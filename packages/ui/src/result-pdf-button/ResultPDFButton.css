@@ -1,0 +1,123 @@
+.ui-ResultPDFButton--container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--layout-margin-large);
+  align-items: center;
+  background-color: var(--theme-gray-10);
+  border: var(--pdf-result-download-container-border);
+  border-radius: var(--layout-border-radius-xlarge);
+  max-width: var(--pdf-result-download-container-max-width);
+  margin-top: var(--layout-margin-xxlarge);
+  margin-inline: auto;
+  transition:
+    box-shadow var(--transition-medium),
+    border-color var(--transition-medium);
+}
+
+.ui-ResultPDFButton--image {
+  margin: 0 auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  max-width: 229px;
+  max-height: 198px;
+  border-right: 1px solid var(--surface-color-border-default);
+  border-radius: var(--pdf-result-download-image-border-radius);
+}
+
+.ui-ResultPDFButton--imageContainer {
+  position: relative;
+  transition: 0.5s ease;
+  background-color: var(--pdf-result-download-container-image-container);
+  width: 229px;
+  height: 190px;
+  border-radius: var(--pdf-result-download-image-border-radius);
+}
+
+.ui-ResultPDFButton--imageMiddle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--surface-color-menus-default);
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.ui-ResultPDFButton--imageContainer:hover .ui-ResultPDFButton--image {
+  opacity: 0.3;
+}
+
+.ui-ResultPDFButton--imageContainer:hover .ui-ResultPDFButton--imageMiddle {
+  opacity: 1;
+}
+
+.ui-ResultPDFButton--container:hover {
+  cursor: pointer;
+  box-shadow: var(--surface-shadow-medium), var(--surface-shadow-medium);
+  border: var(--link-card-border-default);
+}
+.ui-ResultPDFButton--container:focus-visible {
+  outline: var(--layout-border-width-medium) solid
+    var(--surface-color-border-active);
+  outline-offset: var(--outline-offset);
+}
+
+.ui-ResultPDFButton--title {
+  color: var(--typography-color-primary);
+  font: var(--typography-bold-large-body);
+  text-align: center;
+}
+
+.ui-ResultPDFButton--button {
+  margin: var(--layout-margin-small);
+}
+
+.ui-ResultPDFButton--button:hover {
+  background-color: var(--surface-color-primary-button-hover);
+}
+
+.ui-ResultPDFButton--aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--layout-margin-large);
+  flex: 1 0 0;
+  grid-column: 2 / span 2;
+  padding-right: var(--layout-margin-large);
+}
+
+/* Media query for small screens */
+@media (max-width: 980px) {
+  .ui-ResultPDFButton--container {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+  }
+
+  .ui-ResultPDFButton--title {
+    max-width: 250px;
+  }
+
+  .ui-ResultPDFButton--aside {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: max-content;
+    grid-column: auto;
+    padding-right: 0;
+  }
+
+  .ui-ResultPDFButton--image,
+  .ui-ResultPDFButton--imageContainer {
+    margin: 0 auto;
+    border-radius: 0;
+    border: none;
+  }
+}

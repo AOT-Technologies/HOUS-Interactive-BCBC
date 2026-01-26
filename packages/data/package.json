@@ -1,0 +1,24 @@
+{
+  "name": "@repo/data",
+  "version": "1.0.0",
+  "description": "Data types and hooks for BC Building Code application",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types/index.ts",
+    "./hooks": "./src/hooks/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.2.0",
+    "typescript": "^5.3.3"
+  }
+}

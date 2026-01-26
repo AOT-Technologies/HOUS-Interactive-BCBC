@@ -1,0 +1,17 @@
+/* modal close button */
+.ui-ButtonModalClose.--icon {
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--typography-color-primary);
+  border: none;
+  position: fixed;
+  right: var(--layout-padding-medium);
+  top: var(--layout-padding-small);
+}
+
+.ui-ButtonModalClose .ui-Icon {
+  height: 32px;
+  width: 32px;
+}

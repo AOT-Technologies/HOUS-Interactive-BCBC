@@ -1,0 +1,38 @@
+.--glossary .ui-ModalSide--Article {
+  margin-top: var(--layout-margin-medium);
+  padding-inline: var(--layout-padding-medium);
+  padding-block: var(--layout-padding-small);
+}
+
+.--glossary .ui-ModalSide--Subsection > ol {
+  list-style: none;
+}
+
+.ui-ModalSide--List {
+  margin-top: var(--layout-margin-medium);
+  padding-left: revert;
+  padding-bottom: var(--layout-padding-small);
+}
+
+.ui-ModalSide--Term {
+  color: var(--typography-color-link);
+  font: var(--typography-bold-body);
+  text-decoration-line: underline;
+  display: inline;
+}
+
+.ui-ModalSide--LiveRegion {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* TABLET - 608px */
+@media (min-width: 38rem) {
+  .--glossary .ui-ModalSide--Article {
+    padding-left: calc(
+      var(--modal-bc-indent) + var(--layout-margin-xxlarge) + 0.2rem
+    );
+  }
+}

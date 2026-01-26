@@ -1,0 +1,62 @@
+.ui-LinkCard--CardContainer {
+  display: flex;
+  border: 1px solid var(--surface-color-transparent);
+  border-radius: var(--layout-border-radius-xlarge);
+  box-shadow: var(--surface-shadow-medium), var(--surface-shadow-medium);
+  background-color: var(--surface-color-background-white);
+  max-width: var(--link-card-max-width);
+  flex-direction: column;
+  color: var(--support-border-color-info);
+  padding: var(--layout-padding-large);
+  text-align: left;
+  transition:
+    box-shadow var(--transition-medium),
+    border-color var(--transition-medium);
+  text-decoration: none;
+}
+
+.ui-LinkCard--Title {
+  color: var(--support-border-color-info);
+  font: var(--typography-bold-h4);
+  text-decoration: var(--text-decoration-hidden);
+  transition: text-decoration-color var(--transition-medium);
+  text-underline-offset: var(--text-underline-offset);
+}
+
+.ui-LinkCard--CardContainer[data-hovered] {
+  cursor: pointer;
+  box-shadow: var(--surface-shadow-large), var(--surface-shadow-large);
+  border: var(--link-card-border-default);
+}
+.ui-LinkCard--CardContainer[data-focus-visible] {
+  outline: var(--layout-border-width-medium) solid
+    var(--surface-color-border-active);
+}
+
+.ui-LinkCard--CardContainer[data-hovered] .ui-LinkCard--Title {
+  text-decoration-color: var(--support-border-color-info);
+}
+
+.ui-LinkCard--ContentWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-LinkCard--Subtitle {
+  font: var(--typography-regular-label);
+  color: var(--support-border-color-info);
+  border: var(--layout-border-width-small) solid var(--theme-blue-90);
+  border-radius: var(--layout-border-radius-small);
+  padding: var(--layout-padding-xxsmall) var(--layout-padding-xsmall);
+  width: fit-content;
+}
+
+.ui-LinkCard--Description {
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+}
+
+.ui-LinkCard--CTA {
+  align-self: flex-end;
+  margin-top: var(--layout-margin-large);
+}

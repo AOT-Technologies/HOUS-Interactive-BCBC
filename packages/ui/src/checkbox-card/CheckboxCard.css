@@ -1,0 +1,84 @@
+.ui-CheckboxCard--CardContainer {
+  display: flex;
+  align-items: center;
+  border-radius: var(--layout-border-radius-xlarge);
+  box-shadow: var(--surface-shadow-medium), var(--surface-shadow-medium);
+  background: var(--surface-color-background-white);
+  color: var(--typography-color-primary);
+  padding: var(--checkbox-card-padding);
+  gap: var(--checkbox-card-gap);
+  text-align: left;
+  transition:
+    box-shadow var(--transition-medium),
+    background var(--transition-medium),
+    border-color var(--transition-medium);
+  text-decoration: none;
+  border-bottom: var(--layout-border-width-xlarge) solid
+    var(--surface-color-transparent);
+}
+
+.ui-CheckboxCard--Icon {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.ui-CheckboxCard--Title {
+  font: var(--typography-bold-h5);
+  text-decoration: var(--text-decoration-hidden);
+  transition: text-decoration-color var(--transition-medium);
+  text-underline-offset: var(--text-underline-offset);
+}
+
+.ui-CheckboxCard--CardContainer[data-hovered] {
+  cursor: pointer;
+  box-shadow: var(--surface-shadow-large), var(--surface-shadow-large);
+}
+.ui-CheckboxCard--CardContainer[data-focus-visible] {
+  outline: var(--layout-border-width-medium) solid
+    var(--surface-color-border-active);
+}
+
+.ui-CheckboxCard--CardContainer[data-hovered] .ui-CheckboxCard--Title {
+  text-decoration-color: var(--typography-color-primary);
+}
+
+.ui-CheckboxCard--CardContainer[data-selected] {
+  background: linear-gradient(
+      170deg,
+      var(--theme-gold-100-a0) 33.84%,
+      var(--theme-gold-100-a20) 79.92%
+    ),
+    #fff;
+  border-bottom-color: var(--theme-gold-80);
+}
+
+.ui-CheckboxCard--CardContainer[data-selected] .ui-CheckboxCard--Title {
+  color: var(--theme-primary-blue);
+}
+
+.ui-CheckboxCard--CardContainer[data-selected][data-hovered]
+  .ui-CheckboxCard--Title {
+  text-decoration-color: var(--theme-primary-blue);
+}
+
+.ui-CheckboxCard--ContentWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-CheckboxCard--SuperTitle {
+  font: var(--typography-regular-label);
+  color: var(--support-border-color-info);
+  border: var(--layout-border-width-small) solid var(--theme-blue-90);
+  border-radius: var(--layout-border-radius-small);
+  padding: var(--layout-padding-xxsmall) var(--layout-padding-xsmall);
+  width: fit-content;
+  margin-top: 0;
+  margin-bottom: var(--layout-margin-small);
+}
+
+.ui-CheckboxCard--Description {
+  font: var(--typography-regular-body);
+  margin-top: var(--layout-margin-small);
+}
