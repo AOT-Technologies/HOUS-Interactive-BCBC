@@ -59,8 +59,55 @@ bc-building-code/
 │       ├── package.json                # Package dependencies
 │       └── README.md                   # App documentation
 │
-├── packages/                           # Shared packages (to be created)
-│   ├── bcbc-parser/                   # BCBC JSON parsing & validation
+├── packages/                           # Shared packages
+│   ├── ui/                            # ✅ BC Design System UI components
+│   │   ├── src/
+│   │   │   ├── button/                # Button component
+│   │   │   ├── header/                # Header with navigation
+│   │   │   ├── footer/                # Footer component
+│   │   │   ├── icon/                  # Icon system
+│   │   │   ├── link/                  # Link component
+│   │   │   ├── modal-side/            # Side modal for content
+│   │   │   ├── modal-glossary-content/ # Glossary modal content
+│   │   │   ├── modal-building-code-content/ # Building code modal
+│   │   │   ├── checkbox-group/        # Checkbox group
+│   │   │   ├── radio-group/           # Radio group
+│   │   │   ├── number-field/          # Number input field
+│   │   │   ├── tooltip/               # Tooltip component
+│   │   │   ├── link-card/             # Card with link
+│   │   │   ├── checkbox-card/         # Selectable card
+│   │   │   ├── confirmation-modal/    # Confirmation dialog
+│   │   │   ├── pre-footer/            # Pre-footer section
+│   │   │   ├── result-pdf-button/     # PDF download button
+│   │   │   ├── result-pdf-print-content/ # Print content
+│   │   │   ├── input-error/           # Error message display
+│   │   │   ├── image/                 # Next.js Image wrapper
+│   │   │   ├── button-modal-close/    # Modal close button
+│   │   │   └── variables.css          # BC Design System CSS variables
+│   │   ├── tests/                     # Test utilities
+│   │   ├── turbo/generators/          # Component generator
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   ├── vite.config.mts            # Vitest configuration
+│   │   └── README.md
+│   │
+│   ├── constants/                     # Shared constants (to be created)
+│   │   ├── src/
+│   │   │   ├── constants.ts           # General constants
+│   │   │   ├── urls.ts                # URL constants
+│   │   │   ├── ids.ts                 # Element IDs
+│   │   │   └── testids.ts             # Test IDs
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   ├── data/                          # Data types and hooks (to be created)
+│   │   ├── src/
+│   │   │   ├── useGlossaryData.ts     # Glossary data types
+│   │   │   └── useWalkthroughsData.ts # Walkthrough data types
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   ├── bcbc-parser/                   # BCBC JSON parsing & validation (to be created)
 │   │   ├── src/
 │   │   │   ├── parser.ts              # Main parsing logic
 │   │   │   ├── types.ts               # TypeScript type definitions
@@ -68,7 +115,7 @@ bc-building-code/
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
-│   ├── search-indexer/                # FlexSearch index generation
+│   ├── search-indexer/                # FlexSearch index generation (to be created)
 │   │   ├── src/
 │   │   │   ├── indexer.ts             # Index creation logic
 │   │   │   ├── config.ts              # FlexSearch configuration
@@ -76,22 +123,23 @@ bc-building-code/
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
-│   ├── content-chunker/               # Content splitting & metadata extraction
+│   ├── content-chunker/               # Content splitting & metadata extraction (to be created)
 │   │   ├── src/
 │   │   │   ├── chunker.ts             # Content splitting logic
 │   │   │   └── metadata-extractor.ts  # Navigation tree and glossary extraction
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
-│   ├── ui/                            # Shared UI components
-│   │   ├── src/
-│   │   ├── package.json
-│   │   └── tsconfig.json
+│   ├── eslint-config/                 # Shared ESLint config (to be created)
+│   │   ├── index.js
+│   │   └── package.json
 │   │
-│   └── tsconfig/                      # Shared TypeScript configurations
+│   └── typescript-config/             # ✅ Shared TypeScript configurations
 │       ├── base.json
 │       ├── nextjs.json
-│       └── react-library.json
+│       ├── react-library.json
+│       ├── package.json
+│       └── README.md
 │
 ├── scripts/                           # Build-time scripts
 │   └── generate-assets.ts            # Orchestrates the build pipeline
@@ -227,11 +275,14 @@ bc-building-code/
 **Purpose:** Reusable packages for parsing, indexing, and chunking
 
 **Packages:**
-1. **bcbc-parser** - Parse and validate BCBC JSON
-2. **search-indexer** - Generate FlexSearch indexes
-3. **content-chunker** - Split content and extract metadata
-4. **ui** - Shared UI components
-5. **tsconfig** - Shared TypeScript configurations
+1. **ui** ✅ - BC Design System UI components (React, CSS)
+2. **constants** ✅ - Shared constants (URLs, IDs, test IDs)
+3. **data** ✅ - Data types and hooks (glossary, walkthroughs)
+4. **typescript-config** ✅ - Shared TypeScript configurations
+5. **bcbc-parser** - Parse and validate BCBC JSON
+6. **search-indexer** - Generate FlexSearch indexes
+7. **content-chunker** - Split content and extract metadata
+8. **eslint-config** - Shared ESLint configuration
 
 **Git:** ✅ Committed to version control
 

@@ -17,9 +17,9 @@ The BCBC is currently available only as a PDF, which users find difficult to nav
 | Layer | Technology |
 |-------|------------|
 | **Monorepo** | Turborepo |
-| **Framework** | Next.js 14+ (App Router) |
+| **Framework** | Next.js 16+ (App Router) |
 | **Language** | TypeScript (strict mode) |
-| **UI Library** | React 18 |
+| **UI Library** | React 19 |
 | **Component Library** | Chakra UI (BC Design System aligned) |
 | **Search Engine** | FlexSearch (client-side, pre-built indexes) |
 | **Styling** | Chakra UI + CSS-in-JS |
