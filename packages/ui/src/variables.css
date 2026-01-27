@@ -304,7 +304,7 @@
   --pdf-result-download-container-border: 1px solid
     var(--surface-color-border-default);
   --pdf-result-download-container-max-width: 650px;
-  --pdf-result-download-container-image-border: 1px solid var(#00000000);
+  --pdf-result-download-container-image-border: 1px solid #00000000;
   --pdf-result-download-container-image-container: #000000;
   --confirmation-modal-max-width: 500px;
 }

@@ -6,9 +6,6 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  eslint: {
-    dirs: ['app', 'components', 'lib', 'hooks'],
-  },
 };
 
 module.exports = nextConfig;

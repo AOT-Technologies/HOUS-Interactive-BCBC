@@ -5,9 +5,9 @@ A client-side search application for the 2024 British Columbia Building Code, en
 ## Tech Stack
 
 - **Monorepo**: Turborepo
-- **Framework**: Next.js 14+ (App Router, Static Export)
+- **Framework**: Next.js 16+ (App Router, Static Export)
 - **Language**: TypeScript (strict mode)
-- **UI**: React 18 + BC Design System (@repo/ui)
+- **UI**: React 19 + BC Design System (@repo/ui)
 - **Search**: FlexSearch (client-side, pre-built indexes)
 - **Package Manager**: pnpm (v8.15.0+)
 - **Node**: v18.0.0+

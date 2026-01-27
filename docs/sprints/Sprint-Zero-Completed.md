@@ -47,7 +47,7 @@ Sprint 0 focuses on establishing the foundational infrastructure for the BC Buil
 
 **What was accomplished:**
 
-#### 1. Next.js 14+ with App Router
+#### 1. Next.js 16+ with App Router
 - Initialized Next.js application in `apps/web/`
 - Configured App Router architecture (using `app/` directory)
 - Created root layout with metadata
@@ -133,17 +133,17 @@ apps/web/
 - `/apps/web/public/data/.gitkeep` - Data directory
 
 **Dependencies Installed:**
-- `next@^14.2.0` - Next.js framework
-- `react@^18.3.0` - React library
-- `react-dom@^18.3.0` - React DOM
+- `next@^16.1.5` - Next.js framework
+- `react@^19.0.0` - React library
+- `react-dom@^19.0.0` - React DOM
 - `typescript@^5.3.0` - TypeScript compiler
 - `eslint@^8.57.0` - Linting tool
-- `eslint-config-next@^14.2.0` - Next.js ESLint config
+- `eslint-config-next@^16.1.5` - Next.js ESLint config
 - `eslint-config-prettier@^9.1.0` - Prettier integration
 - `prettier@^3.2.0` - Code formatter
 - `@types/node@^20.11.0` - Node.js types
-- `@types/react@^18.3.0` - React types
-- `@types/react-dom@^18.3.0` - React DOM types
+- `@types/react@^19.0.0` - React types
+- `@types/react-dom@^19.0.0` - React DOM types
 
 **Verification Results:**
 - ✅ TypeScript type checking: PASSED (no errors)
@@ -178,7 +178,7 @@ Route (app)              Size      First Load JS
 - ✅ Consistent code style across project
 
 ### Build System
-- ✅ Next.js 14+ with App Router
+- ✅ Next.js 16+ with App Router
 - ✅ Static site generation configured
 - ✅ Optimized production builds
 - ✅ Fast development server
@@ -231,7 +231,7 @@ Once Sprint 0 is complete, Sprint 1 will focus on:
 - ✅ **Requirement 1.1:** Turborepo for monorepo management
 - ✅ **Requirement 1.2:** pnpm as package manager
 - ✅ **Requirement 1.3:** apps/ and packages/ directory organization
-- ✅ **Requirement 1.4:** Next.js 14+ with App Router
+- ✅ **Requirement 1.4:** Next.js 16+ with App Router
 - ✅ **Requirement 1.6:** TypeScript strict mode for all code
 
 ### Pending Requirements
