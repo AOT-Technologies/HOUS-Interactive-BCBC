@@ -1,0 +1,39 @@
+.ui-NumberField input {
+  border: var(--layout-border-width-medium) solid
+    var(--surface-color-border-dark);
+  border-radius: var(--layout-border-radius-medium);
+  padding: var(--layout-padding-12);
+  font: var(--typography-regular-large-body);
+  width: 100%;
+  max-width: 234px;
+}
+
+.ui-NumberField.--isValid input {
+  border-color: var(--surface-color-primary-button-hover);
+}
+
+.ui-NumberField input[data-focused] {
+  border-color: var(--surface-color-border-active);
+  outline: none;
+}
+
+.ui-NumberField--Label {
+  display: block;
+  font: var(--typography-bold-large-body);
+}
+
+.ui-NumberField--Unit {
+  margin-left: var(--layout-margin-12);
+}
+
+.ui-NumberField--Check {
+  position: absolute;
+  right: var(--layout-padding-12);
+  color: var(--icons-color-success);
+  top: 50%;
+  margin-top: -12px;
+}
+
+.ui-NumberField--Error {
+  display: block;
+}

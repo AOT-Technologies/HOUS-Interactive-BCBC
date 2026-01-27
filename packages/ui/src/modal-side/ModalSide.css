@@ -1,0 +1,286 @@
+.ui-ModalSide--AriaDialog {
+  outline: none;
+}
+
+.ui-ModalSide--Overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: var(--theme-black-opacity-40);
+}
+
+.ui-ModalSide--Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  outline: none;
+  border-left: var(--layout-border-width-small) solid
+    var(--surface-color-border-default);
+  box-shadow: -8px 0 20px var(--surface-opacity-10);
+  background: var(--theme-gray-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-ModalSide--Modal[data-entering] {
+  animation: modal-slide-in 300ms reverse ease-in;
+}
+
+.ui-ModalSide--Modal[data-exiting] {
+  animation: modal-slide-out 300ms reverse ease-in;
+}
+
+.ui-ModalSide--Modal .ui-ButtonModalClose.--icon {
+  z-index: 1;
+  position: fixed;
+  right: var(--layout-margin-large);
+  top: var(--layout-margin-medium);
+}
+
+.ui-ModalSide--Content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-padding-medium);
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.ui-ModalSide--Parts ol {
+  list-style: none;
+}
+
+.ui-ModalSide--Parts {
+  padding: var(--modal-bc-padding);
+  margin-top: 80px;
+  list-style: none;
+}
+
+.ui-ModalSide--Parts sup {
+  line-height: 0;
+}
+
+.ui-ModalSide--Parts article,
+.ui-ModalSide--Parts li,
+.ui-ModalSide--Image {
+  scroll-margin-top: var(--layout-margin-80);
+}
+
+.ui-ModalSide--Subsection {
+  padding: var(--modal-bc-padding-subsection);
+}
+
+.ui-ModalSide--ArticleHeader {
+  font: var(--typography-bold-h5);
+}
+
+.ui-ModalSide--SubsectionHeader {
+  font: var(--typography-bold-h4);
+}
+
+.ui-ModalSide-pdfButton {
+  width: 100%;
+  margin-top: var(--layout-margin-medium);
+  padding-inline: var(--layout-padding-12);
+}
+
+.ui-ModalSide-pdfButton .ui-Icon {
+  flex-shrink: 0;
+}
+
+.ui-ModalSide--ArticleHeader {
+  padding: var(--layout-padding-small) var(--layout-padding-medium) 0;
+}
+
+.ui-ModalSide--Article {
+  margin-top: var(--layout-margin-large);
+}
+
+.ui-ModalSide--ArticleContent {
+  padding: var(--layout-padding-small);
+  font: var(--typography-regular-body);
+}
+
+.ui-ModalSide--ArticleContent ol {
+  list-style: none;
+}
+
+.ui-ModalSide--ArticleContent li {
+  position: relative;
+  padding-block: var(--layout-margin-small);
+}
+
+.ui-ModalSide--ArticleContent li:before {
+  position: absolute;
+  right: calc(
+    calc(100% - var(--modal-bc-sentence-padding-start)) +
+      var(--layout-margin-small)
+  );
+}
+
+.ui-ModalSide--Sentences {
+  counter-reset: countsentence;
+}
+
+.ui-ModalSide--Sentences > li {
+  counter-increment: countsentence;
+  padding-inline: var(--modal-bc-sentence-padding-start)
+    var(--modal-bc-sentence-padding-end);
+  margin-right: calc(var(--layout-margin-small) * -1);
+}
+
+.ui-ModalSide--Sentences > li:has(.ui-ModalSide--Clauses) {
+  padding-bottom: 0;
+}
+
+.ui-ModalSide--Clauses + .ui-ModalSide--SentenceSubDescription {
+  display: block;
+  margin-bottom: var(--layout-margin-small);
+}
+
+.ui-ModalSide--Sentences > li:before {
+  content: counter(countsentence) ".";
+}
+
+.ui-ModalSide--Clauses,
+.ui-ModalSide--Subclauses {
+  counter-reset: countclause;
+  padding-top: var(--layout-margin-small);
+  margin-inline: calc(var(--layout-margin-small) * -1);
+}
+
+.ui-ModalSide--Clauses li {
+  counter-increment: countclause;
+  padding-inline: calc(var(--layout-margin-large) + var(--layout-margin-small))
+    var(--layout-margin-small);
+}
+
+.ui-ModalSide--Clauses > li:has(.ui-ModalSide--Subclauses) {
+  padding-bottom: 0;
+}
+
+.ui-ModalSide--Clauses li:before {
+  right: calc(
+    calc(100% - var(--modal-bc-sentence-padding-start)) +
+      var(--layout-margin-medium)
+  );
+}
+
+.ui-ModalSide--Clauses > li:before {
+  content: counter(countclause, lower-alpha) ".";
+}
+
+.ui-ModalSide--Subclauses {
+  counter-reset: countsubclause;
+}
+
+.ui-ModalSide--Subclauses > li {
+  counter-increment: countsubclause;
+}
+
+.ui-ModalSide--Subclauses > li:before {
+  content: counter(countsubclause, lower-roman) ".";
+}
+
+.ui-ModalSide--SectionHighlighted {
+  border-radius: var(--layout-margin-small, 8px);
+  border: 1px solid var(--support-border-color-info);
+  background: var(--support-surface-color-info);
+}
+
+.ui-ModalSide--Image {
+  padding: var(--layout-padding-medium);
+  margin-inline: calc(var(--modal-bc-sentence-padding-start) * -1)
+    calc(var(--modal-bc-sentence-padding-end) * -1);
+}
+
+.ui-ModalSide--Image table {
+  width: 100%;
+}
+.ui-ModalSide--Image table th,
+.ui-ModalSide--Image table td {
+  outline: 1px solid black;
+}
+
+@keyframes modal-slide-out {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes modal-slide-in {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* TABLET - 608px */
+@media (min-width: 38rem) {
+  .ui-ModalSide--SubsectionHeader {
+    font: var(--typography-bold-h3);
+  }
+  .ui-ModalSide--Article {
+    margin-top: 0;
+    padding-bottom: var(--layout-margin-small);
+  }
+  .ui-ModalSide--SubsectionHeader,
+  .ui-ModalSide--ArticleHeader {
+    display: flex;
+    gap: var(--layout-margin-medium);
+    align-items: flex-start;
+    padding-inline-start: var(--layout-margin-large);
+    padding-block: var(--layout-margin-large);
+  }
+  .ui-ModalSide--ArticleHeader {
+    font: var(--typography-bold-h4);
+    padding-bottom: 0;
+  }
+  .ui-ModalSide--SubsectionNumber,
+  .ui-ModalSide--ArticleNumber {
+    width: var(--modal-bc-indent);
+    flex-shrink: 0;
+  }
+  .ui-ModalSide-pdfButton {
+    width: 90px;
+    margin-top: calc(
+      calc(var(--typography-line-heights-xsparse) - var(--size-button)) / 2
+    );
+    margin-left: auto;
+  }
+  .ui-ModalSide--ArticleContent {
+    padding-left: calc(
+      var(--modal-bc-indent) + var(--layout-margin-small) +
+        var(--layout-margin-large)
+    );
+  }
+  .ui-ModalSide--Sentences > li {
+    margin-left: calc(var(--layout-margin-small) * -1);
+  }
+  .ui-ModalSide--Image {
+    margin-inline: calc(
+        calc(var(--modal-bc-sentence-padding-start) + var(--modal-bc-indent)) *
+          -1
+      )
+      calc(var(--modal-bc-sentence-padding-end) * -1);
+  }
+}
+
+/* DESKTOP - 912px */
+@media (min-width: 57rem) {
+  .ui-ModalSide--Modal {
+    width: 60%;
+  }
+}

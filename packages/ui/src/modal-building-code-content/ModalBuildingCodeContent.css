@@ -1,0 +1,113 @@
+.ui-ModalBuildingCodeContent-ImageResponsive {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-block: var(--layout-padding-small);
+}
+
+.ui-ModalBuildingCodeContent--Figure,
+.ui-ModalBuildingCodeContent--Figure .ui-Button {
+  text-align: center;
+  font: var(--typography-regular-small-body);
+}
+
+.ui-ModalBuildingCodeContent--FigureCaptionBold {
+  font-weight: var(--typography-font-weights-bold);
+}
+
+.ui-ModalBuildingCodeContent--TableImageNotes,
+.ui-ModalBuildingCodeContent--TableImageNotes .ui-Button {
+  text-align: left;
+}
+
+.ui-ModalBuildingCodeContent--printContainer {
+  display: none;
+}
+
+.ui-ModalBuildingCodeContent--printContainer .ui-ModalSide--SubsectionHeader {
+  margin: var(--layout-margin-small);
+}
+
+/* Ensure table cells break correctly within pages */
+.ui-ModalBuildingCodeContent--modalTable th,
+.ui-ModalBuildingCodeContent--modalTable td {
+  padding: var(--layout-padding-10);
+  font: var(--typography-regular-small-body);
+  text-align: left;
+  word-wrap: break-word;
+  page-break-inside: auto;
+}
+
+.ui-ModalBuildingCodeContent--modalTable tr {
+  page-break-inside: auto;
+}
+
+.ui-ModalBuildingCodeContent--modalTable li {
+  list-style: none;
+}
+
+.ui-ModalBuildingCodeContent--modalTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  page-break-inside: auto;
+}
+
+/* Print styles that only need to apply when print window is open */
+@media print {
+  /* Hide modal classes not needed for print */
+  .ui-ModalSide--Parts:not(.--glossary),
+  .ui-ModalSide--Header,
+  .ui-ButtonModalClose,
+  .ui-ModalSide-pdfButton {
+    display: none !important;
+  }
+
+  /* Override these class attributes to enable page breaks */
+  .ui-ModalBuildingCodeContent--printContainer {
+    display: block !important;
+  }
+
+  .ui-ModalSide--Content,
+  .ui-ModalSide--Overlay,
+  .ui-ModalSide--Modal,
+  .ui-ModalSide--AriaDialog {
+    display: block !important;
+    height: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .ui-ModalSide--Modal {
+    border: none !important;
+  }
+
+  .ui-ModalSide--Image {
+    margin: 0;
+  }
+
+  .ui-ModalSide--ArticleContent,
+  .--glossary .ui-ModalSide--Article {
+    padding-left: 0;
+  }
+
+  /* We should be able to remove this once the margin-top 50px is no longer there */
+  .ui-ModalSide--Content {
+    margin: 0;
+  }
+
+  .ui-ModalSide--SectionHighlighted {
+    border-radius: 0;
+    border: 0;
+    background: none;
+  }
+
+  .ui-ModalBuildingCodeContent--printContainer .ui-ModalSide--SubsectionHeader,
+  .ui-ModalBuildingCodeContent--printContainer .ui-ModalSide--ArticleHeader {
+    padding: 0;
+    margin: 0;
+  }
+}

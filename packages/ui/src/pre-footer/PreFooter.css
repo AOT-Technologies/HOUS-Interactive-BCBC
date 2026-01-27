@@ -1,0 +1,9 @@
+.ui-PreFooter {
+  background-color: var(--theme-gray-110);
+  color: var(--theme-gray-10);
+  font: var(--typography-regular-small-body);
+  border-top: var(--layout-border-width-large) solid var(--theme-primary-gold);
+  border-bottom: var(--layout-border-width-large) solid
+    var(--theme-primary-gold);
+  padding-block: var(--layout-margin-xlarge);
+}

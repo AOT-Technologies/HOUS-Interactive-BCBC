@@ -1,0 +1,123 @@
+/* Hide the print container by default */
+.ui-ResultPDFPrintContent--printContainer {
+  display: none;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.ui-ResultPDFPrintContent--printContainer sup {
+  line-height: 0;
+}
+
+.ui-ResultPDFPrintContent--table th,
+.ui-ResultPDFPrintContent--table td {
+  border: var(--print-content-table-th-td-border);
+  padding: var(--layout-padding-10);
+  font: var(--typography-regular-small-body);
+  text-align: left;
+  word-wrap: break-word;
+  break-inside: avoid;
+}
+
+.ui-ResultPDFPrintContent--table tr {
+  break-inside: auto;
+  break-after: auto;
+  page-break-inside: auto;
+}
+
+.ui-ResultPDFPrintContent--table li {
+  list-style: none;
+}
+
+.ui-ResultPDFPrintContent--table {
+  width: 99%; /* Ensure table width doesn't cut off border */
+  border-collapse: collapse;
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+.ui-ResultPDFPrintContent--answerColumn ul {
+  margin-left: 20px; /* Indent list items */
+}
+
+.ui-ResultPDFPrintContent--answerColumn ul:has(li:only-child) {
+  margin-left: 0;
+}
+
+.ui-ResultPDFPrintContent--answerColumn li {
+  display: list-item;
+  list-style: disc;
+}
+.ui-ResultPDFPrintContent--answerColumn li:only-child {
+  list-style: none;
+}
+
+.ui-ResultPDFPrintContent--walkthroughTitle {
+  padding: var(--layout-padding-small);
+  font: var(--typography-bold-h3);
+}
+
+.ui-ResultPDFPrintContent--spacer {
+  padding: var(--layout-padding-small);
+  page-break-before: always;
+}
+
+.ui-ResultPDFPrintContent--sectionTitle {
+  font: var(--typography-bold-h5);
+}
+
+/* Set fixed widths for table columns */
+.ui-ResultPDFPrintContent--answerColumn {
+  width: 30%;
+}
+
+.ui-ResultPDFPrintContent--referenceColumn {
+  width: 17%;
+}
+
+.ui-ResultPDFPrintContent--selectedAnswer {
+  color: var(--icons-color-success);
+  font-weight: var(--typography-font-weights-bold);
+}
+
+/* Print styles that only need to apply when print window is open */
+@media print {
+  /* Hide everything on the page besides what we need to print */
+  .ui-Header,
+  .web-Walkthrough--StepTracker,
+  .web-WalkthroughFooter,
+  .p-hide,
+  .ui-ResultPDFButton--container,
+  .ui-ResultPDFButton--button,
+  .ui-ResultPDFButton--imageContainer,
+  .ui-ResultPDFButton--aside {
+    display: none !important;
+  }
+
+  /* Override these class displays to enable page breaks */
+  .web-Walkthrough,
+  .web-Walkthrough--Content {
+    display: block !important;
+  }
+
+  /* Ensure the walkthrough takes up the full height so the printer can detect multiple pages*/
+  .web-Walkthrough {
+    height: 100% !important;
+  }
+
+  .ui-ResultPDFPrintContent--printContainer {
+    width: 100%;
+    display: block;
+    visibility: visible;
+  }
+
+  /* Ensure no overflow and hide any scrollbars */
+  html,
+  body {
+    height: initial !important;
+    overflow: initial !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}

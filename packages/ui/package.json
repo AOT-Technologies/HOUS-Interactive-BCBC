@@ -1,0 +1,62 @@
+{
+  "name": "@repo/ui",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./pre-footer": "./src/pre-footer/PreFooter.tsx",
+    "./confirmation-modal": "./src/confirmation-modal/ConfirmationModal.tsx",
+    "./footer": "./src/footer/Footer.tsx",
+    "./number-field": "./src/number-field/NumberField.tsx",
+    "./button-modal-close": "./src/button-modal-close/ButtonModalClose.tsx",
+    "./result-pdf-button": "./src/result-pdf-button/ResultPDFButton.tsx",
+    "./result-pdf-print-content": "./src/result-pdf-print-content/ResultPDFPrintContent.tsx",
+    "./modal-building-code-content": "./src/modal-building-code-content/ModalBuildingCodeContent.tsx",
+    "./modal-glossary-content": "./src/modal-glossary-content/ModalGlossaryContent.tsx",
+    "./link-card": "./src/link-card/LinkCard.tsx",
+    "./checkbox-card": "./src/checkbox-card/CheckboxCard.tsx",
+    "./image": "./src/image/Image.tsx",
+    "./tooltip": "./src/tooltip/Tooltip.tsx",
+    "./modal-side": "./src/modal-side/ModalSide.tsx",
+    "./checkbox-group": "./src/checkbox-group/CheckboxGroup.tsx",
+    "./header": "./src/header/Header.tsx",
+    "./input-error": "./src/input-error/InputError.tsx",
+    "./radio-group": "./src/radio-group/RadioGroup.tsx",
+    "./icon": "./src/icon/Icon.tsx",
+    "./button": "./src/button/Button.tsx",
+    "./link": "./src/link/Link.tsx",
+    "./cssVariables": "./src/variables.css"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write \"**/*.{ts,tsx,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,css}\"",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "generate:component": "turbo gen react-component"
+  },
+  "devDependencies": {
+    "@repo/constants": "*",
+    "@repo/data": "*",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "^14.5.2",
+    "@turbo/gen": "^1.12.4",
+    "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.57.0",
+    "jsdom": "^24.0.0",
+    "react": "^18.2.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "next": "^14.2.10",
+    "react-aria-components": "^1.2.0"
+  }
+}

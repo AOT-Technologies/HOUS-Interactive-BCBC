@@ -6,19 +6,91 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  font: var(--typography-regular-body);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: var(--typography-color-primary);
+  hanging-punctuation: allow-end;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h1, .h1 {
+  font: var(--typography-regular-h1);
+}
+
+h2, .h2 {
+  font: var(--typography-regular-h2);
+}
+
+h3, .h3 {
+  font: var(--typography-regular-h3);
+}
+
+h4, .h4 {
+  font: var(--typography-regular-h4);
+}
+
+h5, .h5 {
+  font: var(--typography-regular-h5);
+}
+
+p {
+  margin-top: var(--layout-margin-medium);
+}
+
+a[data-skip-link-footer] {
+  display: none;
+  visibility: hidden;
+}
+
+/* Utility classes */
+html:has(.u-page-background-gray) {
+  background: var(--theme-gray-10);
+}
+
+html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
+  display: block;
+  visibility: revert;
+}
+
+.u-container {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-padding-container);
+}
+
+.u-container-content {
+  max-width: var(--layout-max-width-content);
+  margin: 0 auto;
+  padding: 0 var(--layout-padding-container);
+}
+
+.u-hidden {
+  display: none;
+}
+
+.u-relative {
+  position: relative;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-bold {
+  font-weight: bold;
+}
+
+.u-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.u-screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

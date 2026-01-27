@@ -1,0 +1,31 @@
+.ui-Tooltip--Aria {
+  background-color: var(--theme-gray-110);
+  color: var(--typography-color-primary-invert);
+  padding: var(--layout-margin-small, 12px);
+  margin-top: 10px;
+  max-width: 400px;
+  font: var(--typography-regular-small-body);
+  border-radius: var(--layout-border-radius-medium);
+  background: var(--theme-gray-110);
+  box-shadow: var(--surface-shadow-small);
+}
+
+.ui-Tooltip--Content {
+  margin: 0;
+}
+
+.ui-Tooltip--Triangle {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 12px;
+}
+
+.ui-Tooltip--HiddenLabel {
+  position: absolute;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
+}

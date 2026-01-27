@@ -1,0 +1,43 @@
+.ui-ConfirmationModal--overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  overflow-y: auto;
+  background: var(--surface-color-overlay-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--layout-padding-medium);
+  text-align: center;
+}
+
+.ui-ConfirmationModal--modal {
+  width: 100%;
+  max-width: var(--confirmation-modal-max-width);
+  overflow: hidden;
+  border-radius: var(--layout-border-radius-xxlarge);
+  background: var(--surface-color-background-white);
+  padding: var(--layout-padding-large);
+  text-align: left;
+}
+
+.ui-ConfirmationModal--dialog {
+  outline: none;
+  position: relative;
+}
+
+.ui-ConfirmationModal--title {
+  font: var(--typography-bold-h5);
+}
+
+.ui-ConfirmationModal--content {
+  margin-top: var(--layout-margin-medium);
+  font: var(--typography-regular-body);
+}
+
+.ui-ConfirmationModal--actions {
+  margin-top: var(--layout-margin-large);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}

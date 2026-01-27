@@ -1,0 +1,22 @@
+{
+  "name": "@repo/constants",
+  "version": "1.0.0",
+  "description": "Shared constants for BC Building Code application",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./src/urls": "./src/urls.ts",
+    "./src/ids": "./src/ids.ts",
+    "./src/testids": "./src/testids.ts",
+    "./src/constants": "./src/constants.ts"
+  },
+  "scripts": {
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.3.3"
+  }
+}

@@ -5,10 +5,12 @@ A client-side search application for the 2024 British Columbia Building Code, en
 ## Tech Stack
 
 - **Monorepo**: Turborepo
-- **Framework**: Next.js 14+ (App Router, Static Export)
-- **Language**: TypeScript
-- **UI**: React 18 + Chakra UI
+- **Framework**: Next.js 16+ (App Router, Static Export)
+- **Language**: TypeScript (strict mode)
+- **UI**: React 19 + BC Design System (@repo/ui)
 - **Search**: FlexSearch (client-side, pre-built indexes)
+- **Package Manager**: pnpm (v8.15.0+)
+- **Node**: v18.0.0+
 
 ## Architecture
 
@@ -50,14 +52,17 @@ bc-building-code/
 ├── apps/web/              # Next.js application
 │   └── public/data/       # Generated assets (output)
 ├── packages/
-│   ├── bcbc-parser/       # JSON parsing & types
-│   ├── search-indexer/    # FlexSearch index generation
-│   ├── content-chunker/   # Content splitting utilities
-│   └── ui/                # Shared components
+│   ├── ui/                # ✅ BC Design System UI components
+│   ├── constants/         # ✅ Shared constants (URLs, IDs, test IDs)
+│   ├── data/              # ✅ Data types and hooks
+│   ├── bcbc-parser/       # JSON parsing & validation (to be created)
+│   ├── search-indexer/    # FlexSearch index generation (to be created)
+│   └── content-chunker/   # Content splitting utilities (to be created)
 ├── scripts/               # Build-time asset generation
 └── docs/                  # Documentation
     ├── COMMANDS.md        # Command reference
-    └── DATA-MANAGEMENT.md # Data management guide
+    ├── DATA-MANAGEMENT.md # Data management guide
+    └── BC-DESIGN-SYSTEM.md # BC Design System integration guide
 ```
 
 ## Quick Start
@@ -104,6 +109,18 @@ See [docs/DATA-MANAGEMENT.md](docs/DATA-MANAGEMENT.md) for complete data managem
 | `npx pnpm test` | Run tests |
 
 See [docs/COMMANDS.md](docs/COMMANDS.md) for complete command reference.
+
+## BC Design System
+
+The application uses the BC Design System UI component library with 20+ accessible, government-standard components including:
+
+- Layout: Header, Footer, PreFooter
+- Forms: Button, Checkbox, Radio, NumberField
+- Navigation: Link, LinkCard
+- Modals: ModalSide, ConfirmationModal
+- Display: Icon, Image, Tooltip
+
+All components meet WCAG AAA accessibility standards. See [docs/BC-DESIGN-SYSTEM.md](docs/BC-DESIGN-SYSTEM.md) for complete integration guide.
 
 ## Deployment
 
