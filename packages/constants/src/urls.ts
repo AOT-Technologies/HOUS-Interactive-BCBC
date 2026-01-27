@@ -8,6 +8,9 @@ export interface NavigationLink {
   target?: '_blank' | '_self';
 }
 
+// URL titles
+export const URL_HOME_TITLE = 'Home';
+
 // Main navigation links (Header)
 export const URLS_MAIN_NAVIGATION: NavigationLink[] = [
   {

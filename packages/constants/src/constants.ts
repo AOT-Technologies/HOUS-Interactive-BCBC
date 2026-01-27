@@ -5,6 +5,9 @@
 // Images base path
 export const IMAGES_BASE_PATH = '/';
 
+// Website name
+export const STR_WEBSITE_NAME = 'BC Building Code';
+
 // API endpoints
 export const API_ENDPOINTS = {
   SEARCH_INDEX: '/data/search-index.json',
@@ -31,3 +34,18 @@ export const APP_CONFIG = {
   MAX_RECENT_SEARCHES: 10,
   RESULTS_PER_PAGE: 20,
 } as const;
+
+// Building types enum
+export enum EnumBuildingTypes {
+  SINGLE_DWELLING = 'single-dwelling',
+  MULTI_DWELLING = 'multi-dwelling',
+  COMMERCIAL = 'commercial',
+  INDUSTRIAL = 'industrial',
+}
+
+// Walkthrough IDs enum
+export enum EnumWalkthroughIds {
+  _9_9_9 = '9-9-9',
+  _9_10_14 = '9-10-14',
+  _9_10_15 = '9-10-15',
+}
