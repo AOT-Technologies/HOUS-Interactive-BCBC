@@ -11,7 +11,7 @@
     "./useWalkthroughsData": "./src/hooks/useWalkthroughsData.ts"
   },
   "scripts": {
-    "lint": "eslint src/",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -19,8 +19,12 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/react": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.57.0",
     "typescript": "^5.3.3"
   }
 }
