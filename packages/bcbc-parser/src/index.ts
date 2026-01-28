@@ -28,7 +28,13 @@ export type {
 } from './types';
 
 // Export parser functions
-export { parseBCBC, parseDivision, extractContentIds } from './parser';
+export {
+  parseBCBC,
+  parseDivision,
+  extractContentIds,
+  getGlossaryMap,
+  getAmendmentDates,
+} from './parser';
 
 // Export validator functions
 export {

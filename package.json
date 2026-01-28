@@ -7,8 +7,9 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "generate-assets": "turbo run generate-assets",
-    "clean": "turbo run clean"
+    "generate-assets": "tsx scripts/generate-assets.ts",
+    "clean": "turbo run clean",
+    "test": "turbo run test"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
