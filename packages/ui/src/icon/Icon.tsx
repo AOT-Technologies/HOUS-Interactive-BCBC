@@ -20,6 +20,7 @@ import CheckCircle from "./icons/CheckCircle";
 import RestartAlt from "./icons/RestartAlt";
 import AccountTree from "./icons/AccountTree";
 import DownloadIcon from "./icons/DownloadIcon";
+import SearchIcon from "./icons/SearchIcon";
 
 // NOTE: When adding a new icon, make sure to add the string here, and the icon component below in the ICONS object
 export type IconType =
@@ -39,7 +40,8 @@ export type IconType =
   | "restartAlt"
   | "checkCircle"
   | "accountTree" // NOTE: account tree is the name in Material Icons, this is used for the mobile step tracker toggle
-  | "download";
+  | "download"
+  | "search";
 
 export interface IconComponentProps extends SVGProps<SVGSVGElement> {
   /**
@@ -87,6 +89,7 @@ const ICONS: Record<IconType, FunctionComponent<IconProps>> = {
   checkCircle: CheckCircle,
   accountTree: AccountTree,
   download: DownloadIcon,
+  search: SearchIcon,
 };
 
 export default function Icon({

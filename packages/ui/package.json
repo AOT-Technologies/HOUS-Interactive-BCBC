@@ -24,6 +24,9 @@
     "./icon": "./src/icon/Icon.tsx",
     "./button": "./src/button/Button.tsx",
     "./link": "./src/link/Link.tsx",
+    "./search-combobox": "./src/search-combobox/SearchCombobox.tsx",
+    "./header-search": "./src/header-search/HeaderSearch.tsx",
+    "./hero-search": "./src/hero-search/HeroSearch.tsx",
     "./cssVariables": "./src/variables.css"
   },
   "scripts": {

@@ -1,0 +1,75 @@
+/* HeaderSearch - Compact, toggleable search for header */
+
+.ui-HeaderSearch {
+  display: flex;
+  align-items: center;
+  gap: var(--layout-padding-small);
+}
+
+/* Closed State */
+.ui-HeaderSearch.--closed {
+  /* Just the icon button */
+}
+
+/* Open State */
+.ui-HeaderSearch.--open {
+  display: flex;
+  align-items: center;
+  gap: var(--layout-padding-small);
+  animation: headerSearchExpand 0.2s ease-out;
+}
+
+@keyframes headerSearchExpand {
+  from {
+    opacity: 0;
+    transform: scaleX(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Search Input Container */
+.ui-HeaderSearch.--open .ui-SearchCombobox {
+  min-width: 300px;
+  max-width: 400px;
+  flex: 1;
+}
+
+/* Cancel Button */
+.ui-HeaderSearch--CancelButton {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 912px) {
+  .ui-HeaderSearch.--open .ui-SearchCombobox {
+    min-width: 250px;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ui-HeaderSearch.--open {
+    /* On mobile, search could expand full width */
+    flex: 1;
+  }
+
+  .ui-HeaderSearch.--open .ui-SearchCombobox {
+    min-width: 200px;
+    max-width: 100%;
+  }
+
+  .ui-HeaderSearch--CancelButton {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui-HeaderSearch.--open .ui-SearchCombobox {
+    min-width: 150px;
+  }
+}

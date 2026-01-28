@@ -34,6 +34,33 @@ export const TESTID_SEARCH_INPUT = 'search-input';
 export const TESTID_SEARCH_BUTTON = 'search-button';
 export const TESTID_SEARCH_RESULTS = 'search-results';
 
+// Header Search test IDs
+export const TESTID_HEADER_SEARCH = 'header-search';
+export const TESTID_HEADER_SEARCH_BUTTON = 'header-search-button';
+export const TESTID_HEADER_SEARCH_INPUT = 'header-search-input';
+export const TESTID_HEADER_SEARCH_CANCEL = 'header-search-cancel';
+export const TESTID_HEADER_SEARCH_SUBMIT = 'header-search-submit';
+export const TESTID_HEADER_SEARCH_SUGGESTIONS = 'header-search-suggestions';
+export const TESTID_HEADER_SEARCH_SUGGESTION_ITEM = 'header-search-suggestion-item';
+
+// Hero Search test IDs
+export const TESTID_HERO_SEARCH = 'hero-search';
+export const TESTID_HERO_SEARCH_INPUT = 'hero-search-input';
+export const TESTID_HERO_SEARCH_BUTTON = 'hero-search-button';
+export const TESTID_HERO_SEARCH_SUGGESTIONS = 'hero-search-suggestions';
+export const TESTID_HERO_SEARCH_SUGGESTION_ITEM = 'hero-search-suggestion-item';
+
+// Search Combobox test IDs
+export const TESTID_SEARCH_COMBOBOX = 'search-combobox';
+export const TESTID_SEARCH_COMBOBOX_INPUT = 'search-combobox-input';
+export const TESTID_SEARCH_COMBOBOX_DROPDOWN = 'search-combobox-dropdown';
+export const TESTID_SEARCH_COMBOBOX_OPTION = 'search-combobox-option';
+export const TESTID_SEARCH_COMBOBOX_LOADING = 'search-combobox-loading';
+export const TESTID_SEARCH_COMBOBOX_EMPTY = 'search-combobox-empty';
+
+// Search Results test IDs
+export const TESTID_SEARCH_RESULT_ITEM = 'search-result-item';
+
 // Navigation test IDs
 export const TESTID_NAV_TREE = 'navigation-tree';
 export const TESTID_NAV_NODE = 'navigation-node';

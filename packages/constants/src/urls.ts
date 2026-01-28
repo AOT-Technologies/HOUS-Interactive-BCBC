@@ -10,6 +10,15 @@ export interface NavigationLink {
 
 // URL titles
 export const URL_HOME_TITLE = 'Home';
+export const URL_SEARCH_TITLE = 'Search';
+export const URL_BROWSE_TITLE = 'Browse';
+export const URL_ABOUT_TITLE = 'About';
+
+// URL paths
+export const URL_HOME = '/';
+export const URL_SEARCH = '/search';
+export const URL_BROWSE = '/browse';
+export const URL_ABOUT = '/about';
 
 // Main navigation links (Header)
 export const URLS_MAIN_NAVIGATION: NavigationLink[] = [
