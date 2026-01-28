@@ -1,0 +1,996 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcbuildingcode.ca/schemas/bc-building-code-json.schema.json",
+  "title": "BC Building Code JSON Schema",
+  "description": "JSON Schema for validating BC Building Code JSON output generated from canonical XML",
+  "type": "object",
+  "required": ["document_type", "version", "canonical_version", "generated_timestamp", "divisions", "statistics"],
+  "properties": {
+    "document_type": {
+      "type": "string",
+      "const": "bc_building_code",
+      "description": "Document type identifier"
+    },
+    "version": {
+      "type": "string",
+      "description": "NBC version (e.g., '2020')"
+    },
+    "canonical_version": {
+      "type": "string",
+      "description": "Canonical format version"
+    },
+    "generated_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of JSON generation"
+    },
+    "metadata": {
+      "$ref": "#/definitions/metadata",
+      "description": "Document metadata (optional, controlled by include-metadata parameter)"
+    },
+    "divisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/division"
+      },
+      "description": "Top-level divisions (A, B, C)"
+    },
+    "cross_references": {
+      "$ref": "#/definitions/cross_references",
+      "description": "Cross-reference index (optional, controlled by include-cross-references parameter)"
+    },
+    "bc_amendments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/bc_amendment"
+      },
+      "description": "BC-specific amendments and revisions (optional, controlled by include-bc-annotations parameter)"
+    },
+    "glossary": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/glossary_entry"
+      },
+      "description": "Glossary of defined terms"
+    },
+    "statistics": {
+      "$ref": "#/definitions/statistics",
+      "description": "Document statistics"
+    }
+  },
+  "definitions": {
+    "metadata": {
+      "type": "object",
+      "required": ["title", "authority"],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "authority": {
+          "type": "string"
+        },
+        "publication_date": {
+          "type": "string"
+        },
+        "nrc_number": {
+          "type": "string"
+        },
+        "isbn": {
+          "type": "string"
+        },
+        "volumes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "volume": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "division": {
+      "type": "object",
+      "required": ["id", "type", "letter", "title", "parts"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\.div[A-Z0-9]+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "division"
+        },
+        "letter": {
+          "type": "string",
+          "pattern": "^[A-Z]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/part"
+          }
+        }
+      }
+    },
+    "part": {
+      "type": "object",
+      "required": ["id", "type", "title", "sections"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\.div[A-Z0-9]+\\.part\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "part"
+        },
+        "number": {
+          "type": ["number", "null"]
+        },
+        "title": {
+          "type": "string"
+        },
+        "see_also": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/section"
+          }
+        },
+        "special_tables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectables"
+          }
+        },
+        "appendix": {
+          "$ref": "#/definitions/part_appendix"
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": ["id", "type", "title", "subsections"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\.div[A-Z0-9]+\\.part\\d+\\.sect\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "section"
+        },
+        "number": {
+          "type": ["number", "null"]
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this section has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subsections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/subsection"
+          }
+        }
+      }
+    },
+    "subsection": {
+      "type": "object",
+      "required": ["id", "type", "title", "articles"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\.div[A-Z0-9]+\\.part\\d+\\.sect\\d+\\.subsect\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "subsection"
+        },
+        "number": {
+          "type": ["number", "null"]
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this subsection has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "title": {
+          "type": "string"
+        },
+        "see_also": {
+          "type": "string"
+        },
+        "articles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/article"
+          }
+        }
+      }
+    },
+    "article": {
+      "type": "object",
+      "required": ["id", "type", "title", "content"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\.div[A-Z0-9]+\\.part\\d+\\.sect\\d+\\.subsect\\d+\\.art\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "article"
+        },
+        "number": {
+          "type": ["number", "null"]
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this article has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "title": {
+          "type": "string"
+        },
+        "see_also": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "type"],
+            "properties": {
+              "id": {"type": "string"},
+              "type": {"type": "string", "enum": ["sentence", "table", "figure"]}
+            },
+            "oneOf": [
+              {
+                "properties": {
+                  "type": {"const": "sentence"}
+                },
+                "required": ["id", "type", "text"]
+              },
+              {
+                "properties": {
+                  "type": {"const": "table"}
+                },
+                "required": ["id", "type", "title", "structure"]
+              },
+              {
+                "properties": {
+                  "type": {"const": "figure"}
+                },
+                "required": ["id", "type", "title", "graphic"]
+              }
+            ]
+          }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    },
+    "sentence": {
+      "type": "object",
+      "required": ["id", "type", "text"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\..+\\.sent\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "sentence"
+        },
+        "number": {
+          "type": ["number", "null"]
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this sentence has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "text": {
+          "type": "string"
+        },
+        "equations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/equation"
+          },
+          "description": "Mathematical equations contained in this sentence"
+        },
+        "intent_reference": {
+          "type": "string"
+        },
+        "clauses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/clause"
+          }
+        },
+        "see_also": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "content": {"type": "string"}
+            }
+          }
+        },
+        "objectives": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/objective"
+          }
+        },
+        "functional_statements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/functional_statement"
+          }
+        },
+        "bc_annotations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bc_annotation"
+          }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    },
+    "clause": {
+      "type": "object",
+      "required": ["id", "type", "letter", "text"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\..+\\.sent\\d+\\.clause\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "clause"
+        },
+        "letter": {
+          "type": "string",
+          "pattern": "^[a-z]$"
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this clause has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "text": {
+          "type": "string"
+        },
+        "see_also": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "content": {"type": "string"}
+            }
+          }
+        },
+        "subclauses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/subclause"
+          }
+        }
+      }
+    },
+    "subclause": {
+      "type": "object",
+      "required": ["id", "type", "text"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nbc|bc)\\..+\\.subclause\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "const": "subclause"
+        },
+        "number": {
+          "type": ["number", "null"]
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this subclause has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "equation": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Equation identifier (xml:id or image reference as fallback)"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["display", "inline"],
+          "description": "Equation display type: 'display' for block-level equations, 'inline' for inline equations"
+        },
+        "latex": {
+          "type": "string",
+          "description": "LaTeX representation of the equation for mathematical rendering (e.g., 'C_{s}\\\\frac{60\\\\text{°}-a}{53\\\\text{°}}')"
+        },
+        "plainText": {
+          "type": "string",
+          "description": "Plain text representation of the equation for accessibility (e.g., 'C_s(60°-a)/(53°)')"
+        },
+        "mathml": {
+          "type": "string",
+          "description": "Full MathML XML serialization for precise mathematical semantics"
+        },
+        "image": {
+          "type": "string",
+          "description": "Image reference identifier (e.g., 'eg02764a')"
+        },
+        "imageSrc": {
+          "type": "string",
+          "description": "Path to equation image file for fallback rendering (e.g., 'graphics/eg02764a.eps')"
+        }
+      }
+    },
+    "table": {
+      "type": "object",
+      "required": ["id", "type", "title", "structure"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "const": "table"
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this table has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "title": {
+          "type": "string"
+        },
+        "structure": {
+          "type": "object",
+          "required": ["body_rows"],
+          "properties": {
+            "columns": {
+              "type": ["number", "null"]
+            },
+            "column_specs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {"type": "string"},
+                  "width": {"type": "string"}
+                }
+              }
+            },
+            "header_rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/table_entry"
+                }
+              }
+            },
+            "body_rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/table_entry"
+                }
+              }
+            }
+          }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    },
+    "table_entry": {
+      "type": "object",
+      "required": ["content"],
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "align": {
+          "type": "string",
+          "enum": ["left", "center", "right", "justify", "char"]
+        },
+        "rowspan": {
+          "type": "number",
+          "minimum": 1
+        },
+        "colspan": {
+          "type": "number",
+          "minimum": 1
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    },
+    "figure": {
+      "type": "object",
+      "required": ["id", "type", "title", "graphic"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "const": "figure"
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this figure has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "title": {
+          "type": "string"
+        },
+        "graphic": {
+          "type": "object",
+          "required": ["src", "alt_text"],
+          "properties": {
+            "src": {
+              "type": "string"
+            },
+            "alt_text": {
+              "type": "string"
+            },
+            "width": {
+              "type": "string"
+            },
+            "height": {
+              "type": "string"
+            }
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "content": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "spectables": {
+      "type": "object",
+      "required": ["id", "type", "title", "tables"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "const": "spectables"
+        },
+        "title": {
+          "type": "string"
+        },
+        "table_prefix": {
+          "type": "string"
+        },
+        "toc_entry": {
+          "type": "string"
+        },
+        "tables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/table"
+          }
+        }
+      }
+    },
+    "part_appendix": {
+      "type": "object",
+      "required": ["id", "type", "application_notes"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "const": "part_appendix"
+        },
+        "introduction": {
+          "type": "string"
+        },
+        "application_notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/application_note"
+          }
+        }
+      }
+    },
+    "application_note": {
+      "type": "object",
+      "required": ["id", "type", "number", "title"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "const": "application_note"
+        },
+        "number": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this application note has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "title": {
+          "type": "string"
+        },
+        "refs": {
+          "type": "string"
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "content": {"type": "string"}
+            }
+          }
+        },
+        "divisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/note_division"
+          }
+        },
+        "tables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/table"
+          }
+        },
+        "figures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/figure"
+          }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    },
+    "note_division": {
+      "type": "object",
+      "required": ["id", "type", "title"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "const": "note_division"
+        },
+        "title": {
+          "type": "string"
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "content": {"type": "string"}
+            }
+          }
+        },
+        "tables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/table"
+          }
+        },
+        "figures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/figure"
+          }
+        }
+      }
+    },
+    "objective": {
+      "type": "object",
+      "required": ["id", "key", "title", "definition"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        },
+        "sub_objectives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "key", "title", "definition"],
+            "properties": {
+              "id": {"type": "string"},
+              "key": {"type": "string"},
+              "title": {"type": "string"},
+              "definition": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "functional_statement": {
+      "type": "object",
+      "required": ["id", "key", "definition"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        }
+      }
+    },
+    "bc_annotation": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "revision": {
+      "type": "object",
+      "required": ["type", "effective_date"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["original", "revision"]
+        },
+        "revision_type": {
+          "type": "string",
+          "enum": ["amendment", "errata", "policy", "accessibility", "correction"]
+        },
+        "revision_id": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": ["number", "null"]
+        },
+        "effective_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["current", "superseded"]
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this revision represents a deletion (true when revision content is empty)"
+        },
+        "change_summary": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "cross_references": {
+      "type": "object",
+      "required": ["internal_references", "external_references", "standard_references", "term_references"],
+      "properties": {
+        "internal_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "target_id"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "target_id": {"type": "string"},
+              "display_type": {"type": "string"},
+              "pretext": {"type": "string"}
+            }
+          }
+        },
+        "external_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "target", "text"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "target": {"type": "string"},
+              "text": {"type": "string"}
+            }
+          }
+        },
+        "standard_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "standard_id", "text"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "standard_id": {"type": "string"},
+              "text": {"type": "string"}
+            }
+          }
+        },
+        "term_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "term_id", "text"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "term_id": {"type": "string"},
+              "text": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "bc_amendment": {
+      "type": "object",
+      "required": ["location_id", "type", "content"],
+      "properties": {
+        "location_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["original", "revision", "annotation", "insert", "replace", "modify", "delete", "remove"]
+        },
+        "annotation_type": {
+          "type": "string"
+        },
+        "amendment_id": {
+          "type": "string"
+        },
+        "revision_type": {
+          "type": "string",
+          "enum": ["amendment", "errata", "policy", "accessibility", "correction"]
+        },
+        "revision_id": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": ["number", "null"]
+        },
+        "effective_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["current", "superseded"]
+        },
+        "content": {
+          "type": "string"
+        },
+        "change_summary": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "glossary_entry": {
+      "type": "object",
+      "required": ["term", "definition", "location_id"],
+      "properties": {
+        "term": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        },
+        "location_id": {
+          "type": "string"
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "required": [
+        "total_divisions",
+        "total_parts",
+        "total_sections",
+        "total_articles",
+        "total_sentences",
+        "total_tables",
+        "total_figures",
+        "total_spectables",
+        "total_application_notes"
+      ],
+      "properties": {
+        "total_divisions": {"type": "number", "minimum": 0},
+        "total_parts": {"type": "number", "minimum": 0},
+        "total_sections": {"type": "number", "minimum": 0},
+        "total_articles": {"type": "number", "minimum": 0},
+        "total_sentences": {"type": "number", "minimum": 0},
+        "total_tables": {"type": "number", "minimum": 0},
+        "total_figures": {"type": "number", "minimum": 0},
+        "total_spectables": {"type": "number", "minimum": 0},
+        "total_application_notes": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}

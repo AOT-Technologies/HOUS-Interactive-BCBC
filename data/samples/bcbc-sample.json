@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "title": "British Columbia Building Code 2024",
+    "version": "2024",
+    "effectiveDate": "2024-12-01",
+    "publisher": "Province of British Columbia"
+  },
+  "divisions": [
+    {
+      "id": "division-a",
+      "number": "A",
+      "title": "Compliance, Objectives and Functional Statements",
+      "parts": [
+        {
+          "id": "part-1",
+          "number": "1",
+          "title": "Compliance",
+          "sections": [
+            {
+              "id": "section-1-1",
+              "number": "1.1",
+              "title": "General",
+              "subsections": [
+                {
+                  "id": "subsection-1-1-1",
+                  "number": "1.1.1",
+                  "title": "Application",
+                  "articles": [
+                    {
+                      "id": "article-1-1-1-1",
+                      "number": "1.1.1.1",
+                      "title": "Scope",
+                      "content": "This Code applies to the design and construction of new buildings and to the alteration, reconstruction, demolition, removal, relocation and occupancy of existing buildings.",
+                      "clauses": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "division-b",
+      "number": "B",
+      "title": "Acceptable Solutions",
+      "parts": [
+        {
+          "id": "part-3",
+          "number": "3",
+          "title": "Fire Safety, Occupant Safety and Accessibility",
+          "sections": [
+            {
+              "id": "section-3-1",
+              "number": "3.1",
+              "title": "General",
+              "subsections": [
+                {
+                  "id": "subsection-3-1-1",
+                  "number": "3.1.1",
+                  "title": "Application",
+                  "articles": [
+                    {
+                      "id": "article-3-1-1-1",
+                      "number": "3.1.1.1",
+                      "title": "Scope",
+                      "content": "This Part applies to all buildings.",
+                      "clauses": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Building",
+      "definition": "Any structure used or intended for supporting or sheltering any use or occupancy."
+    },
+    {
+      "term": "Occupancy",
+      "definition": "The use or intended use of a building or part thereof for the shelter or support of persons, animals or property."
+    }
+  ],
+  "amendmentDates": [
+    {
+      "date": "2024-12-01",
+      "description": "Initial release"
+    }
+  ]
+}
