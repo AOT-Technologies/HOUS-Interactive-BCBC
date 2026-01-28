@@ -1,55 +1,99 @@
 /**
  * FlexSearch index serialization and export
+ * 
+ * Requirements: 2.2
  */
+
+import type { Document } from 'flexsearch';
+import type { SearchResult } from './config';
 
 /**
  * Export search index to JSON format
- * @param index - FlexSearch index
- * @returns Serialized index data
+ * Serializes the FlexSearch index for storage and client-side loading
+ * 
+ * @param index - FlexSearch Document index
+ * @param searchableItems - Array of items that were indexed
+ * @returns Serialized index data as JSON string
  */
-export function exportIndex(index: unknown): string {
-  // TODO: Implement index export in Sprint 1
-  // This is a placeholder that will be implemented during task 9
-  
-  // Suppress unused variable warning until implementation
-  void index;
-  
-  return JSON.stringify({
-    version: '1.0.0',
-    index: {},
-    store: {},
+export async function exportIndex(
+  index: Document<SearchResult>,
+  searchableItems: SearchResult[]
+): Promise<string> {
+  // FlexSearch Document.export() requires a handler function
+  // We'll collect the exported data in an array
+  const exportedData: any[] = [];
+
+  await index.export((key: string | number, data: any) => {
+    exportedData.push({ key, data });
   });
+
+  // Create a structured export with version and metadata
+  const exportObject = {
+    version: '1.0.0',
+    timestamp: new Date().toISOString(),
+    documentCount: searchableItems.length,
+    index: exportedData,
+    // Store the searchable items for reference
+    items: searchableItems,
+  };
+
+  return JSON.stringify(exportObject);
 }
 
 /**
  * Import search index from JSON format
- * @param indexData - Serialized index data
- * @returns FlexSearch index
+ * Deserializes and loads a FlexSearch index from JSON
+ * 
+ * @param indexData - Serialized index data as JSON string
+ * @param index - FlexSearch Document index to import into
+ * @returns The imported FlexSearch index
  */
-export function importIndex(indexData: string): unknown {
-  // TODO: Implement index import in Sprint 1
-  // This is a placeholder that will be implemented during task 9
+export async function importIndex(
+  indexData: string,
+  index: Document<SearchResult>
+): Promise<Document<SearchResult>> {
   const data = JSON.parse(indexData);
-  return data;
+
+  // Import the index data into the FlexSearch Document
+  if (data.index && Array.isArray(data.index)) {
+    for (const item of data.index) {
+      await index.import(item.key, item.data);
+    }
+  }
+
+  return index;
 }
 
 /**
  * Get index statistics
- * @param index - FlexSearch index
+ * Provides information about the index size and document count
+ * 
+ * @param searchableItems - Array of items that were indexed
+ * @param indexData - Serialized index data (optional)
  * @returns Index statistics
  */
-export function getIndexStats(index: unknown): {
+export function getIndexStats(
+  searchableItems: SearchResult[],
+  indexData?: string
+): {
   documentCount: number;
   indexSize: number;
+  indexSizeKB: number;
 } {
-  // TODO: Implement stats calculation in Sprint 1
-  // This is a placeholder that will be implemented during task 9
-  
-  // Suppress unused variable warning until implementation
-  void index;
-  
+  const documentCount = searchableItems.length;
+
+  // Calculate index size if data is provided
+  let indexSize = 0;
+  let indexSizeKB = 0;
+
+  if (indexData) {
+    indexSize = new Blob([indexData]).size;
+    indexSizeKB = Math.round(indexSize / 1024);
+  }
+
   return {
-    documentCount: 0,
-    indexSize: 0,
+    documentCount,
+    indexSize,
+    indexSizeKB,
   };
 }
