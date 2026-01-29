@@ -7,6 +7,7 @@ import type {
   GlossaryEntry,
   AmendmentDate,
   ContentType,
+  Clause,
 } from '@bc-building-code/bcbc-parser';
 
 /**
@@ -44,12 +45,18 @@ export interface ExtractedMetadata {
 
 /**
  * Extract all metadata from BCBC document
+ * 
+ * Generates all metadata files needed for the application:
+ * - Navigation tree: Hierarchical structure for sidebar
+ * - Glossary map: Term definitions for inline glossary
+ * - Amendment dates: Available effective dates for filtering
+ * - Content types: Available content types for search filters
+ * - Quick access: Frequently accessed sections for homepage
+ * 
  * @param document - BCBC document
  * @returns Extracted metadata
  */
 export function extractMetadata(document: BCBCDocument): ExtractedMetadata {
-  // TODO: Implement metadata extraction in Sprint 1
-  // This is a placeholder that will be implemented during task 10
   return {
     navigationTree: extractNavigationTree(document),
     glossaryMap: extractGlossaryMap(document),
@@ -61,12 +68,14 @@ export function extractMetadata(document: BCBCDocument): ExtractedMetadata {
 
 /**
  * Extract navigation tree from BCBC document
+ * 
+ * Generates a hierarchical navigation structure following:
+ * Division → Part → Section → Subsection → Article
+ * 
  * @param document - BCBC document
  * @returns Navigation tree
  */
 export function extractNavigationTree(document: BCBCDocument): NavigationNode[] {
-  // TODO: Implement navigation tree extraction in Sprint 1
-  // This is a placeholder that will be implemented during task 10
   const tree: NavigationNode[] = [];
 
   for (const division of document.divisions) {
@@ -88,6 +97,44 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
         children: [],
       };
 
+      for (const section of part.sections) {
+        const sectionNode: NavigationNode = {
+          id: section.id,
+          type: 'section',
+          number: section.number,
+          title: section.title,
+          path: `/code/${division.id}/${part.number}/${section.number}`,
+          children: [],
+        };
+
+        for (const subsection of section.subsections) {
+          const subsectionNode: NavigationNode = {
+            id: subsection.id,
+            type: 'subsection',
+            number: subsection.number,
+            title: subsection.title,
+            path: `/code/${division.id}/${part.number}/${section.number}/${subsection.number}`,
+            children: [],
+          };
+
+          for (const article of subsection.articles) {
+            const articleNode: NavigationNode = {
+              id: article.id,
+              type: 'article',
+              number: article.number,
+              title: article.title,
+              path: `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}`,
+            };
+
+            subsectionNode.children?.push(articleNode);
+          }
+
+          sectionNode.children?.push(subsectionNode);
+        }
+
+        partNode.children?.push(sectionNode);
+      }
+
       divisionNode.children?.push(partNode);
     }
 
@@ -99,17 +146,19 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
 
 /**
  * Extract glossary map from BCBC document
+ * 
+ * Creates a map of term (lowercase) → glossary entry for quick lookups.
+ * 
  * @param document - BCBC document
  * @returns Glossary map (term → entry)
  */
 export function extractGlossaryMap(
   document: BCBCDocument
 ): Record<string, GlossaryEntry> {
-  // TODO: Implement glossary map extraction in Sprint 1
-  // This is a placeholder that will be implemented during task 10
   const glossaryMap: Record<string, GlossaryEntry> = {};
 
   for (const entry of document.glossary) {
+    // Use lowercase term as key for case-insensitive lookups
     glossaryMap[entry.term.toLowerCase()] = entry;
   }
 
@@ -118,31 +167,107 @@ export function extractGlossaryMap(
 
 /**
  * Extract content types from BCBC document
+ * 
+ * Scans the document to identify all content types present:
+ * - Article: Standard code articles
+ * - Table: Tables within clauses
+ * - Figure: Figures/images within clauses
+ * - Note: Note references in articles
+ * - Application Note: Special application notes
+ * 
  * @param document - BCBC document
- * @returns Array of content types
+ * @returns Array of content types found in the document
  */
 export function extractContentTypes(document: BCBCDocument): ContentType[] {
-  // TODO: Implement content types extraction in Sprint 1
-  // This is a placeholder that will be implemented during task 10
-  
-  // Suppress unused variable warning until implementation
-  void document;
-  
-  return ['article', 'table', 'figure', 'note', 'application-note'];
+  const contentTypesSet = new Set<ContentType>();
+
+  // Always include 'article' as it's the base content type
+  contentTypesSet.add('article');
+
+  // Scan through all divisions, parts, sections, subsections, and articles
+  for (const division of document.divisions) {
+    for (const part of division.parts) {
+      for (const section of part.sections) {
+        for (const subsection of section.subsections) {
+          for (const article of subsection.articles) {
+            // Check for notes
+            if (article.notes && article.notes.length > 0) {
+              contentTypesSet.add('note');
+              
+              // Check if any notes are application notes
+              for (const note of article.notes) {
+                if (note.noteTitle?.toLowerCase().includes('application')) {
+                  contentTypesSet.add('application-note');
+                }
+              }
+            }
+
+            // Check clauses for tables and figures
+            scanClausesForContentTypes(article.clauses, contentTypesSet);
+          }
+        }
+      }
+    }
+  }
+
+  return Array.from(contentTypesSet);
+}
+
+/**
+ * Recursively scan clauses for tables and figures
+ * @param clauses - Array of clauses to scan
+ * @param contentTypesSet - Set to add found content types to
+ */
+function scanClausesForContentTypes(
+  clauses: Clause[],
+  contentTypesSet: Set<ContentType>
+): void {
+  for (const clause of clauses) {
+    // Check for tables
+    if (clause.tables && clause.tables.length > 0) {
+      contentTypesSet.add('table');
+    }
+
+    // Check for figures
+    if (clause.figures && clause.figures.length > 0) {
+      contentTypesSet.add('figure');
+    }
+
+    // Recursively check subclauses
+    if (clause.subclauses && clause.subclauses.length > 0) {
+      scanClausesForContentTypes(clause.subclauses, contentTypesSet);
+    }
+  }
 }
 
 /**
  * Extract quick access sections from BCBC document
+ * 
+ * Identifies frequently accessed sections for the homepage.
+ * Currently returns the first section from each part as a starting point.
+ * This can be customized based on usage analytics or manual curation.
+ * 
  * @param document - BCBC document
  * @returns Array of quick access sections
  */
 export function extractQuickAccess(document: BCBCDocument): QuickAccessSection[] {
-  // TODO: Implement quick access extraction in Sprint 1
-  // This is a placeholder that will be implemented during task 10
   const quickAccess: QuickAccessSection[] = [];
 
-  // Suppress unused variable warning until implementation
-  void document;
+  // Extract first section from each part as quick access
+  // This provides a representative sample across the code
+  for (const division of document.divisions) {
+    for (const part of division.parts) {
+      if (part.sections.length > 0) {
+        const section = part.sections[0];
+        quickAccess.push({
+          id: section.id,
+          title: `${part.title} - ${section.title}`,
+          path: `/code/${division.id}/${part.number}/${section.number}`,
+          description: `${division.title}, Part ${part.number}, Section ${section.number}`,
+        });
+      }
+    }
+  }
 
   return quickAccess;
 }

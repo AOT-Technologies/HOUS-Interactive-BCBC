@@ -15,19 +15,27 @@ export interface ContentChunk {
 
 /**
  * Split BCBC content into optimized chunks by section
+ * 
+ * Each chunk contains a complete section with all subsections and articles.
+ * Chunks are organized by path: content/{division}/{part}/{section}.json
+ * Typical chunk size: 50-200KB per section
+ * 
  * @param document - BCBC document
  * @returns Array of content chunks
  */
 export function chunkContent(document: BCBCDocument): ContentChunk[] {
-  // TODO: Implement content chunking in Sprint 1
-  // This is a placeholder that will be implemented during task 10
   const chunks: ContentChunk[] = [];
 
   for (const division of document.divisions) {
     for (const part of division.parts) {
       for (const section of part.sections) {
+        // Generate path for this section chunk
         const path = generateChunkPath(division.id, part.number, section.number);
+        
+        // Section data includes all subsections and articles
         const data = section;
+        
+        // Calculate size in bytes (JSON string length)
         const size = JSON.stringify(data).length;
 
         chunks.push({ path, data, size });
@@ -40,9 +48,13 @@ export function chunkContent(document: BCBCDocument): ContentChunk[] {
 
 /**
  * Generate chunk file path
- * @param divisionId - Division ID
- * @param partNumber - Part number
- * @param sectionNumber - Section number
+ * 
+ * Generates a path in the format: content/{division}/{part}/{section}.json
+ * Example: content/division-a/part-1/section-1-1.json
+ * 
+ * @param divisionId - Division ID (e.g., "division-a")
+ * @param partNumber - Part number (e.g., "1")
+ * @param sectionNumber - Section number (e.g., "1.1")
  * @returns Chunk file path
  */
 export function generateChunkPath(
@@ -50,7 +62,13 @@ export function generateChunkPath(
   partNumber: string,
   sectionNumber: string
 ): string {
-  return `content/${divisionId}/part-${partNumber}/section-${sectionNumber}.json`;
+  // Normalize division ID to lowercase and replace dots with hyphens
+  const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
+  
+  // Normalize section number by replacing dots with hyphens
+  const normalizedSection = sectionNumber.replace(/\./g, '-');
+  
+  return `content/${normalizedDivision}/part-${partNumber}/section-${normalizedSection}.json`;
 }
 
 /**
