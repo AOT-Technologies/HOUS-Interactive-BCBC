@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect, useRef } from "react";
 import { useSearch } from "@repo/data/src/hooks/useSearch";
 import {
   TESTID_HERO_SEARCH,
@@ -6,7 +7,7 @@ import {
   TESTID_HERO_SEARCH_BUTTON,
 } from "@repo/constants/src/testids";
 import Button from "../button/Button";
-import SearchCombobox from "../search-combobox/SearchCombobox";
+import Icon from "../icon/Icon";
 import "./HeroSearch.css";
 
 export interface HeroSearchProps {
@@ -24,29 +25,6 @@ export interface HeroSearchProps {
   className?: string;
 }
 
-/**
- * HeroSearch - Large, prominent search for homepage hero section
- * 
- * Features:
- * - Always visible (no toggle)
- * - Large size (~540px input)
- * - Optional title and subtitle
- * - Dark blue hero section background
- * - "Search" button with text
- * - Centered layout
- * - Autocomplete suggestions
- * 
- * @example
- * ```tsx
- * <HeroSearch
- *   title="BC Building Code"
- *   subtitle="Search and navigate the official 2024 British Columbia Building Code..."
- *   placeholder='Search for keywords (e.g. "Egress", "Radon") or Section...'
- *   onSearch={(query) => router.push(`/search?q=${query}`)}
- *   getSuggestions={(query) => searchIndex.suggest(query)}
- * />
- * ```
- */
 export default function HeroSearch({
   onSearch,
   getSuggestions,
@@ -55,37 +33,115 @@ export default function HeroSearch({
   subtitle,
   className = "",
 }: HeroSearchProps) {
+  // ALL HOOKS AT THE TOP
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   // Use shared search hook
   const search = useSearch({
     onSearch,
     getSuggestions,
   });
 
+  // Show suggestions when we have them
+  useEffect(() => {
+    if (search.query.length >= 2 && (search.suggestions.length > 0 || search.isLoading)) {
+      setShowSuggestions(true);
+    } else if (search.query.length < 2) {
+      setShowSuggestions(false);
+    }
+  }, [search.query, search.suggestions.length, search.isLoading]);
+
+  // Reset highlight when suggestions change
+  useEffect(() => {
+    setHighlightedIndex(-1);
+  }, [search.suggestions]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (highlightedIndex >= 0 && highlightedIndex < search.suggestions.length) {
+        search.handleSelectSuggestion(search.suggestions[highlightedIndex]);
+        setShowSuggestions(false);
+      } else {
+        search.handleSubmit();
+      }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setHighlightedIndex((prev) => prev < search.suggestions.length - 1 ? prev + 1 : prev);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setHighlightedIndex((prev) => (prev > 0 ? prev - 1 : -1));
+    } else if (e.key === "Escape") {
+      setShowSuggestions(false);
+      setHighlightedIndex(-1);
+    }
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    search.handleSelectSuggestion(suggestion);
+    setShowSuggestions(false);
+  };
+
+  const shouldShowDropdown = showSuggestions && (search.suggestions.length > 0 || search.isLoading);
+
   return (
-    <section
-      className={`ui-HeroSearch ${className}`}
-      data-testid={TESTID_HERO_SEARCH}
-    >
+    <section className={`ui-HeroSearch ${className}`} data-testid={TESTID_HERO_SEARCH}>
       <div className="ui-HeroSearch--Content">
         {title && <h1 className="ui-HeroSearch--Title">{title}</h1>}
         
         {subtitle && <p className="ui-HeroSearch--Subtitle">{subtitle}</p>}
 
         <div className="ui-HeroSearch--SearchWrapper">
-          <SearchCombobox
-            query={search.query}
-            onQueryChange={search.setQuery}
-            onSubmit={search.handleSubmit}
-            suggestions={search.suggestions}
-            onSelectSuggestion={search.handleSelectSuggestion}
-            isLoading={search.isLoading}
-            placeholder={placeholder}
-            size="xlarge"
-            showIcon={true}
-            ariaLabel="Search building code"
-            className="ui-HeroSearch--SearchCombobox"
-            data-testid={TESTID_HERO_SEARCH_INPUT}
-          />
+          <div ref={containerRef} className="ui-HeroSearch--InputWrapper">
+            <Icon type="search" className="ui-HeroSearch--SearchIcon" aria-hidden="true" />
+            <input
+              type="text"
+              value={search.query}
+              onChange={(e) => search.setQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
+              onFocus={() => search.query.length >= 2 && search.suggestions.length > 0 && setShowSuggestions(true)}
+              className="ui-HeroSearch--Input"
+              placeholder={placeholder}
+              aria-label="Search building code"
+              aria-expanded={shouldShowDropdown}
+              aria-haspopup="listbox"
+              autoComplete="off"
+              data-testid={TESTID_HERO_SEARCH_INPUT}
+            />
+            {shouldShowDropdown && (
+              <ul role="listbox" className="ui-HeroSearch--Dropdown">
+                {search.isLoading ? (
+                  <li className="ui-HeroSearch--LoadingItem">Loading...</li>
+                ) : (
+                  search.suggestions.map((suggestion: string, index: number) => (
+                    <li
+                      key={suggestion}
+                      role="option"
+                      aria-selected={highlightedIndex === index}
+                      className={`ui-HeroSearch--Option ${highlightedIndex === index ? "--highlighted" : ""}`}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      onMouseEnter={() => setHighlightedIndex(index)}
+                    >
+                      {suggestion}
+                    </li>
+                  ))
+                )}
+              </ul>
+            )}
+          </div>
           <Button
             variant="primary"
             onPress={search.handleSubmit}

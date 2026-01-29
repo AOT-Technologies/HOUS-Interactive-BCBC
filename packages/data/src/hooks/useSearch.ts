@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 /**
  * Options for the useSearch hook
@@ -77,11 +77,17 @@ export function useSearch(options: UseSearchOptions): UseSearchReturn {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+  
+  // Use ref for getSuggestions to avoid re-triggering effect
+  const getSuggestionsRef = useRef(getSuggestions);
+  getSuggestionsRef.current = getSuggestions;
 
   // Debounced suggestion fetching
   useEffect(() => {
+    const currentGetSuggestions = getSuggestionsRef.current;
+    
     // Don't fetch if no getSuggestions function provided
-    if (!getSuggestions) {
+    if (!currentGetSuggestions) {
       return;
     }
 
@@ -92,14 +98,14 @@ export function useSearch(options: UseSearchOptions): UseSearchReturn {
       return;
     }
 
-    // Set loading state
+    // Set loading state but DON'T clear suggestions yet
     setIsLoading(true);
     setError(null);
 
     // Debounce the fetch
     const timeoutId = setTimeout(async () => {
       try {
-        const result = await Promise.resolve(getSuggestions(query));
+        const result = await Promise.resolve(currentGetSuggestions(query));
         const limited = result.slice(0, maxSuggestions);
         setSuggestions(limited);
         setError(null);
@@ -112,11 +118,11 @@ export function useSearch(options: UseSearchOptions): UseSearchReturn {
       }
     }, debounceMs);
 
-    // Cleanup
+    // Cleanup - only clear timeout, don't clear suggestions
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [query, getSuggestions, debounceMs, minQueryLength, maxSuggestions]);
+  }, [query, debounceMs, minQueryLength, maxSuggestions]);
 
   /**
    * Submit the current search query

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useMemo, useEffect } from 'react';
-import { Button } from '@repo/ui/button';
+import { useMemo, useEffect } from 'react';
+import Button from '@repo/ui/button';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_PREV_BUTTON, TESTID_NEXT_BUTTON } from '@repo/constants/src/testids';
 import './PrevNextNav.css';
@@ -184,8 +184,8 @@ export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNe
     >
       <Button
         variant="secondary"
-        onClick={handlePrevClick}
-        disabled={!prevNode}
+        onPress={handlePrevClick}
+        isDisabled={!prevNode}
         className="prev-next-nav__button prev-next-nav__button--prev"
         data-testid={TESTID_PREV_BUTTON}
         aria-label={prevNode ? `Previous: ${prevNode.title}` : 'No previous item'}
@@ -203,8 +203,8 @@ export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNe
 
       <Button
         variant="secondary"
-        onClick={handleNextClick}
-        disabled={!nextNode}
+        onPress={handleNextClick}
+        isDisabled={!nextNode}
         className="prev-next-nav__button prev-next-nav__button--next"
         data-testid={TESTID_NEXT_BUTTON}
         aria-label={nextNode ? `Next: ${nextNode.title}` : 'No next item'}

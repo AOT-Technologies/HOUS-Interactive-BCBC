@@ -136,7 +136,6 @@ export const useNavigationStore = create<NavigationStore>()(
           set({ currentPath: path });
           
           // Find and expand to the current node
-          const { navigationTree } = get();
           const nodeId = params.article || params.subsection || params.section || params.part;
           
           if (nodeId) {

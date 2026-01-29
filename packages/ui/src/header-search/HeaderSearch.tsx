@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { useSearch, type UseSearchOptions } from "@repo/data/src/hooks/useSearch";
+import { useSearch } from "@repo/data/hooks";
 import {
   TESTID_HEADER_SEARCH,
   TESTID_HEADER_SEARCH_BUTTON,
@@ -9,7 +9,6 @@ import {
 } from "@repo/constants/src/testids";
 import Button from "../button/Button";
 import Icon from "../icon/Icon";
-import SearchCombobox from "../search-combobox/SearchCombobox";
 import "./HeaderSearch.css";
 
 export interface HeaderSearchProps {
@@ -25,27 +24,6 @@ export interface HeaderSearchProps {
   className?: string;
 }
 
-/**
- * HeaderSearch - Compact, toggleable search for header
- * 
- * Manages both closed (icon button) and open (input with autocomplete) states.
- * 
- * Features:
- * - Toggle open/close with search icon button
- * - Autocomplete suggestions
- * - Cancel button to clear and close
- * - Keyboard navigation (Enter, Escape)
- * - Auto-focus input when opened
- * 
- * @example
- * ```tsx
- * <HeaderSearch
- *   onSearch={(query) => router.push(`/search?q=${query}`)}
- *   getSuggestions={(query) => searchIndex.suggest(query)}
- *   placeholder="Search building code..."
- * />
- * ```
- */
 export default function HeaderSearch({
   onSearch,
   getSuggestions,
@@ -53,60 +31,113 @@ export default function HeaderSearch({
   defaultOpen = false,
   className = "",
 }: HeaderSearchProps) {
+  // ALL HOOKS MUST BE AT THE TOP - before any conditional returns
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isMounted, setIsMounted] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Use shared search hook
   const search = useSearch({
-    onSearch: (query) => {
+    onSearch: (query: string) => {
       onSearch(query);
-      // Keep search open after submit so user can see what they searched
     },
     getSuggestions,
   });
 
+  // Ensure component only renders interactive elements after hydration
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   // Auto-focus input when opened
   useEffect(() => {
-    if (isOpen) {
-      // Small delay to ensure DOM is ready
-      const timer = setTimeout(() => {
-        const input = containerRef.current?.querySelector("input");
-        input?.focus();
-      }, 50);
-      return () => clearTimeout(timer);
-    }
+    if (!isOpen) return;
+    const timer = setTimeout(() => {
+      const input = containerRef.current?.querySelector("input");
+      input?.focus();
+    }, 50);
+    return () => clearTimeout(timer);
   }, [isOpen]);
 
   // Handle Escape key to close
   useEffect(() => {
     if (!isOpen) return;
-
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        handleCancel();
+        search.handleClear();
+        setIsOpen(false);
       }
     };
-
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, search]);
 
-  const handleOpen = () => {
-    setIsOpen(true);
-  };
+  // Show suggestions when we have them
+  useEffect(() => {
+    if (search.query.length >= 2 && (search.suggestions.length > 0 || search.isLoading)) {
+      setShowSuggestions(true);
+    } else if (search.query.length < 2) {
+      setShowSuggestions(false);
+    }
+  }, [search.query, search.suggestions.length, search.isLoading]);
+
+  // Reset highlight when suggestions change
+  useEffect(() => {
+    setHighlightedIndex(-1);
+  }, [search.suggestions]);
+
+  const handleOpen = () => setIsOpen(true);
 
   const handleCancel = () => {
     search.handleClear();
     setIsOpen(false);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (highlightedIndex >= 0 && highlightedIndex < search.suggestions.length) {
+        search.handleSelectSuggestion(search.suggestions[highlightedIndex]);
+        setShowSuggestions(false);
+      } else {
+        search.handleSubmit();
+      }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setHighlightedIndex((prev) => prev < search.suggestions.length - 1 ? prev + 1 : prev);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setHighlightedIndex((prev) => (prev > 0 ? prev - 1 : -1));
+    } else if (e.key === "Escape") {
+      setShowSuggestions(false);
+      setHighlightedIndex(-1);
+    }
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    search.handleSelectSuggestion(suggestion);
+    setShowSuggestions(false);
+  };
+
+  const shouldShowDropdown = showSuggestions && (search.suggestions.length > 0 || search.isLoading);
+
+  // Prevent hydration mismatch by not rendering interactive elements until mounted
+  if (!isMounted) {
+    return (
+      <div className={`ui-HeaderSearch --closed ${className}`} data-testid={TESTID_HEADER_SEARCH}>
+        <div className="ui-Button --tertiary --icon" aria-label="Open search">
+          <Icon type="search" />
+        </div>
+      </div>
+    );
+  }
+
   // Closed state: Icon button only
   if (!isOpen) {
     return (
-      <div
-        className={`ui-HeaderSearch --closed ${className}`}
-        data-testid={TESTID_HEADER_SEARCH}
-      >
+      <div className={`ui-HeaderSearch --closed ${className}`} data-testid={TESTID_HEADER_SEARCH}>
         <Button
           variant="tertiary"
           isIconButton
@@ -122,27 +153,46 @@ export default function HeaderSearch({
 
   // Open state: Search input with cancel button
   return (
-    <div
-      ref={containerRef}
-      className={`ui-HeaderSearch --open ${className}`}
-      data-testid={TESTID_HEADER_SEARCH}
-    >
-      <SearchCombobox
-        query={search.query}
-        onQueryChange={search.setQuery}
-        onSubmit={search.handleSubmit}
-        suggestions={search.suggestions}
-        onSelectSuggestion={search.handleSelectSuggestion}
-        isLoading={search.isLoading}
-        placeholder={placeholder}
-        size="medium"
-        showIcon={true}
-        ariaLabel="Search building code"
-        inputClassName="ui-HeaderSearch--Input"
-        data-testid={TESTID_HEADER_SEARCH_INPUT}
-      />
+    <div ref={containerRef} className={`ui-HeaderSearch --open ${className}`} data-testid={TESTID_HEADER_SEARCH}>
+      <div className="ui-HeaderSearch--SearchWrapper">
+        <input
+          type="text"
+          value={search.query}
+          onChange={(e) => search.setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
+          onFocus={() => search.query.length >= 2 && search.suggestions.length > 0 && setShowSuggestions(true)}
+          className="ui-HeaderSearch--Input"
+          placeholder={placeholder}
+          aria-label="Search building code"
+          aria-expanded={shouldShowDropdown}
+          aria-haspopup="listbox"
+          autoComplete="off"
+          data-testid={TESTID_HEADER_SEARCH_INPUT}
+        />
+        <Icon type="search" className="ui-HeaderSearch--SearchIcon" aria-hidden="true" />
+        {shouldShowDropdown && (
+          <ul role="listbox" className="ui-HeaderSearch--Dropdown">
+            {search.isLoading ? (
+              <li className="ui-HeaderSearch--LoadingItem">Loading...</li>
+            ) : (
+              search.suggestions.map((suggestion: string, index: number) => (
+                <li
+                  key={suggestion}
+                  role="option"
+                  aria-selected={highlightedIndex === index}
+                  className={`ui-HeaderSearch--Option ${highlightedIndex === index ? "--highlighted" : ""}`}
+                  onClick={() => handleSuggestionClick(suggestion)}
+                  onMouseEnter={() => setHighlightedIndex(index)}
+                >
+                  {suggestion}
+                </li>
+              ))
+            )}
+          </ul>
+        )}
+      </div>
       <Button
-        variant="tertiary"
+        variant="secondary"
         onPress={handleCancel}
         aria-label="Cancel search"
         data-testid={TESTID_HEADER_SEARCH_CANCEL}

@@ -13,10 +13,12 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@bc-building-code/search-indexer": "workspace:*",
     "@bcgov/bc-sans": "^2.1.0",
     "@repo/constants": "workspace:*",
     "@repo/data": "workspace:*",
     "@repo/ui": "workspace:*",
+    "flexsearch": "^0.7.43",
     "next": "^16.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -24,7 +26,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^15.0.7",
+    "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.11.0",
     "@types/react": "^19.0.0",

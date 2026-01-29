@@ -24,7 +24,6 @@
     "./icon": "./src/icon/Icon.tsx",
     "./button": "./src/button/Button.tsx",
     "./link": "./src/link/Link.tsx",
-    "./search-combobox": "./src/search-combobox/SearchCombobox.tsx",
     "./header-search": "./src/header-search/HeaderSearch.tsx",
     "./hero-search": "./src/hero-search/HeroSearch.tsx",
     "./sidebar": "./src/sidebar/Sidebar.tsx",
@@ -45,23 +44,23 @@
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^15.0.7",
+    "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.6.0",
     "eslint": "^8.57.0",
     "jsdom": "^24.0.0",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "typescript": "^5.3.3",
     "vitest": "^1.6.0"
   },
   "dependencies": {
-    "next": "^14.2.10",
+    "next": "^16.1.5",
     "react-aria-components": "^1.2.0"
   }
 }

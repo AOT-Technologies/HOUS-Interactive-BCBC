@@ -240,7 +240,7 @@
   --transition-link-color: color 150ms ease-in;
   --transition-link-icon-fill-color: fill 150ms ease-in;
   --button-gap: var(--layout-padding-12);
-  --header-height: 60px;
+  --header-height: 54px;
   --header-border-width: var(--layout-border-width-small);
   --header-height-full: calc(
     var(--header-height) + var(--header-border-width) +
@@ -354,7 +354,7 @@
 /* DESKTOP - 912px */
 @media (min-width: 57rem) {
   :root {
-    --header-height: 65px;
+    --header-height: 54px;
     --walkthrough-side-nav-width: 21.25rem; /* 340px */
     --step-tracker-padding-top: var(--layout-padding-26);
     --step-tracker-padding-left: var(--layout-padding-xlarge);

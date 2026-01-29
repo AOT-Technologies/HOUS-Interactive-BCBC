@@ -9,34 +9,23 @@ export interface NavigationLink {
 }
 
 // URL titles
-export const URL_HOME_TITLE = 'Home';
-export const URL_SEARCH_TITLE = 'Search';
-export const URL_BROWSE_TITLE = 'Browse';
-export const URL_ABOUT_TITLE = 'About';
+export const URL_GLOSSARY_TITLE = 'Glossary';
+export const URL_DOWNLOAD_TITLE = 'Download';
 
 // URL paths
 export const URL_HOME = '/';
-export const URL_SEARCH = '/search';
-export const URL_BROWSE = '/browse';
-export const URL_ABOUT = '/about';
+export const URL_GLOSSARY = '/glossary';
+export const URL_DOWNLOAD = '/download';
 
 // Main navigation links (Header)
 export const URLS_MAIN_NAVIGATION: NavigationLink[] = [
   {
-    title: 'Home',
-    href: '/',
+    title: 'Glossary',
+    href: '/glossary',
   },
   {
-    title: 'Search',
-    href: '/search',
-  },
-  {
-    title: 'Browse',
-    href: '/browse',
-  },
-  {
-    title: 'About',
-    href: '/about',
+    title: 'Download',
+    href: '/download',
   },
 ];
 

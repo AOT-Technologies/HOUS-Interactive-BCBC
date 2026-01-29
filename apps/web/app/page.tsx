@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'BC Building Code Interactive',
+  description:
+    'Interactive web application for the British Columbia Building Code - search, navigate, and understand the building code.',
+};
+
 export default function Home() {
   return (
     <div className="u-container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>

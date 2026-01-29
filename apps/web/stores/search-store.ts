@@ -1,81 +1,311 @@
+/**
+ * Search Store
+ * 
+ * Zustand store for managing search state across the application.
+ * Integrates with the BCBCSearchClient for search operations.
+ */
+
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-
-/**
- * Search result interface
- */
-export interface SearchResult {
-  id: string;
-  type: 'article' | 'section' | 'note' | 'glossary';
-  number: string;
-  title: string;
-  snippet: string;
-  breadcrumb: string[];
-  path: string;
-  score: number;
-}
+import {
+  getSearchClient,
+  type SearchResult,
+  type SearchOptions,
+  type SearchMetadata,
+  type SearchableContentType,
+  type RevisionDate,
+  type TableOfContentsItem,
+} from '../lib/search-client';
 
 /**
  * Search filters interface
  */
 export interface SearchFilters {
-  amendmentDate?: string;
-  division?: string;
-  part?: string;
-  contentType?: ('article' | 'table' | 'figure' | 'note' | 'application-note')[];
+  divisionFilter?: string;
+  partFilter?: number;
+  sectionFilter?: number;
+  amendmentsOnly?: boolean;
+  tablesOnly?: boolean;
+  figuresOnly?: boolean;
+  contentTypes?: SearchableContentType[];
+  effectiveDate?: string;
 }
 
 /**
  * Search store state interface
  */
-interface SearchStore {
+interface SearchStoreState {
+  // Initialization state
+  isInitialized: boolean;
+  isInitializing: boolean;
+  initError: Error | null;
+  
+  // Search state
   query: string;
   results: SearchResult[];
-  loading: boolean;
+  isSearching: boolean;
+  searchError: Error | null;
+  
+  // Filters
   filters: SearchFilters;
-  setQuery: (query: string) => void;
-  setResults: (results: SearchResult[]) => void;
-  setLoading: (loading: boolean) => void;
-  setFilters: (filters: SearchFilters) => void;
-  search: (query: string) => Promise<void>;
-  clearSearch: () => void;
+  
+  // Pagination
+  limit: number;
+  offset: number;
+  hasMore: boolean;
+  
+  // Suggestions
+  suggestions: string[];
+  
+  // Metadata (from search client)
+  metadata: SearchMetadata | null;
 }
 
 /**
+ * Search store actions interface
+ */
+interface SearchStoreActions {
+  // Initialization
+  initialize: () => Promise<void>;
+  
+  // Search actions
+  search: (query: string, options?: Partial<SearchOptions>) => Promise<void>;
+  searchMore: () => Promise<void>;
+  getSuggestions: (query: string) => Promise<void>;
+  
+  // State setters
+  setQuery: (query: string) => void;
+  setFilters: (filters: Partial<SearchFilters>) => void;
+  resetFilters: () => void;
+  clearSearch: () => void;
+  clearSuggestions: () => void;
+  
+  // Metadata accessors
+  getTableOfContents: () => TableOfContentsItem[];
+  getRevisionDates: () => RevisionDate[];
+  getDivisions: () => SearchMetadata['divisions'];
+  getContentTypes: () => SearchableContentType[];
+}
+
+type SearchStore = SearchStoreState & SearchStoreActions;
+
+const DEFAULT_LIMIT = 50;
+
+const initialState: SearchStoreState = {
+  isInitialized: false,
+  isInitializing: false,
+  initError: null,
+  query: '',
+  results: [],
+  isSearching: false,
+  searchError: null,
+  filters: {},
+  limit: DEFAULT_LIMIT,
+  offset: 0,
+  hasMore: false,
+  suggestions: [],
+  metadata: null,
+};
+
+/**
  * Search store
- * Manages search query, results, loading state, and filters
+ * Manages search query, results, filters, and metadata
  */
 export const useSearchStore = create<SearchStore>()(
   devtools(
-    (set) => ({
-      query: '',
-      results: [],
-      loading: false,
-      filters: {},
+    (set, get) => ({
+      ...initialState,
 
-      setQuery: (query) => set({ query }),
+      /**
+       * Initialize the search client
+       */
+      initialize: async () => {
+        const { isInitialized, isInitializing } = get();
+        if (isInitialized || isInitializing) return;
 
-      setResults: (results) => set({ results }),
+        set({ isInitializing: true, initError: null });
 
-      setLoading: (loading) => set({ loading }),
-
-      setFilters: (filters) => set({ filters }),
-
-      search: async (query) => {
-        set({ loading: true, query });
         try {
-          // TODO: Implement actual search logic with FlexSearch
-          // This is a placeholder that will be implemented in Sprint 3
-          await new Promise((resolve) => setTimeout(resolve, 100));
-          set({ results: [], loading: false });
+          const client = getSearchClient();
+          await client.initialize();
+          
+          set({
+            isInitialized: true,
+            isInitializing: false,
+            metadata: client.getMetadata(),
+          });
         } catch (error) {
-          console.error('Search error:', error);
-          set({ loading: false });
+          set({
+            isInitializing: false,
+            initError: error as Error,
+          });
         }
       },
 
-      clearSearch: () => set({ query: '', results: [], filters: {} }),
+      /**
+       * Perform a search
+       */
+      search: async (query, options = {}) => {
+        const { filters, limit } = get();
+        
+        set({ 
+          isSearching: true, 
+          searchError: null, 
+          query,
+          offset: 0,
+        });
+
+        try {
+          const client = getSearchClient();
+          const searchOptions: SearchOptions = {
+            ...filters,
+            ...options,
+            limit,
+            offset: 0,
+          };
+
+          const results = await client.search(query, searchOptions);
+
+          set({
+            isSearching: false,
+            results,
+            hasMore: results.length >= limit,
+          });
+        } catch (error) {
+          set({
+            isSearching: false,
+            searchError: error as Error,
+            results: [],
+          });
+        }
+      },
+
+      /**
+       * Load more results (pagination)
+       */
+      searchMore: async () => {
+        const { query, filters, limit, offset, results, isSearching, hasMore } = get();
+        
+        if (isSearching || !hasMore || !query) return;
+
+        set({ isSearching: true });
+
+        try {
+          const client = getSearchClient();
+          const newOffset = offset + limit;
+          
+          const searchOptions: SearchOptions = {
+            ...filters,
+            limit,
+            offset: newOffset,
+          };
+
+          const newResults = await client.search(query, searchOptions);
+
+          set({
+            isSearching: false,
+            results: [...results, ...newResults],
+            offset: newOffset,
+            hasMore: newResults.length >= limit,
+          });
+        } catch (error) {
+          set({
+            isSearching: false,
+            searchError: error as Error,
+          });
+        }
+      },
+
+      /**
+       * Get search suggestions
+       */
+      getSuggestions: async (query) => {
+        if (query.length < 2) {
+          set({ suggestions: [] });
+          return;
+        }
+
+        try {
+          const client = getSearchClient();
+          const suggestions = await client.getSuggestions(query, 10);
+          set({ suggestions });
+        } catch (error) {
+          console.error('Failed to get suggestions:', error);
+          set({ suggestions: [] });
+        }
+      },
+
+      /**
+       * Set query without searching
+       */
+      setQuery: (query) => set({ query }),
+
+      /**
+       * Update filters
+       */
+      setFilters: (newFilters) => {
+        set((state) => ({
+          filters: { ...state.filters, ...newFilters },
+        }));
+      },
+
+      /**
+       * Reset all filters
+       */
+      resetFilters: () => set({ filters: {} }),
+
+      /**
+       * Clear search state
+       */
+      clearSearch: () => set({
+        query: '',
+        results: [],
+        searchError: null,
+        offset: 0,
+        hasMore: false,
+        suggestions: [],
+      }),
+
+      /**
+       * Clear suggestions only
+       */
+      clearSuggestions: () => set({ suggestions: [] }),
+
+      /**
+       * Get table of contents from metadata
+       */
+      getTableOfContents: () => {
+        const client = getSearchClient();
+        return client.getTableOfContents();
+      },
+
+      /**
+       * Get revision dates from metadata
+       */
+      getRevisionDates: () => {
+        const client = getSearchClient();
+        return client.getRevisionDates();
+      },
+
+      /**
+       * Get divisions from metadata
+       */
+      getDivisions: () => {
+        const client = getSearchClient();
+        return client.getDivisions();
+      },
+
+      /**
+       * Get content types from metadata
+       */
+      getContentTypes: () => {
+        const client = getSearchClient();
+        return client.getContentTypes();
+      },
     }),
     { name: 'search-store' }
   )
 );
+
+// Re-export types for convenience
+export type { SearchResult, SearchOptions, SearchMetadata, SearchableContentType, RevisionDate, TableOfContentsItem };
