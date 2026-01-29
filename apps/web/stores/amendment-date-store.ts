@@ -30,7 +30,7 @@ interface AmendmentDateStore {
 export const useAmendmentDateStore = create<AmendmentDateStore>()(
   devtools(
     persist(
-      (set) => ({
+      (set, get) => ({
         selectedDate: null,
         availableDates: [],
         loading: false,

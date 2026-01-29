@@ -91,6 +91,7 @@ interface RawArticle {
   content: RawSentence[];
   effective_date?: string;
   amended_date?: string;
+  revisions?: RawRevision[];
 }
 
 interface RawSentence {
@@ -102,6 +103,7 @@ interface RawSentence {
   tables?: RawTable[];
   figures?: RawFigure[];
   equations?: RawEquation[];
+  revisions?: RawRevision[];
 }
 
 interface RawClause {
@@ -113,6 +115,7 @@ interface RawClause {
   tables?: RawTable[];
   figures?: RawFigure[];
   equations?: RawEquation[];
+  revisions?: RawRevision[];
 }
 
 interface RawSubclause {
@@ -123,6 +126,7 @@ interface RawSubclause {
   tables?: RawTable[];
   figures?: RawFigure[];
   equations?: RawEquation[];
+  revisions?: RawRevision[];
 }
 
 interface RawTable {
@@ -136,6 +140,7 @@ interface RawTable {
     header_rows?: Array<Array<{ content: string; colspan?: number; rowspan?: number }>>;
     body_rows?: Array<Array<{ content: string; colspan?: number; rowspan?: number }>>;
   };
+  revisions?: RawRevision[];
 }
 
 interface RawFigure {
@@ -169,6 +174,18 @@ interface RawAmendment {
   affected_sections?: string[];
   change_summary?: string;
   note?: string;
+}
+
+interface RawRevision {
+  type: 'original' | 'revision';
+  effective_date: string;
+  revision_id?: string;
+  sequence?: number;
+  status?: string;
+  deleted?: boolean;
+  text?: string;
+  title?: string;
+  content?: string;
 }
 
 /**
@@ -205,8 +222,8 @@ export function parseBCBC(jsonData: unknown): BCBCDocument {
   // Parse glossary
   const glossary: GlossaryEntry[] = parseGlossary(raw.glossary || {});
 
-  // Parse amendment dates
-  const amendmentDates: AmendmentDate[] = parseAmendmentDates(raw.amendments || []);
+  // Extract amendment dates from revisions throughout the document
+  const amendmentDates: AmendmentDate[] = extractAmendmentDatesFromRevisions(raw);
 
   return {
     metadata,
@@ -444,6 +461,95 @@ function parseAmendmentDates(raw: RawAmendment[]): AmendmentDate[] {
     date: amendment.date,
     description: amendment.description || amendment.change_summary || '',
     affectedSections: amendment.affected_sections || [],
+  }));
+}
+
+/**
+ * Extract amendment dates from revisions throughout the document
+ * Scans all articles, sentences, clauses, and tables for revision effective dates
+ */
+function extractAmendmentDatesFromRevisions(raw: RawBCBCDocument): AmendmentDate[] {
+  const datesMap = new Map<string, { date: string; count: number; isLatest: boolean }>();
+  
+  // Helper function to collect dates from revisions array
+  const collectDatesFromRevisions = (revisions?: RawRevision[]) => {
+    if (!revisions || !Array.isArray(revisions)) return;
+    
+    for (const revision of revisions) {
+      if (revision.effective_date) {
+        const existing = datesMap.get(revision.effective_date);
+        if (existing) {
+          existing.count++;
+        } else {
+          datesMap.set(revision.effective_date, {
+            date: revision.effective_date,
+            count: 1,
+            isLatest: false,
+          });
+        }
+      }
+    }
+  };
+  
+  // Recursively scan all divisions, parts, sections, subsections, articles
+  for (const division of raw.divisions || []) {
+    for (const part of division.parts || []) {
+      for (const section of part.sections || []) {
+        for (const subsection of section.subsections || []) {
+          for (const article of subsection.articles || []) {
+            // Collect from article revisions
+            collectDatesFromRevisions(article.revisions);
+            
+            // Collect from article content (sentences)
+            for (const sentence of article.content || []) {
+              collectDatesFromRevisions(sentence.revisions);
+              
+              // Collect from clauses
+              for (const clause of sentence.clauses || []) {
+                collectDatesFromRevisions(clause.revisions);
+                
+                // Collect from subclauses
+                for (const subclause of clause.subclauses || []) {
+                  collectDatesFromRevisions(subclause.revisions);
+                  
+                  // Collect from tables in subclauses
+                  for (const table of subclause.tables || []) {
+                    collectDatesFromRevisions(table.revisions);
+                  }
+                }
+                
+                // Collect from tables in clauses
+                for (const table of clause.tables || []) {
+                  collectDatesFromRevisions(table.revisions);
+                }
+              }
+              
+              // Collect from tables in sentences
+              for (const table of sentence.tables || []) {
+                collectDatesFromRevisions(table.revisions);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Convert map to array and sort by date
+  const dates = Array.from(datesMap.values())
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  
+  // Mark the latest date
+  if (dates.length > 0) {
+    dates[dates.length - 1].isLatest = true;
+  }
+  
+  // Convert to AmendmentDate format
+  return dates.map(({ date, count, isLatest }) => ({
+    date,
+    description: `${count} revision${count > 1 ? 's' : ''} effective on this date`,
+    affectedSections: [],
+    isLatest,
   }));
 }
 

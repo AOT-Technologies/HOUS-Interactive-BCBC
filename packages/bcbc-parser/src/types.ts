@@ -172,6 +172,7 @@ export interface AmendmentDate {
   date: string;
   description: string;
   affectedSections: string[];
+  isLatest?: boolean;
 }
 
 /**

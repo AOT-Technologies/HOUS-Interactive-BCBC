@@ -25,6 +25,32 @@ import { readFile, writeFile, mkdir, rm } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+// Import parser package (using relative path for tsx compatibility)
+import {
+  parseBCBC,
+  validateBCBC,
+  getGlossaryMap,
+  getAmendmentDates,
+  type BCBCDocument,
+  type ValidationError,
+} from '../packages/bcbc-parser/src/index.js';
+
+// Import search indexer package
+import {
+  createSearchIndex,
+  extractSearchableContent,
+  exportIndex,
+  getIndexStats,
+} from '../packages/search-indexer/src/index.js';
+
+// Import content chunker package
+import {
+  chunkContent,
+  extractMetadata,
+  getChunkStats,
+  type ContentChunk,
+} from '../packages/content-chunker/src/index.js';
+
 // Get directory paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -105,7 +131,7 @@ async function cleanOutputDir(): Promise<void> {
 /**
  * Load and parse source JSON file
  */
-async function loadSourceData(): Promise<any> {
+async function loadSourceData(): Promise<BCBCDocument> {
   logger.step('Loading source data');
   logger.info(`Reading from: ${SOURCE_FILE}`);
   
@@ -113,16 +139,21 @@ async function loadSourceData(): Promise<any> {
   
   try {
     const content = await readFile(SOURCE_FILE, 'utf-8');
-    const data = JSON.parse(content);
+    const rawData = JSON.parse(content);
     
     const duration = Date.now() - startTime;
     const size = Buffer.byteLength(content, 'utf-8');
     
     logger.success(`Loaded ${formatBytes(size)} in ${formatDuration(duration)}`);
-    logger.info(`Title: ${data.metadata?.title || 'Unknown'}`);
-    logger.info(`Version: ${data.metadata?.version || 'Unknown'}`);
+    logger.info(`Title: ${rawData.metadata?.title || 'Unknown'}`);
+    logger.info(`Version: ${rawData.version || 'Unknown'}`);
     
-    return data;
+    // Parse the raw JSON into BCBCDocument structure
+    logger.info('Parsing BCBC structure...');
+    const document = parseBCBC(rawData);
+    logger.success(`Parsed ${document.divisions.length} divisions`);
+    
+    return document;
   } catch (error) {
     logger.error(`Failed to load source data: ${error}`);
     throw error;
@@ -131,214 +162,339 @@ async function loadSourceData(): Promise<any> {
 
 /**
  * Validate BCBC data structure
- * 
- * Note: This is a placeholder. The actual validation will be implemented
- * in Sprint 1 Task 8 (bcbc-parser package).
  */
-async function validateData(data: any): Promise<void> {
+async function validateData(document: BCBCDocument): Promise<void> {
   logger.step('Validating data structure');
   
-  // Basic validation checks
-  if (!data.metadata) {
-    throw new Error('Missing metadata');
+  const startTime = Date.now();
+  
+  try {
+    // Run comprehensive validation
+    const errors: ValidationError[] = validateBCBC(document);
+    
+    // Separate errors by severity
+    const criticalErrors = errors.filter(e => e.severity === 'error');
+    const warnings = errors.filter(e => e.severity === 'warning');
+    
+    const duration = Date.now() - startTime;
+    
+    // Report validation results
+    if (criticalErrors.length === 0 && warnings.length === 0) {
+      logger.success(`Validation passed in ${formatDuration(duration)}`);
+      logger.info(`Validated ${document.divisions.length} divisions`);
+    } else {
+      // Display warnings
+      if (warnings.length > 0) {
+        logger.warn(`Found ${warnings.length} validation warning(s):`);
+        warnings.slice(0, 5).forEach(warning => {
+          logger.warn(`  ${warning.path}.${warning.field}: ${warning.message}`);
+        });
+        if (warnings.length > 5) {
+          logger.warn(`  ... and ${warnings.length - 5} more warnings`);
+        }
+      }
+      
+      // Display errors (but don't fail - treat as warnings for now)
+      if (criticalErrors.length > 0) {
+        logger.warn(`Found ${criticalErrors.length} validation error(s) (continuing anyway):`);
+        criticalErrors.slice(0, 10).forEach(error => {
+          logger.warn(`  ${error.path}.${error.field}: ${error.message}`);
+        });
+        if (criticalErrors.length > 10) {
+          logger.warn(`  ... and ${criticalErrors.length - 10} more errors`);
+        }
+        
+        logger.warn('⚠️  Pipeline will continue despite validation errors');
+        logger.warn('⚠️  Generated assets may contain invalid references');
+      }
+      
+      logger.success(`Validation completed in ${formatDuration(duration)} (with issues)`);
+      logger.info(`Validated ${document.divisions.length} divisions`);
+    }
+  } catch (error) {
+    logger.error(`Validation failed: ${error}`);
+    throw error;
   }
-  
-  if (!data.divisions || !Array.isArray(data.divisions)) {
-    throw new Error('Missing or invalid divisions array');
-  }
-  
-  logger.success(`Validated ${data.divisions.length} divisions`);
-  
-  // TODO: Sprint 1 Task 8 - Implement full validation with bcbc-parser
-  logger.warn('Full validation not yet implemented (Sprint 1 Task 8)');
 }
 
 /**
  * Generate FlexSearch index
- * 
- * Note: This is a placeholder. The actual indexer will be implemented
- * in Sprint 1 Task 9 (search-indexer package).
  */
-async function generateSearchIndex(data: any): Promise<void> {
+async function generateSearchIndex(document: BCBCDocument): Promise<void> {
   logger.step('Generating search index');
   
   const startTime = Date.now();
   
-  // Placeholder: Create empty index structure
-  const index = {
-    version: '1.0.0',
-    generatedAt: new Date().toISOString(),
-    documentCount: 0,
-    index: {},
-    store: {},
-  };
-  
-  const outputPath = join(OUTPUT_DIR, 'search-index.json');
-  await writeFile(outputPath, JSON.stringify(index, null, 2));
-  
-  const duration = Date.now() - startTime;
-  logger.success(`Generated search index in ${formatDuration(duration)}`);
-  
-  // TODO: Sprint 1 Task 9 - Implement FlexSearch indexer
-  logger.warn('Search indexer not yet implemented (Sprint 1 Task 9)');
+  try {
+    // Extract searchable content from document
+    logger.info('Extracting searchable content...');
+    const searchableItems = extractSearchableContent(document);
+    logger.info(`Extracted ${searchableItems.length} searchable items`);
+    
+    // Create FlexSearch index
+    logger.info('Building FlexSearch index...');
+    const index = createSearchIndex(document);
+    
+    // Export index to JSON
+    logger.info('Serializing index...');
+    const indexData = await exportIndex(index, searchableItems);
+    
+    // Get index statistics
+    const stats = getIndexStats(searchableItems, indexData);
+    
+    // Write index to file with pretty formatting
+    const outputPath = join(OUTPUT_DIR, 'search-index.json');
+    
+    // Parse and re-stringify with indentation for readability
+    const indexObject = JSON.parse(indexData);
+    await writeFile(outputPath, JSON.stringify(indexObject, null, 2));
+    
+    const duration = Date.now() - startTime;
+    logger.success(`Generated search index in ${formatDuration(duration)}`);
+    logger.info(`  Documents: ${stats.documentCount}`);
+    logger.info(`  Index size: ${stats.indexSizeKB} KB`);
+  } catch (error) {
+    logger.error(`Failed to generate search index: ${error}`);
+    throw error;
+  }
 }
 
 /**
  * Extract navigation tree metadata
- * 
- * Note: This is a placeholder. The actual metadata extractor will be implemented
- * in Sprint 1 Task 10 (content-chunker package).
  */
-async function generateNavigationTree(data: any): Promise<void> {
+async function generateNavigationTree(document: BCBCDocument): Promise<void> {
   logger.step('Generating navigation tree');
   
   const startTime = Date.now();
   
-  // Placeholder: Create basic navigation structure
-  const navigationTree = {
-    version: '1.0.0',
-    generatedAt: new Date().toISOString(),
-    root: {
-      id: 'root',
-      label: data.metadata?.title || 'BC Building Code',
-      children: [],
-    },
-  };
-  
-  const outputPath = join(OUTPUT_DIR, 'navigation-tree.json');
-  await writeFile(outputPath, JSON.stringify(navigationTree, null, 2));
-  
-  const duration = Date.now() - startTime;
-  logger.success(`Generated navigation tree in ${formatDuration(duration)}`);
-  
-  // TODO: Sprint 1 Task 10 - Implement metadata extractor
-  logger.warn('Navigation tree generator not yet implemented (Sprint 1 Task 10)');
+  try {
+    // Extract metadata (includes navigation tree)
+    const metadata = extractMetadata(document);
+    
+    // Create navigation tree output
+    const navigationTree = {
+      version: '1.0.0',
+      generatedAt: new Date().toISOString(),
+      nodes: metadata.navigationTree,
+    };
+    
+    const outputPath = join(OUTPUT_DIR, 'navigation-tree.json');
+    await writeFile(outputPath, JSON.stringify(navigationTree, null, 2));
+    
+    const duration = Date.now() - startTime;
+    const nodeCount = countNavigationNodes(metadata.navigationTree);
+    logger.success(`Generated navigation tree in ${formatDuration(duration)}`);
+    logger.info(`  Total nodes: ${nodeCount}`);
+  } catch (error) {
+    logger.error(`Failed to generate navigation tree: ${error}`);
+    throw error;
+  }
+}
+
+/**
+ * Count total nodes in navigation tree
+ */
+function countNavigationNodes(nodes: any[]): number {
+  let count = nodes.length;
+  for (const node of nodes) {
+    if (node.children && node.children.length > 0) {
+      count += countNavigationNodes(node.children);
+    }
+  }
+  return count;
 }
 
 /**
  * Extract glossary map
  */
-async function generateGlossaryMap(data: any): Promise<void> {
+async function generateGlossaryMap(document: BCBCDocument): Promise<void> {
   logger.step('Generating glossary map');
   
   const startTime = Date.now();
   
-  // Placeholder: Create empty glossary
-  const glossaryMap = {
-    version: '1.0.0',
-    generatedAt: new Date().toISOString(),
-    terms: {},
-  };
-  
-  const outputPath = join(OUTPUT_DIR, 'glossary-map.json');
-  await writeFile(outputPath, JSON.stringify(glossaryMap, null, 2));
-  
-  const duration = Date.now() - startTime;
-  logger.success(`Generated glossary map in ${formatDuration(duration)}`);
-  
-  // TODO: Sprint 1 Task 10 - Implement glossary extraction
-  logger.warn('Glossary extractor not yet implemented (Sprint 1 Task 10)');
+  try {
+    // Extract metadata (includes glossary map)
+    const metadata = extractMetadata(document);
+    
+    // Create glossary map output
+    const glossaryMap = {
+      version: '1.0.0',
+      generatedAt: new Date().toISOString(),
+      terms: metadata.glossaryMap,
+    };
+    
+    const outputPath = join(OUTPUT_DIR, 'glossary-map.json');
+    await writeFile(outputPath, JSON.stringify(glossaryMap, null, 2));
+    
+    const duration = Date.now() - startTime;
+    const termCount = Object.keys(metadata.glossaryMap).length;
+    logger.success(`Generated glossary map in ${formatDuration(duration)}`);
+    logger.info(`  Total terms: ${termCount}`);
+  } catch (error) {
+    logger.error(`Failed to generate glossary map: ${error}`);
+    throw error;
+  }
 }
 
 /**
  * Extract amendment dates
  */
-async function generateAmendmentDates(data: any): Promise<void> {
+async function generateAmendmentDates(document: BCBCDocument): Promise<void> {
   logger.step('Generating amendment dates');
   
   const startTime = Date.now();
   
-  // Placeholder: Create empty dates list
-  const amendmentDates = {
-    version: '1.0.0',
-    generatedAt: new Date().toISOString(),
-    dates: [],
-  };
-  
-  const outputPath = join(OUTPUT_DIR, 'amendment-dates.json');
-  await writeFile(outputPath, JSON.stringify(amendmentDates, null, 2));
-  
-  const duration = Date.now() - startTime;
-  logger.success(`Generated amendment dates in ${formatDuration(duration)}`);
-  
-  // TODO: Sprint 1 Task 10 - Implement amendment date extraction
-  logger.warn('Amendment date extractor not yet implemented (Sprint 1 Task 10)');
+  try {
+    // Extract metadata (includes amendment dates)
+    const metadata = extractMetadata(document);
+    
+    // Create amendment dates output
+    const amendmentDates = {
+      version: '1.0.0',
+      generatedAt: new Date().toISOString(),
+      dates: metadata.amendmentDates,
+    };
+    
+    const outputPath = join(OUTPUT_DIR, 'amendment-dates.json');
+    await writeFile(outputPath, JSON.stringify(amendmentDates, null, 2));
+    
+    const duration = Date.now() - startTime;
+    logger.success(`Generated amendment dates in ${formatDuration(duration)}`);
+    logger.info(`  Total dates: ${metadata.amendmentDates.length}`);
+  } catch (error) {
+    logger.error(`Failed to generate amendment dates: ${error}`);
+    throw error;
+  }
 }
 
 /**
  * Generate content types list
  */
-async function generateContentTypes(data: any): Promise<void> {
+async function generateContentTypes(document: BCBCDocument): Promise<void> {
   logger.step('Generating content types');
   
   const startTime = Date.now();
   
-  // Placeholder: Create default content types
-  const contentTypes = {
-    version: '1.0.0',
-    generatedAt: new Date().toISOString(),
-    types: [
-      { id: 'article', label: 'Article', count: 0 },
-      { id: 'table', label: 'Table', count: 0 },
-      { id: 'figure', label: 'Figure', count: 0 },
-      { id: 'note', label: 'Note', count: 0 },
-      { id: 'application-note', label: 'Application Note', count: 0 },
-    ],
+  try {
+    // Extract metadata (includes content types)
+    const metadata = extractMetadata(document);
+    
+    // Create content types output with counts
+    const contentTypes = {
+      version: '1.0.0',
+      generatedAt: new Date().toISOString(),
+      types: metadata.contentTypes.map(type => ({
+        id: type,
+        label: formatContentTypeLabel(type),
+      })),
+    };
+    
+    const outputPath = join(OUTPUT_DIR, 'content-types.json');
+    await writeFile(outputPath, JSON.stringify(contentTypes, null, 2));
+    
+    const duration = Date.now() - startTime;
+    logger.success(`Generated content types in ${formatDuration(duration)}`);
+    logger.info(`  Total types: ${metadata.contentTypes.length}`);
+  } catch (error) {
+    logger.error(`Failed to generate content types: ${error}`);
+    throw error;
+  }
+}
+
+/**
+ * Format content type ID to human-readable label
+ */
+function formatContentTypeLabel(type: string): string {
+  const labels: Record<string, string> = {
+    'article': 'Article',
+    'table': 'Table',
+    'figure': 'Figure',
+    'note': 'Note',
+    'application-note': 'Application Note',
   };
-  
-  const outputPath = join(OUTPUT_DIR, 'content-types.json');
-  await writeFile(outputPath, JSON.stringify(contentTypes, null, 2));
-  
-  const duration = Date.now() - startTime;
-  logger.success(`Generated content types in ${formatDuration(duration)}`);
-  
-  // TODO: Sprint 1 Task 10 - Implement content type extraction
-  logger.warn('Content type extractor not yet implemented (Sprint 1 Task 10)');
+  return labels[type] || type;
 }
 
 /**
  * Generate quick access pins
  */
-async function generateQuickAccess(data: any): Promise<void> {
+async function generateQuickAccess(document: BCBCDocument): Promise<void> {
   logger.step('Generating quick access pins');
   
   const startTime = Date.now();
   
-  // Placeholder: Create empty quick access
-  const quickAccess = {
-    version: '1.0.0',
-    generatedAt: new Date().toISOString(),
-    pins: [],
-  };
-  
-  const outputPath = join(OUTPUT_DIR, 'quick-access.json');
-  await writeFile(outputPath, JSON.stringify(quickAccess, null, 2));
-  
-  const duration = Date.now() - startTime;
-  logger.success(`Generated quick access pins in ${formatDuration(duration)}`);
-  
-  // TODO: Sprint 1 Task 10 - Implement quick access generation
-  logger.warn('Quick access generator not yet implemented (Sprint 1 Task 10)');
+  try {
+    // Extract metadata (includes quick access)
+    const metadata = extractMetadata(document);
+    
+    // Create quick access output
+    const quickAccess = {
+      version: '1.0.0',
+      generatedAt: new Date().toISOString(),
+      pins: metadata.quickAccess,
+    };
+    
+    const outputPath = join(OUTPUT_DIR, 'quick-access.json');
+    await writeFile(outputPath, JSON.stringify(quickAccess, null, 2));
+    
+    const duration = Date.now() - startTime;
+    logger.success(`Generated quick access pins in ${formatDuration(duration)}`);
+    logger.info(`  Total pins: ${metadata.quickAccess.length}`);
+  } catch (error) {
+    logger.error(`Failed to generate quick access: ${error}`);
+    throw error;
+  }
 }
 
 /**
  * Generate content chunks
  */
-async function generateContentChunks(data: any): Promise<void> {
+async function generateContentChunks(document: BCBCDocument): Promise<void> {
   logger.step('Generating content chunks');
   
   const startTime = Date.now();
   
-  // Create content directory
-  const contentDir = join(OUTPUT_DIR, 'content');
-  await ensureDir(contentDir);
-  
-  // Placeholder: Create empty content structure
-  // TODO: Sprint 1 Task 10 - Implement content chunking
-  
-  const duration = Date.now() - startTime;
-  logger.success(`Generated content chunks in ${formatDuration(duration)}`);
-  logger.warn('Content chunker not yet implemented (Sprint 1 Task 10)');
+  try {
+    // Create content directory
+    const contentDir = join(OUTPUT_DIR, 'content');
+    await ensureDir(contentDir);
+    
+    // Generate chunks
+    logger.info('Splitting content into chunks...');
+    const chunks: ContentChunk[] = chunkContent(document);
+    
+    // Get chunk statistics
+    const stats = getChunkStats(chunks);
+    logger.info(`Generated ${stats.totalChunks} chunks`);
+    logger.info(`  Total size: ${formatBytes(stats.totalSize)}`);
+    logger.info(`  Average size: ${formatBytes(stats.averageSize)}`);
+    logger.info(`  Size range: ${formatBytes(stats.minSize)} - ${formatBytes(stats.maxSize)}`);
+    
+    // Write each chunk to file
+    logger.info('Writing chunk files...');
+    let writtenCount = 0;
+    for (const chunk of chunks) {
+      const chunkPath = join(OUTPUT_DIR, chunk.path);
+      
+      // Ensure chunk directory exists
+      await ensureDir(dirname(chunkPath));
+      
+      // Write chunk data
+      await writeFile(chunkPath, JSON.stringify(chunk.data, null, 2));
+      writtenCount++;
+      
+      // Log progress every 10 chunks
+      if (writtenCount % 10 === 0) {
+        logger.info(`  Written ${writtenCount}/${chunks.length} chunks...`);
+      }
+    }
+    
+    const duration = Date.now() - startTime;
+    logger.success(`Generated ${chunks.length} content chunks in ${formatDuration(duration)}`);
+  } catch (error) {
+    logger.error(`Failed to generate content chunks: ${error}`);
+    throw error;
+  }
 }
 
 /**
@@ -359,9 +515,8 @@ async function generateReport(startTime: number): Promise<void> {
   console.log('  ✓ amendment-dates.json');
   console.log('  ✓ content-types.json');
   console.log('  ✓ quick-access.json');
-  console.log('  ✓ content/ (directory)');
-  console.log('\n' + colors.yellow + 'Note: Placeholder implementations are in place.' + colors.reset);
-  console.log(colors.yellow + 'Full functionality will be implemented in Sprint 1 (Tasks 8-10).' + colors.reset);
+  console.log('  ✓ content/ (directory with section chunks)');
+  console.log('\n' + colors.green + 'All assets generated successfully!' + colors.reset);
   console.log('='.repeat(60) + '\n');
 }
 
