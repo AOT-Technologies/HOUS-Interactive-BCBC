@@ -1,0 +1,203 @@
+/**
+ * ContentPanel Component Styles
+ * 
+ * Responsive behavior:
+ * - Mobile (< 768px): Full-width, stacked layout
+ * - Tablet (768px - 1023px): Optimized reading width
+ * - Desktop (≥ 1024px): Optimal reading width with sidebar
+ */
+
+/* ============================================
+   BASE STYLES (MOBILE FIRST)
+   ============================================ */
+
+.ui-ContentPanel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height-full, 60px));
+  background: var(--surface-color-background-white);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Content container with optimal reading width */
+.ui-ContentPanel--Container {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--layout-padding-medium);
+  margin: 0 auto;
+}
+
+/* ============================================
+   MOBILE - Base styles (< 768px)
+   ============================================ */
+
+/* Mobile uses base styles above */
+
+/* ============================================
+   TABLET - 768px and up
+   ============================================ */
+
+@media (min-width: 48rem) {
+  .ui-ContentPanel--Container {
+    padding: var(--layout-padding-large);
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   DESKTOP - 1024px and up
+   ============================================ */
+
+@media (min-width: 64rem) {
+  .ui-ContentPanel {
+    /* When sidebar is present, content panel takes remaining space */
+    flex: 1;
+    min-width: 0; /* Allow flex shrinking */
+  }
+
+  .ui-ContentPanel--Container {
+    /* Optimal reading width for desktop */
+    max-width: var(--content-max-width, 1200px);
+    padding: var(--layout-padding-xlarge) var(--layout-padding-large);
+  }
+}
+
+/* ============================================
+   DESKTOP LARGE - 1200px and up
+   ============================================ */
+
+@media (min-width: 75rem) {
+  .ui-ContentPanel--Container {
+    padding: var(--layout-padding-xlarge) var(--layout-padding-xlarge);
+  }
+}
+
+/* ============================================
+   DESKTOP XLARGE - 1504px and up
+   ============================================ */
+
+@media (min-width: 94rem) {
+  .ui-ContentPanel--Container {
+    max-width: var(--content-max-width, 1400px);
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY & CONTENT STYLES
+   ============================================ */
+
+/* Ensure proper text rendering */
+.ui-ContentPanel {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Content spacing - direct children get vertical spacing */
+.ui-ContentPanel--Container > * + * {
+  margin-top: var(--layout-padding-large);
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus styles for keyboard navigation */
+.ui-ContentPanel:focus {
+  outline: var(--layout-border-width-medium) solid var(--surface-color-border-active);
+  outline-offset: calc(var(--outline-offset) * -1);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ui-ContentPanel {
+    border: var(--layout-border-width-small) solid var(--surface-color-border-default);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ui-ContentPanel {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .ui-ContentPanel {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .ui-ContentPanel--Container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* ============================================
+   FULL-WIDTH LAYOUT (No Sidebar)
+   ============================================ */
+
+/* When ContentPanel is used without sidebar (Search Results, Download pages) */
+.ui-ContentPanel.--full-width {
+  width: 100%;
+}
+
+.ui-ContentPanel.--full-width .ui-ContentPanel--Container {
+  max-width: var(--content-max-width-full, 1600px);
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.ui-ContentPanel.--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.ui-ContentPanel.--loading .ui-ContentPanel--Container {
+  position: relative;
+}
+
+.ui-ContentPanel.--loading .ui-ContentPanel--Container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--surface-color-border-default);
+  border-top-color: var(--surface-color-border-active);
+  border-radius: 50%;
+  animation: content-panel-spin 1s linear infinite;
+}
+
+@keyframes content-panel-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ============================================
+   ERROR STATE
+   ============================================ */
+
+.ui-ContentPanel.--error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-ContentPanel.--error .ui-ContentPanel--Container {
+  text-align: center;
+  padding: var(--layout-padding-xlarge);
+}

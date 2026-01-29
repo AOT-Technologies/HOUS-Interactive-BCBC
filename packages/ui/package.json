@@ -27,6 +27,8 @@
     "./search-combobox": "./src/search-combobox/SearchCombobox.tsx",
     "./header-search": "./src/header-search/HeaderSearch.tsx",
     "./hero-search": "./src/hero-search/HeroSearch.tsx",
+    "./sidebar": "./src/sidebar/Sidebar.tsx",
+    "./content-panel": "./src/content-panel/ContentPanel.tsx",
     "./cssVariables": "./src/variables.css"
   },
   "scripts": {

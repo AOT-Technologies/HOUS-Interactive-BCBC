@@ -1,5 +1,11 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import {
+  parseContentPath,
+  buildContentPath,
+  updateUrlWithoutNavigation,
+  type ContentPathParams,
+} from '../lib/url-utils';
 
 /**
  * Navigation node interface
@@ -22,10 +28,12 @@ interface NavigationStore {
   currentPath: string;
   loading: boolean;
   toggleNode: (nodeId: string) => void;
-  setCurrentPath: (path: string) => void;
+  setCurrentPath: (path: string, updateUrl?: boolean) => void;
   expandToNode: (nodeId: string) => void;
   loadNavigationTree: () => Promise<void>;
   collapseAll: () => void;
+  syncFromUrl: () => void;
+  navigateToPath: (params: ContentPathParams, queryParams?: Record<string, string>) => void;
 }
 
 /**
@@ -51,7 +59,14 @@ export const useNavigationStore = create<NavigationStore>()(
           return { expandedNodes: newExpandedNodes };
         }),
 
-      setCurrentPath: (path) => set({ currentPath: path }),
+      setCurrentPath: (path, updateUrl = true) => {
+        set({ currentPath: path });
+        
+        // Optionally sync URL without navigation
+        if (updateUrl && typeof window !== 'undefined') {
+          updateUrlWithoutNavigation(path);
+        }
+      },
 
       expandToNode: (nodeId) => {
         // Find the path to the node and expand all parent nodes
@@ -101,6 +116,60 @@ export const useNavigationStore = create<NavigationStore>()(
       },
 
       collapseAll: () => set({ expandedNodes: new Set() }),
+
+      /**
+       * Sync navigation state from current URL
+       * Called on page load and browser back/forward navigation
+       */
+      syncFromUrl: () => {
+        if (typeof window === 'undefined') return;
+        
+        const pathname = window.location.pathname;
+        const search = window.location.search;
+        const params = parseContentPath(pathname);
+        
+        if (params) {
+          // Build the path from params, including query string
+          const path = buildContentPath(params) + search;
+          
+          // Update current path without triggering URL update
+          set({ currentPath: path });
+          
+          // Find and expand to the current node
+          const { navigationTree } = get();
+          const nodeId = params.article || params.subsection || params.section || params.part;
+          
+          if (nodeId) {
+            get().expandToNode(nodeId);
+          }
+        }
+      },
+
+      /**
+       * Navigate to a content path and update URL
+       * 
+       * @param params - Content path parameters
+       * @param queryParams - Optional query parameters (e.g., date filter)
+       */
+      navigateToPath: (params, queryParams) => {
+        const path = buildContentPath(params, queryParams);
+        
+        // Update store state
+        set({ currentPath: path });
+        
+        // Update URL and trigger navigation
+        if (typeof window !== 'undefined') {
+          window.history.pushState({}, '', path);
+          // Dispatch popstate to trigger any navigation listeners
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }
+        
+        // Expand to the target node
+        const nodeId = params.article || params.subsection || params.section || params.part;
+        if (nodeId) {
+          get().expandToNode(nodeId);
+        }
+      },
     }),
     { name: 'navigation-store' }
   )

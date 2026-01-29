@@ -1,0 +1,191 @@
+/**
+ * MainLayout Component Styles
+ * 
+ * Responsive behavior:
+ * - Mobile (< 768px): Stacked layout, drawer sidebar
+ * - Tablet (768px - 1023px): Collapsible sidebar drawer + content
+ * - Desktop (≥ 1024px): Three-panel layout (sidebar + content) or full-width
+ */
+
+/* ============================================
+   BASE STYLES (MOBILE FIRST)
+   ============================================ */
+
+.MainLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height-full, 60px));
+  width: 100%;
+  background: var(--surface-color-background-white);
+}
+
+/* ============================================
+   FULL-WIDTH LAYOUT (No Sidebar)
+   Search Results Page, Download Page
+   ============================================ */
+
+.MainLayout--full-width {
+  /* Full-width content at all breakpoints */
+  flex-direction: column;
+}
+
+.MainLayout--full-width .ui-ContentPanel {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ============================================
+   THREE-PANEL LAYOUT (With Sidebar)
+   Homepage, Content Reading Page
+   ============================================ */
+
+/* Mobile (< 768px): Stacked layout with drawer sidebar */
+.MainLayout--with-sidebar {
+  flex-direction: column;
+  position: relative;
+}
+
+/* Mobile: Content panel takes full width */
+.MainLayout--with-sidebar .ui-ContentPanel {
+  width: 100%;
+  flex: 1;
+}
+
+/* Mobile: Sidebar is a drawer (handled by Sidebar component) */
+.MainLayout--with-sidebar .ui-Sidebar {
+  /* Sidebar component handles mobile drawer behavior */
+}
+
+/* ============================================
+   TABLET - 768px and up
+   ============================================ */
+
+@media (min-width: 48rem) {
+  .MainLayout--with-sidebar {
+    /* Still stacked on tablet, but with better spacing */
+    flex-direction: column;
+  }
+
+  .MainLayout--with-sidebar .ui-ContentPanel {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   DESKTOP - 1024px and up
+   ============================================ */
+
+@media (min-width: 64rem) {
+  /* Three-panel layout: Sidebar + Content side-by-side */
+  .MainLayout--with-sidebar {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* Sidebar takes fixed width */
+  .MainLayout--with-sidebar .ui-Sidebar {
+    flex-shrink: 0;
+    width: var(--sidebar-width, 320px);
+    min-width: var(--sidebar-width-min, 280px);
+    max-width: var(--sidebar-width-max, 400px);
+  }
+
+  /* Sidebar collapsed state */
+  .MainLayout--with-sidebar .ui-Sidebar.--collapsed {
+    width: var(--sidebar-width-collapsed, 60px);
+    min-width: var(--sidebar-width-collapsed, 60px);
+  }
+
+  /* Content panel takes remaining space */
+  .MainLayout--with-sidebar .ui-ContentPanel {
+    flex: 1;
+    min-width: 0; /* Allow flex shrinking */
+    overflow-x: hidden;
+  }
+}
+
+/* ============================================
+   DESKTOP LARGE - 1200px and up
+   ============================================ */
+
+@media (min-width: 75rem) {
+  .MainLayout--with-sidebar .ui-Sidebar {
+    width: var(--sidebar-width-large, 360px);
+  }
+}
+
+/* ============================================
+   DESKTOP XLARGE - 1504px and up
+   ============================================ */
+
+@media (min-width: 94rem) {
+  .MainLayout--with-sidebar .ui-Sidebar {
+    width: var(--sidebar-width-xlarge, 400px);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus styles for keyboard navigation */
+.MainLayout:focus-within {
+  outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .MainLayout--with-sidebar .ui-Sidebar {
+    border-right: var(--layout-border-width-medium) solid var(--surface-color-border-default);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .MainLayout,
+  .MainLayout--with-sidebar,
+  .MainLayout--full-width {
+    transition: none;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .MainLayout {
+    min-height: auto;
+  }
+
+  /* Hide sidebar when printing */
+  .MainLayout--with-sidebar .ui-Sidebar {
+    display: none;
+  }
+
+  /* Content takes full width when printing */
+  .MainLayout--with-sidebar .ui-ContentPanel {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.MainLayout.--loading {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* ============================================
+   ERROR STATE
+   ============================================ */
+
+.MainLayout.--error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}

@@ -67,6 +67,7 @@ export const TESTID_NAV_NODE = 'navigation-node';
 export const TESTID_BREADCRUMBS = 'breadcrumbs';
 
 // Content test IDs
+export const TESTID_CONTENT_PANEL = 'content-panel';
 export const TESTID_CONTENT_ARTICLE = 'content-article';
 
 // Glossary test IDs
@@ -98,6 +99,14 @@ export const TESTID_CHECKBOX_GROUP_ERROR = 'checkbox-group-error';
 
 // CheckboxCard test IDs
 export const GET_TESTID_CHECKBOX_CARD = (id: string) => `checkbox-card-${id}`;
+
+// Sidebar test IDs
+export const TESTID_SIDEBAR = 'sidebar';
+export const TESTID_SIDEBAR_TOGGLE = 'sidebar-toggle';
+export const TESTID_SIDEBAR_MOBILE_OVERLAY = 'sidebar-mobile-overlay';
+
+// MainLayout test IDs
+export const TESTID_MAIN_LAYOUT = 'main-layout';
 
 // RadioGroup test IDs
 export const GET_TESTID_RADIO_GROUP = (name: string) => `radio-group-${name}`;

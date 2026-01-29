@@ -1,0 +1,207 @@
+/**
+ * NavigationTree Component Styles
+ * 
+ * Implements hierarchical navigation tree with expand/collapse functionality
+ * Following BC Design System specifications and WCAG AAA accessibility standards
+ */
+
+.nav-tree {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nav-tree--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.nav-tree-empty-message {
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Navigation Node */
+.nav-tree-node {
+  position: relative;
+}
+
+/* Navigation Button */
+.nav-tree-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--text-primary, #1f2937);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  border-radius: 0.25rem;
+  margin: 0.125rem 0;
+}
+
+.nav-tree-button:hover {
+  background-color: var(--surface-hover, #f3f4f6);
+  color: var(--text-primary, #1f2937);
+}
+
+.nav-tree-button:focus {
+  outline: 2px solid var(--focus-ring, #2563eb);
+  outline-offset: 2px;
+  background-color: var(--surface-hover, #f3f4f6);
+}
+
+.nav-tree-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.nav-tree-button:focus-visible {
+  outline: 2px solid var(--focus-ring, #2563eb);
+  outline-offset: 2px;
+}
+
+/* Active State */
+.nav-tree-button--active {
+  background-color: var(--primary-light, #dbeafe);
+  color: var(--primary-dark, #1e40af);
+  font-weight: 600;
+}
+
+.nav-tree-button--active:hover {
+  background-color: var(--primary-light, #dbeafe);
+  color: var(--primary-dark, #1e40af);
+}
+
+/* Expand/Collapse Icon */
+.nav-tree-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  font-size: 0.625rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nav-tree-icon--expanded {
+  transform: rotate(90deg);
+}
+
+/* Node Number */
+.nav-tree-number {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  flex-shrink: 0;
+}
+
+.nav-tree-button--active .nav-tree-number {
+  color: var(--primary-dark, #1e40af);
+}
+
+/* Node Title */
+.nav-tree-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Children Container */
+.nav-tree-children {
+  margin-left: 0;
+}
+
+/* Level-specific indentation is handled via inline styles in the component */
+
+/* Responsive Design */
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+  .nav-tree-button {
+    font-size: 0.8125rem;
+    padding: 0.4375rem 0.875rem;
+  }
+  
+  .nav-tree-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: 0.4375rem;
+  }
+  
+  .nav-tree-number {
+    margin-right: 0.4375rem;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .nav-tree-button {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+    /* Larger tap targets for mobile */
+    min-height: 44px;
+  }
+  
+  .nav-tree-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .nav-tree-number {
+    margin-right: 0.5rem;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .nav-tree-button {
+    border: 1px solid transparent;
+  }
+  
+  .nav-tree-button:focus {
+    border-color: currentColor;
+  }
+  
+  .nav-tree-button--active {
+    border-color: var(--primary-dark, #1e40af);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .nav-tree-button,
+  .nav-tree-icon {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .nav-tree {
+    overflow: visible;
+  }
+  
+  .nav-tree-button {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .nav-tree-icon {
+    display: none;
+  }
+  
+  .nav-tree-children {
+    display: block !important;
+  }
+}

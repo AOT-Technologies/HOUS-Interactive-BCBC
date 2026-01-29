@@ -1,0 +1,243 @@
+/**
+ * Sidebar Component Styles
+ * 
+ * Responsive behavior:
+ * - Mobile/Tablet (< 1024px): Drawer overlay
+ * - Desktop (≥ 1024px): Collapsible sidebar
+ */
+
+/* ============================================
+   MOBILE/TABLET DRAWER (< 1024px)
+   ============================================ */
+
+/* Mobile toggle button - visible only on mobile/tablet */
+.ui-Sidebar--MobileToggle {
+  position: fixed;
+  top: calc(var(--header-height) + var(--layout-padding-medium));
+  left: var(--layout-padding-medium);
+  z-index: 100;
+  box-shadow: var(--surface-shadow-medium);
+}
+
+/* Mobile overlay */
+.ui-Sidebar--MobileOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: var(--surface-color-overlay-default);
+}
+
+/* Mobile modal */
+.ui-Sidebar--MobileModal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 85%;
+  max-width: 400px;
+  outline: none;
+  background: var(--surface-color-background-white);
+  box-shadow: var(--surface-shadow-large);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Slide-in animation for mobile drawer */
+.ui-Sidebar--MobileModal[data-entering] {
+  animation: sidebar-slide-in 300ms ease-out;
+}
+
+.ui-Sidebar--MobileModal[data-exiting] {
+  animation: sidebar-slide-out 300ms ease-in;
+}
+
+@keyframes sidebar-slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sidebar-slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile dialog */
+.ui-Sidebar--MobileDialog {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Mobile header with close button */
+.ui-Sidebar--MobileHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--layout-padding-medium);
+  border-bottom: var(--layout-border-width-small) solid var(--surface-color-border-default);
+  flex-shrink: 0;
+}
+
+/* Mobile content area */
+.ui-Sidebar--MobileContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--layout-padding-medium);
+}
+
+/* ============================================
+   DESKTOP SIDEBAR (≥ 1024px)
+   ============================================ */
+
+/* Desktop sidebar - hidden on mobile */
+.ui-Sidebar {
+  display: none;
+}
+
+/* Toggle button - hidden on mobile */
+.ui-Sidebar--ToggleButton {
+  display: none;
+}
+
+/* TABLET - 1024px and up */
+@media (min-width: 64rem) {
+  /* Hide mobile toggle button */
+  .ui-Sidebar--MobileToggle {
+    display: none;
+  }
+
+  /* Show desktop sidebar */
+  .ui-Sidebar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: var(--sidebar-width, 320px);
+    min-width: var(--sidebar-width-min, 280px);
+    max-width: var(--sidebar-width-max, 400px);
+    height: calc(100vh - var(--header-height-full, 60px));
+    background: var(--surface-color-background-white);
+    border-right: var(--layout-border-width-small) solid var(--surface-color-border-default);
+    transition: width 300ms ease-in-out, min-width 300ms ease-in-out;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* Collapsed state */
+  .ui-Sidebar.--collapsed {
+    width: var(--sidebar-width-collapsed, 60px);
+    min-width: var(--sidebar-width-collapsed, 60px);
+  }
+
+  /* Sidebar content */
+  .ui-Sidebar--Content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--layout-padding-medium);
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  /* Hide content when collapsed */
+  .ui-Sidebar.--collapsed .ui-Sidebar--Content {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Toggle button */
+  .ui-Sidebar--ToggleButton {
+    display: flex;
+    position: absolute;
+    top: var(--layout-padding-medium);
+    right: var(--layout-padding-medium);
+    z-index: 10;
+    box-shadow: var(--surface-shadow-small);
+  }
+
+  /* Adjust toggle button position when collapsed */
+  .ui-Sidebar.--collapsed .ui-Sidebar--ToggleButton {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  /* Smooth scrolling for scroll-to-active */
+  .ui-Sidebar--Content {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  .ui-Sidebar--Content:focus {
+    outline: var(--layout-border-width-medium) solid var(--surface-color-border-active);
+    outline-offset: calc(var(--outline-offset) * -1);
+  }
+}
+
+/* DESKTOP - 1200px and up - wider sidebar */
+@media (min-width: 75rem) {
+  .ui-Sidebar {
+    width: var(--sidebar-width, 360px);
+    min-width: var(--sidebar-width-min, 320px);
+  }
+}
+
+/* DESKTOP LARGE - 1504px and up - even wider sidebar */
+@media (min-width: 94rem) {
+  .ui-Sidebar {
+    width: var(--sidebar-width, 400px);
+    min-width: var(--sidebar-width-min, 360px);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ui-Sidebar {
+    border-right-width: var(--layout-border-width-medium);
+  }
+
+  .ui-Sidebar--MobileModal {
+    border-right: var(--layout-border-width-medium) solid var(--surface-color-border-dark);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ui-Sidebar {
+    transition: none;
+  }
+
+  .ui-Sidebar--Content {
+    transition: none;
+  }
+
+  .ui-Sidebar--MobileModal[data-entering],
+  .ui-Sidebar--MobileModal[data-exiting] {
+    animation: none;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.ui-Sidebar--ToggleButton:focus-visible,
+.ui-Sidebar--MobileToggle:focus-visible {
+  outline: var(--layout-border-width-medium) solid var(--surface-color-border-active);
+  outline-offset: var(--outline-offset);
+}
