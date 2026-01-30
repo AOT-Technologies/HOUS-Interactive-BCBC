@@ -1,39 +1,63 @@
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'BC Building Code Interactive',
-  description:
-    'Interactive web application for the British Columbia Building Code - search, navigate, and understand the building code.',
-};
+import { useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+import MainLayout from '@/components/layout/MainLayout';
+import HomeSidebarContent from '@/components/home/HomeSidebarContent';
+import HeroSearch from '@repo/ui/hero-search';
+import QuickAccessPins from '@/components/home/QuickAccessPins';
+import { getSearchClient } from '@/lib/search-client';
+import './page.css';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleSearch = useCallback((query: string) => {
+    // Navigate to search page with query
+    router.push(`/search?q=${encodeURIComponent(query)}`);
+  }, [router]);
+
+  const handleGetSuggestions = useCallback(async (query: string): Promise<string[]> => {
+    try {
+      const client = getSearchClient();
+      
+      // Initialize if not already done
+      if (!client.isInitialized()) {
+        await client.initialize();
+      }
+      
+      // Get suggestions from FlexSearch index
+      const suggestions = await client.getSuggestions(query, 5);
+      return suggestions;
+    } catch (error) {
+      console.error('Failed to get suggestions:', error);
+      return [];
+    }
+  }, []);
+
   return (
-    <div className="u-container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
-      <h2>Welcome to the BC Building Code Interactive Application</h2>
-      <p>
-        This application provides an intuitive, searchable interface for the
-        2024 British Columbia Building Code.
-      </p>
+    <MainLayout 
+      showSidebar 
+      sidebarContent={<HomeSidebarContent />}
+    >
+      <div className="homepage">
+        {/* Hero Section */}
+        <section className="homepage-hero">
+          <HeroSearch
+            onSearch={handleSearch}
+            getSuggestions={handleGetSuggestions}
+            title="BC Building Code"
+            subtitle="Search and navigate the official British Columbia Building Code. Find requirements, definitions, and technical guidance for construction projects across BC."
+            placeholder="Search for keywords (e.g. &quot;Egress&quot;, &quot;Radon&quot;) or Section..."
+          />
+        </section>
 
-      <section style={{ marginTop: '2rem' }}>
-        <h3>Key Features</h3>
-        <ul>
-          <li>Full-text search with instant results</li>
-          <li>Hierarchical navigation through code sections</li>
-          <li>Inline glossary definitions</li>
-          <li>Effective date filtering for amendments</li>
-          <li>Responsive design for all devices</li>
-          <li>WCAG AAA accessible</li>
-        </ul>
-      </section>
-
-      <section style={{ marginTop: '2rem' }}>
-        <h3>Getting Started</h3>
-        <p>
-          Use the navigation menu above to explore the building code, or use
-          the search feature to find specific requirements.
-        </p>
-      </section>
-    </div>
+        {/* Quick Access Section */}
+        <section className="homepage-quick-access">
+          <QuickAccessPins />
+        </section>
+      </div>
+    </MainLayout>
   );
 }
+

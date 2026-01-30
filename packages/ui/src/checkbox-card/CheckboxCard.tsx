@@ -25,11 +25,12 @@ export default function CheckboxCard({
   isSelected,
   "data-testid": testid = "",
   "aria-label": ariaLabel = "",
+  className = "",
   ...props
 }: CheckboxCardProps) {
   return (
     <ReactAriaCheckbox
-      className="ui-CheckboxCard--CardContainer"
+      className={`ui-CheckboxCard--CardContainer ${className}`.trim()}
       aria-label={ariaLabel || `${superTitle} - ${title} - ${description}`}
       data-testid={GET_TESTID_CHECKBOX_CARD(testid || title)}
       isSelected={isSelected}

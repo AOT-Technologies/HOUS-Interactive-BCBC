@@ -123,14 +123,15 @@ interface Clause {
 
 /**
  * Sentence structure from BCBC JSON
+ * @deprecated Currently unused but kept for future reference
  */
-interface Sentence {
-  id?: string;
-  type?: string;
-  number?: number;
-  text?: string;
-  clauses?: Clause[];
-}
+// interface Sentence {
+//   id?: string;
+//   type?: string;
+//   number?: number;
+//   text?: string;
+//   clauses?: Clause[];
+// }
 
 /**
  * Content item (sentence, table, figure, etc.)

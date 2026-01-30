@@ -582,7 +582,7 @@ function createBaseDocument(
   part: BCBCPart,
   section: BCBCSection | null,
   subsection: BCBCSubsection | null,
-  config: IndexerConfig
+  _config: IndexerConfig
 ): Partial<SearchDocument> {
   return {
     divisionId: division.id,
@@ -808,7 +808,7 @@ function createFigureDocument(
   const fullNumber = `${articleNumber} Figure ${figureNum}`;
   const urlPath = `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}#${figure.id}`;
   
-  const title = figure.title || figure.caption || `Figure ${figureNum}`;
+  const title = figure.title || `Figure ${figureNum}`;
   const text = normalizeWhitespace(stripReferences(title, config.references));
   
   // Calculate priority

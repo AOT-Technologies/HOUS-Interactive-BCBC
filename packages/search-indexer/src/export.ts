@@ -5,7 +5,7 @@
  * Supports both unified metadata.json and individual files.
  */
 
-import type { SearchDocument, SearchMetadata, IndexerConfig } from './config';
+import type { SearchDocument, SearchMetadata } from './config';
 import { DEFAULT_OUTPUT_CONFIG } from './config';
 
 /**

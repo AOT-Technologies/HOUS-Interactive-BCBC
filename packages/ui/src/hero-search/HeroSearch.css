@@ -2,50 +2,52 @@
 
 .ui-HeroSearch {
   background-color: #003366; /* BC Blue - Dark */
-  padding: var(--layout-padding-xlarge, 48px) var(--layout-padding-container, 24px);
-  text-align: center;
+  padding: 48px 32px;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 .ui-HeroSearch--Content {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--layout-margin-medium, 16px);
+  max-width: 680px;
+  width: 100%;
 }
 
 /* Title */
 .ui-HeroSearch--Title {
-  font: var(--typography-bold-h1, 700 36px/1.2 "BC Sans", sans-serif);
-  color: var(--surface-color-background-white, #ffffff);
-  margin: 0 0 var(--layout-margin-small, 8px) 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
 
 /* Subtitle */
 .ui-HeroSearch--Subtitle {
-  font: var(--typography-regular-body-large, 400 18px/1.6 "BC Sans", sans-serif);
-  color: var(--surface-color-background-white, #ffffff);
-  margin: 0 0 var(--layout-margin-large, 24px) 0;
-  max-width: 700px;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  line-height: 1.5;
 }
 
-/* Search Wrapper */
+/* Search Wrapper - White container with button inside */
 .ui-HeroSearch--SearchWrapper {
   display: flex;
-  gap: var(--layout-margin-small, 8px);
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 700px;
+  align-items: stretch;
+  max-width: 680px;
+  margin-top: 24px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 8px;
+  gap: 8px;
 }
 
 /* Input Wrapper - contains input and dropdown */
 .ui-HeroSearch--InputWrapper {
   position: relative;
   flex: 1;
-  max-width: 540px;
+  display: flex;
+  align-items: center;
 }
 
 /* Search Icon */
@@ -54,47 +56,48 @@
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--typography-color-secondary, #666);
+  color: #606060;
   pointer-events: none;
   z-index: 1;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Input Field */
 .ui-HeroSearch--Input {
+  flex: 1;
   width: 100%;
-  padding: 16px 16px 16px 52px;
-  font: var(--typography-regular-body, 400 20px/1.5 "BC Sans", sans-serif);
-  color: var(--typography-color-primary, #333);
-  background-color: var(--surface-color-background-white, #fff);
-  border: 1px solid var(--surface-color-border-default, #ccc);
-  border-radius: var(--layout-borderradius-default, 4px);
+  padding: 12px 16px 12px 48px;
+  font-size: 16px;
+  font-family: 'Noto Sans', 'BC Sans', sans-serif;
+  border: none;
+  border-radius: 0;
   outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.ui-HeroSearch--Input:focus {
-  border-color: var(--surface-color-border-active, #0066cc);
-  box-shadow: 0 0 0 3px var(--surface-color-border-focus, rgba(0, 102, 204, 0.2));
+  background-color: transparent;
+  color: #313132;
+  line-height: 1.6;
 }
 
 .ui-HeroSearch--Input::placeholder {
-  color: var(--typography-color-secondary, #666);
+  color: #606060;
+}
+
+.ui-HeroSearch--Input:focus {
+  outline: none;
 }
 
 /* Dropdown */
 .ui-HeroSearch--Dropdown {
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  top: calc(100% + 16px);
+  left: -8px;
+  right: -8px;
   list-style: none;
-  margin: 4px 0 0 0;
-  padding: var(--layout-padding-xsmall, 4px) 0;
-  background-color: var(--surface-color-background-white, #fff);
-  border: 1px solid var(--surface-color-border-default, #ccc);
-  border-radius: var(--layout-borderradius-default, 4px);
+  margin: 0;
+  padding: 4px 0;
+  background-color: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 9999;
   max-height: 300px;
@@ -103,86 +106,81 @@
 
 /* Option Item */
 .ui-HeroSearch--Option {
-  padding: var(--layout-padding-small, 8px) var(--layout-padding-medium, 16px);
-  font: var(--typography-regular-body, 400 16px/1.5 "BC Sans", sans-serif);
-  color: var(--typography-color-primary, #333);
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'Noto Sans', 'BC Sans', sans-serif;
+  color: #313132;
   cursor: pointer;
   transition: background-color 0.15s ease;
 }
 
 .ui-HeroSearch--Option:hover,
 .ui-HeroSearch--Option.--highlighted {
-  background-color: var(--surface-color-background-light, #f5f5f5);
+  background-color: #F2F2F2;
 }
 
 /* Loading State */
 .ui-HeroSearch--LoadingItem {
-  padding: var(--layout-padding-medium, 16px);
+  padding: 16px;
   text-align: center;
-  color: var(--typography-color-secondary, #666);
-  font: var(--typography-regular-body, 400 16px/1.5 "BC Sans", sans-serif);
+  color: #606060;
+  font-size: 16px;
+  font-family: 'Noto Sans', 'BC Sans', sans-serif;
   cursor: default;
 }
 
-/* Search Button */
+/* Search Button - Inside the white container */
 .ui-HeroSearch--Button {
-  min-width: 120px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Noto Sans', 'BC Sans', sans-serif;
+  color: #FFFFFF;
+  background-color: #003366;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
-/* Responsive */
-@media (max-width: 912px) {
-  .ui-HeroSearch {
-    padding: var(--layout-padding-large, 32px) var(--layout-padding-medium, 16px);
-  }
-
-  .ui-HeroSearch--Title {
-    font-size: 32px;
-  }
-
-  .ui-HeroSearch--Subtitle {
-    font-size: 16px;
-  }
-
-  .ui-HeroSearch--InputWrapper {
-    max-width: 450px;
-  }
+.ui-HeroSearch--Button:hover {
+  background-color: #004080;
 }
 
+.ui-HeroSearch--Button:focus {
+  outline: 2px solid #FCBA19;
+  outline-offset: 2px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .ui-HeroSearch {
-    padding: var(--layout-padding-medium, 24px) var(--layout-padding-small, 12px);
+    padding: 32px 16px;
   }
 
-  .ui-HeroSearch--Title {
-    font-size: 28px;
-  }
-
-  .ui-HeroSearch--Subtitle {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .ui-HeroSearch--SearchWrapper {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .ui-HeroSearch--InputWrapper {
-    max-width: 100%;
-  }
-
-  .ui-HeroSearch--Button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
   .ui-HeroSearch--Title {
     font-size: 24px;
   }
 
   .ui-HeroSearch--Subtitle {
     font-size: 14px;
+  }
+
+  .ui-HeroSearch--SearchWrapper {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .ui-HeroSearch--Button {
+    width: 100%;
+    padding: 14px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui-HeroSearch--Title {
+    font-size: 18px;
   }
 }

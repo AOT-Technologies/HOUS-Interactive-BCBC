@@ -47,8 +47,8 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Header
           skipLinks={skipLinks}
           title="BC Building Code"
