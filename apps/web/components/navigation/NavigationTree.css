@@ -60,6 +60,16 @@
   background: #F1F8FE;
 }
 
+/* Matching node highlight (search results) */
+.nav-tree-link-wrapper--matching {
+  background: #FFFBEA;
+}
+
+/* Active takes precedence over matching */
+.nav-tree-link-wrapper--active.nav-tree-link-wrapper--matching {
+  background: #F1F8FE;
+}
+
 /* Selection Indicator */
 .nav-tree-selection {
   flex-shrink: 0;
@@ -102,9 +112,10 @@
 
 /* Link text container */
 .nav-tree-text {
-  display: flex;
-  align-items: center;
-  flex: 1;
+  display: block;
+  width: 100%;
+  word-break: break-word;
+  text-align: left;
 }
 
 /* Hover state - underline */
@@ -119,6 +130,17 @@
   line-height: 27px;
 }
 
+/* Matching node text (search results) */
+.nav-tree-link--matching {
+  font-weight: 600;
+}
+
+/* Active takes precedence over matching */
+.nav-tree-link--active.nav-tree-link--matching {
+  font-weight: 700;
+  color: #1A5A96;
+}
+
 /* Active hover state - bold, blue text, underlined */
 .nav-tree-link--active:hover {
   text-decoration: underline;
@@ -128,6 +150,21 @@
 .nav-tree-number {
   font-weight: inherit;
   color: inherit;
+  white-space: nowrap;
+}
+
+/* Separator styling */
+.nav-tree-separator {
+  font-weight: inherit;
+  color: inherit;
+  white-space: pre;         /* Preserves spaces */
+}
+
+/* Title styling */
+.nav-tree-title {
+  font-weight: inherit;
+  color: inherit;
+  word-break: break-word;
 }
 
 /* Children container */

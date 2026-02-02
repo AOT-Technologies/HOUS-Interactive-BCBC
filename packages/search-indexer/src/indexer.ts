@@ -103,11 +103,30 @@ interface BCBCGlossaryEntry {
   location_id?: string;
 }
 
+interface BCBCFrontMatterContent {
+  type: string;
+  id: string;
+  content?: string;
+  level?: number;
+}
+
+interface BCBCPreface {
+  id: string;
+  type: string;
+  content: BCBCFrontMatterContent[];
+}
+
+interface BCBCFrontMatter {
+  id: string;
+  preface?: BCBCPreface;
+}
+
 interface BCBCDocument {
   document_type: string;
   version: string;
   divisions: BCBCDivision[];
   glossary?: Record<string, BCBCGlossaryEntry>;
+  front_matter?: BCBCFrontMatter;
 }
 
 /**
@@ -143,6 +162,15 @@ export function buildSearchIndex(
   const revisionDatesMap = new Map<string, { count: number; types: Set<string> }>();
   const tableOfContents: TableOfContentsItem[] = [];
   const contentTypesFound = new Set<IndexableContentType>();
+
+  // Process front matter (preface) if present
+  if (bcbcData.front_matter?.preface && fullConfig.contentTypes.article.enabled) {
+    const frontMatterTocItem = processFrontMatter(bcbcData.front_matter, documents, fullConfig);
+    if (frontMatterTocItem) {
+      tableOfContents.push(frontMatterTocItem);
+    }
+    contentTypesFound.add('article');
+  }
 
   // Process divisions
   for (const division of bcbcData.divisions) {
@@ -834,6 +862,82 @@ function createFigureDocument(
     hasFigures: true,
     searchPriority: priority,
   } as SearchDocument;
+}
+
+/**
+ * Process front matter (preface)
+ */
+function processFrontMatter(
+  frontMatter: BCBCFrontMatter,
+  documents: SearchDocument[],
+  config: IndexerConfig
+): TableOfContentsItem | null {
+  if (!frontMatter.preface) return null;
+
+  const preface = frontMatter.preface;
+  
+  // Extract text from all content items
+  const textParts: string[] = [];
+  for (const item of preface.content) {
+    if (item.content) {
+      textParts.push(item.content);
+    }
+  }
+  
+  const fullText = textParts.join(' ');
+  const text = stripReferences(fullText, config.references);
+  
+  // Create a single document for the preface
+  documents.push({
+    id: preface.id,
+    type: 'article',
+    articleNumber: 'Preface',
+    title: 'Preface',
+    text,
+    snippet: generateSnippet(text, config.textExtraction.snippetLength),
+    divisionId: 'front-matter',
+    divisionLetter: '',
+    divisionTitle: 'Front Matter',
+    partId: '',
+    partNumber: 0,
+    partTitle: '',
+    sectionId: '',
+    sectionNumber: 0,
+    sectionTitle: '',
+    subsectionId: '',
+    subsectionNumber: 0,
+    subsectionTitle: '',
+    path: 'Front Matter > Preface',
+    breadcrumbs: ['Front Matter', 'Preface'],
+    urlPath: '/preface',
+    hasAmendment: false,
+    hasInternalRefs: hasInternalRefs(fullText),
+    hasExternalRefs: hasExternalRefs(fullText),
+    hasTermRefs: hasTermRefs(fullText),
+    hasTables: false,
+    hasFigures: false,
+    searchPriority: config.contentTypes.article.priority,
+  });
+
+  // Create TOC item for front matter
+  return {
+    id: 'front-matter',
+    type: 'division',
+    number: '',
+    title: 'Front Matter',
+    level: 0,
+    children: [
+      {
+        id: preface.id,
+        type: 'article',
+        number: '',
+        title: 'Preface',
+        level: 1,
+        hasRevisions: false,
+      }
+    ],
+    hasRevisions: false,
+  };
 }
 
 /**

@@ -27,6 +27,10 @@ interface NavigationStore {
   expandedNodes: Set<string>;
   currentPath: string;
   loading: boolean;
+  searchQuery: string;
+  filteredTree: NavigationNode[];
+  matchingNodeIds: Set<string>;
+  preSearchExpandedNodes: Set<string>;
   toggleNode: (nodeId: string) => void;
   setCurrentPath: (path: string, updateUrl?: boolean) => void;
   expandToNode: (nodeId: string) => void;
@@ -34,11 +38,13 @@ interface NavigationStore {
   collapseAll: () => void;
   syncFromUrl: () => void;
   navigateToPath: (params: ContentPathParams, queryParams?: Record<string, string>) => void;
+  setSearchQuery: (query: string) => void;
+  clearSearch: () => void;
 }
 
 /**
  * Navigation store
- * Manages navigation tree, expanded nodes, and current path
+ * Manages navigation tree, expanded nodes, current path, and TOC search
  */
 export const useNavigationStore = create<NavigationStore>()(
   devtools(
@@ -47,6 +53,10 @@ export const useNavigationStore = create<NavigationStore>()(
       expandedNodes: new Set<string>(),
       currentPath: '',
       loading: false,
+      searchQuery: '',
+      filteredTree: [],
+      matchingNodeIds: new Set<string>(),
+      preSearchExpandedNodes: new Set<string>(),
 
       toggleNode: (nodeId) =>
         set((state) => {
@@ -197,6 +207,132 @@ export const useNavigationStore = create<NavigationStore>()(
         if (nodeId) {
           get().expandToNode(nodeId);
         }
+      },
+
+      /**
+       * Set search query and filter navigation tree
+       * Searches across all levels and auto-expands parent nodes to show matches
+       */
+      setSearchQuery: (query: string) => {
+        const trimmedQuery = query.trim();
+        
+        if (!trimmedQuery) {
+          // Clear search
+          set({ 
+            searchQuery: '', 
+            filteredTree: [], 
+            matchingNodeIds: new Set() 
+          });
+          return;
+        }
+
+        const { navigationTree, expandedNodes } = get();
+        
+        // Save current expanded state before first search
+        if (!get().searchQuery) {
+          set({ preSearchExpandedNodes: new Set(expandedNodes) });
+        }
+        
+        const lowerQuery = trimmedQuery.toLowerCase();
+        const matchingIds = new Set<string>();
+        const nodesToExpand = new Set<string>();
+
+        /**
+         * Check if a node matches the search query
+         */
+        const nodeMatches = (node: NavigationNode): boolean => {
+          // Match against title
+          if (node.title.toLowerCase().includes(lowerQuery)) {
+            return true;
+          }
+          
+          // Match against number
+          if (node.number && node.number.toString().includes(lowerQuery)) {
+            return true;
+          }
+          
+          // Match against type + number (e.g., "Part 3", "Section 2")
+          const typeNumber = `${node.type} ${node.number}`.toLowerCase();
+          if (typeNumber.includes(lowerQuery)) {
+            return true;
+          }
+          
+          return false;
+        };
+
+        /**
+         * Recursively search tree and collect matching nodes and their parents
+         * Returns true if this node or any descendant matches
+         */
+        const searchTree = (
+          nodes: NavigationNode[], 
+          parentIds: string[] = []
+        ): NavigationNode[] => {
+          const results: NavigationNode[] = [];
+
+          for (const node of nodes) {
+            const currentPath = [...parentIds, node.id];
+            let includeNode = false;
+            let filteredChildren: NavigationNode[] = [];
+
+            // Check if current node matches
+            if (nodeMatches(node)) {
+              matchingIds.add(node.id);
+              includeNode = true;
+              
+              // Add all parent IDs to expansion set
+              parentIds.forEach(id => nodesToExpand.add(id));
+              nodesToExpand.add(node.id);
+            }
+
+            // Recursively search children
+            if (node.children && node.children.length > 0) {
+              filteredChildren = searchTree(node.children, currentPath);
+              
+              // If any children match, include this node as parent
+              if (filteredChildren.length > 0) {
+                includeNode = true;
+                // Add this node to expansion set
+                nodesToExpand.add(node.id);
+              }
+            }
+
+            // Include node if it matches or has matching descendants
+            if (includeNode) {
+              results.push({
+                ...node,
+                children: filteredChildren.length > 0 ? filteredChildren : node.children,
+              });
+            }
+          }
+
+          return results;
+        };
+
+        // Perform search
+        const filtered = searchTree(navigationTree);
+
+        // Update state with filtered tree and auto-expand matching nodes
+        set((state) => ({
+          searchQuery: trimmedQuery,
+          filteredTree: filtered,
+          matchingNodeIds: matchingIds,
+          expandedNodes: new Set([...state.expandedNodes, ...nodesToExpand]),
+        }));
+      },
+
+      /**
+       * Clear search query and restore tree to pre-search state
+       */
+      clearSearch: () => {
+        const { preSearchExpandedNodes } = get();
+        set({ 
+          searchQuery: '', 
+          filteredTree: [], 
+          matchingNodeIds: new Set(),
+          expandedNodes: preSearchExpandedNodes,
+          preSearchExpandedNodes: new Set(),
+        });
       },
     }),
     { name: 'navigation-store' }

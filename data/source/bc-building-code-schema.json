@@ -28,6 +28,10 @@
       "$ref": "#/definitions/metadata",
       "description": "Document metadata (optional, controlled by include-metadata parameter)"
     },
+    "front_matter": {
+      "$ref": "#/definitions/front_matter",
+      "description": "Front matter content including preface, introduction, and committees"
+    },
     "divisions": {
       "type": "array",
       "items": {
@@ -59,6 +63,199 @@
     }
   },
   "definitions": {
+    "front_matter": {
+      "type": "object",
+      "required": ["id"],
+      "description": "Front matter content including preface, introduction, and committees",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the front matter section"
+        },
+        "preface": {
+          "$ref": "#/definitions/preface",
+          "description": "Preface section with introductory content about the code"
+        },
+        "introduction": {
+          "$ref": "#/definitions/introduction",
+          "description": "Introduction section with standards and conformity assessment information"
+        },
+        "committees": {
+          "$ref": "#/definitions/committees",
+          "description": "Committees section listing commission and standing committee members"
+        }
+      }
+    },
+    "preface": {
+      "type": "object",
+      "required": ["id", "type", "content"],
+      "description": "Preface section containing introductory paragraphs and headings",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the preface"
+        },
+        "type": {
+          "type": "string",
+          "const": "preface"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/front_matter_content_item"
+          },
+          "description": "Array of content items (paragraphs, headings, tables, figures, lists)"
+        }
+      }
+    },
+    "introduction": {
+      "type": "object",
+      "required": ["id", "type", "content"],
+      "description": "Introduction section with standards and conformity assessment information",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the introduction"
+        },
+        "type": {
+          "type": "string",
+          "const": "introduction"
+        },
+        "title": {
+          "type": "string",
+          "description": "Main title of the introduction section"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/front_matter_content_item"
+          },
+          "description": "Array of content items (paragraphs, headings, tables, figures, lists)"
+        }
+      }
+    },
+    "committees": {
+      "type": "object",
+      "required": ["id", "type"],
+      "description": "Committees section listing commission and standing committee members",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the committees section"
+        },
+        "type": {
+          "type": "string",
+          "const": "committees"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the committees section"
+        },
+        "tables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/table"
+          },
+          "description": "Tables listing committee members"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Notes about committee membership (e.g., term start dates)"
+        }
+      }
+    },
+    "front_matter_content_item": {
+      "type": "object",
+      "required": ["type"],
+      "description": "A content item within front matter sections",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["paragraph", "heading", "table", "figure", "list"],
+          "description": "Type of content item"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the content item"
+        },
+        "content": {
+          "type": "string",
+          "description": "Text content (for paragraphs and headings)"
+        },
+        "level": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Heading level (1-6, for heading type only)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title (for tables and figures)"
+        },
+        "structure": {
+          "type": "object",
+          "description": "Table structure (for table type only)",
+          "properties": {
+            "columns": {
+              "type": ["number", "null"]
+            },
+            "header_rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/table_entry"
+                }
+              }
+            },
+            "body_rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/table_entry"
+                }
+              }
+            }
+          }
+        },
+        "graphic": {
+          "type": "object",
+          "description": "Graphic information (for figure type only)",
+          "properties": {
+            "src": {
+              "type": "string"
+            },
+            "alt_text": {
+              "type": "string"
+            }
+          }
+        },
+        "list_type": {
+          "type": "string",
+          "enum": ["bulleted", "numbered"],
+          "description": "List type (for list type only)"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List items (for list type only)"
+        }
+      }
+    },
     "metadata": {
       "type": "object",
       "required": ["title", "authority"],
