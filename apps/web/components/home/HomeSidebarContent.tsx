@@ -1,6 +1,8 @@
 'use client';
 
+import { useEffect } from 'react';
 import { NavigationTree } from '@/components/navigation/NavigationTree';
+import { useNavigationStore } from '@/stores/navigation-store';
 import './HomeSidebarContent.css';
 
 /**
@@ -15,6 +17,13 @@ import './HomeSidebarContent.css';
  * Requirements: 4.1, 4.2, 9.1, 9.2, 9.3
  */
 export default function HomeSidebarContent() {
+  const { loadNavigationTree } = useNavigationStore();
+
+  // Load navigation tree on mount
+  useEffect(() => {
+    loadNavigationTree();
+  }, [loadNavigationTree]);
+
   return (
     <div className="home-sidebar-content">
       {/* Sidebar Header */}

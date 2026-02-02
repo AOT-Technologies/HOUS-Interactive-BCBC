@@ -99,12 +99,41 @@ export const useNavigationStore = create<NavigationStore>()(
       loadNavigationTree: async () => {
         set({ loading: true });
         try {
-          // TODO: Load navigation tree from /public/data/navigation-tree.json
-          // This will be implemented in Sprint 1 after the build pipeline is set up
           const response = await fetch('/data/navigation-tree.json');
           if (response.ok) {
             const data = await response.json();
-            set({ navigationTree: data.divisions || [], loading: false });
+            
+            // Transform the data to add path property to each node
+            const addPathToNodes = (nodes: any[], parentPath: string = ''): NavigationNode[] => {
+              return nodes.map((node) => {
+                // Build path based on node type
+                let path = parentPath;
+                
+                if (node.type === 'division') {
+                  path = `/code/div${node.number.toLowerCase()}`;
+                } else if (node.type === 'part') {
+                  path = `${parentPath}/part-${node.number}`;
+                } else if (node.type === 'section') {
+                  path = `${parentPath}/section-${node.number}`;
+                } else if (node.type === 'subsection') {
+                  path = `${parentPath}/subsection-${node.number}`;
+                } else if (node.type === 'article') {
+                  path = `${parentPath}/article-${node.number}`;
+                }
+                
+                return {
+                  id: node.id,
+                  number: node.number.toString(),
+                  title: node.title,
+                  type: node.type,
+                  path,
+                  children: node.children ? addPathToNodes(node.children, path) : undefined,
+                };
+              });
+            };
+            
+            const transformedTree = addPathToNodes(data.divisions || []);
+            set({ navigationTree: transformedTree, loading: false });
           } else {
             console.error('Failed to load navigation tree');
             set({ loading: false });

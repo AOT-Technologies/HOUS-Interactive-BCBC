@@ -20,7 +20,7 @@ interface NavigationTreeProps {
 /**
  * NavigationTree Component
  * 
- * Displays a hierarchical navigation tree with expand/collapse functionality.
+ * Displays a hierarchical navigation tree matching Figma design specifications.
  * Integrates with the navigation store for state management.
  * 
  * Features:
@@ -28,13 +28,14 @@ interface NavigationTreeProps {
  * - Expand/collapse controls
  * - Click handlers for navigation
  * - Keyboard navigation support
- * - Active node highlighting
+ * - Active node highlighting with blue background
+ * - Hierarchical indentation (16px per level for children, 24px for parent)
  * - Scroll-to-active functionality
  * 
  * Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 10.1
  */
 export function NavigationTree({ className = '', onNodeClick }: NavigationTreeProps) {
-  const { navigationTree, expandedNodes, currentPath, toggleNode, setCurrentPath } = useNavigationStore();
+  const { navigationTree, expandedNodes, currentPath, toggleNode, setCurrentPath, loading } = useNavigationStore();
   const treeRef = useRef<HTMLDivElement>(null);
   const activeNodeRef = useRef<HTMLButtonElement>(null);
 
@@ -110,6 +111,18 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
   );
 
   /**
+   * Calculate padding based on level and node type
+   * Parent (level 0): 0px (handled by wrapper)
+   * Child levels: 32px, 48px, 64px (16px increment per level)
+   */
+  const getPaddingLeft = (level: number): string => {
+    if (level === 0) {
+      return '0px'; // Parent level - no padding on container
+    }
+    return `${32 + (level - 1) * 16}px`; // Child levels: 32px, 48px, 64px, etc.
+  };
+
+  /**
    * Render a single navigation node
    */
   const renderNode = useCallback(
@@ -117,34 +130,42 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
       const isExpanded = expandedNodes.has(node.id);
       const isActive = currentPath === node.path;
       const hasChildren = node.children && node.children.length > 0;
+      const paddingLeft = getPaddingLeft(level);
 
       return (
         <div
           key={node.id}
-          className={`nav-tree-node nav-tree-node--level-${level}`}
+          className={`nav-tree-item`}
           data-testid={`${TESTID_NAV_NODE}-${node.id}`}
         >
-          <button
-            ref={isActive ? activeNodeRef : null}
-            className={`nav-tree-button ${isActive ? 'nav-tree-button--active' : ''}`}
-            onClick={(e) => handleNodeClick(node, e)}
-            onKeyDown={(e) => handleKeyDown(node, e)}
-            aria-expanded={hasChildren ? isExpanded : undefined}
-            aria-current={isActive ? 'page' : undefined}
-            style={{ paddingLeft: `${level * 1.5 + 1}rem` }}
+          <div 
+            className={`nav-tree-link-wrapper ${isActive ? 'nav-tree-link-wrapper--active' : ''}`}
+            style={{ paddingLeft }}
           >
-            {hasChildren && (
-              <span
-                className={`nav-tree-icon ${isExpanded ? 'nav-tree-icon--expanded' : ''}`}
-                aria-hidden="true"
-              >
-                ▶
+            {/* Selection indicator - 4px blue bar for active, 1px gray for inactive children */}
+            {isActive ? (
+              <div className="nav-tree-selection nav-tree-selection--active" />
+            ) : level > 0 ? (
+              <div className="nav-tree-selection nav-tree-selection--inactive" />
+            ) : null}
+            
+            {/* Link label */}
+            <button
+              ref={isActive ? activeNodeRef : null}
+              className={`nav-tree-link ${isActive ? 'nav-tree-link--active' : ''}`}
+              onClick={(e) => handleNodeClick(node, e)}
+              onKeyDown={(e) => handleKeyDown(node, e)}
+              aria-expanded={hasChildren ? isExpanded : undefined}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              <span className="nav-tree-text">
+                {node.number && <span className="nav-tree-number">{node.type === 'division' ? `Division ${node.number}` : `Part ${node.number}`} - </span>}
+                {node.title}
               </span>
-            )}
-            <span className="nav-tree-number">{node.number}</span>
-            <span className="nav-tree-title">{node.title}</span>
-          </button>
+            </button>
+          </div>
 
+          {/* Render children if expanded */}
           {hasChildren && isExpanded && (
             <div className="nav-tree-children" role="group">
               {node.children!.map((child) => renderNode(child, level + 1))}
@@ -155,6 +176,14 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
     },
     [expandedNodes, currentPath, handleNodeClick, handleKeyDown]
   );
+
+  if (loading) {
+    return (
+      <div className={`nav-tree nav-tree--loading ${className}`} data-testid={TESTID_NAV_TREE}>
+        <p className="nav-tree-loading-message">Loading navigation...</p>
+      </div>
+    );
+  }
 
   if (!navigationTree || navigationTree.length === 0) {
     return (

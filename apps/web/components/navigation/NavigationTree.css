@@ -1,207 +1,171 @@
 /**
  * NavigationTree Component Styles
  * 
- * Implements hierarchical navigation tree with expand/collapse functionality
- * Following BC Design System specifications and WCAG AAA accessibility standards
+ * Matches Figma design specifications for the BC Building Code navigation tree.
+ * 
+ * Design States:
+ * - Default: Regular text (400), black (#292929), no background, no border
+ * - Hover: Underlined text
+ * - Active: Blue background (#F1F8FE), blue text (#1A5A96), bold (700), 4px blue left border (#38598A)
+ * - Active Hover: Blue background, underlined blue text
+ * - Child Default: 1px gray left border (#D9D9D9)
+ * 
+ * Hierarchy Levels (padding-left on wrapper):
+ * - Parent (Level 0): 0px
+ * - Child (Level 1): 32px
+ * - Child2 (Level 2): 48px
+ * - Child3 (Level 3): 64px
  */
 
 .nav-tree {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.nav-tree--empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-}
-
-.nav-tree-empty-message {
-  color: var(--text-secondary, #6b7280);
-  font-size: 0.875rem;
+.nav-tree--empty,
+.nav-tree--loading {
+  padding: var(--layout-padding-large);
   text-align: center;
 }
 
-/* Navigation Node */
-.nav-tree-node {
+.nav-tree-empty-message,
+.nav-tree-loading-message {
+  color: var(--typography-color-secondary);
+  font: var(--typography-regular-body);
+}
+
+/* Navigation Item Container */
+.nav-tree-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Link Wrapper - Contains selection indicator and link */
+.nav-tree-link-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px; /* Gap between border and text */
+  width: 100%;
+  min-height: 43px;
   position: relative;
 }
 
-/* Navigation Button */
-.nav-tree-button {
+/* Active state background */
+.nav-tree-link-wrapper--active {
+  background: #F1F8FE;
+}
+
+/* Selection Indicator */
+.nav-tree-selection {
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* Active: 4px blue bar */
+.nav-tree-selection--active {
+  width: 4px;
+  background: #38598A;
+}
+
+/* Inactive child: 1px gray bar */
+.nav-tree-selection--inactive {
+  width: 1px;
+  background: #D9D9D9;
+}
+
+/* Link Button */
+.nav-tree-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px 8px 0px;
+  gap: 8px;
+  flex: 1;
+  min-height: 43px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'BC Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 168%;
+  color: #292929;
+  transition: text-decoration 0.2s ease;
+}
+
+/* Link text container */
+.nav-tree-text {
   display: flex;
   align-items: center;
+  flex: 1;
+}
+
+/* Hover state - underline */
+.nav-tree-link:hover {
+  text-decoration: underline;
+}
+
+/* Active state - bold, blue text, 27px line height */
+.nav-tree-link--active {
+  font-weight: 700;
+  color: #1A5A96;
+  line-height: 27px;
+}
+
+/* Active hover state - bold, blue text, underlined */
+.nav-tree-link--active:hover {
+  text-decoration: underline;
+}
+
+/* Number styling */
+.nav-tree-number {
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Children container */
+.nav-tree-children {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 0.5rem 1rem;
-  border: none;
-  background: transparent;
-  color: var(--text-primary, #1f2937);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-  border-radius: 0.25rem;
-  margin: 0.125rem 0;
 }
 
-.nav-tree-button:hover {
-  background-color: var(--surface-hover, #f3f4f6);
-  color: var(--text-primary, #1f2937);
-}
-
-.nav-tree-button:focus {
-  outline: 2px solid var(--focus-ring, #2563eb);
+/* Focus styles for accessibility */
+.nav-tree-link:focus {
+  outline: 2px solid var(--surface-color-border-active, #2563eb);
   outline-offset: 2px;
-  background-color: var(--surface-hover, #f3f4f6);
 }
 
-.nav-tree-button:focus:not(:focus-visible) {
+.nav-tree-link:focus:not(:focus-visible) {
   outline: none;
 }
 
-.nav-tree-button:focus-visible {
-  outline: 2px solid var(--focus-ring, #2563eb);
-  outline-offset: 2px;
-}
-
-/* Active State */
-.nav-tree-button--active {
-  background-color: var(--primary-light, #dbeafe);
-  color: var(--primary-dark, #1e40af);
-  font-weight: 600;
-}
-
-.nav-tree-button--active:hover {
-  background-color: var(--primary-light, #dbeafe);
-  color: var(--primary-dark, #1e40af);
-}
-
-/* Expand/Collapse Icon */
-.nav-tree-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  font-size: 0.625rem;
-  transition: transform 0.2s ease;
-  flex-shrink: 0;
-}
-
-.nav-tree-icon--expanded {
-  transform: rotate(90deg);
-}
-
-/* Node Number */
-.nav-tree-number {
-  display: inline-block;
-  margin-right: 0.5rem;
-  font-weight: 600;
-  color: var(--text-secondary, #6b7280);
-  flex-shrink: 0;
-}
-
-.nav-tree-button--active .nav-tree-number {
-  color: var(--primary-dark, #1e40af);
-}
-
-/* Node Title */
-.nav-tree-title {
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Children Container */
-.nav-tree-children {
-  margin-left: 0;
-}
-
-/* Level-specific indentation is handled via inline styles in the component */
-
-/* Responsive Design */
-
-/* Tablet (768px - 1023px) */
-@media (max-width: 1023px) {
-  .nav-tree-button {
-    font-size: 0.8125rem;
-    padding: 0.4375rem 0.875rem;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-tree-link {
+    font-size: 14px;
+    padding: 6px 12px 6px 0px;
   }
   
-  .nav-tree-icon {
-    width: 0.875rem;
-    height: 0.875rem;
-    margin-right: 0.4375rem;
+  .nav-tree-link-wrapper {
+    min-height: 38px;
   }
   
-  .nav-tree-number {
-    margin-right: 0.4375rem;
+  .nav-tree-selection--active {
+    height: 38px;
   }
 }
 
-/* Mobile (< 768px) */
-@media (max-width: 767px) {
-  .nav-tree-button {
-    font-size: 0.875rem;
-    padding: 0.625rem 1rem;
-    /* Larger tap targets for mobile */
-    min-height: 44px;
-  }
-  
-  .nav-tree-icon {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5rem;
-  }
-  
-  .nav-tree-number {
-    margin-right: 0.5rem;
-  }
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  .nav-tree-button {
-    border: 1px solid transparent;
-  }
-  
-  .nav-tree-button:focus {
-    border-color: currentColor;
-  }
-  
-  .nav-tree-button--active {
-    border-color: var(--primary-dark, #1e40af);
-  }
-}
-
-/* Reduced Motion Support */
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .nav-tree-button,
-  .nav-tree-icon {
+  .nav-tree-link {
     transition: none;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .nav-tree {
-    overflow: visible;
-  }
-  
-  .nav-tree-button {
-    padding: 0.25rem 0.5rem;
-  }
-  
-  .nav-tree-icon {
-    display: none;
-  }
-  
-  .nav-tree-children {
-    display: block !important;
   }
 }
