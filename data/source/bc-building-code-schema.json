@@ -962,6 +962,11 @@
         "key": {
           "type": "string"
         },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the objective - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
+        },
         "title": {
           "type": "string"
         },
@@ -976,6 +981,11 @@
             "properties": {
               "id": {"type": "string"},
               "key": {"type": "string"},
+              "source": {
+                "type": "string",
+                "enum": ["nbc", "bc"],
+                "description": "Source of the sub-objective - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
+              },
               "title": {"type": "string"},
               "definition": {"type": "string"}
             }
@@ -992,6 +1002,11 @@
         },
         "key": {
           "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the functional statement - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
         },
         "definition": {
           "type": "string"
