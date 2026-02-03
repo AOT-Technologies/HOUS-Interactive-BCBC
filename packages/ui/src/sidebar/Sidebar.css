@@ -137,7 +137,6 @@ button.ui-Sidebar--MobileToggle svg path {
     max-width: var(--sidebar-width-max, 400px);
     height: calc(100vh - var(--header-height-full, 60px));
     background: var(--surface-color-background-white, #FFFFFF);
-    border-right: 1px solid var(--surface-color-border-default, #D9D9D9);
     overflow: hidden;
     flex-shrink: 0;
   }
@@ -184,10 +183,6 @@ button.ui-Sidebar--MobileToggle svg path {
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .ui-Sidebar {
-    border-right-width: 2px;
-  }
-
   .ui-Sidebar--MobilePanel {
     border-bottom-width: 2px;
   }

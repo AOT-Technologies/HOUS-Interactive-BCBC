@@ -56,11 +56,12 @@
     /* When sidebar is present, content panel takes remaining space */
     flex: 1;
     min-width: 0; /* Allow flex shrinking */
+    border-left: 1px solid var(--surface-color-border-default, #D9D9D9);
   }
 
   .ui-ContentPanel--Container {
-    /* Optimal reading width for desktop */
-    max-width: var(--content-max-width, 1200px);
+    /* Fill available width - content panel is already constrained by flex layout */
+    max-width: 100%;
     padding: var(--layout-padding-xlarge) var(--layout-padding-large);
   }
 }
@@ -81,7 +82,8 @@
 
 @media (min-width: 94rem) {
   .ui-ContentPanel--Container {
-    max-width: var(--content-max-width, 1400px);
+    /* Fill available width */
+    max-width: 100%;
   }
 }
 
@@ -115,6 +117,12 @@
 @media (prefers-contrast: high) {
   .ui-ContentPanel {
     border: var(--layout-border-width-small) solid var(--surface-color-border-default);
+  }
+
+  @media (min-width: 64rem) {
+    .ui-ContentPanel {
+      border-left-width: 2px;
+    }
   }
 }
 

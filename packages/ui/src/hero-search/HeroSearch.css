@@ -195,11 +195,17 @@ button.ui-HeroSearch--Button:focus {
   }
 
   .ui-HeroSearch--SearchWrapper {
-    flex-direction: column;
+    padding: 12px;
   }
 
+  /* Hide search button on mobile - user presses Enter to search */
   .ui-HeroSearch--Button,
   button.ui-HeroSearch--Button {
+    display: none;
+  }
+
+  .ui-HeroSearch--InputWrapper {
+    flex: 1;
     width: 100%;
   }
 }
