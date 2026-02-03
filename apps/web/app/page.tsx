@@ -41,7 +41,7 @@ export default function Home() {
       sidebarContent={<HomeSidebarContent />}
     >
       <div className="homepage">
-        {/* Hero Section */}
+        {/* Hero Section - contains sidebar toggle on mobile */}
         <section className="homepage-hero">
           <HeroSearch
             onSearch={handleSearch}

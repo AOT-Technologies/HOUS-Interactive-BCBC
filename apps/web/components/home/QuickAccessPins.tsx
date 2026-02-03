@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import LinkCard from '@repo/ui/link-card';
 import './QuickAccessPins.css';
 
@@ -11,100 +10,62 @@ interface QuickAccessPin {
   description: string;
 }
 
-interface QuickAccessData {
-  version: string;
-  generatedAt: string;
-  pins: QuickAccessPin[];
-}
-
 interface QuickAccessPinsProps {
   /**
    * Optional CSS class name
    */
   className?: string;
-  /**
-   * Maximum number of pins to display
-   * @default undefined (show all)
-   */
-  maxPins?: number;
 }
+
+// Hardcoded quick access items matching Figma design
+const QUICK_ACCESS_ITEMS: QuickAccessPin[] = [
+  {
+    id: "divB-part9",
+    title: "Division B - Part 9",
+    path: "/code/nbc.divBV2/9/1",
+    description: "Housing and Small Buildings"
+  },
+  {
+    id: "divB-part3",
+    title: "Division B - Part 3",
+    path: "/code/nbc.divB/3/1",
+    description: "Fire Protection, Occupant Safety and Accessibility"
+  },
+  {
+    id: "divA-part3",
+    title: "Division A - Part 3",
+    path: "/code/nbc.divA/3/1",
+    description: "Functional Statements"
+  }
+];
 
 /**
  * QuickAccessPins Component
  * 
  * Displays frequently accessed sections of the BC Building Code as clickable cards.
- * Loads data from pre-generated quick-access.json metadata file.
+ * Uses hardcoded Division-based structure matching Figma design.
  * 
  * Features:
- * - Card-based layout
- * - Shows section title, code reference, and description
+ * - Single-column stacked layout
+ * - Shows 3 cards: Division B Part 9, Division B Part 3, Division A Part 3
  * - Click navigates to Content Reading Page
- * - Responsive grid layout
  * 
  * Requirements: 9.1, 9.2, 9.3
  */
-export default function QuickAccessPins({ className = '', maxPins }: QuickAccessPinsProps) {
-  const [pins, setPins] = useState<QuickAccessPin[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  // Load quick access data on mount
-  useEffect(() => {
-    async function loadQuickAccess() {
-      try {
-        const response = await fetch('/data/quick-access.json');
-        if (!response.ok) {
-          throw new Error('Failed to load quick access data');
-        }
-        const data: QuickAccessData = await response.json();
-        const pinsToShow = maxPins ? data.pins.slice(0, maxPins) : data.pins;
-        setPins(pinsToShow);
-      } catch (err) {
-        console.error('Error loading quick access data:', err);
-        setError('Unable to load quick access sections');
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadQuickAccess();
-  }, [maxPins]);
-
-  if (loading) {
-    return (
-      <div className={`quick-access-pins quick-access-pins--loading ${className}`}>
-        <p>Loading quick access sections...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className={`quick-access-pins quick-access-pins--error ${className}`}>
-        <p>{error}</p>
-      </div>
-    );
-  }
-
-  if (pins.length === 0) {
-    return null;
-  }
-
+export default function QuickAccessPins({ className = '' }: QuickAccessPinsProps) {
   return (
     <section className={`quick-access-pins ${className}`}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%' }}>
-        <h2 className="quick-access-pins--title">Quick Access</h2>
-        <div className="quick-access-pins--grid">
-          {pins.map((pin) => (
-            <LinkCard
-              key={pin.id}
-              title={pin.title}
-              description={pin.description}
-              href={pin.path}
-              className="quick-access-pin"
-            />
-          ))}
-        </div>
+      <h2 className="quick-access-pins--title">Quick Access</h2>
+      <div className="quick-access-pins--list">
+        {QUICK_ACCESS_ITEMS.map((pin) => (
+          <LinkCard
+            key={pin.id}
+            title={pin.title}
+            description={pin.description}
+            href={pin.path}
+            className="quick-access-pin"
+          />
+        ))}
       </div>
       
       <div className="quick-access-pins--alert">

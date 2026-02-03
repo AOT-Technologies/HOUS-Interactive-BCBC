@@ -7,7 +7,6 @@ import {
   TESTID_HERO_SEARCH_BUTTON,
 } from "@repo/constants/src/testids";
 import Button from "../button/Button";
-import Icon from "../icon/Icon";
 import "./HeroSearch.css";
 
 export interface HeroSearchProps {
@@ -106,7 +105,6 @@ export default function HeroSearch({
 
         <div className="ui-HeroSearch--SearchWrapper">
           <div ref={containerRef} className="ui-HeroSearch--InputWrapper">
-            <Icon type="search" className="ui-HeroSearch--SearchIcon" aria-hidden="true" />
             <input
               type="text"
               value={search.query}

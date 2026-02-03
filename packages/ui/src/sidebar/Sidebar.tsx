@@ -1,10 +1,9 @@
 "use client";
 
 import { ReactNode, useEffect, useState, useCallback } from "react";
-import { Dialog, Modal, ModalOverlay } from "react-aria-components";
 import Button from "../button/Button";
 import Icon from "../icon/Icon";
-import { TESTID_SIDEBAR, TESTID_SIDEBAR_TOGGLE, TESTID_SIDEBAR_MOBILE_OVERLAY } from "@repo/constants/src/testids";
+import { TESTID_SIDEBAR, TESTID_SIDEBAR_TOGGLE } from "@repo/constants/src/testids";
 import "./Sidebar.css";
 
 export interface SidebarProps {
@@ -33,24 +32,16 @@ export interface SidebarProps {
 
 /**
  * Sidebar component for navigation and filters
- * 
+ *
  * Features:
- * - Collapsible on desktop (≥ 1024px)
- * - Drawer behavior on mobile/tablet (< 1024px)
+ * - Always visible on desktop (≥ 1024px)
+ * - Collapsible inline panel on mobile/tablet (< 1024px)
  * - Scroll-to-active functionality
  * - Responsive across all breakpoints
- * 
+ *
  * Usage:
  * - Only render on Homepage and Content Reading Page
  * - Do NOT render on Search Results Page or Download Page
- * 
- * @example
- * ```tsx
- * <Sidebar>
- *   <NavigationTree />
- *   <Filters />
- * </Sidebar>
- * ```
  */
 export default function Sidebar({
   children,
@@ -59,12 +50,9 @@ export default function Sidebar({
   className = "",
   "data-testid": testid = TESTID_SIDEBAR,
 }: SidebarProps) {
-  // Desktop collapse state (≥ 1024px)
-  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
-  
-  // Mobile/tablet drawer state (< 1024px)
+  // Mobile/tablet panel expanded state (< 1024px)
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  
+
   // Track viewport size to determine mobile vs desktop behavior
   const [isMobile, setIsMobile] = useState(false);
 
@@ -73,105 +61,72 @@ export default function Sidebar({
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-    
+
     // Initial check
     checkMobile();
-    
+
     // Listen for resize
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Handle collapse toggle on desktop
-  const handleToggleCollapse = useCallback(() => {
-    const newCollapsed = !isCollapsed;
-    setIsCollapsed(newCollapsed);
-    onCollapseChange?.(newCollapsed);
-  }, [isCollapsed, onCollapseChange]);
-
-  // Handle mobile drawer toggle
+  // Handle mobile panel toggle
   const handleToggleMobile = useCallback(() => {
-    setIsMobileOpen(!isMobileOpen);
-  }, [isMobileOpen]);
+    const newOpen = !isMobileOpen;
+    setIsMobileOpen(newOpen);
+    onCollapseChange?.(!newOpen);
+  }, [isMobileOpen, onCollapseChange]);
 
-  // Close mobile drawer on window resize to desktop
+  // Close mobile panel on window resize to desktop
   useEffect(() => {
     if (!isMobile && isMobileOpen) {
       setIsMobileOpen(false);
     }
   }, [isMobile, isMobileOpen]);
 
-  // Desktop sidebar (≥ 1024px)
+  // Desktop sidebar (≥ 1024px) - always visible, no collapse button per Figma design
   if (!isMobile) {
     return (
       <aside
-        className={`ui-Sidebar ${isCollapsed ? "--collapsed" : ""} ${className}`}
+        className={`ui-Sidebar ${className}`}
         data-testid={testid}
       >
         <div className="ui-Sidebar--Content">
           {children}
         </div>
-        <Button
-          variant="secondary"
-          isIconButton
-          className="ui-Sidebar--ToggleButton"
-          onPress={handleToggleCollapse}
-          aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-          data-testid={TESTID_SIDEBAR_TOGGLE}
-        >
-          <Icon type={isCollapsed ? "arrowForward" : "arrowBack"} />
-        </Button>
       </aside>
     );
   }
 
-  // Mobile/tablet drawer (< 1024px)
+  // Mobile/tablet collapsible inline panel (< 1024px)
   return (
-    <>
-      {/* Toggle button for mobile drawer */}
-      <Button
-        variant="secondary"
-        isIconButton
-        className="ui-Sidebar--MobileToggle"
-        onPress={handleToggleMobile}
-        aria-label={isMobileOpen ? "Close navigation" : "Open navigation"}
-        data-testid={TESTID_SIDEBAR_TOGGLE}
-      >
-        <Icon type={isMobileOpen ? "close" : "menu"} />
-      </Button>
-
-      {/* Mobile drawer modal */}
-      <ModalOverlay
-        className="ui-Sidebar--MobileOverlay"
-        isOpen={isMobileOpen}
-        onOpenChange={setIsMobileOpen}
-        isDismissable
-      >
-        <Modal
-          className="ui-Sidebar--MobileModal"
-          data-testid={TESTID_SIDEBAR_MOBILE_OVERLAY}
+    <div className={`ui-Sidebar--MobileWrapper ${isMobileOpen ? '--open' : ''}`}>
+      {/* Toggle button container - white background section */}
+      <div className="ui-Sidebar--MobileToggleContainer">
+        <Button
+          variant="secondary"
+          isIconButton
+          className="ui-Sidebar--MobileToggle"
+          onPress={handleToggleMobile}
+          aria-label={isMobileOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isMobileOpen}
+          data-testid={TESTID_SIDEBAR_TOGGLE}
         >
-          <Dialog className="ui-Sidebar--MobileDialog" aria-label="Navigation menu">
-            {({ close }) => (
-              <>
-                <div className="ui-Sidebar--MobileHeader">
-                  <Button
-                    variant="secondary"
-                    isIconButton
-                    onPress={close}
-                    aria-label="Close navigation"
-                  >
-                    <Icon type="close" />
-                  </Button>
-                </div>
-                <div className="ui-Sidebar--MobileContent">
-                  {children}
-                </div>
-              </>
-            )}
-          </Dialog>
-        </Modal>
-      </ModalOverlay>
-    </>
+          <Icon type={isMobileOpen ? "close" : "menu"} />
+        </Button>
+      </div>
+
+      {/* Expandable sidebar panel - appears below toggle when open */}
+      {isMobileOpen && (
+        <aside
+          className={`ui-Sidebar--MobilePanel ${className}`}
+          data-testid={testid}
+        >
+          <div className="ui-Sidebar--MobilePanelContent">
+            {children}
+          </div>
+        </aside>
+      )}
+    </div>
   );
 }

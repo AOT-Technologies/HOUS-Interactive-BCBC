@@ -87,15 +87,17 @@
   justify-content: flex-end;
   align-items: center;
   padding: 0;
-  gap: 8px;
+  gap: 16px;
   height: 54px;
   flex: 1;
   margin-left: auto;
+  min-width: 0;
 }
 
 /* HeaderSearch positioning */
 .ui-Header--Container .ui-HeaderSearch {
   flex: none;
+  margin-left: auto;
 }
 
 .ui-Header--SkipLinks {
@@ -281,16 +283,41 @@ a.ui-Header--NavLink {
     max-width: 100%;
   }
 
+  /* Keep logo visible on mobile/tablet */
   .ui-Header--LogoTitleSection {
+    display: flex;
+    gap: 12px;
+  }
+
+  .ui-Header--LogoLink {
+    width: 100px;
+    height: 42px;
+  }
+
+  .ui-Header--LogoLink img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Hide title divider line and reduce title size on mobile */
+  .ui-Header--TitleWrapper {
+    display: flex;
+    gap: 8px;
+  }
+
+  .ui-Header--Line {
     display: none;
   }
 
-  .ui-Header--TitleWrapper {
-    display: none;
+  .ui-Header--Title {
+    width: auto;
+    font-size: 16px;
+    line-height: 24px;
+    height: auto;
   }
 
   .ui-Header--ContentSection {
-    width: 100%;
+    flex: none;
   }
 
   .ui-Header--Nav {
@@ -299,5 +326,46 @@ a.ui-Header--NavLink {
 
   .ui-Header--NavList {
     display: none;
+  }
+}
+
+/* Very small mobile - hide title text, keep logo */
+@media (max-width: 480px) {
+  .ui-Header--TitleWrapper {
+    display: none;
+  }
+
+  .ui-Header--LogoLink {
+    width: 80px;
+    height: 34px;
+  }
+}
+
+/* Mobile - hide logo/title when search is open */
+@media (max-width: 56.9375rem) {
+  .ui-Header--Container:has(.ui-HeaderSearch.--open) {
+    gap: 8px;
+  }
+
+  .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-Header--LogoTitleSection {
+    display: none;
+  }
+
+  .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-Header--ContentSection {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-HeaderSearch {
+    margin-left: 0;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-Header--Nav {
+    flex-shrink: 0;
   }
 }

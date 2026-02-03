@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import Sidebar from "@repo/ui/sidebar";
 import ContentPanel from "@repo/ui/content-panel";
+import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { TESTID_MAIN_LAYOUT } from "@repo/constants/src/testids";
 import "./MainLayout.css";
 
@@ -41,7 +42,7 @@ export interface MainLayoutProps {
  * - Full-width layout when sidebar is hidden (Search Results, Download pages)
  * - Responsive layout for tablet (768px - 1023px)
  * - Responsive layout for mobile (< 768px)
- * - Integrates Header, Sidebar (conditional), and ContentPanel
+ * - Integrates Breadcrumbs, Sidebar (conditional), and ContentPanel
  * 
  * Layout Behavior:
  * - **With Sidebar** (Homepage, Content Reading Page):
@@ -75,29 +76,35 @@ export default function MainLayout({
   // Full-width layout (no sidebar)
   if (!showSidebar) {
     return (
-      <div
-        className={`MainLayout MainLayout--full-width ${className}`}
-        data-testid={testid}
-      >
-        <ContentPanel className="--full-width">
-          {children}
-        </ContentPanel>
-      </div>
+      <>
+        <Breadcrumbs />
+        <div
+          className={`MainLayout MainLayout--full-width ${className}`}
+          data-testid={testid}
+        >
+          <ContentPanel className="--full-width">
+            {children}
+          </ContentPanel>
+        </div>
+      </>
     );
   }
 
   // Three-panel layout (with sidebar)
   return (
-    <div
-      className={`MainLayout MainLayout--with-sidebar ${className}`}
-      data-testid={testid}
-    >
-      <Sidebar>
-        {sidebarContent}
-      </Sidebar>
-      <ContentPanel>
-        {children}
-      </ContentPanel>
-    </div>
+    <>
+      <Breadcrumbs />
+      <div
+        className={`MainLayout MainLayout--with-sidebar ${className}`}
+        data-testid={testid}
+      >
+        <Sidebar>
+          {sidebarContent}
+        </Sidebar>
+        <ContentPanel>
+          {children}
+        </ContentPanel>
+      </div>
+    </>
   );
 }

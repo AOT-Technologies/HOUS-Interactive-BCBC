@@ -370,20 +370,26 @@ The reading page can render content at multiple hierarchy levels:
 - TOC Search
 
 #### 3.3 Breadcrumb Navigation
-- **Location:** Top of content panel
-- **Format (Dynamic based on hierarchy level):**
-  - Part: `Division > Part`
-  - Section: `Division > Part > Section`
-  - Subsection: `Division > Part > Section > Subsection`
-  - Article: `Division > Part > Section > Subsection > Article`
+- **Location:** Top of all pages (below header, above content)
+- **Format (Dynamic based on page and hierarchy level):**
+  - Homepage: `Home`
+  - Search Results: `Home > Search Results`
+  - Download Page: `Home > Download`
+  - Content Reading - Part: `Home > Division > Part`
+  - Content Reading - Section: `Home > Division > Part > Section`
+  - Content Reading - Subsection: `Home > Division > Part > Section > Subsection`
+  - Content Reading - Article: `Home > Division > Part > Section > Subsection > Article`
 - **Functionality:**
   - Each breadcrumb is clickable
-  - Navigates to parent level
-  - Shows current location in hierarchy
+  - Navigates to parent level or page
+  - Shows current location in site hierarchy
+  - Always starts with "Home" link
 - **Examples:** 
-  - Part: `Division A > Part 1`
-  - Section: `Division A > Part 1 > Section 1.1`
-  - Article: `Division A > Part 1 > Section 1.1 > Subsection 1.1.1 > Article 1.1.1.1`
+  - Homepage: `Home`
+  - Search: `Home > Search Results`
+  - Part: `Home > Division A > Part 1`
+  - Section: `Home > Division A > Part 1 > Section 1.1`
+  - Article: `Home > Division A > Part 1 > Section 1.1 > Subsection 1.1.1 > Article 1.1.1.1`
 
 #### 3.4 Content Panel
 
@@ -781,8 +787,10 @@ Clicks back again → Returns to search results with query preserved
 - No sidebar/TOC on Search Results Page
 - No sidebar/TOC on Download Page
 
+**Available on All Pages:**
+- Breadcrumbs (shows current page context)
+
 **Available on Reading Page Only:**
-- Breadcrumbs
 - Previous/Next navigation
 - Content-specific actions (print, download)
 

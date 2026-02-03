@@ -127,26 +127,27 @@ export default function HeaderSearch({
   if (!isMounted) {
     return (
       <div className={`ui-HeaderSearch --closed ${className}`} data-testid={TESTID_HEADER_SEARCH}>
-        <div className="ui-Button --tertiary --icon" aria-label="Open search">
+        <button className="ui-HeaderSearch--SearchButton" aria-label="Search">
           <Icon type="search" />
-        </div>
+          <span>Search</span>
+        </button>
       </div>
     );
   }
 
-  // Closed state: Icon button only
+  // Closed state: Search button with icon and text
   if (!isOpen) {
     return (
       <div className={`ui-HeaderSearch --closed ${className}`} data-testid={TESTID_HEADER_SEARCH}>
-        <Button
-          variant="tertiary"
-          isIconButton
-          onPress={handleOpen}
+        <button
+          className="ui-HeaderSearch--SearchButton"
+          onClick={handleOpen}
           aria-label="Open search"
           data-testid={TESTID_HEADER_SEARCH_BUTTON}
         >
           <Icon type="search" />
-        </Button>
+          <span>Search</span>
+        </button>
       </div>
     );
   }

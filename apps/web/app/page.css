@@ -9,8 +9,9 @@
   width: 100%;
 }
 
-/* Hero Section - extends to fill content panel width */
+/* Hero Section - extends to fill content panel width, contains sidebar toggle */
 .homepage-hero {
+  position: relative; /* For positioning sidebar toggle */
   width: calc(100% + var(--layout-padding-xlarge) * 2);
   margin-left: calc(var(--layout-padding-xlarge) * -1);
   margin-right: calc(var(--layout-padding-xlarge) * -1);
@@ -26,9 +27,12 @@
 /* Quick Access Section - centered with max-width */
 .homepage-quick-access {
   width: 100%;
-  max-width: 932px;
+  max-width: 560px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 0;
 }
 
 /* Alert Section */
@@ -96,6 +100,13 @@
 
 /* Responsive breakpoints */
 
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+  .homepage-quick-access {
+    max-width: 932px;
+  }
+}
+
 /* Tablet (768px - 1023px) */
 @media (max-width: 1023px) {
   .homepage {
@@ -103,6 +114,7 @@
   }
 
   .homepage-hero {
+    position: relative;
     width: calc(100% + var(--layout-padding-large) * 2);
     margin-left: calc(var(--layout-padding-large) * -1);
     margin-right: calc(var(--layout-padding-large) * -1);
@@ -112,7 +124,8 @@
   }
 
   .homepage-quick-access {
-    max-width: 100%;
+    max-width: 560px;
+    padding: 48px 16px;
   }
 }
 
@@ -123,6 +136,7 @@
   }
 
   .homepage-hero {
+    position: relative;
     width: calc(100% + var(--layout-padding-medium) * 2);
     margin-left: calc(var(--layout-padding-medium) * -1);
     margin-right: calc(var(--layout-padding-medium) * -1);

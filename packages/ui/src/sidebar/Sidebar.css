@@ -1,104 +1,97 @@
 /**
  * Sidebar Component Styles
- * 
+ *
  * Responsive behavior:
- * - Mobile/Tablet (< 1024px): Drawer overlay
- * - Desktop (≥ 1024px): Collapsible sidebar
+ * - Mobile/Tablet (< 1024px): Collapsible inline panel
+ * - Desktop (≥ 1024px): Always visible sidebar
  */
 
 /* ============================================
-   MOBILE/TABLET DRAWER (< 1024px)
+   MOBILE/TABLET INLINE PANEL (< 1024px)
    ============================================ */
 
-/* Mobile toggle button - visible only on mobile/tablet */
-.ui-Sidebar--MobileToggle {
-  position: fixed;
-  top: calc(var(--header-height) + var(--layout-padding-medium));
-  left: var(--layout-padding-medium);
-  z-index: 100;
-  box-shadow: var(--surface-shadow-medium);
+/* Mobile wrapper - contains toggle and expandable panel */
+.ui-Sidebar--MobileWrapper {
+  display: block;
+  width: 100%;
 }
 
-/* Mobile overlay */
-.ui-Sidebar--MobileOverlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  background: var(--surface-color-overlay-default);
+/* Mobile toggle container - white background section between breadcrumb and hero */
+.ui-Sidebar--MobileToggleContainer {
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 16px;
+  border-bottom: 1px solid var(--surface-color-border-default, #D9D9D9);
 }
 
-/* Mobile modal */
-.ui-Sidebar--MobileModal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 85%;
-  max-width: 400px;
-  outline: none;
-  background: var(--surface-color-background-white);
-  box-shadow: var(--surface-shadow-large);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+/* Mobile toggle button - outlined style */
+button.ui-Sidebar--MobileToggle,
+button.ui-Sidebar--MobileToggle.ui-Button,
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary,
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary.--icon {
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 1;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 8px;
+  background-color: #FFFFFF !important;
+  border: 1px solid #313132 !important;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: none !important;
+  color: #313132 !important;
 }
 
-/* Slide-in animation for mobile drawer */
-.ui-Sidebar--MobileModal[data-entering] {
-  animation: sidebar-slide-in 300ms ease-out;
+button.ui-Sidebar--MobileToggle:hover,
+button.ui-Sidebar--MobileToggle[data-hovered],
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary:hover,
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary[data-hovered] {
+  background-color: #F2F2F2 !important;
 }
 
-.ui-Sidebar--MobileModal[data-exiting] {
-  animation: sidebar-slide-out 300ms ease-in;
+button.ui-Sidebar--MobileToggle:focus,
+button.ui-Sidebar--MobileToggle[data-focus-visible] {
+  outline: 2px solid #FCBA19;
+  outline-offset: 2px;
 }
 
-@keyframes sidebar-slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+/* Ensure the icon inside is dark and visible */
+.ui-Sidebar--MobileToggle .ui-Icon,
+.ui-Sidebar--MobileToggle svg,
+button.ui-Sidebar--MobileToggle .ui-Icon,
+button.ui-Sidebar--MobileToggle svg {
+  color: #313132 !important;
+  fill: #313132 !important;
+  width: 24px !important;
+  height: 24px !important;
 }
 
-@keyframes sidebar-slide-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+.ui-Sidebar--MobileToggle svg path,
+button.ui-Sidebar--MobileToggle svg path {
+  fill: #313132 !important;
 }
 
-/* Mobile dialog */
-.ui-Sidebar--MobileDialog {
-  outline: none;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+/* Mobile expandable panel - appears below toggle when open */
+.ui-Sidebar--MobilePanel {
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--surface-color-border-default, #D9D9D9);
 }
 
-/* Mobile header with close button */
-.ui-Sidebar--MobileHeader {
-  display: flex;
-  justify-content: flex-end;
-  padding: var(--layout-padding-medium);
-  border-bottom: var(--layout-border-width-small) solid var(--surface-color-border-default);
-  flex-shrink: 0;
-}
-
-/* Mobile content area */
-.ui-Sidebar--MobileContent {
-  flex: 1;
+/* Mobile panel content */
+.ui-Sidebar--MobilePanelContent {
+  padding: 16px;
+  max-height: 60vh;
   overflow-y: auto;
-  padding: var(--layout-padding-medium);
 }
 
 /* ============================================
@@ -115,10 +108,22 @@
   display: none;
 }
 
-/* TABLET - 1024px and up */
+/* DESKTOP - 1024px and up */
 @media (min-width: 64rem) {
-  /* Hide mobile toggle button */
+  /* Hide mobile wrapper and all mobile elements */
+  .ui-Sidebar--MobileWrapper {
+    display: none;
+  }
+
+  .ui-Sidebar--MobileToggleContainer {
+    display: none;
+  }
+
   .ui-Sidebar--MobileToggle {
+    display: none;
+  }
+
+  .ui-Sidebar--MobilePanel {
     display: none;
   }
 
@@ -131,17 +136,10 @@
     min-width: var(--sidebar-width-min, 280px);
     max-width: var(--sidebar-width-max, 400px);
     height: calc(100vh - var(--header-height-full, 60px));
-    background: var(--surface-color-background-white);
-    border-right: var(--layout-border-width-small) solid var(--surface-color-border-default);
-    transition: width 300ms ease-in-out, min-width 300ms ease-in-out;
+    background: var(--surface-color-background-white, #FFFFFF);
+    border-right: 1px solid var(--surface-color-border-default, #D9D9D9);
     overflow: hidden;
     flex-shrink: 0;
-  }
-
-  /* Collapsed state */
-  .ui-Sidebar.--collapsed {
-    width: var(--sidebar-width-collapsed, 60px);
-    min-width: var(--sidebar-width-collapsed, 60px);
   }
 
   /* Sidebar content */
@@ -149,31 +147,7 @@
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: var(--layout-padding-medium);
-    opacity: 1;
-    transition: opacity 200ms ease-in-out;
-  }
-
-  /* Hide content when collapsed */
-  .ui-Sidebar.--collapsed .ui-Sidebar--Content {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  /* Toggle button */
-  .ui-Sidebar--ToggleButton {
-    display: flex;
-    position: absolute;
-    top: var(--layout-padding-medium);
-    right: var(--layout-padding-medium);
-    z-index: 10;
-    box-shadow: var(--surface-shadow-small);
-  }
-
-  /* Adjust toggle button position when collapsed */
-  .ui-Sidebar.--collapsed .ui-Sidebar--ToggleButton {
-    right: 50%;
-    transform: translateX(50%);
+    padding: 16px;
   }
 
   /* Smooth scrolling for scroll-to-active */
@@ -183,8 +157,8 @@
 
   /* Focus styles for accessibility */
   .ui-Sidebar--Content:focus {
-    outline: var(--layout-border-width-medium) solid var(--surface-color-border-active);
-    outline-offset: calc(var(--outline-offset) * -1);
+    outline: 2px solid var(--surface-color-border-active, #FCBA19);
+    outline-offset: -2px;
   }
 }
 
@@ -211,33 +185,16 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .ui-Sidebar {
-    border-right-width: var(--layout-border-width-medium);
+    border-right-width: 2px;
   }
 
-  .ui-Sidebar--MobileModal {
-    border-right: var(--layout-border-width-medium) solid var(--surface-color-border-dark);
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .ui-Sidebar {
-    transition: none;
-  }
-
-  .ui-Sidebar--Content {
-    transition: none;
-  }
-
-  .ui-Sidebar--MobileModal[data-entering],
-  .ui-Sidebar--MobileModal[data-exiting] {
-    animation: none;
+  .ui-Sidebar--MobilePanel {
+    border-bottom-width: 2px;
   }
 }
 
 /* Focus visible for keyboard navigation */
-.ui-Sidebar--ToggleButton:focus-visible,
 .ui-Sidebar--MobileToggle:focus-visible {
-  outline: var(--layout-border-width-medium) solid var(--surface-color-border-active);
-  outline-offset: var(--outline-offset);
+  outline: 2px solid #FCBA19;
+  outline-offset: 2px;
 }
