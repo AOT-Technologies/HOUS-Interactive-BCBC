@@ -219,7 +219,7 @@ describe('Breadcrumbs', () => {
       );
     });
 
-    it('should prevent default link behavior on click', () => {
+    it('should allow default link navigation behavior', () => {
       const mockOnClick = vi.fn();
       (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
         navigationTree: mockNavigationTree,
@@ -234,7 +234,8 @@ describe('Breadcrumbs', () => {
 
       fireEvent(divisionLink!, event);
 
-      expect(preventDefaultSpy).toHaveBeenCalled();
+      // Should NOT prevent default - let Link handle navigation
+      expect(preventDefaultSpy).not.toHaveBeenCalled();
     });
   });
 

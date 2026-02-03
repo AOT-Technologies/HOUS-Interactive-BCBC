@@ -106,7 +106,7 @@
   position: relative;
 }
 
-/* Search Icon */
+/* Search Icon - Left side */
 .ui-HeaderSearch--SearchIcon {
   display: flex;
   flex-direction: column;
@@ -116,15 +116,13 @@
   width: 20px;
   height: 20px;
   flex: none;
-  order: 3;
+  order: 0;
   flex-grow: 0;
   color: var(--theme-gray-90);
 }
 
-/* Input Field - Figma specs */
+/* Input Field - Middle, takes remaining space */
 .ui-HeaderSearch--Input {
-  width: 339px;
-  height: 27px;
   font-family: 'BC Sans';
   font-style: normal;
   font-weight: 400;
@@ -139,6 +137,42 @@
   flex: 1;
   order: 1;
   flex-grow: 1;
+  min-width: 0;
+}
+
+/* Clear Button - Right side, before search icon */
+.ui-HeaderSearch--ClearButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--theme-gray-90);
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ui-HeaderSearch--ClearButton:hover {
+  background-color: var(--surface-color-background-light-gray);
+  color: var(--typography-color-primary);
+}
+
+.ui-HeaderSearch--ClearButton:focus {
+  outline: 2px solid var(--surface-color-border-active);
+  outline-offset: 2px;
+}
+
+.ui-HeaderSearch--ClearButton .ui-Icon {
+  width: 16px;
+  height: 16px;
 }
 
 .ui-HeaderSearch--SearchWrapper:focus-within {
@@ -207,19 +241,11 @@
   .ui-HeaderSearch--SearchWrapper {
     width: 300px;
   }
-
-  .ui-HeaderSearch--Input {
-    width: 248px;
-  }
 }
 
 @media (max-width: 768px) {
   .ui-HeaderSearch--SearchWrapper {
     width: 250px;
-  }
-
-  .ui-HeaderSearch--Input {
-    width: 198px;
   }
 
   .ui-HeaderSearch--CancelButton {
@@ -232,10 +258,6 @@
 @media (max-width: 480px) {
   .ui-HeaderSearch--SearchWrapper {
     width: 200px;
-  }
-
-  .ui-HeaderSearch--Input {
-    width: 148px;
   }
 }
 

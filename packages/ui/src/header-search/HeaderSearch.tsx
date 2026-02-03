@@ -156,6 +156,7 @@ export default function HeaderSearch({
   return (
     <div ref={containerRef} className={`ui-HeaderSearch --open ${className}`} data-testid={TESTID_HEADER_SEARCH}>
       <div className="ui-HeaderSearch--SearchWrapper">
+        <Icon type="search" className="ui-HeaderSearch--SearchIcon" aria-hidden="true" />
         <input
           type="text"
           value={search.query}
@@ -170,7 +171,16 @@ export default function HeaderSearch({
           autoComplete="off"
           data-testid={TESTID_HEADER_SEARCH_INPUT}
         />
-        <Icon type="search" className="ui-HeaderSearch--SearchIcon" aria-hidden="true" />
+        {search.query && (
+          <button
+            type="button"
+            onClick={search.handleClear}
+            className="ui-HeaderSearch--ClearButton"
+            aria-label="Clear search"
+          >
+            <Icon type="close" />
+          </button>
+        )}
         {shouldShowDropdown && (
           <ul role="listbox" className="ui-HeaderSearch--Dropdown">
             {search.isLoading ? (

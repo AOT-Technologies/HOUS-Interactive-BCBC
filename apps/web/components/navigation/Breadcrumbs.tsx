@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
@@ -17,6 +17,12 @@ interface BreadcrumbsProps {
    * Optional callback when a breadcrumb is clicked
    */
   onBreadcrumbClick?: (node: NavigationNode | { path: string; title: string }) => void;
+  
+  /**
+   * Maximum number of visible items before collapsing (default: 3)
+   * Shows first item, ellipsis, and last item(s)
+   */
+  maxVisibleItems?: number;
 }
 
 /**
@@ -41,9 +47,10 @@ interface BreadcrumbsProps {
  * 
  * Requirements: 4.6, 9.3
  */
-export function Breadcrumbs({ className = '', onBreadcrumbClick }: BreadcrumbsProps) {
+export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems = 3 }: BreadcrumbsProps) {
   const pathname = usePathname();
   const { navigationTree, currentPath } = useNavigationStore();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   /**
    * Build breadcrumb trail based on current page
@@ -95,15 +102,46 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick }: BreadcrumbsPr
   }, [pathname, navigationTree, currentPath]);
 
   /**
-   * Handle breadcrumb click
+   * Handle breadcrumb click - only prevent default if custom callback provided
    */
   const handleClick = (item: typeof breadcrumbs[0], event: React.MouseEvent) => {
-    event.preventDefault();
-    
     if (onBreadcrumbClick) {
       onBreadcrumbClick(item);
+      // Don't prevent default - let the Link navigate
     }
+    // If no callback, let the Link handle navigation normally
   };
+
+  /**
+   * Handle ellipsis click to expand collapsed items
+   */
+  const handleEllipsisClick = () => {
+    setIsExpanded(true);
+  };
+
+  /**
+   * Get visible breadcrumbs (collapsed or expanded)
+   */
+  const getVisibleBreadcrumbs = () => {
+    // If expanded or few items, show all
+    if (isExpanded || breadcrumbs.length <= maxVisibleItems) {
+      return { items: breadcrumbs, showEllipsis: false, collapsedItems: [] };
+    }
+
+    // Collapse middle items: show first, ellipsis, last two
+    const first = breadcrumbs.slice(0, 1);
+    const last = breadcrumbs.slice(-2); // Show last 2 items (parent + current)
+    const collapsed = breadcrumbs.slice(1, -2);
+
+    return {
+      items: [...first, ...last],
+      showEllipsis: true,
+      collapsedItems: collapsed,
+      ellipsisIndex: 1 // Insert ellipsis after first item
+    };
+  };
+
+  const { items: visibleItems, showEllipsis, collapsedItems, ellipsisIndex } = getVisibleBreadcrumbs();
 
   // Always render breadcrumbs (at minimum shows "Home")
   return (
@@ -113,27 +151,48 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick }: BreadcrumbsPr
       aria-label="Breadcrumb navigation"
     >
       <ol className="breadcrumbs-list">
-        {breadcrumbs.map((item, index) => {
-          const isLast = index === breadcrumbs.length - 1;
+        {visibleItems.map((item, index) => {
+          const isLast = index === visibleItems.length - 1;
+          const actualIndex = showEllipsis && index >= ellipsisIndex! ? index + collapsedItems.length : index;
+          const isLastInFull = actualIndex === breadcrumbs.length - 1;
           
           return (
-            <li key={item.id} className="breadcrumbs-item">
-              <Link
-                href={item.path}
-                className={`breadcrumbs-link ${isLast ? 'breadcrumbs-link--current' : ''}`}
-                onClick={(e) => handleClick(item, e as any)}
-                aria-label={`Navigate to ${item.title}`}
-                aria-current={isLast ? 'page' : undefined}
-              >
-                {item.number && <span className="breadcrumbs-number">{item.number}</span>}
-                <span className="breadcrumbs-title">{item.title}</span>
-              </Link>
-              {!isLast && (
-                <span className="breadcrumbs-separator" aria-hidden="true">
-                  &gt;
-                </span>
+            <React.Fragment key={item.id}>
+              {/* Show ellipsis before this item if needed */}
+              {showEllipsis && index === ellipsisIndex && (
+                <li className="breadcrumbs-item breadcrumbs-item--ellipsis">
+                  <button
+                    type="button"
+                    className="breadcrumbs-ellipsis"
+                    onClick={handleEllipsisClick}
+                    aria-label={`Show ${collapsedItems.length} hidden breadcrumb items: ${collapsedItems.map(c => c.title).join(', ')}`}
+                    title={collapsedItems.map(c => c.number ? `${c.number} ${c.title}` : c.title).join(' > ')}
+                  >
+                    ...
+                  </button>
+                  <span className="breadcrumbs-separator" aria-hidden="true">
+                    &gt;
+                  </span>
+                </li>
               )}
-            </li>
+              <li className="breadcrumbs-item">
+                <Link
+                  href={item.path}
+                  className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
+                  onClick={(e) => handleClick(item, e as any)}
+                  aria-label={`Navigate to ${item.title}`}
+                  aria-current={isLastInFull ? 'page' : undefined}
+                >
+                  {item.number && <span className="breadcrumbs-number">{item.number}</span>}
+                  <span className="breadcrumbs-title">{item.title}</span>
+                </Link>
+                {!isLast && (
+                  <span className="breadcrumbs-separator" aria-hidden="true">
+                    &gt;
+                  </span>
+                )}
+              </li>
+            </React.Fragment>
           );
         })}
       </ol>

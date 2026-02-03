@@ -1,6 +1,7 @@
 'use client';
 
 import LinkCard from '@repo/ui/link-card';
+import Alert from '@repo/ui/alert';
 import './QuickAccessPins.css';
 
 interface QuickAccessPin {
@@ -67,18 +68,26 @@ export default function QuickAccessPins({ className = '' }: QuickAccessPinsProps
           />
         ))}
       </div>
-      
-      <div className="quick-access-pins--alert">
-        <svg className="quick-access-pins--alert-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M1 21H23L12 2L1 21ZM13 18H11V16H13V18ZM13 14H11V10H13V14Z" fill="currentColor"/>
-        </svg>
-        <div className="quick-access-pins--alert-content">
-          <h3 className="quick-access-pins--alert-title">Report a bug</h3>
-          <p className="quick-access-pins--alert-description">
-            Found a broken link or search issue? <a href="https://submit-feedback.example.com" target="_blank" rel="noopener noreferrer">Submit feedback to the product team</a>
-          </p>
-        </div>
+      <div className="quick-access-pins--description">
+        <p>
+          The BC Building Code Search Tool provides instant access to the complete 2024 British Columbia Building Code. 
+          Use the search bar above to find specific requirements, browse by division and part using the navigation tree, 
+          or explore frequently accessed sections through Quick Access. All content includes inline glossary definitions, 
+          cross-references, and effective date filtering to help you find exactly what you need.
+        </p>
       </div>
+      <Alert
+        variant="warning"
+        title="Report a bug"
+        description={
+          <>
+            Found a broken link or search issue?{" "}
+            <a href="https://submit-feedback.example.com" target="_blank" rel="noopener noreferrer">
+              Submit feedback to the product team
+            </a>
+          </>
+        }
+      />
     </section>
   );
 }

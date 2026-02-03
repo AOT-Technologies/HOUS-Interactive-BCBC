@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./alert": "./src/alert/Alert.tsx",
     "./pre-footer": "./src/pre-footer/PreFooter.tsx",
     "./confirmation-modal": "./src/confirmation-modal/ConfirmationModal.tsx",
     "./footer": "./src/footer/Footer.tsx",
@@ -60,6 +61,7 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "next": "^16.1.5",
     "react-aria-components": "^1.2.0"
   }

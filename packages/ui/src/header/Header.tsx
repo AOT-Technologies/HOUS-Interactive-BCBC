@@ -220,7 +220,6 @@ export default function Header({
           data-testid={TESTID_HEADER_MOBILE_NAV}
         >
           <Dialog className="ui-Header--NavMobileWrapper" aria-label={title}>
-            {getCloseButton(() => setMobileNavIsOpen(false), mobileNavIsOpen)}
             <nav className="ui-Header--NavMobile">
               {getNavList(onMobileNavLinkClick)}
             </nav>

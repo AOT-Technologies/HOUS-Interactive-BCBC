@@ -113,6 +113,41 @@
   flex: none;
 }
 
+/* Ellipsis Button for collapsed items */
+.breadcrumbs-item--ellipsis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumbs-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  font-family: 'BC Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #1A5A96;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.breadcrumbs-ellipsis:hover {
+  background-color: var(--surface-color-background-light-gray, #F2F2F2);
+  border-color: var(--surface-color-border-default, #D8D8D8);
+}
+
+.breadcrumbs-ellipsis:focus {
+  outline: 2px solid var(--surface-color-border-active, #1A5A96);
+  outline-offset: 2px;
+}
+
 /* Responsive Behavior */
 
 /* Mobile (< 768px) */

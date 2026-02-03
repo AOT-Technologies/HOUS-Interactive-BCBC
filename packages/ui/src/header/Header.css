@@ -139,34 +139,24 @@
   margin-left: auto;
 }
 
-.--mobile-open .ui-Header--NavMobileToggle {
-  display: none;
-}
-
 .ui-Header--NavMobileOverlay {
   z-index: 1;
 }
 
 .ui-Header--NavMobileWrapper {
   position: fixed;
-  top: 0;
+  top: var(--header-height);
   bottom: 0;
   left: 0;
   right: 0;
   outline: none;
   z-index: 1;
   display: flex;
-}
-
-.ui-Header--NavMobileWrapper .ui-Header--NavMobileToggle {
-  position: absolute;
-  right: var(--layout-padding-container);
-  top: var(--layout-padding-10);
+  background-color: var(--surface-color-background-white);
 }
 
 .ui-Header--NavMobile {
   background-color: var(--surface-color-background-white);
-  margin-top: calc(var(--header-height-full));
   padding: var(--header-nav-mobile-padding);
   width: 100%;
 }

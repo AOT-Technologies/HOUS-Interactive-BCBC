@@ -35,6 +35,23 @@
   width: 100%;
 }
 
+.quick-access-pins--description {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.quick-access-pins--description p {
+  font-family: 'BC Sans', 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--typography-color-secondary, #313132);
+  margin: 0;
+  text-align: center;
+}
+
 .quick-access-pin {
   box-sizing: border-box;
   width: 100%;
@@ -59,73 +76,6 @@
   color: #D8292F;
 }
 
-/* Warning Alert Box */
-.quick-access-pins--alert {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 16px 24px;
-  gap: 8px;
-  width: 100%;
-  background: #FEF2D6;
-  border: 1px solid #FCBA19;
-  border-radius: 8px;
-}
-
-.quick-access-pins--alert-header {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 8px;
-  width: 100%;
-}
-
-.quick-access-pins--alert-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: #FCBA19;
-}
-
-.quick-access-pins--alert-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.quick-access-pins--alert-title {
-  font-family: 'BC Sans', 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  color: #292929;
-  margin: 0;
-}
-
-.quick-access-pins--alert-description {
-  font-family: 'BC Sans', 'Noto Sans', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
-  color: #292929;
-  margin: 0;
-  padding-left: 28px;
-}
-
-.quick-access-pins--alert-description a {
-  color: #1A5A96;
-  text-decoration: underline;
-}
-
-.quick-access-pins--alert-description a:hover {
-  color: #003366;
-  text-decoration: none;
-}
-
 /* Responsive breakpoints */
 
 /* Desktop (≥ 1024px) - cards side by side */
@@ -140,6 +90,10 @@
 
   .quick-access-pins--list {
     justify-content: flex-start;
+  }
+
+  .quick-access-pins--description p {
+    text-align: left;
   }
 
   .quick-access-pin {
@@ -178,9 +132,5 @@
 
   .quick-access-pins--list {
     gap: 12px;
-  }
-
-  .quick-access-pins--alert {
-    padding: 12px 16px;
   }
 }
