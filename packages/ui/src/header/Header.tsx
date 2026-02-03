@@ -169,7 +169,7 @@ export default function Header({
       className={`ui-Header ${mobileNavIsOpen ? "--mobile-open" : ""}`}
       data-testid={TESTID_HEADER}
     >
-      <div className="u-container ui-Header--Container">
+      <div className="ui-Header--Container">
         {skipLinks && (
           <ul className="ui-Header--SkipLinks">
             {skipLinks.map((link, index) => {
