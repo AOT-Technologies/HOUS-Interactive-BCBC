@@ -7,9 +7,42 @@
   position: relative;
 }
 
-/* Closed State - Just icon button */
+/* Closed State - Search button with icon and text */
 .ui-HeaderSearch.--closed {
   width: auto;
+}
+
+/* Search Button - Icon + "Search" text */
+.ui-HeaderSearch--SearchButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'BC Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--typography-color-primary, #313132);
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.ui-HeaderSearch--SearchButton:hover {
+  background-color: var(--surface-color-background-light-gray, #F2F2F2);
+}
+
+.ui-HeaderSearch--SearchButton:focus {
+  outline: 2px solid var(--surface-color-border-active, #1A5A96);
+  outline-offset: 2px;
+}
+
+.ui-HeaderSearch--SearchButton .ui-Icon {
+  width: 20px;
+  height: 20px;
+  color: var(--icons-color-primary, #313132);
 }
 
 /* Open State - Animated expansion */
@@ -203,5 +236,30 @@
 
   .ui-HeaderSearch--Input {
     width: 148px;
+  }
+}
+
+/* Mobile - when search is open, take full width (must come last to override fixed widths) */
+@media (max-width: 56.9375rem) {
+  .ui-HeaderSearch.--open {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ui-HeaderSearch.--open .ui-HeaderSearch--SearchWrapper {
+    flex: 1;
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  .ui-HeaderSearch.--open .ui-HeaderSearch--Input {
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  .ui-HeaderSearch.--open .ui-HeaderSearch--CancelButton {
+    flex-shrink: 0;
   }
 }
