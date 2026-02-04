@@ -1,6 +1,5 @@
-"use client";
 import { ReactNode } from "react";
-import Icon from "../icon/Icon";
+import Icon, { IconType } from "../icon/Icon";
 import "./Alert.css";
 
 export interface AlertProps {
@@ -34,7 +33,7 @@ export default function Alert({
     success: "checkCircle",
   };
 
-  const iconName = icon || defaultIcons[variant];
+  const iconName = (icon || defaultIcons[variant]) as IconType;
 
   return (
     <div

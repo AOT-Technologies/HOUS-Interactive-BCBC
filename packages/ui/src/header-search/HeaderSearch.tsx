@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { useSearch } from "@repo/data/hooks";
+import { useSearch } from "@repo/data";
 import {
   TESTID_HEADER_SEARCH,
   TESTID_HEADER_SEARCH_BUTTON,

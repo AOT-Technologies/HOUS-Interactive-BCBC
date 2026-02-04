@@ -37,7 +37,7 @@ Both share core functionality but have different UI presentations.
 | **Background** | White header | Dark blue hero section |
 | **Context** | Navigation | Landing/Discovery |
 | **Title/Subtitle** | No | Yes (H1 + description) |
-| **Search Button** | Icon only (closed) | "Search" button with text |
+| **Search Button** | Icon + "Search" text (closed) | "Search" button with text |
 | **Layout** | Horizontal inline | Centered, full-width |
 
 ---
@@ -170,7 +170,7 @@ export default function HeaderSearch({
 ```
 
 **Features:**
-- Closed state: Search icon button only
+- Closed state: Search button with icon and "Search" text
 - Open state: Full search input with inline dropdown
 - Cancel button to clear and close
 - Auto-focus input when opened

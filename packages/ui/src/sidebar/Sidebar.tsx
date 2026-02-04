@@ -12,11 +12,6 @@ export interface SidebarProps {
    */
   children: ReactNode;
   /**
-   * Whether the sidebar is initially collapsed on desktop
-   * @default false
-   */
-  defaultCollapsed?: boolean;
-  /**
    * Callback when sidebar collapse state changes
    */
   onCollapseChange?: (collapsed: boolean) => void;
@@ -45,7 +40,6 @@ export interface SidebarProps {
  */
 export default function Sidebar({
   children,
-  defaultCollapsed = false,
   onCollapseChange,
   className = "",
   "data-testid": testid = TESTID_SIDEBAR,

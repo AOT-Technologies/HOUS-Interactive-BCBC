@@ -221,9 +221,9 @@ export const useNavigationStore = create<NavigationStore>()(
         const selectedDate = amendmentDateStore.selectedDate;
         
         // Merge provided query params with version and date
-        const mergedQueryParams = {
+        const mergedQueryParams: Record<string, string> = {
           ...queryParams,
-          version: currentVersion,
+          version: currentVersion || '',
         };
         
         // Add date if selected

@@ -104,7 +104,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
   /**
    * Handle breadcrumb click - only prevent default if custom callback provided
    */
-  const handleClick = (item: typeof breadcrumbs[0], event: React.MouseEvent) => {
+  const handleClick = (item: typeof breadcrumbs[0]) => {
     if (onBreadcrumbClick) {
       onBreadcrumbClick(item);
       // Don't prevent default - let the Link navigate
@@ -179,7 +179,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                 <Link
                   href={item.path}
                   className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
-                  onClick={(e) => handleClick(item, e as any)}
+                  onClick={() => handleClick(item)}
                   aria-label={`Navigate to ${item.title}`}
                   aria-current={isLastInFull ? 'page' : undefined}
                 >
