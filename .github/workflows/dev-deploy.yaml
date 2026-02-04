@@ -1,0 +1,88 @@
+name: Deploy to Dev
+
+on:
+  workflow_dispatch:
+    inputs:
+      image-tag:
+        description: 'Image tag to deploy (e.g., PR number or commit SHA)'
+        required: true
+        default: 'latest'
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: dev
+    outputs:
+      image-tag: ${{ steps.set-tag.outputs.tag }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set image tag
+        id: set-tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ github.event.inputs.image-tag }}"
+            if [ "$TAG" = "latest" ]; then
+              TAG="${GITHUB_SHA::7}"
+            fi
+          else
+            TAG="${GITHUB_SHA::7}"
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Artifactory
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ vars.ARTIFACTORY_URL }}
+          username: ${{ secrets.ARTIFACTORY_USERNAME }}
+          password: ${{ secrets.ARTIFACTORY_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ vars.ARTIFACTORY_URL }}/${{ secrets.ARTIFACTORY_REPOSITORY_NAME }}/interactive-bcbc-app:${{ steps.set-tag.outputs.tag }}
+            ${{ vars.ARTIFACTORY_URL }}/${{ secrets.ARTIFACTORY_REPOSITORY_NAME }}/interactive-bcbc-app:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment: dev
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install OpenShift CLI (oc)
+        run: |
+          curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+          tar -xzf openshift-client-linux.tar.gz
+          sudo mv oc kubectl /usr/local/bin/
+          oc version
+
+      - name: Login to OpenShift with CLI
+        run: oc login --token=${{ secrets.OPENSHIFT_SERVICEACCOUNT_TOKEN }} --server=${{ secrets.OPENSHIFT_SERVER }}
+
+      - name: Set OpenShift project
+        run: oc project ${{ vars.OPENSHIFT_NAMESPACE || 'd6af69-dev' }}
+
+      - name: Deploy Application in OpenShift
+        run: |
+          helm upgrade --install interactive-bcbc-app . \
+            -f values-dev.yaml \
+            --set image.repository=${{ vars.ARTIFACTORY_URL }}/${{ secrets.ARTIFACTORY_REPOSITORY_NAME }}/interactive-bcbc-app \
+            --set image.tag=${{ needs.build.outputs.image-tag }} \
+            --set imagePullSecrets[0].name=${{ secrets.IMAGE_PULL_SECRET_NAME }} \
+            --namespace ${{ vars.OPENSHIFT_NAMESPACE || 'd6af69-dev' }}
+        working-directory: ./charts/interactive-bcbc-app

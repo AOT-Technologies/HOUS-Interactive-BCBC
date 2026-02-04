@@ -1,0 +1,21 @@
+# Development environment values
+namespace: d6af69-dev
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+route:
+  enabled: true
+  host: interactive-bcbc-app-d6af69-dev.apps.silver.devops.gov.bc.ca
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+
+autoscaling:
+  enabled: false
