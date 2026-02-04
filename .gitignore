@@ -43,13 +43,24 @@ pnpm-debug.log*
 Thumbs.db
 
 # Generated assets (output from build pipeline)
-apps/web/public/data/
+# All version-specific directories (e.g., /data/2024/, /data/2027/)
+apps/web/public/data/*/
+# Generated versions index
+apps/web/public/data/versions.json
 
-# Source data (optional - uncomment if file is too large)
+# Source data (optional - uncomment if file is too large for Git)
+# Use Git LFS for files > 100 MB
 # data/source/bcbc-*.json
+
+# Keep versions.json in source control (version metadata)
+!data/source/versions.json
 
 # Keep sample data in Git
 !data/samples/*.json
 
 #agent docs
 .kiro/
+
+temp_folder_prototype/
+
+CLAUDE.md

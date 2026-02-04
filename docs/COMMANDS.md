@@ -111,25 +111,87 @@ npx pnpm --filter @bc-building-code/web start
 ### Generate Static Assets
 
 ```bash
-# Run asset generation pipeline (when implemented)
+# Run asset generation pipeline
 npx pnpm generate-assets
 
 # Or use Turbo
 npx turbo generate-assets
+
+# Run with sample data (faster for testing)
+SAMPLE_MODE=true npx pnpm generate-assets
+
+# Run with specific source file
+SOURCE_FILE=data/source/bcbc-2024.json npx pnpm generate-assets
+
+# Run with custom output directory
+OUTPUT_DIR=apps/web/public/data npx pnpm generate-assets
 ```
 
 **What it does:**
-- Parses BCBC JSON source
-- Generates FlexSearch indexes
-- Creates navigation tree
-- Extracts glossary and metadata
-- Chunks content by section
+- Parses BCBC JSON source using `@bc-building-code/bcbc-parser`
+- Generates FlexSearch indexes using `@bc-building-code/search-indexer`
+- Creates navigation tree JSON
+- Extracts glossary map
+- Extracts amendment dates
+- Chunks content by section using `@bc-building-code/content-chunker`
 
+**Input:** `data/source/bcbc-2024.json` (or `data/samples/bcbc-sample.json` in sample mode)  
 **Output location:** `apps/web/public/data/`
+
+**Generated Files:**
+- `search-index.json` - FlexSearch index for client-side search
+- `navigation-tree.json` - Hierarchical TOC structure
+- `glossary-map.json` - Term definitions lookup
+- `amendment-dates.json` - Available effective dates
+- `content-types.json` - Filter options (Article, Table, Figure, Note)
+- `quick-access.json` - Frequently accessed sections
+- `content/{division}/{part}/{section}.json` - Content chunks
+
+**Environment Variables:**
+- `SOURCE_FILE` - Path to source JSON (default: `data/source/bcbc-2024.json`)
+- `OUTPUT_DIR` - Output directory (default: `apps/web/public/data`)
+- `SAMPLE_MODE` - Use sample data (default: `false`)
+
+**When to use:**
+- After updating source BCBC JSON
+- Before building the application
+- When testing search or navigation
+- As part of CI/CD pipeline
 
 ---
 
 ## Testing & Quality
+
+### Running Tests
+
+```bash
+# Run all tests in all packages
+npx pnpm test
+
+# Run tests for specific package
+npx pnpm --filter @bc-building-code/bcbc-parser test
+
+# Run tests in watch mode (continuous testing)
+npx pnpm --filter @bc-building-code/bcbc-parser test --watch
+
+# Run tests with coverage report
+npx pnpm --filter @bc-building-code/bcbc-parser test --coverage
+
+# Run specific test file
+npx pnpm --filter @bc-building-code/bcbc-parser test parser.test.ts
+
+# Run tests matching pattern
+npx pnpm --filter @bc-building-code/bcbc-parser test --grep "parseBCBC"
+```
+
+**What it does:**
+- Runs Vitest test suites
+- Reports test results and coverage
+- Validates functionality
+
+**Test Locations:**
+- `packages/bcbc-parser/src/*.test.ts` - Parser unit and integration tests
+- `packages/*/src/*.test.ts` - Package-specific tests
 
 ### Type Checking
 
@@ -351,7 +413,7 @@ npx pnpm --filter @bc-building-code/web exec prettier --write .
 npx pnpm --filter @bc-building-code/web start
 ```
 
-### BCBC Parser Package (when created)
+### BCBC Parser Package
 
 ```bash
 # Build parser
@@ -360,9 +422,34 @@ npx pnpm --filter @bc-building-code/bcbc-parser build
 # Run tests
 npx pnpm --filter @bc-building-code/bcbc-parser test
 
+# Run tests in watch mode
+npx pnpm --filter @bc-building-code/bcbc-parser test --watch
+
+# Run tests with coverage
+npx pnpm --filter @bc-building-code/bcbc-parser test --coverage
+
 # Type check
 npx pnpm --filter @bc-building-code/bcbc-parser type-check
+
+# Lint
+npx pnpm --filter @bc-building-code/bcbc-parser lint
 ```
+
+**What it does:**
+- Parses BCBC JSON from source format (`data/source/bcbc-2024.json`)
+- Transforms nested structure (divisions → parts → sections → subsections → articles)
+- Extracts clauses with subclauses
+- Parses tables, figures, and equations
+- Extracts glossary term references from text
+- Converts glossary from object to array format
+- Parses amendment dates
+
+**Key Functions:**
+- `parseBCBC(jsonData)` - Parse complete BCBC document
+- `parseDivision(jsonData, divisionId)` - Parse specific division
+- `extractContentIds(document)` - Get all content IDs
+- `getGlossaryMap(document)` - Create glossary lookup map
+- `getAmendmentDates(document)` - Extract unique dates
 
 ### Search Indexer Package (when created)
 
@@ -519,10 +606,13 @@ npx pnpm lint
 # 3. Type check
 npx pnpm --filter @bc-building-code/web type-check
 
-# 4. Build to verify
+# 4. Run tests
+npx pnpm test
+
+# 5. Build to verify
 npx pnpm build
 
-# 5. Commit changes
+# 6. Commit changes
 git add .
 git commit -m "Your commit message"
 ```
@@ -533,6 +623,7 @@ git commit -m "Your commit message"
 # Run all checks in one command
 npx pnpm --filter @bc-building-code/web exec prettier --write . && \
 npx pnpm lint && \
+npx pnpm test && \
 npx pnpm --filter @bc-building-code/web type-check && \
 npx pnpm build
 ```
@@ -595,6 +686,7 @@ npx pnpm install --frozen-lockfile
 
 # Run all checks
 npx pnpm lint
+npx pnpm test
 npx pnpm --filter @bc-building-code/web type-check
 npx pnpm build
 
@@ -645,6 +737,7 @@ DEBUG=* npx pnpm dev
 | Install dependencies | `npx pnpm install` |
 | Start dev server | `npx pnpm dev` |
 | Build for production | `npx pnpm build` |
+| Run tests | `npx pnpm test` |
 | Type check | `npx pnpm --filter @bc-building-code/web type-check` |
 | Lint code | `npx pnpm lint` |
 | Format code | `npx pnpm --filter @bc-building-code/web exec prettier --write .` |
@@ -652,6 +745,7 @@ DEBUG=* npx pnpm dev
 | Add dependency | `npx pnpm --filter @bc-building-code/web add <package>` |
 | Update dependencies | `npx pnpm update` |
 | Generate assets | `npx pnpm generate-assets` |
+| Test parser | `npx pnpm --filter @bc-building-code/bcbc-parser test` |
 
 ---
 
@@ -664,6 +758,6 @@ DEBUG=* npx pnpm dev
 
 ---
 
-**Last Updated:** January 19, 2026  
-**Version:** 1.0  
+**Last Updated:** January 28, 2026  
+**Version:** 1.1  
 **Maintained by:** BC Building Code Interactive Team

@@ -7,12 +7,18 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "generate-assets": "turbo run generate-assets",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test",
+    "generate-assets": "tsx scripts/generate-assets.ts",
+    "generate-assets:2024": "SOURCE_FILE=data/source/bcbc-2024.json OUTPUT_DIR=apps/web/public/data/2024 tsx scripts/generate-assets-single-version-backup.ts",
+    "generate-assets:clean": "rimraf apps/web/public/data/*",
     "clean": "turbo run clean"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
-    "typescript": "^5.3.0"
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "@types/node": "^20.11.0"
   },
   "packageManager": "pnpm@8.15.0",
   "engines": {

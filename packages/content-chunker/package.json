@@ -1,0 +1,29 @@
+{
+  "name": "@bc-building-code/content-chunker",
+  "version": "1.0.0",
+  "description": "Content splitting and metadata extraction for BCBC",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./chunker": "./src/chunker.ts",
+    "./metadata-extractor": "./src/metadata-extractor.ts"
+  },
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\"",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@bc-building-code/bcbc-parser": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.11.24",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.6.0"
+  }
+}

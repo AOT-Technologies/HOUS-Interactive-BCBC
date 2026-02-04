@@ -1,0 +1,195 @@
+/**
+ * Sidebar Component Styles
+ *
+ * Responsive behavior:
+ * - Mobile/Tablet (< 1024px): Collapsible inline panel
+ * - Desktop (≥ 1024px): Always visible sidebar
+ */
+
+/* ============================================
+   MOBILE/TABLET INLINE PANEL (< 1024px)
+   ============================================ */
+
+/* Mobile wrapper - contains toggle and expandable panel */
+.ui-Sidebar--MobileWrapper {
+  display: block;
+  width: 100%;
+}
+
+/* Mobile toggle container - white background section between breadcrumb and hero */
+.ui-Sidebar--MobileToggleContainer {
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 16px;
+  border-bottom: 1px solid var(--surface-color-border-default, #D9D9D9);
+}
+
+/* Mobile toggle button - outlined style */
+button.ui-Sidebar--MobileToggle,
+button.ui-Sidebar--MobileToggle.ui-Button,
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary,
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary.--icon {
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 1;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 8px;
+  background-color: #FFFFFF !important;
+  border: 1px solid #313132 !important;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: none !important;
+  color: #313132 !important;
+}
+
+button.ui-Sidebar--MobileToggle:hover,
+button.ui-Sidebar--MobileToggle[data-hovered],
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary:hover,
+button.ui-Sidebar--MobileToggle.ui-Button.--secondary[data-hovered] {
+  background-color: #F2F2F2 !important;
+}
+
+button.ui-Sidebar--MobileToggle:focus,
+button.ui-Sidebar--MobileToggle[data-focus-visible] {
+  outline: 2px solid #FCBA19;
+  outline-offset: 2px;
+}
+
+/* Ensure the icon inside is dark and visible */
+.ui-Sidebar--MobileToggle .ui-Icon,
+.ui-Sidebar--MobileToggle svg,
+button.ui-Sidebar--MobileToggle .ui-Icon,
+button.ui-Sidebar--MobileToggle svg {
+  color: #313132 !important;
+  fill: #313132 !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.ui-Sidebar--MobileToggle svg path,
+button.ui-Sidebar--MobileToggle svg path {
+  fill: #313132 !important;
+}
+
+/* Mobile expandable panel - appears below toggle when open */
+.ui-Sidebar--MobilePanel {
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--surface-color-border-default, #D9D9D9);
+}
+
+/* Mobile panel content */
+.ui-Sidebar--MobilePanelContent {
+  padding: 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* ============================================
+   DESKTOP SIDEBAR (≥ 1024px)
+   ============================================ */
+
+/* Desktop sidebar - hidden on mobile */
+.ui-Sidebar {
+  display: none;
+}
+
+/* Toggle button - hidden on mobile */
+.ui-Sidebar--ToggleButton {
+  display: none;
+}
+
+/* DESKTOP - 1024px and up */
+@media (min-width: 64rem) {
+  /* Hide mobile wrapper and all mobile elements */
+  .ui-Sidebar--MobileWrapper {
+    display: none;
+  }
+
+  .ui-Sidebar--MobileToggleContainer {
+    display: none;
+  }
+
+  .ui-Sidebar--MobileToggle {
+    display: none;
+  }
+
+  .ui-Sidebar--MobilePanel {
+    display: none;
+  }
+
+  /* Show desktop sidebar */
+  .ui-Sidebar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: var(--sidebar-width, 320px);
+    min-width: var(--sidebar-width-min, 280px);
+    max-width: var(--sidebar-width-max, 400px);
+    height: calc(100vh - var(--header-height-full, 60px));
+    background: var(--surface-color-background-white, #FFFFFF);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* Sidebar content */
+  .ui-Sidebar--Content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 16px;
+  }
+
+  /* Smooth scrolling for scroll-to-active */
+  .ui-Sidebar--Content {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  .ui-Sidebar--Content:focus {
+    outline: 2px solid var(--surface-color-border-active, #FCBA19);
+    outline-offset: -2px;
+  }
+}
+
+/* DESKTOP - 1200px and up - wider sidebar */
+@media (min-width: 75rem) {
+  .ui-Sidebar {
+    width: var(--sidebar-width, 360px);
+    min-width: var(--sidebar-width-min, 320px);
+  }
+}
+
+/* DESKTOP LARGE - 1504px and up - even wider sidebar */
+@media (min-width: 94rem) {
+  .ui-Sidebar {
+    width: var(--sidebar-width, 400px);
+    min-width: var(--sidebar-width-min, 360px);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ui-Sidebar--MobilePanel {
+    border-bottom-width: 2px;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.ui-Sidebar--MobileToggle:focus-visible {
+  outline: 2px solid #FCBA19;
+  outline-offset: 2px;
+}

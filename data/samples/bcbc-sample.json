@@ -1,0 +1,96 @@
+{
+  "document_type": "bc_building_code",
+  "version": "2020",
+  "canonical_version": "1.0",
+  "generated_timestamp": "2026-01-20T19:45:26.4179915-08:00",
+  "metadata": {
+    "title": "National Building Code of Canada 2020",
+    "subtitle": "Volume 1",
+    "authority": "Issued by the Canadian Commission on Building and Fire Codes National Research Council of Canada",
+    "publication_date": "2022",
+    "nrc_number": "56435E",
+    "isbn": "978-0-660-37913-5",
+    "volumes": [
+      {
+        "volume": "1",
+        "title": "National Building Code of Canada 2020",
+        "subtitle": "Volume 1"
+      }
+    ]
+  },
+  "divisions": [
+    {
+      "id": "nbc.divA",
+      "type": "division",
+      "letter": "A",
+      "title": "Compliance, Objectives and Functional Statements",
+      "number": "",
+      "parts": [
+        {
+          "id": "nbc.divA.part1",
+          "type": "part",
+          "number": 1,
+          "title": "Compliance",
+          "sections": [
+            {
+              "id": "nbc.divA.part1.sect1",
+              "type": "section",
+              "number": 1,
+              "title": "General",
+              "subsections": [
+                {
+                  "id": "nbc.divA.part1.sect1.subsect1",
+                  "type": "subsection",
+                  "number": 1,
+                  "title": "Application of this Code",
+                  "articles": [
+                    {
+                      "id": "nbc.divA.part1.sect1.subsect1.art1",
+                      "type": "article",
+                      "number": 1,
+                      "title": "Application of this Code",
+                      "content": [
+                        {
+                          "id": "bc.divA.part1.sect1.subsect1.art1.sent1",
+                          "type": "sentence",
+                          "number": 1,
+                          "text": "This Code applies to any one or more of the following:",
+                          "clauses": [
+                            {
+                              "id": "bc.divA.part1.sect1.subsect1.art1.sent1.clause1",
+                              "type": "clause",
+                              "letter": "a",
+                              "text": "the design and construction of a new [REF:term:bldng]building,"
+                            },
+                            {
+                              "id": "bc.divA.part1.sect1.subsect1.art1.sent1.clause2",
+                              "type": "clause",
+                              "letter": "b",
+                              "text": "the [REF:term:ccpnc]occupancy of any [REF:term:bldng]building,"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": {
+    "bldng": {
+      "term": "Building",
+      "definition": "Any structure used or intended for supporting or sheltering any use or occupancy.",
+      "location_id": "nbc.divA.part1.sect4.subsect1.art2.sent1"
+    },
+    "ccpnc": {
+      "term": "Occupancy",
+      "definition": "The use or intended use of a building or part thereof for the shelter or support of persons, animals or property.",
+      "location_id": "nbc.divA.part1.sect4.subsect1.art2.sent1"
+    }
+  }
+}

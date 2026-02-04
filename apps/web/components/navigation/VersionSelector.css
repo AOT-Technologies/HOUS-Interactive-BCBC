@@ -1,0 +1,152 @@
+/**
+ * VersionSelector Component Styles
+ * 
+ * Styled to match the revision dropdown in HomeSidebarContent
+ */
+
+.VersionSelector {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 2px;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+/* Label */
+.VersionSelector--Label {
+  font-family: 'BC Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #2D2D2D;
+  margin: 0;
+}
+
+/* Loading State */
+.VersionSelector--Loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.VersionSelector--LoadingText {
+  font-family: 'BC Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  color: #6C6C6C;
+}
+
+/* Single Version (Disabled State) */
+.VersionSelector--SingleVersion {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 40px 10px 12px;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  background: #F2F2F2;
+  border: 1px solid #D8D8D8;
+  border-radius: 4px;
+}
+
+.VersionSelector--SingleVersionText {
+  font-family: 'BC Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #6C6C6C;
+}
+
+/* Select Wrapper (for custom styling) */
+.VersionSelector--SelectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Select Element - Matches revision dropdown exactly */
+.VersionSelector--Select {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 40px 10px 12px;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #D8D8D8;
+  border-radius: 4px;
+  font-family: 'BC Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2D2D2D;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.VersionSelector--Select:hover:not(:disabled) {
+  border-color: #898785;
+}
+
+.VersionSelector--Select:focus {
+  outline: 2px solid #1A5A96;
+  outline-offset: 2px;
+}
+
+.VersionSelector--Select:disabled {
+  background: #F2F2F2;
+  color: #6C6C6C;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.VersionSelector--Select option {
+  color: #2D2D2D;
+}
+
+/* Dropdown Icon - Matches revision dropdown */
+.VersionSelector--Icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #2D2D2D;
+  width: 20px;
+  height: 20px;
+}
+
+.VersionSelector--Select:disabled + .VersionSelector--Icon {
+  color: #6C6C6C;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .VersionSelector--Select {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  
+  .VersionSelector--SingleVersionText {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+

@@ -8,3 +8,4 @@
 
 export * from './useLocalStorage';
 export * from './useWalkthroughsData';
+export * from './useSearch';

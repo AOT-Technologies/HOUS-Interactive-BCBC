@@ -38,7 +38,7 @@ const article: Article = {
 ### Hooks
 
 ```typescript
-import { useLocalStorage } from '@repo/data/hooks';
+import { useLocalStorage } from '@repo/data';
 
 function MyComponent() {
   const [value, setValue] = useLocalStorage('my-key', 'default');

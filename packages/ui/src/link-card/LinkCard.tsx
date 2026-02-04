@@ -30,11 +30,12 @@ export default function LinkCard({
   href,
   "data-testid": testid = "",
   "aria-label": ariaLabel = "",
+  className = "",
   ...props
 }: LinkCardProps) {
   return (
     <ReactAriaLink
-      className="ui-LinkCard--CardContainer"
+      className={`ui-LinkCard--CardContainer ${className}`.trim()}
       href={href}
       aria-label={ariaLabel || `${title} - ${description}`}
       data-testid={GET_TESTID_LINK_CARD(testid || href)}

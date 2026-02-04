@@ -1,0 +1,221 @@
+/**
+ * Breadcrumbs Component Styles
+ * 
+ * Displays hierarchical navigation breadcrumbs with responsive behavior.
+ * Follows BC Design System specifications and Figma design.
+ * Aligned to left, vertically centered.
+ */
+
+/* Breadcrumbs Container */
+.breadcrumbs {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically center the content */
+  justify-content: center;
+  width: 100%;
+  height: 54px;
+  padding: 4px var(--layout-padding-container, 16px);
+  background: #FFFFFF;
+  border-bottom: 1px solid #D8D8D8;
+  border-radius: 0px;
+  flex: none;
+  position: relative;
+}
+
+/* Breadcrumbs List - vertically centered, max-width to match header */
+.breadcrumbs-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center; /* Vertically center items */
+  align-content: center; /* Center wrapped content */
+  padding: 0;
+  padding-left: 10px; /* Align with logo graphic (logo image has internal whitespace) */
+  gap: 8px;
+  min-height: 46px;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 1116px;
+}
+
+/* Breadcrumb Item */
+.breadcrumbs-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 4px;
+  height: 22px;
+  flex: none;
+}
+
+/* Breadcrumb Link */
+.breadcrumbs-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  font-family: 'BC Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1A5A96;
+  text-decoration: none;
+  cursor: pointer;
+  flex: none;
+}
+
+.breadcrumbs-link:hover {
+  text-decoration: underline;
+  color: #0D4A7A;
+}
+
+.breadcrumbs-link:focus {
+  outline: 2px solid var(--surface-color-border-active, #1A5A96);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Current page breadcrumb - still blue and clickable */
+.breadcrumbs-link--current {
+  color: #1A5A96;
+  cursor: pointer;
+}
+
+.breadcrumbs-link--current:hover {
+  text-decoration: underline;
+  color: #0D4A7A;
+}
+
+/* Breadcrumb Number */
+.breadcrumbs-number {
+  font-weight: 700;
+}
+
+/* Breadcrumb Title */
+.breadcrumbs-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Breadcrumb Separator */
+.breadcrumbs-separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  color: var(--typography-color-secondary, #606060);
+  flex: none;
+}
+
+/* Ellipsis Button for collapsed items */
+.breadcrumbs-item--ellipsis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumbs-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  font-family: 'BC Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #1A5A96;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.breadcrumbs-ellipsis:hover {
+  background-color: var(--surface-color-background-light-gray, #F2F2F2);
+  border-color: var(--surface-color-border-default, #D8D8D8);
+}
+
+.breadcrumbs-ellipsis:focus {
+  outline: 2px solid var(--surface-color-border-active, #1A5A96);
+  outline-offset: 2px;
+}
+
+/* Responsive Behavior */
+
+/* Mobile (< 768px) */
+@media (max-width: 37.9375rem) {
+  .breadcrumbs-title {
+    max-width: 80px;
+  }
+
+  .breadcrumbs-item:last-child .breadcrumbs-title {
+    max-width: 120px;
+  }
+
+  .breadcrumbs-link,
+  .breadcrumbs-current {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 38rem) and (max-width: 63.9375rem) {
+  .breadcrumbs-title {
+    max-width: 150px;
+  }
+
+  .breadcrumbs-item:last-child .breadcrumbs-title {
+    max-width: 200px;
+  }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 64rem) {
+  .breadcrumbs-title {
+    max-width: none;
+  }
+}
+
+/**
+ * High contrast mode support
+ */
+@media (prefers-contrast: high) {
+  .breadcrumbs {
+    border-bottom-width: 2px;
+  }
+
+  .breadcrumbs-link {
+    text-decoration: underline;
+  }
+}
+
+/**
+ * Print styles
+ */
+@media print {
+  .breadcrumbs {
+    border-bottom: 1px solid #000;
+    padding: 0.5rem 0;
+  }
+
+  .breadcrumbs-link {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .breadcrumbs-separator {
+    color: #000;
+  }
+}

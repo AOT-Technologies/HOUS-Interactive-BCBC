@@ -1,0 +1,120 @@
+/* Alert Component */
+.ui-Alert {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--layout-padding-medium) var(--layout-padding-large);
+  gap: var(--layout-padding-small);
+  isolation: isolate;
+  width: 100%;
+  border-radius: var(--layout-border-radius-xlarge);
+  border-width: var(--layout-border-width-small);
+  border-style: solid;
+}
+
+/* Warning Variant */
+.ui-Alert--warning {
+  background: #FEF2D6;
+  border-color: var(--theme-primary-gold);
+}
+
+/* Info Variant */
+.ui-Alert--info {
+  background: var(--support-surface-color-info);
+  border-color: var(--support-border-color-info);
+}
+
+/* Danger Variant */
+.ui-Alert--danger {
+  background: var(--support-surface-color-danger);
+  border-color: var(--support-border-color-danger);
+}
+
+/* Success Variant */
+.ui-Alert--success {
+  background: var(--support-surface-color-success);
+  border-color: var(--support-border-color-success);
+}
+
+/* Header - Icon + Title */
+.ui-Alert--Header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: var(--layout-padding-small);
+  width: 100%;
+  z-index: 0;
+}
+
+/* Icon */
+.ui-Alert--Icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.ui-Alert--warning .ui-Alert--Icon {
+  color: var(--theme-primary-gold);
+}
+
+.ui-Alert--warning .ui-Alert--Icon svg {
+  color: var(--theme-primary-gold);
+}
+
+.ui-Alert--info .ui-Alert--Icon {
+  color: var(--support-border-color-info);
+}
+
+.ui-Alert--danger .ui-Alert--Icon {
+  color: var(--support-border-color-danger);
+}
+
+.ui-Alert--success .ui-Alert--Icon {
+  color: var(--support-border-color-success);
+}
+
+/* Title */
+.ui-Alert--Title {
+  font-family: var(--typography-font-families-bc-sans);
+  font-style: normal;
+  font-weight: var(--typography-font-weights-bold);
+  font-size: var(--typography-font-size-body);
+  line-height: 22px;
+  color: #292929;
+  margin: 0;
+  flex: 1;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+/* Description */
+.ui-Alert--Description {
+  font-family: var(--typography-font-families-bc-sans);
+  font-style: normal;
+  font-weight: var(--typography-font-weights-regular);
+  font-size: var(--typography-font-size-small-body);
+  line-height: 19px;
+  color: #292929;
+  padding: 0 0 0 28px;
+  width: 100%;
+  z-index: 1;
+}
+
+.ui-Alert--Description p {
+  margin: 0;
+  display: inline;
+}
+
+.ui-Alert--Description a {
+  color: var(--typography-color-link);
+  text-decoration: underline;
+}
+
+.ui-Alert--Description a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,136 @@
+/* QuickAccessPins Component Styles */
+
+.quick-access-pins {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 24px;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto 32px;
+}
+
+.quick-access-pins--title {
+  width: 100%;
+  font-family: 'BC Sans', 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
+/* Single column layout for tablet/mobile, wrapping flex for desktop */
+.quick-access-pins--list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.quick-access-pins--description {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.quick-access-pins--description p {
+  font-family: 'BC Sans', 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--typography-color-secondary, #313132);
+  margin: 0;
+  text-align: center;
+}
+
+.quick-access-pin {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 300px;
+  min-height: 145px;
+  flex: none;
+  text-decoration: none;
+}
+
+/* Loading and error states */
+.quick-access-pins--loading,
+.quick-access-pins--error {
+  padding: 24px;
+  text-align: center;
+  color: #313132;
+  font-family: 'BC Sans', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.quick-access-pins--error {
+  color: #D8292F;
+}
+
+/* Responsive breakpoints */
+
+/* Desktop (≥ 1024px) - cards side by side */
+@media (min-width: 1024px) {
+  .quick-access-pins {
+    max-width: 932px;
+  }
+
+  .quick-access-pins--title {
+    text-align: left;
+  }
+
+  .quick-access-pins--list {
+    justify-content: flex-start;
+  }
+
+  .quick-access-pins--description p {
+    text-align: left;
+  }
+
+  .quick-access-pin {
+    flex: 1 1 calc(33.333% - 11px);
+    max-width: calc(33.333% - 11px);
+  }
+}
+
+/* Tablet and Mobile (< 1024px) - single column, centered */
+@media (max-width: 1023px) {
+  .quick-access-pins {
+    max-width: 560px;
+  }
+
+  .quick-access-pins--list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quick-access-pin {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Mobile (< 768px) - smaller text and spacing */
+@media (max-width: 767px) {
+  .quick-access-pins {
+    gap: 16px;
+  }
+
+  .quick-access-pins--title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .quick-access-pins--list {
+    gap: 12px;
+  }
+}

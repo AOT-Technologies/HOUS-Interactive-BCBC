@@ -1,0 +1,287 @@
+/* HeaderSearch - Compact, toggleable search for header */
+
+.ui-HeaderSearch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+/* Closed State - Search button with icon and text */
+.ui-HeaderSearch.--closed {
+  width: auto;
+}
+
+/* Search Button - Icon + "Search" text */
+.ui-HeaderSearch--SearchButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'BC Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--typography-color-primary, #313132);
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.ui-HeaderSearch--SearchButton:hover {
+  background-color: var(--surface-color-background-light-gray, #F2F2F2);
+}
+
+.ui-HeaderSearch--SearchButton:focus {
+  outline: 2px solid var(--surface-color-border-active, #1A5A96);
+  outline-offset: 2px;
+}
+
+.ui-HeaderSearch--SearchButton .ui-Icon {
+  width: 20px;
+  height: 20px;
+  color: var(--icons-color-primary, #313132);
+}
+
+/* Open State - Animated expansion */
+.ui-HeaderSearch.--open {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  animation: headerSearchExpand 0.3s ease-out;
+}
+
+@keyframes headerSearchExpand {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Cancel Button - Figma specs */
+.ui-HeaderSearch--CancelButton {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  min-width: 82px;
+  height: 40px;
+  background: var(--surface-color-background-white);
+  border: 1px solid var(--theme-gray-100);
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: 'BC Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  color: var(--typography-color-primary);
+}
+
+/* Search Wrapper - contains input and dropdown */
+.ui-HeaderSearch--SearchWrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  width: 391px;
+  height: 39px;
+  background: var(--surface-color-background-white);
+  border: 1px solid var(--surface-color-border-default);
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Search Icon - Left side */
+.ui-HeaderSearch--SearchIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  color: var(--theme-gray-90);
+}
+
+/* Input Field - Middle, takes remaining space */
+.ui-HeaderSearch--Input {
+  font-family: 'BC Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  color: var(--typography-color-secondary);
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  order: 1;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* Clear Button - Right side, before search icon */
+.ui-HeaderSearch--ClearButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--theme-gray-90);
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ui-HeaderSearch--ClearButton:hover {
+  background-color: var(--surface-color-background-light-gray);
+  color: var(--typography-color-primary);
+}
+
+.ui-HeaderSearch--ClearButton:focus {
+  outline: 2px solid var(--surface-color-border-active);
+  outline-offset: 2px;
+}
+
+.ui-HeaderSearch--ClearButton .ui-Icon {
+  width: 16px;
+  height: 16px;
+}
+
+.ui-HeaderSearch--SearchWrapper:focus-within {
+  border-color: var(--surface-color-border-active);
+}
+
+.ui-HeaderSearch--Input::placeholder {
+  color: var(--typography-color-secondary);
+}
+
+/* Dropdown - positioned below search wrapper */
+.ui-HeaderSearch--Dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: var(--layout-padding-xsmall, 4px) 0;
+  background-color: var(--surface-color-background-white, #fff);
+  border: 1px solid var(--surface-color-border-default, #ccc);
+  border-radius: var(--layout-borderradius-medium, 4px);
+  box-shadow: var(--surface-shadow-medium);
+  z-index: 10000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Option Item */
+.ui-HeaderSearch--Option {
+  padding: var(--layout-padding-small, 8px) var(--layout-padding-medium, 16px);
+  font-family: 'BC Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--typography-color-primary);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ui-HeaderSearch--Option:hover,
+.ui-HeaderSearch--Option.--highlighted {
+  background-color: var(--surface-color-background-light-gray);
+}
+
+/* Loading State */
+.ui-HeaderSearch--LoadingItem {
+  padding: var(--layout-padding-medium, 16px);
+  text-align: center;
+  color: var(--typography-color-secondary);
+  font-family: 'BC Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 912px) {
+  .ui-HeaderSearch.--open {
+    width: auto;
+  }
+
+  .ui-HeaderSearch--SearchWrapper {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ui-HeaderSearch--SearchWrapper {
+    width: 250px;
+  }
+
+  .ui-HeaderSearch--CancelButton {
+    font-size: 14px;
+    padding: 6px 12px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui-HeaderSearch--SearchWrapper {
+    width: 200px;
+  }
+}
+
+/* Mobile - when search is open, take full width (must come last to override fixed widths) */
+@media (max-width: 56.9375rem) {
+  .ui-HeaderSearch.--open {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ui-HeaderSearch.--open .ui-HeaderSearch--SearchWrapper {
+    flex: 1;
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  .ui-HeaderSearch.--open .ui-HeaderSearch--Input {
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  .ui-HeaderSearch.--open .ui-HeaderSearch--CancelButton {
+    flex-shrink: 0;
+  }
+}

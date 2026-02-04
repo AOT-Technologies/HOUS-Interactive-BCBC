@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+apps/web/.next/
+apps/web/out/
+apps/web/public/data/
+**/dist/
+**/.turbo/
+
+# Git
+.git/
+.github/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+**/*.test.ts
+**/*.test.tsx
+**/tests/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Temp folders
+temp_folder_prototype/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tsbuildinfo

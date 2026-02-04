@@ -26,6 +26,7 @@ import {
 import Icon from "../icon/Icon";
 import Link from "../link/Link";
 import Button from "../button/Button";
+import HeaderSearch from "../header-search/HeaderSearch";
 import "./Header.css";
 
 export interface HeaderProps {
@@ -47,6 +48,18 @@ export interface HeaderProps {
    * Desired element that renders the `title` string. Defaults to `<span>`.
    */
   titleElement?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "p";
+  /**
+   * Callback when search is submitted. If provided, search bar will be shown.
+   */
+  onSearch?: (query: string) => void;
+  /**
+   * Function to fetch search suggestions for autocomplete.
+   */
+  getSuggestions?: (query: string) => Promise<string[]> | string[];
+  /**
+   * Placeholder text for search input.
+   */
+  searchPlaceholder?: string;
 }
 
 const getCloseButton = (
@@ -98,6 +111,9 @@ export default function Header({
   title = "",
   titleElement = "h1",
   logoSrc,
+  onSearch,
+  getSuggestions,
+  searchPlaceholder = "Search building code...",
 }: PropsWithChildren<HeaderProps>) {
   // setup state
   const router = useRouter();
@@ -153,7 +169,7 @@ export default function Header({
       className={`ui-Header ${mobileNavIsOpen ? "--mobile-open" : ""}`}
       data-testid={TESTID_HEADER}
     >
-      <div className="u-container ui-Header--Container">
+      <div className="ui-Header--Container">
         {skipLinks && (
           <ul className="ui-Header--SkipLinks">
             {skipLinks.map((link, index) => {
@@ -161,26 +177,42 @@ export default function Header({
             })}
           </ul>
         )}
-        {logoSrc && (
-          <ReactAriaLink href="/" className="ui-Header--LogoLink">
-            <Image
-              src={logoSrc}
-              alt={"Government of British Columbia Logo - Go to the homepage"}
-              width={"156"}
-              height={"60"}
+        
+        {/* Logo and Title Section */}
+        <div className="ui-Header--LogoTitleSection">
+          {logoSrc && (
+            <ReactAriaLink href="/" className="ui-Header--LogoLink">
+              <Image
+                src={logoSrc}
+                alt={"Government of British Columbia Logo - Go to the homepage"}
+                width={"129"}
+                height={"54"}
+              />
+            </ReactAriaLink>
+          )}
+          {title && (
+            <div className="ui-Header--TitleWrapper">
+              <div className="ui-Header--Line" />
+              {getTitle()}
+            </div>
+          )}
+        </div>
+
+        {/* Header Content Section (Search + Nav) */}
+        <div className="ui-Header--ContentSection">
+          {onSearch && (
+            <HeaderSearch
+              onSearch={onSearch}
+              getSuggestions={getSuggestions}
+              placeholder={searchPlaceholder}
             />
-          </ReactAriaLink>
-        )}
-        {title && (
-          <div className="ui-Header--TitleWrapper">
-            {logoSrc && <div className="ui-Header--Line" />}
-            {getTitle()}
-          </div>
-        )}
-        <nav className="ui-Header--Nav" id={ID_MAIN_NAVIGATION}>
-          {getNavList(router.push)}
-          {getCloseButton(() => setMobileNavIsOpen(true), mobileNavIsOpen)}
-        </nav>
+          )}
+          <nav className="ui-Header--Nav" id={ID_MAIN_NAVIGATION}>
+            {getNavList(router.push)}
+            {getCloseButton(() => setMobileNavIsOpen(true), mobileNavIsOpen)}
+          </nav>
+        </div>
+
         <Modal
           isDismissable
           isOpen={mobileNavIsOpen}
@@ -188,7 +220,6 @@ export default function Header({
           data-testid={TESTID_HEADER_MOBILE_NAV}
         >
           <Dialog className="ui-Header--NavMobileWrapper" aria-label={title}>
-            {getCloseButton(() => setMobileNavIsOpen(false), mobileNavIsOpen)}
             <nav className="ui-Header--NavMobile">
               {getNavList(onMobileNavLinkClick)}
             </nav>

@@ -213,7 +213,7 @@ const article: Article = {
 ### Using Hooks
 
 ```typescript
-import { useLocalStorage } from '@repo/data/hooks';
+import { useLocalStorage } from '@repo/data';
 
 export function AmendmentFilter() {
   const [selectedDate, setSelectedDate] = useLocalStorage('amendment-date', null);

@@ -1,0 +1,208 @@
+/**
+ * NavigationTree Component Styles
+ * 
+ * Matches Figma design specifications for the BC Building Code navigation tree.
+ * 
+ * Design States:
+ * - Default: Regular text (400), black (#292929), no background, no border
+ * - Hover: Underlined text
+ * - Active: Blue background (#F1F8FE), blue text (#1A5A96), bold (700), 4px blue left border (#38598A)
+ * - Active Hover: Blue background, underlined blue text
+ * - Child Default: 1px gray left border (#D9D9D9)
+ * 
+ * Hierarchy Levels (padding-left on wrapper):
+ * - Parent (Level 0): 0px
+ * - Child (Level 1): 32px
+ * - Child2 (Level 2): 48px
+ * - Child3 (Level 3): 64px
+ */
+
+.nav-tree {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nav-tree--empty,
+.nav-tree--loading {
+  padding: var(--layout-padding-large);
+  text-align: center;
+}
+
+.nav-tree-empty-message,
+.nav-tree-loading-message {
+  color: var(--typography-color-secondary);
+  font: var(--typography-regular-body);
+}
+
+/* Navigation Item Container */
+.nav-tree-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Link Wrapper - Contains selection indicator and link */
+.nav-tree-link-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px; /* Gap between border and text */
+  width: 100%;
+  min-height: 43px;
+  position: relative;
+}
+
+/* Active state background */
+.nav-tree-link-wrapper--active {
+  background: #F1F8FE;
+}
+
+/* Matching node highlight (search results) */
+.nav-tree-link-wrapper--matching {
+  background: #FFFBEA;
+}
+
+/* Active takes precedence over matching */
+.nav-tree-link-wrapper--active.nav-tree-link-wrapper--matching {
+  background: #F1F8FE;
+}
+
+/* Selection Indicator */
+.nav-tree-selection {
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* Active: 4px blue bar */
+.nav-tree-selection--active {
+  width: 4px;
+  background: #38598A;
+}
+
+/* Inactive child: 1px gray bar */
+.nav-tree-selection--inactive {
+  width: 1px;
+  background: #D9D9D9;
+}
+
+/* Link Button */
+.nav-tree-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px 8px 0px;
+  gap: 8px;
+  flex: 1;
+  min-height: 43px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'BC Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 168%;
+  color: #292929;
+  transition: text-decoration 0.2s ease;
+}
+
+/* Link text container */
+.nav-tree-text {
+  display: block;
+  width: 100%;
+  word-break: break-word;
+  text-align: left;
+}
+
+/* Hover state - underline */
+.nav-tree-link:hover {
+  text-decoration: underline;
+}
+
+/* Active state - bold, blue text, 27px line height */
+.nav-tree-link--active {
+  font-weight: 700;
+  color: #1A5A96;
+  line-height: 27px;
+}
+
+/* Matching node text (search results) */
+.nav-tree-link--matching {
+  font-weight: 600;
+}
+
+/* Active takes precedence over matching */
+.nav-tree-link--active.nav-tree-link--matching {
+  font-weight: 700;
+  color: #1A5A96;
+}
+
+/* Active hover state - bold, blue text, underlined */
+.nav-tree-link--active:hover {
+  text-decoration: underline;
+}
+
+/* Number styling */
+.nav-tree-number {
+  font-weight: inherit;
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* Separator styling */
+.nav-tree-separator {
+  font-weight: inherit;
+  color: inherit;
+  white-space: pre;         /* Preserves spaces */
+}
+
+/* Title styling */
+.nav-tree-title {
+  font-weight: inherit;
+  color: inherit;
+  word-break: break-word;
+}
+
+/* Children container */
+.nav-tree-children {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Focus styles for accessibility */
+.nav-tree-link:focus {
+  outline: 2px solid var(--surface-color-border-active, #2563eb);
+  outline-offset: 2px;
+}
+
+.nav-tree-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-tree-link {
+    font-size: 14px;
+    padding: 6px 12px 6px 0px;
+  }
+  
+  .nav-tree-link-wrapper {
+    min-height: 38px;
+  }
+  
+  .nav-tree-selection--active {
+    height: 38px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .nav-tree-link {
+    transition: none;
+  }
+}
