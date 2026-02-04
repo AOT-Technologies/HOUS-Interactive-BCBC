@@ -47,45 +47,68 @@ export interface SearchResult {
 /**
  * BCBC Search Client
  * Manages FlexSearch index and provides search functionality
+ * Supports multiple versions with per-version index caching
  */
 export class BCBCSearchClient {
-  private index: FlexSearch.Document<SearchDocument> | null = null;
-  private documents: Map<string, SearchDocument> = new Map();
-  private metadata: SearchMetadata | null = null;
+  // Version-specific caches
+  private indexCache: Map<string, FlexSearch.Document<SearchDocument>> = new Map();
+  private documentsCache: Map<string, Map<string, SearchDocument>> = new Map();
+  private metadataCache: Map<string, SearchMetadata> = new Map();
+  
+  // Current version state
+  private currentVersion: string | null = null;
   private initialized = false;
 
   /**
-   * Initialize the search client
+   * Initialize the search client for a specific version
    * Loads documents and metadata, builds FlexSearch index
    * 
-   * @param documentsUrl - URL to documents.json (default: /data/search/documents.json)
-   * @param metadataUrl - URL to metadata.json (default: /data/search/metadata.json)
+   * @param version - Version ID (e.g., "2024", "2027")
+   * @param documentsUrl - URL to documents.json (default: /data/{version}/search/documents.json)
+   * @param metadataUrl - URL to metadata.json (default: /data/{version}/search/metadata.json)
    */
   async initialize(
-    documentsUrl: string = '/data/search/documents.json',
-    metadataUrl: string = '/data/search/metadata.json'
+    version: string = '2024',
+    documentsUrl?: string,
+    metadataUrl?: string
   ): Promise<void> {
-    if (this.initialized) {
+    // Check if already initialized for this version
+    if (this.currentVersion === version && this.initialized) {
       return;
     }
 
-    console.time('Search index initialization');
+    // Check if version is already cached
+    if (this.indexCache.has(version)) {
+      this.currentVersion = version;
+      this.initialized = true;
+      console.log(`Using cached search index for version ${version}`);
+      return;
+    }
+
+    // Set default URLs with version path
+    const defaultDocumentsUrl = `/data/${version}/search/documents.json`;
+    const defaultMetadataUrl = `/data/${version}/search/metadata.json`;
+    
+    const finalDocumentsUrl = documentsUrl || defaultDocumentsUrl;
+    const finalMetadataUrl = metadataUrl || defaultMetadataUrl;
+
+    console.time(`Search index initialization (${version})`);
 
     try {
       // Load documents and metadata in parallel
       const [documentsData, metadataData] = await Promise.all([
-        fetch(documentsUrl).then((r) => {
-          if (!r.ok) throw new Error(`Failed to load documents: ${r.statusText}`);
+        fetch(finalDocumentsUrl).then((r) => {
+          if (!r.ok) throw new Error(`Failed to load documents for version ${version}: ${r.statusText}`);
           return r.json();
         }),
-        fetch(metadataUrl).then((r) => {
-          if (!r.ok) throw new Error(`Failed to load metadata: ${r.statusText}`);
+        fetch(finalMetadataUrl).then((r) => {
+          if (!r.ok) throw new Error(`Failed to load metadata for version ${version}: ${r.statusText}`);
           return r.json();
         }),
       ]);
 
       // Create FlexSearch index with field-specific configuration
-      this.index = new FlexSearch.Document<SearchDocument>({
+      const index = new FlexSearch.Document<SearchDocument>({
         tokenize: 'forward',
         optimize: true,
         resolution: 9,
@@ -123,19 +146,28 @@ export class BCBCSearchClient {
         },
       });
 
+      // Create documents map for this version
+      const documents = new Map<string, SearchDocument>();
+      
       // Add documents to index and map
       documentsData.forEach((doc: SearchDocument) => {
-        this.documents.set(doc.id, doc);
-        this.index!.add(doc);
+        documents.set(doc.id, doc);
+        index.add(doc);
       });
 
-      this.metadata = metadataData;
+      // Cache the index, documents, and metadata for this version
+      this.indexCache.set(version, index);
+      this.documentsCache.set(version, documents);
+      this.metadataCache.set(version, metadataData);
+      
+      // Set as current version
+      this.currentVersion = version;
       this.initialized = true;
 
-      console.timeEnd('Search index initialization');
-      console.log(`Loaded ${this.documents.size} documents`);
+      console.timeEnd(`Search index initialization (${version})`);
+      console.log(`Loaded ${documents.size} documents for version ${version}`);
     } catch (error) {
-      console.error('Failed to initialize search client:', error);
+      console.error(`Failed to initialize search client for version ${version}:`, error);
       throw error;
     }
   }
@@ -145,16 +177,27 @@ export class BCBCSearchClient {
    * 
    * @param query - Search query string
    * @param options - Search options (filters, pagination)
+   * @param version - Optional version ID (defaults to current version)
    * @returns Array of search results with scores and highlights
    */
-  async search(query: string, options: SearchOptions = {}): Promise<SearchResult[]> {
-    if (!this.initialized) {
-      throw new Error('Search client not initialized. Call initialize() first.');
+  async search(query: string, options: SearchOptions = {}, version?: string): Promise<SearchResult[]> {
+    const searchVersion = version || this.currentVersion;
+    
+    if (!searchVersion) {
+      throw new Error('No version specified and no current version set');
+    }
+    
+    // Ensure version is initialized
+    if (!this.indexCache.has(searchVersion)) {
+      await this.initialize(searchVersion);
     }
 
     if (!query || query.trim().length < 2) {
       return [];
     }
+    
+    const index = this.indexCache.get(searchVersion)!;
+    const documents = this.documentsCache.get(searchVersion)!;
 
     const {
       divisionFilter,
@@ -172,11 +215,11 @@ export class BCBCSearchClient {
     // Check if query is article number format (e.g., "A.1.2.3.4")
     const articleNumberMatch = query.match(/^([A-C])\.(\d+)\.(\d+)\.(\d+)\.(\d+)$/i);
     if (articleNumberMatch) {
-      return this.searchByArticleNumber(query);
+      return this.searchByArticleNumber(query, searchVersion);
     }
 
     // Perform FlexSearch across all fields
-    const rawResults = this.index!.search(query, {
+    const rawResults = index.search(query, {
       limit: limit * 3, // Get more results for filtering
       enrich: true,
     });
@@ -188,7 +231,7 @@ export class BCBCSearchClient {
       if (!fieldResult.result) return;
 
       fieldResult.result.forEach((item: any) => {
-        const doc = this.documents.get(item.id);
+        const doc = documents.get(item.id);
         if (!doc) return;
 
         if (!resultMap.has(item.id)) {
@@ -267,10 +310,15 @@ export class BCBCSearchClient {
   /**
    * Search by exact article number
    */
-  private searchByArticleNumber(articleNum: string): SearchResult[] {
+  private searchByArticleNumber(articleNum: string, version: string): SearchResult[] {
     const results: SearchResult[] = [];
+    const documents = this.documentsCache.get(version);
+    
+    if (!documents) {
+      return results;
+    }
 
-    for (const doc of this.documents.values()) {
+    for (const doc of documents.values()) {
       if (doc.articleNumber === articleNum) {
         results.push({
           document: doc,
@@ -366,14 +414,17 @@ export class BCBCSearchClient {
    * 
    * @param query - Partial query string
    * @param limit - Maximum number of suggestions (default: 5)
+   * @param version - Optional version ID (defaults to current version)
    * @returns Array of suggestion strings
    */
-  async getSuggestions(query: string, limit: number = 5): Promise<string[]> {
-    if (!this.initialized || query.length < 2) {
+  async getSuggestions(query: string, limit: number = 5, version?: string): Promise<string[]> {
+    const searchVersion = version || this.currentVersion;
+    
+    if (!searchVersion || query.length < 2) {
       return [];
     }
 
-    const results = await this.search(query, { limit: limit * 3 });
+    const results = await this.search(query, { limit: limit * 3 }, searchVersion);
     
     // Extract unique titles, prioritizing shorter/more relevant ones
     const suggestions = new Set<string>();
@@ -401,58 +452,131 @@ export class BCBCSearchClient {
 
   /**
    * Get a specific document by ID
+   * 
+   * @param id - Document ID
+   * @param version - Optional version ID (defaults to current version)
    */
-  getDocument(id: string): SearchDocument | undefined {
-    return this.documents.get(id);
+  getDocument(id: string, version?: string): SearchDocument | undefined {
+    const searchVersion = version || this.currentVersion;
+    if (!searchVersion) return undefined;
+    
+    const documents = this.documentsCache.get(searchVersion);
+    return documents?.get(id);
   }
 
   /**
-   * Get metadata
+   * Get metadata for a specific version
+   * 
+   * @param version - Optional version ID (defaults to current version)
    */
-  getMetadata(): SearchMetadata | null {
-    return this.metadata;
+  getMetadata(version?: string): SearchMetadata | null {
+    const searchVersion = version || this.currentVersion;
+    if (!searchVersion) return null;
+    
+    return this.metadataCache.get(searchVersion) || null;
   }
 
   /**
-   * Get table of contents
+   * Get table of contents for a specific version
+   * 
+   * @param version - Optional version ID (defaults to current version)
    */
-  getTableOfContents(): TableOfContentsItem[] {
-    return this.metadata?.tableOfContents || [];
+  getTableOfContents(version?: string): TableOfContentsItem[] {
+    const metadata = this.getMetadata(version);
+    return metadata?.tableOfContents || [];
   }
 
   /**
-   * Get revision dates
+   * Get revision dates for a specific version
+   * 
+   * @param version - Optional version ID (defaults to current version)
    */
-  getRevisionDates(): RevisionDate[] {
-    return this.metadata?.revisionDates || [];
+  getRevisionDates(version?: string): RevisionDate[] {
+    const metadata = this.getMetadata(version);
+    return metadata?.revisionDates || [];
   }
 
   /**
-   * Get divisions
+   * Get divisions for a specific version
+   * 
+   * @param version - Optional version ID (defaults to current version)
    */
-  getDivisions(): SearchMetadata['divisions'] {
-    return this.metadata?.divisions || [];
+  getDivisions(version?: string): SearchMetadata['divisions'] {
+    const metadata = this.getMetadata(version);
+    return metadata?.divisions || [];
   }
 
   /**
-   * Get content types
+   * Get content types for a specific version
+   * 
+   * @param version - Optional version ID (defaults to current version)
    */
-  getContentTypes(): SearchableContentType[] {
-    return this.metadata?.contentTypes || [];
+  getContentTypes(version?: string): SearchableContentType[] {
+    const metadata = this.getMetadata(version);
+    return metadata?.contentTypes || [];
   }
 
   /**
-   * Check if client is initialized
+   * Check if client is initialized for a specific version
+   * 
+   * @param version - Optional version ID (defaults to current version)
    */
-  isInitialized(): boolean {
-    return this.initialized;
+  isInitialized(version?: string): boolean {
+    const searchVersion = version || this.currentVersion;
+    if (!searchVersion) return false;
+    
+    return this.indexCache.has(searchVersion);
   }
 
   /**
-   * Get total document count
+   * Get total document count for a specific version
+   * 
+   * @param version - Optional version ID (defaults to current version)
    */
-  getDocumentCount(): number {
-    return this.documents.size;
+  getDocumentCount(version?: string): number {
+    const searchVersion = version || this.currentVersion;
+    if (!searchVersion) return 0;
+    
+    const documents = this.documentsCache.get(searchVersion);
+    return documents?.size || 0;
+  }
+  
+  /**
+   * Get current version ID
+   */
+  getCurrentVersion(): string | null {
+    return this.currentVersion;
+  }
+  
+  /**
+   * Clear cache for a specific version (useful for memory management)
+   * 
+   * @param version - Version ID to clear from cache
+   */
+  clearVersionCache(version: string): void {
+    this.indexCache.delete(version);
+    this.documentsCache.delete(version);
+    this.metadataCache.delete(version);
+    
+    if (this.currentVersion === version) {
+      this.currentVersion = null;
+      this.initialized = false;
+    }
+    
+    console.log(`Cleared cache for version ${version}`);
+  }
+  
+  /**
+   * Clear all version caches
+   */
+  clearAllCaches(): void {
+    this.indexCache.clear();
+    this.documentsCache.clear();
+    this.metadataCache.clear();
+    this.currentVersion = null;
+    this.initialized = false;
+    
+    console.log('Cleared all version caches');
   }
 }
 
@@ -471,12 +595,17 @@ export function getSearchClient(): BCBCSearchClient {
 
 /**
  * Initialize the search client (convenience function)
+ * 
+ * @param version - Version ID (e.g., "2024", "2027")
+ * @param documentsUrl - Optional custom documents URL
+ * @param metadataUrl - Optional custom metadata URL
  */
 export async function initializeSearch(
+  version: string = '2024',
   documentsUrl?: string,
   metadataUrl?: string
 ): Promise<BCBCSearchClient> {
   const client = getSearchClient();
-  await client.initialize(documentsUrl, metadataUrl);
+  await client.initialize(version, documentsUrl, metadataUrl);
   return client;
 }

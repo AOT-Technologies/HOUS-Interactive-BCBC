@@ -1,21 +1,24 @@
 #!/usr/bin/env node
 /**
- * Asset Generation Pipeline
+ * Multi-Version Asset Generation Pipeline
  * 
- * Processes BCBC JSON and generates all static assets for the web application.
+ * Processes multiple BCBC JSON versions and generates version-specific static assets.
  * 
  * Pipeline Steps:
- * 1. Parse and validate BCBC JSON (bcbc-parser)
- * 2. Generate search documents and metadata (search-indexer - NEW)
- * 3. Extract metadata and chunk content (content-chunker)
- * 4. Write all assets to apps/web/public/data/
+ * 1. Load version configuration from data/source/versions.json
+ * 2. For each version:
+ *    a. Parse and validate BCBC JSON (bcbc-parser)
+ *    b. Generate search documents and metadata (search-indexer)
+ *    c. Extract metadata and chunk content (content-chunker)
+ *    d. Write all assets to apps/web/public/data/{versionId}/
+ * 3. Generate unified versions.json index
  * 
  * Usage:
- *   npx pnpm generate-assets
+ *   npx tsx scripts/generate-assets-multi-version.ts
  * 
  * Environment Variables:
- *   SOURCE_FILE - Path to source JSON (default: data/source/bcbc-2024.json)
- *   OUTPUT_DIR - Output directory (default: apps/web/public/data)
+ *   VERSIONS_FILE - Path to versions config (default: data/source/versions.json)
+ *   OUTPUT_BASE_DIR - Base output directory (default: apps/web/public/data)
  */
 
 import { readFile, writeFile, mkdir, rm } from 'fs/promises';
@@ -30,7 +33,7 @@ import {
   type ValidationError,
 } from '../packages/bcbc-parser/src/index.js';
 
-// Import NEW search indexer
+// Import search indexer
 import {
   buildSearchIndex,
   exportAll,
@@ -53,8 +56,32 @@ const __dirname = dirname(__filename);
 const rootDir = join(__dirname, '..');
 
 // Configuration
-const SOURCE_FILE = process.env.SOURCE_FILE || join(rootDir, 'data/source/bcbc-2024.json');
-const OUTPUT_DIR = process.env.OUTPUT_DIR || join(rootDir, 'apps/web/public/data');
+const VERSIONS_FILE = process.env.VERSIONS_FILE || join(rootDir, 'data/source/versions.json');
+const OUTPUT_BASE_DIR = process.env.OUTPUT_BASE_DIR || join(rootDir, 'apps/web/public/data');
+
+// Version configuration interface
+interface VersionConfig {
+  id: string;
+  year: number;
+  title: string;
+  sourceFile: string;
+  isDefault: boolean;
+  publishedDate: string;
+  status: 'current' | 'draft' | 'archived';
+  description?: string;
+}
+
+// Generated version metadata interface
+interface GeneratedVersionMetadata {
+  id: string;
+  year: number;
+  title: string;
+  isDefault: boolean;
+  status: string;
+  revisionCount: number;
+  latestRevision: string;
+  dataPath: string;
+}
 
 // ANSI color codes
 const colors = {
@@ -65,6 +92,7 @@ const colors = {
   blue: '\x1b[34m',
   red: '\x1b[31m',
   cyan: '\x1b[36m',
+  magenta: '\x1b[35m',
 };
 
 const logger = {
@@ -73,6 +101,7 @@ const logger = {
   warn: (msg: string) => console.log(`${colors.yellow}⚠${colors.reset} ${msg}`),
   error: (msg: string) => console.error(`${colors.red}✗${colors.reset} ${msg}`),
   step: (msg: string) => console.log(`\n${colors.cyan}${colors.bright}▶${colors.reset} ${msg}`),
+  version: (msg: string) => console.log(`\n${colors.magenta}${colors.bright}◆${colors.reset} ${msg}`),
 };
 
 function formatBytes(bytes: number): string {
@@ -97,25 +126,48 @@ async function ensureDir(dir: string): Promise<void> {
   }
 }
 
-async function cleanOutputDir(): Promise<void> {
-  logger.step('Cleaning output directory');
+/**
+ * Load version configuration from versions.json
+ */
+async function loadVersionsConfig(): Promise<VersionConfig[]> {
+  logger.step('Loading version configuration');
+  logger.info(`Reading from: ${VERSIONS_FILE}`);
+  
   try {
-    await rm(OUTPUT_DIR, { recursive: true, force: true });
-    logger.success(`Cleaned ${OUTPUT_DIR}`);
+    const content = await readFile(VERSIONS_FILE, 'utf-8');
+    const config = JSON.parse(content);
+    
+    if (!config.versions || !Array.isArray(config.versions)) {
+      throw new Error('Invalid versions.json: missing or invalid "versions" array');
+    }
+    
+    if (config.versions.length === 0) {
+      throw new Error('No versions defined in versions.json');
+    }
+    
+    logger.success(`Loaded ${config.versions.length} version(s)`);
+    config.versions.forEach((v: VersionConfig) => {
+      logger.info(`  - ${v.title} (${v.id}) [${v.status}]`);
+    });
+    
+    return config.versions;
   } catch (error) {
-    logger.warn(`Could not clean output directory: ${error}`);
+    logger.error(`Failed to load versions configuration: ${error}`);
+    throw error;
   }
-  await ensureDir(OUTPUT_DIR);
 }
 
-async function loadSourceData(): Promise<any> {
-  logger.step('Loading source data');
-  logger.info(`Reading from: ${SOURCE_FILE}`);
+/**
+ * Load source data for a specific version
+ */
+async function loadSourceData(version: VersionConfig): Promise<any> {
+  const sourceFile = join(rootDir, 'data/source', version.sourceFile);
+  logger.info(`Reading from: ${sourceFile}`);
   
   const startTime = Date.now();
   
   try {
-    const content = await readFile(SOURCE_FILE, 'utf-8');
+    const content = await readFile(sourceFile, 'utf-8');
     const rawData = JSON.parse(content);
     
     const duration = Date.now() - startTime;
@@ -132,8 +184,11 @@ async function loadSourceData(): Promise<any> {
   }
 }
 
+/**
+ * Validate BCBC document
+ */
 async function validateData(document: BCBCDocument): Promise<void> {
-  logger.step('Validating data structure');
+  logger.info('Validating data structure...');
   
   const startTime = Date.now();
   
@@ -162,20 +217,19 @@ async function validateData(document: BCBCDocument): Promise<void> {
 }
 
 /**
- * Generate search index using NEW indexer
- * Outputs: documents.json, metadata.json, and individual files
+ * Generate search assets for a version
  */
-async function generateSearchAssets(rawData: any): Promise<void> {
-  logger.step('Generating search index and metadata (NEW)');
+async function generateSearchAssets(rawData: any, outputDir: string): Promise<{ revisionCount: number; latestRevision: string }> {
+  logger.info('Generating search index and metadata...');
   
   const startTime = Date.now();
   
   try {
     // Create search output directory
-    const searchDir = join(OUTPUT_DIR, 'search');
+    const searchDir = join(outputDir, 'search');
     await ensureDir(searchDir);
     
-    // Configure indexer (can be customized)
+    // Configure indexer
     const config: Partial<IndexerConfig> = {
       output: {
         generateMetadataJson: true,
@@ -183,12 +237,9 @@ async function generateSearchAssets(rawData: any): Promise<void> {
         prettyPrint: true,
         includeStatistics: true,
       },
-      // Customize what to index
       contentTypes: {
         ...DEFAULT_INDEXER_CONFIG.contentTypes,
-        // Enable/disable content types as needed
       },
-      // Customize reference handling
       references: {
         stripFromSearchText: true,
         preserveReferenceIds: true,
@@ -197,22 +248,14 @@ async function generateSearchAssets(rawData: any): Promise<void> {
     };
     
     // Build search index
-    logger.info('Building search index from BCBC data...');
     const { documents, metadata } = buildSearchIndex(rawData, config);
     
     logger.info(`Indexed ${documents.length} documents`);
     logger.info(`  Articles: ${metadata.statistics.totalArticles}`);
     logger.info(`  Tables: ${metadata.statistics.totalTables}`);
     logger.info(`  Figures: ${metadata.statistics.totalFigures}`);
-    logger.info(`  Parts: ${metadata.statistics.totalParts}`);
-    logger.info(`  Sections: ${metadata.statistics.totalSections}`);
-    logger.info(`  Subsections: ${metadata.statistics.totalSubsections}`);
-    logger.info(`  Glossary terms: ${metadata.statistics.totalGlossaryTerms}`);
-    logger.info(`  Amendments: ${metadata.statistics.totalAmendments}`);
-    logger.info(`  Revision dates: ${metadata.statistics.totalRevisionDates}`);
     
     // Export to JSON
-    logger.info('Exporting search assets...');
     const exportResult = exportAll(documents, metadata, {
       prettyPrint: true,
       generateMetadataJson: true,
@@ -221,27 +264,23 @@ async function generateSearchAssets(rawData: any): Promise<void> {
     
     // Get export statistics
     const stats = getExportStats(documents, exportResult);
-    logger.info(`  Documents size: ${stats.documentsSizeKB} KB`);
-    if (stats.metadataSizeKB) {
-      logger.info(`  Metadata size: ${stats.metadataSizeKB} KB`);
-    }
     logger.info(`  Total size: ${stats.totalSizeKB} KB`);
     
     // Write documents.json
     await writeFile(join(searchDir, 'documents.json'), exportResult.documents);
-    logger.success('Written documents.json');
+    logger.success('Written search/documents.json');
     
     // Write metadata.json
     if (exportResult.metadata) {
       await writeFile(join(searchDir, 'metadata.json'), exportResult.metadata);
-      logger.success('Written metadata.json');
+      logger.success('Written search/metadata.json');
     }
     
-    // Write individual files to main data directory (for backward compatibility)
+    // Write individual files to main data directory
     if (exportResult.individualFiles) {
       for (const [filename, content] of Object.entries(exportResult.individualFiles)) {
         if (content) {
-          await writeFile(join(OUTPUT_DIR, filename), content);
+          await writeFile(join(outputDir, filename), content);
           logger.success(`Written ${filename}`);
         }
       }
@@ -249,6 +288,12 @@ async function generateSearchAssets(rawData: any): Promise<void> {
     
     const duration = Date.now() - startTime;
     logger.success(`Generated search assets in ${formatDuration(duration)}`);
+    
+    // Extract revision information from metadata
+    const revisionCount = metadata.revisionDates?.length || 0;
+    const latestRevision = metadata.revisionDates?.[0]?.effectiveDate || '';
+    
+    return { revisionCount, latestRevision };
   } catch (error) {
     logger.error(`Failed to generate search assets: ${error}`);
     throw error;
@@ -256,10 +301,10 @@ async function generateSearchAssets(rawData: any): Promise<void> {
 }
 
 /**
- * Generate quick access pins (from content-chunker metadata)
+ * Generate quick access pins
  */
-async function generateQuickAccess(document: BCBCDocument): Promise<void> {
-  logger.step('Generating quick access pins');
+async function generateQuickAccess(document: BCBCDocument, outputDir: string): Promise<void> {
+  logger.info('Generating quick access pins...');
   
   const startTime = Date.now();
   
@@ -272,7 +317,7 @@ async function generateQuickAccess(document: BCBCDocument): Promise<void> {
       pins: metadata.quickAccess,
     };
     
-    const outputPath = join(OUTPUT_DIR, 'quick-access.json');
+    const outputPath = join(outputDir, 'quick-access.json');
     await writeFile(outputPath, JSON.stringify(quickAccess, null, 2));
     
     const duration = Date.now() - startTime;
@@ -287,32 +332,29 @@ async function generateQuickAccess(document: BCBCDocument): Promise<void> {
 /**
  * Generate content chunks
  */
-async function generateContentChunks(document: BCBCDocument): Promise<void> {
-  logger.step('Generating content chunks');
+async function generateContentChunks(document: BCBCDocument, outputDir: string): Promise<void> {
+  logger.info('Generating content chunks...');
   
   const startTime = Date.now();
   
   try {
-    const contentDir = join(OUTPUT_DIR, 'content');
+    const contentDir = join(outputDir, 'content');
     await ensureDir(contentDir);
     
-    logger.info('Splitting content into chunks...');
     const chunks: ContentChunk[] = chunkContent(document);
     
     const stats = getChunkStats(chunks);
     logger.info(`Generated ${stats.totalChunks} chunks`);
     logger.info(`  Total size: ${formatBytes(stats.totalSize)}`);
-    logger.info(`  Average size: ${formatBytes(stats.averageSize)}`);
     
-    logger.info('Writing chunk files...');
     let writtenCount = 0;
     for (const chunk of chunks) {
-      const chunkPath = join(OUTPUT_DIR, chunk.path);
+      const chunkPath = join(outputDir, chunk.path);
       await ensureDir(dirname(chunkPath));
       await writeFile(chunkPath, JSON.stringify(chunk.data, null, 2));
       writtenCount++;
       
-      if (writtenCount % 10 === 0) {
+      if (writtenCount % 20 === 0) {
         logger.info(`  Written ${writtenCount}/${chunks.length} chunks...`);
       }
     }
@@ -325,60 +367,157 @@ async function generateContentChunks(document: BCBCDocument): Promise<void> {
   }
 }
 
-async function generateReport(startTime: number): Promise<void> {
+/**
+ * Generate assets for a single version
+ */
+async function generateVersionAssets(
+  version: VersionConfig
+): Promise<GeneratedVersionMetadata> {
+  logger.version(`Processing version: ${version.title} (${version.id})`);
+  
+  const versionStartTime = Date.now();
+  const outputDir = join(OUTPUT_BASE_DIR, version.id);
+  
+  try {
+    // Clean version output directory
+    logger.info(`Cleaning output directory: ${outputDir}`);
+    await rm(outputDir, { recursive: true, force: true });
+    await ensureDir(outputDir);
+    
+    // Load source data
+    const rawData = await loadSourceData(version);
+    
+    // Parse for validation and content chunking
+    logger.info('Parsing BCBC structure...');
+    const document = parseBCBC(rawData);
+    logger.success(`Parsed ${document.divisions.length} divisions`);
+    
+    // Validate data
+    await validateData(document);
+    
+    // Generate search assets
+    const { revisionCount, latestRevision } = await generateSearchAssets(rawData, outputDir);
+    
+    // Generate quick access pins
+    await generateQuickAccess(document, outputDir);
+    
+    // Generate content chunks
+    await generateContentChunks(document, outputDir);
+    
+    const versionDuration = Date.now() - versionStartTime;
+    logger.success(`Completed ${version.title} in ${formatDuration(versionDuration)}`);
+    
+    // Return metadata for versions index
+    return {
+      id: version.id,
+      year: version.year,
+      title: version.title,
+      isDefault: version.isDefault,
+      status: version.status,
+      revisionCount,
+      latestRevision,
+      dataPath: `/data/${version.id}`,
+    };
+  } catch (error) {
+    logger.error(`Failed to generate assets for ${version.title}: ${error}`);
+    throw error;
+  }
+}
+
+/**
+ * Generate unified versions.json index
+ */
+async function generateVersionsIndex(
+  versions: GeneratedVersionMetadata[]
+): Promise<void> {
+  logger.step('Generating versions index');
+  
+  try {
+    const defaultVersion = versions.find(v => v.isDefault);
+    
+    const versionsIndex = {
+      generatedAt: new Date().toISOString(),
+      defaultVersion: defaultVersion?.id || versions[0].id,
+      versions,
+    };
+    
+    const outputPath = join(OUTPUT_BASE_DIR, 'versions.json');
+    await writeFile(outputPath, JSON.stringify(versionsIndex, null, 2));
+    
+    logger.success('Generated versions.json');
+    logger.info(`  Default version: ${versionsIndex.defaultVersion}`);
+    logger.info(`  Total versions: ${versions.length}`);
+  } catch (error) {
+    logger.error(`Failed to generate versions index: ${error}`);
+    throw error;
+  }
+}
+
+/**
+ * Generate final report
+ */
+async function generateReport(
+  startTime: number,
+  versions: GeneratedVersionMetadata[]
+): Promise<void> {
   const totalDuration = Date.now() - startTime;
   
-  console.log('\n' + '='.repeat(60));
-  console.log(`${colors.bright}${colors.green}Asset Generation Complete${colors.reset}`);
-  console.log('='.repeat(60));
+  console.log('\n' + '='.repeat(70));
+  console.log(`${colors.bright}${colors.green}Multi-Version Asset Generation Complete${colors.reset}`);
+  console.log('='.repeat(70));
   console.log(`Total time: ${formatDuration(totalDuration)}`);
-  console.log(`Output directory: ${OUTPUT_DIR}`);
-  console.log('\nGenerated files:');
-  console.log('  ✓ search/documents.json (NEW - flat searchable documents)');
-  console.log('  ✓ search/metadata.json (NEW - unified metadata)');
+  console.log(`Output directory: ${OUTPUT_BASE_DIR}`);
+  console.log(`\nGenerated versions:`);
+  
+  versions.forEach(v => {
+    console.log(`  ${colors.green}✓${colors.reset} ${v.title} (${v.id})`);
+    console.log(`    - Status: ${v.status}`);
+    console.log(`    - Revisions: ${v.revisionCount}`);
+    console.log(`    - Latest: ${v.latestRevision || 'N/A'}`);
+    console.log(`    - Path: ${v.dataPath}`);
+  });
+  
+  console.log(`\nGenerated files per version:`);
+  console.log('  ✓ search/documents.json');
+  console.log('  ✓ search/metadata.json');
   console.log('  ✓ navigation-tree.json');
   console.log('  ✓ glossary-map.json');
   console.log('  ✓ amendment-dates.json');
   console.log('  ✓ content-types.json');
   console.log('  ✓ quick-access.json');
-  console.log('  ✓ content/ (directory with section chunks)');
-  console.log('\n' + colors.green + 'All assets generated successfully!' + colors.reset);
-  console.log('='.repeat(60) + '\n');
+  console.log('  ✓ content/ (directory with chunks)');
+  
+  console.log(`\n${colors.green}All assets generated successfully!${colors.reset}`);
+  console.log('='.repeat(70) + '\n');
 }
 
+/**
+ * Main execution
+ */
 async function main(): Promise<void> {
   const startTime = Date.now();
   
-  console.log('\n' + '='.repeat(60));
-  console.log(`${colors.bright}${colors.cyan}BC Building Code - Asset Generation Pipeline${colors.reset}`);
-  console.log('='.repeat(60) + '\n');
+  console.log('\n' + '='.repeat(70));
+  console.log(`${colors.bright}${colors.cyan}BC Building Code - Multi-Version Asset Generation${colors.reset}`);
+  console.log('='.repeat(70) + '\n');
   
   try {
-    // Step 1: Clean output directory
-    await cleanOutputDir();
+    // Load version configuration
+    const versionConfigs = await loadVersionsConfig();
     
-    // Step 2: Load source data (raw JSON)
-    const rawData = await loadSourceData();
+    // Generate assets for each version
+    const generatedVersions: GeneratedVersionMetadata[] = [];
     
-    // Step 3: Parse for validation and content chunking
-    logger.info('Parsing BCBC structure...');
-    const document = parseBCBC(rawData);
-    logger.success(`Parsed ${document.divisions.length} divisions`);
+    for (const versionConfig of versionConfigs) {
+      const metadata = await generateVersionAssets(versionConfig);
+      generatedVersions.push(metadata);
+    }
     
-    // Step 4: Validate data
-    await validateData(document);
+    // Generate unified versions index
+    await generateVersionsIndex(generatedVersions);
     
-    // Step 5: Generate search assets (NEW - uses raw data directly)
-    await generateSearchAssets(rawData);
-    
-    // Step 6: Generate quick access pins
-    await generateQuickAccess(document);
-    
-    // Step 7: Generate content chunks
-    await generateContentChunks(document);
-    
-    // Step 8: Generate report
-    await generateReport(startTime);
+    // Generate final report
+    await generateReport(startTime, generatedVersions);
     
     process.exit(0);
   } catch (error) {

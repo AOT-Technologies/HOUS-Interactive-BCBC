@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import { useVersionStore } from './version-store';
 
 /**
  * Clause interface
@@ -97,7 +98,7 @@ interface ContentStore {
   loading: boolean;
   error: string | null;
   contentCache: Map<string, Article>;
-  loadContent: (path: string) => Promise<void>;
+  loadContent: (path: string, version?: string) => Promise<void>;
   clearContent: () => void;
   clearError: () => void;
 }
@@ -105,6 +106,7 @@ interface ContentStore {
 /**
  * Content store
  * Manages current content, loading state, and content caching
+ * Now version-aware: loads content from version-specific paths and caches per version
  */
 export const useContentStore = create<ContentStore>()(
   devtools(
@@ -114,24 +116,30 @@ export const useContentStore = create<ContentStore>()(
       error: null,
       contentCache: new Map(),
 
-      loadContent: async (path) => {
+      loadContent: async (path, version) => {
+        // Get version data path from version store
+        const versionStore = useVersionStore.getState();
+        const dataPath = versionStore.getVersionDataPath(version);
+        const versionId = version || versionStore.currentVersion || '2024';
+        
+        // Create version-specific cache key
+        const cacheKey = `${versionId}:${path}`;
+        
         // Check cache first
         const { contentCache } = get();
-        if (contentCache.has(path)) {
-          set({ currentContent: contentCache.get(path)!, error: null });
+        if (contentCache.has(cacheKey)) {
+          set({ currentContent: contentCache.get(cacheKey)!, error: null });
           return;
         }
 
         set({ loading: true, error: null });
         try {
-          // TODO: Load content from /public/data/content/{path}.json
-          // This will be implemented in Sprint 1 after the build pipeline is set up
-          const response = await fetch(`/data/content/${path}.json`);
+          const response = await fetch(`${dataPath}/content/${path}.json`);
           if (response.ok) {
             const content = await response.json();
-            // Update cache
+            // Update cache with version-specific key
             const newCache = new Map(contentCache);
-            newCache.set(path, content);
+            newCache.set(cacheKey, content);
             set({
               currentContent: content,
               loading: false,

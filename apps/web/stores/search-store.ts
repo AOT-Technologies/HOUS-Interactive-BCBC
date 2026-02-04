@@ -16,6 +16,7 @@ import {
   type RevisionDate,
   type TableOfContentsItem,
 } from '../lib/search-client';
+import { useVersionStore } from './version-store';
 
 /**
  * Search filters interface
@@ -35,6 +36,9 @@ export interface SearchFilters {
  * Search store state interface
  */
 interface SearchStoreState {
+  // Version tracking
+  currentVersion: string | null;
+  
   // Initialization state
   isInitialized: boolean;
   isInitializing: boolean;
@@ -66,12 +70,12 @@ interface SearchStoreState {
  */
 interface SearchStoreActions {
   // Initialization
-  initialize: () => Promise<void>;
+  initialize: (version?: string) => Promise<void>;
   
   // Search actions
-  search: (query: string, options?: Partial<SearchOptions>) => Promise<void>;
-  searchMore: () => Promise<void>;
-  getSuggestions: (query: string) => Promise<void>;
+  search: (query: string, options?: Partial<SearchOptions>, version?: string) => Promise<void>;
+  searchMore: (version?: string) => Promise<void>;
+  getSuggestions: (query: string, version?: string) => Promise<void>;
   
   // State setters
   setQuery: (query: string) => void;
@@ -81,10 +85,10 @@ interface SearchStoreActions {
   clearSuggestions: () => void;
   
   // Metadata accessors
-  getTableOfContents: () => TableOfContentsItem[];
-  getRevisionDates: () => RevisionDate[];
-  getDivisions: () => SearchMetadata['divisions'];
-  getContentTypes: () => SearchableContentType[];
+  getTableOfContents: (version?: string) => TableOfContentsItem[];
+  getRevisionDates: (version?: string) => RevisionDate[];
+  getDivisions: (version?: string) => SearchMetadata['divisions'];
+  getContentTypes: (version?: string) => SearchableContentType[];
 }
 
 type SearchStore = SearchStoreState & SearchStoreActions;
@@ -92,6 +96,7 @@ type SearchStore = SearchStoreState & SearchStoreActions;
 const DEFAULT_LIMIT = 50;
 
 const initialState: SearchStoreState = {
+  currentVersion: null,
   isInitialized: false,
   isInitializing: false,
   initError: null,
@@ -117,22 +122,35 @@ export const useSearchStore = create<SearchStore>()(
       ...initialState,
 
       /**
-       * Initialize the search client
+       * Initialize the search client for a specific version
+       * 
+       * @param version - Optional version ID (defaults to current version from version store)
        */
-      initialize: async () => {
-        const { isInitialized, isInitializing } = get();
-        if (isInitialized || isInitializing) return;
+      initialize: async (version?: string) => {
+        // Get version from version store if not provided
+        const versionId = version || useVersionStore.getState().currentVersion || '2024';
+        
+        const { currentVersion, isInitialized, isInitializing } = get();
+        
+        // If already initialized for this version, skip
+        if (isInitialized && currentVersion === versionId && !isInitializing) {
+          return;
+        }
 
-        set({ isInitializing: true, initError: null });
+        set({ 
+          isInitializing: true, 
+          initError: null,
+          currentVersion: versionId,
+        });
 
         try {
           const client = getSearchClient();
-          await client.initialize();
+          await client.initialize(versionId);
           
           set({
             isInitialized: true,
             isInitializing: false,
-            metadata: client.getMetadata(),
+            metadata: client.getMetadata(versionId),
           });
         } catch (error) {
           set({
@@ -143,10 +161,20 @@ export const useSearchStore = create<SearchStore>()(
       },
 
       /**
-       * Perform a search
+       * Perform a search for a specific version
+       * 
+       * @param query - Search query
+       * @param options - Search options
+       * @param version - Optional version ID (defaults to current version)
        */
-      search: async (query, options = {}) => {
-        const { filters, limit } = get();
+      search: async (query, options = {}, version?: string) => {
+        const { filters, limit, currentVersion } = get();
+        const searchVersion = version || currentVersion || useVersionStore.getState().currentVersion || '2024';
+        
+        // Ensure initialized for this version
+        if (get().currentVersion !== searchVersion) {
+          await get().initialize(searchVersion);
+        }
         
         set({ 
           isSearching: true, 
@@ -164,7 +192,7 @@ export const useSearchStore = create<SearchStore>()(
             offset: 0,
           };
 
-          const results = await client.search(query, searchOptions);
+          const results = await client.search(query, searchOptions, searchVersion);
 
           set({
             isSearching: false,
@@ -181,10 +209,13 @@ export const useSearchStore = create<SearchStore>()(
       },
 
       /**
-       * Load more results (pagination)
+       * Load more results (pagination) for current version
+       * 
+       * @param version - Optional version ID (defaults to current version)
        */
-      searchMore: async () => {
-        const { query, filters, limit, offset, results, isSearching, hasMore } = get();
+      searchMore: async (version?: string) => {
+        const { query, filters, limit, offset, results, isSearching, hasMore, currentVersion } = get();
+        const searchVersion = version || currentVersion || useVersionStore.getState().currentVersion || '2024';
         
         if (isSearching || !hasMore || !query) return;
 
@@ -200,7 +231,7 @@ export const useSearchStore = create<SearchStore>()(
             offset: newOffset,
           };
 
-          const newResults = await client.search(query, searchOptions);
+          const newResults = await client.search(query, searchOptions, searchVersion);
 
           set({
             isSearching: false,
@@ -217,9 +248,15 @@ export const useSearchStore = create<SearchStore>()(
       },
 
       /**
-       * Get search suggestions
+       * Get search suggestions for current version
+       * 
+       * @param query - Search query
+       * @param version - Optional version ID (defaults to current version)
        */
-      getSuggestions: async (query) => {
+      getSuggestions: async (query, version?: string) => {
+        const { currentVersion } = get();
+        const searchVersion = version || currentVersion || useVersionStore.getState().currentVersion || '2024';
+        
         if (query.length < 2) {
           set({ suggestions: [] });
           return;
@@ -227,7 +264,7 @@ export const useSearchStore = create<SearchStore>()(
 
         try {
           const client = getSearchClient();
-          const suggestions = await client.getSuggestions(query, 10);
+          const suggestions = await client.getSuggestions(query, 10, searchVersion);
           set({ suggestions });
         } catch (error) {
           console.error('Failed to get suggestions:', error);
@@ -272,35 +309,51 @@ export const useSearchStore = create<SearchStore>()(
       clearSuggestions: () => set({ suggestions: [] }),
 
       /**
-       * Get table of contents from metadata
+       * Get table of contents from metadata for a specific version
+       * 
+       * @param version - Optional version ID (defaults to current version)
        */
-      getTableOfContents: () => {
+      getTableOfContents: (version?: string) => {
+        const { currentVersion } = get();
+        const searchVersion = version || currentVersion || useVersionStore.getState().currentVersion || '2024';
         const client = getSearchClient();
-        return client.getTableOfContents();
+        return client.getTableOfContents(searchVersion);
       },
 
       /**
-       * Get revision dates from metadata
+       * Get revision dates from metadata for a specific version
+       * 
+       * @param version - Optional version ID (defaults to current version)
        */
-      getRevisionDates: () => {
+      getRevisionDates: (version?: string) => {
+        const { currentVersion } = get();
+        const searchVersion = version || currentVersion || useVersionStore.getState().currentVersion || '2024';
         const client = getSearchClient();
-        return client.getRevisionDates();
+        return client.getRevisionDates(searchVersion);
       },
 
       /**
-       * Get divisions from metadata
+       * Get divisions from metadata for a specific version
+       * 
+       * @param version - Optional version ID (defaults to current version)
        */
-      getDivisions: () => {
+      getDivisions: (version?: string) => {
+        const { currentVersion } = get();
+        const searchVersion = version || currentVersion || useVersionStore.getState().currentVersion || '2024';
         const client = getSearchClient();
-        return client.getDivisions();
+        return client.getDivisions(searchVersion);
       },
 
       /**
-       * Get content types from metadata
+       * Get content types from metadata for a specific version
+       * 
+       * @param version - Optional version ID (defaults to current version)
        */
-      getContentTypes: () => {
+      getContentTypes: (version?: string) => {
+        const { currentVersion } = get();
+        const searchVersion = version || currentVersion || useVersionStore.getState().currentVersion || '2024';
         const client = getSearchClient();
-        return client.getContentTypes();
+        return client.getContentTypes(searchVersion);
       },
     }),
     { name: 'search-store' }

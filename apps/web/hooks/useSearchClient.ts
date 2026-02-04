@@ -2,11 +2,12 @@
  * React hook for using the BCBC Search Client
  * 
  * Provides a convenient interface for components to:
- * - Initialize the search index
+ * - Initialize the search index for the current version
  * - Perform searches with filters
  * - Get suggestions
  * - Access metadata (TOC, divisions, revision dates)
  * - Track loading and error states
+ * - Automatically reinitialize when version changes
  */
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
@@ -19,6 +20,7 @@ import {
   type RevisionDate,
   type SearchableContentType,
 } from '../lib/search-client';
+import { useCurrentVersionId } from '../stores/version-store';
 
 /**
  * Hook state
@@ -54,6 +56,7 @@ interface UseSearchClientReturn extends UseSearchClientState {
  * React hook for using the search client
  * 
  * @param autoInitialize - Whether to automatically initialize on mount (default: true)
+ * @param version - Optional version ID (defaults to current version from version store)
  * @returns Search client interface
  * 
  * @example
@@ -92,7 +95,11 @@ interface UseSearchClientReturn extends UseSearchClientState {
  * }
  * ```
  */
-export function useSearchClient(autoInitialize: boolean = true): UseSearchClientReturn {
+export function useSearchClient(autoInitialize: boolean = true, version?: string): UseSearchClientReturn {
+  // Get current version from version store if not provided
+  const currentVersionId = useCurrentVersionId();
+  const activeVersion = version || currentVersionId;
+  
   const [state, setState] = useState<UseSearchClientState>({
     isLoading: autoInitialize,
     isInitialized: false,
@@ -105,10 +112,11 @@ export function useSearchClient(autoInitialize: boolean = true): UseSearchClient
   const client = useMemo(() => getSearchClient(), []);
 
   /**
-   * Initialize the search client
+   * Initialize the search client for the current version
+   * Reinitializes when version changes
    */
   useEffect(() => {
-    if (!autoInitialize) {
+    if (!autoInitialize || !activeVersion) {
       return;
     }
 
@@ -116,15 +124,14 @@ export function useSearchClient(autoInitialize: boolean = true): UseSearchClient
       try {
         setState((prev) => ({ ...prev, isLoading: true, error: null }));
 
-        if (!client.isInitialized()) {
-          await client.initialize();
-        }
+        // Initialize for the active version
+        await client.initialize(activeVersion);
 
         setState((prev) => ({
           ...prev,
           isLoading: false,
           isInitialized: true,
-          metadata: client.getMetadata(),
+          metadata: client.getMetadata(activeVersion),
         }));
       } catch (error) {
         setState((prev) => ({
@@ -136,17 +143,17 @@ export function useSearchClient(autoInitialize: boolean = true): UseSearchClient
     };
 
     initialize();
-  }, [autoInitialize, client]);
+  }, [autoInitialize, activeVersion, client]);
 
   /**
-   * Perform a search
+   * Perform a search with the current version
    */
   const search = useCallback(
     async (query: string, options?: SearchOptions) => {
       try {
         setState((prev) => ({ ...prev, isLoading: true, error: null }));
 
-        const results = await client.search(query, options);
+        const results = await client.search(query, options, activeVersion);
 
         setState((prev) => ({
           ...prev,
@@ -162,16 +169,16 @@ export function useSearchClient(autoInitialize: boolean = true): UseSearchClient
         }));
       }
     },
-    [client]
+    [client, activeVersion]
   );
 
   /**
-   * Get search suggestions
+   * Get search suggestions for the current version
    */
   const getSuggestions = useCallback(
     async (query: string, limit: number = 5) => {
       try {
-        const suggestions = await client.getSuggestions(query, limit);
+        const suggestions = await client.getSuggestions(query, limit, activeVersion);
 
         setState((prev) => ({
           ...prev,
@@ -185,7 +192,7 @@ export function useSearchClient(autoInitialize: boolean = true): UseSearchClient
         }));
       }
     },
-    [client]
+    [client, activeVersion]
   );
 
   /**
@@ -209,30 +216,30 @@ export function useSearchClient(autoInitialize: boolean = true): UseSearchClient
     }));
   }, []);
 
-  // Memoized metadata accessors
+  // Memoized metadata accessors (version-aware)
   const tableOfContents = useMemo(
-    () => client.getTableOfContents(),
-    [client, state.isInitialized]
+    () => client.getTableOfContents(activeVersion),
+    [client, activeVersion, state.isInitialized]
   );
 
   const revisionDates = useMemo(
-    () => client.getRevisionDates(),
-    [client, state.isInitialized]
+    () => client.getRevisionDates(activeVersion),
+    [client, activeVersion, state.isInitialized]
   );
 
   const divisions = useMemo(
-    () => client.getDivisions(),
-    [client, state.isInitialized]
+    () => client.getDivisions(activeVersion),
+    [client, activeVersion, state.isInitialized]
   );
 
   const contentTypes = useMemo(
-    () => client.getContentTypes(),
-    [client, state.isInitialized]
+    () => client.getContentTypes(activeVersion),
+    [client, activeVersion, state.isInitialized]
   );
 
   const documentCount = useMemo(
-    () => client.getDocumentCount(),
-    [client, state.isInitialized]
+    () => client.getDocumentCount(activeVersion),
+    [client, activeVersion, state.isInitialized]
   );
 
   return {
@@ -252,8 +259,10 @@ export function useSearchClient(autoInitialize: boolean = true): UseSearchClient
 /**
  * Hook for accessing just the metadata (no search functionality)
  * Useful for components that only need TOC, divisions, etc.
+ * 
+ * @param version - Optional version ID (defaults to current version from version store)
  */
-export function useSearchMetadata(): {
+export function useSearchMetadata(version?: string): {
   isLoading: boolean;
   isInitialized: boolean;
   error: Error | null;
@@ -272,7 +281,7 @@ export function useSearchMetadata(): {
     revisionDates,
     divisions,
     contentTypes,
-  } = useSearchClient(true);
+  } = useSearchClient(true, version);
 
   return {
     isLoading,

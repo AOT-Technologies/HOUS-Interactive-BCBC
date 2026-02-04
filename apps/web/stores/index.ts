@@ -6,6 +6,9 @@
  * Some stores use persist middleware for localStorage synchronization.
  */
 
+export { useVersionStore, useCurrentVersionId, useHasMultipleVersions } from './version-store';
+export type { Version } from './version-store';
+
 export { useSearchStore } from './search-store';
 export type { SearchResult, SearchFilters } from './search-store';
 

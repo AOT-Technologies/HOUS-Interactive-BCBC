@@ -8,6 +8,8 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "generate-assets": "tsx scripts/generate-assets.ts",
+    "generate-assets:2024": "SOURCE_FILE=data/source/bcbc-2024.json OUTPUT_DIR=apps/web/public/data/2024 tsx scripts/generate-assets-single-version-backup.ts",
+    "generate-assets:clean": "rimraf apps/web/public/data/*",
     "clean": "turbo run clean",
     "test": "turbo run test"
   },

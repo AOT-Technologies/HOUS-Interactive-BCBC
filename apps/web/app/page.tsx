@@ -7,15 +7,18 @@ import HomeSidebarContent from '@/components/home/HomeSidebarContent';
 import HeroSearch from '@repo/ui/hero-search';
 import QuickAccessPins from '@/components/home/QuickAccessPins';
 import { getSearchClient } from '@/lib/search-client';
+import { useVersionStore } from '@/stores/version-store';
 import './page.css';
 
 export default function Home() {
   const router = useRouter();
+  const currentVersion = useVersionStore(state => state.currentVersion);
 
   const handleSearch = useCallback((query: string) => {
-    // Navigate to search page with query
-    router.push(`/search?q=${encodeURIComponent(query)}`);
-  }, [router]);
+    // Navigate to search page with query and version
+    const version = currentVersion || '2024';
+    router.push(`/search?q=${encodeURIComponent(query)}&version=${version}`);
+  }, [router, currentVersion]);
 
   const handleGetSuggestions = useCallback(async (query: string): Promise<string[]> => {
     try {

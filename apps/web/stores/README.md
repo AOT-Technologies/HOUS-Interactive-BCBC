@@ -65,20 +65,26 @@ Manages glossary map and selected term.
 - `loadGlossary()`: Load glossary from JSON
 
 ### Amendment Date Store (`amendment-date-store.ts`)
-Manages selected amendment date and available dates. Persists to localStorage.
+Manages selected amendment date and available dates. URL is the source of truth.
 
 **State:**
 - `selectedDate`: Currently selected amendment date
-- `availableDates`: Array of available amendment dates
+- `availableDates`: Array of available amendment dates for current version
+- `datesByVersion`: Map caching dates per version
 - `loading`: Loading state for date operations
+- `initialized`: Whether store has been initialized from URL
 
 **Actions:**
-- `setSelectedDate(date)`: Set selected date (syncs with URL and localStorage)
-- `loadDates()`: Load available dates from JSON
+- `setSelectedDate(date)`: Set selected date (syncs to URL)
+- `loadDates(version, options)`: Load available dates for a version
+  - `options.preserveUrlDate`: If true, preserve date from URL (for initial load)
+- `initializeFromUrl()`: Read date from URL on first load
 
-**Persistence:**
-- Persists `selectedDate` to localStorage
-- Syncs with URL query parameters
+**URL Sync Behavior:**
+- On initial load: Read date from URL if present, otherwise use latest
+- On version change: Reset to latest date, update URL
+- On date change: Update URL immediately
+- No localStorage persistence (URL is source of truth)
 
 ### UI Store (`ui-store.ts`)
 Manages UI state including sidebar, mobile menu, and modals. Persists sidebar state to localStorage.
@@ -135,5 +141,6 @@ To view store state in development:
 - All stores are configured with TypeScript strict mode
 - Store actions include placeholder implementations for features to be implemented in later sprints
 - Content loading and caching is optimized for performance
-- URL synchronization is handled in amendment date store
-- localStorage persistence is used for user preferences
+- URL is the source of truth for version and date parameters
+- Amendment date store uses URL sync, not localStorage persistence
+- localStorage persistence is used for user preferences (sidebar state)

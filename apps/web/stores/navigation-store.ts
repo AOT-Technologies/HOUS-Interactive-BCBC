@@ -6,6 +6,8 @@ import {
   updateUrlWithoutNavigation,
   type ContentPathParams,
 } from '../lib/url-utils';
+import { useVersionStore } from './version-store';
+import { useAmendmentDateStore } from './amendment-date-store';
 
 /**
  * Navigation node interface
@@ -26,6 +28,7 @@ interface NavigationStore {
   navigationTree: NavigationNode[];
   expandedNodes: Set<string>;
   currentPath: string;
+  currentVersion: string | null;
   loading: boolean;
   searchQuery: string;
   filteredTree: NavigationNode[];
@@ -34,7 +37,7 @@ interface NavigationStore {
   toggleNode: (nodeId: string) => void;
   setCurrentPath: (path: string, updateUrl?: boolean) => void;
   expandToNode: (nodeId: string) => void;
-  loadNavigationTree: () => Promise<void>;
+  loadNavigationTree: (version?: string) => Promise<void>;
   collapseAll: () => void;
   syncFromUrl: () => void;
   navigateToPath: (params: ContentPathParams, queryParams?: Record<string, string>) => void;
@@ -45,6 +48,7 @@ interface NavigationStore {
 /**
  * Navigation store
  * Manages navigation tree, expanded nodes, current path, and TOC search
+ * Now version-aware: loads navigation tree from version-specific paths
  */
 export const useNavigationStore = create<NavigationStore>()(
   devtools(
@@ -52,6 +56,7 @@ export const useNavigationStore = create<NavigationStore>()(
       navigationTree: [],
       expandedNodes: new Set<string>(),
       currentPath: '',
+      currentVersion: null,
       loading: false,
       searchQuery: '',
       filteredTree: [],
@@ -74,7 +79,16 @@ export const useNavigationStore = create<NavigationStore>()(
         
         // Optionally sync URL without navigation
         if (updateUrl && typeof window !== 'undefined') {
-          updateUrlWithoutNavigation(path);
+          // Preserve existing query parameters (version, date, etc.)
+          const currentUrl = new URL(window.location.href);
+          const searchParams = currentUrl.searchParams;
+          
+          // Build new URL with path and preserved query params
+          const newUrl = searchParams.toString() 
+            ? `${path}?${searchParams.toString()}`
+            : path;
+          
+          updateUrlWithoutNavigation(newUrl);
         }
       },
 
@@ -106,10 +120,16 @@ export const useNavigationStore = create<NavigationStore>()(
         }
       },
 
-      loadNavigationTree: async () => {
+      loadNavigationTree: async (version?: string) => {
         set({ loading: true });
+        
+        // Get version data path from version store
+        const versionStore = useVersionStore.getState();
+        const dataPath = versionStore.getVersionDataPath(version);
+        const versionId = version || versionStore.currentVersion || '2024';
+        
         try {
-          const response = await fetch('/data/navigation-tree.json');
+          const response = await fetch(`${dataPath}/navigation-tree.json`);
           if (response.ok) {
             const data = await response.json();
             
@@ -143,7 +163,11 @@ export const useNavigationStore = create<NavigationStore>()(
             };
             
             const transformedTree = addPathToNodes(data.divisions || []);
-            set({ navigationTree: transformedTree, loading: false });
+            set({ 
+              navigationTree: transformedTree, 
+              currentVersion: versionId,
+              loading: false 
+            });
           } else {
             console.error('Failed to load navigation tree');
             set({ loading: false });
@@ -190,7 +214,24 @@ export const useNavigationStore = create<NavigationStore>()(
        * @param queryParams - Optional query parameters (e.g., date filter)
        */
       navigateToPath: (params, queryParams) => {
-        const path = buildContentPath(params, queryParams);
+        // Get current version and effective date from stores
+        const versionStore = useVersionStore.getState();
+        const amendmentDateStore = useAmendmentDateStore.getState();
+        const currentVersion = versionStore.currentVersion;
+        const selectedDate = amendmentDateStore.selectedDate;
+        
+        // Merge provided query params with version and date
+        const mergedQueryParams = {
+          ...queryParams,
+          version: currentVersion,
+        };
+        
+        // Add date if selected
+        if (selectedDate) {
+          mergedQueryParams.date = selectedDate;
+        }
+        
+        const path = buildContentPath(params, mergedQueryParams);
         
         // Update store state
         set({ currentPath: path });

@@ -22,6 +22,7 @@ export interface ContentPathParams {
   section?: string;
   subsection?: string;
   article?: string;
+  version?: string; // Optional version parameter (defaults to current version)
 }
 
 /**
@@ -33,6 +34,7 @@ export interface SearchQueryParams {
   division?: string;
   part?: string;
   type?: string;
+  version?: string; // Optional version parameter (defaults to current version)
 }
 
 /**
@@ -126,7 +128,7 @@ export function getContentLevel(params: ContentPathParams): ContentLevel {
 /**
  * Parse search query parameters from URL search string
  * 
- * @param search - URL search string (e.g., '?q=fire&division=division-b')
+ * @param search - URL search string (e.g., '?q=fire&division=division-b&version=2024')
  * @returns Search query parameters or null if no query
  */
 export function parseSearchParams(search: string): SearchQueryParams | null {
@@ -143,6 +145,7 @@ export function parseSearchParams(search: string): SearchQueryParams | null {
     division: params.get('division') || undefined,
     part: params.get('part') || undefined,
     type: params.get('type') || undefined,
+    version: params.get('version') || undefined,
   };
 }
 
@@ -160,6 +163,7 @@ export function buildSearchUrl(
     division?: string;
     part?: string;
     type?: string;
+    version?: string;
   }
 ): string {
   const params = new URLSearchParams();
@@ -170,6 +174,7 @@ export function buildSearchUrl(
     if (filters.division) params.set('division', filters.division);
     if (filters.part) params.set('part', filters.part);
     if (filters.type) params.set('type', filters.type);
+    if (filters.version) params.set('version', filters.version);
   }
   
   return `/search?${params.toString()}`;
@@ -328,4 +333,58 @@ export function isHomePage(): boolean {
  */
 export function isDownloadPage(): boolean {
   return getCurrentPathname().startsWith('/download');
+}
+
+/**
+ * Get version parameter from URL
+ * Returns version from query parameter or null if not present
+ * 
+ * @param search - Optional search string (defaults to current)
+ * @returns Version ID or null
+ */
+export function getVersionFromUrl(search?: string): string | null {
+  return getQueryParam('version', search);
+}
+
+/**
+ * Set version parameter in URL
+ * 
+ * @param version - Version ID to set
+ * @param replace - If true, uses replaceState instead of pushState (default: true)
+ */
+export function setVersionInUrl(version: string, replace: boolean = true): void {
+  setQueryParam('version', version, replace);
+}
+
+/**
+ * Remove version parameter from URL
+ * 
+ * @param replace - If true, uses replaceState instead of pushState (default: true)
+ */
+export function removeVersionFromUrl(replace: boolean = true): void {
+  removeQueryParam('version', replace);
+}
+
+/**
+ * Check if URL has version parameter
+ * 
+ * @param search - Optional search string (defaults to current)
+ * @returns True if version parameter exists
+ */
+export function hasVersionInUrl(search?: string): boolean {
+  return getVersionFromUrl(search) !== null;
+}
+
+/**
+ * Get version from URL or return default
+ * 
+ * @param defaultVersion - Default version to return if not in URL
+ * @param search - Optional search string (defaults to current)
+ * @returns Version ID from URL or default
+ */
+export function getVersionOrDefault(
+  defaultVersion: string,
+  search?: string
+): string {
+  return getVersionFromUrl(search) || defaultVersion;
 }

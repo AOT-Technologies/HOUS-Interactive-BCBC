@@ -40,10 +40,10 @@ This document describes the complete user flow for the BC Building Code Interact
 
 ### 3. BC Building Code Content Reading Page
 **Route (Flexible Hierarchy):**
-- `/code/{division}/{part}?date={effectiveDate}` - Renders full Part
-- `/code/{division}/{part}/{section}?date={effectiveDate}` - Renders full Section
-- `/code/{division}/{part}/{section}/{subsection}?date={effectiveDate}` - Renders full Subsection
-- `/code/{division}/{part}/{section}/{subsection}/{article}?date={effectiveDate}` - Renders specific Article
+- `/code/{division}/{part}?version={versionId}&date={effectiveDate}` - Renders full Part
+- `/code/{division}/{part}/{section}?version={versionId}&date={effectiveDate}` - Renders full Section
+- `/code/{division}/{part}/{section}/{subsection}?version={versionId}&date={effectiveDate}` - Renders full Subsection
+- `/code/{division}/{part}/{section}/{subsection}/{article}?version={versionId}&date={effectiveDate}` - Renders specific Article
 
 **Entry Points:** 
 - Table of contents navigation (any level: Part, Section, Subsection, Article)
@@ -98,17 +98,28 @@ Primary entry point for users to discover and search the BC Building Code.
 - **Accessibility:** WCAG AAA compliant, keyboard navigable
 
 #### 1.2 Sidebar - Table of Contents (Persistent on Homepage & Reading Page)
+
+- **Version Selector:**
+  - Dropdown to select BC Building Code version
+  - Shows available versions (e.g., "BC Building Code 2024", "BC Building Code 2027")
+  - If only one version exists, shows as disabled or label only
+  - Changes URL parameter: `?version={versionId}`
+  - Persists selection to localStorage
+  - Reloads all data for selected version
+  
 - **Hierarchical Navigation Tree:**
   - Division → Part → Section → Article structure
   - Expandable/collapsible sections
-  - Loaded from `navigation-tree.json` (generated metadata)
+  - Loaded from `{version}/navigation-tree.json` (generated metadata)
   - Visual indicators for current location
+  - Updates when version changes
   
 - **Effective Date Filter:**
   - Dropdown to select amendment date
-  - Loaded from `amendment-dates.json`
+  - Loaded from `{version}/amendment-dates.json`
   - Filters visible content based on effective date
   - Default: Latest version
+  - Updates when version changes
   
 - **Table of Contents Search:**
   - Local search within TOC structure
@@ -163,10 +174,10 @@ Display search results with context and allow users to navigate to specific cont
 ### Entry Points
 - Hero search submission from Homepage
 - Header search submission from any page
-- URL with query parameters: `/search?q={query}&date={effectiveDate}&division={divisionId}&part={partId}&type={contentType}`
+- URL with query parameters: `/search?q={query}&version={versionId}&date={effectiveDate}&division={divisionId}&part={partId}&type={contentType}`
 - **Direct URL access:** Users can bookmark or share search results with filters
   - Search executes automatically on page load
-  - Query and all filters restored from URL
+  - Query, version, and all filters restored from URL
   - Results render immediately with applied filters
   - Filter UI reflects URL state
 
@@ -1119,7 +1130,12 @@ All filter options, navigation structure, and content organization are pre-gener
 
 ### Homepage (Mobile)
 - **Sidebar:** Collapsible hamburger menu
-- **Hero Search:** Full-width, prominent
+- **Hero Search:** 
+  - Full-width, prominent
+  - **Search button hidden on mobile (≤480px)**
+  - Users press Enter key to submit search
+  - Input field expands to full width
+  - Autocomplete dropdown remains functional
 - **Quick Access Pins:** Stacked vertically
 
 ### Search Results (Mobile)
@@ -1129,6 +1145,20 @@ All filter options, navigation structure, and content organization are pre-gener
 ### Reading Page (Mobile)
 - **Sidebar:** Hamburger menu overlay
 - **Content:** Full-width, optimized typography
+
+### Mobile Search Interaction Pattern
+**Breakpoint:** ≤480px
+
+**Hero Search (Homepage):**
+- Search button (`display: none`) to maximize input space
+- Users submit search by pressing Enter key
+- Keyboard automatically shows "Go" or "Search" button on mobile devices
+- Autocomplete suggestions remain fully functional
+- Selecting a suggestion submits the search
+
+**Header Search (All Pages):**
+- Follows same pattern as hero search on mobile
+- Compact design optimized for small screens
 - **Tables:** Horizontal scroll with scroll indicators
 - **Glossary Overlay:** Full-screen modal
 - **Previous/Next:** Sticky bottom navigation

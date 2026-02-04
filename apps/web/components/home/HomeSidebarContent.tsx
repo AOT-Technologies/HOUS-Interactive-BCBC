@@ -1,8 +1,11 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { NavigationTree } from '@/components/navigation/NavigationTree';
+import { VersionSelector } from '@/components/navigation';
 import { useNavigationStore } from '@/stores/navigation-store';
+import { useVersionStore } from '@/stores/version-store';
+import { useAmendmentDateStore } from '@/stores/amendment-date-store';
 import './HomeSidebarContent.css';
 
 interface AmendmentDate {
@@ -23,34 +26,82 @@ interface AmendmentDatesData {
  * 
  * Sidebar content for the homepage, including:
  * - BC Building Code title and description
- * - Effective date filter (loaded from amendment-dates.json, defaults to latest, disabled)
- * - TOC search with real-time filtering
- * - Navigation tree
+ * - Version selector (Position 1)
+ * - Effective date filter (Position 2 - loaded from amendment-dates.json, defaults to latest)
+ * - TOC search (Position 3 - with real-time filtering)
+ * - Navigation tree (Position 4)
  * 
  * Requirements: 4.1, 4.2, 9.1, 9.2, 9.3
  */
 export default function HomeSidebarContent() {
   const { loadNavigationTree, setSearchQuery, clearSearch, searchQuery } = useNavigationStore();
-  const [latestDate, setLatestDate] = useState<AmendmentDate | null>(null);
+  const currentVersion = useVersionStore((state) => state.currentVersion);
+  const { selectedDate, setSelectedDate, initializeFromUrl } = useAmendmentDateStore();
+  const [allDates, setAllDates] = useState<AmendmentDate[]>([]);
   const [localSearchValue, setLocalSearchValue] = useState('');
+  
+  // Track if this is the initial load vs a version change
+  const isInitialLoad = useRef(true);
+  const previousVersion = useRef<string | null>(null);
 
-  // Load navigation tree and amendment dates on mount
+  // Initialize date from URL on first mount
   useEffect(() => {
-    loadNavigationTree();
+    initializeFromUrl();
+  }, [initializeFromUrl]);
+
+  // Load navigation tree and amendment dates when version changes
+  useEffect(() => {
+    // Don't load if version is not ready yet
+    if (!currentVersion) {
+      return;
+    }
     
-    // Load amendment dates
-    fetch('/data/amendment-dates.json')
+    // Determine if this is initial load or version change
+    const isVersionChange = previousVersion.current !== null && previousVersion.current !== currentVersion;
+    previousVersion.current = currentVersion;
+    
+    // Load navigation tree for current version
+    loadNavigationTree(currentVersion);
+    
+    // Get current selected date from store (for initial load check)
+    const currentSelectedDate = useAmendmentDateStore.getState().selectedDate;
+    
+    // Load amendment dates from version-specific path
+    fetch(`/data/${currentVersion}/amendment-dates.json`)
       .then(res => res.json())
       .then((data: AmendmentDatesData) => {
-        // Find the latest date (first in the array as they're sorted descending)
         if (data.dates && data.dates.length > 0) {
-          setLatestDate(data.dates[0]);
+          setAllDates(data.dates);
+          
+          if (isInitialLoad.current && !isVersionChange) {
+            // Initial load: preserve URL date if valid, otherwise use latest
+            isInitialLoad.current = false;
+            
+            // Check if current selectedDate (from URL) is valid for this version
+            const urlDateValid = currentSelectedDate && data.dates.some(d => d.effectiveDate === currentSelectedDate);
+            
+            if (!urlDateValid) {
+              // URL date not valid or not present, use latest
+              setSelectedDate(data.dates[0].effectiveDate);
+            }
+            // If URL date is valid, keep it (already set from initializeFromUrl)
+          } else {
+            // Version changed: always reset to latest date
+            setSelectedDate(data.dates[0].effectiveDate);
+          }
         }
       })
       .catch(err => {
         console.error('Failed to load amendment dates:', err);
       });
-  }, [loadNavigationTree]);
+  }, [currentVersion, loadNavigationTree, setSelectedDate]);
+
+  // Handle effective date change
+  const handleDateChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedDate(e.target.value);
+    // TODO: Filter content by selected date (future enhancement)
+    console.log('Selected effective date:', e.target.value);
+  }, [setSelectedDate]);
 
   // Debounced search handler
   useEffect(() => {
@@ -88,18 +139,27 @@ export default function HomeSidebarContent() {
           2024 Consolidated code version including all active revisions and errata
         </p>
         
-        {/* Effective Date Filter - Loaded from amendment-dates.json */}
+        {/* Version Selector - Position 1 */}
+        <VersionSelector />
+        
+        {/* Effective Date Filter - Position 2 - Loaded from amendment-dates.json */}
         <div className="home-sidebar-filter">
+          <label className="home-sidebar-filter-label" htmlFor="effective-date-select">
+            Effective Date
+          </label>
           <select 
+            id="effective-date-select"
             className="home-sidebar-select" 
             aria-label="Select effective date"
-            value={latestDate?.effectiveDate || ''}
-            disabled
+            value={selectedDate || ''} // Convert null to empty string
+            onChange={handleDateChange}
           >
-            {latestDate ? (
-              <option value={latestDate.effectiveDate}>
-                {latestDate.displayDate} (Latest)
-              </option>
+            {allDates.length > 0 ? (
+              allDates.map((date, index) => (
+                <option key={date.effectiveDate} value={date.effectiveDate}>
+                  {date.displayDate} {index === 0 ? '(Latest)' : ''}
+                </option>
+              ))
             ) : (
               <option value="">Loading...</option>
             )}
@@ -109,7 +169,7 @@ export default function HomeSidebarContent() {
         {/* Divider */}
         <div className="home-sidebar-divider" />
 
-        {/* TOC Search - Active with filtering */}
+        {/* TOC Search - Position 3 - Active with filtering */}
         <div className="home-sidebar-search">
           <div className="home-sidebar-search-wrapper">
             <input
@@ -140,7 +200,7 @@ export default function HomeSidebarContent() {
         </div>
       </div>
 
-      {/* Navigation Tree */}
+      {/* Navigation Tree - Position 4 */}
       <div className="home-sidebar-nav">
         <NavigationTree />
       </div>
