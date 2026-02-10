@@ -144,9 +144,11 @@ button.ui-Sidebar--MobileToggle svg path {
   /* Sidebar content */
   .ui-Sidebar--Content {
     flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
+    min-height: 0; /* Important: allows flex child to shrink */
+    overflow: hidden; /* Let child components handle scrolling */
     padding: 16px;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Smooth scrolling for scroll-to-active */

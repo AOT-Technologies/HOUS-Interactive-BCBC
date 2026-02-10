@@ -15,7 +15,7 @@ import type {
  */
 export interface NavigationNode {
   id: string;
-  type: 'division' | 'part' | 'section' | 'subsection' | 'article';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article';
   number?: string;
   title: string;
   path: string;
@@ -60,7 +60,7 @@ export function extractMetadata(document: BCBCDocument): ExtractedMetadata {
   return {
     navigationTree: extractNavigationTree(document),
     glossaryMap: extractGlossaryMap(document),
-    amendmentDates: document.amendmentDates,
+    amendmentDates: document.amendmentDates || [],
     contentTypes: extractContentTypes(document),
     quickAccess: extractQuickAccess(document),
   };
@@ -69,8 +69,8 @@ export function extractMetadata(document: BCBCDocument): ExtractedMetadata {
 /**
  * Extract navigation tree from BCBC document
  * 
- * Generates a hierarchical navigation structure following:
- * Division → Part → Section → Subsection → Article
+ * Generates a hierarchical navigation structure:
+ * Volume → Preface/Divisions/Index/Conversions → Part → Section → Subsection → Article
  * 
  * @param document - BCBC document
  * @returns Navigation tree
@@ -78,70 +78,132 @@ export function extractMetadata(document: BCBCDocument): ExtractedMetadata {
 export function extractNavigationTree(document: BCBCDocument): NavigationNode[] {
   const tree: NavigationNode[] = [];
 
-  for (const division of document.divisions) {
-    const divisionNode: NavigationNode = {
-      id: division.id,
-      type: 'division',
-      title: division.title,
-      path: `/code/${division.id}`,
+  // Process each volume
+  for (const volume of document.volumes) {
+    const volumeNode: NavigationNode = {
+      id: volume.id,
+      type: 'volume',
+      number: volume.number.toString(),
+      title: `Volume ${volume.number}`,
+      path: `/volume/${volume.number}`,
       children: [],
     };
 
-    for (const part of division.parts) {
-      const partNode: NavigationNode = {
-        id: part.id,
-        type: 'part',
-        number: part.number,
-        title: part.title,
-        path: `/code/${division.id}/${part.number}`,
-        children: [],
-      };
+    // IMPORTANT: Maintain order as they appear in the volume
 
-      for (const section of part.sections) {
-        const sectionNode: NavigationNode = {
-          id: section.id,
-          type: 'section',
-          number: section.number,
-          title: section.title,
-          path: `/code/${division.id}/${part.number}/${section.number}`,
-          children: [],
-        };
-
-        for (const subsection of section.subsections) {
-          const subsectionNode: NavigationNode = {
-            id: subsection.id,
-            type: 'subsection',
-            number: subsection.number,
-            title: subsection.title,
-            path: `/code/${division.id}/${part.number}/${section.number}/${subsection.number}`,
-            children: [],
-          };
-
-          for (const article of subsection.articles) {
-            const articleNode: NavigationNode = {
-              id: article.id,
-              type: 'article',
-              number: article.number,
-              title: article.title,
-              path: `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}`,
-            };
-
-            subsectionNode.children?.push(articleNode);
-          }
-
-          sectionNode.children?.push(subsectionNode);
-        }
-
-        partNode.children?.push(sectionNode);
-      }
-
-      divisionNode.children?.push(partNode);
+    // 1. Add Preface (if exists in this volume)
+    if (volume.preface) {
+      volumeNode.children?.push({
+        id: volume.preface.id,
+        type: 'article',
+        title: 'Preface',
+        path: `/code/preface`,
+      });
     }
 
-    tree.push(divisionNode);
+    // 2. Add divisions for this volume (in order)
+    for (const division of volume.divisions) {
+      volumeNode.children?.push(buildDivisionNode(division));
+    }
+
+    // 3. Add Index (if exists in this volume)
+    if (volume.index) {
+      volumeNode.children?.push({
+        id: volume.index.id,
+        type: 'article',
+        title: 'Index',
+        path: `/code/index`,
+      });
+    }
+
+    // 4. Add Conversion Factors (if exists in this volume)
+    if (volume.conversions) {
+      volumeNode.children?.push({
+        id: volume.conversions.id,
+        type: 'article',
+        title: volume.conversions.table_title || 'Conversion Factors',
+        path: `/code/conversions`,
+      });
+    }
+
+    tree.push(volumeNode);
   }
 
   return tree;
+}
+
+/**
+ * Build a division node with hierarchical numbering
+ * @param division - Division to build node for
+ * @returns Division navigation node
+ */
+function buildDivisionNode(division: any): NavigationNode {
+  const divisionNode: NavigationNode = {
+    id: division.id,
+    type: 'division',
+    title: division.letter ? `Division ${division.letter} - ${division.title}` : division.title,
+    path: `/code/${division.id}`,
+    children: [],
+  };
+
+  for (const part of division.parts) {
+    const partNode: NavigationNode = {
+      id: part.id,
+      type: 'part',
+      number: part.number,
+      title: `Part ${part.number} - ${part.title}`,
+      path: `/code/${division.id}/${part.number}`,
+      children: [],
+    };
+
+    for (const section of part.sections) {
+      // NEW: Hierarchical numbering (Part.Section)
+      const sectionNumber = `${part.number}.${section.number}`;
+      const sectionNode: NavigationNode = {
+        id: section.id,
+        type: 'section',
+        number: sectionNumber,
+        title: `${sectionNumber} ${section.title}`,
+        path: `/code/${division.id}/${part.number}/${section.number}`,
+        children: [],
+      };
+
+      for (const subsection of section.subsections) {
+        // NEW: Hierarchical numbering (Part.Section.Subsection)
+        const subsectionNumber = `${sectionNumber}.${subsection.number}`;
+        const subsectionNode: NavigationNode = {
+          id: subsection.id,
+          type: 'subsection',
+          number: subsectionNumber,
+          title: `${subsectionNumber} ${subsection.title}`,
+          path: `/code/${division.id}/${part.number}/${section.number}/${subsection.number}`,
+          children: [],
+        };
+
+        for (const article of subsection.articles) {
+          // NEW: Hierarchical numbering (Part.Section.Subsection.Article)
+          const articleNumber = `${subsectionNumber}.${article.number}`;
+          const articleNode: NavigationNode = {
+            id: article.id,
+            type: 'article',
+            number: articleNumber,
+            title: `${articleNumber} ${article.title}`,
+            path: `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}`,
+          };
+
+          subsectionNode.children?.push(articleNode);
+        }
+
+        sectionNode.children?.push(subsectionNode);
+      }
+
+      partNode.children?.push(sectionNode);
+    }
+
+    divisionNode.children?.push(partNode);
+  }
+
+  return divisionNode;
 }
 
 /**
@@ -184,8 +246,11 @@ export function extractContentTypes(document: BCBCDocument): ContentType[] {
   // Always include 'article' as it's the base content type
   contentTypesSet.add('article');
 
+  // Get divisions from volumes
+  const divisions = document.volumes.flatMap(v => v.divisions);
+
   // Scan through all divisions, parts, sections, subsections, and articles
-  for (const division of document.divisions) {
+  for (const division of divisions) {
     for (const part of division.parts) {
       for (const section of part.sections) {
         for (const subsection of section.subsections) {
@@ -243,27 +308,38 @@ function scanClausesForContentTypes(
 /**
  * Extract quick access sections from BCBC document
  * 
- * Identifies frequently accessed sections for the homepage.
- * Currently returns the first section from each part as a starting point.
- * This can be customized based on usage analytics or manual curation.
+ * Returns exactly 3 predefined quick access pins:
+ * 1. Division A - Part 1 (Compliance)
+ * 2. Division B - Part 9 (Housing and Small Buildings)
+ * 3. Division B - Part 3 (Fire Protection, Occupant Safety and Accessibility)
  * 
  * @param document - BCBC document
- * @returns Array of quick access sections
+ * @returns Array of 3 quick access sections
  */
 export function extractQuickAccess(document: BCBCDocument): QuickAccessSection[] {
   const quickAccess: QuickAccessSection[] = [];
 
-  // Extract first section from each part as quick access
-  // This provides a representative sample across the code
-  for (const division of document.divisions) {
-    for (const part of division.parts) {
-      if (part.sections.length > 0) {
-        const section = part.sections[0];
+  // Get divisions from volumes
+  const divisions = document.volumes.flatMap(v => v.divisions);
+
+  // Define the 3 specific pins we want
+  const targetPins = [
+    { divisionId: 'nbc.divA', partNumber: '1', title: 'Division A - Part 1', description: 'Compliance' },
+    { divisionId: 'nbc.divBV2', partNumber: '9', title: 'Division B - Part 9', description: 'Housing and Small Buildings' },
+    { divisionId: 'nbc.divB', partNumber: '3', title: 'Division B - Part 3', description: 'Fire Protection, Occupant Safety and Accessibility' },
+  ];
+
+  // Find and add each target pin
+  for (const target of targetPins) {
+    const division = divisions.find(d => d.id === target.divisionId);
+    if (division) {
+      const part = division.parts.find(p => p.number === target.partNumber);
+      if (part) {
         quickAccess.push({
-          id: section.id,
-          title: `${part.title} - ${section.title}`,
-          path: `/code/${division.id}/${part.number}/${section.number}`,
-          description: `${division.title}, Part ${part.number}, Section ${section.number}`,
+          id: `${division.id}.part${part.number}`,
+          title: target.title,
+          path: `/code/${division.id}/${part.number}`,
+          description: target.description,
         });
       }
     }

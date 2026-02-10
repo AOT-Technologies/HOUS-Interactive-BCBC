@@ -39,15 +39,42 @@ interface RawBCBCDocument {
     publication_date?: string;
     nrc_number?: string;
     isbn?: string;
-    volumes?: Array<{
+    volumes: Array<{
       volume: string;
       title: string;
       subtitle?: string;
     }>;
   };
-  divisions: RawDivision[];
+  volumes: RawVolume[];
   glossary: Record<string, RawGlossaryEntry>;
-  amendments?: RawAmendment[];
+  bc_amendments?: any[];
+  statistics?: any;
+}
+
+interface RawVolume {
+  id: string;
+  type: 'volume';
+  number: number;
+  title: string;
+  preface?: {
+    id: string;
+    type: 'preface';
+    content: any[];
+  };
+  divisions: RawDivision[];
+  index?: {
+    id: string;
+    type: 'index';
+    introduction: string;
+    letters: any[];
+  };
+  conversions?: {
+    id: string;
+    type: 'conversions';
+    table_id: string;
+    table_title: string;
+    table_structure: any;
+  };
 }
 
 interface RawDivision {
@@ -204,8 +231,8 @@ export function parseBCBC(jsonData: unknown): BCBCDocument {
   if (!raw.metadata) {
     throw new Error('Invalid BCBC JSON: missing metadata');
   }
-  if (!raw.divisions || !Array.isArray(raw.divisions)) {
-    throw new Error('Invalid BCBC JSON: missing or invalid divisions array');
+  if (!raw.volumes || !Array.isArray(raw.volumes)) {
+    throw new Error('Invalid BCBC JSON: missing or invalid volumes array');
   }
 
   // Parse metadata
@@ -214,22 +241,47 @@ export function parseBCBC(jsonData: unknown): BCBCDocument {
     version: raw.version || 'unknown',
     effectiveDate: raw.metadata.publication_date || 'unknown',
     jurisdiction: 'British Columbia',
+    volumes: raw.metadata.volumes || [],
   };
 
-  // Parse divisions
-  const divisions: Division[] = raw.divisions.map(parseDivisionData);
+  // Parse volumes
+  const volumes = raw.volumes.map(parseVolumeData);
 
   // Parse glossary
   const glossary: GlossaryEntry[] = parseGlossary(raw.glossary || {});
 
-  // Extract amendment dates from revisions throughout the document
-  const amendmentDates: AmendmentDate[] = extractAmendmentDatesFromRevisions(raw);
+  // Extract amendment dates from bc_amendments
+  const amendmentDates: AmendmentDate[] = raw.bc_amendments 
+    ? extractAmendmentDatesFromBCAmendments(raw.bc_amendments)
+    : [];
 
   return {
+    document_type: raw.document_type,
+    version: raw.version,
+    canonical_version: raw.canonical_version,
+    generated_timestamp: raw.generated_timestamp,
     metadata,
-    divisions,
+    volumes,
     glossary,
     amendmentDates,
+    bc_amendments: raw.bc_amendments,
+    statistics: raw.statistics,
+  };
+}
+
+/**
+ * Parse a volume from raw data
+ */
+function parseVolumeData(raw: RawVolume): any {
+  return {
+    id: raw.id,
+    type: raw.type,
+    number: raw.number,
+    title: raw.title,
+    preface: raw.preface,
+    divisions: raw.divisions.map(parseDivisionData),
+    index: raw.index,
+    conversions: raw.conversions,
   };
 }
 
@@ -239,8 +291,10 @@ export function parseBCBC(jsonData: unknown): BCBCDocument {
 function parseDivisionData(raw: RawDivision): Division {
   return {
     id: raw.id,
-    title: raw.title,
     type: 'division',
+    letter: raw.letter,
+    title: raw.title,
+    number: String(raw.number),
     parts: raw.parts.map(parsePartData),
   };
 }
@@ -465,7 +519,51 @@ function parseAmendmentDates(raw: RawAmendment[]): AmendmentDate[] {
 }
 
 /**
- * Extract amendment dates from revisions throughout the document
+ * Extract amendment dates from bc_amendments array
+ */
+function extractAmendmentDatesFromBCAmendments(bcAmendments: any[]): AmendmentDate[] {
+  const datesMap = new Map<string, { date: string; count: number; sections: Set<string> }>();
+  
+  for (const amendment of bcAmendments) {
+    if (amendment.effective_date || amendment.date) {
+      const date = amendment.effective_date || amendment.date;
+      const existing = datesMap.get(date);
+      
+      if (existing) {
+        existing.count++;
+        if (amendment.location_id) {
+          existing.sections.add(amendment.location_id);
+        }
+      } else {
+        const sections = new Set<string>();
+        if (amendment.location_id) {
+          sections.add(amendment.location_id);
+        }
+        datesMap.set(date, { date, count: 1, sections });
+      }
+    }
+  }
+  
+  // Convert map to array and sort by date
+  const dates = Array.from(datesMap.entries())
+    .map(([date, { count, sections }]) => ({
+      date,
+      description: `${count} amendment${count > 1 ? 's' : ''} effective on this date`,
+      affectedSections: Array.from(sections),
+      isLatest: false,
+    }))
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  
+  // Mark the latest date
+  if (dates.length > 0) {
+    dates[dates.length - 1].isLatest = true;
+  }
+  
+  return dates;
+}
+
+/**
+ * Extract amendment dates from revisions throughout the document (DEPRECATED - kept for reference)
  * Scans all articles, sentences, clauses, and tables for revision effective dates
  */
 function extractAmendmentDatesFromRevisions(raw: RawBCBCDocument): AmendmentDate[] {
@@ -491,8 +589,11 @@ function extractAmendmentDatesFromRevisions(raw: RawBCBCDocument): AmendmentDate
     }
   };
   
+  // Get divisions from volumes
+  const divisions = raw.volumes?.flatMap(v => v.divisions) || [];
+  
   // Recursively scan all divisions, parts, sections, subsections, articles
-  for (const division of raw.divisions || []) {
+  for (const division of divisions) {
     for (const part of division.parts || []) {
       for (const section of part.sections || []) {
         for (const subsection of section.subsections || []) {
@@ -619,7 +720,11 @@ function extractNumberFromId(id: string): string {
  */
 export function parseDivision(jsonData: unknown, divisionId: string): Division | null {
   const document = parseBCBC(jsonData);
-  return document.divisions.find((d) => d.id === divisionId) || null;
+  
+  // Get divisions from volumes
+  const divisions = document.volumes?.flatMap(v => v.divisions) || [];
+    
+  return divisions.find((d) => d.id === divisionId) || null;
 }
 
 /**
@@ -630,7 +735,10 @@ export function parseDivision(jsonData: unknown, divisionId: string): Division |
 export function extractContentIds(document: BCBCDocument): string[] {
   const ids: string[] = [];
 
-  for (const division of document.divisions) {
+  // Get divisions from volumes
+  const divisions = document.volumes?.flatMap(v => v.divisions) || [];
+
+  for (const division of divisions) {
     ids.push(division.id);
     for (const part of division.parts) {
       ids.push(part.id);
@@ -677,7 +785,7 @@ export function getGlossaryMap(document: BCBCDocument): Map<string, GlossaryEntr
 export function getAmendmentDates(document: BCBCDocument): string[] {
   const dates = new Set<string>();
 
-  for (const amendment of document.amendmentDates) {
+  for (const amendment of (document.amendmentDates || [])) {
     dates.add(amendment.date);
   }
 

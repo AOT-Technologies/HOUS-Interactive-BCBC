@@ -220,7 +220,10 @@
 .home-sidebar-nav {
   width: 100%;
   flex: 1;
-  overflow-y: auto;
+  min-height: 0; /* Important: allows flex child to shrink below content size */
+  overflow: hidden; /* Let the NavigationTree handle scrolling */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Responsive breakpoints */

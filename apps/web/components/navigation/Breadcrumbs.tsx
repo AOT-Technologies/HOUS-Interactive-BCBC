@@ -183,7 +183,6 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                   aria-label={`Navigate to ${item.title}`}
                   aria-current={isLastInFull ? 'page' : undefined}
                 >
-                  {item.number && <span className="breadcrumbs-number">{item.number}</span>}
                   <span className="breadcrumbs-title">{item.title}</span>
                 </Link>
                 {!isLast && (

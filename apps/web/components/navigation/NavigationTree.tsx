@@ -173,18 +173,6 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
               aria-current={isActive ? 'page' : undefined}
             >
               <span className="nav-tree-text">
-                {node.number && (
-                  <>
-                    <span className="nav-tree-number">
-                      {node.type === 'division' && `Division ${node.number}`}
-                      {node.type === 'part' && `Part ${node.number}`}
-                      {node.type === 'section' && `Section ${node.number}`}
-                      {node.type === 'subsection' && `Subsection ${node.number}`}
-                      {node.type === 'article' && `Article ${node.number}`}
-                    </span>
-                    <span className="nav-tree-separator"> - </span>
-                  </>
-                )}
                 <span className="nav-tree-title">{node.title}</span>
               </span>
             </button>

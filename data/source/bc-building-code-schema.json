@@ -4,7 +4,7 @@
   "title": "BC Building Code JSON Schema",
   "description": "JSON Schema for validating BC Building Code JSON output generated from canonical XML",
   "type": "object",
-  "required": ["document_type", "version", "canonical_version", "generated_timestamp", "divisions", "statistics"],
+  "required": ["document_type", "version", "canonical_version", "generated_timestamp", "volumes", "statistics"],
   "properties": {
     "document_type": {
       "type": "string",
@@ -32,12 +32,12 @@
       "$ref": "#/definitions/front_matter",
       "description": "Front matter content including preface, introduction, and committees"
     },
-    "divisions": {
+    "volumes": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/division"
+        "$ref": "#/definitions/volume"
       },
-      "description": "Top-level divisions (A, B, C)"
+      "description": "Volumes (1 and 2) containing divisions, index, and conversions"
     },
     "cross_references": {
       "$ref": "#/definitions/cross_references",
@@ -292,6 +292,258 @@
               "subtitle": {
                 "type": "string"
               }
+            }
+          }
+        }
+      }
+    },
+    "volume": {
+      "type": "object",
+      "required": ["id", "number", "title", "divisions"],
+      "description": "Physical publication volume containing divisions, index, and conversions",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]$",
+          "description": "Volume identifier (e.g., 'nbc.2020.vol1', 'nbc.2020.vol2')"
+        },
+        "number": {
+          "type": "number",
+          "enum": [1, 2],
+          "description": "Volume number (1 or 2)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Volume title (e.g., 'National Building Code of Canada 2020 - Volume 1')"
+        },
+        "divisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/division"
+          },
+          "description": "Divisions contained in this volume"
+        },
+        "index": {
+          "$ref": "#/definitions/index",
+          "description": "Volume-specific alphabetical index of terms with references to code sections"
+        },
+        "conversions": {
+          "$ref": "#/definitions/conversions",
+          "description": "Volume-specific conversion factors table for metric/imperial units"
+        }
+      }
+    },
+    "back_matter": {
+      "type": "object",
+      "required": ["id"],
+      "description": "DEPRECATED: Back matter content. Index and conversions are now volume-specific and located within each volume element. This definition is kept for backward compatibility only.",
+      "deprecated": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the back matter section"
+        },
+        "index": {
+          "$ref": "#/definitions/index",
+          "description": "Alphabetical index of terms with references to code sections"
+        },
+        "conversions": {
+          "$ref": "#/definitions/conversions",
+          "description": "Conversion factors table for metric/imperial units"
+        }
+      }
+    },
+    "index": {
+      "type": "object",
+      "required": ["id", "type", "letters"],
+      "description": "Alphabetical index of terms with references to code sections (volume-specific)",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]\\.index$",
+          "description": "Volume-specific index identifier (e.g., 'nbc.2020.vol1.index', 'nbc.2020.vol2.index')"
+        },
+        "type": {
+          "type": "string",
+          "const": "index"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "Introductory text explaining index notation (e.g., division markers)"
+        },
+        "letters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/index_letter"
+          },
+          "description": "Index entries grouped by letter (A-Z)"
+        }
+      }
+    },
+    "index_letter": {
+      "type": "object",
+      "required": ["id", "letter", "groups"],
+      "description": "Index entries for a specific letter",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]\\.index\\.[A-Z]$",
+          "description": "Volume-specific letter group identifier (e.g., 'nbc.2020.vol1.index.A', 'nbc.2020.vol2.index.B')"
+        },
+        "letter": {
+          "type": "string",
+          "pattern": "^[A-Z]$",
+          "description": "Letter for this group (A-Z)"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/index_group"
+          },
+          "description": "Index term groups within this letter"
+        }
+      }
+    },
+    "index_group": {
+      "type": "object",
+      "required": ["id", "term_id", "term"],
+      "description": "A main index term with optional subterms",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]\\.index\\.[A-Z]\\.group\\d+$",
+          "description": "Volume-specific group identifier (e.g., 'nbc.2020.vol1.index.A.group1')"
+        },
+        "term_id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]\\.index\\.[A-Z]\\.group\\d+\\.term\\d+$",
+          "description": "Volume-specific main term identifier (e.g., 'nbc.2020.vol1.index.A.group1.term1')"
+        },
+        "term": {
+          "type": "string",
+          "description": "Main index term text"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/index_reference"
+          },
+          "description": "References to code sections for this term"
+        },
+        "subterms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/index_subterm"
+          },
+          "description": "Sub-terms under this main term"
+        }
+      }
+    },
+    "index_subterm": {
+      "type": "object",
+      "required": ["id", "term"],
+      "description": "A sub-term under a main index term",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]\\.index\\.[A-Z]\\.group\\d+\\.subterm\\d+\\.term\\d+$",
+          "description": "Volume-specific sub-term identifier (e.g., 'nbc.2020.vol1.index.A.group1.subterm1.term1')"
+        },
+        "term": {
+          "type": "string",
+          "description": "Sub-term text"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/index_reference"
+          },
+          "description": "References to code sections for this sub-term"
+        }
+      }
+    },
+    "index_reference": {
+      "type": "object",
+      "required": ["target"],
+      "description": "A reference from an index term to a code section",
+      "properties": {
+        "target": {
+          "type": "string",
+          "description": "Canonical ID of the referenced code section (e.g., 'nbc.divB.part1.sect3.subsect2.art1')"
+        },
+        "vendor_target": {
+          "type": "string",
+          "description": "Original NBC vendor ID (e.g., 'ea000104')"
+        },
+        "division": {
+          "type": "string",
+          "enum": ["1", "2"],
+          "description": "Division indicator: '1' for Division A/C, '2' for Division B Part 9"
+        }
+      }
+    },
+    "conversions": {
+      "type": "object",
+      "required": ["id", "type", "table_id", "table_title", "table_structure"],
+      "description": "Conversion factors table for metric/imperial units (volume-specific)",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]\\.conversions$",
+          "description": "Volume-specific conversions identifier (e.g., 'nbc.2020.vol1.conversions', 'nbc.2020.vol2.conversions')"
+        },
+        "type": {
+          "type": "string",
+          "const": "conversions"
+        },
+        "table_id": {
+          "type": "string",
+          "pattern": "^nbc\\.\\d{4}\\.vol[12]\\.conversions\\.table\\d+$",
+          "description": "Volume-specific conversion table identifier (e.g., 'nbc.2020.vol1.conversions.table1')"
+        },
+        "table_title": {
+          "type": "string",
+          "description": "Title of the conversion table (e.g., 'Conversion Factors')"
+        },
+        "table_structure": {
+          "type": "object",
+          "required": ["body_rows"],
+          "description": "Table structure with conversion factors",
+          "properties": {
+            "columns": {
+              "type": ["number", "null"],
+              "description": "Number of columns in the table"
+            },
+            "column_specs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {"type": "string"},
+                  "width": {"type": "string"}
+                }
+              },
+              "description": "Column specifications with names and widths"
+            },
+            "header_rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/table_entry"
+                }
+              },
+              "description": "Header rows with column titles"
+            },
+            "body_rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/table_entry"
+                }
+              },
+              "description": "Body rows with conversion factors"
             }
           }
         }
@@ -1182,6 +1434,7 @@
     "statistics": {
       "type": "object",
       "required": [
+        "total_volumes",
         "total_divisions",
         "total_parts",
         "total_sections",
@@ -1190,9 +1443,16 @@
         "total_tables",
         "total_figures",
         "total_spectables",
-        "total_application_notes"
+        "total_application_notes",
+        "total_index_entries",
+        "total_index_references"
       ],
       "properties": {
+        "total_volumes": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total number of volumes (typically 2 for NBC 2020)"
+        },
         "total_divisions": {"type": "number", "minimum": 0},
         "total_parts": {"type": "number", "minimum": 0},
         "total_sections": {"type": "number", "minimum": 0},
@@ -1201,7 +1461,37 @@
         "total_tables": {"type": "number", "minimum": 0},
         "total_figures": {"type": "number", "minimum": 0},
         "total_spectables": {"type": "number", "minimum": 0},
-        "total_application_notes": {"type": "number", "minimum": 0}
+        "total_application_notes": {"type": "number", "minimum": 0},
+        "total_index_entries": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total number of index entries across all volumes (main terms + subterms)"
+        },
+        "total_index_references": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total number of index references to code sections across all volumes"
+        },
+        "total_index_entries_vol1": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of index entries in Volume 1 (main terms + subterms)"
+        },
+        "total_index_entries_vol2": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of index entries in Volume 2 (main terms + subterms)"
+        },
+        "total_index_references_vol1": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of index references to code sections in Volume 1"
+        },
+        "total_index_references_vol2": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of index references to code sections in Volume 2"
+        }
       }
     }
   }

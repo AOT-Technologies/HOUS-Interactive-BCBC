@@ -301,24 +301,36 @@ async function generateSearchAssets(rawData: any, outputDir: string): Promise<{ 
 }
 
 /**
- * Generate quick access pins
+ * Generate quick access and navigation tree
  */
 async function generateQuickAccess(document: BCBCDocument, outputDir: string): Promise<void> {
-  logger.info('Generating quick access pins...');
+  logger.info('Generating quick access pins and navigation tree...');
   
   const startTime = Date.now();
   
   try {
     const metadata = extractMetadata(document);
     
+    // Write quick access
     const quickAccess = {
       version: '1.0.0',
       generatedAt: new Date().toISOString(),
       pins: metadata.quickAccess,
     };
     
-    const outputPath = join(outputDir, 'quick-access.json');
-    await writeFile(outputPath, JSON.stringify(quickAccess, null, 2));
+    const quickAccessPath = join(outputDir, 'quick-access.json');
+    await writeFile(quickAccessPath, JSON.stringify(quickAccess, null, 2));
+    
+    // Write navigation tree (overwrite the one from search indexer)
+    const navigationTree = {
+      version: document.metadata.version || '2020',
+      generatedAt: new Date().toISOString(),
+      tree: metadata.navigationTree,
+    };
+    
+    const navTreePath = join(outputDir, 'navigation-tree.json');
+    await writeFile(navTreePath, JSON.stringify(navigationTree, null, 2));
+    logger.success('Written navigation-tree.json (with volumes)');
     
     const duration = Date.now() - startTime;
     logger.success(`Generated quick access pins in ${formatDuration(duration)}`);
@@ -390,7 +402,8 @@ async function generateVersionAssets(
     // Parse for validation and content chunking
     logger.info('Parsing BCBC structure...');
     const document = parseBCBC(rawData);
-    logger.success(`Parsed ${document.divisions.length} divisions`);
+    const totalDivisions = document.volumes.reduce((sum, v) => sum + v.divisions.length, 0);
+    logger.success(`Parsed ${document.volumes.length} volumes with ${totalDivisions} divisions`);
     
     // Validate data
     await validateData(document);
