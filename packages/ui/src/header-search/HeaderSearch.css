@@ -183,22 +183,46 @@
   color: var(--typography-color-secondary);
 }
 
-/* Dropdown - positioned below search wrapper */
+/* Dropdown Container - positioned below search wrapper */
 .ui-HeaderSearch--Dropdown {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
   right: 0;
-  list-style: none;
-  margin: 0;
-  padding: var(--layout-padding-xsmall, 4px) 0;
   background-color: var(--surface-color-background-white, #fff);
   border: 1px solid var(--surface-color-border-default, #ccc);
   border-radius: var(--layout-borderradius-medium, 4px);
   box-shadow: var(--surface-shadow-medium);
   z-index: 10000;
   max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Suggestions Header */
+.ui-HeaderSearch--SuggestionsHeader {
+  padding: var(--layout-padding-small, 8px) var(--layout-padding-medium, 16px);
+  font-family: 'BC Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--typography-color-secondary, #606060);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--surface-color-border-default, #D9D9D9);
+  background-color: var(--surface-color-background-light-gray, #F2F2F2);
+  flex-shrink: 0;
+}
+
+/* Suggestions List */
+.ui-HeaderSearch--SuggestionsList {
+  list-style: none;
+  margin: 0;
+  padding: var(--layout-padding-xsmall, 4px) 0;
   overflow-y: auto;
+  flex: 1;
 }
 
 /* Option Item */

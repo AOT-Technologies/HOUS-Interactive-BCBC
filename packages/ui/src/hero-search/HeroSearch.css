@@ -76,6 +76,7 @@
   outline: none;
   background-color: transparent;
   color: #313132;
+  min-width: 0;
 }
 
 .ui-HeroSearch--Input::placeholder {
@@ -86,22 +87,78 @@
   outline: none;
 }
 
-/* Dropdown */
+/* Clear Button - appears when there's text */
+.ui-HeroSearch--ClearButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #606060;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ui-HeroSearch--ClearButton:hover {
+  background-color: #F2F2F2;
+  color: #313132;
+}
+
+.ui-HeroSearch--ClearButton:focus {
+  outline: 2px solid #FCBA19;
+  outline-offset: 2px;
+}
+
+.ui-HeroSearch--ClearButton .ui-Icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Dropdown Container */
 .ui-HeroSearch--Dropdown {
   position: absolute;
   top: calc(100% + 16px);
   left: -12px;
   right: -12px;
-  list-style: none;
-  margin: 0;
-  padding: 4px 0;
   background-color: #FFFFFF;
   border: 1px solid #D9D9D9;
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 9999;
   max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Suggestions Header */
+.ui-HeroSearch--SuggestionsHeader {
+  padding: var(--layout-padding-small, 8px) var(--layout-padding-medium, 16px);
+  font-family: 'BC Sans', 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--typography-color-secondary, #606060);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--surface-color-border-default, #D9D9D9);
+  background-color: var(--surface-color-background-light-gray, #F2F2F2);
+  flex-shrink: 0;
+}
+
+/* Suggestions List */
+.ui-HeroSearch--SuggestionsList {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
   overflow-y: auto;
+  flex: 1;
 }
 
 /* Option Item */
