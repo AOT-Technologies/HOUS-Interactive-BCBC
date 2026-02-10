@@ -98,9 +98,11 @@ interface BCBCRevision {
 }
 
 interface BCBCGlossaryEntry {
+  id?: string;
   term: string;
   definition: string;
   location_id?: string;
+  relatedTerms?: string[];
 }
 
 interface BCBCFrontMatterContent {
@@ -121,11 +123,21 @@ interface BCBCFrontMatter {
   preface?: BCBCPreface;
 }
 
+interface BCBCVolume {
+  id: string;
+  type: string;
+  number: number;
+  title: string;
+  preface?: BCBCPreface;
+  divisions: BCBCDivision[];
+}
+
 interface BCBCDocument {
   document_type: string;
   version: string;
-  divisions: BCBCDivision[];
-  glossary?: Record<string, BCBCGlossaryEntry>;
+  volumes?: BCBCVolume[];
+  divisions?: BCBCDivision[];
+  glossary?: Record<string, BCBCGlossaryEntry> | BCBCGlossaryEntry[];
   front_matter?: BCBCFrontMatter;
 }
 
@@ -172,8 +184,11 @@ export function buildSearchIndex(
     contentTypesFound.add('article');
   }
 
-  // Process divisions from volumes
-  const divisions = bcbcData.volumes?.flatMap((v: any) => v.divisions) || [];
+  // Process divisions (either from volumes or directly)
+  const divisions = bcbcData.volumes 
+    ? bcbcData.volumes.flatMap((v) => v.divisions)
+    : (bcbcData.divisions || []);
+  
   for (const division of divisions) {
     const divisionTocItem = processDivision(
       division,
@@ -185,12 +200,19 @@ export function buildSearchIndex(
     tableOfContents.push(divisionTocItem);
   }
 
-  // Process glossary (glossary is an object with IDs as keys)
+  // Process glossary (can be object with IDs as keys or array)
   if (bcbcData.glossary && fullConfig.contentTypes.glossary.enabled) {
-    const glossaryEntries = Object.entries(bcbcData.glossary).map(([id, entry]) => ({
-      id,
-      ...entry,
-    }));
+    const glossaryEntries = Array.isArray(bcbcData.glossary)
+      ? bcbcData.glossary.map((entry, index) => ({
+          id: entry.id || `glossary-${index}`,
+          term: entry.term,
+          definition: entry.definition,
+        }))
+      : Object.entries(bcbcData.glossary).map(([id, entry]) => ({
+          id,
+          term: entry.term,
+          definition: entry.definition,
+        }));
     processGlossary(glossaryEntries, documents, fullConfig);
     contentTypesFound.add('glossary');
   }
@@ -214,11 +236,11 @@ export function buildSearchIndex(
       totalRevisionDates: revisionDates.length,
       totalGlossaryTerms: documents.filter(d => d.type === 'glossary').length,
     },
-    divisions: divisions.map((d: any) => ({
+    divisions: divisions.map((d) => ({
       id: d.id,
       letter: d.letter,
       title: d.title,
-      parts: d.parts.map((p: any) => ({
+      parts: d.parts.map((p) => ({
         id: p.id,
         number: p.number,
         title: p.title,

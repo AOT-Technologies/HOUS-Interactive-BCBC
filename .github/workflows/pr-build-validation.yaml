@@ -1,0 +1,41 @@
+name: PR Build Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - dev
+      - main
+
+jobs:
+  validate-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image (no push)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: interactive-bcbc-app:pr-${{ github.event.pull_request.number }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build validation summary
+        if: success()
+        run: |
+          echo "✅ Docker build completed successfully"
+          echo "PR #${{ github.event.pull_request.number }} is ready for review"
+
+      - name: Build failure notification
+        if: failure()
+        run: |
+          echo "❌ Docker build failed"
+          echo "Please fix the build errors before merging"
+          exit 1
