@@ -16,7 +16,7 @@ export interface NavigationNode {
   id: string;
   number: string;
   title: string;
-  type: 'division' | 'part' | 'section' | 'subsection' | 'article';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article';
   path: string;
   children?: NavigationNode[];
 }
@@ -136,24 +136,32 @@ export const useNavigationStore = create<NavigationStore>()(
             // Transform the data to add path property to each node
             const addPathToNodes = (nodes: any[], parentPath: string = ''): NavigationNode[] => {
               return nodes.map((node) => {
-                // Build path based on node type
-                let path = parentPath;
+                // Use existing path from JSON if available, otherwise build it
+                let path = node.path || parentPath;
                 
-                if (node.type === 'division') {
-                  path = `/code/div${node.number.toLowerCase()}`;
-                } else if (node.type === 'part') {
-                  path = `${parentPath}/part-${node.number}`;
-                } else if (node.type === 'section') {
-                  path = `${parentPath}/section-${node.number}`;
-                } else if (node.type === 'subsection') {
-                  path = `${parentPath}/subsection-${node.number}`;
-                } else if (node.type === 'article') {
-                  path = `${parentPath}/article-${node.number}`;
+                // Only build path if not provided in JSON
+                if (!node.path) {
+                  if (node.type === 'volume') {
+                    path = `/volume/${node.number}`;
+                  } else if (node.type === 'division') {
+                    // Extract division letter from ID (e.g., "nbc.divA" -> "A")
+                    const divMatch = node.id.match(/div([A-Z])/i);
+                    const divLetter = divMatch ? divMatch[1].toLowerCase() : node.number?.toLowerCase() || '';
+                    path = `/code/div${divLetter}`;
+                  } else if (node.type === 'part') {
+                    path = `${parentPath}/part-${node.number}`;
+                  } else if (node.type === 'section') {
+                    path = `${parentPath}/section-${node.number}`;
+                  } else if (node.type === 'subsection') {
+                    path = `${parentPath}/subsection-${node.number}`;
+                  } else if (node.type === 'article') {
+                    path = `${parentPath}/article-${node.number}`;
+                  }
                 }
                 
                 return {
                   id: node.id,
-                  number: node.number.toString(),
+                  number: node.number?.toString() || '',
                   title: node.title,
                   type: node.type,
                   path,
@@ -162,7 +170,9 @@ export const useNavigationStore = create<NavigationStore>()(
               });
             };
             
-            const transformedTree = addPathToNodes(data.divisions || []);
+            // Handle both old structure (data.divisions) and new structure (data.tree with volumes)
+            const sourceNodes = data.tree || data.divisions || [];
+            const transformedTree = addPathToNodes(sourceNodes);
             set({ 
               navigationTree: transformedTree, 
               currentVersion: versionId,

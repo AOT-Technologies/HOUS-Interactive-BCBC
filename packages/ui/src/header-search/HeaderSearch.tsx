@@ -182,24 +182,27 @@ export default function HeaderSearch({
           </button>
         )}
         {shouldShowDropdown && (
-          <ul role="listbox" className="ui-HeaderSearch--Dropdown">
-            {search.isLoading ? (
-              <li className="ui-HeaderSearch--LoadingItem">Loading...</li>
-            ) : (
-              search.suggestions.map((suggestion: string, index: number) => (
-                <li
-                  key={suggestion}
-                  role="option"
-                  aria-selected={highlightedIndex === index}
-                  className={`ui-HeaderSearch--Option ${highlightedIndex === index ? "--highlighted" : ""}`}
-                  onClick={() => handleSuggestionClick(suggestion)}
-                  onMouseEnter={() => setHighlightedIndex(index)}
-                >
-                  {suggestion}
-                </li>
-              ))
-            )}
-          </ul>
+          <div className="ui-HeaderSearch--Dropdown">
+            <div className="ui-HeaderSearch--SuggestionsHeader">Search Suggestions</div>
+            <ul role="listbox" className="ui-HeaderSearch--SuggestionsList">
+              {search.isLoading ? (
+                <li className="ui-HeaderSearch--LoadingItem">Loading...</li>
+              ) : (
+                search.suggestions.map((suggestion: string, index: number) => (
+                  <li
+                    key={suggestion}
+                    role="option"
+                    aria-selected={highlightedIndex === index}
+                    className={`ui-HeaderSearch--Option ${highlightedIndex === index ? "--highlighted" : ""}`}
+                    onClick={() => handleSuggestionClick(suggestion)}
+                    onMouseEnter={() => setHighlightedIndex(index)}
+                  >
+                    {suggestion}
+                  </li>
+                ))
+              )}
+            </ul>
+          </div>
         )}
       </div>
       <Button

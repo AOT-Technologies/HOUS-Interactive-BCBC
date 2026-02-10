@@ -7,6 +7,7 @@ import {
   TESTID_HERO_SEARCH_BUTTON,
 } from "@repo/constants/src/testids";
 import Button from "../button/Button";
+import Icon from "../icon/Icon";
 import "./HeroSearch.css";
 
 export interface HeroSearchProps {
@@ -119,25 +120,38 @@ export default function HeroSearch({
               autoComplete="off"
               data-testid={TESTID_HERO_SEARCH_INPUT}
             />
+            {search.query && (
+              <button
+                type="button"
+                onClick={search.handleClear}
+                className="ui-HeroSearch--ClearButton"
+                aria-label="Clear search"
+              >
+                <Icon type="close" />
+              </button>
+            )}
             {shouldShowDropdown && (
-              <ul role="listbox" className="ui-HeroSearch--Dropdown">
-                {search.isLoading ? (
-                  <li className="ui-HeroSearch--LoadingItem">Loading...</li>
-                ) : (
-                  search.suggestions.map((suggestion: string, index: number) => (
-                    <li
-                      key={suggestion}
-                      role="option"
-                      aria-selected={highlightedIndex === index}
-                      className={`ui-HeroSearch--Option ${highlightedIndex === index ? "--highlighted" : ""}`}
-                      onClick={() => handleSuggestionClick(suggestion)}
-                      onMouseEnter={() => setHighlightedIndex(index)}
-                    >
-                      {suggestion}
-                    </li>
-                  ))
-                )}
-              </ul>
+              <div className="ui-HeroSearch--Dropdown">
+                <div className="ui-HeroSearch--SuggestionsHeader">Search Suggestions</div>
+                <ul role="listbox" className="ui-HeroSearch--SuggestionsList">
+                  {search.isLoading ? (
+                    <li className="ui-HeroSearch--LoadingItem">Loading...</li>
+                  ) : (
+                    search.suggestions.map((suggestion: string, index: number) => (
+                      <li
+                        key={suggestion}
+                        role="option"
+                        aria-selected={highlightedIndex === index}
+                        className={`ui-HeroSearch--Option ${highlightedIndex === index ? "--highlighted" : ""}`}
+                        onClick={() => handleSuggestionClick(suggestion)}
+                        onMouseEnter={() => setHighlightedIndex(index)}
+                      >
+                        {suggestion}
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </div>
             )}
           </div>
           <Button

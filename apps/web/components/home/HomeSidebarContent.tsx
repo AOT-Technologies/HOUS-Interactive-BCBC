@@ -35,7 +35,7 @@ interface AmendmentDatesData {
  */
 export default function HomeSidebarContent() {
   const { loadNavigationTree, setSearchQuery, clearSearch, searchQuery } = useNavigationStore();
-  const currentVersion = useVersionStore((state) => state.currentVersion);
+  const { currentVersion, getVersion } = useVersionStore();
   const { selectedDate, setSelectedDate, initializeFromUrl } = useAmendmentDateStore();
   const [allDates, setAllDates] = useState<AmendmentDate[]>([]);
   const [localSearchValue, setLocalSearchValue] = useState('');
@@ -43,6 +43,10 @@ export default function HomeSidebarContent() {
   // Track if this is the initial load vs a version change
   const isInitialLoad = useRef(true);
   const previousVersion = useRef<string | null>(null);
+  
+  // Get current version details
+  const currentVersionData = getVersion(currentVersion || undefined);
+  const versionYear = currentVersionData?.year || 2024;
 
   // Initialize date from URL on first mount
   useEffect(() => {
@@ -136,7 +140,7 @@ export default function HomeSidebarContent() {
       <div className="home-sidebar-header">
         <h2 className="home-sidebar-title">BC Building Code</h2>
         <p className="home-sidebar-description">
-          2024 Consolidated code version including all active revisions and errata
+          {versionYear} Consolidated code version including all active revisions and errata
         </p>
         
         {/* Version Selector - Position 1 */}

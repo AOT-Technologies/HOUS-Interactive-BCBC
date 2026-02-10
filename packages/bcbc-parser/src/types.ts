@@ -3,6 +3,15 @@
  */
 
 /**
+ * Volume metadata
+ */
+export interface VolumeMetadata {
+  volume: string;  // "1" or "2"
+  title: string;
+  subtitle?: string;  // Optional
+}
+
+/**
  * Document metadata
  */
 export interface DocumentMetadata {
@@ -10,16 +19,111 @@ export interface DocumentMetadata {
   version: string;
   effectiveDate: string;
   jurisdiction: string;
+  volumes: VolumeMetadata[];
+}
+
+/**
+ * Preface content (inside volume)
+ */
+export interface PrefaceContent {
+  id: string;
+  type: 'preface';
+  content: PrefaceSection[];
+}
+
+export interface PrefaceSection {
+  type: 'paragraph' | 'heading';
+  id: string;
+  content: string;
+  level?: number;  // For headings
+}
+
+/**
+ * Index structure (inside volume)
+ */
+export interface IndexSection {
+  id: string;
+  type: 'index';
+  introduction: string;
+  letters: IndexLetter[];
+}
+
+export interface IndexLetter {
+  id: string;
+  letter: string;
+  groups: IndexGroup[];
+}
+
+export interface IndexGroup {
+  id: string;
+  term_id: string;
+  term: string;
+  subterms?: IndexSubterm[];
+  references?: IndexReference[];
+}
+
+export interface IndexSubterm {
+  id: string;
+  term: string;
+  references: IndexReference[];
+}
+
+export interface IndexReference {
+  target: string;  // Article ID
+  division?: string;
+  vendor_target?: string;
+}
+
+/**
+ * Conversions structure (inside volume)
+ */
+export interface ConversionsSection {
+  id: string;
+  type: 'conversions';
+  table_id: string;
+  table_title: string;
+  table_structure: TableStructure;
+}
+
+export interface TableStructure {
+  columns: number;
+  column_specs: ColumnSpec[];
+  rows: any[];  // Table row data
+}
+
+export interface ColumnSpec {
+  name: string;
+  width: string;
+}
+
+/**
+ * Volume structure (contains preface, divisions, index, conversions)
+ */
+export interface Volume {
+  id: string;
+  type: 'volume';
+  number: number;  // 1 or 2
+  title: string;
+  preface?: PrefaceContent;  // Only in Volume 1
+  divisions: Division[];
+  index?: IndexSection;
+  conversions?: ConversionsSection;
 }
 
 /**
  * Root BCBC document structure
  */
 export interface BCBCDocument {
+  document_type?: string;
+  version?: string;
+  canonical_version?: string;
+  generated_timestamp?: string;
   metadata: DocumentMetadata;
-  divisions: Division[];
+  volumes: Volume[];
   glossary: GlossaryEntry[];
-  amendmentDates: AmendmentDate[];
+  amendmentDates?: AmendmentDate[];
+  bc_amendments?: any[];
+  statistics?: any;
 }
 
 /**
@@ -27,8 +131,10 @@ export interface BCBCDocument {
  */
 export interface Division {
   id: string;
-  title: string;
   type: 'division';
+  letter: string;
+  title: string;
+  number: string;
   parts: Part[];
 }
 

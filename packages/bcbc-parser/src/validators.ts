@@ -49,26 +49,31 @@ export function validateBCBC(document: BCBCDocument): ValidationError[] {
     ));
   }
 
-  // Validate divisions array
-  if (document.divisions) {
-    if (!Array.isArray(document.divisions)) {
+  // Validate volumes array
+  if (document.volumes) {
+    if (!Array.isArray(document.volumes)) {
       errors.push({
         path: 'root',
-        field: 'divisions',
-        message: 'Field divisions must be an array',
+        field: 'volumes',
+        message: 'Field volumes must be an array',
         severity: 'error',
       });
-    } else if (document.divisions.length === 0) {
+    } else if (document.volumes.length === 0) {
       errors.push({
         path: 'root',
-        field: 'divisions',
-        message: 'Document must contain at least one division',
+        field: 'volumes',
+        message: 'Document must contain at least one volume',
         severity: 'warning',
       });
     } else {
-      // Validate each division
-      document.divisions.forEach((division, index) => {
-        errors.push(...validateDivision(division, `divisions[${index}]`));
+      // Validate each volume
+      document.volumes.forEach((volume, index) => {
+        // Validate divisions in volume
+        if (volume.divisions && Array.isArray(volume.divisions)) {
+          volume.divisions.forEach((division, divIndex) => {
+            errors.push(...validateDivision(division, `volumes[${index}].divisions[${divIndex}]`));
+          });
+        }
       });
     }
   }
@@ -501,16 +506,19 @@ function validateClause(clause: Clause, path: string): ValidationError[] {
 export function validateCrossReferences(document: BCBCDocument): ValidationError[] {
   const errors: ValidationError[] = [];
 
-  // Early return if divisions is not valid
-  if (!document.divisions || !Array.isArray(document.divisions)) {
+  // Early return if volumes is not valid
+  if (!document.volumes || !Array.isArray(document.volumes)) {
     return errors;
   }
 
   // Build a set of all valid content IDs
   const validIds = new Set<string>();
 
+  // Get divisions from volumes
+  const divisions = document.volumes.flatMap(v => v.divisions || []);
+
   // Add all division, part, section, subsection, article, and clause IDs
-  for (const division of document.divisions) {
+  for (const division of divisions) {
     if (!division || typeof division !== 'object') continue;
     
     validIds.add(division.id);
@@ -568,7 +576,7 @@ export function validateCrossReferences(document: BCBCDocument): ValidationError
   }
 
   // Validate glossary term references in clauses
-  for (const division of document.divisions) {
+  for (const division of divisions) {
     if (!division || typeof division !== 'object' || !division.parts || !Array.isArray(division.parts)) continue;
     
     for (const part of division.parts) {

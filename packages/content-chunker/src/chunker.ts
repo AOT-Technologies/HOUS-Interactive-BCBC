@@ -26,7 +26,10 @@ export interface ContentChunk {
 export function chunkContent(document: BCBCDocument): ContentChunk[] {
   const chunks: ContentChunk[] = [];
 
-  for (const division of document.divisions) {
+  // Get divisions from volumes
+  const divisions = document.volumes.flatMap(v => v.divisions);
+
+  for (const division of divisions) {
     for (const part of division.parts) {
       for (const section of part.sections) {
         // Generate path for this section chunk

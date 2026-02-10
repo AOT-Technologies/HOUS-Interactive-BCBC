@@ -172,8 +172,9 @@ export function buildSearchIndex(
     contentTypesFound.add('article');
   }
 
-  // Process divisions
-  for (const division of bcbcData.divisions) {
+  // Process divisions from volumes
+  const divisions = bcbcData.volumes?.flatMap((v: any) => v.divisions) || [];
+  for (const division of divisions) {
     const divisionTocItem = processDivision(
       division,
       documents,
@@ -213,11 +214,11 @@ export function buildSearchIndex(
       totalRevisionDates: revisionDates.length,
       totalGlossaryTerms: documents.filter(d => d.type === 'glossary').length,
     },
-    divisions: bcbcData.divisions.map(d => ({
+    divisions: divisions.map((d: any) => ({
       id: d.id,
       letter: d.letter,
       title: d.title,
-      parts: d.parts.map(p => ({
+      parts: d.parts.map((p: any) => ({
         id: p.id,
         number: p.number,
         title: p.title,
