@@ -12,6 +12,7 @@ import type {
   SubsectionContent,
   ArticleContent,
 } from '@repo/data';
+import { fetchAndAdaptSectionContent } from '../content-adapter';
 
 /**
  * AbortController for canceling in-flight fetch requests
@@ -66,24 +67,14 @@ export const useContentStore = create<ContentState>((set, get) => ({
     set({ loading: true, error: null });
 
     try {
-      const response = await fetch(
-        `/data/${version}/content/${division}/${part}/${section}.json`,
-        { signal }
+      // Use adapter to fetch and transform content
+      const content = await fetchAndAdaptSectionContent(
+        version,
+        division,
+        part,
+        section,
+        signal
       );
-
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error(`Content not found: ${division}/${part}/${section}`);
-        }
-        throw new Error(`Failed to load content: ${response.statusText}`);
-      }
-
-      const content: SectionContent = await response.json();
-
-      // Validate content structure
-      if (!content.id || !content.reference || !content.title) {
-        throw new Error('Invalid content structure: missing required fields');
-      }
 
       // Update cache
       const newCache = new Map(get().cache);
@@ -119,14 +110,28 @@ export const useContentStore = create<ContentState>((set, get) => ({
   } => {
     const [, , , subsection, article] = path;
 
-    if (article && subsection) {
+    // Extract just the number from subsection/article if they're in format "subsection-1" or "article-2"
+    const subsectionNumber = subsection?.replace(/^subsection-/, '');
+    const articleNumber = article?.replace(/^article-/, '');
+
+    if (articleNumber && subsectionNumber) {
       // Article-level render
-      const sub = content.subsections.find((s) => s.id === subsection);
+      // Match by number field extracted from reference
+      const sub = content.subsections.find((s) => {
+        const subNumber = s.reference.split('.').pop();
+        return subNumber === subsectionNumber;
+      });
+      
       if (!sub) {
         throw new Error(`Subsection not found: ${subsection}`);
       }
 
-      const art = sub.articles.find((a) => a.id === article);
+      // Match article by number field extracted from reference
+      const art = sub.articles.find((a) => {
+        const artNumber = a.reference.split('.').pop();
+        return artNumber === articleNumber;
+      });
+      
       if (!art) {
         throw new Error(`Article not found: ${article}`);
       }
@@ -138,9 +143,14 @@ export const useContentStore = create<ContentState>((set, get) => ({
       };
     }
 
-    if (subsection) {
+    if (subsectionNumber) {
       // Subsection-level render
-      const sub = content.subsections.find((s) => s.id === subsection);
+      // Match by number field extracted from reference
+      const sub = content.subsections.find((s) => {
+        const subNumber = s.reference.split('.').pop();
+        return subNumber === subsectionNumber;
+      });
+      
       if (!sub) {
         throw new Error(`Subsection not found: ${subsection}`);
       }

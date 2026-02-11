@@ -10,6 +10,21 @@ export { SectionTitle } from './SectionTitle';
 export { SubsectionBlock } from './SubsectionBlock';
 export { ArticleBlock } from './ArticleBlock';
 export { ClauseRenderer } from './ClauseRenderer';
+export { TableBlock } from './TableBlock';
+export { FigureBlock } from './FigureBlock';
+export { EquationBlock } from './EquationBlock';
+export { NoteBlock } from './NoteBlock';
+export { NoteReference } from './NoteReference';
+export { NotesList } from './NotesList';
+
+// Container components
+export { ContentRenderer } from './ContentRenderer';
+export { ReadingView } from './ReadingView';
+export { ReadingViewHeader } from './ReadingViewHeader';
+
+// Content source indicator components
+export { ContentSourceIndicator } from './ContentSourceIndicator';
+export { SourceBadges } from './SourceBadges';
 
 // Re-export reading types from @repo/data
 export type {

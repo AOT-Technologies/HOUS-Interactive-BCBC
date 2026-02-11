@@ -1,0 +1,53 @@
+/**
+ * NoteReference Component Styles
+ * 
+ * Renders inline note references that link to note content.
+ */
+
+.note-reference {
+  font-size: 0.75rem;
+  line-height: 0;
+  vertical-align: super;
+  margin-left: 0.125rem;
+}
+
+.note-reference__link {
+  color: var(--typography-color-link, #1a5a96);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: var(--typography-font-weights-bold, 700);
+  transition: color 0.2s ease;
+}
+
+.note-reference__link:hover {
+  color: var(--surface-color-primary-button-hover, #002855);
+  text-decoration: underline;
+}
+
+.note-reference__link:focus {
+  outline: 2px solid var(--surface-color-border-active, #1a5a96);
+  outline-offset: 2px;
+  border-radius: var(--layout-border-radius-small, 2px);
+}
+
+.note-reference--non-interactive {
+  color: var(--typography-color-secondary, #6c6c6e);
+  cursor: default;
+}
+
+/* Highlight effect when scrolling to a note */
+.note-block--highlighted {
+  animation: noteHighlight 2s ease-out;
+}
+
+@keyframes noteHighlight {
+  0% {
+    background-color: var(--support-surface-color-info, #d9eaf7);
+    border-left-color: var(--typography-color-link, #1a5a96);
+  }
+  100% {
+    background-color: var(--surface-color-background-light-gray, #faf9f8);
+    border-left-color: var(--surface-color-border-medium, #d1d1d3);
+  }
+}
+

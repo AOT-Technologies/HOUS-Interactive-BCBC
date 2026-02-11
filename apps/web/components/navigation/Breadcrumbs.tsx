@@ -49,7 +49,7 @@ interface BreadcrumbsProps {
  */
 export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems = 3 }: BreadcrumbsProps) {
   const pathname = usePathname();
-  const { navigationTree, currentPath } = useNavigationStore();
+  const { navigationTree } = useNavigationStore();
   const [isExpanded, setIsExpanded] = useState(false);
 
   /**
@@ -73,33 +73,58 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
       // Download Page
       trail.push({ id: 'download', title: 'Download', path: '/download' });
       return trail;
-    } else if (pathname?.startsWith('/code') && currentPath && navigationTree && navigationTree.length > 0) {
-      // Content Reading Page - build from navigation tree
-      const findPath = (nodes: NavigationNode[], targetPath: string): boolean => {
+    } else if (pathname?.startsWith('/code') && navigationTree && navigationTree.length > 0) {
+      // Content Reading Page - build from navigation tree by matching node path to URL
+      // Strip trailing slash for comparison: "/code/nbc.divB/1/1/1/" -> "/code/nbc.divB/1/1/1"
+      const normalizedPathname = pathname.replace(/\/$/, '');
+      
+      // Walk the tree and collect ancestors of the node whose path matches the URL
+      const findAncestors = (nodes: NavigationNode[]): boolean => {
         for (const node of nodes) {
-          if (node.path === targetPath) {
-            trail.push({ id: node.id, title: node.title, path: node.path, number: node.number });
-            return true;
+          const normalizedNodePath = node.path.replace(/\/$/, '');
+          
+          // Volume nodes have paths like "/volume/1" which don't match "/code/..." URLs
+          // Skip them in the trail but always recurse into their children
+          if (node.type === 'volume') {
+            if (node.children && node.children.length > 0) {
+              if (findAncestors(node.children)) {
+                return true;
+              }
+            }
+            continue;
           }
-
-          if (node.children && node.children.length > 0) {
+          
+          // Check if the current URL starts with (or equals) this node's path
+          // This means this node is an ancestor of the target
+          if (normalizedPathname === normalizedNodePath || normalizedPathname.startsWith(normalizedNodePath + '/')) {
             trail.push({ id: node.id, title: node.title, path: node.path, number: node.number });
-            if (findPath(node.children, targetPath)) {
+            
+            // Exact match — we found the target node
+            if (normalizedPathname === normalizedNodePath) {
               return true;
             }
-            trail.pop();
+            
+            // Search children for a deeper match
+            if (node.children && node.children.length > 0) {
+              if (findAncestors(node.children)) {
+                return true;
+              }
+            }
+            
+            // This node is the deepest match even if no child matched exactly
+            return true;
           }
         }
         return false;
       };
-
-      findPath(navigationTree, currentPath);
+      
+      findAncestors(navigationTree);
       return trail;
     }
 
     // Default: just show Home
     return trail;
-  }, [pathname, navigationTree, currentPath]);
+  }, [pathname, navigationTree]);
 
   /**
    * Handle breadcrumb click - only prevent default if custom callback provided

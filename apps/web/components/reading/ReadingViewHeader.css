@@ -1,0 +1,40 @@
+/**
+ * ReadingViewHeader Component Styles
+ * 
+ * Header section with PDF button and source badges.
+ */
+
+.reading-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--layout-margin-large, 1.5rem);
+  padding-bottom: var(--layout-padding-medium, 1rem);
+  border-bottom: var(--layout-border-width-small, 1px) solid var(--surface-color-border-default, #e0e0e0);
+}
+
+.reading-view-header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--layout-margin-medium, 1rem);
+}
+
+.reading-view-header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--layout-margin-small, 0.5rem);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .reading-view-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--layout-margin-medium, 1rem);
+  }
+
+  .reading-view-header__right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,53 @@
+/**
+ * EquationBlock Component Styles
+ * 
+ * Renders mathematical equations inline or as blocks.
+ */
+
+.equation-block {
+  margin: var(--layout-margin-medium, 1rem) 0;
+}
+
+.equation-block--inline {
+  display: inline;
+  margin: 0;
+}
+
+.equation-block--block {
+  display: block;
+  text-align: center;
+  margin: var(--layout-margin-large, 1.5rem) 0;
+}
+
+.equation-block__content {
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.equation-block__image {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.equation-block__fallback {
+  font-family: monospace;
+  background-color: var(--surface-color-background-light-gray, #faf9f8);
+  padding: var(--layout-padding-small, 0.5rem);
+  border-radius: var(--layout-border-radius-small, 2px);
+  overflow-x: auto;
+}
+
+/* Screen reader only text */
+.equation-block__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

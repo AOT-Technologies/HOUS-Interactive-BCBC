@@ -1,0 +1,40 @@
+/**
+ * NoteBlock Component Styles
+ * 
+ * Renders note references with proper formatting.
+ */
+
+.note-block {
+  margin: var(--layout-margin-medium, 1rem) 0;
+  padding: var(--layout-padding-medium, 1rem);
+  background-color: var(--surface-color-background-light-gray, #faf9f8);
+  border-left: 3px solid var(--surface-color-border-medium, #d1d1d3);
+  border-radius: var(--layout-border-radius-small, 2px);
+  font-size: var(--typography-font-size-body, 1rem);
+  line-height: var(--typography-line-heights-normal, 1.5);
+  color: var(--typography-color-primary, #313132);
+}
+
+.note-block__reference {
+  font-weight: var(--typography-font-weights-bold, 700);
+  color: var(--typography-color-primary, #313132);
+  margin-right: var(--layout-margin-small, 0.5rem);
+}
+
+.note-block__reference::after {
+  content: ':';
+  margin-right: var(--layout-margin-small, 0.5rem);
+}
+
+.note-block__content {
+  display: inline;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .note-block {
+    padding: var(--layout-padding-small, 0.5rem) var(--layout-padding-medium, 1rem);
+    font-size: 0.9375rem;
+  }
+}
+

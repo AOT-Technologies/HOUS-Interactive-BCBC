@@ -1,6 +1,8 @@
 import React from 'react';
 import type { ArticleBlockProps } from '@repo/data';
 import { ClauseRenderer } from './ClauseRenderer';
+import { TableBlock } from './TableBlock';
+import { FigureBlock } from './FigureBlock';
 import './ArticleBlock.css';
 
 export const ArticleBlock: React.FC<ArticleBlockProps> = ({ 
@@ -22,6 +24,24 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
           />
         ))}
       </div>
+      
+      {/* Render tables if present */}
+      {article.tables && article.tables.length > 0 && (
+        <div className="article-tables">
+          {article.tables.map((table) => (
+            <TableBlock key={table.id} table={table} />
+          ))}
+        </div>
+      )}
+      
+      {/* Render figures if present */}
+      {article.figures && article.figures.length > 0 && (
+        <div className="article-figures">
+          {article.figures.map((figure) => (
+            <FigureBlock key={figure.id} figure={figure} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
