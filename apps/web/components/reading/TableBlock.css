@@ -1,0 +1,45 @@
+/**
+ * TableBlock Component Styles
+ * 
+ * Renders tables with responsive horizontal scrolling.
+ */
+
+.table-block {
+  margin: var(--layout-margin-large, 1.5rem) 0;
+}
+
+.table-block__wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-block__table {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+}
+
+.table-block__header-cell,
+.table-block__cell {
+  padding: var(--layout-padding-small) var(--layout-padding-12);
+  border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table-block__header-cell {
+  font-weight: var(--typography-font-weights-bold, 700);
+  background-color: var(--surface-color-background-light-gray, #faf9f8);
+}
+
+.table-block__caption {
+  font-size: 0.875rem;
+  color: var(--typography-color-secondary, #6c6c6e);
+  margin-top: var(--layout-margin-small, 0.5rem);
+  text-align: left;
+}
+
+.table-block__caption--above {
+  margin-top: 0;
+  margin-bottom: var(--layout-margin-small, 0.5rem);
+}

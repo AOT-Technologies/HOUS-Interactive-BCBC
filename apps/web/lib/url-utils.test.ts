@@ -12,7 +12,12 @@ import {
   isSearchPage,
   isHomePage,
   isDownloadPage,
+  parseURLParams,
+  buildURL,
+  updateURLWithModal,
+  removeModalFromURL,
   type ContentPathParams,
+  type URLParams,
 } from './url-utils';
 
 describe('parseContentPath', () => {
@@ -418,5 +423,231 @@ describe('round-trip parsing and building', () => {
     expect(rebuilt).toContain('part=part-3');
     expect(rebuilt).toContain('type=article');
     expect(rebuilt).toContain('date=2024-01-01');
+  });
+});
+
+describe('parseURLParams', () => {
+  it('should parse section-level URL without query params', () => {
+    const url = '/code/division-a/part-1/section-1-1';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: undefined,
+      date: undefined,
+      modal: undefined,
+    });
+  });
+
+  it('should parse section-level URL with version and date', () => {
+    const url = '/code/division-a/part-1/section-1-1?version=2024&date=2025-06-16';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: '2024',
+      date: '2025-06-16',
+      modal: undefined,
+    });
+  });
+
+  it('should parse subsection-level URL', () => {
+    const url = '/code/division-b/part-3/section-3-2/subsection-3-2-1?version=2024';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-b', 'part-3', 'section-3-2', 'subsection-3-2-1'],
+      version: '2024',
+      date: undefined,
+      modal: undefined,
+    });
+  });
+
+  it('should parse article-level URL with modal', () => {
+    const url = '/code/division-b/part-3/section-3-2/subsection-3-2-1/article-3-2-1-1?version=2024&date=2025-06-16&modal=A-1.1.2.1.(1)';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-b', 'part-3', 'section-3-2', 'subsection-3-2-1', 'article-3-2-1-1'],
+      version: '2024',
+      date: '2025-06-16',
+      modal: 'A-1.1.2.1.(1)',
+    });
+  });
+
+  it('should parse URL with only version parameter', () => {
+    const url = '/code/division-a/part-1/section-1-1?version=2027';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: '2027',
+      date: undefined,
+      modal: undefined,
+    });
+  });
+
+  it('should parse URL with only date parameter', () => {
+    const url = '/code/division-a/part-1/section-1-1?date=2025-12-31';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: undefined,
+      date: '2025-12-31',
+      modal: undefined,
+    });
+  });
+
+  it('should parse URL with only modal parameter', () => {
+    const url = '/code/division-a/part-1/section-1-1?modal=B-2.3.4.5.(2)';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: undefined,
+      date: undefined,
+      modal: 'B-2.3.4.5.(2)',
+    });
+  });
+
+  it('should handle full URL with protocol and domain', () => {
+    const url = 'https://example.com/code/division-a/part-1/section-1-1?version=2024';
+    const result = parseURLParams(url);
+    expect(result).toEqual({
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: '2024',
+      date: undefined,
+      modal: undefined,
+    });
+  });
+
+  it('should throw error for invalid content URL', () => {
+    expect(() => parseURLParams('/search?q=fire')).toThrow('Invalid content URL');
+    expect(() => parseURLParams('/invalid/path')).toThrow('Invalid content URL');
+    expect(() => parseURLParams('/')).toThrow('Invalid content URL');
+  });
+
+  it('should handle URL-encoded modal parameter', () => {
+    const url = '/code/division-a/part-1/section-1-1?modal=A-1.1.2.1.%281%29';
+    const result = parseURLParams(url);
+    expect(result.modal).toBe('A-1.1.2.1.(1)');
+  });
+});
+
+describe('buildURL', () => {
+  it('should build section-level URL without query params', () => {
+    const params: URLParams = {
+      slug: ['division-a', 'part-1', 'section-1-1'],
+    };
+    expect(buildURL(params)).toBe('/code/division-a/part-1/section-1-1');
+  });
+
+  it('should build section-level URL with version and date', () => {
+    const params: URLParams = {
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: '2024',
+      date: '2025-06-16',
+    };
+    const result = buildURL(params);
+    expect(result).toContain('/code/division-a/part-1/section-1-1');
+    expect(result).toContain('version=2024');
+    expect(result).toContain('date=2025-06-16');
+  });
+
+  it('should build subsection-level URL', () => {
+    const params: URLParams = {
+      slug: ['division-b', 'part-3', 'section-3-2', 'subsection-3-2-1'],
+      version: '2024',
+    };
+    const result = buildURL(params);
+    expect(result).toContain('/code/division-b/part-3/section-3-2/subsection-3-2-1');
+    expect(result).toContain('version=2024');
+  });
+
+  it('should build article-level URL with modal', () => {
+    const params: URLParams = {
+      slug: ['division-b', 'part-3', 'section-3-2', 'subsection-3-2-1', 'article-3-2-1-1'],
+      version: '2024',
+      date: '2025-06-16',
+      modal: 'A-1.1.2.1.(1)',
+    };
+    const result = buildURL(params);
+    expect(result).toContain('/code/division-b/part-3/section-3-2/subsection-3-2-1/article-3-2-1-1');
+    expect(result).toContain('version=2024');
+    expect(result).toContain('date=2025-06-16');
+    expect(result).toContain('modal=A-1.1.2.1.%281%29');
+  });
+
+  it('should build URL with only version parameter', () => {
+    const params: URLParams = {
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: '2027',
+    };
+    expect(buildURL(params)).toBe('/code/division-a/part-1/section-1-1?version=2027');
+  });
+
+  it('should build URL with only date parameter', () => {
+    const params: URLParams = {
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      date: '2025-12-31',
+    };
+    expect(buildURL(params)).toBe('/code/division-a/part-1/section-1-1?date=2025-12-31');
+  });
+
+  it('should build URL with only modal parameter', () => {
+    const params: URLParams = {
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      modal: 'B-2.3.4.5.(2)',
+    };
+    const result = buildURL(params);
+    expect(result).toContain('/code/division-a/part-1/section-1-1');
+    expect(result).toContain('modal=B-2.3.4.5.%282%29');
+  });
+
+  it('should handle all query parameters', () => {
+    const params: URLParams = {
+      slug: ['division-a', 'part-1', 'section-1-1'],
+      version: '2024',
+      date: '2025-06-16',
+      modal: 'A-1.1.2.1.(1)',
+    };
+    const result = buildURL(params);
+    expect(result).toContain('version=2024');
+    expect(result).toContain('date=2025-06-16');
+    expect(result).toContain('modal=A-1.1.2.1.%281%29');
+  });
+});
+
+describe('parseURLParams and buildURL round-trip', () => {
+  it('should round-trip section-level URL', () => {
+    const original = '/code/division-a/part-1/section-1-1?version=2024&date=2025-06-16';
+    const parsed = parseURLParams(original);
+    const rebuilt = buildURL(parsed);
+    
+    // Parse both to compare (order of query params may differ)
+    const originalParsed = parseURLParams(original);
+    const rebuiltParsed = parseURLParams(rebuilt);
+    expect(rebuiltParsed).toEqual(originalParsed);
+  });
+
+  it('should round-trip subsection-level URL', () => {
+    const original = '/code/division-b/part-3/section-3-2/subsection-3-2-1?version=2024';
+    const parsed = parseURLParams(original);
+    const rebuilt = buildURL(parsed);
+    
+    const originalParsed = parseURLParams(original);
+    const rebuiltParsed = parseURLParams(rebuilt);
+    expect(rebuiltParsed).toEqual(originalParsed);
+  });
+
+  it('should round-trip article-level URL with modal', () => {
+    const original = '/code/division-b/part-3/section-3-2/subsection-3-2-1/article-3-2-1-1?version=2024&date=2025-06-16&modal=A-1.1.2.1.(1)';
+    const parsed = parseURLParams(original);
+    const rebuilt = buildURL(parsed);
+    
+    const originalParsed = parseURLParams(original);
+    const rebuiltParsed = parseURLParams(rebuilt);
+    expect(rebuiltParsed).toEqual(originalParsed);
+  });
+
+  it('should round-trip URL without query params', () => {
+    const original = '/code/division-a/part-1/section-1-1';
+    const parsed = parseURLParams(original);
+    const rebuilt = buildURL(parsed);
+    expect(rebuilt).toBe(original);
   });
 });

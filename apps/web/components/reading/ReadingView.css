@@ -1,0 +1,51 @@
+/**
+ * ReadingView Component Styles
+ * 
+ * Main container for the reading page content renderer.
+ */
+
+.reading-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--layout-max-width-content, 71.375rem);
+  margin: 0 auto;
+  padding: var(--layout-padding-medium) var(--layout-padding-large);
+}
+
+.reading-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--layout-margin-large, 1.5rem);
+}
+
+.reading-view__content {
+  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
+  font-size: var(--typography-font-size-body, 1rem);
+  line-height: var(--typography-line-heights-normal, 1.5);
+  color: var(--typography-color-primary, #313132);
+}
+
+.reading-view__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: var(--typography-color-secondary, #6c6c6e);
+}
+
+.reading-view__error {
+  padding: var(--layout-padding-large);
+  background-color: var(--support-surface-color-danger, #f4e1e2);
+  border: var(--layout-border-width-small) solid var(--support-border-color-danger, #ce3e39);
+  border-radius: var(--layout-border-radius-medium, 4px);
+  color: var(--typography-color-primary, #313132);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .reading-view {
+    padding: var(--layout-padding-medium);
+  }
+}

@@ -1,0 +1,44 @@
+/**
+ * CrossReferenceLink Component Styles
+ * 
+ * Inline link that opens cross-reference modal.
+ */
+
+.cross-reference-link {
+  display: inline;
+  color: #1a5a96;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+
+.cross-reference-link--interactive {
+  text-decoration: underline;
+}
+
+.cross-reference-link--interactive:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.cross-reference-link__icon {
+  display: inline-block;
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+  vertical-align: baseline;
+}
+
+.cross-reference-link--non-interactive {
+  cursor: default;
+  text-decoration: none;
+}
+
+/* Ensure minimum tap target size on touch devices */
+@media (hover: none) {
+  .cross-reference-link--interactive {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}

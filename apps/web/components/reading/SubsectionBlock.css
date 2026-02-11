@@ -1,0 +1,23 @@
+/**
+ * SubsectionBlock Component Styles
+ * 
+ * Renders subsection heading and child articles.
+ */
+
+.subsection-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-margin-medium, 1rem);
+}
+
+.subsection-block__heading {
+  font: var(--typography-bold-h3);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: var(--layout-margin-medium, 1rem);
+}
+
+.subsection-block__articles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-margin-large, 1.5rem);
+}

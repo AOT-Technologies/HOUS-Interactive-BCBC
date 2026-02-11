@@ -1,0 +1,43 @@
+/**
+ * SourceBadges Component Styles
+ * 
+ * Legend badges showing BC Building Code and NBC indicators.
+ */
+
+.source-badges {
+  display: flex;
+  gap: var(--layout-margin-medium, 1rem);
+  align-items: center;
+}
+
+.source-badges__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--layout-padding-xsmall) var(--layout-padding-small);
+  font-size: 0.875rem;
+  font-weight: var(--typography-font-weights-regular, 400);
+  border-radius: var(--layout-border-radius-small, 2px);
+}
+
+.source-badges__badge--bcbc {
+  border-left: 4px solid #fcba19;
+  background-color: var(--surface-color-background-white, #ffffff);
+}
+
+.source-badges__badge--nbc {
+  border-left: 4px solid #003366;
+  background-color: var(--surface-color-background-white, #ffffff);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .source-badges {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--layout-margin-small, 0.5rem);
+  }
+
+  .source-badges__badge {
+    font-size: 0.75rem;
+  }
+}

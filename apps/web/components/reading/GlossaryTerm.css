@@ -1,0 +1,71 @@
+/**
+ * GlossaryTerm Component Styles
+ * 
+ * Inline component for glossary terms with hover tooltip and click interaction.
+ */
+
+.glossary-term {
+  display: inline;
+  font-style: italic;
+  color: #1a5a96;
+  cursor: pointer;
+  position: relative;
+}
+
+.glossary-term--interactive {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.glossary-term--interactive:hover {
+  text-decoration-style: solid;
+}
+
+.glossary-term__icon {
+  display: inline-block;
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+  vertical-align: baseline;
+}
+
+.glossary-term--non-interactive {
+  cursor: default;
+  text-decoration: none;
+}
+
+/* Tooltip styles */
+.glossary-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  padding: var(--layout-padding-12) var(--layout-padding-medium);
+  background-color: #313132;
+  color: #ffffff;
+  border-radius: var(--layout-border-radius-medium, 4px);
+  max-width: 400px;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  z-index: 1000;
+  box-shadow: var(--surface-shadow-medium);
+  pointer-events: none;
+}
+
+.glossary-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #313132;
+}
+
+/* Hide tooltip on touch devices */
+@media (hover: none) {
+  .glossary-tooltip {
+    display: none;
+  }
+}

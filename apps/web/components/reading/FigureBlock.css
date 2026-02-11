@@ -1,0 +1,24 @@
+/**
+ * FigureBlock Component Styles
+ * 
+ * Renders images with captions.
+ */
+
+.figure-block {
+  margin: var(--layout-margin-large, 1.5rem) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.figure-block__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figure-block__caption {
+  font-size: 0.875rem;
+  color: var(--typography-color-secondary, #6c6c6e);
+  margin-top: var(--layout-margin-small, 0.5rem);
+}

@@ -1,0 +1,31 @@
+/**
+ * ContentRenderer Component Styles
+ * 
+ * Recursive component for rendering content hierarchy.
+ */
+
+.content-renderer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-margin-large, 1.5rem);
+}
+
+.content-renderer__part-title {
+  font: var(--typography-bold-h1);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: var(--layout-margin-small, 0.5rem);
+}
+
+.content-renderer__section-title {
+  font: var(--typography-bold-h2);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: var(--layout-margin-large, 1.5rem);
+}
+
+.content-renderer__subsection {
+  margin-bottom: var(--layout-margin-xlarge, 2rem);
+}
+
+.content-renderer__article {
+  margin-bottom: var(--layout-margin-large, 1.5rem);
+}

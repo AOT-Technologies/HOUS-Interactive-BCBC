@@ -1,0 +1,23 @@
+/**
+ * ArticleBlock Component Styles
+ * 
+ * Renders article heading and clauses.
+ */
+
+.article-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-margin-12, 0.75rem);
+}
+
+.article-block__heading {
+  font: var(--typography-bold-h4);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: var(--layout-margin-12, 0.75rem);
+}
+
+.article-block__clauses {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-margin-medium, 1rem);
+}

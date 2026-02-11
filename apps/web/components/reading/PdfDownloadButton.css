@@ -1,0 +1,42 @@
+/**
+ * PdfDownloadButton Component Styles
+ * 
+ * Button that generates and downloads PDF of current content.
+ */
+
+.pdf-download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--layout-margin-small, 0.5rem);
+  padding: var(--layout-padding-small) var(--layout-padding-medium);
+  background-color: var(--surface-color-secondary-button-default, #ffffff);
+  color: var(--typography-color-primary, #313132);
+  border: var(--layout-border-width-small) solid var(--surface-color-border-dark, #313132);
+  border-radius: var(--layout-border-radius-small, 2px);
+  font-size: 0.875rem;
+  font-weight: var(--typography-font-weights-bold, 700);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pdf-download-button:hover {
+  background-color: var(--surface-color-secondary-button-hover, #edebe9);
+}
+
+.pdf-download-button:disabled {
+  background-color: var(--surface-color-secondary-button-disabled, #edebe9);
+  color: var(--typography-color-disabled, #9f9d9c);
+  cursor: not-allowed;
+}
+
+.pdf-download-button__icon {
+  font-size: var(--icons-size-small, 16px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .pdf-download-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

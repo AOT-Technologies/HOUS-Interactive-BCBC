@@ -64,3 +64,8 @@ apps/web/public/data/versions.json
 temp_folder_prototype/
 
 CLAUDE.md
+*.eps
+*.mmf
+
+apps/web/public/bc-graphics/**/*.html
+apps/web/public/graphics/**/*.html

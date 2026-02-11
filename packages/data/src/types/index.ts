@@ -2,6 +2,9 @@
  * Core data types for BC Building Code application
  */
 
+// Export reading page types
+export * from './reading';
+
 // Document structure types
 export interface BCBCDocument {
   metadata: DocumentMetadata;
