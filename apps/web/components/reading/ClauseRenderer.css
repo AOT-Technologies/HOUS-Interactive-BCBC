@@ -4,53 +4,52 @@
  * Renders numbered clauses with hierarchical indentation.
  */
 
-.clause-renderer {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
-  font-size: var(--typography-font-size-body, 1rem);
-  line-height: var(--typography-line-heights-normal, 1.5);
-  color: var(--typography-color-primary, #313132);
-}
-
-.clause-renderer__list {
+.clauseList {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: var(--typography-font-families-bc-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #313132;
 }
 
-.clause-renderer__item {
-  display: flex;
-  margin-bottom: var(--layout-margin-medium, 1rem);
+.clauseItem {
+  margin-bottom: 14px;
+  display: list-item;
 }
 
 /* Indentation levels */
-.clause-renderer__item--level-0 {
+.clauseItem.level0 {
   padding-left: 32px;
+  list-style-type: decimal;
 }
 
-.clause-renderer__item--level-1 {
+.clauseItem.level1 {
   padding-left: 56px;
+  list-style-type: lower-alpha;
 }
 
-.clause-renderer__item--level-2 {
+.clauseItem.level2 {
   padding-left: 80px;
+  list-style-type: lower-roman;
 }
 
-.clause-renderer__item--level-3 {
+.clauseItem.level3 {
   padding-left: 104px;
+  list-style-type: upper-alpha;
 }
 
-.clause-renderer__number {
-  font-weight: var(--typography-font-weights-bold, 700);
-  margin-right: var(--layout-margin-small, 0.5rem);
-  flex-shrink: 0;
+.clauseNumber {
+  font-weight: var(--typography-font-weights-bold);
+  margin-right: 0.25rem;
 }
 
-.clause-renderer__content {
-  flex: 1;
+.clauseContent {
+  font-weight: var(--typography-font-weights-regular);
+  display: inline;
 }
 
-.clause-renderer__subclauses {
-  margin-top: var(--layout-margin-small, 0.5rem);
+.subClauses {
+  margin-top: 8px;
 }

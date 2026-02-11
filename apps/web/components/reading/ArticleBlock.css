@@ -4,20 +4,21 @@
  * Renders article heading and clauses.
  */
 
-.article-block {
-  display: flex;
-  flex-direction: column;
-  gap: var(--layout-margin-12, 0.75rem);
+.articleBlock {
+  margin-bottom: 24px;
 }
 
-.article-block__heading {
-  font: var(--typography-bold-h4);
-  color: var(--typography-color-primary, #313132);
-  margin-bottom: var(--layout-margin-12, 0.75rem);
+.articleHeading {
+  font-family: var(--typography-font-families-bc-sans);
+  font-size: 18px;
+  font-weight: var(--typography-font-weights-bold);
+  color: #313132;
+  margin: 0;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-.article-block__clauses {
+.clauses {
   display: flex;
   flex-direction: column;
-  gap: var(--layout-margin-medium, 1rem);
 }

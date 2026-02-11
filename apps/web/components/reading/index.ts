@@ -4,8 +4,12 @@
  * Export all reading page components and their types.
  */
 
-// Component exports will be added as components are implemented
-// This file serves as the main entry point for the reading page module
+// Core rendering components
+export { PartTitle } from './PartTitle';
+export { SectionTitle } from './SectionTitle';
+export { SubsectionBlock } from './SubsectionBlock';
+export { ArticleBlock } from './ArticleBlock';
+export { ClauseRenderer } from './ClauseRenderer';
 
 // Re-export reading types from @repo/data
 export type {
