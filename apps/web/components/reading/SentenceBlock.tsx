@@ -12,26 +12,13 @@ import React from 'react';
 import type { Sentence } from '@bc-building-code/bcbc-parser';
 import { filterSentence } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './SentenceBlock.css';
 
 export interface SentenceBlockProps {
   sentence: Sentence;
   effectiveDate?: string;
   interactive?: boolean;
-}
-
-/**
- * Parse text with glossary term markers
- * Format: "text [REF:term:termId]term text[/REF] more text"
- */
-function parseTextWithGlossary(text: string, _glossaryTerms: string[]): React.ReactNode[] {
-  const nodes: React.ReactNode[] = [];
-  
-  // Simple implementation for now - just render text
-  // TODO: Implement proper parsing of [REF:term:...] markers in future task
-  nodes.push(text);
-  
-  return nodes;
 }
 
 export const SentenceBlock: React.FC<SentenceBlockProps> = ({ 
@@ -54,7 +41,7 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
       <span className="sentenceNumber">{filteredSentence.number})</span>
       <div className="sentenceContent">
         <p className="sentenceText">
-          {parseTextWithGlossary(filteredSentence.text, filteredSentence.glossaryTerms)}
+          {parseTextWithMarkers(filteredSentence.text, filteredSentence.glossaryTerms, interactive)}
         </p>
         
         {/* Render nested content (clauses, tables, figures, equations) */}

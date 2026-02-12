@@ -14,6 +14,7 @@
 'use client';
 
 import React, { useState, useRef, useCallback, useEffect } from 'react';
+import Icon from '@repo/ui/icon';
 import type { GlossaryTermProps } from '@repo/data';
 import { useGlossaryStore } from '../../stores/glossary-store';
 import { useUIStore } from '../../lib/stores/ui-store';
@@ -111,7 +112,7 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
       onKeyDown={handleKeyDown}
     >
       <span className="glossary-term__icon" aria-hidden="true">
-        ⓘ
+        <Icon type="info" style={{ color: '#1A5A96' }} />
       </span>
       {text}
       {showTooltip && definition && (

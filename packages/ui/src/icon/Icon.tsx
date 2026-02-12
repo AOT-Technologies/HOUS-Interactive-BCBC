@@ -23,6 +23,7 @@ import DownloadIcon from "./icons/DownloadIcon";
 import SearchIcon from "./icons/SearchIcon";
 import WarningIcon from "./icons/WarningIcon";
 import PaperPlaneTilt from "./icons/PaperPlaneTilt";
+import InfoIcon from "./icons/InfoIcon";
 
 // NOTE: When adding a new icon, make sure to add the string here, and the icon component below in the ICONS object
 export type IconType =
@@ -45,7 +46,8 @@ export type IconType =
   | "download"
   | "search"
   | "warning"
-  | "paperPlaneTilt";
+  | "paperPlaneTilt"
+  | "info";
 
 export interface IconComponentProps extends SVGProps<SVGSVGElement> {
   /**
@@ -96,6 +98,7 @@ const ICONS: Record<IconType, FunctionComponent<IconProps>> = {
   search: SearchIcon,
   warning: WarningIcon,
   paperPlaneTilt: PaperPlaneTilt,
+  info: InfoIcon,
 };
 
 export default function Icon({

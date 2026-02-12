@@ -12,26 +12,13 @@ import React from 'react';
 import type { Subclause } from '@bc-building-code/bcbc-parser';
 import { filterSubclause } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './SubclauseBlock.css';
 
 export interface SubclauseBlockProps {
   subclause: Subclause;
   effectiveDate?: string;
   interactive?: boolean;
-}
-
-/**
- * Parse text with glossary term markers
- * Format: "text [REF:term:termId]term text[/REF] more text"
- */
-function parseTextWithGlossary(text: string, _glossaryTerms: string[]): React.ReactNode[] {
-  const nodes: React.ReactNode[] = [];
-  
-  // Simple implementation for now - just render text
-  // TODO: Implement proper parsing of [REF:term:...] markers in future task
-  nodes.push(text);
-  
-  return nodes;
 }
 
 export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({ 
@@ -54,7 +41,7 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
       <span className="subclauseNumber">{filteredSubclause.number})</span>
       <div className="subclauseContent">
         <p className="subclauseText">
-          {parseTextWithGlossary(filteredSubclause.text, filteredSubclause.glossaryTerms)}
+          {parseTextWithMarkers(filteredSubclause.text, filteredSubclause.glossaryTerms, interactive)}
         </p>
         
         {/* Render nested content (tables, figures, equations) */}

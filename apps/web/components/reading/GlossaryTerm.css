@@ -38,6 +38,9 @@
   font-size: 0.875rem;
   font-style: normal;
   vertical-align: baseline;
+  line-height: 0;
+  position: relative;
+  top: 1px;
 }
 
 .glossary-term--non-interactive {

@@ -12,26 +12,13 @@ import React from 'react';
 import type { Clause } from '@bc-building-code/bcbc-parser';
 import { filterClause } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './ClauseBlock.css';
 
 export interface ClauseBlockProps {
   clause: Clause;
   effectiveDate?: string;
   interactive?: boolean;
-}
-
-/**
- * Parse text with glossary term markers
- * Format: "text [REF:term:termId]term text[/REF] more text"
- */
-function parseTextWithGlossary(text: string, _glossaryTerms: string[]): React.ReactNode[] {
-  const nodes: React.ReactNode[] = [];
-  
-  // Simple implementation for now - just render text
-  // TODO: Implement proper parsing of [REF:term:...] markers in future task
-  nodes.push(text);
-  
-  return nodes;
 }
 
 export const ClauseBlock: React.FC<ClauseBlockProps> = ({ 
@@ -54,7 +41,7 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
       <span className="clauseNumber">{filteredClause.number})</span>
       <div className="clauseContent">
         <p className="clauseText">
-          {parseTextWithGlossary(filteredClause.text, filteredClause.glossaryTerms)}
+          {parseTextWithMarkers(filteredClause.text, filteredClause.glossaryTerms, interactive)}
         </p>
         
         {/* Render nested content (subclauses, tables, figures, equations) */}
