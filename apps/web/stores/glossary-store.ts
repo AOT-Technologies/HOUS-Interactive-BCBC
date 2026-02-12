@@ -1,10 +1,12 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import { useVersionStore } from './version-store';
 
 /**
  * Glossary entry interface
  */
 export interface GlossaryEntry {
+  id?: string;
   term: string;
   definition: string;
   relatedTerms?: string[];
@@ -43,25 +45,49 @@ export const useGlossaryStore = create<GlossaryStore>()(
       loadGlossary: async () => {
         set({ loading: true });
         try {
-          // TODO: Load glossary from /public/data/glossary-map.json
-          // This will be implemented in Sprint 1 after the build pipeline is set up
-          const response = await fetch('/data/glossary-map.json');
-          if (response.ok) {
-            const data = await response.json();
-            const glossaryMap = new Map<string, GlossaryEntry>();
-            
-            // Convert object to Map
-            if (data.terms) {
-              Object.entries(data.terms).forEach(([key, value]) => {
-                glossaryMap.set(key.toLowerCase(), value as GlossaryEntry);
-              });
-            }
-            
-            set({ glossaryMap, loading: false });
-          } else {
-            console.error('Failed to load glossary');
-            set({ loading: false });
+          const versionDataPath = useVersionStore.getState().getVersionDataPath();
+
+          // Primary: versioned multi-version path
+          // Fallback: legacy single-version path
+          const response = await fetch(`${versionDataPath}/glossary-map.json`);
+          const finalResponse = response.ok ? response : await fetch('/data/glossary-map.json');
+
+          if (!finalResponse.ok) {
+            throw new Error(`Failed to load glossary: ${finalResponse.status}`);
           }
+
+          const data = await finalResponse.json();
+          const glossaryMap = new Map<string, GlossaryEntry>();
+
+          // Convert object to Map.
+          // Supports both shapes:
+          // 1) { terms: { key: entry } } (legacy)
+          // 2) { key: entry } where entry has { id, term, definition } (current)
+          const entriesSource =
+            data && typeof data === 'object' && data.terms && typeof data.terms === 'object'
+              ? (data.terms as Record<string, GlossaryEntry>)
+              : (data as Record<string, GlossaryEntry>);
+
+          Object.entries(entriesSource).forEach(([key, value]) => {
+            if (!value || typeof value !== 'object') {
+              return;
+            }
+
+            // Primary lookup by readable term key
+            glossaryMap.set(key.toLowerCase(), value);
+
+            // Secondary lookup by glossary id used in markers, e.g. [REF:term:bldng]
+            if (value.id) {
+              glossaryMap.set(value.id.toLowerCase(), value);
+            }
+
+            // Secondary lookup by normalized term text
+            if (value.term) {
+              glossaryMap.set(value.term.toLowerCase(), value);
+            }
+          });
+
+          set({ glossaryMap, loading: false });
         } catch (error) {
           console.error('Error loading glossary:', error);
           set({ loading: false });
