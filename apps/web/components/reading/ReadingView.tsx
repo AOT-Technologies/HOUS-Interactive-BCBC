@@ -2,7 +2,7 @@
  * ReadingView Container Component
  * 
  * Top-level container that manages content loading, URL synchronization, and state.
- * Fetches section JSON, extracts subtree based on URL depth, and renders content.
+ * Fetches section JSON and renders content using type-driven recursive rendering.
  * 
  * URL Change Handling:
  * - Listens for changes to slug and version props (updated by Next.js router)
@@ -16,44 +16,40 @@
 import React, { useEffect, useRef } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import type { ReadingViewProps } from '@repo/data';
-import { useContentStore } from '../../lib/stores/content-store';
+import { useSectionStore } from '../../lib/stores/section-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
-import { transformNavigationUrlToFileSystem, isNavigationFormat } from '../../lib/url-adapter';
-import { ContentRenderer } from './ContentRenderer';
+import { SectionRenderer } from './SectionRenderer';
 import { ReadingViewHeader } from './ReadingViewHeader';
 import './ReadingView.css';
 
 export const ReadingView: React.FC<ReadingViewProps> = ({
   slug: initialSlug,
   version: initialVersion,
-  // effectiveDate: initialDate, // TODO: Implement effective date filtering
-  // modalRef: initialModalRef, // TODO: Implement modal handling
 }) => {
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const searchParams = useSearchParams();
   
-  // Extract version from URL query parameters if available
+  // Extract version and date from URL query parameters
   const urlVersion = searchParams.get('version');
+  const urlDate = searchParams.get('date');
   
   // Use version from URL, fallback to props, then default to '2024'
   const version = urlVersion || initialVersion || '2024';
-  // const effectiveDate = initialDate; // TODO: Implement effective date filtering
-  // const modalRef = initialModalRef; // TODO: Implement modal handling
   
-  // Transform URL if it's in navigation format (nbc.divA/1/4)
-  const slug = isNavigationFormat(initialSlug) 
-    ? transformNavigationUrlToFileSystem(initialSlug)
-    : initialSlug;
+  // Use date from URL, or undefined to show latest
+  const effectiveDate = urlDate || undefined;
+  
+  // URL is always in navigation format now (nbc.divA/1/1)
+  const slug = initialSlug;
   
   const {
-    currentContent,
+    currentSection,
     loading,
     error,
-    fetchContent,
-    extractSubtree,
+    fetchSection,
     clearError,
-  } = useContentStore();
+  } = useSectionStore();
 
   // Create stable slug key for useEffect dependencies
   const slugKey = slug.join('/');
@@ -99,72 +95,27 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     };
     
     initializeNavigation();
-  }, [pathname, slugKey, version]); // Re-run when pathname, slug, or version changes
+  }, [pathname, slugKey, version]);
 
   // Fetch content when slug or version changes
-  // This effect handles URL changes including browser back/forward navigation
   useEffect(() => {
     const loadContent = async () => {
       try {
-        // Fetch section-level content
-        await fetchContent(version, slug);
+        await fetchSection(version, slug);
       } catch (err) {
         console.error('Failed to load content:', err);
       }
     };
 
     loadContent();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slugKey, version]); // Use slugKey for stable comparison, fetchContent is stable from Zustand
-
-  // Listen for URL changes (pathname)
-  // This ensures content updates when navigating via browser controls
-  useEffect(() => {
-    // URL has changed, content will be reloaded by the effect above
-    // This effect is primarily for logging and debugging
-    console.log('URL changed:', pathname);
-  }, [pathname]);
+  }, [slugKey, version, fetchSection]);
 
   // Scroll to top when navigation occurs
   useEffect(() => {
-    if (contentContainerRef.current && currentContent) {
+    if (contentContainerRef.current && currentSection) {
       contentContainerRef.current.scrollTop = 0;
     }
-  }, [slugKey, currentContent]); // Use slugKey for stable comparison
-
-  // Extract subtree based on URL depth
-  const renderData = React.useMemo(() => {
-    if (!currentContent) return null;
-
-    try {
-      // Check if currentContent is a SectionContent (has subsections)
-      if ('subsections' in currentContent) {
-        return extractSubtree(currentContent, slug);
-      }
-      
-      // If it's already a subsection or article, render it directly
-      if ('articles' in currentContent) {
-        return {
-          content: currentContent,
-          renderLevel: 'subsection' as const,
-          context: null,
-        };
-      }
-      
-      if ('clauses' in currentContent) {
-        return {
-          content: currentContent,
-          renderLevel: 'article' as const,
-          context: null,
-        };
-      }
-    } catch (err) {
-      console.error('Failed to extract subtree:', err);
-      return null;
-    }
-
-    return null;
-  }, [currentContent, slug, extractSubtree]);
+  }, [slugKey, currentSection]);
 
   // Loading state
   if (loading) {
@@ -188,7 +139,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             <button
               onClick={() => {
                 clearError();
-                fetchContent(version, slug);
+                fetchSection(version, slug);
               }}
               className="reading-view__error-button"
             >
@@ -204,7 +155,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }
 
   // No content state
-  if (!renderData) {
+  if (!currentSection) {
     return (
       <div className="reading-view">
         <div className="reading-view__loading">
@@ -220,10 +171,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       <ReadingViewHeader />
       
       <div className="reading-view__content">
-        <ContentRenderer
-          content={renderData.content}
-          renderLevel={renderData.renderLevel}
-          context={renderData.context ?? undefined}
+        <SectionRenderer
+          section={currentSection}
+          effectiveDate={effectiveDate}
           interactive={true}
         />
       </div>

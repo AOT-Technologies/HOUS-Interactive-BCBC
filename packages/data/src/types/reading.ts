@@ -61,6 +61,8 @@ export interface ClauseContent {
   level: number;                 // 0-3 for indentation depth
   content: InlineContent[];      // Mixed text, glossary terms, links
   subClauses?: ClauseContent[];  // Recursive nesting
+  tables?: any[];                // Tables attached to this clause (from sentences)
+  figures?: any[];               // Figures attached to this clause (from sentences)
 }
 
 /**
@@ -97,11 +99,29 @@ export interface TableContent {
 }
 
 export interface TableRow {
+  id?: string;
+  type?: 'header_row' | 'body_row';
   cells: TableCell[];
 }
 
+/**
+ * Content item within a table cell (text or figure)
+ */
+export interface TableCellContent {
+  type: 'text' | 'figure';
+  value?: string; // For text content
+  id?: string; // For figure content
+  source?: 'nbc' | 'bc';
+  title?: string;
+  graphic?: {
+    src: string;
+    alt_text: string;
+  };
+}
+
 export interface TableCell {
-  content: string | InlineContent[];
+  content: string | InlineContent[] | TableCellContent[];
+  align?: 'left' | 'center' | 'right';
   colspan?: number;
   rowspan?: number;
   isHeader?: boolean;

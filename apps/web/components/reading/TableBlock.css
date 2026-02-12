@@ -2,6 +2,7 @@
  * TableBlock Component Styles
  * 
  * Renders tables with responsive horizontal scrolling.
+ * Supports mixed content cells (text and figures).
  */
 
 .table-block {
@@ -30,6 +31,44 @@
 .table-block__header-cell {
   font-weight: var(--typography-font-weights-bold, 700);
   background-color: var(--surface-color-background-light-gray, #faf9f8);
+}
+
+/* Text alignment modifiers */
+.table-block__cell--center,
+.table-block__header-cell--center {
+  text-align: center;
+}
+
+.table-block__cell--right,
+.table-block__header-cell--right {
+  text-align: right;
+}
+
+.table-block__cell--left,
+.table-block__header-cell--left {
+  text-align: left;
+}
+
+/* Figure within table cell */
+.table-block__figure {
+  margin: var(--layout-margin-small, 0.5rem) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-block__figure-title {
+  font-size: var(--typography-font-size-label, 0.75rem);
+  font-weight: var(--typography-font-weights-bold, 700);
+  color: var(--typography-color-secondary, #6c6c6e);
+  margin-bottom: var(--layout-margin-8, 0.5rem);
+  text-align: center;
+}
+
+.table-block__figure-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .table-block__caption {

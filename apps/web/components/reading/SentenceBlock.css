@@ -1,0 +1,28 @@
+.sentenceBlock {
+  display: flex;
+  gap: var(--layout-padding-small);
+  margin-bottom: var(--layout-margin-small);
+}
+
+.sentenceNumber {
+  flex-shrink: 0;
+  font: var(--typography-bold-body);
+  color: var(--typography-color-primary);
+  min-width: 2rem;
+}
+
+.sentenceContent {
+  flex: 1;
+}
+
+.sentenceText {
+  margin: 0 0 var(--layout-margin-small) 0;
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+  line-height: var(--typography-line-heights-sparse);
+}
+
+.sentenceNestedContent {
+  margin-left: var(--layout-margin-medium);
+  margin-top: var(--layout-margin-small);
+}

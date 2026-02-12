@@ -1,47 +1,43 @@
+/**
+ * ArticleBlock - Renders an article with its content
+ * 
+ * Uses type-driven recursive rendering to handle all content types
+ * in source order (sentences, tables, figures, equations, notes)
+ */
+
 import React from 'react';
-import type { ArticleBlockProps } from '@repo/data';
-import { ClauseRenderer } from './ClauseRenderer';
-import { TableBlock } from './TableBlock';
-import { FigureBlock } from './FigureBlock';
+import type { Article } from '@bc-building-code/bcbc-parser';
+import { ContentRenderer } from './ContentRenderer';
 import './ArticleBlock.css';
 
+export interface ArticleBlockProps {
+  article: Article;
+  effectiveDate?: string;
+  interactive?: boolean;
+}
+
 export const ArticleBlock: React.FC<ArticleBlockProps> = ({ 
-  article, 
+  article,
+  effectiveDate,
   interactive = true 
 }) => {
   return (
     <div className="articleBlock">
       <h4 className="articleHeading">
-        {article.reference} {article.title}
+        {article.number} {article.title}
       </h4>
-      <div className="clauses">
-        {article.clauses.map((clause, index) => (
-          <ClauseRenderer 
-            key={`${article.id}-clause-${index}`}
-            clause={clause} 
-            level={clause.level}
-            interactive={interactive} 
+      
+      {/* Render all content in source order using type-driven dispatcher */}
+      <div className="articleContent">
+        {article.content.map((item, index) => (
+          <ContentRenderer 
+            key={`${article.id}-content-${index}`}
+            node={item}
+            effectiveDate={effectiveDate}
+            interactive={interactive}
           />
         ))}
       </div>
-      
-      {/* Render tables if present */}
-      {article.tables && article.tables.length > 0 && (
-        <div className="article-tables">
-          {article.tables.map((table) => (
-            <TableBlock key={table.id} table={table} />
-          ))}
-        </div>
-      )}
-      
-      {/* Render figures if present */}
-      {article.figures && article.figures.length > 0 && (
-        <div className="article-figures">
-          {article.figures.map((figure) => (
-            <FigureBlock key={figure.id} figure={figure} />
-          ))}
-        </div>
-      )}
     </div>
   );
 };

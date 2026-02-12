@@ -90,11 +90,30 @@ export interface TableHeader {
 }
 
 export interface TableRow {
+  id?: string;
+  type?: 'header_row' | 'body_row';
   cells: TableCell[];
 }
 
+/**
+ * Content item within a table cell (text or figure)
+ */
+export interface TableCellContent {
+  type: 'text' | 'figure';
+  value?: string; // For text content
+  id?: string; // For figure content
+  source?: 'nbc' | 'bc';
+  title?: string;
+  graphic?: {
+    src: string;
+    alt_text: string;
+  };
+}
+
 export interface TableCell {
-  text: string;
+  text?: string; // Legacy format
+  content?: TableCellContent[]; // New format
+  align?: 'left' | 'center' | 'right';
   colspan?: number;
   rowspan?: number;
   isHeader?: boolean;

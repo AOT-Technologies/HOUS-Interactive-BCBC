@@ -13,10 +13,16 @@ export type {
   Section,
   Subsection,
   Article,
+  ArticleContentNode,
+  Sentence,
+  SentenceContentNode,
   Clause,
+  ClauseContentNode,
+  Subclause,
   Table,
   TableRow,
   TableCell,
+  TableCellContent,
   Figure,
   Equation,
   NoteReference,
@@ -25,6 +31,7 @@ export type {
   ValidationError,
   ContentType,
   HierarchyLevel,
+  Revision,
 } from './types';
 
 // Export parser functions
@@ -43,3 +50,13 @@ export {
   validateRequiredFields,
   validateDataTypes,
 } from './validators';
+
+// Export revision filtering utilities
+export {
+  getTextForDate,
+  isVisibleOnDate,
+  filterSentence,
+  filterClause,
+  filterSubclause,
+  getLatestEffectiveDate,
+} from './revision-filter';

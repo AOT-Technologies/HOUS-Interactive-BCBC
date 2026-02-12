@@ -666,6 +666,15 @@
           "type": "boolean",
           "description": "Indicates if this subsection has been deleted (true when deleted='yes' attribute is present)"
         },
+        "revised": {
+          "type": "boolean",
+          "description": "Indicates if this subsection has revision history (true when revised='yes' attribute is present)"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the subsection - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
+        },
         "title": {
           "type": "string"
         },
@@ -677,6 +686,13 @@
           "items": {
             "$ref": "#/definitions/article"
           }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          },
+          "description": "Revision history for this subsection (original baseline and all revisions)"
         }
       }
     },
@@ -698,6 +714,15 @@
         "deleted": {
           "type": "boolean",
           "description": "Indicates if this article has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "revised": {
+          "type": "boolean",
+          "description": "Indicates if this article has revision history (true when revised='yes' attribute is present)"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the article - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
         },
         "title": {
           "type": "string"
@@ -740,7 +765,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/revision"
-          }
+          },
+          "description": "Revision history for this article (original baseline and all revisions)"
         }
       }
     },
@@ -762,6 +788,15 @@
         "deleted": {
           "type": "boolean",
           "description": "Indicates if this sentence has been deleted (true when deleted='yes' attribute is present)"
+        },
+        "revised": {
+          "type": "boolean",
+          "description": "Indicates if this sentence has revision history (true when revised='yes' attribute is present)"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the sentence - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
         },
         "text": {
           "type": "string"
@@ -814,7 +849,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/revision"
-          }
+          },
+          "description": "Revision history for this sentence (original baseline and all revisions)"
         }
       }
     },
@@ -838,6 +874,15 @@
           "type": "boolean",
           "description": "Indicates if this clause has been deleted (true when deleted='yes' attribute is present)"
         },
+        "revised": {
+          "type": "boolean",
+          "description": "Indicates if this clause has revision history (true when revised='yes' attribute is present)"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the clause - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
+        },
         "text": {
           "type": "string"
         },
@@ -856,6 +901,13 @@
           "items": {
             "$ref": "#/definitions/subclause"
           }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          },
+          "description": "Revision history for this clause (original baseline and all revisions)"
         }
       }
     },
@@ -878,8 +930,24 @@
           "type": "boolean",
           "description": "Indicates if this subclause has been deleted (true when deleted='yes' attribute is present)"
         },
+        "revised": {
+          "type": "boolean",
+          "description": "Indicates if this subclause has revision history (true when revised='yes' attribute is present)"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the subclause - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
+        },
         "text": {
           "type": "string"
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          },
+          "description": "Revision history for this subclause (original baseline and all revisions)"
         }
       }
     },

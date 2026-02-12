@@ -47,18 +47,42 @@ interface RawArticleContent {
   number: string;
   title: string;
   type: 'article';
-  clauses: RawClauseContent[];
+  sentences: RawSentenceContent[];
   tables?: any[];
   figures?: any[];
   notes?: any[];
 }
 
+interface RawSentenceContent {
+  id: string;
+  number: string;
+  type: 'sentence';
+  text: string;
+  glossaryTerms?: string[];
+  clauses?: RawClauseContent[];
+  tables?: any[];
+  figures?: any[];
+}
+
 interface RawClauseContent {
   id: string;
   number: string;
+  type: 'clause';
   text: string;
   glossaryTerms?: string[];
-  subClauses?: RawClauseContent[];
+  subclauses?: RawSubclauseContent[];
+  tables?: any[];
+  figures?: any[];
+}
+
+interface RawSubclauseContent {
+  id: string;
+  number: string;
+  type: 'subclause';
+  text: string;
+  glossaryTerms?: string[];
+  tables?: any[];
+  figures?: any[];
 }
 
 /**
@@ -125,6 +149,19 @@ function getClauseLevel(number: string): number {
 }
 
 /**
+ * Transform raw subclause to ClauseContent (for nested rendering)
+ */
+function transformSubclause(rawSubclause: RawSubclauseContent): ClauseContent {
+  const level = getClauseLevel(rawSubclause.number);
+  
+  return {
+    number: rawSubclause.number + ')',
+    level,
+    content: parseInlineContent(rawSubclause.text, rawSubclause.glossaryTerms),
+  };
+}
+
+/**
  * Transform raw clause to ClauseContent
  */
 function transformClause(rawClause: RawClauseContent): ClauseContent {
@@ -134,7 +171,23 @@ function transformClause(rawClause: RawClauseContent): ClauseContent {
     number: rawClause.number + ')',
     level,
     content: parseInlineContent(rawClause.text, rawClause.glossaryTerms),
-    subClauses: rawClause.subClauses?.map(transformClause),
+    subClauses: rawClause.subclauses?.map(transformSubclause),
+  };
+}
+
+/**
+ * Transform raw sentence to ClauseContent (sentences become top-level clauses)
+ */
+function transformSentence(rawSentence: RawSentenceContent): ClauseContent {
+  const level = getClauseLevel(rawSentence.number);
+  
+  return {
+    number: rawSentence.number + ')',
+    level,
+    content: parseInlineContent(rawSentence.text, rawSentence.glossaryTerms),
+    subClauses: rawSentence.clauses?.map(transformClause),
+    tables: rawSentence.tables,
+    figures: rawSentence.figures,
   };
 }
 
@@ -146,7 +199,7 @@ function transformArticle(rawArticle: RawArticleContent, sectionRef: string, sub
     id: rawArticle.id,
     reference: `${sectionRef}.${subsectionRef}.${rawArticle.number}`,
     title: rawArticle.title,
-    clauses: rawArticle.clauses.map(transformClause),
+    clauses: rawArticle.sentences.map(transformSentence),
     tables: rawArticle.tables,
     figures: rawArticle.figures,
     notes: rawArticle.notes,

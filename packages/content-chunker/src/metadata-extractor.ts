@@ -232,8 +232,8 @@ export function extractGlossaryMap(
  * 
  * Scans the document to identify all content types present:
  * - Article: Standard code articles
- * - Table: Tables within clauses
- * - Figure: Figures/images within clauses
+ * - Table: Tables within content
+ * - Figure: Figures/images within content
  * - Note: Note references in articles
  * - Application Note: Special application notes
  * 
@@ -255,20 +255,8 @@ export function extractContentTypes(document: BCBCDocument): ContentType[] {
       for (const section of part.sections) {
         for (const subsection of section.subsections) {
           for (const article of subsection.articles) {
-            // Check for notes
-            if (article.notes && article.notes.length > 0) {
-              contentTypesSet.add('note');
-              
-              // Check if any notes are application notes
-              for (const note of article.notes) {
-                if (note.noteTitle?.toLowerCase().includes('application')) {
-                  contentTypesSet.add('application-note');
-                }
-              }
-            }
-
-            // Check clauses for tables and figures
-            scanClausesForContentTypes(article.clauses, contentTypesSet);
+            // Scan article content for content types
+            scanContentForTypes(article.content, contentTypesSet);
           }
         }
       }
@@ -279,28 +267,42 @@ export function extractContentTypes(document: BCBCDocument): ContentType[] {
 }
 
 /**
- * Recursively scan clauses for tables and figures
- * @param clauses - Array of clauses to scan
+ * Recursively scan content array for content types
+ * @param content - Array of content nodes to scan
  * @param contentTypesSet - Set to add found content types to
  */
-function scanClausesForContentTypes(
-  clauses: Clause[],
+function scanContentForTypes(
+  content: any[],
   contentTypesSet: Set<ContentType>
 ): void {
-  for (const clause of clauses) {
-    // Check for tables
-    if (clause.tables && clause.tables.length > 0) {
-      contentTypesSet.add('table');
-    }
+  if (!content || !Array.isArray(content)) {
+    return;
+  }
 
-    // Check for figures
-    if (clause.figures && clause.figures.length > 0) {
-      contentTypesSet.add('figure');
-    }
-
-    // Recursively check subclauses
-    if (clause.subclauses && clause.subclauses.length > 0) {
-      scanClausesForContentTypes(clause.subclauses, contentTypesSet);
+  for (const node of content) {
+    // Check node type and add to set
+    switch (node.type) {
+      case 'table':
+        contentTypesSet.add('table');
+        break;
+      case 'figure':
+        contentTypesSet.add('figure');
+        break;
+      case 'note':
+        contentTypesSet.add('note');
+        // Check if it's an application note
+        if (node.noteTitle?.toLowerCase().includes('application')) {
+          contentTypesSet.add('application-note');
+        }
+        break;
+      case 'sentence':
+      case 'clause':
+      case 'subclause':
+        // Recursively scan nested content
+        if (node.content) {
+          scanContentForTypes(node.content, contentTypesSet);
+        }
+        break;
     }
   }
 }

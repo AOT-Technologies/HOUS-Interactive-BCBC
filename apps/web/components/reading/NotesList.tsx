@@ -1,5 +1,5 @@
 import React from 'react';
-import type { NoteContent } from '@repo/data';
+import type { NoteReference } from '@bc-building-code/bcbc-parser';
 import { NoteBlock } from './NoteBlock';
 import './NotesList.css';
 
@@ -11,7 +11,7 @@ import './NotesList.css';
  */
 
 interface NotesListProps {
-  notes: NoteContent[];
+  notes: NoteReference[];
   title?: string;
 }
 

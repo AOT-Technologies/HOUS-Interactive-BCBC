@@ -13,6 +13,7 @@
  * - modal: Cross-reference modal ID
  */
 
+import { Suspense } from 'react';
 import MainLayout from '../../../components/layout/MainLayout';
 import HomeSidebarContent from '../../../components/home/HomeSidebarContent';
 import { ReadingView } from '../../../components/reading';
@@ -31,12 +32,14 @@ export default async function ReadingPage({ params }: PageProps) {
       showSidebar 
       sidebarContent={<HomeSidebarContent />}
     >
-      <ReadingView
-        slug={slug}
-        version="2024"
-        effectiveDate={undefined}
-        modalRef={undefined}
-      />
+      <Suspense fallback={<div className="reading-view__loading"><p>Loading content...</p></div>}>
+        <ReadingView
+          slug={slug}
+          version="2024"
+          effectiveDate={undefined}
+          modalRef={undefined}
+        />
+      </Suspense>
     </MainLayout>
   );
 }

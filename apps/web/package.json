@@ -13,6 +13,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@bc-building-code/bcbc-parser": "workspace:*",
     "@bc-building-code/search-indexer": "workspace:*",
     "@bcgov/bc-sans": "^2.1.0",
     "@repo/constants": "workspace:*",

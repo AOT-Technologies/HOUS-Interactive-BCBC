@@ -1,0 +1,28 @@
+.clauseBlock {
+  display: flex;
+  gap: var(--layout-padding-small);
+  margin-bottom: var(--layout-margin-small);
+}
+
+.clauseNumber {
+  flex-shrink: 0;
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+  min-width: 2rem;
+}
+
+.clauseContent {
+  flex: 1;
+}
+
+.clauseText {
+  margin: 0 0 var(--layout-margin-small) 0;
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+  line-height: var(--typography-line-heights-sparse);
+}
+
+.clauseNestedContent {
+  margin-left: var(--layout-margin-medium);
+  margin-top: var(--layout-margin-small);
+}

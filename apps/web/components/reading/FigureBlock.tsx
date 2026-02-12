@@ -1,43 +1,35 @@
+import React from 'react';
+import type { Figure } from '@bc-building-code/bcbc-parser';
 import './FigureBlock.css';
 
-interface FigureContent {
-  id: string;
-  src: string;
-  alt: string;
-  caption?: string;
-  width?: number;
-  height?: number;
+export interface FigureBlockProps {
+  figure: Figure;
 }
 
-interface FigureBlockProps {
-  figure: FigureContent;
-}
-
-export function FigureBlock({ figure }: FigureBlockProps) {
+export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
   // Determine the full image path
-  // Images can be in /bc-graphics/ or /graphics/ directories
   const getImagePath = (src: string): string => {
     // If src already starts with /, use it as-is
     if (src.startsWith('/')) {
       return src;
     }
     
-    // Otherwise, try bc-graphics first, then graphics
-    // The actual path resolution will happen at runtime
+    // Otherwise, try bc-graphics first
     return `/bc-graphics/${src}`;
   };
 
-  const imagePath = getImagePath(figure.src);
+  const imagePath = getImagePath(figure.imageUrl);
 
   return (
     <figure className="figure-block">
+      <div className="figure-block__title">
+        Figure {figure.number} {figure.title}
+      </div>
       <img
         src={imagePath}
-        alt={figure.alt}
+        alt={figure.altText}
         className="figure-block__image"
         loading="lazy"
-        width={figure.width}
-        height={figure.height}
       />
       {figure.caption && (
         <figcaption className="figure-block__caption">
@@ -46,4 +38,4 @@ export function FigureBlock({ figure }: FigureBlockProps) {
       )}
     </figure>
   );
-}
+};

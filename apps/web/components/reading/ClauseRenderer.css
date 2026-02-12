@@ -22,22 +22,18 @@
 /* Indentation levels */
 .clauseItem.level0 {
   padding-left: 32px;
-  list-style-type: decimal;
 }
 
 .clauseItem.level1 {
   padding-left: 56px;
-  list-style-type: lower-alpha;
 }
 
 .clauseItem.level2 {
   padding-left: 80px;
-  list-style-type: lower-roman;
 }
 
 .clauseItem.level3 {
   padding-left: 104px;
-  list-style-type: upper-alpha;
 }
 
 .clauseNumber {
@@ -52,4 +48,17 @@
 
 .subClauses {
   margin-top: 8px;
+}
+
+/* Tables and figures within clauses */
+.clause-tables,
+.clause-figures {
+  margin-top: var(--layout-margin-16);
+  margin-bottom: var(--layout-margin-16);
+}
+
+/* Remove left padding from tables/figures to align with clause content */
+.clauseItem .clause-tables,
+.clauseItem .clause-figures {
+  margin-left: calc(-1 * var(--layout-padding-32));
 }

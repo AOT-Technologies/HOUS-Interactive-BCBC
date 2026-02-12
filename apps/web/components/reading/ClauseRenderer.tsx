@@ -1,5 +1,8 @@
 import React from 'react';
 import type { ClauseRendererProps, InlineContent } from '@repo/data';
+import { GlossaryTerm } from './GlossaryTerm';
+import { TableBlock } from './TableBlock';
+import { FigureBlock } from './FigureBlock';
 import './ClauseRenderer.css';
 
 // Helper to get the list type attribute for semantic HTML
@@ -13,16 +16,23 @@ const getListType = (level: number): '1' | 'a' | 'i' | 'A' => {
   return listTypes[level] || '1';
 };
 
-// Helper to render inline content (text only for now, glossary terms and links will be added later)
-const renderInlineContent = (content: InlineContent[]): React.ReactNode => {
+// Helper to render inline content with glossary terms and cross-references
+const renderInlineContent = (content: InlineContent[], interactive: boolean): React.ReactNode => {
   return content.map((item, index) => {
     if (item.type === 'text') {
       return <span key={index}>{item.text}</span>;
     }
-    // Placeholder for glossary terms and cross-references (will be implemented in later tasks)
     if (item.type === 'glossary-term') {
-      return <em key={index}>{item.text}</em>;
+      return (
+        <GlossaryTerm
+          key={index}
+          termId={item.termId || item.text}
+          text={item.text}
+          interactive={interactive}
+        />
+      );
     }
+    // Cross-references will be implemented in Task 8
     if (item.type === 'cross-reference') {
       return <span key={index}>{item.text}</span>;
     }
@@ -43,8 +53,26 @@ export const ClauseRenderer: React.FC<ClauseRendererProps> = ({
       <li className={`clauseItem ${levelClass}`}>
         <span className="clauseNumber">{clause.number}</span>
         <span className="clauseContent">
-          {renderInlineContent(clause.content)}
+          {renderInlineContent(clause.content, interactive)}
         </span>
+        
+        {/* Render tables if present (from sentences) */}
+        {clause.tables && clause.tables.length > 0 && (
+          <div className="clause-tables">
+            {clause.tables.map((table) => (
+              <TableBlock key={table.id} table={table} />
+            ))}
+          </div>
+        )}
+        
+        {/* Render figures if present (from sentences) */}
+        {clause.figures && clause.figures.length > 0 && (
+          <div className="clause-figures">
+            {clause.figures.map((figure) => (
+              <FigureBlock key={figure.id} figure={figure} />
+            ))}
+          </div>
+        )}
         
         {/* Recursively render sub-clauses */}
         {clause.subClauses && clause.subClauses.length > 0 && (

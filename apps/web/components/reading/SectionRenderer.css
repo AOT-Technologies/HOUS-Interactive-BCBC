@@ -1,0 +1,9 @@
+.sectionRenderer {
+  max-width: var(--layout-max-width-content);
+  margin: 0 auto;
+  padding: var(--layout-padding-large);
+}
+
+.sectionContent {
+  margin-top: var(--layout-margin-large);
+}

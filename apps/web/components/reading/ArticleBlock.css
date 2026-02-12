@@ -1,24 +1,21 @@
 /**
  * ArticleBlock Component Styles
  * 
- * Renders article heading and clauses.
+ * Renders article heading and content using type-driven recursive rendering.
  */
 
 .articleBlock {
-  margin-bottom: 24px;
+  margin-bottom: var(--layout-margin-large);
+  padding-bottom: var(--layout-padding-large);
+  border-bottom: 1px solid var(--surface-color-border-default);
 }
 
 .articleHeading {
-  font-family: var(--typography-font-families-bc-sans);
-  font-size: 18px;
-  font-weight: var(--typography-font-weights-bold);
-  color: #313132;
-  margin: 0;
-  margin-bottom: 12px;
-  line-height: 1.3;
+  font: var(--typography-bold-h4);
+  color: var(--typography-color-primary);
+  margin: 0 0 var(--layout-margin-medium) 0;
 }
 
-.clauses {
-  display: flex;
-  flex-direction: column;
+.articleContent {
+  margin-left: var(--layout-margin-medium);
 }

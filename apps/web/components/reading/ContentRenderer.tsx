@@ -1,100 +1,72 @@
 /**
- * ContentRenderer Component
+ * ContentRenderer - Type-driven recursive content dispatcher
  * 
- * Recursive component that transforms JSON content tree into React elements.
- * Dispatches to specialized sub-components based on content type.
- * Handles interactive vs non-interactive mode for modal previews.
+ * This component inspects the `type` field of content nodes and dispatches
+ * to the appropriate specialized component. It enables recursive rendering
+ * of nested content structures while preserving source order.
  */
 
 import React from 'react';
-import type { ContentRendererProps, SectionContent, SubsectionContent, ArticleContent } from '@repo/data';
-import { PartTitle } from './PartTitle';
-import { SectionTitle } from './SectionTitle';
-import { SubsectionBlock } from './SubsectionBlock';
-import { ArticleBlock } from './ArticleBlock';
-import './ContentRenderer.css';
+import type {
+  ArticleContentNode,
+  SentenceContentNode,
+  ClauseContentNode,
+  Sentence,
+  Clause,
+  Subclause,
+  Table,
+  Figure,
+  Equation,
+  NoteReference,
+} from '@bc-building-code/bcbc-parser';
 
-export const ContentRenderer: React.FC<ContentRendererProps> = ({
-  content,
-  renderLevel,
-  context,
-  interactive = true,
+import { SentenceBlock } from './SentenceBlock';
+import { ClauseBlock } from './ClauseBlock';
+import { SubclauseBlock } from './SubclauseBlock';
+import { TableBlock } from './TableBlock';
+import { FigureBlock } from './FigureBlock';
+import { EquationBlock } from './EquationBlock';
+import { NoteBlock } from './NoteBlock';
+
+export interface ContentRendererProps {
+  node: ArticleContentNode | SentenceContentNode | ClauseContentNode | Sentence | Clause | Subclause | Table | Figure | Equation | NoteReference;
+  effectiveDate?: string;
+  interactive?: boolean;
+}
+
+/**
+ * Type-driven content renderer
+ * Dispatches to appropriate component based on node.type
+ */
+export const ContentRenderer: React.FC<ContentRendererProps> = ({ 
+  node, 
+  effectiveDate,
+  interactive = true 
 }) => {
-  // Type guards to determine content type
-  const isSectionContent = (c: any): c is SectionContent => {
-    return 'subsections' in c && 'partTitle' in c;
-  };
-
-  const isSubsectionContent = (c: any): c is SubsectionContent => {
-    return 'articles' in c && !('subsections' in c);
-  };
-
-  const isArticleContent = (c: any): c is ArticleContent => {
-    return 'clauses' in c && !('articles' in c);
-  };
-
-  // Render based on content type and render level
-  if (renderLevel === 'section' && isSectionContent(content)) {
-    return (
-      <div className="content-renderer">
-        {/* Part Title */}
-        <PartTitle title={content.partTitle} />
-        
-        {/* Section Title */}
-        <SectionTitle title={`${content.reference}. ${content.title}`} />
-        
-        {/* Subsections */}
-        {content.subsections.map((subsection) => (
-          <div key={subsection.id} className="content-renderer__subsection">
-            <SubsectionBlock subsection={subsection} interactive={interactive} />
-          </div>
-        ))}
-      </div>
-    );
+  switch (node.type) {
+    case 'sentence':
+      return <SentenceBlock sentence={node as Sentence} effectiveDate={effectiveDate} interactive={interactive} />;
+    
+    case 'clause':
+      return <ClauseBlock clause={node as Clause} effectiveDate={effectiveDate} interactive={interactive} />;
+    
+    case 'subclause':
+      return <SubclauseBlock subclause={node as Subclause} effectiveDate={effectiveDate} interactive={interactive} />;
+    
+    case 'table':
+      return <TableBlock table={node as Table} />;
+    
+    case 'figure':
+      return <FigureBlock figure={node as Figure} />;
+    
+    case 'equation':
+      return <EquationBlock equation={node as Equation} />;
+    
+    case 'note':
+      return <NoteBlock note={node as NoteReference} interactive={interactive} />;
+    
+    default:
+      console.warn('Unknown content node type:', (node as any).type);
+      return null;
   }
-
-  if (renderLevel === 'subsection' && isSubsectionContent(content)) {
-    return (
-      <div className="content-renderer">
-        {/* Show context if available */}
-        {context && (
-          <>
-            <PartTitle title={context.partTitle} />
-            <SectionTitle title={`${context.reference}. ${context.title}`} />
-          </>
-        )}
-        
-        {/* Subsection */}
-        <div className="content-renderer__subsection">
-          <SubsectionBlock subsection={content} interactive={interactive} />
-        </div>
-      </div>
-    );
-  }
-
-  if (renderLevel === 'article' && isArticleContent(content)) {
-    return (
-      <div className="content-renderer">
-        {/* Show context if available */}
-        {context && (
-          <>
-            <PartTitle title={context.partTitle} />
-            <SectionTitle title={`${context.reference}. ${context.title}`} />
-          </>
-        )}
-        
-        {/* Article */}
-        <div className="content-renderer__article">
-          <ArticleBlock article={content} interactive={interactive} />
-        </div>
-      </div>
-    );
-  }
-
-  // Fallback for unexpected content type
-  return (
-    <div className="content-renderer">
-      <p>Unable to render content: unexpected content type or render level</p>
-    </div>
-  );
 };
