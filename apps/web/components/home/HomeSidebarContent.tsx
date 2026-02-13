@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { Suspense, useEffect, useState, useCallback, useRef } from 'react';
 import { NavigationTree } from '@/components/navigation/NavigationTree';
 import { VersionSelector } from '@/components/navigation';
 import { useNavigationStore } from '@/stores/navigation-store';
@@ -206,7 +206,9 @@ export default function HomeSidebarContent() {
 
       {/* Navigation Tree - Position 4 */}
       <div className="home-sidebar-nav">
-        <NavigationTree />
+        <Suspense fallback={<div className="navigation-tree__loading">Loading navigation...</div>}>
+          <NavigationTree />
+        </Suspense>
       </div>
     </div>
   );

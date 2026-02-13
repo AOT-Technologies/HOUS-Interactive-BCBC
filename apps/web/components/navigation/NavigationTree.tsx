@@ -78,11 +78,16 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
       const treeRect = treeRef.current.getBoundingClientRect();
       const nodeRect = activeNodeRef.current.getBoundingClientRect();
       
-      // Check if node is outside visible area
+      // Check if node is outside visible area of the tree container
       if (nodeRect.top < treeRect.top || nodeRect.bottom > treeRect.bottom) {
-        activeNodeRef.current.scrollIntoView({
+        // Calculate how far the node is from the center of the tree viewport,
+        // then adjust the current scroll position by that delta.
+        const nodeCenter = nodeRect.top + nodeRect.height / 2;
+        const treeCenter = treeRect.top + treeRect.height / 2;
+        const delta = nodeCenter - treeCenter;
+        treeRef.current.scrollTo({
+          top: treeRef.current.scrollTop + delta,
           behavior: 'smooth',
-          block: 'center',
         });
       }
     }

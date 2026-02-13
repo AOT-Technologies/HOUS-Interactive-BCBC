@@ -556,7 +556,12 @@ function parseTableData(raw: RawTable): Table {
         id: row.id,
         type: row.type,
         cells: row.cells.map((cell) => ({
-          content: cell.content || '',
+          content: Array.isArray(cell.content)
+            ? cell.content.map((item) => ({
+                ...item,
+                source: item.source as 'nbc' | 'bc' | undefined,
+              }))
+            : cell.content || '',
           align: cell.align,
           colspan: cell.colspan,
           rowspan: cell.rowspan,

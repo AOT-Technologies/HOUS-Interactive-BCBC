@@ -31,7 +31,11 @@ export default async function ReadingPage({ params }: PageProps) {
     <MainLayout 
       className="MainLayout--reading"
       showSidebar 
-      sidebarContent={<HomeSidebarContent />}
+      sidebarContent={
+        <Suspense fallback={<div className="sidebar-loading">Loading navigation...</div>}>
+          <HomeSidebarContent />
+        </Suspense>
+      }
     >
       <Suspense fallback={<div className="reading-view__loading"><p>Loading content...</p></div>}>
         <ReadingView
