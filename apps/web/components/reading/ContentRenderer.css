@@ -29,3 +29,13 @@
 .content-renderer__article {
   margin-bottom: var(--layout-margin-large, 1.5rem);
 }
+
+.content-renderer__source-indicator {
+  position: relative;
+  margin: var(--layout-margin-small, 0.5rem) 0;
+  padding-left: var(--layout-padding-medium, 1rem);
+}
+
+.content-renderer__source-indicator--bc {
+  border-left: 3px solid var(--support-borderColor-warning, #F8BB47);
+}

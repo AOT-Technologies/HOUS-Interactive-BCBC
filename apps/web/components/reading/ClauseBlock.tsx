@@ -19,12 +19,14 @@ export interface ClauseBlockProps {
   clause: Clause;
   effectiveDate?: string;
   interactive?: boolean;
+  parentHasBcSource?: boolean;
 }
 
 export const ClauseBlock: React.FC<ClauseBlockProps> = ({ 
   clause, 
   effectiveDate,
-  interactive = true 
+  interactive = true,
+  parentHasBcSource = false,
 }) => {
   // Apply effective date filtering if date is provided
   const filteredClause = effectiveDate 
@@ -53,6 +55,7 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
                 node={item}
                 effectiveDate={effectiveDate}
                 interactive={interactive}
+                parentHasBcSource={parentHasBcSource}
               />
             ))}
           </div>

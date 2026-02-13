@@ -19,12 +19,14 @@ export interface SentenceBlockProps {
   sentence: Sentence;
   effectiveDate?: string;
   interactive?: boolean;
+  parentHasBcSource?: boolean;
 }
 
 export const SentenceBlock: React.FC<SentenceBlockProps> = ({ 
   sentence, 
   effectiveDate,
-  interactive = true 
+  interactive = true,
+  parentHasBcSource = false,
 }) => {
   // Apply effective date filtering if date is provided
   const filteredSentence = effectiveDate 
@@ -53,6 +55,7 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
                 node={item}
                 effectiveDate={effectiveDate}
                 interactive={interactive}
+                parentHasBcSource={parentHasBcSource}
               />
             ))}
           </div>

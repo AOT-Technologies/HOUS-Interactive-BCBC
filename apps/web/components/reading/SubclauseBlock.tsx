@@ -19,12 +19,14 @@ export interface SubclauseBlockProps {
   subclause: Subclause;
   effectiveDate?: string;
   interactive?: boolean;
+  parentHasBcSource?: boolean;
 }
 
 export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({ 
   subclause, 
   effectiveDate,
-  interactive = true 
+  interactive = true,
+  parentHasBcSource = false,
 }) => {
   // Apply effective date filtering if date is provided
   const filteredSubclause = effectiveDate 
@@ -53,6 +55,7 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
                 node={item}
                 effectiveDate={effectiveDate}
                 interactive={interactive}
+                parentHasBcSource={parentHasBcSource}
               />
             ))}
           </div>

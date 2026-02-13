@@ -27,11 +27,13 @@ import { TableBlock } from './TableBlock';
 import { FigureBlock } from './FigureBlock';
 import { EquationBlock } from './EquationBlock';
 import { NoteBlock } from './NoteBlock';
+import './ContentRenderer.css';
 
 export interface ContentRendererProps {
   node: ArticleContentNode | SentenceContentNode | ClauseContentNode | Sentence | Clause | Subclause | Table | Figure | Equation | NoteReference;
   effectiveDate?: string;
   interactive?: boolean;
+  parentHasBcSource?: boolean;
 }
 
 /**
@@ -41,29 +43,66 @@ export interface ContentRendererProps {
 export const ContentRenderer: React.FC<ContentRendererProps> = ({ 
   node, 
   effectiveDate,
-  interactive = true 
+  interactive = true,
+  parentHasBcSource = false,
 }) => {
+  const source = (node as { source?: string }).source;
+  const hasBcSource = source?.toLowerCase() === 'bc';
+  const hasBcSourceInTree = parentHasBcSource || hasBcSource;
+
+  const withSourceIndicator = (content: React.ReactNode) =>
+    hasBcSource && !parentHasBcSource ? (
+      <div className="content-renderer__source-indicator content-renderer__source-indicator--bc">
+        {content}
+      </div>
+    ) : content;
+
   switch (node.type) {
     case 'sentence':
-      return <SentenceBlock sentence={node as Sentence} effectiveDate={effectiveDate} interactive={interactive} />;
+      return withSourceIndicator(
+        <SentenceBlock
+          sentence={node as Sentence}
+          effectiveDate={effectiveDate}
+          interactive={interactive}
+          parentHasBcSource={hasBcSourceInTree}
+        />
+      );
     
     case 'clause':
-      return <ClauseBlock clause={node as Clause} effectiveDate={effectiveDate} interactive={interactive} />;
+      return withSourceIndicator(
+        <ClauseBlock
+          clause={node as Clause}
+          effectiveDate={effectiveDate}
+          interactive={interactive}
+          parentHasBcSource={hasBcSourceInTree}
+        />
+      );
     
     case 'subclause':
-      return <SubclauseBlock subclause={node as Subclause} effectiveDate={effectiveDate} interactive={interactive} />;
+      return withSourceIndicator(
+        <SubclauseBlock
+          subclause={node as Subclause}
+          effectiveDate={effectiveDate}
+          interactive={interactive}
+          parentHasBcSource={hasBcSourceInTree}
+        />
+      );
     
     case 'table':
-      return <TableBlock table={node as Table} interactive={interactive} />;
+      return withSourceIndicator(
+        <TableBlock table={node as Table} interactive={interactive} />
+      );
     
     case 'figure':
-      return <FigureBlock figure={node as Figure} />;
+      return withSourceIndicator(<FigureBlock figure={node as Figure} />);
     
     case 'equation':
-      return <EquationBlock equation={node as Equation} />;
+      return withSourceIndicator(<EquationBlock equation={node as Equation} />);
     
     case 'note':
-      return <NoteBlock note={node as NoteReference} interactive={interactive} />;
+      return withSourceIndicator(
+        <NoteBlock note={node as NoteReference} interactive={interactive} />
+      );
     
     default:
       console.warn('Unknown content node type:', (node as any).type);
