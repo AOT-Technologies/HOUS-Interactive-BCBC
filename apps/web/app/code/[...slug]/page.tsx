@@ -37,7 +37,29 @@ export default async function ReadingPage({ params }: PageProps) {
         </Suspense>
       }
     >
-      <Suspense fallback={<div className="reading-view__loading"><p>Loading content...</p></div>}>
+      <Suspense
+        fallback={
+          <div className="reading-view">
+            <div className="reading-view__loading" role="status" aria-live="polite" aria-label="Loading content...">
+              <div className="reading-view__loading-shell" aria-hidden="true">
+                <div className="reading-view__skeleton-line reading-view__skeleton-title" />
+                <div className="reading-view__skeleton-line reading-view__skeleton-subtitle" />
+                <div className="reading-view__skeleton-block">
+                  <div className="reading-view__skeleton-line reading-view__skeleton-body" />
+                  <div className="reading-view__skeleton-line reading-view__skeleton-body" />
+                  <div className="reading-view__skeleton-line reading-view__skeleton-body-short" />
+                </div>
+                <div className="reading-view__skeleton-block">
+                  <div className="reading-view__skeleton-line reading-view__skeleton-body" />
+                  <div className="reading-view__skeleton-line reading-view__skeleton-body-mid" />
+                  <div className="reading-view__skeleton-line reading-view__skeleton-body-short" />
+                </div>
+              </div>
+              <span className="reading-view__loading-text">Loading content...</span>
+            </div>
+          </div>
+        }
+      >
         <ReadingView
           slug={slug}
           version="2024"

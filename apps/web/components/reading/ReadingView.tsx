@@ -222,20 +222,31 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     loadContent();
   }, [slugKey, version, fetchSection, isSectionLevelOrDeeper]);
 
-  const renderLoadingModal = (message: string = 'Loading content...') => (
+  const renderLoadingSkeleton = (message: string = 'Loading content...') => (
     <div className="reading-view">
-      <div className="reading-view__loading">
-        <div className="reading-view__loading-modal" role="status" aria-live="polite">
-          <span className="reading-view__loading-spinner" aria-hidden="true" />
-          <p>{message}</p>
+      <div className="reading-view__loading" role="status" aria-live="polite" aria-label={message}>
+        <div className="reading-view__loading-shell" aria-hidden="true">
+          <div className="reading-view__skeleton-line reading-view__skeleton-title" />
+          <div className="reading-view__skeleton-line reading-view__skeleton-subtitle" />
+          <div className="reading-view__skeleton-block">
+            <div className="reading-view__skeleton-line reading-view__skeleton-body" />
+            <div className="reading-view__skeleton-line reading-view__skeleton-body" />
+            <div className="reading-view__skeleton-line reading-view__skeleton-body-short" />
+          </div>
+          <div className="reading-view__skeleton-block">
+            <div className="reading-view__skeleton-line reading-view__skeleton-body" />
+            <div className="reading-view__skeleton-line reading-view__skeleton-body-mid" />
+            <div className="reading-view__skeleton-line reading-view__skeleton-body-short" />
+          </div>
         </div>
+        <span className="reading-view__loading-text">{message}</span>
       </div>
     </div>
   );
 
   // Loading state
   if (loading) {
-    return renderLoadingModal();
+    return renderLoadingSkeleton();
   }
 
   if (isPartLevel) {
@@ -245,7 +256,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       (navigationTree.length === 0 && currentVersion !== version) ||
       (navigationTree.length === 0 && !currentPartNode)
     ) {
-      return renderLoadingModal();
+      return renderLoadingSkeleton();
     }
 
     if (!currentPartNode || currentPartNode.type !== 'part') {
@@ -279,7 +290,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }
 
   if (isSectionLevelOrDeeper && !isRequestedSectionLoaded && !error) {
-    return renderLoadingModal();
+    return renderLoadingSkeleton();
   }
 
   // Error state
@@ -310,7 +321,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   // No content state
   if (!currentSection) {
-    return renderLoadingModal();
+    return renderLoadingSkeleton();
   }
 
   const subtree = getSubtreeForSlug(currentSection, slug);

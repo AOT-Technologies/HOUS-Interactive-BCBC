@@ -22,6 +22,51 @@ export interface SubclauseBlockProps {
   parentHasBcSource?: boolean;
 }
 
+const toLowerRoman = (value: number): string => {
+  const romanMap: Array<[number, string]> = [
+    [1000, 'm'],
+    [900, 'cm'],
+    [500, 'd'],
+    [400, 'cd'],
+    [100, 'c'],
+    [90, 'xc'],
+    [50, 'l'],
+    [40, 'xl'],
+    [10, 'x'],
+    [9, 'ix'],
+    [5, 'v'],
+    [4, 'iv'],
+    [1, 'i'],
+  ];
+
+  let remaining = value;
+  let result = '';
+
+  for (const [arabic, roman] of romanMap) {
+    while (remaining >= arabic) {
+      result += roman;
+      remaining -= arabic;
+    }
+  }
+
+  return result;
+};
+
+const formatSubclauseNumber = (value: string): string => {
+  const trimmedValue = value.trim();
+
+  if (!/^\d+$/.test(trimmedValue)) {
+    return trimmedValue;
+  }
+
+  const numericValue = Number.parseInt(trimmedValue, 10);
+  if (!Number.isFinite(numericValue) || numericValue <= 0) {
+    return trimmedValue;
+  }
+
+  return toLowerRoman(numericValue);
+};
+
 export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({ 
   subclause, 
   effectiveDate,
@@ -40,7 +85,7 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
   
   return (
     <div className="subclauseBlock">
-      <span className="subclauseNumber">{filteredSubclause.number})</span>
+      <span className="subclauseNumber">{formatSubclauseNumber(filteredSubclause.number)})</span>
       <div className="subclauseContent">
         <p className="subclauseText">
           {parseTextWithMarkers(filteredSubclause.text, filteredSubclause.glossaryTerms, interactive)}
