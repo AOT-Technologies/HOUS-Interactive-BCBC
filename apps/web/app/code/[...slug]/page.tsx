@@ -71,10 +71,14 @@ export async function generateMetadata({ params }: PageProps) {
     title = `Subsection ${subsection} - BC Building Code`;
   } else if (section) {
     title = `Section ${section} - BC Building Code`;
+  } else if (part) {
+    title = `Part ${part} - BC Building Code`;
   }
+
+  const locationParts = [division, part, section, subsection, article].filter(Boolean);
 
   return {
     title,
-    description: `Read the BC Building Code content for ${division}/${part}/${section}`,
+    description: `Read the BC Building Code content for ${locationParts.join('/')}`,
   };
 }

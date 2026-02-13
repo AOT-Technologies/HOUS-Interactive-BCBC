@@ -55,9 +55,14 @@ function extractSlugFromPath(navPath: string): string[] {
  * Recursively extract all paths from navigation tree
  */
 function extractPathsFromNode(node: NavigationNode, paths: string[][] = []): string[][] {
-  // Only include paths for section, subsection, and article levels
-  // Skip volume, division, and part levels as they're not content pages
-  if (node.type === 'section' || node.type === 'subsection' || node.type === 'article') {
+  // Include paths for part, section, subsection, and article levels.
+  // Skip only volume and division levels.
+  if (
+    node.type === 'part' ||
+    node.type === 'section' ||
+    node.type === 'subsection' ||
+    node.type === 'article'
+  ) {
     const slug = extractSlugFromPath(node.path);
     if (slug.length > 0) {
       paths.push(slug);

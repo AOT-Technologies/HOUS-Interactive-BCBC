@@ -6,6 +6,7 @@
 
 // Core rendering components
 export { PartTitle } from './PartTitle';
+export { PartRenderer } from './PartRenderer';
 export { SectionTitle } from './SectionTitle';
 export { SectionRenderer } from './SectionRenderer';
 export { SubsectionBlock } from './SubsectionBlock';

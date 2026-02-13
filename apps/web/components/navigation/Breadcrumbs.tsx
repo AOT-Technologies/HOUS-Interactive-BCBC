@@ -49,17 +49,18 @@ interface BreadcrumbsProps {
  */
 export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems = 3 }: BreadcrumbsProps) {
   const pathname = usePathname();
-  const { navigationTree } = useNavigationStore();
+  const { navigationTree, currentPath } = useNavigationStore();
   const [isExpanded, setIsExpanded] = useState(false);
+  const isContentPage = pathname?.startsWith('/code');
 
   /**
    * Build breadcrumb trail based on current page
    */
   const breadcrumbs = useMemo(() => {
-    const trail: Array<{ id: string; title: string; path: string; number?: string }> = [];
+    const trail: Array<{ id: string; title: string; path: string; number?: string; type?: NavigationNode['type'] | 'home' | 'search' | 'download' }> = [];
 
     // Always start with Home
-    trail.push({ id: 'home', title: 'Home', path: '/' });
+    trail.push({ id: 'home', title: 'Home', path: '/', type: 'home' });
 
     // Determine page type and build appropriate breadcrumbs
     if (pathname === '/') {
@@ -67,16 +68,17 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
       return trail;
     } else if (pathname?.startsWith('/search')) {
       // Search Results Page
-      trail.push({ id: 'search', title: 'Search Results', path: '/search' });
+      trail.push({ id: 'search', title: 'Search Results', path: '/search', type: 'search' });
       return trail;
     } else if (pathname?.startsWith('/download')) {
       // Download Page
-      trail.push({ id: 'download', title: 'Download', path: '/download' });
+      trail.push({ id: 'download', title: 'Download', path: '/download', type: 'download' });
       return trail;
     } else if (pathname?.startsWith('/code') && navigationTree && navigationTree.length > 0) {
       // Content Reading Page - build from navigation tree by matching node path to URL
+      const contentPath = currentPath.startsWith('/code') ? currentPath : pathname;
       // Strip trailing slash for comparison: "/code/nbc.divB/1/1/1/" -> "/code/nbc.divB/1/1/1"
-      const normalizedPathname = pathname.replace(/\/$/, '');
+      const normalizedPathname = contentPath.replace(/\/$/, '');
       
       // Walk the tree and collect ancestors of the node whose path matches the URL
       const findAncestors = (nodes: NavigationNode[]): boolean => {
@@ -97,7 +99,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
           // Check if the current URL starts with (or equals) this node's path
           // This means this node is an ancestor of the target
           if (normalizedPathname === normalizedNodePath || normalizedPathname.startsWith(normalizedNodePath + '/')) {
-            trail.push({ id: node.id, title: node.title, path: node.path, number: node.number });
+            trail.push({ id: node.id, title: node.title, path: node.path, number: node.number, type: node.type });
             
             // Exact match — we found the target node
             if (normalizedPathname === normalizedNodePath) {
@@ -124,7 +126,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
 
     // Default: just show Home
     return trail;
-  }, [pathname, navigationTree]);
+  }, [pathname, currentPath, navigationTree]);
 
   /**
    * Handle breadcrumb click - only prevent default if custom callback provided
@@ -135,6 +137,13 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
       // Don't prevent default - let the Link navigate
     }
     // If no callback, let the Link handle navigation normally
+  };
+
+  const isNonNavigableContentCrumb = (item: typeof breadcrumbs[0]): boolean => {
+    // On reading pages, URL should only change from Part and below.
+    // Division (and volume if ever present) should not navigate.
+    if (!isContentPage) return false;
+    return item.type === 'division' || item.type === 'volume';
   };
 
   /**
@@ -201,15 +210,24 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                 </li>
               )}
               <li className="breadcrumbs-item">
-                <Link
-                  href={item.path}
-                  className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
-                  onClick={() => handleClick(item)}
-                  aria-label={`Navigate to ${item.title}`}
-                  aria-current={isLastInFull ? 'page' : undefined}
-                >
-                  <span className="breadcrumbs-title">{item.title}</span>
-                </Link>
+                {isNonNavigableContentCrumb(item) ? (
+                  <span
+                    className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
+                    aria-current={isLastInFull ? 'page' : undefined}
+                  >
+                    <span className="breadcrumbs-title">{item.title}</span>
+                  </span>
+                ) : (
+                  <Link
+                    href={item.path}
+                    className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
+                    onClick={() => handleClick(item)}
+                    aria-label={`Navigate to ${item.title}`}
+                    aria-current={isLastInFull ? 'page' : undefined}
+                  >
+                    <span className="breadcrumbs-title">{item.title}</span>
+                  </Link>
+                )}
                 {!isLast && (
                   <span className="breadcrumbs-separator" aria-hidden="true">
                     &gt;

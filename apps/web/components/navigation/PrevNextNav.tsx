@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useEffect } from 'react';
+import { useMemo, useEffect, useCallback } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Button from '@repo/ui/button';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_PREV_BUTTON, TESTID_NEXT_BUTTON } from '@repo/constants/src/testids';
@@ -45,7 +46,35 @@ interface PrevNextNavProps {
  * Requirements: 4.7, 10.1
  */
 export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNextNavProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { navigationTree, currentPath, setCurrentPath } = useNavigationStore();
+
+  const buildTargetUrl = useCallback(
+    (path: string): string => {
+      const queryString = searchParams.toString();
+      return queryString ? `${path}?${queryString}` : path;
+    },
+    [searchParams]
+  );
+
+  const navigateTo = useCallback(
+    (path: string) => {
+      setCurrentPath(path, false);
+      const targetUrl = buildTargetUrl(path);
+      const currentUrl = buildTargetUrl(pathname);
+      const isReadingPage = pathname.startsWith('/code');
+      if (targetUrl !== currentUrl) {
+        if (isReadingPage && typeof window !== 'undefined') {
+          window.history.pushState({}, '', targetUrl);
+        } else {
+          router.push(targetUrl);
+        }
+      }
+    },
+    [setCurrentPath, buildTargetUrl, pathname, router]
+  );
 
   /**
    * Flatten the navigation tree to get all nodes in sequential order
@@ -123,7 +152,7 @@ export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNe
    */
   const handlePrevClick = () => {
     if (prevNode) {
-      setCurrentPath(prevNode.path);
+      navigateTo(prevNode.path);
       if (onPrevClick) {
         onPrevClick(prevNode);
       }
@@ -135,7 +164,7 @@ export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNe
    */
   const handleNextClick = () => {
     if (nextNode) {
-      setCurrentPath(nextNode.path);
+      navigateTo(nextNode.path);
       if (onNextClick) {
         onNextClick(nextNode);
       }

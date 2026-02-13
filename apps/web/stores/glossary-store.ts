@@ -19,10 +19,18 @@ interface GlossaryStore {
   glossaryMap: Map<string, GlossaryEntry>;
   selectedTerm: string | null;
   loading: boolean;
+  loadedVersion: string | null;
   setSelectedTerm: (term: string | null) => void;
   getTerm: (term: string) => GlossaryEntry | undefined;
   loadGlossary: () => Promise<void>;
 }
+
+/**
+ * In-flight glossary request deduplication.
+ * Prevents many GlossaryTerm instances from triggering duplicate fetches.
+ */
+let glossaryLoadPromise: Promise<void> | null = null;
+let glossaryLoadVersion: string | null = null;
 
 /**
  * Glossary store
@@ -34,6 +42,7 @@ export const useGlossaryStore = create<GlossaryStore>()(
       glossaryMap: new Map(),
       selectedTerm: null,
       loading: false,
+      loadedVersion: null,
 
       setSelectedTerm: (term) => set({ selectedTerm: term }),
 
@@ -43,55 +52,82 @@ export const useGlossaryStore = create<GlossaryStore>()(
       },
 
       loadGlossary: async () => {
-        set({ loading: true });
-        try {
-          const versionDataPath = useVersionStore.getState().getVersionDataPath();
+        const versionStore = useVersionStore.getState();
+        const versionId = versionStore.currentVersion || '2024';
+        const versionDataPath = versionStore.getVersionDataPath(versionId);
+        const { glossaryMap, loadedVersion, loading } = get();
 
-          // Primary: versioned multi-version path
-          // Fallback: legacy single-version path
-          const response = await fetch(`${versionDataPath}/glossary-map.json`);
-          const finalResponse = response.ok ? response : await fetch('/data/glossary-map.json');
-
-          if (!finalResponse.ok) {
-            throw new Error(`Failed to load glossary: ${finalResponse.status}`);
-          }
-
-          const data = await finalResponse.json();
-          const glossaryMap = new Map<string, GlossaryEntry>();
-
-          // Convert object to Map.
-          // Supports both shapes:
-          // 1) { terms: { key: entry } } (legacy)
-          // 2) { key: entry } where entry has { id, term, definition } (current)
-          const entriesSource =
-            data && typeof data === 'object' && data.terms && typeof data.terms === 'object'
-              ? (data.terms as Record<string, GlossaryEntry>)
-              : (data as Record<string, GlossaryEntry>);
-
-          Object.entries(entriesSource).forEach(([key, value]) => {
-            if (!value || typeof value !== 'object') {
-              return;
-            }
-
-            // Primary lookup by readable term key
-            glossaryMap.set(key.toLowerCase(), value);
-
-            // Secondary lookup by glossary id used in markers, e.g. [REF:term:bldng]
-            if (value.id) {
-              glossaryMap.set(value.id.toLowerCase(), value);
-            }
-
-            // Secondary lookup by normalized term text
-            if (value.term) {
-              glossaryMap.set(value.term.toLowerCase(), value);
-            }
-          });
-
-          set({ glossaryMap, loading: false });
-        } catch (error) {
-          console.error('Error loading glossary:', error);
-          set({ loading: false });
+        // Already loaded for this version.
+        if (loadedVersion === versionId && glossaryMap.size > 0) {
+          return;
         }
+
+        // Reuse in-flight request for the same version.
+        if (loading && glossaryLoadPromise && glossaryLoadVersion === versionId) {
+          await glossaryLoadPromise;
+          return;
+        }
+
+        set({ loading: true });
+
+        glossaryLoadVersion = versionId;
+        glossaryLoadPromise = (async () => {
+          try {
+            // Primary: versioned multi-version path
+            // Fallback: legacy single-version path
+            const response = await fetch(`${versionDataPath}/glossary-map.json`);
+            const finalResponse = response.ok ? response : await fetch('/data/glossary-map.json');
+
+            if (!finalResponse.ok) {
+              throw new Error(`Failed to load glossary: ${finalResponse.status}`);
+            }
+
+            const data = await finalResponse.json();
+            const nextGlossaryMap = new Map<string, GlossaryEntry>();
+
+            // Convert object to Map.
+            // Supports both shapes:
+            // 1) { terms: { key: entry } } (legacy)
+            // 2) { key: entry } where entry has { id, term, definition } (current)
+            const entriesSource =
+              data && typeof data === 'object' && data.terms && typeof data.terms === 'object'
+                ? (data.terms as Record<string, GlossaryEntry>)
+                : (data as Record<string, GlossaryEntry>);
+
+            Object.entries(entriesSource).forEach(([key, value]) => {
+              if (!value || typeof value !== 'object') {
+                return;
+              }
+
+              // Primary lookup by readable term key
+              nextGlossaryMap.set(key.toLowerCase(), value);
+
+              // Secondary lookup by glossary id used in markers, e.g. [REF:term:bldng]
+              if (value.id) {
+                nextGlossaryMap.set(value.id.toLowerCase(), value);
+              }
+
+              // Secondary lookup by normalized term text
+              if (value.term) {
+                nextGlossaryMap.set(value.term.toLowerCase(), value);
+              }
+            });
+
+            set({
+              glossaryMap: nextGlossaryMap,
+              loading: false,
+              loadedVersion: versionId,
+            });
+          } catch (error) {
+            console.error('Error loading glossary:', error);
+            set({ loading: false });
+          } finally {
+            glossaryLoadPromise = null;
+            glossaryLoadVersion = null;
+          }
+        })();
+
+        await glossaryLoadPromise;
       },
     }),
     { name: 'glossary-store' }

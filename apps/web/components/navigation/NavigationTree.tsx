@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_NAV_TREE, TESTID_NAV_NODE } from '@repo/constants/src/testids';
 import './NavigationTree.css';
@@ -35,6 +36,9 @@ interface NavigationTreeProps {
  * Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 10.1
  */
 export function NavigationTree({ className = '', onNodeClick }: NavigationTreeProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { 
     navigationTree, 
     expandedNodes, 
@@ -51,6 +55,14 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
 
   // Use filtered tree when search is active, otherwise use full tree
   const displayTree = searchQuery ? filteredTree : navigationTree;
+
+  const buildTargetUrl = useCallback(
+    (path: string): string => {
+      const queryString = searchParams.toString();
+      return queryString ? `${path}?${queryString}` : path;
+    },
+    [searchParams]
+  );
 
   /**
    * Scroll to active node when current path changes
@@ -76,21 +88,42 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
   const handleNodeClick = useCallback(
     (node: NavigationNode, event: React.MouseEvent) => {
       event.preventDefault();
+      const isNavigable =
+        node.type === 'part' ||
+        node.type === 'section' ||
+        node.type === 'subsection' ||
+        node.type === 'article';
       
       // Toggle expansion if node has children
       if (node.children && node.children.length > 0) {
         toggleNode(node.id);
       }
       
-      // Update current path
-      setCurrentPath(node.path);
+      // Only part and deeper levels are routable content pages.
+      if (isNavigable) {
+        const targetUrl = buildTargetUrl(node.path);
+        const currentUrl = buildTargetUrl(pathname);
+        const isReadingPage = pathname.startsWith('/code');
+
+        // In reading page, update only the reading view state and URL (no route transition).
+        // From homepage/other pages, perform normal route navigation to reading page.
+        if (isReadingPage) {
+          setCurrentPath(node.path, false);
+          if (targetUrl !== currentUrl && typeof window !== 'undefined') {
+            window.history.pushState({}, '', targetUrl);
+          }
+        } else if (targetUrl !== currentUrl) {
+          setCurrentPath(node.path, false);
+          router.push(targetUrl);
+        }
+      }
       
       // Call optional callback
       if (onNodeClick) {
         onNodeClick(node);
       }
     },
-    [toggleNode, setCurrentPath, onNodeClick]
+    [toggleNode, setCurrentPath, buildTargetUrl, pathname, router, onNodeClick]
   );
 
   /**
