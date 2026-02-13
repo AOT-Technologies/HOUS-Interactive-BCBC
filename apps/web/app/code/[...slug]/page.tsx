@@ -29,6 +29,7 @@ export default async function ReadingPage({ params }: PageProps) {
 
   return (
     <MainLayout 
+      className="MainLayout--reading"
       showSidebar 
       sidebarContent={<HomeSidebarContent />}
     >

@@ -88,6 +88,8 @@
     width: var(--sidebar-width, 320px);
     min-width: var(--sidebar-width-min, 280px);
     max-width: var(--sidebar-width-max, 400px);
+    position: relative;
+    z-index: 1;
   }
 
   /* Sidebar collapsed state */
@@ -101,6 +103,18 @@
     flex: 1;
     min-width: 0; /* Allow flex shrinking */
     overflow-x: hidden;
+  }
+
+  /* Reading page needs horizontal overflow visible for glossary tooltips. */
+  .MainLayout--with-sidebar.MainLayout--reading .ui-ContentPanel {
+    overflow-x: visible;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Left divider is needed on homepage only (not reading page). */
+  .MainLayout--with-sidebar.MainLayout--home .ui-ContentPanel {
+    border-left: 1px solid var(--surface-color-border-default, #d9d9d9);
   }
 }
 

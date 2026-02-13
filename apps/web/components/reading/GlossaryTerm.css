@@ -14,8 +14,6 @@
 
 .glossary-term--interactive {
   cursor: pointer;
-  text-decoration: underline;
-  text-decoration-style: dotted;
   /* Minimum 44x44px tap target */
   min-height: 44px;
   min-width: 44px;
@@ -24,6 +22,7 @@
 
 .glossary-term--interactive:hover {
   text-decoration-style: solid;
+  z-index: 2000;
 }
 
 .glossary-term--interactive:focus-visible {
@@ -64,7 +63,7 @@
   font-style: normal;
   font-size: 0.875rem;
   line-height: 1.4;
-  z-index: 1000;
+  z-index: 9999;
   box-shadow: var(--surface-shadow-medium, 0 4px 12px rgba(0, 0, 0, 0.15));
   pointer-events: none;
   white-space: normal;

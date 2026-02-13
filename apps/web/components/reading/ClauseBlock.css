@@ -1,12 +1,15 @@
 .clauseBlock {
   display: flex;
-  gap: var(--layout-padding-small);
+  align-items: flex-start;
+  gap: 0;
   margin-bottom: var(--layout-margin-small);
 }
 
 .clauseNumber {
+  display: inline-flex;
   flex-shrink: 0;
   font: var(--typography-regular-body);
+  line-height: var(--typography-line-heights-sparse);
   color: var(--typography-color-primary);
   min-width: 2rem;
 }

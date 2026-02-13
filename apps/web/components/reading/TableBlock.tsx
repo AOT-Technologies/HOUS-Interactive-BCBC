@@ -1,9 +1,11 @@
 import React from 'react';
 import type { Table, TableCellContent } from '@bc-building-code/bcbc-parser';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './TableBlock.css';
 
 export interface TableBlockProps {
   table: Table;
+  interactive?: boolean;
 }
 
 /**
@@ -41,16 +43,74 @@ const TableCellFigure: React.FC<{ figure: TableCellContent }> = ({ figure }) => 
 /**
  * Renders the content of a table cell (text, figure, or mixed)
  */
-const renderCellContent = (content: string | TableCellContent[]): React.ReactNode => {
+const renderFormattedText = (text: string, interactive: boolean): React.ReactNode[] => {
+  const italicRegex = /<italic>(.*?)<\/italic>/gi;
+  const nodes: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let chunkIndex = 0;
+
+  while ((match = italicRegex.exec(text)) !== null) {
+    const matchStart = match.index;
+    const matchEnd = italicRegex.lastIndex;
+    const italicText = match[1] || '';
+
+    if (matchStart > lastIndex) {
+      nodes.push(
+        <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
+          {parseTextWithMarkers(text.slice(lastIndex, matchStart), [], interactive)}
+        </React.Fragment>
+      );
+      chunkIndex += 1;
+    }
+
+    nodes.push(
+      <em key={`table-italic-${chunkIndex}`}>
+        {parseTextWithMarkers(italicText, [], interactive)}
+      </em>
+    );
+
+    chunkIndex += 1;
+    lastIndex = matchEnd;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(
+      <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
+        {parseTextWithMarkers(text.slice(lastIndex), [], interactive)}
+      </React.Fragment>
+    );
+    chunkIndex += 1;
+  }
+
+  if (nodes.length === 0) {
+    nodes.push(
+      <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
+        {parseTextWithMarkers(text, [], interactive)}
+      </React.Fragment>
+    );
+  }
+
+  return nodes;
+};
+
+const renderCellContent = (
+  content: string | TableCellContent[],
+  interactive: boolean
+): React.ReactNode => {
   // Legacy format: plain string
   if (typeof content === 'string') {
-    return content;
+    return renderFormattedText(content, interactive);
   }
 
   // New format: array of content items
   return content.map((item, index) => {
     if (item.type === 'text') {
-      return <span key={index}>{item.value}</span>;
+      return (
+        <React.Fragment key={index}>
+          {renderFormattedText(item.value || '', interactive)}
+        </React.Fragment>
+      );
     } else if (item.type === 'figure') {
       return <TableCellFigure key={index} figure={item} />;
     }
@@ -58,17 +118,20 @@ const renderCellContent = (content: string | TableCellContent[]): React.ReactNod
   });
 };
 
-export const TableBlock: React.FC<TableBlockProps> = ({ table }) => {
+export const TableBlock: React.FC<TableBlockProps> = ({
+  table,
+  interactive = true,
+}) => {
   return (
     <div className="table-block">
       {table.title && (
         <div className="table-block__title">
-          Table {table.number} {table.title}
+          {renderFormattedText(`Table ${table.number} ${table.title}`, interactive)}
         </div>
       )}
       {table.caption && (
         <div className="table-block__caption">
-          {table.caption}
+          {renderFormattedText(table.caption, interactive)}
         </div>
       )}
       <div className="table-block__wrapper">
@@ -87,7 +150,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({ table }) => {
                       colSpan={cell.colspan}
                       rowSpan={cell.rowspan}
                     >
-                      {renderCellContent(cell.content)}
+                      {renderCellContent(cell.content, interactive)}
                     </CellTag>
                   );
                 })}

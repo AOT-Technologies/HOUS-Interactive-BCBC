@@ -40,6 +40,7 @@ export default function Home() {
 
   return (
     <MainLayout 
+      className="MainLayout--home"
       showSidebar 
       sidebarContent={<HomeSidebarContent />}
     >
@@ -63,4 +64,3 @@ export default function Home() {
     </MainLayout>
   );
 }
-

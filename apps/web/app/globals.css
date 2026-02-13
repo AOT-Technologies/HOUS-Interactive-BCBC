@@ -94,3 +94,58 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
   height: 1px;
   overflow: hidden;
 }
+
+@media print {
+  .breadcrumbs,
+  .reading-view-header__actions,
+  .ui-Footer {
+    display: none !important;
+  }
+
+  .ui-Header {
+    display: flex !important;
+    height: auto !important;
+    min-height: 54px;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 0 16px;
+  }
+
+  .ui-Header--Container {
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    height: auto !important;
+    max-width: none !important;
+  }
+
+  .ui-Header--SkipLinks,
+  .ui-Header--ContentSection,
+  .ui-Header--NavMobileWrapper,
+  .ui-Header--Nav,
+  .ui-HeaderSearch {
+    display: none !important;
+  }
+
+  .ui-Header--LogoTitleSection,
+  .ui-Header--TitleWrapper {
+    display: flex !important;
+  }
+
+  main#main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .MainLayout,
+  .ui-ContentPanel,
+  .ui-ContentPanel--Container,
+  .reading-view {
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .reading-view__content {
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+  }
+}

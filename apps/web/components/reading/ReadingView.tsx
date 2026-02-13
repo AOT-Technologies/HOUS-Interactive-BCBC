@@ -48,6 +48,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   
   const {
     currentSection,
+    currentPath,
     loading,
     error,
     fetchSection,
@@ -56,6 +57,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   const {
     navigationTree,
+    loading: navigationLoading,
     currentVersion,
     currentPath: navigationCurrentPath,
     setCurrentPath,
@@ -84,10 +86,19 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const slug = liveSlug || initialSlug;
   const isPartLevel = slug.length === 2;
   const isSectionLevelOrDeeper = slug.length >= 3;
+  const requestedSectionKey = slug.slice(0, 3).join('/');
+  const loadedSectionKey = currentPath.slice(0, 3).join('/');
+  const isRequestedSectionLoaded = Boolean(currentSection) && loadedSectionKey === requestedSectionKey;
 
   // Create stable slug key for useEffect dependencies
   const slugKey = slug.join('/');
   const normalizedPathname = pathname.replace(/\/$/, '');
+
+  const getDivisionLabel = (divisionSlug: string): string => {
+    const match = divisionSlug.match(/div([a-z0-9]+)/i);
+    if (!match) return divisionSlug;
+    return `Division ${match[1].toUpperCase()}`;
+  };
 
   const findNodeByPath = (nodes: NavigationNode[], path: string): NavigationNode | null => {
     for (const node of nodes) {
@@ -108,6 +119,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const currentPartNode = isPartLevel
     ? findNodeByPath(navigationTree, normalizedPathname)
     : null;
+
+  const divisionLabel = getDivisionLabel(slug[0] || '');
 
   const getSubtreeForSlug = (
     section: NonNullable<typeof currentSection>,
@@ -209,34 +222,30 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     loadContent();
   }, [slugKey, version, fetchSection, isSectionLevelOrDeeper]);
 
-  // Scroll to top when navigation occurs
-  useEffect(() => {
-    if (contentContainerRef.current && (currentSection || isPartLevel)) {
-      contentContainerRef.current.scrollTop = 0;
-    }
-  }, [slugKey, currentSection, isPartLevel]);
+  const renderLoadingModal = (message: string = 'Loading content...') => (
+    <div className="reading-view">
+      <div className="reading-view__loading">
+        <div className="reading-view__loading-modal" role="status" aria-live="polite">
+          <span className="reading-view__loading-spinner" aria-hidden="true" />
+          <p>{message}</p>
+        </div>
+      </div>
+    </div>
+  );
 
   // Loading state
   if (loading) {
-    return (
-      <div className="reading-view">
-        <div className="reading-view__loading">
-          <p>Loading content...</p>
-        </div>
-      </div>
-    );
+    return renderLoadingModal();
   }
 
   if (isPartLevel) {
     // Navigation tree is still loading for this version
-    if ((navigationTree.length === 0 && currentVersion !== version) || (navigationTree.length === 0 && !currentPartNode)) {
-      return (
-        <div className="reading-view">
-          <div className="reading-view__loading">
-            <p>Loading content...</p>
-          </div>
-        </div>
-      );
+    if (
+      navigationLoading ||
+      (navigationTree.length === 0 && currentVersion !== version) ||
+      (navigationTree.length === 0 && !currentPartNode)
+    ) {
+      return renderLoadingModal();
     }
 
     if (!currentPartNode || currentPartNode.type !== 'part') {
@@ -257,7 +266,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
     return (
       <div className="reading-view" ref={contentContainerRef}>
-        <ReadingViewHeader />
+        <ReadingViewHeader pdfLabel={`${divisionLabel} - Part ${slug[1]} PDF`} />
 
         <div className="reading-view__content">
           <PartRenderer
@@ -267,6 +276,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         </div>
       </div>
     );
+  }
+
+  if (isSectionLevelOrDeeper && !isRequestedSectionLoaded && !error) {
+    return renderLoadingModal();
   }
 
   // Error state
@@ -297,13 +310,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   // No content state
   if (!currentSection) {
-    return (
-      <div className="reading-view">
-        <div className="reading-view__loading">
-          <p>No content available</p>
-        </div>
-      </div>
-    );
+    return renderLoadingModal();
   }
 
   const subtree = getSubtreeForSlug(currentSection, slug);
@@ -331,14 +338,17 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }
 
   // Render content
+  const sectionPdfLabel = `${divisionLabel} - ${currentSection.number} ${currentSection.title} PDF`;
+
   return (
     <div className="reading-view" ref={contentContainerRef}>
-      <ReadingViewHeader />
+      <ReadingViewHeader pdfLabel={sectionPdfLabel} />
       
       <div className="reading-view__content">
         {subtree.mode === 'section' && (
           <SectionRenderer
             section={currentSection}
+            partNumber={slug[1]}
             effectiveDate={effectiveDate}
             interactive={true}
           />
@@ -347,6 +357,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           <div className="sectionRenderer">
             <SubsectionBlock
               subsection={subtree.subsection}
+              sectionNumberPrefix={`${slug[1]}.${currentSection.number}`}
               effectiveDate={effectiveDate}
               interactive={true}
             />
@@ -356,6 +367,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           <div className="sectionRenderer">
             <ArticleBlock
               article={subtree.article}
+              subsectionNumberPrefix={`${slug[1]}.${currentSection.number}.${subtree.subsection!.number}`}
               effectiveDate={effectiveDate}
               interactive={true}
             />

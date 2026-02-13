@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * ReadingViewHeader Component
  * 
@@ -6,21 +8,25 @@
  */
 
 import React from 'react';
+import { PdfDownloadButton } from './PdfDownloadButton';
 import { SourceBadges } from './SourceBadges';
 import './ReadingViewHeader.css';
 
 interface ReadingViewHeaderProps {
-  // PDF button will be added in later tasks
+  pdfLabel: string;
 }
 
-export const ReadingViewHeader: React.FC<ReadingViewHeaderProps> = () => {
+export const ReadingViewHeader: React.FC<ReadingViewHeaderProps> = ({ pdfLabel }) => {
   return (
     <div className="reading-view-header">
-      <div className="reading-view-header__left">
-        {/* PDF Download Button will be added in Task 9 */}
+      <div className="reading-view-header__actions">
+        <PdfDownloadButton label={pdfLabel} />
       </div>
-      <div className="reading-view-header__right">
-        <SourceBadges />
+      <div className="reading-view-header__meta">
+        <div className="reading-view-header__divider" aria-hidden="true" />
+        <div className="reading-view-header__badges">
+          <SourceBadges />
+        </div>
       </div>
     </div>
   );

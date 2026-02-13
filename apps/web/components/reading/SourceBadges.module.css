@@ -6,27 +6,26 @@
 
 .source-badges {
   display: flex;
-  gap: var(--layout-margin-medium, 1rem);
+  gap: 1rem;
   align-items: center;
 }
 
 .source-badges__badge {
   display: inline-flex;
   align-items: center;
-  padding: var(--layout-padding-xsmall) var(--layout-padding-small);
-  font-size: 0.875rem;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: var(--typography-font-weights-regular, 400);
-  border-radius: var(--layout-border-radius-small, 2px);
+  color: var(--typography-color-primary, #313132);
 }
 
 .source-badges__badge--bcbc {
-  border-left: 4px solid #fcba19;
-  background-color: var(--surface-color-background-white, #ffffff);
+  border-left: 3px solid #fcba19;
 }
 
 .source-badges__badge--nbc {
-  border-left: 4px solid #003366;
-  background-color: var(--surface-color-background-white, #ffffff);
+  border-left: 3px solid #003366;
 }
 
 /* Mobile responsive */
@@ -38,6 +37,6 @@
   }
 
   .source-badges__badge {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 }

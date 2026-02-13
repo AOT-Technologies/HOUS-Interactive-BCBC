@@ -205,7 +205,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                     ...
                   </button>
                   <span className="breadcrumbs-separator" aria-hidden="true">
-                    &gt;
+                    /
                   </span>
                 </li>
               )}
@@ -230,7 +230,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                 )}
                 {!isLast && (
                   <span className="breadcrumbs-separator" aria-hidden="true">
-                    &gt;
+                    /
                   </span>
                 )}
               </li>

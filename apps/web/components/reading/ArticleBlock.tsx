@@ -12,19 +12,25 @@ import './ArticleBlock.css';
 
 export interface ArticleBlockProps {
   article: Article;
+  subsectionNumberPrefix?: string;
   effectiveDate?: string;
   interactive?: boolean;
 }
 
 export const ArticleBlock: React.FC<ArticleBlockProps> = ({ 
   article,
+  subsectionNumberPrefix,
   effectiveDate,
   interactive = true 
 }) => {
+  const fullArticleNumber = subsectionNumberPrefix
+    ? `${subsectionNumberPrefix}.${article.number}`
+    : article.number;
+
   return (
     <div className="articleBlock">
       <h4 className="articleHeading">
-        {article.number} {article.title}
+        {fullArticleNumber} {article.title}
       </h4>
       
       {/* Render all content in source order using type-driven dispatcher */}

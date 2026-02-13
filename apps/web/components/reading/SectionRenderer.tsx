@@ -12,19 +12,23 @@ import './SectionRenderer.css';
 
 export interface SectionRendererProps {
   section: Section;
+  partNumber?: string;
   effectiveDate?: string;
   interactive?: boolean;
 }
 
 export const SectionRenderer: React.FC<SectionRendererProps> = ({ 
   section,
+  partNumber,
   effectiveDate,
   interactive = true 
 }) => {
+  const fullSectionNumber = partNumber ? `${partNumber}.${section.number}` : section.number;
+
   return (
     <div className="sectionRenderer">
       <SectionTitle 
-        number={section.number}
+        number={fullSectionNumber}
         title={section.title}
       />
       
@@ -33,6 +37,7 @@ export const SectionRenderer: React.FC<SectionRendererProps> = ({
           <SubsectionBlock
             key={subsection.id}
             subsection={subsection}
+            sectionNumberPrefix={fullSectionNumber}
             effectiveDate={effectiveDate}
             interactive={interactive}
           />

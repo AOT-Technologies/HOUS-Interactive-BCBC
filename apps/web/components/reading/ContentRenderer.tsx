@@ -54,7 +54,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
       return <SubclauseBlock subclause={node as Subclause} effectiveDate={effectiveDate} interactive={interactive} />;
     
     case 'table':
-      return <TableBlock table={node as Table} />;
+      return <TableBlock table={node as Table} interactive={interactive} />;
     
     case 'figure':
       return <FigureBlock figure={node as Figure} />;

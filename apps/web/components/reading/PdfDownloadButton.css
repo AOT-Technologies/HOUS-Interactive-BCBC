@@ -8,13 +8,14 @@
   display: inline-flex;
   align-items: center;
   gap: var(--layout-margin-small, 0.5rem);
-  padding: var(--layout-padding-small) var(--layout-padding-medium);
+  padding: 0.5rem 0.75rem;
   background-color: var(--surface-color-secondary-button-default, #ffffff);
   color: var(--typography-color-primary, #313132);
-  border: var(--layout-border-width-small) solid var(--surface-color-border-dark, #313132);
-  border-radius: var(--layout-border-radius-small, 2px);
+  border: 1px solid var(--surface-color-border-dark, #313132);
+  border-radius: 4px;
   font-size: 0.875rem;
-  font-weight: var(--typography-font-weights-bold, 700);
+  font-weight: var(--typography-font-weights-regular, 400);
+  line-height: 1.5;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -31,6 +32,11 @@
 
 .pdf-download-button__icon {
   font-size: var(--icons-size-small, 16px);
+  display: inline-flex;
+}
+
+.pdf-download-button__label {
+  white-space: nowrap;
 }
 
 /* Mobile responsive */

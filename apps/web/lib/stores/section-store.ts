@@ -54,7 +54,12 @@ export const useSectionStore = create<SectionState>((set, get) => ({
     // Check cache first
     const cached = get().cache.get(cacheKey);
     if (cached) {
-      set({ currentSection: cached, loading: false, error: null });
+      set({
+        currentSection: cached,
+        currentPath: path,
+        loading: false,
+        error: null,
+      });
       return;
     }
 
@@ -68,7 +73,12 @@ export const useSectionStore = create<SectionState>((set, get) => ({
     const signal = abortController.signal;
 
     // Fetch from public data directory
-    set({ loading: true, error: null });
+    set({
+      currentSection: null,
+      currentPath: path,
+      loading: true,
+      error: null,
+    });
 
     try {
       // Transform navigation format to file system format

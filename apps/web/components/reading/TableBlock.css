@@ -9,15 +9,39 @@
   margin: var(--layout-margin-large, 1.5rem) 0;
 }
 
+.table-block__title {
+  margin: 0 0 var(--layout-margin-small, 0.5rem);
+  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
+  font-size: 1.125rem;
+  font-weight: var(--typography-font-weights-bold, 700);
+  line-height: 1.4;
+  white-space: pre-line;
+  color: var(--typography-color-primary, #313132);
+}
+
 .table-block__wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .table-block__table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+}
+
+@media (min-width: 64rem) {
+  .table-block__wrapper {
+    overflow-x: visible;
+  }
+
+  .table-block__table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+  }
 }
 
 .table-block__header-cell,
@@ -26,10 +50,15 @@
   border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
   text-align: left;
   vertical-align: top;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .table-block__header-cell {
   font-weight: var(--typography-font-weights-bold, 700);
+  font-size: 1.125rem;
+  line-height: 1.35;
   background-color: var(--surface-color-background-light-gray, #faf9f8);
 }
 
@@ -72,13 +101,44 @@
 }
 
 .table-block__caption {
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-weight: var(--typography-font-weights-semibold, 600);
+  line-height: 1.4;
+  white-space: pre-line;
   color: var(--typography-color-secondary, #6c6c6e);
-  margin-top: var(--layout-margin-small, 0.5rem);
+  margin: 0 0 var(--layout-margin-small, 0.5rem);
   text-align: left;
 }
 
 .table-block__caption--above {
   margin-top: 0;
   margin-bottom: var(--layout-margin-small, 0.5rem);
+}
+
+@media print {
+  .table-block__wrapper {
+    overflow: visible !important;
+    max-width: 100% !important;
+  }
+
+  .table-block__table {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed;
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
+  .table-block__header-cell,
+  .table-block__cell {
+    padding: 0.25rem 0.3rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .table-block__figure-image {
+    max-width: 100%;
+    height: auto;
+  }
 }

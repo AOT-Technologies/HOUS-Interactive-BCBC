@@ -52,6 +52,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
   } = useNavigationStore();
   const treeRef = useRef<HTMLDivElement>(null);
   const activeNodeRef = useRef<HTMLButtonElement>(null);
+  const hasInitializedActiveScrollRef = useRef(false);
 
   // Use filtered tree when search is active, otherwise use full tree
   const displayTree = searchQuery ? filteredTree : navigationTree;
@@ -68,6 +69,11 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
    * Scroll to active node when current path changes
    */
   useEffect(() => {
+    if (!hasInitializedActiveScrollRef.current) {
+      hasInitializedActiveScrollRef.current = true;
+      return;
+    }
+
     if (activeNodeRef.current && treeRef.current) {
       const treeRect = treeRef.current.getBoundingClientRect();
       const nodeRect = activeNodeRef.current.getBoundingClientRect();
@@ -199,7 +205,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
             {/* Link label */}
             <button
               ref={isActive ? activeNodeRef : null}
-              className={`nav-tree-link ${isActive ? 'nav-tree-link--active' : ''} ${isMatching ? 'nav-tree-link--matching' : ''}`}
+              className={`nav-tree-link nav-tree-link--${node.type} ${isActive ? 'nav-tree-link--active' : ''} ${isMatching ? 'nav-tree-link--matching' : ''}`}
               onClick={(e) => handleNodeClick(node, e)}
               onKeyDown={(e) => handleKeyDown(node, e)}
               aria-expanded={hasChildren ? isExpanded : undefined}

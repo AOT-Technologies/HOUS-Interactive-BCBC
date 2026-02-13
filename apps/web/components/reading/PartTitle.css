@@ -1,9 +1,9 @@
 .partTitle {
-  font-family: var(--typography-font-families-bc-sans);
-  font-size: 32px;
+  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
+  font-size: 28px;
   font-weight: var(--typography-font-weights-bold);
   color: #313132;
   margin: 0;
   margin-bottom: 12px;
-  line-height: 1.2;
+  line-height: 42px;
 }
