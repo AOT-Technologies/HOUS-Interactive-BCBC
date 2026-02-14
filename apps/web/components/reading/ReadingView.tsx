@@ -19,7 +19,9 @@ import type { ReadingViewProps } from '@repo/data';
 import type { Subsection, Article } from '@bc-building-code/bcbc-parser';
 import { useSectionStore } from '../../lib/stores/section-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
+import { useEquationStore } from '../../stores/equation-store';
 import { parseContentPath } from '../../lib/url-utils';
+import { resolveSectionForEffectiveDate } from '../../lib/revision-resolver';
 import { SectionRenderer } from './SectionRenderer';
 import { ReadingViewHeader } from './ReadingViewHeader';
 import { PartRenderer } from './PartRenderer';
@@ -89,6 +91,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const requestedSectionKey = slug.slice(0, 3).join('/');
   const loadedSectionKey = currentPath.slice(0, 3).join('/');
   const isRequestedSectionLoaded = Boolean(currentSection) && loadedSectionKey === requestedSectionKey;
+  const resolvedSection = useMemo(
+    () => (currentSection ? resolveSectionForEffectiveDate(currentSection, effectiveDate) : null),
+    [currentSection, effectiveDate]
+  );
 
   // Create stable slug key for useEffect dependencies
   const slugKey = slug.join('/');
@@ -132,7 +138,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     }
 
     const subsectionNumber = path[3];
-    const subsection = section.subsections.find((sub) => sub.number === subsectionNumber);
+    const subsection = section.subsections.find(
+      (sub) => String(sub.number) === String(subsectionNumber)
+    );
 
     // /code/{division}/{part}/{section}/{subsection}
     if (path.length === 4) {
@@ -141,7 +149,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
     // /code/{division}/{part}/{section}/{subsection}/{article}
     const articleNumber = path[4];
-    const article = subsection?.articles.find((art) => art.number === articleNumber);
+    const article = subsection?.articles.find(
+      (art) => String(art.number) === String(articleNumber)
+    );
     return { mode: 'article', subsection, article };
   };
 
@@ -221,6 +231,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
     loadContent();
   }, [slugKey, version, fetchSection, isSectionLevelOrDeeper]);
+
+  // Preload equation map for [EQ:*:*] marker resolution in content text.
+  useEffect(() => {
+    useEquationStore.getState().loadEquationMap().catch((error) => {
+      console.error('Failed to load equation map:', error);
+    });
+  }, [version]);
 
   const renderLoadingSkeleton = (message: string = 'Loading content...') => (
     <div className="reading-view">
@@ -320,11 +337,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }
 
   // No content state
-  if (!currentSection) {
+  if (!resolvedSection) {
     return renderLoadingSkeleton();
   }
 
-  const subtree = getSubtreeForSlug(currentSection, slug);
+  const subtree = getSubtreeForSlug(resolvedSection, slug);
 
   if (subtree.mode === 'subsection' && !subtree.subsection) {
     return (
@@ -349,7 +366,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }
 
   // Render content
-  const sectionPdfLabel = `${divisionLabel} - ${currentSection.number} ${currentSection.title} PDF`;
+  const sectionPdfLabel = `${divisionLabel} - ${resolvedSection.number} ${resolvedSection.title} PDF`;
 
   return (
     <div className="reading-view" ref={contentContainerRef}>
@@ -357,8 +374,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       
       <div className="reading-view__content">
         {subtree.mode === 'section' && (
-          <SectionRenderer
-            section={currentSection}
+            <SectionRenderer
+            section={resolvedSection}
             partNumber={slug[1]}
             effectiveDate={effectiveDate}
             interactive={true}
@@ -368,7 +385,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           <div className="sectionRenderer">
             <SubsectionBlock
               subsection={subtree.subsection}
-              sectionNumberPrefix={`${slug[1]}.${currentSection.number}`}
+              sectionNumberPrefix={`${slug[1]}.${resolvedSection.number}`}
               effectiveDate={effectiveDate}
               interactive={true}
             />
@@ -378,7 +395,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           <div className="sectionRenderer">
             <ArticleBlock
               article={subtree.article}
-              subsectionNumberPrefix={`${slug[1]}.${currentSection.number}.${subtree.subsection!.number}`}
+              subsectionNumberPrefix={`${slug[1]}.${resolvedSection.number}.${subtree.subsection!.number}`}
               effectiveDate={effectiveDate}
               interactive={true}
             />

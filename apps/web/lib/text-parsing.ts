@@ -12,20 +12,27 @@
  * Requirements: 11.1, 12.1, 21.10, 21.11, 21.12, 21.13, 21.14
  */
 
+'use client';
+
 import React from 'react';
 import { GlossaryTerm } from '../components/reading/GlossaryTerm';
 import { NoteReference } from '../components/reading/NoteReference';
+import { EquationBlock } from '../components/reading/EquationBlock';
+import { useEquationStore } from '../stores/equation-store';
 
 /**
  * Marker type for internal tracking
  */
 interface Marker {
-  type: 'glossary' | 'crossref' | 'note';
+  type: 'glossary' | 'crossref' | 'note' | 'tableNote' | 'equation';
   start: number;
   end: number;
   termId?: string;
   referenceId?: string;
   noteId?: string;
+  tableNoteId?: string;
+  equationId?: string;
+  equationType?: 'display' | 'inline';
   format?: InternalRefFormat;
 }
 
@@ -35,6 +42,91 @@ interface GlossaryDisplay {
   text: string;
   consumed: number;
 }
+
+export interface TextEquationEntry {
+  id: string;
+  type?: 'display' | 'inline' | string;
+  latex?: string;
+  plainText?: string;
+  mathml?: string;
+  htmlSrc?: string;
+  image?: string;
+  imageSrc?: string;
+}
+
+function toRenderableEquation(
+  equation: TextEquationEntry,
+  fallbackType: 'display' | 'inline'
+): React.ComponentProps<typeof EquationBlock>['equation'] {
+  const preferredType = equation.type === 'inline' ? 'inline' : 'display';
+  const display = preferredType === 'inline' ? 'inline' : 'block';
+
+  return {
+    id: equation.id,
+    type: 'equation',
+    number: equation.id,
+    latex: equation.latex || equation.plainText || '',
+    description: equation.plainText,
+    plainText: equation.plainText,
+    mathml: equation.mathml,
+    htmlSrc: equation.htmlSrc,
+    image: equation.image,
+    imageSrc: equation.imageSrc,
+    display: fallbackType === 'inline' ? 'inline' : display,
+  };
+}
+
+function getNoteLabel(noteId: string): string {
+  const normalized = noteId.trim();
+  const match = normalized.match(/(?:title)?note(\d+)$/i);
+  if (match) {
+    return `(${match[1]})`;
+  }
+
+  return `(${normalized.split('.').pop() || normalized})`;
+}
+
+function sanitizeLegacyPlaceholderTags(text: string): string {
+  // Legacy source uses <>...</> placeholders for inline emphasis.
+  // Render as plain text by stripping these wrapper tokens.
+  return text.replace(/<>/g, '').replace(/<\/>/g, '');
+}
+
+const GLOSSARY_SECOND_WORD_STOPWORDS = new Set([
+  'shall',
+  'must',
+  'may',
+  'can',
+  'will',
+  'is',
+  'are',
+  'was',
+  'were',
+  'be',
+  'being',
+  'been',
+  'have',
+  'has',
+  'had',
+  'do',
+  'does',
+  'did',
+  'to',
+  'of',
+  'and',
+  'or',
+  'in',
+  'on',
+  'by',
+  'with',
+  'for',
+  'from',
+  'that',
+  'this',
+  'these',
+  'those',
+  'as',
+]);
 
 function toAlphabetOrdinal(value: number): string {
   if (value <= 0 || Number.isNaN(value)) return String(value);
@@ -100,11 +192,22 @@ function getGlossaryDisplayText(
   termId: string
 ): GlossaryDisplay {
   const remaining = fullText.slice(markerEnd);
-  const immediateTermMatch = remaining.match(/^([A-Za-z][A-Za-z0-9'./-]*)/);
+  const immediateTermMatch = remaining.match(
+    /^([A-Za-z][A-Za-z0-9'./-]*)(?:\s+([A-Za-z][A-Za-z0-9'./-]*))?/
+  );
 
   if (immediateTermMatch) {
-    const display = immediateTermMatch[1];
-    return { text: display, consumed: display.length };
+    const firstWord = immediateTermMatch[1];
+    const secondWord = immediateTermMatch[2];
+
+    if (secondWord && !GLOSSARY_SECOND_WORD_STOPWORDS.has(secondWord.toLowerCase())) {
+      return {
+        text: `${firstWord} ${secondWord}`,
+        consumed: firstWord.length + 1 + secondWord.length,
+      };
+    }
+
+    return { text: firstWord, consumed: firstWord.length };
   }
 
   // Fallback for malformed source where marker is not immediately followed by term text.
@@ -384,16 +487,25 @@ export function parseTextWithNotes(
 export function parseTextWithMarkers(
   text: string,
   _glossaryTerms: string[] = [],
-  interactive: boolean = true
+  interactive: boolean = true,
+  localEquations: TextEquationEntry[] = []
 ): React.ReactNode[] {
+  const sanitizedText = sanitizeLegacyPlaceholderTags(text);
   const nodes: React.ReactNode[] = [];
   const markers: Marker[] = [];
+  const getEquation = useEquationStore.getState().getEquation;
+  const localEquationById = new Map(
+    localEquations
+      .filter((equation) => typeof equation.id === 'string' && equation.id.trim().length > 0)
+      .map((equation) => [equation.id.trim().toLowerCase(), equation] as const)
+  );
+  const consumedLocalEquationIds = new Set<string>();
   
   // Find all glossary term markers
   const glossaryRegex = /\[REF:term:([^\]]+)\]/g;
   let match: RegExpExecArray | null;
   
-  while ((match = glossaryRegex.exec(text)) !== null) {
+  while ((match = glossaryRegex.exec(sanitizedText)) !== null) {
     markers.push({
       type: 'glossary',
       start: match.index,
@@ -407,7 +519,7 @@ export function parseTextWithMarkers(
   // as regular cross-references (e.g., "Note A-2.1.1.2.(6).").
   const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)\]/gi;
   
-  while ((match = noteRegex.exec(text)) !== null) {
+  while ((match = noteRegex.exec(sanitizedText)) !== null) {
     markers.push({
       type: 'note',
       start: match.index,
@@ -416,11 +528,24 @@ export function parseTextWithMarkers(
       format: match[2] as 'short' | 'long',
     });
   }
+
+  // Find table note markers.
+  // Example: [REF:table-note:nbc.divB.part3.sect1.subsect3.art1.table1.note2]
+  const tableNoteRegex = /\[REF:table-note:([^\]]+)\]/gi;
+
+  while ((match = tableNoteRegex.exec(sanitizedText)) !== null) {
+    markers.push({
+      type: 'tableNote',
+      start: match.index,
+      end: tableNoteRegex.lastIndex,
+      tableNoteId: match[1],
+    });
+  }
   
   // Find all cross-reference markers (with optional display format suffix)
   const crossRefRegex = /\[REF:internal:([^\]:]+)(?::([a-zA-Z]+))?\]/g;
   
-  while ((match = crossRefRegex.exec(text)) !== null) {
+  while ((match = crossRefRegex.exec(sanitizedText)) !== null) {
     // Check if this position is already occupied by a note marker
     const isNoteMarker = markers.some(
       m => m.type === 'note' && m.start === match!.index
@@ -436,6 +561,20 @@ export function parseTextWithMarkers(
       });
     }
   }
+
+  // Find equation markers.
+  // Examples: [EQ:display:es007867q1], [EQ:inline:eg02643a], [EQ:display:]
+  const equationRegex = /\[EQ:(display|inline)(?::([^\]]*))?\]/gi;
+
+  while ((match = equationRegex.exec(sanitizedText)) !== null) {
+    markers.push({
+      type: 'equation',
+      start: match.index,
+      end: equationRegex.lastIndex,
+      equationType: (match[1]?.toLowerCase() === 'inline' ? 'inline' : 'display'),
+      equationId: (match[2] || '').trim() || undefined,
+    });
+  }
   
   // Sort markers by position to maintain source order
   markers.sort((a, b) => a.start - b.start);
@@ -446,14 +585,14 @@ export function parseTextWithMarkers(
   for (const marker of markers) {
     // Add plain text before the marker
     if (marker.start > lastIndex) {
-      nodes.push(text.substring(lastIndex, marker.start));
+      nodes.push(sanitizedText.substring(lastIndex, marker.start));
     }
     
     // Add the appropriate component based on marker type
     switch (marker.type) {
       case 'glossary': {
         const glossaryDisplay = getGlossaryDisplayText(
-          text,
+          sanitizedText,
           marker.end,
           marker.termId!
         );
@@ -493,7 +632,7 @@ export function parseTextWithMarkers(
       
       case 'note': {
         const displayText = marker.format === 'short' 
-          ? `(${marker.noteId!.split('.').pop()})` 
+          ? getNoteLabel(marker.noteId!)
           : marker.noteId!;
         
         nodes.push(
@@ -506,6 +645,56 @@ export function parseTextWithMarkers(
         );
         break;
       }
+
+      case 'tableNote': {
+        nodes.push(
+          React.createElement(NoteReference, {
+            key: `table-note-${marker.start}`,
+            referenceId: marker.tableNoteId!,
+            text: getNoteLabel(marker.tableNoteId!),
+            interactive,
+          })
+        );
+        break;
+      }
+
+      case 'equation': {
+        const markerType = marker.equationType === 'inline' ? 'inline' : 'display';
+        const markerId = marker.equationId?.toLowerCase();
+
+        let equation: TextEquationEntry | undefined;
+
+        if (markerId) {
+          equation = localEquationById.get(markerId) || getEquation(markerId);
+          if (equation?.id) {
+            consumedLocalEquationIds.add(equation.id.toLowerCase());
+          }
+        } else {
+          equation = localEquations.find(
+            (candidate) =>
+              typeof candidate.id === 'string' &&
+              candidate.id.trim().length > 0 &&
+              !consumedLocalEquationIds.has(candidate.id.toLowerCase())
+          );
+          if (equation?.id) {
+            consumedLocalEquationIds.add(equation.id.toLowerCase());
+          }
+        }
+
+        if (!equation) {
+          break;
+        }
+
+        nodes.push(
+          React.createElement(EquationBlock, {
+            key: `equation-${marker.start}`,
+            equation: toRenderableEquation(equation, markerType),
+            variant: 'marker',
+            displayMode: markerType === 'inline' ? 'inline' : 'block',
+          })
+        );
+        break;
+      }
     }
     
     if (marker.type !== 'glossary') {
@@ -514,13 +703,13 @@ export function parseTextWithMarkers(
   }
   
   // Add remaining text after last marker
-  if (lastIndex < text.length) {
-    nodes.push(text.substring(lastIndex));
+  if (lastIndex < sanitizedText.length) {
+      nodes.push(sanitizedText.substring(lastIndex));
   }
   
   // If no markers found, return the original text
   if (nodes.length === 0) {
-    nodes.push(text);
+    nodes.push(sanitizedText);
   }
   
   return nodes;

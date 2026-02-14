@@ -90,7 +90,11 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
     
     case 'table':
       return withSourceIndicator(
-        <TableBlock table={node as Table} interactive={interactive} />
+        <TableBlock
+          table={node as Table}
+          interactive={interactive}
+          effectiveDate={effectiveDate}
+        />
       );
     
     case 'figure':

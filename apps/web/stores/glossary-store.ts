@@ -48,7 +48,27 @@ export const useGlossaryStore = create<GlossaryStore>()(
 
       getTerm: (term) => {
         const { glossaryMap } = get();
-        return glossaryMap.get(term.toLowerCase());
+        const normalized = term.toLowerCase().trim();
+
+        const direct = glossaryMap.get(normalized);
+        if (direct) return direct;
+
+        // Basic singular fallback for content text like "systems" vs glossary "system".
+        if (normalized.endsWith('s')) {
+          const singular = glossaryMap.get(normalized.slice(0, -1));
+          if (singular) return singular;
+        }
+
+        // Defensive fallback for data where marker IDs and glossary IDs diverge:
+        // match by leading glossary term words (e.g., "plumbing" -> "plumbing system").
+        for (const entry of glossaryMap.values()) {
+          const entryTerm = entry.term?.toLowerCase().trim();
+          if (!entryTerm) continue;
+          if (entryTerm === normalized) return entry;
+          if (entryTerm.startsWith(`${normalized} `)) return entry;
+        }
+
+        return undefined;
       },
 
       loadGlossary: async () => {

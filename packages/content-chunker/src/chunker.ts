@@ -14,6 +14,41 @@ export interface ContentChunk {
 }
 
 /**
+ * Minimal raw source shape used for preserving sections during chunking.
+ */
+export interface RawDocumentForChunking {
+  volumes?: RawVolume[];
+}
+
+interface RawVolume {
+  divisions?: RawDivision[];
+}
+
+interface RawDivision {
+  id: string;
+  parts?: RawPart[];
+}
+
+interface RawPart {
+  number: string | number;
+  sections?: RawSection[];
+}
+
+interface RawSection {
+  number: string | number;
+  [key: string]: unknown;
+}
+
+/**
+ * Content chunk where data is the raw section object from source JSON.
+ */
+export interface RawContentChunk {
+  path: string;
+  data: RawSection;
+  size: number;
+}
+
+/**
  * Split BCBC content into optimized chunks by section
  * 
  * Each chunk contains a complete section with all subsections and articles.
@@ -42,6 +77,35 @@ export function chunkContent(document: BCBCDocument): ContentChunk[] {
         const size = JSON.stringify(data).length;
 
         chunks.push({ path, data, size });
+      }
+    }
+  }
+
+  return chunks;
+}
+
+/**
+ * Split raw BCBC source JSON into section chunks without parsing/transformation.
+ *
+ * Each chunk copies the original section object exactly as found in source data.
+ */
+export function chunkRawContent(document: RawDocumentForChunking): RawContentChunk[] {
+  const chunks: RawContentChunk[] = [];
+  const volumes = document.volumes ?? [];
+
+  for (const volume of volumes) {
+    for (const division of volume.divisions ?? []) {
+      for (const part of division.parts ?? []) {
+        for (const section of part.sections ?? []) {
+          const path = generateChunkPath(
+            division.id,
+            String(part.number),
+            String(section.number)
+          );
+          const size = JSON.stringify(section).length;
+
+          chunks.push({ path, data: section, size });
+        }
       }
     }
   }

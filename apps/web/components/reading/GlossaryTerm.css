@@ -22,7 +22,6 @@
 
 .glossary-term--interactive:hover {
   text-decoration-style: solid;
-  z-index: 2000;
 }
 
 .glossary-term--interactive:focus-visible {
@@ -49,11 +48,6 @@
 
 /* Tooltip styles - desktop only */
 .glossary-tooltip {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 8px;
   padding: 12px 16px;
   background-color: #313132;
   color: #ffffff;
@@ -63,10 +57,14 @@
   font-style: normal;
   font-size: 0.875rem;
   line-height: 1.4;
-  z-index: 9999;
+  z-index: 2147483000;
   box-shadow: var(--surface-shadow-medium, 0 4px 12px rgba(0, 0, 0, 0.15));
   pointer-events: none;
   white-space: normal;
+}
+
+.glossary-tooltip--portal {
+  position: fixed;
 }
 
 .glossary-tooltip::after {
@@ -77,6 +75,13 @@
   transform: translateX(-50%);
   border: 6px solid transparent;
   border-top-color: #313132;
+}
+
+.glossary-tooltip--bottom::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: #313132;
 }
 
 .glossary-tooltip__term {

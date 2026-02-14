@@ -39,14 +39,19 @@ export default function HomeSidebarContent() {
   const { selectedDate, setSelectedDate, initializeFromUrl } = useAmendmentDateStore();
   const [allDates, setAllDates] = useState<AmendmentDate[]>([]);
   const [localSearchValue, setLocalSearchValue] = useState('');
+  const [hasMounted, setHasMounted] = useState(false);
   
   // Track if this is the initial load vs a version change
   const isInitialLoad = useRef(true);
   const previousVersion = useRef<string | null>(null);
   
   // Get current version details
-  const currentVersionData = getVersion(currentVersion || undefined);
+  const currentVersionData = hasMounted ? getVersion(currentVersion || undefined) : undefined;
   const versionYear = currentVersionData?.year || 2024;
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   // Initialize date from URL on first mount
   useEffect(() => {
@@ -140,7 +145,7 @@ export default function HomeSidebarContent() {
       <div className="home-sidebar-header">
         <h2 className="home-sidebar-title">BC Building Code</h2>
         <p className="home-sidebar-description">
-          {versionYear} Consolidated code version including all active revisions and errata
+          {hasMounted ? `${versionYear} ` : ''}Consolidated code version including all active revisions and errata
         </p>
         
         {/* Version Selector - Position 1 */}

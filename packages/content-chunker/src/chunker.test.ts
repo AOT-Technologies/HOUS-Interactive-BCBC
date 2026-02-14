@@ -3,7 +3,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { chunkContent, generateChunkPath, isOptimalChunkSize, getChunkStats } from './chunker';
+import { chunkContent, chunkRawContent, generateChunkPath, isOptimalChunkSize, getChunkStats } from './chunker';
 import type { BCBCDocument } from '@bc-building-code/bcbc-parser';
 
 describe('chunkContent', () => {
@@ -99,6 +99,77 @@ describe('chunkContent', () => {
 
     expect(chunks[0].size).toBeGreaterThan(0);
     expect(typeof chunks[0].size).toBe('number');
+  });
+});
+
+describe('chunkRawContent', () => {
+  it('should preserve raw section objects without stripping table revisions', () => {
+    const mockRawDocument = {
+      volumes: [
+        {
+          divisions: [
+            {
+              id: 'nbc.divB',
+              parts: [
+                {
+                  number: 3,
+                  sections: [
+                    {
+                      id: 'nbc.divB.part3.sect1',
+                      number: 1,
+                      type: 'section',
+                      subsections: [
+                        {
+                          id: 'sub-1',
+                          type: 'subsection',
+                          number: 1,
+                          articles: [
+                            {
+                              id: 'art-1',
+                              type: 'article',
+                              number: 1,
+                              content: [
+                                {
+                                  id: 'table-1',
+                                  type: 'table',
+                                  revised: true,
+                                  structure: { columns: null, body_rows: [] },
+                                  revisions: [
+                                    {
+                                      type: 'original',
+                                      effective_date: '2020-12-01',
+                                      title: 'Original table title',
+                                    },
+                                  ],
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+
+    const chunks = chunkRawContent(mockRawDocument);
+
+    expect(chunks).toHaveLength(1);
+    expect(chunks[0].path).toBe('content/nbc-divb/part-3/section-1.json');
+
+    const tableNode = (chunks[0].data.subsections as any[])[0]
+      .articles[0]
+      .content[0];
+
+    expect(tableNode.revised).toBe(true);
+    expect(tableNode.structure).toEqual({ columns: null, body_rows: [] });
+    expect(tableNode.revisions).toHaveLength(1);
+    expect(tableNode.revisions[0].effective_date).toBe('2020-12-01');
   });
 });
 

@@ -7,11 +7,12 @@
 // Export chunker functions
 export {
   chunkContent,
+  chunkRawContent,
   generateChunkPath,
   isOptimalChunkSize,
   getChunkStats,
 } from './chunker';
-export type { ContentChunk } from './chunker';
+export type { ContentChunk, RawContentChunk, RawDocumentForChunking } from './chunker';
 
 // Export metadata extractor functions
 export {

@@ -65,6 +65,37 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
     [searchParams]
   );
 
+  const scrollExpandedChildrenIntoView = useCallback((triggerElement: HTMLElement) => {
+    if (!treeRef.current) {
+      return;
+    }
+
+    const treeElement = treeRef.current;
+
+    // Wait until the expanded children are rendered before measuring.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const treeItem = triggerElement.closest('.nav-tree-item') as HTMLElement | null;
+        const childrenContainer = treeItem?.querySelector(':scope > .nav-tree-children') as HTMLElement | null;
+
+        if (!childrenContainer) {
+          return;
+        }
+
+        const treeRect = treeElement.getBoundingClientRect();
+        const childrenRect = childrenContainer.getBoundingClientRect();
+
+        const overflowBottom = childrenRect.bottom - treeRect.bottom;
+        if (overflowBottom > 0) {
+          treeElement.scrollBy({
+            top: overflowBottom + 12,
+            behavior: 'smooth',
+          });
+        }
+      });
+    });
+  }, []);
+
   /**
    * Scroll to active node when current path changes
    */
@@ -93,21 +124,23 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
     }
   }, [currentPath]);
 
-  /**
-   * Handle node click - toggle expansion and navigate
-   */
-  const handleNodeClick = useCallback(
-    (node: NavigationNode, event: React.MouseEvent) => {
-      event.preventDefault();
+  const handleNodeAction = useCallback(
+    (node: NavigationNode, triggerElement?: HTMLElement) => {
       const isNavigable =
         node.type === 'part' ||
         node.type === 'section' ||
         node.type === 'subsection' ||
         node.type === 'article';
+      const wasExpanded = expandedNodes.has(node.id);
       
       // Toggle expansion if node has children
       if (node.children && node.children.length > 0) {
         toggleNode(node.id);
+
+        // If expanding near the bottom of the scroll area, keep new children visible.
+        if (!wasExpanded && triggerElement) {
+          scrollExpandedChildrenIntoView(triggerElement);
+        }
       }
       
       // Only part and deeper levels are routable content pages.
@@ -134,25 +167,37 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
         onNodeClick(node);
       }
     },
-    [toggleNode, setCurrentPath, buildTargetUrl, pathname, router, onNodeClick]
+    [toggleNode, setCurrentPath, buildTargetUrl, pathname, router, onNodeClick, expandedNodes, scrollExpandedChildrenIntoView]
+  );
+
+  /**
+   * Handle node click - toggle expansion and navigate
+   */
+  const handleNodeClick = useCallback(
+    (node: NavigationNode, event: React.MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      handleNodeAction(node, event.currentTarget);
+    },
+    [handleNodeAction]
   );
 
   /**
    * Handle keyboard navigation
    */
   const handleKeyDown = useCallback(
-    (node: NavigationNode, event: React.KeyboardEvent) => {
+    (node: NavigationNode, event: React.KeyboardEvent<HTMLButtonElement>) => {
       switch (event.key) {
         case 'Enter':
         case ' ':
           event.preventDefault();
-          handleNodeClick(node, event as any);
+          handleNodeAction(node, event.currentTarget);
           break;
         case 'ArrowRight':
           // Expand node if it has children and is collapsed
           if (node.children && node.children.length > 0 && !expandedNodes.has(node.id)) {
             event.preventDefault();
             toggleNode(node.id);
+            scrollExpandedChildrenIntoView(event.currentTarget);
           }
           break;
         case 'ArrowLeft':
@@ -164,7 +209,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
           break;
       }
     },
-    [handleNodeClick, expandedNodes, toggleNode]
+    [handleNodeAction, expandedNodes, toggleNode, scrollExpandedChildrenIntoView]
   );
 
   /**

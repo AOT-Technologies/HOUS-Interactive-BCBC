@@ -9,14 +9,15 @@
 }
 
 .equation-block--inline {
-  display: inline;
+  display: inline-flex;
+  align-items: baseline;
   margin: 0;
 }
 
 .equation-block--block {
   display: block;
   text-align: center;
-  margin: var(--layout-margin-large, 1.5rem) 0;
+  margin: 1.25rem auto 1.1rem auto;
 }
 
 .equation-block__content {
@@ -25,18 +26,108 @@
   line-height: 1.6;
 }
 
-.equation-block__image {
+.equation-block__mathml {
   max-width: 100%;
+  overflow-x: auto;
+}
+
+.equation-block__mathml math {
+  font-family: 'Cambria Math', 'STIX Two Math', 'Times New Roman', serif;
+  color: var(--typography-color-primary, #313132);
+}
+
+.equation-block--block .equation-block__mathml math {
+  display: block;
+  margin: 0 auto;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  line-height: 1.15;
+}
+
+.equation-block--block .equation-block__mathml mjx-container[jax='CHTML'] {
+  display: block;
+  margin: 0 auto;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+}
+
+.equation-block--block .equation-block__mathml mjx-container[jax='SVG'] {
+  display: block;
+  margin: 0 auto;
+}
+
+.equation-block--block .equation-block__mathml mjx-container[jax='SVG'] svg {
   height: auto;
-  vertical-align: middle;
+  max-width: 100%;
+}
+
+.equation-block--inline .equation-block__mathml math {
+  display: inline;
+  font-size: 1.05em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.equation-block--inline .equation-block__mathml mjx-container[jax='CHTML'] {
+  display: inline-block;
+  font-size: 1.05em;
+  vertical-align: baseline;
+}
+
+.equation-block--inline .equation-block__mathml mjx-container[jax='SVG'] {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.equation-block__mathml::-webkit-scrollbar {
+  height: 6px;
+}
+
+.equation-block__mathml::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
 }
 
 .equation-block__fallback {
-  font-family: monospace;
-  background-color: var(--surface-color-background-light-gray, #faf9f8);
-  padding: var(--layout-padding-small, 0.5rem);
-  border-radius: var(--layout-border-radius-small, 2px);
+  font-family: 'Cambria Math', 'STIX Two Math', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  color: var(--typography-color-primary, #313132);
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
   overflow-x: auto;
+  white-space: nowrap;
+}
+
+.equation-block--block .equation-block__fallback {
+  display: inline-block;
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  white-space: normal;
+}
+
+.equation-block__title {
+  margin-bottom: 0.6rem;
+  font: var(--typography-regular-small, 400 0.95rem/1.4 'BCSans', sans-serif);
+  color: var(--typography-color-secondary, #555);
+}
+
+.equation-block__description {
+  margin-top: 0.55rem;
+  font: var(--typography-regular-small, 400 0.95rem/1.4 'BCSans', sans-serif);
+  color: var(--typography-color-secondary, #555);
+}
+
+.sentenceText .equation-block--block,
+.clauseText .equation-block--block,
+.subclauseText .equation-block--block {
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.sentenceText .equation-block--inline,
+.clauseText .equation-block--inline,
+.subclauseText .equation-block--inline {
+  margin-left: 0.15rem;
+  margin-right: 0.15rem;
+  max-width: 100%;
 }
 
 /* Screen reader only text */

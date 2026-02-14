@@ -31,6 +31,9 @@ export type {
 export { useGlossaryStore } from './glossary-store';
 export type { GlossaryEntry } from './glossary-store';
 
+export { useEquationStore } from './equation-store';
+export type { EquationEntry } from './equation-store';
+
 export { useAmendmentDateStore } from './amendment-date-store';
 export type { AmendmentDate } from './amendment-date-store';
 

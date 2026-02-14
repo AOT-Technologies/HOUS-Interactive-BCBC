@@ -210,24 +210,41 @@
             "columns": {
               "type": ["number", "null"]
             },
+            "colsep": {
+              "type": "string"
+            },
+            "rowsep": {
+              "type": "string"
+            },
+            "column_specs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {"type": "string"},
+                  "width": {"type": "string"}
+                }
+              }
+            },
             "header_rows": {
               "type": "array",
               "items": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/table_entry"
-                }
+                "$ref": "#/definitions/table_row"
               }
             },
             "body_rows": {
               "type": "array",
               "items": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/table_entry"
-                }
+                "$ref": "#/definitions/table_row"
               }
             }
+          }
+        },
+        "table_notes": {
+          "type": "array",
+          "description": "Resolved table note objects keyed by note ID",
+          "items": {
+            "$ref": "#/definitions/table_note"
           }
         },
         "graphic": {
@@ -528,20 +545,14 @@
             "header_rows": {
               "type": "array",
               "items": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/table_entry"
-                }
+                "$ref": "#/definitions/table_row"
               },
               "description": "Header rows with column titles"
             },
             "body_rows": {
               "type": "array",
               "items": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/table_entry"
-                }
+                "$ref": "#/definitions/table_row"
               },
               "description": "Body rows with conversion factors"
             }
@@ -957,7 +968,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Equation identifier (xml:id or image reference as fallback)"
+          "description": "Equation identifier (xml:id, image reference, or html source filename fallback)"
         },
         "type": {
           "type": "string",
@@ -976,13 +987,17 @@
           "type": "string",
           "description": "Full MathML XML serialization for precise mathematical semantics"
         },
+        "htmlSrc": {
+          "type": "string",
+          "description": "Path to equation HTML file for rendering (e.g., 'graphics/eg/025/eg02506a.html')"
+        },
         "image": {
           "type": "string",
-          "description": "Image reference identifier (e.g., 'eg02764a')"
+          "description": "Legacy image reference identifier (e.g., 'eg02764a')"
         },
         "imageSrc": {
           "type": "string",
-          "description": "Path to equation image file for fallback rendering (e.g., 'graphics/eg02764a.eps')"
+          "description": "Legacy EPS equation path for backward compatibility (e.g., 'graphics/eg02764a.eps')"
         }
       }
     },
@@ -997,6 +1012,9 @@
           "type": "string",
           "const": "table"
         },
+        "frame": {
+          "type": "string"
+        },
         "deleted": {
           "type": "boolean",
           "description": "Indicates if this table has been deleted (true when deleted='yes' attribute is present)"
@@ -1004,12 +1022,25 @@
         "title": {
           "type": "string"
         },
+        "table_notes": {
+          "type": "array",
+          "description": "Resolved table note objects keyed by note ID",
+          "items": {
+            "$ref": "#/definitions/table_note"
+          }
+        },
         "structure": {
           "type": "object",
           "required": ["body_rows"],
           "properties": {
             "columns": {
               "type": ["number", "null"]
+            },
+            "colsep": {
+              "type": "string"
+            },
+            "rowsep": {
+              "type": "string"
             },
             "column_specs": {
               "type": "array",
@@ -1024,22 +1055,51 @@
             "header_rows": {
               "type": "array",
               "items": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/table_entry"
-                }
+                "$ref": "#/definitions/table_row"
               }
             },
             "body_rows": {
               "type": "array",
               "items": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/table_entry"
-                }
+                "$ref": "#/definitions/table_row"
               }
             }
           }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    },
+    "table_row": {
+      "type": "object",
+      "required": ["id", "type", "cells"],
+      "description": "A row in a table (header or body)",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the row"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["header_row", "body_row"],
+          "description": "Type of row"
+        },
+        "valign": {
+          "type": "string"
+        },
+        "rowsep": {
+          "type": "string"
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/table_entry"
+          },
+          "description": "Cells in this row"
         },
         "revisions": {
           "type": "array",
@@ -1054,11 +1114,33 @@
       "required": ["content"],
       "properties": {
         "content": {
-          "type": "string"
+          "type": "array",
+          "description": "Array of content items (text or figures) in the cell",
+          "items": {
+            "$ref": "#/definitions/cell_content_item"
+          }
         },
         "align": {
           "type": "string",
           "enum": ["left", "center", "right", "justify", "char"]
+        },
+        "valign": {
+          "type": "string"
+        },
+        "colsep": {
+          "type": "string"
+        },
+        "rowsep": {
+          "type": "string"
+        },
+        "colname": {
+          "type": "string"
+        },
+        "namest": {
+          "type": "string"
+        },
+        "nameend": {
+          "type": "string"
         },
         "rowspan": {
           "type": "number",
@@ -1075,6 +1157,82 @@
           }
         }
       }
+    },
+    "table_note": {
+      "type": "object",
+      "required": ["id", "content"],
+      "properties": {
+        "id": {"type": "string"},
+        "vendor_id": {"type": "string"},
+        "content": {"type": "string"}
+      }
+    },
+    "cell_content_item": {
+      "type": "object",
+      "required": ["type"],
+      "description": "Content item in a table cell - either text or figure",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["type", "value"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "text"
+            },
+            "value": {
+              "type": "string",
+              "description": "Text content of the cell"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["type", "id", "graphic"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "figure"
+            },
+            "id": {
+              "type": "string",
+              "description": "Unique identifier for the figure"
+            },
+            "source": {
+              "type": "string",
+              "enum": ["bc", "nbc"],
+              "description": "Source of the figure (BC amendment or original NBC)"
+            },
+            "title": {
+              "type": "string",
+              "description": "Figure title/caption"
+            },
+            "graphic": {
+              "type": "object",
+              "required": ["src"],
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "description": "Path to the graphic file"
+                },
+                "alt_text": {
+                  "type": "string",
+                  "description": "Alternative text for accessibility"
+                },
+                "width": {
+                  "type": "string",
+                  "description": "Width of the graphic"
+                },
+                "height": {
+                  "type": "string",
+                  "description": "Height of the graphic"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "figure": {
       "type": "object",

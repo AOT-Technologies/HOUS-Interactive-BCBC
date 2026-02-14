@@ -28,23 +28,18 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
   interactive = true,
   parentHasBcSource = false,
 }) => {
-  // Apply effective date filtering if date is provided
-  const filteredClause = effectiveDate 
-    ? filterClause(clause, effectiveDate)
-    : clause;
-  
-  // If clause is deleted on this date, don't render
-  if (!filteredClause) {
-    return null;
-  }
-  
+  const filteredClause = effectiveDate ? filterClause(clause, effectiveDate) : clause;
+  if (!filteredClause) return null;
+
+  const clauseEquations = (filteredClause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
+
   return (
     <div className="clauseBlock">
       <span className="clauseNumber">{filteredClause.number})</span>
       <div className="clauseContent">
-        <p className="clauseText">
-          {parseTextWithMarkers(filteredClause.text, filteredClause.glossaryTerms, interactive)}
-        </p>
+        <div className="clauseText">
+          {parseTextWithMarkers(filteredClause.text, filteredClause.glossaryTerms || [], interactive, clauseEquations)}
+        </div>
         
         {/* Render nested content (subclauses, tables, figures, equations) */}
         {filteredClause.content && filteredClause.content.length > 0 && (

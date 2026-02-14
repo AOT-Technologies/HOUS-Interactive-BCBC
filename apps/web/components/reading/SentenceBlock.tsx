@@ -28,23 +28,18 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
   interactive = true,
   parentHasBcSource = false,
 }) => {
-  // Apply effective date filtering if date is provided
-  const filteredSentence = effectiveDate 
-    ? filterSentence(sentence, effectiveDate)
-    : sentence;
-  
-  // If sentence is deleted on this date, don't render
-  if (!filteredSentence) {
-    return null;
-  }
-  
+  const filteredSentence = effectiveDate ? filterSentence(sentence, effectiveDate) : sentence;
+  if (!filteredSentence) return null;
+
+  const sentenceEquations = (filteredSentence as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
+
   return (
     <div className="sentenceBlock">
       <span className="sentenceNumber">{filteredSentence.number})</span>
       <div className="sentenceContent">
-        <p className="sentenceText">
-          {parseTextWithMarkers(filteredSentence.text, filteredSentence.glossaryTerms, interactive)}
-        </p>
+        <div className="sentenceText">
+          {parseTextWithMarkers(filteredSentence.text, filteredSentence.glossaryTerms || [], interactive, sentenceEquations)}
+        </div>
         
         {/* Render nested content (clauses, tables, figures, equations) */}
         {filteredSentence.content && filteredSentence.content.length > 0 && (

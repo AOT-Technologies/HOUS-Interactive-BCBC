@@ -35,7 +35,7 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
       
       {/* Render all content in source order using type-driven dispatcher */}
       <div className="articleContent">
-        {article.content.map((item, index) => (
+        {(article.content || []).map((item, index) => (
           <ContentRenderer 
             key={`${article.id}-content-${index}`}
             node={item}

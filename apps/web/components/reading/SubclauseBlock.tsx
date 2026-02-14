@@ -73,23 +73,18 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
   interactive = true,
   parentHasBcSource = false,
 }) => {
-  // Apply effective date filtering if date is provided
-  const filteredSubclause = effectiveDate 
-    ? filterSubclause(subclause, effectiveDate)
-    : subclause;
-  
-  // If subclause is deleted on this date, don't render
-  if (!filteredSubclause) {
-    return null;
-  }
-  
+  const filteredSubclause = effectiveDate ? filterSubclause(subclause, effectiveDate) : subclause;
+  if (!filteredSubclause) return null;
+
+  const subclauseEquations = (filteredSubclause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
+
   return (
     <div className="subclauseBlock">
       <span className="subclauseNumber">{formatSubclauseNumber(filteredSubclause.number)})</span>
       <div className="subclauseContent">
-        <p className="subclauseText">
-          {parseTextWithMarkers(filteredSubclause.text, filteredSubclause.glossaryTerms, interactive)}
-        </p>
+        <div className="subclauseText">
+          {parseTextWithMarkers(filteredSubclause.text, filteredSubclause.glossaryTerms || [], interactive, subclauseEquations)}
+        </div>
         
         {/* Render nested content (tables, figures, equations) */}
         {filteredSubclause.content && filteredSubclause.content.length > 0 && (

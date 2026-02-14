@@ -13,7 +13,8 @@
 
 'use client';
 
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect, useLayoutEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Icon from '@repo/ui/icon';
 import type { GlossaryTermProps } from '@repo/data';
 import { useGlossaryStore } from '../../stores/glossary-store';
@@ -26,8 +27,11 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
   interactive = true,
 }) => {
   const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
+  const [tooltipPlacement, setTooltipPlacement] = useState<'top' | 'bottom'>('top');
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const termRef = useRef<HTMLSpanElement>(null);
+  const tooltipRef = useRef<HTMLSpanElement>(null);
 
   const getTerm = useGlossaryStore((s) => s.getTerm);
   const loadGlossary = useGlossaryStore((s) => s.loadGlossary);
@@ -42,7 +46,7 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
     }
   }, [interactive, glossaryMap.size, loadGlossary]);
 
-  const definition = getTerm(termId);
+  const definition = getTerm(termId) ?? getTerm(text);
 
   const handleMouseEnter = useCallback(() => {
     if (!interactive || !definition) return;
@@ -90,6 +94,49 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
     };
   }, []);
 
+  const updateTooltipPosition = useCallback(() => {
+    if (!showTooltip || !termRef.current || !tooltipRef.current) return;
+
+    const spacing = 8;
+    const viewportPadding = 8;
+    const termRect = termRef.current.getBoundingClientRect();
+    const tooltipRect = tooltipRef.current.getBoundingClientRect();
+
+    let left = termRect.left + termRect.width / 2 - tooltipRect.width / 2;
+    left = Math.max(
+      viewportPadding,
+      Math.min(left, window.innerWidth - tooltipRect.width - viewportPadding)
+    );
+
+    const topPlacement = termRect.top - tooltipRect.height - spacing;
+    if (topPlacement >= viewportPadding) {
+      setTooltipPlacement('top');
+      setTooltipPosition({ top: topPlacement, left });
+      return;
+    }
+
+    const bottomPlacement = termRect.bottom + spacing;
+    setTooltipPlacement('bottom');
+    setTooltipPosition({ top: bottomPlacement, left });
+  }, [showTooltip]);
+
+  useLayoutEffect(() => {
+    if (!showTooltip) return;
+    updateTooltipPosition();
+  }, [showTooltip, updateTooltipPosition]);
+
+  useEffect(() => {
+    if (!showTooltip) return;
+
+    window.addEventListener('resize', updateTooltipPosition);
+    window.addEventListener('scroll', updateTooltipPosition, true);
+
+    return () => {
+      window.removeEventListener('resize', updateTooltipPosition);
+      window.removeEventListener('scroll', updateTooltipPosition, true);
+    };
+  }, [showTooltip, updateTooltipPosition]);
+
   // Non-interactive mode: plain italic text, no icon, no interactions
   if (!interactive) {
     return (
@@ -115,14 +162,22 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
         <Icon type="info" style={{ color: '#1A5A96' }} />
       </span>
       {text}
-      {showTooltip && definition && (
-        <span className="glossary-tooltip" role="tooltip">
-          <span className="glossary-tooltip__term">{definition.term}</span>
-          <span className="glossary-tooltip__definition">
-            {definition.definition}
+      {showTooltip && definition && typeof document !== 'undefined' &&
+        createPortal(
+          <span
+            ref={tooltipRef}
+            className={`glossary-tooltip glossary-tooltip--portal glossary-tooltip--${tooltipPlacement}`}
+            role="tooltip"
+            style={{ top: `${tooltipPosition.top}px`, left: `${tooltipPosition.left}px` }}
+          >
+            <span className="glossary-tooltip__term">{definition.term}</span>
+            <span className="glossary-tooltip__definition">
+              {definition.definition}
+            </span>
           </span>
-        </span>
-      )}
+          ,
+          document.body
+        )}
     </span>
   );
 };

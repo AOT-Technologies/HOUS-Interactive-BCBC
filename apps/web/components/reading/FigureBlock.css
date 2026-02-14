@@ -12,9 +12,16 @@
 }
 
 .figure-block__image {
-  max-width: 100%;
+  width: 50%;
+  max-width: 900px;
   height: auto;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .figure-block__image {
+    width: 100%;
+  }
 }
 
 .figure-block__caption {

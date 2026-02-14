@@ -44,10 +44,11 @@ import {
 
 // Import content chunker package
 import {
-  chunkContent,
+  chunkRawContent,
   extractMetadata,
   getChunkStats,
-  type ContentChunk,
+  type RawDocumentForChunking,
+  type RawContentChunk,
 } from '../packages/content-chunker/src/index.js';
 
 // Get directory paths
@@ -81,6 +82,17 @@ interface GeneratedVersionMetadata {
   revisionCount: number;
   latestRevision: string;
   dataPath: string;
+}
+
+interface EquationMapEntry {
+  id: string;
+  type: 'display' | 'inline' | string;
+  latex?: string;
+  plainText?: string;
+  mathml?: string;
+  htmlSrc?: string;
+  image?: string;
+  imageSrc?: string;
 }
 
 // ANSI color codes
@@ -300,6 +312,87 @@ async function generateSearchAssets(rawData: any, outputDir: string): Promise<{ 
   }
 }
 
+function buildEquationMap(rawData: unknown): Record<string, EquationMapEntry> {
+  const equationMap: Record<string, EquationMapEntry> = {};
+
+  const deriveHtmlSrc = (id: string, image?: string, imageSrc?: string, existingHtmlSrc?: string): string | undefined => {
+    if (typeof existingHtmlSrc === 'string' && existingHtmlSrc.trim()) {
+      return existingHtmlSrc.trim().replace(/\\/g, '/');
+    }
+
+    const candidate = (image || '').trim() || (typeof imageSrc === 'string' ? imageSrc.trim().split('/').pop()?.replace(/\.eps$/i, '') : '');
+    if (!candidate || !/^eg\d+[a-z0-9]*$/i.test(candidate)) {
+      return undefined;
+    }
+
+    const normalized = candidate.toLowerCase();
+    const group = normalized.slice(2, 5);
+    if (!/^\d{3}$/.test(group)) {
+      return undefined;
+    }
+
+    return `graphics/eg/${group}/${normalized}.html`;
+  };
+
+  const visit = (node: unknown): void => {
+    if (!node || typeof node !== 'object') return;
+
+    if (Array.isArray(node)) {
+      for (const child of node) {
+        visit(child);
+      }
+      return;
+    }
+
+    const record = node as Record<string, unknown>;
+    const equations = record.equations;
+
+    if (Array.isArray(equations)) {
+      for (const equation of equations) {
+        if (!equation || typeof equation !== 'object') continue;
+        const eq = equation as Record<string, unknown>;
+        const id = typeof eq.id === 'string' ? eq.id.trim() : '';
+        if (!id) continue;
+
+        const existing = equationMap[id];
+        const image = typeof eq.image === 'string' ? eq.image : existing?.image;
+        const imageSrc = typeof eq.imageSrc === 'string' ? eq.imageSrc : existing?.imageSrc;
+        const htmlSrc = deriveHtmlSrc(
+          id,
+          image,
+          imageSrc,
+          typeof eq.htmlSrc === 'string' ? eq.htmlSrc : existing?.htmlSrc
+        );
+
+        equationMap[id] = {
+          id,
+          type: typeof eq.type === 'string' ? eq.type : existing?.type || 'display',
+          latex: typeof eq.latex === 'string' ? eq.latex : existing?.latex,
+          plainText: typeof eq.plainText === 'string' ? eq.plainText : existing?.plainText,
+          mathml: typeof eq.mathml === 'string' ? eq.mathml : existing?.mathml,
+          htmlSrc,
+          image,
+          imageSrc,
+        };
+      }
+    }
+
+    for (const value of Object.values(record)) {
+      visit(value);
+    }
+  };
+
+  visit(rawData);
+  return equationMap;
+}
+
+async function generateEquationMap(rawData: unknown, outputDir: string): Promise<void> {
+  logger.info('Generating equation map...');
+  const equationMap = buildEquationMap(rawData);
+  await writeFile(join(outputDir, 'equation-map.json'), JSON.stringify(equationMap, null, 2));
+  logger.success(`Written equation-map.json (${Object.keys(equationMap).length} equations)`);
+}
+
 /**
  * Generate quick access and navigation tree
  */
@@ -344,7 +437,7 @@ async function generateQuickAccess(document: BCBCDocument, outputDir: string): P
 /**
  * Generate content chunks
  */
-async function generateContentChunks(document: BCBCDocument, outputDir: string): Promise<void> {
+async function generateContentChunks(rawData: RawDocumentForChunking, outputDir: string): Promise<void> {
   logger.info('Generating content chunks...');
   
   const startTime = Date.now();
@@ -353,7 +446,7 @@ async function generateContentChunks(document: BCBCDocument, outputDir: string):
     const contentDir = join(outputDir, 'content');
     await ensureDir(contentDir);
     
-    const chunks: ContentChunk[] = chunkContent(document);
+    const chunks: RawContentChunk[] = chunkRawContent(rawData);
     
     const stats = getChunkStats(chunks);
     logger.info(`Generated ${stats.totalChunks} chunks`);
@@ -415,7 +508,10 @@ async function generateVersionAssets(
     await generateQuickAccess(document, outputDir);
     
     // Generate content chunks
-    await generateContentChunks(document, outputDir);
+    await generateContentChunks(rawData, outputDir);
+
+    // Generate equation lookup map for inline equation markers
+    await generateEquationMap(rawData, outputDir);
     
     const versionDuration = Date.now() - versionStartTime;
     logger.success(`Completed ${version.title} in ${formatDuration(versionDuration)}`);
@@ -495,6 +591,7 @@ async function generateReport(
   console.log('  ✓ search/metadata.json');
   console.log('  ✓ navigation-tree.json');
   console.log('  ✓ glossary-map.json');
+  console.log('  ✓ equation-map.json');
   console.log('  ✓ amendment-dates.json');
   console.log('  ✓ content-types.json');
   console.log('  ✓ quick-access.json');

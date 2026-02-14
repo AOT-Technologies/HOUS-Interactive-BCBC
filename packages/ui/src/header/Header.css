@@ -9,7 +9,7 @@
   height: 54px;
   background-color: var(--surface-color-background-white);
   border-bottom: 1px solid var(--surface-color-border-default);
-  z-index: 1;
+  z-index: 10;
   position: relative;
 }
 
