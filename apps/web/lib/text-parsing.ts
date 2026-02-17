@@ -215,6 +215,47 @@ function getGlossaryDisplayText(
   return { text: termId.replace(/-/g, ' '), consumed: 0 };
 }
 
+function getCrossReferenceDisplayText(
+  fullText: string,
+  markerEnd: number,
+  referenceId: string,
+  format?: InternalRefFormat
+): GlossaryDisplay {
+  const remaining = fullText.slice(markerEnd);
+  
+  // Match different patterns based on format:
+  // - long: "Articles 3.2.4.7." or "Article 3.2.4.7." or "Section 3.3." or "Sentence (2)"
+  // - short: "Sentence (2)" or "(2)"
+  // - number/shortNum: "3.2.4.7." or "3.2.2.93."
+  
+  let displayTextMatch: RegExpMatchArray | null = null;
+  
+  if (format === 'long') {
+    // Match "Articles X.X.X." or "Article X.X.X." or "Section X.X." or "Sentence (X)" etc.
+    displayTextMatch = remaining.match(/^((?:Articles?|Sections?|Sentences?|Clauses?|Subclauses?|Tables?|Note)\s+[A-Z0-9][A-Z0-9.\-()]*\.?)/i);
+  } else if (format === 'short') {
+    // Match "Sentence (X)" or just "(X)"
+    displayTextMatch = remaining.match(/^((?:Sentence|Clause|Subclause)\s+\([^)]+\)|\([^)]+\))/i);
+  } else if (format === 'number' || format === 'shortNum') {
+    // Match just the number like "3.2.4.7." or "3.2.2.93."
+    displayTextMatch = remaining.match(/^([A-Z]?[0-9]+(?:\.[0-9]+)*\.?)/);
+  }
+  
+  if (displayTextMatch) {
+    const text = displayTextMatch[1];
+    return {
+      text,
+      consumed: text.length,
+    };
+  }
+  
+  // Fallback: generate display text from referenceId
+  return {
+    text: formatInternalReference(referenceId, format),
+    consumed: 0,
+  };
+}
+
 function formatInternalReference(referenceId: string, format?: InternalRefFormat): string {
   const division = extractNumeric(referenceId, /\.div([A-Za-z0-9]+)/i)?.toUpperCase();
   const part = extractNumeric(referenceId, /\.part(\d+)/i);
@@ -605,12 +646,15 @@ export function parseTextWithMarkers(
             interactive,
           })
         );
+        // For glossary terms, consume the text that follows the marker
         lastIndex = marker.end + glossaryDisplay.consumed;
         break;
       }
       
       case 'crossref': {
-        const displayText = formatInternalReference(
+        const crossRefDisplay = getCrossReferenceDisplayText(
+          sanitizedText,
+          marker.end,
           marker.referenceId!,
           marker.format as InternalRefFormat
         );
@@ -619,10 +663,12 @@ export function parseTextWithMarkers(
           React.createElement(CrossReferenceLink, {
             key: `crossref-${marker.start}`,
             referenceId: marker.referenceId!,
-            displayText,
+            displayText: crossRefDisplay.text,
             interactive,
           })
         );
+        // For cross-references, consume the marker and the display text that follows
+        lastIndex = marker.end + crossRefDisplay.consumed;
         break;
       }
       
@@ -639,6 +685,7 @@ export function parseTextWithMarkers(
             interactive,
           })
         );
+        lastIndex = marker.end;
         break;
       }
 
@@ -651,6 +698,7 @@ export function parseTextWithMarkers(
             interactive,
           })
         );
+        lastIndex = marker.end;
         break;
       }
 
@@ -678,6 +726,7 @@ export function parseTextWithMarkers(
         }
 
         if (!equation) {
+          lastIndex = marker.end;
           break;
         }
 
@@ -689,12 +738,9 @@ export function parseTextWithMarkers(
             displayMode: markerType === 'inline' ? 'inline' : 'block',
           })
         );
+        lastIndex = marker.end;
         break;
       }
-    }
-    
-    if (marker.type !== 'glossary') {
-      lastIndex = marker.end;
     }
   }
   

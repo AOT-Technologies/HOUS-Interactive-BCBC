@@ -206,7 +206,7 @@ const normalizeCell = (cell: RawTableCell, isHeader: boolean) => ({
   isHeader: cell.isHeader ?? isHeader,
 });
 
-const normalizeRows = (rows: RawTableRow[], isHeader: boolean, effectiveDate?: string) =>
+const normalizeRows = (rows: RawTableRow[], isHeader: boolean, effectiveDate?: string, rowPrefix: string = 'row') =>
   rows
     .map((row, rowIndex) => {
     const rowObject = Array.isArray(row) ? { cells: row } : row;
@@ -219,7 +219,7 @@ const normalizeRows = (rows: RawTableRow[], isHeader: boolean, effectiveDate?: s
     const resolvedCells = activeRowRevision?.cells || rowObject.cells || [];
     const cells = resolvedCells.map((cell) => normalizeCell(cell, isHeader));
     return {
-      id: rowObject.id || `row-${rowIndex}`,
+      id: rowObject.id || `${rowPrefix}-${rowIndex}`,
       type: rowObject.type,
       cells,
     };
@@ -244,8 +244,8 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const normalizedRows = table.rows && Array.isArray(table.rows)
     ? table.rows
     : [
-        ...normalizeRows(structure?.header_rows || [], true, effectiveDate),
-        ...normalizeRows(structure?.body_rows || [], false, effectiveDate),
+        ...normalizeRows(structure?.header_rows || [], true, effectiveDate, 'header-row'),
+        ...normalizeRows(structure?.body_rows || [], false, effectiveDate, 'body-row'),
       ];
 
   return (

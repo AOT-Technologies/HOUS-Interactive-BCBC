@@ -117,14 +117,9 @@ export const useAmendmentDateStore = create<AmendmentDateStore>()(
             let dateToSelect: string | null = null;
             
             if (options.preserveUrlDate && selectedDate) {
-              // Check if the URL date is valid for this version
-              const isValidDate = transformedDates.some(d => d.date === selectedDate);
-              if (isValidDate) {
-                dateToSelect = selectedDate;
-              } else {
-                // URL date not valid for this version, use latest
-                dateToSelect = transformedDates[0]?.date || null;
-              }
+              // Preserve the URL date even if it's not in the available dates list
+              // The content renderer will handle showing the closest available content
+              dateToSelect = selectedDate;
             } else {
               // Version changed or no URL date - use latest
               dateToSelect = transformedDates[0]?.date || null;
@@ -137,8 +132,8 @@ export const useAmendmentDateStore = create<AmendmentDateStore>()(
               loading: false 
             });
             
-            // Sync to URL
-            if (typeof window !== 'undefined' && dateToSelect) {
+            // Only sync to URL if we're setting a new date (not preserving from URL)
+            if (typeof window !== 'undefined' && !options.preserveUrlDate && dateToSelect) {
               const url = new URL(window.location.href);
               url.searchParams.set('date', dateToSelect);
               window.history.replaceState({}, '', url.toString());
