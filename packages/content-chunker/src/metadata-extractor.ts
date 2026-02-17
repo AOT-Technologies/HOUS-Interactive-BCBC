@@ -70,7 +70,9 @@ export function extractMetadata(document: BCBCDocument): ExtractedMetadata {
  * Extract navigation tree from BCBC document
  * 
  * Generates a hierarchical navigation structure:
- * Volume → Preface/Divisions/Index/Conversions → Part → Section → Subsection → Article
+ * Volume → Preface/Divisions → Part → Section → Subsection → Article
+ * 
+ * Note: Index and Conversion Factors are excluded from the navigation tree.
  * 
  * @param document - BCBC document
  * @returns Navigation tree
@@ -106,25 +108,7 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
       volumeNode.children?.push(buildDivisionNode(division));
     }
 
-    // 3. Add Index (if exists in this volume)
-    if (volume.index) {
-      volumeNode.children?.push({
-        id: volume.index.id,
-        type: 'article',
-        title: 'Index',
-        path: `/code/index`,
-      });
-    }
-
-    // 4. Add Conversion Factors (if exists in this volume)
-    if (volume.conversions) {
-      volumeNode.children?.push({
-        id: volume.conversions.id,
-        type: 'article',
-        title: volume.conversions.table_title || 'Conversion Factors',
-        path: `/code/conversions`,
-      });
-    }
+    // Note: Index and Conversion Factors are intentionally excluded from navigation tree
 
     tree.push(volumeNode);
   }
