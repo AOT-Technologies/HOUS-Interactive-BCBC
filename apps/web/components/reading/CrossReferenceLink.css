@@ -5,25 +5,32 @@
  */
 
 .cross-reference-link {
-  display: inline;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
   color: #1a5a96;
-  cursor: pointer;
-  text-decoration: none;
+  font: inherit;
+  line-height: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
   position: relative;
 }
 
 .cross-reference-link--interactive {
-  text-decoration: underline;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .cross-reference-link--interactive:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
 }
 
 .cross-reference-link__icon {
   display: inline-block;
-  margin-right: 0.25rem;
+  margin-right: 0.1rem;
   font-size: 0.875rem;
   vertical-align: baseline;
 }
@@ -38,7 +45,6 @@
   .cross-reference-link--interactive {
     min-width: 44px;
     min-height: 44px;
-    display: inline-flex;
     align-items: center;
   }
 }

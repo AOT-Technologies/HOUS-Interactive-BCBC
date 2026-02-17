@@ -21,6 +21,8 @@ export { EquationBlock } from './EquationBlock';
 export { NoteBlock } from './NoteBlock';
 export { NoteReference } from './NoteReference';
 export { NotesList } from './NotesList';
+export { CrossReferenceLink } from './CrossReferenceLink';
+export { CrossReferenceModal } from './CrossReferenceModal';
 
 // Type-driven recursive renderer
 export { ContentRenderer } from './ContentRenderer';

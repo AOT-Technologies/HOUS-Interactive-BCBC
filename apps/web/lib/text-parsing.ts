@@ -18,6 +18,7 @@ import React from 'react';
 import { GlossaryTerm } from '../components/reading/GlossaryTerm';
 import { NoteReference } from '../components/reading/NoteReference';
 import { EquationBlock } from '../components/reading/EquationBlock';
+import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
 import { useEquationStore } from '../stores/equation-store';
 
 /**
@@ -229,6 +230,7 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   const sectionNumber = [part, section].filter(Boolean).join('.');
   const subsectionNumber = [part, section, subsection].filter(Boolean).join('.');
   const articleNumber = [part, section, subsection, article].filter(Boolean).join('.');
+  const tableNumber = [part, section, subsection, article, table].filter(Boolean).join('.');
 
   // Application notes are rendered as Note references in BC style.
   if (appNote) {
@@ -254,11 +256,15 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     return isShortNumeric ? `(${sentence})` : `Sentence (${sentence})`;
   }
 
-  if (articleNumber) {
+  if (table) {
+    return tableNumber ? `Table ${tableNumber}.` : `Table ${table}`;
+  }
+
+  if (article) {
     return isShortNumeric ? articleNumber : `Article ${articleNumber}.`;
   }
 
-  if (subsectionNumber) {
+  if (subsection) {
     return isShortNumeric ? subsectionNumber : `Subsection ${subsectionNumber}.`;
   }
 
@@ -376,20 +382,14 @@ export function parseTextWithCrossReferences(
 
     const displayText = formatInternalReference(referenceId, format);
     
-    // For now, render as plain text with a placeholder
-    // The actual CrossReferenceLink component will be implemented in task 8.1
-    // TODO: Replace with actual CrossReferenceLink component
-    if (interactive) {
-      nodes.push(
-        React.createElement('span', {
-          key: `crossref-${matchStart}`,
-          className: 'cross-reference-link',
-          style: { color: '#1A5A96', textDecoration: 'underline' }
-        }, displayText)
-      );
-    } else {
-      nodes.push(displayText);
-    }
+    nodes.push(
+      React.createElement(CrossReferenceLink, {
+        key: `crossref-${matchStart}`,
+        referenceId,
+        displayText,
+        interactive,
+      })
+    );
     
     lastIndex = matchEnd;
   }
@@ -615,18 +615,14 @@ export function parseTextWithMarkers(
           marker.format as InternalRefFormat
         );
 
-        // TODO: Replace with actual CrossReferenceLink component in task 8.1
-        if (interactive) {
-          nodes.push(
-            React.createElement('span', {
-              key: `crossref-${marker.start}`,
-              className: 'cross-reference-link',
-              style: { color: '#1A5A96', textDecoration: 'underline' }
-            }, displayText)
-          );
-        } else {
-          nodes.push(displayText);
-        }
+        nodes.push(
+          React.createElement(CrossReferenceLink, {
+            key: `crossref-${marker.start}`,
+            referenceId: marker.referenceId!,
+            displayText,
+            interactive,
+          })
+        );
         break;
       }
       

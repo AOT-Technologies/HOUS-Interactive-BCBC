@@ -13,30 +13,65 @@
 
 'use client';
 
-import React, { useEffect, useMemo, useRef } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { ReadingViewProps } from '@repo/data';
-import type { Subsection, Article } from '@bc-building-code/bcbc-parser';
+import type { Subsection, Article, Section } from '@bc-building-code/bcbc-parser';
 import { useSectionStore } from '../../lib/stores/section-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
 import { useEquationStore } from '../../stores/equation-store';
 import { parseContentPath } from '../../lib/url-utils';
 import { resolveSectionForEffectiveDate } from '../../lib/revision-resolver';
+import { getNavigationSlug, getSectionFetchPath, parseReferenceId } from '../../lib/cross-reference';
 import { SectionRenderer } from './SectionRenderer';
 import { ReadingViewHeader } from './ReadingViewHeader';
 import { PartRenderer } from './PartRenderer';
 import { SubsectionBlock } from './SubsectionBlock';
 import { ArticleBlock } from './ArticleBlock';
+import { CrossReferenceContext } from './CrossReferenceContext';
+import { CrossReferenceModal } from './CrossReferenceModal';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './ReadingView.css';
 
 export const ReadingView: React.FC<ReadingViewProps> = ({
   slug: initialSlug,
   version: initialVersion,
 }) => {
+  type AppendixParagraph = { id: string; content: string };
+  type AppendixDivision = { id: string; title?: string; paragraphs?: AppendixParagraph[] };
+  type ApplicationNote = {
+    id: string;
+    number?: string;
+    title?: string;
+    paragraphs?: AppendixParagraph[];
+    divisions?: AppendixDivision[];
+  };
+  type SectionWithAppendix = Section & {
+    appendix?: {
+      application_notes?: ApplicationNote[];
+    };
+  };
+  type ResolvedCrossReference = {
+    referenceId: string;
+    heading: string;
+    targetSlug: string[] | null;
+    mode: 'article' | 'subsection' | 'section' | 'appnote' | 'error';
+    section?: SectionWithAppendix;
+    subsection?: Subsection;
+    article?: Article;
+    note?: ApplicationNote;
+    errorMessage?: string;
+  };
+
   const contentContainerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const queryString = searchParams.toString();
+  const targetSectionCacheRef = useRef<Map<string, SectionWithAppendix>>(new Map());
+  const triggerElementRef = useRef<HTMLElement | null>(null);
+  const suppressedModalParamRef = useRef<string | null>(null);
+  const [modalData, setModalData] = useState<ResolvedCrossReference | null>(null);
   
   // Extract version and date from URL query parameters
   const urlVersion = searchParams.get('version');
@@ -47,6 +82,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   
   // Use date from URL, or undefined to show latest
   const effectiveDate = urlDate || undefined;
+  const modalQueryParam = searchParams.get('modal');
   
   const {
     currentSection,
@@ -90,6 +126,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const isSectionLevelOrDeeper = slug.length >= 3;
   const requestedSectionKey = slug.slice(0, 3).join('/');
   const loadedSectionKey = currentPath.slice(0, 3).join('/');
+  const isErrorForRequestedSection = Boolean(error) && loadedSectionKey === requestedSectionKey;
   const isRequestedSectionLoaded = Boolean(currentSection) && loadedSectionKey === requestedSectionKey;
   const resolvedSection = useMemo(
     () => (currentSection ? resolveSectionForEffectiveDate(currentSection, effectiveDate) : null),
@@ -154,6 +191,185 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     );
     return { mode: 'article', subsection, article };
   };
+
+  const updateModalInUrl = useCallback(
+    (referenceId: string | null) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (referenceId) {
+        params.set('modal', referenceId);
+      } else {
+        params.delete('modal');
+      }
+
+      const nextQuery = params.toString();
+      const nextUrl = nextQuery ? `${pathname}?${nextQuery}` : pathname;
+      router.replace(nextUrl, { scroll: false });
+    },
+    [pathname, router, searchParams]
+  );
+
+  const fetchTargetSection = useCallback(
+    async (referenceId: string): Promise<SectionWithAppendix | null> => {
+      const fetchPath = getSectionFetchPath(version, referenceId);
+      if (!fetchPath) return null;
+
+      const cached = targetSectionCacheRef.current.get(fetchPath);
+      if (cached) return cached;
+
+      const response = await fetch(fetchPath);
+      if (!response.ok) return null;
+
+      const section = (await response.json()) as SectionWithAppendix;
+      targetSectionCacheRef.current.set(fetchPath, section);
+      return section;
+    },
+    [version]
+  );
+
+  const resolveCrossReference = useCallback(
+    async (referenceId: string): Promise<ResolvedCrossReference> => {
+      const parsed = parseReferenceId(referenceId);
+      if (!parsed) {
+        return {
+          referenceId,
+          heading: referenceId,
+          mode: 'error',
+          targetSlug: null,
+          errorMessage: 'Unable to parse reference target.',
+        };
+      }
+
+      const sectionKey = [parsed.division, parsed.part, parsed.section].join('/');
+      const isSameSection = sectionKey === requestedSectionKey;
+      const section =
+        (isSameSection ? (currentSection as SectionWithAppendix | null) : null) ||
+        (await fetchTargetSection(referenceId));
+
+      if (!section) {
+        return {
+          referenceId,
+          heading: referenceId,
+          mode: 'error',
+          targetSlug: getNavigationSlug(referenceId),
+          errorMessage: 'Referenced content could not be loaded.',
+        };
+      }
+
+      if (parsed.appnote) {
+        const targetNotePrefix = `${parsed.division}.part${parsed.part}.sect${parsed.section}.appnote${parsed.appnote}`;
+        const note = section.appendix?.application_notes?.find((item) =>
+          item.id.startsWith(targetNotePrefix)
+        );
+
+        if (!note) {
+          return {
+            referenceId,
+            heading: referenceId,
+            mode: 'error',
+            targetSlug: getNavigationSlug(referenceId),
+            section,
+            errorMessage: 'Referenced note was not found.',
+          };
+        }
+
+        const noteLabel = note.number ? `Note ${note.number}` : 'Note';
+        const heading = (note.title || noteLabel).trim();
+        return {
+          referenceId,
+          heading,
+          mode: 'appnote',
+          section,
+          note,
+          targetSlug: getNavigationSlug(referenceId),
+        };
+      }
+
+      if (parsed.subsection && parsed.article) {
+        const subsection = section.subsections.find(
+          (item) => String(item.number) === String(parsed.subsection)
+        );
+        const article = subsection?.articles.find(
+          (item) => String(item.number) === String(parsed.article)
+        );
+
+        if (subsection && article) {
+          return {
+            referenceId,
+            heading: article.title.trim(),
+            mode: 'article',
+            section,
+            subsection,
+            article,
+            targetSlug: getNavigationSlug(referenceId),
+          };
+        }
+      }
+
+      if (parsed.subsection) {
+        const subsection = section.subsections.find(
+          (item) => String(item.number) === String(parsed.subsection)
+        );
+
+        if (subsection) {
+          return {
+            referenceId,
+            heading: subsection.title.trim(),
+            mode: 'subsection',
+            section,
+            subsection,
+            targetSlug: getNavigationSlug(referenceId),
+          };
+        }
+      }
+
+      return {
+        referenceId,
+        heading: section.title.trim(),
+        mode: 'section',
+        section,
+        targetSlug: getNavigationSlug(referenceId),
+      };
+    },
+    [currentSection, fetchTargetSection, requestedSectionKey]
+  );
+
+  const closeReferenceModal = useCallback(() => {
+    suppressedModalParamRef.current = modalData?.referenceId || suppressedModalParamRef.current;
+    setModalData(null);
+    updateModalInUrl(null);
+
+    if (triggerElementRef.current) {
+      triggerElementRef.current.focus();
+      triggerElementRef.current = null;
+    }
+  }, [modalData?.referenceId, updateModalInUrl]);
+
+  const openReferenceModal = useCallback(
+    async (referenceId: string, triggerElement: HTMLElement | null) => {
+      if (triggerElement) {
+        triggerElementRef.current = triggerElement;
+      }
+
+      const resolved = await resolveCrossReference(referenceId);
+      setModalData(resolved);
+      updateModalInUrl(referenceId);
+    },
+    [resolveCrossReference, updateModalInUrl]
+  );
+
+  const navigateToReference = useCallback(
+    (referenceId: string) => {
+      const targetSlug = getNavigationSlug(referenceId);
+      if (!targetSlug || targetSlug.length < 3) return;
+
+      const params = new URLSearchParams(searchParams.toString());
+      params.delete('modal');
+      const query = params.toString();
+      const url = `/code/${targetSlug.join('/')}${query ? `?${query}` : ''}`;
+      router.push(url);
+    },
+    [router, searchParams]
+  );
 
   // Sync navigation state from URL on mount and when path changes
   useEffect(() => {
@@ -239,6 +455,36 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     });
   }, [version]);
 
+  useEffect(() => {
+    if (!modalQueryParam) {
+      suppressedModalParamRef.current = null;
+      return;
+    }
+
+    if (suppressedModalParamRef.current === modalQueryParam) {
+      return;
+    }
+
+    if (!modalQueryParam || !isSectionLevelOrDeeper || loading) return;
+    if (modalData?.referenceId === modalQueryParam) return;
+
+    openReferenceModal(modalQueryParam, null).catch((error) => {
+      console.error('Failed to open modal from URL parameter:', error);
+    });
+  }, [
+    isSectionLevelOrDeeper,
+    loading,
+    modalData?.referenceId,
+    modalQueryParam,
+    openReferenceModal,
+  ]);
+
+  useEffect(() => {
+    if (!modalQueryParam) {
+      setModalData(null);
+    }
+  }, [modalQueryParam]);
+
   const renderLoadingSkeleton = (message: string = 'Loading content...') => (
     <div className="reading-view">
       <div className="reading-view__loading" role="status" aria-live="polite" aria-label={message}>
@@ -293,25 +539,29 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     }
 
     return (
-      <div className="reading-view" ref={contentContainerRef}>
-        <ReadingViewHeader pdfLabel={`${divisionLabel} - Part ${slug[1]} PDF`} />
+      <CrossReferenceContext.Provider
+        value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
+      >
+        <div className="reading-view" ref={contentContainerRef}>
+          <ReadingViewHeader pdfLabel={`${divisionLabel} - Part ${slug[1]} PDF`} />
 
-        <div className="reading-view__content">
-          <PartRenderer
-            part={currentPartNode}
-            queryString={queryString}
-          />
+          <div className="reading-view__content">
+            <PartRenderer
+              part={currentPartNode}
+              queryString={queryString}
+            />
+          </div>
         </div>
-      </div>
+      </CrossReferenceContext.Provider>
     );
   }
 
-  if (isSectionLevelOrDeeper && !isRequestedSectionLoaded && !error) {
+  if (isSectionLevelOrDeeper && !isRequestedSectionLoaded && !isErrorForRequestedSection) {
     return renderLoadingSkeleton();
   }
 
   // Error state
-  if (error) {
+  if (isErrorForRequestedSection) {
     return (
       <div className="reading-view">
         <div className="reading-view__error">
@@ -367,41 +617,123 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   // Render content
   const sectionPdfLabel = `${divisionLabel} - ${resolvedSection.number} ${resolvedSection.title} PDF`;
+  const modalGoToSectionVisible = modalData?.mode !== 'error';
+
+  const renderModalContent = () => {
+    if (!modalData) return null;
+
+    if (modalData.mode === 'article' && modalData.section && modalData.subsection && modalData.article) {
+      const targetPart = modalData.targetSlug?.[1];
+      return (
+        <ArticleBlock
+          article={modalData.article}
+          subsectionNumberPrefix={`${targetPart || ''}.${modalData.section.number}.${modalData.subsection.number}`.replace(/^\./, '')}
+          interactive={false}
+        />
+      );
+    }
+
+    if (modalData.mode === 'subsection' && modalData.section && modalData.subsection) {
+      const targetPart = modalData.targetSlug?.[1];
+      return (
+        <SubsectionBlock
+          subsection={modalData.subsection}
+          sectionNumberPrefix={`${targetPart || ''}.${modalData.section.number}`.replace(/^\./, '')}
+          interactive={false}
+        />
+      );
+    }
+
+    if (modalData.mode === 'section' && modalData.section) {
+      return (
+        <SectionRenderer
+          section={modalData.section}
+          partNumber={modalData.targetSlug?.[1] || slug[1]}
+          interactive={false}
+        />
+      );
+    }
+
+    if (modalData.mode === 'appnote' && modalData.note) {
+      return (
+        <div className="note-block">
+          {modalData.note.paragraphs?.map((paragraph) => (
+            <p key={paragraph.id}>{parseTextWithMarkers(paragraph.content || '', [], false)}</p>
+          ))}
+          {modalData.note.divisions?.map((division) => (
+            <div key={division.id}>
+              {division.title ? <h4>{division.title}</h4> : null}
+              {division.paragraphs?.map((paragraph) => (
+                <p key={paragraph.id}>{parseTextWithMarkers(paragraph.content || '', [], false)}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    return <p>{modalData.errorMessage || 'Referenced content is unavailable.'}</p>;
+  };
 
   return (
-    <div className="reading-view" ref={contentContainerRef}>
-      <ReadingViewHeader pdfLabel={sectionPdfLabel} />
-      
-      <div className="reading-view__content">
-        {subtree.mode === 'section' && (
-            <SectionRenderer
-            section={resolvedSection}
-            partNumber={slug[1]}
-            effectiveDate={effectiveDate}
-            interactive={true}
-          />
-        )}
-        {subtree.mode === 'subsection' && subtree.subsection && (
-          <div className="sectionRenderer">
-            <SubsectionBlock
-              subsection={subtree.subsection}
-              sectionNumberPrefix={`${slug[1]}.${resolvedSection.number}`}
+    <CrossReferenceContext.Provider
+      value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
+    >
+      <div className="reading-view" ref={contentContainerRef}>
+        <ReadingViewHeader pdfLabel={sectionPdfLabel} />
+        
+        <div className="reading-view__content">
+          {subtree.mode === 'section' && (
+              <SectionRenderer
+              section={resolvedSection}
+              partNumber={slug[1]}
               effectiveDate={effectiveDate}
               interactive={true}
             />
-          </div>
-        )}
-        {subtree.mode === 'article' && subtree.article && (
-          <div className="sectionRenderer">
-            <ArticleBlock
-              article={subtree.article}
-              subsectionNumberPrefix={`${slug[1]}.${resolvedSection.number}.${subtree.subsection!.number}`}
-              effectiveDate={effectiveDate}
-              interactive={true}
-            />
-          </div>
-        )}
+          )}
+          {subtree.mode === 'subsection' && subtree.subsection && (
+            <div className="sectionRenderer">
+              <SubsectionBlock
+                subsection={subtree.subsection}
+                sectionNumberPrefix={`${slug[1]}.${resolvedSection.number}`}
+                effectiveDate={effectiveDate}
+                interactive={true}
+              />
+            </div>
+          )}
+          {subtree.mode === 'article' && subtree.article && (
+            <div className="sectionRenderer">
+              <ArticleBlock
+                article={subtree.article}
+                subsectionNumberPrefix={`${slug[1]}.${resolvedSection.number}.${subtree.subsection!.number}`}
+                effectiveDate={effectiveDate}
+                interactive={true}
+              />
+            </div>
+          )}
+        </div>
+
+        <CrossReferenceModal
+          open={Boolean(modalData)}
+          heading={modalData?.heading || 'Cross reference'}
+          onClose={closeReferenceModal}
+          onGoToSection={() => {
+            if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
+              closeReferenceModal();
+              return;
+            }
+
+            closeReferenceModal();
+            const params = new URLSearchParams(searchParams.toString());
+            params.delete('modal');
+            const query = params.toString();
+            router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
+          }}
+          showGoToSection={modalGoToSectionVisible}
+        >
+          {renderModalContent()}
+        </CrossReferenceModal>
       </div>
-    </div>
+    </CrossReferenceContext.Provider>
   );
 };
