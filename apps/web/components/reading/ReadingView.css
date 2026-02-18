@@ -162,6 +162,18 @@
 }
 
 /* Responsive styles */
+
+/* Desktop (≥1024px) - Use full available width */
+@media (min-width: 64rem) {
+  .reading-view__content {
+    width: 100%;
+    max-width: none; /* Remove width constraint to fill available space */
+    margin: 0;
+    padding-right: var(--layout-padding-large, 1.5rem);
+  }
+}
+
+/* Tablet and Mobile */
 @media (max-width: 768px) {
   .reading-view {
     max-height: calc(100dvh - var(--header-height-full, 60px) - var(--layout-padding-large, 1.5rem));
