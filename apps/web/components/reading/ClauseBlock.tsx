@@ -34,7 +34,7 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
   const clauseEquations = (filteredClause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
 
   return (
-    <div className="clauseBlock">
+    <div className="clauseBlock" id={filteredClause.id}>
       <span className="clauseNumber">{filteredClause.number})</span>
       <div className="clauseContent">
         <div className="clauseText">

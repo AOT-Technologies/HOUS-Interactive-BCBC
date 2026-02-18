@@ -8,6 +8,8 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .source-badges__badge {
@@ -38,5 +40,16 @@
 
   .source-badges__badge {
     font-size: 0.875rem;
+  }
+}
+
+@media print {
+  .source-badges {
+    width: 100%;
+    flex-direction: row !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
   }
 }

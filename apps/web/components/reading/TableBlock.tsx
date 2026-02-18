@@ -269,7 +269,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   };
 
   return (
-    <div className="table-block">
+    <div className="table-block" id={rawTable.id}>
       {resolvedTitle && (
         <div className="table-block__title">
           {renderFormattedText(`Table ${String(rawTable.number ?? '')} ${resolvedTitle}`, interactive)}
@@ -313,7 +313,11 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         <div className="table-block__notes" aria-label="Table notes">
           <div className="table-block__notes-title">Table notes</div>
           {resolvedTableNotes.map((note, index) => (
-            <div className="table-block__note" key={note.id || note.vendor_id || `note-${index}`}>
+            <div
+              className="table-block__note"
+              id={note.id}
+              key={note.id || note.vendor_id || `note-${index}`}
+            >
               <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
               <span className="table-block__note-content">
                 {renderFormattedText(note.content || '', interactive)}

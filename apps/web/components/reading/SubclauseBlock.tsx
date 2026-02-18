@@ -79,7 +79,7 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
   const subclauseEquations = (filteredSubclause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
 
   return (
-    <div className="subclauseBlock">
+    <div className="subclauseBlock" id={filteredSubclause.id}>
       <span className="subclauseNumber">{formatSubclauseNumber(filteredSubclause.number)})</span>
       <div className="subclauseContent">
         <div className="subclauseText">

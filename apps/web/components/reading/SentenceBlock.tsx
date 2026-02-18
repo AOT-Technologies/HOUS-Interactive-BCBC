@@ -34,7 +34,7 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
   const sentenceEquations = (filteredSentence as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
 
   return (
-    <div className="sentenceBlock">
+    <div className="sentenceBlock" id={filteredSentence.id}>
       <span className="sentenceNumber">{filteredSentence.number})</span>
       <div className="sentenceContent">
         <div className="sentenceText">

@@ -213,17 +213,19 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       const fetchPath = getSectionFetchPath(version, referenceId);
       if (!fetchPath) return null;
 
-      const cached = targetSectionCacheRef.current.get(fetchPath);
+      const cacheKey = `${fetchPath}|${effectiveDate || 'latest'}`;
+      const cached = targetSectionCacheRef.current.get(cacheKey);
       if (cached) return cached;
 
       const response = await fetch(fetchPath);
       if (!response.ok) return null;
 
       const section = (await response.json()) as SectionWithAppendix;
-      targetSectionCacheRef.current.set(fetchPath, section);
-      return section;
+      const resolvedSection = resolveSectionForEffectiveDate(section as Section, effectiveDate) as SectionWithAppendix;
+      targetSectionCacheRef.current.set(cacheKey, resolvedSection);
+      return resolvedSection;
     },
-    [version]
+    [effectiveDate, version]
   );
 
   const resolveCrossReference = useCallback(
@@ -242,7 +244,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       const sectionKey = [parsed.division, parsed.part, parsed.section].join('/');
       const isSameSection = sectionKey === requestedSectionKey;
       const section =
-        (isSameSection ? (currentSection as SectionWithAppendix | null) : null) ||
+        (isSameSection ? (resolvedSection as SectionWithAppendix | null) : null) ||
         (await fetchTargetSection(referenceId));
 
       if (!section) {
@@ -330,7 +332,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         targetSlug: getNavigationSlug(referenceId),
       };
     },
-    [currentSection, fetchTargetSection, requestedSectionKey]
+    [fetchTargetSection, requestedSectionKey, resolvedSection]
   );
 
   const closeReferenceModal = useCallback(() => {
@@ -716,6 +718,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         <CrossReferenceModal
           open={Boolean(modalData)}
           heading={modalData?.heading || 'Cross reference'}
+          scrollToReferenceId={modalData?.referenceId || null}
           onClose={closeReferenceModal}
           onGoToSection={() => {
             if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {

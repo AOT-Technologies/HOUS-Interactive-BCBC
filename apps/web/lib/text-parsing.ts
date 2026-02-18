@@ -98,7 +98,7 @@ function sanitizeLegacyPlaceholderTags(text: string): string {
   return text.replace(/<>/g, '').replace(/<\/>/g, '');
 }
 
-function parseInlineScriptNotation(text: string): React.ReactNode[] {
+function parseInlineScriptNotation(text: string, absoluteStart: number = 0): React.ReactNode[] {
   if (!text || (!text.includes('_{') && !text.includes('^{'))) {
     return [text];
   }
@@ -107,12 +107,12 @@ function parseInlineScriptNotation(text: string): React.ReactNode[] {
   const scriptRegex = /(_\{[^{}]+\}|\^\{[^{}]+\})/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
-  let index = 0;
 
   while ((match = scriptRegex.exec(text)) !== null) {
     const token = match[0];
     const start = match.index;
     const end = scriptRegex.lastIndex;
+    const keySuffix = absoluteStart + start;
 
     if (start > lastIndex) {
       nodes.push(text.substring(lastIndex, start));
@@ -120,15 +120,14 @@ function parseInlineScriptNotation(text: string): React.ReactNode[] {
 
     if (token.startsWith('_{')) {
       nodes.push(
-        React.createElement('sub', { key: `inline-sub-${index}` }, token.slice(2, -1))
+        React.createElement('sub', { key: `inline-sub-${keySuffix}` }, token.slice(2, -1))
       );
     } else {
       nodes.push(
-        React.createElement('sup', { key: `inline-sup-${index}` }, token.slice(2, -1))
+        React.createElement('sup', { key: `inline-sup-${keySuffix}` }, token.slice(2, -1))
       );
     }
 
-    index += 1;
     lastIndex = end;
   }
 
@@ -751,7 +750,12 @@ export function parseTextWithMarkers(
     }
     // Add plain text before the marker
     if (marker.start > lastIndex) {
-      nodes.push(...parseInlineScriptNotation(sanitizedText.substring(lastIndex, marker.start)));
+      nodes.push(
+        ...parseInlineScriptNotation(
+          sanitizedText.substring(lastIndex, marker.start),
+          lastIndex
+        )
+      );
     }
     
     // Add the appropriate component based on marker type
@@ -817,10 +821,10 @@ export function parseTextWithMarkers(
 
       case 'tableNote': {
         nodes.push(
-          React.createElement(NoteReference, {
+          React.createElement(CrossReferenceLink, {
             key: `table-note-${marker.start}`,
             referenceId: marker.tableNoteId!,
-            text: getNoteLabel(marker.tableNoteId!),
+            displayText: getNoteLabel(marker.tableNoteId!),
             interactive,
           })
         );
@@ -954,7 +958,12 @@ export function parseTextWithMarkers(
   
   // Add remaining text after last marker
   if (lastIndex < sanitizedText.length) {
-      nodes.push(...parseInlineScriptNotation(sanitizedText.substring(lastIndex)));
+      nodes.push(
+        ...parseInlineScriptNotation(
+          sanitizedText.substring(lastIndex),
+          lastIndex
+        )
+      );
   }
   
   // If no markers found, return the original text

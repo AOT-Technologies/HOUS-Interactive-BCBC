@@ -104,6 +104,13 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
     display: none !important;
   }
 
+  .ui-Sidebar--MobileWrapper,
+  .ui-Sidebar--MobileToggleContainer,
+  .ui-Sidebar--MobileToggle,
+  button.ui-Sidebar--MobileToggle {
+    display: none !important;
+  }
+
   .ui-Header {
     display: flex !important;
     height: auto !important;
@@ -149,5 +156,11 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
   .reading-view__content {
     overflow: visible !important;
     padding-bottom: 0 !important;
+  }
+
+  .reading-view-header__badges {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
   }
 }

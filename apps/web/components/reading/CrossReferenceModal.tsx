@@ -10,6 +10,7 @@ interface CrossReferenceModalProps {
   onClose: () => void;
   onGoToSection: () => void;
   showGoToSection?: boolean;
+  scrollToReferenceId?: string | null;
 }
 
 function getFocusableElements(container: HTMLElement): HTMLElement[] {
@@ -34,6 +35,7 @@ export const CrossReferenceModal: React.FC<CrossReferenceModalProps> = ({
   onClose,
   onGoToSection,
   showGoToSection = true,
+  scrollToReferenceId = null,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const backdropMouseDownRef = useRef(false);
@@ -74,6 +76,66 @@ export const CrossReferenceModal: React.FC<CrossReferenceModalProps> = ({
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [open, onClose]);
+
+  useEffect(() => {
+    if (!open || !scrollToReferenceId) return;
+
+    const modalElement = modalRef.current;
+    if (!modalElement) return;
+
+    const body = modalElement.querySelector<HTMLElement>('.cross-reference-modal__body');
+    if (!body) return;
+
+    const findById = (root: HTMLElement, rawTargetId: string): HTMLElement | null => {
+      const targetId = rawTargetId.trim();
+      const normalizedTargetId = targetId.toLowerCase();
+      const allWithId = Array.from(root.querySelectorAll<HTMLElement>('[id]'));
+
+      // 1) Exact id match (case-insensitive)
+      const exact = allWithId.find((element) => element.id.toLowerCase() === normalizedTargetId);
+      if (exact) return exact;
+
+      // 2) Fallback for deep reference IDs where upstream may vary slightly in prefix/casing.
+      // Keep suffix-specific matching strict enough to avoid landing on the wrong node.
+      const suffixPatterns = [
+        /\.table\d+\.note\d+$/i,
+        /\.sent\d+\.clause\d+\.subclause\d+$/i,
+        /\.sent\d+\.clause\d+$/i,
+        /\.sent\d+$/i,
+        /\.table\d+$/i,
+      ];
+
+      for (const pattern of suffixPatterns) {
+        const suffixMatch = normalizedTargetId.match(pattern);
+        if (!suffixMatch) continue;
+
+        const suffix = suffixMatch[0];
+        const prefix = normalizedTargetId.slice(0, normalizedTargetId.length - suffix.length);
+        const candidate = allWithId.find((element) => {
+          const normalizedElementId = element.id.toLowerCase();
+          return normalizedElementId.endsWith(suffix) && (prefix ? normalizedElementId.startsWith(prefix) : true);
+        });
+
+        if (candidate) return candidate;
+      }
+
+      return null;
+    };
+
+    const scrollToTarget = () => {
+      const target = findById(body, scrollToReferenceId);
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.classList.add('cross-reference-modal__target--highlight');
+      window.setTimeout(() => {
+        target.classList.remove('cross-reference-modal__target--highlight');
+      }, 1800);
+    };
+
+    const raf = window.requestAnimationFrame(scrollToTarget);
+    return () => window.cancelAnimationFrame(raf);
+  }, [open, scrollToReferenceId, children]);
 
   if (!open) return null;
 

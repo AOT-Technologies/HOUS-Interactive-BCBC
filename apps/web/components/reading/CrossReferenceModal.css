@@ -87,6 +87,19 @@
   text-decoration: none;
 }
 
+.cross-reference-modal__target--highlight {
+  animation: cross-reference-target-highlight 1.8s ease-out;
+}
+
+@keyframes cross-reference-target-highlight {
+  0% {
+    background-color: rgba(252, 186, 25, 0.28);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
 .cross-reference-modal__footer {
   padding: var(--layout-padding-large);
   border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #d8d8d8);
