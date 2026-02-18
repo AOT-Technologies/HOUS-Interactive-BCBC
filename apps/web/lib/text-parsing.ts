@@ -98,6 +98,47 @@ function sanitizeLegacyPlaceholderTags(text: string): string {
   return text.replace(/<>/g, '').replace(/<\/>/g, '');
 }
 
+function parseInlineScriptNotation(text: string): React.ReactNode[] {
+  if (!text || (!text.includes('_{') && !text.includes('^{'))) {
+    return [text];
+  }
+
+  const nodes: React.ReactNode[] = [];
+  const scriptRegex = /(_\{[^{}]+\}|\^\{[^{}]+\})/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let index = 0;
+
+  while ((match = scriptRegex.exec(text)) !== null) {
+    const token = match[0];
+    const start = match.index;
+    const end = scriptRegex.lastIndex;
+
+    if (start > lastIndex) {
+      nodes.push(text.substring(lastIndex, start));
+    }
+
+    if (token.startsWith('_{')) {
+      nodes.push(
+        React.createElement('sub', { key: `inline-sub-${index}` }, token.slice(2, -1))
+      );
+    } else {
+      nodes.push(
+        React.createElement('sup', { key: `inline-sup-${index}` }, token.slice(2, -1))
+      );
+    }
+
+    index += 1;
+    lastIndex = end;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.substring(lastIndex));
+  }
+
+  return nodes.length > 0 ? nodes : [text];
+}
+
 const GLOSSARY_SECOND_WORD_STOPWORDS = new Set([
   'shall',
   'must',
@@ -710,7 +751,7 @@ export function parseTextWithMarkers(
     }
     // Add plain text before the marker
     if (marker.start > lastIndex) {
-      nodes.push(sanitizedText.substring(lastIndex, marker.start));
+      nodes.push(...parseInlineScriptNotation(sanitizedText.substring(lastIndex, marker.start)));
     }
     
     // Add the appropriate component based on marker type
@@ -913,7 +954,7 @@ export function parseTextWithMarkers(
   
   // Add remaining text after last marker
   if (lastIndex < sanitizedText.length) {
-      nodes.push(sanitizedText.substring(lastIndex));
+      nodes.push(...parseInlineScriptNotation(sanitizedText.substring(lastIndex)));
   }
   
   // If no markers found, return the original text
