@@ -5,7 +5,7 @@
  * Logs validation errors to console for debugging.
  */
 
-import type { Section, Subsection, Article } from '@bc-building-code/bcbc-parser';
+import type { Section } from '@bc-building-code/bcbc-parser';
 
 export interface ValidationError {
   field: string;
