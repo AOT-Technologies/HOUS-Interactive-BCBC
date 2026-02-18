@@ -6,14 +6,18 @@ import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_PREV_BUTTON, TESTID_NEXT_BUTTON } from '@repo/constants/src/testids';
 
 // Mock the navigation store
-vi.mock('@/stores/navigation-store');
+vi.mock('@/stores/navigation-store', () => ({
+  useNavigationStore: vi.fn(),
+  NavigationNode: {} as any,
+}));
 
 // Mock the Button component
 vi.mock('@repo/ui/button', () => ({
-  Button: ({ children, onClick, disabled, className, 'data-testid': testId, 'aria-label': ariaLabel, variant }: any) => (
+  __esModule: true,
+  default: ({ children, onPress, isDisabled, className, 'data-testid': testId, 'aria-label': ariaLabel, variant }: any) => (
     <button
-      onClick={onClick}
-      disabled={disabled}
+      onClick={onPress}
+      disabled={isDisabled}
       className={className}
       data-testid={testId}
       aria-label={ariaLabel}
