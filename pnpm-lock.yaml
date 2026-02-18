@@ -23,6 +23,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@bc-building-code/bcbc-parser':
+        specifier: workspace:*
+        version: link:../../packages/bcbc-parser
       '@bc-building-code/search-indexer':
         specifier: workspace:*
         version: link:../../packages/search-indexer

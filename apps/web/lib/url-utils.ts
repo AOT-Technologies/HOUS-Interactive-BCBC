@@ -388,3 +388,113 @@ export function getVersionOrDefault(
 ): string {
   return getVersionFromUrl(search) || defaultVersion;
 }
+
+/**
+ * URL parameters for reading page content renderer
+ * Used for parsing and building URLs with version, date, and modal state
+ */
+export interface URLParams {
+  slug: string[];              // Path segments [division, part, section, subsection?, article?]
+  version?: string;            // Query param - code version
+  date?: string;               // Query param - effective date (ISO format)
+  modal?: string;              // Query param - modal reference ID
+}
+
+/**
+ * Parse URL parameters for reading page content renderer
+ * Extracts path segments and query parameters from a full URL
+ * 
+ * Supports three URL patterns:
+ * - Section: /code/{division}/{part}/{section}?version={version}&date={date}
+ * - Subsection: /code/{division}/{part}/{section}/{subsection}?version={version}&date={date}
+ * - Article: /code/{division}/{part}/{section}/{subsection}/{article}?version={version}&date={date}&modal={referenceId}
+ * 
+ * @param url - Full URL string to parse
+ * @returns URLParams object with slug and query parameters
+ * 
+ * @example
+ * parseURLParams('/code/division-a/part-1/section-1-1?version=2024&date=2025-06-16')
+ * // Returns: { slug: ['division-a', 'part-1', 'section-1-1'], version: '2024', date: '2025-06-16' }
+ */
+export function parseURLParams(url: string): URLParams {
+  // Parse URL to extract pathname and search params
+  const urlObj = new URL(url, 'http://localhost'); // Base URL needed for relative URLs
+  const pathname = urlObj.pathname;
+  const searchParams = urlObj.searchParams;
+  
+  // Parse content path from pathname
+  const contentPath = parseContentPath(pathname);
+  
+  if (!contentPath) {
+    throw new Error(`Invalid content URL: ${url}`);
+  }
+  
+  // Build slug array from content path
+  const slug: string[] = [
+    contentPath.division,
+    contentPath.part,
+    contentPath.section,
+    contentPath.subsection,
+    contentPath.article,
+  ].filter(Boolean) as string[];
+  
+  // Extract query parameters
+  const version = searchParams.get('version') || undefined;
+  const date = searchParams.get('date') || undefined;
+  const modal = searchParams.get('modal') || undefined;
+  
+  return {
+    slug,
+    version,
+    date,
+    modal,
+  };
+}
+
+/**
+ * Build URL from URLParams
+ * Constructs a full URL path with query parameters
+ * 
+ * @param params - URLParams object with slug and optional query parameters
+ * @returns Full URL string
+ * 
+ * @example
+ * buildURL({ slug: ['division-a', 'part-1', 'section-1-1'], version: '2024', date: '2025-06-16' })
+ * // Returns: '/code/division-a/part-1/section-1-1?version=2024&date=2025-06-16'
+ */
+export function buildURL(params: URLParams): string {
+  // Build pathname from slug
+  const pathname = `/code/${params.slug.join('/')}`;
+  
+  // Build query parameters
+  const queryParams: Record<string, string> = {};
+  if (params.version) queryParams.version = params.version;
+  if (params.date) queryParams.date = params.date;
+  if (params.modal) queryParams.modal = params.modal;
+  
+  // Add query string if parameters exist
+  if (Object.keys(queryParams).length > 0) {
+    const searchParams = new URLSearchParams(queryParams);
+    return `${pathname}?${searchParams.toString()}`;
+  }
+  
+  return pathname;
+}
+
+/**
+ * Update URL with modal reference ID
+ * Adds or updates the modal query parameter without navigation
+ * 
+ * @param referenceId - Modal reference ID to add to URL
+ */
+export function updateURLWithModal(referenceId: string): void {
+  setQueryParam('modal', referenceId, true);
+}
+
+/**
+ * Remove modal reference ID from URL
+ * Removes the modal query parameter without navigation
+ */
+export function removeModalFromURL(): void {
+  removeQueryParam('modal', true);
+}

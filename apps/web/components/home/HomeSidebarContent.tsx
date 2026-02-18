@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { Suspense, useEffect, useState, useCallback, useRef } from 'react';
 import { NavigationTree } from '@/components/navigation/NavigationTree';
 import { VersionSelector } from '@/components/navigation';
 import { useNavigationStore } from '@/stores/navigation-store';
@@ -36,17 +36,22 @@ interface AmendmentDatesData {
 export default function HomeSidebarContent() {
   const { loadNavigationTree, setSearchQuery, clearSearch, searchQuery } = useNavigationStore();
   const { currentVersion, getVersion } = useVersionStore();
-  const { selectedDate, setSelectedDate, initializeFromUrl } = useAmendmentDateStore();
+  const { selectedDate, initializeFromUrl } = useAmendmentDateStore();
   const [allDates, setAllDates] = useState<AmendmentDate[]>([]);
   const [localSearchValue, setLocalSearchValue] = useState('');
+  const [hasMounted, setHasMounted] = useState(false);
   
   // Track if this is the initial load vs a version change
   const isInitialLoad = useRef(true);
   const previousVersion = useRef<string | null>(null);
   
   // Get current version details
-  const currentVersionData = getVersion(currentVersion || undefined);
+  const currentVersionData = hasMounted ? getVersion(currentVersion || undefined) : undefined;
   const versionYear = currentVersionData?.year || 2024;
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   // Initialize date from URL on first mount
   useEffect(() => {
@@ -64,6 +69,11 @@ export default function HomeSidebarContent() {
     const isVersionChange = previousVersion.current !== null && previousVersion.current !== currentVersion;
     previousVersion.current = currentVersion;
     
+    // If version hasn't changed and we've already loaded, skip
+    if (!isVersionChange && !isInitialLoad.current) {
+      return;
+    }
+    
     // Load navigation tree for current version
     loadNavigationTree(currentVersion);
     
@@ -77,35 +87,30 @@ export default function HomeSidebarContent() {
         if (data.dates && data.dates.length > 0) {
           setAllDates(data.dates);
           
-          if (isInitialLoad.current && !isVersionChange) {
-            // Initial load: preserve URL date if valid, otherwise use latest
-            isInitialLoad.current = false;
-            
-            // Check if current selectedDate (from URL) is valid for this version
-            const urlDateValid = currentSelectedDate && data.dates.some(d => d.effectiveDate === currentSelectedDate);
-            
-            if (!urlDateValid) {
-              // URL date not valid or not present, use latest
-              setSelectedDate(data.dates[0].effectiveDate);
-            }
-            // If URL date is valid, keep it (already set from initializeFromUrl)
-          } else {
+          if (isVersionChange) {
             // Version changed: always reset to latest date
-            setSelectedDate(data.dates[0].effectiveDate);
+            useAmendmentDateStore.getState().setSelectedDate(data.dates[0].effectiveDate);
+          } else if (!currentSelectedDate) {
+            // Initial load with no date in URL: use latest
+            useAmendmentDateStore.getState().setSelectedDate(data.dates[0].effectiveDate);
           }
+          // Otherwise: preserve the URL date as-is
         }
       })
       .catch(err => {
         console.error('Failed to load amendment dates:', err);
+      })
+      .finally(() => {
+        isInitialLoad.current = false;
       });
-  }, [currentVersion, loadNavigationTree, setSelectedDate]);
+  }, [currentVersion, loadNavigationTree]);
 
   // Handle effective date change
   const handleDateChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedDate(e.target.value);
+    useAmendmentDateStore.getState().setSelectedDate(e.target.value);
     // TODO: Filter content by selected date (future enhancement)
     console.log('Selected effective date:', e.target.value);
-  }, [setSelectedDate]);
+  }, []);
 
   // Debounced search handler
   useEffect(() => {
@@ -140,7 +145,7 @@ export default function HomeSidebarContent() {
       <div className="home-sidebar-header">
         <h2 className="home-sidebar-title">BC Building Code</h2>
         <p className="home-sidebar-description">
-          {versionYear} Consolidated code version including all active revisions and errata
+          {hasMounted ? `${versionYear} ` : ''}Consolidated code version including all active revisions and errata
         </p>
         
         {/* Version Selector - Position 1 */}
@@ -206,7 +211,9 @@ export default function HomeSidebarContent() {
 
       {/* Navigation Tree - Position 4 */}
       <div className="home-sidebar-nav">
-        <NavigationTree />
+        <Suspense fallback={<div className="navigation-tree__loading">Loading navigation...</div>}>
+          <NavigationTree />
+        </Suspense>
       </div>
     </div>
   );

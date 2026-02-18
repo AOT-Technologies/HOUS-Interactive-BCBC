@@ -82,9 +82,10 @@ Manages selected amendment date and available dates. URL is the source of truth.
 
 **URL Sync Behavior:**
 - On initial load: Read date from URL if present, otherwise use latest
-- On version change: Reset to latest date, update URL
+- On version change: Preserve URL date parameter (even if not in new version's available dates list)
 - On date change: Update URL immediately
 - No localStorage persistence (URL is source of truth)
+- Content renderer handles displaying closest available content when URL date is not in available dates
 
 ### UI Store (`ui-store.ts`)
 Manages UI state including sidebar, mobile menu, and modals. Persists sidebar state to localStorage.

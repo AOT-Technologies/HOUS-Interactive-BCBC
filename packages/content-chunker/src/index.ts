@@ -7,11 +7,12 @@
 // Export chunker functions
 export {
   chunkContent,
+  chunkRawContent,
   generateChunkPath,
   isOptimalChunkSize,
   getChunkStats,
 } from './chunker';
-export type { ContentChunk } from './chunker';
+export type { ContentChunk, RawContentChunk, RawDocumentForChunking } from './chunker';
 
 // Export metadata extractor functions
 export {
@@ -20,9 +21,16 @@ export {
   extractGlossaryMap,
   extractContentTypes,
   extractQuickAccess,
+  extractFunctionalStatements,
+  extractObjectives,
+  extractFunctionalStatementsFromRaw,
+  extractObjectivesFromRaw,
 } from './metadata-extractor';
 export type {
   NavigationNode,
   QuickAccessSection,
   ExtractedMetadata,
+  FunctionalStatement,
+  Objective,
+  SubObjective,
 } from './metadata-extractor';

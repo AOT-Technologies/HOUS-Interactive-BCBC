@@ -1,0 +1,102 @@
+/**
+ * GlossaryTerm Component Styles
+ *
+ * Inline component for glossary terms with hover tooltip and click interaction.
+ * Requirements: 11.1, 11.2, 11.3, 11.8, 11.17
+ */
+
+.glossary-term {
+  display: inline;
+  font-style: italic;
+  color: #1a5a96;
+  position: relative;
+}
+
+.glossary-term--interactive {
+  cursor: pointer;
+  /* Minimum 44x44px tap target */
+  min-height: 44px;
+  min-width: 44px;
+  padding: 4px 2px;
+}
+
+.glossary-term--interactive:hover {
+  text-decoration-style: solid;
+}
+
+.glossary-term--interactive:focus-visible {
+  outline: 2px solid var(--surface-color-border-active, #2e5dd7);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.glossary-term__icon {
+  display: inline-block;
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  vertical-align: baseline;
+  line-height: 0;
+  position: relative;
+  top: 1px;
+}
+
+.glossary-term--non-interactive {
+  cursor: default;
+  text-decoration: none;
+}
+
+/* Tooltip styles - desktop only */
+.glossary-tooltip {
+  padding: 12px 16px;
+  background-color: #313132;
+  color: #ffffff;
+  border-radius: 8px;
+  max-width: 400px;
+  min-width: 200px;
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  z-index: 2147483000;
+  box-shadow: var(--surface-shadow-medium, 0 4px 12px rgba(0, 0, 0, 0.15));
+  pointer-events: none;
+  white-space: normal;
+}
+
+.glossary-tooltip--portal {
+  position: fixed;
+}
+
+.glossary-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #313132;
+}
+
+.glossary-tooltip--bottom::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: #313132;
+}
+
+.glossary-tooltip__term {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.glossary-tooltip__definition {
+  display: block;
+}
+
+/* Hide tooltip on touch devices (Requirement 11.17) */
+@media (hover: none) {
+  .glossary-tooltip {
+    display: none !important;
+  }
+}

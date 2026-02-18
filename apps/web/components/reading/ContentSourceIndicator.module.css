@@ -1,0 +1,19 @@
+/**
+ * ContentSourceIndicator Component Styles
+ * 
+ * Wrapper component that applies colored left border based on content source.
+ */
+
+.content-source-indicator {
+  position: relative;
+}
+
+.content-source-indicator--bcbc {
+  border-left: 3px solid #fcba19;
+  padding-left: var(--layout-padding-medium, 1rem);
+}
+
+.content-source-indicator--nbc {
+  border-left: 3px solid #003366;
+  padding-left: var(--layout-padding-medium, 1rem);
+}

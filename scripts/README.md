@@ -40,10 +40,11 @@ SOURCE_FILE=data/samples/bcbc-sample.json npx tsx scripts/generate-assets.ts
 4. **Generate Search Index** - Create FlexSearch index (Sprint 1 Task 9)
 5. **Generate Navigation Tree** - Extract TOC structure (Sprint 1 Task 10)
 6. **Generate Glossary Map** - Extract term definitions (Sprint 1 Task 10)
-7. **Generate Amendment Dates** - Extract available dates (Sprint 1 Task 10)
-8. **Generate Content Types** - Extract content type list (Sprint 1 Task 10)
-9. **Generate Quick Access** - Create homepage pins (Sprint 1 Task 10)
-10. **Generate Content Chunks** - Split content by section (Sprint 1 Task 10)
+7. **Generate Equation Map** - Extract equation definitions for `[EQ:*:*]` markers
+8. **Generate Amendment Dates** - Extract available dates (Sprint 1 Task 10)
+9. **Generate Content Types** - Extract content type list (Sprint 1 Task 10)
+10. **Generate Quick Access** - Create homepage pins (Sprint 1 Task 10)
+11. **Generate Content Chunks** - Split content by section (Sprint 1 Task 10)
 
 **Output Files:**
 
@@ -52,6 +53,7 @@ apps/web/public/data/
 ├── search-index.json          # Pre-built FlexSearch index
 ├── navigation-tree.json       # Navigation structure
 ├── glossary-map.json          # Glossary term definitions
+├── equation-map.json          # Equation definitions keyed by equation id
 ├── amendment-dates.json       # Available amendment dates
 ├── content-types.json         # Content type filter options
 ├── quick-access.json          # Homepage quick access pins

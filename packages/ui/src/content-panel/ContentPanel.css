@@ -56,7 +56,6 @@
     /* When sidebar is present, content panel takes remaining space */
     flex: 1;
     min-width: 0; /* Allow flex shrinking */
-    border-left: 1px solid var(--surface-color-border-default, #D9D9D9);
   }
 
   .ui-ContentPanel--Container {

@@ -172,18 +172,68 @@ export interface Subsection {
 }
 
 /**
- * Article with clauses
+ * Content node types that can appear in article content array
+ */
+export type ArticleContentNode = Sentence | Table | Figure | Equation | NoteReference;
+
+/**
+ * Article with content array (preserves source order)
  */
 export interface Article {
   id: string;
   number: string;
   title: string;
   type: 'article';
-  clauses: Clause[];
-  notes: NoteReference[];
+  content: ArticleContentNode[];
   effectiveDate?: string;
   amendedDate?: string;
 }
+
+/**
+ * Content node types that can appear in sentence content array
+ */
+/**
+ * Revision information for content nodes
+ */
+export interface Revision {
+  type: 'original' | 'revision';
+  effective_date: string;
+  revision_id?: string;
+  revision_type?: 'amendment' | 'add' | 'replace' | 'delete';
+  sequence?: number;
+  status?: string;
+  text?: string;
+  title?: string;
+  content?: string;
+  change_summary?: string;
+  note?: string;
+  deleted?: boolean;
+}
+
+/**
+ * Content node types that can appear in sentence content array
+ */
+export type SentenceContentNode = Clause | Table | Figure | Equation;
+
+/**
+ * Sentence within an article
+ */
+export interface Sentence {
+  id: string;
+  number: string;
+  type: 'sentence';
+  text: string;
+  glossaryTerms: string[];
+  content?: SentenceContentNode[];
+  revisions?: Revision[];
+  revised?: boolean;
+  source?: string;
+}
+
+/**
+ * Content node types that can appear in clause content array
+ */
+export type ClauseContentNode = Subclause | Table | Figure | Equation;
 
 /**
  * Clause with text and optional subclauses
@@ -191,12 +241,28 @@ export interface Article {
 export interface Clause {
   id: string;
   number: string;
+  type: 'clause';
   text: string;
   glossaryTerms: string[];
-  subclauses?: Clause[];
-  tables?: Table[];
-  figures?: Figure[];
-  equations?: Equation[];
+  content?: ClauseContentNode[];
+  revisions?: Revision[];
+  revised?: boolean;
+  source?: string;
+}
+
+/**
+ * Subclause within a clause
+ */
+export interface Subclause {
+  id: string;
+  number: string;
+  type: 'subclause';
+  text: string;
+  glossaryTerms: string[];
+  content?: (Table | Figure | Equation)[];
+  revisions?: Revision[];
+  revised?: boolean;
+  source?: string;
 }
 
 /**
@@ -204,6 +270,7 @@ export interface Clause {
  */
 export interface Table {
   id: string;
+  type: 'table';
   number: string;
   title: string;
   caption?: string;
@@ -215,14 +282,32 @@ export interface Table {
  * Table row with cells
  */
 export interface TableRow {
+  id?: string;
+  type?: 'header_row' | 'body_row';
   cells: TableCell[];
 }
 
 /**
- * Table cell with optional colspan/rowspan
+ * Content item within a table cell (text or figure)
+ */
+export interface TableCellContent {
+  type: 'text' | 'figure';
+  value?: string; // For text content
+  id?: string; // For figure content
+  source?: 'nbc' | 'bc';
+  title?: string;
+  graphic?: {
+    src: string;
+    alt_text: string;
+  };
+}
+
+/**
+ * Table cell with optional colspan/rowspan and mixed content
  */
 export interface TableCell {
-  content: string;
+  content: string | TableCellContent[]; // Support both old and new formats
+  align?: 'left' | 'center' | 'right';
   colspan?: number;
   rowspan?: number;
   isHeader?: boolean;
@@ -233,6 +318,7 @@ export interface TableCell {
  */
 export interface Figure {
   id: string;
+  type: 'figure';
   number: string;
   title: string;
   caption?: string;
@@ -245,6 +331,7 @@ export interface Figure {
  */
 export interface Equation {
   id: string;
+  type: 'equation';
   number: string;
   latex: string;
   description?: string;
@@ -255,6 +342,7 @@ export interface Equation {
  */
 export interface NoteReference {
   id: string;
+  type: 'note';
   noteNumber: string;
   noteTitle: string;
   noteContent: string;

@@ -1,0 +1,24 @@
+/**
+ * ArticleBlock Component Styles
+ * 
+ * Renders article heading and content using type-driven recursive rendering.
+ */
+
+.articleBlock {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.articleHeading {
+  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
+  font-size: 18px;
+  line-height: 30.608px;
+  font-weight: var(--typography-font-weights-bold, 700);
+  color: var(--typography-color-primary);
+  margin: 0 0 12px 0;
+}
+
+.articleContent {
+  margin-left: 0;
+}

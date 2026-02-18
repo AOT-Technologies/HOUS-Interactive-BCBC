@@ -1,0 +1,37 @@
+/**
+ * NotesList Component Styles
+ * 
+ * Renders a collection of notes as an appendix.
+ */
+
+.notes-list {
+  margin-top: var(--layout-margin-64, 4rem);
+  padding-top: var(--layout-padding-large, 1.5rem);
+  border-top: 2px solid var(--surface-color-border-medium, #d1d1d3);
+}
+
+.notes-list__heading {
+  font-size: var(--typography-font-size-h3, 1.5rem);
+  font-weight: var(--typography-font-weights-bold, 700);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: var(--layout-margin-large, 1.5rem);
+  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
+}
+
+.notes-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-margin-medium, 1rem);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .notes-list {
+    margin-top: var(--layout-margin-48, 3rem);
+  }
+  
+  .notes-list__heading {
+    font-size: 1.25rem;
+  }
+}
+

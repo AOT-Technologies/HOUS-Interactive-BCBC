@@ -147,6 +147,23 @@
   text-decoration: underline;
 }
 
+.nav-tree-link--volume {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.nav-tree-link--volume:hover {
+  text-decoration: none;
+}
+
+.nav-tree-link--division {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 /* Number styling */
 .nav-tree-number {
   font-weight: inherit;

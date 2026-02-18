@@ -1,0 +1,64 @@
+/**
+ * ClauseRenderer Component Styles
+ * 
+ * Renders numbered clauses with hierarchical indentation.
+ */
+
+.clauseList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--typography-font-families-bc-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #313132;
+}
+
+.clauseItem {
+  margin-bottom: 14px;
+  display: list-item;
+}
+
+/* Indentation levels */
+.clauseItem.level0 {
+  padding-left: 32px;
+}
+
+.clauseItem.level1 {
+  padding-left: 56px;
+}
+
+.clauseItem.level2 {
+  padding-left: 80px;
+}
+
+.clauseItem.level3 {
+  padding-left: 104px;
+}
+
+.clauseNumber {
+  font-weight: var(--typography-font-weights-bold);
+  margin-right: 0.25rem;
+}
+
+.clauseContent {
+  font-weight: var(--typography-font-weights-regular);
+  display: inline;
+}
+
+.subClauses {
+  margin-top: 8px;
+}
+
+/* Tables and figures within clauses */
+.clause-tables,
+.clause-figures {
+  margin-top: var(--layout-margin-16);
+  margin-bottom: var(--layout-margin-16);
+}
+
+/* Remove left padding from tables/figures to align with clause content */
+.clauseItem .clause-tables,
+.clauseItem .clause-figures {
+  margin-left: calc(-1 * var(--layout-padding-32));
+}

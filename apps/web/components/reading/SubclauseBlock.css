@@ -1,0 +1,31 @@
+.subclauseBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: var(--layout-margin-small);
+}
+
+.subclauseNumber {
+  display: inline-flex;
+  flex-shrink: 0;
+  font: var(--typography-regular-body);
+  line-height: var(--typography-line-heights-sparse);
+  color: var(--typography-color-secondary);
+  min-width: 2rem;
+}
+
+.subclauseContent {
+  flex: 1;
+}
+
+.subclauseText {
+  margin: 0 0 var(--layout-margin-small) 0;
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+  line-height: var(--typography-line-heights-sparse);
+}
+
+.subclauseNestedContent {
+  margin-left: var(--layout-margin-medium);
+  margin-top: var(--layout-margin-small);
+}

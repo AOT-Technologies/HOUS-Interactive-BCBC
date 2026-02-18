@@ -15,7 +15,9 @@ import type {
   Section,
   Subsection,
   Article,
+  Sentence,
   Clause,
+  Subclause,
   ValidationError,
 } from './types';
 
@@ -329,7 +331,7 @@ function validateArticle(article: Article, path: string): ValidationError[] {
   // Validate required fields
   errors.push(...validateRequiredFields(
     article as unknown as Record<string, unknown>,
-    ['id', 'number', 'title', 'type', 'clauses', 'notes'],
+    ['id', 'number', 'title', 'type', 'sentences', 'notes'],
     path
   ));
 
@@ -350,24 +352,28 @@ function validateArticle(article: Article, path: string): ValidationError[] {
     });
   }
 
-  // Validate clauses array
-  if (article.clauses) {
-    if (!Array.isArray(article.clauses)) {
+  // Validate content array (replaces sentences array in new structure)
+  if (article.content) {
+    if (!Array.isArray(article.content)) {
       errors.push({
         path,
-        field: 'clauses',
-        message: 'Field clauses must be an array',
+        field: 'content',
+        message: 'Field content must be an array',
         severity: 'error',
       });
     } else {
-      article.clauses.forEach((clause, index) => {
-        errors.push(...validateClause(clause, `${path}.clauses[${index}]`));
+      article.content.forEach((contentNode, index) => {
+        // Validate based on content node type
+        if (contentNode.type === 'sentence') {
+          errors.push(...validateSentence(contentNode as any, `${path}.content[${index}]`));
+        }
+        // Tables, Figures, Equations, NoteReferences would be validated here
       });
     }
   }
 
-  // Validate notes array
-  if (article.notes) {
+  // Validate notes array (if present)
+  if ('notes' in article && article.notes) {
     if (!Array.isArray(article.notes)) {
       errors.push({
         path,
@@ -390,6 +396,69 @@ function validateArticle(article: Article, path: string): ValidationError[] {
 }
 
 /**
+ * Validate a sentence structure
+ */
+function validateSentence(sentence: Sentence, path: string): ValidationError[] {
+  const errors: ValidationError[] = [];
+
+  // Validate required fields
+  errors.push(...validateRequiredFields(
+    sentence as unknown as Record<string, unknown>,
+    ['id', 'number', 'type', 'text', 'glossaryTerms'],
+    path
+  ));
+
+  // Validate data types
+  errors.push(...validateDataTypes(
+    sentence as unknown as Record<string, unknown>,
+    { id: 'string', number: 'string', type: 'string', text: 'string' },
+    path
+  ));
+
+  // Validate type field value
+  if (sentence.type !== 'sentence') {
+    errors.push({
+      path,
+      field: 'type',
+      message: `Invalid type value: expected 'sentence', got '${sentence.type}'`,
+      severity: 'error',
+    });
+  }
+
+  // Validate glossaryTerms is an array
+  if (sentence.glossaryTerms && !Array.isArray(sentence.glossaryTerms)) {
+    errors.push({
+      path,
+      field: 'glossaryTerms',
+      message: 'Field glossaryTerms must be an array',
+      severity: 'error',
+    });
+  }
+
+  // Validate content if present (replaces clauses in new structure)
+  if (sentence.content) {
+    if (!Array.isArray(sentence.content)) {
+      errors.push({
+        path,
+        field: 'content',
+        message: 'Field content must be an array',
+        severity: 'error',
+      });
+    } else {
+      sentence.content.forEach((contentNode, index) => {
+        // Validate based on content node type
+        if (contentNode.type === 'clause') {
+          errors.push(...validateClause(contentNode as any, `${path}.content[${index}]`));
+        }
+        // Tables, Figures, Equations would be validated here
+      });
+    }
+  }
+
+  return errors;
+}
+
+/**
  * Validate a clause structure
  */
 function validateClause(clause: Clause, path: string): ValidationError[] {
@@ -398,16 +467,26 @@ function validateClause(clause: Clause, path: string): ValidationError[] {
   // Validate required fields
   errors.push(...validateRequiredFields(
     clause as unknown as Record<string, unknown>,
-    ['id', 'number', 'text', 'glossaryTerms'],
+    ['id', 'number', 'type', 'text', 'glossaryTerms'],
     path
   ));
 
   // Validate data types
   errors.push(...validateDataTypes(
     clause as unknown as Record<string, unknown>,
-    { id: 'string', number: 'string', text: 'string' },
+    { id: 'string', number: 'string', type: 'string', text: 'string' },
     path
   ));
+
+  // Validate type field value
+  if (clause.type !== 'clause') {
+    errors.push({
+      path,
+      field: 'type',
+      message: `Invalid type value: expected 'clause', got '${clause.type}'`,
+      severity: 'error',
+    });
+  }
 
   // Validate glossaryTerms is an array
   if (clause.glossaryTerms && !Array.isArray(clause.glossaryTerms)) {
@@ -419,45 +498,96 @@ function validateClause(clause: Clause, path: string): ValidationError[] {
     });
   }
 
-  // Validate subclauses if present
-  if (clause.subclauses) {
-    if (!Array.isArray(clause.subclauses)) {
+  // Validate content if present (replaces subclauses in new structure)
+  if (clause.content) {
+    if (!Array.isArray(clause.content)) {
       errors.push({
         path,
-        field: 'subclauses',
-        message: 'Field subclauses must be an array',
+        field: 'content',
+        message: 'Field content must be an array',
         severity: 'error',
       });
     } else {
-      clause.subclauses.forEach((subclause, index) => {
-        errors.push(...validateClause(subclause, `${path}.subclauses[${index}]`));
+      clause.content.forEach((contentNode, index) => {
+        // Validate based on content node type
+        if (contentNode.type === 'subclause') {
+          errors.push(...validateSubclause(contentNode as any, `${path}.content[${index}]`));
+        }
+        // Tables, Figures, Equations would be validated here
       });
     }
   }
 
-  // Validate tables if present
-  if (clause.tables) {
-    if (!Array.isArray(clause.tables)) {
+  return errors;
+}
+
+/**
+ * Validate a subclause structure
+ */
+function validateSubclause(subclause: Subclause, path: string): ValidationError[] {
+  const errors: ValidationError[] = [];
+
+  // Validate required fields
+  errors.push(...validateRequiredFields(
+    subclause as unknown as Record<string, unknown>,
+    ['id', 'number', 'type', 'text', 'glossaryTerms'],
+    path
+  ));
+
+  // Validate data types
+  errors.push(...validateDataTypes(
+    subclause as unknown as Record<string, unknown>,
+    { id: 'string', number: 'string', type: 'string', text: 'string' },
+    path
+  ));
+
+  // Validate type field value
+  if (subclause.type !== 'subclause') {
+    errors.push({
+      path,
+      field: 'type',
+      message: `Invalid type value: expected 'subclause', got '${subclause.type}'`,
+      severity: 'error',
+    });
+  }
+
+  // Validate glossaryTerms is an array
+  if (subclause.glossaryTerms && !Array.isArray(subclause.glossaryTerms)) {
+    errors.push({
+      path,
+      field: 'glossaryTerms',
+      message: 'Field glossaryTerms must be an array',
+      severity: 'error',
+    });
+  }
+
+  // Validate content if present (replaces tables/figures/equations in new structure)
+  if (subclause.content) {
+    if (!Array.isArray(subclause.content)) {
       errors.push({
         path,
-        field: 'tables',
-        message: 'Field tables must be an array',
+        field: 'content',
+        message: 'Field content must be an array',
         severity: 'error',
       });
     } else {
-      clause.tables.forEach((table, index) => {
-        errors.push(...validateRequiredFields(
-          table as unknown as Record<string, unknown>,
-          ['id', 'number', 'title', 'rows'],
-          `${path}.tables[${index}]`
-        ));
+      subclause.content.forEach((contentNode, index) => {
+        // Validate based on content node type
+        if (contentNode.type === 'table') {
+          errors.push(...validateRequiredFields(
+            contentNode as unknown as Record<string, unknown>,
+            ['id', 'number', 'title', 'rows'],
+            `${path}.content[${index}]`
+          ));
+        }
+        // Figures, Equations would be validated here
       });
     }
   }
 
-  // Validate figures if present
-  if (clause.figures) {
-    if (!Array.isArray(clause.figures)) {
+  // Validate figures if present (legacy structure)
+  if ('figures' in subclause && subclause.figures) {
+    if (!Array.isArray(subclause.figures)) {
       errors.push({
         path,
         field: 'figures',
@@ -465,7 +595,7 @@ function validateClause(clause: Clause, path: string): ValidationError[] {
         severity: 'error',
       });
     } else {
-      clause.figures.forEach((figure, index) => {
+      subclause.figures.forEach((figure, index) => {
         errors.push(...validateRequiredFields(
           figure as unknown as Record<string, unknown>,
           ['id', 'number', 'title', 'imageUrl', 'altText'],
@@ -475,9 +605,9 @@ function validateClause(clause: Clause, path: string): ValidationError[] {
     }
   }
 
-  // Validate equations if present
-  if (clause.equations) {
-    if (!Array.isArray(clause.equations)) {
+  // Validate equations if present (legacy structure)
+  if ('equations' in subclause && subclause.equations) {
+    if (!Array.isArray(subclause.equations)) {
       errors.push({
         path,
         field: 'equations',
@@ -485,7 +615,7 @@ function validateClause(clause: Clause, path: string): ValidationError[] {
         severity: 'error',
       });
     } else {
-      clause.equations.forEach((equation, index) => {
+      subclause.equations.forEach((equation, index) => {
         errors.push(...validateRequiredFields(
           equation as unknown as Record<string, unknown>,
           ['id', 'number', 'latex'],
@@ -551,14 +681,20 @@ export function validateCrossReferences(document: BCBCDocument): ValidationError
             
             validIds.add(article.id);
             
-            if (!article.clauses || !Array.isArray(article.clauses)) continue;
+            // Use content array instead of sentences
+            if (!article.content || !Array.isArray(article.content)) continue;
             
-            for (const clause of article.clauses) {
-              if (!clause || typeof clause !== 'object') continue;
+            for (const contentNode of article.content) {
+              if (!contentNode || typeof contentNode !== 'object') continue;
               
-              validIds.add(clause.id);
-              // Add subclause IDs recursively
-              addClauseIds(clause, validIds);
+              validIds.add(contentNode.id);
+              // Add clause and subclause IDs recursively for sentences
+              if (contentNode.type === 'sentence' && 'content' in contentNode && contentNode.content && Array.isArray(contentNode.content)) {
+                for (const clauseNode of contentNode.content) {
+                  validIds.add(clauseNode.id);
+                  addClauseIds(clauseNode as any, validIds);
+                }
+              }
             }
           }
         }
@@ -575,7 +711,7 @@ export function validateCrossReferences(document: BCBCDocument): ValidationError
     }
   }
 
-  // Validate glossary term references in clauses
+  // Validate glossary term references in sentences, clauses, and subclauses
   for (const division of divisions) {
     if (!division || typeof division !== 'object' || !division.parts || !Array.isArray(division.parts)) continue;
     
@@ -589,21 +725,43 @@ export function validateCrossReferences(document: BCBCDocument): ValidationError
           if (!subsection || typeof subsection !== 'object' || !subsection.articles || !Array.isArray(subsection.articles)) continue;
           
           for (const article of subsection.articles) {
-            if (!article || typeof article !== 'object' || !article.clauses || !Array.isArray(article.clauses)) continue;
+            // Use content array instead of sentences
+            if (!article || typeof article !== 'object' || !article.content || !Array.isArray(article.content)) continue;
             
-            for (const clause of article.clauses) {
-              if (!clause || typeof clause !== 'object') continue;
+            const glossaryIds = document.glossary && Array.isArray(document.glossary)
+              ? document.glossary.map(g => g.id)
+              : [];
+            
+            for (const contentNode of article.content) {
+              if (!contentNode || typeof contentNode !== 'object') continue;
               
-              const glossaryIds = document.glossary && Array.isArray(document.glossary)
-                ? document.glossary.map(g => g.id)
-                : [];
+              // Only validate sentences (skip tables, figures, etc.)
+              if (contentNode.type !== 'sentence') continue;
               
-              errors.push(...validateClauseReferences(
-                clause,
+              // Validate sentence glossary terms
+              errors.push(...validateSentenceReferences(
+                contentNode as any,
                 validIds,
                 glossaryIds,
-                `${division.id}.${part.id}.${section.id}.${subsection.id}.${article.id}.${clause.id}`
+                `${division.id}.${part.id}.${section.id}.${subsection.id}.${article.id}.${contentNode.id}`
               ));
+              
+              // Validate clauses within sentence
+              if ('content' in contentNode && contentNode.content && Array.isArray(contentNode.content)) {
+                for (const clauseNode of contentNode.content) {
+                  if (!clauseNode || typeof clauseNode !== 'object') continue;
+                  
+                  // Only validate clauses
+                  if (clauseNode.type !== 'clause') continue;
+                  
+                  errors.push(...validateClauseReferences(
+                    clauseNode as any,
+                    validIds,
+                    glossaryIds,
+                    `${division.id}.${part.id}.${section.id}.${subsection.id}.${article.id}.${contentNode.id}.${clauseNode.id}`
+                  ));
+                }
+              }
             }
           }
         }
@@ -618,12 +776,40 @@ export function validateCrossReferences(document: BCBCDocument): ValidationError
  * Recursively add clause and subclause IDs to the set
  */
 function addClauseIds(clause: Clause, ids: Set<string>): void {
-  if (clause.subclauses) {
-    for (const subclause of clause.subclauses) {
-      ids.add(subclause.id);
-      addClauseIds(subclause, ids);
+  // Use content array instead of subclauses
+  if (clause.content) {
+    for (const contentNode of clause.content) {
+      if (contentNode.type === 'subclause') {
+        ids.add(contentNode.id);
+      }
     }
   }
+}
+
+/**
+ * Validate references within a sentence
+ */
+function validateSentenceReferences(
+  sentence: Sentence,
+  _validIds: Set<string>,
+  glossaryIds: string[],
+  path: string
+): ValidationError[] {
+  const errors: ValidationError[] = [];
+
+  // Validate glossary term references
+  for (const termId of sentence.glossaryTerms) {
+    if (!glossaryIds.includes(termId)) {
+      errors.push({
+        path,
+        field: 'glossaryTerms',
+        message: `Invalid glossary term reference: '${termId}' does not exist in glossary`,
+        severity: 'error',
+      });
+    }
+  }
+
+  return errors;
 }
 
 /**
@@ -649,10 +835,38 @@ function validateClauseReferences(
     }
   }
 
-  // Recursively validate subclauses
-  if (clause.subclauses) {
-    for (const subclause of clause.subclauses) {
-      errors.push(...validateClauseReferences(subclause, validIds, glossaryIds, `${path}.${subclause.id}`));
+  // Recursively validate subclauses (use content array)
+  if (clause.content) {
+    for (const contentNode of clause.content) {
+      if (contentNode.type === 'subclause') {
+        errors.push(...validateSubclauseReferences(contentNode as any, validIds, glossaryIds, `${path}.${contentNode.id}`));
+      }
+    }
+  }
+
+  return errors;
+}
+
+/**
+ * Validate references within a subclause
+ */
+function validateSubclauseReferences(
+  subclause: Subclause,
+  _validIds: Set<string>,
+  glossaryIds: string[],
+  path: string
+): ValidationError[] {
+  const errors: ValidationError[] = [];
+
+  // Validate glossary term references
+  for (const termId of subclause.glossaryTerms) {
+    if (!glossaryIds.includes(termId)) {
+      errors.push({
+        path,
+        field: 'glossaryTerms',
+        message: `Invalid glossary term reference: '${termId}' does not exist in glossary`,
+        severity: 'error',
+      });
     }
   }
 

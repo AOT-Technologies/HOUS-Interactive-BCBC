@@ -1,0 +1,86 @@
+.partRenderer {
+  width: 100%;
+}
+
+.partRendererDescription {
+  margin: 0 0 1rem 0;
+  color: var(--typography-color-secondary, #4b5563);
+  font: var(--typography-regular-body);
+}
+
+.partSectionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.partSectionCard {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  min-height: 145px;
+  background: #ffffff;
+  border: 1px solid var(--surface-color-border-default, #d9d9d9);
+  border-radius: 8px;
+  padding: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.partSectionCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--theme-primary-gold, #fcba19);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.partSectionCard:hover {
+  border-color: var(--surface-color-border-default, #d9d9d9);
+}
+
+.partSectionCard:hover::before,
+.partSectionCard:focus-visible::before {
+  opacity: 1;
+}
+
+.partSectionCard:focus-visible {
+  outline: 2px solid var(--theme-primary-gold, #fcba19);
+  outline-offset: 2px;
+}
+
+.partSectionCardNumber {
+  margin: 0 0 8px 0;
+  font-family: "BC Sans", "Noto Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  color: var(--surface-color-primary-button-default, #013366);
+}
+
+.partSectionCardTitle {
+  margin: 0;
+  font-family: "BC Sans", "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--typography-color-primary, #292929);
+}
+
+@media (max-width: 767px) {
+  .partSectionCard {
+    min-height: 128px;
+    padding: 20px;
+  }
+
+  .partSectionCardNumber {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

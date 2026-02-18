@@ -1,0 +1,186 @@
+/**
+ * ReadingView Component Styles
+ * 
+ * Main container for the reading page content renderer.
+ */
+
+.reading-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  max-height: calc(100dvh - var(--header-height-full, 60px) - var(--layout-padding-xlarge, 2rem));
+  margin: 0;
+  padding: 0;
+}
+
+.reading-view__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--layout-margin-large, 1.5rem);
+}
+
+.reading-view__content {
+  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
+  font-size: var(--typography-font-size-body, 1rem);
+  line-height: var(--typography-line-heights-normal, 1.5);
+  color: var(--typography-color-primary, #313132);
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 0 var(--layout-padding-large, 1.5rem);
+  overscroll-behavior: contain;
+}
+
+.reading-view__loading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: clamp(16rem, 42vh, 24rem);
+  border: var(--layout-border-width-small, 1px) solid var(--surface-color-border-default, #d8d8d8);
+  border-radius: 8px;
+  background: var(--surface-color-background-white, #ffffff);
+  padding: 1.5rem;
+}
+
+.reading-view__loading-text {
+  margin: 0;
+  font: var(--typography-regular-label, 400 0.75rem/1.2 "BC Sans", sans-serif);
+  color: var(--typography-color-secondary, #6c6c6e);
+}
+
+.reading-view__loading-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 64rem;
+}
+
+.reading-view__skeleton-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding-top: 0.25rem;
+}
+
+.reading-view__skeleton-line {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #eef2f5;
+}
+
+.reading-view__skeleton-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  animation: reading-view-skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.reading-view__skeleton-title {
+  width: min(32rem, 72%);
+  height: 2rem;
+}
+
+.reading-view__skeleton-subtitle {
+  width: min(16rem, 44%);
+  height: 1.1rem;
+}
+
+.reading-view__skeleton-body {
+  width: 100%;
+  height: 1rem;
+}
+
+.reading-view__skeleton-body-mid {
+  width: 84%;
+  height: 1rem;
+}
+
+.reading-view__skeleton-body-short {
+  width: 68%;
+  height: 1rem;
+}
+
+@keyframes reading-view-skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.reading-view__error {
+  padding: var(--layout-padding-large);
+  background-color: var(--support-surface-color-danger, #f4e1e2);
+  border: var(--layout-border-width-small) solid var(--support-border-color-danger, #ce3e39);
+  border-radius: var(--layout-border-radius-medium, 4px);
+  color: var(--typography-color-primary, #313132);
+}
+
+.reading-view__error h2 {
+  font: var(--typography-bold-h3);
+  margin-bottom: var(--layout-margin-medium, 1rem);
+}
+
+.reading-view__error p {
+  margin-bottom: var(--layout-margin-large, 1.5rem);
+}
+
+.reading-view__error-actions {
+  display: flex;
+  gap: var(--layout-margin-medium, 1rem);
+  align-items: center;
+}
+
+.reading-view__error-button {
+  background-color: var(--surface-color-primary-button-default, #003366);
+  color: var(--typography-color-primary-invert, #ffffff);
+  padding: var(--layout-padding-small) var(--layout-padding-large);
+  border: none;
+  border-radius: var(--layout-border-radius-medium, 4px);
+  font: var(--typography-bold-body);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reading-view__error-button:hover {
+  background-color: var(--surface-color-primary-button-hover, #002147);
+}
+
+.reading-view__error-link {
+  color: var(--typography-color-link, #1a5a96);
+  text-decoration: underline;
+  font: var(--typography-regular-body);
+}
+
+.reading-view__error-link:hover {
+  text-decoration: none;
+}
+
+/* Responsive styles */
+
+/* Desktop (≥1024px) - Use full available width */
+@media (min-width: 64rem) {
+  .reading-view__content {
+    width: 100%;
+    max-width: none; /* Remove width constraint to fill available space */
+    margin: 0;
+    padding-right: var(--layout-padding-large, 1.5rem);
+  }
+}
+
+/* Tablet and Mobile */
+@media (max-width: 768px) {
+  .reading-view {
+    max-height: calc(100dvh - var(--header-height-full, 60px) - var(--layout-padding-large, 1.5rem));
+  }
+
+  .reading-view__error-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,92 @@
+.objective-link {
+  position: relative;
+  display: inline;
+  color: var(--typography-color-primary);
+  cursor: help;
+  font-weight: var(--typography-font-weights-regular);
+  z-index: 1;
+}
+
+.objective-link:hover,
+.objective-link:focus {
+  color: var(--typography-color-link);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  z-index: 2147483000;
+}
+
+.objective-link__text {
+  display: inline;
+}
+
+.objective-link__tooltip {
+  position: absolute;
+  top: auto;
+  left: 0;
+  transform: none;
+  margin-bottom: 0;
+  padding: var(--layout-padding-12);
+  background-color: var(--surface-color-background-dark-blue);
+  color: var(--typography-color-primary-invert);
+  border-radius: var(--layout-border-radius-medium);
+  box-shadow: var(--surface-shadow-large);
+  z-index: 2147483000;
+  min-width: 250px;
+  max-width: 400px;
+  white-space: normal;
+  text-align: left;
+  pointer-events: none;
+}
+
+.objective-link__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--surface-color-background-dark-blue);
+}
+
+.objective-link__tooltip--portal {
+  position: fixed;
+}
+
+.objective-link__tooltip--bottom::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--surface-color-background-dark-blue);
+}
+
+.objective-link__tooltip-title {
+  display: block;
+  font-weight: var(--typography-font-weights-bold);
+  font-size: var(--typography-font-size-body);
+  margin-bottom: var(--layout-margin-8);
+  color: var(--theme-primary-gold);
+}
+
+.objective-link__tooltip-definition {
+  display: block;
+  font-size: var(--typography-font-size-body);
+  line-height: var(--typography-line-heights-normal);
+}
+
+.objective-link__tooltip-badge {
+  display: inline-block;
+  margin-top: var(--layout-margin-8);
+  padding: var(--layout-padding-4) var(--layout-padding-8);
+  background-color: var(--theme-primary-gold);
+  color: var(--surface-color-background-dark-blue);
+  font-size: var(--typography-font-size-label);
+  font-weight: var(--typography-font-weights-bold);
+  border-radius: var(--layout-border-radius-small);
+}
+
+/* Non-interactive fallback */
+.objective-ref {
+  display: inline;
+  font-weight: var(--typography-font-weights-regular);
+  color: var(--typography-color-primary);
+}

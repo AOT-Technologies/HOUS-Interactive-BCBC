@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_NAV_TREE, TESTID_NAV_NODE } from '@repo/constants/src/testids';
 import './NavigationTree.css';
@@ -35,6 +36,9 @@ interface NavigationTreeProps {
  * Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 10.1
  */
 export function NavigationTree({ className = '', onNodeClick }: NavigationTreeProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { 
     navigationTree, 
     expandedNodes, 
@@ -48,67 +52,152 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
   } = useNavigationStore();
   const treeRef = useRef<HTMLDivElement>(null);
   const activeNodeRef = useRef<HTMLButtonElement>(null);
+  const hasInitializedActiveScrollRef = useRef(false);
 
   // Use filtered tree when search is active, otherwise use full tree
   const displayTree = searchQuery ? filteredTree : navigationTree;
+
+  const buildTargetUrl = useCallback(
+    (path: string): string => {
+      const queryString = searchParams.toString();
+      return queryString ? `${path}?${queryString}` : path;
+    },
+    [searchParams]
+  );
+
+  const scrollExpandedChildrenIntoView = useCallback((triggerElement: HTMLElement) => {
+    if (!treeRef.current) {
+      return;
+    }
+
+    const treeElement = treeRef.current;
+
+    // Wait until the expanded children are rendered before measuring.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const treeItem = triggerElement.closest('.nav-tree-item') as HTMLElement | null;
+        const childrenContainer = treeItem?.querySelector(':scope > .nav-tree-children') as HTMLElement | null;
+
+        if (!childrenContainer) {
+          return;
+        }
+
+        const treeRect = treeElement.getBoundingClientRect();
+        const childrenRect = childrenContainer.getBoundingClientRect();
+
+        const overflowBottom = childrenRect.bottom - treeRect.bottom;
+        if (overflowBottom > 0) {
+          treeElement.scrollBy({
+            top: overflowBottom + 12,
+            behavior: 'smooth',
+          });
+        }
+      });
+    });
+  }, []);
 
   /**
    * Scroll to active node when current path changes
    */
   useEffect(() => {
+    if (!hasInitializedActiveScrollRef.current) {
+      hasInitializedActiveScrollRef.current = true;
+      return;
+    }
+
     if (activeNodeRef.current && treeRef.current) {
       const treeRect = treeRef.current.getBoundingClientRect();
       const nodeRect = activeNodeRef.current.getBoundingClientRect();
       
-      // Check if node is outside visible area
+      // Check if node is outside visible area of the tree container
       if (nodeRect.top < treeRect.top || nodeRect.bottom > treeRect.bottom) {
-        activeNodeRef.current.scrollIntoView({
+        // Calculate how far the node is from the center of the tree viewport,
+        // then adjust the current scroll position by that delta.
+        const nodeCenter = nodeRect.top + nodeRect.height / 2;
+        const treeCenter = treeRect.top + treeRect.height / 2;
+        const delta = nodeCenter - treeCenter;
+        treeRef.current.scrollTo({
+          top: treeRef.current.scrollTop + delta,
           behavior: 'smooth',
-          block: 'center',
         });
       }
     }
   }, [currentPath]);
 
-  /**
-   * Handle node click - toggle expansion and navigate
-   */
-  const handleNodeClick = useCallback(
-    (node: NavigationNode, event: React.MouseEvent) => {
-      event.preventDefault();
+  const handleNodeAction = useCallback(
+    (node: NavigationNode, triggerElement?: HTMLElement) => {
+      const isNavigable =
+        node.type === 'part' ||
+        node.type === 'section' ||
+        node.type === 'subsection' ||
+        node.type === 'article';
+      const wasExpanded = expandedNodes.has(node.id);
       
       // Toggle expansion if node has children
       if (node.children && node.children.length > 0) {
         toggleNode(node.id);
+
+        // If expanding near the bottom of the scroll area, keep new children visible.
+        if (!wasExpanded && triggerElement) {
+          scrollExpandedChildrenIntoView(triggerElement);
+        }
       }
       
-      // Update current path
-      setCurrentPath(node.path);
+      // Only part and deeper levels are routable content pages.
+      if (isNavigable) {
+        const targetUrl = buildTargetUrl(node.path);
+        const currentUrl = buildTargetUrl(pathname);
+        const isReadingPage = pathname.startsWith('/code');
+
+        // In reading page, update only the reading view state and URL (no route transition).
+        // From homepage/other pages, perform normal route navigation to reading page.
+        if (isReadingPage) {
+          setCurrentPath(node.path, false);
+          if (targetUrl !== currentUrl && typeof window !== 'undefined') {
+            window.history.pushState({}, '', targetUrl);
+          }
+        } else if (targetUrl !== currentUrl) {
+          setCurrentPath(node.path, false);
+          router.push(targetUrl);
+        }
+      }
       
       // Call optional callback
       if (onNodeClick) {
         onNodeClick(node);
       }
     },
-    [toggleNode, setCurrentPath, onNodeClick]
+    [toggleNode, setCurrentPath, buildTargetUrl, pathname, router, onNodeClick, expandedNodes, scrollExpandedChildrenIntoView]
+  );
+
+  /**
+   * Handle node click - toggle expansion and navigate
+   */
+  const handleNodeClick = useCallback(
+    (node: NavigationNode, event: React.MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      handleNodeAction(node, event.currentTarget);
+    },
+    [handleNodeAction]
   );
 
   /**
    * Handle keyboard navigation
    */
   const handleKeyDown = useCallback(
-    (node: NavigationNode, event: React.KeyboardEvent) => {
+    (node: NavigationNode, event: React.KeyboardEvent<HTMLButtonElement>) => {
       switch (event.key) {
         case 'Enter':
         case ' ':
           event.preventDefault();
-          handleNodeClick(node, event as any);
+          handleNodeAction(node, event.currentTarget);
           break;
         case 'ArrowRight':
           // Expand node if it has children and is collapsed
           if (node.children && node.children.length > 0 && !expandedNodes.has(node.id)) {
             event.preventDefault();
             toggleNode(node.id);
+            scrollExpandedChildrenIntoView(event.currentTarget);
           }
           break;
         case 'ArrowLeft':
@@ -120,7 +209,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
           break;
       }
     },
-    [handleNodeClick, expandedNodes, toggleNode]
+    [handleNodeAction, expandedNodes, toggleNode, scrollExpandedChildrenIntoView]
   );
 
   /**
@@ -166,7 +255,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
             {/* Link label */}
             <button
               ref={isActive ? activeNodeRef : null}
-              className={`nav-tree-link ${isActive ? 'nav-tree-link--active' : ''} ${isMatching ? 'nav-tree-link--matching' : ''}`}
+              className={`nav-tree-link nav-tree-link--${node.type} ${isActive ? 'nav-tree-link--active' : ''} ${isMatching ? 'nav-tree-link--matching' : ''}`}
               onClick={(e) => handleNodeClick(node, e)}
               onKeyDown={(e) => handleKeyDown(node, e)}
               aria-expanded={hasChildren ? isExpanded : undefined}

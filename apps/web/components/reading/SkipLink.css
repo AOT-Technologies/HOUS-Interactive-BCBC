@@ -1,0 +1,61 @@
+/**
+ * SkipLink Component Styles
+ * 
+ * WCAG AAA compliant skip navigation links.
+ * Hidden by default, visible on keyboard focus.
+ */
+
+.skip-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: var(--layout-padding-medium, 1rem) var(--layout-padding-large, 1.5rem);
+  background-color: var(--surface-color-primary-button-default, #003366);
+  color: var(--typography-color-primary-invert, #ffffff);
+  font: var(--typography-bold-body, 700 1rem/1.5 "BC Sans", sans-serif);
+  text-decoration: none;
+  border-radius: 0 0 var(--layout-border-radius-medium, 4px) 0;
+  transition: top 0.2s ease;
+  min-height: 44px; /* WCAG AAA touch target size */
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: var(--layout-border-width-large, 4px) solid var(--surface-color-border-active, #fcba19);
+  outline-offset: 0;
+}
+
+.skip-link:hover {
+  background-color: var(--surface-color-primary-button-hover, #002147);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .skip-link {
+    border: var(--layout-border-width-medium, 2px) solid var(--typography-color-primary-invert, #ffffff);
+  }
+
+  .skip-link:focus {
+    outline-width: var(--layout-border-width-large, 4px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}
