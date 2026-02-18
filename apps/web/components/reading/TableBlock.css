@@ -21,7 +21,7 @@
 
 .table-block__wrapper {
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
 }
@@ -113,6 +113,38 @@
 .table-block__caption--above {
   margin-top: 0;
   margin-bottom: var(--layout-margin-small, 0.5rem);
+}
+
+.table-block__notes {
+  margin-top: var(--layout-margin-small, 0.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.table-block__notes-title {
+  font-weight: var(--typography-font-weights-semibold, 600);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: 0.1rem;
+}
+
+.table-block__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--typography-color-secondary, #6c6c6e);
+}
+
+.table-block__note-label {
+  flex: 0 0 auto;
+  font-weight: var(--typography-font-weights-semibold, 600);
+  color: var(--typography-color-primary, #313132);
+}
+
+.table-block__note-content {
+  flex: 1 1 auto;
 }
 
 @media print {

@@ -6,8 +6,8 @@
 
 .cross-reference-link {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.15rem;
+  align-items: center;
+  gap: 0.2rem;
   color: #1a5a96;
   font: inherit;
   line-height: inherit;
@@ -29,10 +29,16 @@
 }
 
 .cross-reference-link__icon {
-  display: inline-block;
-  margin-right: 0.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.875rem;
-  vertical-align: baseline;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.cross-reference-link__text {
+  line-height: inherit;
 }
 
 .cross-reference-link--non-interactive {

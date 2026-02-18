@@ -21,9 +21,16 @@ export {
   extractGlossaryMap,
   extractContentTypes,
   extractQuickAccess,
+  extractFunctionalStatements,
+  extractObjectives,
+  extractFunctionalStatementsFromRaw,
+  extractObjectivesFromRaw,
 } from './metadata-extractor';
 export type {
   NavigationNode,
   QuickAccessSection,
   ExtractedMetadata,
+  FunctionalStatement,
+  Objective,
+  SubObjective,
 } from './metadata-extractor';

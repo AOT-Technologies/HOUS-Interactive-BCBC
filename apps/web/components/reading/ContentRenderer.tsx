@@ -47,6 +47,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
   parentHasBcSource = false,
 }) => {
   const source = (node as { source?: string }).source;
+  const nodeType = (node as { type?: string }).type;
   const hasBcSource = source?.toLowerCase() === 'bc';
   const hasBcSourceInTree = parentHasBcSource || hasBcSource;
 
@@ -57,7 +58,15 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
       </div>
     ) : content;
 
-  switch (node.type) {
+  const toEquationNode = (rawNode: any): Equation => ({
+    id: rawNode?.id || '',
+    type: 'equation',
+    number: rawNode?.number || rawNode?.id || '',
+    latex: rawNode?.latex || rawNode?.plainText || '',
+    description: rawNode?.plainText,
+  });
+
+  switch (nodeType) {
     case 'sentence':
       return withSourceIndicator(
         <SentenceBlock
@@ -102,6 +111,27 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
     
     case 'equation':
       return withSourceIndicator(<EquationBlock equation={node as Equation} />);
+
+    // Some generated content can emit equation objects as `type: "display"` or
+    // `type: "inline"` instead of `type: "equation"`.
+    case 'display':
+    case 'inline': {
+      const displayType = nodeType === 'inline' ? 'inline' : 'block';
+      return withSourceIndicator(
+        <EquationBlock
+          equation={{
+            ...toEquationNode(node as any),
+            plainText: (node as any).plainText,
+            mathml: (node as any).mathml,
+            htmlSrc: (node as any).htmlSrc,
+            image: (node as any).image,
+            imageSrc: (node as any).imageSrc,
+            display: displayType,
+          }}
+          displayMode={displayType}
+        />
+      );
+    }
     
     case 'note':
       return withSourceIndicator(

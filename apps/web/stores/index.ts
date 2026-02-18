@@ -34,6 +34,12 @@ export type { GlossaryEntry } from './glossary-store';
 export { useEquationStore } from './equation-store';
 export type { EquationEntry } from './equation-store';
 
+export { useFunctionalStatementsStore } from './functional-statements-store';
+export type { FunctionalStatement } from './functional-statements-store';
+
+export { useObjectivesStore } from './objectives-store';
+export type { Objective, SubObjective } from './objectives-store';
+
 export { useAmendmentDateStore } from './amendment-date-store';
 export type { AmendmentDate } from './amendment-date-store';
 

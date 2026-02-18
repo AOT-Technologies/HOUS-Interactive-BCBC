@@ -19,13 +19,15 @@ import { GlossaryTerm } from '../components/reading/GlossaryTerm';
 import { NoteReference } from '../components/reading/NoteReference';
 import { EquationBlock } from '../components/reading/EquationBlock';
 import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
+import { FunctionalStatementLink } from '../components/reading/FunctionalStatementLink';
+import { ObjectiveLink } from '../components/reading/ObjectiveLink';
 import { useEquationStore } from '../stores/equation-store';
 
 /**
  * Marker type for internal tracking
  */
 interface Marker {
-  type: 'glossary' | 'crossref' | 'note' | 'tableNote' | 'equation';
+  type: 'glossary' | 'crossref' | 'note' | 'tableNote' | 'equation' | 'functionalStatement' | 'objective' | 'compound';
   start: number;
   end: number;
   termId?: string;
@@ -35,6 +37,9 @@ interface Marker {
   equationId?: string;
   equationType?: 'display' | 'inline';
   format?: InternalRefFormat;
+  functionalStatementId?: string;
+  objectiveId?: string;
+  compoundParts?: Array<{ type: 'functionalStatement' | 'objective'; id: string }>;
 }
 
 type InternalRefFormat = 'short' | 'long' | 'medium' | 'title' | 'number' | 'shortNum' | undefined;
@@ -428,6 +433,7 @@ export function parseTextWithCrossReferences(
         key: `crossref-${matchStart}`,
         referenceId,
         displayText,
+        format,
         interactive,
       })
     );
@@ -515,8 +521,19 @@ export function parseTextWithNotes(
  * Parse text containing all marker types in a single pass
  * 
  * This is the main parsing function that should be used by rendering components.
- * It handles glossary terms, cross-references, and note references in a single pass,
+ * It handles glossary terms, cross-references, note references, and objective-based
+ * code references (functional statements and objectives) in a single pass,
  * preserving the exact source order.
+ * 
+ * Supported marker formats:
+ * - Glossary: [REF:term:termId]
+ * - Cross-references: [REF:internal:referenceId]
+ * - Notes: [REF:internal:noteId:short|long]
+ * - Table notes: [REF:table-note:noteId]
+ * - Equations: [EQ:display|inline:equationId]
+ * - Functional statements: [[REF:functional-statement:fs01]]
+ * - Objectives: [[REF:sub-objective:nbc-obj-os1.2]]
+ * - Compound references: [[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]
  * 
  * @param text - Text containing any combination of markers
  * @param glossaryTerms - Array of term IDs present in the text (for validation)
@@ -616,6 +633,69 @@ export function parseTextWithMarkers(
       equationId: (match[2] || '').trim() || undefined,
     });
   }
+
+  // Find double-bracket objective-based code references
+  // Examples:
+  // - [[REF:functional-statement:fs03]]
+  // - [[REF:sub-objective:nbc-obj-os1.2]]
+  // - [[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]
+  // - [[REF:functional-statement:fs02],[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]
+  // Use non-greedy match to capture everything between [[ and ]]
+  const doubleBracketRegex = /\[\[(.*?)\]\]/g;
+
+  while ((match = doubleBracketRegex.exec(sanitizedText)) !== null) {
+    const content = match[1];
+    const matchStart = match.index;
+    const matchEnd = doubleBracketRegex.lastIndex;
+
+    // Extract reference parts in source order without splitting on `-`,
+    // because IDs themselves contain hyphens (e.g., functional-statement, nbc-obj-os1.2).
+    const objectiveRefRegex = /REF:(functional-statement|sub-objective):([A-Za-z0-9.-]+)/gi;
+    let partMatch: RegExpExecArray | null;
+    const compoundParts: Array<{ type: 'functionalStatement' | 'objective'; id: string }> = [];
+
+    while ((partMatch = objectiveRefRegex.exec(content)) !== null) {
+      const refType = partMatch[1]?.toLowerCase();
+      const refId = partMatch[2];
+      if (!refId) continue;
+
+      if (refType === 'functional-statement') {
+        compoundParts.push({ type: 'functionalStatement', id: refId });
+      } else if (refType === 'sub-objective') {
+        compoundParts.push({ type: 'objective', id: refId });
+      }
+    }
+
+    if (compoundParts.length > 0) {
+      if (compoundParts.length === 1) {
+        // Single reference
+        const part = compoundParts[0];
+        if (part.type === 'functionalStatement') {
+          markers.push({
+            type: 'functionalStatement',
+            start: matchStart,
+            end: matchEnd,
+            functionalStatementId: part.id,
+          });
+        } else {
+          markers.push({
+            type: 'objective',
+            start: matchStart,
+            end: matchEnd,
+            objectiveId: part.id,
+          });
+        }
+      } else {
+        // Compound reference
+        markers.push({
+          type: 'compound',
+          start: matchStart,
+          end: matchEnd,
+          compoundParts,
+        });
+      }
+    }
+  }
   
   // Sort markers by position to maintain source order
   markers.sort((a, b) => a.start - b.start);
@@ -624,6 +704,10 @@ export function parseTextWithMarkers(
   let lastIndex = 0;
   
   for (const marker of markers) {
+    // Skip markers that overlap with previously consumed text
+    if (marker.start < lastIndex) {
+      continue;
+    }
     // Add plain text before the marker
     if (marker.start > lastIndex) {
       nodes.push(sanitizedText.substring(lastIndex, marker.start));
@@ -664,6 +748,7 @@ export function parseTextWithMarkers(
             key: `crossref-${marker.start}`,
             referenceId: marker.referenceId!,
             displayText: crossRefDisplay.text,
+            format: marker.format as InternalRefFormat,
             interactive,
           })
         );
@@ -737,6 +822,88 @@ export function parseTextWithMarkers(
             variant: 'marker',
             displayMode: markerType === 'inline' ? 'inline' : 'block',
           })
+        );
+        lastIndex = marker.end;
+        break;
+      }
+
+      case 'functionalStatement': {
+        // Format: "F03" not "FS03" to match printed format
+        const displayText = marker.functionalStatementId?.toUpperCase().replace(/^FS/, 'F') || '';
+        nodes.push(
+          React.createElement(FunctionalStatementLink, {
+            key: `fs-${marker.start}`,
+            statementId: marker.functionalStatementId!,
+            displayText,
+            interactive,
+          })
+        );
+        lastIndex = marker.end;
+        break;
+      }
+
+      case 'objective': {
+        // Format: "OS1.2" not "NBC-OBJ-OS1.2" to match printed format
+        const displayText = marker.objectiveId?.toUpperCase().replace(/^NBC-OBJ-/, '') || '';
+        nodes.push(
+          React.createElement(ObjectiveLink, {
+            key: `obj-${marker.start}`,
+            objectiveId: marker.objectiveId!,
+            displayText,
+            interactive,
+          })
+        );
+        lastIndex = marker.end;
+        break;
+      }
+
+      case 'compound': {
+        // Render compound references with square brackets: [ F03 - OS1.2 ]
+        const parts = marker.compoundParts || [];
+        const displayParts: React.ReactNode[] = [];
+        
+        for (let i = 0; i < parts.length; i++) {
+          const part = parts[i];
+          const isLast = i === parts.length - 1;
+          
+          if (part.type === 'functionalStatement') {
+            // Format: "F03" not "FS03"
+            const displayText = part.id.toUpperCase().replace(/^FS/, 'F');
+            displayParts.push(
+              React.createElement(FunctionalStatementLink, {
+                key: `fs-${marker.start}-${i}`,
+                statementId: part.id,
+                displayText,
+                interactive,
+              })
+            );
+          } else {
+            // Format: "OS1.2" not "NBC-OBJ-OS1.2"
+            const displayText = part.id.toUpperCase().replace(/^NBC-OBJ-/, '');
+            displayParts.push(
+              React.createElement(ObjectiveLink, {
+                key: `obj-${marker.start}-${i}`,
+                objectiveId: part.id,
+                displayText,
+                interactive,
+              })
+            );
+          }
+          
+          // Add separator if not last
+          if (!isLast) {
+            // Determine separator based on next part type
+            const nextPart = parts[i + 1];
+            const separator = nextPart.type === part.type ? ', ' : ' - ';
+            displayParts.push(separator);
+          }
+        }
+        
+        nodes.push(
+          React.createElement('span', {
+            key: `compound-${marker.start}`,
+            className: 'compound-ref',
+          }, ...displayParts)
         );
         lastIndex = marker.end;
         break;

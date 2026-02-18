@@ -41,11 +41,19 @@ type RawTableRevision = {
   title?: string;
   caption?: string;
   structure?: RawTableStructure;
+  table_notes?: RawTableNote[];
+};
+
+type RawTableNote = {
+  id?: string;
+  vendor_id?: string;
+  content?: string;
 };
 
 type TableWithRawSupport = Table & {
   structure?: RawTableStructure;
   revisions?: RawTableRevision[];
+  table_notes?: RawTableNote[];
   number?: string | number;
   title?: string;
   caption?: string;
@@ -93,7 +101,7 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
     .replace(/<>/g, '<italic>')
     .replace(/<\/>/g, '</italic>');
 
-  const tokenRegex = /(<italic>[\s\S]*?<\/italic>|<bold>[\s\S]*?<\/bold>|\^\{[\s\S]*?\})/gi;
+  const tokenRegex = /(<italic>[\s\S]*?<\/italic>|<bold>[\s\S]*?<\/bold>|\^\{[\s\S]*?\}|_\{[\s\S]*?\})/gi;
   const nodes: React.ReactNode[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
@@ -133,6 +141,13 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
         <sup key={`table-sup-${chunkIndex}`}>
           {parseTextWithMarkers(superText, [], interactive)}
         </sup>
+      );
+    } else if (/^_\{/.test(token)) {
+      const subText = token.replace(/^_\{/, '').replace(/\}$/, '');
+      nodes.push(
+        <sub key={`table-sub-${chunkIndex}`}>
+          {parseTextWithMarkers(subText, [], interactive)}
+        </sub>
       );
     }
 
@@ -239,6 +254,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const activeRevision = getActiveRevision(rawTable.revisions, effectiveDate);
   const resolvedTitle = activeRevision?.title ?? rawTable.title ?? '';
   const resolvedCaption = activeRevision?.caption ?? rawTable.caption;
+  const resolvedTableNotes = activeRevision?.table_notes ?? rawTable.table_notes ?? [];
 
   const structure = activeRevision?.structure ?? rawTable.structure;
   const normalizedRows = table.rows && Array.isArray(table.rows)
@@ -247,6 +263,10 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         ...normalizeRows(structure?.header_rows || [], true, effectiveDate, 'header-row'),
         ...normalizeRows(structure?.body_rows || [], false, effectiveDate, 'body-row'),
       ];
+
+  const getTableNoteLabel = (_note: RawTableNote, index: number): string => {
+    return `(${index + 1})`;
+  };
 
   return (
     <div className="table-block">
@@ -289,6 +309,19 @@ export const TableBlock: React.FC<TableBlockProps> = ({
           </tbody>
         </table>
       </div>
+      {resolvedTableNotes.length > 0 && (
+        <div className="table-block__notes" aria-label="Table notes">
+          <div className="table-block__notes-title">Table notes</div>
+          {resolvedTableNotes.map((note, index) => (
+            <div className="table-block__note" key={note.id || note.vendor_id || `note-${index}`}>
+              <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
+              <span className="table-block__note-content">
+                {renderFormattedText(note.content || '', interactive)}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

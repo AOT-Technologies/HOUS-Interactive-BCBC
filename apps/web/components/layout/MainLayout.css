@@ -51,6 +51,13 @@
   flex: 1;
 }
 
+/* Reading page needs horizontal overflow visible for tooltips/popovers. */
+.MainLayout--with-sidebar.MainLayout--reading .ui-ContentPanel {
+  overflow-x: visible;
+  position: relative;
+  z-index: 2;
+}
+
 /* Mobile: Sidebar is a drawer (handled by Sidebar component) */
 .MainLayout--with-sidebar .ui-Sidebar {
   /* Sidebar component handles mobile drawer behavior */
@@ -103,13 +110,6 @@
     flex: 1;
     min-width: 0; /* Allow flex shrinking */
     overflow-x: hidden;
-  }
-
-  /* Reading page needs horizontal overflow visible for glossary tooltips. */
-  .MainLayout--with-sidebar.MainLayout--reading .ui-ContentPanel {
-    overflow-x: visible;
-    position: relative;
-    z-index: 2;
   }
 
   /* Left divider is needed on homepage only (not reading page). */

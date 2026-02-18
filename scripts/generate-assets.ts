@@ -46,6 +46,8 @@ import {
 import {
   chunkRawContent,
   extractMetadata,
+  extractFunctionalStatementsFromRaw,
+  extractObjectivesFromRaw,
   getChunkStats,
   type RawDocumentForChunking,
   type RawContentChunk,
@@ -396,13 +398,17 @@ async function generateEquationMap(rawData: unknown, outputDir: string): Promise
 /**
  * Generate quick access and navigation tree
  */
-async function generateQuickAccess(document: BCBCDocument, outputDir: string): Promise<void> {
+async function generateQuickAccess(document: BCBCDocument, rawData: any, outputDir: string): Promise<void> {
   logger.info('Generating quick access pins and navigation tree...');
   
   const startTime = Date.now();
   
   try {
     const metadata = extractMetadata(document);
+    
+    // Extract functional statements and objectives from raw data
+    const functionalStatements = extractFunctionalStatementsFromRaw(rawData);
+    const objectives = extractObjectivesFromRaw(rawData);
     
     // Write quick access
     const quickAccess = {
@@ -425,9 +431,33 @@ async function generateQuickAccess(document: BCBCDocument, outputDir: string): P
     await writeFile(navTreePath, JSON.stringify(navigationTree, null, 2));
     logger.success('Written navigation-tree.json (with volumes)');
     
+    // Write functional statements
+    const functionalStatementsData = {
+      version: document.metadata.version || '2020',
+      generatedAt: new Date().toISOString(),
+      statements: functionalStatements,
+    };
+    
+    const functionalStatementsPath = join(outputDir, 'functional-statements.json');
+    await writeFile(functionalStatementsPath, JSON.stringify(functionalStatementsData, null, 2));
+    logger.success(`Written functional-statements.json (${Object.keys(functionalStatements).length} statements)`);
+    
+    // Write objectives
+    const objectivesData = {
+      version: document.metadata.version || '2020',
+      generatedAt: new Date().toISOString(),
+      objectives: objectives,
+    };
+    
+    const objectivesPath = join(outputDir, 'objectives.json');
+    await writeFile(objectivesPath, JSON.stringify(objectivesData, null, 2));
+    logger.success(`Written objectives.json (${Object.keys(objectives).length} objectives)`);
+    
     const duration = Date.now() - startTime;
-    logger.success(`Generated quick access pins in ${formatDuration(duration)}`);
-    logger.info(`  Total pins: ${metadata.quickAccess.length}`);
+    logger.success(`Generated metadata files in ${formatDuration(duration)}`);
+    logger.info(`  Quick access pins: ${metadata.quickAccess.length}`);
+    logger.info(`  Functional statements: ${Object.keys(functionalStatements).length}`);
+    logger.info(`  Objectives: ${Object.keys(objectives).length}`);
   } catch (error) {
     logger.error(`Failed to generate quick access: ${error}`);
     throw error;
@@ -505,7 +535,7 @@ async function generateVersionAssets(
     const { revisionCount, latestRevision } = await generateSearchAssets(rawData, outputDir);
     
     // Generate quick access pins
-    await generateQuickAccess(document, outputDir);
+    await generateQuickAccess(document, rawData, outputDir);
     
     // Generate content chunks
     await generateContentChunks(rawData, outputDir);
@@ -595,6 +625,8 @@ async function generateReport(
   console.log('  ✓ amendment-dates.json');
   console.log('  ✓ content-types.json');
   console.log('  ✓ quick-access.json');
+  console.log('  ✓ functional-statements.json');
+  console.log('  ✓ objectives.json');
   console.log('  ✓ content/ (directory with chunks)');
   
   console.log(`\n${colors.green}All assets generated successfully!${colors.reset}`);
