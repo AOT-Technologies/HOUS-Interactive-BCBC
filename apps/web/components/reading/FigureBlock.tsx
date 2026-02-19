@@ -25,18 +25,16 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
       return null;
     }
 
-    // If src already starts with /, use it as-is.
+    // If src already starts with /, use it as-is but lowercase for case-insensitive matching
     if (src.startsWith('/')) {
-      return src;
+      return src.toLowerCase();
     }
 
     // Handle bc-graphics/ paths - strip the prefix
     let normalizedSrc = src.replace(/^\/?bc-graphics\//i, '');
     
-    // Convert .eps/.EPS to .jpg/.JPG (preserve case of extension)
-    const convertedSrc = normalizedSrc.replace(/\.eps$/i, (match) => {
-      return match === match.toUpperCase() ? '.JPG' : '.jpg';
-    });
+    // Convert .eps to .jpg and lowercase everything for case-insensitive matching
+    const convertedSrc = normalizedSrc.replace(/\.eps$/i, '.jpg').toLowerCase();
 
     // Use normalized root-relative asset path.
     return `/${convertedSrc}`;
