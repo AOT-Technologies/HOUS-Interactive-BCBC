@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type MouseEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import LinkCard from '@repo/ui/link-card';
 import Alert from '@repo/ui/alert';
 import { useVersionStore } from '@/stores/version-store';
@@ -38,6 +39,7 @@ interface QuickAccessPinsProps {
 export default function QuickAccessPins({ className = '' }: QuickAccessPinsProps) {
   const [pins, setPins] = useState<QuickAccessPin[]>([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
   const currentVersion = useVersionStore((state) => state.currentVersion);
   const selectedDate = useAmendmentDateStore((state) => state.selectedDate);
   const getVersionDataPath = useVersionStore((state) => state.getVersionDataPath);
@@ -72,6 +74,16 @@ export default function QuickAccessPins({ className = '' }: QuickAccessPinsProps
     return `${path}?${params.toString()}`;
   };
 
+  const handlePinNavigation = (event: MouseEvent<Element>, url: string) => {
+    // Keep native browser behavior for modified clicks (new tab/window, etc).
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return;
+    }
+
+    event.preventDefault();
+    router.push(url);
+  };
+
   if (loading) {
     return (
       <section className={`quick-access-pins ${className}`}>
@@ -85,15 +97,19 @@ export default function QuickAccessPins({ className = '' }: QuickAccessPinsProps
     <section className={`quick-access-pins ${className}`}>
       <h2 className="quick-access-pins--title">Quick Access</h2>
       <div className="quick-access-pins--list">
-        {pins.map((pin) => (
+        {pins.map((pin) => {
+          const pinUrl = buildPinUrl(pin.path);
+          return (
           <LinkCard
             key={pin.id}
             title={pin.title}
             description={pin.description}
-            href={buildPinUrl(pin.path)}
+            href={pinUrl}
+            onClick={(event) => handlePinNavigation(event, pinUrl)}
             className="quick-access-pin"
           />
-        ))}
+          );
+        })}
       </div>
       <div className="quick-access-pins--description">
         <p>
