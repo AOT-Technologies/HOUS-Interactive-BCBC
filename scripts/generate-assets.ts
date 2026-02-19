@@ -327,13 +327,14 @@ function buildEquationMap(rawData: unknown): Record<string, EquationMapEntry> {
       return undefined;
     }
 
-    const normalized = candidate.toLowerCase();
-    const group = normalized.slice(2, 5);
+    // Extract group number (characters 2-5) for directory structure
+    const group = candidate.slice(2, 5).toLowerCase();
     if (!/^\d{3}$/.test(group)) {
       return undefined;
     }
 
-    return `graphics/eg/${group}/${normalized}.html`;
+    // Preserve original case from JSON for filename
+    return `graphics/eg/${group}/${candidate}.html`;
   };
 
   const visit = (node: unknown): void => {
