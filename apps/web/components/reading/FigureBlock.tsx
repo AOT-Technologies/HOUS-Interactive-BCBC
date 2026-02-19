@@ -30,8 +30,13 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
       return src;
     }
 
-    const normalizedSrc = src.replace(/^\/?bc-graphics\//i, '');
-    const convertedSrc = normalizedSrc.replace(/\.eps$/i, '.jpg');
+    // Handle bc-graphics/ paths - strip the prefix
+    let normalizedSrc = src.replace(/^\/?bc-graphics\//i, '');
+    
+    // Convert .eps/.EPS to .jpg/.JPG (preserve case of extension)
+    const convertedSrc = normalizedSrc.replace(/\.eps$/i, (match) => {
+      return match === match.toUpperCase() ? '.JPG' : '.jpg';
+    });
 
     // Use normalized root-relative asset path.
     return `/${convertedSrc}`;
