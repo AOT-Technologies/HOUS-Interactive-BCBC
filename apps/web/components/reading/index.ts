@@ -15,6 +15,7 @@ export { SentenceBlock } from './SentenceBlock';
 export { ClauseBlock } from './ClauseBlock';
 export { SubclauseBlock } from './SubclauseBlock';
 export { GlossaryTerm } from './GlossaryTerm';
+export { GlossarySidebar } from './GlossarySidebar';
 export { TableBlock } from './TableBlock';
 export { FigureBlock } from './FigureBlock';
 export { EquationBlock } from './EquationBlock';

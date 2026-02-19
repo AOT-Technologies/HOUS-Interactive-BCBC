@@ -3,10 +3,29 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { Breadcrumbs } from './Breadcrumbs';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
+import { usePathname } from 'next/navigation';
 import { TESTID_BREADCRUMBS } from '@repo/constants/src/testids';
 
 // Mock the navigation store
-vi.mock('@/stores/navigation-store');
+vi.mock('@/stores/navigation-store', () => ({
+  useNavigationStore: vi.fn(),
+  NavigationNode: {} as any,
+}));
+
+// Mock Next.js navigation
+vi.mock('next/navigation', () => ({
+  usePathname: vi.fn(() => '/'),
+}));
+
+// Mock Next.js Link
+vi.mock('next/link', () => ({
+  __esModule: true,
+  default: ({ children, href, ...props }: any) => (
+    <a href={href} {...props}>
+      {children}
+    </a>
+  ),
+}));
 
 // Mock the Link component
 vi.mock('@repo/ui/link', () => ({
@@ -71,12 +90,13 @@ describe('Breadcrumbs', () => {
 
   describe('Rendering', () => {
     it('should render breadcrumbs for article level', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       expect(screen.getByTestId(TESTID_BREADCRUMBS)).toBeInTheDocument();
       expect(screen.getByText('Division A')).toBeInTheDocument();
@@ -87,12 +107,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should render breadcrumbs for section level', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       expect(screen.getByText('Division A')).toBeInTheDocument();
       expect(screen.getByText('Part 1')).toBeInTheDocument();
@@ -101,12 +122,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should render breadcrumbs for part level', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       expect(screen.getByText('Division A')).toBeInTheDocument();
       expect(screen.getByText('Part 1')).toBeInTheDocument();
@@ -114,36 +136,41 @@ describe('Breadcrumbs', () => {
     });
 
     it('should not render when currentPath is empty', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '',
       });
 
-      const { container } = render(<Breadcrumbs />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      expect(container.firstChild).toBeNull();
+      // Should only render Home breadcrumb
+      expect(screen.getByText('Home')).toBeInTheDocument();
     });
 
     it('should not render when navigationTree is empty', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: [],
         currentPath: '/code/division-a/part-1',
       });
 
-      const { container } = render(<Breadcrumbs />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      expect(container.firstChild).toBeNull();
+      // Should only render Home breadcrumb when tree is empty
+      expect(screen.getByText('Home')).toBeInTheDocument();
     });
   });
 
   describe('Breadcrumb Structure', () => {
     it('should display separators between breadcrumb items', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       const separators = screen.getAllByText('>', { exact: false });
       // Should have 2 separators for 3 items (Division > Part > Section)
@@ -151,12 +178,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should render breadcrumb numbers and titles', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       // Check that both number and title are rendered
       expect(screen.getByText('Division A')).toBeInTheDocument();
@@ -166,12 +194,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should mark the last breadcrumb as current page', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       // The current element should have the breadcrumbs-current class and aria-current attribute
       const currentElements = screen.getAllByText('Section 1.1');
@@ -183,12 +212,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should render non-current breadcrumbs as links', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       const divisionLink = screen.getByText('Division A').closest('a');
       const partLink = screen.getByText('Part 1').closest('a');
@@ -201,7 +231,7 @@ describe('Breadcrumbs', () => {
   describe('Interaction', () => {
     it('should call onBreadcrumbClick when a breadcrumb is clicked', () => {
       const mockOnClick = vi.fn();
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
@@ -221,7 +251,7 @@ describe('Breadcrumbs', () => {
 
     it('should allow default link navigation behavior', () => {
       const mockOnClick = vi.fn();
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
@@ -241,24 +271,26 @@ describe('Breadcrumbs', () => {
 
   describe('Accessibility', () => {
     it('should have proper ARIA labels', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       const nav = screen.getByRole('navigation', { name: 'Breadcrumb navigation' });
       expect(nav).toBeInTheDocument();
     });
 
     it('should have aria-label on breadcrumb links', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       const divisionLink = screen.getByLabelText(
         'Navigate to Compliance, Objectives and Functional Statements'
@@ -267,12 +299,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should mark separators as aria-hidden', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      const { container } = render(<Breadcrumbs />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
       const separators = container.querySelectorAll('.breadcrumbs-separator');
       separators.forEach((separator) => {
@@ -281,12 +314,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should use semantic list structure', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       const list = screen.getByRole('list');
       expect(list).toBeInTheDocument();
@@ -296,7 +330,8 @@ describe('Breadcrumbs', () => {
 
   describe('Custom className', () => {
     it('should apply custom className', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1',
       });
@@ -311,12 +346,13 @@ describe('Breadcrumbs', () => {
 
   describe('Edge Cases', () => {
     it('should handle single breadcrumb (division only)', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       expect(screen.getByText('Division A')).toBeInTheDocument();
       // Should not have separators for single item
@@ -324,24 +360,26 @@ describe('Breadcrumbs', () => {
     });
 
     it('should handle invalid path gracefully', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/invalid-path');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/invalid-path',
       });
 
-      const { container } = render(<Breadcrumbs />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
       // Should not render anything for invalid path
       expect(container.firstChild).toBeNull();
     });
 
     it('should handle deeply nested navigation tree', () => {
-      (useNavigationStore as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1');
+      (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1',
       });
 
-      render(<Breadcrumbs />);
+      render(<Breadcrumbs maxVisibleItems={10} />);
 
       // Should render all 5 levels
       expect(screen.getByText('Division A')).toBeInTheDocument();

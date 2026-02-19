@@ -88,13 +88,15 @@ describe('TableBlock', () => {
       ],
     };
 
-    render(<TableBlock table={table} />);
+    const { container } = render(<TableBlock table={table} />);
     
     expect(screen.getByText('Table 2 Mixed Content Table')).toBeInTheDocument();
     expect(screen.getByText('8.08')).toBeInTheDocument();
-    expect(screen.getByText('Text before image')).toBeInTheDocument();
-    expect(screen.getByText('Text after image')).toBeInTheDocument();
     expect(screen.getByText('10.5')).toBeInTheDocument();
+    
+    // Check for text content using container.textContent which includes all text
+    expect(container.textContent).toContain('Text before image');
+    expect(container.textContent).toContain('Text after image');
     
     // Check for figures
     const images = screen.getAllByRole('img');

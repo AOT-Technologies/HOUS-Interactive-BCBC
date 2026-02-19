@@ -77,6 +77,10 @@ describe('NavigationTree', () => {
       currentPath: '',
       toggleNode: mockToggleNode,
       setCurrentPath: mockSetCurrentPath,
+      loading: false,
+      searchQuery: '',
+      filteredTree: [],
+      matchingNodeIds: new Set<string>(),
     });
   });
 
@@ -105,6 +109,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -137,6 +145,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -164,6 +176,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -185,6 +201,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -199,6 +219,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -238,6 +262,10 @@ describe('NavigationTree', () => {
         currentPath: '/division-a/part-1',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -252,6 +280,10 @@ describe('NavigationTree', () => {
         currentPath: '/division-a/part-1',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -266,6 +298,10 @@ describe('NavigationTree', () => {
         currentPath: '/division-a/part-1',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -305,6 +341,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -320,6 +360,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -342,6 +386,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -363,6 +411,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -381,6 +433,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -411,6 +467,10 @@ describe('NavigationTree', () => {
         currentPath: '',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);
@@ -471,6 +531,10 @@ describe('NavigationTree', () => {
         currentPath: '/division-a/part-1',
         toggleNode: mockToggleNode,
         setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
       });
 
       render(<NavigationTree />);

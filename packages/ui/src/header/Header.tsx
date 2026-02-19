@@ -12,6 +12,7 @@ import Image from "@repo/ui/image";
 import { Dialog, Link as ReactAriaLink, Modal } from "react-aria-components";
 // repo
 import { URLS_MAIN_NAVIGATION } from "@repo/constants/src/urls";
+import type { NavigationLink } from "@repo/constants/src/urls";
 import {
   ID_MAIN_NAVIGATION,
   ID_MAIN_NAVIGATION_MOBILE,
@@ -60,6 +61,11 @@ export interface HeaderProps {
    * Placeholder text for search input.
    */
   searchPlaceholder?: string;
+  /**
+   * Optional hook to intercept main navigation link presses.
+   * Return true to indicate the navigation was handled externally.
+   */
+  onNavLinkClick?: (link: NavigationLink) => boolean | void;
 }
 
 const getCloseButton = (
@@ -83,22 +89,27 @@ const getCloseButton = (
   );
 };
 
-const getNavList = (onLinkClick: (href: string) => void) => {
+const getNavList = (
+  onLinkClick: (link: NavigationLink) => void,
+) => {
   return (
     <ul className="ui-Header--NavList">
-      {URLS_MAIN_NAVIGATION.map(({ title, ...props }) => (
-        <li key={title} className="ui-Header--NavListItem">
+      {URLS_MAIN_NAVIGATION.map((link) => (
+        <li key={link.title} className="ui-Header--NavListItem">
           <Link
             className="ui-Header--NavLink"
-            data-testid={GET_TESTID_HEADER_NAV_ITEM(title)}
-            onPress={
-              props.target === "_blank"
+            data-testid={GET_TESTID_HEADER_NAV_ITEM(link.title)}
+            onClick={
+              link.target === "_blank"
                 ? undefined
-                : () => onLinkClick(props.href)
+                : (event) => {
+                    event.preventDefault();
+                    onLinkClick(link);
+                  }
             }
-            {...props}
+            {...link}
           >
-            {title}
+            {link.title}
           </Link>
         </li>
       ))}
@@ -114,13 +125,25 @@ export default function Header({
   onSearch,
   getSuggestions,
   searchPlaceholder = "Search building code...",
+  onNavLinkClick,
 }: PropsWithChildren<HeaderProps>) {
   // setup state
   const router = useRouter();
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
-  const onMobileNavLinkClick = (href: string) => {
+  const handleHeaderLinkClick = useCallback(
+    (link: NavigationLink) => {
+      const handled = onNavLinkClick?.(link);
+      if (handled === true) {
+        return;
+      }
+      router.push(link.href);
+    },
+    [onNavLinkClick, router]
+  );
+
+  const onMobileNavLinkClick = (link: NavigationLink) => {
     setMobileNavIsOpen(false);
-    router.push(href);
+    handleHeaderLinkClick(link);
   };
 
   useEffect(() => {
@@ -208,7 +231,7 @@ export default function Header({
             />
           )}
           <nav className="ui-Header--Nav" id={ID_MAIN_NAVIGATION}>
-            {getNavList(router.push)}
+            {getNavList(handleHeaderLinkClick)}
             {getCloseButton(() => setMobileNavIsOpen(true), mobileNavIsOpen)}
           </nav>
         </div>

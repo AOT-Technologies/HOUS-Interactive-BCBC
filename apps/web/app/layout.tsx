@@ -4,11 +4,14 @@ import { useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { getSearchClient } from '@/lib/search-client';
 import { useVersionStore } from '@/stores/version-store';
+import { useUIStore } from '@/lib/stores/ui-store';
+import { GlossarySidebar } from '@/components/reading/GlossarySidebar';
 import '@bcgov/bc-sans/css/BC_Sans.css';
 import '@repo/ui/cssVariables';
 import Header from '@repo/ui/header';
 import Footer from '@repo/ui/footer';
 import { ID_MAIN_CONTENT, ID_SKIP_TO_CONTENT } from '@repo/constants';
+import { URL_GLOSSARY_TITLE } from '@repo/constants/src/urls';
 import './globals.css';
 
 export default function RootLayout({
@@ -21,6 +24,7 @@ export default function RootLayout({
   // Load versions on mount
   const loadVersions = useVersionStore(state => state.loadVersions);
   const currentVersion = useVersionStore(state => state.currentVersion);
+  const openGlossarySidebar = useUIStore(state => state.openGlossarySidebar);
   
   useEffect(() => {
     loadVersions();
@@ -75,6 +79,20 @@ export default function RootLayout({
     }
   }, []);
 
+  const handleHeaderNavClick = useCallback((link: { title: string }) => {
+    if (link.title !== URL_GLOSSARY_TITLE) {
+      return false;
+    }
+
+    const { glossarySidebarOpen } = useUIStore.getState();
+    if (glossarySidebarOpen) {
+      return true;
+    }
+
+    openGlossarySidebar();
+    return true;
+  }, [openGlossarySidebar]);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
@@ -86,8 +104,10 @@ export default function RootLayout({
           onSearch={handleSearch}
           getSuggestions={handleGetSuggestions}
           searchPlaceholder="Search building code..."
+          onNavLinkClick={handleHeaderNavClick}
         />
         <main id={ID_MAIN_CONTENT}>{children}</main>
+        <GlossarySidebar />
         <Footer />
       </body>
     </html>
