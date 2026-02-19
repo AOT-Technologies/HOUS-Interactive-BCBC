@@ -28,7 +28,8 @@
 
 .equation-block__mathml {
   max-width: 100%;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .equation-block__mathml math {
@@ -77,15 +78,6 @@
   vertical-align: baseline;
 }
 
-.equation-block__mathml::-webkit-scrollbar {
-  height: 6px;
-}
-
-.equation-block__mathml::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-}
-
 .equation-block__fallback {
   font-family: 'Cambria Math', 'STIX Two Math', 'Times New Roman', serif;
   font-size: 1.1rem;
@@ -93,8 +85,9 @@
   background-color: transparent;
   padding: 0;
   border-radius: 0;
-  overflow-x: auto;
-  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: normal;
 }
 
 .equation-block--block .equation-block__fallback {

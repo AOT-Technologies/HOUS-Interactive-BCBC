@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { MathJaxContext } from 'better-react-mathjax';
 import { getSearchClient } from '@/lib/search-client';
 import { useVersionStore } from '@/stores/version-store';
 import { useUIStore } from '@/lib/stores/ui-store';
@@ -13,6 +14,17 @@ import Footer from '@repo/ui/footer';
 import { ID_MAIN_CONTENT, ID_SKIP_TO_CONTENT } from '@repo/constants';
 import { URL_GLOSSARY_TITLE } from '@repo/constants/src/urls';
 import './globals.css';
+
+const mathJaxConfig = {
+  startup: {
+    typeset: false,
+  },
+  options: {
+    renderActions: {
+      addMenu: [],
+    },
+  },
+};
 
 export default function RootLayout({
   children,
@@ -96,19 +108,29 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <Header
-          skipLinks={skipLinks}
-          title="BC Building Code"
-          logoSrc="/bc-logo.png"
-          titleElement="h1"
-          onSearch={handleSearch}
-          getSuggestions={handleGetSuggestions}
-          searchPlaceholder="Search building code..."
-          onNavLinkClick={handleHeaderNavClick}
-        />
-        <main id={ID_MAIN_CONTENT}>{children}</main>
-        <GlossarySidebar />
-        <Footer />
+        <MathJaxContext
+          version={3}
+          config={mathJaxConfig}
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"
+          hideUntilTypeset="first"
+          onError={(error) => {
+            console.error('[MathJax] Failed to load or initialize MathJax', error);
+          }}
+        >
+          <Header
+            skipLinks={skipLinks}
+            title="BC Building Code"
+            logoSrc="/bc-logo.png"
+            titleElement="h1"
+            onSearch={handleSearch}
+            getSuggestions={handleGetSuggestions}
+            searchPlaceholder="Search building code..."
+            onNavLinkClick={handleHeaderNavClick}
+          />
+          <main id={ID_MAIN_CONTENT}>{children}</main>
+          <GlossarySidebar />
+          <Footer />
+        </MathJaxContext>
       </body>
     </html>
   );
