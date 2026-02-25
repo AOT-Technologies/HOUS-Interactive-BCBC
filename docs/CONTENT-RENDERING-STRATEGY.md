@@ -575,6 +575,363 @@ interface SectionState {
 
 ---
 
+## Inline Content Rendering
+
+### Overview
+
+Text content in sentences, clauses, and subclauses contains inline markers that are parsed and converted to interactive React components. The parsing system handles multiple marker types in a single pass while preserving exact source order.
+
+### Supported Marker Types
+
+The `parseTextWithMarkers` function handles all inline content types:
+
+1. **Glossary Terms**: `[REF:term:termId]` or `[REF:term:termId:label]`
+2. **Cross-References**: `[REF:internal:referenceId]` or `[REF:internal:referenceId:format]`
+3. **Note References**: `[REF:internal:noteId:short|long]`
+4. **Table Notes**: `[REF:table-note:noteId]`
+5. **Standards References**: `[REF:standard:standardId]` or `[REF:external:externalId]`
+6. **Equations**: `[EQ:display|inline:equationId]` or `[EQ:display|inline:]`
+7. **Functional Statements**: `[[REF:functional-statement:fs01]]`
+8. **Objectives**: `[[REF:sub-objective:nbc-obj-os1.2]]`
+9. **Compound References**: `[[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]`
+10. **Inline Formatting**: `<italic>text</italic>`, `<bold>text</bold>`, `_{subscript}`, `^{superscript}`
+
+### Parsing Strategy
+
+The parser uses a multi-pass approach:
+
+1. **Sanitize Legacy Placeholders**: Remove `<>` and `</>` wrapper tokens
+2. **Find All Markers**: Scan text for all marker types and record positions
+3. **Sort by Position**: Maintain source order
+4. **Build Node Array**: Convert markers to React components while preserving plain text
+
+```typescript
+// apps/web/lib/text-parsing.ts
+
+export function parseTextWithMarkers(
+  text: string,
+  glossaryTerms: string[] = [],
+  interactive: boolean = true,
+  localEquations: TextEquationEntry[] = []
+): React.ReactNode[] {
+  const sanitizedText = sanitizeLegacyPlaceholderTags(text);
+  const nodes: React.ReactNode[] = [];
+  const markers: Marker[] = [];
+  
+  // Find all markers (glossary, cross-ref, notes, equations, etc.)
+  // ... marker detection logic ...
+  
+  // Sort markers by position to maintain source order
+  markers.sort((a, b) => a.start - b.start);
+  
+  // Build node array
+  let lastIndex = 0;
+  for (const marker of markers) {
+    // Add plain text before marker
+    if (marker.start > lastIndex) {
+      nodes.push(
+        ...parseInlineFormatting(
+          sanitizedText.substring(lastIndex, marker.start),
+          interactive,
+          lastIndex
+        )
+      );
+    }
+    
+    // Add component for marker
+    switch (marker.type) {
+      case 'glossary':
+        nodes.push(<GlossaryTerm ... />);
+        break;
+      case 'crossref':
+        nodes.push(<CrossReferenceLink ... />);
+        break;
+      // ... other marker types ...
+    }
+    
+    lastIndex = marker.end + consumed;
+  }
+  
+  // Add remaining text
+  if (lastIndex < sanitizedText.length) {
+    nodes.push(
+      ...parseInlineFormatting(
+        sanitizedText.substring(lastIndex),
+        interactive,
+        lastIndex
+      )
+    );
+  }
+  
+  return nodes;
+}
+```
+
+### Glossary Terms
+
+**Marker Format**: `[REF:term:termId]` or `[REF:term:termId:label]`
+
+**Display Text Resolution**:
+1. If label provided: Use label directly
+2. Otherwise: Extract 1-2 words following the marker
+   - Take first word
+   - Take second word if not a stopword (shall, must, may, etc.)
+3. Fallback: Use termId with hyphens replaced by spaces
+
+**Interactive Features**:
+- Info icon (ⓘ) before term text
+- Hover tooltip (desktop) showing definition after 200ms delay
+- Click opens glossary sidebar with full definition
+- Non-interactive mode: Plain italic text, no icon
+
+```typescript
+// Example rendering
+<GlossaryTerm
+  termId="bldng"
+  text="building"
+  interactive={true}
+/>
+```
+
+### Cross-References
+
+**Marker Format**: `[REF:internal:referenceId]` or `[REF:internal:referenceId:format]`
+
+**Format Options**:
+- `long`: "Article 3.2.4.7." or "Section 3.3."
+- `short`: "Sentence (2)" or "(2)"
+- `number` / `shortNum`: "3.2.4.7." or "3.2.2.93."
+- `title`: Looks up title from navigation tree
+- `medium`: Default format
+
+**Display Text Resolution**:
+1. If format specified: Extract matching pattern from text following marker
+2. Otherwise: Generate from referenceId structure
+3. Fallback: Use referenceId as-is
+
+**Interactive Features**:
+- Info icon (ⓘ) before reference text
+- Click behavior depends on reference type:
+  - **Modal references** (articles, subsections, sections, notes): Opens modal overlay
+  - **Navigation references** (parts, divisions): Navigates to target page
+- Non-interactive mode: Plain text, no icon
+
+**Special Handling**:
+- **Application Notes**: Rendered as "Note A-2.1.1.2.(6)."
+- **Standards References**: Fetches display text from `standards-map.json`
+
+```typescript
+// Example rendering
+<CrossReferenceLink
+  referenceId="nbc.divA.part1.sect1.subsect1.art1"
+  displayText="Article 1.1.1.1."
+  format="long"
+  interactive={true}
+/>
+```
+
+### Note References
+
+**Marker Format**: `[REF:internal:noteId:short|long]`
+
+**Display Text**:
+- `short`: "(1)" - just the note number
+- `long`: Full note ID
+
+**Interactive Features**:
+- Rendered as superscript
+- Click scrolls to note in appendix
+- Adds temporary highlight effect on target note
+- Non-interactive mode: Plain superscript text
+
+```typescript
+// Example rendering
+<NoteReference
+  referenceId="nbc.divA.part1.sect1.subsect1.art1.note1"
+  text="(1)"
+  interactive={true}
+/>
+```
+
+### Table Notes
+
+**Marker Format**: `[REF:table-note:noteId]`
+
+**Display Text**: "(1)", "(2)", etc. - extracted from noteId
+
+**Interactive Features**:
+- Rendered as cross-reference link
+- Click opens modal showing table note content
+- Non-interactive mode: Plain text
+
+### Standards References
+
+**Marker Format**: `[REF:standard:standardId]` or `[REF:external:externalId]`
+
+**Display Text Resolution**:
+1. Fetch `standards-map.json` for current version
+2. Normalize standardId (remove non-alphanumeric, lowercase)
+3. Match against `standard_id`, `standard_ref_id`, or map keys
+4. Use `agency` field if available, otherwise `standard_id`
+5. Fallback: Use standardId from marker
+
+**Interactive Features**:
+- Info icon (ⓘ) before standard text
+- Click opens modal showing:
+  - Agency and full number
+  - Full title
+  - Reference ID
+  - Location link (if available)
+- Non-interactive mode: Plain text
+
+### Equations
+
+**Marker Format**: `[EQ:display|inline:equationId]` or `[EQ:display|inline:]`
+
+**Equation Resolution**:
+1. If equationId provided: Look up in local equations array or global equation store
+2. If no equationId: Use first unconsumed equation from local equations array
+3. Track consumed equations to prevent duplicates
+
+**Rendering**:
+- `display`: Block-level equation (centered, larger)
+- `inline`: Inline equation (within text flow)
+- Supports LaTeX, MathML, HTML, and image formats
+
+```typescript
+// Example rendering
+<EquationBlock
+  equation={{
+    id: "es007867q1",
+    type: "equation",
+    latex: "E = mc^2",
+    display: "block"
+  }}
+  displayMode="block"
+  variant="marker"
+/>
+```
+
+### Functional Statements
+
+**Marker Format**: `[[REF:functional-statement:fs01]]`
+
+**Display Text**: "F01" (not "FS01") - matches printed format
+
+**Interactive Features**:
+- Compact display in table cells
+- Hover tooltip showing full definition
+- Non-interactive mode: Plain text
+
+```typescript
+// Example rendering
+<FunctionalStatementLink
+  statementId="fs03"
+  displayText="F03"
+  interactive={true}
+/>
+```
+
+### Objectives
+
+**Marker Format**: `[[REF:sub-objective:nbc-obj-os1.2]]`
+
+**Display Text**: "OS1.2" (not "NBC-OBJ-OS1.2") - matches printed format
+
+**Interactive Features**:
+- Compact display in table cells
+- Hover tooltip showing title and definition
+- Definition text can contain glossary terms (parsed recursively)
+- BC source badge if `source: 'bc'`
+- Non-interactive mode: Plain text
+
+```typescript
+// Example rendering
+<ObjectiveLink
+  objectiveId="nbc-obj-os1.2"
+  displayText="OS1.2"
+  interactive={true}
+/>
+```
+
+### Compound References
+
+**Marker Format**: `[[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]`
+
+**Display Format**: `[ F03 - OS1.2 ]` with square brackets
+
+**Separator Rules**:
+- Same type (FS + FS or Obj + Obj): Comma separator `, `
+- Different types (FS + Obj): Dash separator ` - `
+
+**Example**: `[[REF:functional-statement:fs02],[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]`
+**Renders as**: `[ F02, F03 - OS1.2 ]`
+
+```typescript
+// Example rendering
+<span className="compound-ref">
+  <FunctionalStatementLink statementId="fs03" displayText="F03" />
+  {' - '}
+  <ObjectiveLink objectiveId="nbc-obj-os1.2" displayText="OS1.2" />
+</span>
+```
+
+### Inline Formatting
+
+**Supported Tags**:
+- `<italic>text</italic>` → `<em>text</em>`
+- `<bold>text</bold>` → `<strong>text</strong>`
+- `_{subscript}` → `<sub>subscript</sub>`
+- `^{superscript}` → `<sup>superscript</sup>`
+
+**Nesting Support**: Formatting tags can be nested and are parsed recursively
+
+**Example**:
+```
+Input: "The <italic>maximum</italic> temperature is 100^{°C}"
+Output: The <em>maximum</em> temperature is 100<sup>°C</sup>
+```
+
+### Display Text Consumption
+
+Some markers consume text that follows them:
+
+1. **Glossary Terms**: Consume 1-2 words after marker
+2. **Cross-References**: Consume display text if format matches pattern
+3. **Others**: No consumption (marker is self-contained)
+
+This prevents duplicate text rendering:
+```
+Input: "[REF:term:bldng]building is defined as..."
+Marker: [REF:term:bldng]
+Consumed: "building"
+Output: <GlossaryTerm text="building" /> is defined as...
+```
+
+### Interactive vs Non-Interactive Mode
+
+**Interactive Mode** (default):
+- Full interactivity: tooltips, modals, navigation
+- Icons displayed before terms/references
+- Hover effects and click handlers
+- Used in main reading view
+
+**Non-Interactive Mode**:
+- Plain text rendering
+- No icons or interactive elements
+- No tooltips or modals
+- Used in modal previews and print layouts
+
+### Performance Considerations
+
+1. **Single-Pass Parsing**: All marker types detected in one pass
+2. **Marker Sorting**: Maintains source order efficiently
+3. **Lazy Loading**: Glossary/equation data loaded on demand
+4. **Memoization**: Parsed content memoized in components
+5. **Portal Rendering**: Tooltips rendered in document.body to avoid z-index issues
+
+---
+
 ## Recursive Content Rendering
 
 ### Component Hierarchy
@@ -659,36 +1016,95 @@ SubclauseBlock
 
 ### ContentRenderer (Type Dispatcher)
 
-The ContentRenderer is the core of the type-driven rendering system:
+The ContentRenderer is the core of the type-driven rendering system. It supports BC source attribution tracking and handles multiple equation formats:
 
 ```typescript
 // apps/web/components/reading/ContentRenderer.tsx
 
 export const ContentRenderer: React.FC<ContentRendererProps> = ({ 
   node, 
-  interactive = true 
+  effectiveDate,
+  interactive = true,
+  parentHasBcSource = false,
 }) => {
-  switch (node.type) {
+  const source = (node as { source?: string }).source;
+  const nodeType = (node as { type?: string }).type;
+  const hasBcSource = source?.toLowerCase() === 'bc';
+  const hasBcSourceInTree = parentHasBcSource || hasBcSource;
+
+  // Wrap content with BC source indicator if needed
+  const withSourceIndicator = (content: React.ReactNode) =>
+    hasBcSource && !parentHasBcSource ? (
+      <div className="content-renderer__source-indicator content-renderer__source-indicator--bc">
+        {content}
+      </div>
+    ) : content;
+
+  switch (nodeType) {
     case 'sentence':
-      return <SentenceBlock sentence={node as Sentence} interactive={interactive} />;
+      return withSourceIndicator(
+        <SentenceBlock
+          sentence={node as Sentence}
+          effectiveDate={effectiveDate}
+          interactive={interactive}
+          parentHasBcSource={hasBcSourceInTree}
+        />
+      );
     
     case 'clause':
-      return <ClauseBlock clause={node as Clause} interactive={interactive} />;
+      return withSourceIndicator(
+        <ClauseBlock
+          clause={node as Clause}
+          effectiveDate={effectiveDate}
+          interactive={interactive}
+          parentHasBcSource={hasBcSourceInTree}
+        />
+      );
     
     case 'subclause':
-      return <SubclauseBlock subclause={node as Subclause} interactive={interactive} />;
+      return withSourceIndicator(
+        <SubclauseBlock
+          subclause={node as Subclause}
+          effectiveDate={effectiveDate}
+          interactive={interactive}
+          parentHasBcSource={hasBcSourceInTree}
+        />
+      );
     
     case 'table':
-      return <TableBlock table={node as Table} />;
+      return withSourceIndicator(
+        <TableBlock
+          table={node as Table}
+          interactive={interactive}
+          effectiveDate={effectiveDate}
+        />
+      );
     
     case 'figure':
-      return <FigureBlock figure={node as Figure} />;
+      return withSourceIndicator(<FigureBlock figure={node as Figure} />);
     
     case 'equation':
-      return <EquationBlock equation={node as Equation} />;
+      return withSourceIndicator(<EquationBlock equation={node as Equation} />);
+
+    // Handle alternative equation type names from generated content
+    case 'display':
+    case 'inline': {
+      const displayType = nodeType === 'inline' ? 'inline' : 'block';
+      return withSourceIndicator(
+        <EquationBlock
+          equation={{
+            ...toEquationNode(node as any),
+            display: displayType,
+          }}
+          displayMode={displayType}
+        />
+      );
+    }
     
     case 'note':
-      return <NoteBlock note={node as NoteReference} interactive={interactive} />;
+      return withSourceIndicator(
+        <NoteBlock note={node as NoteReference} interactive={interactive} />
+      );
     
     default:
       console.warn('Unknown content node type:', (node as any).type);
@@ -697,6 +1113,13 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
 };
 ```
 
+**Key Features**:
+- **BC Source Attribution**: Tracks `source: 'bc'` field and wraps BC-specific content with visual indicators
+- **Effective Date Support**: Passes `effectiveDate` to all content blocks for revision filtering
+- **Interactive Mode**: Controls whether components render interactive features (glossary tooltips, cross-reference modals)
+- **Parent Source Tracking**: Prevents duplicate BC indicators when nested content inherits BC source
+- **Equation Type Flexibility**: Handles both `type: 'equation'` and legacy `type: 'display'/'inline'` formats
+
 ### Component Responsibilities
 
 Each component is responsible for:
@@ -704,6 +1127,9 @@ Each component is responsible for:
 1. **Rendering its own content** (text, title, number, etc.)
 2. **Recursively rendering nested content** using ContentRenderer
 3. **Handling interactive features** (glossary terms, cross-references, etc.)
+4. **Applying effective date filtering** to show correct revisions
+5. **Propagating BC source attribution** to child components
+6. **Supporting non-interactive mode** for modal previews
 
 ### Example: SentenceBlock
 
@@ -712,24 +1138,81 @@ Each component is responsible for:
 
 export const SentenceBlock: React.FC<SentenceBlockProps> = ({ 
   sentence, 
-  interactive = true 
+  effectiveDate,
+  interactive = true,
+  parentHasBcSource = false,
 }) => {
+  // Apply effective date filtering
+  const filteredSentence = effectiveDate ? filterSentence(sentence, effectiveDate) : sentence;
+  if (!filteredSentence) return null; // Hidden if deleted on this date
+
+  // Extract equations and organizations if present
+  const sentenceOrganizations = (filteredSentence as any).organizations || [];
+  const sentenceEquations = (filteredSentence as any).equations || [];
+
   return (
-    <div className="sentenceBlock">
-      <span className="sentenceNumber">{sentence.number})</span>
+    <div className="sentenceBlock" id={filteredSentence.id}>
+      <span className="sentenceNumber">{filteredSentence.number})</span>
       <div className="sentenceContent">
-        <p className="sentenceText">
-          {parseTextWithGlossary(sentence.text, sentence.glossaryTerms)}
-        </p>
+        <div className="sentenceText">
+          {/* Parse text with all marker types */}
+          {parseTextWithMarkers(
+            filteredSentence.text, 
+            filteredSentence.glossaryTerms || [], 
+            interactive,
+            sentenceEquations
+          )}
+        </div>
+        
+        {/* Render definitions list if present (for "Defined Terms" articles) */}
+        {filteredSentence.definitions && filteredSentence.definitions.length > 0 && (
+          <DefinitionsList 
+            definitions={filteredSentence.definitions}
+            interactive={interactive}
+          />
+        )}
+
+        {/* Render organizations table if present */}
+        {sentenceOrganizations.length > 0 && (
+          <div className="sentenceOrganizations">
+            <table className="sentenceOrganizationsTable">
+              <caption>Organizations</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Abbreviation</th>
+                  <th scope="col">Organization</th>
+                  <th scope="col">Website</th>
+                </tr>
+              </thead>
+              <tbody>
+                {sentenceOrganizations.map((org) => (
+                  <tr key={org.id}>
+                    <td>{org.abbreviation}</td>
+                    <td>{org.fullName}</td>
+                    <td>
+                      {org.website ? (
+                        <a href={org.website} target="_blank" rel="noopener noreferrer">
+                          {org.website}
+                        </a>
+                      ) : '-'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
         
         {/* Recursively render nested content */}
-        {sentence.content && sentence.content.length > 0 && (
+        {filteredSentence.content && filteredSentence.content.length > 0 && (
           <div className="sentenceNestedContent">
-            {sentence.content.map((item, index) => (
+            {filteredSentence.content.map((item, index) => (
               <ContentRenderer 
-                key={`${sentence.id}-content-${index}`}
+                key={`${filteredSentence.id}-content-${index}`}
                 node={item}
+                effectiveDate={effectiveDate}
                 interactive={interactive}
+                parentHasBcSource={parentHasBcSource}
               />
             ))}
           </div>
