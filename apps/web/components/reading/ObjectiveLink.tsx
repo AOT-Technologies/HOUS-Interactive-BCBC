@@ -57,6 +57,22 @@ const GLOSSARY_SECOND_WORD_STOPWORDS = new Set([
   'as',
 ]);
 
+const parseGlossaryMarkerPayload = (payload: string): { termId: string; label?: string } => {
+  const firstColon = payload.indexOf(':');
+
+  if (firstColon === -1) {
+    return { termId: payload.trim() };
+  }
+
+  const termId = payload.slice(0, firstColon).trim();
+  const label = payload.slice(firstColon + 1).trim();
+
+  return {
+    termId,
+    label: label.length > 0 ? label : undefined,
+  };
+};
+
 const parseDefinitionWithGlossary = (text: string): React.ReactNode[] => {
   const nodes: React.ReactNode[] = [];
   const glossaryRegex = /\[REF:term:([^\]]+)\]/g;
@@ -64,7 +80,8 @@ const parseDefinitionWithGlossary = (text: string): React.ReactNode[] => {
   let lastIndex = 0;
 
   while ((match = glossaryRegex.exec(text)) !== null) {
-    const termId = match[1];
+    const marker = parseGlossaryMarkerPayload(match[1]);
+    const termId = marker.termId;
     const matchStart = match.index;
     const matchEnd = glossaryRegex.lastIndex;
 
@@ -77,10 +94,10 @@ const parseDefinitionWithGlossary = (text: string): React.ReactNode[] => {
       /^([A-Za-z][A-Za-z0-9'./-]*)(?:\s+([A-Za-z][A-Za-z0-9'./-]*))?/
     );
 
-    let displayText = termId.replace(/-/g, ' ');
+    let displayText = marker.label || termId.replace(/-/g, ' ');
     let consumed = 0;
 
-    if (immediateTermMatch) {
+    if (!marker.label && immediateTermMatch) {
       const firstWord = immediateTermMatch[1];
       const secondWord = immediateTermMatch[2];
 

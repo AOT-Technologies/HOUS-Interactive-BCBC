@@ -49,6 +49,8 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
   displayMode,
 }) => {
   const mode = displayMode || equation.display || 'block';
+  const ContainerTag: 'span' | 'div' = mode === 'inline' ? 'span' : 'div';
+  const DescriptionTag: 'span' | 'div' = mode === 'inline' ? 'span' : 'div';
   const repairedLatex = getRepairedLatex(equation);
   const latexForRender = repairedLatex || equation.latex || '';
   const fallbackText = equation.plainText || latexForRender || equation.id;
@@ -87,7 +89,7 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
   }, [equation.id, equation.number, fallbackText, hasMathml, resolvedMathml, showLatex]);
 
   return (
-    <div
+    <ContainerTag
       className={[
         'equation-block',
         mode === 'inline' ? 'equation-block--inline' : 'equation-block--block',
@@ -121,10 +123,10 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
         </code>
       )}
       {shouldShowDescription && (
-        <div className="equation-block__description">
+        <DescriptionTag className="equation-block__description">
           {equation.description}
-        </div>
+        </DescriptionTag>
       )}
-    </div>
+    </ContainerTag>
   );
 };

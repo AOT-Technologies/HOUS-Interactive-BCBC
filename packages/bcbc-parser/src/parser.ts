@@ -896,7 +896,9 @@ function extractAmendmentDatesFromBCAmendments(bcAmendments: any[]): AmendmentDa
 
 /**
  * Extract glossary term references from text
- * Format: [REF:term:termId]termText
+ * Formats:
+ * - Legacy: [REF:term:termId]termText
+ * - Current: [REF:term:termId:term label]
  */
 function extractGlossaryTerms(text: string): string[] {
   const terms: string[] = [];
@@ -904,7 +906,13 @@ function extractGlossaryTerms(text: string): string[] {
   let match;
 
   while ((match = regex.exec(text)) !== null) {
-    terms.push(match[1]);
+    const payload = (match[1] || '').trim();
+    const separatorIndex = payload.indexOf(':');
+    const termId = separatorIndex === -1 ? payload : payload.slice(0, separatorIndex).trim();
+
+    if (termId) {
+      terms.push(termId);
+    }
   }
 
   return terms;

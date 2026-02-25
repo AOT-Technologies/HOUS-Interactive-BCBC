@@ -31,6 +31,7 @@ interface Marker {
   start: number;
   end: number;
   termId?: string;
+  glossaryLabel?: string;
   referenceId?: string;
   noteId?: string;
   tableNoteId?: string;
@@ -49,6 +50,11 @@ type InternalRefFormat = 'short' | 'long' | 'medium' | 'title' | 'number' | 'sho
 interface GlossaryDisplay {
   text: string;
   consumed: number;
+}
+
+interface ParsedGlossaryMarker {
+  termId: string;
+  label?: string;
 }
 
 export interface TextEquationEntry {
@@ -266,8 +272,13 @@ function asNumber(value: string | undefined): number | undefined {
 function getGlossaryDisplayText(
   fullText: string,
   markerEnd: number,
-  termId: string
+  termId: string,
+  markerLabel?: string
 ): GlossaryDisplay {
+  if (markerLabel && markerLabel.trim().length > 0) {
+    return { text: markerLabel.trim(), consumed: 0 };
+  }
+
   const remaining = fullText.slice(markerEnd);
   const immediateTermMatch = remaining.match(
     /^([A-Za-z][A-Za-z0-9'./-]*)(?:\s+([A-Za-z][A-Za-z0-9'./-]*))?/
@@ -289,6 +300,22 @@ function getGlossaryDisplayText(
 
   // Fallback for malformed source where marker is not immediately followed by term text.
   return { text: termId.replace(/-/g, ' '), consumed: 0 };
+}
+
+function parseGlossaryMarkerPayload(payload: string): ParsedGlossaryMarker {
+  const firstColon = payload.indexOf(':');
+
+  if (firstColon === -1) {
+    return { termId: payload.trim() };
+  }
+
+  const termId = payload.slice(0, firstColon).trim();
+  const label = payload.slice(firstColon + 1).trim();
+
+  return {
+    termId,
+    label: label.length > 0 ? label : undefined,
+  };
 }
 
 function getCrossReferenceDisplayText(
@@ -438,7 +465,8 @@ export function parseTextWithGlossary(
   let match: RegExpExecArray | null;
   
   while ((match = glossaryRegex.exec(text)) !== null) {
-    const termId = match[1];
+    const glossaryMarker = parseGlossaryMarkerPayload(match[1]);
+    const termId = glossaryMarker.termId;
     const matchStart = match.index;
     const matchEnd = glossaryRegex.lastIndex;
     
@@ -451,7 +479,7 @@ export function parseTextWithGlossary(
     // The term text is the content between the marker and the next marker or end
     // For now, we'll use the termId as the display text
     // In a real implementation, this would look up the term from glossary
-    const glossaryDisplay = getGlossaryDisplayText(text, matchEnd, termId);
+    const glossaryDisplay = getGlossaryDisplayText(text, matchEnd, termId, glossaryMarker.label);
     
     // Add GlossaryTerm component
     nodes.push(
@@ -649,11 +677,13 @@ export function parseTextWithMarkers(
   let match: RegExpExecArray | null;
   
   while ((match = glossaryRegex.exec(sanitizedText)) !== null) {
+    const glossaryMarker = parseGlossaryMarkerPayload(match[1]);
     markers.push({
       type: 'glossary',
       start: match.index,
       end: glossaryRegex.lastIndex,
-      termId: match[1],
+      termId: glossaryMarker.termId,
+      glossaryLabel: glossaryMarker.label,
     });
   }
   
@@ -828,7 +858,8 @@ export function parseTextWithMarkers(
         const glossaryDisplay = getGlossaryDisplayText(
           sanitizedText,
           marker.end,
-          marker.termId!
+          marker.termId!,
+          marker.glossaryLabel
         );
 
         nodes.push(

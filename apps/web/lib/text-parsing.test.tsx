@@ -3,6 +3,7 @@ import { parseTextWithMarkers } from './text-parsing';
 import { FunctionalStatementLink } from '../components/reading/FunctionalStatementLink';
 import { ObjectiveLink } from '../components/reading/ObjectiveLink';
 import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
+import { GlossaryTerm } from '../components/reading/GlossaryTerm';
 
 const getElementsByType = (
   nodes: React.ReactNode[],
@@ -117,5 +118,25 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(functionalRefs.length).toBeGreaterThanOrEqual(2);
     expect(objectiveRefs).toHaveLength(1);
     expect(objectiveRefs[0].props.objectiveId).toBe('nbc-obj-op2.3');
+  });
+
+  it('renders glossary label from marker payload in new format', () => {
+    const input = 'in [REF:term:bldng-r:building area] that do not create a hazard';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const glossaryTerms = getElementsByType(nodes, GlossaryTerm);
+
+    expect(glossaryTerms).toHaveLength(1);
+    expect(glossaryTerms[0].props.termId).toBe('bldng-r');
+    expect(glossaryTerms[0].props.text).toBe('building area');
+  });
+
+  it('keeps compatibility with legacy glossary format', () => {
+    const input = 'all [REF:term:bldng]buildings shall comply';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const glossaryTerms = getElementsByType(nodes, GlossaryTerm);
+
+    expect(glossaryTerms).toHaveLength(1);
+    expect(glossaryTerms[0].props.termId).toBe('bldng');
+    expect(glossaryTerms[0].props.text).toBe('buildings');
   });
 });
