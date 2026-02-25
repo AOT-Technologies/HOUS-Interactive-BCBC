@@ -95,8 +95,10 @@ export const GlossarySidebar: React.FC = () => {
   const [activeLetter, setActiveLetter] = useState<string>('ALL');
 
   const panelRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const previousFocusedRef = useRef<HTMLElement | null>(null);
   const termRefs = useRef<Map<string, HTMLElement>>(new Map());
+  const prevSearchQueryRef = useRef('');
 
   useEffect(() => {
     if (glossarySidebarOpen && glossaryMap.size === 0 && !loading) {
@@ -199,18 +201,57 @@ export const GlossarySidebar: React.FC = () => {
   }, [glossarySidebarOpen, closeGlossarySidebar]);
 
   useEffect(() => {
+    const previous = prevSearchQueryRef.current;
+    const wasSearching = previous.trim().length > 0;
+    const isSearchingNow = searchQuery.trim().length > 0;
+
+    if (wasSearching && !isSearchingNow) {
+      requestAnimationFrame(() => {
+        contentRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+      });
+    }
+
+    prevSearchQueryRef.current = searchQuery;
+  }, [searchQuery]);
+
+  const pendingScrollTermRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!glossarySidebarOpen) {
+      pendingScrollTermRef.current = null;
+      return;
+    }
+
+    pendingScrollTermRef.current = activeGlossaryTermId ? normalize(activeGlossaryTermId) : null;
+  }, [glossarySidebarOpen, activeGlossaryTermId]);
+
+  useEffect(() => {
     if (!glossarySidebarOpen || !activeTermEntry) return;
+    if (!pendingScrollTermRef.current) return;
 
     const key = normalize(activeTermEntry.term);
     const target = termRefs.current.get(key);
     if (!target) return;
 
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    target.focus();
-  }, [activeTermEntry, groupedEntries, glossarySidebarOpen]);
+    // Scroll once per requested active term; avoid focus-stealing from search input.
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    });
+    pendingScrollTermRef.current = null;
+  }, [activeTermEntry, glossarySidebarOpen]);
 
   const handleSidebarTermClick = (termId: string) => {
     openGlossarySidebar(termId);
+  };
+
+  const handleLetterFilterClick = (letter: string) => {
+    setActiveLetter(letter);
+
+    if (letter === 'ALL') {
+      requestAnimationFrame(() => {
+        contentRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+      });
+    }
   };
 
   return (
@@ -262,7 +303,7 @@ export const GlossarySidebar: React.FC = () => {
             <button
               type="button"
               className={`glossary-sidebar__letter ${activeLetter === 'ALL' ? 'is-active' : ''}`}
-              onClick={() => setActiveLetter('ALL')}
+              onClick={() => handleLetterFilterClick('ALL')}
             >
               All
             </button>
@@ -271,7 +312,7 @@ export const GlossarySidebar: React.FC = () => {
                 key={letter}
                 type="button"
                 className={`glossary-sidebar__letter ${activeLetter === letter ? 'is-active' : ''}`}
-                onClick={() => setActiveLetter(letter)}
+                onClick={() => handleLetterFilterClick(letter)}
               >
                 {letter}
               </button>
@@ -279,7 +320,7 @@ export const GlossarySidebar: React.FC = () => {
           </div>
         </div>
 
-        <div className="glossary-sidebar__content">
+        <div ref={contentRef} className="glossary-sidebar__content">
           {loading && entries.length === 0 ? (
             <p className="glossary-sidebar__status">Loading glossary terms...</p>
           ) : filteredEntries.length === 0 ? (
