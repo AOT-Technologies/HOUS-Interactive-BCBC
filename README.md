@@ -177,6 +177,23 @@ See [docs/DATA-MANAGEMENT.md](docs/DATA-MANAGEMENT.md) for complete data managem
 
 See [docs/COMMANDS.md](docs/COMMANDS.md) for complete command reference.
 
+## Image Configuration
+
+The application supports configurable image formats via environment variable. BC Building Code JSON uses extension-less image paths, and the extension is specified at build time:
+
+```bash
+# Build with JPG images (default)
+NEXT_PUBLIC_IMAGE_EXTENSION=.jpg npx pnpm build
+
+# Build with PNG images
+NEXT_PUBLIC_IMAGE_EXTENSION=.png npx pnpm build
+
+# Build with EPS images
+NEXT_PUBLIC_IMAGE_EXTENSION=.eps npx pnpm build
+```
+
+See [docs/IMAGE-CONFIGURATION.md](docs/IMAGE-CONFIGURATION.md) for complete details.
+
 ## BC Design System
 
 The application uses the BC Design System UI component library with 20+ accessible, government-standard components including:

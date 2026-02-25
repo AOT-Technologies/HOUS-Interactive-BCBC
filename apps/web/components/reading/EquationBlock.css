@@ -96,12 +96,6 @@
   white-space: normal;
 }
 
-.equation-block__title {
-  margin-bottom: 0.6rem;
-  font: var(--typography-regular-small, 400 0.95rem/1.4 'BCSans', sans-serif);
-  color: var(--typography-color-secondary, #555);
-}
-
 .equation-block__description {
   margin-top: 0.55rem;
   font: var(--typography-regular-small, 400 0.95rem/1.4 'BCSans', sans-serif);

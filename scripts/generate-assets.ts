@@ -396,6 +396,15 @@ async function generateEquationMap(rawData: unknown, outputDir: string): Promise
   logger.success(`Written equation-map.json (${Object.keys(equationMap).length} equations)`);
 }
 
+async function generateStandardsMap(rawData: any, outputDir: string): Promise<void> {
+  logger.info('Generating standards map...');
+  const standards = rawData?.standards && typeof rawData.standards === 'object'
+    ? rawData.standards
+    : {};
+  await writeFile(join(outputDir, 'standards-map.json'), JSON.stringify(standards, null, 2));
+  logger.success(`Written standards-map.json (${Object.keys(standards).length} standards)`);
+}
+
 /**
  * Generate quick access and navigation tree
  */
@@ -406,6 +415,10 @@ async function generateQuickAccess(document: BCBCDocument, rawData: any, outputD
   
   try {
     const metadata = extractMetadata(document);
+    const navigationTreeWithAppendices = injectPartAppendixNodes(
+      metadata.navigationTree,
+      rawData
+    );
     
     // Extract functional statements and objectives from raw data
     const functionalStatements = extractFunctionalStatementsFromRaw(rawData);
@@ -425,7 +438,7 @@ async function generateQuickAccess(document: BCBCDocument, rawData: any, outputD
     const navigationTree = {
       version: document.metadata.version || '2020',
       generatedAt: new Date().toISOString(),
-      tree: metadata.navigationTree,
+      tree: navigationTreeWithAppendices,
     };
     
     const navTreePath = join(outputDir, 'navigation-tree.json');
@@ -463,6 +476,58 @@ async function generateQuickAccess(document: BCBCDocument, rawData: any, outputD
     logger.error(`Failed to generate quick access: ${error}`);
     throw error;
   }
+}
+
+function injectPartAppendixNodes(
+  tree: any[],
+  rawData: any
+): any[] {
+  const appendixByPartId = new Map<string, { appendixId: string; path: string }>();
+
+  for (const volume of rawData?.volumes || []) {
+    for (const division of volume?.divisions || []) {
+      for (const part of division?.parts || []) {
+        if (part?.appendix?.type === 'part_appendix' && part?.appendix?.id) {
+          const partId = typeof part.id === 'string'
+            ? part.id
+            : `${division.id}.part${part.number}`;
+          appendixByPartId.set(partId, {
+            appendixId: part.appendix.id,
+            path: `/code/${division.id}/${part.number}/appendix`,
+          });
+        }
+      }
+    }
+  }
+
+  const visit = (nodes: any[]): any[] =>
+    nodes.map((node) => {
+      const nextNode = {
+        ...node,
+        children: Array.isArray(node.children) ? visit(node.children) : node.children,
+      };
+
+      if (nextNode.type === 'part') {
+        const appendix = appendixByPartId.get(nextNode.id);
+        const children = Array.isArray(nextNode.children) ? [...nextNode.children] : [];
+
+        if (appendix && !children.some((child) => child?.type === 'part_appendix')) {
+          children.push({
+            id: appendix.appendixId,
+            number: '',
+            title: 'Appendix',
+            type: 'part_appendix',
+            path: appendix.path,
+          });
+        }
+
+        nextNode.children = children;
+      }
+
+      return nextNode;
+    });
+
+  return visit(tree);
 }
 
 /**
@@ -543,6 +608,9 @@ async function generateVersionAssets(
 
     // Generate equation lookup map for inline equation markers
     await generateEquationMap(rawData, outputDir);
+
+    // Generate standards lookup map for [REF:standard:*] / [REF:external:*]
+    await generateStandardsMap(rawData, outputDir);
     
     const versionDuration = Date.now() - versionStartTime;
     logger.success(`Completed ${version.title} in ${formatDuration(versionDuration)}`);

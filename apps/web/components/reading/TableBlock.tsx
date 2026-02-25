@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Table, TableCellContent } from '@bc-building-code/bcbc-parser';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import { resolveImagePath } from '../../lib/image-config';
 import './TableBlock.css';
 
 export interface TableBlockProps {
@@ -65,17 +66,8 @@ type TableWithRawSupport = Table & {
 const TableCellFigure: React.FC<{ figure: TableCellContent }> = ({ figure }) => {
   if (!figure.graphic) return null;
 
-  const getImagePath = (src: string): string => {
-    if (src.startsWith('/')) {
-      return src;
-    }
-
-    const normalizedSrc = src.replace(/^\/?bc-graphics\//i, '');
-    const convertedSrc = normalizedSrc.replace(/\.eps$/i, '.jpg');
-    return `/${convertedSrc}`;
-  };
-
-  const imagePath = getImagePath(figure.graphic.src);
+  const imagePath = resolveImagePath(figure.graphic.src);
+  if (!imagePath) return null;
 
   return (
     <figure className="table-block__figure">

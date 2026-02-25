@@ -15,7 +15,7 @@ import type {
  */
 export interface NavigationNode {
   id: string;
-  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix';
   number?: string;
   title: string;
   path: string;
@@ -194,11 +194,15 @@ function buildDivisionNode(division: any): NavigationNode {
       for (const subsection of section.subsections) {
         // NEW: Hierarchical numbering (Part.Section.Subsection)
         const subsectionNumber = `${sectionNumber}.${subsection.number}`;
+        // Handle subsection title as either string or revision history object
+        const subsectionTitle = typeof subsection.title === 'string' 
+          ? subsection.title 
+          : subsection.title.text;
         const subsectionNode: NavigationNode = {
           id: subsection.id,
           type: 'subsection',
           number: subsectionNumber,
-          title: `${subsectionNumber} ${subsection.title}`,
+          title: `${subsectionNumber} ${subsectionTitle}`,
           path: `/code/${division.id}/${part.number}/${section.number}/${subsection.number}`,
           children: [],
         };
@@ -221,6 +225,15 @@ function buildDivisionNode(division: any): NavigationNode {
       }
 
       partNode.children?.push(sectionNode);
+    }
+
+    if (part.appendix && part.appendix.type === 'part_appendix') {
+      partNode.children?.push({
+        id: part.appendix.id,
+        type: 'part_appendix',
+        title: 'Appendix',
+        path: `/code/${division.id}/${part.number}/appendix`,
+      });
     }
 
     divisionNode.children?.push(partNode);

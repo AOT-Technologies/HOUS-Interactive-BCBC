@@ -8,11 +8,24 @@
   margin: var(--layout-margin-large, 1.5rem) 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.figure-block__number {
+  font: var(--typography-bold-medium, 700 1.05rem/1.4 'BCSans', sans-serif);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: 0.2rem;
+}
+
+.figure-block__title {
+  font: var(--typography-regular-medium, 400 1rem/1.45 'BCSans', sans-serif);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: var(--layout-margin-small, 0.5rem);
 }
 
 .figure-block__image {
-  width: 50%;
+  width: min(100%, 900px);
   max-width: 900px;
   height: auto;
   display: block;
@@ -25,7 +38,21 @@
 }
 
 .figure-block__caption {
+  width: min(100%, 900px);
   font-size: 0.875rem;
   color: var(--typography-color-secondary, #6c6c6e);
   margin-top: var(--layout-margin-small, 0.5rem);
+  text-align: center;
+}
+
+.figure-block__notes {
+  width: min(100%, 900px);
+  margin-top: var(--layout-margin-small, 0.5rem);
+  text-align: left;
+}
+
+.figure-block__note {
+  margin: 0.25rem 0;
+  font: var(--typography-regular-small, 400 0.95rem/1.45 'BCSans', sans-serif);
+  color: var(--typography-color-primary, #313132);
 }

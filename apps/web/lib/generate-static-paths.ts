@@ -10,7 +10,7 @@ import path from 'path';
 
 interface NavigationNode {
   id: string;
-  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix';
   number?: string;
   title: string;
   path: string;
@@ -59,6 +59,7 @@ function extractPathsFromNode(node: NavigationNode, paths: string[][] = []): str
   // Skip only volume and division levels.
   if (
     node.type === 'part' ||
+    node.type === 'part_appendix' ||
     node.type === 'section' ||
     node.type === 'subsection' ||
     node.type === 'article'
@@ -194,4 +195,3 @@ export function generateStaticPathsForVersion(version: string): { slug: string[]
   
   return paths;
 }
-

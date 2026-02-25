@@ -216,6 +216,25 @@ export interface Revision {
 export type SentenceContentNode = Clause | Table | Figure | Equation;
 
 /**
+ * Definition entry within a sentence
+ */
+export interface Definition {
+  id: string;
+  term: string;
+  definition: string;
+}
+
+/**
+ * Organization entry used in abbreviation lists
+ */
+export interface Organization {
+  id: string;
+  abbreviation: string;
+  fullName: string;
+  website?: string;
+}
+
+/**
  * Sentence within an article
  */
 export interface Sentence {
@@ -224,6 +243,8 @@ export interface Sentence {
   type: 'sentence';
   text: string;
   glossaryTerms: string[];
+  definitions?: Definition[];
+  organizations?: Organization[];
   content?: SentenceContentNode[];
   revisions?: Revision[];
   revised?: boolean;
@@ -324,6 +345,10 @@ export interface Figure {
   caption?: string;
   imageUrl: string;
   altText: string;
+  notes?: Array<{
+    id: string;
+    content: string;
+  }>;
 }
 
 /**

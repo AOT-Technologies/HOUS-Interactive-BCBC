@@ -14,6 +14,7 @@ export { ArticleBlock } from './ArticleBlock';
 export { SentenceBlock } from './SentenceBlock';
 export { ClauseBlock } from './ClauseBlock';
 export { SubclauseBlock } from './SubclauseBlock';
+export { DefinitionsList } from './DefinitionsList';
 export { GlossaryTerm } from './GlossaryTerm';
 export { GlossarySidebar } from './GlossarySidebar';
 export { TableBlock } from './TableBlock';

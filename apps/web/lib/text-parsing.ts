@@ -27,7 +27,7 @@ import { useEquationStore } from '../stores/equation-store';
  * Marker type for internal tracking
  */
 interface Marker {
-  type: 'glossary' | 'crossref' | 'note' | 'tableNote' | 'equation' | 'functionalStatement' | 'objective' | 'compound';
+  type: 'glossary' | 'crossref' | 'standardRef' | 'note' | 'tableNote' | 'equation' | 'functionalStatement' | 'objective' | 'compound';
   start: number;
   end: number;
   termId?: string;
@@ -40,6 +40,8 @@ interface Marker {
   functionalStatementId?: string;
   objectiveId?: string;
   compoundParts?: Array<{ type: 'functionalStatement' | 'objective'; id: string }>;
+  standardsRefType?: 'standard' | 'external';
+  standardsRefId?: string;
 }
 
 type InternalRefFormat = 'short' | 'long' | 'medium' | 'title' | 'number' | 'shortNum' | undefined;
@@ -98,39 +100,68 @@ function sanitizeLegacyPlaceholderTags(text: string): string {
   return text.replace(/<>/g, '').replace(/<\/>/g, '');
 }
 
-function parseInlineScriptNotation(text: string, absoluteStart: number = 0): React.ReactNode[] {
-  if (!text || (!text.includes('_{') && !text.includes('^{'))) {
+/**
+ * Parse text with inline formatting tags (italic, bold) and script notation
+ * Returns array of React nodes with proper formatting applied
+ */
+function parseInlineFormatting(text: string, interactive: boolean = true, startIndex: number = 0): React.ReactNode[] {
+  if (!text) {
+    return [text];
+  }
+
+  // Check if text contains any formatting tags or script notation
+  if (!text.includes('<italic>') && !text.includes('<bold>') && !text.includes('_{') && !text.includes('^{')) {
     return [text];
   }
 
   const nodes: React.ReactNode[] = [];
-  const scriptRegex = /(_\{[^{}]+\}|\^\{[^{}]+\})/g;
+  // Match italic, bold, subscript, and superscript patterns
+  const formatRegex = /(<italic>[\s\S]*?<\/italic>|<bold>[\s\S]*?<\/bold>|_\{[^{}]+\}|\^\{[^{}]+\})/gi;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
-  while ((match = scriptRegex.exec(text)) !== null) {
+  while ((match = formatRegex.exec(text)) !== null) {
     const token = match[0];
-    const start = match.index;
-    const end = scriptRegex.lastIndex;
-    const keySuffix = absoluteStart + start;
+    const matchStart = match.index;
+    const matchEnd = formatRegex.lastIndex;
+    const keyIndex = startIndex + matchStart;
 
-    if (start > lastIndex) {
-      nodes.push(text.substring(lastIndex, start));
+    // Add plain text before this match
+    if (matchStart > lastIndex) {
+      nodes.push(text.substring(lastIndex, matchStart));
     }
 
-    if (token.startsWith('_{')) {
+    // Handle different formatting types
+    if (/^<italic>/i.test(token)) {
+      const italicText = token.replace(/^<italic>/i, '').replace(/<\/italic>$/i, '');
       nodes.push(
-        React.createElement('sub', { key: `inline-sub-${keySuffix}` }, token.slice(2, -1))
+        React.createElement('em', { key: `italic-${keyIndex}` },
+          ...parseInlineFormatting(italicText, interactive, keyIndex)
+        )
       );
-    } else {
+    } else if (/^<bold>/i.test(token)) {
+      const boldText = token.replace(/^<bold>/i, '').replace(/<\/bold>$/i, '');
       nodes.push(
-        React.createElement('sup', { key: `inline-sup-${keySuffix}` }, token.slice(2, -1))
+        React.createElement('strong', { key: `bold-${keyIndex}` },
+          ...parseInlineFormatting(boldText, interactive, keyIndex)
+        )
+      );
+    } else if (token.startsWith('_{')) {
+      // Subscript
+      nodes.push(
+        React.createElement('sub', { key: `sub-${keyIndex}` }, token.slice(2, -1))
+      );
+    } else if (token.startsWith('^{')) {
+      // Superscript
+      nodes.push(
+        React.createElement('sup', { key: `sup-${keyIndex}` }, token.slice(2, -1))
       );
     }
 
-    lastIndex = end;
+    lastIndex = matchEnd;
   }
 
+  // Add remaining text
   if (lastIndex < text.length) {
     nodes.push(text.substring(lastIndex));
   }
@@ -276,8 +307,8 @@ function getCrossReferenceDisplayText(
   let displayTextMatch: RegExpMatchArray | null = null;
   
   if (format === 'long') {
-    // Match "Articles X.X.X." or "Article X.X.X." or "Section X.X." or "Sentence (X)" etc.
-    displayTextMatch = remaining.match(/^((?:Articles?|Sections?|Sentences?|Clauses?|Subclauses?|Tables?|Note)\s+[A-Z0-9][A-Z0-9.\-()]*\.?)/i);
+    // Match "Article X.X.X." / "Figure X.X.X.-A" / "Section X.X." / "Sentence (X)" etc.
+    displayTextMatch = remaining.match(/^((?:Articles?|Figures?|Sections?|Sentences?|Clauses?|Subclauses?|Tables?|Note)\s+[A-Z0-9][A-Z0-9.\-()]*\.?)/i);
   } else if (format === 'short') {
     // Match "Sentence (X)" or just "(X)"
     displayTextMatch = remaining.match(/^((?:Sentence|Clause|Subclause)\s+\([^)]+\)|\([^)]+\))/i);
@@ -307,6 +338,7 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   const section = extractNumeric(referenceId, /\.sect(\d+)/i);
   const subsection = extractNumeric(referenceId, /\.subsect(\d+)/i);
   const article = extractNumeric(referenceId, /\.art(\d+)/i);
+  const figure = extractNumeric(referenceId, /\.figure(\d+)/i);
   const sentence = extractNumeric(referenceId, /\.sent(\d+)/i);
   const clause = extractNumeric(referenceId, /\.clause(\d+)/i);
   const subclause = extractNumeric(referenceId, /\.subclause(\d+)/i);
@@ -317,6 +349,11 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   const subsectionNumber = [part, section, subsection].filter(Boolean).join('.');
   const articleNumber = [part, section, subsection, article].filter(Boolean).join('.');
   const tableNumber = [part, section, subsection, article, table].filter(Boolean).join('.');
+  const figureIndex = asNumber(figure);
+  const figureLetter = typeof figureIndex === 'number' ? toAlphabetOrdinal(figureIndex).toUpperCase() : undefined;
+  const figureNumber = part && section && subsection && article && figureLetter
+    ? `${part}.${section}.${subsection}.${article}.-${figureLetter}`
+    : undefined;
 
   // Application notes are rendered as Note references in BC style.
   if (appNote) {
@@ -344,6 +381,14 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
 
   if (table) {
     return tableNumber ? `Table ${tableNumber}.` : `Table ${table}`;
+  }
+
+  if (figureNumber) {
+    return isShortNumeric ? figureNumber : `Figure ${figureNumber}`;
+  }
+
+  if (figure) {
+    return isShortNumeric ? figure : `Figure ${figure}`;
   }
 
   if (article) {
@@ -480,7 +525,7 @@ export function parseTextWithCrossReferences(
     
     lastIndex = matchEnd;
   }
-  
+
   // Add remaining text after last marker
   if (lastIndex < text.length) {
     nodes.push(text.substring(lastIndex));
@@ -660,6 +705,22 @@ export function parseTextWithMarkers(
     }
   }
 
+  // Find standards/external markers.
+  // Examples:
+  // - [REF:standard:csaa440S1]
+  // - [REF:external:csa101a440]
+  const standardsRegex = /\[REF:(standard|external):([^\]]+)\]/gi;
+
+  while ((match = standardsRegex.exec(sanitizedText)) !== null) {
+    markers.push({
+      type: 'standardRef',
+      start: match.index,
+      end: standardsRegex.lastIndex,
+      standardsRefType: (match[1] || '').toLowerCase() as 'standard' | 'external',
+      standardsRefId: (match[2] || '').trim(),
+    });
+  }
+
   // Find equation markers.
   // Examples: [EQ:display:es007867q1], [EQ:inline:eg02643a], [EQ:display:]
   const equationRegex = /\[EQ:(display|inline)(?::([^\]]*))?\]/gi;
@@ -680,8 +741,10 @@ export function parseTextWithMarkers(
   // - [[REF:sub-objective:nbc-obj-os1.2]]
   // - [[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]
   // - [[REF:functional-statement:fs02],[REF:functional-statement:fs03]-[REF:sub-objective:nbc-obj-os1.2]]
-  // Use non-greedy match to capture everything between [[ and ]]
-  const doubleBracketRegex = /\[\[(.*?)\]\]/g;
+  // Use non-greedy match to capture everything between [[ and ]],
+  // while also supporting spaced forms like:
+  // [ [REF:functional-statement:fs03] - [REF:sub-objective:nbc-obj-os1.2] ]
+  const doubleBracketRegex = /\[\s*\[([\s\S]*?)\]\s*\]/g;
 
   while ((match = doubleBracketRegex.exec(sanitizedText)) !== null) {
     const content = match[1];
@@ -751,8 +814,9 @@ export function parseTextWithMarkers(
     // Add plain text before the marker
     if (marker.start > lastIndex) {
       nodes.push(
-        ...parseInlineScriptNotation(
+        ...parseInlineFormatting(
           sanitizedText.substring(lastIndex, marker.start),
+          interactive,
           lastIndex
         )
       );
@@ -799,6 +863,22 @@ export function parseTextWithMarkers(
         );
         // For cross-references, consume the marker and the display text that follows
         lastIndex = marker.end + crossRefDisplay.consumed;
+        break;
+      }
+
+      case 'standardRef': {
+        const standardsType = marker.standardsRefType || 'standard';
+        const standardsId = marker.standardsRefId || '';
+
+        nodes.push(
+          React.createElement(CrossReferenceLink, {
+            key: `standards-${marker.start}`,
+            referenceId: `${standardsType}:${standardsId}`,
+            displayText: standardsId,
+            interactive,
+          })
+        );
+        lastIndex = marker.end;
         break;
       }
       
@@ -959,16 +1039,17 @@ export function parseTextWithMarkers(
   // Add remaining text after last marker
   if (lastIndex < sanitizedText.length) {
       nodes.push(
-        ...parseInlineScriptNotation(
+        ...parseInlineFormatting(
           sanitizedText.substring(lastIndex),
+          interactive,
           lastIndex
         )
       );
   }
   
-  // If no markers found, return the original text
+  // If no markers found, return the original text with formatting
   if (nodes.length === 0) {
-    nodes.push(sanitizedText);
+    return parseInlineFormatting(sanitizedText, interactive, 0);
   }
   
   return nodes;

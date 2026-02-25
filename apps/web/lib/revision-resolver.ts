@@ -9,6 +9,7 @@ type RevisionRecord = {
 type ContentNode = {
   id?: string;
   type?: string;
+  title?: unknown;
   revisions?: RevisionRecord[];
   [key: string]: unknown;
 };
@@ -32,8 +33,33 @@ function getApplicableRevision(
 }
 
 function applyRevision<T extends ContentNode>(node: T, effectiveDate?: string): T | null {
-  const revision = getApplicableRevision(node.revisions, effectiveDate);
-  if (!revision) return { ...node };
+  // First, handle title with revision history (before checking node-level revisions)
+  let processedNode = { ...node };
+  
+  if (processedNode.title && typeof processedNode.title === 'object' && 'revised' in processedNode.title) {
+    const titleObj = processedNode.title as any;
+    if (titleObj.revised && Array.isArray(titleObj.revisions)) {
+      // Find the appropriate title revision based on effective date
+      const sortedTitleRevisions = [...titleObj.revisions].sort((a, b) =>
+        (b.effective_date || '').localeCompare(a.effective_date || '')
+      );
+      
+      if (effectiveDate) {
+        const applicableTitleRevision = sortedTitleRevisions.find(
+          (rev) => (rev.effective_date || '') <= effectiveDate
+        ) || sortedTitleRevisions[sortedTitleRevisions.length - 1];
+        
+        processedNode.title = applicableTitleRevision.text || titleObj.text;
+      } else {
+        // No effective date specified, use current text
+        processedNode.title = titleObj.text;
+      }
+    }
+  }
+
+  // Then handle node-level revisions
+  const revision = getApplicableRevision(processedNode.revisions, effectiveDate);
+  if (!revision) return processedNode as T;
   if (revision.deleted) return null;
 
   const {
@@ -51,10 +77,10 @@ function applyRevision<T extends ContentNode>(node: T, effectiveDate?: string): 
 
   // Revision payload overrides content fields, but never node identity/type.
   return {
-    ...node,
+    ...processedNode,
     ...revisionPayload,
-    id: node.id,
-    type: node.type,
+    id: processedNode.id,
+    type: processedNode.type,
   } as T;
 }
 

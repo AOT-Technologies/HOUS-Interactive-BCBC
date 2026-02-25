@@ -20,10 +20,21 @@ export const SubsectionBlock: React.FC<SubsectionBlockProps> = ({
     ? `${sectionNumberPrefix}.${subsection.number}`
     : subsection.number;
 
+  // Handle title - after revision resolution it should be a string,
+  // but handle object case for safety
+  let titleText: string;
+  if (typeof subsection.title === 'string') {
+    titleText = subsection.title;
+  } else if (subsection.title && typeof subsection.title === 'object' && 'text' in subsection.title) {
+    titleText = (subsection.title as any).text;
+  } else {
+    titleText = '';
+  }
+
   return (
     <div className="subsectionBlock">
       <h3 className="subsectionHeading">
-        {fullSubsectionNumber} {subsection.title}
+        {fullSubsectionNumber} {titleText}
       </h3>
       <div className="articles">
         {subsection.articles.map((article) => (

@@ -49,7 +49,6 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
   displayMode,
 }) => {
   const mode = displayMode || equation.display || 'block';
-  const shouldShowTitle = variant === 'standalone';
   const repairedLatex = getRepairedLatex(equation);
   const latexForRender = repairedLatex || equation.latex || '';
   const fallbackText = equation.plainText || latexForRender || equation.id;
@@ -61,7 +60,7 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
 
   const showLatex = !hasMathml && latexForRender.trim().length > 0;
   const shouldShowDescription =
-    shouldShowTitle &&
+    variant === 'standalone' &&
     equation.description &&
     equation.plainText &&
     equation.description.trim() !== equation.plainText.trim();
@@ -93,12 +92,8 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
         'equation-block',
         mode === 'inline' ? 'equation-block--inline' : 'equation-block--block',
       ].join(' ')}
+      data-node-id={equation.id}
     >
-      {shouldShowTitle && (
-        <div className="equation-block__title">
-          Equation {equation.number}
-        </div>
-      )}
       {hasMathml ? (
         <MathJax
           dynamic

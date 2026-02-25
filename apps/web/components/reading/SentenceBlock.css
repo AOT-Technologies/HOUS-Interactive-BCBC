@@ -29,3 +29,35 @@
   margin-left: var(--layout-margin-medium);
   margin-top: var(--layout-margin-small);
 }
+
+.sentenceOrganizations {
+  margin: 0 0 var(--layout-margin-medium) 0;
+  overflow-x: auto;
+}
+
+.sentenceOrganizationsTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+}
+
+.sentenceOrganizationsTable__caption {
+  text-align: left;
+  font: var(--typography-bold-body);
+  color: var(--typography-color-primary);
+  margin-bottom: var(--layout-margin-small);
+}
+
+.sentenceOrganizationsTable th,
+.sentenceOrganizationsTable td {
+  border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.sentenceOrganizationsTable th {
+  background-color: var(--surface-color-background-light-gray, #faf9f8);
+  font: var(--typography-bold-body);
+}

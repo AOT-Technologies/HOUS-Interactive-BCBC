@@ -1,0 +1,53 @@
+/**
+ * DefinitionsList Styles
+ * 
+ * Displays term definitions in a clean, readable format
+ * using definition list (dl/dt/dd) semantic HTML
+ */
+
+.definitionsList {
+  margin: var(--layout-margin-16) 0;
+}
+
+.definitionsList__list {
+  margin: 0;
+  padding: 0;
+}
+
+.definitionsList__item {
+  margin-bottom: var(--layout-margin-24);
+  padding-bottom: var(--layout-padding-16);
+  border-bottom: var(--layout-border-width-small) solid var(--surface-color-border-default);
+}
+
+.definitionsList__item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.definitionsList__term {
+  font: var(--typography-bold-h5);
+  color: var(--typography-color-primary);
+  margin: 0 0 var(--layout-margin-8) 0;
+  font-style: italic;
+}
+
+.definitionsList__definition {
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+  margin: 0;
+  line-height: var(--typography-line-heights-sparse);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .definitionsList__item {
+    margin-bottom: var(--layout-margin-16);
+    padding-bottom: var(--layout-padding-12);
+  }
+
+  .definitionsList__term {
+    font-size: var(--typography-font-size-h6);
+  }
+}

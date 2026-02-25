@@ -1533,6 +1533,66 @@
           "type": "boolean",
           "description": "Indicates if this revision represents a deletion (true when revision content is empty)"
         },
+        "text": {
+          "type": "string",
+          "description": "Text content for sentence, clause, or subclause revisions"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title for article or subsection revisions"
+        },
+        "see_also": {
+          "oneOf": [
+            {
+              "type": "string",
+              "description": "See-also reference for article or subsection revisions"
+            },
+            {
+              "type": "array",
+              "description": "See-also references for sentence or clause revisions",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {"type": "string"},
+                  "content": {"type": "string"}
+                }
+              }
+            }
+          ]
+        },
+        "clauses": {
+          "type": "array",
+          "description": "Clauses for sentence revisions",
+          "items": {
+            "$ref": "#/definitions/clause"
+          }
+        },
+        "subclauses": {
+          "type": "array",
+          "description": "Subclauses for clause revisions",
+          "items": {
+            "$ref": "#/definitions/subclause"
+          }
+        },
+        "content": {
+          "type": "array",
+          "description": "Content array for article revisions (sentences, tables, figures)",
+          "items": {
+            "type": "object",
+            "required": ["id", "type"],
+            "properties": {
+              "id": {"type": "string"},
+              "type": {"type": "string", "enum": ["sentence", "table", "figure"]}
+            }
+          }
+        },
+        "articles": {
+          "type": "array",
+          "description": "Articles for subsection revisions",
+          "items": {
+            "$ref": "#/definitions/article"
+          }
+        },
         "change_summary": {
           "type": "string"
         },

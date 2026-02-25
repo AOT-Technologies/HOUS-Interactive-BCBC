@@ -9,6 +9,7 @@ export {
   chunkContent,
   chunkRawContent,
   generateChunkPath,
+  generateAppendixChunkPath,
   isOptimalChunkSize,
   getChunkStats,
 } from './chunker';

@@ -200,6 +200,10 @@ interface RawFigure {
   caption?: string;
   image_url?: string;
   alt_text?: string;
+  notes?: Array<{
+    id: string;
+    content?: string;
+  }>;
 }
 
 interface RawEquation {
@@ -699,6 +703,14 @@ function parseFigureData(raw: RawFigure): Figure {
     caption: raw.caption,
     imageUrl: raw.image_url || '',
     altText: raw.alt_text || raw.title || 'Figure',
+    notes: Array.isArray(raw.notes)
+      ? raw.notes
+          .filter((note) => note && typeof note.id === 'string')
+          .map((note) => ({
+            id: note.id,
+            content: note.content || '',
+          }))
+      : undefined,
   };
 }
 

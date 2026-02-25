@@ -32,10 +32,17 @@ interface RawDivision {
 interface RawPart {
   number: string | number;
   sections?: RawSection[];
+  appendix?: RawPartAppendix;
 }
 
 interface RawSection {
   number: string | number;
+  [key: string]: unknown;
+}
+
+interface RawPartAppendix {
+  id?: string;
+  type?: string;
   [key: string]: unknown;
 }
 
@@ -44,7 +51,7 @@ interface RawSection {
  */
 export interface RawContentChunk {
   path: string;
-  data: RawSection;
+  data: RawSection | RawPartAppendix;
   size: number;
 }
 
@@ -106,6 +113,19 @@ export function chunkRawContent(document: RawDocumentForChunking): RawContentChu
 
           chunks.push({ path, data: section, size });
         }
+
+        if (part.appendix && part.appendix.type === 'part_appendix') {
+          const appendixPath = generateAppendixChunkPath(
+            division.id,
+            String(part.number)
+          );
+          const appendixSize = JSON.stringify(part.appendix).length;
+          chunks.push({
+            path: appendixPath,
+            data: part.appendix,
+            size: appendixSize,
+          });
+        }
       }
     }
   }
@@ -138,12 +158,20 @@ export function generateChunkPath(
   return `content/${normalizedDivision}/part-${partNumber}/section-${normalizedSection}.json`;
 }
 
+export function generateAppendixChunkPath(
+  divisionId: string,
+  partNumber: string | number
+): string {
+  const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
+  return `content/${normalizedDivision}/part-${String(partNumber)}/appendix.json`;
+}
+
 /**
  * Validate chunk size is within optimal range
  * @param chunk - Content chunk
  * @returns True if chunk size is optimal (50-200KB)
  */
-export function isOptimalChunkSize(chunk: ContentChunk): boolean {
+export function isOptimalChunkSize(chunk: { size: number }): boolean {
   const minSize = 50 * 1024; // 50KB
   const maxSize = 200 * 1024; // 200KB
   return chunk.size >= minSize && chunk.size <= maxSize;
@@ -154,7 +182,7 @@ export function isOptimalChunkSize(chunk: ContentChunk): boolean {
  * @param chunks - Array of content chunks
  * @returns Chunk statistics
  */
-export function getChunkStats(chunks: ContentChunk[]): {
+export function getChunkStats(chunks: Array<{ size: number }>): {
   totalChunks: number;
   totalSize: number;
   averageSize: number;

@@ -89,15 +89,28 @@ export const CrossReferenceModal: React.FC<CrossReferenceModalProps> = ({
     const findById = (root: HTMLElement, rawTargetId: string): HTMLElement | null => {
       const targetId = rawTargetId.trim();
       const normalizedTargetId = targetId.toLowerCase();
-      const allWithId = Array.from(root.querySelectorAll<HTMLElement>('[id]'));
+      const allCandidates = Array.from(
+        root.querySelectorAll<HTMLElement>('[id], [data-node-id]')
+      );
+      const getCandidateKeys = (element: HTMLElement): string[] => {
+        const keys: string[] = [];
+        if (element.id) keys.push(element.id.toLowerCase());
+        const nodeId = element.getAttribute('data-node-id');
+        if (nodeId) keys.push(nodeId.toLowerCase());
+        return keys;
+      };
 
-      // 1) Exact id match (case-insensitive)
-      const exact = allWithId.find((element) => element.id.toLowerCase() === normalizedTargetId);
+      // 1) Exact node id match (case-insensitive), checking both `id` and `data-node-id`.
+      const exact = allCandidates.find((element) =>
+        getCandidateKeys(element).includes(normalizedTargetId)
+      );
       if (exact) return exact;
 
       // 2) Fallback for deep reference IDs where upstream may vary slightly in prefix/casing.
       // Keep suffix-specific matching strict enough to avoid landing on the wrong node.
       const suffixPatterns = [
+        /\.figure\d+$/i,
+        /\.equation\d+$/i,
         /\.table\d+\.note\d+$/i,
         /\.sent\d+\.clause\d+\.subclause\d+$/i,
         /\.sent\d+\.clause\d+$/i,
@@ -111,10 +124,11 @@ export const CrossReferenceModal: React.FC<CrossReferenceModalProps> = ({
 
         const suffix = suffixMatch[0];
         const prefix = normalizedTargetId.slice(0, normalizedTargetId.length - suffix.length);
-        const candidate = allWithId.find((element) => {
-          const normalizedElementId = element.id.toLowerCase();
-          return normalizedElementId.endsWith(suffix) && (prefix ? normalizedElementId.startsWith(prefix) : true);
-        });
+        const candidate = allCandidates.find((element) =>
+          getCandidateKeys(element).some((key) =>
+            key.endsWith(suffix) && (prefix ? key.startsWith(prefix) : true)
+          )
+        );
 
         if (candidate) return candidate;
       }
