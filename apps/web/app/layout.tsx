@@ -76,20 +76,21 @@ export default function RootLayout({
   const handleGetSuggestions = useCallback(async (query: string): Promise<string[]> => {
     try {
       const client = getSearchClient();
+      const version = currentVersion || '2024';
       
       // Initialize if not already done
-      if (!client.isInitialized()) {
-        await client.initialize();
+      if (!client.isInitialized(version)) {
+        await client.initialize(version);
       }
       
       // Get suggestions from FlexSearch index
-      const suggestions = await client.getSuggestions(query, 5);
+      const suggestions = await client.getSuggestions(query, 5, version);
       return suggestions;
     } catch (error) {
       console.error('Failed to get suggestions:', error);
       return [];
     }
-  }, []);
+  }, [currentVersion]);
 
   const handleHeaderNavClick = useCallback((link: { title: string }) => {
     if (link.title !== URL_GLOSSARY_TITLE) {
