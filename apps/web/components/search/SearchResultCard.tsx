@@ -9,7 +9,13 @@ import './SearchResults.css';
 interface SearchResultCardProps {
   result: SearchResult;
   href: string;
-  effectiveDateLabel?: string;
+}
+
+function getVolumeLabel(divisionId: string): string {
+  if (/divbv2/i.test(divisionId)) {
+    return 'Vol 2';
+  }
+  return 'Vol 1';
 }
 
 function stripDivisionPrefix(articleNumber: string, divisionLetter: string, partNumber: number): string {
@@ -24,7 +30,7 @@ function normalizeHighlightedSnippet(input: string): string {
   return input.replace(/<mark[^>]*>/gi, '').replace(/<\/mark>/gi, '');
 }
 
-export function SearchResultCard({ result, href, effectiveDateLabel }: SearchResultCardProps) {
+export function SearchResultCard({ result, href }: SearchResultCardProps) {
   const router = useRouter();
   const { document } = result;
 
@@ -55,11 +61,13 @@ export function SearchResultCard({ result, href, effectiveDateLabel }: SearchRes
     return map[document.type] || document.type;
   }, [document.type]);
 
+  const volumeLabel = useMemo(() => getVolumeLabel(document.divisionId), [document.divisionId]);
+
   const pathLabel = useMemo(() => {
     const articleToken = stripDivisionPrefix(document.articleNumber, document.divisionLetter, document.partNumber).split(' ')[0];
 
     const base = [
-      `Division ${document.divisionLetter} - Part ${document.partNumber}`,
+      `${volumeLabel} - Division ${document.divisionLetter} - Part ${document.partNumber}`,
       document.sectionNumber ? `Section ${document.sectionNumber}` : null,
       document.subsectionNumber ? `Subsection ${document.sectionNumber}.${document.subsectionNumber}` : null,
       document.type === 'article' || document.type === 'table' || document.type === 'figure'
@@ -71,10 +79,12 @@ export function SearchResultCard({ result, href, effectiveDateLabel }: SearchRes
   }, [
     document.articleNumber,
     document.divisionLetter,
+    document.divisionId,
     document.partNumber,
     document.sectionNumber,
     document.subsectionNumber,
     document.type,
+    volumeLabel,
   ]);
 
   const onOpen = () => {
@@ -99,7 +109,7 @@ export function SearchResultCard({ result, href, effectiveDateLabel }: SearchRes
     >
       <header className="search-results-card__header-row">
         <span className="search-results-card__badge">
-          DIVISION {document.divisionLetter} - PART {document.partNumber}
+          {volumeLabel.toUpperCase()} - DIVISION {document.divisionLetter} - PART {document.partNumber}
         </span>
         <span className="search-results-card__type">{typeLabel}</span>
       </header>
@@ -116,11 +126,8 @@ export function SearchResultCard({ result, href, effectiveDateLabel }: SearchRes
       />
 
       <footer className="search-results-card__footer-row">
-        <span className="search-results-card__effective-date">
-          Effective: {effectiveDateLabel || 'Latest'}
-        </span>
         <span className="search-results-card__cta" aria-hidden="true">
-          View Section <Icon type="arrowForward" />
+          View Section <Icon type="caretRight" />
         </span>
       </footer>
     </article>

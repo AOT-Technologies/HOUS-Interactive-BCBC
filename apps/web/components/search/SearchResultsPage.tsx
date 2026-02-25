@@ -184,10 +184,6 @@ export default function SearchResultsPage() {
   );
 
   const availableParts = selectedDivision?.parts || [];
-  const selectedDateLabel = useMemo(() => {
-    return dateOptions.find((item) => item.effectiveDate === date)?.displayDate;
-  }, [date, dateOptions]);
-
   useEffect(() => {
     setQueryInput(q);
   }, [q]);
@@ -423,6 +419,23 @@ export default function SearchResultsPage() {
     };
   }, [results.length]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 64rem)');
+
+    const handleViewportChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        setMobileFiltersOpen(false);
+      }
+    };
+
+    if (mediaQuery.matches) {
+      setMobileFiltersOpen(false);
+    }
+
+    mediaQuery.addEventListener('change', handleViewportChange);
+    return () => mediaQuery.removeEventListener('change', handleViewportChange);
+  }, []);
+
   const visibleResults = useMemo(() => results.slice(0, visibleCount), [results, visibleCount]);
   const hasMore = visibleCount < results.length;
 
@@ -470,7 +483,7 @@ export default function SearchResultsPage() {
         <aside className={`search-results-page__filters ${mobileFiltersOpen ? '--mobile-open' : ''}`}>
           <div className="search-results-page__filters-header">
             <h2>
-              <Icon type="menu" /> Filters
+              <Icon type="funnel" /> Filters
             </h2>
             <div className="search-results-page__filters-header-actions">
               <Button variant="secondary" className="search-results-page__filters-close" onPress={() => setMobileFiltersOpen(false)}>
@@ -481,82 +494,92 @@ export default function SearchResultsPage() {
 
           <label className="search-results-page__filter-group">
             <span>Effective Version</span>
-            <select
-              value={version}
-              onChange={(event) => onVersionChange(event.target.value)}
-              aria-label="Select version"
-            >
-              {availableVersions.map((item) => (
-                <option key={item.id} value={item.id}>
-                  {item.title}
-                </option>
-              ))}
-            </select>
+            <div className="search-results-page__select-wrap">
+              <select
+                value={version}
+                onChange={(event) => onVersionChange(event.target.value)}
+                aria-label="Select version"
+              >
+                {availableVersions.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.title}
+                  </option>
+                ))}
+              </select>
+            </div>
           </label>
 
           <label className="search-results-page__filter-group">
             <span>Effective Date</span>
-            <select
-              value={date}
-              onChange={(event) => pushSearchParams({ date: event.target.value || null })}
-              aria-label="Select effective date"
-              disabled={datesLoading}
-            >
-              {dateOptions.map((item, index) => (
-                <option key={item.effectiveDate} value={item.effectiveDate}>
-                  {index === 0 ? `${item.displayDate} (Latest)` : item.displayDate}
-                </option>
-              ))}
-            </select>
+            <div className="search-results-page__select-wrap">
+              <select
+                value={date}
+                onChange={(event) => pushSearchParams({ date: event.target.value || null })}
+                aria-label="Select effective date"
+                disabled={datesLoading}
+              >
+                {dateOptions.map((item, index) => (
+                  <option key={item.effectiveDate} value={item.effectiveDate}>
+                    {index === 0 ? `${item.displayDate} (Latest)` : item.displayDate}
+                  </option>
+                ))}
+              </select>
+            </div>
           </label>
 
           <label className="search-results-page__filter-group">
             <span>Code Division</span>
-            <select
-              value={division}
-              onChange={(event) => pushSearchParams({ division: event.target.value || null, part: null })}
-              aria-label="Select division"
-            >
-              <option value="">Select</option>
-              {divisions.map((item) => (
-                <option key={item.id} value={item.letter}>
-                  Division {item.letter} - {item.title}
-                </option>
-              ))}
-            </select>
+            <div className="search-results-page__select-wrap">
+              <select
+                value={division}
+                onChange={(event) => pushSearchParams({ division: event.target.value || null, part: null })}
+                aria-label="Select division"
+              >
+                <option value="">Select</option>
+                {divisions.map((item) => (
+                  <option key={item.id} value={item.letter}>
+                    Division {item.letter} - {item.title}
+                  </option>
+                ))}
+              </select>
+            </div>
           </label>
 
           <label className="search-results-page__filter-group">
             <span>Part</span>
-            <select
-              value={part}
-              onChange={(event) => pushSearchParams({ part: event.target.value || null })}
-              aria-label="Select part"
-              disabled={!selectedDivision}
-            >
-              <option value="">Select</option>
-              {availableParts.map((item) => (
-                <option key={item.id} value={String(item.number)}>
-                  Part {item.number} - {item.title}
-                </option>
-              ))}
-            </select>
+            <div className="search-results-page__select-wrap">
+              <select
+                value={part}
+                onChange={(event) => pushSearchParams({ part: event.target.value || null })}
+                aria-label="Select part"
+                disabled={!selectedDivision}
+              >
+                <option value="">Select</option>
+                {availableParts.map((item) => (
+                  <option key={item.id} value={String(item.number)}>
+                    Part {item.number} - {item.title}
+                  </option>
+                ))}
+              </select>
+            </div>
           </label>
 
           <label className="search-results-page__filter-group">
             <span>Content Type</span>
-            <select
-              value={type}
-              onChange={(event) => pushSearchParams({ type: event.target.value || null })}
-              aria-label="Select content type"
-            >
-              <option value="">Select</option>
-              {contentTypes.map((item) => (
-                <option key={item} value={item}>
-                  {formatContentTypeLabel(item)}
-                </option>
-              ))}
-            </select>
+            <div className="search-results-page__select-wrap">
+              <select
+                value={type}
+                onChange={(event) => pushSearchParams({ type: event.target.value || null })}
+                aria-label="Select content type"
+              >
+                <option value="">Select</option>
+                {contentTypes.map((item) => (
+                  <option key={item} value={item}>
+                    {formatContentTypeLabel(item)}
+                  </option>
+                ))}
+              </select>
+            </div>
           </label>
 
           <Button variant="secondary" className="search-results-page__clear-filters" onPress={clearFilters}>
@@ -604,7 +627,6 @@ export default function SearchResultsPage() {
                   key={item.document.id}
                   result={item}
                   href={buildResultHref(item.document.urlPath, version, date || undefined)}
-                  effectiveDateLabel={selectedDateLabel}
                 />
               ))}
 
