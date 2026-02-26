@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Icon from '@repo/ui/icon';
 import { useGlossaryStore } from '../../stores/glossary-store';
 import { useUIStore } from '../../lib/stores/ui-store';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './GlossarySidebar.css';
 
 type GlossaryEntry = {
@@ -16,75 +17,14 @@ const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 const normalize = (value: string) => value.trim().toLowerCase();
 
-const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-const renderDefinitionWithLinks = (
-  definition: string,
-  terms: GlossaryEntry[],
-  onTermClick: (termId: string) => void
-): React.ReactNode[] => {
-  if (!definition) return [definition];
-
-  const shortList = terms
-    .map((entry) => ({ id: entry.id || entry.term, term: entry.term }))
-    .filter((entry) => entry.term.length >= 4)
-    .sort((a, b) => b.term.length - a.term.length)
-    .slice(0, 250);
-
-  if (shortList.length === 0) return [definition];
-
-  const pattern = shortList.map((entry) => escapeRegExp(entry.term)).join('|');
-  const regex = new RegExp(`\\b(${pattern})\\b`, 'gi');
-
-  const nodes: React.ReactNode[] = [];
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-
-  while ((match = regex.exec(definition)) !== null) {
-    const matchedText = match[0];
-    const start = match.index;
-
-    if (start > lastIndex) {
-      nodes.push(definition.slice(lastIndex, start));
-    }
-
-    const matchedEntry = shortList.find((entry) =>
-      normalize(entry.term) === normalize(matchedText)
-    );
-
-    if (matchedEntry) {
-      nodes.push(
-        <button
-          key={`link-${start}-${matchedEntry.id}`}
-          type="button"
-          className="glossary-sidebar__inline-term"
-          onClick={() => onTermClick(matchedEntry.id)}
-        >
-          <span className="glossary-sidebar__inline-term-icon" aria-hidden="true">
-            <Icon type="info" style={{ color: '#1A5A96' }} />
-          </span>
-          {matchedText}
-        </button>
-      );
-    } else {
-      nodes.push(matchedText);
-    }
-
-    lastIndex = start + matchedText.length;
-  }
-
-  if (lastIndex < definition.length) {
-    nodes.push(definition.slice(lastIndex));
-  }
-
-  return nodes.length > 0 ? nodes : [definition];
+const renderDefinitionWithMarkers = (definition: string): React.ReactNode[] => {
+  return parseTextWithMarkers(definition, [], true);
 };
 
 export const GlossarySidebar: React.FC = () => {
   const glossarySidebarOpen = useUIStore((s) => s.glossarySidebarOpen);
   const activeGlossaryTermId = useUIStore((s) => s.activeGlossaryTermId);
   const closeGlossarySidebar = useUIStore((s) => s.closeGlossarySidebar);
-  const openGlossarySidebar = useUIStore((s) => s.openGlossarySidebar);
 
   const glossaryMap = useGlossaryStore((s) => s.glossaryMap);
   const loading = useGlossaryStore((s) => s.loading);
@@ -99,6 +39,7 @@ export const GlossarySidebar: React.FC = () => {
   const previousFocusedRef = useRef<HTMLElement | null>(null);
   const termRefs = useRef<Map<string, HTMLElement>>(new Map());
   const prevSearchQueryRef = useRef('');
+  const lastAutoFilterTermRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (glossarySidebarOpen && glossaryMap.size === 0 && !loading) {
@@ -240,18 +181,26 @@ export const GlossarySidebar: React.FC = () => {
     pendingScrollTermRef.current = null;
   }, [activeTermEntry, glossarySidebarOpen]);
 
-  const handleSidebarTermClick = (termId: string) => {
-    openGlossarySidebar(termId);
-  };
+  useEffect(() => {
+    if (!glossarySidebarOpen || !activeTermEntry) return;
+
+    // Ensure target entry is visible when activated from an inline definition link.
+    const activeKey = normalize(activeTermEntry.id || activeTermEntry.term);
+    if (lastAutoFilterTermRef.current === activeKey) return;
+    lastAutoFilterTermRef.current = activeKey;
+
+    const targetLetter = activeTermEntry.term.charAt(0).toUpperCase();
+    setSearchQuery('');
+    if (targetLetter) {
+      setActiveLetter(targetLetter);
+    }
+  }, [activeTermEntry, glossarySidebarOpen]);
 
   const handleLetterFilterClick = (letter: string) => {
     setActiveLetter(letter);
-
-    if (letter === 'ALL') {
-      requestAnimationFrame(() => {
-        contentRef.current?.scrollTo({ top: 0, behavior: 'auto' });
-      });
-    }
+    requestAnimationFrame(() => {
+      contentRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+    });
   };
 
   return (
@@ -354,7 +303,7 @@ export const GlossarySidebar: React.FC = () => {
                   >
                     <h4 className="glossary-sidebar__term-title">{entry.term}</h4>
                     <p className="glossary-sidebar__term-definition">
-                      {renderDefinitionWithLinks(entry.definition, entries, handleSidebarTermClick)}
+                      {renderDefinitionWithMarkers(entry.definition)}
                     </p>
                   </article>
                 );
@@ -387,7 +336,7 @@ export const GlossarySidebar: React.FC = () => {
                       >
                         <h4 className="glossary-sidebar__term-title">{entry.term}</h4>
                         <p className="glossary-sidebar__term-definition">
-                          {renderDefinitionWithLinks(entry.definition, entries, handleSidebarTermClick)}
+                          {renderDefinitionWithMarkers(entry.definition)}
                         </p>
                       </article>
                     );

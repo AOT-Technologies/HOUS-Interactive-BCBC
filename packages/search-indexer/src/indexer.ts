@@ -972,7 +972,9 @@ function processGlossary(
   config: IndexerConfig
 ): void {
   for (const entry of glossary) {
-    const text = stripReferences(entry.definition, config.references);
+    // Preserve glossary definitions as-is from source data so marker payloads
+    // (e.g. [REF:term:id:label]) remain available for the glossary sidebar renderer.
+    const text = entry.definition;
     
     documents.push({
       id: entry.id,

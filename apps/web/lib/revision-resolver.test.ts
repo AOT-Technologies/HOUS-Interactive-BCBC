@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { resolveSectionForEffectiveDate } from './revision-resolver';
+import { resolvePartAppendixForEffectiveDate, resolveSectionForEffectiveDate } from './revision-resolver';
 
 describe('resolveSectionForEffectiveDate', () => {
   it('selects the latest valid revision at subsection/article/sentence levels', () => {
@@ -190,5 +190,62 @@ describe('resolveSectionForEffectiveDate', () => {
 
     expect(table.type).toBe('table');
     expect(table.title).toBe('New Table');
+  });
+
+  it('resolves application note revisions for appendix content by effective date', () => {
+    const appendix = {
+      id: 'nbc.divB.part3.appendix',
+      type: 'part_appendix',
+      introduction: 'Appendix intro',
+      application_notes: [
+        {
+          id: 'nbc.divB.part3.appendix.appnote21',
+          type: 'application_note',
+          number: '3.1.6.4.(1)',
+          title: 'Encapsulation of Mass Timber Elements',
+          paragraphs: [
+            {
+              id: 'nbc.divB.part3.appendix.appnote21.para1',
+              type: 'paragraph',
+              content: 'Current content',
+            },
+          ],
+          revisions: [
+            {
+              type: 'original',
+              effective_date: '2020-12-01',
+              number: '3.1.6.4.(1)',
+              title: 'Encapsulation of Mass Timber Elements',
+              paragraphs: [
+                {
+                  id: 'nbc.divB.part3.appendix.appnote21.para1',
+                  type: 'paragraph',
+                  content: 'Original content',
+                },
+              ],
+            },
+            {
+              type: 'revision',
+              effective_date: '2024-04-05',
+              number: '3.1.6.4.(1)',
+              title: 'Encapsulation of Mass Timber Elements',
+              paragraphs: [
+                {
+                  id: 'nbc.divB.part3.appendix.appnote21.para1',
+                  type: 'paragraph',
+                  content: 'Revised content',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    } as any;
+
+    const onOriginalDate = resolvePartAppendixForEffectiveDate(appendix, '2021-01-01');
+    expect(onOriginalDate.application_notes[0].paragraphs[0].content).toBe('Original content');
+
+    const onRevisedDate = resolvePartAppendixForEffectiveDate(appendix, '2025-06-16');
+    expect(onRevisedDate.application_notes[0].paragraphs[0].content).toBe('Revised content');
   });
 });

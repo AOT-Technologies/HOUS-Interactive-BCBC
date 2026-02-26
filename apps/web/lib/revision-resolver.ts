@@ -14,6 +14,28 @@ type ContentNode = {
   [key: string]: unknown;
 };
 
+type AppendixContentBlockNode = ContentNode & {
+  paragraphs?: unknown[];
+  tables?: ContentNode[];
+  figures?: ContentNode[];
+};
+
+type AppendixDivisionNode = AppendixContentBlockNode & {
+  title?: unknown;
+};
+
+type ApplicationNoteNode = AppendixContentBlockNode & {
+  divisions?: AppendixDivisionNode[];
+  number?: unknown;
+  title?: unknown;
+};
+
+type PartAppendixNode = ContentNode & {
+  type: 'part_appendix';
+  introduction?: unknown;
+  application_notes?: ApplicationNoteNode[];
+};
+
 function sortByEffectiveDateDesc(revisions: RevisionRecord[]): RevisionRecord[] {
   return [...revisions].sort((a, b) =>
     (b.effective_date || '').localeCompare(a.effective_date || '')
@@ -288,5 +310,83 @@ export function resolveSectionForEffectiveDate(
     ...(resolved as unknown as Section),
     number: String((resolved as any).number ?? ''),
     subsections: subsections as any,
+  };
+}
+
+function resolveAppendixContentBlock<T extends AppendixContentBlockNode>(
+  block: T,
+  effectiveDate?: string
+): T | null {
+  const resolved = applyRevision(block, effectiveDate);
+  if (!resolved) return null;
+
+  const paragraphs = Array.isArray(resolved.paragraphs)
+    ? resolved.paragraphs
+        .map((paragraph) => applyRevision(paragraph as ContentNode, effectiveDate))
+        .filter(Boolean)
+    : undefined;
+
+  const tables = Array.isArray(resolved.tables)
+    ? resolved.tables
+        .map((table) => resolveTable(table as ContentNode, effectiveDate))
+        .filter(Boolean)
+    : undefined;
+
+  const figures = Array.isArray(resolved.figures)
+    ? resolved.figures
+        .map((figure) => applyRevision(figure as ContentNode, effectiveDate))
+        .filter(Boolean)
+    : undefined;
+
+  return {
+    ...resolved,
+    ...(paragraphs ? { paragraphs } : {}),
+    ...(tables ? { tables } : {}),
+    ...(figures ? { figures } : {}),
+  } as T;
+}
+
+function resolveAppendixDivision(
+  division: AppendixDivisionNode,
+  effectiveDate?: string
+): AppendixDivisionNode | null {
+  return resolveAppendixContentBlock(division, effectiveDate);
+}
+
+function resolveApplicationNote(
+  note: ApplicationNoteNode,
+  effectiveDate?: string
+): ApplicationNoteNode | null {
+  const resolvedBlock = resolveAppendixContentBlock(note, effectiveDate);
+  if (!resolvedBlock) return null;
+
+  const divisions = Array.isArray(resolvedBlock.divisions)
+    ? resolvedBlock.divisions
+        .map((division) => resolveAppendixDivision(division as AppendixDivisionNode, effectiveDate))
+        .filter((division): division is AppendixDivisionNode => Boolean(division))
+    : undefined;
+
+  return {
+    ...resolvedBlock,
+    ...(divisions ? { divisions } : {}),
+  };
+}
+
+export function resolvePartAppendixForEffectiveDate<T extends PartAppendixNode>(
+  appendix: T,
+  effectiveDate?: string
+): T {
+  const resolved = applyRevision(appendix, effectiveDate);
+  if (!resolved) return appendix;
+
+  const applicationNotes = Array.isArray((resolved as PartAppendixNode).application_notes)
+    ? (resolved as PartAppendixNode).application_notes
+        ?.map((note) => resolveApplicationNote(note as ApplicationNoteNode, effectiveDate))
+        .filter((note): note is ApplicationNoteNode => Boolean(note))
+    : [];
+
+  return {
+    ...(resolved as T),
+    application_notes: applicationNotes as ApplicationNoteNode[],
   };
 }

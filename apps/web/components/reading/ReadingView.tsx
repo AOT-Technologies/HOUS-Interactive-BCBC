@@ -22,7 +22,7 @@ import { useAppendixStore, type PartAppendix, type ApplicationNote, type Appendi
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
 import { useEquationStore } from '../../stores/equation-store';
 import { parseContentPath } from '../../lib/url-utils';
-import { resolveSectionForEffectiveDate } from '../../lib/revision-resolver';
+import { resolvePartAppendixForEffectiveDate, resolveSectionForEffectiveDate } from '../../lib/revision-resolver';
 import { getNavigationSlug, getSectionFetchPath, parseReferenceId } from '../../lib/cross-reference';
 import { SectionRenderer } from './SectionRenderer';
 import { ReadingViewHeader } from './ReadingViewHeader';
@@ -150,6 +150,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     () => (currentSection ? resolveSectionForEffectiveDate(currentSection, effectiveDate) : null),
     [currentSection, effectiveDate]
   );
+  const resolvedPartAppendix = useMemo(
+    () => (partAppendix ? resolvePartAppendixForEffectiveDate(partAppendix as any, effectiveDate) : null),
+    [effectiveDate, partAppendix]
+  );
 
   // Create stable slug key for useEffect dependencies
   const slugKey = slug.join('/');
@@ -257,12 +261,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       if (!parsed || parsed.kind !== 'part_appendix') return null;
 
       try {
-        return await fetchAppendix(version, parsed.division, parsed.part);
+        const appendix = await fetchAppendix(version, parsed.division, parsed.part);
+        return resolvePartAppendixForEffectiveDate(appendix as any, effectiveDate);
       } catch {
         return null;
       }
     },
-    [fetchAppendix, version]
+    [effectiveDate, fetchAppendix, version]
   );
 
   const fetchStandardsMap = useCallback(async (): Promise<Record<string, StandardReferenceEntry> | null> => {
@@ -343,7 +348,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
       if (parsed.kind === 'part_appendix' && parsed.appnote) {
         const appendix =
-          (isAppendixLevel ? partAppendix : null) ||
+          (isAppendixLevel ? resolvedPartAppendix : null) ||
           (await fetchTargetAppendix(referenceId));
 
         if (!appendix) {
@@ -359,7 +364,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         const appnoteTokenMatch = referenceId.match(/\.appnote([A-Za-z0-9]+)/i);
         const appnoteToken = appnoteTokenMatch?.[1] || parsed.appnote;
         const notePrefix = `${parsed.division}.part${parsed.part}.appendix.appnote${appnoteToken}`;
-        const note = appendix.application_notes?.find((item) => item.id.startsWith(notePrefix));
+        const note = appendix.application_notes?.find((item: ApplicationNote) => item.id.startsWith(notePrefix));
 
         if (!note) {
           return {
@@ -467,6 +472,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       partAppendix,
       requestedSectionKey,
       resolvedSection,
+      resolvedPartAppendix,
     ]
   );
 
@@ -869,7 +875,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       );
     }
 
-    if (!partAppendix) {
+    if (!resolvedPartAppendix) {
       return renderLoadingSkeleton();
     }
 
@@ -884,13 +890,15 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             <div className="reading-view__appendix">
               <PartTitle title={currentPartNode.title} />
               <h2 className="reading-view__appendix-heading">Appendix</h2>
-              {partAppendix.introduction ? (
+              {resolvedPartAppendix.introduction ? (
                 <p className="reading-view__appendix-introduction">
-                  {parseTextWithMarkers(partAppendix.introduction, [], true)}
+                  {parseTextWithMarkers(resolvedPartAppendix.introduction, [], true)}
                 </p>
               ) : null}
               <div className="reading-view__appendix-notes">
-                {(partAppendix.application_notes || []).map((note) => renderApplicationNote(note, true))}
+                {(resolvedPartAppendix.application_notes || []).map((note: ApplicationNote) =>
+                  renderApplicationNote(note, true)
+                )}
               </div>
             </div>
           </div>

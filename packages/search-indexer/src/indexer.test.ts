@@ -25,6 +25,16 @@ describe('search-indexer', () => {
         expect(refs[0].displayText).toBe('building');
       });
 
+      it('should extract term references with inline label', () => {
+        const text = 'This is a [REF:term:bldng:building] test';
+        const refs = extractReferences(text);
+
+        expect(refs).toHaveLength(1);
+        expect(refs[0].type).toBe('term');
+        expect(refs[0].id).toBe('bldng');
+        expect(refs[0].displayText).toBe('building');
+      });
+
       it('should extract internal references', () => {
         const text = 'See [REF:internal:nbc.divB.part3:long] for details';
         const refs = extractReferences(text);
@@ -47,6 +57,13 @@ describe('search-indexer', () => {
         const text = 'This is a [REF:term:bldng]building test';
         const result = stripReferences(text, DEFAULT_REFERENCE_CONFIG);
         
+        expect(result).toBe('This is a building test');
+      });
+
+      it('should strip references and keep inline label text', () => {
+        const text = 'This is a [REF:term:bldng:building] test';
+        const result = stripReferences(text, DEFAULT_REFERENCE_CONFIG);
+
         expect(result).toBe('This is a building test');
       });
 

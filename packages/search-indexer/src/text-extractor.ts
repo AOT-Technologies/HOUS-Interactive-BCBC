@@ -22,13 +22,66 @@ export interface ExtractedReference {
 }
 
 /**
- * Reference pattern: [REF:type:id]displayText or [REF:type:id:format]
+ * Reference pattern: [REF:type:id]displayText or [REF:type:id:label]
  * Examples:
  * - [REF:term:bldng]building
+ * - [REF:term:bldng:building]
  * - [REF:internal:nbc.divB.part3.sect2.subsect10:long]
  * - [REF:standard:CSA-A23.3]
  */
-const REFERENCE_PATTERN = /\[REF:(\w+):([^\]]+)\](\w*)/g;
+const REFERENCE_PATTERN = /\[REF:(\w+):([^\]]+)\]/g;
+
+interface ParsedReferencePayload {
+  id: string;
+  displayText: string;
+}
+
+/**
+ * Parse payload inside a [REF:*:*] marker.
+ * Term refs can carry inline labels ([REF:term:id:label]); non-term refs can carry format suffixes.
+ */
+function parseReferencePayload(
+  type: ReferenceType,
+  payload: string,
+  text: string,
+  markerEndIndex: number
+): ParsedReferencePayload {
+  if (type === 'term') {
+    const separatorIndex = payload.indexOf(':');
+    if (separatorIndex === -1) {
+      return {
+        id: payload,
+        displayText: extractTrailingDisplayText(text, markerEndIndex),
+      };
+    }
+
+    const id = payload.slice(0, separatorIndex);
+    const inlineLabel = payload.slice(separatorIndex + 1).trim();
+
+    return {
+      id,
+      displayText: inlineLabel || extractTrailingDisplayText(text, markerEndIndex),
+    };
+  }
+
+  // Non-term references may include format suffixes such as :short or :long
+  const [id] = payload.split(':');
+  return { id, displayText: '' };
+}
+
+/**
+ * Extract trailing word text immediately following a reference marker.
+ * Supports legacy markers like [REF:term:bldng]building.
+ */
+function extractTrailingDisplayText(text: string, markerEndIndex: number): string {
+  let endIndex = markerEndIndex;
+
+  while (endIndex < text.length && /[\p{L}\p{N}_-]/u.test(text[endIndex])) {
+    endIndex++;
+  }
+
+  return text.slice(markerEndIndex, endIndex);
+}
 
 /**
  * Extract all references from text
@@ -44,16 +97,18 @@ export function extractReferences(text: string): ExtractedReference[] {
   REFERENCE_PATTERN.lastIndex = 0;
   
   while ((match = REFERENCE_PATTERN.exec(text)) !== null) {
-    const [fullMatch, type, idPart, displayText] = match;
-    
-    // Handle format suffix in ID (e.g., "nbc.divB.part3:long" -> id="nbc.divB.part3")
-    const idParts = idPart.split(':');
-    const id = idParts[0];
+    const [fullMatch, type, payload] = match;
+    const { id, displayText } = parseReferencePayload(
+      type as ReferenceType,
+      payload,
+      text,
+      match.index + fullMatch.length
+    );
     
     references.push({
       type: type as ReferenceType,
       id,
-      displayText: displayText || '',
+      displayText,
       fullMatch,
     });
   }
@@ -76,14 +131,22 @@ export function stripReferences(
     return text;
   }
   
-  return text.replace(REFERENCE_PATTERN, (match, type, _id, displayText) => {
+  return text.replace(REFERENCE_PATTERN, (match, type, payload, offset, sourceText) => {
     // Only process configured reference types
     if (!config.processTypes.includes(type as ReferenceType)) {
       return match;
     }
-    
-    // Return just the display text (or empty string if none)
-    return displayText || '';
+
+    const { displayText } = parseReferencePayload(
+      type as ReferenceType,
+      payload,
+      sourceText,
+      offset + match.length
+    );
+
+    // Return inline label for marker format [REF:term:id:label]; for legacy format
+    // [REF:term:id]text, return empty so trailing text remains intact.
+    return displayText && type === 'term' && payload.includes(':') ? displayText : '';
   });
 }
 

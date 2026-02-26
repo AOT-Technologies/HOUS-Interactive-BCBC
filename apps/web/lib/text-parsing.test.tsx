@@ -95,6 +95,29 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.referenceId).toBe('external:csa101a440');
   });
 
+  it('parses external references with explicit label text', () => {
+    const input = 'concrete stated in [REF:external:csaa23.1:Section 9 of][REF:standard:csaa23.1]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(2);
+    expect(crossRefs[0].props.referenceId).toBe('external:csaa23.1');
+    expect(crossRefs[0].props.displayText).toBe('Section 9 of');
+    expect(crossRefs[1].props.referenceId).toBe('standard:csaa23.1');
+  });
+
+  it('preserves trailing space in external-reference label text', () => {
+    const input = '[REF:external:csaa23.1:Section 9 of ][REF:standard:csaa23.1]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const textNodes = nodes.filter((node): node is string => typeof node === 'string');
+
+    expect(crossRefs).toHaveLength(2);
+    expect(crossRefs[0].props.referenceId).toBe('external:csaa23.1');
+    expect(crossRefs[0].props.displayText).toBe('Section 9 of');
+    expect(textNodes.join('')).toContain(' ');
+  });
+
   it('parses spaced double-bracket functional/objective references', () => {
     const input = '[ [REF:functional-statement:fs05] - [REF:sub-objective:nbc-obj-os1.5] ]';
     const nodes = parseTextWithMarkers(input, [], true);

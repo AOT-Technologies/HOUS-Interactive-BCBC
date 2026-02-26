@@ -43,6 +43,7 @@ interface Marker {
   compoundParts?: Array<{ type: 'functionalStatement' | 'objective'; id: string }>;
   standardsRefType?: 'standard' | 'external';
   standardsRefId?: string;
+  standardsTrailingWhitespace?: number;
 }
 
 type InternalRefFormat = 'short' | 'long' | 'medium' | 'title' | 'number' | 'shortNum' | undefined;
@@ -55,6 +56,12 @@ interface GlossaryDisplay {
 interface ParsedGlossaryMarker {
   termId: string;
   label?: string;
+}
+
+interface ParsedStandardsMarker {
+  standardsId: string;
+  label?: string;
+  trailingWhitespace?: number;
 }
 
 export interface TextEquationEntry {
@@ -315,6 +322,24 @@ function parseGlossaryMarkerPayload(payload: string): ParsedGlossaryMarker {
   return {
     termId,
     label: label.length > 0 ? label : undefined,
+  };
+}
+
+function parseStandardsMarkerPayload(payload: string): ParsedStandardsMarker {
+  const firstColon = payload.indexOf(':');
+  if (firstColon === -1) {
+    return { standardsId: payload.trim() };
+  }
+
+  const standardsId = payload.slice(0, firstColon).trim();
+  const rawLabel = payload.slice(firstColon + 1);
+  const trailingWhitespace = (rawLabel.match(/\s+$/) || [''])[0].length;
+  const label = rawLabel.replace(/\s+$/, '');
+
+  return {
+    standardsId,
+    label: label.length > 0 ? label : undefined,
+    trailingWhitespace: trailingWhitespace > 0 ? trailingWhitespace : undefined,
   };
 }
 
@@ -742,12 +767,15 @@ export function parseTextWithMarkers(
   const standardsRegex = /\[REF:(standard|external):([^\]]+)\]/gi;
 
   while ((match = standardsRegex.exec(sanitizedText)) !== null) {
+    const parsedStandardsPayload = parseStandardsMarkerPayload(match[2] || '');
     markers.push({
       type: 'standardRef',
       start: match.index,
       end: standardsRegex.lastIndex,
       standardsRefType: (match[1] || '').toLowerCase() as 'standard' | 'external',
-      standardsRefId: (match[2] || '').trim(),
+      standardsRefId: parsedStandardsPayload.standardsId,
+      glossaryLabel: parsedStandardsPayload.label,
+      standardsTrailingWhitespace: parsedStandardsPayload.trailingWhitespace,
     });
   }
 
@@ -900,15 +928,20 @@ export function parseTextWithMarkers(
       case 'standardRef': {
         const standardsType = marker.standardsRefType || 'standard';
         const standardsId = marker.standardsRefId || '';
+        const standardsLabel = marker.glossaryLabel;
+        const trailingWhitespace = marker.standardsTrailingWhitespace || 0;
 
         nodes.push(
           React.createElement(CrossReferenceLink, {
             key: `standards-${marker.start}`,
             referenceId: `${standardsType}:${standardsId}`,
-            displayText: standardsId,
+            displayText: standardsLabel || standardsId,
             interactive,
           })
         );
+        if (trailingWhitespace > 0) {
+          nodes.push(' '.repeat(trailingWhitespace));
+        }
         lastIndex = marker.end;
         break;
       }
