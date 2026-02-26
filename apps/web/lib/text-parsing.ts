@@ -64,6 +64,14 @@ interface ParsedStandardsMarker {
   trailingWhitespace?: number;
 }
 
+function skipWhitespaceBeforePunctuation(text: string, index: number): number {
+  if (index >= text.length) return index;
+  const remaining = text.slice(index);
+  const match = remaining.match(/^(\s+)([,:.;)\]])/);
+  if (!match) return index;
+  return index + match[1].length;
+}
+
 export interface TextEquationEntry {
   id: string;
   type?: 'display' | 'inline' | string;
@@ -899,7 +907,10 @@ export function parseTextWithMarkers(
           })
         );
         // For glossary terms, consume the text that follows the marker
-        lastIndex = marker.end + glossaryDisplay.consumed;
+        lastIndex = skipWhitespaceBeforePunctuation(
+          sanitizedText,
+          marker.end + glossaryDisplay.consumed
+        );
         break;
       }
       
@@ -921,7 +932,10 @@ export function parseTextWithMarkers(
           })
         );
         // For cross-references, consume the marker and the display text that follows
-        lastIndex = marker.end + crossRefDisplay.consumed;
+        lastIndex = skipWhitespaceBeforePunctuation(
+          sanitizedText,
+          marker.end + crossRefDisplay.consumed
+        );
         break;
       }
 
@@ -942,7 +956,7 @@ export function parseTextWithMarkers(
         if (trailingWhitespace > 0) {
           nodes.push(' '.repeat(trailingWhitespace));
         }
-        lastIndex = marker.end;
+        lastIndex = skipWhitespaceBeforePunctuation(sanitizedText, marker.end);
         break;
       }
       
@@ -959,7 +973,7 @@ export function parseTextWithMarkers(
             interactive,
           })
         );
-        lastIndex = marker.end;
+        lastIndex = skipWhitespaceBeforePunctuation(sanitizedText, marker.end);
         break;
       }
 
@@ -972,7 +986,7 @@ export function parseTextWithMarkers(
             interactive,
           })
         );
-        lastIndex = marker.end;
+        lastIndex = skipWhitespaceBeforePunctuation(sanitizedText, marker.end);
         break;
       }
 

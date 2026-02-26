@@ -5,6 +5,7 @@ import Icon from '@repo/ui/icon';
 import { useGlossaryStore } from '../../stores/glossary-store';
 import { useUIStore } from '../../lib/stores/ui-store';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import { GlossaryTerm } from './GlossaryTerm';
 import './GlossarySidebar.css';
 
 type GlossaryEntry = {
@@ -17,14 +18,11 @@ const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 const normalize = (value: string) => value.trim().toLowerCase();
 
-const renderDefinitionWithMarkers = (definition: string): React.ReactNode[] => {
-  return parseTextWithMarkers(definition, [], true);
-};
-
 export const GlossarySidebar: React.FC = () => {
   const glossarySidebarOpen = useUIStore((s) => s.glossarySidebarOpen);
   const activeGlossaryTermId = useUIStore((s) => s.activeGlossaryTermId);
   const closeGlossarySidebar = useUIStore((s) => s.closeGlossarySidebar);
+  const openGlossarySidebar = useUIStore((s) => s.openGlossarySidebar);
 
   const glossaryMap = useGlossaryStore((s) => s.glossaryMap);
   const loading = useGlossaryStore((s) => s.loading);
@@ -174,12 +172,23 @@ export const GlossarySidebar: React.FC = () => {
     const target = termRefs.current.get(key);
     if (!target) return;
 
-    // Scroll once per requested active term; avoid focus-stealing from search input.
+    // Scroll once per requested active term after it is rendered, then move focus for accessibility.
     requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      const content = contentRef.current;
+      if (content) {
+        const contentRect = content.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const offsetTop = targetRect.top - contentRect.top;
+        const nextTop = content.scrollTop + offsetTop - 8;
+        content.scrollTo({ top: Math.max(0, nextTop), behavior: 'auto' });
+      } else {
+        target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+
+      target.focus({ preventScroll: true });
     });
     pendingScrollTermRef.current = null;
-  }, [activeTermEntry, glossarySidebarOpen]);
+  }, [activeTermEntry, glossarySidebarOpen, filteredEntries]);
 
   useEffect(() => {
     if (!glossarySidebarOpen || !activeTermEntry) return;
@@ -200,6 +209,34 @@ export const GlossarySidebar: React.FC = () => {
     setActiveLetter(letter);
     requestAnimationFrame(() => {
       contentRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+    });
+  };
+
+  const renderDefinitionWithMarkers = (definition: string): React.ReactNode[] => {
+    // Sidebar-specific behavior:
+    // - REF:term remains clickable to jump within glossary
+    // - all other REF types render as plain text (non-hyperlink)
+    const parsedNodes = parseTextWithMarkers(definition, [], false);
+
+    return parsedNodes.map((node, index) => {
+      if (!React.isValidElement(node)) return node;
+      if (node.type !== GlossaryTerm) return node;
+
+      const glossaryNode = node as React.ReactElement<{ termId?: string; text?: string }>;
+      const termId = typeof glossaryNode.props.termId === 'string' ? glossaryNode.props.termId : '';
+      const text = typeof glossaryNode.props.text === 'string' ? glossaryNode.props.text : termId;
+      if (!termId || !text) return text;
+
+      return (
+        <button
+          key={`inline-term-${termId}-${index}`}
+          type="button"
+          className="glossary-sidebar__inline-term"
+          onClick={() => openGlossarySidebar(termId)}
+        >
+          {text}
+        </button>
+      );
     });
   };
 

@@ -156,11 +156,30 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
   .reading-view__content {
     overflow: visible !important;
     padding-bottom: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   .reading-view-header__badges {
     width: 100% !important;
     display: flex !important;
     justify-content: flex-end !important;
+  }
+
+  .ui-ContentPanel,
+  .ui-ContentPanel--Container,
+  .reading-view,
+  .reading-view__content,
+  .reading-view-header,
+  .reading-view-header__meta,
+  .reading-view-header__divider {
+    border-right: none !important;
+  }
+
+  .reading-view,
+  .reading-view * {
+    border-right: none !important;
+    outline: none !important;
+    box-shadow: none !important;
   }
 }

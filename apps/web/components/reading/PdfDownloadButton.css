@@ -44,5 +44,16 @@
   .pdf-download-button {
     width: 100%;
     justify-content: center;
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .pdf-download-button__label {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: left;
+    min-width: 0;
+    flex: 1 1 auto;
   }
 }

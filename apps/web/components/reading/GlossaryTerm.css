@@ -102,9 +102,35 @@
   display: block;
 }
 
+.glossary-tooltip__definition .glossary-term,
+.glossary-tooltip__definition .cross-reference-link,
+.glossary-tooltip__definition .note-reference--non-interactive {
+  color: inherit;
+}
+
 /* Hide tooltip on touch devices (Requirement 11.17) */
 @media (hover: none) {
   .glossary-tooltip {
     display: none !important;
+  }
+}
+
+@media print {
+  .glossary-term--interactive {
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    line-height: inherit;
+    vertical-align: baseline;
+  }
+
+  .glossary-term__icon {
+    display: none;
+  }
+
+  .glossary-term--interactive:focus-visible {
+    outline: none;
   }
 }

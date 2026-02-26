@@ -18,6 +18,7 @@ import { createPortal } from 'react-dom';
 import type { GlossaryTermProps } from '@repo/data';
 import { useGlossaryStore } from '../../stores/glossary-store';
 import { useUIStore } from '../../lib/stores/ui-store';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './GlossaryTerm.css';
 
 export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
@@ -161,8 +162,7 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M13 8C13 8.55208 12.5521 9 12 9C11.4479 9 11 8.55208 11 8C11 7.44792 11.4479 7 12 7C12.5521 7 13 7.44792 13 8ZM10 11C10 10.6313 10.2979 10.3333 10.6667 10.3333H12C12.3688 10.3333 12.6667 10.6313 12.6667 11V15.6667H13.3333C13.7021 15.6667 14 15.9646 14 16.3333C14 16.7021 13.7021 17 13.3333 17H10.6667C10.2979 17 10 16.7021 10 16.3333C10 15.9646 10.2979 15.6667 10.6667 15.6667H11.3333V11.6667H10.6667C10.2979 11.6667 10 11.3688 10 11Z" fill="white"/>
         </svg>
-      </span>
-      {text}
+      </span>{text}
       {showTooltip && definition && typeof document !== 'undefined' &&
         createPortal(
           <span
@@ -173,7 +173,7 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
           >
             <span className="glossary-tooltip__term">{definition.term}</span>
             <span className="glossary-tooltip__definition">
-              {definition.definition}
+              {parseTextWithMarkers(definition.definition, [], false)}
             </span>
           </span>
           ,
