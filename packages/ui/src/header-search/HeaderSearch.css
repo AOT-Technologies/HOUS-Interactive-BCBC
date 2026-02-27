@@ -291,7 +291,8 @@
     flex: 1;
     width: 100%;
     min-width: 0;
-    overflow: hidden;
+    /* Keep dropdown visible on mobile when suggestions open below input */
+    overflow: visible;
   }
 
   .ui-HeaderSearch.--open .ui-HeaderSearch--SearchWrapper {

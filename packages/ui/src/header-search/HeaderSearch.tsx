@@ -95,14 +95,23 @@ export default function HeaderSearch({
     setIsOpen(false);
   };
 
+  const submitAndReset = (query: string) => {
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery) return;
+
+    onSearch(trimmedQuery);
+    search.handleClear();
+    setShowSuggestions(false);
+    setHighlightedIndex(-1);
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault();
       if (highlightedIndex >= 0 && highlightedIndex < search.suggestions.length) {
-        search.handleSelectSuggestion(search.suggestions[highlightedIndex]);
-        setShowSuggestions(false);
+        submitAndReset(search.suggestions[highlightedIndex]);
       } else {
-        search.handleSubmit();
+        submitAndReset(search.query);
       }
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -117,8 +126,7 @@ export default function HeaderSearch({
   };
 
   const handleSuggestionClick = (suggestion: string) => {
-    search.handleSelectSuggestion(suggestion);
-    setShowSuggestions(false);
+    submitAndReset(suggestion);
   };
 
   const shouldShowDropdown = showSuggestions && (search.suggestions.length > 0 || search.isLoading);

@@ -337,14 +337,14 @@ a.ui-Header--NavLink {
     flex: 1;
     width: 100%;
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-HeaderSearch {
     margin-left: 0;
     flex: 1;
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-Header--Nav {

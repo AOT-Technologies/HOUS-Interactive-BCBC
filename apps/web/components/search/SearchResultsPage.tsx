@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { CSSProperties, FormEvent, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import type { Section } from '@bc-building-code/bcbc-parser';
 import Button from '@repo/ui/button';
@@ -34,7 +34,24 @@ function toNumberOrUndefined(value: string | null): number | undefined {
 
 function normalizeDivisionFilter(value: string | null): string | undefined {
   if (!value) return undefined;
+
+  const match = value.match(/nbc\.div([A-Z])[A-Z0-9]*/i);
+  if (match) {
+    return match[1].toUpperCase();
+  }
+
   return value.toUpperCase();
+}
+
+function normalizeDivisionIdFilter(value: string | null): string | undefined {
+  if (!value) return undefined;
+  return /^nbc\.div/i.test(value) ? value : undefined;
+}
+
+function formatDivisionVolumeLabel(divisionId: string): string {
+  const volumeMatch = divisionId.match(/V(\d+)$/i);
+  const volume = volumeMatch ? volumeMatch[1] : '1';
+  return `Vol ${volume}`;
 }
 
 function transformDivisionForPath(divisionId: string): string {
@@ -170,17 +187,30 @@ export default function SearchResultsPage() {
   const [error, setError] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(RESULTS_BATCH_SIZE);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [mobileOverlayTop, setMobileOverlayTop] = useState<number | null>(null);
 
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const resultsScrollRef = useRef<HTMLDivElement | null>(null);
+  const mobileFilterRowRef = useRef<HTMLDivElement | null>(null);
   const runIdRef = useRef(0);
   const sectionCacheRef = useRef<Map<string, Section>>(new Map());
   const resolvedSectionCacheRef = useRef<Map<string, Section>>(new Map());
   const visibilityCacheRef = useRef<Map<string, boolean>>(new Map());
 
+  const selectedDivisionValue = useMemo(() => {
+    if (!division) return '';
+
+    if (divisions.some((item) => item.id === division)) {
+      return division;
+    }
+
+    const byLetter = divisions.find((item) => item.letter.toUpperCase() === division.toUpperCase());
+    return byLetter?.id || '';
+  }, [division, divisions]);
+
   const selectedDivision = useMemo(
-    () => divisions.find((item) => item.letter.toUpperCase() === division.toUpperCase()),
-    [division, divisions]
+    () => divisions.find((item) => item.id === selectedDivisionValue),
+    [divisions, selectedDivisionValue]
   );
 
   const availableParts = selectedDivision?.parts || [];
@@ -335,6 +365,7 @@ export default function SearchResultsPage() {
         await searchClient.initialize(version);
 
         const divisionFilter = normalizeDivisionFilter(division);
+        const divisionIdFilter = normalizeDivisionIdFilter(division);
         const partFilter = toNumberOrUndefined(part);
         const contentTypeFilter = type || undefined;
 
@@ -356,6 +387,10 @@ export default function SearchResultsPage() {
         setContentTypes(searchClient.getContentTypes(version));
 
         let filtered = rawResults.filter((item) => item.document.urlPath.startsWith('/code/'));
+
+        if (divisionIdFilter) {
+          filtered = filtered.filter((item) => item.document.divisionId === divisionIdFilter);
+        }
 
         if (date) {
           setIsDateFiltering(true);
@@ -436,6 +471,54 @@ export default function SearchResultsPage() {
     return () => mediaQuery.removeEventListener('change', handleViewportChange);
   }, []);
 
+  useEffect(() => {
+    if (!mobileFiltersOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
+    };
+  }, [mobileFiltersOpen]);
+
+  useLayoutEffect(() => {
+    if (!mobileFiltersOpen) return;
+
+    const updateOverlayTop = () => {
+      const rowRect = mobileFilterRowRef.current?.getBoundingClientRect();
+      if (!rowRect) return;
+      setMobileOverlayTop(rowRect.bottom);
+    };
+
+    updateOverlayTop();
+    window.addEventListener('resize', updateOverlayTop);
+    window.addEventListener('scroll', updateOverlayTop, { passive: true });
+
+    return () => {
+      window.removeEventListener('resize', updateOverlayTop);
+      window.removeEventListener('scroll', updateOverlayTop);
+    };
+  }, [mobileFiltersOpen]);
+
+  const toggleMobileFilters = () => {
+    if (!mobileFiltersOpen) {
+      const rowRect = mobileFilterRowRef.current?.getBoundingClientRect();
+      if (rowRect) {
+        setMobileOverlayTop(rowRect.bottom);
+      }
+    }
+
+    setMobileFiltersOpen((open) => !open);
+  };
+
   const visibleResults = useMemo(() => results.slice(0, visibleCount), [results, visibleCount]);
   const hasMore = visibleCount < results.length;
 
@@ -462,25 +545,23 @@ export default function SearchResultsPage() {
 
   return (
     <div className="search-results-page">
-      <Button
-        variant="secondary"
-        className="search-results-page__mobile-filters-toggle"
-        onPress={() => setMobileFiltersOpen((open) => !open)}
-      >
-        Filters
-      </Button>
-
-      {mobileFiltersOpen ? (
+      <div ref={mobileFilterRowRef} className="search-results-page__mobile-filter-row">
         <button
           type="button"
-          className="search-results-page__mobile-backdrop"
-          onClick={() => setMobileFiltersOpen(false)}
-          aria-label="Close filters"
-        />
-      ) : null}
+          className="search-results-page__mobile-filter-icon-btn"
+          aria-label={mobileFiltersOpen ? 'Close filters' : 'Open filters'}
+          onClick={toggleMobileFilters}
+        >
+          <Icon type={mobileFiltersOpen ? 'close' : 'funnel'} />
+        </button>
+      </div>
 
       <div className="search-results-page__layout">
-        <aside className={`search-results-page__filters ${mobileFiltersOpen ? '--mobile-open' : ''}`}>
+        <aside
+          className={`search-results-page__filters ${mobileFiltersOpen ? '--mobile-open' : ''} ${mobileFiltersOpen && mobileOverlayTop === null ? '--positioning' : ''}`}
+          style={mobileFiltersOpen && mobileOverlayTop !== null ? ({ '--mobile-overlay-top': `${mobileOverlayTop}px` } as CSSProperties) : undefined}
+        >
+
           <div className="search-results-page__filters-header">
             <h2>
               <Icon type="funnel" /> Filters
@@ -491,6 +572,10 @@ export default function SearchResultsPage() {
               </Button>
             </div>
           </div>
+
+          <Button variant="secondary" className="search-results-page__clear-filters" onPress={clearFilters}>
+            Clear All Filters
+          </Button>
 
           <label className="search-results-page__filter-group">
             <span>Effective Version</span>
@@ -531,14 +616,14 @@ export default function SearchResultsPage() {
             <span>Code Division</span>
             <div className="search-results-page__select-wrap">
               <select
-                value={division}
+                value={selectedDivisionValue}
                 onChange={(event) => pushSearchParams({ division: event.target.value || null, part: null })}
                 aria-label="Select division"
               >
                 <option value="">Select</option>
                 {divisions.map((item) => (
-                  <option key={item.id} value={item.letter}>
-                    Division {item.letter} - {item.title}
+                  <option key={item.id} value={item.id}>
+                    {formatDivisionVolumeLabel(item.id)} - Division {item.letter} - {item.title}
                   </option>
                 ))}
               </select>
@@ -582,8 +667,8 @@ export default function SearchResultsPage() {
             </div>
           </label>
 
-          <Button variant="secondary" className="search-results-page__clear-filters" onPress={clearFilters}>
-            Clear All Filters
+          <Button className="search-results-page__apply-filters" onPress={() => setMobileFiltersOpen(false)}>
+            Apply Filters
           </Button>
         </aside>
 
@@ -604,6 +689,16 @@ export default function SearchResultsPage() {
               onChange={(event) => setQueryInput(event.target.value)}
               aria-label="Search building code"
             />
+            {queryInput && (
+              <button
+                type="button"
+                className="search-results-page__search-clear"
+                onClick={() => setQueryInput('')}
+                aria-label="Clear search"
+              >
+                <Icon type="close" />
+              </button>
+            )}
             <button type="submit" className="search-results-page__search-submit" aria-label="Submit search">
               <Icon type="search" />
             </button>
