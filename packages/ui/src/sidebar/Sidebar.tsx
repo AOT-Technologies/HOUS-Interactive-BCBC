@@ -1,9 +1,13 @@
 "use client";
 
-import { ReactNode, useEffect, useState, useCallback } from "react";
+import { ReactNode, CSSProperties, useEffect, useState, useCallback, useRef } from "react";
 import Button from "../button/Button";
 import Icon from "../icon/Icon";
-import { TESTID_SIDEBAR, TESTID_SIDEBAR_TOGGLE } from "@repo/constants/src/testids";
+import {
+  TESTID_SIDEBAR,
+  TESTID_SIDEBAR_MOBILE_OVERLAY,
+  TESTID_SIDEBAR_TOGGLE,
+} from "@repo/constants/src/testids";
 import "./Sidebar.css";
 
 export interface SidebarProps {
@@ -49,6 +53,8 @@ export default function Sidebar({
 
   // Track viewport size to determine mobile vs desktop behavior
   const [isMobile, setIsMobile] = useState(false);
+  const [mobileOverlayTop, setMobileOverlayTop] = useState<number | null>(null);
+  const toggleContainerRef = useRef<HTMLDivElement>(null);
 
   // Check if viewport is mobile/tablet (< 1024px)
   useEffect(() => {
@@ -78,6 +84,40 @@ export default function Sidebar({
     }
   }, [isMobile, isMobileOpen]);
 
+  // Keep the mobile overlay positioned below the toggle row.
+  useEffect(() => {
+    if (!isMobile || !isMobileOpen) {
+      setMobileOverlayTop(null);
+      return;
+    }
+
+    const updateOverlayTop = () => {
+      const bounds = toggleContainerRef.current?.getBoundingClientRect();
+      setMobileOverlayTop(bounds ? Math.round(bounds.bottom) : null);
+    };
+
+    updateOverlayTop();
+    window.addEventListener("resize", updateOverlayTop);
+    window.addEventListener("scroll", updateOverlayTop, { passive: true });
+
+    return () => {
+      window.removeEventListener("resize", updateOverlayTop);
+      window.removeEventListener("scroll", updateOverlayTop);
+    };
+  }, [isMobile, isMobileOpen]);
+
+  // Prevent body scroll while mobile overlay is open.
+  useEffect(() => {
+    if (!isMobile || !isMobileOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isMobile, isMobileOpen]);
+
   // Desktop sidebar (≥ 1024px) - always visible, no collapse button per Figma design
   if (!isMobile) {
     return (
@@ -96,7 +136,7 @@ export default function Sidebar({
   return (
     <div className={`ui-Sidebar--MobileWrapper ${isMobileOpen ? '--open' : ''}`}>
       {/* Toggle button container - white background section */}
-      <div className="ui-Sidebar--MobileToggleContainer">
+      <div ref={toggleContainerRef} className="ui-Sidebar--MobileToggleContainer">
         <Button
           variant="secondary"
           isIconButton
@@ -110,16 +150,22 @@ export default function Sidebar({
         </Button>
       </div>
 
-      {/* Expandable sidebar panel - appears below toggle when open */}
+      {/* Overlay sidebar panel - opens above page content */}
       {isMobileOpen && (
-        <aside
-          className={`ui-Sidebar--MobilePanel ${className}`}
-          data-testid={testid}
+        <div
+          className={`ui-Sidebar--MobileOverlay ${mobileOverlayTop === null ? "--positioning" : ""}`}
+          data-testid={TESTID_SIDEBAR_MOBILE_OVERLAY}
+          style={mobileOverlayTop !== null ? ({ "--sidebar-mobile-overlay-top": `${mobileOverlayTop}px` } as CSSProperties) : undefined}
         >
-          <div className="ui-Sidebar--MobilePanelContent">
-            {children}
-          </div>
-        </aside>
+          <aside
+            className={`ui-Sidebar--MobilePanel ${className}`}
+            data-testid={testid}
+          >
+            <div className="ui-Sidebar--MobilePanelContent">
+              {children}
+            </div>
+          </aside>
+        </div>
       )}
     </div>
   );

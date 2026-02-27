@@ -255,6 +255,14 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         ...normalizeRows(structure?.header_rows || [], true, effectiveDate, 'header-row'),
         ...normalizeRows(structure?.body_rows || [], false, effectiveDate, 'body-row'),
       ];
+  const maxColumnCount = normalizedRows.reduce((max, row) => {
+    const rowColumnCount = row.cells.reduce(
+      (total, cell) => total + (typeof cell.colspan === 'number' ? cell.colspan : 1),
+      0
+    );
+    return Math.max(max, rowColumnCount);
+  }, 0);
+  const isDenseTable = maxColumnCount >= 7;
 
   const getTableNoteLabel = (_note: RawTableNote, index: number): string => {
     return `(${index + 1})`;
@@ -272,7 +280,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
           {renderFormattedText(resolvedCaption, interactive)}
         </div>
       )}
-      <div className="table-block__wrapper">
+      <div className={`table-block__wrapper ${isDenseTable ? 'table-block__wrapper--dense' : ''}`}>
         <table className="table-block__table">
           <tbody>
             {normalizedRows.map((row, rowIndex) => (

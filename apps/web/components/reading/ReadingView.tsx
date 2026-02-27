@@ -988,7 +988,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }
 
   // Render content
-  const sectionPdfLabel = `${divisionLabel} - ${resolvedSection.number} ${resolvedSection.title} PDF`;
+  const sectionNumberPrefix = `${slug[1]}.${resolvedSection.number}`;
+  const pdfLabel =
+    subtree.mode === 'article' && subtree.subsection && subtree.article
+      ? `${divisionLabel} - ${sectionNumberPrefix}.${subtree.subsection.number}.${subtree.article.number} ${subtree.article.title} PDF`
+      : subtree.mode === 'subsection' && subtree.subsection
+        ? `${divisionLabel} - ${sectionNumberPrefix}.${subtree.subsection.number} ${subtree.subsection.title} PDF`
+        : `${divisionLabel} - ${sectionNumberPrefix} ${resolvedSection.title} PDF`;
   const modalGoToSectionVisible =
     modalData?.mode !== 'error' &&
     Boolean(modalData?.targetSlug && modalData.targetSlug.length >= 3);
@@ -998,7 +1004,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
     >
       <div className="reading-view" ref={contentContainerRef}>
-        <ReadingViewHeader pdfLabel={sectionPdfLabel} />
+        <ReadingViewHeader pdfLabel={pdfLabel} />
         
         <div className="reading-view__content">
           {subtree.mode === 'section' && (

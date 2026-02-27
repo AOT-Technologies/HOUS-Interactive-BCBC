@@ -34,6 +34,7 @@ export interface SearchQueryParams {
   division?: string;
   part?: string;
   type?: string;
+  sort?: 'relevance' | 'code-order';
   version?: string; // Optional version parameter (defaults to current version)
 }
 
@@ -145,6 +146,7 @@ export function parseSearchParams(search: string): SearchQueryParams | null {
     division: params.get('division') || undefined,
     part: params.get('part') || undefined,
     type: params.get('type') || undefined,
+    sort: (params.get('sort') as SearchQueryParams['sort']) || undefined,
     version: params.get('version') || undefined,
   };
 }
@@ -163,6 +165,7 @@ export function buildSearchUrl(
     division?: string;
     part?: string;
     type?: string;
+    sort?: 'relevance' | 'code-order';
     version?: string;
   }
 ): string {
@@ -174,6 +177,7 @@ export function buildSearchUrl(
     if (filters.division) params.set('division', filters.division);
     if (filters.part) params.set('part', filters.part);
     if (filters.type) params.set('type', filters.type);
+    if (filters.sort && filters.sort !== 'relevance') params.set('sort', filters.sort);
     if (filters.version) params.set('version', filters.version);
   }
   

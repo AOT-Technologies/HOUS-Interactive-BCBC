@@ -32,11 +32,16 @@
 
 .sentenceOrganizations {
   margin: 0 0 var(--layout-margin-medium) 0;
-  overflow-x: auto;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 500px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable both-edges;
 }
 
 .sentenceOrganizationsTable {
   width: 100%;
+  min-width: max-content;
   border-collapse: collapse;
   border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
 }
@@ -60,4 +65,10 @@
 .sentenceOrganizationsTable th {
   background-color: var(--surface-color-background-light-gray, #faf9f8);
   font: var(--typography-bold-body);
+}
+
+@media (max-width: 37.9375rem) {
+  .sentenceOrganizations {
+    max-height: 200px;
+  }
 }

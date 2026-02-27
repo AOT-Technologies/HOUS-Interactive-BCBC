@@ -33,7 +33,9 @@ interface Marker {
   termId?: string;
   glossaryLabel?: string;
   referenceId?: string;
+  crossRefLabel?: string;
   noteId?: string;
+  noteLabel?: string;
   tableNoteId?: string;
   equationId?: string;
   equationType?: 'display' | 'inline';
@@ -70,6 +72,12 @@ function skipWhitespaceBeforePunctuation(text: string, index: number): number {
   const match = remaining.match(/^(\s+)([,:.;)\]])/);
   if (!match) return index;
   return index + match[1].length;
+}
+
+function avoidDuplicateTrailingPeriod(displayText: string, remainingText: string): string {
+  if (!displayText.endsWith('.')) return displayText;
+  if (!/^\s*\./.test(remainingText)) return displayText;
+  return displayText.slice(0, -1);
 }
 
 export interface TextEquationEntry {
@@ -358,6 +366,17 @@ function getCrossReferenceDisplayText(
   format?: InternalRefFormat
 ): GlossaryDisplay {
   const remaining = fullText.slice(markerEnd);
+
+  // Note labels can include suffix qualifiers such as " (a)" or "(1)".
+  // Ensure the full note token is linked instead of splitting trailing qualifiers.
+  const noteDisplayMatch = remaining.match(/^(Note\s+[A-Z0-9][A-Z0-9.\-]*\.?(?:\s*\([^)]+\))?\.?)/i);
+  if (noteDisplayMatch) {
+    const text = noteDisplayMatch[1];
+    return {
+      text,
+      consumed: text.length,
+    };
+  }
   
   // Match different patterns based on format:
   // - long: "Articles 3.2.4.7." or "Article 3.2.4.7." or "Section 3.3." or "Sentence (2)"
@@ -386,8 +405,21 @@ function getCrossReferenceDisplayText(
   }
   
   // Fallback: generate display text from referenceId
+  const fallback = formatInternalReference(referenceId, format);
+  const qualifierMatch = fallback.startsWith('Note ')
+    ? remaining.match(/^(\s*\([^)]+\))/)
+    : null;
+
+  if (qualifierMatch) {
+    const qualifier = qualifierMatch[1].trim();
+    return {
+      text: `${fallback} ${qualifier}`.replace(/\s+/g, ' ').trim(),
+      consumed: qualifierMatch[1].length,
+    };
+  }
+
   return {
-    text: formatInternalReference(referenceId, format),
+    text: fallback,
     consumed: 0,
   };
 }
@@ -555,8 +587,11 @@ export function parseTextWithCrossReferences(
 ): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
   
-  // Regex to match [REF:internal:referenceId] or [REF:internal:referenceId:format]
-  const crossRefRegex = /\[REF:internal:([^\]:]+)(?::([a-zA-Z]+))?\]/g;
+  // Regex to match:
+  // - [REF:internal:referenceId]
+  // - [REF:internal:referenceId:format]
+  // - [REF:internal:referenceId:format:custom label]
+  const crossRefRegex = /\[REF:internal:([^\]:]+)(?::([a-zA-Z]+)(?::([^\]]+))?)?\]/g;
   
   let lastIndex = 0;
   let match: RegExpExecArray | null;
@@ -564,6 +599,7 @@ export function parseTextWithCrossReferences(
   while ((match = crossRefRegex.exec(text)) !== null) {
     const referenceId = match[1];
     const format = match[2] as InternalRefFormat;
+    const customLabel = match[3]?.trim();
     const matchStart = match.index;
     const matchEnd = crossRefRegex.lastIndex;
     
@@ -572,19 +608,31 @@ export function parseTextWithCrossReferences(
       nodes.push(text.substring(lastIndex, matchStart));
     }
 
-    const displayText = formatInternalReference(referenceId, format);
+    const baseDisplay = customLabel || formatInternalReference(referenceId, format);
+    const trailing = text.slice(matchEnd);
+    const qualifierMatch = baseDisplay.startsWith('Note ')
+      ? trailing.match(/^(\s*\([^)]+\))/)
+      : null;
+    const displayText = qualifierMatch
+      ? `${baseDisplay} ${qualifierMatch[1].trim()}`.replace(/\s+/g, ' ').trim()
+      : baseDisplay;
+    const normalizedDisplayText = avoidDuplicateTrailingPeriod(
+      displayText,
+      text.slice(matchEnd + (qualifierMatch ? qualifierMatch[1].length : 0))
+    );
     
     nodes.push(
       React.createElement(CrossReferenceLink, {
         key: `crossref-${matchStart}`,
         referenceId,
-        displayText,
+        displayText: normalizedDisplayText,
         format,
         interactive,
+        preserveDisplayText: Boolean(customLabel),
       })
     );
     
-    lastIndex = matchEnd;
+    lastIndex = matchEnd + (qualifierMatch ? qualifierMatch[1].length : 0);
   }
 
   // Add remaining text after last marker
@@ -616,7 +664,7 @@ export function parseTextWithNotes(
   const nodes: React.ReactNode[] = [];
   
   // Dedicated note references only (excluding application notes).
-  const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)\]/gi;
+  const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)(?::([^\]]+))?\]/gi;
   
   let lastIndex = 0;
   let match: RegExpExecArray | null;
@@ -624,6 +672,7 @@ export function parseTextWithNotes(
   while ((match = noteRegex.exec(text)) !== null) {
     const noteId = match[1];
     const format = match[2] as 'short' | 'long';
+    const customLabel = match[3]?.trim();
     const matchStart = match.index;
     const matchEnd = noteRegex.lastIndex;
     
@@ -635,7 +684,7 @@ export function parseTextWithNotes(
     // Generate display text based on format
     // For short format, typically shows a number like "(1)"
     // For long format, shows more descriptive text
-    const displayText = format === 'short' ? `(${noteId.split('.').pop()})` : noteId;
+    const displayText = customLabel || (format === 'short' ? getNoteLabel(noteId) : noteId);
     
     // Add NoteReference component
     nodes.push(
@@ -723,7 +772,7 @@ export function parseTextWithMarkers(
   // Find dedicated note reference markers (must check before cross-references).
   // This intentionally excludes application notes (appnote), which are handled
   // as regular cross-references (e.g., "Note A-2.1.1.2.(6).").
-  const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)\]/gi;
+  const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)(?::([^\]]+))?\]/gi;
   
   while ((match = noteRegex.exec(sanitizedText)) !== null) {
     markers.push({
@@ -732,6 +781,7 @@ export function parseTextWithMarkers(
       end: noteRegex.lastIndex,
       noteId: match[1],
       format: match[2] as 'short' | 'long',
+      noteLabel: match[3]?.trim() || undefined,
     });
   }
 
@@ -748,8 +798,13 @@ export function parseTextWithMarkers(
     });
   }
   
-  // Find all cross-reference markers (with optional display format suffix)
-  const crossRefRegex = /\[REF:internal:([^\]:]+)(?::([a-zA-Z]+))?\]/g;
+  // Find all cross-reference markers.
+  // Supports optional format and optional inline display label payload.
+  // Examples:
+  // - [REF:internal:nbc.divB.part9]
+  // - [REF:internal:nbc.divB.part9:short]
+  // - [REF:internal:nbc.divC.part2.appendix.appnote1:short:Note A-2.2.1.2.(1)]
+  const crossRefRegex = /\[REF:internal:([^\]:]+)(?::([a-zA-Z]+)(?::([^\]]+))?)?\]/g;
   
   while ((match = crossRefRegex.exec(sanitizedText)) !== null) {
     // Check if this position is already occupied by a note marker
@@ -764,6 +819,7 @@ export function parseTextWithMarkers(
         end: crossRefRegex.lastIndex,
         referenceId: match[1],
         format: match[2] as InternalRefFormat,
+        crossRefLabel: match[3]?.trim() || undefined,
       });
     }
   }
@@ -915,20 +971,40 @@ export function parseTextWithMarkers(
       }
       
       case 'crossref': {
-        const crossRefDisplay = getCrossReferenceDisplayText(
-          sanitizedText,
-          marker.end,
-          marker.referenceId!,
-          marker.format as InternalRefFormat
+        const crossRefDisplay = marker.crossRefLabel
+          ? (() => {
+              const trailing = sanitizedText.slice(marker.end);
+              const qualifierMatch = marker.crossRefLabel.startsWith('Note ')
+                ? trailing.match(/^(\s*\([^)]+\))/)
+                : null;
+              if (qualifierMatch) {
+                return {
+                  text: `${marker.crossRefLabel} ${qualifierMatch[1].trim()}`.replace(/\s+/g, ' ').trim(),
+                  consumed: qualifierMatch[1].length,
+                };
+              }
+              return { text: marker.crossRefLabel, consumed: 0 };
+            })()
+          : getCrossReferenceDisplayText(
+              sanitizedText,
+              marker.end,
+              marker.referenceId!,
+              marker.format as InternalRefFormat
+            );
+
+        const normalizedDisplayText = avoidDuplicateTrailingPeriod(
+          crossRefDisplay.text,
+          sanitizedText.slice(marker.end + crossRefDisplay.consumed)
         );
 
         nodes.push(
           React.createElement(CrossReferenceLink, {
             key: `crossref-${marker.start}`,
             referenceId: marker.referenceId!,
-            displayText: crossRefDisplay.text,
+            displayText: normalizedDisplayText,
             format: marker.format as InternalRefFormat,
             interactive,
+            preserveDisplayText: Boolean(marker.crossRefLabel),
           })
         );
         // For cross-references, consume the marker and the display text that follows
@@ -961,9 +1037,9 @@ export function parseTextWithMarkers(
       }
       
       case 'note': {
-        const displayText = marker.format === 'short' 
+        const displayText = marker.noteLabel || (marker.format === 'short'
           ? getNoteLabel(marker.noteId!)
-          : marker.noteId!;
+          : marker.noteId!);
         
         nodes.push(
           React.createElement(NoteReference, {

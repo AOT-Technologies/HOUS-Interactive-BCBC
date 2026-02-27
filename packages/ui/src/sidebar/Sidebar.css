@@ -14,6 +14,7 @@
 .ui-Sidebar--MobileWrapper {
   display: block;
   width: 100%;
+  position: relative;
 }
 
 /* Mobile toggle container - white background section between breadcrumb and hero */
@@ -79,18 +80,35 @@ button.ui-Sidebar--MobileToggle svg path {
   fill: #313132 !important;
 }
 
-/* Mobile expandable panel - appears below toggle when open */
+/* Mobile overlay sits above home/reading content */
+.ui-Sidebar--MobileOverlay {
+  position: fixed;
+  top: var(--sidebar-mobile-overlay-top, 0px);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background: var(--surface-color-background-white, #FFFFFF);
+}
+
+.ui-Sidebar--MobileOverlay.--positioning {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Mobile expandable panel - overlays content below toggle row */
 .ui-Sidebar--MobilePanel {
   display: block;
   width: 100%;
+  height: 100%;
   background-color: #FFFFFF;
-  border-bottom: 1px solid var(--surface-color-border-default, #D9D9D9);
+  border-top: 1px solid var(--surface-color-border-default, #D9D9D9);
 }
 
 /* Mobile panel content */
 .ui-Sidebar--MobilePanelContent {
   padding: 16px;
-  max-height: 60vh;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -124,6 +142,10 @@ button.ui-Sidebar--MobileToggle svg path {
   }
 
   .ui-Sidebar--MobilePanel {
+    display: none;
+  }
+
+  .ui-Sidebar--MobileOverlay {
     display: none;
   }
 
