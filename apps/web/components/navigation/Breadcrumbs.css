@@ -58,6 +58,7 @@
   flex-direction: row;
   align-items: center;
   gap: 4px;
+  position: relative;
   height: 22px;
   font-family: 'BC Sans', sans-serif;
   font-style: normal;
@@ -102,6 +103,36 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.breadcrumbs-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  display: block;
+  width: max-content;
+  max-width: 360px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: #313132;
+  color: #FFFFFF;
+  font-family: 'BC Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumbs-link:hover .breadcrumbs-tooltip,
+.breadcrumbs-link:focus-visible .breadcrumbs-tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Breadcrumb Separator */

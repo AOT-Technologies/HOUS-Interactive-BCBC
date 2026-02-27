@@ -52,6 +52,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
   const { navigationTree, currentPath } = useNavigationStore();
   const [isExpanded, setIsExpanded] = useState(false);
   const isContentPage = pathname?.startsWith('/code');
+  const maxTitleChars = 24;
 
   /**
    * Build breadcrumb trail based on current page
@@ -153,6 +154,13 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
     setIsExpanded(true);
   };
 
+  const truncateTitle = (title: string): string => {
+    if (title.length <= maxTitleChars) {
+      return title;
+    }
+    return `${title.slice(0, maxTitleChars)}...`;
+  };
+
   /**
    * Get visible breadcrumbs (collapsed or expanded)
    */
@@ -189,6 +197,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
           const isLast = index === visibleItems.length - 1;
           const actualIndex = showEllipsis && index >= ellipsisIndex! ? index + collapsedItems.length : index;
           const isLastInFull = actualIndex === breadcrumbs.length - 1;
+          const displayTitle = truncateTitle(item.title);
           
           return (
             <React.Fragment key={item.id}>
@@ -215,7 +224,10 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                     className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
                     aria-current={isLastInFull ? 'page' : undefined}
                   >
-                    <span className="breadcrumbs-title">{item.title}</span>
+                    <span className="breadcrumbs-title">{displayTitle}</span>
+                    <span className="breadcrumbs-tooltip" role="tooltip">
+                      {item.title}
+                    </span>
                   </span>
                 ) : (
                   <Link
@@ -225,7 +237,10 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                     aria-label={`Navigate to ${item.title}`}
                     aria-current={isLastInFull ? 'page' : undefined}
                   >
-                    <span className="breadcrumbs-title">{item.title}</span>
+                    <span className="breadcrumbs-title">{displayTitle}</span>
+                    <span className="breadcrumbs-tooltip" role="tooltip">
+                      {item.title}
+                    </span>
                   </Link>
                 )}
                 {!isLast && (
