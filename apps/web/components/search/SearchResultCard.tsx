@@ -2,6 +2,7 @@
 
 import { useMemo, type KeyboardEventHandler } from 'react';
 import { useRouter } from 'next/navigation';
+import { GET_TESTID_SEARCH_RESULT_ITEM } from '@repo/constants';
 import type { SearchResult } from '@/lib/search-client';
 import Icon from '@repo/ui/icon';
 import './SearchResults.css';
@@ -9,6 +10,7 @@ import './SearchResults.css';
 interface SearchResultCardProps {
   result: SearchResult;
   href: string;
+  testId?: string;
 }
 
 function getVolumeLabel(divisionId: string): string {
@@ -30,7 +32,7 @@ function normalizeHighlightedSnippet(input: string): string {
   return input.replace(/<mark[^>]*>/gi, '').replace(/<\/mark>/gi, '');
 }
 
-export function SearchResultCard({ result, href }: SearchResultCardProps) {
+export function SearchResultCard({ result, href, testId }: SearchResultCardProps) {
   const router = useRouter();
   const { document } = result;
 
@@ -106,6 +108,7 @@ export function SearchResultCard({ result, href }: SearchResultCardProps) {
       onClick={onOpen}
       onKeyDown={onKeyDown}
       aria-label={`Open ${heading}`}
+      data-testid={GET_TESTID_SEARCH_RESULT_ITEM(testId || document.id)}
     >
       <header className="search-results-card__header-row">
         <span className="search-results-card__badge">

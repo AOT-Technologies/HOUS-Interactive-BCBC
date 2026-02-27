@@ -77,6 +77,68 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.displayText).toBe('4.1.6.10.-B');
   });
 
+  it('parses note references with explicit display label payload', () => {
+    const input = 'See [REF:internal:nbc.divC.part2.appendix.appnote1:short:Note A-2.2.1.2.(1)] for details.';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.referenceId).toBe('nbc.divC.part2.appendix.appnote1');
+    expect(crossRefs[0].props.displayText).toBe('Note A-2.2.1.2.(1)');
+  });
+
+  it('consumes full note label including trailing bracket qualifier', () => {
+    const input = 'retain (see [REF:internal:nbc.divB.part2.sect2.subsect7.appnote1:long]Note 2.2.7. (a))';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const textNodes = nodes.filter((node): node is string => typeof node === 'string');
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Note 2.2.7. (a)');
+    expect(textNodes.join('')).not.toContain(' (a)');
+  });
+
+  it('consumes trailing bracket qualifier after app-note short marker', () => {
+    const input = 'ascertain that (see [REF:internal:nbc.divC.part2.appendix.appnote7:short] (a))';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const textNodes = nodes.filter((node): node is string => typeof node === 'string');
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText.startsWith('Note ')).toBe(true);
+    expect(crossRefs[0].props.displayText.endsWith('(a)')).toBe(true);
+    expect(textNodes.join('')).not.toContain(' (a)');
+  });
+
+  it('consumes trailing bracket qualifier after app-note custom label marker', () => {
+    const input = 'ascertain that (see [REF:internal:nbc.divC.part2.appendix.appnote7:short:Note A-2.2.7.2.(1)] (a))';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const textNodes = nodes.filter((node): node is string => typeof node === 'string');
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Note A-2.2.7.2.(1) (a)');
+    expect(textNodes.join('')).not.toContain(' (a)');
+  });
+
+  it('avoids duplicate trailing period for generated article labels when source has period', () => {
+    const input = '(See [REF:internal:nbc.divA.part1.sect3.subsect3.art2:long].)';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 1.3.3.2');
+  });
+
+  it('avoids duplicate trailing period for generated appnote labels when source has period', () => {
+    const input = '(See [REF:internal:nbc.divC.part2.appendix.appnote1:short].)';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText.endsWith('.')).toBe(false);
+  });
+
   it('parses standard references into cross-reference links', () => {
     const input = 'See [REF:standard:csaa440S1] for details.';
     const nodes = parseTextWithMarkers(input, [], true);

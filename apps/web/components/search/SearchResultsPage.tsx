@@ -3,11 +3,24 @@
 import { CSSProperties, FormEvent, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import type { Section } from '@bc-building-code/bcbc-parser';
+import {
+  TESTID_SEARCH_RESULTS_EMPTY,
+  TESTID_SEARCH_RESULTS_FILTERS,
+  TESTID_SEARCH_RESULTS_FILTER_TOGGLE,
+  TESTID_SEARCH_RESULTS_LIST,
+  TESTID_SEARCH_RESULTS_PAGE,
+  TESTID_SEARCH_RESULTS_PANEL,
+  TESTID_SEARCH_RESULTS_QUERY_CLEAR,
+  TESTID_SEARCH_RESULTS_QUERY_INPUT,
+  TESTID_SEARCH_RESULTS_QUERY_SUBMIT,
+  TESTID_SEARCH_RESULTS_STATUS,
+} from '@repo/constants';
 import Button from '@repo/ui/button';
 import Icon from '@repo/ui/icon';
 import { getSearchClient, type SearchResult } from '@/lib/search-client';
 import { resolveSectionForEffectiveDate } from '@/lib/revision-resolver';
 import { useVersionStore } from '@/stores/version-store';
+import { LiveRegion } from '@/components/reading/LiveRegion';
 import SearchResultCard from './SearchResultCard';
 import './SearchResults.css';
 
@@ -25,6 +38,8 @@ type DivisionOption = {
 
 const RESULTS_BATCH_SIZE = 20;
 const MAX_FETCH_RESULTS = 500;
+const SEARCH_RESULTS_FILTERS_ID = 'search-results-filters';
+const SEARCH_RESULTS_LIST_ID = 'search-results-list';
 
 function toNumberOrUndefined(value: string | null): number | undefined {
   if (!value) return undefined;
@@ -188,10 +203,13 @@ export default function SearchResultsPage() {
   const [visibleCount, setVisibleCount] = useState(RESULTS_BATCH_SIZE);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [mobileOverlayTop, setMobileOverlayTop] = useState<number | null>(null);
+  const [liveAnnouncement, setLiveAnnouncement] = useState('');
 
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const resultsScrollRef = useRef<HTMLDivElement | null>(null);
   const mobileFilterRowRef = useRef<HTMLDivElement | null>(null);
+  const mobileFiltersRef = useRef<HTMLElement | null>(null);
+  const mobileFilterToggleButtonRef = useRef<HTMLButtonElement | null>(null);
   const runIdRef = useRef(0);
   const sectionCacheRef = useRef<Map<string, Section>>(new Map());
   const resolvedSectionCacheRef = useRef<Map<string, Section>>(new Map());
@@ -508,6 +526,54 @@ export default function SearchResultsPage() {
     };
   }, [mobileFiltersOpen]);
 
+  useEffect(() => {
+    if (!mobileFiltersOpen) {
+      mobileFilterToggleButtonRef.current?.focus();
+      return;
+    }
+
+    const focusableSelector = [
+      'a[href]',
+      'button:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])',
+    ].join(',');
+    const panel = mobileFiltersRef.current;
+    if (!panel) return;
+
+    const focusables = Array.from(panel.querySelectorAll<HTMLElement>(focusableSelector));
+    focusables[0]?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (!mobileFiltersOpen) return;
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setMobileFiltersOpen(false);
+        return;
+      }
+
+      if (event.key !== 'Tab' || focusables.length === 0) return;
+
+      const active = document.activeElement as HTMLElement | null;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (event.shiftKey && active === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [mobileFiltersOpen]);
+
   const toggleMobileFilters = () => {
     if (!mobileFiltersOpen) {
       const rowRect = mobileFilterRowRef.current?.getBoundingClientRect();
@@ -521,6 +587,26 @@ export default function SearchResultsPage() {
 
   const visibleResults = useMemo(() => results.slice(0, visibleCount), [results, visibleCount]);
   const hasMore = visibleCount < results.length;
+
+  useEffect(() => {
+    if (error) {
+      setLiveAnnouncement(`Search failed: ${error}`);
+      return;
+    }
+    if (isSearching) {
+      setLiveAnnouncement(q ? `Searching for ${q}` : 'Searching');
+      return;
+    }
+    if (isDateFiltering) {
+      setLiveAnnouncement('Applying effective date filter');
+      return;
+    }
+    if (q.trim()) {
+      setLiveAnnouncement(`${results.length} results found${q ? ` for ${q}` : ''}`);
+      return;
+    }
+    setLiveAnnouncement('');
+  }, [error, isDateFiltering, isSearching, q, results.length]);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -544,13 +630,26 @@ export default function SearchResultsPage() {
   };
 
   return (
-    <div className="search-results-page">
+    <div className="search-results-page" data-testid={TESTID_SEARCH_RESULTS_PAGE}>
+      <nav className="search-results-page__skip-links" aria-label="Search results quick navigation">
+        <a className="search-results-page__skip-link" href={`#${SEARCH_RESULTS_FILTERS_ID}`}>
+          Skip to filters
+        </a>
+        <a className="search-results-page__skip-link" href={`#${SEARCH_RESULTS_LIST_ID}`}>
+          Skip to results
+        </a>
+      </nav>
+      <LiveRegion message={liveAnnouncement} politeness="polite" />
       <div ref={mobileFilterRowRef} className="search-results-page__mobile-filter-row">
         <button
           type="button"
           className="search-results-page__mobile-filter-icon-btn"
           aria-label={mobileFiltersOpen ? 'Close filters' : 'Open filters'}
+          aria-controls={SEARCH_RESULTS_FILTERS_ID}
+          aria-expanded={mobileFiltersOpen}
+          ref={mobileFilterToggleButtonRef}
           onClick={toggleMobileFilters}
+          data-testid={TESTID_SEARCH_RESULTS_FILTER_TOGGLE}
         >
           <Icon type={mobileFiltersOpen ? 'close' : 'funnel'} />
         </button>
@@ -558,8 +657,14 @@ export default function SearchResultsPage() {
 
       <div className="search-results-page__layout">
         <aside
+          id={SEARCH_RESULTS_FILTERS_ID}
+          ref={mobileFiltersRef}
           className={`search-results-page__filters ${mobileFiltersOpen ? '--mobile-open' : ''} ${mobileFiltersOpen && mobileOverlayTop === null ? '--positioning' : ''}`}
           style={mobileFiltersOpen && mobileOverlayTop !== null ? ({ '--mobile-overlay-top': `${mobileOverlayTop}px` } as CSSProperties) : undefined}
+          role={mobileFiltersOpen ? 'dialog' : undefined}
+          aria-modal={mobileFiltersOpen ? 'true' : undefined}
+          aria-label="Search filters"
+          data-testid={TESTID_SEARCH_RESULTS_FILTERS}
         >
 
           <div className="search-results-page__filters-header">
@@ -672,7 +777,7 @@ export default function SearchResultsPage() {
           </Button>
         </aside>
 
-        <section className="search-results-page__results-panel" aria-live="polite">
+        <section className="search-results-page__results-panel" data-testid={TESTID_SEARCH_RESULTS_PANEL}>
           <div className="search-results-page__header-row">
             <h1 className="search-results-page__title">Search Results</h1>
             <p className="search-results-page__summary">
@@ -688,6 +793,7 @@ export default function SearchResultsPage() {
               value={queryInput}
               onChange={(event) => setQueryInput(event.target.value)}
               aria-label="Search building code"
+              data-testid={TESTID_SEARCH_RESULTS_QUERY_INPUT}
             />
             {queryInput && (
               <button
@@ -695,23 +801,41 @@ export default function SearchResultsPage() {
                 className="search-results-page__search-clear"
                 onClick={() => setQueryInput('')}
                 aria-label="Clear search"
+                data-testid={TESTID_SEARCH_RESULTS_QUERY_CLEAR}
               >
                 <Icon type="close" />
               </button>
             )}
-            <button type="submit" className="search-results-page__search-submit" aria-label="Submit search">
+            <button
+              type="submit"
+              className="search-results-page__search-submit"
+              aria-label="Submit search"
+              data-testid={TESTID_SEARCH_RESULTS_QUERY_SUBMIT}
+            >
               <Icon type="search" />
             </button>
           </form>
 
           <div ref={resultsScrollRef} className="search-results-page__results-scroll">
-            <div className="search-results-page__results">
-              {error ? <p className="search-results-page__status --error">{error}</p> : null}
-              {isSearching ? <p className="search-results-page__status">Searching…</p> : null}
-              {isDateFiltering ? <p className="search-results-page__status">Applying effective date…</p> : null}
+            <div
+              id={SEARCH_RESULTS_LIST_ID}
+              className="search-results-page__results"
+              data-testid={TESTID_SEARCH_RESULTS_LIST}
+            >
+              {error ? (
+                <p className="search-results-page__status --error" data-testid={TESTID_SEARCH_RESULTS_STATUS} role="alert">
+                  {error}
+                </p>
+              ) : null}
+              {isSearching ? (
+                <p className="search-results-page__status" data-testid={TESTID_SEARCH_RESULTS_STATUS}>Searching…</p>
+              ) : null}
+              {isDateFiltering ? (
+                <p className="search-results-page__status" data-testid={TESTID_SEARCH_RESULTS_STATUS}>Applying effective date…</p>
+              ) : null}
 
               {!isSearching && !error && q && results.length === 0 ? (
-                <div className="search-results-page__empty">
+                <div className="search-results-page__empty" data-testid={TESTID_SEARCH_RESULTS_EMPTY}>
                   <p>No results found for “{q}”.</p>
                   <Button variant="secondary" onPress={clearFilters}>Clear All Filters</Button>
                 </div>
@@ -722,6 +846,7 @@ export default function SearchResultsPage() {
                   key={item.document.id}
                   result={item}
                   href={buildResultHref(item.document.urlPath, version, date || undefined)}
+                  testId={item.document.id}
                 />
               ))}
 

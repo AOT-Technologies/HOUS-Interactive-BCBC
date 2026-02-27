@@ -15,6 +15,7 @@ interface CrossReferenceLinkProps {
   displayText: string;
   format?: 'short' | 'long' | 'medium' | 'title' | 'number' | 'shortNum';
   interactive?: boolean;
+  preserveDisplayText?: boolean;
 }
 
 type ApplicationNoteMeta = {
@@ -49,6 +50,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   displayText,
   format,
   interactive = true,
+  preserveDisplayText = false,
 }) => {
   const { openReference, navigateReference } = useCrossReferenceContext();
   const searchParams = useSearchParams();
@@ -83,12 +85,16 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
       ? findNodeById(navigationTree, referenceId)?.title || displayText
       : displayText;
 
+  const trailingClauseQualifier =
+    resolvedDisplayText.match(/(\([A-Za-z0-9]+\))\.?\s*$/)?.[1] || '';
+
   const parsedReference = useMemo(() => parseReferenceId(referenceId), [referenceId]);
   const glossaryTermMatch = referenceId.match(/^term:(.+)$/i);
   const glossaryTermId = glossaryTermMatch?.[1]?.trim() || '';
   const isGlossaryTermReference = Boolean(glossaryTermId);
   const isPartAppendixAppnote =
     parsedReference?.kind === 'part_appendix' && Boolean(parsedReference.appnote);
+  const shouldResolveAppnoteDisplayText = isPartAppendixAppnote && !preserveDisplayText;
   const standardsMatch = referenceId.match(/^(standard|external):(.+)$/i);
   const standardsRefId = standardsMatch?.[2]?.trim() || '';
   const isStandardsReference = Boolean(standardsMatch && standardsRefId);
@@ -101,7 +107,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     let active = true;
 
     const resolveAppNoteDisplayText = async () => {
-      if (!isPartAppendixAppnote || !parsedReference) {
+      if (!shouldResolveAppnoteDisplayText || !parsedReference) {
         if (active) {
           setAppnoteDisplayText(null);
         }
@@ -165,7 +171,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     return () => {
       active = false;
     };
-  }, [effectiveDate, fetchAppendix, format, isPartAppendixAppnote, parsedReference, referenceId, version]);
+  }, [effectiveDate, fetchAppendix, format, parsedReference, referenceId, shouldResolveAppnoteDisplayText, version]);
 
   useEffect(() => {
     let active = true;
@@ -227,7 +233,10 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     };
   }, [hasExplicitStandardsLabel, isStandardsReference, standardsRefId, version]);
 
-  const effectiveDisplayText = standardsDisplayText || appnoteDisplayText || resolvedDisplayText;
+  const effectiveDisplayText = standardsDisplayText
+    || (appnoteDisplayText
+      ? `${appnoteDisplayText}${trailingClauseQualifier ? ` ${trailingClauseQualifier}` : ''}`
+      : resolvedDisplayText);
 
   if (!interactive) {
     return (

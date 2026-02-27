@@ -60,6 +60,17 @@ export const TESTID_SEARCH_COMBOBOX_EMPTY = 'search-combobox-empty';
 
 // Search Results test IDs
 export const TESTID_SEARCH_RESULT_ITEM = 'search-result-item';
+export const TESTID_SEARCH_RESULTS_PAGE = 'search-results-page';
+export const TESTID_SEARCH_RESULTS_FILTER_TOGGLE = 'search-results-filter-toggle';
+export const TESTID_SEARCH_RESULTS_FILTERS = 'search-results-filters';
+export const TESTID_SEARCH_RESULTS_PANEL = 'search-results-panel';
+export const TESTID_SEARCH_RESULTS_QUERY_INPUT = 'search-results-query-input';
+export const TESTID_SEARCH_RESULTS_QUERY_CLEAR = 'search-results-query-clear';
+export const TESTID_SEARCH_RESULTS_QUERY_SUBMIT = 'search-results-query-submit';
+export const TESTID_SEARCH_RESULTS_LIST = 'search-results-list';
+export const TESTID_SEARCH_RESULTS_STATUS = 'search-results-status';
+export const TESTID_SEARCH_RESULTS_EMPTY = 'search-results-empty';
+export const GET_TESTID_SEARCH_RESULT_ITEM = (id: string) => `${TESTID_SEARCH_RESULT_ITEM}-${id}`;
 
 // Navigation test IDs
 export const TESTID_NAV_TREE = 'navigation-tree';
