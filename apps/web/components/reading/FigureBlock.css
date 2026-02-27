@@ -25,8 +25,8 @@
 }
 
 .figure-block__image {
-  width: min(100%, 900px);
-  max-width: 900px;
+  width: min(100%, 500px);
+  max-width: 500px;
   height: auto;
   display: block;
 }
