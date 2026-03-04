@@ -52,7 +52,6 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
   } = useNavigationStore();
   const treeRef = useRef<HTMLDivElement>(null);
   const activeNodeRef = useRef<HTMLButtonElement>(null);
-  const hasInitializedActiveScrollRef = useRef(false);
 
   // Use filtered tree when search is active, otherwise use full tree
   const displayTree = searchQuery ? filteredTree : navigationTree;
@@ -96,33 +95,51 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
     });
   }, []);
 
+  const scrollActiveNodeIntoView = useCallback((attempt: number = 0) => {
+    const treeElement = treeRef.current;
+    const activeElement = activeNodeRef.current;
+
+    // During route/state transitions, active node can be missing for a frame.
+    if (!treeElement || !activeElement) {
+      if (attempt < 6) {
+        requestAnimationFrame(() => scrollActiveNodeIntoView(attempt + 1));
+      }
+      return;
+    }
+
+    const treeRect = treeElement.getBoundingClientRect();
+    const nodeRect = activeElement.getBoundingClientRect();
+
+    // Keep the active row slightly below top for context (not pinned at top edge).
+    const desiredTop = treeRect.top + 72;
+    const desiredBottom = treeRect.bottom - 24;
+
+    let delta = 0;
+    const isOutsideViewport = nodeRect.top < desiredTop || nodeRect.bottom > desiredBottom;
+    if (isOutsideViewport) {
+      // Always align active item near the top offset for better reading context.
+      delta = nodeRect.top - desiredTop;
+    }
+
+    if (Math.abs(delta) > 1) {
+      const nextTop = treeElement.scrollTop + delta;
+      if (typeof treeElement.scrollTo === 'function') {
+        treeElement.scrollTo({
+          top: nextTop,
+          behavior: 'smooth',
+        });
+      } else {
+        treeElement.scrollTop = nextTop;
+      }
+    }
+  }, []);
+
   /**
    * Scroll to active node when current path changes
    */
   useEffect(() => {
-    if (!hasInitializedActiveScrollRef.current) {
-      hasInitializedActiveScrollRef.current = true;
-      return;
-    }
-
-    if (activeNodeRef.current && treeRef.current) {
-      const treeRect = treeRef.current.getBoundingClientRect();
-      const nodeRect = activeNodeRef.current.getBoundingClientRect();
-      
-      // Check if node is outside visible area of the tree container
-      if (nodeRect.top < treeRect.top || nodeRect.bottom > treeRect.bottom) {
-        // Calculate how far the node is from the center of the tree viewport,
-        // then adjust the current scroll position by that delta.
-        const nodeCenter = nodeRect.top + nodeRect.height / 2;
-        const treeCenter = treeRect.top + treeRect.height / 2;
-        const delta = nodeCenter - treeCenter;
-        treeRef.current.scrollTo({
-          top: treeRef.current.scrollTop + delta,
-          behavior: 'smooth',
-        });
-      }
-    }
-  }, [currentPath]);
+    scrollActiveNodeIntoView();
+  }, [currentPath, expandedNodes, searchQuery, scrollActiveNodeIntoView]);
 
   const handleNodeAction = useCallback(
     (node: NavigationNode, triggerElement?: HTMLElement) => {
@@ -220,9 +237,9 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
    */
   const getPaddingLeft = (level: number): string => {
     if (level === 0) {
-      return '0px'; // Parent level - no padding on container
+      return '0px';
     }
-    return `${32 + (level - 1) * 16}px`; // Child levels: 32px, 48px, 64px, etc.
+    return `${32 + (level - 1) * 16}px`;
   };
 
   /**

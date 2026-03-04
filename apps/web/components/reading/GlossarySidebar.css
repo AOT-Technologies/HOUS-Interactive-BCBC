@@ -52,6 +52,12 @@
   cursor: pointer;
 }
 
+.glossary-sidebar__close-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
 .glossary-sidebar__header {
   padding: 40px 120px 0;
 }
@@ -162,7 +168,6 @@
 .glossary-sidebar__search-title {
   margin: 0;
   color: #2d2d2d;
-  font-size: 42px;
   line-height: 1.1;
   font-weight: 700;
 }

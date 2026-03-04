@@ -150,4 +150,48 @@ describe('TableBlock', () => {
     
     expect(screen.getByText('This is a caption')).toBeInTheDocument();
   });
+
+  it('prefers horizontal scroll for content-heavy tables even with fewer columns', () => {
+    const table: Table = {
+      id: 'test-table-5',
+      type: 'table',
+      number: '5',
+      title: 'Compact but Wide',
+      rows: [
+        {
+          type: 'header_row',
+          cells: [
+            { content: 'Issuing Agency', isHeader: true },
+            { content: 'Document Number', isHeader: true },
+            { content: 'Title of Document', isHeader: true },
+            { content: 'Code Reference', isHeader: true },
+          ],
+        },
+        {
+          type: 'body_row',
+          cells: [
+            { content: [{ type: 'text', value: 'AAMA' }] },
+            { content: [{ type: 'text', value: '501.1-05' }] },
+            {
+              content: [
+                {
+                  type: 'text',
+                  value:
+                    'Standard Test Method for Water Penetration of Windows Curtain Walls and Doors Using Dynamic Pressure',
+                },
+              ],
+            },
+            { content: [{ type: 'text', value: 'Note 5.9.3. (47)' }] },
+          ],
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table} />);
+    const wrapper = container.querySelector('.table-block__wrapper');
+    const renderedTable = container.querySelector('.table-block__table');
+
+    expect(wrapper).toHaveClass('table-block__wrapper--scroll');
+    expect(renderedTable?.getAttribute('style')).toMatch(/min-width:\s*\d+(\.\d+)?rem/i);
+  });
 });

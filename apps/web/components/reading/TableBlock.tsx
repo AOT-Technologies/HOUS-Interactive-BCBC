@@ -237,6 +237,93 @@ const normalizeRows = (rows: RawTableRow[], isHeader: boolean, effectiveDate?: s
       cells: ReturnType<typeof normalizeCell>[];
     }>;
 
+type TableWidthAnalysisRow = {
+  cells: Array<{
+    content: string | TableCellContent[];
+    colspan?: number;
+  }>;
+};
+
+const getCellPlainText = (content: string | TableCellContent[]): string => {
+  if (typeof content === 'string') {
+    return content;
+  }
+
+  return content
+    .map((item) => {
+      if (item.type === 'text') return item.value || '';
+      if (item.type === 'figure') return `${item.title || ''} ${item.graphic?.alt_text || ''}`;
+      return '';
+    })
+    .join(' ')
+    .trim();
+};
+
+const getLongestTokenLength = (text: string): number => {
+  const cleaned = text.replace(/<[^>]+>/g, ' ').trim();
+  if (!cleaned) return 0;
+
+  return cleaned
+    .split(/[\s/()]+/)
+    .filter(Boolean)
+    .reduce((max, token) => Math.max(max, token.length), 0);
+};
+
+const analyzeTableWidth = (
+  rows: TableWidthAnalysisRow[],
+  maxColumnCount: number
+): { preferHorizontalScroll: boolean; minWidthRem: number } => {
+  if (maxColumnCount === 0) {
+    return { preferHorizontalScroll: false, minWidthRem: 0 };
+  }
+
+  const columns = Array.from({ length: maxColumnCount }, () => ({
+    maxChars: 0,
+    maxToken: 0,
+    hasFigure: false,
+  }));
+
+  rows.forEach((row) => {
+    let columnIndex = 0;
+    row.cells.forEach((cell) => {
+      const colspan = typeof cell.colspan === 'number' && cell.colspan > 0 ? cell.colspan : 1;
+      const hasFigure = Array.isArray(cell.content) ? cell.content.some((item) => item.type === 'figure') : false;
+      const text = getCellPlainText(cell.content);
+      const plainTextLength = text.replace(/<[^>]+>/g, '').trim().length;
+      const longestTokenLength = getLongestTokenLength(text);
+
+      if (colspan === 1 && columns[columnIndex]) {
+        columns[columnIndex].maxChars = Math.max(columns[columnIndex].maxChars, Math.min(plainTextLength, 60));
+        columns[columnIndex].maxToken = Math.max(columns[columnIndex].maxToken, longestTokenLength);
+        columns[columnIndex].hasFigure = columns[columnIndex].hasFigure || hasFigure;
+      }
+
+      columnIndex += colspan;
+    });
+  });
+
+  const estimatedMinWidthRem = columns.reduce((total, column) => {
+    const baseRem = 5.5;
+    const tokenRem = Math.min(Math.max(column.maxToken * 0.58 + 1.6, 4.8), 15);
+    const textRem = Math.min(Math.max(column.maxChars * 0.2 + 2.4, 4.8), 14);
+    const figureRem = column.hasFigure ? 9 : 0;
+    return total + Math.max(baseRem, tokenRem, textRem, figureRem);
+  }, 0);
+
+  const hasVeryLongToken = columns.some((column) => column.maxToken >= 14);
+  const hasModerateCompressionRisk = maxColumnCount >= 4 && estimatedMinWidthRem >= 30;
+  const preferHorizontalScroll =
+    maxColumnCount >= 7 ||
+    hasVeryLongToken ||
+    hasModerateCompressionRisk ||
+    estimatedMinWidthRem >= 42;
+
+  return {
+    preferHorizontalScroll,
+    minWidthRem: Math.min(Math.max(estimatedMinWidthRem, 32), 120),
+  };
+};
+
 export const TableBlock: React.FC<TableBlockProps> = ({
   table,
   interactive = true,
@@ -262,7 +349,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     );
     return Math.max(max, rowColumnCount);
   }, 0);
-  const isDenseTable = maxColumnCount >= 7;
+  const { preferHorizontalScroll, minWidthRem } = analyzeTableWidth(normalizedRows, maxColumnCount);
 
   const getTableNoteLabel = (_note: RawTableNote, index: number): string => {
     return `(${index + 1})`;
@@ -280,8 +367,11 @@ export const TableBlock: React.FC<TableBlockProps> = ({
           {renderFormattedText(resolvedCaption, interactive)}
         </div>
       )}
-      <div className={`table-block__wrapper ${isDenseTable ? 'table-block__wrapper--dense' : ''}`}>
-        <table className="table-block__table">
+      <div className={`table-block__wrapper ${preferHorizontalScroll ? 'table-block__wrapper--scroll' : ''}`}>
+        <table
+          className="table-block__table"
+          style={preferHorizontalScroll ? { minWidth: `${minWidthRem}rem` } : undefined}
+        >
           <tbody>
             {normalizedRows.map((row, rowIndex) => (
               <tr key={row.id || rowIndex}>

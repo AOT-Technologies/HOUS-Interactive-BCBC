@@ -29,14 +29,15 @@
 
 .table-block__table {
   width: 100%;
-  min-width: 100%;
+  min-width: 0;
   table-layout: auto;
   border-collapse: collapse;
   border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
 }
 
-.table-block__wrapper--dense .table-block__table {
+.table-block__wrapper--scroll .table-block__table {
   width: max-content;
+  min-width: 100%;
 }
 
 .table-block__header-cell,
@@ -46,8 +47,10 @@
   text-align: left;
   vertical-align: top;
   white-space: pre-line;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  min-inline-size: 5.75rem;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
 }
 
 .table-block__header-cell {
@@ -55,6 +58,9 @@
   font-size: 1.125rem;
   line-height: 1.35;
   background-color: var(--surface-color-background-light-gray, #faf9f8);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 /* Text alignment modifiers */
@@ -192,6 +198,11 @@
   .table-block__cell--has-figure {
     min-width: 7rem;
     width: min(38vw, 9.5rem);
+  }
+
+  .table-block__header-cell,
+  .table-block__cell {
+    min-inline-size: 4.75rem;
   }
 }
 

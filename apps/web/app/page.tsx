@@ -43,7 +43,7 @@ export default function Home() {
     <MainLayout 
       className="MainLayout--home"
       showSidebar 
-      sidebarContent={<HomeSidebarContent />}
+      sidebarContent={<HomeSidebarContent enableDefaultVolumeExpansion />}
     >
       <div className="homepage">
         {/* Hero Section - contains sidebar toggle on mobile */}

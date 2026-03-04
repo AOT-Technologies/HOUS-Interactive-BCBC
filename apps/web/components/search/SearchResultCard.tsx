@@ -52,7 +52,7 @@ export function SearchResultCard({ result, href, testId }: SearchResultCardProps
       article: 'Article',
       section: 'Section',
       subsection: 'Subsection',
-      part: 'Requirement',
+      part: 'Part',
       table: 'Table',
       figure: 'Figure',
       note: 'Notes',

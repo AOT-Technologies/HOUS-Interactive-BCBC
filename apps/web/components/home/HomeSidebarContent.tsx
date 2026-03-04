@@ -21,6 +21,14 @@ interface AmendmentDatesData {
   dates: AmendmentDate[];
 }
 
+interface HomeSidebarContentProps {
+  /**
+   * When true, auto-expand default volume nodes on initial sidebar load.
+   * Intended for homepage only.
+   */
+  enableDefaultVolumeExpansion?: boolean;
+}
+
 /**
  * HomeSidebarContent Component
  * 
@@ -33,7 +41,9 @@ interface AmendmentDatesData {
  * 
  * Requirements: 4.1, 4.2, 9.1, 9.2, 9.3
  */
-export default function HomeSidebarContent() {
+export default function HomeSidebarContent({
+  enableDefaultVolumeExpansion = false,
+}: HomeSidebarContentProps) {
   const { loadNavigationTree, setSearchQuery, clearSearch, searchQuery } = useNavigationStore();
   const { currentVersion, getVersion } = useVersionStore();
   const { selectedDate, initializeFromUrl } = useAmendmentDateStore();
@@ -60,6 +70,19 @@ export default function HomeSidebarContent() {
 
   // Load navigation tree and amendment dates when version changes
   useEffect(() => {
+    const applyHomepageDefaultExpansion = () => {
+      const navState = useNavigationStore.getState();
+      const defaultExpandedVolumeIds = navState.navigationTree
+        .filter((node) => node.type === 'volume' && node.children && node.children.length > 0)
+        .map((node) => node.id);
+
+      if (defaultExpandedVolumeIds.length === 0) {
+        return;
+      }
+
+      useNavigationStore.setState({ expandedNodes: new Set(defaultExpandedVolumeIds) });
+    };
+
     // Don't load if version is not ready yet
     if (!currentVersion) {
       return;
@@ -67,6 +90,7 @@ export default function HomeSidebarContent() {
     
     // Determine if this is initial load or version change
     const isVersionChange = previousVersion.current !== null && previousVersion.current !== currentVersion;
+    const shouldApplyHomepageDefaultExpansion = enableDefaultVolumeExpansion && isInitialLoad.current;
     previousVersion.current = currentVersion;
     
     // If version hasn't changed and we've already loaded, skip
@@ -75,7 +99,12 @@ export default function HomeSidebarContent() {
     }
     
     // Load navigation tree for current version
-    loadNavigationTree(currentVersion);
+    loadNavigationTree(currentVersion).then(() => {
+      // Apply homepage-only default expansion on first landing load.
+      if (shouldApplyHomepageDefaultExpansion) {
+        applyHomepageDefaultExpansion();
+      }
+    });
     
     // Get current selected date from store (for initial load check)
     const currentSelectedDate = useAmendmentDateStore.getState().selectedDate;
@@ -103,7 +132,7 @@ export default function HomeSidebarContent() {
       .finally(() => {
         isInitialLoad.current = false;
       });
-  }, [currentVersion, loadNavigationTree]);
+  }, [currentVersion, loadNavigationTree, enableDefaultVolumeExpansion]);
 
   // Handle effective date change
   const handleDateChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {

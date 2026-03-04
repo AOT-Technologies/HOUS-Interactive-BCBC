@@ -125,7 +125,7 @@ export default function QuickAccessPins({ className = '' }: QuickAccessPinsProps
         description={
           <>
             Found a broken link or search issue?{" "}
-            <a href="https://submit-feedback.example.com" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:BGI-DigitalDelivery@gov.bc.ca">
               Submit feedback to the product team
             </a>
           </>

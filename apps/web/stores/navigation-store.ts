@@ -36,7 +36,7 @@ interface NavigationStore {
   preSearchExpandedNodes: Set<string>;
   toggleNode: (nodeId: string) => void;
   setCurrentPath: (path: string, updateUrl?: boolean) => void;
-  expandToNode: (nodeId: string) => void;
+  expandToNode: (nodeId: string, options?: { replaceExpandedNodes?: boolean }) => void;
   loadNavigationTree: (version?: string) => Promise<void>;
   collapseAll: () => void;
   syncFromUrl: () => void;
@@ -92,7 +92,7 @@ export const useNavigationStore = create<NavigationStore>()(
         }
       },
 
-      expandToNode: (nodeId) => {
+      expandToNode: (nodeId, options) => {
         // Find the path to the node and expand all parent nodes
         const findPath = (
           nodes: NavigationNode[],
@@ -114,9 +114,13 @@ export const useNavigationStore = create<NavigationStore>()(
         const { navigationTree } = get();
         const pathToNode = findPath(navigationTree, nodeId);
         if (pathToNode) {
-          set((state) => ({
-            expandedNodes: new Set([...state.expandedNodes, ...pathToNode]),
-          }));
+          if (options?.replaceExpandedNodes) {
+            set({ expandedNodes: new Set(pathToNode) });
+          } else {
+            set((state) => ({
+              expandedNodes: new Set([...state.expandedNodes, ...pathToNode]),
+            }));
+          }
         }
       },
 

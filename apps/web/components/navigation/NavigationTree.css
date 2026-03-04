@@ -10,7 +10,7 @@
  * - Active Hover: Blue background, underlined blue text
  * - Child Default: 1px gray left border (#D9D9D9)
  * 
- * Hierarchy Levels (padding-left on wrapper):
+ * Hierarchy Levels (margin-left on wrapper):
  * - Parent (Level 0): 0px
  * - Child (Level 1): 32px
  * - Child2 (Level 2): 48px
@@ -56,14 +56,16 @@
   position: relative;
 }
 
-/* Active state background */
+/* Active state background (clipped so left indent gutter stays uncolored) */
 .nav-tree-link-wrapper--active {
   background: #F1F8FE;
+  background-clip: content-box;
 }
 
 /* Matching node highlight (search results) */
 .nav-tree-link-wrapper--matching {
   background: #FFFBEA;
+  background-clip: content-box;
 }
 
 /* Active takes precedence over matching */

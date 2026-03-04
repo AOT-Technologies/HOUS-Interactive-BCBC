@@ -33,7 +33,7 @@ export default async function ReadingPage({ params }: PageProps) {
       showSidebar 
       sidebarContent={
         <Suspense fallback={<div className="sidebar-loading">Loading navigation...</div>}>
-          <HomeSidebarContent />
+          <HomeSidebarContent enableDefaultVolumeExpansion={false} />
         </Suspense>
       }
     >

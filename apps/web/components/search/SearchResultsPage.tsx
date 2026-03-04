@@ -163,7 +163,7 @@ function formatContentTypeLabel(type: string): string {
     article: 'Article',
     section: 'Section',
     subsection: 'Subsection',
-    part: 'Requirement',
+    part: 'Part',
     table: 'Table',
     figure: 'Figure',
     note: 'Notes',
@@ -763,7 +763,7 @@ export default function SearchResultsPage() {
                 aria-label="Select content type"
               >
                 <option value="">Select</option>
-                {contentTypes.map((item) => (
+                {contentTypes.filter((item) => item !== 'glossary').map((item) => (
                   <option key={item} value={item}>
                     {formatContentTypeLabel(item)}
                   </option>

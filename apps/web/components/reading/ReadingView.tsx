@@ -84,6 +84,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const standardsMapCacheRef = useRef<Map<string, Record<string, StandardReferenceEntry>>>(new Map());
   const triggerElementRef = useRef<HTMLElement | null>(null);
   const suppressedModalParamRef = useRef<string | null>(null);
+  const pendingModalParamRef = useRef<string | null>(null);
   const [modalData, setModalData] = useState<ResolvedCrossReference | null>(null);
   const [partAppendix, setPartAppendix] = useState<PartAppendix | null>(null);
   const [appendixLoading, setAppendixLoading] = useState(false);
@@ -477,6 +478,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   );
 
   const closeReferenceModal = useCallback(() => {
+    pendingModalParamRef.current = null;
     suppressedModalParamRef.current = modalData?.referenceId || suppressedModalParamRef.current;
     setModalData(null);
     updateModalInUrl(null);
@@ -493,6 +495,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         triggerElementRef.current = triggerElement;
       }
 
+      // Guard against local open -> URL sync race that can briefly clear modal state.
+      pendingModalParamRef.current = referenceId;
       const resolved = await resolveCrossReference(referenceId);
       setModalData(resolved);
       updateModalInUrl(referenceId);
@@ -552,7 +556,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       
       const nodeId = findNodeIdByPath(navigationTree);
       if (nodeId) {
-        expandToNode(nodeId);
+        // On reading routes, URL path is the source of truth for open tree state.
+        // Replace existing expansion so homepage defaults or prior state do not leak in.
+        expandToNode(nodeId, { replaceExpandedNodes: true });
       }
     };
     
@@ -626,6 +632,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }, [version]);
 
   useEffect(() => {
+    if (modalQueryParam && pendingModalParamRef.current === modalQueryParam) {
+      pendingModalParamRef.current = null;
+    }
+
     if (!modalQueryParam) {
       suppressedModalParamRef.current = null;
       return;
@@ -655,6 +665,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   useEffect(() => {
     if (!modalQueryParam) {
+      if (pendingModalParamRef.current) {
+        return;
+      }
       setModalData(null);
     }
   }, [modalQueryParam]);
