@@ -158,7 +158,6 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   // Create stable slug key for useEffect dependencies
   const slugKey = slug.join('/');
-  const normalizedPathname = pathname.replace(/\/$/, '');
 
   const getDivisionLabel = (divisionSlug: string): string => {
     const match = divisionSlug.match(/div([a-z0-9]+)/i);
