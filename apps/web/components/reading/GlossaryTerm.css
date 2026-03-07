@@ -18,20 +18,25 @@
   min-height: 44px;
   min-width: 44px;
   padding: 4px 2px;
+  text-decoration: none;
 }
 
 .glossary-term--interactive:hover {
-  text-decoration-style: solid;
+  color: #255a90;
+  text-decoration: none;
 }
 
 .glossary-term--interactive:focus-visible {
   outline: 2px solid var(--surface-color-border-active, #2e5dd7);
   outline-offset: 2px;
   border-radius: 2px;
+  color: #255a90;
+  text-decoration: underline;
+  text-underline-offset: var(--text-underline-offset-large, 0.35em);
 }
 
 .glossary-term__icon {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 14px;
