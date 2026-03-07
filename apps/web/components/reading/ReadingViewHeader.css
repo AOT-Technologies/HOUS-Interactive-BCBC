@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.5rem;
+  gap: 0;
   margin-bottom: 1rem;
 }
 
@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-bottom: var(--layout-margin-12, 0.75rem);
 }
 
 .reading-view-header__meta {

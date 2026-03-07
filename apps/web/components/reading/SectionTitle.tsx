@@ -7,9 +7,11 @@ interface SectionTitleProps {
 }
 
 export const SectionTitle: React.FC<SectionTitleProps> = ({ number, title }) => {
+  const normalizedTitle = title.trim();
+
   return (
     <h2 className="sectionTitle">
-      <span className="sectionNumber">{number}</span> {title}
+      Section <span className="sectionNumber">{number}</span>. {normalizedTitle}
     </h2>
   );
 };

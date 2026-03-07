@@ -6,5 +6,10 @@ interface PartTitleProps {
 }
 
 export const PartTitle: React.FC<PartTitleProps> = ({ title }) => {
-  return <h1 className="partTitle">{title}</h1>;
+  const normalizedTitle = title.trim();
+  const displayTitle = /^part\s+/i.test(normalizedTitle)
+    ? normalizedTitle
+    : `Part ${normalizedTitle}`;
+
+  return <h1 className="partTitle">{displayTitle}</h1>;
 };

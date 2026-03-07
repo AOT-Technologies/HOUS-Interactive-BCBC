@@ -51,12 +51,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
   const hasBcSource = source?.toLowerCase() === 'bc';
   const hasBcSourceInTree = parentHasBcSource || hasBcSource;
 
-  const withSourceIndicator = (content: React.ReactNode) =>
-    hasBcSource && !parentHasBcSource ? (
-      <div className="content-renderer__source-indicator content-renderer__source-indicator--bc">
-        {content}
-      </div>
-    ) : content;
+  const withSourceIndicator = (content: React.ReactNode) => content;
 
   const toEquationNode = (rawNode: any): Equation => ({
     id: rawNode?.id || '',

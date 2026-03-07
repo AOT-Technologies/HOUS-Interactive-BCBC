@@ -182,11 +182,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     return null;
   };
 
-  const currentPartNode = (isPartLevel || isAppendixLevel)
-    ? findNodeByPath(
-        navigationTree,
-        isAppendixLevel ? normalizedPathname.replace(/\/appendix$/i, '') : normalizedPathname
-      )
+  const partPath = slug.length >= 2 ? `/code/${slug[0]}/${slug[1]}` : null;
+  const currentPartNode = partPath
+    ? findNodeByPath(navigationTree, partPath)
     : null;
 
   const divisionLabel = getDivisionLabel(slug[0] || '');
@@ -1011,6 +1009,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const modalGoToSectionVisible =
     modalData?.mode !== 'error' &&
     Boolean(modalData?.targetSlug && modalData.targetSlug.length >= 3);
+  const sectionViewPartTitle = currentPartNode?.title || slug[1];
 
   return (
     <CrossReferenceContext.Provider
@@ -1020,6 +1019,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         <ReadingViewHeader pdfLabel={pdfLabel} />
         
         <div className="reading-view__content">
+          <PartTitle title={sectionViewPartTitle} />
           {subtree.mode === 'section' && (
               <SectionRenderer
               section={resolvedSection}

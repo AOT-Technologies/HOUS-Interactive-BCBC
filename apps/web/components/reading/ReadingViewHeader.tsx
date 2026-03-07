@@ -9,7 +9,6 @@
 
 import React from 'react';
 import { PdfDownloadButton } from './PdfDownloadButton';
-import { SourceBadges } from './SourceBadges';
 import './ReadingViewHeader.css';
 
 interface ReadingViewHeaderProps {
@@ -22,12 +21,7 @@ export const ReadingViewHeader: React.FC<ReadingViewHeaderProps> = ({ pdfLabel }
       <div className="reading-view-header__actions">
         <PdfDownloadButton label={pdfLabel} />
       </div>
-      <div className="reading-view-header__meta">
-        <div className="reading-view-header__divider" aria-hidden="true" />
-        <div className="reading-view-header__badges">
-          <SourceBadges />
-        </div>
-      </div>
+      <div className="reading-view-header__divider" aria-hidden="true" />
     </div>
   );
 };
