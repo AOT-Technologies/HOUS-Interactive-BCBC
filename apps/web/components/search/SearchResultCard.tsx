@@ -20,12 +20,36 @@ function getVolumeLabel(divisionId: string): string {
   return 'Vol 1';
 }
 
-function stripDivisionPrefix(articleNumber: string, divisionLetter: string, partNumber: number): string {
-  const prefix = `${divisionLetter}.${partNumber}.`;
+function stripDivisionPrefix(articleNumber: string, divisionLetter: string): string {
+  const prefix = `${divisionLetter}.`;
   if (articleNumber.startsWith(prefix)) {
     return articleNumber.slice(prefix.length);
   }
   return articleNumber;
+}
+
+function buildSectionNumber(partNumber: number, sectionNumber?: number): string | null {
+  if (sectionNumber === undefined || sectionNumber === null) return null;
+  const section = String(sectionNumber).trim();
+  if (!section) return null;
+  if (section.startsWith(`${partNumber}.`)) return section;
+  return `${partNumber}.${section}`;
+}
+
+function buildSubsectionNumber(partNumber: number, sectionNumber?: number, subsectionNumber?: number): string | null {
+  if (subsectionNumber === undefined || subsectionNumber === null) return null;
+  const subsection = String(subsectionNumber).trim();
+  if (!subsection) return null;
+
+  const fullSection = buildSectionNumber(partNumber, sectionNumber);
+  if (!fullSection) return null;
+
+  if (subsection === '0') return fullSection;
+  if (subsection === `${fullSection}.0`) return fullSection;
+
+  if (subsection.startsWith(`${fullSection}.`)) return subsection;
+  if (subsection.startsWith(`${partNumber}.`)) return subsection;
+  return `${fullSection}.${subsection}`;
 }
 
 function normalizeHighlightedSnippet(input: string): string {
@@ -37,9 +61,9 @@ export function SearchResultCard({ result, href, testId }: SearchResultCardProps
   const { document } = result;
 
   const heading = useMemo(() => {
-    const number = stripDivisionPrefix(document.articleNumber, document.divisionLetter, document.partNumber);
+    const number = stripDivisionPrefix(document.articleNumber, document.divisionLetter);
     return `${number} ${document.title}`.trim();
-  }, [document.articleNumber, document.divisionLetter, document.partNumber, document.title]);
+  }, [document.articleNumber, document.divisionLetter, document.title]);
 
   const previewHtml = useMemo(() => {
     const textHighlight = result.highlights.find((item) => item.field === 'text')?.text;
@@ -66,12 +90,18 @@ export function SearchResultCard({ result, href, testId }: SearchResultCardProps
   const volumeLabel = useMemo(() => getVolumeLabel(document.divisionId), [document.divisionId]);
 
   const pathLabel = useMemo(() => {
-    const articleToken = stripDivisionPrefix(document.articleNumber, document.divisionLetter, document.partNumber).split(' ')[0];
+    const fullSectionNumber = buildSectionNumber(document.partNumber, document.sectionNumber);
+    const fullSubsectionNumber = buildSubsectionNumber(
+      document.partNumber,
+      document.sectionNumber,
+      document.subsectionNumber
+    );
+    const articleToken = stripDivisionPrefix(document.articleNumber, document.divisionLetter).split(' ')[0];
 
     const base = [
       `${volumeLabel} - Division ${document.divisionLetter} - Part ${document.partNumber}`,
-      document.sectionNumber ? `Section ${document.sectionNumber}` : null,
-      document.subsectionNumber ? `Subsection ${document.sectionNumber}.${document.subsectionNumber}` : null,
+      fullSectionNumber ? `Section ${fullSectionNumber}` : null,
+      fullSubsectionNumber ? `Subsection ${fullSubsectionNumber}` : null,
       document.type === 'article' || document.type === 'table' || document.type === 'figure'
         ? `Article ${articleToken}`
         : null,

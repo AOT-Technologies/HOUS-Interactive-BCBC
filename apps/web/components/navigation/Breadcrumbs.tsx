@@ -219,9 +219,9 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                 </li>
               )}
               <li className="breadcrumbs-item">
-                {isNonNavigableContentCrumb(item) ? (
+                {isNonNavigableContentCrumb(item) || isLastInFull ? (
                   <span
-                    className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
+                    className={`breadcrumbs-link breadcrumbs-link--non-navigable ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
                     aria-current={isLastInFull ? 'page' : undefined}
                   >
                     <span className="breadcrumbs-title">{displayTitle}</span>

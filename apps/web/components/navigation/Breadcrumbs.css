@@ -93,6 +93,24 @@
   color: #0D4A7A;
 }
 
+/* Non-clickable breadcrumb items (e.g., division and active page) */
+.breadcrumbs-link.breadcrumbs-link--non-navigable {
+  color: var(--typography-color-primary, #313132);
+  cursor: default;
+}
+
+.breadcrumbs-link.breadcrumbs-link--non-navigable:hover {
+  text-decoration: none;
+  color: var(--typography-color-primary, #313132);
+}
+
+.breadcrumbs-link.breadcrumbs-link--non-navigable.breadcrumbs-link--current,
+.breadcrumbs-link.breadcrumbs-link--non-navigable.breadcrumbs-link--current:hover {
+  color: var(--typography-color-primary, #313132);
+  cursor: default;
+  text-decoration: none;
+}
+
 /* Breadcrumb Number */
 .breadcrumbs-number {
   font-weight: 700;
