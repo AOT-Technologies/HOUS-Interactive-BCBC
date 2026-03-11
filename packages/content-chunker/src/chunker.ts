@@ -21,7 +21,25 @@ export interface RawDocumentForChunking {
 }
 
 interface RawVolume {
+  front_matter?: RawFrontMatter;
   divisions?: RawDivision[];
+}
+
+interface RawFrontMatter {
+  id: string;
+  preface?: RawFrontMatterSection;
+  introduction?: RawFrontMatterSection;
+  committees?: RawFrontMatterSection;
+}
+
+interface RawFrontMatterSection {
+  id: string;
+  type: string;
+  title?: string;
+  content?: unknown[];
+  tables?: unknown[];
+  notes?: unknown[];
+  [key: string]: unknown;
 }
 
 interface RawDivision {
@@ -51,7 +69,7 @@ interface RawPartAppendix {
  */
 export interface RawContentChunk {
   path: string;
-  data: RawSection | RawPartAppendix;
+  data: RawSection | RawPartAppendix | RawFrontMatterSection;
   size: number;
 }
 
@@ -95,12 +113,52 @@ export function chunkContent(document: BCBCDocument): ContentChunk[] {
  * Split raw BCBC source JSON into section chunks without parsing/transformation.
  *
  * Each chunk copies the original section object exactly as found in source data.
+ * Also includes front matter sections (preface, introduction, committees).
  */
 export function chunkRawContent(document: RawDocumentForChunking): RawContentChunk[] {
   const chunks: RawContentChunk[] = [];
   const volumes = document.volumes ?? [];
 
   for (const volume of volumes) {
+    // Process front matter sections first
+    if (volume.front_matter) {
+      const frontMatter = volume.front_matter;
+      
+      // Add preface chunk
+      if (frontMatter.preface) {
+        const prefacePath = generateFrontMatterChunkPath('preface');
+        const prefaceSize = JSON.stringify(frontMatter.preface).length;
+        chunks.push({
+          path: prefacePath,
+          data: frontMatter.preface,
+          size: prefaceSize,
+        });
+      }
+      
+      // Add introduction chunk
+      if (frontMatter.introduction) {
+        const introPath = generateFrontMatterChunkPath('introduction');
+        const introSize = JSON.stringify(frontMatter.introduction).length;
+        chunks.push({
+          path: introPath,
+          data: frontMatter.introduction,
+          size: introSize,
+        });
+      }
+      
+      // Add committees chunk
+      if (frontMatter.committees) {
+        const committeesPath = generateFrontMatterChunkPath('committees');
+        const committeesSize = JSON.stringify(frontMatter.committees).length;
+        chunks.push({
+          path: committeesPath,
+          data: frontMatter.committees,
+          size: committeesSize,
+        });
+      }
+    }
+
+    // Process divisions
     for (const division of volume.divisions ?? []) {
       for (const part of division.parts ?? []) {
         for (const section of part.sections ?? []) {
@@ -164,6 +222,19 @@ export function generateAppendixChunkPath(
 ): string {
   const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
   return `content/${normalizedDivision}/part-${String(partNumber)}/appendix.json`;
+}
+
+/**
+ * Generate chunk file path for front matter sections
+ * 
+ * Generates a path in the format: content/front-matter/{section}.json
+ * Example: content/front-matter/preface.json
+ * 
+ * @param section - Front matter section name (preface, introduction, committees)
+ * @returns Chunk file path
+ */
+export function generateFrontMatterChunkPath(section: string): string {
+  return `content/front-matter/${section}.json`;
 }
 
 /**

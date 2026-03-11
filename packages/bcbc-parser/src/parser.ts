@@ -59,6 +59,27 @@ interface RawVolume {
   type: 'volume';
   number: number;
   title: string;
+  front_matter?: {
+    id: string;
+    preface?: {
+      id: string;
+      type: 'preface';
+      content: any[];
+    };
+    introduction?: {
+      id: string;
+      type: 'introduction';
+      title?: string;
+      content: any[];
+    };
+    committees?: {
+      id: string;
+      type: 'committees';
+      title?: string;
+      tables?: any[];
+      notes?: any[];
+    };
+  };
   preface?: {
     id: string;
     type: 'preface';
@@ -305,7 +326,8 @@ function parseVolumeData(raw: RawVolume): any {
     type: raw.type,
     number: raw.number,
     title: raw.title,
-    preface: raw.preface,
+    frontMatter: raw.front_matter,  // New: front matter with preface, introduction, committees
+    preface: raw.preface,  // Legacy: keep for backward compatibility
     divisions: raw.divisions.map(parseDivisionData),
     index: raw.index,
     conversions: raw.conversions,

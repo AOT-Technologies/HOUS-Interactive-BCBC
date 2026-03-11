@@ -1,0 +1,144 @@
+/**
+ * FrontMatterRenderer Styles
+ * 
+ * Styles for rendering front matter content (preface, introduction, committees)
+ */
+
+.front-matter-renderer {
+  max-width: var(--layout-max-width-content);
+  margin: 0 auto;
+  padding: var(--layout-padding-large);
+}
+
+.front-matter-renderer__title {
+  font: var(--typography-bold-h1);
+  color: var(--typography-color-primary);
+  margin-bottom: var(--layout-margin-large);
+  padding-bottom: var(--layout-padding-medium);
+  border-bottom: var(--layout-border-width-medium) solid var(--surface-color-border-default);
+}
+
+.front-matter-renderer__content {
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+  line-height: var(--typography-line-heights-sparse);
+}
+
+/* Paragraphs */
+.front-matter__paragraph {
+  margin-bottom: var(--layout-margin-medium);
+  line-height: var(--typography-line-heights-sparse);
+}
+
+.front-matter__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Headings */
+.front-matter__heading {
+  color: var(--typography-color-primary);
+  margin-top: var(--layout-margin-large);
+  margin-bottom: var(--layout-margin-medium);
+  font-weight: var(--typography-font-weights-bold);
+}
+
+.front-matter__heading--level-2 {
+  font: var(--typography-bold-h2);
+  margin-top: var(--layout-margin-32);
+}
+
+.front-matter__heading--level-3 {
+  font: var(--typography-bold-h3);
+  margin-top: var(--layout-margin-24);
+}
+
+.front-matter__heading--level-4 {
+  font: var(--typography-bold-h4);
+  margin-top: var(--layout-margin-20);
+}
+
+.front-matter__heading--level-5,
+.front-matter__heading--level-6 {
+  font: var(--typography-bold-h5);
+  margin-top: var(--layout-margin-16);
+}
+
+/* Tables */
+.front-matter-renderer__content .tableBlock {
+  margin-top: var(--layout-margin-large);
+  margin-bottom: var(--layout-margin-large);
+}
+
+/* Figures */
+.front-matter__figure {
+  margin: var(--layout-margin-large) 0;
+  padding: var(--layout-padding-medium);
+  background-color: var(--surface-color-background-light-gray);
+  border-radius: var(--layout-border-radius-medium);
+}
+
+.front-matter__figure figcaption {
+  font: var(--typography-regular-body);
+  color: var(--typography-color-secondary);
+  margin-top: var(--layout-margin-small);
+}
+
+/* Lists */
+.front-matter__list {
+  margin: var(--layout-margin-medium) 0;
+  padding-left: var(--layout-padding-large);
+}
+
+/* Notes */
+.front-matter__note {
+  margin: var(--layout-margin-medium) 0;
+  padding: var(--layout-padding-medium);
+  background-color: var(--support-surface-color-info);
+  border-left: var(--layout-border-width-large) solid var(--theme-primary-blue);
+  border-radius: var(--layout-border-radius-small);
+}
+
+.front-matter__note p {
+  margin: 0;
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+}
+
+/* Unknown content types */
+.front-matter__unknown {
+  margin: var(--layout-margin-medium) 0;
+  padding: var(--layout-padding-medium);
+  background-color: var(--surface-color-background-light-gray);
+  border-radius: var(--layout-border-radius-small);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .front-matter-renderer {
+    padding: var(--layout-padding-medium);
+  }
+
+  .front-matter-renderer__title {
+    font: var(--typography-bold-h2);
+  }
+
+  .front-matter__heading--level-2 {
+    font: var(--typography-bold-h3);
+  }
+
+  .front-matter__heading--level-3 {
+    font: var(--typography-bold-h4);
+  }
+}
+
+@media (min-width: 38rem) {
+  .front-matter-renderer {
+    padding: var(--layout-padding-32);
+  }
+}
+
+@media (min-width: 57rem) {
+  .front-matter-renderer {
+    padding: var(--layout-padding-48);
+  }
+}

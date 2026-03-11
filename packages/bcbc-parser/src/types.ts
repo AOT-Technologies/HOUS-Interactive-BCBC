@@ -23,20 +23,59 @@ export interface DocumentMetadata {
 }
 
 /**
- * Preface content (inside volume)
+ * Front Matter content (inside volume)
+ * Contains preface, introduction, and committees sections
+ */
+export interface FrontMatter {
+  id: string;
+  preface?: PrefaceContent;
+  introduction?: IntroductionContent;
+  committees?: CommitteesContent;
+}
+
+/**
+ * Preface content
  */
 export interface PrefaceContent {
   id: string;
   type: 'preface';
-  content: PrefaceSection[];
+  content: FrontMatterContentItem[];
 }
 
-export interface PrefaceSection {
-  type: 'paragraph' | 'heading';
+/**
+ * Introduction content
+ */
+export interface IntroductionContent {
   id: string;
-  content: string;
-  level?: number;  // For headings
+  type: 'introduction';
+  title?: string;
+  content: FrontMatterContentItem[];
 }
+
+/**
+ * Committees content
+ */
+export interface CommitteesContent {
+  id: string;
+  type: 'committees';
+  title?: string;
+  tables?: any[];  // Committee tables
+  notes?: any[];   // Committee notes
+}
+
+/**
+ * Front matter content item (paragraph, heading, etc.)
+ */
+export interface FrontMatterContentItem {
+  type: 'paragraph' | 'heading' | 'table' | 'figure' | 'list';
+  id: string;
+  content?: string;
+  level?: number;  // For headings
+  [key: string]: any;  // Allow additional properties
+}
+
+// Legacy type alias for backward compatibility
+export type PrefaceSection = FrontMatterContentItem;
 
 /**
  * Index structure (inside volume)
@@ -97,14 +136,15 @@ export interface ColumnSpec {
 }
 
 /**
- * Volume structure (contains preface, divisions, index, conversions)
+ * Volume structure (contains front matter, divisions, index, conversions)
  */
 export interface Volume {
   id: string;
   type: 'volume';
   number: number;  // 1 or 2
   title: string;
-  preface?: PrefaceContent;  // Only in Volume 1
+  frontMatter?: FrontMatter;  // Front matter with preface, introduction, committees
+  preface?: PrefaceContent;  // Legacy: Only in Volume 1 (deprecated, use frontMatter)
   divisions: Division[];
   index?: IndexSection;
   conversions?: ConversionsSection;

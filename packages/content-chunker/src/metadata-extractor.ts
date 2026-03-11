@@ -132,14 +132,50 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
 
     // IMPORTANT: Maintain order as they appear in the volume
 
-    // 1. Add Preface (if exists in this volume)
-    if (volume.preface) {
-      volumeNode.children?.push({
-        id: volume.preface.id,
-        type: 'article',
-        title: 'Preface',
-        path: `/code/preface`,
-      });
+    // 1. Add Front Matter sections (if they exist in this volume)
+    if (volume.frontMatter) {
+      const frontMatterChildren: NavigationNode[] = [];
+      
+      // Add Preface
+      if (volume.frontMatter.preface) {
+        frontMatterChildren.push({
+          id: volume.frontMatter.preface.id,
+          type: 'article',
+          title: 'Preface',
+          path: `/code/front-matter/preface`,
+        });
+      }
+      
+      // Add Introduction
+      if (volume.frontMatter.introduction) {
+        frontMatterChildren.push({
+          id: volume.frontMatter.introduction.id,
+          type: 'article',
+          title: volume.frontMatter.introduction.title || 'Introduction',
+          path: `/code/front-matter/introduction`,
+        });
+      }
+      
+      // Add Committees
+      if (volume.frontMatter.committees) {
+        frontMatterChildren.push({
+          id: volume.frontMatter.committees.id,
+          type: 'article',
+          title: volume.frontMatter.committees.title || 'Committees',
+          path: `/code/front-matter/committees`,
+        });
+      }
+      
+      // Add Front Matter node with children if any sections exist
+      if (frontMatterChildren.length > 0) {
+        volumeNode.children?.push({
+          id: volume.frontMatter.id,
+          type: 'division',
+          title: 'Front Matter',
+          path: `/code/front-matter`,
+          children: frontMatterChildren,
+        });
+      }
     }
 
     // 2. Add divisions for this volume (in order)

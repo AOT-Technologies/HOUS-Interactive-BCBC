@@ -19,6 +19,7 @@ import type { ReadingViewProps } from '@repo/data';
 import type { Subsection, Article, Section } from '@bc-building-code/bcbc-parser';
 import { useSectionStore } from '../../lib/stores/section-store';
 import { useAppendixStore, type PartAppendix, type ApplicationNote, type AppendixContentBlock } from '../../lib/stores/appendix-store';
+import { useFrontMatterStore } from '../../lib/stores/front-matter-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
 import { useEquationStore } from '../../stores/equation-store';
 import { parseContentPath } from '../../lib/url-utils';
@@ -32,6 +33,7 @@ import { SubsectionBlock } from './SubsectionBlock';
 import { ArticleBlock } from './ArticleBlock';
 import { TableBlock } from './TableBlock';
 import { FigureBlock } from './FigureBlock';
+import { FrontMatterRenderer } from './FrontMatterRenderer';
 import { CrossReferenceContext } from './CrossReferenceContext';
 import { CrossReferenceModal } from './CrossReferenceModal';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
@@ -110,6 +112,14 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     clearError,
   } = useSectionStore();
   const fetchAppendix = useAppendixStore((s) => s.fetchAppendix);
+  
+  const {
+    currentSection: currentFrontMatter,
+    loading: frontMatterLoading,
+    error: frontMatterError,
+    fetchFrontMatter,
+    clearError: clearFrontMatterError,
+  } = useFrontMatterStore();
 
   const {
     navigationTree,
@@ -141,8 +151,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   const slug = liveSlug || initialSlug;
   const isPartLevel = slug.length === 2;
+  const isFrontMatterLevel = slug.length === 2 && slug[0]?.toLowerCase() === 'front-matter';
   const isAppendixLevel = slug.length === 3 && slug[2]?.toLowerCase() === 'appendix';
-  const isSectionLevelOrDeeper = slug.length >= 3 && !isAppendixLevel;
+  const isSectionLevelOrDeeper = slug.length >= 3 && !isAppendixLevel && !isFrontMatterLevel;
   const requestedSectionKey = slug.slice(0, 3).join('/');
   const loadedSectionKey = currentPath.slice(0, 3).join('/');
   const isErrorForRequestedSection = Boolean(error) && loadedSectionKey === requestedSectionKey;
@@ -594,6 +605,24 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     loadContent();
   }, [slugKey, version, fetchSection, isSectionLevelOrDeeper]);
 
+  // Fetch front matter content when on front matter page
+  useEffect(() => {
+    if (!isFrontMatterLevel) {
+      return;
+    }
+
+    const loadFrontMatter = async () => {
+      try {
+        const section = slug[1]; // preface, introduction, or committees
+        await fetchFrontMatter(version, section);
+      } catch (err) {
+        console.error('Failed to load front matter:', err);
+      }
+    };
+
+    loadFrontMatter();
+  }, [slugKey, version, fetchFrontMatter, isFrontMatterLevel, slug]);
+
   useEffect(() => {
     if (!isAppendixLevel) {
       setPartAppendix(null);
@@ -806,8 +835,62 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   };
 
   // Loading state
-  if (loading || (isAppendixLevel && appendixLoading)) {
+  if (loading || (isAppendixLevel && appendixLoading) || (isFrontMatterLevel && frontMatterLoading)) {
     return renderLoadingSkeleton();
+  }
+
+  // Front matter rendering
+  if (isFrontMatterLevel) {
+    // Error state
+    if (frontMatterError) {
+      return (
+        <div className="reading-view">
+          <div className="reading-view__error">
+            <h2>Unable to Load Content</h2>
+            <p>{frontMatterError}</p>
+            <div className="reading-view__error-actions">
+              <button
+                onClick={() => {
+                  clearFrontMatterError();
+                  fetchFrontMatter(version, slug[1]);
+                }}
+                className="reading-view__error-button"
+              >
+                Try Again
+              </button>
+              <a href="/" className="reading-view__error-link">
+                Return to Homepage
+              </a>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // No content state
+    if (!currentFrontMatter) {
+      return renderLoadingSkeleton();
+    }
+
+    const sectionTitle = currentFrontMatter.title || slug[1];
+    const pdfLabel = `Front Matter - ${sectionTitle} PDF`;
+
+    return (
+      <CrossReferenceContext.Provider
+        value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
+      >
+        <div className="reading-view" ref={contentContainerRef}>
+          <ReadingViewHeader pdfLabel={pdfLabel} />
+
+          <div className="reading-view__content">
+            <FrontMatterRenderer
+              section={currentFrontMatter}
+              interactive={true}
+            />
+          </div>
+        </div>
+      </CrossReferenceContext.Provider>
+    );
   }
 
   if (isPartLevel) {
