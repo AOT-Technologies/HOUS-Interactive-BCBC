@@ -135,11 +135,13 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
   }, []);
 
   /**
-   * Scroll to active node when current path changes
+   * Scroll to the active node when navigation or tree search changes.
+   * Do not rerun this for every expand/collapse action, otherwise opening an
+   * unrelated branch can snap the tree back to the current article.
    */
   useEffect(() => {
     scrollActiveNodeIntoView();
-  }, [currentPath, expandedNodes, searchQuery, scrollActiveNodeIntoView]);
+  }, [currentPath, searchQuery, scrollActiveNodeIntoView]);
 
   const handleNodeAction = useCallback(
     (node: NavigationNode, triggerElement?: HTMLElement) => {
