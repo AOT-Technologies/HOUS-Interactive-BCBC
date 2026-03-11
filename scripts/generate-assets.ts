@@ -61,6 +61,8 @@ const rootDir = join(__dirname, '..');
 // Configuration
 const VERSIONS_FILE = process.env.VERSIONS_FILE || join(rootDir, 'data/source/versions.json');
 const OUTPUT_BASE_DIR = process.env.OUTPUT_BASE_DIR || join(rootDir, 'apps/web/public/data');
+const DOWNLOAD_OPTIONS_SOURCE_FILE =
+  process.env.DOWNLOAD_OPTIONS_FILE || join(rootDir, 'data/source/downloadOptions.json');
 
 // Version configuration interface
 interface VersionConfig {
@@ -662,6 +664,30 @@ async function generateVersionsIndex(
 }
 
 /**
+ * Copy download options source into public data directory
+ */
+async function generateDownloadOptionsData(): Promise<void> {
+  logger.step('Generating download options data');
+
+  try {
+    const content = await readFile(DOWNLOAD_OPTIONS_SOURCE_FILE, 'utf-8');
+    const data = JSON.parse(content);
+    if (!data || !Array.isArray(data.versions)) {
+      throw new Error('Invalid downloadOptions.json: missing or invalid "versions" array');
+    }
+
+    const outputPath = join(OUTPUT_BASE_DIR, 'download-options.json');
+    await writeFile(outputPath, JSON.stringify(data, null, 2));
+
+    logger.success('Generated download-options.json');
+    logger.info(`  Versions: ${data.versions.length}`);
+  } catch (error) {
+    logger.error(`Failed to generate download-options.json: ${error}`);
+    throw error;
+  }
+}
+
+/**
  * Generate final report
  */
 async function generateReport(
@@ -694,6 +720,7 @@ async function generateReport(
   console.log('  ✓ amendment-dates.json');
   console.log('  ✓ content-types.json');
   console.log('  ✓ quick-access.json');
+  console.log('  ✓ download-options.json');
   console.log('  ✓ functional-statements.json');
   console.log('  ✓ objectives.json');
   console.log('  ✓ content/ (directory with chunks)');
@@ -726,6 +753,9 @@ async function main(): Promise<void> {
     
     // Generate unified versions index
     await generateVersionsIndex(generatedVersions);
+
+    // Generate download options file
+    await generateDownloadOptionsData();
     
     // Generate final report
     await generateReport(startTime, generatedVersions);

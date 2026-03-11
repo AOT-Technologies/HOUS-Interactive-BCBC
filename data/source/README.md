@@ -24,6 +24,14 @@ The complete BC Building Code 2024 in JSON format. This is the primary source fi
 ### `bcbc-2024-amendments.json` (Optional)
 Supplementary amendment data if needed separately from the main file.
 
+### `downloadOptions.json`
+Download page content configuration by code version.
+
+When a new version is added to `versions.json`, add matching download data here:
+- `codePdfs` (full-code PDF links)
+- `revisionsErrata` (title, effectiveDate, description, pdfLink)
+- `about` section text
+
 ## Usage
 
 The build pipeline reads from this directory:

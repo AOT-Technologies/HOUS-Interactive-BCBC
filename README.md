@@ -2,7 +2,7 @@
 
 A client-side search application for the British Columbia Building Code, enabling users to search, navigate, and explore building code requirements through an intuitive web interface.
 
-**Multi-Version Support:** The application supports multiple BC Building Code versions (2024, 2027, etc.) with seamless switching between versions.
+**Multi-Version Support:** The application supports multiple BC Building Code versions (2024, with infrastructure ready for future versions) with seamless switching between versions.
 
 ## Tech Stack
 
@@ -57,14 +57,14 @@ bc-building-code/
 ├── data/
 │   ├── source/            # BC Building Code JSON source (input)
 │   │   ├── versions.json  # Version configuration (NEW)
+│   │   ├── downloadOptions.json # Download page content per version
 │   │   ├── bcbc-2024.json # BC Building Code 2024
-│   │   └── bcbc-2027.json # BC Building Code 2027 (future)
+│   │   └── (future versions can be added here)
 │   └── samples/           # Sample data for testing
 ├── apps/web/              # Next.js application
 │   └── public/data/       # Generated assets (output)
 │       ├── versions.json  # Version index (generated)
-│       ├── 2024/          # Version-specific assets
-│       └── 2027/          # Future version assets
+│       └── 2024/          # Version-specific assets
 ├── packages/
 │   ├── ui/                # ✅ BC Design System UI components
 │   ├── constants/         # ✅ Shared constants (URLs, IDs, test IDs)
@@ -115,8 +115,12 @@ See [docs/HOW-TO-ADD-NEW-VERSION.md](docs/HOW-TO-ADD-NEW-VERSION.md) for complet
 **Quick steps:**
 1. Add source JSON: `data/source/bcbc-2027.json`
 2. Update `data/source/versions.json` to include new version
-3. Run `npx pnpm generate-assets`
-4. Done! Version selector will show both versions
+3. Update `data/source/downloadOptions.json` with the new version's:
+   - `codePdfs` (full code PDF link)
+   - `revisionsErrata` entries (title, effectiveDate, description, pdfLink)
+   - `about` content
+4. Run `npx pnpm generate-assets`
+5. Done! Version selector and Download page will show the new version
 
 ### Version Switching
 
@@ -154,9 +158,16 @@ Place BC Building Code JSON files in `data/source/`:
 ```
 data/source/
 ├── versions.json      # Version configuration
+├── downloadOptions.json # Download page version data (required for /download)
 ├── bcbc-2024.json     # BC Building Code 2024
 └── bcbc-2027.json     # BC Building Code 2027 (future)
 ```
+
+### Download Page Configuration
+
+The Download page is configured from `data/source/downloadOptions.json`.
+
+Important: when you add a new version in `data/source/versions.json`, you must also add that version in `data/source/downloadOptions.json`; otherwise the Download page will not have PDF links and revision/errata content for that version.
 
 For testing, use sample data:
 ```bash
