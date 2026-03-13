@@ -306,7 +306,18 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       }
 
       const nextQuery = params.toString();
-      const nextUrl = nextQuery ? `${pathname}?${nextQuery}` : pathname;
+      const currentPathname =
+        typeof window !== 'undefined' ? window.location.pathname : pathname;
+      const nextUrl = nextQuery ? `${currentPathname}?${nextQuery}` : currentPathname;
+      const currentUrl =
+        typeof window !== 'undefined'
+          ? `${window.location.pathname}${window.location.search}`
+          : `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
+
+      if (nextUrl === currentUrl) {
+        return;
+      }
+
       router.replace(nextUrl, { scroll: false });
     },
     [pathname, router, searchParams]
@@ -826,6 +837,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   useEffect(() => {
     if (modalQueryParam && pendingModalParamRef.current === modalQueryParam) {
       pendingModalParamRef.current = null;
+      return;
     }
 
     if (!modalQueryParam) {
