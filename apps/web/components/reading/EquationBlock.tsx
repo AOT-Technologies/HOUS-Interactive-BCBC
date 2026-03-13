@@ -67,10 +67,6 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
     equation.plainText &&
     equation.description.trim() !== equation.plainText.trim();
 
-  const latexWithDelimiters = mode === 'inline'
-    ? `\\(${latexForRender}\\)`
-    : `\\[${latexForRender}\\]`;
-
   useEffect(() => {
     if (!hasMathml && !showLatex && !fallbackText) {
       console.error('[EquationBlock] Missing equation render data', {
@@ -98,24 +94,26 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
     >
       {hasMathml ? (
         <MathJax
-          dynamic
+          renderMode="pre"
+          text={resolvedMathml}
+          typesettingOptions={{ fn: 'mathml2chtmlPromise' }}
           inline={mode === 'inline'}
           hideUntilTypeset="first"
           className="equation-block__mathml"
           role="math"
           aria-label={equation.plainText || equation.description || `Equation ${equation.id}`}
         >
-          <span dangerouslySetInnerHTML={{ __html: resolvedMathml }} />
         </MathJax>
       ) : showLatex ? (
         <MathJax
-          dynamic
+          renderMode="pre"
+          text={latexForRender}
+          typesettingOptions={{ fn: 'tex2chtmlPromise' }}
           inline={mode === 'inline'}
           hideUntilTypeset="first"
           className="equation-block__content"
           aria-label={equation.description || `Equation ${equation.number}`}
         >
-          {latexWithDelimiters}
         </MathJax>
       ) : (
         <code className="equation-block__fallback" aria-label="Mathematical equation">

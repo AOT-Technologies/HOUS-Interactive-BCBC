@@ -1,8 +1,8 @@
 export interface ParsedReferenceId {
   raw: string;
-  kind: 'section' | 'part_appendix';
+  kind: 'section' | 'part_appendix' | 'appendix_document';
   division: string;
-  part: string;
+  part?: string;
   section?: string;
   subsection?: string;
   article?: string;
@@ -11,10 +11,17 @@ export interface ParsedReferenceId {
   subclause?: string;
   table?: string;
   appnote?: string;
+  appendixLetter?: string;
+  appendixSection?: string;
+  paragraph?: string;
+  figure?: string;
 }
 
 const PART_APPENDIX_REF_REGEX =
   /^nbc\.div([A-Za-z0-9]+)\.part(\d+)\.appendix(?:\.appnote([A-Za-z0-9]+))?/i;
+
+const APPENDIX_DOCUMENT_REF_REGEX =
+  /^nbc\.div([A-Za-z0-9]+)\.appendix([A-Za-z])(?:\.appsect(\d+))?(?:\.subsect(\d+))?(?:\.article(\d+))?(?:\.para(\d+))?(?:\.table(\d+))?(?:\.figure(\d+))?/i;
 
 const SECTION_REF_REGEX =
   /^nbc\.div([A-Za-z0-9]+)\.part(\d+)\.sect(\d+)(?:\.subsect(\d+))?(?:\.art(\d+))?(?:\.sent(\d+))?(?:\.clause(\d+))?(?:\.subclause(\d+))?(?:\.table(\d+))?/i;
@@ -28,6 +35,22 @@ export function parseReferenceId(referenceId: string): ParsedReferenceId | null 
       division: `nbc.div${appendixMatch[1]}`,
       part: appendixMatch[2],
       appnote: appendixMatch[3] || undefined,
+    };
+  }
+
+  const appendixDocumentMatch = referenceId.match(APPENDIX_DOCUMENT_REF_REGEX);
+  if (appendixDocumentMatch) {
+    return {
+      raw: referenceId,
+      kind: 'appendix_document',
+      division: `nbc.div${appendixDocumentMatch[1]}`,
+      appendixLetter: appendixDocumentMatch[2]?.toUpperCase(),
+      appendixSection: appendixDocumentMatch[3] || undefined,
+      subsection: appendixDocumentMatch[4] || undefined,
+      article: appendixDocumentMatch[5] || undefined,
+      paragraph: appendixDocumentMatch[6] || undefined,
+      table: appendixDocumentMatch[7] || undefined,
+      figure: appendixDocumentMatch[8] || undefined,
     };
   }
 
@@ -64,10 +87,15 @@ export function getNavigationSlug(referenceId: string): string[] | null {
   if (!parsed) return null;
 
   if (parsed.kind === 'part_appendix') {
+    if (!parsed.part) return null;
     return [parsed.division, parsed.part, 'appendix'];
   }
 
-  if (!parsed.section) return null;
+  if (parsed.kind === 'appendix_document') {
+    return parsed.appendixLetter ? [parsed.division, 'appendix', parsed.appendixLetter] : null;
+  }
+
+  if (!parsed.part || !parsed.section) return null;
 
   const base = [parsed.division, parsed.part, parsed.section];
 
@@ -91,10 +119,16 @@ export function getSectionFetchPath(version: string, referenceId: string): strin
   );
 
   if (parsed.kind === 'part_appendix') {
+    if (!parsed.part) return null;
     return `/data/${version}/content/${transformedDivision}/part-${parsed.part}/appendix.json`;
   }
 
-  if (!parsed.section) return null;
+  if (parsed.kind === 'appendix_document') {
+    if (!parsed.appendixLetter) return null;
+    return `/data/${version}/content/${transformedDivision}/appendix-${parsed.appendixLetter.toLowerCase()}.json`;
+  }
+
+  if (!parsed.part || !parsed.section) return null;
 
   return `/data/${version}/content/${transformedDivision}/part-${parsed.part}/section-${parsed.section}.json`;
 }

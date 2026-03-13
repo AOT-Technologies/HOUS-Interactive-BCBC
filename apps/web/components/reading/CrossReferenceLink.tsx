@@ -107,23 +107,29 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     let active = true;
 
     const resolveAppNoteDisplayText = async () => {
-      if (!shouldResolveAppnoteDisplayText || !parsedReference) {
+      if (
+        !shouldResolveAppnoteDisplayText ||
+        !parsedReference ||
+        parsedReference.kind !== 'part_appendix' ||
+        !parsedReference.part
+      ) {
         if (active) {
           setAppnoteDisplayText(null);
         }
         return;
       }
 
+      const partNumber = parsedReference.part;
       const tokenMatch = referenceId.match(/\.appnote([A-Za-z0-9]+)/i);
       const appnoteToken = tokenMatch?.[1] || parsedReference.appnote || '';
-      const notePrefix = `${parsedReference.division}.part${parsedReference.part}.appendix.appnote${appnoteToken}`;
+      const notePrefix = `${parsedReference.division}.part${partNumber}.appendix.appnote${appnoteToken}`;
 
       let notesMap: Map<string, ApplicationNoteMeta>;
       try {
         const appendixPayload = (await fetchAppendix(
           version,
           parsedReference.division,
-          parsedReference.part
+          partNumber
         )) as PartAppendixPayload;
         const resolvedAppendixPayload = resolvePartAppendixForEffectiveDate(
           appendixPayload as any,

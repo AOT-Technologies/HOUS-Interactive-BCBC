@@ -148,6 +148,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
       const isNavigable =
         node.type === 'part' ||
         node.type === 'part_appendix' ||
+        node.type === 'division_appendix' ||
         node.type === 'section' ||
         node.type === 'subsection' ||
         node.type === 'article';

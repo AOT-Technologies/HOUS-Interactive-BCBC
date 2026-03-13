@@ -6,6 +6,8 @@
  * - /code/{division}/{part}/{section}
  * - /code/{division}/{part}/{section}/{subsection}
  * - /code/{division}/{part}/{section}/{subsection}/{article}
+ * - /code/{division}/{part}/appendix
+ * - /code/{division}/appendix/{letter}
  * 
  * Query parameters:
  * - version: Code version (e.g., "2024")
@@ -91,8 +93,12 @@ export async function generateMetadata({ params }: PageProps) {
   const [division, part, section, subsection, article] = slug;
 
   let title = 'BC Building Code';
-  
-  if (article && subsection) {
+
+  if (part === 'appendix' && section) {
+    title = `Appendix ${section.toUpperCase()} - BC Building Code`;
+  } else if (section === 'appendix') {
+    title = `Part ${part} Appendix - BC Building Code`;
+  } else if (article && subsection) {
     title = `Article ${article} - BC Building Code`;
   } else if (subsection) {
     title = `Subsection ${subsection} - BC Building Code`;

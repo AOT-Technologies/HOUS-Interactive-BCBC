@@ -18,7 +18,13 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { ReadingViewProps } from '@repo/data';
 import type { Subsection, Article, Section } from '@bc-building-code/bcbc-parser';
 import { useSectionStore } from '../../lib/stores/section-store';
-import { useAppendixStore, type PartAppendix, type ApplicationNote, type AppendixContentBlock } from '../../lib/stores/appendix-store';
+import {
+  useAppendixStore,
+  type PartAppendix,
+  type DivisionAppendix,
+  type ApplicationNote,
+  type AppendixContentBlock,
+} from '../../lib/stores/appendix-store';
 import { useFrontMatterStore } from '../../lib/stores/front-matter-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
 import { useEquationStore } from '../../stores/equation-store';
@@ -36,6 +42,7 @@ import { FigureBlock } from './FigureBlock';
 import { FrontMatterRenderer } from './FrontMatterRenderer';
 import { CrossReferenceContext } from './CrossReferenceContext';
 import { CrossReferenceModal } from './CrossReferenceModal';
+import { DivisionAppendixRenderer } from './DivisionAppendixRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './ReadingView.css';
 
@@ -61,17 +68,63 @@ type ResolvedCrossReference = {
   referenceId: string;
   heading: string;
   targetSlug: string[] | null;
-  mode: 'article' | 'subsection' | 'section' | 'appnote' | 'standard' | 'error';
+  mode: 'article' | 'subsection' | 'section' | 'appnote' | 'division_appendix' | 'standard' | 'error';
   section?: SectionWithAppendix;
   subsection?: Subsection;
   article?: Article;
   note?: ApplicationNote;
+  divisionAppendix?: DivisionAppendix;
   standard?: StandardReferenceEntry;
   errorMessage?: string;
 };
 
 const normalizeStandardsKey = (value: string): string =>
   value.replace(/[^a-z0-9.]/gi, '').toLowerCase();
+
+const formatAppendixDocumentHeading = (
+  parsed: ReturnType<typeof parseReferenceId>
+): string => {
+  if (!parsed || parsed.kind !== 'appendix_document' || !parsed.appendixLetter) {
+    return 'Appendix reference';
+  }
+
+  const baseNumber = [
+    parsed.appendixLetter,
+    parsed.appendixSection,
+    parsed.subsection,
+    parsed.article,
+  ]
+    .filter(Boolean)
+    .join('.');
+
+  if (parsed.table) {
+    return `Table ${baseNumber}`;
+  }
+
+  if (parsed.paragraph) {
+    return `Sentence ${baseNumber}.(${parsed.paragraph})`;
+  }
+
+  if (parsed.article) {
+    return `Article ${baseNumber}`;
+  }
+
+  if (parsed.subsection) {
+    return `Subsection ${[
+      parsed.appendixLetter,
+      parsed.appendixSection,
+      parsed.subsection,
+    ]
+      .filter(Boolean)
+      .join('.')}`;
+  }
+
+  if (parsed.appendixSection) {
+    return `Section ${[parsed.appendixLetter, parsed.appendixSection].filter(Boolean).join('.')}`;
+  }
+
+  return `Appendix ${parsed.appendixLetter}`;
+};
 
 export const ReadingView: React.FC<ReadingViewProps> = ({
   slug: initialSlug,
@@ -89,6 +142,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const pendingModalParamRef = useRef<string | null>(null);
   const [modalData, setModalData] = useState<ResolvedCrossReference | null>(null);
   const [partAppendix, setPartAppendix] = useState<PartAppendix | null>(null);
+  const [divisionAppendix, setDivisionAppendix] = useState<DivisionAppendix | null>(null);
   const [appendixLoading, setAppendixLoading] = useState(false);
   const [appendixError, setAppendixError] = useState<string | null>(null);
   
@@ -112,6 +166,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     clearError,
   } = useSectionStore();
   const fetchAppendix = useAppendixStore((s) => s.fetchAppendix);
+  const fetchDivisionAppendix = useAppendixStore((s) => s.fetchDivisionAppendix);
   
   const {
     currentSection: currentFrontMatter,
@@ -152,7 +207,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const slug = liveSlug || initialSlug;
   const isPartLevel = slug.length === 2;
   const isFrontMatterLevel = slug.length === 2 && slug[0]?.toLowerCase() === 'front-matter';
-  const isAppendixLevel = slug.length === 3 && slug[2]?.toLowerCase() === 'appendix';
+  const isPartAppendixLevel = slug.length === 3 && slug[2]?.toLowerCase() === 'appendix';
+  const isDivisionAppendixLevel = slug.length === 3 && slug[1]?.toLowerCase() === 'appendix';
+  const isAppendixLevel = isPartAppendixLevel || isDivisionAppendixLevel;
   const isSectionLevelOrDeeper = slug.length >= 3 && !isAppendixLevel && !isFrontMatterLevel;
   const requestedSectionKey = slug.slice(0, 3).join('/');
   const loadedSectionKey = currentPath.slice(0, 3).join('/');
@@ -192,9 +249,15 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     return null;
   };
 
-  const partPath = slug.length >= 2 ? `/code/${slug[0]}/${slug[1]}` : null;
+  const partPath =
+    slug.length >= 2 && !isDivisionAppendixLevel
+      ? `/code/${slug[0]}/${slug[1]}`
+      : null;
   const currentPartNode = partPath
     ? findNodeByPath(navigationTree, partPath)
+    : null;
+  const currentDivisionAppendixNode = isDivisionAppendixLevel
+    ? findNodeByPath(navigationTree, `/code/${slug[0]}/appendix/${slug[2]}`)
     : null;
 
   const divisionLabel = getDivisionLabel(slug[0] || '');
@@ -267,16 +330,31 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const fetchTargetAppendix = useCallback(
     async (referenceId: string): Promise<PartAppendix | null> => {
       const parsed = parseReferenceId(referenceId);
-      if (!parsed || parsed.kind !== 'part_appendix') return null;
+      if (!parsed || parsed.kind !== 'part_appendix' || !parsed.part) return null;
 
       try {
-        const appendix = await fetchAppendix(version, parsed.division, parsed.part);
+        const partNumber = parsed.part;
+        const appendix = await fetchAppendix(version, parsed.division, partNumber);
         return resolvePartAppendixForEffectiveDate(appendix as any, effectiveDate);
       } catch {
         return null;
       }
     },
     [effectiveDate, fetchAppendix, version]
+  );
+
+  const fetchTargetDivisionAppendix = useCallback(
+    async (referenceId: string): Promise<DivisionAppendix | null> => {
+      const parsed = parseReferenceId(referenceId);
+      if (!parsed || parsed.kind !== 'appendix_document' || !parsed.appendixLetter) return null;
+
+      try {
+        return await fetchDivisionAppendix(version, parsed.division, parsed.appendixLetter);
+      } catch {
+        return null;
+      }
+    },
+    [fetchDivisionAppendix, version]
   );
 
   const fetchStandardsMap = useCallback(async (): Promise<Record<string, StandardReferenceEntry> | null> => {
@@ -355,9 +433,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         };
       }
 
-      if (parsed.kind === 'part_appendix' && parsed.appnote) {
+      if (parsed.kind === 'part_appendix' && parsed.appnote && parsed.part) {
+        const partNumber = parsed.part;
         const appendix =
-          (isAppendixLevel ? resolvedPartAppendix : null) ||
+          (isPartAppendixLevel ? resolvedPartAppendix : null) ||
           (await fetchTargetAppendix(referenceId));
 
         if (!appendix) {
@@ -372,7 +451,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
         const appnoteTokenMatch = referenceId.match(/\.appnote([A-Za-z0-9]+)/i);
         const appnoteToken = appnoteTokenMatch?.[1] || parsed.appnote;
-        const notePrefix = `${parsed.division}.part${parsed.part}.appendix.appnote${appnoteToken}`;
+        const notePrefix = `${parsed.division}.part${partNumber}.appendix.appnote${appnoteToken}`;
         const note = appendix.application_notes?.find((item: ApplicationNote) => item.id.startsWith(notePrefix));
 
         if (!note) {
@@ -396,7 +475,34 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         };
       }
 
-      if (parsed.kind !== 'section' || !parsed.section) {
+      if (parsed.kind === 'appendix_document') {
+        const appendix =
+          (isDivisionAppendixLevel &&
+          divisionAppendix &&
+          divisionAppendix.letter.toUpperCase() === parsed.appendixLetter
+            ? divisionAppendix
+            : null) || (await fetchTargetDivisionAppendix(referenceId));
+
+        if (!appendix) {
+          return {
+            referenceId,
+            heading: formatAppendixDocumentHeading(parsed),
+            mode: 'error',
+            targetSlug: getNavigationSlug(referenceId),
+            errorMessage: 'Referenced appendix could not be loaded.',
+          };
+        }
+
+        return {
+          referenceId,
+          heading: formatAppendixDocumentHeading(parsed),
+          mode: 'division_appendix',
+          divisionAppendix: appendix,
+          targetSlug: getNavigationSlug(referenceId),
+        };
+      }
+
+      if (parsed.kind !== 'section' || !parsed.part || !parsed.section) {
         return {
           referenceId,
           heading: referenceId,
@@ -476,9 +582,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     [
       fetchStandardsMap,
       fetchTargetAppendix,
+      fetchTargetDivisionAppendix,
       fetchTargetSection,
-      isAppendixLevel,
-      partAppendix,
+      divisionAppendix,
+      isDivisionAppendixLevel,
+      isPartAppendixLevel,
       requestedSectionKey,
       resolvedSection,
       resolvedPartAppendix,
@@ -625,9 +733,14 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   useEffect(() => {
     if (!isAppendixLevel) {
-      setPartAppendix(null);
-      setAppendixError(null);
       setAppendixLoading(false);
+      setAppendixError(null);
+    }
+  }, [isAppendixLevel]);
+
+  useEffect(() => {
+    if (!isPartAppendixLevel) {
+      setPartAppendix(null);
       return;
     }
 
@@ -648,7 +761,32 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     };
 
     loadAppendix();
-  }, [fetchAppendix, isAppendixLevel, slug, version]);
+  }, [fetchAppendix, isPartAppendixLevel, slug, version]);
+
+  useEffect(() => {
+    if (!isDivisionAppendixLevel) {
+      setDivisionAppendix(null);
+      return;
+    }
+
+    const loadDivisionAppendix = async () => {
+      setAppendixLoading(true);
+      setAppendixError(null);
+      setDivisionAppendix(null);
+
+      try {
+        const appendix = await fetchDivisionAppendix(version, slug[0], slug[2]);
+        setDivisionAppendix(appendix);
+      } catch (err) {
+        const message = err instanceof Error ? err.message : 'Failed to load appendix.';
+        setAppendixError(message);
+      } finally {
+        setAppendixLoading(false);
+      }
+    };
+
+    loadDivisionAppendix();
+  }, [fetchDivisionAppendix, isDivisionAppendixLevel, slug, version]);
 
   // Preload equation map for [EQ:*:*] marker resolution in content text.
   useEffect(() => {
@@ -733,19 +871,21 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   ): React.ReactNode => {
     return (
       <>
-        {block.paragraphs?.map((paragraph) => (
-          <p key={paragraph.id}>{parseTextWithMarkers(paragraph.content || '', [], interactive)}</p>
+        {block.paragraphs?.map((paragraph, index) => (
+          <p key={`${block.id}-paragraph-${paragraph.id || index}`}>
+            {parseTextWithMarkers(paragraph.content || '', [], interactive)}
+          </p>
         ))}
-        {block.tables?.map((table) => (
+        {block.tables?.map((table, index) => (
           <TableBlock
-            key={table.id}
+            key={`${block.id}-table-${table.id || index}`}
             table={table}
             interactive={interactive}
             effectiveDate={effectiveDate}
           />
         ))}
-        {block.figures?.map((figure) => (
-          <FigureBlock key={figure.id} figure={figure} />
+        {block.figures?.map((figure, index) => (
+          <FigureBlock key={`${block.id}-figure-${figure.id || index}`} figure={figure} />
         ))}
       </>
     );
@@ -762,8 +902,12 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         </h3>
         <div className="reading-view__appendix-note-content">
           {renderAppendixBlock(note, interactive)}
-          {note.divisions?.map((division) => (
-            <section key={division.id} id={division.id} className="reading-view__appendix-division">
+          {note.divisions?.map((division, index) => (
+            <section
+              key={`${note.id}-division-${division.id || index}`}
+              id={division.id}
+              className="reading-view__appendix-division"
+            >
               {division.title ? <h4>{division.title}</h4> : null}
               {renderAppendixBlock(division, interactive)}
             </section>
@@ -810,6 +954,16 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
     if (modalData.mode === 'appnote' && modalData.note) {
       return renderApplicationNote(modalData.note, false);
+    }
+
+    if (modalData.mode === 'division_appendix' && modalData.divisionAppendix) {
+      return (
+        <DivisionAppendixRenderer
+          appendix={modalData.divisionAppendix}
+          interactive={false}
+          effectiveDate={effectiveDate}
+        />
+      );
     }
 
     if (modalData.mode === 'standard' && modalData.standard) {
@@ -937,7 +1091,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     );
   }
 
-  if (isAppendixLevel) {
+  if (isPartAppendixLevel) {
     if (
       navigationLoading ||
       (navigationTree.length === 0 && currentVersion !== version) ||
@@ -994,6 +1148,81 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
                 )}
               </div>
             </div>
+          </div>
+          <CrossReferenceModal
+            open={Boolean(modalData)}
+            heading={modalData?.heading || 'Cross reference'}
+            scrollToReferenceId={modalData?.referenceId || null}
+            onClose={closeReferenceModal}
+            onGoToSection={() => {
+              if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
+                closeReferenceModal();
+                return;
+              }
+
+              closeReferenceModal();
+              const params = new URLSearchParams(searchParams.toString());
+              params.delete('modal');
+              const query = params.toString();
+              router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
+            }}
+            showGoToSection={modalData?.mode !== 'error'}
+          >
+            {renderModalContent()}
+          </CrossReferenceModal>
+        </div>
+      </CrossReferenceContext.Provider>
+    );
+  }
+
+  if (isDivisionAppendixLevel) {
+    if (
+      navigationLoading ||
+      (navigationTree.length === 0 && currentVersion !== version) ||
+      (navigationTree.length === 0 && !currentDivisionAppendixNode)
+    ) {
+      return renderLoadingSkeleton();
+    }
+
+    if (!currentDivisionAppendixNode || currentDivisionAppendixNode.type !== 'division_appendix') {
+      return (
+        <div className="reading-view">
+          <div className="reading-view__error">
+            <h2>Unable to Load Content</h2>
+            <p>Appendix content is not available for this URL.</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (appendixError) {
+      return (
+        <div className="reading-view">
+          <div className="reading-view__error">
+            <h2>Unable to Load Content</h2>
+            <p>{appendixError}</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (!divisionAppendix) {
+      return renderLoadingSkeleton();
+    }
+
+    const appendixPdfLabel = `${divisionLabel} - Appendix ${divisionAppendix.letter} PDF`;
+    return (
+      <CrossReferenceContext.Provider
+        value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
+      >
+        <div className="reading-view" ref={contentContainerRef}>
+          <ReadingViewHeader pdfLabel={appendixPdfLabel} />
+          <div className="reading-view__content">
+            <DivisionAppendixRenderer
+              appendix={divisionAppendix}
+              interactive={true}
+              effectiveDate={effectiveDate}
+            />
           </div>
           <CrossReferenceModal
             open={Boolean(modalData)}

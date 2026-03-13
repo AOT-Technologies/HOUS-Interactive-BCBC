@@ -139,6 +139,26 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.displayText.endsWith('.')).toBe(false);
   });
 
+  it('formats Appendix D table references with BC appendix numbering', () => {
+    const input =
+      'See Table [REF:internal:nbc.divB.appendixD.appsect1.subsect1.article2.table1:long] of Appendix D.';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('D.1.1.2.');
+  });
+
+  it('avoids duplicating the leading type label for Appendix D sentence references', () => {
+    const input =
+      'See Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] of Appendix D.';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('D.1.2.1.(2).');
+  });
+
   it('parses standard references into cross-reference links', () => {
     const input = 'See [REF:standard:csaa440S1] for details.';
     const nodes = parseTextWithMarkers(input, [], true);

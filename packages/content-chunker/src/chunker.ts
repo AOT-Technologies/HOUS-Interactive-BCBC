@@ -45,6 +45,7 @@ interface RawFrontMatterSection {
 interface RawDivision {
   id: string;
   parts?: RawPart[];
+  appendices?: RawDivisionAppendix[];
 }
 
 interface RawPart {
@@ -64,12 +65,19 @@ interface RawPartAppendix {
   [key: string]: unknown;
 }
 
+interface RawDivisionAppendix {
+  id?: string;
+  type?: string;
+  letter?: string;
+  [key: string]: unknown;
+}
+
 /**
  * Content chunk where data is the raw section object from source JSON.
  */
 export interface RawContentChunk {
   path: string;
-  data: RawSection | RawPartAppendix | RawFrontMatterSection;
+  data: RawSection | RawPartAppendix | RawDivisionAppendix | RawFrontMatterSection;
   size: number;
 }
 
@@ -185,6 +193,21 @@ export function chunkRawContent(document: RawDocumentForChunking): RawContentChu
           });
         }
       }
+
+      for (const appendix of division.appendices ?? []) {
+        if (appendix.type === 'appendix' && appendix.letter) {
+          const appendixPath = generateDivisionAppendixChunkPath(
+            division.id,
+            String(appendix.letter)
+          );
+          const appendixSize = JSON.stringify(appendix).length;
+          chunks.push({
+            path: appendixPath,
+            data: appendix,
+            size: appendixSize,
+          });
+        }
+      }
     }
   }
 
@@ -222,6 +245,14 @@ export function generateAppendixChunkPath(
 ): string {
   const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
   return `content/${normalizedDivision}/part-${String(partNumber)}/appendix.json`;
+}
+
+export function generateDivisionAppendixChunkPath(
+  divisionId: string,
+  appendixLetter: string
+): string {
+  const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
+  return `content/${normalizedDivision}/appendix-${String(appendixLetter).toLowerCase()}.json`;
 }
 
 /**

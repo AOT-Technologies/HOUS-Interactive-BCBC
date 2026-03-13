@@ -176,6 +176,7 @@ export interface Division {
   title: string;
   number: string;
   parts: Part[];
+  appendices?: DivisionAppendix[];
 }
 
 /**
@@ -187,6 +188,69 @@ export interface Part {
   title: string;
   type: 'part';
   sections: Section[];
+  appendix?: PartAppendix;
+}
+
+export interface AppendixParagraph {
+  id: string;
+  content: string;
+}
+
+export interface AppendixContentBlock {
+  id: string;
+  paragraphs?: AppendixParagraph[];
+  tables?: Table[];
+  figures?: Figure[];
+}
+
+export interface AppendixDivision extends AppendixContentBlock {
+  title?: string;
+}
+
+export interface ApplicationNote extends AppendixContentBlock {
+  number?: string;
+  title?: string;
+  divisions?: AppendixDivision[];
+}
+
+export interface PartAppendix {
+  id: string;
+  type: 'part_appendix';
+  introduction?: string;
+  application_notes?: ApplicationNote[];
+}
+
+export interface DivisionAppendixArticle {
+  id: string;
+  type: 'appendix_article';
+  title: string;
+  paragraphs?: AppendixParagraph[];
+  content?: Array<Table | Figure>;
+}
+
+export interface DivisionAppendixSubsection {
+  id: string;
+  type: 'appendix_subsection';
+  title: string;
+  articles: DivisionAppendixArticle[];
+}
+
+export interface DivisionAppendixSection {
+  id: string;
+  type: 'appendix_section';
+  title: string;
+  paragraphs?: AppendixParagraph[];
+  subsections?: DivisionAppendixSubsection[];
+}
+
+export interface DivisionAppendix {
+  id: string;
+  type: 'appendix';
+  letter: string;
+  number: string;
+  title: string;
+  introduction?: string;
+  sections: DivisionAppendixSection[];
 }
 
 /**
@@ -334,9 +398,17 @@ export interface Table {
   type: 'table';
   number: string;
   title: string;
+  source?: string;
   caption?: string;
   headers: string[][];
   rows: TableRow[];
+  formingPart?: FormingPartReference[];
+}
+
+export interface FormingPartReference {
+  type: string;
+  target: string;
+  display_type?: string;
 }
 
 /**

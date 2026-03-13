@@ -62,4 +62,31 @@ describe('appendix-store', () => {
     expect(resultB).toEqual(appendixPayload);
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
+
+  it('fetches and caches division appendix content', async () => {
+    const appendixPayload = {
+      id: 'nbc.divB.appendixD',
+      type: 'appendix' as const,
+      letter: 'D',
+      number: '4',
+      title: 'Fire-Performance Ratings',
+      sections: [],
+    };
+
+    const fetchMock = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValue({
+        ok: true,
+        json: async () => appendixPayload,
+      } as Response);
+
+    const { fetchDivisionAppendix } = useAppendixStore.getState();
+
+    const first = await fetchDivisionAppendix('2027', 'nbc.divB', 'D');
+    const second = await fetchDivisionAppendix('2027', 'nbc.divB', 'D');
+
+    expect(first).toEqual(appendixPayload);
+    expect(second).toEqual(appendixPayload);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
 });

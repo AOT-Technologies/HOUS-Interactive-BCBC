@@ -94,8 +94,16 @@ export interface CrossReference {
 export interface TableContent {
   id: string;
   caption?: string;
+  source?: string;
   headers: string[];
   rows: TableRow[];
+  formingPart?: FormingPartReference[];
+}
+
+export interface FormingPartReference {
+  type: string;
+  target: string;
+  display_type?: string;
 }
 
 export interface TableRow {

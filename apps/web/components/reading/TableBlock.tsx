@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Table, TableCellContent } from '@bc-building-code/bcbc-parser';
+import type { FormingPartReference, Table, TableCellContent } from '@bc-building-code/bcbc-parser';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import { resolveImagePath } from '../../lib/image-config';
 import './TableBlock.css';
@@ -55,9 +55,24 @@ type TableWithRawSupport = Table & {
   structure?: RawTableStructure;
   revisions?: RawTableRevision[];
   table_notes?: RawTableNote[];
+  forming_part?: FormingPartReference[];
   number?: string | number;
   title?: string;
   caption?: string;
+};
+
+type ParsedInternalReference = {
+  appendixLetter?: string;
+  appendixSection?: string;
+  part?: string;
+  section?: string;
+  subsection?: string;
+  article?: string;
+  paragraph?: string;
+  sentence?: string;
+  clause?: string;
+  subclause?: string;
+  table?: string;
 };
 
 /**
@@ -91,7 +106,12 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
   const normalizedText = text
     // Legacy placeholders used in some table content
     .replace(/<>/g, '<italic>')
-    .replace(/<\/>/g, '</italic>');
+    .replace(/<\/>/g, '</italic>')
+    // Normalize dash markers used in tables and common mojibake variants.
+    .replace(/â€”/g, '-')
+    .replace(/â€“/g, '-')
+    .replace(/—/g, '-')
+    .replace(/–/g, '-');
 
   const tokenRegex = /(<italic>[\s\S]*?<\/italic>|<bold>[\s\S]*?<\/bold>|\^\{[\s\S]*?\}|_\{[\s\S]*?\})/gi;
   const nodes: React.ReactNode[] = [];
@@ -208,12 +228,18 @@ const getActiveRevision = <T extends { effective_date?: string }>(
 const normalizeCell = (cell: RawTableCell, isHeader: boolean) => ({
   content: cell.content ?? cell.text ?? '',
   align: cell.align,
-  colspan: cell.colspan,
-  rowspan: cell.rowspan,
+  colspan: typeof cell.colspan === 'number' && cell.colspan > 0 ? cell.colspan : undefined,
+  rowspan: typeof cell.rowspan === 'number' && cell.rowspan > 0 ? cell.rowspan : undefined,
   isHeader: cell.isHeader ?? isHeader,
 });
 
-const normalizeRows = (rows: RawTableRow[], isHeader: boolean, effectiveDate?: string, rowPrefix: string = 'row') =>
+const normalizeRows = (
+  rows: RawTableRow[],
+  isHeader: boolean,
+  effectiveDate?: string,
+  rowPrefix: string = 'row'
+) => {
+  return (
   rows
     .map((row, rowIndex) => {
     const rowObject = Array.isArray(row) ? { cells: row } : row;
@@ -235,7 +261,191 @@ const normalizeRows = (rows: RawTableRow[], isHeader: boolean, effectiveDate?: s
       id?: string;
       type?: 'header_row' | 'body_row';
       cells: ReturnType<typeof normalizeCell>[];
-    }>;
+    }>
+  );
+};
+
+const extractNumeric = (value: string, pattern: RegExp): string | undefined =>
+  value.match(pattern)?.[1];
+
+const toAlphabetOrdinal = (value: number): string => {
+  if (!Number.isFinite(value) || value <= 0) {
+    return String(value);
+  }
+
+  let current = value;
+  let result = '';
+
+  while (current > 0) {
+    current -= 1;
+    result = String.fromCharCode(97 + (current % 26)) + result;
+    current = Math.floor(current / 26);
+  }
+
+  return result;
+};
+
+const toRoman = (value: number): string => {
+  if (!Number.isFinite(value) || value <= 0) {
+    return String(value);
+  }
+
+  const numerals: Array<[number, string]> = [
+    [1000, 'm'],
+    [900, 'cm'],
+    [500, 'd'],
+    [400, 'cd'],
+    [100, 'c'],
+    [90, 'xc'],
+    [50, 'l'],
+    [40, 'xl'],
+    [10, 'x'],
+    [9, 'ix'],
+    [5, 'v'],
+    [4, 'iv'],
+    [1, 'i'],
+  ];
+
+  let remainder = Math.floor(value);
+  let result = '';
+
+  for (const [numericValue, numeral] of numerals) {
+    while (remainder >= numericValue) {
+      result += numeral;
+      remainder -= numericValue;
+    }
+  }
+
+  return result;
+};
+
+const parseInternalReference = (referenceId: string): ParsedInternalReference => {
+  const appendixMatch = referenceId.match(
+    /^nbc\.div[A-Za-z0-9]+\.appendix([A-Za-z])(?:\.appsect(\d+))?(?:\.subsect(\d+))?(?:\.article(\d+))?(?:\.para(\d+))?(?:\.table(\d+))?/i
+  );
+
+  if (appendixMatch) {
+    return {
+      appendixLetter: appendixMatch[1]?.toUpperCase(),
+      appendixSection: appendixMatch[2],
+      subsection: appendixMatch[3],
+      article: appendixMatch[4],
+      paragraph: appendixMatch[5],
+      table: appendixMatch[6],
+    };
+  }
+
+  return {
+    part: extractNumeric(referenceId, /\.part(\d+)/i),
+    section: extractNumeric(referenceId, /\.sect(\d+)/i),
+    subsection: extractNumeric(referenceId, /\.subsect(\d+)/i),
+    article: extractNumeric(referenceId, /\.art(\d+)/i),
+    sentence: extractNumeric(referenceId, /\.sent(\d+)/i),
+    clause: extractNumeric(referenceId, /\.clause(\d+)/i),
+    subclause: extractNumeric(referenceId, /\.subclause(\d+)/i),
+    table: extractNumeric(referenceId, /\.table(\d+)/i),
+  };
+};
+
+const buildArticleReference = (referenceId: string): string | null => {
+  const parsed = parseInternalReference(referenceId);
+
+  if (parsed.appendixLetter && parsed.appendixSection) {
+    return [parsed.appendixLetter, parsed.appendixSection, parsed.subsection, parsed.article]
+      .filter(Boolean)
+      .join('.');
+  }
+
+  if (!parsed.part || !parsed.section || !parsed.subsection || !parsed.article) {
+    return null;
+  }
+
+  return `${parsed.part}.${parsed.section}.${parsed.subsection}.${parsed.article}`;
+};
+
+const getResolvedTableNumber = (table: TableWithRawSupport): string => {
+  if (table.number) {
+    return String(table.number);
+  }
+
+  const parsedFromId = parseInternalReference(table.id);
+  if (
+    parsedFromId.appendixLetter &&
+    parsedFromId.appendixSection &&
+    parsedFromId.subsection &&
+    parsedFromId.article &&
+    parsedFromId.table
+  ) {
+    return [
+      parsedFromId.appendixLetter,
+      parsedFromId.appendixSection,
+      parsedFromId.subsection,
+      parsedFromId.article,
+    ].join('.');
+  }
+
+  const formingPartEntries = table.formingPart ?? table.forming_part;
+  const formingPartTarget = formingPartEntries?.find((entry) => typeof entry?.target === 'string')?.target;
+  const referenceFromTarget = formingPartTarget ? buildArticleReference(formingPartTarget) : null;
+
+  return referenceFromTarget || buildArticleReference(table.id) || table.id;
+};
+
+const formatFormingPartLabel = (reference: ParsedInternalReference): string | null => {
+  const articleReference = [reference.part, reference.section, reference.subsection, reference.article]
+    .filter(Boolean)
+    .join('.');
+
+  if (reference.subclause) {
+    return articleReference
+      ? `Subclause ${articleReference}.(${toRoman(Number(reference.subclause))})`
+      : `Subclause (${toRoman(Number(reference.subclause))})`;
+  }
+
+  if (reference.clause) {
+    const clauseLabel = toAlphabetOrdinal(Number(reference.clause));
+    return articleReference
+      ? `Clause ${articleReference}.(${clauseLabel})`
+      : `Clause (${clauseLabel})`;
+  }
+
+  if (reference.sentence) {
+    return articleReference
+      ? `Sentence ${articleReference}.(${reference.sentence})`
+      : `Sentence (${reference.sentence})`;
+  }
+
+  if (articleReference) {
+    return `Article ${articleReference}.`;
+  }
+
+  return null;
+};
+
+const formatFormingPartText = (formingPart: FormingPartReference[] | undefined): string | null => {
+  if (!formingPart || formingPart.length === 0) {
+    return null;
+  }
+
+  const labels = formingPart
+    .filter((entry) => entry?.type === 'internal' && typeof entry.target === 'string')
+    .map((entry) => formatFormingPartLabel(parseInternalReference(entry.target)))
+    .filter((label): label is string => Boolean(label));
+
+  if (labels.length === 0) {
+    return null;
+  }
+
+  if (labels.length === 1) {
+    return `Forming Part of ${labels[0]}`;
+  }
+
+  if (labels.length === 2) {
+    return `Forming Part of ${labels[0]} and ${labels[1]}`;
+  }
+
+  return `Forming Part of ${labels.slice(0, -1).join(', ')}, and ${labels[labels.length - 1]}`;
+};
 
 type TableWidthAnalysisRow = {
   cells: Array<{
@@ -310,13 +520,16 @@ const analyzeTableWidth = (
     return total + Math.max(baseRem, tokenRem, textRem, figureRem);
   }, 0);
 
-  const hasVeryLongToken = columns.some((column) => column.maxToken >= 14);
+  // Single or two-column tables often include long headers but still read well
+  // without horizontal scroll. Gate this trigger to wider tables.
+  const hasVeryLongToken = maxColumnCount >= 3 && columns.some((column) => column.maxToken >= 14);
   const hasModerateCompressionRisk = maxColumnCount >= 4 && estimatedMinWidthRem >= 30;
   const preferHorizontalScroll =
     maxColumnCount >= 7 ||
     hasVeryLongToken ||
     hasModerateCompressionRisk ||
-    estimatedMinWidthRem >= 42;
+    (maxColumnCount >= 3 && estimatedMinWidthRem >= 42) ||
+    estimatedMinWidthRem >= 60;
 
   return {
     preferHorizontalScroll,
@@ -334,9 +547,16 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const resolvedTitle = activeRevision?.title ?? rawTable.title ?? '';
   const resolvedCaption = activeRevision?.caption ?? rawTable.caption;
   const resolvedTableNotes = activeRevision?.table_notes ?? rawTable.table_notes ?? [];
+  const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
+  const tableNumber = getResolvedTableNumber(rawTable);
+  const tableNumberDisplay = tableNumber
+    ? `Table ${tableNumber}${tableNumber.endsWith(')') ? '' : '.'}`
+    : null;
+  const formingPartText = formatFormingPartText(formingPartEntries);
 
   const structure = activeRevision?.structure ?? rawTable.structure;
-  const normalizedRows = table.rows && Array.isArray(table.rows)
+  const hasDirectRows = Array.isArray(table.rows) && table.rows.length > 0;
+  const normalizedRows = hasDirectRows
     ? table.rows
     : [
         ...normalizeRows(structure?.header_rows || [], true, effectiveDate, 'header-row'),
@@ -357,9 +577,23 @@ export const TableBlock: React.FC<TableBlockProps> = ({
 
   return (
     <div className="table-block" id={rawTable.id}>
-      {resolvedTitle && (
-        <div className="table-block__title">
-          {renderFormattedText(`Table ${String(rawTable.number ?? '')} ${resolvedTitle}`, interactive)}
+      {(tableNumber || resolvedTitle || formingPartText) && (
+        <div className="table-block__header">
+          {tableNumber && (
+            <div className="table-block__number">
+              {renderFormattedText(tableNumberDisplay || '', interactive)}
+            </div>
+          )}
+          {resolvedTitle && (
+            <div className="table-block__title">
+              {renderFormattedText(resolvedTitle, interactive)}
+            </div>
+          )}
+          {formingPartText && (
+            <div className="table-block__forming-part">
+              {renderFormattedText(formingPartText, interactive)}
+            </div>
+          )}
         </div>
       )}
       {resolvedCaption && (
@@ -367,55 +601,62 @@ export const TableBlock: React.FC<TableBlockProps> = ({
           {renderFormattedText(resolvedCaption, interactive)}
         </div>
       )}
-      <div className={`table-block__wrapper ${preferHorizontalScroll ? 'table-block__wrapper--scroll' : ''}`}>
-        <table
-          className="table-block__table"
-          style={preferHorizontalScroll ? { minWidth: `${minWidthRem}rem` } : undefined}
-        >
-          <tbody>
-            {normalizedRows.map((row, rowIndex) => (
-              <tr key={row.id || rowIndex}>
-                {row.cells.map((cell, cellIndex) => {
-                  const CellTag = cell.isHeader ? 'th' : 'td';
-                  const alignClass = cell.align ? `table-block__cell--${cell.align}` : '';
-                  const hasFigureContent = Array.isArray(cell.content)
-                    ? cell.content.some((item) => item.type === 'figure')
-                    : false;
-                  const figureClass = hasFigureContent ? 'table-block__cell--has-figure' : '';
-                  
-                  return (
-                    <CellTag
-                      key={cellIndex}
-                      className={`${cell.isHeader ? 'table-block__header-cell' : 'table-block__cell'} ${alignClass} ${figureClass}`.trim()}
-                      colSpan={cell.colspan}
-                      rowSpan={cell.rowspan}
-                    >
-                      {renderCellContent(cell.content, interactive)}
-                    </CellTag>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {resolvedTableNotes.length > 0 && (
-        <div className="table-block__notes" aria-label="Table notes">
-          <div className="table-block__notes-title">Table notes</div>
-          {resolvedTableNotes.map((note, index) => (
-            <div
-              className="table-block__note"
-              id={note.id}
-              key={note.id || note.vendor_id || `note-${index}`}
-            >
-              <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
-              <span className="table-block__note-content">
-                {renderFormattedText(note.content || '', interactive)}
-              </span>
-            </div>
-          ))}
+      <div className={`table-block__body${preferHorizontalScroll ? ' table-block__body--scroll' : ''}`}>
+        <div className={`table-block__wrapper${preferHorizontalScroll ? ' table-block__wrapper--scroll' : ''}`}>
+          <table
+            className="table-block__table"
+            style={preferHorizontalScroll ? { minWidth: `${minWidthRem}rem` } : undefined}
+          >
+            <tbody>
+              {normalizedRows.map((row, rowIndex) => (
+                <tr key={row.id || rowIndex}>
+                  {row.cells.map((cell, cellIndex) => {
+                    const CellTag = cell.isHeader ? 'th' : 'td';
+                    const alignClass = cell.align ? `table-block__cell--${cell.align}` : '';
+                    const hasFigureContent = Array.isArray(cell.content)
+                      ? cell.content.some((item) => item.type === 'figure')
+                      : false;
+                    const figureClass = hasFigureContent ? 'table-block__cell--has-figure' : '';
+                    const spanClass =
+                      (typeof cell.colspan === 'number' && cell.colspan > 1) ||
+                      (typeof cell.rowspan === 'number' && cell.rowspan > 1)
+                        ? 'table-block__cell--spanned'
+                        : '';
+                    
+                    return (
+                      <CellTag
+                        key={cellIndex}
+                        className={`${cell.isHeader ? 'table-block__header-cell' : 'table-block__cell'} ${alignClass} ${figureClass} ${spanClass}`.trim()}
+                        colSpan={cell.colspan}
+                        rowSpan={cell.rowspan}
+                      >
+                        {renderCellContent(cell.content, interactive)}
+                      </CellTag>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      )}
+        {resolvedTableNotes.length > 0 && (
+          <div className="table-block__notes" aria-label="Table notes">
+            <div className="table-block__notes-title">Table notes</div>
+            {resolvedTableNotes.map((note, index) => (
+              <div
+                className="table-block__note"
+                id={note.id}
+                key={note.id || note.vendor_id || `note-${index}`}
+              >
+                <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
+                <span className="table-block__note-content">
+                  {renderFormattedText(note.content || '', interactive)}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

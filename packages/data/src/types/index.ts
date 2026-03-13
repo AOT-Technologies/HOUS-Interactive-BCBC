@@ -78,9 +78,17 @@ export interface Table {
   id: string;
   number: string;
   title: string;
+  source?: string;
   headers: TableHeader[];
   rows: TableRow[];
   notes?: string[];
+  formingPart?: FormingPartReference[];
+}
+
+export interface FormingPartReference {
+  type: string;
+  target: string;
+  display_type?: string;
 }
 
 export interface TableHeader {

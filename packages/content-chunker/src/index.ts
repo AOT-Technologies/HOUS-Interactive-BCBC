@@ -10,6 +10,7 @@ export {
   chunkRawContent,
   generateChunkPath,
   generateAppendixChunkPath,
+  generateDivisionAppendixChunkPath,
   generateFrontMatterChunkPath,
   isOptimalChunkSize,
   getChunkStats,

@@ -27,13 +27,47 @@ export type PartAppendix = {
   application_notes?: ApplicationNote[];
 };
 
+export type DivisionAppendixArticle = {
+  id: string;
+  type: 'appendix_article';
+  title: string;
+  paragraphs?: AppendixParagraph[];
+  content?: Array<Table | Figure>;
+};
+
+export type DivisionAppendixSubsection = {
+  id: string;
+  type: 'appendix_subsection';
+  title: string;
+  articles: DivisionAppendixArticle[];
+};
+
+export type DivisionAppendixSection = {
+  id: string;
+  type: 'appendix_section';
+  title: string;
+  paragraphs?: AppendixParagraph[];
+  subsections?: DivisionAppendixSubsection[];
+};
+
+export type DivisionAppendix = {
+  id: string;
+  type: 'appendix';
+  letter: string;
+  number: string;
+  title: string;
+  introduction?: string;
+  sections: DivisionAppendixSection[];
+};
+
 interface AppendixStoreState {
-  cache: Map<string, PartAppendix>;
+  cache: Map<string, PartAppendix | DivisionAppendix>;
   fetchAppendix: (version: string, division: string, part: string) => Promise<PartAppendix>;
+  fetchDivisionAppendix: (version: string, division: string, letter: string) => Promise<DivisionAppendix>;
   clearCache: () => void;
 }
 
-const inflightRequests = new Map<string, Promise<PartAppendix>>();
+const inflightRequests = new Map<string, Promise<PartAppendix | DivisionAppendix>>();
 
 const normalizeDivision = (division: string): string =>
   division.replace(/nbc\.div([A-Z0-9]+)/i, (_, suffix) => `nbc-div${String(suffix).toLowerCase()}`);
@@ -46,19 +80,36 @@ const buildCacheKey = (version: string, division: string, part: string): string 
 const buildFetchPath = (version: string, division: string, part: string): string =>
   `/data/${version}/content/${normalizeDivision(division)}/${normalizePart(part)}/appendix.json`;
 
+const buildDivisionAppendixCacheKey = (version: string, division: string, letter: string): string =>
+  `${version}/${normalizeDivision(division)}/appendix-${letter.toLowerCase()}`;
+
+const buildDivisionAppendixFetchPath = (version: string, division: string, letter: string): string =>
+  `/data/${version}/content/${normalizeDivision(division)}/appendix-${letter.toLowerCase()}.json`;
+
+const isPartAppendixPayload = (
+  payload: PartAppendix | DivisionAppendix
+): payload is PartAppendix => payload.type === 'part_appendix';
+
+const isDivisionAppendixPayload = (
+  payload: PartAppendix | DivisionAppendix
+): payload is DivisionAppendix => payload.type === 'appendix';
+
 export const useAppendixStore = create<AppendixStoreState>((set, get) => ({
-  cache: new Map<string, PartAppendix>(),
+  cache: new Map<string, PartAppendix | DivisionAppendix>(),
 
   fetchAppendix: async (version: string, division: string, part: string): Promise<PartAppendix> => {
     const cacheKey = buildCacheKey(version, division, part);
     const cached = get().cache.get(cacheKey);
-    if (cached) {
+    if (cached && isPartAppendixPayload(cached)) {
       return cached;
     }
 
     const inflight = inflightRequests.get(cacheKey);
     if (inflight) {
-      return inflight;
+      const inflightPayload = await inflight;
+      if (isPartAppendixPayload(inflightPayload)) {
+        return inflightPayload;
+      }
     }
 
     const request = (async () => {
@@ -85,5 +136,48 @@ export const useAppendixStore = create<AppendixStoreState>((set, get) => ({
     }
   },
 
-  clearCache: () => set({ cache: new Map<string, PartAppendix>() }),
+  fetchDivisionAppendix: async (
+    version: string,
+    division: string,
+    letter: string
+  ): Promise<DivisionAppendix> => {
+    const cacheKey = buildDivisionAppendixCacheKey(version, division, letter);
+    const cached = get().cache.get(cacheKey);
+    if (cached && isDivisionAppendixPayload(cached)) {
+      return cached;
+    }
+
+    const inflight = inflightRequests.get(cacheKey);
+    if (inflight) {
+      const inflightPayload = await inflight;
+      if (isDivisionAppendixPayload(inflightPayload)) {
+        return inflightPayload;
+      }
+    }
+
+    const request = (async () => {
+      const fetchPath = buildDivisionAppendixFetchPath(version, division, letter);
+      const response = await fetch(fetchPath);
+
+      if (!response.ok) {
+        throw new Error(`Appendix ${letter.toUpperCase()} not found for ${division}.`);
+      }
+
+      const appendix = (await response.json()) as DivisionAppendix;
+      const nextCache = new Map(get().cache);
+      nextCache.set(cacheKey, appendix);
+      set({ cache: nextCache });
+      return appendix;
+    })();
+
+    inflightRequests.set(cacheKey, request);
+
+    try {
+      return await request;
+    } finally {
+      inflightRequests.delete(cacheKey);
+    }
+  },
+
+  clearCache: () => set({ cache: new Map<string, PartAppendix | DivisionAppendix>() }),
 }));

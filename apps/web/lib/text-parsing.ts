@@ -80,6 +80,20 @@ function avoidDuplicateTrailingPeriod(displayText: string, remainingText: string
   return displayText.slice(0, -1);
 }
 
+function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: string): string {
+  const displayMatch = displayText.match(
+    /^(Appendix|Section|Subsection|Article|Sentence|Clause|Subclause|Table|Figure|Note)\s+/i
+  );
+  if (!displayMatch) return displayText;
+
+  const duplicatedType = displayMatch[1];
+  if (!new RegExp(`${duplicatedType}\\s*$`, 'i').test(precedingText)) {
+    return displayText;
+  }
+
+  return displayText.slice(displayMatch[0].length);
+}
+
 export interface TextEquationEntry {
   id: string;
   type?: 'display' | 'inline' | string;
@@ -425,6 +439,60 @@ function getCrossReferenceDisplayText(
 }
 
 function formatInternalReference(referenceId: string, format?: InternalRefFormat): string {
+  const appendixDocumentMatch = referenceId.match(
+    /^nbc\.div([A-Za-z0-9]+)\.appendix([A-Za-z])(?:\.appsect(\d+))?(?:\.subsect(\d+))?(?:\.article(\d+))?(?:\.para(\d+))?(?:\.table(\d+))?(?:\.figure(\d+))?/i
+  );
+
+  if (appendixDocumentMatch) {
+    const appendixLetter = appendixDocumentMatch[2]?.toUpperCase();
+    const appendixSection = appendixDocumentMatch[3];
+    const subsection = appendixDocumentMatch[4];
+    const article = appendixDocumentMatch[5];
+    const paragraph = appendixDocumentMatch[6];
+    const table = appendixDocumentMatch[7];
+    const figure = appendixDocumentMatch[8];
+    const baseNumber = [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
+    const isShortNumeric = format === 'shortNum' || format === 'number';
+
+    if (paragraph) {
+      return isShortNumeric
+        ? `(${paragraph})`
+        : `Sentence ${baseNumber}.(${paragraph}).`;
+    }
+
+    if (table) {
+      const tableNumber = baseNumber || [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
+      return isShortNumeric ? tableNumber : `Table ${tableNumber}.`;
+    }
+
+    if (figure) {
+      const figureIndex = asNumber(figure);
+      const figureLetter = typeof figureIndex === 'number'
+        ? toAlphabetOrdinal(figureIndex).toUpperCase()
+        : undefined;
+      const figureNumber = baseNumber && figureLetter
+        ? `${baseNumber}.-${figureLetter}`
+        : [appendixLetter, appendixSection, subsection, article, figure].filter(Boolean).join('.');
+      return isShortNumeric ? figureNumber : `Figure ${figureNumber}`;
+    }
+
+    if (article) {
+      return isShortNumeric ? baseNumber : `Article ${baseNumber}.`;
+    }
+
+    if (subsection) {
+      const subsectionNumber = [appendixLetter, appendixSection, subsection].filter(Boolean).join('.');
+      return isShortNumeric ? subsectionNumber : `Subsection ${subsectionNumber}.`;
+    }
+
+    if (appendixSection) {
+      const sectionNumber = [appendixLetter, appendixSection].filter(Boolean).join('.');
+      return isShortNumeric ? sectionNumber : `Section ${sectionNumber}.`;
+    }
+
+    return `Appendix ${appendixLetter}`;
+  }
+
   const division = extractNumeric(referenceId, /\.div([A-Za-z0-9]+)/i)?.toUpperCase();
   const part = extractNumeric(referenceId, /\.part(\d+)/i);
   const section = extractNumeric(referenceId, /\.sect(\d+)/i);
@@ -617,7 +685,7 @@ export function parseTextWithCrossReferences(
       ? `${baseDisplay} ${qualifierMatch[1].trim()}`.replace(/\s+/g, ' ').trim()
       : baseDisplay;
     const normalizedDisplayText = avoidDuplicateTrailingPeriod(
-      displayText,
+      avoidDuplicateLeadingReferenceType(text.slice(0, matchStart), displayText),
       text.slice(matchEnd + (qualifierMatch ? qualifierMatch[1].length : 0))
     );
     
@@ -993,7 +1061,10 @@ export function parseTextWithMarkers(
             );
 
         const normalizedDisplayText = avoidDuplicateTrailingPeriod(
-          crossRefDisplay.text,
+          avoidDuplicateLeadingReferenceType(
+            sanitizedText.slice(0, marker.start),
+            crossRefDisplay.text
+          ),
           sanitizedText.slice(marker.end + crossRefDisplay.consumed)
         );
 

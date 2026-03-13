@@ -9,8 +9,16 @@ import type {
   BCBCDocument,
   Division,
   Part,
+  PartAppendix,
   Section,
   Subsection,
+  DivisionAppendix,
+  DivisionAppendixSection,
+  DivisionAppendixSubsection,
+  DivisionAppendixArticle,
+  ApplicationNote,
+  AppendixDivision,
+  AppendixParagraph,
   Article,
   ArticleContentNode,
   Sentence,
@@ -108,6 +116,7 @@ interface RawDivision {
   title: string;
   number: string | number;
   parts: RawPart[];
+  appendices?: RawDivisionAppendix[];
 }
 
 interface RawPart {
@@ -116,6 +125,7 @@ interface RawPart {
   number: string | number;
   title: string;
   sections: RawSection[];
+  appendix?: RawPartAppendix;
 }
 
 interface RawSection {
@@ -196,9 +206,15 @@ interface RawTableRow {
 interface RawTable {
   id: string;
   type: 'table';
+  source?: string;
   title?: string;
   caption?: string;
   number?: string;
+  forming_part?: Array<{
+    type: string;
+    target: string;
+    display_type?: string;
+  }>;
   // New structure with rows array
   rows?: RawTableRow[];
   // Structure with header_rows and body_rows (can be new or legacy format)
@@ -240,6 +256,70 @@ interface RawGlossaryEntry {
   definition: string;
   location_id?: string;
   related_terms?: string[];
+}
+
+interface RawAppendixParagraph {
+  id: string;
+  content: string;
+}
+
+interface RawAppendixDivision {
+  id: string;
+  title?: string;
+  paragraphs?: RawAppendixParagraph[];
+  tables?: RawTable[];
+  figures?: RawFigure[];
+}
+
+interface RawApplicationNote {
+  id: string;
+  type: 'application_note';
+  number?: string;
+  title?: string;
+  paragraphs?: RawAppendixParagraph[];
+  tables?: RawTable[];
+  figures?: RawFigure[];
+  divisions?: RawAppendixDivision[];
+}
+
+interface RawPartAppendix {
+  id: string;
+  type: 'part_appendix';
+  introduction?: string;
+  application_notes?: RawApplicationNote[];
+}
+
+interface RawDivisionAppendixArticle {
+  id: string;
+  type: 'appendix_article';
+  title: string;
+  paragraphs?: RawAppendixParagraph[];
+  content?: Array<RawTable | RawFigure>;
+}
+
+interface RawDivisionAppendixSubsection {
+  id: string;
+  type: 'appendix_subsection';
+  title: string;
+  articles: RawDivisionAppendixArticle[];
+}
+
+interface RawDivisionAppendixSection {
+  id: string;
+  type: 'appendix_section';
+  title: string;
+  paragraphs?: RawAppendixParagraph[];
+  subsections?: RawDivisionAppendixSubsection[];
+}
+
+interface RawDivisionAppendix {
+  id: string;
+  type: 'appendix';
+  letter: string;
+  number: string | number;
+  title: string;
+  introduction?: string;
+  sections?: RawDivisionAppendixSection[];
 }
 
 // TODO: Use this interface when implementing amendment date parsing
@@ -345,6 +425,7 @@ function parseDivisionData(raw: RawDivision): Division {
     title: raw.title,
     number: String(raw.number),
     parts: raw.parts.map(parsePartData),
+    appendices: raw.appendices?.map(parseDivisionAppendixData),
   };
 }
 
@@ -358,6 +439,95 @@ function parsePartData(raw: RawPart): Part {
     title: raw.title,
     type: 'part',
     sections: raw.sections.map(parseSectionData),
+    appendix: raw.appendix ? parsePartAppendixData(raw.appendix) : undefined,
+  };
+}
+
+function parseAppendixParagraph(raw: RawAppendixParagraph): AppendixParagraph {
+  return {
+    id: raw.id,
+    content: raw.content,
+  };
+}
+
+function parseAppendixDivision(raw: RawAppendixDivision): AppendixDivision {
+  return {
+    id: raw.id,
+    title: raw.title,
+    paragraphs: raw.paragraphs?.map(parseAppendixParagraph),
+    tables: raw.tables?.map(parseTableData),
+    figures: raw.figures?.map(parseFigureData),
+  };
+}
+
+function parseApplicationNote(raw: RawApplicationNote): ApplicationNote {
+  return {
+    id: raw.id,
+    number: raw.number,
+    title: raw.title,
+    paragraphs: raw.paragraphs?.map(parseAppendixParagraph),
+    tables: raw.tables?.map(parseTableData),
+    figures: raw.figures?.map(parseFigureData),
+    divisions: raw.divisions?.map(parseAppendixDivision),
+  };
+}
+
+function parsePartAppendixData(raw: RawPartAppendix): PartAppendix {
+  return {
+    id: raw.id,
+    type: 'part_appendix',
+    introduction: raw.introduction,
+    application_notes: raw.application_notes?.map(parseApplicationNote),
+  };
+}
+
+function parseDivisionAppendixArticleData(raw: RawDivisionAppendixArticle): DivisionAppendixArticle {
+  const parsedContent = raw.content?.reduce<Array<Table | Figure>>((acc, item) => {
+    if (item.type === 'table') {
+      acc.push(parseTableData(item));
+    } else if (item.type === 'figure') {
+      acc.push(parseFigureData(item));
+    }
+    return acc;
+  }, []);
+
+  return {
+    id: raw.id,
+    type: 'appendix_article',
+    title: raw.title,
+    paragraphs: raw.paragraphs?.map(parseAppendixParagraph),
+    content: parsedContent,
+  };
+}
+
+function parseDivisionAppendixSubsectionData(raw: RawDivisionAppendixSubsection): DivisionAppendixSubsection {
+  return {
+    id: raw.id,
+    type: 'appendix_subsection',
+    title: raw.title,
+    articles: raw.articles.map(parseDivisionAppendixArticleData),
+  };
+}
+
+function parseDivisionAppendixSectionData(raw: RawDivisionAppendixSection): DivisionAppendixSection {
+  return {
+    id: raw.id,
+    type: 'appendix_section',
+    title: raw.title,
+    paragraphs: raw.paragraphs?.map(parseAppendixParagraph),
+    subsections: raw.subsections?.map(parseDivisionAppendixSubsectionData),
+  };
+}
+
+function parseDivisionAppendixData(raw: RawDivisionAppendix): DivisionAppendix {
+  return {
+    id: raw.id,
+    type: 'appendix',
+    letter: raw.letter,
+    number: String(raw.number),
+    title: raw.title,
+    introduction: raw.introduction,
+    sections: raw.sections?.map(parseDivisionAppendixSectionData) || [],
   };
 }
 
@@ -705,11 +875,13 @@ function parseTableData(raw: RawTable): Table {
   return {
     id: raw.id,
     type: 'table',
-    number: raw.number || extractNumberFromId(raw.id),
+    number: raw.number || extractTableNumber(raw.id, raw.forming_part),
     title: raw.title || '',
+    source: raw.source,
     caption: raw.caption,
     headers,
     rows,
+    formingPart: raw.forming_part,
   };
 }
 
@@ -1024,6 +1196,37 @@ function extractNumberFromId(id: string): string {
   }
 
   return numbers.join('.') || id;
+}
+
+function extractArticleReference(targetId: string): string | null {
+  const part = targetId.match(/\.part(\d+)/i)?.[1];
+  const section = targetId.match(/\.sect(\d+)/i)?.[1];
+  const subsection = targetId.match(/\.subsect(\d+)/i)?.[1];
+  const article = targetId.match(/\.art(\d+)/i)?.[1];
+
+  if (!part || !section || !subsection || !article) {
+    return null;
+  }
+
+  return `${part}.${section}.${subsection}.${article}`;
+}
+
+function extractTableNumber(
+  id: string,
+  formingPart?: Array<{ target: string }>
+): string {
+  const formingPartTarget = formingPart?.find((entry) => typeof entry?.target === 'string')?.target;
+  const targetReference = formingPartTarget ? extractArticleReference(formingPartTarget) : null;
+  if (targetReference) {
+    return targetReference;
+  }
+
+  const idReference = extractArticleReference(id);
+  if (idReference) {
+    return idReference;
+  }
+
+  return extractNumberFromId(id);
 }
 
 /**

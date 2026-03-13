@@ -16,7 +16,7 @@ export interface NavigationNode {
   id: string;
   number: string;
   title: string;
-  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix';
   path: string;
   children?: NavigationNode[];
 }
@@ -162,6 +162,8 @@ export const useNavigationStore = create<NavigationStore>()(
                     path = `${parentPath}/article-${node.number}`;
                   } else if (node.type === 'part_appendix') {
                     path = `${parentPath}/appendix`;
+                  } else if (node.type === 'division_appendix') {
+                    path = `${parentPath}/appendix/${node.number?.toLowerCase()}`;
                   }
                 }
                 

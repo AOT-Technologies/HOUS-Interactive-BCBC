@@ -8,7 +8,7 @@ describe('TableBlock', () => {
     const table: Table = {
       id: 'test-table-1',
       type: 'table',
-      number: '1',
+      number: '1.3.1.2',
       title: 'Test Table',
       headers: [['Header 1', 'Header 2']],
       rows: [
@@ -23,7 +23,8 @@ describe('TableBlock', () => {
 
     render(<TableBlock table={table} />);
     
-    expect(screen.getByText('Table 1 Test Table')).toBeInTheDocument();
+    expect(screen.getByText('Table 1.3.1.2.')).toBeInTheDocument();
+    expect(screen.getByText('Test Table')).toBeInTheDocument();
     expect(screen.getByText('Cell 1')).toBeInTheDocument();
     expect(screen.getByText('Cell 2')).toBeInTheDocument();
   });
@@ -90,7 +91,8 @@ describe('TableBlock', () => {
 
     const { container } = render(<TableBlock table={table} />);
     
-    expect(screen.getByText('Table 2 Mixed Content Table')).toBeInTheDocument();
+    expect(screen.getByText('Table 2.')).toBeInTheDocument();
+    expect(screen.getByText('Mixed Content Table')).toBeInTheDocument();
     expect(screen.getByText('8.08')).toBeInTheDocument();
     expect(screen.getByText('10.5')).toBeInTheDocument();
     
@@ -193,5 +195,104 @@ describe('TableBlock', () => {
 
     expect(wrapper).toHaveClass('table-block__wrapper--scroll');
     expect(renderedTable?.getAttribute('style')).toMatch(/min-width:\s*\d+(\.\d+)?rem/i);
+  });
+
+  it('renders forming part information from internal targets', () => {
+    const table: Table = {
+      id: 'nbc.divB.part1.sect3.subsect1.art2.table1',
+      type: 'table',
+      number: '1.3.1.2',
+      title: 'Documents Referenced in Book I',
+      headers: [['Header']],
+      rows: [
+        {
+          cells: [{ content: 'Data' }],
+        },
+      ],
+      formingPart: [
+        {
+          type: 'internal',
+          target: 'nbc.divB.part1.sect3.subsect1.art2.sent1',
+          display_type: 'long',
+        },
+      ],
+    };
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText('Table 1.3.1.2.')).toBeInTheDocument();
+    expect(screen.getByText('Forming Part of Sentence 1.3.1.2.(1)')).toBeInTheDocument();
+  });
+
+  it('renders Appendix D table numbering from appendix-style ids when number is omitted', () => {
+    const table: Table = {
+      id: 'nbc.divB.appendixD.appsect1.subsect1.article2.table1',
+      type: 'table',
+      title: 'Appendix Table',
+      headers: [['Header']],
+      rows: [
+        {
+          cells: [{ content: 'Data' }],
+        },
+      ],
+    };
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText('Table D.1.1.2.')).toBeInTheDocument();
+  });
+
+  it('normalizes em dash table values to hyphen', () => {
+    const table: Table = {
+      id: 'test-table-dash',
+      type: 'table',
+      number: '3.1.3.1',
+      title: 'Dash Normalization',
+      headers: [['Header']],
+      rows: [
+        {
+          cells: [{ content: [{ type: 'text', value: '—' }] }],
+        },
+      ],
+    };
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText('-')).toBeInTheDocument();
+  });
+
+  it('applies explicit colspan in raw table structure', () => {
+    const table = {
+      id: 'test-table-span',
+      type: 'table' as const,
+      number: '9.37.1.3',
+      title: 'Span Test',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'rowh1',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'A' }], align: 'center' as const },
+              {
+                content: [{ type: 'text' as const, value: 'Merged Header' }],
+                align: 'center' as const,
+                colspan: 4,
+              },
+            ],
+          },
+        ],
+        body_rows: [],
+      },
+    };
+
+    const { container } = render(<TableBlock table={table as Table} />);
+
+    const mergedCell = screen.getByText('Merged Header').closest('th');
+    expect(mergedCell).toHaveAttribute('colspan', '4');
+    expect(mergedCell).toHaveClass('table-block__cell--spanned');
+    expect(container.querySelectorAll('th')).toHaveLength(2);
   });
 });
