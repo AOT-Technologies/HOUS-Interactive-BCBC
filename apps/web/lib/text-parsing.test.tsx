@@ -26,6 +26,24 @@ const getElementsByType = (
   return found;
 };
 
+const getTextContent = (nodes: React.ReactNode[]): string => {
+  let text = '';
+
+  const visit = (node: React.ReactNode): void => {
+    if (typeof node === 'string') {
+      text += node;
+      return;
+    }
+
+    if (!React.isValidElement(node)) return;
+    const children = React.Children.toArray(node.props.children);
+    children.forEach(visit);
+  };
+
+  nodes.forEach(visit);
+  return text;
+};
+
 describe('parseTextWithMarkers - objective-based code references', () => {
   it('parses a compound functional statement + objective reference', () => {
     const input = '[[REF:functional-statement:fs01]-[REF:sub-objective:nbc-obj-os1.1]]';
@@ -168,13 +186,53 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.referenceId).toBe('standard:csaa440S1');
   });
 
-  it('parses external references into cross-reference links', () => {
+  it('separates adjacent standard references with comma and space', () => {
+    const input =
+      'found in the following publications:[REF:standard:nrcc40383][REF:standard:nrcc35951]Commentary entitled';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const renderedText = getTextContent(nodes);
+
+    expect(crossRefs).toHaveLength(2);
+    expect(crossRefs[0].props.referenceId).toBe('standard:nrcc40383');
+    expect(crossRefs[1].props.referenceId).toBe('standard:nrcc35951');
+    expect(renderedText).toContain('publications:');
+    expect(renderedText).toContain(', ');
+    expect(renderedText).toContain('Commentary entitled');
+  });
+
+  it('adds space after last adjacent standard ref before following text, even if more markers exist later', () => {
+    const input =
+      'See [REF:standard:nrcc40383][REF:standard:nrcc35951]Commentary entitled [REF:standard:nrcc-nbcug4].';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const renderedText = getTextContent(nodes);
+
+    expect(crossRefs).toHaveLength(3);
+    expect(crossRefs[0].props.referenceId).toBe('standard:nrcc40383');
+    expect(crossRefs[1].props.referenceId).toBe('standard:nrcc35951');
+    expect(crossRefs[2].props.referenceId).toBe('standard:nrcc-nbcug4');
+    expect(renderedText).toContain(', ');
+    expect(renderedText).toContain('Commentary entitled ');
+  });
+
+  it('renders non-URL external references as plain text', () => {
     const input = 'See [REF:external:csa101a440] for details.';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain('csa101a440');
+  });
+
+  it('parses URL external references into cross-reference links', () => {
+    const input = 'Visit [REF:external:https://www.scc.ca:(www.scc.ca)] for details.';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.referenceId).toBe('external:csa101a440');
+    expect(crossRefs[0].props.referenceId).toBe('external:https://www.scc.ca');
+    expect(crossRefs[0].props.displayText).toBe('(www.scc.ca)');
   });
 
   it('parses external references with explicit label text', () => {
@@ -182,22 +240,19 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
-    expect(crossRefs).toHaveLength(2);
-    expect(crossRefs[0].props.referenceId).toBe('external:csaa23.1');
-    expect(crossRefs[0].props.displayText).toBe('Section 9 of');
-    expect(crossRefs[1].props.referenceId).toBe('standard:csaa23.1');
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.referenceId).toBe('standard:csaa23.1');
+    expect(getTextContent(nodes)).toContain('Section 9 of');
   });
 
   it('preserves trailing space in external-reference label text', () => {
     const input = '[REF:external:csaa23.1:Section 9 of ][REF:standard:csaa23.1]';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
-    const textNodes = nodes.filter((node): node is string => typeof node === 'string');
 
-    expect(crossRefs).toHaveLength(2);
-    expect(crossRefs[0].props.referenceId).toBe('external:csaa23.1');
-    expect(crossRefs[0].props.displayText).toBe('Section 9 of');
-    expect(textNodes.join('')).toContain(' ');
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.referenceId).toBe('standard:csaa23.1');
+    expect(getTextContent(nodes)).toContain('Section 9 of ');
   });
 
   it('parses spaced double-bracket functional/objective references', () => {

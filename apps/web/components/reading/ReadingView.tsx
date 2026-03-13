@@ -68,18 +68,25 @@ type ResolvedCrossReference = {
   referenceId: string;
   heading: string;
   targetSlug: string[] | null;
-  mode: 'article' | 'subsection' | 'section' | 'appnote' | 'division_appendix' | 'standard' | 'error';
+  mode: 'article' | 'subsection' | 'section' | 'appnote' | 'division_appendix' | 'standard' | 'external_url' | 'error';
   section?: SectionWithAppendix;
   subsection?: Subsection;
   article?: Article;
   note?: ApplicationNote;
   divisionAppendix?: DivisionAppendix;
   standard?: StandardReferenceEntry;
+  externalUrl?: string;
+  externalLabel?: string;
   errorMessage?: string;
 };
 
 const normalizeStandardsKey = (value: string): string =>
   value.replace(/[^a-z0-9.]/gi, '').toLowerCase();
+
+const isHttpReference = (value: string): boolean => /^https?:\/\//i.test(value.trim());
+
+const decodeExternalUrl = (value: string): string =>
+  value.replace(/\\\//g, '/').trim();
 
 const formatAppendixDocumentHeading = (
   parsed: ReturnType<typeof parseReferenceId>
@@ -374,7 +381,28 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     async (referenceId: string): Promise<ResolvedCrossReference> => {
       const standardsMatch = referenceId.match(/^(standard|external):(.+)$/i);
       if (standardsMatch) {
+        const standardsType = (standardsMatch[1] || '').toLowerCase();
         const standardsRefId = (standardsMatch[2] || '').trim();
+
+        if (standardsType === 'external' && isHttpReference(standardsRefId)) {
+          const decodedUrl = decodeExternalUrl(standardsRefId);
+          let hostname = decodedUrl;
+          try {
+            hostname = new URL(decodedUrl).hostname;
+          } catch {
+            // Keep decoded URL as fallback.
+          }
+
+          return {
+            referenceId,
+            heading: 'External link',
+            mode: 'external_url',
+            targetSlug: null,
+            externalUrl: decodedUrl,
+            externalLabel: hostname,
+          };
+        }
+
         const standardsMap = await fetchStandardsMap();
 
         if (!standardsMap) {
@@ -985,6 +1013,17 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       );
     }
 
+    if (modalData.mode === 'external_url' && modalData.externalUrl) {
+      return (
+        <div className="reading-view__standard-modal">
+          <p>This reference points to an external website.</p>
+          <p className="reading-view__standard-modal-meta">
+            {modalData.externalLabel || modalData.externalUrl}
+          </p>
+        </div>
+      );
+    }
+
     return <p>{modalData.errorMessage || 'Referenced content is unavailable.'}</p>;
   };
 
@@ -1155,6 +1194,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             scrollToReferenceId={modalData?.referenceId || null}
             onClose={closeReferenceModal}
             onGoToSection={() => {
+              if (modalData?.mode === 'external_url' && modalData.externalUrl) {
+                window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
+                return;
+              }
+
               if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
                 closeReferenceModal();
                 return;
@@ -1166,7 +1210,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               const query = params.toString();
               router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
             }}
-            showGoToSection={modalData?.mode !== 'error'}
+            showGoToSection={Boolean(
+              (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
+              (modalData?.mode === 'external_url' && modalData.externalUrl)
+            )}
+            goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
           >
             {renderModalContent()}
           </CrossReferenceModal>
@@ -1230,6 +1278,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             scrollToReferenceId={modalData?.referenceId || null}
             onClose={closeReferenceModal}
             onGoToSection={() => {
+              if (modalData?.mode === 'external_url' && modalData.externalUrl) {
+                window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
+                return;
+              }
+
               if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
                 closeReferenceModal();
                 return;
@@ -1241,7 +1294,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               const query = params.toString();
               router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
             }}
-            showGoToSection={modalData?.mode !== 'error'}
+            showGoToSection={Boolean(
+              (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
+              (modalData?.mode === 'external_url' && modalData.externalUrl)
+            )}
+            goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
           >
             {renderModalContent()}
           </CrossReferenceModal>
@@ -1319,7 +1376,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         : `${divisionLabel} - ${sectionNumberPrefix} ${resolvedSection.title} PDF`;
   const modalGoToSectionVisible =
     modalData?.mode !== 'error' &&
-    Boolean(modalData?.targetSlug && modalData.targetSlug.length >= 3);
+    Boolean(
+      (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
+      (modalData?.mode === 'external_url' && modalData.externalUrl)
+    );
   const sectionViewPartTitle = currentPartNode?.title || slug[1];
 
   return (
@@ -1367,6 +1427,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           scrollToReferenceId={modalData?.referenceId || null}
           onClose={closeReferenceModal}
           onGoToSection={() => {
+            if (modalData?.mode === 'external_url' && modalData.externalUrl) {
+              window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
+              return;
+            }
+
             if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
               closeReferenceModal();
               return;
@@ -1379,6 +1444,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
           }}
           showGoToSection={modalGoToSectionVisible}
+          goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
         >
           {renderModalContent()}
         </CrossReferenceModal>
@@ -1386,3 +1452,4 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     </CrossReferenceContext.Provider>
   );
 };
+

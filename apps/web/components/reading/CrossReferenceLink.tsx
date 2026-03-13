@@ -45,6 +45,8 @@ const standardsMapCache = new Map<string, Record<string, StandardReferenceMeta>>
 const normalizeStandardsKey = (value: string): string =>
   value.replace(/[^a-z0-9.]/gi, '').toLowerCase();
 
+const isHttpReference = (value: string): boolean => /^https?:\/\//i.test(value.trim());
+
 export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   referenceId,
   displayText,
@@ -96,8 +98,12 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     parsedReference?.kind === 'part_appendix' && Boolean(parsedReference.appnote);
   const shouldResolveAppnoteDisplayText = isPartAppendixAppnote && !preserveDisplayText;
   const standardsMatch = referenceId.match(/^(standard|external):(.+)$/i);
+  const standardsType = standardsMatch?.[1]?.toLowerCase() as 'standard' | 'external' | undefined;
   const standardsRefId = standardsMatch?.[2]?.trim() || '';
   const isStandardsReference = Boolean(standardsMatch && standardsRefId);
+  const isExternalReference = standardsType === 'external';
+  const isExternalUrlReference = isExternalReference && isHttpReference(standardsRefId);
+  const isNonLinkExternalReference = isExternalReference && !isExternalUrlReference;
   const hasExplicitStandardsLabel =
     isStandardsReference &&
     displayText.trim().length > 0 &&
@@ -183,7 +189,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     let active = true;
 
     const resolveStandardsDisplayText = async () => {
-      if (!isStandardsReference || hasExplicitStandardsLabel) {
+      if (!isStandardsReference || hasExplicitStandardsLabel || isExternalReference) {
         if (active) {
           setStandardsDisplayText(null);
         }
@@ -237,16 +243,16 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     return () => {
       active = false;
     };
-  }, [hasExplicitStandardsLabel, isStandardsReference, standardsRefId, version]);
+  }, [hasExplicitStandardsLabel, isExternalReference, isStandardsReference, standardsRefId, version]);
 
   const effectiveDisplayText = standardsDisplayText
     || (appnoteDisplayText
       ? `${appnoteDisplayText}${trailingClauseQualifier ? ` ${trailingClauseQualifier}` : ''}`
       : resolvedDisplayText);
 
-  if (!interactive) {
+  if (!interactive || isNonLinkExternalReference) {
     return (
-      <span className="cross-reference-link cross-reference-link--non-interactive">
+      <span className={isNonLinkExternalReference ? undefined : 'cross-reference-link cross-reference-link--non-interactive'}>
         {effectiveDisplayText}
       </span>
     );

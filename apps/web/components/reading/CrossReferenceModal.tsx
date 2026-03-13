@@ -10,6 +10,7 @@ interface CrossReferenceModalProps {
   onClose: () => void;
   onGoToSection: () => void;
   showGoToSection?: boolean;
+  goToSectionLabel?: string;
   scrollToReferenceId?: string | null;
 }
 
@@ -35,6 +36,7 @@ export const CrossReferenceModal: React.FC<CrossReferenceModalProps> = ({
   onClose,
   onGoToSection,
   showGoToSection = true,
+  goToSectionLabel = 'Go to Section',
   scrollToReferenceId = null,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -204,7 +206,7 @@ export const CrossReferenceModal: React.FC<CrossReferenceModalProps> = ({
               className="cross-reference-modal__button--go-to-section"
               onClick={onGoToSection}
             >
-              Go to Section
+              {goToSectionLabel}
             </button>
           )}
         </footer>

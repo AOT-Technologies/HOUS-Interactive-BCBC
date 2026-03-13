@@ -66,6 +66,10 @@ interface ParsedStandardsMarker {
   trailingWhitespace?: number;
 }
 
+function isHttpReference(value: string): boolean {
+  return /^https?:\/\//i.test(value.trim());
+}
+
 function skipWhitespaceBeforePunctuation(text: string, index: number): number {
   if (index >= text.length) return index;
   const remaining = text.slice(index);
@@ -356,6 +360,23 @@ function parseGlossaryMarkerPayload(payload: string): ParsedGlossaryMarker {
 }
 
 function parseStandardsMarkerPayload(payload: string): ParsedStandardsMarker {
+  const trimmedPayload = payload.trim();
+  if (isHttpReference(trimmedPayload)) {
+    const urlPayloadMatch = trimmedPayload.match(/^(https?:\/\/[^\s:]+[^\s]*?)(?::([\s\S]*))?$/i);
+    if (urlPayloadMatch) {
+      const standardsId = urlPayloadMatch[1].trim();
+      const rawLabel = urlPayloadMatch[2] ?? '';
+      const trailingWhitespace = (rawLabel.match(/\s+$/) || [''])[0].length;
+      const label = rawLabel.replace(/\s+$/, '');
+
+      return {
+        standardsId,
+        label: label.length > 0 ? label : undefined,
+        trailingWhitespace: trailingWhitespace > 0 ? trailingWhitespace : undefined,
+      };
+    }
+  }
+
   const firstColon = payload.indexOf(':');
   if (firstColon === -1) {
     return { standardsId: payload.trim() };
@@ -996,7 +1017,10 @@ export function parseTextWithMarkers(
   // Build the node array
   let lastIndex = 0;
   
-  for (const marker of markers) {
+  for (let markerIndex = 0; markerIndex < markers.length; markerIndex += 1) {
+    const marker = markers[markerIndex];
+    const previousMarker = markerIndex > 0 ? markers[markerIndex - 1] : undefined;
+    const nextMarker = markerIndex < markers.length - 1 ? markers[markerIndex + 1] : undefined;
     // Skip markers that overlap with previously consumed text
     if (marker.start < lastIndex) {
       continue;
@@ -1091,18 +1115,56 @@ export function parseTextWithMarkers(
         const standardsId = marker.standardsRefId || '';
         const standardsLabel = marker.glossaryLabel;
         const trailingWhitespace = marker.standardsTrailingWhitespace || 0;
+        const isPlainExternalReference =
+          standardsType === 'external' && !isHttpReference(standardsId);
 
-        nodes.push(
-          React.createElement(CrossReferenceLink, {
-            key: `standards-${marker.start}`,
-            referenceId: `${standardsType}:${standardsId}`,
-            displayText: standardsLabel || standardsId,
-            interactive,
-          })
-        );
+        const standardsText = standardsLabel || standardsId;
+
+        if (isPlainExternalReference) {
+          nodes.push(
+            React.createElement(
+              React.Fragment,
+              { key: `standards-${marker.start}` },
+              ...parseInlineFormatting(standardsText, interactive, marker.start)
+            )
+          );
+        } else {
+          nodes.push(
+            React.createElement(CrossReferenceLink, {
+              key: `standards-${marker.start}`,
+              referenceId: `${standardsType}:${standardsId}`,
+              displayText: standardsText,
+              interactive,
+            })
+          );
+        }
         if (trailingWhitespace > 0) {
           nodes.push(' '.repeat(trailingWhitespace));
         }
+
+        // If standards markers are directly adjacent in source, add comma-space separation.
+        if (
+          previousMarker?.type === 'standardRef' &&
+          previousMarker.end === marker.start
+        ) {
+          const insertionIndex = nodes.length - (trailingWhitespace > 0 ? 1 : 0) - 1;
+          if (insertionIndex >= 0) {
+            nodes.splice(insertionIndex, 0, ', ');
+          }
+        }
+
+        // If this standard marker is immediately followed by plain word text, insert a space.
+        const hasImmediateNextMarker = Boolean(nextMarker && nextMarker.start === marker.end);
+        if (
+          !hasImmediateNextMarker &&
+          marker.end < sanitizedText.length &&
+          sanitizedText[marker.end] &&
+          !/\s/.test(sanitizedText[marker.end]) &&
+          !/^[,.:;)\]]$/.test(sanitizedText[marker.end])
+        ) {
+          nodes.push(' ');
+        }
+
         lastIndex = skipWhitespaceBeforePunctuation(sanitizedText, marker.end);
         break;
       }
