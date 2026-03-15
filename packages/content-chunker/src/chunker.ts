@@ -52,6 +52,8 @@ interface RawPart {
   number: string | number;
   sections?: RawSection[];
   appendix?: RawPartAppendix;
+  spectables?: RawSpectables[];
+  special_tables?: RawSpectables[];
 }
 
 interface RawSection {
@@ -72,12 +74,18 @@ interface RawDivisionAppendix {
   [key: string]: unknown;
 }
 
+interface RawSpectables {
+  id?: string;
+  type?: string;
+  [key: string]: unknown;
+}
+
 /**
  * Content chunk where data is the raw section object from source JSON.
  */
 export interface RawContentChunk {
   path: string;
-  data: RawSection | RawPartAppendix | RawDivisionAppendix | RawFrontMatterSection;
+  data: RawSection | RawPartAppendix | RawDivisionAppendix | RawFrontMatterSection | RawSpectables;
   size: number;
 }
 
@@ -192,6 +200,27 @@ export function chunkRawContent(document: RawDocumentForChunking): RawContentChu
             size: appendixSize,
           });
         }
+
+        const spectablesList = [...(part.spectables ?? []), ...(part.special_tables ?? [])];
+        for (const spectables of spectablesList) {
+          if (spectables.type === 'spectables' && spectables.id) {
+            const spectablesNumberMatch = String(spectables.id).match(/\.spectables(\d+)$/i);
+            const spectablesNumber = spectablesNumberMatch?.[1];
+            if (!spectablesNumber) continue;
+
+            const spectablesPath = generateSpectablesChunkPath(
+              division.id,
+              String(part.number),
+              spectablesNumber
+            );
+            const spectablesSize = JSON.stringify(spectables).length;
+            chunks.push({
+              path: spectablesPath,
+              data: spectables,
+              size: spectablesSize,
+            });
+          }
+        }
       }
 
       for (const appendix of division.appendices ?? []) {
@@ -253,6 +282,15 @@ export function generateDivisionAppendixChunkPath(
 ): string {
   const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
   return `content/${normalizedDivision}/appendix-${String(appendixLetter).toLowerCase()}.json`;
+}
+
+export function generateSpectablesChunkPath(
+  divisionId: string,
+  partNumber: string | number,
+  spectablesNumber: string | number
+): string {
+  const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
+  return `content/${normalizedDivision}/part-${String(partNumber)}/spectables-${String(spectablesNumber)}.json`;
 }
 
 /**

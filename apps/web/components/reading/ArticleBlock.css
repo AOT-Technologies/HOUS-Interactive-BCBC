@@ -19,6 +19,13 @@
   margin: 0 0 12px 0;
 }
 
+.articleSeeAlso {
+  margin: -4px 0 12px 0;
+  font-family: var(--typography-font-families-bc-sans, 'BC Sans', sans-serif);
+  font-size: var(--typography-font-size-body, 1rem);
+  line-height: var(--typography-line-heights-normal, 1.5);
+}
+
 .articleContent {
   margin-left: 0;
 }

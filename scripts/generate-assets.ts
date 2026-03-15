@@ -407,6 +407,38 @@ async function generateStandardsMap(rawData: any, outputDir: string): Promise<vo
   logger.success(`Written standards-map.json (${Object.keys(standards).length} standards)`);
 }
 
+async function generateSpectablesMap(rawData: any, outputDir: string): Promise<void> {
+  logger.info('Generating spectables map...');
+  const spectablesMap: Record<string, { number?: string; title?: string; path?: string }> = {};
+
+  for (const volume of rawData?.volumes || []) {
+    for (const division of volume?.divisions || []) {
+      for (const part of division?.parts || []) {
+        const spectablesList = [...(part?.spectables || []), ...(part?.special_tables || [])];
+        for (const spectables of spectablesList) {
+          if (!spectables || spectables.type !== 'spectables') continue;
+          const spectablesNumber = String(spectables.id || '').match(/\.spectables(\d+)$/i)?.[1];
+          const path = spectablesNumber
+            ? `/code/${division.id}/${part.number}/spectables/${spectablesNumber}`
+            : undefined;
+
+          for (const table of spectables.tables || []) {
+            if (!table?.id) continue;
+            spectablesMap[table.id] = {
+              number: table.number,
+              title: table.title,
+              path,
+            };
+          }
+        }
+      }
+    }
+  }
+
+  await writeFile(join(outputDir, 'spectables-map.json'), JSON.stringify(spectablesMap, null, 2));
+  logger.success(`Written spectables-map.json (${Object.keys(spectablesMap).length} entries)`);
+}
+
 /**
  * Generate quick access and navigation tree
  */
@@ -613,6 +645,9 @@ async function generateVersionAssets(
 
     // Generate standards lookup map for [REF:standard:*] / [REF:external:*]
     await generateStandardsMap(rawData, outputDir);
+
+    // Generate span-table lookup map for spectables references
+    await generateSpectablesMap(rawData, outputDir);
     
     const versionDuration = Date.now() - versionStartTime;
     logger.success(`Completed ${version.title} in ${formatDuration(versionDuration)}`);
@@ -717,6 +752,7 @@ async function generateReport(
   console.log('  ✓ navigation-tree.json');
   console.log('  ✓ glossary-map.json');
   console.log('  ✓ equation-map.json');
+  console.log('  ✓ spectables-map.json');
   console.log('  ✓ amendment-dates.json');
   console.log('  ✓ content-types.json');
   console.log('  ✓ quick-access.json');

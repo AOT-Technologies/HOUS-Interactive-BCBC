@@ -1,6 +1,6 @@
 export interface ParsedReferenceId {
   raw: string;
-  kind: 'section' | 'part_appendix' | 'appendix_document';
+  kind: 'section' | 'part_appendix' | 'appendix_document' | 'spectables';
   division: string;
   part?: string;
   section?: string;
@@ -15,6 +15,7 @@ export interface ParsedReferenceId {
   appendixSection?: string;
   paragraph?: string;
   figure?: string;
+  spectables?: string;
 }
 
 const PART_APPENDIX_REF_REGEX =
@@ -25,6 +26,9 @@ const APPENDIX_DOCUMENT_REF_REGEX =
 
 const SECTION_REF_REGEX =
   /^nbc\.div([A-Za-z0-9]+)\.part(\d+)\.sect(\d+)(?:\.subsect(\d+))?(?:\.art(\d+))?(?:\.sent(\d+))?(?:\.clause(\d+))?(?:\.subclause(\d+))?(?:\.table(\d+))?/i;
+
+const SPECTABLE_REF_REGEX =
+  /^nbc\.div([A-Za-z0-9]+)\.part(\d+)\.spectables(\d+)(?:\.table(\d+))?/i;
 
 export function parseReferenceId(referenceId: string): ParsedReferenceId | null {
   const appendixMatch = referenceId.match(PART_APPENDIX_REF_REGEX);
@@ -55,21 +59,35 @@ export function parseReferenceId(referenceId: string): ParsedReferenceId | null 
   }
 
   const sectionMatch = referenceId.match(SECTION_REF_REGEX);
-  if (!sectionMatch) return null;
+  if (sectionMatch) {
+    return {
+      raw: referenceId,
+      kind: 'section',
+      division: `nbc.div${sectionMatch[1]}`,
+      part: sectionMatch[2],
+      section: sectionMatch[3],
+      subsection: sectionMatch[4] || undefined,
+      article: sectionMatch[5] || undefined,
+      sentence: sectionMatch[6] || undefined,
+      clause: sectionMatch[7] || undefined,
+      subclause: sectionMatch[8] || undefined,
+      table: sectionMatch[9] || undefined,
+    };
+  }
 
-  return {
-    raw: referenceId,
-    kind: 'section',
-    division: `nbc.div${sectionMatch[1]}`,
-    part: sectionMatch[2],
-    section: sectionMatch[3],
-    subsection: sectionMatch[4] || undefined,
-    article: sectionMatch[5] || undefined,
-    sentence: sectionMatch[6] || undefined,
-    clause: sectionMatch[7] || undefined,
-    subclause: sectionMatch[8] || undefined,
-    table: sectionMatch[9] || undefined,
-  };
+  const spectablesMatch = referenceId.match(SPECTABLE_REF_REGEX);
+  if (spectablesMatch) {
+    return {
+      raw: referenceId,
+      kind: 'spectables',
+      division: `nbc.div${spectablesMatch[1]}`,
+      part: spectablesMatch[2],
+      spectables: spectablesMatch[3],
+      table: spectablesMatch[4] || undefined,
+    };
+  }
+
+  return null;
 }
 
 export function isModalReference(referenceId: string): boolean {
@@ -93,6 +111,11 @@ export function getNavigationSlug(referenceId: string): string[] | null {
 
   if (parsed.kind === 'appendix_document') {
     return parsed.appendixLetter ? [parsed.division, 'appendix', parsed.appendixLetter] : null;
+  }
+
+  if (parsed.kind === 'spectables') {
+    if (!parsed.part || !parsed.spectables) return null;
+    return [parsed.division, parsed.part, 'spectables', parsed.spectables];
   }
 
   if (!parsed.part || !parsed.section) return null;
@@ -126,6 +149,11 @@ export function getSectionFetchPath(version: string, referenceId: string): strin
   if (parsed.kind === 'appendix_document') {
     if (!parsed.appendixLetter) return null;
     return `/data/${version}/content/${transformedDivision}/appendix-${parsed.appendixLetter.toLowerCase()}.json`;
+  }
+
+  if (parsed.kind === 'spectables') {
+    if (!parsed.part || !parsed.spectables) return null;
+    return `/data/${version}/content/${transformedDivision}/part-${parsed.part}/spectables-${parsed.spectables}.json`;
   }
 
   if (!parsed.part || !parsed.section) return null;

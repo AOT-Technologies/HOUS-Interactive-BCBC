@@ -19,7 +19,13 @@
 }
 
 .figure-block__title {
-  font: var(--typography-regular-medium, 400 1rem/1.45 'BCSans', sans-serif);
+  font: var(--typography-bold-medium, 700 1rem/1.45 'BCSans', sans-serif);
+  color: var(--typography-color-primary, #313132);
+  margin-bottom: var(--layout-margin-small, 0.5rem);
+}
+
+.figure-block__forming-part {
+  font: var(--typography-regular-medium, 400 1rem/1.35 'BCSans', sans-serif);
   color: var(--typography-color-primary, #313132);
   margin-bottom: var(--layout-margin-small, 0.5rem);
 }

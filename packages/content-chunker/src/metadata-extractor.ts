@@ -15,7 +15,7 @@ import type {
  */
 export interface NavigationNode {
   id: string;
-  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables';
   number?: string;
   title: string;
   path: string;
@@ -269,6 +269,21 @@ function buildDivisionNode(division: any): NavigationNode {
         type: 'part_appendix',
         title: 'Appendix',
         path: `/code/${division.id}/${part.number}/appendix`,
+      });
+    }
+
+    for (const spectables of part.spectables || []) {
+      if (!spectables?.id || spectables?.type !== 'spectables') continue;
+      const spectablesNumberMatch = String(spectables.id).match(/\.spectables(\d+)$/i);
+      const spectablesNumber = spectablesNumberMatch?.[1];
+      if (!spectablesNumber) continue;
+
+      partNode.children?.push({
+        id: spectables.id,
+        type: 'spectables',
+        number: spectablesNumber,
+        title: spectables.title || `Span Tables ${spectablesNumber}`,
+        path: `/code/${division.id}/${part.number}/spectables/${spectablesNumber}`,
       });
     }
 

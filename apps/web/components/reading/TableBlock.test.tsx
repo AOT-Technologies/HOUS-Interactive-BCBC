@@ -295,4 +295,26 @@ describe('TableBlock', () => {
     expect(mergedCell).toHaveClass('table-block__cell--spanned');
     expect(container.querySelectorAll('th')).toHaveLength(2);
   });
+
+  it('renders table note labels using note id suffix when available', () => {
+    const table = {
+      id: 'nbc.divBV2.part9.spectables1.table1',
+      type: 'table' as const,
+      number: '9.10.3.1.-A',
+      title: 'Spectable Note Labels',
+      headers: [],
+      rows: [],
+      table_notes: [
+        { id: 'nbc.divBV2.part9.spectables1.table1.note10', content: 'Note ten content' },
+        { id: 'nbc.divBV2.part9.spectables1.table1.note2', content: 'Note two content' },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table as unknown as Table} />);
+    const labels = Array.from(container.querySelectorAll('.table-block__note-label')).map(
+      (el) => el.textContent
+    );
+
+    expect(labels).toEqual(['(10)', '(2)']);
+  });
 });

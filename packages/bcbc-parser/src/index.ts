@@ -10,6 +10,7 @@ export type {
   DocumentMetadata,
   Division,
   Part,
+  Spectables,
   PartAppendix,
   Section,
   Subsection,

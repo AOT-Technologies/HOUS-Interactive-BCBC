@@ -26,6 +26,7 @@ export { NotesList } from './NotesList';
 export { CrossReferenceLink } from './CrossReferenceLink';
 export { CrossReferenceModal } from './CrossReferenceModal';
 export { FrontMatterRenderer } from './FrontMatterRenderer';
+export { SpectablesRenderer } from './SpectablesRenderer';
 
 // Type-driven recursive renderer
 export { ContentRenderer } from './ContentRenderer';

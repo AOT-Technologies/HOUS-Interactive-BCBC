@@ -25,6 +25,7 @@ import {
   type ApplicationNote,
   type AppendixContentBlock,
 } from '../../lib/stores/appendix-store';
+import { useSpectablesStore, type Spectables } from '../../lib/stores/spectables-store';
 import { useFrontMatterStore } from '../../lib/stores/front-matter-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
 import { useEquationStore } from '../../stores/equation-store';
@@ -44,6 +45,7 @@ import { FrontMatterRenderer } from './FrontMatterRenderer';
 import { CrossReferenceContext } from './CrossReferenceContext';
 import { CrossReferenceModal } from './CrossReferenceModal';
 import { DivisionAppendixRenderer } from './DivisionAppendixRenderer';
+import { SpectablesRenderer } from './SpectablesRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './ReadingView.css';
 
@@ -57,12 +59,14 @@ type ResolvedCrossReference = {
   referenceId: string;
   heading: string;
   targetSlug: string[] | null;
-  mode: 'article' | 'subsection' | 'section' | 'appnote' | 'division_appendix' | 'standard' | 'external_url' | 'error';
+  mode: 'article' | 'subsection' | 'section' | 'appnote' | 'division_appendix' | 'spectable' | 'standard' | 'external_url' | 'error';
   section?: SectionWithAppendix;
   subsection?: Subsection;
   article?: Article;
   note?: ApplicationNote;
   divisionAppendix?: DivisionAppendix;
+  spectables?: Spectables;
+  table?: Table;
   standard?: StandardReferenceEntry;
   externalUrl?: string;
   externalLabel?: string;
@@ -140,6 +144,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const [divisionAppendix, setDivisionAppendix] = useState<DivisionAppendix | null>(null);
   const [appendixLoading, setAppendixLoading] = useState(false);
   const [appendixError, setAppendixError] = useState<string | null>(null);
+  const [spectables, setSpectables] = useState<Spectables | null>(null);
+  const [spectablesLoading, setSpectablesLoading] = useState(false);
+  const [spectablesError, setSpectablesError] = useState<string | null>(null);
   
   // Extract version and date from URL query parameters
   const urlVersion = searchParams.get('version');
@@ -162,6 +169,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   } = useSectionStore();
   const fetchAppendix = useAppendixStore((s) => s.fetchAppendix);
   const fetchDivisionAppendix = useAppendixStore((s) => s.fetchDivisionAppendix);
+  const fetchSpectables = useSpectablesStore((s) => s.fetchSpectables);
   const fetchStandardsMap = useStandardsMapStore((s) => s.fetchStandardsMap);
   
   const {
@@ -205,8 +213,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const isFrontMatterLevel = slug.length === 2 && slug[0]?.toLowerCase() === 'front-matter';
   const isPartAppendixLevel = slug.length === 3 && slug[2]?.toLowerCase() === 'appendix';
   const isDivisionAppendixLevel = slug.length === 3 && slug[1]?.toLowerCase() === 'appendix';
+  const isSpectablesLevel = slug.length === 4 && slug[2]?.toLowerCase() === 'spectables';
   const isAppendixLevel = isPartAppendixLevel || isDivisionAppendixLevel;
-  const isSectionLevelOrDeeper = slug.length >= 3 && !isAppendixLevel && !isFrontMatterLevel;
+  const isSectionLevelOrDeeper =
+    slug.length >= 3 && !isAppendixLevel && !isFrontMatterLevel && !isSpectablesLevel;
   const requestedSectionKey = slug.slice(0, 3).join('/');
   const loadedSectionKey = currentPath.slice(0, 3).join('/');
   const isErrorForRequestedSection = Boolean(error) && loadedSectionKey === requestedSectionKey;
@@ -254,6 +264,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     : null;
   const currentDivisionAppendixNode = isDivisionAppendixLevel
     ? findNodeByPath(navigationTree, `/code/${slug[0]}/appendix/${slug[2]}`)
+    : null;
+  const currentSpectablesNode = isSpectablesLevel
+    ? findNodeByPath(navigationTree, `/code/${slug[0]}/${slug[1]}/spectables/${slug[3]}`)
     : null;
 
   const divisionLabel = getDivisionLabel(slug[0] || '');
@@ -362,6 +375,20 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       }
     },
     [fetchDivisionAppendix, version]
+  );
+
+  const fetchTargetSpectables = useCallback(
+    async (referenceId: string): Promise<Spectables | null> => {
+      const parsed = parseReferenceId(referenceId);
+      if (!parsed || parsed.kind !== 'spectables' || !parsed.part || !parsed.spectables) return null;
+
+      try {
+        return await fetchSpectables(version, parsed.division, parsed.part, parsed.spectables);
+      } catch {
+        return null;
+      }
+    },
+    [fetchSpectables, version]
   );
 
   const resolveCrossReference = useCallback(
@@ -518,6 +545,64 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         };
       }
 
+      if (parsed.kind === 'spectables') {
+        const spectablesPayload =
+          (isSpectablesLevel &&
+          spectables &&
+          String(spectables.id).toLowerCase().includes(`spectables${parsed.spectables || ''}`.toLowerCase())
+            ? spectables
+            : null) || (await fetchTargetSpectables(referenceId));
+
+        if (!spectablesPayload) {
+          return {
+            referenceId,
+            heading: referenceId,
+            mode: 'error',
+            targetSlug: getNavigationSlug(referenceId),
+            errorMessage: 'Referenced span tables could not be loaded.',
+          };
+        }
+
+        const tableNoteMatch = referenceId.match(
+          /^(nbc\.div[A-Za-z0-9]+\.part\d+\.spectables\d+\.table\d+)\.note(\d+)$/i
+        );
+        const tableReferenceId = tableNoteMatch?.[1] || referenceId;
+        const tableNoteNumber = tableNoteMatch?.[2];
+        const table = (spectablesPayload.tables || []).find((item) => item.id === tableReferenceId);
+
+        if (tableNoteMatch) {
+          if (!table) {
+            return {
+              referenceId,
+              heading: `Table Note (${tableNoteNumber || '?'})`,
+              mode: 'error',
+              targetSlug: getNavigationSlug(referenceId),
+              errorMessage: 'Referenced table note was not found.',
+            };
+          }
+
+          const heading = table?.number ? `Table ${table.number}` : table?.title || spectablesPayload.title;
+          return {
+            referenceId,
+            heading: heading || referenceId,
+            mode: 'spectable',
+            spectables: spectablesPayload,
+            table,
+            targetSlug: getNavigationSlug(referenceId),
+          };
+        }
+
+        const heading = table?.number ? `Table ${table.number}` : table?.title || spectablesPayload.title;
+        return {
+          referenceId,
+          heading: heading || referenceId,
+          mode: 'spectable',
+          spectables: spectablesPayload,
+          table,
+          targetSlug: getNavigationSlug(referenceId),
+        };
+      }
+
       if (parsed.kind !== 'section' || !parsed.part || !parsed.section) {
         return {
           referenceId,
@@ -599,11 +684,14 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       fetchStandardsMap,
       fetchTargetAppendix,
       fetchTargetDivisionAppendix,
+      fetchTargetSpectables,
       fetchTargetSection,
       divisionAppendix,
+      spectables,
       version,
       isDivisionAppendixLevel,
       isPartAppendixLevel,
+      isSpectablesLevel,
       requestedSectionKey,
       resolvedSection,
       resolvedPartAppendix,
@@ -756,6 +844,14 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }, [isAppendixLevel]);
 
   useEffect(() => {
+    if (!isSpectablesLevel) {
+      setSpectables(null);
+      setSpectablesLoading(false);
+      setSpectablesError(null);
+    }
+  }, [isSpectablesLevel]);
+
+  useEffect(() => {
     if (!isPartAppendixLevel) {
       setPartAppendix(null);
       return;
@@ -805,6 +901,30 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     loadDivisionAppendix();
   }, [fetchDivisionAppendix, isDivisionAppendixLevel, slug, version]);
 
+  useEffect(() => {
+    if (!isSpectablesLevel) {
+      return;
+    }
+
+    const loadSpectables = async () => {
+      setSpectablesLoading(true);
+      setSpectablesError(null);
+      setSpectables(null);
+
+      try {
+        const payload = await fetchSpectables(version, slug[0], slug[1], slug[3]);
+        setSpectables(payload);
+      } catch (err) {
+        const message = err instanceof Error ? err.message : 'Failed to load span tables.';
+        setSpectablesError(message);
+      } finally {
+        setSpectablesLoading(false);
+      }
+    };
+
+    loadSpectables();
+  }, [fetchSpectables, isSpectablesLevel, slug, version]);
+
   // Preload equation map for [EQ:*:*] marker resolution in content text.
   useEffect(() => {
     useEquationStore.getState().loadEquationMap().catch((error) => {
@@ -828,8 +948,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     }
 
     const contentStillLoading =
-      (isSectionLevelOrDeeper && loading) || (isAppendixLevel && appendixLoading);
-    if (!modalQueryParam || (!isSectionLevelOrDeeper && !isAppendixLevel) || contentStillLoading) return;
+      (isSectionLevelOrDeeper && loading) ||
+      (isAppendixLevel && appendixLoading) ||
+      (isSpectablesLevel && spectablesLoading);
+    if (!modalQueryParam || (!isSectionLevelOrDeeper && !isAppendixLevel && !isSpectablesLevel) || contentStillLoading) return;
     if (modalData?.referenceId === modalQueryParam) return;
 
     openReferenceModal(modalQueryParam, null).catch((error) => {
@@ -839,10 +961,12 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     appendixLoading,
     isAppendixLevel,
     isSectionLevelOrDeeper,
+    isSpectablesLevel,
     loading,
     modalData?.referenceId,
     modalQueryParam,
     openReferenceModal,
+    spectablesLoading,
   ]);
 
   useEffect(() => {
@@ -1066,6 +1190,16 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       );
     }
 
+    if (modalData.mode === 'spectable' && modalData.table) {
+      return (
+        <TableBlock
+          table={modalData.table}
+          interactive={false}
+          effectiveDate={effectiveDate}
+        />
+      );
+    }
+
     if (modalData.mode === 'standard' && modalData.standard) {
       const standard = modalData.standard;
       const heading = [standard.agency, standard.full_number]
@@ -1100,7 +1234,12 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   };
 
   // Loading state
-  if (loading || (isAppendixLevel && appendixLoading) || (isFrontMatterLevel && frontMatterLoading)) {
+  if (
+    loading ||
+    (isAppendixLevel && appendixLoading) ||
+    (isFrontMatterLevel && frontMatterLoading) ||
+    (isSpectablesLevel && spectablesLoading)
+  ) {
     return renderLoadingSkeleton();
   }
 
@@ -1340,6 +1479,91 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           <div className="reading-view__content">
             <DivisionAppendixRenderer
               appendix={divisionAppendix}
+              interactive={true}
+              effectiveDate={effectiveDate}
+            />
+          </div>
+          <CrossReferenceModal
+            open={Boolean(modalData)}
+            heading={modalData?.heading || 'Cross reference'}
+            scrollToReferenceId={modalData?.referenceId || null}
+            onClose={closeReferenceModal}
+            onGoToSection={() => {
+              if (modalData?.mode === 'external_url' && modalData.externalUrl) {
+                window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
+                return;
+              }
+
+              if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
+                closeReferenceModal();
+                return;
+              }
+
+              closeReferenceModal();
+              const params = new URLSearchParams(searchParams.toString());
+              params.delete('modal');
+              const query = params.toString();
+              router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
+            }}
+            showGoToSection={Boolean(
+              (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
+              (modalData?.mode === 'external_url' && modalData.externalUrl)
+            )}
+            goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
+          >
+            {renderModalContent()}
+          </CrossReferenceModal>
+        </div>
+      </CrossReferenceContext.Provider>
+    );
+  }
+
+  if (isSpectablesLevel) {
+    if (
+      navigationLoading ||
+      (navigationTree.length === 0 && currentVersion !== version) ||
+      (navigationTree.length === 0 && !currentSpectablesNode)
+    ) {
+      return renderLoadingSkeleton();
+    }
+
+    if (!currentSpectablesNode || currentSpectablesNode.type !== 'spectables') {
+      return (
+        <div className="reading-view">
+          <div className="reading-view__error">
+            <h2>Unable to Load Content</h2>
+            <p>Span tables content is not available for this URL.</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (spectablesError) {
+      return (
+        <div className="reading-view">
+          <div className="reading-view__error">
+            <h2>Unable to Load Content</h2>
+            <p>{spectablesError}</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (!spectables) {
+      return renderLoadingSkeleton();
+    }
+
+    const spectablesPdfLabel = `${divisionLabel} - Part ${slug[1]} ${spectables.title} PDF`;
+    return (
+      <CrossReferenceContext.Provider
+        value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
+      >
+        <div className="reading-view" ref={contentContainerRef}>
+          <ReadingViewHeader pdfLabel={spectablesPdfLabel} />
+          <div className="reading-view__content">
+            <PartTitle title={currentPartNode?.title || slug[1]} />
+            <SpectablesRenderer
+              spectables={spectables}
               interactive={true}
               effectiveDate={effectiveDate}
             />

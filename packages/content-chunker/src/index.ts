@@ -11,6 +11,7 @@ export {
   generateChunkPath,
   generateAppendixChunkPath,
   generateDivisionAppendixChunkPath,
+  generateSpectablesChunkPath,
   generateFrontMatterChunkPath,
   isOptimalChunkSize,
   getChunkStats,

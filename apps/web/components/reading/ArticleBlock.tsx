@@ -8,6 +8,7 @@
 import React from 'react';
 import type { Article } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './ArticleBlock.css';
 
 export interface ArticleBlockProps {
@@ -23,6 +24,8 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
   effectiveDate,
   interactive = true 
 }) => {
+  const articleWithSeeAlso = article as Article & { see_also?: string };
+  const seeAlsoText = articleWithSeeAlso.see_also?.trim();
   const fullArticleNumber = subsectionNumberPrefix
     ? `${subsectionNumberPrefix}.${article.number}`
     : article.number;
@@ -32,6 +35,11 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
       <h4 className="articleHeading">
         {fullArticleNumber} {article.title}
       </h4>
+      {seeAlsoText ? (
+        <p className="articleSeeAlso">
+          {parseTextWithMarkers(seeAlsoText, [], interactive)}
+        </p>
+      ) : null}
       
       {/* Render all content in source order using type-driven dispatcher */}
       <div className="articleContent">
