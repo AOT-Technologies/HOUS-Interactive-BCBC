@@ -16,7 +16,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { ReadingViewProps } from '@repo/data';
-import type { Subsection, Article, Section } from '@bc-building-code/bcbc-parser';
+import type { Subsection, Article, Section, Table, Figure } from '@bc-building-code/bcbc-parser';
 import { useSectionStore } from '../../lib/stores/section-store';
 import {
   useAppendixStore,
@@ -947,6 +947,24 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       figureNumberById: Map<string, string>;
     }
   ): React.ReactNode => {
+    const getTableWithOverride = (table: Table) => {
+      if (!table?.id || !numberOverrides) {
+        return table;
+      }
+
+      const overrideNumber = numberOverrides.tableNumberById.get(table.id);
+      return overrideNumber ? { ...table, number: overrideNumber } : table;
+    };
+
+    const getFigureWithOverride = (figure: Figure) => {
+      if (!figure?.id || !numberOverrides) {
+        return figure;
+      }
+
+      const overrideNumber = numberOverrides.figureNumberById.get(figure.id);
+      return overrideNumber ? { ...figure, number: overrideNumber } : figure;
+    };
+
     return (
       <>
         {block.paragraphs?.map((paragraph, index) => (
@@ -957,11 +975,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         {block.tables?.map((table, index) => (
           <TableBlock
             key={`${block.id}-table-${table.id || index}`}
-            table={
-              table?.id && numberOverrides?.tableNumberById.has(table.id)
-                ? { ...table, number: numberOverrides.tableNumberById.get(table.id) }
-                : table
-            }
+            table={getTableWithOverride(table)}
             interactive={interactive}
             effectiveDate={effectiveDate}
           />
@@ -969,11 +983,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         {block.figures?.map((figure, index) => (
           <FigureBlock
             key={`${block.id}-figure-${figure.id || index}`}
-            figure={
-              figure?.id && numberOverrides?.figureNumberById.has(figure.id)
-                ? { ...figure, number: numberOverrides.figureNumberById.get(figure.id) }
-                : figure
-            }
+            figure={getFigureWithOverride(figure)}
           />
         ))}
       </>
