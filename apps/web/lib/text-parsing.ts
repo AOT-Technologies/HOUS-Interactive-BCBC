@@ -460,6 +460,18 @@ function getCrossReferenceDisplayText(
 }
 
 function formatInternalReference(referenceId: string, format?: InternalRefFormat): string {
+  const spectablesMatch = referenceId.match(
+    /^nbc\.div([A-Za-z0-9]+)\.part(\d+)\.spectables(\d+)(?:\.table(\d+))?/i
+  );
+
+  if (spectablesMatch) {
+    const table = spectablesMatch[4];
+    if (table && (format === 'number' || format === 'shortNum')) {
+      return table;
+    }
+    return 'Table';
+  }
+
   const appendixDocumentMatch = referenceId.match(
     /^nbc\.div([A-Za-z0-9]+)\.appendix([A-Za-z])(?:\.appsect(\d+))?(?:\.subsect(\d+))?(?:\.article(\d+))?(?:\.para(\d+))?(?:\.table(\d+))?(?:\.figure(\d+))?/i
   );
@@ -487,14 +499,8 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (figure) {
-      const figureIndex = asNumber(figure);
-      const figureLetter = typeof figureIndex === 'number'
-        ? toAlphabetOrdinal(figureIndex).toUpperCase()
-        : undefined;
-      const figureNumber = baseNumber && figureLetter
-        ? `${baseNumber}.-${figureLetter}`
-        : [appendixLetter, appendixSection, subsection, article, figure].filter(Boolean).join('.');
-      return isShortNumeric ? figureNumber : `Figure ${figureNumber}`;
+      const figureNumber = baseNumber || [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
+      return isShortNumeric ? figureNumber : `Figure ${figureNumber}.`;
     }
 
     if (article) {
@@ -529,19 +535,13 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   const sectionNumber = [part, section].filter(Boolean).join('.');
   const subsectionNumber = [part, section, subsection].filter(Boolean).join('.');
   const articleNumber = [part, section, subsection, article].filter(Boolean).join('.');
-  const tableNumber = [part, section, subsection, article, table].filter(Boolean).join('.');
-  const figureIndex = asNumber(figure);
-  const figureLetter = typeof figureIndex === 'number' ? toAlphabetOrdinal(figureIndex).toUpperCase() : undefined;
-  const figureNumber = part && section && subsection && article && figureLetter
-    ? `${part}.${section}.${subsection}.${article}.-${figureLetter}`
-    : undefined;
+  const containerNumber = articleNumber || subsectionNumber || sectionNumber || part;
 
   // Application notes are rendered as Note references in BC style.
   if (appNote) {
     const trail = [part, section, subsection, article].filter(Boolean).join('.');
-    const prefix = [division, trail].filter(Boolean).join('-');
-    const noteLabel = `${prefix}.(${appNote})`;
-    return `Note ${noteLabel}.`;
+    const noteLabel = [division, trail].filter(Boolean).join('-');
+    return noteLabel ? `Note ${noteLabel}.` : 'Note';
   }
 
   const isShortNumeric = format === 'shortNum' || format === 'number';
@@ -561,14 +561,16 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   }
 
   if (table) {
-    return tableNumber ? `Table ${tableNumber}.` : `Table ${table}`;
-  }
-
-  if (figureNumber) {
-    return isShortNumeric ? figureNumber : `Figure ${figureNumber}`;
+    if (containerNumber) {
+      return isShortNumeric ? containerNumber : `Table ${containerNumber}.`;
+    }
+    return isShortNumeric ? table : `Table ${table}`;
   }
 
   if (figure) {
+    if (containerNumber) {
+      return isShortNumeric ? containerNumber : `Figure ${containerNumber}.`;
+    }
     return isShortNumeric ? figure : `Figure ${figure}`;
   }
 
@@ -593,6 +595,18 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   }
 
   return referenceId;
+}
+
+function getSpectableTableNoteNumber(referenceId: string): string | null {
+  const match = referenceId.match(
+    /^nbc\.div[A-Za-z0-9]+\.part\d+\.spectables\d+\.table\d+\.note(\d+)$/i
+  );
+  return match?.[1] || null;
+}
+
+function getSpectableTableNoteLabel(referenceId: string): string | null {
+  const noteNumber = getSpectableTableNoteNumber(referenceId);
+  return noteNumber ? `(${noteNumber})` : null;
 }
 
 /**
@@ -697,7 +711,8 @@ export function parseTextWithCrossReferences(
       nodes.push(text.substring(lastIndex, matchStart));
     }
 
-    const baseDisplay = customLabel || formatInternalReference(referenceId, format);
+    const spectableTableNoteLabel = getSpectableTableNoteLabel(referenceId);
+    const baseDisplay = customLabel || spectableTableNoteLabel || formatInternalReference(referenceId, format);
     const trailing = text.slice(matchEnd);
     const qualifierMatch = baseDisplay.startsWith('Note ')
       ? trailing.match(/^(\s*\([^)]+\))/)
@@ -717,7 +732,7 @@ export function parseTextWithCrossReferences(
         displayText: normalizedDisplayText,
         format,
         interactive,
-        preserveDisplayText: Boolean(customLabel),
+        preserveDisplayText: Boolean(customLabel || spectableTableNoteLabel),
       })
     );
     
@@ -864,6 +879,9 @@ export function parseTextWithMarkers(
   const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)(?::([^\]]+))?\]/gi;
   
   while ((match = noteRegex.exec(sanitizedText)) !== null) {
+    if (getSpectableTableNoteNumber(match[1])) {
+      continue;
+    }
     markers.push({
       type: 'note',
       start: match.index,
@@ -1063,6 +1081,8 @@ export function parseTextWithMarkers(
       }
       
       case 'crossref': {
+        const spectableTableNoteLabel = getSpectableTableNoteLabel(marker.referenceId!);
+
         const crossRefDisplay = marker.crossRefLabel
           ? (() => {
               const trailing = sanitizedText.slice(marker.end);
@@ -1077,6 +1097,8 @@ export function parseTextWithMarkers(
               }
               return { text: marker.crossRefLabel, consumed: 0 };
             })()
+          : spectableTableNoteLabel
+            ? { text: spectableTableNoteLabel, consumed: 0 }
           : getCrossReferenceDisplayText(
               sanitizedText,
               marker.end,
@@ -1099,7 +1121,7 @@ export function parseTextWithMarkers(
             displayText: normalizedDisplayText,
             format: marker.format as InternalRefFormat,
             interactive,
-            preserveDisplayText: Boolean(marker.crossRefLabel),
+            preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
           })
         );
         // For cross-references, consume the marker and the display text that follows

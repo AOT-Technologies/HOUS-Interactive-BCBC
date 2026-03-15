@@ -83,7 +83,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Figure 4.1.6.10.-A');
+    expect(crossRefs[0].props.displayText).toBe('Figure 4.1.6.10.');
   });
 
   it('formats internal figure references with BC figure numbering for shortNum format', () => {
@@ -92,7 +92,31 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('4.1.6.10.-B');
+    expect(crossRefs[0].props.displayText).toBe('4.1.6.10');
+  });
+
+  it('formats internal table references using parent article numbering for long format', () => {
+    const input = '[REF:internal:nbc.divB.part9.sect3.subsect1.art7.table1:long]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Table 9.3.1.7.');
+  });
+
+  it('renders spectables table-note references as cross-reference links with note labels', () => {
+    const input =
+      'See [REF:internal:nbc.divBV2.part9.spectables1.table1.note14:long], [REF:internal:nbc.divBV2.part9.spectables1.table1.note16:short] and [REF:internal:nbc.divBV2.part9.spectables1.table1.note22:short].';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(3);
+    expect(crossRefs[0].props.referenceId).toBe('nbc.divBV2.part9.spectables1.table1.note14');
+    expect(crossRefs[0].props.displayText).toBe('(14)');
+    expect(crossRefs[1].props.referenceId).toBe('nbc.divBV2.part9.spectables1.table1.note16');
+    expect(crossRefs[1].props.displayText).toBe('(16)');
+    expect(crossRefs[2].props.referenceId).toBe('nbc.divBV2.part9.spectables1.table1.note22');
+    expect(crossRefs[2].props.displayText).toBe('(22)');
   });
 
   it('parses note references with explicit display label payload', () => {

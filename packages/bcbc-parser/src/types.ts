@@ -189,6 +189,16 @@ export interface Part {
   type: 'part';
   sections: Section[];
   appendix?: PartAppendix;
+  spectables?: Spectables[];
+}
+
+export interface Spectables {
+  id: string;
+  type: 'spectables';
+  title: string;
+  table_prefix?: string;
+  toc_entry?: string;
+  tables: Table[];
 }
 
 export interface AppendixParagraph {

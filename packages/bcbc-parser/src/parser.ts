@@ -9,6 +9,7 @@ import type {
   BCBCDocument,
   Division,
   Part,
+  Spectables,
   PartAppendix,
   Section,
   Subsection,
@@ -126,6 +127,17 @@ interface RawPart {
   title: string;
   sections: RawSection[];
   appendix?: RawPartAppendix;
+  spectables?: RawSpectables[];
+  special_tables?: RawSpectables[];
+}
+
+interface RawSpectables {
+  id: string;
+  type: 'spectables';
+  title: string;
+  table_prefix?: string;
+  toc_entry?: string;
+  tables?: RawTable[];
 }
 
 interface RawSection {
@@ -433,6 +445,7 @@ function parseDivisionData(raw: RawDivision): Division {
  * Parse a part from raw data
  */
 function parsePartData(raw: RawPart): Part {
+  const spectables = raw.spectables || raw.special_tables;
   return {
     id: raw.id,
     number: String(raw.number),
@@ -440,6 +453,18 @@ function parsePartData(raw: RawPart): Part {
     type: 'part',
     sections: raw.sections.map(parseSectionData),
     appendix: raw.appendix ? parsePartAppendixData(raw.appendix) : undefined,
+    spectables: spectables?.map(parseSpectablesData),
+  };
+}
+
+function parseSpectablesData(raw: RawSpectables): Spectables {
+  return {
+    id: raw.id,
+    type: 'spectables',
+    title: raw.title,
+    table_prefix: raw.table_prefix,
+    toc_entry: raw.toc_entry,
+    tables: (raw.tables || []).map(parseTableData),
   };
 }
 

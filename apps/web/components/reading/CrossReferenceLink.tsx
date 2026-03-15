@@ -7,6 +7,7 @@ import { resolvePartAppendixForEffectiveDate } from '../../lib/revision-resolver
 import { useCrossReferenceContext } from './CrossReferenceContext';
 import { useNavigationStore, type NavigationNode } from '../../stores/navigation-store';
 import { useStandardsMapStore, type StandardReferenceEntry } from '../../stores/standards-map-store';
+import { useSpectablesMapStore } from '../../stores/spectables-map-store';
 import { useAppendixStore } from '../../lib/stores/appendix-store';
 import { useUIStore } from '../../lib/stores/ui-store';
 import './CrossReferenceLink.css';
@@ -47,10 +48,12 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   const effectiveDate = searchParams.get('date') || undefined;
   const fetchAppendix = useAppendixStore((s) => s.fetchAppendix);
   const fetchStandardsMap = useStandardsMapStore((s) => s.fetchStandardsMap);
+  const fetchSpectablesMap = useSpectablesMapStore((s) => s.fetchSpectablesMap);
   const openGlossarySidebar = useUIStore((s) => s.openGlossarySidebar);
   const navigationTree = useNavigationStore((s) => s.navigationTree);
   const [appnoteDisplayText, setAppnoteDisplayText] = useState<string | null>(null);
   const [standardsDisplayText, setStandardsDisplayText] = useState<string | null>(null);
+  const [spectableDisplayText, setSpectableDisplayText] = useState<string | null>(null);
 
   const findNodeById = (
     nodes: NavigationNode[],
@@ -84,7 +87,10 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   const isGlossaryTermReference = Boolean(glossaryTermId);
   const isPartAppendixAppnote =
     parsedReference?.kind === 'part_appendix' && Boolean(parsedReference.appnote);
+  const isSpectableTableRef =
+    parsedReference?.kind === 'spectables' && Boolean(parsedReference.table);
   const shouldResolveAppnoteDisplayText = isPartAppendixAppnote && !preserveDisplayText;
+  const shouldResolveSpectableDisplayText = isSpectableTableRef && !preserveDisplayText;
   const standardsMatch = referenceId.match(/^(standard|external):(.+)$/i);
   const standardsType = standardsMatch?.[1]?.toLowerCase() as 'standard' | 'external' | undefined;
   const standardsRefId = standardsMatch?.[2]?.trim() || '';
@@ -221,7 +227,56 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     };
   }, [fetchStandardsMap, hasExplicitStandardsLabel, isExternalReference, isStandardsReference, standardsRefId, version]);
 
+  useEffect(() => {
+    let active = true;
+
+    const resolveSpectableDisplayText = async () => {
+      if (!shouldResolveSpectableDisplayText) {
+        if (active) {
+          setSpectableDisplayText(null);
+        }
+        return;
+      }
+
+      let spectablesMap: Record<string, { number?: string; title?: string }>;
+      try {
+        spectablesMap = await fetchSpectablesMap(version);
+      } catch {
+        if (active) {
+          setSpectableDisplayText(null);
+        }
+        return;
+      }
+
+      const entry = spectablesMap[referenceId];
+      const tableNumber = entry?.number?.trim();
+      if (!tableNumber) {
+        if (active) {
+          setSpectableDisplayText(null);
+        }
+        return;
+      }
+
+      let nextText = `Table ${tableNumber}`;
+      if (format === 'number' || format === 'shortNum') {
+        nextText = tableNumber;
+      } else if (format === 'title' && entry?.title?.trim()) {
+        nextText = entry.title.trim();
+      }
+
+      if (active) {
+        setSpectableDisplayText(nextText);
+      }
+    };
+
+    resolveSpectableDisplayText();
+    return () => {
+      active = false;
+    };
+  }, [fetchSpectablesMap, format, referenceId, shouldResolveSpectableDisplayText, version]);
+
   const effectiveDisplayText = standardsDisplayText
+    || spectableDisplayText
     || (appnoteDisplayText
       ? `${appnoteDisplayText}${trailingClauseQualifier ? ` ${trailingClauseQualifier}` : ''}`
       : resolvedDisplayText);

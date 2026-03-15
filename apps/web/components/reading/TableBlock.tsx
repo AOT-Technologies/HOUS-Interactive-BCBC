@@ -571,7 +571,13 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   }, 0);
   const { preferHorizontalScroll, minWidthRem } = analyzeTableWidth(normalizedRows, maxColumnCount);
 
-  const getTableNoteLabel = (_note: RawTableNote, index: number): string => {
+  const getTableNoteLabel = (note: RawTableNote, index: number): string => {
+    const noteId = (note.id || '').trim();
+    const numericSuffix = noteId.match(/\.note(\d+)$/i)?.[1];
+    if (numericSuffix) {
+      return `(${numericSuffix})`;
+    }
+
     return `(${index + 1})`;
   };
 

@@ -8,6 +8,7 @@
  * - /code/{division}/{part}/{section}/{subsection}/{article}
  * - /code/{division}/{part}/appendix
  * - /code/{division}/appendix/{letter}
+ * - /code/{division}/{part}/spectables/{number}
  * 
  * Query parameters:
  * - version: Code version (e.g., "2024")
@@ -98,6 +99,8 @@ export async function generateMetadata({ params }: PageProps) {
     title = `Appendix ${section.toUpperCase()} - BC Building Code`;
   } else if (section === 'appendix') {
     title = `Part ${part} Appendix - BC Building Code`;
+  } else if (section === 'spectables' && subsection) {
+    title = `Span Tables ${subsection} - BC Building Code`;
   } else if (article && subsection) {
     title = `Article ${article} - BC Building Code`;
   } else if (subsection) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Figure } from '@bc-building-code/bcbc-parser';
+import type { Figure, FormingPartReference } from '@bc-building-code/bcbc-parser';
 import { resolveImagePath } from '../../lib/image-config';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './FigureBlock.css';
@@ -13,6 +13,8 @@ type FigureWithRawGraphic = Figure & {
   graphic?: RawFigureGraphic;
   number?: string;
   altText?: string;
+  forming_part?: FormingPartReference[];
+  formingPart?: FormingPartReference[];
   imageUrl?: string;
   notes?: Array<{
     id: string;
@@ -59,12 +61,144 @@ function getFigureNoteNumber(noteId: string): string {
   return noteMatch?.[1] || noteId.split('.').pop() || noteId;
 }
 
+type ParsedInternalReference = {
+  part?: string;
+  section?: string;
+  subsection?: string;
+  article?: string;
+  sentence?: string;
+  clause?: string;
+  subclause?: string;
+};
+
+const extractNumeric = (value: string, pattern: RegExp): string | undefined =>
+  value.match(pattern)?.[1];
+
+const toAlphabetOrdinal = (value: number): string => {
+  if (!Number.isFinite(value) || value <= 0) {
+    return String(value);
+  }
+
+  let current = value;
+  let result = '';
+
+  while (current > 0) {
+    current -= 1;
+    result = String.fromCharCode(97 + (current % 26)) + result;
+    current = Math.floor(current / 26);
+  }
+
+  return result;
+};
+
+const toRoman = (value: number): string => {
+  if (!Number.isFinite(value) || value <= 0) {
+    return String(value);
+  }
+
+  const numerals: Array<[number, string]> = [
+    [1000, 'm'],
+    [900, 'cm'],
+    [500, 'd'],
+    [400, 'cd'],
+    [100, 'c'],
+    [90, 'xc'],
+    [50, 'l'],
+    [40, 'xl'],
+    [10, 'x'],
+    [9, 'ix'],
+    [5, 'v'],
+    [4, 'iv'],
+    [1, 'i'],
+  ];
+
+  let remainder = Math.floor(value);
+  let result = '';
+
+  for (const [numericValue, numeral] of numerals) {
+    while (remainder >= numericValue) {
+      result += numeral;
+      remainder -= numericValue;
+    }
+  }
+
+  return result;
+};
+
+const parseInternalReference = (referenceId: string): ParsedInternalReference => ({
+  part: extractNumeric(referenceId, /\.part(\d+)/i),
+  section: extractNumeric(referenceId, /\.sect(\d+)/i),
+  subsection: extractNumeric(referenceId, /\.subsect(\d+)/i),
+  article: extractNumeric(referenceId, /\.art(\d+)/i),
+  sentence: extractNumeric(referenceId, /\.sent(\d+)/i),
+  clause: extractNumeric(referenceId, /\.clause(\d+)/i),
+  subclause: extractNumeric(referenceId, /\.subclause(\d+)/i),
+});
+
+const formatFormingPartLabel = (reference: ParsedInternalReference): string | null => {
+  const articleReference = [reference.part, reference.section, reference.subsection, reference.article]
+    .filter(Boolean)
+    .join('.');
+
+  if (reference.subclause) {
+    return articleReference
+      ? `Subclause ${articleReference}.(${toRoman(Number(reference.subclause))})`
+      : `Subclause (${toRoman(Number(reference.subclause))})`;
+  }
+
+  if (reference.clause) {
+    const clauseLabel = toAlphabetOrdinal(Number(reference.clause));
+    return articleReference
+      ? `Clause ${articleReference}.(${clauseLabel})`
+      : `Clause (${clauseLabel})`;
+  }
+
+  if (reference.sentence) {
+    return articleReference
+      ? `Sentence ${articleReference}.(${reference.sentence})`
+      : `Sentence (${reference.sentence})`;
+  }
+
+  if (articleReference) {
+    return `Article ${articleReference}.`;
+  }
+
+  return null;
+};
+
+const formatFormingPartText = (formingPart: FormingPartReference[] | undefined): string | null => {
+  if (!formingPart || formingPart.length === 0) {
+    return null;
+  }
+
+  const labels = formingPart
+    .filter((entry) => entry?.type === 'internal' && typeof entry.target === 'string')
+    .map((entry) => formatFormingPartLabel(parseInternalReference(entry.target)))
+    .filter((label): label is string => Boolean(label));
+
+  if (labels.length === 0) {
+    return null;
+  }
+
+  if (labels.length === 1) {
+    return `Forming Part of ${labels[0]}`;
+  }
+
+  if (labels.length === 2) {
+    return `Forming Part of ${labels[0]} and ${labels[1]}`;
+  }
+
+  return `Forming Part of ${labels.slice(0, -1).join(', ')}, and ${labels[labels.length - 1]}`;
+};
+
 export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
   const rawImageSrc = figure.imageUrl || figure.graphic?.src;
   const imagePath = resolveImagePath(rawImageSrc);
   const altText = figure.altText || figure.graphic?.alt_text || figure.title || 'Figure';
   const figureNumber = extractFigureNumberFromId(figure.id) || figure.number;
   const figureLabel = figureNumber ? `Figure ${figureNumber}` : 'Figure';
+  const formingPartEntries = figure.formingPart ?? figure.forming_part;
+  const formingPartText = formatFormingPartText(formingPartEntries);
   const figureNotes = Array.isArray(figure.notes) ? figure.notes.filter((note) => note?.content) : [];
 
   return (
@@ -73,6 +207,11 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
       {figure.title && (
         <div className="figure-block__title">
           {parseTextWithMarkers(figure.title, [], true)}
+        </div>
+      )}
+      {formingPartText && (
+        <div className="figure-block__forming-part">
+          {parseTextWithMarkers(formingPartText, [], true)}
         </div>
       )}
       {imagePath && (

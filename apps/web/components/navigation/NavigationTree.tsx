@@ -147,6 +147,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
     (node: NavigationNode, triggerElement?: HTMLElement) => {
       const isNavigable =
         node.type === 'part' ||
+        node.type === 'spectables' ||
         node.type === 'part_appendix' ||
         node.type === 'division_appendix' ||
         node.type === 'section' ||
