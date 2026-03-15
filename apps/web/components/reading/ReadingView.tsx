@@ -28,6 +28,7 @@ import {
 import { useFrontMatterStore } from '../../lib/stores/front-matter-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
 import { useEquationStore } from '../../stores/equation-store';
+import { useStandardsMapStore, type StandardReferenceEntry } from '../../stores/standards-map-store';
 import { parseContentPath } from '../../lib/url-utils';
 import { resolvePartAppendixForEffectiveDate, resolveSectionForEffectiveDate } from '../../lib/revision-resolver';
 import { getNavigationSlug, getSectionFetchPath, parseReferenceId } from '../../lib/cross-reference';
@@ -45,18 +46,6 @@ import { CrossReferenceModal } from './CrossReferenceModal';
 import { DivisionAppendixRenderer } from './DivisionAppendixRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './ReadingView.css';
-
-type StandardReferenceEntry = {
-  standard_id?: string;
-  standard_ref_id?: string;
-  title?: string;
-  full_title?: string;
-  number?: string;
-  full_number?: string;
-  agency?: string;
-  table_id?: string;
-  location_id?: string;
-};
 
 type SectionWithAppendix = Section & {
   appendix?: {
@@ -143,7 +132,6 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const searchParams = useSearchParams();
   const queryString = searchParams.toString();
   const targetSectionCacheRef = useRef<Map<string, SectionWithAppendix>>(new Map());
-  const standardsMapCacheRef = useRef<Map<string, Record<string, StandardReferenceEntry>>>(new Map());
   const triggerElementRef = useRef<HTMLElement | null>(null);
   const suppressedModalParamRef = useRef<string | null>(null);
   const pendingModalParamRef = useRef<string | null>(null);
@@ -174,6 +162,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   } = useSectionStore();
   const fetchAppendix = useAppendixStore((s) => s.fetchAppendix);
   const fetchDivisionAppendix = useAppendixStore((s) => s.fetchDivisionAppendix);
+  const fetchStandardsMap = useStandardsMapStore((s) => s.fetchStandardsMap);
   
   const {
     currentSection: currentFrontMatter,
@@ -375,19 +364,6 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     [fetchDivisionAppendix, version]
   );
 
-  const fetchStandardsMap = useCallback(async (): Promise<Record<string, StandardReferenceEntry> | null> => {
-    const mapPath = `/data/${version}/standards-map.json`;
-    const cached = standardsMapCacheRef.current.get(mapPath);
-    if (cached) return cached;
-
-    const response = await fetch(mapPath);
-    if (!response.ok) return null;
-
-    const map = (await response.json()) as Record<string, StandardReferenceEntry>;
-    standardsMapCacheRef.current.set(mapPath, map);
-    return map;
-  }, [version]);
-
   const resolveCrossReference = useCallback(
     async (referenceId: string): Promise<ResolvedCrossReference> => {
       const standardsMatch = referenceId.match(/^(standard|external):(.+)$/i);
@@ -414,9 +390,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           };
         }
 
-        const standardsMap = await fetchStandardsMap();
-
-        if (!standardsMap) {
+        let standardsMap: Record<string, StandardReferenceEntry>;
+        try {
+          standardsMap = await fetchStandardsMap(version);
+        } catch {
           return {
             referenceId,
             heading: referenceId,
@@ -624,6 +601,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       fetchTargetDivisionAppendix,
       fetchTargetSection,
       divisionAppendix,
+      version,
       isDivisionAppendixLevel,
       isPartAppendixLevel,
       requestedSectionKey,
@@ -905,9 +883,69 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     return 'Note';
   };
 
+  const toAlphabetOrdinalUpper = (value: number): string => {
+    if (value <= 0 || Number.isNaN(value)) return String(value);
+
+    let remaining = value;
+    let result = '';
+
+    while (remaining > 0) {
+      const current = (remaining - 1) % 26;
+      result = String.fromCharCode(65 + current) + result;
+      remaining = Math.floor((remaining - 1) / 26);
+    }
+
+    return result;
+  };
+
+  const buildAppendixNoteItemNumberMap = (
+    note: ApplicationNote
+  ): {
+    tableNumberById: Map<string, string>;
+    figureNumberById: Map<string, string>;
+  } => {
+    const tableNumberById = new Map<string, string>();
+    const figureNumberById = new Map<string, string>();
+    const noteNumber = note.number?.trim();
+
+    if (!noteNumber) {
+      return { tableNumberById, figureNumberById };
+    }
+
+    let tableIndex = 0;
+    let figureIndex = 0;
+
+    const appendBlockNumbers = (block: AppendixContentBlock | undefined) => {
+      if (!block) return;
+
+      for (const table of block.tables || []) {
+        if (!table?.id || table.number) continue;
+        tableIndex += 1;
+        tableNumberById.set(table.id, `${noteNumber}-${toAlphabetOrdinalUpper(tableIndex)}`);
+      }
+
+      for (const figure of block.figures || []) {
+        if (!figure?.id || figure.number) continue;
+        figureIndex += 1;
+        figureNumberById.set(figure.id, `${noteNumber}-${toAlphabetOrdinalUpper(figureIndex)}`);
+      }
+    };
+
+    appendBlockNumbers(note);
+    for (const division of note.divisions || []) {
+      appendBlockNumbers(division);
+    }
+
+    return { tableNumberById, figureNumberById };
+  };
+
   const renderAppendixBlock = (
     block: AppendixContentBlock,
-    interactive: boolean
+    interactive: boolean,
+    numberOverrides?: {
+      tableNumberById: Map<string, string>;
+      figureNumberById: Map<string, string>;
+    }
   ): React.ReactNode => {
     return (
       <>
@@ -919,13 +957,24 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         {block.tables?.map((table, index) => (
           <TableBlock
             key={`${block.id}-table-${table.id || index}`}
-            table={table}
+            table={
+              table?.id && numberOverrides?.tableNumberById.has(table.id)
+                ? { ...table, number: numberOverrides.tableNumberById.get(table.id) }
+                : table
+            }
             interactive={interactive}
             effectiveDate={effectiveDate}
           />
         ))}
         {block.figures?.map((figure, index) => (
-          <FigureBlock key={`${block.id}-figure-${figure.id || index}`} figure={figure} />
+          <FigureBlock
+            key={`${block.id}-figure-${figure.id || index}`}
+            figure={
+              figure?.id && numberOverrides?.figureNumberById.has(figure.id)
+                ? { ...figure, number: numberOverrides.figureNumberById.get(figure.id) }
+                : figure
+            }
+          />
         ))}
       </>
     );
@@ -933,6 +982,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   const renderApplicationNote = (note: ApplicationNote, interactive: boolean): React.ReactNode => {
     const noteLabel = getNoteDisplayLabel(note);
+    const numberOverrides = buildAppendixNoteItemNumberMap(note);
 
     return (
       <article key={note.id} id={note.id} className="reading-view__appendix-note">
@@ -941,7 +991,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           {note.title ? ` ${note.title}` : ''}
         </h3>
         <div className="reading-view__appendix-note-content">
-          {renderAppendixBlock(note, interactive)}
+          {renderAppendixBlock(note, interactive, numberOverrides)}
           {note.divisions?.map((division, index) => (
             <section
               key={`${note.id}-division-${division.id || index}`}
@@ -949,7 +999,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               className="reading-view__appendix-division"
             >
               {division.title ? <h4>{division.title}</h4> : null}
-              {renderAppendixBlock(division, interactive)}
+              {renderAppendixBlock(division, interactive, numberOverrides)}
             </section>
           ))}
         </div>

@@ -33,6 +33,8 @@ export type { GlossaryEntry } from './glossary-store';
 
 export { useEquationStore } from './equation-store';
 export type { EquationEntry } from './equation-store';
+export { useStandardsMapStore } from './standards-map-store';
+export type { StandardReferenceEntry } from './standards-map-store';
 
 export { useFunctionalStatementsStore } from './functional-statements-store';
 export type { FunctionalStatement } from './functional-statements-store';

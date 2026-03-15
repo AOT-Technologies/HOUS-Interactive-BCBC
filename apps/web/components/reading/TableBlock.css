@@ -12,7 +12,7 @@
 .table-block__header {
   margin: 0 auto var(--layout-margin-small, 0.5rem);
   text-align: center;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -34,6 +34,10 @@
   white-space: pre-line;
   color: var(--typography-color-primary, #313132);
   text-align: center;
+  max-inline-size: min(100%, 72ch);
+  margin-inline: auto;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .table-block__forming-part {
