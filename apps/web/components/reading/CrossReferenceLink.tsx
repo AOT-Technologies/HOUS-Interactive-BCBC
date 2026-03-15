@@ -6,6 +6,7 @@ import { isModalReference, parseReferenceId } from '../../lib/cross-reference';
 import { resolvePartAppendixForEffectiveDate } from '../../lib/revision-resolver';
 import { useCrossReferenceContext } from './CrossReferenceContext';
 import { useNavigationStore, type NavigationNode } from '../../stores/navigation-store';
+import { useStandardsMapStore, type StandardReferenceEntry } from '../../stores/standards-map-store';
 import { useAppendixStore } from '../../lib/stores/appendix-store';
 import { useUIStore } from '../../lib/stores/ui-store';
 import './CrossReferenceLink.css';
@@ -28,20 +29,6 @@ type PartAppendixPayload = {
   application_notes?: ApplicationNoteMeta[];
 };
 
-type StandardReferenceMeta = {
-  standard_id?: string;
-  standard_ref_id?: string;
-  title?: string;
-  full_title?: string;
-  number?: string;
-  full_number?: string;
-  agency?: string;
-  table_id?: string;
-  location_id?: string;
-};
-
-const standardsMapCache = new Map<string, Record<string, StandardReferenceMeta>>();
-
 const normalizeStandardsKey = (value: string): string =>
   value.replace(/[^a-z0-9.]/gi, '').toLowerCase();
 
@@ -59,6 +46,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   const version = searchParams.get('version') || '2024';
   const effectiveDate = searchParams.get('date') || undefined;
   const fetchAppendix = useAppendixStore((s) => s.fetchAppendix);
+  const fetchStandardsMap = useStandardsMapStore((s) => s.fetchStandardsMap);
   const openGlossarySidebar = useUIStore((s) => s.openGlossarySidebar);
   const navigationTree = useNavigationStore((s) => s.navigationTree);
   const [appnoteDisplayText, setAppnoteDisplayText] = useState<string | null>(null);
@@ -196,26 +184,14 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
         return;
       }
 
-      const dataPath = `/data/${version}/standards-map.json`;
-      let standardsMap = standardsMapCache.get(dataPath);
-
-      if (!standardsMap) {
-        try {
-          const response = await fetch(dataPath);
-          if (!response.ok) {
-            if (active) {
-              setStandardsDisplayText(null);
-            }
-            return;
-          }
-          standardsMap = (await response.json()) as Record<string, StandardReferenceMeta>;
-          standardsMapCache.set(dataPath, standardsMap);
-        } catch {
-          if (active) {
-            setStandardsDisplayText(null);
-          }
-          return;
+      let standardsMap: Record<string, StandardReferenceEntry>;
+      try {
+        standardsMap = await fetchStandardsMap(version);
+      } catch {
+        if (active) {
+          setStandardsDisplayText(null);
         }
+        return;
       }
 
       const normalizedRefId = normalizeStandardsKey(standardsRefId);
@@ -243,7 +219,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     return () => {
       active = false;
     };
-  }, [hasExplicitStandardsLabel, isExternalReference, isStandardsReference, standardsRefId, version]);
+  }, [fetchStandardsMap, hasExplicitStandardsLabel, isExternalReference, isStandardsReference, standardsRefId, version]);
 
   const effectiveDisplayText = standardsDisplayText
     || (appnoteDisplayText
