@@ -1,567 +1,291 @@
-/**
- * Tests for metadata extraction functionality
- */
-
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import {
+  extractContentTypes,
+  extractGlossaryMap,
   extractMetadata,
   extractNavigationTree,
-  extractGlossaryMap,
-  extractContentTypes,
   extractQuickAccess,
 } from './metadata-extractor';
 import type { BCBCDocument } from '@bc-building-code/bcbc-parser';
 
-describe('extractNavigationTree', () => {
-  it('should extract complete navigation hierarchy', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [
-                    {
-                      id: 'subsection-1-1-1',
-                      number: '1.1.1',
-                      title: 'Subsection 1.1.1',
-                      type: 'subsection',
-                      articles: [
-                        {
-                          id: 'article-1-1-1-1',
-                          number: '1.1.1.1',
-                          title: 'Article 1.1.1.1',
-                          type: 'article',
-                          clauses: [],
-                          notes: [],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
+function createBaseDocument(): BCBCDocument {
+  return {
+    metadata: {
+      title: 'Test BCBC',
+      version: '2024',
+      effectiveDate: '2024-01-01',
+      jurisdiction: 'BC',
+      volumes: [{ volume: '1', title: 'Volume 1' }],
+    },
+    volumes: [
+      {
+        id: 'vol-1',
+        type: 'volume',
+        number: 1,
+        title: 'Volume 1',
+        frontMatter: {
+          id: 'front-matter',
+          preface: {
+            id: 'preface',
+            type: 'preface',
+            content: [],
+          },
         },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
+        divisions: [
+          {
+            id: 'nbc.divA',
+            letter: 'A',
+            title: 'Compliance, Objectives and Functional Statements',
+            number: '1',
+            type: 'division',
+            parts: [
+              {
+                id: 'nbc.divA.part1',
+                number: '1',
+                title: 'Compliance',
+                type: 'part',
+                sections: [
+                  {
+                    id: 'nbc.divA.part1.sect1',
+                    number: '1',
+                    title: 'Section 1',
+                    type: 'section',
+                    subsections: [
+                      {
+                        id: 'nbc.divA.part1.sect1.subsect1',
+                        number: '1',
+                        title: 'Subsection 1',
+                        type: 'subsection',
+                        articles: [
+                          {
+                            id: 'nbc.divA.part1.sect1.subsect1.art1',
+                            number: '1',
+                            title: 'Article 1',
+                            type: 'article',
+                            content: [
+                              {
+                                id: 'sent-1',
+                                number: '1',
+                                type: 'sentence',
+                                text: 'Sentence text.',
+                                glossaryTerms: [],
+                                content: [],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'nbc.divB',
+            letter: 'B',
+            title: 'General Requirements',
+            number: '2',
+            type: 'division',
+            parts: [
+              {
+                id: 'nbc.divB.part3',
+                number: '3',
+                title: 'Fire Protection, Occupant Safety and Accessibility',
+                type: 'part',
+                sections: [
+                  {
+                    id: 'nbc.divB.part3.sect1',
+                    number: '1',
+                    title: 'General',
+                    type: 'section',
+                    subsections: [],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'nbc.divBV2',
+            letter: 'B',
+            title: 'Volume 2 Requirements',
+            number: '2',
+            type: 'division',
+            parts: [
+              {
+                id: 'nbc.divBV2.part9',
+                number: '9',
+                title: 'Housing and Small Buildings',
+                type: 'part',
+                sections: [
+                  {
+                    id: 'nbc.divBV2.part9.sect1',
+                    number: '1',
+                    title: 'Small Buildings',
+                    type: 'section',
+                    subsections: [],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    glossary: [
+      {
+        id: 'term-1',
+        term: 'Building',
+        definition: 'A structure for shelter.',
+      },
+      {
+        id: 'term-2',
+        term: 'Occupancy',
+        definition: 'The use of a building.',
+      },
+    ],
+    amendmentDates: [
+      {
+        date: '2024-01-01',
+        description: 'Initial release',
+        affectedSections: [],
+      },
+    ],
+  };
+}
 
-    const tree = extractNavigationTree(mockDocument);
+describe('extractNavigationTree', () => {
+  it('extracts a volume-first navigation hierarchy', () => {
+    const tree = extractNavigationTree(createBaseDocument());
 
     expect(tree).toHaveLength(1);
-    expect(tree[0].type).toBe('division');
-    expect(tree[0].title).toBe('Division A');
-    expect(tree[0].children).toHaveLength(1);
-    expect(tree[0].children![0].type).toBe('part');
-    expect(tree[0].children![0].children).toHaveLength(1);
-    expect(tree[0].children![0].children![0].type).toBe('section');
-    expect(tree[0].children![0].children![0].children).toHaveLength(1);
-    expect(tree[0].children![0].children![0].children![0].type).toBe('subsection');
-    expect(tree[0].children![0].children![0].children![0].children).toHaveLength(1);
-    expect(tree[0].children![0].children![0].children![0].children![0].type).toBe('article');
+    expect(tree[0].type).toBe('volume');
+    expect(tree[0].children?.[0].title).toBe('Front Matter');
+    expect(tree[0].children?.[1].type).toBe('division');
+    expect(tree[0].children?.[1].children?.[0].type).toBe('part');
+    expect(tree[0].children?.[1].children?.[0].children?.[0].type).toBe('section');
+    expect(tree[0].children?.[1].children?.[0].children?.[0].children?.[0].type).toBe(
+      'subsection'
+    );
+    expect(
+      tree[0].children?.[1].children?.[0].children?.[0].children?.[0].children?.[0].type
+    ).toBe('article');
   });
 
-  it('should generate correct paths', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-b',
-          title: 'Division B',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-3',
-              number: '3',
-              title: 'Part 3',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-3-2',
-                  number: '3.2',
-                  title: 'Section 3.2',
-                  type: 'section',
-                  subsections: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
+  it('generates current navigation paths', () => {
+    const tree = extractNavigationTree(createBaseDocument());
+    const divisionNode = tree[0].children?.[1];
+    const partNode = divisionNode?.children?.[0];
+    const sectionNode = partNode?.children?.[0];
 
-    const tree = extractNavigationTree(mockDocument);
-
-    expect(tree[0].path).toBe('/code/division-b');
-    expect(tree[0].children![0].path).toBe('/code/division-b/3');
-    expect(tree[0].children![0].children![0].path).toBe('/code/division-b/3/3.2');
+    expect(tree[0].path).toBe('/volume/1');
+    expect(divisionNode?.path).toBe('/code/nbc.divA');
+    expect(partNode?.path).toBe('/code/nbc.divA/1');
+    expect(sectionNode?.path).toBe('/code/nbc.divA/1/1');
   });
 });
 
 describe('extractGlossaryMap', () => {
-  it('should create map with lowercase keys', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [],
-      glossary: [
-        {
-          id: 'term-1',
-          term: 'Building',
-          definition: 'A structure for shelter',
-          relatedTerms: [],
-        },
-        {
-          id: 'term-2',
-          term: 'Occupancy',
-          definition: 'The use of a building',
-          relatedTerms: [],
-        },
-      ],
-      amendmentDates: [],
-    };
+  it('creates a term-keyed lowercase glossary map', () => {
+    const glossaryMap = extractGlossaryMap(createBaseDocument());
 
-    const glossaryMap = extractGlossaryMap(mockDocument);
-
-    expect(glossaryMap['building']).toBeDefined();
-    expect(glossaryMap['building'].term).toBe('Building');
-    expect(glossaryMap['occupancy']).toBeDefined();
-    expect(glossaryMap['occupancy'].term).toBe('Occupancy');
+    expect(glossaryMap.building.term).toBe('Building');
+    expect(glossaryMap.occupancy.term).toBe('Occupancy');
   });
 });
 
 describe('extractContentTypes', () => {
-  it('should always include article type', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [],
-      glossary: [],
-      amendmentDates: [],
-    };
-
-    const contentTypes = extractContentTypes(mockDocument);
-
-    expect(contentTypes).toContain('article');
+  it('always includes article', () => {
+    expect(extractContentTypes(createBaseDocument())).toContain('article');
   });
 
-  it('should detect tables in clauses', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
+  it('detects tables, figures, and notes from nested content nodes', () => {
+    const document = createBaseDocument();
+    const article =
+      document.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0];
+    const sentence = article.content[0];
+
+    if (sentence.type !== 'sentence') {
+      throw new Error('Expected sentence content node');
+    }
+
+    sentence.content = [
+      {
+        id: 'clause-1',
+        number: 'a',
+        type: 'clause',
+        text: 'Clause text.',
+        glossaryTerms: [],
+        content: [
+          {
+            id: 'table-1',
+            type: 'table',
+            number: '1',
+            title: 'Table 1',
+            headers: [],
+            rows: [],
+          },
+          {
+            id: 'figure-1',
+            type: 'figure',
+            number: '1',
+            title: 'Figure 1',
+            imageUrl: '/images/test.png',
+            altText: 'Figure',
+          },
+        ],
       },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [
-                    {
-                      id: 'subsection-1-1-1',
-                      number: '1.1.1',
-                      title: 'Subsection 1.1.1',
-                      type: 'subsection',
-                      articles: [
-                        {
-                          id: 'article-1',
-                          number: '1.1.1.1',
-                          title: 'Article 1',
-                          type: 'article',
-                          clauses: [
-                            {
-                              id: 'clause-1',
-                              number: '1',
-                              text: 'Test clause',
-                              glossaryTerms: [],
-                              tables: [
-                                {
-                                  id: 'table-1',
-                                  number: '1',
-                                  title: 'Test Table',
-                                  headers: [['Header']],
-                                  rows: [],
-                                },
-                              ],
-                            },
-                          ],
-                          notes: [],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
+      {
+        id: 'note-1',
+        type: 'note',
+        noteNumber: 'A-1',
+        noteTitle: 'Application Note',
+        noteContent: 'Test content',
+      },
+    ];
 
-    const contentTypes = extractContentTypes(mockDocument);
-
+    const contentTypes = extractContentTypes(document);
     expect(contentTypes).toContain('table');
-  });
-
-  it('should detect figures in clauses', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [
-                    {
-                      id: 'subsection-1-1-1',
-                      number: '1.1.1',
-                      title: 'Subsection 1.1.1',
-                      type: 'subsection',
-                      articles: [
-                        {
-                          id: 'article-1',
-                          number: '1.1.1.1',
-                          title: 'Article 1',
-                          type: 'article',
-                          clauses: [
-                            {
-                              id: 'clause-1',
-                              number: '1',
-                              text: 'Test clause',
-                              glossaryTerms: [],
-                              figures: [
-                                {
-                                  id: 'figure-1',
-                                  number: '1',
-                                  title: 'Test Figure',
-                                  imageUrl: '/images/test.png',
-                                  altText: 'Test',
-                                },
-                              ],
-                            },
-                          ],
-                          notes: [],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
-
-    const contentTypes = extractContentTypes(mockDocument);
-
     expect(contentTypes).toContain('figure');
-  });
-
-  it('should detect notes', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [
-                    {
-                      id: 'subsection-1-1-1',
-                      number: '1.1.1',
-                      title: 'Subsection 1.1.1',
-                      type: 'subsection',
-                      articles: [
-                        {
-                          id: 'article-1',
-                          number: '1.1.1.1',
-                          title: 'Article 1',
-                          type: 'article',
-                          clauses: [],
-                          notes: [
-                            {
-                              id: 'note-1',
-                              noteNumber: 'A-1',
-                              noteTitle: 'Test Note',
-                              noteContent: 'Test content',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
-
-    const contentTypes = extractContentTypes(mockDocument);
-
     expect(contentTypes).toContain('note');
+    expect(contentTypes).toContain('application-note');
   });
 });
 
 describe('extractQuickAccess', () => {
-  it('should extract first section from each part', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [],
-                },
-                {
-                  id: 'section-1-2',
-                  number: '1.2',
-                  title: 'Section 1.2',
-                  type: 'section',
-                  subsections: [],
-                },
-              ],
-            },
-            {
-              id: 'part-2',
-              number: '2',
-              title: 'Part 2',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-2-1',
-                  number: '2.1',
-                  title: 'Section 2.1',
-                  type: 'section',
-                  subsections: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
+  it('returns the three predefined quick access pins when present', () => {
+    const quickAccess = extractQuickAccess(createBaseDocument());
 
-    const quickAccess = extractQuickAccess(mockDocument);
-
-    expect(quickAccess).toHaveLength(2);
-    expect(quickAccess[0].id).toBe('section-1-1');
-    expect(quickAccess[1].id).toBe('section-2-1');
-  });
-
-  it('should generate correct paths and descriptions', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-b',
-          title: 'Division B',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-3',
-              number: '3',
-              title: 'Fire Protection',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-3-1',
-                  number: '3.1',
-                  title: 'General',
-                  type: 'section',
-                  subsections: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
-
-    const quickAccess = extractQuickAccess(mockDocument);
-
-    expect(quickAccess[0].path).toBe('/code/division-b/3/3.1');
-    expect(quickAccess[0].title).toBe('Fire Protection - General');
-    expect(quickAccess[0].description).toBe('Division B, Part 3, Section 3.1');
+    expect(quickAccess).toHaveLength(3);
+    expect(quickAccess[0]).toMatchObject({
+      id: 'nbc.divA.part1',
+      title: 'Division A - Part 1',
+      path: '/code/nbc.divA/1',
+      description: 'Compliance',
+    });
+    expect(quickAccess[1]).toMatchObject({
+      id: 'nbc.divBV2.part9',
+      title: 'Division B - Part 9',
+      path: '/code/nbc.divBV2/9',
+      description: 'Housing and Small Buildings',
+    });
+    expect(quickAccess[2]).toMatchObject({
+      id: 'nbc.divB.part3',
+      title: 'Division B - Part 3',
+      path: '/code/nbc.divB/3',
+      description: 'Fire Protection, Occupant Safety and Accessibility',
+    });
   });
 });
 
 describe('extractMetadata', () => {
-  it('should extract all metadata types', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [
-        {
-          id: 'term-1',
-          term: 'Building',
-          definition: 'A structure',
-        },
-      ],
-      amendmentDates: [
-        {
-          date: '2024-01-01',
-          description: 'Initial release',
-          affectedSections: [],
-        },
-      ],
-    };
+  it('extracts all metadata types', () => {
+    const metadata = extractMetadata(createBaseDocument());
 
-    const metadata = extractMetadata(mockDocument);
-
-    expect(metadata.navigationTree).toBeDefined();
-    expect(metadata.glossaryMap).toBeDefined();
-    expect(metadata.amendmentDates).toBeDefined();
-    expect(metadata.contentTypes).toBeDefined();
-    expect(metadata.quickAccess).toBeDefined();
     expect(metadata.navigationTree.length).toBeGreaterThan(0);
     expect(Object.keys(metadata.glossaryMap).length).toBeGreaterThan(0);
+    expect(metadata.amendmentDates).toHaveLength(1);
     expect(metadata.contentTypes).toContain('article');
+    expect(metadata.quickAccess).toHaveLength(3);
   });
 });

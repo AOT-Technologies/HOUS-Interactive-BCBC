@@ -317,4 +317,20 @@ describe('TableBlock', () => {
 
     expect(labels).toEqual(['(10)', '(2)']);
   });
+
+  it('renders table notes heading with the resolved table number', () => {
+    const table = {
+      id: 'nbc.divB.part9.sect3.subsect1.art7.table1',
+      type: 'table' as const,
+      number: '9.3.1.7',
+      title: 'Table Notes Heading',
+      headers: [],
+      rows: [],
+      table_notes: [{ id: 'nbc.divB.part9.sect3.subsect1.art7.table1.note1', content: 'First note' }],
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    expect(screen.getByText('Notes to Table 9.3.1.7.:')).toBeInTheDocument();
+  });
 });

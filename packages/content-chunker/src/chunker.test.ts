@@ -1,56 +1,71 @@
-/**
- * Tests for content chunking functionality
- */
-
-import { describe, it, expect } from 'vitest';
-import { chunkContent, chunkRawContent, generateChunkPath, isOptimalChunkSize, getChunkStats } from './chunker';
+import { describe, expect, it } from 'vitest';
+import {
+  chunkContent,
+  chunkRawContent,
+  generateChunkPath,
+  getChunkStats,
+  isOptimalChunkSize,
+} from './chunker';
 import type { BCBCDocument } from '@bc-building-code/bcbc-parser';
 
-describe('chunkContent', () => {
-  it('should split content by section', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
+function createDocument(): BCBCDocument {
+  return {
+    metadata: {
+      title: 'Test BCBC',
+      version: '2024',
+      effectiveDate: '2024-01-01',
+      jurisdiction: 'BC',
+      volumes: [{ volume: '1', title: 'Volume 1' }],
+    },
+    volumes: [
+      {
+        id: 'vol-1',
+        type: 'volume',
+        number: 1,
+        title: 'Volume 1',
+        divisions: [
+          {
+            id: 'division-a',
+            letter: 'A',
+            title: 'Division A',
+            number: '1',
+            type: 'division',
+            parts: [
+              {
+                id: 'part-1',
+                number: '1',
+                title: 'Part 1',
+                type: 'part',
+                sections: [
+                  {
+                    id: 'section-1-1',
+                    number: '1.1',
+                    title: 'Section 1.1',
+                    type: 'section',
+                    subsections: [],
+                  },
+                  {
+                    id: 'section-1-2',
+                    number: '1.2',
+                    title: 'Section 1.2',
+                    type: 'section',
+                    subsections: [],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [],
-                },
-                {
-                  id: 'section-1-2',
-                  number: '1.2',
-                  title: 'Section 1.2',
-                  type: 'section',
-                  subsections: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
+    ],
+    glossary: [],
+    amendmentDates: [],
+  };
+}
 
-    const chunks = chunkContent(mockDocument);
+describe('chunkContent', () => {
+  it('splits content by section from the volume hierarchy', () => {
+    const chunks = chunkContent(createDocument());
 
     expect(chunks).toHaveLength(2);
     expect(chunks[0].path).toBe('content/division-a/part-1/section-1-1.json');
@@ -59,43 +74,8 @@ describe('chunkContent', () => {
     expect(chunks[1].data.id).toBe('section-1-2');
   });
 
-  it('should calculate chunk sizes', () => {
-    const mockDocument: BCBCDocument = {
-      metadata: {
-        title: 'Test BCBC',
-        version: '2024',
-        effectiveDate: '2024-01-01',
-        jurisdiction: 'BC',
-      },
-      divisions: [
-        {
-          id: 'division-a',
-          title: 'Division A',
-          type: 'division',
-          parts: [
-            {
-              id: 'part-1',
-              number: '1',
-              title: 'Part 1',
-              type: 'part',
-              sections: [
-                {
-                  id: 'section-1-1',
-                  number: '1.1',
-                  title: 'Section 1.1',
-                  type: 'section',
-                  subsections: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      glossary: [],
-      amendmentDates: [],
-    };
-
-    const chunks = chunkContent(mockDocument);
+  it('calculates chunk sizes', () => {
+    const chunks = chunkContent(createDocument());
 
     expect(chunks[0].size).toBeGreaterThan(0);
     expect(typeof chunks[0].size).toBe('number');
@@ -103,7 +83,7 @@ describe('chunkContent', () => {
 });
 
 describe('chunkRawContent', () => {
-  it('should preserve raw section objects without stripping table revisions', () => {
+  it('preserves raw section objects without stripping table revisions', () => {
     const mockRawDocument = {
       volumes: [
         {
@@ -162,10 +142,7 @@ describe('chunkRawContent', () => {
     expect(chunks).toHaveLength(1);
     expect(chunks[0].path).toBe('content/nbc-divb/part-3/section-1.json');
 
-    const tableNode = (chunks[0].data.subsections as any[])[0]
-      .articles[0]
-      .content[0];
-
+    const tableNode = (chunks[0].data.subsections as any[])[0].articles[0].content[0];
     expect(tableNode.revised).toBe(true);
     expect(tableNode.structure).toEqual({ columns: null, body_rows: [] });
     expect(tableNode.revisions).toHaveLength(1);
@@ -174,60 +151,37 @@ describe('chunkRawContent', () => {
 });
 
 describe('generateChunkPath', () => {
-  it('should generate correct path format', () => {
-    const path = generateChunkPath('division-a', '1', '1.1');
-    expect(path).toBe('content/division-a/part-1/section-1-1.json');
-  });
-
-  it('should normalize division ID', () => {
-    const path = generateChunkPath('Division-A', '1', '1.1');
-    expect(path).toBe('content/division-a/part-1/section-1-1.json');
-  });
-
-  it('should handle section numbers with dots', () => {
-    const path = generateChunkPath('division-b', '3', '3.2.1');
-    expect(path).toBe('content/division-b/part-3/section-3-2-1.json');
+  it('generates correct section chunk paths', () => {
+    expect(generateChunkPath('division-a', '1', '1.1')).toBe(
+      'content/division-a/part-1/section-1-1.json'
+    );
+    expect(generateChunkPath('Division-A', '1', '1.1')).toBe(
+      'content/division-a/part-1/section-1-1.json'
+    );
+    expect(generateChunkPath('division-b', '3', '3.2.1')).toBe(
+      'content/division-b/part-3/section-3-2-1.json'
+    );
   });
 });
 
 describe('isOptimalChunkSize', () => {
-  it('should return true for chunks within 50-200KB range', () => {
-    const chunk = {
-      path: 'test.json',
-      data: {} as any,
-      size: 100 * 1024, // 100KB
-    };
-    expect(isOptimalChunkSize(chunk)).toBe(true);
+  it('returns true for chunks within the target range', () => {
+    expect(isOptimalChunkSize({ size: 100 * 1024 })).toBe(true);
   });
 
-  it('should return false for chunks below 50KB', () => {
-    const chunk = {
-      path: 'test.json',
-      data: {} as any,
-      size: 30 * 1024, // 30KB
-    };
-    expect(isOptimalChunkSize(chunk)).toBe(false);
-  });
-
-  it('should return false for chunks above 200KB', () => {
-    const chunk = {
-      path: 'test.json',
-      data: {} as any,
-      size: 250 * 1024, // 250KB
-    };
-    expect(isOptimalChunkSize(chunk)).toBe(false);
+  it('returns false for chunks outside the target range', () => {
+    expect(isOptimalChunkSize({ size: 30 * 1024 })).toBe(false);
+    expect(isOptimalChunkSize({ size: 250 * 1024 })).toBe(false);
   });
 });
 
 describe('getChunkStats', () => {
-  it('should calculate correct statistics', () => {
-    const chunks = [
-      { path: 'test1.json', data: {} as any, size: 50 * 1024 },
-      { path: 'test2.json', data: {} as any, size: 100 * 1024 },
-      { path: 'test3.json', data: {} as any, size: 150 * 1024 },
-    ];
-
-    const stats = getChunkStats(chunks);
+  it('calculates aggregate statistics', () => {
+    const stats = getChunkStats([
+      { size: 50 * 1024 },
+      { size: 100 * 1024 },
+      { size: 150 * 1024 },
+    ]);
 
     expect(stats.totalChunks).toBe(3);
     expect(stats.totalSize).toBe(300 * 1024);

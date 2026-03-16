@@ -270,7 +270,8 @@ describe('PrevNextNav', () => {
       fireEvent.click(prevButton);
       
       expect(mockSetCurrentPath).toHaveBeenCalledWith(
-        '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1'
+        '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1',
+        false
       );
     });
 
@@ -283,7 +284,8 @@ describe('PrevNextNav', () => {
       fireEvent.click(nextButton);
       
       expect(mockSetCurrentPath).toHaveBeenCalledWith(
-        '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-2'
+        '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-2',
+        false
       );
     });
 
@@ -345,7 +347,8 @@ describe('PrevNextNav', () => {
       
       await waitFor(() => {
         expect(mockSetCurrentPath).toHaveBeenCalledWith(
-          '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1'
+          '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1',
+          false
         );
       });
     });
@@ -359,7 +362,8 @@ describe('PrevNextNav', () => {
       
       await waitFor(() => {
         expect(mockSetCurrentPath).toHaveBeenCalledWith(
-          '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-2'
+          '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-2',
+          false
         );
       });
     });

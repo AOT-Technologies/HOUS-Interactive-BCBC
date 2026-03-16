@@ -20,6 +20,9 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
+    "test": {
+      "dependsOn": ["^test"]
+    },
     "generate-assets": {
       "cache": false,
       "outputs": ["apps/web/public/data/**"]

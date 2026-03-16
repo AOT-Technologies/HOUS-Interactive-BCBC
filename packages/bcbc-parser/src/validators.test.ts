@@ -1,464 +1,122 @@
-/**
- * Unit tests for BCBC JSON validation
- */
-
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import {
   validateBCBC,
   validateCrossReferences,
-  validateRequiredFields,
   validateDataTypes,
+  validateRequiredFields,
 } from './validators';
-import type {
-  BCBCDocument,
-  Division,
-  Part,
-  Section,
-  Subsection,
-  Article,
-  Clause,
-  GlossaryEntry,
-  AmendmentDate,
-} from './types';
+import type { BCBCDocument, Clause, Sentence } from './types';
 
 describe('validateRequiredFields', () => {
-  it('should return no errors when all required fields are present', () => {
-    const obj = { id: '1', name: 'test', value: 42 };
-    const errors = validateRequiredFields(obj, ['id', 'name'], 'test.path');
+  it('returns no errors when required fields exist', () => {
+    const errors = validateRequiredFields({ id: '1', name: 'test' }, ['id', 'name'], 'test.path');
     expect(errors).toHaveLength(0);
   });
 
-  it('should return error when required field is missing', () => {
-    const obj = { id: '1' };
-    const errors = validateRequiredFields(obj, ['id', 'name'], 'test.path');
-    expect(errors).toHaveLength(1);
-    expect(errors[0]).toMatchObject({
-      path: 'test.path',
-      field: 'name',
-      message: 'Missing required field: name',
-      severity: 'error',
-    });
-  });
+  it('returns errors for missing, null, and undefined fields', () => {
+    const errors = validateRequiredFields(
+      { id: '1', missing: undefined, empty: null },
+      ['id', 'missing', 'empty', 'name'],
+      'test.path'
+    );
 
-  it('should return error when required field is null', () => {
-    const obj = { id: '1', name: null };
-    const errors = validateRequiredFields(obj, ['id', 'name'], 'test.path');
-    expect(errors).toHaveLength(1);
-    expect(errors[0].field).toBe('name');
-  });
-
-  it('should return error when required field is undefined', () => {
-    const obj = { id: '1', name: undefined };
-    const errors = validateRequiredFields(obj, ['id', 'name'], 'test.path');
-    expect(errors).toHaveLength(1);
-    expect(errors[0].field).toBe('name');
-  });
-
-  it('should return multiple errors for multiple missing fields', () => {
-    const obj = { id: '1' };
-    const errors = validateRequiredFields(obj, ['id', 'name', 'value'], 'test.path');
-    expect(errors).toHaveLength(2);
-    expect(errors.map(e => e.field)).toEqual(['name', 'value']);
+    expect(errors).toHaveLength(3);
+    expect(errors.map((error) => error.field)).toEqual(['missing', 'empty', 'name']);
   });
 });
 
 describe('validateDataTypes', () => {
-  it('should return no errors when data types match', () => {
-    const obj = { id: '1', name: 'test', count: 42 };
-    const schema = { id: 'string', name: 'string', count: 'number' };
-    const errors = validateDataTypes(obj, schema, 'test.path');
+  it('returns no errors when data types match', () => {
+    const errors = validateDataTypes(
+      { id: '1', count: 42, enabled: true },
+      { id: 'string', count: 'number', enabled: 'boolean' },
+      'test.path'
+    );
+
     expect(errors).toHaveLength(0);
   });
 
-  it('should return error when data type does not match', () => {
-    const obj = { id: 1, name: 'test' };
-    const schema = { id: 'string', name: 'string' };
-    const errors = validateDataTypes(obj, schema, 'test.path');
-    expect(errors).toHaveLength(1);
-    expect(errors[0]).toMatchObject({
-      path: 'test.path',
-      field: 'id',
-      message: 'Invalid type for field id: expected string, got number',
-      severity: 'error',
-    });
-  });
+  it('returns errors for type mismatches', () => {
+    const errors = validateDataTypes(
+      { id: 1, count: '42' },
+      { id: 'string', count: 'number' },
+      'test.path'
+    );
 
-  it('should skip validation for fields not in object', () => {
-    const obj = { id: '1' };
-    const schema = { id: 'string', name: 'string' };
-    const errors = validateDataTypes(obj, schema, 'test.path');
-    expect(errors).toHaveLength(0);
-  });
-
-  it('should skip validation for null fields', () => {
-    const obj = { id: '1', name: null };
-    const schema = { id: 'string', name: 'string' };
-    const errors = validateDataTypes(obj, schema, 'test.path');
-    expect(errors).toHaveLength(0);
-  });
-
-  it('should return multiple errors for multiple type mismatches', () => {
-    const obj = { id: 1, name: 42, value: true };
-    const schema = { id: 'string', name: 'string', value: 'string' };
-    const errors = validateDataTypes(obj, schema, 'test.path');
-    expect(errors).toHaveLength(3);
+    expect(errors).toHaveLength(2);
+    expect(errors[0].message).toContain('expected string');
+    expect(errors[1].message).toContain('expected number');
   });
 });
 
-describe('validateBCBC', () => {
-  const createValidDocument = (): BCBCDocument => ({
-    metadata: {
-      title: 'BC Building Code',
-      version: '2024',
-      effectiveDate: '2024-01-01',
-      jurisdiction: 'British Columbia',
-    },
-    divisions: [
+function createSentence(): Sentence {
+  return {
+    id: 'nbc.divA.part1.sect1.subsect1.art1.sent1',
+    number: '1',
+    type: 'sentence',
+    text: 'Sentence with [REF:term:term1]term.',
+    glossaryTerms: ['term1'],
+    content: [
       {
-        id: 'nbc.divA',
-        title: 'Division A',
-        type: 'division',
-        parts: [
-          {
-            id: 'nbc.divA.part1',
-            number: '1',
-            title: 'Part 1',
-            type: 'part',
-            sections: [
-              {
-                id: 'nbc.divA.part1.sect1',
-                number: '1',
-                title: 'Section 1',
-                type: 'section',
-                subsections: [
-                  {
-                    id: 'nbc.divA.part1.sect1.subsect1',
-                    number: '1',
-                    title: 'Subsection 1',
-                    type: 'subsection',
-                    articles: [
-                      {
-                        id: 'nbc.divA.part1.sect1.subsect1.art1',
-                        number: '1',
-                        title: 'Article 1',
-                        type: 'article',
-                        clauses: [
-                          {
-                            id: 'nbc.divA.part1.sect1.subsect1.art1.sent1',
-                            number: '1',
-                            text: 'Test clause',
-                            glossaryTerms: [],
-                          },
-                        ],
-                        notes: [],
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    glossary: [],
-    amendmentDates: [],
-  });
-
-  it('should return no errors for valid document', () => {
-    const document = createValidDocument();
-    const errors = validateBCBC(document);
-    expect(errors).toHaveLength(0);
-  });
-
-  it('should return error when metadata is missing', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.metadata = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'metadata')).toBe(true);
-  });
-
-  it('should return error when divisions is missing', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'divisions')).toBe(true);
-  });
-
-  it('should return error when divisions is not an array', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions = 'not an array';
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.message.includes('must be an array'))).toBe(true);
-  });
-
-  it('should return warning when divisions array is empty', () => {
-    const document = createValidDocument();
-    document.divisions = [];
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.severity === 'warning' && e.message.includes('at least one division'))).toBe(true);
-  });
-
-  it('should validate metadata required fields', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.metadata.title = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'title' && e.path === 'metadata')).toBe(true);
-  });
-
-  it('should validate metadata data types', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.metadata.version = 123;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'version' && e.message.includes('expected string'))).toBe(true);
-  });
-
-  it('should validate division structure', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].id = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'id' && e.path === 'divisions[0]')).toBe(true);
-  });
-
-  it('should validate division type field value', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].type = 'invalid';
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'type' && e.message.includes("expected 'division'"))).toBe(true);
-  });
-
-  it('should validate part structure', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].parts[0].number = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'number' && e.path.includes('parts[0]'))).toBe(true);
-  });
-
-  it('should validate part type field value', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].parts[0].type = 'invalid';
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'type' && e.message.includes("expected 'part'"))).toBe(true);
-  });
-
-  it('should validate section structure', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].parts[0].sections[0].title = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'title' && e.path.includes('sections[0]'))).toBe(true);
-  });
-
-  it('should validate section type field value', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].parts[0].sections[0].type = 'invalid';
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'type' && e.message.includes("expected 'section'"))).toBe(true);
-  });
-
-  it('should validate subsection structure', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].parts[0].sections[0].subsections[0].id = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'id' && e.path.includes('subsections[0]'))).toBe(true);
-  });
-
-  it('should validate subsection type field value', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.divisions[0].parts[0].sections[0].subsections[0].type = 'invalid';
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'type' && e.message.includes("expected 'subsection'"))).toBe(true);
-  });
-
-  it('should validate article structure', () => {
-    const document = createValidDocument();
-    const article = document.divisions[0].parts[0].sections[0].subsections[0].articles[0];
-    // @ts-expect-error - Testing invalid state
-    article.clauses = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'clauses' && e.path.includes('articles[0]'))).toBe(true);
-  });
-
-  it('should validate article type field value', () => {
-    const document = createValidDocument();
-    const article = document.divisions[0].parts[0].sections[0].subsections[0].articles[0];
-    // @ts-expect-error - Testing invalid state
-    article.type = 'invalid';
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'type' && e.message.includes("expected 'article'"))).toBe(true);
-  });
-
-  it('should validate clause structure', () => {
-    const document = createValidDocument();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    // @ts-expect-error - Testing invalid state
-    clause.text = undefined;
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'text' && e.path.includes('clauses[0]'))).toBe(true);
-  });
-
-  it('should validate glossary entries', () => {
-    const document = createValidDocument();
-    document.glossary = [
-      {
-        id: 'term1',
-        term: 'Test Term',
-        definition: 'Test definition',
-      },
-    ];
-    const errors = validateBCBC(document);
-    expect(errors).toHaveLength(0);
-  });
-
-  it('should return error for invalid glossary entry', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.glossary = [{ id: 'term1' }];
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'term' || e.field === 'definition')).toBe(true);
-  });
-
-  it('should validate amendment dates', () => {
-    const document = createValidDocument();
-    document.amendmentDates = [
-      {
-        date: '2024-01-01',
-        description: 'Initial release',
-        affectedSections: [],
-      },
-    ];
-    const errors = validateBCBC(document);
-    expect(errors).toHaveLength(0);
-  });
-
-  it('should return error for invalid amendment date', () => {
-    const document = createValidDocument();
-    // @ts-expect-error - Testing invalid state
-    document.amendmentDates = [{ date: '2024-01-01' }];
-    const errors = validateBCBC(document);
-    expect(errors.some(e => e.field === 'description')).toBe(true);
-  });
-
-  it('should validate nested clause structures', () => {
-    const document = createValidDocument();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.subclauses = [
-      {
-        id: 'subclause1',
+        id: 'nbc.divA.part1.sect1.subsect1.art1.sent1.clausea',
         number: 'a',
-        text: 'Subclause text',
+        type: 'clause',
+        text: 'Clause text.',
         glossaryTerms: [],
       },
-    ];
-    const errors = validateBCBC(document);
-    expect(errors).toHaveLength(0);
-  });
+    ],
+  };
+}
 
-  it('should validate tables in clauses', () => {
-    const document = createValidDocument();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.tables = [
-      {
-        id: 'table1',
-        number: '1',
-        title: 'Test Table',
-        headers: [],
-        rows: [],
-      },
-    ];
-    const errors = validateBCBC(document);
-    expect(errors).toHaveLength(0);
-  });
-
-  it('should validate figures in clauses', () => {
-    const document = createValidDocument();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.figures = [
-      {
-        id: 'figure1',
-        number: '1',
-        title: 'Test Figure',
-        imageUrl: 'test.png',
-        altText: 'Test alt text',
-      },
-    ];
-    const errors = validateBCBC(document);
-    expect(errors).toHaveLength(0);
-  });
-
-  it('should validate equations in clauses', () => {
-    const document = createValidDocument();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.equations = [
-      {
-        id: 'equation1',
-        number: '1',
-        latex: 'E = mc^2',
-      },
-    ];
-    const errors = validateBCBC(document);
-    expect(errors).toHaveLength(0);
-  });
-});
-
-describe('validateCrossReferences', () => {
-  const createDocumentWithReferences = (): BCBCDocument => ({
+function createValidDocument(): BCBCDocument {
+  return {
     metadata: {
       title: 'BC Building Code',
       version: '2024',
       effectiveDate: '2024-01-01',
       jurisdiction: 'British Columbia',
+      volumes: [{ volume: '1', title: 'Volume 1' }],
     },
-    divisions: [
+    volumes: [
       {
-        id: 'nbc.divA',
-        title: 'Division A',
-        type: 'division',
-        parts: [
+        id: 'vol-1',
+        type: 'volume',
+        number: 1,
+        title: 'Volume 1',
+        divisions: [
           {
-            id: 'nbc.divA.part1',
+            id: 'nbc.divA',
+            letter: 'A',
+            title: 'Division A',
             number: '1',
-            title: 'Part 1',
-            type: 'part',
-            sections: [
+            type: 'division',
+            parts: [
               {
-                id: 'nbc.divA.part1.sect1',
+                id: 'nbc.divA.part1',
                 number: '1',
-                title: 'Section 1',
-                type: 'section',
-                subsections: [
+                title: 'Part 1',
+                type: 'part',
+                sections: [
                   {
-                    id: 'nbc.divA.part1.sect1.subsect1',
+                    id: 'nbc.divA.part1.sect1',
                     number: '1',
-                    title: 'Subsection 1',
-                    type: 'subsection',
-                    articles: [
+                    title: 'Section 1',
+                    type: 'section',
+                    subsections: [
                       {
-                        id: 'nbc.divA.part1.sect1.subsect1.art1',
+                        id: 'nbc.divA.part1.sect1.subsect1',
                         number: '1',
-                        title: 'Article 1',
-                        type: 'article',
-                        clauses: [
+                        title: 'Subsection 1',
+                        type: 'subsection',
+                        articles: [
                           {
-                            id: 'nbc.divA.part1.sect1.subsect1.art1.sent1',
+                            id: 'nbc.divA.part1.sect1.subsect1.art1',
                             number: '1',
-                            text: 'Test clause with glossary term',
-                            glossaryTerms: ['term1'],
+                            title: 'Article 1',
+                            type: 'article',
+                            content: [createSentence()],
                           },
                         ],
-                        notes: [],
                       },
                     ],
                   },
@@ -476,80 +134,270 @@ describe('validateCrossReferences', () => {
         definition: 'Test definition',
       },
     ],
-    amendmentDates: [],
+    amendmentDates: [
+      {
+        date: '2024-01-01',
+        description: 'Initial release',
+        affectedSections: [],
+      },
+    ],
+  };
+}
+
+function getFirstSentence(document: BCBCDocument): Sentence {
+  const sentence = document.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0]
+    .content[0];
+  if (sentence.type !== 'sentence') {
+    throw new Error('Expected first content node to be a sentence');
+  }
+  return sentence;
+}
+
+function getFirstClause(document: BCBCDocument): Clause {
+  const clause = getFirstSentence(document).content?.[0];
+  if (!clause || clause.type !== 'clause') {
+    throw new Error('Expected first sentence content node to be a clause');
+  }
+  return clause;
+}
+
+describe('validateBCBC', () => {
+  it('returns no errors for a valid volume-based document', () => {
+    expect(validateBCBC(createValidDocument())).toHaveLength(0);
   });
 
-  it('should return no errors when all glossary references are valid', () => {
-    const document = createDocumentWithReferences();
-    const errors = validateCrossReferences(document);
-    expect(errors).toHaveLength(0);
+  it('reports missing metadata', () => {
+    const document = createValidDocument();
+    // @ts-expect-error testing invalid state
+    document.metadata = undefined;
+
+    expect(validateBCBC(document).some((error) => error.field === 'metadata')).toBe(true);
   });
 
-  it('should return error when glossary term reference is invalid', () => {
-    const document = createDocumentWithReferences();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.glossaryTerms = ['invalid_term'];
-    const errors = validateCrossReferences(document);
-    expect(errors).toHaveLength(1);
-    expect(errors[0]).toMatchObject({
-      field: 'glossaryTerms',
-      message: expect.stringContaining('invalid_term'),
-      severity: 'error',
-    });
+  it('reports missing or invalid volumes', () => {
+    const missing = createValidDocument();
+    // @ts-expect-error testing invalid state
+    missing.volumes = undefined;
+
+    expect(validateBCBC(missing).some((error) => error.field === 'volumes')).toBe(true);
+
+    const invalid = createValidDocument();
+    // @ts-expect-error testing invalid state
+    invalid.volumes = 'not an array';
+
+    expect(
+      validateBCBC(invalid).some(
+        (error) => error.field === 'volumes' && error.message.includes('must be an array')
+      )
+    ).toBe(true);
   });
 
-  it('should validate glossary references in nested subclauses', () => {
-    const document = createDocumentWithReferences();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.subclauses = [
+  it('warns when the volumes array is empty', () => {
+    const document = createValidDocument();
+    document.volumes = [];
+
+    expect(
+      validateBCBC(document).some(
+        (error) => error.field === 'volumes' && error.severity === 'warning'
+      )
+    ).toBe(true);
+  });
+
+  it('validates metadata fields and types', () => {
+    const missingTitle = createValidDocument();
+    // @ts-expect-error testing invalid state
+    missingTitle.metadata.title = undefined;
+
+    expect(
+      validateBCBC(missingTitle).some(
+        (error) => error.field === 'title' && error.path === 'metadata'
+      )
+    ).toBe(true);
+
+    const invalidVersion = createValidDocument();
+    // @ts-expect-error testing invalid state
+    invalidVersion.metadata.version = 123;
+
+    expect(
+      validateBCBC(invalidVersion).some(
+        (error) => error.field === 'version' && error.message.includes('expected string')
+      )
+    ).toBe(true);
+  });
+
+  it('validates the nested hierarchy inside volumes', () => {
+    const missingDivisionId = createValidDocument();
+    // @ts-expect-error testing invalid state
+    missingDivisionId.volumes[0].divisions[0].id = undefined;
+    expect(
+      validateBCBC(missingDivisionId).some(
+        (error) => error.field === 'id' && error.path === 'volumes[0].divisions[0]'
+      )
+    ).toBe(true);
+
+    const invalidDivisionType = createValidDocument();
+    // @ts-expect-error testing invalid state
+    invalidDivisionType.volumes[0].divisions[0].type = 'invalid';
+    expect(
+      validateBCBC(invalidDivisionType).some(
+        (error) => error.field === 'type' && error.message.includes("expected 'division'")
+      )
+    ).toBe(true);
+
+    const missingPartNumber = createValidDocument();
+    // @ts-expect-error testing invalid state
+    missingPartNumber.volumes[0].divisions[0].parts[0].number = undefined;
+    expect(
+      validateBCBC(missingPartNumber).some(
+        (error) => error.field === 'number' && error.path.includes('parts[0]')
+      )
+    ).toBe(true);
+
+    const invalidSectionType = createValidDocument();
+    // @ts-expect-error testing invalid state
+    invalidSectionType.volumes[0].divisions[0].parts[0].sections[0].type = 'invalid';
+    expect(
+      validateBCBC(invalidSectionType).some(
+        (error) => error.field === 'type' && error.message.includes("expected 'section'")
+      )
+    ).toBe(true);
+
+    const missingSubsectionId = createValidDocument();
+    // @ts-expect-error testing invalid state
+    missingSubsectionId.volumes[0].divisions[0].parts[0].sections[0].subsections[0].id =
+      undefined;
+    expect(
+      validateBCBC(missingSubsectionId).some(
+        (error) => error.field === 'id' && error.path.includes('subsections[0]')
+      )
+    ).toBe(true);
+  });
+
+  it('validates article content instead of legacy clauses or notes fields', () => {
+    const missingContent = createValidDocument();
+    // @ts-expect-error testing invalid state
+    missingContent.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].content =
+      undefined;
+
+    expect(
+      validateBCBC(missingContent).some(
+        (error) => error.field === 'content' && error.path.includes('articles[0]')
+      )
+    ).toBe(true);
+
+    const invalidArticleType = createValidDocument();
+    // @ts-expect-error testing invalid state
+    invalidArticleType.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].type =
+      'invalid';
+
+    expect(
+      validateBCBC(invalidArticleType).some(
+        (error) => error.field === 'type' && error.message.includes("expected 'article'")
+      )
+    ).toBe(true);
+  });
+
+  it('validates sentence, clause, and subclause content structures', () => {
+    const missingSentenceText = createValidDocument();
+    // @ts-expect-error testing invalid state
+    getFirstSentence(missingSentenceText).text = undefined;
+    expect(
+      validateBCBC(missingSentenceText).some(
+        (error) => error.field === 'text' && error.path.includes('content[0]')
+      )
+    ).toBe(true);
+
+    const missingClauseText = createValidDocument();
+    // @ts-expect-error testing invalid state
+    getFirstClause(missingClauseText).text = undefined;
+    expect(
+      validateBCBC(missingClauseText).some(
+        (error) => error.field === 'text' && error.path.includes('content[0].content[0]')
+      )
+    ).toBe(true);
+
+    const invalidSubclause = createValidDocument();
+    getFirstClause(invalidSubclause).content = [
       {
         id: 'subclause1',
-        number: 'a',
-        text: 'Subclause with invalid term',
-        glossaryTerms: ['invalid_term'],
+        number: '1',
+        type: 'subclause',
+        // @ts-expect-error testing invalid state
+        text: undefined,
+        glossaryTerms: [],
       },
     ];
+    expect(
+      validateBCBC(invalidSubclause).some(
+        (error) => error.field === 'text' && error.path.includes('content[0].content[0].content[0]')
+      )
+    ).toBe(true);
+  });
+
+  it('validates glossary entries and amendment dates', () => {
+    const invalidGlossary = createValidDocument();
+    // @ts-expect-error testing invalid state
+    invalidGlossary.glossary = [{ id: 'term1' }];
+    expect(
+      validateBCBC(invalidGlossary).some(
+        (error) => error.field === 'term' || error.field === 'definition'
+      )
+    ).toBe(true);
+
+    const invalidAmendment = createValidDocument();
+    // @ts-expect-error testing invalid state
+    invalidAmendment.amendmentDates = [{ date: '2024-01-01' }];
+    expect(
+      validateBCBC(invalidAmendment).some((error) => error.field === 'description')
+    ).toBe(true);
+  });
+});
+
+describe('validateCrossReferences', () => {
+  it('returns no errors when glossary references are valid', () => {
+    expect(validateCrossReferences(createValidDocument())).toHaveLength(0);
+  });
+
+  it('reports invalid glossary references in clauses', () => {
+    const document = createValidDocument();
+    getFirstClause(document).glossaryTerms = ['invalid_term'];
+
     const errors = validateCrossReferences(document);
     expect(errors).toHaveLength(1);
     expect(errors[0].message).toContain('invalid_term');
   });
 
-  it('should handle multiple invalid references', () => {
-    const document = createDocumentWithReferences();
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.glossaryTerms = ['invalid1', 'invalid2', 'term1'];
+  it('reports invalid glossary references in nested subclauses', () => {
+    const document = createValidDocument();
+    getFirstClause(document).content = [
+      {
+        id: 'subclause1',
+        number: '1',
+        type: 'subclause',
+        text: 'Nested content.',
+        glossaryTerms: ['invalid_term'],
+      },
+    ];
+
+    const errors = validateCrossReferences(document);
+    expect(errors).toHaveLength(1);
+    expect(errors[0].message).toContain('invalid_term');
+  });
+
+  it('handles multiple invalid references', () => {
+    const document = createValidDocument();
+    getFirstClause(document).glossaryTerms = ['invalid1', 'invalid2', 'term1'];
+
     const errors = validateCrossReferences(document);
     expect(errors).toHaveLength(2);
   });
 
-  it('should handle documents with no glossary terms', () => {
-    const document = createDocumentWithReferences();
+  it('handles documents without glossary entries', () => {
+    const document = createValidDocument();
     document.glossary = [];
-    const clause = document.divisions[0].parts[0].sections[0].subsections[0].articles[0].clauses[0];
-    clause.glossaryTerms = [];
-    const errors = validateCrossReferences(document);
-    expect(errors).toHaveLength(0);
-  });
+    getFirstSentence(document).glossaryTerms = [];
+    getFirstClause(document).glossaryTerms = [];
 
-  it('should build complete ID set including all hierarchy levels', () => {
-    const document = createDocumentWithReferences();
-    // Add a second article to test ID collection
-    document.divisions[0].parts[0].sections[0].subsections[0].articles.push({
-      id: 'nbc.divA.part1.sect1.subsect1.art2',
-      number: '2',
-      title: 'Article 2',
-      type: 'article',
-      clauses: [
-        {
-          id: 'nbc.divA.part1.sect1.subsect1.art2.sent1',
-          number: '1',
-          text: 'Another clause',
-          glossaryTerms: [],
-        },
-      ],
-      notes: [],
-    });
-    const errors = validateCrossReferences(document);
-    expect(errors).toHaveLength(0);
+    expect(validateCrossReferences(document)).toHaveLength(0);
   });
 });

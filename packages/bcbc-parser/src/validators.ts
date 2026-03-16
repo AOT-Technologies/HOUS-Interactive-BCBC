@@ -32,7 +32,7 @@ export function validateBCBC(document: BCBCDocument): ValidationError[] {
   // Validate root-level required fields
   errors.push(...validateRequiredFields(
     document as unknown as Record<string, unknown>,
-    ['metadata', 'divisions', 'glossary', 'amendmentDates'],
+    ['metadata', 'volumes', 'glossary', 'amendmentDates'],
     'root'
   ));
 
@@ -331,7 +331,7 @@ function validateArticle(article: Article, path: string): ValidationError[] {
   // Validate required fields
   errors.push(...validateRequiredFields(
     article as unknown as Record<string, unknown>,
-    ['id', 'number', 'title', 'type', 'sentences', 'notes'],
+    ['id', 'number', 'title', 'type', 'content'],
     path
   ));
 
@@ -368,26 +368,6 @@ function validateArticle(article: Article, path: string): ValidationError[] {
           errors.push(...validateSentence(contentNode as any, `${path}.content[${index}]`));
         }
         // Tables, Figures, Equations, NoteReferences would be validated here
-      });
-    }
-  }
-
-  // Validate notes array (if present)
-  if ('notes' in article && article.notes) {
-    if (!Array.isArray(article.notes)) {
-      errors.push({
-        path,
-        field: 'notes',
-        message: 'Field notes must be an array',
-        severity: 'error',
-      });
-    } else {
-      article.notes.forEach((note, index) => {
-        errors.push(...validateRequiredFields(
-          note as unknown as Record<string, unknown>,
-          ['id', 'noteNumber', 'noteTitle', 'noteContent'],
-          `${path}.notes[${index}]`
-        ));
       });
     }
   }

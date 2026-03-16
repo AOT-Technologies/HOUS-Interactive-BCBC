@@ -12,6 +12,10 @@ vi.mock('../lib/search-client', () => ({
   getSearchClient: vi.fn(),
 }));
 
+vi.mock('../stores/version-store', () => ({
+  useCurrentVersionId: () => '2024',
+}));
+
 describe('useSearchClient', () => {
   const mockClient = {
     isInitialized: vi.fn(),
@@ -101,7 +105,7 @@ describe('useSearchClient', () => {
   });
 
   describe('initialization', () => {
-    it('should auto-initialize by default', async () => {
+    it('should auto-initialize by default with the current version', async () => {
       const { result } = renderHook(() => useSearchClient());
 
       expect(result.current.isLoading).toBe(true);
@@ -110,7 +114,7 @@ describe('useSearchClient', () => {
         expect(result.current.isInitialized).toBe(true);
       });
 
-      expect(mockClient.initialize).toHaveBeenCalled();
+      expect(mockClient.initialize).toHaveBeenCalledWith('2024');
       expect(result.current.isLoading).toBe(false);
     });
 
@@ -121,16 +125,14 @@ describe('useSearchClient', () => {
       expect(mockClient.initialize).not.toHaveBeenCalled();
     });
 
-    it('should not re-initialize if already initialized', async () => {
-      mockClient.isInitialized.mockReturnValue(true);
-
-      const { result } = renderHook(() => useSearchClient());
+    it('should initialize with an explicit version when provided', async () => {
+      const { result } = renderHook(() => useSearchClient(true, '2027'));
 
       await waitFor(() => {
         expect(result.current.isInitialized).toBe(true);
       });
 
-      expect(mockClient.initialize).not.toHaveBeenCalled();
+      expect(mockClient.initialize).toHaveBeenCalledWith('2027');
     });
 
     it('should handle initialization errors', async () => {
@@ -164,7 +166,7 @@ describe('useSearchClient', () => {
         expect(result.current.results).toEqual(mockResults);
       });
 
-      expect(mockClient.search).toHaveBeenCalledWith('test query', undefined);
+      expect(mockClient.search).toHaveBeenCalledWith('test query', undefined, '2024');
       expect(result.current.isLoading).toBe(false);
     });
 
@@ -181,7 +183,7 @@ describe('useSearchClient', () => {
       });
 
       await waitFor(() => {
-        expect(mockClient.search).toHaveBeenCalledWith('test', options);
+        expect(mockClient.search).toHaveBeenCalledWith('test', options, '2024');
       });
     });
 
@@ -224,7 +226,7 @@ describe('useSearchClient', () => {
         expect(result.current.suggestions).toEqual(['Test Article']);
       });
 
-      expect(mockClient.getSuggestions).toHaveBeenCalledWith('test', 5);
+      expect(mockClient.getSuggestions).toHaveBeenCalledWith('test', 5, '2024');
     });
 
     it('should pass limit parameter', async () => {
@@ -239,7 +241,7 @@ describe('useSearchClient', () => {
       });
 
       await waitFor(() => {
-        expect(mockClient.getSuggestions).toHaveBeenCalledWith('test', 10);
+        expect(mockClient.getSuggestions).toHaveBeenCalledWith('test', 10, '2024');
       });
     });
 
@@ -336,6 +338,7 @@ describe('useSearchMetadata', () => {
     getRevisionDates: vi.fn(),
     getDivisions: vi.fn(),
     getContentTypes: vi.fn(),
+    getDocumentCount: vi.fn(),
   };
 
   const mockMetadata = {
@@ -369,6 +372,7 @@ describe('useSearchMetadata', () => {
     mockClient.getRevisionDates.mockReturnValue(mockMetadata.revisionDates);
     mockClient.getDivisions.mockReturnValue(mockMetadata.divisions);
     mockClient.getContentTypes.mockReturnValue(['article', 'table']);
+    mockClient.getDocumentCount.mockReturnValue(100);
   });
 
   it('should return metadata after initialization', async () => {
@@ -385,6 +389,7 @@ describe('useSearchMetadata', () => {
 
   it('should return null metadata before initialization', () => {
     mockClient.isInitialized.mockReturnValue(false);
+    mockClient.initialize.mockImplementation(() => new Promise(() => {}));
     mockClient.getMetadata.mockReturnValue(null);
 
     const { result } = renderHook(() => useSearchMetadata());

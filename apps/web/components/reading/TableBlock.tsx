@@ -552,6 +552,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const tableNumberDisplay = tableNumber
     ? `Table ${tableNumber}${tableNumber.endsWith(')') ? '' : '.'}`
     : null;
+  const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
   const formingPartText = formatFormingPartText(formingPartEntries);
 
   const structure = activeRevision?.structure ?? rawTable.structure;
@@ -647,7 +648,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         </div>
         {resolvedTableNotes.length > 0 && (
           <div className="table-block__notes" aria-label="Table notes">
-            <div className="table-block__notes-title">Table notes</div>
+            <div className="table-block__notes-title">{tableNotesHeading}</div>
             {resolvedTableNotes.map((note, index) => (
               <div
                 className="table-block__note"

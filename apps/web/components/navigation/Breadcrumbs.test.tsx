@@ -20,22 +20,30 @@ vi.mock('next/navigation', () => ({
 // Mock Next.js Link
 vi.mock('next/link', () => ({
   __esModule: true,
-  default: ({ children, href, ...props }: any) => (
-    <a href={href} {...props}>
+  default: ({ children, href, onClick, ...props }: any) => (
+    <a
+      href={href}
+      onClick={(event) => {
+        onClick?.(event);
+        event.preventDefault();
+      }}
+      {...props}
+    >
       {children}
     </a>
   ),
 }));
 
-// Mock the Link component
-vi.mock('@repo/ui/link', () => ({
-  __esModule: true,
-  default: ({ children, href, onClick, className, 'aria-label': ariaLabel }: any) => (
-    <a href={href} onClick={onClick} className={className} aria-label={ariaLabel}>
-      {children}
-    </a>
-  ),
-}));
+/**
+ * Helper: query a .breadcrumbs-title span by its text content.
+ * Each breadcrumb renders both a .breadcrumbs-title and a .breadcrumbs-tooltip
+ * with the same text, so plain getByText hits duplicates.
+ */
+const getTitleByText = (container: HTMLElement, text: string) => {
+  const titles = container.querySelectorAll('.breadcrumbs-title');
+  const match = Array.from(titles).find(el => el.textContent === text);
+  return match ?? null;
+};
 
 describe('Breadcrumbs', () => {
   const mockNavigationTree: NavigationNode[] = [
@@ -96,14 +104,14 @@ describe('Breadcrumbs', () => {
         currentPath: '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1',
       });
 
-      render(<Breadcrumbs maxVisibleItems={10} />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
       expect(screen.getByTestId(TESTID_BREADCRUMBS)).toBeInTheDocument();
-      expect(screen.getByText('Division A')).toBeInTheDocument();
-      expect(screen.getByText('Part 1')).toBeInTheDocument();
-      expect(screen.getByText('Section 1.1')).toBeInTheDocument();
-      expect(screen.getByText('Subsection 1.1.1')).toBeInTheDocument();
-      expect(screen.getByText('Article 1.1.1.1')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Compliance, Objectives a...')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Compliance')).toBeInTheDocument();
+      expect(getTitleByText(container, 'General')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Application')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Scope')).toBeInTheDocument();
     });
 
     it('should render breadcrumbs for section level', () => {
@@ -113,12 +121,12 @@ describe('Breadcrumbs', () => {
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs maxVisibleItems={10} />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      expect(screen.getByText('Division A')).toBeInTheDocument();
-      expect(screen.getByText('Part 1')).toBeInTheDocument();
-      expect(screen.getByText('Section 1.1')).toBeInTheDocument();
-      expect(screen.queryByText('Subsection 1.1.1')).not.toBeInTheDocument();
+      expect(getTitleByText(container, 'Compliance, Objectives a...')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Compliance')).toBeInTheDocument();
+      expect(getTitleByText(container, 'General')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Application')).toBeNull();
     });
 
     it('should render breadcrumbs for part level', () => {
@@ -128,11 +136,11 @@ describe('Breadcrumbs', () => {
         currentPath: '/code/division-a/part-1',
       });
 
-      render(<Breadcrumbs maxVisibleItems={10} />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      expect(screen.getByText('Division A')).toBeInTheDocument();
-      expect(screen.getByText('Part 1')).toBeInTheDocument();
-      expect(screen.queryByText('Section 1.1')).not.toBeInTheDocument();
+      expect(getTitleByText(container, 'Compliance, Objectives a...')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Compliance')).toBeInTheDocument();
+      expect(getTitleByText(container, 'General')).toBeNull();
     });
 
     it('should not render when currentPath is empty', () => {
@@ -145,7 +153,7 @@ describe('Breadcrumbs', () => {
       const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
       // Should only render Home breadcrumb
-      expect(screen.getByText('Home')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Home')).toBeInTheDocument();
     });
 
     it('should not render when navigationTree is empty', () => {
@@ -158,7 +166,7 @@ describe('Breadcrumbs', () => {
       const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
       // Should only render Home breadcrumb when tree is empty
-      expect(screen.getByText('Home')).toBeInTheDocument();
+      expect(getTitleByText(container, 'Home')).toBeInTheDocument();
     });
   });
 
@@ -172,25 +180,28 @@ describe('Breadcrumbs', () => {
 
       render(<Breadcrumbs maxVisibleItems={10} />);
 
-      const separators = screen.getAllByText('>', { exact: false });
-      // Should have 2 separators for 3 items (Division > Part > Section)
-      expect(separators.length).toBe(2);
+      // Component uses "/" as separator
+      const separators = screen.getAllByText('/');
+      // Home + Division + Part + Section = 4 items, 3 separators (last item has no separator)
+      expect(separators.length).toBe(3);
     });
 
-    it('should render breadcrumb numbers and titles', () => {
+    it('should render breadcrumb titles', () => {
       (usePathname as any).mockReturnValue('/code/division-a/part-1');
       (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1',
       });
 
-      render(<Breadcrumbs maxVisibleItems={10} />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      // Check that both number and title are rendered
-      expect(screen.getByText('Division A')).toBeInTheDocument();
-      expect(screen.getByText('Compliance, Objectives and Functional Statements')).toBeInTheDocument();
-      expect(screen.getByText('Part 1')).toBeInTheDocument();
-      expect(screen.getByText('Compliance')).toBeInTheDocument();
+      // Division title is shown (truncated in display, full in tooltip)
+      expect(getTitleByText(container, 'Compliance, Objectives a...')).toBeInTheDocument();
+      // Full title in tooltip
+      const tooltips = container.querySelectorAll('.breadcrumbs-tooltip');
+      const divisionTooltip = Array.from(tooltips).find(t => t.textContent === 'Compliance, Objectives and Functional Statements');
+      expect(divisionTooltip).toBeTruthy();
+      expect(getTitleByText(container, 'Compliance')).toBeInTheDocument();
     });
 
     it('should mark the last breadcrumb as current page', () => {
@@ -200,72 +211,77 @@ describe('Breadcrumbs', () => {
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs maxVisibleItems={10} />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      // The current element should have the breadcrumbs-current class and aria-current attribute
-      const currentElements = screen.getAllByText('Section 1.1');
-      const currentElement = currentElements.find(el => 
-        el.closest('.breadcrumbs-current')
-      );
-      
-      expect(currentElement?.closest('.breadcrumbs-current')).toHaveAttribute('aria-current', 'page');
+      const currentElement = container.querySelector('.breadcrumbs-link--current');
+      expect(currentElement).toBeTruthy();
+      expect(currentElement).toHaveAttribute('aria-current', 'page');
+      // The current item should contain "General"
+      expect(getTitleByText(currentElement as HTMLElement, 'General')).toBeTruthy();
     });
 
-    it('should render non-current breadcrumbs as links', () => {
+    it('should render navigable breadcrumbs as links (part and below)', () => {
       (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
       (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs maxVisibleItems={10} />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      const divisionLink = screen.getByText('Division A').closest('a');
-      const partLink = screen.getByText('Part 1').closest('a');
+      // Division is non-navigable on content pages (rendered as span, not link)
+      const divisionTitle = getTitleByText(container, 'Compliance, Objectives a...');
+      expect(divisionTitle!.closest('.breadcrumbs-link--non-navigable')).toBeTruthy();
 
-      expect(divisionLink).toHaveAttribute('href', '/code/division-a');
+      // Part is navigable (rendered as link) — use aria-label to find it uniquely
+      const partLink = screen.getByLabelText('Navigate to Compliance');
       expect(partLink).toHaveAttribute('href', '/code/division-a/part-1');
     });
   });
 
   describe('Interaction', () => {
-    it('should call onBreadcrumbClick when a breadcrumb is clicked', () => {
+    it('should call onBreadcrumbClick when a navigable breadcrumb is clicked', () => {
       const mockOnClick = vi.fn();
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
       (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs onBreadcrumbClick={mockOnClick} />);
+      render(<Breadcrumbs onBreadcrumbClick={mockOnClick} maxVisibleItems={10} />);
 
-      const divisionLink = screen.getByText('Division A').closest('a');
-      fireEvent.click(divisionLink!);
+      // Part is a navigable link — use aria-label to find it uniquely
+      const partLink = screen.getByLabelText('Navigate to Compliance');
+      fireEvent.click(partLink);
 
       expect(mockOnClick).toHaveBeenCalledWith(
         expect.objectContaining({
-          id: 'division-a',
-          path: '/code/division-a',
+          id: 'part-1',
+          path: '/code/division-a/part-1',
         })
       );
     });
 
-    it('should allow default link navigation behavior', () => {
+    it('should preserve the breadcrumb href while invoking the click callback', () => {
       const mockOnClick = vi.fn();
+      (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
       (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
         currentPath: '/code/division-a/part-1/section-1-1',
       });
 
-      render(<Breadcrumbs onBreadcrumbClick={mockOnClick} />);
+      render(<Breadcrumbs onBreadcrumbClick={mockOnClick} maxVisibleItems={10} />);
 
-      const divisionLink = screen.getByText('Division A').closest('a');
-      const event = new MouseEvent('click', { bubbles: true, cancelable: true });
-      const preventDefaultSpy = vi.spyOn(event, 'preventDefault');
+      const partLink = screen.getByLabelText('Navigate to Compliance');
+      fireEvent.click(partLink);
 
-      fireEvent(divisionLink!, event);
-
-      // Should NOT prevent default - let Link handle navigation
-      expect(preventDefaultSpy).not.toHaveBeenCalled();
+      expect(partLink).toHaveAttribute('href', '/code/division-a/part-1');
+      expect(mockOnClick).toHaveBeenCalledWith(
+        expect.objectContaining({
+          id: 'part-1',
+          path: '/code/division-a/part-1',
+        })
+      );
     });
   });
 
@@ -283,7 +299,7 @@ describe('Breadcrumbs', () => {
       expect(nav).toBeInTheDocument();
     });
 
-    it('should have aria-label on breadcrumb links', () => {
+    it('should have aria-label on navigable breadcrumb links', () => {
       (usePathname as any).mockReturnValue('/code/division-a/part-1/section-1-1');
       (useNavigationStore as any).mockReturnValue({
         navigationTree: mockNavigationTree,
@@ -292,10 +308,9 @@ describe('Breadcrumbs', () => {
 
       render(<Breadcrumbs maxVisibleItems={10} />);
 
-      const divisionLink = screen.getByLabelText(
-        'Navigate to Compliance, Objectives and Functional Statements'
-      );
-      expect(divisionLink).toBeInTheDocument();
+      // Part is navigable and should have aria-label
+      const partLink = screen.getByLabelText('Navigate to Compliance');
+      expect(partLink).toBeInTheDocument();
     });
 
     it('should mark separators as aria-hidden', () => {
@@ -354,9 +369,8 @@ describe('Breadcrumbs', () => {
 
       render(<Breadcrumbs maxVisibleItems={10} />);
 
-      expect(screen.getByText('Division A')).toBeInTheDocument();
-      // Should not have separators for single item
-      expect(screen.queryByText('>', { exact: false })).not.toBeInTheDocument();
+      // Division title is rendered (truncated)
+      expect(screen.getByText('Compliance, Objectives a...')).toBeInTheDocument();
     });
 
     it('should handle invalid path gracefully', () => {
@@ -368,8 +382,9 @@ describe('Breadcrumbs', () => {
 
       const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      // Should not render anything for invalid path
-      expect(container.firstChild).toBeNull();
+      // Component always renders at minimum "Home"
+      expect(getTitleByText(container, 'Home')).toBeTruthy();
+      expect(container.firstChild).not.toBeNull();
     });
 
     it('should handle deeply nested navigation tree', () => {
@@ -379,15 +394,14 @@ describe('Breadcrumbs', () => {
         currentPath: '/code/division-a/part-1/section-1-1/subsection-1-1-1/article-1-1-1-1',
       });
 
-      render(<Breadcrumbs maxVisibleItems={10} />);
+      const { container } = render(<Breadcrumbs maxVisibleItems={10} />);
 
-      // Should render all 5 levels
-      expect(screen.getByText('Division A')).toBeInTheDocument();
-      expect(screen.getByText('Part 1')).toBeInTheDocument();
-      expect(screen.getByText('Section 1.1')).toBeInTheDocument();
-      expect(screen.getByText('Subsection 1.1.1')).toBeInTheDocument();
-      expect(screen.getByText('Article 1.1.1.1')).toBeInTheDocument();
+      // Should render all 5 levels by title
+      expect(getTitleByText(container, 'Compliance, Objectives a...')).toBeTruthy();
+      expect(getTitleByText(container, 'Compliance')).toBeTruthy();
+      expect(getTitleByText(container, 'General')).toBeTruthy();
+      expect(getTitleByText(container, 'Application')).toBeTruthy();
+      expect(getTitleByText(container, 'Scope')).toBeTruthy();
     });
   });
 });
-

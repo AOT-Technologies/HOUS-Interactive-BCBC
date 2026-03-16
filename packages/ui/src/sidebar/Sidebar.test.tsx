@@ -1,41 +1,41 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Sidebar from "./Sidebar";
-import { TESTID_SIDEBAR, TESTID_SIDEBAR_TOGGLE, TESTID_SIDEBAR_MOBILE_OVERLAY, GET_TESTID_BUTTON } from "@repo/constants/src/testids";
+import {
+  GET_TESTID_BUTTON,
+  TESTID_SIDEBAR,
+  TESTID_SIDEBAR_MOBILE_OVERLAY,
+  TESTID_SIDEBAR_TOGGLE,
+} from "@repo/constants/src/testids";
 
 describe("Sidebar", () => {
   let originalInnerWidth: number;
 
-  beforeEach(() => {
-    // Store original window.innerWidth
-    originalInnerWidth = window.innerWidth;
-  });
-
-  afterEach(() => {
-    // Restore original window.innerWidth
+  const setViewport = (width: number) => {
     Object.defineProperty(window, "innerWidth", {
-      writable: true,
       configurable: true,
-      value: originalInnerWidth,
-    });
-  });
-
-  const mockResize = (width: number) => {
-    Object.defineProperty(window, "innerWidth", {
       writable: true,
-      configurable: true,
       value: width,
     });
     window.dispatchEvent(new Event("resize"));
   };
 
-  describe("Desktop behavior (≥ 1024px)", () => {
+  beforeEach(() => {
+    originalInnerWidth = window.innerWidth;
+  });
+
+  afterEach(() => {
+    setViewport(originalInnerWidth);
+    document.body.style.overflow = "";
+  });
+
+  describe("desktop behavior", () => {
     beforeEach(() => {
-      mockResize(1024);
+      setViewport(1200);
     });
 
-    it("renders sidebar with children on desktop", () => {
+    it("renders the sidebar content inline", () => {
       render(
         <Sidebar>
           <div>Navigation Content</div>
@@ -46,308 +46,30 @@ describe("Sidebar", () => {
       expect(screen.getByText("Navigation Content")).toBeInTheDocument();
     });
 
-    it("renders toggle button on desktop", () => {
+    it("does not render the mobile toggle or overlay on desktop", () => {
       render(
         <Sidebar>
           <div>Content</div>
         </Sidebar>
       );
 
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      expect(toggleButton).toBeInTheDocument();
-      expect(toggleButton).toHaveAttribute("aria-label", "Collapse sidebar");
+      expect(
+        screen.queryByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE))
+      ).not.toBeInTheDocument();
+      expect(screen.queryByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).not.toBeInTheDocument();
     });
 
-    it("toggles collapse state when toggle button is clicked", async () => {
-      const user = userEvent.setup();
-      render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      const sidebar = screen.getByTestId(TESTID_SIDEBAR);
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-
-      // Initially not collapsed
-      expect(sidebar).not.toHaveClass("--collapsed");
-      expect(toggleButton).toHaveAttribute("aria-label", "Collapse sidebar");
-
-      // Click to collapse
-      await user.click(toggleButton);
-      expect(sidebar).toHaveClass("--collapsed");
-      expect(toggleButton).toHaveAttribute("aria-label", "Expand sidebar");
-
-      // Click to expand
-      await user.click(toggleButton);
-      expect(sidebar).not.toHaveClass("--collapsed");
-      expect(toggleButton).toHaveAttribute("aria-label", "Collapse sidebar");
-    });
-
-    it("calls onCollapseChange callback when toggled", async () => {
-      const user = userEvent.setup();
-      const onCollapseChange = vi.fn();
-      
-      render(
-        <Sidebar onCollapseChange={onCollapseChange}>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-
-      await user.click(toggleButton);
-      expect(onCollapseChange).toHaveBeenCalledWith(true);
-
-      await user.click(toggleButton);
-      expect(onCollapseChange).toHaveBeenCalledWith(false);
-    });
-
-    it("respects defaultCollapsed prop", () => {
-      render(
-        <Sidebar defaultCollapsed>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      const sidebar = screen.getByTestId(TESTID_SIDEBAR);
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-
-      expect(sidebar).toHaveClass("--collapsed");
-      expect(toggleButton).toHaveAttribute("aria-label", "Expand sidebar");
-    });
-
-    it("applies custom className", () => {
+    it("applies a custom class name", () => {
       render(
         <Sidebar className="custom-class">
           <div>Content</div>
         </Sidebar>
       );
 
-      const sidebar = screen.getByTestId(TESTID_SIDEBAR);
-      expect(sidebar).toHaveClass("custom-class");
+      expect(screen.getByTestId(TESTID_SIDEBAR)).toHaveClass("custom-class");
     });
 
-    it("does not render mobile toggle button on desktop", () => {
-      render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      // Mobile toggle should not be visible on desktop
-      const toggleButtons = screen.getAllByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      expect(toggleButtons).toHaveLength(1); // Only desktop toggle
-    });
-  });
-
-  describe("Mobile/Tablet behavior (< 1024px)", () => {
-    beforeEach(() => {
-      mockResize(768);
-    });
-
-    it("renders mobile toggle button on mobile", async () => {
-      render(
-        <Sidebar>
-          <div>Navigation Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-        expect(toggleButton).toBeInTheDocument();
-        expect(toggleButton).toHaveAttribute("aria-label", "Open navigation");
-      });
-    });
-
-    it("does not render desktop sidebar on mobile", async () => {
-      render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        expect(screen.queryByTestId(TESTID_SIDEBAR)).not.toBeInTheDocument();
-      });
-    });
-
-    it("opens mobile drawer when toggle button is clicked", async () => {
-      const user = userEvent.setup();
-      render(
-        <Sidebar>
-          <div>Navigation Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-        expect(toggleButton).toBeInTheDocument();
-      });
-
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      await user.click(toggleButton);
-
-      await waitFor(() => {
-        expect(screen.getByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).toBeInTheDocument();
-        expect(screen.getByText("Navigation Content")).toBeInTheDocument();
-      });
-    });
-
-    it("closes mobile drawer when close button is clicked", async () => {
-      const user = userEvent.setup();
-      render(
-        <Sidebar>
-          <div>Navigation Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-        expect(toggleButton).toBeInTheDocument();
-      });
-
-      // Open drawer
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      await user.click(toggleButton);
-
-      await waitFor(() => {
-        expect(screen.getByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).toBeInTheDocument();
-      });
-
-      // Close drawer using close button in header
-      const closeButtons = screen.getAllByRole("button", { name: /close navigation/i });
-      await user.click(closeButtons[0]);
-
-      await waitFor(() => {
-        expect(screen.queryByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).not.toBeInTheDocument();
-      });
-    });
-
-    it("updates toggle button label when drawer is open", async () => {
-      const user = userEvent.setup();
-      render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-        expect(toggleButton).toHaveAttribute("aria-label", "Open navigation");
-      });
-
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      await user.click(toggleButton);
-
-      await waitFor(() => {
-        expect(toggleButton).toHaveAttribute("aria-label", "Close navigation");
-      });
-    });
-  });
-
-  describe("Responsive behavior", () => {
-    it("switches from desktop to mobile when resizing below 1024px", async () => {
-      mockResize(1200);
-      
-      const { rerender } = render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      // Desktop sidebar should be visible
-      expect(screen.getByTestId(TESTID_SIDEBAR)).toBeInTheDocument();
-
-      // Resize to mobile
-      mockResize(768);
-      rerender(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        expect(screen.queryByTestId(TESTID_SIDEBAR)).not.toBeInTheDocument();
-      });
-    });
-
-    it("closes mobile drawer when resizing to desktop", async () => {
-      const user = userEvent.setup();
-      mockResize(768);
-      
-      const { rerender } = render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-        expect(toggleButton).toBeInTheDocument();
-      });
-
-      // Open mobile drawer
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      await user.click(toggleButton);
-
-      await waitFor(() => {
-        expect(screen.getByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).toBeInTheDocument();
-      });
-
-      // Resize to desktop
-      mockResize(1200);
-      rerender(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      await waitFor(() => {
-        expect(screen.queryByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).not.toBeInTheDocument();
-        expect(screen.getByTestId(TESTID_SIDEBAR)).toBeInTheDocument();
-      });
-    });
-  });
-
-  describe("Accessibility", () => {
-    it("has proper ARIA labels for toggle buttons", () => {
-      mockResize(1024);
-      render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      expect(toggleButton).toHaveAttribute("aria-label");
-    });
-
-    it("supports keyboard navigation", async () => {
-      const user = userEvent.setup();
-      mockResize(1024);
-      
-      render(
-        <Sidebar>
-          <div>Content</div>
-        </Sidebar>
-      );
-
-      const toggleButton = screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE));
-      
-      // Focus the button
-      toggleButton.focus();
-      expect(toggleButton).toHaveFocus();
-
-      // Press Enter to toggle
-      await user.keyboard("{Enter}");
-      
-      const sidebar = screen.getByTestId(TESTID_SIDEBAR);
-      expect(sidebar).toHaveClass("--collapsed");
-    });
-
-    it("uses custom test ID when provided", () => {
-      mockResize(1024);
+    it("uses a custom test id", () => {
       render(
         <Sidebar data-testid="custom-sidebar">
           <div>Content</div>
@@ -355,6 +77,128 @@ describe("Sidebar", () => {
       );
 
       expect(screen.getByTestId("custom-sidebar")).toBeInTheDocument();
+    });
+  });
+
+  describe("mobile behavior", () => {
+    beforeEach(() => {
+      setViewport(768);
+    });
+
+    it("renders a mobile toggle button", async () => {
+      render(
+        <Sidebar>
+          <div>Navigation Content</div>
+        </Sidebar>
+      );
+
+      await waitFor(() => {
+        expect(
+          screen.getByTestId(GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE))
+        ).toHaveAttribute("aria-label", "Open navigation");
+      });
+    });
+
+    it("opens and closes the mobile overlay", async () => {
+      const user = userEvent.setup();
+      render(
+        <Sidebar>
+          <div>Navigation Content</div>
+        </Sidebar>
+      );
+
+      const toggleButton = await screen.findByTestId(
+        GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE)
+      );
+
+      await user.click(toggleButton);
+
+      await waitFor(() => {
+        expect(screen.getByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).toBeInTheDocument();
+        expect(screen.getByTestId(TESTID_SIDEBAR)).toBeInTheDocument();
+        expect(toggleButton).toHaveAttribute("aria-label", "Close navigation");
+      });
+
+      expect(document.body.style.overflow).toBe("hidden");
+
+      await user.click(toggleButton);
+
+      await waitFor(() => {
+        expect(screen.queryByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).not.toBeInTheDocument();
+        expect(toggleButton).toHaveAttribute("aria-label", "Open navigation");
+      });
+    });
+
+    it("calls onCollapseChange with the current mobile state", async () => {
+      const user = userEvent.setup();
+      const onCollapseChange = vi.fn();
+
+      render(
+        <Sidebar onCollapseChange={onCollapseChange}>
+          <div>Content</div>
+        </Sidebar>
+      );
+
+      const toggleButton = await screen.findByTestId(
+        GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE)
+      );
+
+      await user.click(toggleButton);
+      await user.click(toggleButton);
+
+      expect(onCollapseChange).toHaveBeenNthCalledWith(1, false);
+      expect(onCollapseChange).toHaveBeenNthCalledWith(2, true);
+    });
+
+    it("supports keyboard activation for the toggle button", async () => {
+      const user = userEvent.setup();
+      render(
+        <Sidebar>
+          <div>Content</div>
+        </Sidebar>
+      );
+
+      const toggleButton = await screen.findByTestId(
+        GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE)
+      );
+
+      toggleButton.focus();
+      expect(toggleButton).toHaveFocus();
+
+      await user.keyboard("{Enter}");
+
+      await waitFor(() => {
+        expect(screen.getByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).toBeInTheDocument();
+      });
+    });
+  });
+
+  describe("responsive transitions", () => {
+    it("closes the mobile overlay when resizing to desktop", async () => {
+      const user = userEvent.setup();
+      setViewport(768);
+
+      render(
+        <Sidebar>
+          <div>Content</div>
+        </Sidebar>
+      );
+
+      const toggleButton = await screen.findByTestId(
+        GET_TESTID_BUTTON(TESTID_SIDEBAR_TOGGLE)
+      );
+      await user.click(toggleButton);
+
+      await waitFor(() => {
+        expect(screen.getByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).toBeInTheDocument();
+      });
+
+      setViewport(1200);
+
+      await waitFor(() => {
+        expect(screen.queryByTestId(TESTID_SIDEBAR_MOBILE_OVERLAY)).not.toBeInTheDocument();
+        expect(screen.getByTestId(TESTID_SIDEBAR)).toBeInTheDocument();
+      });
     });
   });
 });
