@@ -739,6 +739,46 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     [router, searchParams]
   );
 
+  const isModalGoToSectionVisible =
+    modalData?.mode !== 'error' &&
+    Boolean(
+      (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
+      (modalData?.mode === 'external_url' && modalData.externalUrl)
+    );
+
+  const getModalNavigationAnchor = useCallback(
+    (resolved: ResolvedCrossReference | null): string | null => {
+      if (!resolved) return null;
+
+      if (resolved.mode === 'standard' && resolved.standard) {
+        return resolved.standard.table_id || resolved.standard.location_id || null;
+      }
+
+      return resolved.referenceId || null;
+    },
+    []
+  );
+
+  const handleModalGoToSection = useCallback(() => {
+    if (modalData?.mode === 'external_url' && modalData.externalUrl) {
+      window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
+      closeReferenceModal();
+      return;
+    }
+
+    closeReferenceModal();
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete('modal');
+    const query = params.toString();
+    const anchor = getModalNavigationAnchor(modalData);
+    const hash = anchor ? `#${anchor}` : '';
+    router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}${hash}`);
+  }, [closeReferenceModal, getModalNavigationAnchor, modalData, router, searchParams]);
+
   // Sync navigation state from URL on mount and when path changes
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -1404,27 +1444,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             heading={modalData?.heading || 'Cross reference'}
             scrollToReferenceId={modalData?.referenceId || null}
             onClose={closeReferenceModal}
-            onGoToSection={() => {
-              if (modalData?.mode === 'external_url' && modalData.externalUrl) {
-                window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
-                return;
-              }
-
-              if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
-                closeReferenceModal();
-                return;
-              }
-
-              closeReferenceModal();
-              const params = new URLSearchParams(searchParams.toString());
-              params.delete('modal');
-              const query = params.toString();
-              router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
-            }}
-            showGoToSection={Boolean(
-              (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
-              (modalData?.mode === 'external_url' && modalData.externalUrl)
-            )}
+            onGoToSection={handleModalGoToSection}
+            showGoToSection={isModalGoToSectionVisible}
             goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
           >
             {renderModalContent()}
@@ -1488,27 +1509,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             heading={modalData?.heading || 'Cross reference'}
             scrollToReferenceId={modalData?.referenceId || null}
             onClose={closeReferenceModal}
-            onGoToSection={() => {
-              if (modalData?.mode === 'external_url' && modalData.externalUrl) {
-                window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
-                return;
-              }
-
-              if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
-                closeReferenceModal();
-                return;
-              }
-
-              closeReferenceModal();
-              const params = new URLSearchParams(searchParams.toString());
-              params.delete('modal');
-              const query = params.toString();
-              router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
-            }}
-            showGoToSection={Boolean(
-              (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
-              (modalData?.mode === 'external_url' && modalData.externalUrl)
-            )}
+            onGoToSection={handleModalGoToSection}
+            showGoToSection={isModalGoToSectionVisible}
             goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
           >
             {renderModalContent()}
@@ -1573,27 +1575,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             heading={modalData?.heading || 'Cross reference'}
             scrollToReferenceId={modalData?.referenceId || null}
             onClose={closeReferenceModal}
-            onGoToSection={() => {
-              if (modalData?.mode === 'external_url' && modalData.externalUrl) {
-                window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
-                return;
-              }
-
-              if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
-                closeReferenceModal();
-                return;
-              }
-
-              closeReferenceModal();
-              const params = new URLSearchParams(searchParams.toString());
-              params.delete('modal');
-              const query = params.toString();
-              router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
-            }}
-            showGoToSection={Boolean(
-              (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
-              (modalData?.mode === 'external_url' && modalData.externalUrl)
-            )}
+            onGoToSection={handleModalGoToSection}
+            showGoToSection={isModalGoToSectionVisible}
             goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
           >
             {renderModalContent()}
@@ -1670,12 +1653,6 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       : subtree.mode === 'subsection' && subtree.subsection
         ? `${divisionLabel} - ${sectionNumberPrefix}.${subtree.subsection.number} ${subtree.subsection.title} PDF`
         : `${divisionLabel} - ${sectionNumberPrefix} ${resolvedSection.title} PDF`;
-  const modalGoToSectionVisible =
-    modalData?.mode !== 'error' &&
-    Boolean(
-      (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
-      (modalData?.mode === 'external_url' && modalData.externalUrl)
-    );
   const sectionViewPartTitle = currentPartNode?.title || slug[1];
 
   return (
@@ -1722,24 +1699,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           heading={modalData?.heading || 'Cross reference'}
           scrollToReferenceId={modalData?.referenceId || null}
           onClose={closeReferenceModal}
-          onGoToSection={() => {
-            if (modalData?.mode === 'external_url' && modalData.externalUrl) {
-              window.open(modalData.externalUrl, '_blank', 'noopener,noreferrer');
-              return;
-            }
-
-            if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
-              closeReferenceModal();
-              return;
-            }
-
-            closeReferenceModal();
-            const params = new URLSearchParams(searchParams.toString());
-            params.delete('modal');
-            const query = params.toString();
-            router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
-          }}
-          showGoToSection={modalGoToSectionVisible}
+          onGoToSection={handleModalGoToSection}
+          showGoToSection={isModalGoToSectionVisible}
           goToSectionLabel={modalData?.mode === 'external_url' ? 'Go to website' : 'Go to Section'}
         >
           {renderModalContent()}
