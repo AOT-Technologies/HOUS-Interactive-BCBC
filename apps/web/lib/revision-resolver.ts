@@ -54,6 +54,10 @@ function getApplicableRevision(
   return sorted.find((rev) => (rev.effective_date || '') <= effectiveDate) || sorted[sorted.length - 1];
 }
 
+function hasEquationPlaceholder(text: unknown): boolean {
+  return typeof text === 'string' && /\[EQ:(?:display|inline)(?::[^\]]*)?\]/i.test(text);
+}
+
 function applyRevision<T extends ContentNode>(node: T, effectiveDate?: string): T | null {
   // First, handle title with revision history (before checking node-level revisions)
   let processedNode = { ...node };
@@ -109,13 +113,14 @@ function applyRevision<T extends ContentNode>(node: T, effectiveDate?: string): 
 function resolveSubclause(node: ContentNode, effectiveDate?: string): ContentNode | null {
   const resolved = applyRevision(node, effectiveDate);
   if (!resolved) return null;
+  const includeEquationContent = !hasEquationPlaceholder(resolved.text);
 
   const nestedSource = Array.isArray(resolved.content)
     ? resolved.content
     : [
         ...(Array.isArray(resolved.tables) ? resolved.tables : []),
         ...(Array.isArray(resolved.figures) ? resolved.figures : []),
-        ...(Array.isArray(resolved.equations) ? resolved.equations : []),
+        ...(includeEquationContent && Array.isArray(resolved.equations) ? resolved.equations : []),
       ];
 
   const nested = nestedSource
@@ -133,6 +138,7 @@ function resolveSubclause(node: ContentNode, effectiveDate?: string): ContentNod
 function resolveClause(node: ContentNode, effectiveDate?: string): ContentNode | null {
   const resolved = applyRevision(node, effectiveDate);
   if (!resolved) return null;
+  const includeEquationContent = !hasEquationPlaceholder(resolved.text);
 
   let nestedSource: unknown[] = [];
   if (Array.isArray(resolved.content)) {
@@ -142,13 +148,13 @@ function resolveClause(node: ContentNode, effectiveDate?: string): ContentNode |
       ...resolved.subclauses,
       ...(Array.isArray(resolved.tables) ? resolved.tables : []),
       ...(Array.isArray(resolved.figures) ? resolved.figures : []),
-      ...(Array.isArray(resolved.equations) ? resolved.equations : []),
+      ...(includeEquationContent && Array.isArray(resolved.equations) ? resolved.equations : []),
     ];
   } else {
     nestedSource = [
       ...(Array.isArray(resolved.tables) ? resolved.tables : []),
       ...(Array.isArray(resolved.figures) ? resolved.figures : []),
-      ...(Array.isArray(resolved.equations) ? resolved.equations : []),
+      ...(includeEquationContent && Array.isArray(resolved.equations) ? resolved.equations : []),
     ];
   }
 
@@ -167,6 +173,7 @@ function resolveClause(node: ContentNode, effectiveDate?: string): ContentNode |
 function resolveSentence(node: ContentNode, effectiveDate?: string): ContentNode | null {
   const resolved = applyRevision(node, effectiveDate);
   if (!resolved) return null;
+  const includeEquationContent = !hasEquationPlaceholder(resolved.text);
 
   let nestedSource: unknown[] = [];
   if (Array.isArray(resolved.content)) {
@@ -176,13 +183,13 @@ function resolveSentence(node: ContentNode, effectiveDate?: string): ContentNode
       ...resolved.clauses,
       ...(Array.isArray(resolved.tables) ? resolved.tables : []),
       ...(Array.isArray(resolved.figures) ? resolved.figures : []),
-      ...(Array.isArray(resolved.equations) ? resolved.equations : []),
+      ...(includeEquationContent && Array.isArray(resolved.equations) ? resolved.equations : []),
     ];
   } else {
     nestedSource = [
       ...(Array.isArray(resolved.tables) ? resolved.tables : []),
       ...(Array.isArray(resolved.figures) ? resolved.figures : []),
-      ...(Array.isArray(resolved.equations) ? resolved.equations : []),
+      ...(includeEquationContent && Array.isArray(resolved.equations) ? resolved.equations : []),
     ];
   }
 

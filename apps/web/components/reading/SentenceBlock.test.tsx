@@ -4,6 +4,34 @@ import type { Sentence } from '@bc-building-code/bcbc-parser';
 import { SentenceBlock } from './SentenceBlock';
 
 describe('SentenceBlock', () => {
+  it('renders variable lists inline where the placeholder appears', () => {
+    const sentence: Sentence = {
+      id: 'sentence-variable',
+      type: 'sentence',
+      number: '1',
+      text: 'The area is calculated where[LIST:variable]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'variable',
+          items: [
+            {
+              id: 'var-area',
+              symbol: 'Area',
+              description: '= gross area',
+            },
+          ],
+        },
+      ],
+    };
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    expect(screen.getByText('The area is calculated where')).toBeInTheDocument();
+    expect(screen.getByText('Area')).toBeInTheDocument();
+    expect(screen.getByText('= gross area')).toBeInTheDocument();
+  });
+
   it('renders organizations as a table when sentence contains organizations', () => {
     const sentence: Sentence = {
       id: 'sentence-1',

@@ -40,14 +40,14 @@
 .equation-block--block .equation-block__mathml math {
   display: block;
   margin: 0 auto;
-  font-size: clamp(2rem, 2.8vw, 3rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
   line-height: 1.15;
 }
 
 .equation-block--block .equation-block__mathml mjx-container[jax='CHTML'] {
   display: block;
   margin: 0 auto;
-  font-size: clamp(2rem, 2.8vw, 3rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
 }
 
 .equation-block--block .equation-block__mathml mjx-container[jax='SVG'] {
@@ -92,7 +92,7 @@
 
 .equation-block--block .equation-block__fallback {
   display: inline-block;
-  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
   white-space: normal;
 }
 

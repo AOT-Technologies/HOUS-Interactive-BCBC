@@ -15,19 +15,21 @@
 'use client';
 
 import React from 'react';
+import type { StructuredList } from '@bc-building-code/bcbc-parser';
 import { GlossaryTerm } from '../components/reading/GlossaryTerm';
 import { NoteReference } from '../components/reading/NoteReference';
 import { EquationBlock } from '../components/reading/EquationBlock';
 import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
 import { FunctionalStatementLink } from '../components/reading/FunctionalStatementLink';
 import { ObjectiveLink } from '../components/reading/ObjectiveLink';
+import { StructuredListBlock } from '../components/reading/StructuredListBlock';
 import { useEquationStore } from '../stores/equation-store';
 
 /**
  * Marker type for internal tracking
  */
 interface Marker {
-  type: 'glossary' | 'crossref' | 'standardRef' | 'note' | 'tableNote' | 'equation' | 'functionalStatement' | 'objective' | 'compound';
+  type: 'glossary' | 'crossref' | 'standardRef' | 'note' | 'tableNote' | 'equation' | 'list' | 'functionalStatement' | 'objective' | 'compound';
   start: number;
   end: number;
   termId?: string;
@@ -39,6 +41,7 @@ interface Marker {
   tableNoteId?: string;
   equationId?: string;
   equationType?: 'display' | 'inline';
+  listType?: string;
   format?: InternalRefFormat;
   functionalStatementId?: string;
   objectiveId?: string;
@@ -845,7 +848,8 @@ export function parseTextWithMarkers(
   text: string,
   _glossaryTerms: string[] = [],
   interactive: boolean = true,
-  localEquations: TextEquationEntry[] = []
+  localEquations: TextEquationEntry[] = [],
+  localLists: StructuredList[] = []
 ): React.ReactNode[] {
   const sanitizedText = sanitizeLegacyPlaceholderTags(text);
   const nodes: React.ReactNode[] = [];
@@ -857,6 +861,7 @@ export function parseTextWithMarkers(
       .map((equation) => [equation.id.trim().toLowerCase(), equation] as const)
   );
   const consumedLocalEquationIds = new Set<string>();
+  const consumedLocalListIndexes = new Set<number>();
   
   // Find all glossary term markers
   const glossaryRegex = /\[REF:term:([^\]]+)\]/g;
@@ -961,6 +966,17 @@ export function parseTextWithMarkers(
       end: equationRegex.lastIndex,
       equationType: (match[1]?.toLowerCase() === 'inline' ? 'inline' : 'display'),
       equationId: (match[2] || '').trim() || undefined,
+    });
+  }
+
+  const listRegex = /\[LIST:([a-z-]+)\]/gi;
+
+  while ((match = listRegex.exec(sanitizedText)) !== null) {
+    markers.push({
+      type: 'list',
+      start: match.index,
+      end: listRegex.lastIndex,
+      listType: (match[1] || '').toLowerCase(),
     });
   }
 
@@ -1255,6 +1271,33 @@ export function parseTextWithMarkers(
             equation: toRenderableEquation(equation, markerType),
             variant: 'marker',
             displayMode: markerType === 'inline' ? 'inline' : 'block',
+          })
+        );
+        lastIndex = marker.end;
+        break;
+      }
+
+      case 'list': {
+        const targetIndex = localLists.findIndex(
+          (list, index) =>
+            !consumedLocalListIndexes.has(index) &&
+            list.type.toLowerCase() === marker.listType
+        );
+
+        if (targetIndex === -1) {
+          lastIndex = marker.end;
+          break;
+        }
+
+        consumedLocalListIndexes.add(targetIndex);
+        const list = localLists[targetIndex];
+
+        nodes.push(
+          React.createElement(StructuredListBlock, {
+            key: `list-${marker.start}`,
+            list,
+            interactive,
+            renderText: (value: string) => parseTextWithMarkers(value, [], interactive),
           })
         );
         lastIndex = marker.end;

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Subsection } from '@bc-building-code/bcbc-parser';
 import { ArticleBlock } from './ArticleBlock';
+import { formatNumberedTitle } from '../../lib/title-formatting';
 import './SubsectionBlock.css';
 
 export interface SubsectionBlockProps {
@@ -34,7 +35,7 @@ export const SubsectionBlock: React.FC<SubsectionBlockProps> = ({
   return (
     <div className="subsectionBlock">
       <h3 className="subsectionHeading">
-        {fullSubsectionNumber} {titleText}
+        {formatNumberedTitle(fullSubsectionNumber, titleText)}
       </h3>
       <div className="articles">
         {subsection.articles.map((article) => (

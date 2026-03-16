@@ -10,7 +10,7 @@
  */
 
 import React from 'react';
-import type { Organization, Sentence } from '@bc-building-code/bcbc-parser';
+import type { Organization, Sentence, StructuredList } from '@bc-building-code/bcbc-parser';
 import { filterSentence } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { DefinitionsList } from './DefinitionsList';
@@ -36,13 +36,20 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
   const sentenceOrganizations =
     (filteredSentence as Sentence & { organizations?: Organization[] }).organizations || [];
   const sentenceEquations = (filteredSentence as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
+  const sentenceLists = (filteredSentence as Sentence & { lists?: StructuredList[] }).lists || [];
 
   return (
     <div className="sentenceBlock" id={filteredSentence.id}>
       <span className="sentenceNumber">{filteredSentence.number})</span>
       <div className="sentenceContent">
         <div className="sentenceText">
-          {parseTextWithMarkers(filteredSentence.text, filteredSentence.glossaryTerms || [], interactive, sentenceEquations)}
+          {parseTextWithMarkers(
+            filteredSentence.text,
+            filteredSentence.glossaryTerms || [],
+            interactive,
+            sentenceEquations,
+            sentenceLists
+          )}
         </div>
         
         {/* Render definitions list if present */}

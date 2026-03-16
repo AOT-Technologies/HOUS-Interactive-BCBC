@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_NAV_TREE, TESTID_NAV_NODE } from '@repo/constants/src/testids';
+import { formatNavigationNodeTitle } from '../../lib/title-formatting';
 import './NavigationTree.css';
 
 interface NavigationTreeProps {
@@ -256,6 +257,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
       const isMatching = matchingNodeIds.has(node.id);
       const hasChildren = node.children && node.children.length > 0;
       const paddingLeft = getPaddingLeft(level);
+      const displayTitle = formatNavigationNodeTitle(node.type, node.title, node.number);
 
       return (
         <div
@@ -284,7 +286,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
               aria-current={isActive ? 'page' : undefined}
             >
               <span className="nav-tree-text">
-                <span className="nav-tree-title">{node.title}</span>
+                <span className="nav-tree-title">{displayTitle}</span>
               </span>
             </button>
           </div>

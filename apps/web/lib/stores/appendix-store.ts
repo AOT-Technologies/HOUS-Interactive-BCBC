@@ -1,7 +1,12 @@
 import { create } from 'zustand';
-import type { Figure, Table } from '@bc-building-code/bcbc-parser';
+import type { Equation, Figure, StructuredList, Table } from '@bc-building-code/bcbc-parser';
 
-export type AppendixParagraph = { id: string; content: string };
+export type AppendixParagraph = {
+  id: string;
+  content: string;
+  equations?: Equation[];
+  lists?: StructuredList[];
+};
 
 export type AppendixContentBlock = {
   id: string;

@@ -34,6 +34,9 @@ import type {
   GlossaryEntry,
   AmendmentDate,
   DocumentMetadata,
+  Definition,
+  Organization,
+  StructuredList,
 } from './types';
 
 /**
@@ -172,6 +175,9 @@ interface RawSentence {
   type: 'sentence';
   number: number;
   text: string;
+  lists?: RawStructuredList[];
+  definitions?: Definition[];
+  organizations?: Organization[];
   clauses?: RawClause[];
   tables?: RawTable[];
   figures?: RawFigure[];
@@ -184,6 +190,7 @@ interface RawClause {
   type: 'clause';
   letter: string;
   text: string;
+  lists?: RawStructuredList[];
   subclauses?: RawSubclause[];
   tables?: RawTable[];
   figures?: RawFigure[];
@@ -196,11 +203,49 @@ interface RawSubclause {
   type: 'subclause';
   number: number;
   text: string;
+  lists?: RawStructuredList[];
   tables?: RawTable[];
   figures?: RawFigure[];
   equations?: RawEquation[];
   revisions?: RawRevision[];
 }
+
+interface RawTextListItem {
+  id?: string;
+  content: string;
+}
+
+interface RawVariableListItem {
+  id?: string;
+  symbol: string;
+  description: string;
+}
+
+interface RawDefinitionList {
+  type: 'definition';
+  items: Definition[];
+}
+
+interface RawOrganizationList {
+  type: 'organization';
+  items: Organization[];
+}
+
+interface RawTextList {
+  type: 'bulleted' | 'numbered' | 'alphabetic';
+  items: RawTextListItem[];
+}
+
+interface RawVariableList {
+  type: 'variable';
+  items: RawVariableListItem[];
+}
+
+type RawStructuredList =
+  | RawTextList
+  | RawVariableList
+  | RawDefinitionList
+  | RawOrganizationList;
 
 interface RawTableCell {
   content?: string | Array<{ type: 'text' | 'figure'; value?: string; id?: string; source?: string; title?: string; graphic?: { src: string; alt_text: string } }>;
@@ -257,10 +302,15 @@ interface RawFigure {
 
 interface RawEquation {
   id: string;
-  type: 'equation';
+  type: 'equation' | 'display' | 'inline';
   number?: string;
   latex?: string;
   description?: string;
+  plainText?: string;
+  mathml?: string;
+  htmlSrc?: string;
+  image?: string;
+  imageSrc?: string;
 }
 
 interface RawGlossaryEntry {
@@ -273,6 +323,8 @@ interface RawGlossaryEntry {
 interface RawAppendixParagraph {
   id: string;
   content: string;
+  equations?: RawEquation[];
+  lists?: RawStructuredList[];
 }
 
 interface RawAppendixDivision {
@@ -472,7 +524,111 @@ function parseAppendixParagraph(raw: RawAppendixParagraph): AppendixParagraph {
   return {
     id: raw.id,
     content: raw.content,
+    equations: raw.equations?.map(parseEquationData),
+    lists: parseStructuredLists(raw.lists),
   };
+}
+
+function parseStructuredLists(
+  rawLists?: RawStructuredList[],
+  legacyDefinitions?: Definition[],
+  legacyOrganizations?: Organization[]
+): StructuredList[] | undefined {
+  const parsedLists: StructuredList[] = [];
+
+  if (Array.isArray(rawLists)) {
+    for (const list of rawLists) {
+      if (!list || typeof list !== 'object' || !Array.isArray(list.items)) {
+        continue;
+      }
+
+      switch (list.type) {
+        case 'bulleted':
+        case 'numbered':
+        case 'alphabetic':
+          parsedLists.push({
+            type: list.type,
+            items: list.items
+              .filter((item) => item && typeof item.content === 'string')
+              .map((item) => ({
+                id: item.id,
+                content: item.content,
+              })),
+          });
+          break;
+        case 'variable':
+          parsedLists.push({
+            type: 'variable',
+            items: list.items
+              .filter(
+                (item) =>
+                  item &&
+                  typeof item.symbol === 'string' &&
+                  typeof item.description === 'string'
+              )
+              .map((item) => ({
+                id: item.id,
+                symbol: item.symbol,
+                description: item.description,
+              })),
+          });
+          break;
+        case 'definition':
+          parsedLists.push({
+            type: 'definition',
+            items: list.items
+              .filter(
+                (item) =>
+                  item &&
+                  typeof item.id === 'string' &&
+                  typeof item.term === 'string' &&
+                  typeof item.definition === 'string'
+              )
+              .map((item) => ({
+                id: item.id,
+                term: item.term,
+                definition: item.definition,
+              })),
+          });
+          break;
+        case 'organization':
+          parsedLists.push({
+            type: 'organization',
+            items: list.items
+              .filter(
+                (item) =>
+                  item &&
+                  typeof item.id === 'string' &&
+                  typeof item.abbreviation === 'string' &&
+                  typeof item.fullName === 'string'
+              )
+              .map((item) => ({
+                id: item.id,
+                abbreviation: item.abbreviation,
+                fullName: item.fullName,
+                website: item.website,
+              })),
+          });
+          break;
+      }
+    }
+  }
+
+  if (Array.isArray(legacyDefinitions) && legacyDefinitions.length > 0) {
+    parsedLists.push({
+      type: 'definition',
+      items: legacyDefinitions,
+    });
+  }
+
+  if (Array.isArray(legacyOrganizations) && legacyOrganizations.length > 0) {
+    parsedLists.push({
+      type: 'organization',
+      items: legacyOrganizations,
+    });
+  }
+
+  return parsedLists.length > 0 ? parsedLists : undefined;
 }
 
 function parseAppendixDivision(raw: RawAppendixDivision): AppendixDivision {
@@ -632,6 +788,8 @@ function parseSentenceData(raw: RawSentence): Sentence | null {
   }
 
   const content: SentenceContentNode[] = [];
+  const equations = raw.equations?.map(parseEquationData);
+  const hasInlineEquationMarkers = /\[EQ:(?:display|inline)(?::[^\]]*)?\]/i.test(raw.text);
 
   // Parse clauses
   if (raw.clauses && Array.isArray(raw.clauses)) {
@@ -655,7 +813,7 @@ function parseSentenceData(raw: RawSentence): Sentence | null {
   }
 
   // Parse equations
-  if (raw.equations && Array.isArray(raw.equations)) {
+  if (!hasInlineEquationMarkers && raw.equations && Array.isArray(raw.equations)) {
     for (const equation of raw.equations) {
       content.push(parseEquationData(equation));
     }
@@ -667,6 +825,8 @@ function parseSentenceData(raw: RawSentence): Sentence | null {
     type: 'sentence',
     text: raw.text,
     glossaryTerms: extractGlossaryTerms(raw.text),
+    equations: equations && equations.length > 0 ? equations : undefined,
+    lists: parseStructuredLists(raw.lists, raw.definitions, raw.organizations),
     content: content.length > 0 ? content : undefined,
     revisions: raw.revisions,
     revised: (raw as any).revised,
@@ -679,6 +839,8 @@ function parseSentenceData(raw: RawSentence): Sentence | null {
  */
 function parseClauseData(raw: RawClause): Clause {
   const content: ClauseContentNode[] = [];
+  const equations = raw.equations?.map(parseEquationData);
+  const hasInlineEquationMarkers = /\[EQ:(?:display|inline)(?::[^\]]*)?\]/i.test(raw.text);
 
   // Parse subclauses
   if (raw.subclauses && Array.isArray(raw.subclauses)) {
@@ -702,7 +864,7 @@ function parseClauseData(raw: RawClause): Clause {
   }
 
   // Parse equations
-  if (raw.equations && Array.isArray(raw.equations)) {
+  if (!hasInlineEquationMarkers && raw.equations && Array.isArray(raw.equations)) {
     for (const equation of raw.equations) {
       content.push(parseEquationData(equation));
     }
@@ -714,6 +876,8 @@ function parseClauseData(raw: RawClause): Clause {
     type: 'clause',
     text: raw.text,
     glossaryTerms: extractGlossaryTerms(raw.text),
+    equations: equations && equations.length > 0 ? equations : undefined,
+    lists: parseStructuredLists(raw.lists),
     content: content.length > 0 ? content : undefined,
     revisions: raw.revisions,
     revised: (raw as any).revised,
@@ -726,6 +890,8 @@ function parseClauseData(raw: RawClause): Clause {
  */
 function parseSubclauseData(raw: RawSubclause): Subclause {
   const content: (Table | Figure | Equation)[] = [];
+  const equations = raw.equations?.map(parseEquationData);
+  const hasInlineEquationMarkers = /\[EQ:(?:display|inline)(?::[^\]]*)?\]/i.test(raw.text);
 
   // Parse tables
   if (raw.tables && Array.isArray(raw.tables)) {
@@ -742,7 +908,7 @@ function parseSubclauseData(raw: RawSubclause): Subclause {
   }
 
   // Parse equations
-  if (raw.equations && Array.isArray(raw.equations)) {
+  if (!hasInlineEquationMarkers && raw.equations && Array.isArray(raw.equations)) {
     for (const equation of raw.equations) {
       content.push(parseEquationData(equation));
     }
@@ -754,6 +920,8 @@ function parseSubclauseData(raw: RawSubclause): Subclause {
     type: 'subclause',
     text: raw.text,
     glossaryTerms: extractGlossaryTerms(raw.text),
+    equations: equations && equations.length > 0 ? equations : undefined,
+    lists: parseStructuredLists(raw.lists),
     content: content.length > 0 ? content : undefined,
     revisions: raw.revisions,
     revised: (raw as any).revised,
@@ -941,8 +1109,14 @@ function parseEquationData(raw: RawEquation): Equation {
     id: raw.id,
     type: 'equation',
     number: raw.number || extractNumberFromId(raw.id),
-    latex: raw.latex || '',
+    latex: raw.latex || raw.plainText || '',
     description: raw.description,
+    plainText: raw.plainText,
+    mathml: raw.mathml,
+    htmlSrc: raw.htmlSrc,
+    image: raw.image,
+    imageSrc: raw.imageSrc,
+    display: raw.type === 'inline' ? 'inline' : 'block',
   };
 }
 

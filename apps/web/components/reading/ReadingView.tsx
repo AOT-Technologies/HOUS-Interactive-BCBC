@@ -1133,7 +1133,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       <>
         {block.paragraphs?.map((paragraph, index) => (
           <p key={`${block.id}-paragraph-${paragraph.id || index}`}>
-            {parseTextWithMarkers(paragraph.content || '', [], interactive)}
+            {parseTextWithMarkers(
+              paragraph.content || '',
+              [],
+              interactive,
+              paragraph.equations || [],
+              paragraph.lists || []
+            )}
           </p>
         ))}
         {block.tables?.map((table, index) => (

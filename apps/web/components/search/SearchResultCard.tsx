@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { GET_TESTID_SEARCH_RESULT_ITEM } from '@repo/constants';
 import type { SearchResult } from '@/lib/search-client';
 import Icon from '@repo/ui/icon';
+import { formatNumberedTitle } from '../../lib/title-formatting';
 import './SearchResults.css';
 
 interface SearchResultCardProps {
@@ -62,7 +63,7 @@ export function SearchResultCard({ result, href, testId }: SearchResultCardProps
 
   const heading = useMemo(() => {
     const number = stripDivisionPrefix(document.articleNumber, document.divisionLetter);
-    return `${number} ${document.title}`.trim();
+    return formatNumberedTitle(number, document.title);
   }, [document.articleNumber, document.divisionLetter, document.title]);
 
   const previewHtml = useMemo(() => {
@@ -100,10 +101,10 @@ export function SearchResultCard({ result, href, testId }: SearchResultCardProps
 
     const base = [
       `${volumeLabel} - Division ${document.divisionLetter} - Part ${document.partNumber}`,
-      fullSectionNumber ? `Section ${fullSectionNumber}` : null,
-      fullSubsectionNumber ? `Subsection ${fullSubsectionNumber}` : null,
+      fullSectionNumber ? `Section ${formatNumberedTitle(fullSectionNumber, '')}` : null,
+      fullSubsectionNumber ? `Subsection ${formatNumberedTitle(fullSubsectionNumber, '')}` : null,
       document.type === 'article' || document.type === 'table' || document.type === 'figure'
-        ? `Article ${articleToken}`
+        ? `Article ${formatNumberedTitle(articleToken, '')}`
         : null,
     ].filter(Boolean);
 

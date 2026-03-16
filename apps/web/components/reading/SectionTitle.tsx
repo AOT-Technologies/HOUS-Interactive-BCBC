@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatNumberedTitle } from '../../lib/title-formatting';
 import './SectionTitle.css';
 
 interface SectionTitleProps {
@@ -7,11 +8,9 @@ interface SectionTitleProps {
 }
 
 export const SectionTitle: React.FC<SectionTitleProps> = ({ number, title }) => {
-  const normalizedTitle = title.trim();
-
   return (
     <h2 className="sectionTitle">
-      Section <span className="sectionNumber">{number}</span>. {normalizedTitle}
+      Section <span className="sectionNumber">{formatNumberedTitle(number, title)}</span>
     </h2>
   );
 };

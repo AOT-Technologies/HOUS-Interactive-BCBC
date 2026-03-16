@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Button from '@repo/ui/button';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_PREV_BUTTON, TESTID_NEXT_BUTTON } from '@repo/constants/src/testids';
+import { formatNavigationNodeTitle } from '../../lib/title-formatting';
 import './PrevNextNav.css';
 
 interface PrevNextNavProps {
@@ -206,6 +207,13 @@ export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNe
     return null;
   }
 
+  const prevTitle = prevNode
+    ? formatNavigationNodeTitle(prevNode.type, prevNode.title, prevNode.number)
+    : null;
+  const nextTitle = nextNode
+    ? formatNavigationNodeTitle(nextNode.type, nextNode.title, nextNode.number)
+    : null;
+
   return (
     <nav
       className={`prev-next-nav ${className}`}
@@ -217,14 +225,14 @@ export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNe
         isDisabled={!prevNode}
         className="prev-next-nav__button prev-next-nav__button--prev"
         data-testid={TESTID_PREV_BUTTON}
-        aria-label={prevNode ? `Previous: ${prevNode.title}` : 'No previous item'}
+        aria-label={prevTitle ? `Previous: ${prevTitle}` : 'No previous item'}
       >
         <span className="prev-next-nav__arrow" aria-hidden="true">←</span>
         <span className="prev-next-nav__content">
           <span className="prev-next-nav__label">Previous</span>
           {prevNode && (
             <span className="prev-next-nav__title">
-              {prevNode.number} {prevNode.title}
+              {prevTitle}
             </span>
           )}
         </span>
@@ -236,13 +244,13 @@ export function PrevNextNav({ className = '', onPrevClick, onNextClick }: PrevNe
         isDisabled={!nextNode}
         className="prev-next-nav__button prev-next-nav__button--next"
         data-testid={TESTID_NEXT_BUTTON}
-        aria-label={nextNode ? `Next: ${nextNode.title}` : 'No next item'}
+        aria-label={nextTitle ? `Next: ${nextTitle}` : 'No next item'}
       >
         <span className="prev-next-nav__content">
           <span className="prev-next-nav__label">Next</span>
           {nextNode && (
             <span className="prev-next-nav__title">
-              {nextNode.number} {nextNode.title}
+              {nextTitle}
             </span>
           )}
         </span>

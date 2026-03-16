@@ -204,6 +204,8 @@ export interface Spectables {
 export interface AppendixParagraph {
   id: string;
   content: string;
+  equations?: Equation[];
+  lists?: StructuredList[];
 }
 
 export interface AppendixContentBlock {
@@ -348,6 +350,43 @@ export interface Organization {
   website?: string;
 }
 
+export interface TextListItem {
+  id?: string;
+  content: string;
+}
+
+export interface VariableListItem {
+  id?: string;
+  symbol: string;
+  description: string;
+}
+
+export interface BulletedList {
+  type: 'bulleted' | 'numbered' | 'alphabetic';
+  items: TextListItem[];
+}
+
+export interface VariableList {
+  type: 'variable';
+  items: VariableListItem[];
+}
+
+export interface DefinitionList {
+  type: 'definition';
+  items: Definition[];
+}
+
+export interface OrganizationList {
+  type: 'organization';
+  items: Organization[];
+}
+
+export type StructuredList =
+  | BulletedList
+  | VariableList
+  | DefinitionList
+  | OrganizationList;
+
 /**
  * Sentence within an article
  */
@@ -357,6 +396,8 @@ export interface Sentence {
   type: 'sentence';
   text: string;
   glossaryTerms: string[];
+  equations?: Equation[];
+  lists?: StructuredList[];
   definitions?: Definition[];
   organizations?: Organization[];
   content?: SentenceContentNode[];
@@ -379,6 +420,8 @@ export interface Clause {
   type: 'clause';
   text: string;
   glossaryTerms: string[];
+  equations?: Equation[];
+  lists?: StructuredList[];
   content?: ClauseContentNode[];
   revisions?: Revision[];
   revised?: boolean;
@@ -394,6 +437,8 @@ export interface Subclause {
   type: 'subclause';
   text: string;
   glossaryTerms: string[];
+  equations?: Equation[];
+  lists?: StructuredList[];
   content?: (Table | Figure | Equation)[];
   revisions?: Revision[];
   revised?: boolean;
@@ -482,6 +527,12 @@ export interface Equation {
   number: string;
   latex: string;
   description?: string;
+  plainText?: string;
+  mathml?: string;
+  htmlSrc?: string;
+  image?: string;
+  imageSrc?: string;
+  display?: 'inline' | 'block';
 }
 
 /**

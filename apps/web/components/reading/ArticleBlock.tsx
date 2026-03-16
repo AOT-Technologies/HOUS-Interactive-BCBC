@@ -9,6 +9,7 @@ import React from 'react';
 import type { Article } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import { formatNumberedTitle } from '../../lib/title-formatting';
 import './ArticleBlock.css';
 
 export interface ArticleBlockProps {
@@ -33,7 +34,7 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
   return (
     <div className="articleBlock">
       <h4 className="articleHeading">
-        {fullArticleNumber} {article.title}
+        {formatNumberedTitle(fullArticleNumber, article.title)}
       </h4>
       {seeAlsoText ? (
         <p className="articleSeeAlso">

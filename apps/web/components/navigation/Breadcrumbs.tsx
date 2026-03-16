@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useNavigationStore, NavigationNode } from '@/stores/navigation-store';
 import { TESTID_BREADCRUMBS } from '@repo/constants/src/testids';
+import { formatNavigationNodeTitle } from '../../lib/title-formatting';
 import './Breadcrumbs.css';
 
 interface BreadcrumbsProps {
@@ -197,7 +198,8 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
           const isLast = index === visibleItems.length - 1;
           const actualIndex = showEllipsis && index >= ellipsisIndex! ? index + collapsedItems.length : index;
           const isLastInFull = actualIndex === breadcrumbs.length - 1;
-          const displayTitle = truncateTitle(item.title);
+          const formattedTitle = formatNavigationNodeTitle(item.type, item.title, item.number);
+          const displayTitle = truncateTitle(formattedTitle);
           
           return (
             <React.Fragment key={item.id}>
@@ -208,8 +210,8 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                     type="button"
                     className="breadcrumbs-ellipsis"
                     onClick={handleEllipsisClick}
-                    aria-label={`Show ${collapsedItems.length} hidden breadcrumb items: ${collapsedItems.map(c => c.title).join(', ')}`}
-                    title={collapsedItems.map(c => c.number ? `${c.number} ${c.title}` : c.title).join(' > ')}
+                    aria-label={`Show ${collapsedItems.length} hidden breadcrumb items: ${collapsedItems.map(c => formatNavigationNodeTitle(c.type, c.title, c.number)).join(', ')}`}
+                    title={collapsedItems.map(c => formatNavigationNodeTitle(c.type, c.title, c.number)).join(' > ')}
                   >
                     ...
                   </button>
@@ -226,7 +228,7 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                   >
                     <span className="breadcrumbs-title">{displayTitle}</span>
                     <span className="breadcrumbs-tooltip" role="tooltip">
-                      {item.title}
+                      {formattedTitle}
                     </span>
                   </span>
                 ) : (
@@ -234,12 +236,12 @@ export function Breadcrumbs({ className = '', onBreadcrumbClick, maxVisibleItems
                     href={item.path}
                     className={`breadcrumbs-link ${isLastInFull ? 'breadcrumbs-link--current' : ''}`}
                     onClick={() => handleClick(item)}
-                    aria-label={`Navigate to ${item.title}`}
+                    aria-label={`Navigate to ${formattedTitle}`}
                     aria-current={isLastInFull ? 'page' : undefined}
                   >
                     <span className="breadcrumbs-title">{displayTitle}</span>
                     <span className="breadcrumbs-tooltip" role="tooltip">
-                      {item.title}
+                      {formattedTitle}
                     </span>
                   </Link>
                 )}

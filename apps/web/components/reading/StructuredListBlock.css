@@ -1,0 +1,67 @@
+.structuredList {
+  margin: var(--layout-margin-small) 0 0;
+}
+
+.structuredList--bulleted,
+.structuredList--numbered,
+.structuredList--alphabetic {
+  padding-left: 1.5rem;
+}
+
+.structuredList--bulleted li,
+.structuredList--numbered li,
+.structuredList--alphabetic li {
+  margin-top: 0.5rem;
+}
+
+.structuredList__row {
+  margin-top: 0.75rem;
+}
+
+.structuredList__row:first-child {
+  margin-top: 0;
+}
+
+.structuredList__row--variable {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 0.5rem;
+  align-items: baseline;
+}
+
+.structuredList__term {
+  font-weight: var(--typography-font-weights-bold);
+  margin: 0;
+}
+
+.structuredList__description {
+  margin: 0.25rem 0 0;
+}
+
+.structuredList--variable .structuredList__description {
+  margin: 0;
+}
+
+.structuredList--organization {
+  overflow-x: auto;
+}
+
+.structuredList__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--layout-margin-small);
+}
+
+.structuredList__caption {
+  text-align: left;
+  font-weight: var(--typography-font-weights-bold);
+  margin-bottom: 0.5rem;
+}
+
+.structuredList__table th,
+.structuredList__table td {
+  border: 1px solid var(--surface-color-border-default);
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}

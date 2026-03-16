@@ -45,6 +45,13 @@ export type {
   Revision,
   Definition,
   Organization,
+  TextListItem,
+  VariableListItem,
+  BulletedList,
+  VariableList,
+  DefinitionList,
+  OrganizationList,
+  StructuredList,
 } from './types';
 
 // Export parser functions

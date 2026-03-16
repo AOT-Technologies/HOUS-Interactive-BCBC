@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import type { Subclause } from '@bc-building-code/bcbc-parser';
+import type { StructuredList, Subclause } from '@bc-building-code/bcbc-parser';
 import { filterSubclause } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
@@ -77,13 +77,20 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
   if (!filteredSubclause) return null;
 
   const subclauseEquations = (filteredSubclause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
+  const subclauseLists = (filteredSubclause as Subclause & { lists?: StructuredList[] }).lists || [];
 
   return (
     <div className="subclauseBlock" id={filteredSubclause.id}>
       <span className="subclauseNumber">{formatSubclauseNumber(filteredSubclause.number)})</span>
       <div className="subclauseContent">
         <div className="subclauseText">
-          {parseTextWithMarkers(filteredSubclause.text, filteredSubclause.glossaryTerms || [], interactive, subclauseEquations)}
+          {parseTextWithMarkers(
+            filteredSubclause.text,
+            filteredSubclause.glossaryTerms || [],
+            interactive,
+            subclauseEquations,
+            subclauseLists
+          )}
         </div>
         
         {/* Render nested content (tables, figures, equations) */}

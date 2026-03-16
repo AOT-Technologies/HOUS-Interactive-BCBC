@@ -35,7 +35,13 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
             <h3>{section.title}</h3>
             {section.paragraphs?.map((paragraph, index) => (
               <p key={`${section.id}-paragraph-${paragraph.id || index}`} id={paragraph.id}>
-                {parseTextWithMarkers(paragraph.content || '', [], interactive)}
+                {parseTextWithMarkers(
+                  paragraph.content || '',
+                  [],
+                  interactive,
+                  paragraph.equations || [],
+                  paragraph.lists || []
+                )}
               </p>
             ))}
             {section.subsections?.map((subsection) => (
@@ -55,7 +61,13 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                     <div className="reading-view__appendix-note-content">
                       {article.paragraphs?.map((paragraph, index) => (
                         <p key={`${article.id}-paragraph-${paragraph.id || index}`} id={paragraph.id}>
-                          {parseTextWithMarkers(paragraph.content || '', [], interactive)}
+                          {parseTextWithMarkers(
+                            paragraph.content || '',
+                            [],
+                            interactive,
+                            paragraph.equations || [],
+                            paragraph.lists || []
+                          )}
                         </p>
                       ))}
                       {article.content?.map((item, index) => {

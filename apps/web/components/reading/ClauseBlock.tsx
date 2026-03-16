@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import type { Clause } from '@bc-building-code/bcbc-parser';
+import type { Clause, StructuredList } from '@bc-building-code/bcbc-parser';
 import { filterClause } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
@@ -32,13 +32,20 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
   if (!filteredClause) return null;
 
   const clauseEquations = (filteredClause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
+  const clauseLists = (filteredClause as Clause & { lists?: StructuredList[] }).lists || [];
 
   return (
     <div className="clauseBlock" id={filteredClause.id}>
       <span className="clauseNumber">{filteredClause.number})</span>
       <div className="clauseContent">
         <div className="clauseText">
-          {parseTextWithMarkers(filteredClause.text, filteredClause.glossaryTerms || [], interactive, clauseEquations)}
+          {parseTextWithMarkers(
+            filteredClause.text,
+            filteredClause.glossaryTerms || [],
+            interactive,
+            clauseEquations,
+            clauseLists
+          )}
         </div>
         
         {/* Render nested content (subclauses, tables, figures, equations) */}
