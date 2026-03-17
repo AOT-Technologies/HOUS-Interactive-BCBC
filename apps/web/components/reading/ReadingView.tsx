@@ -32,7 +32,12 @@ import { useEquationStore } from '../../stores/equation-store';
 import { useStandardsMapStore, type StandardReferenceEntry } from '../../stores/standards-map-store';
 import { parseContentPath } from '../../lib/url-utils';
 import { resolvePartAppendixForEffectiveDate, resolveSectionForEffectiveDate } from '../../lib/revision-resolver';
-import { getNavigationSlug, getSectionFetchPath, parseReferenceId } from '../../lib/cross-reference';
+import {
+  getNavigationSlug,
+  getSectionFetchPath,
+  parseReferenceId,
+  type ReferenceRenderContext,
+} from '../../lib/cross-reference';
 import { SectionRenderer } from './SectionRenderer';
 import { ReadingViewHeader } from './ReadingViewHeader';
 import { PartRenderer } from './PartRenderer';
@@ -59,7 +64,8 @@ type ResolvedCrossReference = {
   referenceId: string;
   heading: string;
   targetSlug: string[] | null;
-  mode: 'article' | 'subsection' | 'section' | 'appnote' | 'division_appendix' | 'spectable' | 'standard' | 'external_url' | 'error';
+  mode: 'part' | 'article' | 'subsection' | 'section' | 'appnote' | 'division_appendix' | 'spectable' | 'standard' | 'external_url' | 'error';
+  part?: NavigationNode;
   section?: SectionWithAppendix;
   subsection?: Subsection;
   article?: Article;
@@ -603,6 +609,28 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         };
       }
 
+      if (parsed.kind === 'part' && parsed.part) {
+        const partNode = findNodeByPath(navigationTree, `/code/${parsed.division}/${parsed.part}`);
+
+        if (!partNode || partNode.type !== 'part') {
+          return {
+            referenceId,
+            heading: `Part ${parsed.part}`,
+            mode: 'error',
+            targetSlug: getNavigationSlug(referenceId),
+            errorMessage: 'Referenced part could not be loaded.',
+          };
+        }
+
+        return {
+          referenceId,
+          heading: partNode.title.trim() || `Part ${parsed.part}`,
+          mode: 'part',
+          part: partNode,
+          targetSlug: getNavigationSlug(referenceId),
+        };
+      }
+
       if (parsed.kind !== 'section' || !parsed.part || !parsed.section) {
         return {
           referenceId,
@@ -687,6 +715,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       fetchTargetSpectables,
       fetchTargetSection,
       divisionAppendix,
+      navigationTree,
       spectables,
       version,
       isDivisionAppendixLevel,
@@ -742,7 +771,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const isModalGoToSectionVisible =
     modalData?.mode !== 'error' &&
     Boolean(
-      (modalData?.targetSlug && modalData.targetSlug.length >= 3) ||
+      (modalData?.targetSlug &&
+        ((modalData.mode === 'part' && modalData.targetSlug.length >= 2) ||
+          (modalData.mode !== 'part' && modalData.targetSlug.length >= 3))) ||
       (modalData?.mode === 'external_url' && modalData.externalUrl)
     );
 
@@ -765,7 +796,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       return;
     }
 
-    if (!modalData?.targetSlug || modalData.targetSlug.length < 3) {
+    const minimumSlugLength = modalData?.mode === 'part' ? 2 : 3;
+    if (!modalData?.targetSlug || modalData.targetSlug.length < minimumSlugLength) {
       closeReferenceModal();
       return;
     }
@@ -1109,8 +1141,15 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     numberOverrides?: {
       tableNumberById: Map<string, string>;
       figureNumberById: Map<string, string>;
-    }
+    },
+    renderContext?: ReferenceRenderContext
   ): React.ReactNode => {
+    const hasBlockLevelInlineContent = (paragraph: {
+      content?: string;
+      lists?: unknown[];
+    }) =>
+      Boolean(paragraph.lists?.length) || /\[LIST:[^\]]+\]|\[EQ:display(?::[^\]]*)?\]/i.test(paragraph.content || '');
+
     const getTableWithOverride = (table: Table) => {
       if (!table?.id || !numberOverrides) {
         return table;
@@ -1131,29 +1170,38 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
     return (
       <>
-        {block.paragraphs?.map((paragraph, index) => (
-          <p key={`${block.id}-paragraph-${paragraph.id || index}`}>
-            {parseTextWithMarkers(
-              paragraph.content || '',
-              [],
-              interactive,
-              paragraph.equations || [],
-              paragraph.lists || []
-            )}
-          </p>
-        ))}
+        {block.paragraphs?.map((paragraph, index) => {
+          const content = parseTextWithMarkers(
+            paragraph.content || '',
+            [],
+            interactive,
+            paragraph.equations || [],
+            paragraph.lists || [],
+            renderContext
+          );
+          const WrapperTag = hasBlockLevelInlineContent(paragraph) ? 'div' : 'p';
+
+          return (
+            <WrapperTag key={`${block.id}-paragraph-${paragraph.id || index}`}>
+              {content}
+            </WrapperTag>
+          );
+        })}
         {block.tables?.map((table, index) => (
           <TableBlock
             key={`${block.id}-table-${table.id || index}`}
             table={getTableWithOverride(table)}
             interactive={interactive}
             effectiveDate={effectiveDate}
+            renderContext={renderContext}
           />
         ))}
         {block.figures?.map((figure, index) => (
           <FigureBlock
             key={`${block.id}-figure-${figure.id || index}`}
             figure={getFigureWithOverride(figure)}
+            interactive={interactive}
+            renderContext={renderContext}
           />
         ))}
       </>
@@ -1163,6 +1211,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const renderApplicationNote = (note: ApplicationNote, interactive: boolean): React.ReactNode => {
     const noteLabel = getNoteDisplayLabel(note);
     const numberOverrides = buildAppendixNoteItemNumberMap(note);
+    const noteContext: ReferenceRenderContext = {
+      kind: 'application-note',
+      referenceId: note.id,
+    };
 
     return (
       <article key={note.id} id={note.id} className="reading-view__appendix-note">
@@ -1171,7 +1223,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           {note.title ? ` ${note.title}` : ''}
         </h3>
         <div className="reading-view__appendix-note-content">
-          {renderAppendixBlock(note, interactive, numberOverrides)}
+          {renderAppendixBlock(note, interactive, numberOverrides, noteContext)}
           {note.divisions?.map((division, index) => (
             <section
               key={`${note.id}-division-${division.id || index}`}
@@ -1179,7 +1231,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               className="reading-view__appendix-division"
             >
               {division.title ? <h4>{division.title}</h4> : null}
-              {renderAppendixBlock(division, interactive, numberOverrides)}
+              {renderAppendixBlock(division, interactive, numberOverrides, noteContext)}
             </section>
           ))}
         </div>
@@ -1220,6 +1272,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           interactive={false}
         />
       );
+    }
+
+    if (modalData.mode === 'part' && modalData.part) {
+      return <PartRenderer part={modalData.part} queryString={queryString} />;
     }
 
     if (modalData.mode === 'appnote' && modalData.note) {
@@ -1435,7 +1491,17 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               <h2 className="reading-view__appendix-heading">Appendix</h2>
               {resolvedPartAppendix.introduction ? (
                 <p className="reading-view__appendix-introduction">
-                  {parseTextWithMarkers(resolvedPartAppendix.introduction, [], true)}
+                  {parseTextWithMarkers(
+                    resolvedPartAppendix.introduction,
+                    [],
+                    true,
+                    [],
+                    [],
+                    {
+                      kind: 'appendix',
+                      referenceId: resolvedPartAppendix.id,
+                    }
+                  )}
                 </p>
               ) : null}
               <div className="reading-view__appendix-notes">

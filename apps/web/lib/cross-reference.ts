@@ -1,6 +1,6 @@
 export interface ParsedReferenceId {
   raw: string;
-  kind: 'section' | 'part_appendix' | 'appendix_document' | 'spectables';
+  kind: 'part' | 'section' | 'part_appendix' | 'appendix_document' | 'spectables';
   division: string;
   part?: string;
   section?: string;
@@ -18,8 +18,24 @@ export interface ParsedReferenceId {
   spectables?: string;
 }
 
+export type ReferenceRenderContext =
+  | {
+      kind: 'article';
+      referenceId: string;
+    }
+  | {
+      kind: 'appendix';
+      referenceId: string;
+    }
+  | {
+      kind: 'application-note';
+      referenceId: string;
+    };
+
 const PART_APPENDIX_REF_REGEX =
   /^nbc\.div([A-Za-z0-9]+)\.part(\d+)\.appendix(?:\.appnote([A-Za-z0-9]+))?/i;
+
+const PART_REF_REGEX = /^nbc\.div([A-Za-z0-9]+)\.part(\d+)$/i;
 
 const APPENDIX_DOCUMENT_REF_REGEX =
   /^nbc\.div([A-Za-z0-9]+)\.appendix([A-Za-z])(?:\.appsect(\d+))?(?:\.subsect(\d+))?(?:\.article(\d+))?(?:\.para(\d+))?(?:\.table(\d+))?(?:\.figure(\d+))?/i;
@@ -39,6 +55,16 @@ export function parseReferenceId(referenceId: string): ParsedReferenceId | null 
       division: `nbc.div${appendixMatch[1]}`,
       part: appendixMatch[2],
       appnote: appendixMatch[3] || undefined,
+    };
+  }
+
+  const partMatch = referenceId.match(PART_REF_REGEX);
+  if (partMatch) {
+    return {
+      raw: referenceId,
+      kind: 'part',
+      division: `nbc.div${partMatch[1]}`,
+      part: partMatch[2],
     };
   }
 
@@ -109,6 +135,10 @@ export function getNavigationSlug(referenceId: string): string[] | null {
     return [parsed.division, parsed.part, 'appendix'];
   }
 
+  if (parsed.kind === 'part') {
+    return parsed.part ? [parsed.division, parsed.part] : null;
+  }
+
   if (parsed.kind === 'appendix_document') {
     return parsed.appendixLetter ? [parsed.division, 'appendix', parsed.appendixLetter] : null;
   }
@@ -146,6 +176,10 @@ export function getSectionFetchPath(version: string, referenceId: string): strin
     return `/data/${version}/content/${transformedDivision}/part-${parsed.part}/appendix.json`;
   }
 
+  if (parsed.kind === 'part') {
+    return null;
+  }
+
   if (parsed.kind === 'appendix_document') {
     if (!parsed.appendixLetter) return null;
     return `/data/${version}/content/${transformedDivision}/appendix-${parsed.appendixLetter.toLowerCase()}.json`;
@@ -159,4 +193,66 @@ export function getSectionFetchPath(version: string, referenceId: string): strin
   if (!parsed.part || !parsed.section) return null;
 
   return `/data/${version}/content/${transformedDivision}/part-${parsed.part}/section-${parsed.section}.json`;
+}
+
+export function shouldSuppressReferenceInContext(
+  targetReferenceId: string,
+  context?: ReferenceRenderContext
+): boolean {
+  if (!context || /^(standard|external):/i.test(targetReferenceId)) {
+    return false;
+  }
+
+  const target = parseReferenceId(targetReferenceId);
+  const current = parseReferenceId(context.referenceId);
+
+  if (!target || !current) {
+    return false;
+  }
+
+  if (context.kind === 'article') {
+    return (
+      target.kind === 'section' &&
+      current.kind === 'section' &&
+      Boolean(target.article) &&
+      Boolean(current.article) &&
+      target.division.toLowerCase() === current.division.toLowerCase() &&
+      target.part === current.part &&
+      target.section === current.section &&
+      target.subsection === current.subsection &&
+      target.article === current.article
+    );
+  }
+
+  if (context.kind === 'appendix') {
+    if (target.kind !== current.kind) {
+      return false;
+    }
+
+    if (target.kind === 'appendix_document' && current.kind === 'appendix_document') {
+      return (
+        target.division.toLowerCase() === current.division.toLowerCase() &&
+        target.appendixLetter === current.appendixLetter
+      );
+    }
+
+    if (target.kind === 'part_appendix' && current.kind === 'part_appendix') {
+      return (
+        target.division.toLowerCase() === current.division.toLowerCase() &&
+        target.part === current.part
+      );
+    }
+
+    return false;
+  }
+
+  return (
+    target.kind === 'part_appendix' &&
+    current.kind === 'part_appendix' &&
+    Boolean(target.appnote) &&
+    Boolean(current.appnote) &&
+    target.division.toLowerCase() === current.division.toLowerCase() &&
+    target.part === current.part &&
+    target.appnote === current.appnote
+  );
 }

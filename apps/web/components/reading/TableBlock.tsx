@@ -1,6 +1,7 @@
 import React from 'react';
 import type { FormingPartReference, Table, TableCellContent } from '@bc-building-code/bcbc-parser';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import { resolveImagePath } from '../../lib/image-config';
 import './TableBlock.css';
 
@@ -8,6 +9,7 @@ export interface TableBlockProps {
   table: Table;
   interactive?: boolean;
   effectiveDate?: string;
+  renderContext?: ReferenceRenderContext;
 }
 
 type RawTableCell = {
@@ -102,7 +104,11 @@ const TableCellFigure: React.FC<{ figure: TableCellContent }> = ({ figure }) => 
 /**
  * Renders the content of a table cell (text, figure, or mixed)
  */
-const renderFormattedText = (text: string, interactive: boolean): React.ReactNode[] => {
+const renderFormattedText = (
+  text: string,
+  interactive: boolean,
+  renderContext?: ReferenceRenderContext
+): React.ReactNode[] => {
   const normalizedText = text
     // Legacy placeholders used in some table content
     .replace(/<>/g, '<italic>')
@@ -127,7 +133,14 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
     if (matchStart > lastIndex) {
       nodes.push(
         <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
-          {parseTextWithMarkers(normalizedText.slice(lastIndex, matchStart), [], interactive)}
+          {parseTextWithMarkers(
+            normalizedText.slice(lastIndex, matchStart),
+            [],
+            interactive,
+            [],
+            [],
+            renderContext
+          )}
         </React.Fragment>
       );
       chunkIndex += 1;
@@ -137,28 +150,28 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
       const italicText = token.replace(/^<italic>/i, '').replace(/<\/italic>$/i, '');
       nodes.push(
         <em key={`table-italic-${chunkIndex}`}>
-          {parseTextWithMarkers(italicText, [], interactive)}
+          {parseTextWithMarkers(italicText, [], interactive, [], [], renderContext)}
         </em>
       );
     } else if (/^<bold>/i.test(token)) {
       const boldText = token.replace(/^<bold>/i, '').replace(/<\/bold>$/i, '');
       nodes.push(
         <strong key={`table-bold-${chunkIndex}`}>
-          {parseTextWithMarkers(boldText, [], interactive)}
+          {parseTextWithMarkers(boldText, [], interactive, [], [], renderContext)}
         </strong>
       );
     } else if (/^\^\{/.test(token)) {
       const superText = token.replace(/^\^\{/, '').replace(/\}$/, '');
       nodes.push(
         <sup key={`table-sup-${chunkIndex}`}>
-          {parseTextWithMarkers(superText, [], interactive)}
+          {parseTextWithMarkers(superText, [], interactive, [], [], renderContext)}
         </sup>
       );
     } else if (/^_\{/.test(token)) {
       const subText = token.replace(/^_\{/, '').replace(/\}$/, '');
       nodes.push(
         <sub key={`table-sub-${chunkIndex}`}>
-          {parseTextWithMarkers(subText, [], interactive)}
+          {parseTextWithMarkers(subText, [], interactive, [], [], renderContext)}
         </sub>
       );
     }
@@ -170,7 +183,7 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
   if (lastIndex < normalizedText.length) {
     nodes.push(
       <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
-        {parseTextWithMarkers(normalizedText.slice(lastIndex), [], interactive)}
+        {parseTextWithMarkers(normalizedText.slice(lastIndex), [], interactive, [], [], renderContext)}
       </React.Fragment>
     );
   }
@@ -178,7 +191,7 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
   if (nodes.length === 0) {
     nodes.push(
       <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
-        {parseTextWithMarkers(normalizedText, [], interactive)}
+        {parseTextWithMarkers(normalizedText, [], interactive, [], [], renderContext)}
       </React.Fragment>
     );
   }
@@ -188,11 +201,12 @@ const renderFormattedText = (text: string, interactive: boolean): React.ReactNod
 
 const renderCellContent = (
   content: string | TableCellContent[],
-  interactive: boolean
+  interactive: boolean,
+  renderContext?: ReferenceRenderContext
 ): React.ReactNode => {
   // Legacy format: plain string
   if (typeof content === 'string') {
-    return renderFormattedText(content, interactive);
+    return renderFormattedText(content, interactive, renderContext);
   }
 
   // New format: array of content items
@@ -200,7 +214,7 @@ const renderCellContent = (
     if (item.type === 'text') {
       return (
         <React.Fragment key={index}>
-          {renderFormattedText(item.value || '', interactive)}
+          {renderFormattedText(item.value || '', interactive, renderContext)}
         </React.Fragment>
       );
     } else if (item.type === 'figure') {
@@ -388,7 +402,7 @@ const getResolvedTableNumber = (table: TableWithRawSupport): string => {
   const formingPartTarget = formingPartEntries?.find((entry) => typeof entry?.target === 'string')?.target;
   const referenceFromTarget = formingPartTarget ? buildArticleReference(formingPartTarget) : null;
 
-  return referenceFromTarget || buildArticleReference(table.id) || table.id;
+  return referenceFromTarget || buildArticleReference(table.id) || '';
 };
 
 const formatFormingPartLabel = (reference: ParsedInternalReference): string | null => {
@@ -541,6 +555,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   table,
   interactive = true,
   effectiveDate,
+  renderContext,
 }) => {
   const rawTable = table as TableWithRawSupport;
   const activeRevision = getActiveRevision(rawTable.revisions, effectiveDate);
@@ -588,24 +603,24 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         <div className="table-block__header">
           {tableNumber && (
             <div className="table-block__number">
-              {renderFormattedText(tableNumberDisplay || '', interactive)}
+              {renderFormattedText(tableNumberDisplay || '', interactive, renderContext)}
             </div>
           )}
           {resolvedTitle && (
             <div className="table-block__title">
-              {renderFormattedText(resolvedTitle, interactive)}
+              {renderFormattedText(resolvedTitle, interactive, renderContext)}
             </div>
           )}
           {formingPartText && (
             <div className="table-block__forming-part">
-              {renderFormattedText(formingPartText, interactive)}
+              {renderFormattedText(formingPartText, interactive, renderContext)}
             </div>
           )}
         </div>
       )}
       {resolvedCaption && (
         <div className="table-block__caption">
-          {renderFormattedText(resolvedCaption, interactive)}
+          {renderFormattedText(resolvedCaption, interactive, renderContext)}
         </div>
       )}
       <div className={`table-block__body${preferHorizontalScroll ? ' table-block__body--scroll' : ''}`}>
@@ -637,7 +652,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                         colSpan={cell.colspan}
                         rowSpan={cell.rowspan}
                       >
-                        {renderCellContent(cell.content, interactive)}
+                        {renderCellContent(cell.content, interactive, renderContext)}
                       </CellTag>
                     );
                   })}
@@ -657,7 +672,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
               >
                 <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
                 <span className="table-block__note-content">
-                  {renderFormattedText(note.content || '', interactive)}
+                  {renderFormattedText(note.content || '', interactive, renderContext)}
                 </span>
               </div>
             ))}

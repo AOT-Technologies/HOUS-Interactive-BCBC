@@ -13,6 +13,7 @@ import type { Clause, StructuredList } from '@bc-building-code/bcbc-parser';
 import { filterClause } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import './ClauseBlock.css';
 
 export interface ClauseBlockProps {
@@ -20,6 +21,7 @@ export interface ClauseBlockProps {
   effectiveDate?: string;
   interactive?: boolean;
   parentHasBcSource?: boolean;
+  renderContext?: ReferenceRenderContext;
 }
 
 export const ClauseBlock: React.FC<ClauseBlockProps> = ({ 
@@ -27,6 +29,7 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
   effectiveDate,
   interactive = true,
   parentHasBcSource = false,
+  renderContext,
 }) => {
   const filteredClause = effectiveDate ? filterClause(clause, effectiveDate) : clause;
   if (!filteredClause) return null;
@@ -44,7 +47,8 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
             filteredClause.glossaryTerms || [],
             interactive,
             clauseEquations,
-            clauseLists
+            clauseLists,
+            renderContext
           )}
         </div>
         
@@ -58,6 +62,7 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
                 effectiveDate={effectiveDate}
                 interactive={interactive}
                 parentHasBcSource={parentHasBcSource}
+                renderContext={renderContext}
               />
             ))}
           </div>

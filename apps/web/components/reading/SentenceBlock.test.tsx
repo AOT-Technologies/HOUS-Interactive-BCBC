@@ -4,6 +4,24 @@ import type { Sentence } from '@bc-building-code/bcbc-parser';
 import { SentenceBlock } from './SentenceBlock';
 
 describe('SentenceBlock', () => {
+  it('strips raw change wrappers from sentence text', () => {
+    const sentence: Sentence = {
+      id: 'sentence-change-wrapper',
+      type: 'sentence',
+      number: '1',
+      text: '<CHANGE:insert>Except as provided in Sentences Sentence (3) and Sentence (2) and as required by Sentence (2), the</CHANGE> climatic and seismic values',
+      glossaryTerms: [],
+    };
+
+    const { container } = render(<SentenceBlock sentence={sentence} />);
+
+    expect(container.textContent).toContain(
+      '1)Except as provided in Sentences Sentence (3) and Sentence (2) and as required by Sentence (2), the climatic and seismic values'
+    );
+    expect(container.textContent).not.toContain('<CHANGE:insert>');
+    expect(container.textContent).not.toContain('</CHANGE>');
+  });
+
   it('renders variable lists inline where the placeholder appears', () => {
     const sentence: Sentence = {
       id: 'sentence-variable',

@@ -9,6 +9,7 @@ import React from 'react';
 import type { Article } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import { formatNumberedTitle } from '../../lib/title-formatting';
 import './ArticleBlock.css';
 
@@ -30,6 +31,10 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
   const fullArticleNumber = subsectionNumberPrefix
     ? `${subsectionNumberPrefix}.${article.number}`
     : article.number;
+  const renderContext: ReferenceRenderContext = {
+    kind: 'article',
+    referenceId: article.id,
+  };
 
   return (
     <div className="articleBlock">
@@ -38,7 +43,7 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
       </h4>
       {seeAlsoText ? (
         <p className="articleSeeAlso">
-          {parseTextWithMarkers(seeAlsoText, [], interactive)}
+          {parseTextWithMarkers(seeAlsoText, [], interactive, [], [], renderContext)}
         </p>
       ) : null}
       
@@ -50,6 +55,7 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
             node={item}
             effectiveDate={effectiveDate}
             interactive={interactive}
+            renderContext={renderContext}
           />
         ))}
       </div>

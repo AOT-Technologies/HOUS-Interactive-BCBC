@@ -13,6 +13,7 @@ import type { StructuredList, Subclause } from '@bc-building-code/bcbc-parser';
 import { filterSubclause } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import './SubclauseBlock.css';
 
 export interface SubclauseBlockProps {
@@ -20,6 +21,7 @@ export interface SubclauseBlockProps {
   effectiveDate?: string;
   interactive?: boolean;
   parentHasBcSource?: boolean;
+  renderContext?: ReferenceRenderContext;
 }
 
 const toLowerRoman = (value: number): string => {
@@ -72,6 +74,7 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
   effectiveDate,
   interactive = true,
   parentHasBcSource = false,
+  renderContext,
 }) => {
   const filteredSubclause = effectiveDate ? filterSubclause(subclause, effectiveDate) : subclause;
   if (!filteredSubclause) return null;
@@ -89,7 +92,8 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
             filteredSubclause.glossaryTerms || [],
             interactive,
             subclauseEquations,
-            subclauseLists
+            subclauseLists,
+            renderContext
           )}
         </div>
         
@@ -103,6 +107,7 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
                 effectiveDate={effectiveDate}
                 interactive={interactive}
                 parentHasBcSource={parentHasBcSource}
+                renderContext={renderContext}
               />
             ))}
           </div>

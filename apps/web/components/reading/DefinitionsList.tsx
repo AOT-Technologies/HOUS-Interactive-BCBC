@@ -8,16 +8,19 @@
 import React from 'react';
 import type { Definition } from '@bc-building-code/bcbc-parser';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import './DefinitionsList.css';
 
 export interface DefinitionsListProps {
   definitions: Definition[];
   interactive?: boolean;
+  renderContext?: ReferenceRenderContext;
 }
 
 export const DefinitionsList: React.FC<DefinitionsListProps> = ({ 
   definitions,
-  interactive = true 
+  interactive = true,
+  renderContext,
 }) => {
   if (!definitions || definitions.length === 0) {
     return null;
@@ -30,7 +33,7 @@ export const DefinitionsList: React.FC<DefinitionsListProps> = ({
           <div key={def.id} className="definitionsList__item" id={def.id}>
             <dt className="definitionsList__term">{def.term}</dt>
             <dd className="definitionsList__definition">
-              {parseTextWithMarkers(def.definition, [], interactive)}
+              {parseTextWithMarkers(def.definition, [], interactive, [], [], renderContext)}
             </dd>
           </div>
         ))}

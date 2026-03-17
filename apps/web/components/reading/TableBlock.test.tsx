@@ -242,6 +242,25 @@ describe('TableBlock', () => {
     expect(screen.getByText('Table D.1.1.2.')).toBeInTheDocument();
   });
 
+  it('does not render unresolved table ids as table numbers', () => {
+    const table: Table = {
+      id: 'nbc.2020.preface.div6.sub1.table1',
+      type: 'table',
+      headers: [['Header']],
+      rows: [
+        {
+          cells: [{ content: 'Data' }],
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table} />);
+
+    expect(container.textContent).not.toContain('Table nbc.2020.preface.div6.sub1.table1.');
+    expect(container.querySelector('.table-block__number')).toBeNull();
+    expect(screen.getByText('Data')).toBeInTheDocument();
+  });
+
   it('normalizes em dash table values to hyphen', () => {
     const table: Table = {
       id: 'test-table-dash',

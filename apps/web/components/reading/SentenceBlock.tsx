@@ -15,6 +15,7 @@ import { filterSentence } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { DefinitionsList } from './DefinitionsList';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import './SentenceBlock.css';
 
 export interface SentenceBlockProps {
@@ -22,6 +23,7 @@ export interface SentenceBlockProps {
   effectiveDate?: string;
   interactive?: boolean;
   parentHasBcSource?: boolean;
+  renderContext?: ReferenceRenderContext;
 }
 
 export const SentenceBlock: React.FC<SentenceBlockProps> = ({ 
@@ -29,6 +31,7 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
   effectiveDate,
   interactive = true,
   parentHasBcSource = false,
+  renderContext,
 }) => {
   const filteredSentence = effectiveDate ? filterSentence(sentence, effectiveDate) : sentence;
   if (!filteredSentence) return null;
@@ -48,7 +51,8 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
             filteredSentence.glossaryTerms || [],
             interactive,
             sentenceEquations,
-            sentenceLists
+            sentenceLists,
+            renderContext
           )}
         </div>
         
@@ -57,6 +61,7 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
           <DefinitionsList 
             definitions={filteredSentence.definitions}
             interactive={interactive}
+            renderContext={renderContext}
           />
         )}
 
@@ -106,6 +111,7 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
                 effectiveDate={effectiveDate}
                 interactive={interactive}
                 parentHasBcSource={parentHasBcSource}
+                renderContext={renderContext}
               />
             ))}
           </div>

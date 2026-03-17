@@ -4,6 +4,7 @@ import { FunctionalStatementLink } from '../components/reading/FunctionalStateme
 import { ObjectiveLink } from '../components/reading/ObjectiveLink';
 import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
 import { GlossaryTerm } from '../components/reading/GlossaryTerm';
+import type { ReferenceRenderContext } from './cross-reference';
 
 const getElementsByType = (
   nodes: React.ReactNode[],
@@ -42,6 +43,11 @@ const getTextContent = (nodes: React.ReactNode[]): string => {
 
   nodes.forEach(visit);
   return text;
+};
+
+const articleContext: ReferenceRenderContext = {
+  kind: 'article',
+  referenceId: 'nbc.divA.part1.sect3.subsect3.art3',
 };
 
 describe('parseTextWithMarkers - objective-based code references', () => {
@@ -102,6 +108,101 @@ describe('parseTextWithMarkers - objective-based code references', () => {
 
     expect(crossRefs).toHaveLength(1);
     expect(crossRefs[0].props.displayText).toBe('Table 9.3.1.7.');
+  });
+
+  it('formats part-level references as part labels for long format', () => {
+    const input = '[REF:internal:nbc.divB.part5:long] applies to all buildings.';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.referenceId).toBe('nbc.divB.part5');
+    expect(crossRefs[0].props.displayText).toBe('Part 5');
+  });
+
+  it('consumes explicit part labels following a long-format part reference marker', () => {
+    const input = 'See [REF:internal:nbc.divB.part5:long]Part 5. for details.';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const text = getTextContent(nodes);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Part 5.');
+    expect(text).toContain('See ');
+    expect(text).toContain(' for details.');
+  });
+
+  it('renders same-article references as plain text when article context is provided', () => {
+    const input = 'See [REF:internal:nbc.divA.part1.sect3.subsect3.art3.sent1:long] for details.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain('Sentence 1.3.3.3.(1)');
+  });
+
+  it('keeps out-of-article references interactive when article context is provided', () => {
+    const input = 'See [REF:internal:nbc.divA.part1.sect3.subsect3.art2.sent1:long] for details.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.referenceId).toBe('nbc.divA.part1.sect3.subsect3.art2.sent1');
+  });
+
+  it('expands short sentence references to full numbering when they target a different article', () => {
+    const input = 'Sentence [REF:internal:nbc.divA.part1.sect3.subsect3.art2.sent1:short] applies.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('1.3.3.2.(1)');
+  });
+
+  it('expands short clause references to full numbering when they target a different article', () => {
+    const input = 'Clause [REF:internal:nbc.divB.part10.sect2.subsect2.art1.sent1.clause1:short] applies.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('10.2.2.1.(1)(a)');
+  });
+
+  it('renders same-appendix references as plain text when appendix context is provided', () => {
+    const input =
+      'See [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] of Appendix D.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], {
+      kind: 'appendix',
+      referenceId: 'nbc.divB.appendixD.appsect1.subsect1.article1',
+    });
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain('Sentence D.1.2.1.(2)');
+  });
+
+  it('renders same application-note references as plain text when note context is provided', () => {
+    const input = 'See [REF:internal:nbc.divC.part2.appendix.appnote7:short] for details.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], {
+      kind: 'application-note',
+      referenceId: 'nbc.divC.part2.appendix.appnote7',
+    });
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain('Note');
+  });
+
+  it('keeps different application-note references interactive when note context is provided', () => {
+    const input = 'See [REF:internal:nbc.divC.part2.appendix.appnote8:short] for details.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], {
+      kind: 'application-note',
+      referenceId: 'nbc.divC.part2.appendix.appnote7',
+    });
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.referenceId).toBe('nbc.divC.part2.appendix.appnote8');
   });
 
   it('renders spectables table-note references as cross-reference links with note labels', () => {
@@ -199,6 +300,69 @@ describe('parseTextWithMarkers - objective-based code references', () => {
 
     expect(crossRefs).toHaveLength(1);
     expect(crossRefs[0].props.displayText).toBe('D.1.2.1.(2).');
+  });
+
+  it('avoids duplicating the leading sentence label after plural Sentences text', () => {
+    const input =
+      'Except as provided in Sentences [REF:internal:nbc.divB.part1.sect1.subsect3.art1.sent2:short] and [REF:internal:nbc.divB.part1.sect1.subsect3.art1.sent4:short] and as required by Sentence [REF:internal:nbc.divBV2.part9.sect7.subsect4.art3.sent2:short]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const renderedText = getTextContent(nodes);
+
+    expect(crossRefs).toHaveLength(3);
+    expect(crossRefs[0].props.displayText).toBe('(2)');
+    expect(crossRefs[1].props.displayText).toBe('(4)');
+    expect(crossRefs[2].props.displayText).toBe('(2)');
+    expect(renderedText).toContain('Except as provided in Sentences ');
+    expect(renderedText).toContain(' and as required by Sentence ');
+  });
+
+  it('renders long sentence references with full numbering when preceded by Sentence', () => {
+    const input =
+      'Sentence [REF:internal:nbc.divBV2.part9.sect7.subsect4.art3.sent2:long]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2)');
+  });
+
+  it('renders medium sentence references with full numbering when preceded by Sentence', () => {
+    const input =
+      'Sentence [REF:internal:nbc.divBV2.part9.sect7.subsect4.art3.sent2:medium]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2)');
+  });
+
+  it('renders medium clause references with full numbering when preceded by Clause', () => {
+    const input =
+      'Clause [REF:internal:nbc.divB.part10.sect2.subsect2.art1.sent1.clause1:medium]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('10.2.2.1.(1)(a)');
+  });
+
+  it('renders same-article clause references as plain text when article context is provided', () => {
+    const input = 'See [REF:internal:nbc.divA.part1.sect3.subsect3.art3.sent1.clause1:medium] for details.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain('Clause 1.3.3.3.(1)(a)');
+  });
+
+  it('renders same-article short clause references as plain text when article context is provided', () => {
+    const input = 'See [REF:internal:nbc.divA.part1.sect3.subsect3.art3.sent1.clause1:short] for details.';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain('Clause (a)');
   });
 
   it('parses standard references into cross-reference links', () => {

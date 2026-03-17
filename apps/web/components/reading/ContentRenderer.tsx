@@ -27,6 +27,7 @@ import { TableBlock } from './TableBlock';
 import { FigureBlock } from './FigureBlock';
 import { EquationBlock } from './EquationBlock';
 import { NoteBlock } from './NoteBlock';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import './ContentRenderer.css';
 
 export interface ContentRendererProps {
@@ -34,6 +35,7 @@ export interface ContentRendererProps {
   effectiveDate?: string;
   interactive?: boolean;
   parentHasBcSource?: boolean;
+  renderContext?: ReferenceRenderContext;
 }
 
 /**
@@ -45,6 +47,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
   effectiveDate,
   interactive = true,
   parentHasBcSource = false,
+  renderContext,
 }) => {
   const source = (node as { source?: string }).source;
   const nodeType = (node as { type?: string }).type;
@@ -69,6 +72,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
           effectiveDate={effectiveDate}
           interactive={interactive}
           parentHasBcSource={hasBcSourceInTree}
+          renderContext={renderContext}
         />
       );
     
@@ -79,6 +83,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
           effectiveDate={effectiveDate}
           interactive={interactive}
           parentHasBcSource={hasBcSourceInTree}
+          renderContext={renderContext}
         />
       );
     
@@ -89,6 +94,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
           effectiveDate={effectiveDate}
           interactive={interactive}
           parentHasBcSource={hasBcSourceInTree}
+          renderContext={renderContext}
         />
       );
     
@@ -98,11 +104,14 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
           table={node as Table}
           interactive={interactive}
           effectiveDate={effectiveDate}
+          renderContext={renderContext}
         />
       );
     
     case 'figure':
-      return withSourceIndicator(<FigureBlock figure={node as Figure} />);
+      return withSourceIndicator(
+        <FigureBlock figure={node as Figure} interactive={interactive} renderContext={renderContext} />
+      );
     
     case 'equation':
       return withSourceIndicator(<EquationBlock equation={node as Equation} />);

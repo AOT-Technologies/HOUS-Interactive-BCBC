@@ -23,6 +23,11 @@ import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
 import { FunctionalStatementLink } from '../components/reading/FunctionalStatementLink';
 import { ObjectiveLink } from '../components/reading/ObjectiveLink';
 import { StructuredListBlock } from '../components/reading/StructuredListBlock';
+import {
+  parseReferenceId,
+  shouldSuppressReferenceInContext,
+  type ReferenceRenderContext,
+} from './cross-reference';
 import { useEquationStore } from '../stores/equation-store';
 
 /**
@@ -89,12 +94,47 @@ function avoidDuplicateTrailingPeriod(displayText: string, remainingText: string
 
 function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: string): string {
   const displayMatch = displayText.match(
-    /^(Appendix|Section|Subsection|Article|Sentence|Clause|Subclause|Table|Figure|Note)\s+/i
+    /^(Appendix|Part|Section|Subsection|Article|Sentence|Clause|Subclause|Table|Figure|Note)\s+/i
   );
   if (!displayMatch) return displayText;
 
   const duplicatedType = displayMatch[1];
-  if (!new RegExp(`${duplicatedType}\\s*$`, 'i').test(precedingText)) {
+  const acceptablePrefixes = {
+    Appendix: ['Appendix', 'Appendices'],
+    Part: ['Part', 'Parts'],
+    Section: ['Section', 'Sections'],
+    Subsection: ['Subsection', 'Subsections'],
+    Article: ['Article', 'Articles'],
+    Sentence: ['Sentence', 'Sentences'],
+    Clause: ['Clause', 'Clauses'],
+    Subclause: ['Subclause', 'Subclauses'],
+    Table: ['Table', 'Tables'],
+    Figure: ['Figure', 'Figures'],
+    Note: ['Note', 'Notes'],
+  } as const;
+
+  const allowedForms = acceptablePrefixes[duplicatedType as keyof typeof acceptablePrefixes] || [
+    duplicatedType,
+  ];
+
+  const escapedAllowedForms = allowedForms.map((value) =>
+    value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  );
+
+  if (new RegExp(`(?:${escapedAllowedForms.join('|')})\\s*$`, 'i').test(precedingText)) {
+    return displayText.slice(displayMatch[0].length);
+  }
+
+  const normalizedPrecedingText = precedingText
+    .replace(/\[REF:[^\]]+\]/gi, '(ref)')
+    .replace(/\s+/g, ' ')
+    .trimEnd();
+  const priorReferenceListPattern = new RegExp(
+    `(?:${escapedAllowedForms.join('|')})\\s+(?:(?:\\(ref\\)|\\([^)]+\\)|(?:${escapedAllowedForms.join('|')})\\s+\\([^)]+\\))\\s*(?:,\\s*)?(?:(?:and|or)\\s*)?)+$`,
+    'i'
+  );
+
+  if (!priorReferenceListPattern.test(normalizedPrecedingText)) {
     return displayText;
   }
 
@@ -146,8 +186,14 @@ function getNoteLabel(noteId: string): string {
 
 function sanitizeLegacyPlaceholderTags(text: string): string {
   // Legacy source uses <>...</> placeholders for inline emphasis.
+  // Some legacy/amendment payloads also include raw CHANGE wrappers that should
+  // not surface in reading text.
   // Render as plain text by stripping these wrapper tokens.
-  return text.replace(/<>/g, '').replace(/<\/>/g, '');
+  return text
+    .replace(/<>/g, '')
+    .replace(/<\/>/g, '')
+    .replace(/<CHANGE:[^>]+>/gi, '')
+    .replace(/<\/CHANGE>/gi, '');
 }
 
 /**
@@ -401,9 +447,18 @@ function getCrossReferenceDisplayText(
   fullText: string,
   markerEnd: number,
   referenceId: string,
-  format?: InternalRefFormat
+  format?: InternalRefFormat,
+  renderContext?: ReferenceRenderContext
 ): GlossaryDisplay {
   const remaining = fullText.slice(markerEnd);
+  const parsedReference = parseReferenceId(referenceId);
+  const shouldExpandShortArticleRef =
+    format === 'short' &&
+    renderContext?.kind === 'article' &&
+    parsedReference?.kind === 'section' &&
+    Boolean(parsedReference.article) &&
+    (Boolean(parsedReference.sentence) || Boolean(parsedReference.clause)) &&
+    !shouldSuppressReferenceInContext(referenceId, renderContext);
 
   // Note labels can include suffix qualifiers such as " (a)" or "(1)".
   // Ensure the full note token is linked instead of splitting trailing qualifiers.
@@ -425,8 +480,8 @@ function getCrossReferenceDisplayText(
   
   if (format === 'long') {
     // Match "Article X.X.X." / "Figure X.X.X.-A" / "Section X.X." / "Sentence (X)" etc.
-    displayTextMatch = remaining.match(/^((?:Articles?|Figures?|Sections?|Sentences?|Clauses?|Subclauses?|Tables?|Note)\s+[A-Z0-9][A-Z0-9.\-()]*\.?)/i);
-  } else if (format === 'short') {
+    displayTextMatch = remaining.match(/^((?:Parts?|Articles?|Figures?|Sections?|Sentences?|Clauses?|Subclauses?|Tables?|Note)\s+[A-Z0-9][A-Z0-9.\-()]*\.?)/i);
+  } else if (format === 'short' && !shouldExpandShortArticleRef) {
     // Match "Sentence (X)" or just "(X)"
     displayTextMatch = remaining.match(/^((?:Sentence|Clause|Subclause)\s+\([^)]+\)|\([^)]+\))/i);
   } else if (format === 'number' || format === 'shortNum') {
@@ -443,7 +498,10 @@ function getCrossReferenceDisplayText(
   }
   
   // Fallback: generate display text from referenceId
-  const fallback = formatInternalReference(referenceId, format);
+  const fallback = formatInternalReference(
+    referenceId,
+    shouldExpandShortArticleRef ? 'medium' : format
+  );
   const qualifierMatch = fallback.startsWith('Note ')
     ? remaining.match(/^(\s*\([^)]+\))/)
     : null;
@@ -535,10 +593,17 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   const table = extractNumeric(referenceId, /\.table(\d+)/i);
   const appNote = extractNumeric(referenceId, /\.appnote(\d+)/i);
 
-  const sectionNumber = [part, section].filter(Boolean).join('.');
-  const subsectionNumber = [part, section, subsection].filter(Boolean).join('.');
-  const articleNumber = [part, section, subsection, article].filter(Boolean).join('.');
+  const sectionNumber = section ? [part, section].filter(Boolean).join('.') : '';
+  const subsectionNumber =
+    section && subsection ? [part, section, subsection].filter(Boolean).join('.') : '';
+  const articleNumber =
+    section && subsection && article
+      ? [part, section, subsection, article].filter(Boolean).join('.')
+      : '';
   const containerNumber = articleNumber || subsectionNumber || sectionNumber || part;
+  const sentenceNumber = sentence
+    ? [containerNumber, `(${sentence})`].filter(Boolean).join('.')
+    : '';
 
   // Application notes are rendered as Note references in BC style.
   if (appNote) {
@@ -556,11 +621,35 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
 
   if (clause) {
     const number = toAlphabetOrdinal(asNumber(clause) ?? Number.NaN);
-    return isShortNumeric ? `(${number})` : `Clause (${number})`;
+    if (isShortNumeric) {
+      return `(${number})`;
+    }
+
+    if (format === 'short') {
+      return `Clause (${number})`;
+    }
+
+    if (sentenceNumber) {
+      return `Clause ${sentenceNumber}(${number})`;
+    }
+
+    return `Clause (${number})`;
   }
 
   if (sentence) {
-    return isShortNumeric ? `(${sentence})` : `Sentence (${sentence})`;
+    if (isShortNumeric) {
+      return `(${sentence})`;
+    }
+
+    if (format === 'short') {
+      return `Sentence (${sentence})`;
+    }
+
+    if (containerNumber) {
+      return `Sentence ${containerNumber}.(${sentence})`;
+    }
+
+    return `Sentence (${sentence})`;
   }
 
   if (table) {
@@ -849,7 +938,8 @@ export function parseTextWithMarkers(
   _glossaryTerms: string[] = [],
   interactive: boolean = true,
   localEquations: TextEquationEntry[] = [],
-  localLists: StructuredList[] = []
+  localLists: StructuredList[] = [],
+  renderContext?: ReferenceRenderContext
 ): React.ReactNode[] {
   const sanitizedText = sanitizeLegacyPlaceholderTags(text);
   const nodes: React.ReactNode[] = [];
@@ -1119,7 +1209,8 @@ export function parseTextWithMarkers(
               sanitizedText,
               marker.end,
               marker.referenceId!,
-              marker.format as InternalRefFormat
+              marker.format as InternalRefFormat,
+              renderContext
             );
 
         const normalizedDisplayText = avoidDuplicateTrailingPeriod(
@@ -1129,17 +1220,30 @@ export function parseTextWithMarkers(
           ),
           sanitizedText.slice(marker.end + crossRefDisplay.consumed)
         );
+        const suppressReference =
+          interactive &&
+          shouldSuppressReferenceInContext(marker.referenceId!, renderContext);
 
-        nodes.push(
-          React.createElement(CrossReferenceLink, {
-            key: `crossref-${marker.start}`,
-            referenceId: marker.referenceId!,
-            displayText: normalizedDisplayText,
-            format: marker.format as InternalRefFormat,
-            interactive,
-            preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
-          })
-        );
+        if (suppressReference) {
+          nodes.push(
+            ...parseInlineFormatting(
+              normalizedDisplayText,
+              interactive,
+              marker.start
+            )
+          );
+        } else {
+          nodes.push(
+            React.createElement(CrossReferenceLink, {
+              key: `crossref-${marker.start}`,
+              referenceId: marker.referenceId!,
+              displayText: normalizedDisplayText,
+              format: marker.format as InternalRefFormat,
+              interactive,
+              preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
+            })
+          );
+        }
         // For cross-references, consume the marker and the display text that follows
         lastIndex = skipWhitespaceBeforePunctuation(
           sanitizedText,
@@ -1297,7 +1401,8 @@ export function parseTextWithMarkers(
             key: `list-${marker.start}`,
             list,
             interactive,
-            renderText: (value: string) => parseTextWithMarkers(value, [], interactive),
+            renderText: (value: string) =>
+              parseTextWithMarkers(value, [], interactive, [], [], renderContext),
           })
         );
         lastIndex = marker.end;

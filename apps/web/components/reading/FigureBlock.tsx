@@ -2,6 +2,7 @@ import React from 'react';
 import type { Figure, FormingPartReference } from '@bc-building-code/bcbc-parser';
 import { resolveImagePath } from '../../lib/image-config';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import './FigureBlock.css';
 
 type RawFigureGraphic = {
@@ -24,6 +25,8 @@ type FigureWithRawGraphic = Figure & {
 
 export interface FigureBlockProps {
   figure: FigureWithRawGraphic;
+  interactive?: boolean;
+  renderContext?: ReferenceRenderContext;
 }
 
 function toAlphabetOrdinalUpper(value: number): string {
@@ -191,7 +194,11 @@ const formatFormingPartText = (formingPart: FormingPartReference[] | undefined):
   return `Forming Part of ${labels.slice(0, -1).join(', ')}, and ${labels[labels.length - 1]}`;
 };
 
-export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
+export const FigureBlock: React.FC<FigureBlockProps> = ({
+  figure,
+  interactive = true,
+  renderContext,
+}) => {
   const rawImageSrc = figure.imageUrl || figure.graphic?.src;
   const imagePath = resolveImagePath(rawImageSrc);
   const altText = figure.altText || figure.graphic?.alt_text || figure.title || 'Figure';
@@ -206,12 +213,12 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
       <div className="figure-block__number">{figureLabel}</div>
       {figure.title && (
         <div className="figure-block__title">
-          {parseTextWithMarkers(figure.title, [], true)}
+          {parseTextWithMarkers(figure.title, [], interactive, [], [], renderContext)}
         </div>
       )}
       {formingPartText && (
         <div className="figure-block__forming-part">
-          {parseTextWithMarkers(formingPartText, [], true)}
+          {parseTextWithMarkers(formingPartText, [], interactive, [], [], renderContext)}
         </div>
       )}
       {imagePath && (
@@ -224,7 +231,7 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
       )}
       {figure.caption && (
         <figcaption className="figure-block__caption">
-          {parseTextWithMarkers(figure.caption, [], true)}
+          {parseTextWithMarkers(figure.caption, [], interactive, [], [], renderContext)}
         </figcaption>
       )}
       {figureNotes.length > 0 && (
@@ -232,7 +239,7 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({ figure }) => {
           {figureNotes.map((note) => (
             <p key={note.id} className="figure-block__note">
               <strong>{`Note (${getFigureNoteNumber(note.id)}): `}</strong>
-              {parseTextWithMarkers(note.content, [], true)}
+              {parseTextWithMarkers(note.content, [], interactive, [], [], renderContext)}
             </p>
           ))}
         </div>
