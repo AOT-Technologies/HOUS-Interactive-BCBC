@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-16T22:35:50.3413143-07:00",
+  "generated_timestamp" : "2026-03-17T22:26:35.1072506-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6047,55 +6047,7 @@
                { "id" : "nbc.divA.part1.sect3.subsect3.art4.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "The vertical [REF:term:fr-prtn:fire separation] referred to in [REF:internal:nbc.divA.part1.sect3.subsect3.art4.sent2:short] may terminate at the floor assembly immediately above a [REF:term:bmnt:basement] provided the [REF:term:bmnt:basement] conforms to [REF:internal:nbc.divB.part3.sect2.subsect1.art2:long] ." } ] },
-             
-             { "id" : "nbc.divA.part1.sect3.subsect3.art5",
-              "type" : "article",
-              "number" : 5,
-              "title" : "Application of Part 2",
-              "content" : 
-              [ 
-               { "id" : "nbc.divA.part1.sect3.subsect3.art5.sent1",
-                "type" : "sentence",
-                "number" : 1,
-                "text" : "Part 2 of Division B applies to all [REF:term:bldng:buildings] that are",
-                "clauses" : 
-                [ 
-                 { "id" : "nbc.divA.part1.sect3.subsect3.art5.sent1.clause1",
-                  "type" : "clause",
-                  "letter" : "a",
-                  "text" : "more than 600 m^{2} in [REF:term:bldng-r:building area] or more than 3 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] used for [REF:term:mjr-ccpn:major occupancies] classified as Group G, Division 1, 2 or 3 [REF:term:grc-ccp:agricultural occupancies] , or" },
-                 
-                 { "id" : "nbc.divA.part1.sect3.subsect3.art5.sent1.clause2",
-                  "type" : "clause",
-                  "letter" : "b",
-                  "text" : "used for [REF:term:mjr-ccpn:major occupancies] classified as Group G, Division 4, [REF:term:grc-ccp-nh:agricultural occupancies with no human occupants] ." } ] } ] },
-             
-             { "id" : "nbc.divA.part1.sect3.subsect3.art6",
-              "type" : "article",
-              "number" : 6,
-              "title" : "Classification of Buildings Containing Agricultural Occupancies",
-              "content" : 
-              [ 
-               { "id" : "nbc.divA.part1.sect3.subsect3.art6.sent1",
-                "type" : "sentence",
-                "number" : 1,
-                "text" : "[REF:term:bldng:Buildings] or parts of [REF:term:bldng:buildings] containing an [REF:term:grc-ccp:agricultural occupancy] that has an [REF:term:ccpnt-ld:occupant load] of not more than one person per 40 m^{2} shall be classified according to their [REF:term:mjr-ccpn:major occupancy] as belonging to Group G, Division 1, 2, 3 or 4." },
-               
-               { "id" : "nbc.divA.part1.sect3.subsect3.art6.sent2",
-                "type" : "sentence",
-                "number" : 2,
-                "text" : "[REF:term:bldng:Buildings] or parts of [REF:term:bldng:buildings] containing an [REF:term:grc-ccp:agricultural occupancy] that has an [REF:term:ccpnt-ld:occupant load] of more than one person per 40 m^{2} shall be classified according to their [REF:term:mjr-ccpn:major occupancy] as belonging to one of the Groups and Divisions listed in [REF:internal:nbc.divB.part3.sect1.subsect2.art1.table1:long] ." },
-               
-               { "id" : "nbc.divA.part1.sect3.subsect3.art6.sent3",
-                "type" : "sentence",
-                "number" : 3,
-                "text" : "For the purposes of  Sentences [REF:internal:nbc.divA.part1.sect3.subsect3.art6.sent1:short] and [REF:internal:nbc.divA.part1.sect3.subsect3.art6.sent2:short] , the [REF:term:ccpnt-ld:occupant load] shall be determined based on the [REF:term:flr-r:floor area] or the part of the [REF:term:flr-r:floor area] that contains the [REF:term:grc-ccp:agricultural occupancy] ." },
-               
-               { "id" : "nbc.divA.part1.sect3.subsect3.art6.sent4",
-                "type" : "sentence",
-                "number" : 4,
-                "text" : "A [REF:term:bldng:building] intended for use by more than one [REF:term:mjr-ccpn:major occupancy] shall be classified according to all the [REF:term:mjr-ccpn:major occupancies] for which it is used or intended to be used." } ] } ] },
+                "text" : "The vertical [REF:term:fr-prtn:fire separation] referred to in [REF:internal:nbc.divA.part1.sect3.subsect3.art4.sent2:short] may terminate at the floor assembly immediately above a [REF:term:bmnt:basement] provided the [REF:term:bmnt:basement] conforms to [REF:internal:nbc.divB.part3.sect2.subsect1.art2:long] ." } ] } ] },
            
            { "id" : "nbc.divA.part1.sect3.subsect4",
             "type" : "subsection",
@@ -8979,12 +8931,12 @@
                 "number" : 1,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part2.sect5] , [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)",
+                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)",
                 "revisions" : 
                 [ 
                  { "type" : "original",
                   "effective_date" : "2024-03-08",
-                  "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part2.sect5] , [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)" },
+                  "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)" },
                  
                  { "type" : "revision",
                   "revision_type" : "amendment",
@@ -8992,7 +8944,7 @@
                   "sequence" : 1,
                   "effective_date" : "2025-06-16",
                   "status" : "current",
-                  "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part2.sect5] , [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)",
+                  "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)",
                   "change_summary" : "Struck out \"2.5.,\"",
                   "note" : "Ministerial Order BA 2024 06" } ] } ] } ] },
            
@@ -9418,7 +9370,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part2.sect4.subsect2.art5.sent1:number]  [REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number]  [REF:internal:nbc.divB.part6.appendix.appnote9:number]" } ],
+                       "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number]  [REF:internal:nbc.divB.part6.appendix.appnote9:number]" } ],
                      "revisions" : 
                      [ 
                       { "type" : "original",
@@ -9432,7 +9384,7 @@
                        "effective_date" : "2025-06-16",
                        "status" : "current",
                        "deleted" : true,
-                       "content" : "[REF:internal:nbc.divB.part2.sect4.subsect2.art5.sent1:number]  [REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number]  [REF:internal:nbc.divB.part6.appendix.appnote9:number]",
+                       "content" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number]  [REF:internal:nbc.divB.part6.appendix.appnote9:number]",
                        "change_summary" : "Struck out \"6.3.2.14.(2)\" from Code Reference column",
                        "note" : "Ministerial Order BA 2024 06" } ] } ] },
                   
@@ -20961,7 +20913,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part2.sect2.subsect1.art1.sent4:number]" } ] } ] },
+                       "value" : "2.2.1.1.(1)" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.bc-row-4",
                    "type" : "body_row",
@@ -278896,7 +278848,7 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "A [REF:term:bc-rgstrd-prfssnl:registered professional] of record who is retained to undertake design work and field reviews and who is required to provide letters pursuant to [REF:internal:nbc.divB.part2.sect2.subsect7.art2.sent1.clause2:short:Clause 2.2.7.2.(1)(b)] shall",
+                "text" : "A [REF:term:bc-rgstrd-prfssnl:registered professional] of record who is retained to undertake design work and field reviews and who is required to provide letters pursuant to [REF:internal:nbc.divC.part2.sect2.subsect7.art2.sent1.clause2:short:Clause 2.2.7.2.(1)(b)] shall",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divC.part2.sect2.subsect7.art3.sent3.clause1",
@@ -679350,7 +679302,7 @@
    { "location_id" : "nbc.divB.part1.sect1.subsect2.art1.sent1",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part2.sect5] , [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)" },
+    "content" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)" },
    
    { "location_id" : "nbc.divB.part1.sect1.subsect2.art1.sent1",
     "type" : "revision",
@@ -679359,7 +679311,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part2.sect5] , [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)",
+    "content" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium] , the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in  Sections [REF:internal:nbc.divB.part3.sect9] , [REF:internal:nbc.divB.part4.sect5] , [REF:internal:nbc.divB.part5.sect10] , [REF:internal:nbc.divB.part6.sect10] , [REF:internal:nbc.divB.part7.sect2] , [REF:internal:nbc.divB.part8.sect3] , [REF:internal:nbc.divBV2.part9.sect38]  and [REF:internal:nbc.divB.part10.sect4:short] (See [REF:internal:nbc.divB.part1.appendix.appnote1:short] .)",
     "change_summary" : "Struck out \"2.5.,\"",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -679375,7 +679327,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "[REF:internal:nbc.divB.part2.sect4.subsect2.art5.sent1:number]  [REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number]  [REF:internal:nbc.divB.part6.appendix.appnote9:number]",
+    "content" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number]  [REF:internal:nbc.divB.part6.appendix.appnote9:number]",
     "change_summary" : "Struck out \"6.3.2.14.(2)\" from Code Reference column",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -688937,8 +688889,8 @@
    "total_divisions" : 4,
    "total_parts" : 15,
    "total_sections" : 100,
-   "total_articles" : 2022,
-   "total_sentences" : 5135,
+   "total_articles" : 2020,
+   "total_sentences" : 5130,
    "total_tables" : 351,
    "total_figures" : 318,
    "total_spectables" : 2,
