@@ -113,10 +113,23 @@ export default function QuickAccessPins({ className = '' }: QuickAccessPinsProps
       </div>
       <div className="quick-access-pins--description">
         <p>
-          The BC Building Code Search Tool provides instant access to the complete {currentVersion || '2024'} British Columbia Building Code. 
-          Use the search bar above to find specific requirements, browse by division and part using the navigation tree, 
-          or explore frequently accessed sections through Quick Access. All content includes inline glossary definitions, 
-          cross-references, and effective date filtering to help you find exactly what you need.
+          The BC Building Code includes the BC Plumbing Code and together they regulate:
+        </p>
+        <ul>
+          <li>New construction</li>
+          <li>Building alterations and repairs</li>
+          <li>Demolitions</li>
+        </ul>
+        <p>
+          The BC Building Code {currentVersion || '2024'} (BCBC) came into effect on March 8, 2024, and applies to all
+          projects with building permits applied for after that date.
+        </p>
+        <p>
+          The BC Building Code website provides a modern, searchable and easy to navigate experience to access code
+          requirements. Quickly find information using full-text search, filters, and a clear navigation structure. All
+          content includes glossary terms and BCBC cross-references, allowing you to understand requirements in context
+          without losing your place. You can also explore code requirements by effective date to easily identify which
+          provisions apply.
         </p>
       </div>
       <Alert

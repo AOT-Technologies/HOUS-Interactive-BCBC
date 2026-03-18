@@ -52,7 +52,7 @@ export default function Home() {
             onSearch={handleSearch}
             getSuggestions={handleGetSuggestions}
             title="BC Building Code"
-            subtitle="Search and navigate the official British Columbia Building Code. Find requirements, definitions, and technical guidance for construction projects across BC."
+            subtitle="Search and navigate the official British Columbia Building Code. Find requirements, definitions, and technical guidance for construction projects throughout BC."
             placeholder="Search for keywords (e.g. &quot;Egress&quot;, &quot;Radon&quot;) or Section..."
           />
         </section>

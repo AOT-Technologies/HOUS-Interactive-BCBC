@@ -52,6 +52,24 @@
   text-align: center;
 }
 
+.quick-access-pins--description ul {
+  margin: 8px 0 0;
+  padding-left: 24px;
+  font-family: 'BC Sans', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--typography-color-secondary, #313132);
+}
+
+.quick-access-pins--description li {
+  margin: 0;
+}
+
+.quick-access-pins--description ul + p,
+.quick-access-pins--description p + p {
+  margin-top: 8px;
+}
+
 .quick-access-pin {
   box-sizing: border-box;
   width: 100%;
@@ -93,6 +111,10 @@
   }
 
   .quick-access-pins--description p {
+    text-align: left;
+  }
+
+  .quick-access-pins--description ul {
     text-align: left;
   }
 
