@@ -107,6 +107,82 @@ describe('TableBlock', () => {
     expect(images[1]).toHaveAttribute('alt', 'Two storey building configuration');
   });
 
+  it('renders structured list content embedded in a table cell', () => {
+    const table: Table = {
+      id: 'test-table-list-cell',
+      type: 'table',
+      number: '9.36.1.3',
+      title: 'List Cell Table',
+      headers: [['Building Types and Sizes']],
+      rows: [
+        {
+          id: 'row-1',
+          type: 'body_row',
+          cells: [
+            {
+              content: [
+                {
+                  type: 'list',
+                  list: {
+                    type: 'bulleted',
+                    items: [
+                      { content: 'Houses with or without a secondary suite' },
+                      { content: 'Buildings containing only dwelling units' },
+                    ],
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText('Houses with or without a secondary suite')).toBeInTheDocument();
+    expect(screen.getByText('Buildings containing only dwelling units')).toBeInTheDocument();
+    expect(screen.getByRole('list')).toBeInTheDocument();
+  });
+
+  it('renders raw list_type table cell content from generated appendix data', () => {
+    const table = {
+      id: 'test-table-raw-list-cell',
+      type: 'table' as const,
+      number: '9.36.1.3',
+      title: 'Raw List Cell Table',
+      headers: [],
+      rows: [],
+      structure: {
+        body_rows: [
+          {
+            id: 'row-1',
+            type: 'body_row' as const,
+            cells: [
+              {
+                content: [
+                  {
+                    type: 'list' as const,
+                    list_type: 'bulleted' as const,
+                    items: [
+                      { content: 'Houses with or without a secondary suite' },
+                      { content: 'Buildings containing only dwelling units' },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    expect(screen.getByText('Houses with or without a secondary suite')).toBeInTheDocument();
+    expect(screen.getByText('Buildings containing only dwelling units')).toBeInTheDocument();
+  });
+
   it('applies text alignment classes', () => {
     const table: Table = {
       id: 'test-table-3',
@@ -151,6 +227,25 @@ describe('TableBlock', () => {
     render(<TableBlock table={table} />);
     
     expect(screen.getByText('This is a caption')).toBeInTheDocument();
+  });
+
+  it('does not leak unresolved list placeholders in table cells', () => {
+    const table: Table = {
+      id: 'test-table-list-placeholder',
+      type: 'table',
+      number: '9.36.1.3',
+      title: 'Placeholder Handling',
+      headers: [['Building Type']],
+      rows: [
+        {
+          cells: [{ content: [{ type: 'text', value: '[LIST:bulleted]' }] }],
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table} />);
+
+    expect(container.textContent).not.toContain('[LIST:bulleted]');
   });
 
   it('prefers horizontal scroll for content-heavy tables even with fewer columns', () => {

@@ -475,12 +475,13 @@ export interface TableRow {
   cells: TableCell[];
 }
 
-/**
- * Content item within a table cell (text or figure)
- */
-export interface TableCellContent {
-  type: 'text' | 'figure';
+export interface TableCellTextContent {
+  type: 'text';
   value?: string; // For text content
+}
+
+export interface TableCellFigureContent {
+  type: 'figure';
   id?: string; // For figure content
   source?: 'nbc' | 'bc';
   title?: string;
@@ -489,6 +490,19 @@ export interface TableCellContent {
     alt_text: string;
   };
 }
+
+export interface TableCellListContent {
+  type: 'list';
+  list: StructuredList;
+}
+
+/**
+ * Content item within a table cell (text, figure, or structured list)
+ */
+export type TableCellContent =
+  | TableCellTextContent
+  | TableCellFigureContent
+  | TableCellListContent;
 
 /**
  * Table cell with optional colspan/rowspan and mixed content

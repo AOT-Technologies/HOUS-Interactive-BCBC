@@ -253,6 +253,19 @@
   font-size: 0.9375rem;
 }
 
+.reading-view__target--highlight {
+  animation: reading-view-target-highlight 2.4s ease-out;
+}
+
+@keyframes reading-view-target-highlight {
+  0% {
+    background-color: rgba(252, 186, 25, 0.28);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
 /* Responsive styles */
 
 /* Desktop (≥1024px) - Use full available width */

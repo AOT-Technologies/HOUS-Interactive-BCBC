@@ -1,8 +1,9 @@
 import React from 'react';
-import type { FormingPartReference, Table, TableCellContent } from '@bc-building-code/bcbc-parser';
+import type { FormingPartReference, StructuredList, Table, TableCellContent } from '@bc-building-code/bcbc-parser';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import { resolveImagePath } from '../../lib/image-config';
+import { StructuredListBlock } from './StructuredListBlock';
 import './TableBlock.css';
 
 export interface TableBlockProps {
@@ -13,13 +14,21 @@ export interface TableBlockProps {
 }
 
 type RawTableCell = {
-  content?: string | TableCellContent[];
+  content?: string | RawTableCellContent[];
   text?: string;
   align?: 'left' | 'center' | 'right';
   colspan?: number;
   rowspan?: number;
   isHeader?: boolean;
 };
+
+type RawTableCellContent =
+  | TableCellContent
+  | {
+      type: 'list';
+      list_type?: StructuredList['type'];
+      items?: unknown[];
+    };
 
 type RawTableRow =
   | {
@@ -77,10 +86,12 @@ type ParsedInternalReference = {
   table?: string;
 };
 
+type TableCellFigureContent = Extract<TableCellContent, { type: 'figure' }>;
+
 /**
  * Renders a figure within a table cell
  */
-const TableCellFigure: React.FC<{ figure: TableCellContent }> = ({ figure }) => {
+const TableCellFigure: React.FC<{ figure: TableCellFigureContent }> = ({ figure }) => {
   if (!figure.graphic) return null;
 
   const imagePath = resolveImagePath(figure.graphic.src);
@@ -219,6 +230,17 @@ const renderCellContent = (
       );
     } else if (item.type === 'figure') {
       return <TableCellFigure key={index} figure={item} />;
+    } else if (item.type === 'list') {
+      return (
+        <StructuredListBlock
+          key={index}
+          list={item.list}
+          interactive={interactive}
+          renderText={(value: string) =>
+            parseTextWithMarkers(value, [], interactive, [], [], renderContext)
+          }
+        />
+      );
     }
     return null;
   });
@@ -239,8 +261,129 @@ const getActiveRevision = <T extends { effective_date?: string }>(
   return sorted.find((rev) => (rev.effective_date || '') <= effectiveDate) || sorted[sorted.length - 1];
 };
 
+const normalizeStructuredList = (
+  listType: StructuredList['type'] | undefined,
+  items: unknown[] | undefined
+): StructuredList | null => {
+  if (!listType || !Array.isArray(items)) {
+    return null;
+  }
+
+  switch (listType) {
+    case 'bulleted':
+    case 'numbered':
+    case 'alphabetic':
+      return {
+        type: listType,
+        items: items
+          .filter((item): item is { id?: string; content: string } =>
+            Boolean(item && typeof item === 'object' && typeof (item as { content?: unknown }).content === 'string')
+          )
+          .map((item) => ({
+            id: item.id,
+            content: item.content,
+          })),
+      };
+    case 'variable':
+      return {
+        type: 'variable',
+        items: items
+          .filter(
+            (item): item is { id?: string; symbol: string; description: string } =>
+              Boolean(
+                item &&
+                  typeof item === 'object' &&
+                  typeof (item as { symbol?: unknown }).symbol === 'string' &&
+                  typeof (item as { description?: unknown }).description === 'string'
+              )
+          )
+          .map((item) => ({
+            id: item.id,
+            symbol: item.symbol,
+            description: item.description,
+          })),
+      };
+    case 'definition':
+      return {
+        type: 'definition',
+        items: items
+          .filter(
+            (item): item is { id: string; term: string; definition: string } =>
+              Boolean(
+                item &&
+                  typeof item === 'object' &&
+                  typeof (item as { id?: unknown }).id === 'string' &&
+                  typeof (item as { term?: unknown }).term === 'string' &&
+                  typeof (item as { definition?: unknown }).definition === 'string'
+              )
+          )
+          .map((item) => ({
+            id: item.id,
+            term: item.term,
+            definition: item.definition,
+          })),
+      };
+    case 'organization':
+      return {
+        type: 'organization',
+        items: items
+          .filter(
+            (item): item is { id: string; abbreviation: string; fullName: string; website?: string } =>
+              Boolean(
+                item &&
+                  typeof item === 'object' &&
+                  typeof (item as { id?: unknown }).id === 'string' &&
+                  typeof (item as { abbreviation?: unknown }).abbreviation === 'string' &&
+                  typeof (item as { fullName?: unknown }).fullName === 'string'
+              )
+          )
+          .map((item) => ({
+            id: item.id,
+            abbreviation: item.abbreviation,
+            fullName: item.fullName,
+            website: item.website,
+          })),
+      };
+    default:
+      return null;
+  }
+};
+
+const normalizeTableCellContent = (item: RawTableCellContent): TableCellContent | null => {
+  if (!item || typeof item !== 'object' || typeof item.type !== 'string') {
+    return null;
+  }
+
+  if (item.type === 'list') {
+    if ('list' in item && item.list) {
+      return item as TableCellContent;
+    }
+
+    const rawListItem = item as {
+      type: 'list';
+      list_type?: StructuredList['type'];
+      items?: unknown[];
+    };
+    const normalizedList = normalizeStructuredList(rawListItem.list_type, rawListItem.items);
+    if (!normalizedList) {
+      return null;
+    }
+
+    return {
+      type: 'list',
+      list: normalizedList,
+    };
+  }
+
+  return item as TableCellContent;
+};
+
 const normalizeCell = (cell: RawTableCell, isHeader: boolean) => ({
-  content: cell.content ?? cell.text ?? '',
+  content: Array.isArray(cell.content)
+    ? cell.content
+        .map(normalizeTableCellContent)
+        .filter((item): item is TableCellContent => item !== null)
+    : cell.content ?? cell.text ?? '',
   align: cell.align,
   colspan: typeof cell.colspan === 'number' && cell.colspan > 0 ? cell.colspan : undefined,
   rowspan: typeof cell.rowspan === 'number' && cell.rowspan > 0 ? cell.rowspan : undefined,
@@ -468,6 +611,25 @@ type TableWidthAnalysisRow = {
   }>;
 };
 
+const getStructuredListPlainText = (list: StructuredList): string => {
+  switch (list.type) {
+    case 'bulleted':
+    case 'numbered':
+    case 'alphabetic':
+      return list.items.map((item) => item.content).join(' ');
+    case 'variable':
+      return list.items.map((item) => `${item.symbol} ${item.description}`.trim()).join(' ');
+    case 'definition':
+      return list.items.map((item) => `${item.term} ${item.definition}`.trim()).join(' ');
+    case 'organization':
+      return list.items
+        .map((item) => `${item.abbreviation} ${item.fullName} ${item.website || ''}`.trim())
+        .join(' ');
+    default:
+      return '';
+  }
+};
+
 const getCellPlainText = (content: string | TableCellContent[]): string => {
   if (typeof content === 'string') {
     return content;
@@ -477,6 +639,7 @@ const getCellPlainText = (content: string | TableCellContent[]): string => {
     .map((item) => {
       if (item.type === 'text') return item.value || '';
       if (item.type === 'figure') return `${item.title || ''} ${item.graphic?.alt_text || ''}`;
+      if (item.type === 'list') return getStructuredListPlainText(item.list);
       return '';
     })
     .join(' ')
@@ -573,7 +736,11 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const structure = activeRevision?.structure ?? rawTable.structure;
   const hasDirectRows = Array.isArray(table.rows) && table.rows.length > 0;
   const normalizedRows = hasDirectRows
-    ? table.rows
+    ? table.rows.map((row, rowIndex) => ({
+        id: row.id || `row-${rowIndex}`,
+        type: row.type,
+        cells: row.cells.map((cell) => normalizeCell(cell as RawTableCell, Boolean(cell.isHeader))),
+      }))
     : [
         ...normalizeRows(structure?.header_rows || [], true, effectiveDate, 'header-row'),
         ...normalizeRows(structure?.body_rows || [], false, effectiveDate, 'body-row'),

@@ -1504,8 +1504,10 @@ export function parseTextWithMarkers(
       );
   }
   
-  // If no markers found, return the original text with formatting
-  if (nodes.length === 0) {
+  // Only fall back to raw text when no markers were found at all.
+  // If markers were found but could not be resolved, returning the raw text
+  // would leak placeholder tokens like [LIST:bulleted] into the UI.
+  if (nodes.length === 0 && markers.length === 0) {
     return parseInlineFormatting(sanitizedText, interactive, 0);
   }
   

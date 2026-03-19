@@ -218,6 +218,62 @@ describe('parseBCBC', () => {
       'Use of a building.'
     );
   });
+
+  it('parses embedded list content inside table cells', () => {
+    const raw = createRawDocument();
+    raw.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].content.push({
+      id: 'table-1',
+      type: 'table',
+      number: '9.36.1.3',
+      title: 'Energy Efficiency Compliance Options',
+      rows: [
+        {
+          id: 'row-1',
+          type: 'body_row',
+          cells: [
+            {
+              content: [
+                {
+                  type: 'list',
+                  list_type: 'bulleted',
+                  items: [
+                    { content: 'Houses with or without a secondary suite' },
+                    { content: 'Buildings containing only dwelling units' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    });
+
+    const result = parseBCBC(raw);
+    const article = result.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0];
+    const table = article.content[1];
+
+    expect(table?.type).toBe('table');
+    if (!table || table.type !== 'table') {
+      throw new Error('Expected table content node');
+    }
+
+    const cellContent = table.rows[0]?.cells[0]?.content;
+    expect(Array.isArray(cellContent)).toBe(true);
+    if (!Array.isArray(cellContent)) {
+      throw new Error('Expected array table cell content');
+    }
+
+    expect(cellContent[0]).toEqual({
+      type: 'list',
+      list: {
+        type: 'bulleted',
+        items: [
+          { content: 'Houses with or without a secondary suite' },
+          { content: 'Buildings containing only dwelling units' },
+        ],
+      },
+    });
+  });
 });
 
 describe('extractContentIds', () => {

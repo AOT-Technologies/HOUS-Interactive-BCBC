@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-17T22:26:35.1072506-07:00",
+  "generated_timestamp" : "2026-03-18T20:29:51.925-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -138989,7 +138989,29 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Ground profile contains more than 3 m of [REF:term:l:soil] with all the following characteristics:[LIST:bulleted]" } ] },
+                       "value" : "Ground profile contains more than " },
+                      
+                      { "type" : "text",
+                       "value" : "3 m" },
+                      
+                      { "type" : "text",
+                       "value" : " of " },
+                      
+                      { "type" : "text",
+                       "value" : "[REF:term:l:soil]" },
+                      
+                      { "type" : "text",
+                       "value" : " with all the following characteristics:" },
+                      
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "plasticity index, PI > 20," },
+                        
+                        { "content" : "moisture content, w ≥ 40%, and" },
+                        
+                        { "content" : "undrained shear strength, s_{u} < 25 kPa" } ] } ] },
                     
                     { "content" : 
                      [ 
@@ -139012,7 +139034,19 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Ground profile contains[LIST:bulleted]" } ],
+                       "value" : "Ground profile contains" },
+                      
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "liquefiable [REF:term:l:soil] , quick and highly sensitive clay, collapsible weakly cemented [REF:term:l:soil] , or other [REF:term:l:soil] susceptible to failure or collapse under seismic loading," },
+                        
+                        { "content" : "more than 3 m of peat and\/or highly organic clay," },
+                        
+                        { "content" : "more than 8 m of highly plastic [REF:term:l:soil] (with PI > 75), or" },
+                        
+                        { "content" : "more than 30 m of soft to medium-stiff clay" } ] } ],
                      "align" : "left",
                      "valign" : "middle" },
                     
@@ -139328,7 +139362,23 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Any ground profile other than Site Class F that contains more than 3 m of [REF:term:l:soil] with all the following characteristics:[LIST:bulleted]" } ],
+                       "value" : "Any ground profile other than Site Class F that contains more than 3 m of " },
+                      
+                      { "type" : "text",
+                       "value" : "[REF:term:l:soil]" },
+                      
+                      { "type" : "text",
+                       "value" : " with all the following characteristics:" },
+                      
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "plasticity index, PI > 20," },
+                        
+                        { "content" : "moisture content, w ≥ 40%, and" },
+                        
+                        { "content" : "undrained shear strength, s_{u} < 25 kPa" } ] } ],
                      "align" : "left",
                      "colspan" : 3 } ] },
                   
@@ -139376,7 +139426,19 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Any ground profile that contains[LIST:bulleted]" } ],
+                       "value" : "Any ground profile that contains" },
+                      
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "liquefiable [REF:term:l:soil] , quick and highly sensitive clay, collapsible weakly cemented [REF:term:l:soil] , or other [REF:term:l:soil] susceptible to failure or collapse under seismic loading," },
+                        
+                        { "content" : "more than 3 m of peat and\/or highly organic clay," },
+                        
+                        { "content" : "more than 8 m of highly plastic [REF:term:l:soil] (with PI > 75), or" },
+                        
+                        { "content" : "more than 30 m of soft to medium-stiff clay" } ] } ],
                      "align" : "left",
                      "colspan" : 3 } ] } ] },
                 "equations" : 
@@ -348489,8 +348551,15 @@
                     
                     { "content" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "[LIST:bulleted]" } ] } ] },
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "wood strip flooring not less than 16 mm thick aligned parallel to separating wall, or" },
+                        
+                        { "content" : "one layer of OSB or plywood not less than 15.5 mm thick plus finished flooring, or" },
+                        
+                        { "content" : "one additional material layer plus finished flooring having a combined mass per area not less than 8 kg\/m^{2} See [REF:internal:nbc.divBV2.part9.appendix.appnote83:short]" } ] } ] } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect11.subsect1.art4.table1.row3",
                    "type" : "body_row",
@@ -348504,8 +348573,13 @@
                     
                     { "content" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "[LIST:bulleted]" } ] } ] },
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "one layer of OSB or plywood not less than 12.5 mm thick plus hardwood strip flooring not less than 19 mm thick aligned parallel to separating wall, or" },
+                        
+                        { "content" : "one additional material layer plus finished flooring having a combined mass per area not less than 16 kg\/m^{2}" } ] } ] } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect11.subsect1.art4.table1.row4",
                    "type" : "body_row",
@@ -348519,8 +348593,13 @@
                     
                     { "content" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "[LIST:bulleted]" } ] } ] },
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "concrete or gypsum concrete topping not less than 19 mm thick bonded to the subfloor plus finished flooring, or" },
+                        
+                        { "content" : "one additional material layer plus finished flooring having a combined mass per area not less than 32 kg\/m^{2}" } ] } ] } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect11.subsect1.art4.table1.row5",
                    "type" : "body_row",
@@ -348534,8 +348613,13 @@
                     
                     { "content" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "[LIST:bulleted]" } ] } ] },
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "where a continuous subfloor or other rigid materials at the floor\/wall junction provide structural connection between the two rows of studs in the separating wall:[LIST:bulleted]" },
+                        
+                        { "content" : "any finished flooring where the subfloor and other rigid materials are not connected at the floor\/wall junction and where there are no structural connections between the two rows of studs in the separating wall" } ] } ] } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect11.subsect1.art4.table1.row6",
                    "type" : "body_row",
@@ -348549,8 +348633,11 @@
                     
                     { "content" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "[LIST:bulleted]" } ] } ] } ] } } ] } ] } ] },
+                      { "type" : "list",
+                       "list_type" : "bulleted",
+                       "items" : 
+                       [ 
+                        { "content" : "any finished flooring" } ] } ] } ] } ] } } ] } ] } ] },
          
          { "id" : "nbc.divBV2.part9.sect12",
           "type" : "section",
@@ -496530,7 +496617,33 @@
                 { "content" : 
                  [ 
                   { "type" : "text",
-                   "value" : "W1 with• 89 mm thick absorptive materialSound absorptive material includes fibre processed from rock, slag, glass or cellulose fibre. It must fill at least 90% of the cavity thickness for the wall to have the listed [REF:term:stc:STC] value. The absorptive material should not overfill the cavity to the point of producing significant outward pressure on the finishes; such an assembly will not achieve the [REF:term:stc:STC] rating. Where the absorptive material used with steel stud assemblies is in batt form, “steel stud batts,” which are wide enough to fill the cavity from the web of one stud to the web of the adjacent stud, must be used.• 15.9 mm Type X gypsum boardThe complete descriptions of indicated finishes are as follows:[LIST:bulleted]" } ],
+                   "value" : "W1 with• 89 mm thick absorptive materialSound absorptive material includes fibre processed from rock, slag, glass or cellulose fibre. It must fill at least 90% of the cavity thickness for the wall to have the listed " },
+                  
+                  { "type" : "text",
+                   "value" : "[REF:term:stc:STC]" },
+                  
+                  { "type" : "text",
+                   "value" : " value. The absorptive material should not overfill the cavity to the point of producing significant outward pressure on the finishes; such an assembly will not achieve the " },
+                  
+                  { "type" : "text",
+                   "value" : "[REF:term:stc:STC]" },
+                  
+                  { "type" : "text",
+                   "value" : " rating. Where the absorptive material used with steel stud assemblies is in batt form, “steel stud batts,” which are wide enough to fill the cavity from the web of one stud to the web of the adjacent stud, must be used.• 15.9 mm Type X gypsum boardThe complete descriptions of indicated finishes are as follows:" },
+                  
+                  { "type" : "list",
+                   "list_type" : "bulleted",
+                   "items" : 
+                   [ 
+                    { "content" : "12.7 mm regular gypsum board – 12.7 mm regular gypsum board conforming to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art2:long]" },
+                    
+                    { "content" : "12.7 mm Type X gypsum board – 12.7 mm special fire-resistant Type X gypsum board conforming to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art2:long]" },
+                    
+                    { "content" : "15.9 mm Type X gypsum board – 15.9 mm special fire-resistant Type X gypsum board conforming to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art2:long]" },
+                    
+                    { "content" : "Except for exterior walls (see [REF:internal:nbc.divBV2.part9.spectables1.table1.note15:long] ), the outer layer of finish on both sides of the wall must have its joints taped and finished." },
+                    
+                    { "content" : "Except as otherwise required for fastener spacing (see  Table Notes [REF:internal:nbc.divBV2.part9.spectables1.table1.note14:long] , [REF:internal:nbc.divBV2.part9.spectables1.table1.note16:short]  and [REF:internal:nbc.divBV2.part9.spectables1.table1.note22:short] ), fastener type, spacing and penetration depth for the attachment of gypsum board must conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] and fasteners must consist of[LIST:bulleted]" } ] } ],
                  "align" : "left",
                  "valign" : "top",
                  "rowsep" : "1" },
@@ -497916,7 +498029,48 @@
                 { "content" : 
                  [ 
                   { "type" : "text",
-                   "value" : "W6 with• studs spaced 400 mm or 600 mm o.c. with blocking at mid-height The [REF:term:fr-rtnc-:fire-resistance rating] values are achieved as follows:[LIST:bulleted]• 89 mm thick rock or slag fibre insulationThe mineral fibre insulation processed from rock or slag shall have a mass per unit area of wall surface of not less than 4.48 kg\/m^{2} for 140 mm thickness and 2.85 kg\/m^{2} for 89 mm thickness and shall completely fill the wall cavity. • resilient metal channels spaced 400 mm or 600 mm o.c.• 15.9 mm Type X gypsum board" } ],
+                   "value" : "W6 with• studs spaced 400 mm or 600 mm o.c. with blocking at mid-height The " },
+                  
+                  { "type" : "text",
+                   "value" : "[REF:term:fr-rtnc-:fire-resistance rating]" },
+                  
+                  { "type" : "text",
+                   "value" : " values are achieved as follows:" },
+                  
+                  { "type" : "list",
+                   "list_type" : "bulleted",
+                   "items" : 
+                   [ 
+                    { "content" : "for a single row of studs, by installing blocking at a spacing of not more than 1 524 mm o.c. as shown in Case A of [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure5:long] , or" },
+                    
+                    { "content" : "for two rows of studs on separate plates, by installing blocking in both rows at a spacing of not more than 1 524 mm o.c. as shown in Case B of [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure5:long] ." } ] },
+                  
+                  { "type" : "text",
+                   "value" : "• 89 mm thick rock or slag fibre insulationThe mineral fibre insulation processed from rock or slag shall have a mass per unit area of wall surface of not less than " },
+                  
+                  { "type" : "text",
+                   "value" : "4.48 kg\/m^{2}" },
+                  
+                  { "type" : "text",
+                   "value" : " for " },
+                  
+                  { "type" : "text",
+                   "value" : "140 mm" },
+                  
+                  { "type" : "text",
+                   "value" : " thickness and " },
+                  
+                  { "type" : "text",
+                   "value" : "2.85 kg\/m^{2}" },
+                  
+                  { "type" : "text",
+                   "value" : " for " },
+                  
+                  { "type" : "text",
+                   "value" : "89 mm" },
+                  
+                  { "type" : "text",
+                   "value" : " thickness and shall completely fill the wall cavity. • resilient metal channels spaced 400 mm or 600 mm o.c.• 15.9 mm Type X gypsum board" } ],
                  "align" : "left",
                  "valign" : "top",
                  "rowsep" : "1" },
@@ -598093,19 +598247,42 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "for additional material layer and finished flooring, see [REF:internal:nbc.divBV2.part9.sect11.subsect1.art4.table1:long]" },
+                     
+                     { "content" : "subfloor on both sides of wall is plywood, OSB, waferboard (15.5 mm thick) or tongue and groove lumber (≥ 17 mm thick)" },
+                     
+                     { "content" : "floor is framed with wood joists, wood I-joists or wood trusses spaced ≥ 400 mm o.c., with or without absorptive materialSound absorptive material is porous (closed-cell foam was not tested) and includes fibre processed from rock, slag, glass or cellulose fibre with a maximum density of 32 kg\/m^{3}. See  Table Notes [REF:internal:nbc.divBV2.part9.spectables1.table1.note5:long]  and [REF:internal:nbc.divBV2.part9.spectables1.table1.note8:short] of [REF:internal:nbc.divBV2.part9.spectables1.table1:long] and [REF:internal:nbc.divBV2.part9.spectables1.table2.note5:long] of [REF:internal:nbc.divBV2.part9.spectables1.table2:long] for additional information. in cavities" },
+                     
+                     { "content" : "floor joists or trusses are oriented parallel to separating wall (non-loadbearing case) or perpendicular to separating wall but are not continuous across junction (loadbearing case)" } ] } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "ceiling is framed with wood joists, wood I-joists, or wood trusses, with or without absorptive material in cavities" },
+                     
+                     { "content" : "ceiling joists or trusses are oriented perpendicular to separating wall but are not continuous across junction (loadbearing case) or parallel to junction (non-loadbearing case)" },
+                     
+                     { "content" : "gypsum board ceiling is fastened directly to bottom of ceiling framing or on resilient metal channelsResilient metal channels are formed from steel having a maximum thickness of 0.46 mm (25 gauge) with slits or holes in the single “leg” between the faces fastened to the framing and to the gypsum board (see [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure4:long] ). [REF:standard:astmc754] describes the installation of resilient metal channels." } ] } ] },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "gypsum board on flanking walls ends or is cut at separating wall and is fastened directly to framing or on resilient metal channels" },
+                     
+                     { "content" : "flanking wall is framed with single row of wood studs, staggered studs on a single 38 mm × 140 mm plate, or 2 rows of 38 mm × 89 mm wood studs on separate 38 mm × 89 mm plates, with or without absorptive material in cavities" },
+                     
+                     { "content" : "flanking wall framing is structurally connected to separating wall and terminates where it butts against framing of separating wall or is continuous across junction" } ] } ],
                   "colsep" : "0" } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table1.row4",
@@ -598231,20 +598408,45 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "for additional material layer and finished flooring, see [REF:internal:nbc.divBV2.part9.sect11.subsect1.art4.table1:long]" },
+                     
+                     { "content" : "subfloor on both sides of wall is plywood, OSB, waferboard (15.5 mm thick) or tongue and groove lumber (≥ 17 mm thick)" },
+                     
+                     { "content" : "floor is framed with wood joists, wood I-joists or wood trusses spaced ≥ 400 mm o.c., with or without absorptive material in cavities" },
+                     
+                     { "content" : "floor joists or trusses are oriented parallel to separating wall (non-loadbearing case) or perpendicular to separating wall but are not continuous across junction (loadbearing case)" },
+                     
+                     { "content" : "near leaf of separating wall is supported on “designated” joist" } ] } ],
                   "colsep" : "1" },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "wood joists, wood I-joists or wood trusses are oriented perpendicular or parallel to separating wall, with or without absorptive material in cavities" },
+                     
+                     { "content" : "joist framing at junction is supported on near leaf of separating wall" },
+                     
+                     { "content" : "gypsum board ceiling panels end at wall framing and are fastened directly to bottom of ceiling framing or on resilient metal channels" } ] } ],
                   "colsep" : "1" },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "flanking wall framing is fastened to adjacent leaf of separating wall" },
+                     
+                     { "content" : "flanking wall is framed with single row of wood studs, staggered studs on a single 38 mm × 140 mm plate, or 2 rows of 38 mm × 89 mm wood studs on separate 38 mm × 89 mm plates, with or without absorptive material in cavities" },
+                     
+                     { "content" : "gypsum board panels on flanking walls ends or is cut at framing of separating wall and is fastened on resilient metal channels or directly to framing of flanking wall if that framing and any sheathing are not continuous across the junction" } ] } ] } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table1.row9",
                 "type" : "body_row",
@@ -598311,18 +598513,37 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "F1 concrete floor assembly from [REF:internal:nbc.divBV2.part9.spectables1.table2:long] with mass per area not less than 300 kg\/m^{2} (e.g. normal-weight concrete with average thickness of 130 mm)" },
+                     
+                     { "content" : "with or without an additional material layer or finished flooring" } ] } ] },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "F1 concrete floor assembly from [REF:internal:nbc.divBV2.part9.spectables1.table2:long] with mass per area not less than 300 kg\/m^{2} (e.g. normal-weight concrete with average thickness of 130 mm )" },
+                     
+                     { "content" : "with or without gypsum board ceiling suspended below concrete floor" } ] } ] },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "flanking wall framing is structurally connected to separating wall and terminates where it butts against framing of separating wall or is continuous across junction" },
+                     
+                     { "content" : "gypsum board on flanking walls ends or is cut at separating wall and is fastened directly to framing or on resilient metal channels" },
+                     
+                     { "content" : "flanking wall consists of steel framing (loadbearing or non-loadbearing steel studs) or concrete blocks with mass per area not less than 200 kg\/m^{2} (e.g. normal-weight hollow core concrete block unitsNormal-weight concrete block units conforming to [REF:standard:csaa165.1] have aggregate with a density not less than 2 000 kg\/m^{3} ; 190 mm hollow core units are 53% solid, providing a wall mass per area over 200 kg\/m^{2} ; 140 mm hollow core units are 75% solid, providing a wall mass per area over 200 kg\/m^{2}. with a gypsum board lining supported on framing providing a cavity not less than 50 mm deep)" },
+                     
+                     { "content" : "with or without absorptive material in cavities behind gypsum board of flanking walls" } ] } ] } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table1.row12",
                 "type" : "body_row",
@@ -598389,20 +598610,31 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "same options as stated above for walls S1 to S15" } ] } ],
                   "align" : "left" },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "same options as stated above for walls S1 to S15" },
+                     
+                     { "content" : "junction at top of concrete block assembly is loadbearing or non-loadbearing resilient joint" } ] } ],
                   "align" : "left" },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "same options as stated above for walls S1 to S15" } ] } ] } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table1.row15",
                 "type" : "body_row",
@@ -598510,8 +598742,21 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Increase mass per area of additional material layer and finished flooring over subfloor (e.g. concrete or gypsum concrete topping)" },
+                     
+                     { "content" : "Choose separating wall assembly with higher STC rating" },
+                     
+                     { "content" : "Orient floor and ceiling joists parallel to separating wall (non-loadbearing case)" },
+                     
+                     { "content" : "Add resilient layer under additional material layer over subfloor or between additional material layer and finished flooring" },
+                     
+                     { "content" : "Support gypsum board panels of ceiling on resilient metal channelsResilient metal channels are formed from steel having a maximum thickness of 0.46 mm (25 gauge) with slits or holes in the single “leg” between the faces fastened to the framing and to the gypsum board (see [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure4:long] ). [REF:standard:astmc754] describes the installation of resilient metal channels." },
+                     
+                     { "content" : "Support gypsum board panels of flanking walls on resilient metal channels" } ] } ] } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table2.row3",
                 "type" : "body_row",
@@ -598525,8 +598770,13 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "If seismic or other structural requirements permit, choose a fire block detail at floor\/wall junction in accordance with [REF:internal:nbc.divBV2.part9.sect10.subsect16:long] that does not provide a rigid connection between the two rows of framing of the separating wall (e.g. subfloor not continuous across junction and semi-rigid fibre insulation board filling the gap in accordance with [REF:internal:nbc.divBV2.part9.sect10.subsect16.art3:long] ). In this case, an additional material layer would not be necessary. Also, choose separating wall assembly with higher STC rating (e.g. more absorptive materialSound absorptive material is porous (closed-cell foam was not tested) and includes fibre processed from rock, slag, glass or cellulose fibre with a maximum density of 32 kg\/m^{3} . See  Table Notes [REF:internal:nbc.divBV2.part9.spectables1.table1.note5:long]  and [REF:internal:nbc.divBV2.part9.spectables1.table1.note8:short] of [REF:internal:nbc.divBV2.part9.spectables1.table1:long] and [REF:internal:nbc.divBV2.part9.spectables1.table2.note5:long] of [REF:internal:nbc.divBV2.part9.spectables1.table2:long] for additional information. in cavities and\/or more gypsum board)." },
+                     
+                     { "content" : "If having a rigid structural connection at the floor\/wall junction (such as subfloor continuous across the junction) is required for seismic or other structural reasons, obtain a higher ASTC rating as follows:[LIST:bulleted]" } ] } ] } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table2.row4",
                 "type" : "body_row",
@@ -598540,8 +598790,19 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Choose separating wall assembly with higher STC rating" },
+                     
+                     { "content" : "Increase thickness of concrete floor slab and\/or add material layer and finished flooring over subfloor" },
+                     
+                     { "content" : "Add gypsum board ceiling on framing supported under the floor above, with cavity not less than 100 mm deep" },
+                     
+                     { "content" : "Add resilient layer under additional material layer over subfloor or between additional material layer and finished flooring" },
+                     
+                     { "content" : "Support gypsum board panels of flanking walls on resilient metal channels if steel studs are loadbearing type" } ] } ] } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table2.row5",
                 "type" : "body_row",
@@ -598555,8 +598816,19 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] } ] } },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Choose separating wall assembly with higher STC rating" },
+                     
+                     { "content" : "Add gypsum board ceiling supported below concrete floor with cavity not less than 100 mm deep and sound absorptive material in cavity" },
+                     
+                     { "content" : "Increase thickness of concrete floor slab and\/or add material layer and finished flooring over subfloor" },
+                     
+                     { "content" : "Add resilient layer under additional material layer over subfloor or between additional material layer and finished flooring and increase mass per area of additional material layer and finished flooring (e.g. floating concrete or gypsum concrete topping)" },
+                     
+                     { "content" : "Support gypsum board panels of flanking walls on resilient metal channels if steel studs are loadbearing type" } ] } ] } ] } ] } },
             
             { "id" : "nbc.divBV2.part9.appendix.appnote82.table3",
              "type" : "table",
@@ -598650,14 +598922,34 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "floor ends at flanking wall assembly (T-junction) or extends beyond it (cross-junction)" },
+                     
+                     { "content" : "steel framing of flanking walls is loadbearing or non-loadbearing, with a single row of steel studs, staggered studs, or 2 rows of studs, with studs spaced not less than 400 mm o.c., with or without absorptive materialSound absorptive material is porous (closed-cell foam was not tested) and includes fibre processed from rock, slag, glass or cellulose fibre with a maximum density of 32 kg\/m^{3}. See  Table Notes [REF:internal:nbc.divBV2.part9.spectables1.table1.note5:long]  and [REF:internal:nbc.divBV2.part9.spectables1.table1.note8:short] of [REF:internal:nbc.divBV2.part9.spectables1.table1:long] and [REF:internal:nbc.divBV2.part9.spectables1.table2.note5:long] of [REF:internal:nbc.divBV2.part9.spectables1.table2:long] for additional information. in cavities" },
+                     
+                     { "content" : "flanking wall structure is fastened to separating concrete floor but is not continuous across junction" },
+                     
+                     { "content" : "gypsum board on flanking walls is not continuous across junction and is fastened directly to wall framing or on resilient metal channelsResilient metal channels are formed from steel having a maximum thickness of 0.46 mm (25 gauge) with slits or holes in the single “leg” between the faces fastened to the framing and to the gypsum board (see [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure4:long] ). [REF:standard:astmc754] describes the installation of resilient metal channels." } ] } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "floor ends at flanking wall assembly (T-junction) or extends beyond it (cross-junction)" },
+                     
+                     { "content" : "one wythe of concrete blocks with mass per area not less than 200 kg\/m^{2} (e.g. normal-weight hollow core concrete block unitsNormal-weight concrete block units conforming to [REF:standard:csaa165.1] have aggregate with a density not less than 2 000 kg\/m^{3} ; 190 mm hollow core units are 53% solid, providing a wall mass per area over 200 kg\/m^{2} ; 140 mm hollow core units are 75% solid, providing a wall mass per area over 200 kg\/m^{2}.)" },
+                     
+                     { "content" : "loadbearing (solid) or non-loadbearing (resilient) junction between top of flanking concrete block wall and floor structure" },
+                     
+                     { "content" : "gypsum board lining is supported on wood or steel framing providing a cavity not less than 50 mm deep, with or without absorptive material in cavities" },
+                     
+                     { "content" : "gypsum board on flanking walls is not continuous across junction and is fastened directly to wall framing or on resilient metal channels" } ] } ] } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table3.row4",
                 "type" : "body_row",
@@ -598735,8 +599027,15 @@
                 [ 
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "wood studs of flanking wall are 38 mm × 89 mm or 38 mm × 140 mm and spaced 400 mm or 600 mm o.c." },
+                     
+                     { "content" : "flanking wall framing consists of single row of wood studs, staggered studs on a single 38 mm × 140 mm plate, or 2 rows of 38 mm × 89 mm wood studs on separate 38 mm × 89 mm plates, with or without absorptive material in wall cavities" },
+                     
+                     { "content" : "gypsum board on flanking walls ends or is cut near floor framing and is fastened directly to wall framing or supported on resilient metal channels" } ] } ],
                   "colspan" : 2 } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote82.table3.row8",
@@ -598846,8 +599145,15 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Add heavier additional material layer over subfloor and\/or resilient layer under additional material layer or between additional material layer and finished flooring" },
+                     
+                     { "content" : "Add gypsum board ceiling supported at least 100 mm below concrete floor with minimal structural connection (e.g. ceiling framing supported resiliently) and sound absorptive materialSound absorptive material is porous (closed-cell foam was not tested) and includes fibre processed from rock, slag, glass or cellulose fibre with a maximum density of 32 kg\/m^{3}. See  Table Notes [REF:internal:nbc.divBV2.part9.spectables1.table1.note5:long]  and [REF:internal:nbc.divBV2.part9.spectables1.table1.note8:short] of [REF:internal:nbc.divBV2.part9.spectables1.table1:long] and [REF:internal:nbc.divBV2.part9.spectables1.table2.note5:long] of [REF:internal:nbc.divBV2.part9.spectables1.table2:long] for additional information. in cavity" },
+                     
+                     { "content" : "Support gypsum board of flanking walls of lower room on resilient metal channelsResilient metal channels are formed from steel having a maximum thickness of 0.46 mm (25 gauge) with slits or holes in the single “leg” between the faces fastened to the framing and to the gypsum board (see [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure4:long] ). [REF:standard:astmc754] describes the installation of resilient metal channels. (if framed with loadbearing studs)" } ] } ],
                   "valign" : "middle",
                   "colsep" : "0" } ] },
                
@@ -598863,8 +599169,17 @@
                  
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ],
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Add heavier additional material layer over subfloor and\/or resilient layer under additional material layer or between additional material layer and finished flooring" },
+                     
+                     { "content" : "Add more\/heavier gypsum board to ceiling and increase spacing of resilient metal channels to 600 mm o.c." },
+                     
+                     { "content" : "Support gypsum board of flanking loadbearing walls of lower room on resilient metal channels" },
+                     
+                     { "content" : "Support gypsum board on flanking non-loadbearing walls of lower room on resilient metal channels" } ] } ],
                   "valign" : "middle",
                   "colsep" : "0" } ] } ] } } ] },
           
@@ -607375,8 +607690,13 @@
                 [ 
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Houses with or without a secondary suite, including their common spaces" },
+                     
+                     { "content" : "Buildings containing only dwelling units with common spaces ≤ 20% of building's total floor area^{(1)}" } ] } ] },
                  
                  { "content" : 
                   [ 
@@ -607408,8 +607728,13 @@
                 [ 
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Buildings containing Group D, E or F Division 3 occupancies with a combined total floor area ≤ 300 m^{2} , excluding storage garages that serve residential occupancies" },
+                     
+                     { "content" : "Buildings with a mix of Group C and Group D, E or F Division 3 occupancies where the non-residential portion's combined total floor area ≤ 300 m^{2} (excluding parking garages that serve residential occupancies)" } ] } ] },
                  
                  { "content" : 
                   [ 
@@ -607441,8 +607766,13 @@
                 [ 
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Buildings containing Group D, E or F Division 3 occupancies whose combined total floor area > 300 m^{2}" },
+                     
+                     { "content" : "Buildings containing F Division 2 occupancies of any size" } ] } ] },
                  
                  { "content" : 
                   [ 
@@ -607474,8 +607804,11 @@
                 [ 
                  { "content" : 
                   [ 
-                   { "type" : "text",
-                    "value" : "[LIST:bulleted]" } ] },
+                   { "type" : "list",
+                    "list_type" : "bulleted",
+                    "items" : 
+                    [ 
+                     { "content" : "Log homes^{(2)}" } ] } ] },
                  
                  { "content" : 
                   [ 
