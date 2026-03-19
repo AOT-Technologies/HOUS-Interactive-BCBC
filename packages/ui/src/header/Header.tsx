@@ -187,6 +187,18 @@ export default function Header({
     }
   }
 
+  function getTitleLink() {
+    return (
+      <ReactAriaLink
+        href="/"
+        className="ui-Header--TitleLink"
+        aria-label={`${title} - Go to the homepage`}
+      >
+        {getTitle()}
+      </ReactAriaLink>
+    );
+  }
+
   return (
     <header
       className={`ui-Header ${mobileNavIsOpen ? "--mobile-open" : ""}`}
@@ -216,7 +228,7 @@ export default function Header({
           {title && (
             <div className="ui-Header--TitleWrapper">
               <div className="ui-Header--Line" />
-              {getTitle()}
+              {getTitleLink()}
             </div>
           )}
         </div>
