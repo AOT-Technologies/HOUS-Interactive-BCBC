@@ -28,6 +28,7 @@ import type {
   ClauseContentNode,
   Subclause,
   Table,
+  TableCellContent,
   TableRow,
   Figure,
   Equation,
@@ -247,8 +248,26 @@ type RawStructuredList =
   | RawDefinitionList
   | RawOrganizationList;
 
+type RawTableCellContentItem =
+  | {
+      type: 'text';
+      value?: string;
+    }
+  | {
+      type: 'figure';
+      id?: string;
+      source?: string;
+      title?: string;
+      graphic?: { src: string; alt_text: string };
+    }
+  | {
+      type: 'list';
+      list_type?: 'bulleted' | 'numbered' | 'alphabetic' | 'variable' | 'definition' | 'organization';
+      items?: unknown[];
+    };
+
 interface RawTableCell {
-  content?: string | Array<{ type: 'text' | 'figure'; value?: string; id?: string; source?: string; title?: string; graphic?: { src: string; alt_text: string } }>;
+  content?: string | RawTableCellContentItem[];
   align?: 'left' | 'center' | 'right';
   colspan?: number;
   rowspan?: number;
@@ -631,6 +650,95 @@ function parseStructuredLists(
   return parsedLists.length > 0 ? parsedLists : undefined;
 }
 
+function parseTableCellContentItem(item: RawTableCellContentItem): TableCellContent | null {
+  if (!item || typeof item !== 'object' || typeof item.type !== 'string') {
+    return null;
+  }
+
+  switch (item.type) {
+    case 'text':
+      return {
+        type: 'text',
+        value: item.value || '',
+      };
+    case 'figure':
+      return {
+        type: 'figure',
+        id: item.id,
+        source: item.source as 'nbc' | 'bc' | undefined,
+        title: item.title,
+        graphic: item.graphic,
+      };
+    case 'list': {
+      if (!item.list_type || !Array.isArray(item.items)) {
+        return null;
+      }
+
+      const parsedList = parseStructuredLists([
+        {
+          type: item.list_type,
+          items: item.items as never[],
+        } as RawStructuredList,
+      ])?.[0];
+
+      if (!parsedList) {
+        return null;
+      }
+
+      return {
+        type: 'list',
+        list: parsedList,
+      };
+    }
+    default:
+      return null;
+  }
+}
+
+function extractTableCellContentText(content: string | TableCellContent[]): string {
+  if (typeof content === 'string') {
+    return content;
+  }
+
+  return content
+    .map((item) => {
+      if (item.type === 'text') {
+        return item.value || '';
+      }
+
+      if (item.type === 'figure') {
+        return [item.title || '', item.graphic?.alt_text || ''].filter(Boolean).join(' ');
+      }
+
+      if (item.type === 'list') {
+        switch (item.list.type) {
+          case 'bulleted':
+          case 'numbered':
+          case 'alphabetic':
+            return item.list.items.map((entry) => entry.content).join(' ');
+          case 'variable':
+            return item.list.items
+              .map((entry) => `${entry.symbol} ${entry.description}`.trim())
+              .join(' ');
+          case 'definition':
+            return item.list.items
+              .map((entry) => `${entry.term} ${entry.definition}`.trim())
+              .join(' ');
+          case 'organization':
+            return item.list.items
+              .map((entry) => `${entry.abbreviation} ${entry.fullName} ${entry.website || ''}`.trim())
+              .join(' ');
+          default:
+            return '';
+        }
+      }
+
+      return '';
+    })
+    .join(' ')
+    .trim();
+}
+
 function parseAppendixDivision(raw: RawAppendixDivision): AppendixDivision {
   return {
     id: raw.id,
@@ -941,19 +1049,18 @@ function parseTableData(raw: RawTable): Table {
     for (const row of raw.rows) {
       const isHeader = row.type === 'header_row';
       
-      const parsedRow: TableRow = {
-        id: row.id,
-        type: row.type,
-        cells: row.cells.map((cell) => ({
-          content: Array.isArray(cell.content)
-            ? cell.content.map((item) => ({
-                ...item,
-                source: item.source as 'nbc' | 'bc' | undefined,
-              }))
-            : cell.content || '',
-          align: cell.align,
-          colspan: cell.colspan,
-          rowspan: cell.rowspan,
+          const parsedRow: TableRow = {
+            id: row.id,
+            type: row.type,
+            cells: row.cells.map((cell) => ({
+              content: Array.isArray(cell.content)
+                ? cell.content
+                    .map(parseTableCellContentItem)
+                    .filter((item): item is TableCellContent => item !== null)
+                : cell.content || '',
+              align: cell.align,
+              colspan: cell.colspan,
+              rowspan: cell.rowspan,
           isHeader,
         })),
       };
@@ -962,21 +1069,17 @@ function parseTableData(raw: RawTable): Table {
       
       // Build headers array for backward compatibility
       if (isHeader) {
-        headers.push(
-          row.cells.map((cell) => {
-            if (typeof cell.content === 'string') {
-              return cell.content;
-            } else if (Array.isArray(cell.content)) {
-              // Extract text from content array
-              return cell.content
-                .filter((item) => item.type === 'text')
-                .map((item) => item.value || '')
-                .join(' ');
-            }
-            return '';
-          })
-        );
-      }
+          headers.push(
+            row.cells.map((cell) => {
+              const parsedContent = Array.isArray(cell.content)
+                ? cell.content
+                    .map(parseTableCellContentItem)
+                    .filter((item): item is TableCellContent => item !== null)
+                : cell.content || '';
+              return extractTableCellContentText(parsedContent);
+            })
+          );
+        }
     }
   }
   // Structure with header_rows and body_rows
@@ -990,7 +1093,11 @@ function parseTableData(raw: RawTable): Table {
             id: (headerRow as any).id,
             type: 'header_row',
             cells: (headerRow as any).cells.map((cell: any) => ({
-              content: cell.content || '',
+              content: Array.isArray(cell.content)
+                ? cell.content
+                    .map(parseTableCellContentItem)
+                    .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
+                : cell.content || '',
               align: cell.align,
               colspan: cell.colspan,
               rowspan: cell.rowspan,
@@ -1003,15 +1110,12 @@ function parseTableData(raw: RawTable): Table {
           // Build headers array
           headers.push(
             (headerRow as any).cells.map((cell: any) => {
-              if (typeof cell.content === 'string') {
-                return cell.content;
-              } else if (Array.isArray(cell.content)) {
-                return cell.content
-                  .filter((item: any) => item.type === 'text')
-                  .map((item: any) => item.value || '')
-                  .join(' ');
-              }
-              return '';
+              const parsedContent = Array.isArray(cell.content)
+                ? cell.content
+                    .map(parseTableCellContentItem)
+                    .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
+                : cell.content || '';
+              return extractTableCellContentText(parsedContent);
             })
           );
         }
@@ -1041,7 +1145,11 @@ function parseTableData(raw: RawTable): Table {
             id: (bodyRow as any).id,
             type: 'body_row',
             cells: (bodyRow as any).cells.map((cell: any) => ({
-              content: cell.content || '',
+              content: Array.isArray(cell.content)
+                ? cell.content
+                    .map(parseTableCellContentItem)
+                    .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
+                : cell.content || '',
               align: cell.align,
               colspan: cell.colspan,
               rowspan: cell.rowspan,

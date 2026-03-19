@@ -51,6 +51,11 @@ import { CrossReferenceContext } from './CrossReferenceContext';
 import { CrossReferenceModal } from './CrossReferenceModal';
 import { DivisionAppendixRenderer } from './DivisionAppendixRenderer';
 import { SpectablesRenderer } from './SpectablesRenderer';
+import {
+  findReferenceTarget,
+  focusReferenceTarget,
+  scrollTargetIntoView,
+} from './reference-target';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './ReadingView.css';
 
@@ -78,6 +83,11 @@ type ResolvedCrossReference = {
   externalLabel?: string;
   errorMessage?: string;
 };
+
+const PENDING_HASH_TARGET_STORAGE_KEY = 'reading-view-pending-hash-target';
+
+const normalizePendingHashPath = (value: string): string =>
+  value.replace(/\/+$/, '') || '/';
 
 const normalizeStandardsKey = (value: string): string =>
   value.replace(/[^a-z0-9.]/gi, '').toLowerCase();
@@ -145,6 +155,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const triggerElementRef = useRef<HTMLElement | null>(null);
   const suppressedModalParamRef = useRef<string | null>(null);
   const pendingModalParamRef = useRef<string | null>(null);
+  const lastHandledHashRef = useRef<string | null>(null);
   const [modalData, setModalData] = useState<ResolvedCrossReference | null>(null);
   const [partAppendix, setPartAppendix] = useState<PartAppendix | null>(null);
   const [divisionAppendix, setDivisionAppendix] = useState<DivisionAppendix | null>(null);
@@ -153,6 +164,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const [spectables, setSpectables] = useState<Spectables | null>(null);
   const [spectablesLoading, setSpectablesLoading] = useState(false);
   const [spectablesError, setSpectablesError] = useState<string | null>(null);
+  const [hashTargetId, setHashTargetId] = useState('');
   
   // Extract version and date from URL query parameters
   const urlVersion = searchParams.get('version');
@@ -727,16 +739,18 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     ]
   );
 
-  const closeReferenceModal = useCallback(() => {
+  const closeReferenceModal = useCallback((options?: { restoreFocus?: boolean }) => {
+    const shouldRestoreFocus = options?.restoreFocus ?? true;
     pendingModalParamRef.current = null;
     suppressedModalParamRef.current = modalData?.referenceId || suppressedModalParamRef.current;
     setModalData(null);
     updateModalInUrl(null);
 
-    if (triggerElementRef.current) {
+    if (shouldRestoreFocus && triggerElementRef.current) {
       triggerElementRef.current.focus();
-      triggerElementRef.current = null;
     }
+
+    triggerElementRef.current = null;
   }, [modalData?.referenceId, updateModalInUrl]);
 
   const openReferenceModal = useCallback(
@@ -802,13 +816,25 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       return;
     }
 
-    closeReferenceModal();
+    closeReferenceModal({ restoreFocus: false });
     const params = new URLSearchParams(searchParams.toString());
     params.delete('modal');
     const query = params.toString();
     const anchor = getModalNavigationAnchor(modalData);
-    const hash = anchor ? `#${anchor}` : '';
-    router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}${hash}`);
+
+    if (anchor && typeof window !== 'undefined') {
+      const pendingHashPayload = JSON.stringify({
+        path: `/code/${modalData.targetSlug.join('/')}`,
+        query,
+        hash: anchor,
+      });
+      window.sessionStorage.setItem(
+        PENDING_HASH_TARGET_STORAGE_KEY,
+        pendingHashPayload
+      );
+    }
+
+    router.push(`/code/${modalData.targetSlug.join('/')}${query ? `?${query}` : ''}`);
   }, [closeReferenceModal, getModalNavigationAnchor, modalData, router, searchParams]);
 
   // Sync navigation state from URL on mount and when path changes
@@ -857,6 +883,74 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     
     initializeNavigation();
   }, [pathname, version, setCurrentPath]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const syncHashTarget = () => {
+      const rawHash = window.location.hash.replace(/^#/, '');
+      let nextHash = rawHash ? decodeURIComponent(rawHash).trim() : '';
+
+      if (!nextHash) {
+        const pendingHashPayload = window.sessionStorage.getItem(
+          PENDING_HASH_TARGET_STORAGE_KEY
+        );
+
+        if (pendingHashPayload) {
+          try {
+            const parsed = JSON.parse(pendingHashPayload) as {
+              path?: string;
+              query?: string;
+              hash?: string;
+            };
+            const currentPath = normalizePendingHashPath(window.location.pathname);
+            const currentQuery = window.location.search.replace(/^\?/, '');
+
+            if (
+              parsed.hash &&
+              normalizePendingHashPath(parsed.path || '') === currentPath &&
+              (parsed.query || '') === currentQuery
+            ) {
+              nextHash = parsed.hash.trim();
+            }
+          } catch {
+            window.sessionStorage.removeItem(PENDING_HASH_TARGET_STORAGE_KEY);
+          }
+        }
+      }
+
+      setHashTargetId(nextHash);
+      if (!nextHash) {
+        lastHandledHashRef.current = null;
+      }
+    };
+
+    let attempts = 0;
+    let retryTimer: number | null = null;
+
+    const syncHashTargetWithRetry = () => {
+      syncHashTarget();
+
+      const pendingHashPayload = window.sessionStorage.getItem(
+        PENDING_HASH_TARGET_STORAGE_KEY
+      );
+      if (window.location.hash || !pendingHashPayload || attempts >= 10) {
+        return;
+      }
+
+      attempts += 1;
+      retryTimer = window.setTimeout(syncHashTargetWithRetry, 50);
+    };
+
+    syncHashTargetWithRetry();
+    window.addEventListener('hashchange', syncHashTarget);
+    return () => {
+      window.removeEventListener('hashchange', syncHashTarget);
+      if (retryTimer !== null) {
+        window.clearTimeout(retryTimer);
+      }
+    };
+  }, [pathname, queryString]);
 
   // Keep reading view in sync with browser back/forward while staying on /code.
   useEffect(() => {
@@ -1049,6 +1143,104 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       setModalData(null);
     }
   }, [modalQueryParam]);
+
+  useEffect(() => {
+    if (!hashTargetId) {
+      return;
+    }
+
+    const contentStillLoading =
+      (isSectionLevelOrDeeper && loading) ||
+      (isAppendixLevel && appendixLoading) ||
+      (isSpectablesLevel && spectablesLoading) ||
+      (isFrontMatterLevel && frontMatterLoading);
+    if (contentStillLoading) {
+      return;
+    }
+
+    const pageHashKey = `${pathname}?${queryString}#${hashTargetId}`;
+    if (lastHandledHashRef.current === pageHashKey) {
+      return;
+    }
+
+    let attempt = 0;
+    let retryTimer: number | null = null;
+    let highlightTimer: number | null = null;
+    const focusTimers: number[] = [];
+    let restoreFocusability: (() => void) | null = null;
+
+    const tryScrollToHashTarget = () => {
+      const contentRoot =
+        contentContainerRef.current?.querySelector<HTMLElement>('.reading-view__content') || null;
+      if (!contentRoot) {
+        if (attempt < 50) {
+          attempt += 1;
+          retryTimer = window.setTimeout(tryScrollToHashTarget, 100);
+        }
+        return;
+      }
+
+      const target = findReferenceTarget(contentRoot, hashTargetId);
+      if (!target) {
+        if (attempt < 50) {
+          attempt += 1;
+          retryTimer = window.setTimeout(tryScrollToHashTarget, 100);
+        }
+        return;
+      }
+
+      scrollTargetIntoView(target, contentRoot);
+      const applyTargetFocus = () => {
+        restoreFocusability?.();
+        restoreFocusability = focusReferenceTarget(target);
+      };
+      applyTargetFocus();
+      focusTimers.push(window.setTimeout(applyTargetFocus, 250));
+      focusTimers.push(window.setTimeout(applyTargetFocus, 900));
+      target.classList.add('reading-view__target--highlight');
+      lastHandledHashRef.current = pageHashKey;
+      if (typeof window !== 'undefined') {
+        const nextUrl = `${window.location.pathname}${window.location.search}#${encodeURIComponent(hashTargetId)}`;
+        window.history.replaceState(window.history.state, '', nextUrl);
+        window.sessionStorage.removeItem(PENDING_HASH_TARGET_STORAGE_KEY);
+      }
+
+      highlightTimer = window.setTimeout(() => {
+        target.classList.remove('reading-view__target--highlight');
+        restoreFocusability?.();
+        restoreFocusability = null;
+      }, 2400);
+    };
+
+    const raf = window.requestAnimationFrame(tryScrollToHashTarget);
+
+    return () => {
+      window.cancelAnimationFrame(raf);
+      if (retryTimer !== null) {
+        window.clearTimeout(retryTimer);
+      }
+      if (highlightTimer !== null) {
+        window.clearTimeout(highlightTimer);
+      }
+      for (const focusTimer of focusTimers) {
+        window.clearTimeout(focusTimer);
+      }
+      restoreFocusability?.();
+    };
+  }, [
+    appendixLoading,
+    frontMatterLoading,
+    hashTargetId,
+    isAppendixLevel,
+    isFrontMatterLevel,
+    isSectionLevelOrDeeper,
+    isSpectablesLevel,
+    loading,
+    pathname,
+    queryString,
+    slugKey,
+    spectablesLoading,
+  ]);
 
   const renderLoadingSkeleton = (message: string = 'Loading content...') => (
     <div className="reading-view">

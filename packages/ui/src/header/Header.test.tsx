@@ -51,6 +51,14 @@ describe("Header", () => {
     ).toBeInTheDocument();
   });
 
+  it("renders the title as a home link", () => {
+    render(<Header title="BC Building Code" logoSrc="/logo.png" />);
+
+    expect(
+      screen.getByRole("link", { name: "BC Building Code - Go to the homepage" })
+    ).toHaveAttribute("href", "/");
+  });
+
   it("renders skip links when provided", () => {
     const skipLinks = [
       <a key="skip-main" href="#main">

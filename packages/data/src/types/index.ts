@@ -103,12 +103,63 @@ export interface TableRow {
   cells: TableCell[];
 }
 
-/**
- * Content item within a table cell (text or figure)
- */
-export interface TableCellContent {
-  type: 'text' | 'figure';
+export interface TextListItem {
+  id?: string;
+  content: string;
+}
+
+export interface VariableListItem {
+  id?: string;
+  symbol: string;
+  description: string;
+}
+
+export interface DefinitionListItem {
+  id: string;
+  term: string;
+  definition: string;
+}
+
+export interface OrganizationListItem {
+  id: string;
+  abbreviation: string;
+  fullName: string;
+  website?: string;
+}
+
+export interface BulletedList {
+  type: 'bulleted' | 'numbered' | 'alphabetic';
+  items: TextListItem[];
+}
+
+export interface VariableList {
+  type: 'variable';
+  items: VariableListItem[];
+}
+
+export interface DefinitionList {
+  type: 'definition';
+  items: DefinitionListItem[];
+}
+
+export interface OrganizationList {
+  type: 'organization';
+  items: OrganizationListItem[];
+}
+
+export type StructuredList =
+  | BulletedList
+  | VariableList
+  | DefinitionList
+  | OrganizationList;
+
+export interface TableCellTextContent {
+  type: 'text';
   value?: string; // For text content
+}
+
+export interface TableCellFigureContent {
+  type: 'figure';
   id?: string; // For figure content
   source?: 'nbc' | 'bc';
   title?: string;
@@ -117,6 +168,19 @@ export interface TableCellContent {
     alt_text: string;
   };
 }
+
+export interface TableCellListContent {
+  type: 'list';
+  list: StructuredList;
+}
+
+/**
+ * Content item within a table cell (text, figure, or structured list)
+ */
+export type TableCellContent =
+  | TableCellTextContent
+  | TableCellFigureContent
+  | TableCellListContent;
 
 export interface TableCell {
   text?: string; // Legacy format
