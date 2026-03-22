@@ -78,7 +78,8 @@ describe('search-indexer', () => {
         const text = 'See [REF:internal:nbc.divB.part3:long] for details';
         const result = stripReferences(text, DEFAULT_REFERENCE_CONFIG);
         
-        expect(result).toBe('See  for details');
+        // After bugfix: internal refs now produce display text from formatInternalReference
+        expect(result).toBe('See Part 3 for details');
       });
     });
 
