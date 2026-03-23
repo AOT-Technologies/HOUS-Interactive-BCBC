@@ -147,6 +147,4 @@ The workflow will automatically trigger and deploy.
 
 ## Related Documentation
 
-- [DEPLOYMENT-QUICKSTART.md](./DEPLOYMENT-QUICKSTART.md) - Quick reference commands
 - [DEPLOYMENT.md](./DEPLOYMENT.md) - Complete deployment guide
-- [DEPLOYMENT-SETUP-SUMMARY.md](./DEPLOYMENT-SETUP-SUMMARY.md) - Setup summary

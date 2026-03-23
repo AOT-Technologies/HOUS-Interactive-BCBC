@@ -11,8 +11,7 @@ bc-building-code/
 │
 ├── data/                                # Data directory
 │   ├── source/                         # ✅ SOURCE DATA (INPUT)
-│   │   ├── versions.json              # Version configuration (NEW)
-│   │   ├── bcbc-2024.json             # BC Building Code 2024 (10-50 MB)
+│   │   ├── versions.json              # Version configuration│   │   ├── bcbc-2024.json             # BC Building Code 2024 (10-50 MB)
 │   │   ├── bcbc-2027.json             # BC Building Code 2027 (future)
 │   │   └── README.md                   # Source data documentation
 │   │
@@ -32,8 +31,7 @@ bc-building-code/
 │       │   │   ├── HomeSidebarContent.tsx  # Sidebar with version selector
 │       │   │   └── QuickAccessPins.tsx
 │       │   ├── navigation/            # Navigation components
-│       │   │   ├── VersionSelector.tsx     # Version dropdown (NEW)
-│       │   │   ├── VersionSelector.css
+│       │   │   ├── VersionSelector.tsx     # Version dropdown│       │   │   ├── VersionSelector.css
 │       │   │   ├── Breadcrumbs.tsx
 │       │   │   ├── NavigationTree.tsx
 │       │   │   └── PrevNextNav.tsx
@@ -47,22 +45,26 @@ bc-building-code/
 │       │   ├── search-client.ts       # Version-aware search client
 │       │   └── url-utils.ts           # URL utilities with version support
 │       │
-│       ├── stores/                     # Zustand stores
-│       │   ├── version-store.ts       # Version state management (NEW)
+│       ├── stores/                     # Zustand stores (version-aware, high-level)
+│       │   ├── version-store.ts       # Version state management
 │       │   ├── navigation-store.ts    # Version-aware navigation
-│       │   ├── content-store.ts       # Version-aware content
 │       │   ├── amendment-date-store.ts # Version-aware dates
 │       │   ├── glossary-store.ts      # Version-aware glossary
 │       │   ├── search-store.ts        # Version-aware search
-│       │   └── ui-store.ts
+│       │   ├── functional-statements-store.ts  # Functional statement data
+│       │   ├── objectives-store.ts    # Objective data
+│       │   ├── standards-map-store.ts  # Standards references
+│       │   ├── spectables-map-store.ts # Spectables references
+│       │   ├── equation-store.ts      # Equation data
+│       │   └── index.ts               # Store exports
 │       │
 │       ├── styles/                     # Theme configuration
 │       │   └── .gitkeep
 │       │
 │       ├── public/
 │       │   └── data/                   # ❌ GENERATED ASSETS (OUTPUT)
-│       │       ├── versions.json       # Version index (NEW)
-│       │       ├── 2024/              # BC Building Code 2024 (NEW)
+│       │       ├── versions.json       # Version index
+│       │       ├── 2024/              # BC Building Code 2024
 │       │       │   ├── search/
 │       │       │   │   ├── documents.json   # FlexSearch index
 │       │       │   │   └── metadata.json    # Search metadata
@@ -177,16 +179,31 @@ bc-building-code/
 │       └── README.md
 │
 ├── scripts/                           # Build-time scripts
-│   ├── generate-assets.ts            # Multi-version asset generation (NEW)
-│   ├── generate-assets-multi-version.ts  # Multi-version script
+│   ├── generate-assets.ts            # Multi-version asset generation│   ├── generate-assets-multi-version.ts  # Multi-version script
 │   ├── generate-assets-single-version-backup.ts  # Legacy backup
 │   └── README.md
 │
 ├── docs/                              # Project documentation
+│   ├── BC-DESIGN-SYSTEM.md            # UI component library reference
 │   ├── COMMANDS.md                    # Command reference
+│   ├── CONTENT-MARKERS.md             # Bracket marker syntax & rendering
+│   ├── CONTENT-RENDERING-STRATEGY.md  # End-to-end content rendering
 │   ├── DATA-MANAGEMENT.md             # Data management guide
+│   ├── DEPLOYMENT.md                  # OpenShift deployment guide
+│   ├── FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md  # FS/Objective refs
+│   ├── HOW-TO-ADD-NEW-VERSION.md      # Adding a new code version
+│   ├── IMAGE-CONFIGURATION.md         # Image format configuration
+│   ├── MANUAL-DEPLOYMENT-GUIDE.md     # Manual GitHub Actions deployment
+│   ├── PLAN.md                        # Original project design doc (historical)
 │   ├── PROJECT-STRUCTURE.md           # This file
-│   └── Sprint-Zero-Completed.md       # Sprint progress
+│   ├── STATIC-ANALYSIS-REPORT.md      # Static code analysis snapshot
+│   ├── STATIC-PATH-GENERATION.md      # Next.js static export path gen
+│   ├── USER-FLOW.md                   # User flow documentation
+│   ├── search-component-architecture.md  # Search component design
+│   ├── figma-screenshots/             # Figma design reference images
+│   └── sprints/                       # Sprint progress records
+│       ├── Sprint-One-DesignSystem-LandingPage.md
+│       └── Sprint-Zero-Completed.md
 │
 ├── .gitignore                         # Git ignore rules
 ├── turbo.json                         # Turborepo configuration
@@ -339,8 +356,7 @@ bc-building-code/
 **Structure:**
 ```
 apps/web/public/data/
-├── versions.json          # Version index (NEW)
-├── 2024/                  # BC Building Code 2024
+├── versions.json          # Version index├── 2024/                  # BC Building Code 2024
 │   ├── search/
 │   │   ├── documents.json
 │   │   └── metadata.json
@@ -389,8 +405,7 @@ apps/web/public/data/
 **Purpose:** Orchestrate the multi-version build pipeline
 
 **Contents:**
-- `generate-assets.ts` - Multi-version build script (NEW)
-- `generate-assets-multi-version.ts` - Multi-version implementation
+- `generate-assets.ts` - Multi-version build script- `generate-assets-multi-version.ts` - Multi-version implementation
 - `generate-assets-single-version-backup.ts` - Legacy backup
 - `README.md` - Build script documentation
 
@@ -472,17 +487,17 @@ apps/web/public/data/
 
 | What | Where | Why |
 |------|-------|-----|
-| Version configuration | `/data/source/versions.json` | Version metadata (NEW) |
+| Version configuration | `/data/source/versions.json` | Version metadata |
 | BC Building Code JSON | `/data/source/bcbc-{year}.json` | Source data input |
 | Sample data | `/data/samples/bcbc-sample.json` | Testing |
 | Generated assets | `/apps/web/public/data/{version}/` | Build output (version-specific) |
 | Version index | `/apps/web/public/data/versions.json` | Version list (generated) |
 | React components | `/apps/web/components/` | UI code |
-| Version selector | `/apps/web/components/navigation/VersionSelector.tsx` | Version UI (NEW) |
+| Version selector | `/apps/web/components/navigation/VersionSelector.tsx` | Version UI |
 | Custom hooks | `/apps/web/hooks/` | React hooks |
 | Utilities | `/apps/web/lib/` | Helper functions |
-| Stores | `/apps/web/stores/` | State management |
-| Version store | `/apps/web/stores/version-store.ts` | Version state (NEW) |
+| High-level stores | `/apps/web/stores/` | Version-aware state |
+| Low-level stores | `/apps/web/lib/stores/` | Content loading state |
 | Shared packages | `/packages/` | Reusable code |
 | Build scripts | `/scripts/` | Automation |
 | Documentation | `/docs/` | Guides and references |
@@ -527,15 +542,17 @@ npx pnpm generate-assets
 
 ## Related Documentation
 
+- [BC-DESIGN-SYSTEM.md](./BC-DESIGN-SYSTEM.md) - UI component library reference
 - [COMMANDS.md](./COMMANDS.md) - Complete command reference
+- [CONTENT-MARKERS.md](./CONTENT-MARKERS.md) - Bracket marker syntax and rendering
+- [CONTENT-RENDERING-STRATEGY.md](./CONTENT-RENDERING-STRATEGY.md) - End-to-end content rendering
 - [DATA-MANAGEMENT.md](./DATA-MANAGEMENT.md) - Data management guide
-- [HOW-TO-ADD-NEW-VERSION.md](./HOW-TO-ADD-NEW-VERSION.md) - Version management guide (NEW)
-- [MULTI-VERSION-IMPLEMENTATION-COMPLETE.md](./MULTI-VERSION-IMPLEMENTATION-COMPLETE.md) - Implementation summary (NEW)
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - OpenShift deployment guide
+- [HOW-TO-ADD-NEW-VERSION.md](./HOW-TO-ADD-NEW-VERSION.md) - Version management guide
 - [USER-FLOW.md](./USER-FLOW.md) - User flow documentation
 - [../README.md](../README.md) - Project README
-- [../.kiro/specs/bcbc-interactive-web-app/design.md](../.kiro/specs/bcbc-interactive-web-app/design.md) - Design document
 
 ---
 
-**Last Updated:** February 4, 2026  
-**Version:** 2.0 (Multi-Version Support)
+**Last Updated:** March 21, 2026
+**Version:** 3.0
