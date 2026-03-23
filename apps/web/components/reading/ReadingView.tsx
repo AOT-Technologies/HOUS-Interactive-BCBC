@@ -142,6 +142,8 @@ const formatAppendixDocumentHeading = (
   return `Appendix ${parsed.appendixLetter}`;
 };
 
+const getPartAppendixHeading = (partNumber: string): string => `Notes to Part ${partNumber}`;
+
 export const ReadingView: React.FC<ReadingViewProps> = ({
   slug: initialSlug,
   version: initialVersion,
@@ -189,6 +191,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const fetchDivisionAppendix = useAppendixStore((s) => s.fetchDivisionAppendix);
   const fetchSpectables = useSpectablesStore((s) => s.fetchSpectables);
   const fetchStandardsMap = useStandardsMapStore((s) => s.fetchStandardsMap);
+  const standardsMapCache = useStandardsMapStore((s) => s.cache);
   
   const {
     currentSection: currentFrontMatter,
@@ -288,6 +291,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     : null;
 
   const divisionLabel = getDivisionLabel(slug[0] || '');
+  void standardsMapCache;
 
   const getSubtreeForSlug = (
     section: NonNullable<typeof currentSection>,
@@ -1003,6 +1007,12 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   }, [slugKey, version, fetchFrontMatter, isFrontMatterLevel, slug]);
 
   useEffect(() => {
+    fetchStandardsMap(version).catch(() => {
+      // Inline standard references fall back to the raw token if the map is unavailable.
+    });
+  }, [fetchStandardsMap, version]);
+
+  useEffect(() => {
     if (!isAppendixLevel) {
       setAppendixLoading(false);
       setAppendixError(null);
@@ -1670,7 +1680,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       return renderLoadingSkeleton();
     }
 
-    const appendixPdfLabel = `${divisionLabel} - Part ${slug[1]} Appendix PDF`;
+    const appendixHeading = getPartAppendixHeading(slug[1]);
+    const appendixPdfLabel = `${divisionLabel} - ${appendixHeading} PDF`;
     return (
       <CrossReferenceContext.Provider
         value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
@@ -1680,7 +1691,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           <div className="reading-view__content">
             <div className="reading-view__appendix">
               <PartTitle title={currentPartNode.title} />
-              <h2 className="reading-view__appendix-heading">Appendix</h2>
+              <h2 className="reading-view__appendix-heading">{appendixHeading}</h2>
               {resolvedPartAppendix.introduction ? (
                 <p className="reading-view__appendix-introduction">
                   {parseTextWithMarkers(

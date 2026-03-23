@@ -565,4 +565,62 @@ describe('TableBlock', () => {
     expect(minimumHeader).toHaveAttribute('colspan', '6');
     expect(container.querySelector('.table-block__wrapper--split')).toBeInTheDocument();
   });
+
+  it('infers rowspans for placeholder header cells in appendix tables', () => {
+    const table = {
+      id: 'nbc.divA.part1.appendix.appnote7.div5.table1',
+      type: 'table' as const,
+      title:
+        'Table A-1.4.1.2.(1) TDGR, WHMIS and British Columbia Building Code Class Descriptors for Dangerous Goods',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'TDGR' }], colspan: 2 },
+              { content: [{ type: 'text' as const, value: 'WHMIS' }] },
+              { content: [{ type: 'text' as const, value: 'British Columbia Building Code' }] },
+            ],
+          },
+          {
+            id: 'header-2',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Class' }] },
+              { content: [{ type: 'text' as const, value: 'Descriptor' }] },
+              { content: [{ type: 'text' as const, value: '' }] },
+              { content: [{ type: 'text' as const, value: '' }] },
+            ],
+          },
+        ],
+        body_rows: [
+          {
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: '1' }] },
+              { content: [{ type: 'text' as const, value: 'Explosives' }] },
+              { content: [{ type: 'text' as const, value: 'Explosives' }] },
+              { content: [{ type: 'text' as const, value: 'Explosives' }] },
+            ],
+          },
+        ],
+      },
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    const tdgrHeader = screen.getByText('TDGR').closest('th');
+    const whmisHeader = screen.getByText('WHMIS').closest('th');
+    const bcbcHeader = screen.getByText('British Columbia Building Code').closest('th');
+
+    expect(tdgrHeader).toHaveAttribute('colspan', '2');
+    expect(whmisHeader).toHaveAttribute('rowspan', '2');
+    expect(bcbcHeader).toHaveAttribute('rowspan', '2');
+    expect(screen.getByText('Class')).toBeInTheDocument();
+    expect(screen.getByText('Descriptor')).toBeInTheDocument();
+  });
 });

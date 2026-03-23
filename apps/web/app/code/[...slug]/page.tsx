@@ -98,7 +98,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (part === 'appendix' && section) {
     title = `Appendix ${section.toUpperCase()} - BC Building Code`;
   } else if (section === 'appendix') {
-    title = `Part ${part} Appendix - BC Building Code`;
+    title = `Notes to Part ${part} - BC Building Code`;
   } else if (section === 'spectables' && subsection) {
     title = `Span Tables ${subsection} - BC Building Code`;
   } else if (article && subsection) {

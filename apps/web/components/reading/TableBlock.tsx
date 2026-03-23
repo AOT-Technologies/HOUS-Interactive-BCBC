@@ -786,6 +786,49 @@ const inferHeaderSpans = (
         (typeof cell.rowspan !== 'number' || cell.rowspan <= 1)
     );
 
+  const buildRowLayouts = (rows: NormalizedRow[]) => {
+    const activeRowspans = new Array(totalColumns).fill(0);
+
+    return rows.map((row) => {
+      const positionedCells: Array<{ index: number; start: number; end: number; cell: NormalizedCell }> = [];
+      let columnCursor = 0;
+
+      row.cells.forEach((cell, cellIndex) => {
+        while (columnCursor < totalColumns && activeRowspans[columnCursor] > 0) {
+          columnCursor += 1;
+        }
+
+        const colspan = typeof cell.colspan === 'number' && cell.colspan > 0 ? cell.colspan : 1;
+        const rowspan = typeof cell.rowspan === 'number' && cell.rowspan > 1 ? cell.rowspan : 1;
+        const start = columnCursor;
+        const end = columnCursor + colspan - 1;
+
+        positionedCells.push({ index: cellIndex, start, end, cell });
+
+        if (rowspan > 1) {
+          for (let offset = 0; offset < colspan; offset += 1) {
+            if (columnCursor + offset < totalColumns) {
+              activeRowspans[columnCursor + offset] = Math.max(
+                activeRowspans[columnCursor + offset],
+                rowspan - 1
+              );
+            }
+          }
+        }
+
+        columnCursor += colspan;
+      });
+
+      for (let columnIndex = 0; columnIndex < activeRowspans.length; columnIndex += 1) {
+        if (activeRowspans[columnIndex] > 0) {
+          activeRowspans[columnIndex] -= 1;
+        }
+      }
+
+      return positionedCells;
+    });
+  };
+
   // Some legacy tables provide explicit colspans but omit rowspans, leaving
   // blank placeholder cells in subsequent header rows. Promote the anchor cell
   // to cover those rows so the split header uses the same column map as the body.
@@ -820,6 +863,64 @@ const inferHeaderSpans = (
     }
   });
 
+  let inferredPlaceholderRowspans = true;
+  while (inferredPlaceholderRowspans) {
+    inferredPlaceholderRowspans = false;
+    const layouts = buildRowLayouts(clonedRows);
+
+    for (let rowIndex = 0; rowIndex < clonedRows.length - 1 && !inferredPlaceholderRowspans; rowIndex += 1) {
+      for (const positionedCell of layouts[rowIndex] || []) {
+        const { cell, start, end } = positionedCell;
+        const hasExplicitRowspan = typeof cell.rowspan === 'number' && cell.rowspan > 1;
+        if (hasExplicitRowspan) {
+          continue;
+        }
+
+        const rowsToConsume: Array<{ rowIndex: number; cellIndexes: number[] }> = [];
+
+        for (let nextRowIndex = rowIndex + 1; nextRowIndex < clonedRows.length; nextRowIndex += 1) {
+          const overlaps = (layouts[nextRowIndex] || [])
+            .filter((entry) => !(entry.end < start || entry.start > end))
+            .sort((a, b) => a.start - b.start);
+
+          if (overlaps.length === 0) {
+            break;
+          }
+
+          const fullyCovered =
+            overlaps.every((entry) => isPlaceholderCell(entry.cell)) &&
+            overlaps[0]?.start === start &&
+            overlaps[overlaps.length - 1]?.end === end &&
+            overlaps.every((entry, overlapIndex) =>
+              overlapIndex === 0 ? true : overlaps[overlapIndex - 1].end + 1 === entry.start
+            );
+
+          if (!fullyCovered) {
+            break;
+          }
+
+          rowsToConsume.push({
+            rowIndex: nextRowIndex,
+            cellIndexes: overlaps.map((entry) => entry.index).sort((a, b) => b - a),
+          });
+        }
+
+        if (rowsToConsume.length === 0) {
+          continue;
+        }
+
+        cell.rowspan = rowsToConsume.length + 1;
+        rowsToConsume.forEach(({ rowIndex: targetRowIndex, cellIndexes }) => {
+          cellIndexes.forEach((cellIndex) => {
+            clonedRows[targetRowIndex].cells.splice(cellIndex, 1);
+          });
+        });
+
+        inferredPlaceholderRowspans = true;
+      }
+    }
+  }
+
   let activeRowspans = new Array(totalColumns).fill(0);
 
   clonedRows.forEach((row, rowIndex) => {
@@ -832,7 +933,7 @@ const inferHeaderSpans = (
       trimRowToColumnCount(row, availableColumns);
     }
 
-    if (availableColumns > cellCount && cellCount > 0) {
+    if (availableColumns > rowColumnCount && cellCount > 0) {
       if (rowIndex === 0 && cellCount > 1) {
         for (let index = 0; index < cellCount - 1; index += 1) {
           row.cells[index].rowspan = clonedRows.length;
