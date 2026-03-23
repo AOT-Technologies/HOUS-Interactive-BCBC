@@ -191,6 +191,10 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
   return tree;
 }
 
+function getPartAppendixTitle(partNumber: string): string {
+  return `Notes to Part ${partNumber}`;
+}
+
 /**
  * Build a division node with hierarchical numbering
  * @param division - Division to build node for
@@ -267,7 +271,7 @@ function buildDivisionNode(division: any): NavigationNode {
       partNode.children?.push({
         id: part.appendix.id,
         type: 'part_appendix',
-        title: 'Appendix',
+        title: getPartAppendixTitle(String(part.number)),
         path: `/code/${division.id}/${part.number}/appendix`,
       });
     }

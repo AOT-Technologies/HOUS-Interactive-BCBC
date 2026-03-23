@@ -286,10 +286,63 @@ describe('TableBlock', () => {
 
     const { container } = render(<TableBlock table={table} />);
     const wrapper = container.querySelector('.table-block__wrapper');
-    const renderedTable = container.querySelector('.table-block__table');
+    const bodyViewport = container.querySelector('.table-block__body-viewport');
+    const splitLayout = container.querySelector('.table-block__split-scroll');
+    const splitTables = container.querySelectorAll('.table-block__table');
 
     expect(wrapper).toHaveClass('table-block__wrapper--scroll');
-    expect(renderedTable?.getAttribute('style')).toMatch(/min-width:\s*\d+(\.\d+)?rem/i);
+    expect(wrapper).toHaveClass('table-block__wrapper--split');
+    expect(splitLayout).toBeInTheDocument();
+    expect(bodyViewport).toBeInTheDocument();
+    expect(splitTables).toHaveLength(2);
+    expect(splitTables[1]?.getAttribute('style')).toMatch(/min-width:\s*\d+(\.\d+)?rem/i);
+  });
+
+  it('keeps header rows outside the scrollable body region for overflow tables', () => {
+    const table: Table = {
+      id: 'test-table-split-header',
+      type: 'table',
+      number: '9.99.9.9',
+      title: 'Pinned Header',
+      rows: [
+        {
+          type: 'header_row',
+          cells: [
+            { content: 'Extremely Long Header Column One', isHeader: true },
+            { content: 'Extremely Long Header Column Two', isHeader: true },
+            { content: 'Extremely Long Header Column Three', isHeader: true },
+            { content: 'Extremely Long Header Column Four', isHeader: true },
+          ],
+        },
+        {
+          type: 'body_row',
+          cells: [
+            { content: [{ type: 'text', value: 'Body value 1' }] },
+            { content: [{ type: 'text', value: 'Body value 2' }] },
+            {
+              content: [
+                {
+                  type: 'text',
+                  value:
+                    'This row is intentionally long enough to keep the table in overflow mode and trigger the split layout.',
+                },
+              ],
+            },
+            { content: [{ type: 'text', value: 'Body value 4' }] },
+          ],
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table} />);
+    const headerViewport = container.querySelector('.table-block__header-viewport');
+    const bodyViewport = container.querySelector('.table-block__body-viewport');
+
+    expect(headerViewport).toBeInTheDocument();
+    expect(bodyViewport).toBeInTheDocument();
+    expect(headerViewport?.textContent).toContain('Extremely Long Header Column One');
+    expect(bodyViewport?.textContent).not.toContain('Extremely Long Header Column One');
+    expect(bodyViewport?.textContent).toContain('Body value 1');
   });
 
   it('renders forming part information from internal targets', () => {
@@ -446,5 +499,128 @@ describe('TableBlock', () => {
     render(<TableBlock table={table as unknown as Table} />);
 
     expect(screen.getByText('Notes to Table 9.3.1.7.:')).toBeInTheDocument();
+  });
+
+  it('infers header spans for legacy multi-row headers that omit colspan and rowspan', () => {
+    const table = {
+      id: 'test-table-infer-spans',
+      type: 'table' as const,
+      number: '9.36.1.3',
+      title: 'Inferred Span Header',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Assembly Type' }] },
+              { content: [{ type: 'text' as const, value: 'Heating Degree-Days' }] },
+            ],
+          },
+          {
+            id: 'header-2',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Zone 4' }] },
+              { content: [{ type: 'text' as const, value: 'Zone 5' }] },
+              { content: [{ type: 'text' as const, value: 'Zone 6' }] },
+              { content: [{ type: 'text' as const, value: 'Zone 7A' }] },
+              { content: [{ type: 'text' as const, value: 'Zone 7B' }] },
+              { content: [{ type: 'text' as const, value: 'Zone 8' }] },
+            ],
+          },
+          {
+            id: 'header-3',
+            type: 'header_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'Minimum Effective Thermal Resistance' }] }],
+          },
+        ],
+        body_rows: [
+          {
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Foundation walls' }] },
+              { content: [{ type: 'text' as const, value: '3.46' }] },
+              { content: [{ type: 'text' as const, value: '3.97' }] },
+              { content: [{ type: 'text' as const, value: '3.97' }] },
+              { content: [{ type: 'text' as const, value: '3.97' }] },
+              { content: [{ type: 'text' as const, value: '3.97' }] },
+              { content: [{ type: 'text' as const, value: '3.97' }] },
+            ],
+          },
+        ],
+      },
+    };
+
+    const { container } = render(<TableBlock table={table as unknown as Table} />);
+    const assemblyHeader = screen.getByText('Assembly Type').closest('th');
+    const heatingHeader = screen.getByText('Heating Degree-Days').closest('th');
+    const minimumHeader = screen.getByText('Minimum Effective Thermal Resistance').closest('th');
+
+    expect(assemblyHeader).toHaveAttribute('rowspan', '3');
+    expect(heatingHeader).toHaveAttribute('colspan', '6');
+    expect(minimumHeader).toHaveAttribute('colspan', '6');
+    expect(container.querySelector('.table-block__wrapper--split')).toBeInTheDocument();
+  });
+
+  it('infers rowspans for placeholder header cells in appendix tables', () => {
+    const table = {
+      id: 'nbc.divA.part1.appendix.appnote7.div5.table1',
+      type: 'table' as const,
+      title:
+        'Table A-1.4.1.2.(1) TDGR, WHMIS and British Columbia Building Code Class Descriptors for Dangerous Goods',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'TDGR' }], colspan: 2 },
+              { content: [{ type: 'text' as const, value: 'WHMIS' }] },
+              { content: [{ type: 'text' as const, value: 'British Columbia Building Code' }] },
+            ],
+          },
+          {
+            id: 'header-2',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Class' }] },
+              { content: [{ type: 'text' as const, value: 'Descriptor' }] },
+              { content: [{ type: 'text' as const, value: '' }] },
+              { content: [{ type: 'text' as const, value: '' }] },
+            ],
+          },
+        ],
+        body_rows: [
+          {
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: '1' }] },
+              { content: [{ type: 'text' as const, value: 'Explosives' }] },
+              { content: [{ type: 'text' as const, value: 'Explosives' }] },
+              { content: [{ type: 'text' as const, value: 'Explosives' }] },
+            ],
+          },
+        ],
+      },
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    const tdgrHeader = screen.getByText('TDGR').closest('th');
+    const whmisHeader = screen.getByText('WHMIS').closest('th');
+    const bcbcHeader = screen.getByText('British Columbia Building Code').closest('th');
+
+    expect(tdgrHeader).toHaveAttribute('colspan', '2');
+    expect(whmisHeader).toHaveAttribute('rowspan', '2');
+    expect(bcbcHeader).toHaveAttribute('rowspan', '2');
+    expect(screen.getByText('Class')).toBeInTheDocument();
+    expect(screen.getByText('Descriptor')).toBeInTheDocument();
   });
 });

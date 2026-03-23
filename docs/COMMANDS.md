@@ -451,7 +451,7 @@ npx pnpm --filter @bc-building-code/bcbc-parser lint
 - `getGlossaryMap(document)` - Create glossary lookup map
 - `getAmendmentDates(document)` - Extract unique dates
 
-### Search Indexer Package (when created)
+### Search Indexer Package
 
 ```bash
 # Build indexer
@@ -461,7 +461,7 @@ npx pnpm --filter @bc-building-code/search-indexer build
 npx pnpm --filter @bc-building-code/search-indexer test
 ```
 
-### Content Chunker Package (when created)
+### Content Chunker Package
 
 ```bash
 # Build chunker

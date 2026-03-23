@@ -516,7 +516,7 @@ function injectPartAppendixNodes(
   tree: any[],
   rawData: any
 ): any[] {
-  const appendixByPartId = new Map<string, { appendixId: string; path: string }>();
+  const appendixByPartId = new Map<string, { appendixId: string; path: string; title: string }>();
 
   for (const volume of rawData?.volumes || []) {
     for (const division of volume?.divisions || []) {
@@ -528,6 +528,7 @@ function injectPartAppendixNodes(
           appendixByPartId.set(partId, {
             appendixId: part.appendix.id,
             path: `/code/${division.id}/${part.number}/appendix`,
+            title: `Notes to Part ${String(part.number)}`,
           });
         }
       }
@@ -549,7 +550,7 @@ function injectPartAppendixNodes(
           children.push({
             id: appendix.appendixId,
             number: '',
-            title: 'Appendix',
+            title: appendix.title,
             type: 'part_appendix',
             path: appendix.path,
           });

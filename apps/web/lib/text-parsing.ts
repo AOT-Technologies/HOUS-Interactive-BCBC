@@ -29,6 +29,8 @@ import {
   type ReferenceRenderContext,
 } from './cross-reference';
 import { useEquationStore } from '../stores/equation-store';
+import { useStandardsMapStore, type StandardReferenceEntry } from '../stores/standards-map-store';
+import { useVersionStore } from '../stores/version-store';
 
 /**
  * Marker type for internal tracking
@@ -76,6 +78,66 @@ interface ParsedStandardsMarker {
 
 function isHttpReference(value: string): boolean {
   return /^https?:\/\//i.test(value.trim());
+}
+
+function normalizeStandardsKey(value: string): string {
+  return value.replace(/[^a-z0-9.]/gi, '').toLowerCase();
+}
+
+function stripTrailingStandardsEdition(value: string): string {
+  return value.replace(/-\d{2,4}[A-Za-z0-9]*$/u, '');
+}
+
+function findStandardReferenceEntry(
+  standardsRefId: string
+): StandardReferenceEntry | null {
+  const normalizedRefId = normalizeStandardsKey(standardsRefId);
+  if (!normalizedRefId) return null;
+
+  const version = useVersionStore.getState().currentVersion || '2024';
+  const cache = useStandardsMapStore.getState().cache;
+  const versionCacheKey = `standards-map:${version}`;
+  const standardsMap =
+    cache.get(versionCacheKey) ||
+    Array.from(cache.values())[0];
+
+  if (!standardsMap) {
+    return null;
+  }
+
+  const matchedEntry = Object.entries(standardsMap).find(([key, value]) => {
+    if (normalizeStandardsKey(key) === normalizedRefId) return true;
+    if (value.standard_ref_id && normalizeStandardsKey(value.standard_ref_id) === normalizedRefId) return true;
+    if (value.standard_id && normalizeStandardsKey(value.standard_id) === normalizedRefId) return true;
+    return false;
+  })?.[1];
+
+  return matchedEntry || null;
+}
+
+function formatStandardReferenceText(
+  standardsRefId: string,
+  explicitLabel?: string
+): string {
+  const matchedEntry = findStandardReferenceEntry(standardsRefId);
+  if (!matchedEntry) {
+    return explicitLabel || standardsRefId;
+  }
+
+  const abbreviation = [
+    matchedEntry.agency,
+    stripTrailingStandardsEdition(matchedEntry.full_number || matchedEntry.number || ''),
+  ]
+    .filter((value): value is string => Boolean(value && value.trim()))
+    .map((value) => value.trim())
+    .join(' ');
+  const title = matchedEntry.full_title?.trim() || matchedEntry.title?.trim() || '';
+
+  if (abbreviation && title) {
+    return `${abbreviation}, "${title}"`;
+  }
+
+  return abbreviation || title || explicitLabel || standardsRefId;
 }
 
 function skipWhitespaceBeforePunctuation(text: string, index: number): number {
@@ -1260,9 +1322,12 @@ export function parseTextWithMarkers(
         const isPlainExternalReference =
           standardsType === 'external' && !isHttpReference(standardsId);
 
-        const standardsText = standardsLabel || standardsId;
+        const standardsText =
+          standardsType === 'standard'
+            ? formatStandardReferenceText(standardsId, standardsLabel)
+            : standardsLabel || standardsId;
 
-        if (isPlainExternalReference) {
+        if (isPlainExternalReference || standardsType === 'standard') {
           nodes.push(
             React.createElement(
               React.Fragment,

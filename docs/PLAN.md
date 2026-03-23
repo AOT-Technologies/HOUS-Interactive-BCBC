@@ -1,5 +1,7 @@
 # BC Building Code Interactive Web Application - Project Description
 
+> **Note:** This document is the original project planning document and reflects early-stage design decisions. Some details (e.g. the component library) have evolved during implementation. Refer to `BC-DESIGN-SYSTEM.md`, `PROJECT-STRUCTURE.md`, and the `.kiro/steering/` docs for current architecture.
+
 ## Project Overview
 
 This project delivers a **free, publicly accessible, interactive web application** for the 2024 British Columbia Building Code (BCBC). The application enables building officials, construction professionals, and the public to efficiently search, navigate, and understand the 2000+ page technical building code document.
@@ -20,9 +22,9 @@ The BCBC is currently available only as a PDF, which users find difficult to nav
 | **Framework** | Next.js 16+ (App Router) |
 | **Language** | TypeScript (strict mode) |
 | **UI Library** | React 19 |
-| **Component Library** | Chakra UI (BC Design System aligned) |
+| **Component Library** | Custom BC Design System (`@repo/ui`) |
 | **Search Engine** | FlexSearch (client-side, pre-built indexes) |
-| **Styling** | Chakra UI + CSS-in-JS |
+| **Styling** | BC Design System CSS variables + CSS modules |
 | **Build Output** | Static Site Generation (SSG) / Static Export |
 | **Hosting Target** | BC Gov OpenShift (containerized static assets) |
 
@@ -253,7 +255,7 @@ bc-building-code/
 │       │           ├── division-b/
 │       │           └── division-c/
 │       └── styles/
-│           └── theme.ts              # Chakra UI theme (BC Design System)
+│           └── .gitkeep              # BC Design System CSS variables via @repo/ui
 │
 ├── packages/
 │   ├── bcbc-parser/                  # BCBC JSON processing
@@ -281,7 +283,8 @@ bc-building-code/
 │   │   │   └── index.ts
 │   │   └── package.json
 │   │
-│   └── tsconfig/                     # Shared TypeScript configs
+│   ├── eslint-config/                # Shared ESLint config
+│   └── typescript-config/            # Shared TypeScript configs
 │       ├── base.json
 │       ├── nextjs.json
 │       └── package.json

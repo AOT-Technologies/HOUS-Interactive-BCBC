@@ -285,7 +285,7 @@ See `docs/DEPLOYMENT-OPTIONS.md` for detailed comparison.
 
 ## Related Documentation
 
-- [Deployment Options](./DEPLOYMENT-OPTIONS.md) - Static export vs Node.js server comparison
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - OpenShift deployment guide
 - [Next.js Static Export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports)
 - [generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)
 

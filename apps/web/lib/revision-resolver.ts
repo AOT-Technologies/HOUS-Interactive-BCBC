@@ -58,34 +58,71 @@ function hasEquationPlaceholder(text: unknown): boolean {
   return typeof text === 'string' && /\[EQ:(?:display|inline)(?::[^\]]*)?\]/i.test(text);
 }
 
+function normalizeNodeNumber(value: unknown, fallback: string = ''): string {
+  return typeof value === 'string' ? value : String(value ?? fallback);
+}
+
+function mapResolvedArray<TInput, TOutput>(
+  items: TInput[],
+  mapper: (item: TInput, index: number) => TOutput | null
+): { items: TOutput[]; changed: boolean } {
+  let changed = false;
+  const resolvedItems: TOutput[] = [];
+
+  items.forEach((item, index) => {
+    const resolvedItem = mapper(item, index);
+    if (resolvedItem === null) {
+      changed = true;
+      return;
+    }
+
+    if (resolvedItem !== item) {
+      changed = true;
+    }
+
+    resolvedItems.push(resolvedItem);
+  });
+
+  if (!changed && resolvedItems.length === items.length) {
+    return { items: items as unknown as TOutput[], changed: false };
+  }
+
+  return { items: resolvedItems, changed: true };
+}
+
 function applyRevision<T extends ContentNode>(node: T, effectiveDate?: string): T | null {
-  // First, handle title with revision history (before checking node-level revisions)
-  let processedNode = { ...node };
-  
-  if (processedNode.title && typeof processedNode.title === 'object' && 'revised' in processedNode.title) {
-    const titleObj = processedNode.title as any;
+  let resolvedTitle = node.title;
+
+  if (node.title && typeof node.title === 'object' && 'revised' in node.title) {
+    const titleObj = node.title as any;
     if (titleObj.revised && Array.isArray(titleObj.revisions)) {
-      // Find the appropriate title revision based on effective date
       const sortedTitleRevisions = [...titleObj.revisions].sort((a, b) =>
         (b.effective_date || '').localeCompare(a.effective_date || '')
       );
-      
+
       if (effectiveDate) {
         const applicableTitleRevision = sortedTitleRevisions.find(
           (rev) => (rev.effective_date || '') <= effectiveDate
         ) || sortedTitleRevisions[sortedTitleRevisions.length - 1];
-        
-        processedNode.title = applicableTitleRevision.text || titleObj.text;
+
+        resolvedTitle = applicableTitleRevision.text || titleObj.text;
       } else {
-        // No effective date specified, use current text
-        processedNode.title = titleObj.text;
+        resolvedTitle = titleObj.text;
       }
     }
   }
 
-  // Then handle node-level revisions
-  const revision = getApplicableRevision(processedNode.revisions, effectiveDate);
-  if (!revision) return processedNode as T;
+  const revision = getApplicableRevision(node.revisions, effectiveDate);
+  if (!revision) {
+    if (resolvedTitle === node.title) {
+      return node;
+    }
+
+    return {
+      ...node,
+      title: resolvedTitle,
+    } as T;
+  }
   if (revision.deleted) return null;
 
   const {
@@ -101,12 +138,12 @@ function applyRevision<T extends ContentNode>(node: T, effectiveDate?: string): 
     ...revisionPayload
   } = revision as RevisionRecord & Record<string, unknown>;
 
-  // Revision payload overrides content fields, but never node identity/type.
   return {
-    ...processedNode,
+    ...node,
+    ...(resolvedTitle !== node.title ? { title: resolvedTitle } : {}),
     ...revisionPayload,
-    id: processedNode.id,
-    type: processedNode.type,
+    id: node.id,
+    type: node.type,
   } as T;
 }
 
@@ -124,14 +161,25 @@ function resolveSubclause(node: ContentNode, effectiveDate?: string): ContentNod
       ];
 
   const nested = nestedSource
-    .map((item) => resolveContentNode(item as ContentNode, effectiveDate))
-    .filter(Boolean);
+    ? mapResolvedArray(nestedSource as ContentNode[], (item) => resolveContentNode(item, effectiveDate))
+    : { items: [], changed: false };
+
+  const number = normalizeNodeNumber(resolved.number);
+  const glossaryTerms = Array.isArray(resolved.glossaryTerms) ? resolved.glossaryTerms : [];
+  const nextContent = nested.items.length > 0 ? nested.items : undefined;
+  const contentChanged = (resolved.content ?? undefined) !== nextContent;
+  const glossaryChanged = glossaryTerms !== resolved.glossaryTerms;
+  const numberChanged = number !== resolved.number;
+
+  if (resolved === node && !nested.changed && !contentChanged && !glossaryChanged && !numberChanged) {
+    return resolved;
+  }
 
   return {
     ...resolved,
-    number: String(resolved.number ?? ''),
-    glossaryTerms: Array.isArray(resolved.glossaryTerms) ? resolved.glossaryTerms : [],
-    content: nested.length > 0 ? nested : undefined,
+    number,
+    glossaryTerms,
+    content: nextContent,
   };
 }
 
@@ -159,14 +207,25 @@ function resolveClause(node: ContentNode, effectiveDate?: string): ContentNode |
   }
 
   const nested = nestedSource
-    .map((item) => resolveContentNode(item as ContentNode, effectiveDate))
-    .filter(Boolean);
+    ? mapResolvedArray(nestedSource as ContentNode[], (item) => resolveContentNode(item, effectiveDate))
+    : { items: [], changed: false };
+
+  const number = normalizeNodeNumber(resolved.number ?? resolved.letter);
+  const glossaryTerms = Array.isArray(resolved.glossaryTerms) ? resolved.glossaryTerms : [];
+  const nextContent = nested.items.length > 0 ? nested.items : undefined;
+  const contentChanged = (resolved.content ?? undefined) !== nextContent;
+  const glossaryChanged = glossaryTerms !== resolved.glossaryTerms;
+  const numberChanged = number !== resolved.number;
+
+  if (resolved === node && !nested.changed && !contentChanged && !glossaryChanged && !numberChanged) {
+    return resolved;
+  }
 
   return {
     ...resolved,
-    number: String(resolved.number ?? resolved.letter ?? ''),
-    glossaryTerms: Array.isArray(resolved.glossaryTerms) ? resolved.glossaryTerms : [],
-    content: nested.length > 0 ? nested : undefined,
+    number,
+    glossaryTerms,
+    content: nextContent,
   };
 }
 
@@ -194,39 +253,48 @@ function resolveSentence(node: ContentNode, effectiveDate?: string): ContentNode
   }
 
   const nested = nestedSource
-    .map((item) => resolveContentNode(item as ContentNode, effectiveDate))
-    .filter(Boolean);
+    ? mapResolvedArray(nestedSource as ContentNode[], (item) => resolveContentNode(item, effectiveDate))
+    : { items: [], changed: false };
+
+  const number = normalizeNodeNumber(resolved.number);
+  const glossaryTerms = Array.isArray(resolved.glossaryTerms) ? resolved.glossaryTerms : [];
+  const nextContent = nested.items.length > 0 ? nested.items : undefined;
+  const contentChanged = (resolved.content ?? undefined) !== nextContent;
+  const glossaryChanged = glossaryTerms !== resolved.glossaryTerms;
+  const numberChanged = number !== resolved.number;
+
+  if (resolved === node && !nested.changed && !contentChanged && !glossaryChanged && !numberChanged) {
+    return resolved;
+  }
 
   return {
     ...resolved,
-    number: String(resolved.number ?? ''),
-    glossaryTerms: Array.isArray(resolved.glossaryTerms) ? resolved.glossaryTerms : [],
-    content: nested.length > 0 ? nested : undefined,
+    number,
+    glossaryTerms,
+    content: nextContent,
   };
 }
 
 function resolveTableRows(rows: unknown[], effectiveDate?: string): unknown[] {
-  return rows
-    .map((row) => {
-      const rowNode = row as ContentNode;
-      const resolvedRow = applyRevision(rowNode, effectiveDate);
-      if (!resolvedRow) return null;
+  const resolvedRows = mapResolvedArray(rows as ContentNode[], (rowNode) => {
+    const resolvedRow = applyRevision(rowNode, effectiveDate);
+    if (!resolvedRow) return null;
 
-      const cells = Array.isArray(resolvedRow.cells)
-        ? resolvedRow.cells
-            .map((cell) => {
-              const resolvedCell = applyRevision(cell as ContentNode, effectiveDate);
-              return resolvedCell || null;
-            })
-            .filter(Boolean)
-        : [];
+    const resolvedCells = Array.isArray(resolvedRow.cells)
+      ? mapResolvedArray(resolvedRow.cells as ContentNode[], (cell) => applyRevision(cell, effectiveDate))
+      : { items: [], changed: false };
 
-      return {
-        ...resolvedRow,
-        cells,
-      };
-    })
-    .filter(Boolean);
+    if (resolvedRow === rowNode && !resolvedCells.changed) {
+      return resolvedRow;
+    }
+
+    return {
+      ...resolvedRow,
+      cells: resolvedCells.items,
+    };
+  });
+
+  return resolvedRows.changed ? resolvedRows.items : rows;
 }
 
 function resolveTable(node: ContentNode, effectiveDate?: string): ContentNode | null {
@@ -241,13 +309,23 @@ function resolveTable(node: ContentNode, effectiveDate?: string): ContentNode | 
     ? resolveTableRows((structure as any).body_rows, effectiveDate)
     : undefined;
 
+  const structureChanged =
+    headerRows !== (structure as any).header_rows ||
+    bodyRows !== (structure as any).body_rows;
+
+  if (resolved === node && !structureChanged) {
+    return resolved;
+  }
+
   return {
     ...resolved,
-    structure: {
-      ...structure,
-      ...(headerRows ? { header_rows: headerRows } : {}),
-      ...(bodyRows ? { body_rows: bodyRows } : {}),
-    },
+    structure: structureChanged
+      ? {
+          ...structure,
+          ...(headerRows ? { header_rows: headerRows } : {}),
+          ...(bodyRows ? { body_rows: bodyRows } : {}),
+        }
+      : structure,
   };
 }
 
@@ -271,15 +349,18 @@ function resolveArticle(node: ContentNode, effectiveDate?: string): ContentNode 
   if (!resolved) return null;
 
   const content = Array.isArray(resolved.content)
-    ? resolved.content
-        .map((item) => resolveContentNode(item as ContentNode, effectiveDate))
-        .filter(Boolean)
-    : [];
+    ? mapResolvedArray(resolved.content as ContentNode[], (item) => resolveContentNode(item, effectiveDate))
+    : { items: [], changed: false };
+
+  const number = normalizeNodeNumber(resolved.number);
+  if (resolved === node && !content.changed && number === resolved.number) {
+    return resolved;
+  }
 
   return {
     ...resolved,
-    number: String(resolved.number ?? ''),
-    content,
+    number,
+    content: content.items,
   };
 }
 
@@ -288,15 +369,18 @@ function resolveSubsection(node: ContentNode, effectiveDate?: string): ContentNo
   if (!resolved) return null;
 
   const articles = Array.isArray(resolved.articles)
-    ? resolved.articles
-        .map((item) => resolveArticle(item as ContentNode, effectiveDate))
-        .filter(Boolean)
-    : [];
+    ? mapResolvedArray(resolved.articles as ContentNode[], (item) => resolveArticle(item, effectiveDate))
+    : { items: [], changed: false };
+
+  const number = normalizeNodeNumber(resolved.number);
+  if (resolved === node && !articles.changed && number === resolved.number) {
+    return resolved;
+  }
 
   return {
     ...resolved,
-    number: String(resolved.number ?? ''),
-    articles,
+    number,
+    articles: articles.items,
   };
 }
 
@@ -308,15 +392,22 @@ export function resolveSectionForEffectiveDate(
   if (!resolved) return section;
 
   const subsections = Array.isArray(resolved.subsections)
-    ? resolved.subsections
-        .map((item) => resolveSubsection(item as ContentNode, effectiveDate))
-        .filter(Boolean)
-    : [];
+    ? mapResolvedArray(resolved.subsections as ContentNode[], (item) => resolveSubsection(item, effectiveDate))
+    : { items: [], changed: false };
+
+  const number = normalizeNodeNumber((resolved as any).number);
+  if (
+    resolved === (section as unknown as ContentNode) &&
+    !subsections.changed &&
+    number === (resolved as any).number
+  ) {
+    return resolved as unknown as Section;
+  }
 
   return {
     ...(resolved as unknown as Section),
-    number: String((resolved as any).number ?? ''),
-    subsections: subsections as any,
+    number,
+    subsections: subsections.items as any,
   };
 }
 
@@ -328,28 +419,34 @@ function resolveAppendixContentBlock<T extends AppendixContentBlockNode>(
   if (!resolved) return null;
 
   const paragraphs = Array.isArray(resolved.paragraphs)
-    ? resolved.paragraphs
-        .map((paragraph) => applyRevision(paragraph as ContentNode, effectiveDate))
-        .filter(Boolean)
+    ? mapResolvedArray(resolved.paragraphs as ContentNode[], (paragraph) =>
+        applyRevision(paragraph, effectiveDate)
+      )
     : undefined;
 
   const tables = Array.isArray(resolved.tables)
-    ? resolved.tables
-        .map((table) => resolveTable(table as ContentNode, effectiveDate))
-        .filter(Boolean)
+    ? mapResolvedArray(resolved.tables as ContentNode[], (table) => resolveTable(table, effectiveDate))
     : undefined;
 
   const figures = Array.isArray(resolved.figures)
-    ? resolved.figures
-        .map((figure) => applyRevision(figure as ContentNode, effectiveDate))
-        .filter(Boolean)
+    ? mapResolvedArray(resolved.figures as ContentNode[], (figure) =>
+        applyRevision(figure, effectiveDate)
+      )
     : undefined;
+
+  const paragraphsChanged = Boolean(paragraphs?.changed);
+  const tablesChanged = Boolean(tables?.changed);
+  const figuresChanged = Boolean(figures?.changed);
+
+  if (resolved === block && !paragraphsChanged && !tablesChanged && !figuresChanged) {
+    return resolved;
+  }
 
   return {
     ...resolved,
-    ...(paragraphs ? { paragraphs } : {}),
-    ...(tables ? { tables } : {}),
-    ...(figures ? { figures } : {}),
+    ...(paragraphs ? { paragraphs: paragraphs.items } : {}),
+    ...(tables ? { tables: tables.items } : {}),
+    ...(figures ? { figures: figures.items } : {}),
   } as T;
 }
 
@@ -368,14 +465,18 @@ function resolveApplicationNote(
   if (!resolvedBlock) return null;
 
   const divisions = Array.isArray(resolvedBlock.divisions)
-    ? resolvedBlock.divisions
-        .map((division) => resolveAppendixDivision(division as AppendixDivisionNode, effectiveDate))
-        .filter((division): division is AppendixDivisionNode => Boolean(division))
+    ? mapResolvedArray(resolvedBlock.divisions as AppendixDivisionNode[], (division) =>
+        resolveAppendixDivision(division, effectiveDate)
+      )
     : undefined;
+
+  if (resolvedBlock === note && !divisions?.changed) {
+    return resolvedBlock;
+  }
 
   return {
     ...resolvedBlock,
-    ...(divisions ? { divisions } : {}),
+    ...(divisions ? { divisions: divisions.items } : {}),
   };
 }
 
@@ -387,13 +488,17 @@ export function resolvePartAppendixForEffectiveDate<T extends PartAppendixNode>(
   if (!resolved) return appendix;
 
   const applicationNotes = Array.isArray((resolved as PartAppendixNode).application_notes)
-    ? (resolved as PartAppendixNode).application_notes
-        ?.map((note) => resolveApplicationNote(note as ApplicationNoteNode, effectiveDate))
-        .filter((note): note is ApplicationNoteNode => Boolean(note))
-    : [];
+    ? mapResolvedArray((resolved as PartAppendixNode).application_notes as ApplicationNoteNode[], (note) =>
+        resolveApplicationNote(note, effectiveDate)
+      )
+    : { items: [], changed: false };
+
+  if (resolved === appendix && !applicationNotes.changed) {
+    return resolved as T;
+  }
 
   return {
     ...(resolved as T),
-    application_notes: applicationNotes as ApplicationNoteNode[],
+    application_notes: applicationNotes.items as ApplicationNoteNode[],
   };
 }

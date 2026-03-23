@@ -17,6 +17,8 @@ The main UI component library with BC Design System components.
 - `Header` - Application header with navigation
 - `Footer` - BC Government footer
 - `PreFooter` - Pre-footer content section
+- `Sidebar` - Collapsible sidebar panel
+- `ContentPanel` - Main content area panel
 
 **Form Components**:
 - `Button` - Primary, secondary, tertiary variants
@@ -30,13 +32,19 @@ The main UI component library with BC Design System components.
 - `Link` - Styled link with external indicators
 - `LinkCard` - Card-style navigation
 
+**Search Components**:
+- `HeaderSearch` - Compact, toggleable search for the header bar
+- `HeroSearch` - Large prominent search for the homepage hero section
+
 **Modal Components**:
 - `ModalSide` - Side panel modal
 - `ModalGlossaryContent` - Glossary modal content
+- `ModalBuildingCodeContent` - Building code content modal
 - `ButtonModalClose` - Modal close button
 - `ConfirmationModal` - Confirmation dialog
 
 **Display Components**:
+- `Alert` - Alert/notification banner
 - `Icon` - Icon library (Check, Close, Menu, Arrow, etc.)
 - `Image` - Optimized image component
 - `Tooltip` - Accessible tooltips
@@ -72,6 +80,8 @@ Data types and React hooks.
 
 **Hooks**:
 - `useLocalStorage` - LocalStorage with React state
+- `useSearch` - Shared search state and behaviour (debounce, suggestions, submit)
+- `useWalkthroughsData` - Walkthrough content data access
 
 ## Design Tokens
 

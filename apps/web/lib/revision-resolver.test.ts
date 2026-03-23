@@ -192,6 +192,60 @@ describe('resolveSectionForEffectiveDate', () => {
     expect(table.title).toBe('New Table');
   });
 
+  it('reuses unchanged table rows and cells when no row-level revisions exist', () => {
+    const bodyRow = {
+      id: 'r1',
+      type: 'body_row',
+      cells: [
+        {
+          id: 'c1',
+          type: 'text',
+          content: [{ type: 'text', value: 'Cell content' }],
+        },
+      ],
+    };
+
+    const section = {
+      id: 'sec-1',
+      type: 'section',
+      number: 1,
+      title: 'Section',
+      subsections: [
+        {
+          id: 'sub-1',
+          type: 'subsection',
+          number: 1,
+          title: 'Subsection',
+          articles: [
+            {
+              id: 'art-1',
+              type: 'article',
+              number: 1,
+              title: 'Article',
+              content: [
+                {
+                  id: 'tbl-1',
+                  type: 'table',
+                  title: 'Large Table',
+                  structure: {
+                    body_rows: [bodyRow],
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    } as any;
+
+    const resolved = resolveSectionForEffectiveDate(section, '2025-06-16');
+    const resolvedTable = resolved.subsections[0].articles[0].content[0];
+
+    expect(resolvedTable.structure.body_rows).toBe(section.subsections[0].articles[0].content[0].structure.body_rows);
+    expect(resolvedTable.structure.body_rows[0]).toBe(bodyRow);
+    expect(resolvedTable.structure.body_rows[0].cells[0]).toBe(bodyRow.cells[0]);
+  });
+
   it('resolves application note revisions for appendix content by effective date', () => {
     const appendix = {
       id: 'nbc.divB.part3.appendix',

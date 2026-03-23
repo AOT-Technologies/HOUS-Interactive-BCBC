@@ -5,6 +5,8 @@ import { ObjectiveLink } from '../components/reading/ObjectiveLink';
 import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
 import { GlossaryTerm } from '../components/reading/GlossaryTerm';
 import type { ReferenceRenderContext } from './cross-reference';
+import { useStandardsMapStore } from '../stores/standards-map-store';
+import { useVersionStore } from '../stores/version-store';
 
 const getElementsByType = (
   nodes: React.ReactNode[],
@@ -49,6 +51,11 @@ const articleContext: ReferenceRenderContext = {
   kind: 'article',
   referenceId: 'nbc.divA.part1.sect3.subsect3.art3',
 };
+
+beforeEach(() => {
+  useStandardsMapStore.getState().clearCache();
+  useVersionStore.setState({ currentVersion: '2024' });
+});
 
 describe('parseTextWithMarkers - objective-based code references', () => {
   it('parses a compound functional statement + objective reference', () => {
@@ -365,41 +372,130 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(getTextContent(nodes)).toContain('Clause (a)');
   });
 
-  it('parses standard references into cross-reference links', () => {
+  it('renders standard references as inline citation text', () => {
+    useStandardsMapStore.setState({
+      cache: new Map([
+        [
+          'standards-map:2024',
+          {
+            csaa440S1: {
+              standard_ref_id: 'csaa440S1',
+              agency: 'CSA',
+              full_number: 'A440S1-19',
+              full_title: 'Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440',
+            },
+          },
+        ],
+      ]),
+    });
+
     const input = 'See [REF:standard:csaa440S1] for details.';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
-    expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.referenceId).toBe('standard:csaa440S1');
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain(
+      'CSA A440S1, "Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440"'
+    );
+  });
+
+  it('strips trailing edition suffix from displayed standard numbers', () => {
+    useStandardsMapStore.setState({
+      cache: new Map([
+        [
+          'standards-map:2024',
+          {
+            astmd1227: {
+              standard_ref_id: 'astmd1227',
+              agency: 'ASTM',
+              full_number: 'D1227/D1227M-13',
+              full_title: 'Standard Specification for Emulsified Asphalt Used as a Protective Coating for Roofing',
+            },
+          },
+        ],
+      ]),
+    });
+
+    const input = 'See [REF:standard:astmd1227] for details.';
+    const nodes = parseTextWithMarkers(input, [], true);
+
+    expect(getTextContent(nodes)).toContain(
+      'ASTM D1227/D1227M, "Standard Specification for Emulsified Asphalt Used as a Protective Coating for Roofing"'
+    );
+    expect(getTextContent(nodes)).not.toContain('D1227/D1227M-13');
   });
 
   it('separates adjacent standard references with comma and space', () => {
+    useStandardsMapStore.setState({
+      cache: new Map([
+        [
+          'standards-map:2024',
+          {
+            nrcc40383: {
+              standard_ref_id: 'nrcc40383',
+              agency: 'NRCC',
+              full_number: '40383',
+              full_title: 'First Publication',
+            },
+            nrcc35951: {
+              standard_ref_id: 'nrcc35951',
+              agency: 'NRCC',
+              full_number: '35951',
+              full_title: 'Second Publication',
+            },
+          },
+        ],
+      ]),
+    });
+
     const input =
       'found in the following publications:[REF:standard:nrcc40383][REF:standard:nrcc35951]Commentary entitled';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
     const renderedText = getTextContent(nodes);
 
-    expect(crossRefs).toHaveLength(2);
-    expect(crossRefs[0].props.referenceId).toBe('standard:nrcc40383');
-    expect(crossRefs[1].props.referenceId).toBe('standard:nrcc35951');
+    expect(crossRefs).toHaveLength(0);
     expect(renderedText).toContain('publications:');
     expect(renderedText).toContain(', ');
     expect(renderedText).toContain('Commentary entitled');
   });
 
   it('adds space after last adjacent standard ref before following text, even if more markers exist later', () => {
+    useStandardsMapStore.setState({
+      cache: new Map([
+        [
+          'standards-map:2024',
+          {
+            nrcc40383: {
+              standard_ref_id: 'nrcc40383',
+              agency: 'NRCC',
+              full_number: '40383',
+              full_title: 'First Publication',
+            },
+            nrcc35951: {
+              standard_ref_id: 'nrcc35951',
+              agency: 'NRCC',
+              full_number: '35951',
+              full_title: 'Second Publication',
+            },
+            'nrcc-nbcug4': {
+              standard_ref_id: 'nrcc-nbcug4',
+              agency: 'NRCC',
+              full_number: 'NBCUG4',
+              full_title: 'Third Publication',
+            },
+          },
+        ],
+      ]),
+    });
+
     const input =
       'See [REF:standard:nrcc40383][REF:standard:nrcc35951]Commentary entitled [REF:standard:nrcc-nbcug4].';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
     const renderedText = getTextContent(nodes);
 
-    expect(crossRefs).toHaveLength(3);
-    expect(crossRefs[0].props.referenceId).toBe('standard:nrcc40383');
-    expect(crossRefs[1].props.referenceId).toBe('standard:nrcc35951');
-    expect(crossRefs[2].props.referenceId).toBe('standard:nrcc-nbcug4');
+    expect(crossRefs).toHaveLength(0);
     expect(renderedText).toContain(', ');
     expect(renderedText).toContain('Commentary entitled ');
   });
@@ -424,22 +520,55 @@ describe('parseTextWithMarkers - objective-based code references', () => {
   });
 
   it('parses external references with explicit label text', () => {
+    useStandardsMapStore.setState({
+      cache: new Map([
+        [
+          'standards-map:2024',
+          {
+            'csaa23.1': {
+              standard_ref_id: 'csaa23.1',
+              agency: 'CSA',
+              full_number: 'A23.1-19',
+              full_title: 'Concrete Materials and Methods of Concrete Construction',
+            },
+          },
+        ],
+      ]),
+    });
+
     const input = 'concrete stated in [REF:external:csaa23.1:Section 9 of][REF:standard:csaa23.1]';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
-    expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.referenceId).toBe('standard:csaa23.1');
+    expect(crossRefs).toHaveLength(0);
+    expect(getTextContent(nodes)).toContain(
+      'CSA A23.1, "Concrete Materials and Methods of Concrete Construction"'
+    );
     expect(getTextContent(nodes)).toContain('Section 9 of');
   });
 
   it('preserves trailing space in external-reference label text', () => {
+    useStandardsMapStore.setState({
+      cache: new Map([
+        [
+          'standards-map:2024',
+          {
+            'csaa23.1': {
+              standard_ref_id: 'csaa23.1',
+              agency: 'CSA',
+              full_number: 'A23.1-19',
+              full_title: 'Concrete Materials and Methods of Concrete Construction',
+            },
+          },
+        ],
+      ]),
+    });
+
     const input = '[REF:external:csaa23.1:Section 9 of ][REF:standard:csaa23.1]';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
-    expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.referenceId).toBe('standard:csaa23.1');
+    expect(crossRefs).toHaveLength(0);
     expect(getTextContent(nodes)).toContain('Section 9 of ');
   });
 
