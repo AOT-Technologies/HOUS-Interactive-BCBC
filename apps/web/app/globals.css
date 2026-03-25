@@ -182,4 +182,11 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
     outline: none !important;
     box-shadow: none !important;
   }
+
+  /* Restore right borders on table cells for proper table rendering */
+  .reading-view .table-block__header-cell,
+  .reading-view .table-block__cell,
+  .reading-view .table-block__table {
+    border-right: var(--layout-border-width-small, 1px) solid var(--surface-color-border-default, #e0e0e0) !important;
+  }
 }

@@ -123,8 +123,9 @@
 
 .table-block__wrapper:not(.table-block__wrapper--split) {
   overflow-x: auto;
-  overflow-y: visible;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  max-height: 500px;
 }
 
 .table-block__split-scroll {
@@ -172,6 +173,39 @@
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
+}
+
+/* Sticky header row for standard (non-split) tables */
+.table-block__thead-sticky .table-block__header-cell {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--surface-color-background-light-gray, #faf9f8);
+}
+
+/* border-collapse: collapse causes content to bleed through sticky headers.
+   Switch to border-collapse: separate when sticky headers are present. */
+.table-block__table:has(.table-block__thead-sticky) {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* With border-collapse: separate, adjacent cells both render their borders
+   causing doubled borders. Remove left/top borders on non-first cells to
+   keep the same visual as collapsed borders. */
+.table-block__table:has(.table-block__thead-sticky) .table-block__header-cell,
+.table-block__table:has(.table-block__thead-sticky) .table-block__cell {
+  border-top: none;
+  border-left: none;
+}
+
+.table-block__table:has(.table-block__thead-sticky) .table-block__header-cell:first-child,
+.table-block__table:has(.table-block__thead-sticky) .table-block__cell:first-child {
+  border-left: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+}
+
+.table-block__table:has(.table-block__thead-sticky) .table-block__thead-sticky .table-block__header-cell {
+  border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
 }
 
 /* Text alignment modifiers */
@@ -279,9 +313,12 @@
 @media print {
   .table-block__wrapper {
     max-width: 100% !important;
+    width: fit-content !important;
+    margin-inline: auto !important;
+    overflow: visible !important;
+    max-height: none !important;
   }
 
-  .table-block__wrapper,
   .table-block__body-viewport {
     overflow: visible !important;
     max-height: none !important;
@@ -301,12 +338,32 @@
     width: auto !important;
   }
 
+  /* Match reading page table style: natural width, centered, no stretch */
   .table-block__table {
-    width: 100% !important;
+    width: auto !important;
     min-width: 0 !important;
-    table-layout: fixed;
+    max-width: 100% !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
     font-size: 0.72rem;
     line-height: 1.2;
+  }
+
+  /* Disable sticky headers in print */
+  .table-block__thead-sticky .table-block__header-cell {
+    position: static !important;
+  }
+
+  /* Undo border-collapse: separate overrides for print */
+  .table-block__table:has(.table-block__thead-sticky) {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+  }
+
+  .table-block__table:has(.table-block__thead-sticky) .table-block__header-cell,
+  .table-block__table:has(.table-block__thead-sticky) .table-block__cell {
+    border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0) !important;
+    border-left: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0) !important;
   }
 
   .table-block__header-cell,
@@ -347,9 +404,5 @@
   .table-block__wrapper:not(.table-block__wrapper--split),
   .table-block__body-viewport {
     max-height: 200px;
-  }
-
-  .table-block__wrapper:not(.table-block__wrapper--split) {
-    max-height: none;
   }
 }

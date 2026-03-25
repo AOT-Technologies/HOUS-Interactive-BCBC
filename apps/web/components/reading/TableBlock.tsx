@@ -1266,7 +1266,16 @@ export const TableBlock: React.FC<TableBlockProps> = ({
               style={usesHorizontalScrollLayout ? { minWidth: `${minWidthRem}rem` } : undefined}
             >
               {renderColGroup(columnWidthsRem)}
-              <tbody>{renderRows(displayRows, interactive, renderContext)}</tbody>
+              {displayHeaderRows.length > 0 ? (
+                <>
+                  <thead className="table-block__thead-sticky">
+                    {renderRows(displayHeaderRows, interactive, renderContext)}
+                  </thead>
+                  <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
+                </>
+              ) : (
+                <tbody>{renderRows(displayRows, interactive, renderContext)}</tbody>
+              )}
             </table>
           )}
         </div>
