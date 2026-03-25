@@ -3,6 +3,41 @@ import { render, screen } from '@testing-library/react';
 import { TableBlock } from './TableBlock';
 import type { Table } from '@bc-building-code/bcbc-parser';
 
+const mockElementWidth = (width: number) => {
+  const clientWidthDescriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'clientWidth');
+  const offsetWidthDescriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
+
+  Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+    configurable: true,
+    get() {
+      return width;
+    },
+  });
+
+  Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+    configurable: true,
+    get() {
+      return width;
+    },
+  });
+
+  return () => {
+    if (clientWidthDescriptor) {
+      Object.defineProperty(HTMLElement.prototype, 'clientWidth', clientWidthDescriptor);
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+      delete (HTMLElement.prototype as Partial<HTMLElement>).clientWidth;
+    }
+
+    if (offsetWidthDescriptor) {
+      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', offsetWidthDescriptor);
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+      delete (HTMLElement.prototype as Partial<HTMLElement>).offsetWidth;
+    }
+  };
+};
+
 describe('TableBlock', () => {
   it('renders table with legacy string content', () => {
     const table: Table = {
@@ -249,6 +284,7 @@ describe('TableBlock', () => {
   });
 
   it('prefers horizontal scroll for content-heavy tables even with fewer columns', () => {
+    const restoreWidths = mockElementWidth(320);
     const table: Table = {
       id: 'test-table-5',
       type: 'table',
@@ -294,11 +330,218 @@ describe('TableBlock', () => {
     expect(wrapper).toHaveClass('table-block__wrapper--split');
     expect(splitLayout).toBeInTheDocument();
     expect(bodyViewport).toBeInTheDocument();
-    expect(splitTables).toHaveLength(2);
+    expect(splitTables).toHaveLength(3);
     expect(splitTables[1]?.getAttribute('style')).toMatch(/min-width:\s*\d+(\.\d+)?rem/i);
+    restoreWidths();
+  });
+
+  it('assigns print-specific column widths for wide tables', () => {
+    const table: Table = {
+      id: 'test-table-print-widths',
+      type: 'table',
+      number: '9.99.1.1',
+      title: 'Print Width Balancing',
+      rows: [
+        {
+          type: 'header_row',
+          cells: [
+            { content: 'Short', isHeader: true },
+            {
+              content:
+                'Very Long Descriptive Header For Content That Needs More Room In The Printed PDF',
+              isHeader: true,
+            },
+            { content: 'Ref', isHeader: true },
+            { content: 'Value', isHeader: true },
+          ],
+        },
+        {
+          type: 'body_row',
+          cells: [
+            { content: [{ type: 'text', value: 'A' }] },
+            {
+              content: [
+                {
+                  type: 'text',
+                  value:
+                    'This body cell contains substantially more text so the print view should allocate more width to this column than the others.',
+                },
+              ],
+            },
+            { content: [{ type: 'text', value: '9.10.3.1.' }] },
+            { content: [{ type: 'text', value: '12.5' }] },
+          ],
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table} />);
+    const columns = Array.from(container.querySelectorAll('.table-block__col'));
+
+    expect(columns.length).toBeGreaterThanOrEqual(4);
+    expect(columns[0]?.style.getPropertyValue('--table-column-width-rem')).not.toBe('');
+    expect(columns[0]?.style.getPropertyValue('--table-column-width-print')).not.toBe('');
+
+    const firstPrintWidth = Number.parseFloat(
+      columns[0]?.style.getPropertyValue('--table-column-width-print') || '0'
+    );
+    const secondPrintWidth = Number.parseFloat(
+      columns[1]?.style.getPropertyValue('--table-column-width-print') || '0'
+    );
+
+    expect(secondPrintWidth).toBeGreaterThan(firstPrintWidth);
+  });
+
+  it('marks extra-wide print tables for landscape scaling', () => {
+    const table: Table = {
+      id: 'test-table-print-scale',
+      type: 'table',
+      number: '9.99.2.2',
+      title: 'Landscape Scale',
+      rows: [
+        {
+          type: 'header_row',
+          cells: Array.from({ length: 10 }, (_, index) => ({
+            content: `Long Descriptive Header Column ${index + 1} For Print Scaling`,
+            isHeader: true,
+          })),
+        },
+        {
+          type: 'body_row',
+          cells: Array.from({ length: 10 }, (_, index) => ({
+            content: [
+              {
+                type: 'text' as const,
+                value: `Extended table content ${index + 1} that forces a very wide natural print width`,
+              },
+            ],
+          })),
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table} />);
+    const root = container.querySelector('.table-block');
+
+    expect(root).toHaveClass('table-block--landscape');
+    expect(root).toHaveClass('table-block--print-scaled');
+    expect(root?.getAttribute('style')).toContain('--table-print-natural-width');
+    expect(root?.getAttribute('style')).toContain('--table-print-scale');
+  });
+
+  it('infers grouped header colspans from contiguous child header codes', () => {
+    const restoreWidths = mockElementWidth(320);
+    const table = {
+      id: 'test-table-braced-wall-panels',
+      type: 'table' as const,
+      title: 'Minimum Total Length of Braced Wall Panels where HWP <= 0.5 kPa and Smax <= 0.3',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: '<italic>Storey</italic>' }] },
+              {
+                content: [
+                  {
+                    type: 'text' as const,
+                    value: '<italic>Minimum Total Length Braced Wall Panels</italic>, m',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'header-2',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: '' }] },
+              {
+                content: [
+                  {
+                    type: 'text' as const,
+                    value:
+                      '<bold>Diagonal-Lumber-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}</bold>',
+                  },
+                ],
+              },
+              {
+                content: [
+                  {
+                    type: 'text' as const,
+                    value:
+                      '<bold>Gypsum-Sheathed Framing Type (with gypsum board on only one side)^{(1)(2)}</bold>',
+                  },
+                ],
+              },
+              {
+                content: [
+                  {
+                    type: 'text' as const,
+                    value:
+                      '<bold>Wood-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}</bold>',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'header-3',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: '' }] },
+              { content: [{ type: 'text' as const, value: 'DWB' }] },
+              { content: [{ type: 'text' as const, value: 'GWB-A' }] },
+              { content: [{ type: 'text' as const, value: 'GWB-B' }] },
+              { content: [{ type: 'text' as const, value: 'GWB-C' }] },
+              { content: [{ type: 'text' as const, value: 'GWB-D' }] },
+              { content: [{ type: 'text' as const, value: 'WSP-A' }] },
+              { content: [{ type: 'text' as const, value: 'WSP-B' }] },
+              { content: [{ type: 'text' as const, value: 'WSP-C' }] },
+              { content: [{ type: 'text' as const, value: 'WSP-D' }] },
+              { content: [{ type: 'text' as const, value: 'WSP-E' }] },
+            ],
+          },
+        ],
+        body_rows: [
+          {
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: Array.from({ length: 11 }, (_, index) => ({
+              content: [{ type: 'text' as const, value: `Cell ${index + 1}` }],
+            })),
+          },
+        ],
+      },
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    const storeyHeader = screen.getAllByText('Storey')[0]?.closest('th');
+    const allPanelsHeader = screen.getAllByText('Minimum Total Length Braced Wall Panels')[0]?.closest('th');
+    const diagonalHeader = screen
+      .getAllByText(/Diagonal-Lumber-Sheathed Framing Type/i)[0]
+      ?.closest('th');
+    const gypsumHeader = screen
+      .getAllByText(/Gypsum-Sheathed Framing Type/i)[0]
+      ?.closest('th');
+    const woodHeader = screen
+      .getAllByText(/Wood-Sheathed Framing Type/i)[0]
+      ?.closest('th');
+
+    expect(storeyHeader).toHaveAttribute('rowspan', '3');
+    expect(allPanelsHeader).toHaveAttribute('colspan', '10');
+    expect(diagonalHeader).not.toHaveAttribute('colspan');
+    expect(gypsumHeader).toHaveAttribute('colspan', '4');
+    expect(woodHeader).toHaveAttribute('colspan', '5');
+    restoreWidths();
   });
 
   it('keeps header rows outside the scrollable body region for overflow tables', () => {
+    const restoreWidths = mockElementWidth(320);
     const table: Table = {
       id: 'test-table-split-header',
       type: 'table',
@@ -343,6 +586,7 @@ describe('TableBlock', () => {
     expect(headerViewport?.textContent).toContain('Extremely Long Header Column One');
     expect(bodyViewport?.textContent).not.toContain('Extremely Long Header Column One');
     expect(bodyViewport?.textContent).toContain('Body value 1');
+    restoreWidths();
   });
 
   it('renders forming part information from internal targets', () => {
@@ -502,6 +746,7 @@ describe('TableBlock', () => {
   });
 
   it('infers header spans for legacy multi-row headers that omit colspan and rowspan', () => {
+    const restoreWidths = mockElementWidth(320);
     const table = {
       id: 'test-table-infer-spans',
       type: 'table' as const,
@@ -556,14 +801,15 @@ describe('TableBlock', () => {
     };
 
     const { container } = render(<TableBlock table={table as unknown as Table} />);
-    const assemblyHeader = screen.getByText('Assembly Type').closest('th');
-    const heatingHeader = screen.getByText('Heating Degree-Days').closest('th');
-    const minimumHeader = screen.getByText('Minimum Effective Thermal Resistance').closest('th');
+    const assemblyHeader = screen.getAllByText('Assembly Type')[0]?.closest('th');
+    const heatingHeader = screen.getAllByText('Heating Degree-Days')[0]?.closest('th');
+    const minimumHeader = screen.getAllByText('Minimum Effective Thermal Resistance')[0]?.closest('th');
 
     expect(assemblyHeader).toHaveAttribute('rowspan', '3');
     expect(heatingHeader).toHaveAttribute('colspan', '6');
     expect(minimumHeader).toHaveAttribute('colspan', '6');
     expect(container.querySelector('.table-block__wrapper--split')).toBeInTheDocument();
+    restoreWidths();
   });
 
   it('infers rowspans for placeholder header cells in appendix tables', () => {

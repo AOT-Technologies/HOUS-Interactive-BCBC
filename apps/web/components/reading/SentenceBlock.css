@@ -3,6 +3,7 @@
   align-items: flex-start;
   gap: 0;
   margin-bottom: var(--layout-margin-small);
+  min-width: 0;
 }
 
 .sentenceNumber {
@@ -16,6 +17,7 @@
 
 .sentenceContent {
   flex: 1;
+  min-width: 0;
 }
 
 .sentenceText {
@@ -23,11 +25,13 @@
   font: var(--typography-regular-body);
   color: var(--typography-color-primary);
   line-height: 27.008px;
+  min-width: 0;
 }
 
 .sentenceNestedContent {
   margin-left: var(--layout-margin-medium);
   margin-top: var(--layout-margin-small);
+  min-width: 0;
 }
 
 .sentenceOrganizations {

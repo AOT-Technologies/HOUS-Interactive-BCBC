@@ -78,6 +78,10 @@
   margin: 0;
 }
 
+.table-block__col {
+  width: calc(var(--table-column-width-rem, 5.5) * 1rem);
+}
+
 .table-block__wrapper--scroll .table-block__table {
   width: max-content;
   min-width: 100%;
@@ -317,10 +321,29 @@
   flex: 1 1 auto;
 }
 
+/* Print-only unified table: hidden on screen, shown in print for proper header repetition */
+.table-block__table--print-unified {
+  display: none;
+}
+
+/* Landscape page rule for wide tables */
+@page landscape-table {
+  size: landscape;
+  margin: 1cm;
+}
+
+.table-block--landscape {
+  page: landscape-table;
+}
+
 @media print {
+  :root {
+    --table-print-page-gutter: 0.5cm;
+  }
+
   .table-block__wrapper {
     max-width: 100% !important;
-    width: fit-content !important;
+    width: 100% !important;
     margin-inline: auto !important;
     overflow: visible !important;
     max-height: none !important;
@@ -331,8 +354,14 @@
     max-height: none !important;
   }
 
+  /* Hide the split-scroll pair in print; the unified print table replaces it */
   .table-block__split-scroll {
-    border: 0 !important;
+    display: none !important;
+  }
+
+  /* Show the unified print table that has proper <thead>/<tbody> for header repetition */
+  .table-block__table--print-unified {
+    display: table !important;
   }
 
   .table-block__header-viewport {
@@ -345,15 +374,107 @@
     width: auto !important;
   }
 
-  /* Match reading page table style: natural width, centered, no stretch */
+  /* Fit tables within page width; browser compresses columns as needed */
   .table-block__table {
-    width: auto !important;
+    width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
     table-layout: auto !important;
     border-collapse: collapse !important;
     font-size: 0.72rem;
     line-height: 1.2;
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .table-block__col {
+    width: var(--table-column-width-print) !important;
+  }
+
+  /* Landscape: stretch the full container chain to use all available page width */
+  .table-block--landscape {
+    width: calc(100vw - (var(--table-print-page-gutter) * 2)) !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+
+  .table-block--landscape .table-block__body,
+  .table-block--landscape .table-block__wrapper {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .table-block--landscape .table-block__table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    font-size: 0.62rem;
+    line-height: 1.15;
+  }
+
+  .table-block--print-scaled {
+    width: calc(var(--table-print-natural-width) * var(--table-print-scale)) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
+  .table-block--print-scaled .table-block__body,
+  .table-block--print-scaled .table-block__wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .table-block--print-scaled .table-block__table--print-unified {
+    width: calc(var(--table-print-natural-width) * var(--table-print-scale)) !important;
+    min-width: calc(var(--table-print-natural-width) * var(--table-print-scale)) !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    font-size: calc(0.72rem * var(--table-print-scale)) !important;
+    line-height: 1.2 !important;
+  }
+
+  .table-block--print-scaled .table-block__table--print-unified .table-block__col {
+    width: calc(var(--table-column-width-rem, 5.5) * 1rem * var(--table-print-scale)) !important;
+  }
+
+  .table-block--print-scaled .table-block__table--print-unified .table-block__header-cell {
+    font-size: calc(1.125rem * var(--table-print-scale)) !important;
+    line-height: 1.15 !important;
+    padding: calc(0.2rem * var(--table-print-scale)) calc(0.25rem * var(--table-print-scale)) !important;
+  }
+
+  .table-block--print-scaled .table-block__table--print-unified .table-block__cell {
+    font-size: calc(0.72rem * var(--table-print-scale)) !important;
+    line-height: 1.15 !important;
+    padding: calc(0.2rem * var(--table-print-scale)) calc(0.25rem * var(--table-print-scale)) !important;
+  }
+
+  .table-block--print-scaled .table-block__table--print-unified .table-block__cell--has-figure {
+    min-width: 0 !important;
+    width: auto !important;
+  }
+
+  .table-block--print-scaled .table-block__table--print-unified .table-block__figure-image {
+    width: min(100%, calc(9.5rem * var(--table-print-scale))) !important;
+    max-width: calc(9.5rem * var(--table-print-scale)) !important;
+    max-height: calc(8.5rem * var(--table-print-scale)) !important;
+  }
+
+  /* Repeat <thead> on every printed page */
+  .table-block__table thead {
+    display: table-header-group;
+  }
+
+  /* Avoid splitting individual rows across pages */
+  .table-block__table tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep table title/caption attached to the table — don't orphan them */
+  .table-block__header,
+  .table-block__caption {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   /* Disable sticky headers in print */
@@ -375,10 +496,17 @@
 
   .table-block__header-cell,
   .table-block__cell {
-    padding: 0.25rem 0.3rem;
+    padding: 0.2rem 0.25rem;
+    min-inline-size: 0 !important;
     overflow-wrap: anywhere;
     word-break: break-word;
     hyphens: auto;
+  }
+
+  .table-block__header-cell {
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: manual;
   }
 
   .table-block__figure-image {

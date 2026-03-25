@@ -15,6 +15,8 @@ export interface TableBlockProps {
   renderContext?: ReferenceRenderContext;
 }
 
+const LANDSCAPE_PRINT_CAPACITY_REM = 65;
+
 type RawTableCell = {
   content?: string | RawTableCellContent[];
   text?: string;
@@ -613,6 +615,15 @@ type TableWidthAnalysisRow = {
   }>;
 };
 
+type ColumnWidthProfile = {
+  maxChars: number;
+  maxToken: number;
+  hasFigure: boolean;
+  letterCount: number;
+  digitCount: number;
+  hasMultiWordText: boolean;
+};
+
 const getStructuredListPlainText = (list: StructuredList): string => {
   switch (list.type) {
     case 'bulleted':
@@ -658,18 +669,41 @@ const getLongestTokenLength = (text: string): number => {
     .reduce((max, token) => Math.max(max, token.length), 0);
 };
 
+const getCharacterCounts = (text: string) => {
+  const cleaned = text.replace(/<[^>]+>/g, ' ').trim();
+
+  return {
+    letters: (cleaned.match(/[A-Za-z]/g) || []).length,
+    digits: (cleaned.match(/\d/g) || []).length,
+    hasMultiWordText: /\S+\s+\S+/.test(cleaned),
+  };
+};
+
 const analyzeTableWidth = (
   rows: TableWidthAnalysisRow[],
   maxColumnCount: number
-): { preferHorizontalScroll: boolean; minWidthRem: number; columnWidthsRem: number[] } => {
+): {
+  preferHorizontalScroll: boolean;
+  minWidthRem: number;
+  columnWidthsRem: number[];
+  columnProfiles: ColumnWidthProfile[];
+} => {
   if (maxColumnCount === 0) {
-    return { preferHorizontalScroll: false, minWidthRem: 0, columnWidthsRem: [] };
+    return {
+      preferHorizontalScroll: false,
+      minWidthRem: 0,
+      columnWidthsRem: [],
+      columnProfiles: [],
+    };
   }
 
-  const columns = Array.from({ length: maxColumnCount }, () => ({
+  const columns: ColumnWidthProfile[] = Array.from({ length: maxColumnCount }, () => ({
     maxChars: 0,
     maxToken: 0,
     hasFigure: false,
+    letterCount: 0,
+    digitCount: 0,
+    hasMultiWordText: false,
   }));
 
   rows.forEach((row) => {
@@ -680,11 +714,16 @@ const analyzeTableWidth = (
       const text = getCellPlainText(cell.content);
       const plainTextLength = text.replace(/<[^>]+>/g, '').trim().length;
       const longestTokenLength = getLongestTokenLength(text);
+      const { letters, digits, hasMultiWordText } = getCharacterCounts(text);
 
       if (colspan === 1 && columns[columnIndex]) {
         columns[columnIndex].maxChars = Math.max(columns[columnIndex].maxChars, Math.min(plainTextLength, 60));
         columns[columnIndex].maxToken = Math.max(columns[columnIndex].maxToken, longestTokenLength);
         columns[columnIndex].hasFigure = columns[columnIndex].hasFigure || hasFigure;
+        columns[columnIndex].letterCount += letters;
+        columns[columnIndex].digitCount += digits;
+        columns[columnIndex].hasMultiWordText =
+          columns[columnIndex].hasMultiWordText || hasMultiWordText;
       }
 
       columnIndex += colspan;
@@ -716,7 +755,55 @@ const analyzeTableWidth = (
     preferHorizontalScroll,
     minWidthRem: Math.max(estimatedMinWidthRem, 32),
     columnWidthsRem,
+    columnProfiles: columns,
   };
+};
+
+const getPrintColumnWidthPercentages = (
+  columnWidthsRem: number[],
+  columnProfiles: ColumnWidthProfile[],
+  landscape: boolean
+): number[] => {
+  if (columnWidthsRem.length === 0 || columnWidthsRem.length !== columnProfiles.length) {
+    return [];
+  }
+
+  const weightedWidths = columnWidthsRem.map((width, index) => {
+    const profile = columnProfiles[index];
+    const isMostlyNumeric =
+      profile.digitCount > profile.letterCount * 2 &&
+      profile.maxToken <= 4 &&
+      profile.maxChars <= 12 &&
+      !profile.hasFigure;
+    const isTextHeavy =
+      profile.hasMultiWordText ||
+      (profile.letterCount > profile.digitCount && profile.maxChars >= 14) ||
+      profile.maxToken >= 8;
+
+    let adjustedWidth = width;
+
+    if (isMostlyNumeric) {
+      adjustedWidth *= landscape ? 0.48 : 0.58;
+    }
+
+    if (isTextHeavy) {
+      adjustedWidth *= landscape ? 1.85 : 1.65;
+    }
+
+    if (profile.hasFigure) {
+      adjustedWidth *= 1.2;
+    }
+
+    const exponent = landscape ? 0.88 : 0.92;
+    return Math.pow(Math.max(adjustedWidth, 1), exponent);
+  });
+  const totalWeightedWidth = weightedWidths.reduce((total, width) => total + width, 0);
+
+  if (totalWeightedWidth <= 0) {
+    return [];
+  }
+
+  return weightedWidths.map((width) => (width / totalWeightedWidth) * 100);
 };
 
 type NormalizedCell = ReturnType<typeof normalizeCell>;
@@ -762,6 +849,52 @@ const trimRowToColumnCount = (row: NormalizedRow, maxColumns: number): void => {
   });
 
   row.cells = nextCells;
+};
+
+const getHeaderGroupToken = (value: string): string | null => {
+  const cleaned = value
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\^\{[^}]*\}/g, ' ')
+    .replace(/_\{[^}]*\}/g, ' ')
+    .replace(/\[REF:[^\]]+:(.*?)\]/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toUpperCase();
+
+  if (!cleaned) {
+    return null;
+  }
+
+  const match = cleaned.match(/^([A-Z]{2,})/);
+  return match?.[1] ?? null;
+};
+
+const getContiguousHeaderGroupRuns = (row: NormalizedRow): number[] | null => {
+  const tokens = row.cells
+    .map((cell) => getHeaderGroupToken(getCellPlainText(cell.content)))
+    .filter((token): token is string => Boolean(token));
+
+  if (tokens.length !== row.cells.length || tokens.length <= 1) {
+    return null;
+  }
+
+  const runs: number[] = [];
+  let currentToken = tokens[0];
+  let currentCount = 1;
+
+  for (let index = 1; index < tokens.length; index += 1) {
+    if (tokens[index] === currentToken) {
+      currentCount += 1;
+      continue;
+    }
+
+    runs.push(currentCount);
+    currentToken = tokens[index];
+    currentCount = 1;
+  }
+
+  runs.push(currentCount);
+  return runs.length > 1 ? runs : null;
 };
 
 const inferHeaderSpans = (
@@ -926,14 +1059,35 @@ const inferHeaderSpans = (
   clonedRows.forEach((row, rowIndex) => {
     const occupiedColumns = activeRowspans.filter((value) => value > 0).length;
     const availableColumns = totalColumns - occupiedColumns;
-    const rowColumnCount = getColumnCount(row);
+    let rowColumnCount = getColumnCount(row);
     const cellCount = row.cells.length;
 
     if (rowColumnCount > availableColumns) {
       trimRowToColumnCount(row, availableColumns);
+      rowColumnCount = getColumnCount(row);
     }
 
     if (availableColumns > rowColumnCount && cellCount > 0) {
+      const canInferGroupedColspans =
+        rowIndex > 0 &&
+        row.cells.every((cell) => typeof cell.colspan !== 'number' || cell.colspan <= 1) &&
+        row.cells.every((cell) => typeof cell.rowspan !== 'number' || cell.rowspan <= 1);
+      const nextRow = clonedRows[rowIndex + 1];
+      const childGroupRuns =
+        canInferGroupedColspans && nextRow ? getContiguousHeaderGroupRuns(nextRow) : null;
+
+      if (
+        childGroupRuns &&
+        childGroupRuns.length === row.cells.length &&
+        childGroupRuns.reduce((total, span) => total + span, 0) === availableColumns
+      ) {
+        row.cells = row.cells.map((cell, index) => ({
+          ...cell,
+          colspan: childGroupRuns[index] > 1 ? childGroupRuns[index] : undefined,
+        }));
+        rowColumnCount = getColumnCount(row);
+      }
+
       if (rowIndex === 0 && cellCount > 1) {
         for (let index = 0; index < cellCount - 1; index += 1) {
           row.cells[index].rowspan = clonedRows.length;
@@ -943,7 +1097,7 @@ const inferHeaderSpans = (
         if (trailingSpan > 1) {
           row.cells[cellCount - 1].colspan = trailingSpan;
         }
-      } else {
+      } else if (availableColumns > rowColumnCount) {
         const trailingSpan = availableColumns - (cellCount - 1);
         if (trailingSpan > 1) {
           row.cells[cellCount - 1].colspan = trailingSpan;
@@ -982,15 +1136,24 @@ const inferHeaderSpans = (
   return clonedRows;
 };
 
-const renderColGroup = (columnWidthsRem: number[]) => {
-  if (columnWidthsRem.length === 0) {
+const renderColGroup = (columnWidthsRem: number[], printColumnWidthsPct: number[]) => {
+  if (columnWidthsRem.length === 0 || columnWidthsRem.length !== printColumnWidthsPct.length) {
     return null;
   }
 
   return (
     <colgroup>
       {columnWidthsRem.map((width, index) => (
-        <col key={`column-${index}`} style={{ width: `${width}rem` }} />
+        <col
+          key={`column-${index}`}
+          className="table-block__col"
+          style={
+            {
+              '--table-column-width-rem': width,
+              '--table-column-width-print': `${printColumnWidthsPct[index]}%`,
+            } as React.CSSProperties
+          }
+        />
       ))}
     </colgroup>
   );
@@ -1096,7 +1259,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     () => (displayHeaderRows.length > 0 ? [...displayHeaderRows, ...bodyRows] : normalizedRows),
     [bodyRows, displayHeaderRows, normalizedRows]
   );
-  const { preferHorizontalScroll, minWidthRem, columnWidthsRem } = useMemo(
+  const { preferHorizontalScroll, minWidthRem, columnWidthsRem, columnProfiles } = useMemo(
     () => analyzeTableWidth(displayRows, Math.max(...displayRows.map(getColumnCount), 0)),
     [displayRows]
   );
@@ -1139,6 +1302,20 @@ export const TableBlock: React.FC<TableBlockProps> = ({
 
   const usesSplitScrollLayout =
     usesHorizontalScrollLayout && displayHeaderRows.length > 0;
+
+  const needsLandscapePrint = minWidthRem > 48;
+  const printScale = useMemo(
+    () =>
+      needsLandscapePrint
+        ? Math.min(1, LANDSCAPE_PRINT_CAPACITY_REM / Math.max(minWidthRem, LANDSCAPE_PRINT_CAPACITY_REM))
+        : 1,
+    [minWidthRem, needsLandscapePrint]
+  );
+  const usesLandscapePrintScaling = needsLandscapePrint && printScale < 0.995;
+  const printColumnWidthsPct = useMemo(
+    () => getPrintColumnWidthPercentages(columnWidthsRem, columnProfiles, needsLandscapePrint),
+    [columnProfiles, columnWidthsRem, needsLandscapePrint]
+  );
 
   useEffect(() => {
     if (!usesSplitScrollLayout) {
@@ -1220,7 +1397,18 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   };
 
   return (
-    <div className="table-block" id={rawTable.id}>
+    <div
+      className={`table-block${needsLandscapePrint ? ' table-block--landscape' : ''}${usesLandscapePrintScaling ? ' table-block--print-scaled' : ''}`}
+      id={rawTable.id}
+      style={
+        needsLandscapePrint
+          ? ({
+              '--table-print-natural-width': `${minWidthRem}rem`,
+              '--table-print-scale': `${printScale}`,
+            } as React.CSSProperties)
+          : undefined
+      }
+    >
       {(tableNumber || resolvedTitle || formingPartText) && (
         <div className="table-block__header">
           {tableNumber && (
@@ -1253,51 +1441,62 @@ export const TableBlock: React.FC<TableBlockProps> = ({
           className={`table-block__wrapper${usesHorizontalScrollLayout ? ' table-block__wrapper--scroll' : ''}${usesSplitScrollLayout ? ' table-block__wrapper--split' : ''}`}
         >
           {usesSplitScrollLayout ? (
-            <div className="table-block__split-scroll">
-              <div
-                className="table-block__header-viewport"
-                aria-hidden="true"
-                style={{ paddingRight: `${scrollbarCompensation}px` }}
-              >
+            <>
+              <div className="table-block__split-scroll">
                 <div
-                  className="table-block__header-track"
-                  style={{
-                    width: `${minWidthRem}rem`,
-                    transform: `translateX(-${headerOffset}px)`,
+                  className="table-block__header-viewport"
+                  aria-hidden="true"
+                  style={{ paddingRight: `${scrollbarCompensation}px` }}
+                >
+                  <div
+                    className="table-block__header-track"
+                    style={{
+                      width: `${minWidthRem}rem`,
+                      transform: `translateX(-${headerOffset}px)`,
+                    }}
+                  >
+                    <table
+                      className="table-block__table table-block__table--split-header"
+                      style={{ width: `${minWidthRem}rem`, minWidth: `${minWidthRem}rem` }}
+                    >
+                      {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
+                      <thead>{renderRows(displayHeaderRows, interactive, renderContext)}</thead>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  className="table-block__body-viewport"
+                  ref={bodyViewportRef}
+                  onScroll={(event) => {
+                    const currentTarget = event.currentTarget;
+                    setHeaderOffset(currentTarget.scrollLeft);
                   }}
                 >
                   <table
-                    className="table-block__table table-block__table--split-header"
+                    className="table-block__table table-block__table--split-body"
                     style={{ width: `${minWidthRem}rem`, minWidth: `${minWidthRem}rem` }}
                   >
-                    {renderColGroup(columnWidthsRem)}
-                    <thead>{renderRows(displayHeaderRows, interactive, renderContext)}</thead>
+                    {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
+                    <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
                   </table>
                 </div>
               </div>
-              <div
-                className="table-block__body-viewport"
-                ref={bodyViewportRef}
-                onScroll={(event) => {
-                  const currentTarget = event.currentTarget;
-                  setHeaderOffset(currentTarget.scrollLeft);
-                }}
+              {/* Print-only unified table: combines header + body in one <table> so browsers can repeat <thead> on each page */}
+              <table
+                className="table-block__table table-block__table--print-unified"
+                aria-hidden="true"
               >
-                <table
-                  className="table-block__table table-block__table--split-body"
-                  style={{ width: `${minWidthRem}rem`, minWidth: `${minWidthRem}rem` }}
-                >
-                  {renderColGroup(columnWidthsRem)}
-                  <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
-                </table>
-              </div>
-            </div>
+                {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
+                <thead>{renderRows(displayHeaderRows, interactive, renderContext)}</thead>
+                <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
+              </table>
+            </>
           ) : (
             <table
               className="table-block__table"
               style={usesHorizontalScrollLayout ? { minWidth: `${minWidthRem}rem` } : undefined}
             >
-              {renderColGroup(columnWidthsRem)}
+              {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
               {displayHeaderRows.length > 0 ? (
                 <>
                   <thead className="table-block__thead-sticky" ref={theadRef}>
