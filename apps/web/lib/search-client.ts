@@ -352,7 +352,8 @@ export class BCBCSearchClient {
     }
 
     // Boost exact phrase match in title
-    if (doc.title.toLowerCase().includes(query.toLowerCase())) {
+    const title = typeof doc.title === 'string' ? doc.title : (doc.title as any)?.text ?? '';
+    if (title.toLowerCase().includes(query.toLowerCase())) {
       score *= 2;
     }
 
@@ -367,10 +368,11 @@ export class BCBCSearchClient {
     const queryLower = query.toLowerCase();
 
     // Title highlight
-    if (doc.title.toLowerCase().includes(queryLower)) {
+    const docTitle = typeof doc.title === 'string' ? doc.title : (doc.title as any)?.text ?? '';
+    if (docTitle.toLowerCase().includes(queryLower)) {
       highlights.push({
         field: 'title',
-        text: this.highlightText(doc.title, query),
+        text: this.highlightText(docTitle, query),
       });
     }
 

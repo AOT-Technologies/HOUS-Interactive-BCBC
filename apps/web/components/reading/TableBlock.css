@@ -178,7 +178,7 @@
 /* Sticky header row for standard (non-split) tables */
 .table-block__thead-sticky .table-block__header-cell {
   position: sticky;
-  top: 0;
+  top: var(--sticky-top, 0px);
   z-index: 1;
   background-color: var(--surface-color-background-light-gray, #faf9f8);
 }
@@ -188,11 +188,12 @@
 .table-block__table:has(.table-block__thead-sticky) {
   border-collapse: separate;
   border-spacing: 0;
+  border: none;
 }
 
 /* With border-collapse: separate, adjacent cells both render their borders
-   causing doubled borders. Remove left/top borders on non-first cells to
-   keep the same visual as collapsed borders. */
+   causing doubled borders. Remove top/left borders on non-first cells and
+   restore them on first cells/rows to keep the same visual as collapsed borders. */
 .table-block__table:has(.table-block__thead-sticky) .table-block__header-cell,
 .table-block__table:has(.table-block__thead-sticky) .table-block__cell {
   border-top: none;
@@ -204,7 +205,13 @@
   border-left: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
 }
 
-.table-block__table:has(.table-block__thead-sticky) .table-block__thead-sticky .table-block__header-cell {
+.table-block__table:has(.table-block__thead-sticky) .table-block__thead-sticky tr:first-child .table-block__header-cell {
+  border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+}
+
+/* First body row needs top border to separate from header */
+.table-block__table:has(.table-block__thead-sticky) tbody tr:first-child .table-block__cell,
+.table-block__table:has(.table-block__thead-sticky) tbody tr:first-child .table-block__header-cell {
   border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
 }
 

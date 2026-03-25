@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-18T20:29:51.925-07:00",
+  "generated_timestamp" : "2026-03-25T11:43:55.973-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -380426,23 +380426,26 @@
                  { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.note8",
                   "content" : "^{(7)} A [REF:term:br-wl-bnd:braced wall band] spacing of 15 m is only permitted in [REF:term:bmnt:basements] and crawl spaces." } ],
                 "structure" : 
-                { "columns" : 5,
+                { "columns" : 6,
                  "column_specs" : 
                  [ 
                   { "name" : "col1",
-                   "width" : "15.00*" },
+                   "width" : "12.00*" },
                   
                   { "name" : "col2",
-                   "width" : "35.00*" },
+                   "width" : "33.00*" },
                   
                   { "name" : "col3",
-                   "width" : "20.00*" },
+                   "width" : "18.00*" },
                   
                   { "name" : "col4",
                    "width" : "15.00*" },
                   
                   { "name" : "col5",
-                   "width" : "15.00*" } ],
+                   "width" : "11.00*" },
+                  
+                  { "name" : "col6",
+                   "width" : "11.00*" } ],
                  "header_rows" : 
                  [ 
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.rowh1",
@@ -380477,7 +380480,8 @@
                      [ 
                       { "type" : "text",
                        "value" : "Adjustment Factor" } ],
-                     "align" : "center" } ] } ],
+                     "align" : "center",
+                     "colspan" : 2 } ] } ],
                  "body_rows" : 
                  [ 
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row1",
@@ -380488,7 +380492,7 @@
                      [ 
                       { "type" : "text",
                        "value" : "K_{weight}^{(1) (2)}" } ],
-                     "rowspan" : 38 },
+                     "rowspan" : 190 },
                     
                     { "content" : 
                      [ 
@@ -380508,7 +380512,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.0" } ] } ] },
+                       "value" : "1.0" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row2",
                    "type" : "body_row",
@@ -380528,7 +380533,7 @@
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row1",
                         "alt_text" : "Building depth diagram showing 3.1 to 18.3 m" } } ],
-                     "rowspan" : 37 },
+                     "rowspan" : 18 },
                     
                     { "content" : 
                      [ 
@@ -380554,7 +380559,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.72" } ] } ] },
+                       "value" : "1.72" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row3",
                    "type" : "body_row",
@@ -380568,7 +380574,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.54" } ] } ] },
+                       "value" : "1.54" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row4",
                    "type" : "body_row",
@@ -380582,7 +380589,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.46" } ] } ] },
+                       "value" : "1.46" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row5",
                    "type" : "body_row",
@@ -380596,7 +380604,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.42" } ] } ] },
+                       "value" : "1.42" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row6",
                    "type" : "body_row",
@@ -380610,7 +380619,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.39" } ] } ] },
+                       "value" : "1.39" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row7",
                    "type" : "body_row",
@@ -380624,7 +380634,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.38" } ] } ] },
+                       "value" : "1.38" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row8",
                    "type" : "body_row",
@@ -380654,7 +380665,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.92" } ] } ] },
+                       "value" : "1.92" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row9",
                    "type" : "body_row",
@@ -380668,7 +380680,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.71" } ] } ] },
+                       "value" : "1.71" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row10",
                    "type" : "body_row",
@@ -380682,7 +380695,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.62" } ] } ] },
+                       "value" : "1.62" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row11",
                    "type" : "body_row",
@@ -380696,7 +380710,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.57" } ] } ] },
+                       "value" : "1.57" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row12",
                    "type" : "body_row",
@@ -380710,7 +380725,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.54" } ] } ] },
+                       "value" : "1.54" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row13",
                    "type" : "body_row",
@@ -380724,7 +380740,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.51" } ] } ] },
+                       "value" : "1.51" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row14",
                    "type" : "body_row",
@@ -380754,7 +380771,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.97" } ] } ] },
+                       "value" : "1.97" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row15",
                    "type" : "body_row",
@@ -380768,7 +380786,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.76" } ] } ] },
+                       "value" : "1.76" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row16",
                    "type" : "body_row",
@@ -380782,7 +380801,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.67" } ] } ] },
+                       "value" : "1.67" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row17",
                    "type" : "body_row",
@@ -380796,7 +380816,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.61" } ] } ] },
+                       "value" : "1.61" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row18",
                    "type" : "body_row",
@@ -380810,7 +380831,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.58" } ] } ] },
+                       "value" : "1.58" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row19",
                    "type" : "body_row",
@@ -380824,7 +380846,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.56" } ] } ] },
+                       "value" : "1.56" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row20",
                    "type" : "body_row",
@@ -382910,13 +382933,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Stone veneer^{(2)}" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
+                       "value" : "Stone veneer^{(2)}" } ] },
                     
                     { "content" : 
                      [ 
@@ -382955,7 +382972,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] },
+                       "value" : "Any L_{wl}" } ] },
                     
                     { "content" : 
                      [ 
@@ -382965,7 +382982,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "" } ] } ] },
+                       "value" : "1.00" } ] } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row107",
                    "type" : "body_row",
@@ -384569,7 +384586,7 @@
                         "alt_text" : "One storey building - 1-storey stone veneer fully clad" } },
                       
                       { "type" : "text",
-                       "value" : " Supporting roof + 2 floor2" } ],
+                       "value" : " Supporting roof + 2 floors" } ],
                      "rowspan" : 6 },
                     
                     { "content" : 
@@ -384981,7 +384998,7 @@
                      [ 
                       { "type" : "text",
                        "value" : "K_{snow}^{(4)}" } ],
-                     "rowspan" : 10 },
+                     "rowspan" : 15 },
                     
                     { "content" : 
                      [ 
@@ -385018,7 +385035,7 @@
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row14",
                         "alt_text" : "Building depth diagram for K_snow" } } ],
-                     "rowspan" : 10 },
+                     "rowspan" : 15 },
                     
                     { "content" : 
                      [ 
@@ -385044,7 +385061,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] } ] },
+                       "value" : "1.00" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row192",
                    "type" : "body_row",
@@ -385058,7 +385076,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.20" } ] } ] },
+                       "value" : "1.20" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row193",
                    "type" : "body_row",
@@ -385072,7 +385091,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.40" } ] } ] },
+                       "value" : "1.40" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row194",
                    "type" : "body_row",
@@ -385086,7 +385106,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.60" } ] } ] },
+                       "value" : "1.60" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row195",
                    "type" : "body_row",
@@ -385100,7 +385121,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.80" } ] } ] },
+                       "value" : "1.80" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row196",
                    "type" : "body_row",
@@ -385130,7 +385152,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] } ] },
+                       "value" : "1.00" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row197",
                    "type" : "body_row",
@@ -385144,7 +385167,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.10" } ] } ] },
+                       "value" : "1.10" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row198",
                    "type" : "body_row",
@@ -385158,7 +385182,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.20" } ] } ] },
+                       "value" : "1.20" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row199",
                    "type" : "body_row",
@@ -385172,7 +385197,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.30" } ] } ] },
+                       "value" : "1.30" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row200",
                    "type" : "body_row",
@@ -385186,7 +385212,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.40" } ] } ] },
+                       "value" : "1.40" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row201",
                    "type" : "body_row",
@@ -385216,7 +385243,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] } ] },
+                       "value" : "1.00" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row202",
                    "type" : "body_row",
@@ -385230,7 +385258,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.06" } ] } ] },
+                       "value" : "1.06" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row203",
                    "type" : "body_row",
@@ -385244,7 +385273,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.10" } ] } ] },
+                       "value" : "1.10" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row204",
                    "type" : "body_row",
@@ -385258,7 +385288,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.20" } ] } ] },
+                       "value" : "1.20" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row205",
                    "type" : "body_row",
@@ -385272,7 +385303,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.24" } ] } ] },
+                       "value" : "1.24" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row206",
                    "type" : "body_row",
@@ -385304,7 +385336,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.60" } ] } ] },
+                       "value" : "0.60" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row207",
                    "type" : "body_row",
@@ -385318,7 +385351,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] } ] },
+                       "value" : "1.00" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row208",
                    "type" : "body_row",
@@ -385332,7 +385366,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.35" } ] } ] },
+                       "value" : "1.35" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row209",
                    "type" : "body_row",
@@ -385346,7 +385381,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.90" } ] } ] },
+                       "value" : "1.90" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row210",
                    "type" : "body_row",
@@ -385378,7 +385414,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] } ] },
+                       "value" : "1.00" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row211",
                    "type" : "body_row",
@@ -385392,7 +385429,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.33" } ] } ] },
+                       "value" : "1.33" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row212",
                    "type" : "body_row",
@@ -385406,7 +385444,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.50" } ] } ] },
+                       "value" : "1.50" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row213",
                    "type" : "body_row",
@@ -385420,7 +385459,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.60" } ] } ] },
+                       "value" : "1.60" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row214",
                    "type" : "body_row",
@@ -385452,7 +385492,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] } ] },
+                       "value" : "1.00" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row215",
                    "type" : "body_row",
@@ -385466,7 +385507,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.20" } ] } ] },
+                       "value" : "1.20" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row216",
                    "type" : "body_row",
@@ -385480,7 +385522,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.40" } ] } ] },
+                       "value" : "1.40" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row217",
                    "type" : "body_row",
@@ -385512,7 +385555,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.00" } ] } ] },
+                       "value" : "1.00" } ],
+                     "colspan" : 2 } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row218",
                    "type" : "body_row",
@@ -385526,7 +385570,8 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.15" } ] } ] } ] } },
+                       "value" : "1.15" } ],
+                     "colspan" : 2 } ] } ] } },
                
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.sent5",
                 "type" : "sentence",

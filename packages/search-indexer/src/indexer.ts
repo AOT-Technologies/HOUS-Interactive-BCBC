@@ -63,7 +63,7 @@ interface BCBCSubsection {
   id: string;
   type: string;
   number: number;
-  title: string;
+  title: string | { revised: boolean; text: string; [key: string]: any };
   articles: BCBCArticle[];
 }
 
@@ -139,6 +139,16 @@ interface BCBCDocument {
   divisions?: BCBCDivision[];
   glossary?: Record<string, BCBCGlossaryEntry> | BCBCGlossaryEntry[];
   front_matter?: BCBCFrontMatter;
+}
+
+/**
+ * Resolve a title that may be a string or a revision object to a plain string.
+ * Some titles in the source data are objects like { revised: true, text: "..." }
+ */
+function resolveTitle(title: string | { text: string; [key: string]: any } | unknown): string {
+  if (typeof title === 'string') return title;
+  if (title && typeof title === 'object' && 'text' in title) return String((title as any).text);
+  return String(title ?? '');
 }
 
 /**
@@ -409,7 +419,7 @@ function processSubsection(
     id: subsection.id,
     type: 'subsection',
     number: subsection.number,
-    title: subsection.title,
+    title: resolveTitle(subsection.title),
     level: 3,
     children: [],
     hasRevisions: false,
@@ -648,7 +658,7 @@ function createBaseDocument(
     sectionTitle: section?.title || '',
     subsectionId: subsection?.id || '',
     subsectionNumber: subsection?.number || 0,
-    subsectionTitle: subsection?.title || '',
+    subsectionTitle: subsection ? resolveTitle(subsection.title) : '',
     hasAmendment: false,
     hasInternalRefs: false,
     hasExternalRefs: false,
@@ -729,11 +739,11 @@ function createSubsectionDocument(
     id: subsection.id,
     type: 'subsection',
     articleNumber,
-    title: subsection.title,
-    text: subsection.title,
-    snippet: subsection.title,
+    title: resolveTitle(subsection.title),
+    text: resolveTitle(subsection.title),
+    snippet: resolveTitle(subsection.title),
     path: `Division ${division.letter} > Part ${part.number} > Section ${section.number} > Subsection ${subsection.number}`,
-    breadcrumbs: [division.title, part.title, section.title, subsection.title],
+    breadcrumbs: [division.title, part.title, section.title, resolveTitle(subsection.title)],
     urlPath,
     searchPriority: config.contentTypes.subsection.priority,
   } as SearchDocument;
@@ -779,7 +789,7 @@ function createArticleDocument(
     text,
     snippet: generateSnippet(text, config.textExtraction.snippetLength),
     path: `Division ${division.letter} > Part ${part.number} > Section ${section.number} > ${subsection.number}.${article.number}`,
-    breadcrumbs: [division.title, part.title, section.title, subsection.title, article.title],
+    breadcrumbs: [division.title, part.title, section.title, resolveTitle(subsection.title), article.title],
     urlPath,
     hasAmendment: revisionInfo.hasAmendment,
     amendmentType: revisionInfo.amendmentType as any,
@@ -831,7 +841,7 @@ function createTableDocument(
     text,
     snippet: generateSnippet(text, config.textExtraction.snippetLength),
     path: `Division ${division.letter} > Part ${part.number} > Section ${section.number} > ${subsection.number}.${article.number} > Table ${tableNum}`,
-    breadcrumbs: [division.title, part.title, section.title, subsection.title, article.title, `Table ${tableNum}`],
+    breadcrumbs: [division.title, part.title, section.title, resolveTitle(subsection.title), article.title, `Table ${tableNum}`],
     urlPath,
     hasAmendment: revisionInfo.hasAmendment,
     amendmentType: revisionInfo.amendmentType as any,
@@ -878,7 +888,7 @@ function createFigureDocument(
     text,
     snippet: text,
     path: `Division ${division.letter} > Part ${part.number} > Section ${section.number} > ${subsection.number}.${article.number} > Figure ${figureNum}`,
-    breadcrumbs: [division.title, part.title, section.title, subsection.title, article.title, `Figure ${figureNum}`],
+    breadcrumbs: [division.title, part.title, section.title, resolveTitle(subsection.title), article.title, `Figure ${figureNum}`],
     urlPath,
     hasAmendment: revisionInfo.hasAmendment,
     amendmentType: revisionInfo.amendmentType as any,
