@@ -1040,8 +1040,10 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const [headerOffset, setHeaderOffset] = useState(0);
   const [scrollbarCompensation, setScrollbarCompensation] = useState(0);
   const [availableWidth, setAvailableWidth] = useState(0);
+  const [headerRowTops, setHeaderRowTops] = useState<number[]>([]);
   const bodyViewportRef = useRef<HTMLDivElement | null>(null);
   const bodyContainerRef = useRef<HTMLDivElement | null>(null);
+  const theadRef = useRef<HTMLTableSectionElement | null>(null);
   const rawTable = table as TableWithRawSupport;
   const activeRevision = getActiveRevision(rawTable.revisions, effectiveDate);
   const resolvedTitle = activeRevision?.title ?? rawTable.title ?? '';
@@ -1177,6 +1179,36 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     };
   }, [usesSplitScrollLayout]);
 
+  // Measure header row heights for multi-row sticky offset calculation
+  useEffect(() => {
+    const thead = theadRef.current;
+    if (!thead) {
+      setHeaderRowTops([]);
+      return;
+    }
+
+    const measureRowTops = () => {
+      const rows = thead.querySelectorAll('tr');
+      const tops: number[] = [];
+      let cumulative = 0;
+      rows.forEach((row) => {
+        tops.push(cumulative);
+        cumulative += row.getBoundingClientRect().height;
+      });
+      setHeaderRowTops(tops);
+    };
+
+    measureRowTops();
+
+    if (typeof ResizeObserver !== 'undefined') {
+      const observer = new ResizeObserver(() => measureRowTops());
+      observer.observe(thead);
+      return () => observer.disconnect();
+    }
+
+    return undefined;
+  }, [displayHeaderRows, usesSplitScrollLayout]);
+
   const getTableNoteLabel = (note: RawTableNote, index: number): string => {
     const noteId = (note.id || '').trim();
     const numericSuffix = noteId.match(/\.note(\d+)$/i)?.[1];
@@ -1266,7 +1298,50 @@ export const TableBlock: React.FC<TableBlockProps> = ({
               style={usesHorizontalScrollLayout ? { minWidth: `${minWidthRem}rem` } : undefined}
             >
               {renderColGroup(columnWidthsRem)}
-              <tbody>{renderRows(displayRows, interactive, renderContext)}</tbody>
+              {displayHeaderRows.length > 0 ? (
+                <>
+                  <thead className="table-block__thead-sticky" ref={theadRef}>
+                    {displayHeaderRows.map((row, rowIndex) => (
+                      <tr
+                        key={row.id || rowIndex}
+                        style={
+                          headerRowTops[rowIndex] != null
+                            ? ({ '--sticky-top': `${headerRowTops[rowIndex]}px` } as React.CSSProperties)
+                            : undefined
+                        }
+                      >
+                        {row.cells.map((cell, cellIndex) => {
+                          const CellTag = cell.isHeader ? 'th' : 'td';
+                          const alignClass = cell.align ? `table-block__cell--${cell.align}` : '';
+                          const hasFigureContent = Array.isArray(cell.content)
+                            ? cell.content.some((item) => item.type === 'figure')
+                            : false;
+                          const figureClass = hasFigureContent ? 'table-block__cell--has-figure' : '';
+                          const spanClass =
+                            (typeof cell.colspan === 'number' && cell.colspan > 1) ||
+                            (typeof cell.rowspan === 'number' && cell.rowspan > 1)
+                              ? 'table-block__cell--spanned'
+                              : '';
+
+                          return (
+                            <CellTag
+                              key={cellIndex}
+                              className={`${cell.isHeader ? 'table-block__header-cell' : 'table-block__cell'} ${alignClass} ${figureClass} ${spanClass}`.trim()}
+                              colSpan={cell.colspan}
+                              rowSpan={cell.rowspan}
+                            >
+                              {renderCellContent(cell.content, interactive, renderContext)}
+                            </CellTag>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </thead>
+                  <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
+                </>
+              ) : (
+                <tbody>{renderRows(displayRows, interactive, renderContext)}</tbody>
+              )}
             </table>
           )}
         </div>
