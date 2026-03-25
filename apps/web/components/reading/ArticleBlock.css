@@ -8,6 +8,7 @@
   margin-bottom: 1.5rem;
   padding-bottom: 0;
   border-bottom: 0;
+  min-width: 0;
 }
 
 .articleHeading {
@@ -28,4 +29,5 @@
 
 .articleContent {
   margin-left: 0;
+  min-width: 0;
 }

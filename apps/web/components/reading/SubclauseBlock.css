@@ -3,6 +3,7 @@
   align-items: flex-start;
   gap: 0;
   margin-bottom: var(--layout-margin-small);
+  min-width: 0;
 }
 
 .subclauseNumber {
@@ -16,6 +17,7 @@
 
 .subclauseContent {
   flex: 1;
+  min-width: 0;
 }
 
 .subclauseText {
@@ -23,9 +25,11 @@
   font: var(--typography-regular-body);
   color: var(--typography-color-primary);
   line-height: 27.008px;
+  min-width: 0;
 }
 
 .subclauseNestedContent {
   margin-left: var(--layout-margin-medium);
   margin-top: var(--layout-margin-small);
+  min-width: 0;
 }

@@ -111,6 +111,19 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
     display: none !important;
   }
 
+  /* Hide glossary sidebar overlay and its backdrop in print */
+  .glossary-sidebar,
+  .glossary-sidebar__backdrop {
+    display: none !important;
+  }
+
+  /* Ensure all sidebar variants are hidden in print */
+  .ui-Sidebar,
+  .ui-Sidebar--MobileOverlay,
+  .ui-Sidebar--MobilePanel {
+    display: none !important;
+  }
+
   .ui-Header {
     display: flex !important;
     height: auto !important;
@@ -158,6 +171,14 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
     padding-bottom: 0 !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
+  }
+
+  .ui-ContentPanel--Container:has(.table-block--landscape),
+  .reading-view:has(.table-block--landscape),
+  .reading-view__content:has(.table-block--landscape) {
+    width: 100% !important;
+    max-width: none !important;
+    overflow: visible !important;
   }
 
   .reading-view-header__badges {
