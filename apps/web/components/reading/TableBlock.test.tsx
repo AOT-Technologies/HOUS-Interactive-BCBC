@@ -634,6 +634,33 @@ describe('TableBlock', () => {
     expect(screen.getByText('Table D.1.1.2.')).toBeInTheDocument();
   });
 
+  it('renders top-level appendix table numbering and forming part labels', () => {
+    const table: Table = {
+      id: 'nbc.divB.appendixC.table1',
+      type: 'table',
+      title: 'Wind Speeds',
+      headers: [['qkPa', 'Vm/s']],
+      rows: [
+        {
+          cells: [{ content: '0.15' }, { content: '15.2' }],
+        },
+      ],
+      formingPart: [
+        {
+          type: 'internal',
+          target: 'nbc.divB.appendixC',
+          display_type: 'long',
+        },
+      ],
+    };
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText('Table C-1')).toBeInTheDocument();
+    expect(screen.getByText('Forming Part of Appendix C')).toBeInTheDocument();
+    expect(screen.getByText('Wind Speeds')).toBeInTheDocument();
+  });
+
   it('does not render unresolved table ids as table numbers', () => {
     const table: Table = {
       id: 'nbc.2020.preface.div6.sub1.table1',

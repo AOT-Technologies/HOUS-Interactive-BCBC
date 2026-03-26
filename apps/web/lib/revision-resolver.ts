@@ -18,6 +18,7 @@ type AppendixContentBlockNode = ContentNode & {
   paragraphs?: unknown[];
   tables?: ContentNode[];
   figures?: ContentNode[];
+  content?: ContentNode[];
 };
 
 type AppendixDivisionNode = AppendixContentBlockNode & {
@@ -434,11 +435,24 @@ function resolveAppendixContentBlock<T extends AppendixContentBlockNode>(
       )
     : undefined;
 
+  const content = Array.isArray(resolved.content)
+    ? mapResolvedArray(resolved.content as ContentNode[], (item) => {
+        if (item.type === 'table') {
+          return resolveTable(item, effectiveDate);
+        }
+        if (item.type === 'note_division') {
+          return resolveAppendixDivision(item as AppendixDivisionNode, effectiveDate);
+        }
+        return applyRevision(item, effectiveDate);
+      })
+    : undefined;
+
   const paragraphsChanged = Boolean(paragraphs?.changed);
   const tablesChanged = Boolean(tables?.changed);
   const figuresChanged = Boolean(figures?.changed);
+  const contentChanged = Boolean(content?.changed);
 
-  if (resolved === block && !paragraphsChanged && !tablesChanged && !figuresChanged) {
+  if (resolved === block && !paragraphsChanged && !tablesChanged && !figuresChanged && !contentChanged) {
     return resolved;
   }
 
@@ -447,6 +461,7 @@ function resolveAppendixContentBlock<T extends AppendixContentBlockNode>(
     ...(paragraphs ? { paragraphs: paragraphs.items } : {}),
     ...(tables ? { tables: tables.items } : {}),
     ...(figures ? { figures: figures.items } : {}),
+    ...(content ? { content: content.items } : {}),
   } as T;
 }
 

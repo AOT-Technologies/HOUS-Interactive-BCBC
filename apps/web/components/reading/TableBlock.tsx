@@ -530,6 +530,19 @@ const getResolvedTableNumber = (table: TableWithRawSupport): string => {
   }
 
   const parsedFromId = parseInternalReference(table.id);
+  if (parsedFromId.appendixLetter && parsedFromId.table) {
+    if (parsedFromId.appendixSection && parsedFromId.subsection && parsedFromId.article) {
+      return [
+        parsedFromId.appendixLetter,
+        parsedFromId.appendixSection,
+        parsedFromId.subsection,
+        parsedFromId.article,
+      ].join('.');
+    }
+
+    return `${parsedFromId.appendixLetter}-${parsedFromId.table}`;
+  }
+
   if (
     parsedFromId.appendixLetter &&
     parsedFromId.appendixSection &&
@@ -553,6 +566,35 @@ const getResolvedTableNumber = (table: TableWithRawSupport): string => {
 };
 
 const formatFormingPartLabel = (reference: ParsedInternalReference): string | null => {
+  if (reference.appendixLetter) {
+    const appendixReference = [
+      reference.appendixLetter,
+      reference.appendixSection,
+      reference.subsection,
+      reference.article,
+    ]
+      .filter(Boolean)
+      .join('.');
+
+    if (reference.paragraph && appendixReference) {
+      return `Sentence ${appendixReference}.(${reference.paragraph})`;
+    }
+
+    if (reference.article && appendixReference) {
+      return `Article ${appendixReference}`;
+    }
+
+    if (reference.subsection && appendixReference) {
+      return `Subsection ${appendixReference}`;
+    }
+
+    if (reference.appendixSection && appendixReference) {
+      return `Section ${appendixReference}`;
+    }
+
+    return `Appendix ${reference.appendixLetter}`;
+  }
+
   const articleReference = [reference.part, reference.section, reference.subsection, reference.article]
     .filter(Boolean)
     .join('.');
@@ -606,6 +648,14 @@ const formatFormingPartText = (formingPart: FormingPartReference[] | undefined):
   }
 
   return `Forming Part of ${labels.slice(0, -1).join(', ')}, and ${labels[labels.length - 1]}`;
+};
+
+const getTableNumberDisplay = (tableNumber: string): string => {
+  const normalized = tableNumber.trim();
+  const omitTrailingDot =
+    normalized.endsWith(')') || /^[A-Za-z]-\d+$/i.test(normalized);
+
+  return `Table ${normalized}${omitTrailingDot ? '' : '.'}`;
 };
 
 type TableWidthAnalysisRow = {
@@ -1214,9 +1264,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const resolvedTableNotes = activeRevision?.table_notes ?? rawTable.table_notes ?? [];
   const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
   const tableNumber = getResolvedTableNumber(rawTable);
-  const tableNumberDisplay = tableNumber
-    ? `Table ${tableNumber}${tableNumber.endsWith(')') ? '' : '.'}`
-    : null;
+  const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
   const formingPartText = formatFormingPartText(formingPartEntries);
 

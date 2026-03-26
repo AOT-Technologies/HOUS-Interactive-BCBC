@@ -3,23 +3,42 @@ import type { Equation, Figure, StructuredList, Table } from '@bc-building-code/
 
 export type AppendixParagraph = {
   id: string;
+  type?: 'paragraph';
   content: string;
   equations?: Equation[];
   lists?: StructuredList[];
 };
+
+export type AppendixStandaloneList = {
+  id?: string;
+  type: 'list';
+  list?: StructuredList;
+  list_type?: StructuredList['type'];
+  items?: unknown[];
+};
+
+export type AppendixRenderableItem =
+  | AppendixParagraph
+  | AppendixDivision
+  | Table
+  | Figure
+  | AppendixStandaloneList;
 
 export type AppendixContentBlock = {
   id: string;
   paragraphs?: AppendixParagraph[];
   tables?: Table[];
   figures?: Figure[];
+  content?: AppendixRenderableItem[];
 };
 
 export type AppendixDivision = AppendixContentBlock & {
+  type?: 'note_division' | 'appendix_section';
   title?: string;
 };
 
 export type ApplicationNote = AppendixContentBlock & {
+  type?: 'application_note';
   number?: string;
   title?: string;
   divisions?: AppendixDivision[];
@@ -49,9 +68,10 @@ export type DivisionAppendixSubsection = {
 
 export type DivisionAppendixSection = {
   id: string;
-  type: 'appendix_section';
-  title: string;
+  type: 'appendix_section' | 'note_division';
+  title?: string;
   paragraphs?: AppendixParagraph[];
+  content?: Array<AppendixParagraph | Table | Figure | AppendixStandaloneList>;
   subsections?: DivisionAppendixSubsection[];
 };
 
@@ -62,7 +82,7 @@ export type DivisionAppendix = {
   number: string;
   title: string;
   introduction?: string;
-  sections: DivisionAppendixSection[];
+  sections: Array<AppendixRenderableItem>;
 };
 
 interface AppendixStoreState {
