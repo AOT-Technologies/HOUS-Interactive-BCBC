@@ -302,4 +302,59 @@ describe('resolveSectionForEffectiveDate', () => {
     const onRevisedDate = resolvePartAppendixForEffectiveDate(appendix, '2025-06-16');
     expect(onRevisedDate.application_notes[0].paragraphs[0].content).toBe('Revised content');
   });
+
+  it('preserves application note content array order with note_division and table items', () => {
+    const appendix = {
+      id: 'nbc.divA.part1.appendix',
+      type: 'part_appendix',
+      application_notes: [
+        {
+          id: 'nbc.divA.part1.appendix.appnote2b',
+          type: 'application_note',
+          number: '2.1.1.1.(1)',
+          content: [
+            {
+              id: 'nbc.divA.part1.appendix.appnote2b.para1',
+              type: 'paragraph',
+              content: 'First paragraph',
+            },
+            {
+              id: 'nbc.divA.part1.appendix.appnote2b.list1',
+              type: 'list',
+              list_type: 'numbered',
+              items: [
+                { id: 'nbc.divA.part1.appendix.appnote2b.list1.item1', content: 'Step 1' },
+                { id: 'nbc.divA.part1.appendix.appnote2b.list1.item2', content: 'Step 2' },
+              ],
+            },
+            {
+              id: 'nbc.divA.part1.appendix.appnote2b.div1',
+              type: 'note_division',
+              title: 'Division Block',
+              content: [
+                {
+                  id: 'nbc.divA.part1.appendix.appnote2b.div1.para1',
+                  type: 'paragraph',
+                  content: 'Nested paragraph',
+                },
+              ],
+            },
+            {
+              id: 'nbc.divA.part1.appendix.appnote2b.table1',
+              type: 'table',
+              structure: { body_rows: [] },
+            },
+          ],
+        },
+      ],
+    } as any;
+
+    const resolved = resolvePartAppendixForEffectiveDate(appendix, '2025-06-16');
+    const content = resolved.application_notes[0].content;
+
+    expect(content[0].type).toBe('paragraph');
+    expect(content[1].type).toBe('list');
+    expect(content[2].type).toBe('note_division');
+    expect(content[3].type).toBe('table');
+  });
 });

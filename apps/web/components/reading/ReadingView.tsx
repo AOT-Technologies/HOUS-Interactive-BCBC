@@ -16,10 +16,14 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { ReadingViewProps } from '@repo/data';
-import type { Subsection, Article, Section, Table, Figure } from '@bc-building-code/bcbc-parser';
+import type { StructuredList, Subsection, Article, Section, Table, Figure } from '@bc-building-code/bcbc-parser';
 import { useSectionStore } from '../../lib/stores/section-store';
 import {
   useAppendixStore,
+  type AppendixDivision,
+  type AppendixParagraph,
+  type AppendixStandaloneList,
+  type AppendixRenderableItem,
   type PartAppendix,
   type DivisionAppendix,
   type ApplicationNote,
@@ -46,6 +50,7 @@ import { SubsectionBlock } from './SubsectionBlock';
 import { ArticleBlock } from './ArticleBlock';
 import { TableBlock } from './TableBlock';
 import { FigureBlock } from './FigureBlock';
+import { StructuredListBlock } from './StructuredListBlock';
 import { FrontMatterRenderer } from './FrontMatterRenderer';
 import { CrossReferenceContext } from './CrossReferenceContext';
 import { CrossReferenceModal } from './CrossReferenceModal';
@@ -1316,6 +1321,27 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     const appendBlockNumbers = (block: AppendixContentBlock | undefined) => {
       if (!block) return;
 
+      if (Array.isArray(block.content) && block.content.length > 0) {
+        for (const item of block.content) {
+          if (!item || typeof item !== 'object' || !('type' in item)) continue;
+          if (item.type === 'table') {
+            if (!item.id || item.number) continue;
+            tableIndex += 1;
+            tableNumberById.set(item.id, `${noteNumber}-${toAlphabetOrdinalUpper(tableIndex)}`);
+            continue;
+          }
+          if (item.type === 'figure') {
+            if (!item.id || item.number) continue;
+            figureIndex += 1;
+            figureNumberById.set(item.id, `${noteNumber}-${toAlphabetOrdinalUpper(figureIndex)}`);
+            continue;
+          }
+          if (item.type === 'note_division') {
+            appendBlockNumbers(item);
+          }
+        }
+      }
+
       for (const table of block.tables || []) {
         if (!table?.id || table.number) continue;
         tableIndex += 1;
@@ -1327,15 +1353,22 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         figureIndex += 1;
         figureNumberById.set(figure.id, `${noteNumber}-${toAlphabetOrdinalUpper(figureIndex)}`);
       }
+
+      for (const division of (block as ApplicationNote).divisions || []) {
+        appendBlockNumbers(division);
+      }
     };
 
     appendBlockNumbers(note);
-    for (const division of note.divisions || []) {
-      appendBlockNumbers(division);
-    }
 
     return { tableNumberById, figureNumberById };
   };
+
+  const hasBlockLevelInlineContent = (paragraph: {
+    content?: string;
+    lists?: unknown[];
+  }) =>
+    Boolean(paragraph.lists?.length) || /\[LIST:[^\]]+\]|\[EQ:display(?::[^\]]*)?\]/i.test(paragraph.content || '');
 
   const renderAppendixBlock = (
     block: AppendixContentBlock,
@@ -1346,12 +1379,6 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     },
     renderContext?: ReferenceRenderContext
   ): React.ReactNode => {
-    const hasBlockLevelInlineContent = (paragraph: {
-      content?: string;
-      lists?: unknown[];
-    }) =>
-      Boolean(paragraph.lists?.length) || /\[LIST:[^\]]+\]|\[EQ:display(?::[^\]]*)?\]/i.test(paragraph.content || '');
-
     const getTableWithOverride = (table: Table) => {
       if (!table?.id || !numberOverrides) {
         return table;
@@ -1370,25 +1397,178 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       return overrideNumber ? { ...figure, number: overrideNumber } : figure;
     };
 
+    const normalizeStandaloneList = (item: AppendixStandaloneList): StructuredList | null => {
+      if (item.list) {
+        return item.list;
+      }
+
+      const listType = item.list_type;
+      const rawItems = item.items;
+      if (!listType || !Array.isArray(rawItems)) {
+        return null;
+      }
+
+      if (listType === 'bulleted' || listType === 'numbered' || listType === 'alphabetic') {
+        return {
+          type: listType,
+          items: rawItems
+            .filter((entry): entry is { id?: string; content: string } =>
+              Boolean(
+                entry &&
+                  typeof entry === 'object' &&
+                  typeof (entry as { content?: unknown }).content === 'string'
+              )
+            )
+            .map((entry) => ({ id: entry.id, content: entry.content })),
+        };
+      }
+
+      if (listType === 'variable') {
+        return {
+          type: 'variable',
+          items: rawItems
+            .filter((entry): entry is { id?: string; symbol: string; description: string } =>
+              Boolean(
+                entry &&
+                  typeof entry === 'object' &&
+                  typeof (entry as { symbol?: unknown }).symbol === 'string' &&
+                  typeof (entry as { description?: unknown }).description === 'string'
+              )
+            )
+            .map((entry) => ({ id: entry.id, symbol: entry.symbol, description: entry.description })),
+        };
+      }
+
+      if (listType === 'definition') {
+        return {
+          type: 'definition',
+          items: rawItems
+            .filter((entry): entry is { id: string; term: string; definition: string } =>
+              Boolean(
+                entry &&
+                  typeof entry === 'object' &&
+                  typeof (entry as { id?: unknown }).id === 'string' &&
+                  typeof (entry as { term?: unknown }).term === 'string' &&
+                  typeof (entry as { definition?: unknown }).definition === 'string'
+              )
+            )
+            .map((entry) => ({ id: entry.id, term: entry.term, definition: entry.definition })),
+        };
+      }
+
+      if (listType === 'organization') {
+        return {
+          type: 'organization',
+          items: rawItems
+            .filter((entry): entry is { id: string; abbreviation: string; fullName: string; website?: string } =>
+              Boolean(
+                entry &&
+                  typeof entry === 'object' &&
+                  typeof (entry as { id?: unknown }).id === 'string' &&
+                  typeof (entry as { abbreviation?: unknown }).abbreviation === 'string' &&
+                  typeof (entry as { fullName?: unknown }).fullName === 'string'
+              )
+            )
+            .map((entry) => ({
+              id: entry.id,
+              abbreviation: entry.abbreviation,
+              fullName: entry.fullName,
+              website: entry.website,
+            })),
+        };
+      }
+
+      return null;
+    };
+
+    const renderParagraph = (paragraph: AppendixParagraph, index: number) => {
+      const content = parseTextWithMarkers(
+        paragraph.content || '',
+        [],
+        interactive,
+        paragraph.equations || [],
+        paragraph.lists || [],
+        renderContext
+      );
+      const WrapperTag = hasBlockLevelInlineContent(paragraph) ? 'div' : 'p';
+
+      return (
+        <WrapperTag key={`${block.id}-paragraph-${paragraph.id || index}`}>
+          {content}
+        </WrapperTag>
+      );
+    };
+
+    const renderContentItem = (item: AppendixRenderableItem, index: number): React.ReactNode => {
+      if (item.type === 'paragraph') {
+        return renderParagraph(item, index);
+      }
+
+      if (item.type === 'table') {
+        return (
+          <TableBlock
+            key={`${block.id}-table-${item.id || index}`}
+            table={getTableWithOverride(item)}
+            interactive={interactive}
+            effectiveDate={effectiveDate}
+            renderContext={renderContext}
+          />
+        );
+      }
+
+      if (item.type === 'figure') {
+        return (
+          <FigureBlock
+            key={`${block.id}-figure-${item.id || index}`}
+            figure={getFigureWithOverride(item)}
+            interactive={interactive}
+            renderContext={renderContext}
+          />
+        );
+      }
+
+      if (item.type === 'note_division') {
+        const division = item as AppendixDivision;
+        return (
+          <section
+            key={`${block.id}-division-${division.id || index}`}
+            id={division.id}
+            className="reading-view__appendix-division"
+          >
+            {division.title ? <h4>{division.title}</h4> : null}
+            {renderAppendixBlock(division, interactive, numberOverrides, renderContext)}
+          </section>
+        );
+      }
+
+      if (item.type === 'list') {
+        const normalizedList = normalizeStandaloneList(item);
+        if (!normalizedList) {
+          return null;
+        }
+
+        return (
+          <StructuredListBlock
+            key={`${block.id}-list-${item.id || index}`}
+            list={normalizedList}
+            interactive={interactive}
+            renderText={(value: string) =>
+              parseTextWithMarkers(value, [], interactive, [], [], renderContext)
+            }
+          />
+        );
+      }
+
+      return null;
+    };
+
+    if (Array.isArray(block.content) && block.content.length > 0) {
+      return <>{block.content.map((item, index) => renderContentItem(item, index))}</>;
+    }
+
     return (
       <>
-        {block.paragraphs?.map((paragraph, index) => {
-          const content = parseTextWithMarkers(
-            paragraph.content || '',
-            [],
-            interactive,
-            paragraph.equations || [],
-            paragraph.lists || [],
-            renderContext
-          );
-          const WrapperTag = hasBlockLevelInlineContent(paragraph) ? 'div' : 'p';
-
-          return (
-            <WrapperTag key={`${block.id}-paragraph-${paragraph.id || index}`}>
-              {content}
-            </WrapperTag>
-          );
-        })}
+        {block.paragraphs?.map((paragraph, index) => renderParagraph(paragraph, index))}
         {block.tables?.map((table, index) => (
           <TableBlock
             key={`${block.id}-table-${table.id || index}`}
@@ -1405,6 +1585,16 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             interactive={interactive}
             renderContext={renderContext}
           />
+        ))}
+        {(block as ApplicationNote).divisions?.map((division, index) => (
+          <section
+            key={`${block.id}-division-${division.id || index}`}
+            id={division.id}
+            className="reading-view__appendix-division"
+          >
+            {division.title ? <h4>{division.title}</h4> : null}
+            {renderAppendixBlock(division, interactive, numberOverrides, renderContext)}
+          </section>
         ))}
       </>
     );
@@ -1426,16 +1616,6 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         </h3>
         <div className="reading-view__appendix-note-content">
           {renderAppendixBlock(note, interactive, numberOverrides, noteContext)}
-          {note.divisions?.map((division, index) => (
-            <section
-              key={`${note.id}-division-${division.id || index}`}
-              id={division.id}
-              className="reading-view__appendix-division"
-            >
-              {division.title ? <h4>{division.title}</h4> : null}
-              {renderAppendixBlock(division, interactive, numberOverrides, noteContext)}
-            </section>
-          ))}
         </div>
       </article>
     );
