@@ -174,7 +174,3 @@ Run tests:
 cd packages/bcbc-parser
 npx vitest run
 ```
-
-## Sample Data
-
-A sample JSON file is provided at `data/samples/bcbc-sample.json` that matches the source format and can be used for testing and development.

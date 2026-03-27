@@ -261,7 +261,7 @@
         },
         "list_type": {
           "type": "string",
-          "enum": ["bulleted", "numbered"],
+          "enum": ["bulleted", "numbered", "bibliography"],
           "description": "List type (for list type only)"
         },
         "items": {
@@ -687,7 +687,35 @@
           "description": "Source of the subsection - 'nbc' for National Building Code, 'bc' for BC-specific modifications"
         },
         "title": {
-          "type": "string"
+          "oneOf": [
+            {
+              "type": "string",
+              "description": "Title as a simple string (when no revision history)"
+            },
+            {
+              "type": "object",
+              "required": ["revised", "text", "revisions"],
+              "description": "Title with revision history (when title has been amended)",
+              "properties": {
+                "revised": {
+                  "type": "boolean",
+                  "const": true,
+                  "description": "Always true when title has revision history"
+                },
+                "text": {
+                  "type": "string",
+                  "description": "Current title text from the latest revision"
+                },
+                "revisions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/title_revision"
+                  },
+                  "description": "Revision history for the title (original and all revisions)"
+                }
+              }
+            }
+          ]
         },
         "see_also": {
           "type": "string"
@@ -1170,7 +1198,7 @@
     "cell_content_item": {
       "type": "object",
       "required": ["type"],
-      "description": "Content item in a table cell - either text or figure",
+      "description": "Content item in a table cell - text, figure, or list",
       "oneOf": [
         {
           "type": "object",
@@ -1189,7 +1217,7 @@
         },
         {
           "type": "object",
-          "required": ["type", "id", "graphic"],
+          "required": ["type", "graphic"],
           "properties": {
             "type": {
               "type": "string",
@@ -1197,7 +1225,7 @@
             },
             "id": {
               "type": "string",
-              "description": "Unique identifier for the figure"
+              "description": "Unique identifier for the figure (optional for inline table cell figures)"
             },
             "source": {
               "type": "string",
@@ -1231,6 +1259,36 @@
               }
             }
           }
+        },
+        {
+          "type": "object",
+          "required": ["type", "list_type", "items"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "list"
+            },
+            "list_type": {
+              "type": "string",
+              "enum": ["bulleted", "numbered", "bibliography"],
+              "description": "Type of list"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["content"],
+                "properties": {
+                  "content": {
+                    "type": "string",
+                    "description": "Text content of the list item"
+                  }
+                }
+              },
+              "description": "List items"
+            }
+          },
+          "additionalProperties": false
         }
       ]
     },
@@ -1334,7 +1392,8 @@
     },
     "application_note": {
       "type": "object",
-      "required": ["id", "type", "number", "title"],
+      "required": ["id", "type", "number", "title", "content"],
+      "description": "An application note containing paragraphs, note-divisions, tables, and figures in document order",
       "properties": {
         "id": {
           "type": "string"
@@ -1350,38 +1409,26 @@
           "type": "boolean",
           "description": "Indicates if this application note has been deleted (true when deleted='yes' attribute is present)"
         },
+        "revised": {
+          "type": "boolean",
+          "description": "Indicates if this application note has revision history"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the application note"
+        },
         "title": {
           "type": "string"
         },
         "refs": {
           "type": "string"
         },
-        "paragraphs": {
+        "content": {
           "type": "array",
+          "description": "Content items in document order (paragraphs, note-divisions, tables, figures)",
           "items": {
-            "type": "object",
-            "properties": {
-              "id": {"type": "string"},
-              "content": {"type": "string"}
-            }
-          }
-        },
-        "divisions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/note_division"
-          }
-        },
-        "tables": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/table"
-          }
-        },
-        "figures": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/figure"
+            "$ref": "#/definitions/application_note_content_item"
           }
         },
         "revisions": {
@@ -1392,9 +1439,29 @@
         }
       }
     },
+    "application_note_content_item": {
+      "type": "object",
+      "required": ["type"],
+      "description": "A content item within an application note - paragraph, note_division, table, or figure. Discriminate by 'type' field.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/content_paragraph"
+        },
+        {
+          "$ref": "#/definitions/note_division"
+        },
+        {
+          "$ref": "#/definitions/table"
+        },
+        {
+          "$ref": "#/definitions/figure"
+        }
+      ]
+    },
     "note_division": {
       "type": "object",
-      "required": ["id", "type", "title"],
+      "required": ["id", "type", "title", "content"],
+      "description": "A sub-division within an application note, containing paragraphs, tables, and figures in document order",
       "properties": {
         "id": {
           "type": "string"
@@ -1403,32 +1470,106 @@
           "type": "string",
           "const": "note_division"
         },
+        "source": {
+          "type": "string",
+          "enum": ["nbc", "bc"],
+          "description": "Source of the note division"
+        },
         "title": {
           "type": "string"
         },
-        "paragraphs": {
+        "content": {
           "type": "array",
+          "description": "Content items in document order (paragraphs, tables, figures)",
           "items": {
-            "type": "object",
-            "properties": {
-              "id": {"type": "string"},
-              "content": {"type": "string"}
-            }
-          }
-        },
-        "tables": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/table"
-          }
-        },
-        "figures": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/figure"
+            "$ref": "#/definitions/note_division_content_item"
           }
         }
       }
+    },
+    "content_paragraph": {
+      "type": "object",
+      "required": ["type"],
+      "description": "A paragraph content item used within application notes and note divisions",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "paragraph"
+        },
+        "id": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "Indicates if this paragraph has been deleted"
+        },
+        "revised": {
+          "type": "boolean",
+          "description": "Indicates if this paragraph has revision history"
+        },
+        "content": {
+          "type": "string"
+        },
+        "equations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/equation"
+          }
+        },
+        "lists": {
+          "type": "array",
+          "description": "Extracted lists from paragraph content",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["bulleted", "numbered", "variable", "definition", "alphabetic", "bibliography"]
+              },
+              "header": {
+                "type": "string",
+                "description": "Optional header text for bibliography lists (e.g., 'References:')"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {"type": "string"},
+                    "content": {"type": "string"},
+                    "symbol": {"type": "string"},
+                    "description": {"type": "string"},
+                    "term": {"type": "string"},
+                    "definition": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      }
+    },
+    "note_division_content_item": {
+      "type": "object",
+      "required": ["type"],
+      "description": "A content item within a note division - paragraph, table, or figure. Discriminate by 'type' field: 'paragraph', 'table', or 'figure'.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/content_paragraph"
+        },
+        {
+          "$ref": "#/definitions/table"
+        },
+        {
+          "$ref": "#/definitions/figure"
+        }
+      ]
     },
     "objective": {
       "type": "object",
@@ -1575,16 +1716,24 @@
           }
         },
         "content": {
-          "type": "array",
-          "description": "Content array for article revisions (sentences, tables, figures)",
-          "items": {
-            "type": "object",
-            "required": ["id", "type"],
-            "properties": {
-              "id": {"type": "string"},
-              "type": {"type": "string", "enum": ["sentence", "table", "figure"]}
+          "oneOf": [
+            {
+              "type": "string",
+              "description": "Text content for paragraph, sentence, clause, or subclause revisions"
+            },
+            {
+              "type": "array",
+              "description": "Content array for article revisions (sentences, tables, figures)",
+              "items": {
+                "type": "object",
+                "required": ["id", "type"],
+                "properties": {
+                  "id": {"type": "string"},
+                  "type": {"type": "string", "enum": ["sentence", "table", "figure"]}
+                }
+              }
             }
-          }
+          ]
         },
         "articles": {
           "type": "array",
@@ -1592,6 +1741,45 @@
           "items": {
             "$ref": "#/definitions/article"
           }
+        },
+        "change_summary": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "title_revision": {
+      "type": "object",
+      "required": ["type", "effective_date", "text"],
+      "description": "Revision entry for title elements (child-element amendments)",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["original", "revision"]
+        },
+        "revision_type": {
+          "type": "string",
+          "enum": ["amendment", "errata", "policy", "accessibility", "correction"]
+        },
+        "revision_id": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": ["number", "null"]
+        },
+        "effective_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["current", "superseded"]
+        },
+        "text": {
+          "type": "string",
+          "description": "Title text content"
         },
         "change_summary": {
           "type": "string"

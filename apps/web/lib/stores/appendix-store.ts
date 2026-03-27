@@ -55,14 +55,15 @@ export type DivisionAppendixArticle = {
   id: string;
   type: 'appendix_article';
   title: string;
-  paragraphs?: AppendixParagraph[];
-  content?: Array<Table | Figure>;
+  content?: Array<AppendixParagraph | Table | Figure>;
+  see_also?: string;
 };
 
 export type DivisionAppendixSubsection = {
   id: string;
   type: 'appendix_subsection';
   title: string;
+  paragraphs?: AppendixParagraph[];
   articles: DivisionAppendixArticle[];
 };
 
