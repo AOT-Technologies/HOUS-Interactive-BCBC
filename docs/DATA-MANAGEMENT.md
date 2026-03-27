@@ -38,10 +38,6 @@ bc-building-code/
 │   │   ├── bcbc-2024.json                 # Main source file (10-50 MB)
 │   │   ├── bcbc-2027.json                 # Future version (when available)
 │   │   └── README.md                       # Documentation
-│   │
-│   └── samples/                            # Sample/test data
-│       ├── bcbc-sample.json               # Small sample for testing
-│       └── README.md                       # Sample data docs
 │
 ├── apps/web/public/data/                   # ❌ GENERATED - DON'T EDIT
 │   ├── versions.json                      # Version index (generated)
@@ -311,7 +307,6 @@ apps/web/public/data/
 
 ✅ **DO commit:**
 - `/data/source/bcbc-2024.json` (source data)
-- `/data/samples/*.json` (sample data)
 - `/data/source/README.md` (documentation)
 
 ❌ **DON'T commit:**
@@ -330,8 +325,6 @@ apps/web/public/data/
 # Source data (optional - uncomment if file is too large)
 # data/source/bcbc-*.json
 
-# Keep sample data in Git
-!data/samples/*.json
 ```
 
 ### Using Git LFS (for large files)
@@ -693,36 +686,18 @@ git add data/source/bcbc-2024.json
 git commit -m "Update BC Building Code to version 2024.1"
 ```
 
-### 3. Testing with Sample Data
-
-For faster development:
-
-```bash
-# Use sample data
-cp data/samples/bcbc-sample.json data/source/bcbc-2024.json
-
-# Generate assets (much faster)
-npx pnpm generate-assets
-
-# Develop with sample data
-npx pnpm dev
-```
-
-### 4. CI/CD Pipeline
+### 3. CI/CD Pipeline
 
 ```yaml
 # .github/workflows/build.yml
 - name: Generate Assets
-  run: |
-    # Use sample data for CI
-    cp data/samples/bcbc-sample.json data/source/bcbc-2024.json
-    npx pnpm generate-assets
+  run: npx pnpm generate-assets
     
 - name: Build Application
   run: npx pnpm build
 ```
 
-### 5. Deployment
+### 4. Deployment
 
 ```bash
 # Production deployment
@@ -791,7 +766,6 @@ DEBUG=* npx pnpm generate-assets
 | Add source data | `cp ~/bcbc-2024.json data/source/` |
 | Validate data | `npx pnpm --filter @bc-building-code/bcbc-parser validate data/source/bcbc-2024.json` |
 | Generate assets | `npx pnpm generate-assets` |
-| Use sample data | `cp data/samples/bcbc-sample.json data/source/bcbc-2024.json` |
 | Check file size | `ls -lh data/source/bcbc-2024.json` |
 | Setup Git LFS | `git lfs track "data/source/*.json"` |
 | Clean generated | `rm -rf apps/web/public/data/*` |

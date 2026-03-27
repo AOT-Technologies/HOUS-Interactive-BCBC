@@ -117,9 +117,6 @@ npx pnpm generate-assets
 # Or use Turbo
 npx turbo generate-assets
 
-# Run with sample data (faster for testing)
-SAMPLE_MODE=true npx pnpm generate-assets
-
 # Run with specific source file
 SOURCE_FILE=data/source/bcbc-2024.json npx pnpm generate-assets
 
@@ -135,7 +132,7 @@ OUTPUT_DIR=apps/web/public/data npx pnpm generate-assets
 - Extracts amendment dates
 - Chunks content by section using `@bc-building-code/content-chunker`
 
-**Input:** `data/source/bcbc-2024.json` (or `data/samples/bcbc-sample.json` in sample mode)  
+**Input:** `data/source/bcbc-2024.json`  
 **Output location:** `apps/web/public/data/`
 
 **Generated Files:**
@@ -150,7 +147,6 @@ OUTPUT_DIR=apps/web/public/data npx pnpm generate-assets
 **Environment Variables:**
 - `SOURCE_FILE` - Path to source JSON (default: `data/source/bcbc-2024.json`)
 - `OUTPUT_DIR` - Output directory (default: `apps/web/public/data`)
-- `SAMPLE_MODE` - Use sample data (default: `false`)
 
 **When to use:**
 - After updating source BCBC JSON

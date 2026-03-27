@@ -60,7 +60,6 @@ bc-building-code/
 │   │   ├── downloadOptions.json # Download page content per version
 │   │   ├── bcbc-2024.json # BC Building Code 2024
 │   │   └── (future versions can be added here)
-│   └── samples/           # Sample data for testing
 ├── apps/web/              # Next.js application
 │   └── public/data/       # Generated assets (output)
 │       ├── versions.json  # Version index (generated)
@@ -169,10 +168,6 @@ The Download page is configured from `data/source/downloadOptions.json`.
 
 Important: when you add a new version in `data/source/versions.json`, you must also add that version in `data/source/downloadOptions.json`; otherwise the Download page will not have PDF links and revision/errata content for that version.
 
-For testing, use sample data:
-```bash
-cp data/samples/bcbc-sample.json data/source/bcbc-2024.json
-```
 
 See [docs/DATA-MANAGEMENT.md](docs/DATA-MANAGEMENT.md) for complete data management guide.
 

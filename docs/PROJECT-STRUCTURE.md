@@ -14,10 +14,6 @@ bc-building-code/
 │   │   ├── versions.json              # Version configuration│   │   ├── bcbc-2024.json             # BC Building Code 2024 (10-50 MB)
 │   │   ├── bcbc-2027.json             # BC Building Code 2027 (future)
 │   │   └── README.md                   # Source data documentation
-│   │
-│   └── samples/                        # Sample/test data
-│       ├── bcbc-sample.json           # Small sample for testing (~500 KB)
-│       └── README.md                   # Sample data documentation
 │
 ├── apps/
 │   └── web/                            # Next.js application
@@ -333,22 +329,6 @@ bc-building-code/
 }
 ```
 
-### `/data/samples/` - Sample Data
-
-**Purpose:** Smaller test data for development
-
-**Contents:**
-- `bcbc-sample.json` - Small sample (~500 KB)
-- `README.md` - Documentation
-
-**Git:** ✅ Committed to version control
-
-**When to use:**
-- Fast development iteration
-- Unit testing
-- CI/CD pipelines
-- Documentation examples
-
 ### `/apps/web/public/data/` - Generated Assets (Output)
 
 **Purpose:** Store generated static assets for the web app (multi-version)
@@ -436,7 +416,6 @@ apps/web/public/data/
 | File/Directory | Size | Description |
 |----------------|------|-------------|
 | `/data/source/bcbc-2024.json` | 10-50 MB | Source BC Building Code |
-| `/data/samples/bcbc-sample.json` | ~500 KB | Sample for testing |
 | `/apps/web/public/data/search-index.json` | 5-15 MB | FlexSearch index |
 | `/apps/web/public/data/navigation-tree.json` | 100-500 KB | Navigation structure |
 | `/apps/web/public/data/glossary-map.json` | 50-200 KB | Glossary definitions |
@@ -451,7 +430,6 @@ apps/web/public/data/
 ### What to Commit ✅
 
 - `/data/source/` - Source BC Building Code JSON
-- `/data/samples/` - Sample data
 - `/apps/web/` - Application code
 - `/packages/` - Shared packages
 - `/scripts/` - Build scripts
@@ -475,8 +453,6 @@ apps/web/public/data/
 # Source data (optional - uncomment if file is too large)
 # data/source/bcbc-*.json
 
-# Keep sample data in Git
-!data/samples/*.json
 ```
 
 ---
@@ -489,7 +465,6 @@ apps/web/public/data/
 |------|-------|-----|
 | Version configuration | `/data/source/versions.json` | Version metadata |
 | BC Building Code JSON | `/data/source/bcbc-{year}.json` | Source data input |
-| Sample data | `/data/samples/bcbc-sample.json` | Testing |
 | Generated assets | `/apps/web/public/data/{version}/` | Build output (version-specific) |
 | Version index | `/apps/web/public/data/versions.json` | Version list (generated) |
 | React components | `/apps/web/components/` | UI code |
