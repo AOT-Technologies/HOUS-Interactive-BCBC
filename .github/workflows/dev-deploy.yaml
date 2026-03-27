@@ -9,7 +9,7 @@ on:
         default: 'latest'
   push:
     branches:
-      - dev
+      - develop
 
 jobs:
   build:
