@@ -12,6 +12,8 @@ interface SearchResultCardProps {
   result: SearchResult;
   href: string;
   testId?: string;
+  displayTitle?: string;
+  displaySnippet?: string;
 }
 
 function getVolumeLabel(divisionId: string): string {
@@ -57,20 +59,25 @@ function normalizeHighlightedSnippet(input: string): string {
   return input.replace(/<mark[^>]*>/gi, '').replace(/<\/mark>/gi, '');
 }
 
-export function SearchResultCard({ result, href, testId }: SearchResultCardProps) {
+export function SearchResultCard({ result, href, testId, displayTitle, displaySnippet }: SearchResultCardProps) {
   const router = useRouter();
   const { document } = result;
+  const titleForDisplay = displayTitle || document.title;
 
   const heading = useMemo(() => {
     const number = stripDivisionPrefix(document.articleNumber, document.divisionLetter);
-    return formatNumberedTitle(number, document.title);
-  }, [document.articleNumber, document.divisionLetter, document.title]);
+    return formatNumberedTitle(number, titleForDisplay);
+  }, [document.articleNumber, document.divisionLetter, titleForDisplay]);
 
   const previewHtml = useMemo(() => {
+    if (displaySnippet) {
+      return normalizeHighlightedSnippet(displaySnippet);
+    }
+
     const textHighlight = result.highlights.find((item) => item.field === 'text')?.text;
     const preview = textHighlight || document.snippet || '';
     return normalizeHighlightedSnippet(preview);
-  }, [document.snippet, result.highlights]);
+  }, [displaySnippet, document.snippet, result.highlights]);
 
   const typeLabel = useMemo(() => {
     const map: Record<string, string> = {

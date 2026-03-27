@@ -17,6 +17,7 @@ import {
 } from '@repo/constants';
 import Button from '@repo/ui/button';
 import Icon from '@repo/ui/icon';
+import { DEFAULT_REFERENCE_CONFIG, stripReferences } from '@bc-building-code/search-indexer';
 import { getSearchClient, type SearchResult } from '@/lib/search-client';
 import { resolveSectionForEffectiveDate } from '@/lib/revision-resolver';
 import { useVersionStore } from '@/stores/version-store';
@@ -34,6 +35,11 @@ type DivisionOption = {
   letter: string;
   title: string;
   parts: Array<{ id: string; number: number; title: string }>;
+};
+
+type SearchResultDisplayOverride = {
+  title?: string;
+  snippet?: string;
 };
 
 const RESULTS_BATCH_SIZE = 20;
@@ -108,6 +114,172 @@ function nodeExistsInSection(section: Section, targetId: string): boolean {
   }
 
   return false;
+}
+
+function findNodeInSection(section: Section, targetId: string): any | null {
+  const stack: any[] = [section];
+
+  while (stack.length > 0) {
+    const current = stack.pop();
+    if (!current || typeof current !== 'object') continue;
+
+    if (current.id === targetId) {
+      return current;
+    }
+
+    for (const value of Object.values(current)) {
+      if (Array.isArray(value)) {
+        for (const item of value) {
+          if (item && typeof item === 'object') {
+            stack.push(item);
+          }
+        }
+      } else if (value && typeof value === 'object') {
+        stack.push(value);
+      }
+    }
+  }
+
+  return null;
+}
+
+function normalizeText(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function formatReferenceText(value: string): string {
+  if (!value) return '';
+  return normalizeText(stripReferences(value, DEFAULT_REFERENCE_CONFIG));
+}
+
+function snippetFromText(text: string, maxLength: number = 280): string {
+  const normalized = normalizeText(text);
+  if (!normalized) return '';
+  if (normalized.length <= maxLength) return normalized;
+
+  const truncated = normalized.slice(0, maxLength);
+  const lastWordBreak = truncated.lastIndexOf(' ');
+  if (lastWordBreak > Math.floor(maxLength * 0.7)) {
+    return `${truncated.slice(0, lastWordBreak)}...`;
+  }
+  return `${truncated}...`;
+}
+
+function readNodeText(value: unknown): string {
+  if (typeof value === 'string') return value;
+  if (!value || typeof value !== 'object') return '';
+  if ('text' in value && typeof (value as any).text === 'string') {
+    return (value as any).text;
+  }
+  return '';
+}
+
+function extractClauseText(clause: any): string {
+  const parts: string[] = [];
+  const text = formatReferenceText(readNodeText(clause?.text));
+  if (text) parts.push(text);
+
+  const nested = Array.isArray(clause?.content)
+    ? clause.content
+    : [...(Array.isArray(clause?.clauses) ? clause.clauses : []), ...(Array.isArray(clause?.subclauses) ? clause.subclauses : [])];
+
+  for (const item of nested) {
+    if (!item || typeof item !== 'object') continue;
+    parts.push(extractClauseText(item));
+  }
+
+  return parts.filter(Boolean).join(' ');
+}
+
+function extractArticleSnippet(node: any): string {
+  const content = Array.isArray(node?.content) ? node.content : [];
+  const parts: string[] = [];
+
+  for (const item of content) {
+    if (!item || typeof item !== 'object') continue;
+    if (item.type === 'sentence') {
+      const sentenceText = formatReferenceText(readNodeText(item.text));
+      if (sentenceText) parts.push(sentenceText);
+
+      const clauses = Array.isArray(item.content) ? item.content : item.clauses;
+      if (Array.isArray(clauses)) {
+        for (const clause of clauses) {
+          parts.push(extractClauseText(clause));
+        }
+      }
+    } else if (item.type === 'table' || item.type === 'figure') {
+      const label = formatReferenceText(readNodeText(item.title) || readNodeText(item.caption));
+      if (label) parts.push(label);
+    }
+  }
+
+  if (parts.length === 0) {
+    const fallbackText = formatReferenceText(readNodeText(node?.text));
+    if (fallbackText) return snippetFromText(fallbackText);
+  }
+
+  return snippetFromText(parts.join(' '));
+}
+
+function extractTableSnippet(node: any): string {
+  const parts: string[] = [];
+  const title = formatReferenceText(readNodeText(node?.title));
+  const caption = formatReferenceText(readNodeText(node?.caption));
+
+  if (title) parts.push(title);
+  if (caption) parts.push(caption);
+
+  const structure = node?.structure;
+  const headerRows = Array.isArray(structure?.header_rows) ? structure.header_rows : [];
+  const bodyRows = Array.isArray(structure?.body_rows) ? structure.body_rows.slice(0, 5) : [];
+  const rows = [...headerRows, ...bodyRows];
+
+  for (const row of rows) {
+    const cells = Array.isArray(row?.cells) ? row.cells : [];
+    for (const cell of cells) {
+      const cellText = formatReferenceText(readNodeText(cell?.text));
+      if (cellText) parts.push(cellText);
+    }
+  }
+
+  return snippetFromText(parts.join(' '));
+}
+
+function extractFigureSnippet(node: any): string {
+  const text = formatReferenceText(
+    readNodeText(node?.title) || readNodeText(node?.caption) || readNodeText(node?.text)
+  );
+  return snippetFromText(text);
+}
+
+function extractDisplayOverrideFromNode(
+  node: any,
+  result: SearchResult
+): SearchResultDisplayOverride | null {
+  const resolvedTitle = formatReferenceText(readNodeText(node?.title));
+  let resolvedSnippet = '';
+
+  if (result.document.type === 'article') {
+    resolvedSnippet = extractArticleSnippet(node);
+  } else if (result.document.type === 'table') {
+    resolvedSnippet = extractTableSnippet(node);
+  } else if (result.document.type === 'figure') {
+    resolvedSnippet = extractFigureSnippet(node);
+  } else {
+    return null;
+  }
+
+  const nextTitle = resolvedTitle || result.document.title;
+  const nextSnippet = resolvedSnippet || result.document.snippet;
+
+  if (!nextTitle && !nextSnippet) {
+    return null;
+  }
+
+  return {
+    title: nextTitle,
+    snippet: nextSnippet,
+  };
 }
 
 function getCodeOrderTuple(result: SearchResult): [string, number, number, number, number, string] {
@@ -204,6 +376,7 @@ export default function SearchResultsPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [mobileOverlayTop, setMobileOverlayTop] = useState<number | null>(null);
   const [liveAnnouncement, setLiveAnnouncement] = useState('');
+  const [displayOverrides, setDisplayOverrides] = useState<Record<string, SearchResultDisplayOverride>>({});
 
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const resultsScrollRef = useRef<HTMLDivElement | null>(null);
@@ -214,6 +387,7 @@ export default function SearchResultsPage() {
   const sectionCacheRef = useRef<Map<string, Section>>(new Map());
   const resolvedSectionCacheRef = useRef<Map<string, Section>>(new Map());
   const visibilityCacheRef = useRef<Map<string, boolean>>(new Map());
+  const displayOverrideCacheRef = useRef<Map<string, SearchResultDisplayOverride>>(new Map());
 
   const selectedDivisionValue = useMemo(() => {
     if (!division) return '';
@@ -317,6 +491,36 @@ export default function SearchResultsPage() {
     router.push(`/search?${params.toString()}`);
   };
 
+  const getResolvedSection = async (result: SearchResult, effectiveDate: string): Promise<Section | null> => {
+    if (result.document.type === 'part' || !result.document.sectionNumber) {
+      return null;
+    }
+
+    const sectionPath = buildSectionDataPath(version, result);
+    if (!sectionPath) {
+      return null;
+    }
+
+    let section = sectionCacheRef.current.get(sectionPath);
+    if (!section) {
+      const response = await fetch(sectionPath);
+      if (!response.ok) {
+        return null;
+      }
+      section = (await response.json()) as Section;
+      sectionCacheRef.current.set(sectionPath, section);
+    }
+
+    const resolvedKey = `${sectionPath}::${effectiveDate}`;
+    let resolvedSection = resolvedSectionCacheRef.current.get(resolvedKey);
+    if (!resolvedSection) {
+      resolvedSection = resolveSectionForEffectiveDate(section, effectiveDate);
+      resolvedSectionCacheRef.current.set(resolvedKey, resolvedSection);
+    }
+
+    return resolvedSection;
+  };
+
   const isResultVisibleOnDate = async (result: SearchResult, effectiveDate: string): Promise<boolean> => {
     const cacheKey = `${version}:${effectiveDate}:${result.document.id}`;
     const cached = visibilityCacheRef.current.get(cacheKey);
@@ -334,33 +538,48 @@ export default function SearchResultsPage() {
       return true;
     }
 
-    const sectionPath = buildSectionDataPath(version, result);
-    if (!sectionPath) {
-      visibilityCacheRef.current.set(cacheKey, true);
-      return true;
-    }
-
-    let section = sectionCacheRef.current.get(sectionPath);
-    if (!section) {
-      const response = await fetch(sectionPath);
-      if (!response.ok) {
-        visibilityCacheRef.current.set(cacheKey, false);
-        return false;
-      }
-      section = (await response.json()) as Section;
-      sectionCacheRef.current.set(sectionPath, section);
-    }
-
-    const resolvedKey = `${sectionPath}::${effectiveDate}`;
-    let resolvedSection = resolvedSectionCacheRef.current.get(resolvedKey);
+    const resolvedSection = await getResolvedSection(result, effectiveDate);
     if (!resolvedSection) {
-      resolvedSection = resolveSectionForEffectiveDate(section, effectiveDate);
-      resolvedSectionCacheRef.current.set(resolvedKey, resolvedSection);
+      visibilityCacheRef.current.set(cacheKey, false);
+      return false;
     }
 
     const visible = nodeExistsInSection(resolvedSection, result.document.id);
     visibilityCacheRef.current.set(cacheKey, visible);
     return visible;
+  };
+
+  const getDisplayOverrideForDate = async (
+    result: SearchResult,
+    effectiveDate: string
+  ): Promise<SearchResultDisplayOverride | null> => {
+    if (!['article', 'table', 'figure'].includes(result.document.type)) {
+      return null;
+    }
+
+    const cacheKey = `${version}:${effectiveDate}:${result.document.id}`;
+    const cached = displayOverrideCacheRef.current.get(cacheKey);
+    if (cached) {
+      return cached;
+    }
+
+    const resolvedSection = await getResolvedSection(result, effectiveDate);
+    if (!resolvedSection) {
+      return null;
+    }
+
+    const resolvedNode = findNodeInSection(resolvedSection, result.document.id);
+    if (!resolvedNode) {
+      return null;
+    }
+
+    const display = extractDisplayOverrideFromNode(resolvedNode, result);
+    if (!display) {
+      return null;
+    }
+
+    displayOverrideCacheRef.current.set(cacheKey, display);
+    return display;
   };
 
   useEffect(() => {
@@ -370,6 +589,7 @@ export default function SearchResultsPage() {
     const runSearch = async () => {
       if (!q.trim()) {
         setResults([]);
+        setDisplayOverrides({});
         setError(null);
         setVisibleCount(RESULTS_BATCH_SIZE);
         return;
@@ -419,7 +639,26 @@ export default function SearchResultsPage() {
           if (runIdRef.current !== runId) return;
 
           filtered = filtered.filter((_, index) => visibility[index]);
+
+          const displayEntries = await Promise.all(
+            filtered.map(async (item) => {
+              const display = await getDisplayOverrideForDate(item, date);
+              return [item.document.id, display] as const;
+            })
+          );
+
+          if (runIdRef.current !== runId) return;
+
+          const nextOverrides: Record<string, SearchResultDisplayOverride> = {};
+          for (const [id, display] of displayEntries) {
+            if (display) {
+              nextOverrides[id] = display;
+            }
+          }
+          setDisplayOverrides(nextOverrides);
           setIsDateFiltering(false);
+        } else {
+          setDisplayOverrides({});
         }
 
         if (sort === 'code-order') {
@@ -434,6 +673,7 @@ export default function SearchResultsPage() {
         console.error(err);
         setError(err instanceof Error ? err.message : 'Failed to load search results');
         setResults([]);
+        setDisplayOverrides({});
       } finally {
         if (runIdRef.current === runId) {
           setIsSearching(false);
@@ -847,6 +1087,8 @@ export default function SearchResultsPage() {
                   result={item}
                   href={buildResultHref(item.document.urlPath, version, date || undefined)}
                   testId={item.document.id}
+                  displayTitle={displayOverrides[item.document.id]?.title}
+                  displaySnippet={displayOverrides[item.document.id]?.snippet}
                 />
               ))}
 
