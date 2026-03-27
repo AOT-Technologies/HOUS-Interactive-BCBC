@@ -45,6 +45,17 @@ function toAlphabetOrdinalUpper(value: number): string {
 }
 
 function extractFigureNumberFromId(id: string): string | undefined {
+  // Handle appendix figures: nbc.divB.appendixC.figure1 → C-1
+  const appendixFigureMatch = id.match(
+    /\.appendix([A-Za-z])(?:\..*)?\.figure(\d+)/i
+  );
+  if (appendixFigureMatch) {
+    const letter = appendixFigureMatch[1].toUpperCase();
+    const figureNum = appendixFigureMatch[2];
+    return `${letter}-${figureNum}`;
+  }
+
+  // Handle regular article figures
   const part = id.match(/\.part(\d+)/i)?.[1];
   const section = id.match(/\.sect(\d+)/i)?.[1];
   const subsection = id.match(/\.subsect(\d+)/i)?.[1];

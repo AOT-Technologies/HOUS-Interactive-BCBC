@@ -100,16 +100,6 @@ When updating the BC Building Code data:
 4. Test the application: `npx pnpm dev`
 5. Commit the updated source file
 
-## Sample Data
-
-For development and testing, use the sample file in `data/samples/`:
-
-```bash
-# Use sample data for testing
-cp data/samples/bcbc-sample.json data/source/bcbc-2024.json
-npx pnpm generate-assets
-```
-
 ## Security & Licensing
 
 - Ensure you have the right to use and distribute this data

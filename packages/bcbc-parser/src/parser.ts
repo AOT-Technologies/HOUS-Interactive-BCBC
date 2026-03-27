@@ -232,6 +232,12 @@ interface RawOrganizationList {
   items: Organization[];
 }
 
+interface RawBibliographyList {
+  type: 'bibliography';
+  header?: string;
+  items: RawTextListItem[];
+}
+
 interface RawTextList {
   type: 'bulleted' | 'numbered' | 'alphabetic';
   items: RawTextListItem[];
@@ -246,7 +252,8 @@ type RawStructuredList =
   | RawTextList
   | RawVariableList
   | RawDefinitionList
-  | RawOrganizationList;
+  | RawOrganizationList
+  | RawBibliographyList;
 
 type RawTableCellContentItem =
   | {
@@ -341,6 +348,7 @@ interface RawGlossaryEntry {
 
 interface RawAppendixParagraph {
   id: string;
+  type?: 'paragraph';
   content: string;
   equations?: RawEquation[];
   lists?: RawStructuredList[];
@@ -377,13 +385,15 @@ interface RawDivisionAppendixArticle {
   type: 'appendix_article';
   title: string;
   paragraphs?: RawAppendixParagraph[];
-  content?: Array<RawTable | RawFigure>;
+  content?: Array<RawAppendixParagraph | RawTable | RawFigure>;
+  see_also?: string;
 }
 
 interface RawDivisionAppendixSubsection {
   id: string;
   type: 'appendix_subsection';
   title: string;
+  paragraphs?: RawAppendixParagraph[];
   articles: RawDivisionAppendixArticle[];
 }
 
@@ -629,6 +639,18 @@ function parseStructuredLists(
               })),
           });
           break;
+        case 'bibliography':
+          parsedLists.push({
+            type: 'bibliography',
+            header: (list as RawBibliographyList).header,
+            items: list.items
+              .filter((item) => item && typeof item.content === 'string')
+              .map((item) => ({
+                id: item.id,
+                content: item.content,
+              })),
+          });
+          break;
       }
     }
   }
@@ -771,21 +793,34 @@ function parsePartAppendixData(raw: RawPartAppendix): PartAppendix {
 }
 
 function parseDivisionAppendixArticleData(raw: RawDivisionAppendixArticle): DivisionAppendixArticle {
-  const parsedContent = raw.content?.reduce<Array<Table | Figure>>((acc, item) => {
-    if (item.type === 'table') {
-      acc.push(parseTableData(item));
-    } else if (item.type === 'figure') {
-      acc.push(parseFigureData(item));
+  // Support both unified content array (new) and separate paragraphs+content (legacy)
+  const unifiedContent: Array<AppendixParagraph | Table | Figure> = [];
+
+  if (raw.content && raw.content.length > 0) {
+    for (const item of raw.content) {
+      const itemType = (item as { type?: string }).type;
+      if (itemType === 'table') {
+        unifiedContent.push(parseTableData(item as RawTable));
+      } else if (itemType === 'figure') {
+        unifiedContent.push(parseFigureData(item as RawFigure));
+      } else {
+        // paragraph (type === 'paragraph' or no type in legacy data)
+        unifiedContent.push(parseAppendixParagraph(item as RawAppendixParagraph));
+      }
     }
-    return acc;
-  }, []);
+  } else if (raw.paragraphs) {
+    // Legacy: separate paragraphs array
+    for (const p of raw.paragraphs) {
+      unifiedContent.push(parseAppendixParagraph(p));
+    }
+  }
 
   return {
     id: raw.id,
     type: 'appendix_article',
     title: raw.title,
-    paragraphs: raw.paragraphs?.map(parseAppendixParagraph),
-    content: parsedContent,
+    content: unifiedContent.length > 0 ? unifiedContent : undefined,
+    see_also: raw.see_also,
   };
 }
 
@@ -794,6 +829,7 @@ function parseDivisionAppendixSubsectionData(raw: RawDivisionAppendixSubsection)
     id: raw.id,
     type: 'appendix_subsection',
     title: raw.title,
+    paragraphs: raw.paragraphs?.map(parseAppendixParagraph),
     articles: raw.articles.map(parseDivisionAppendixArticleData),
   };
 }

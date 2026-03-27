@@ -236,14 +236,15 @@ export interface DivisionAppendixArticle {
   id: string;
   type: 'appendix_article';
   title: string;
-  paragraphs?: AppendixParagraph[];
-  content?: Array<Table | Figure>;
+  content?: Array<AppendixParagraph | Table | Figure>;
+  see_also?: string;
 }
 
 export interface DivisionAppendixSubsection {
   id: string;
   type: 'appendix_subsection';
   title: string;
+  paragraphs?: AppendixParagraph[];
   articles: DivisionAppendixArticle[];
 }
 
@@ -381,11 +382,18 @@ export interface OrganizationList {
   items: Organization[];
 }
 
+export interface BibliographyList {
+  type: 'bibliography';
+  header?: string;
+  items: TextListItem[];
+}
+
 export type StructuredList =
   | BulletedList
   | VariableList
   | DefinitionList
-  | OrganizationList;
+  | OrganizationList
+  | BibliographyList;
 
 /**
  * Sentence within an article

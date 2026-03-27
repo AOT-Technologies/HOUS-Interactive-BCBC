@@ -94,6 +94,19 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
           </table>
         </div>
       );
+    case 'bibliography':
+      return (
+        <div className="structuredList structuredList--bibliography">
+          {list.header ? (
+            <p className="structuredList__bibliography-header"><strong>{list.header}</strong></p>
+          ) : null}
+          <ol className="structuredList structuredList--numbered">
+            {list.items.map((item, index) => (
+              <li key={item.id || `bibliography-${index}`}>{renderText(item.content)}</li>
+            ))}
+          </ol>
+        </div>
+      );
     default:
       return null;
   }

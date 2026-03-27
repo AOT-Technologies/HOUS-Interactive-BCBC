@@ -19,20 +19,14 @@ npx pnpm generate-assets
 # Run directly with tsx
 npx tsx scripts/generate-assets.ts
 
-# Use sample data
-SAMPLE_MODE=true npx tsx scripts/generate-assets.ts
-
 # Custom source file
-SOURCE_FILE=data/samples/bcbc-sample.json npx tsx scripts/generate-assets.ts
+SOURCE_FILE=data/source/bcbc-2024.json npx tsx scripts/generate-assets.ts
 ```
 
 **Environment Variables:**
 
 - `SOURCE_FILE` - Path to source JSON (default: `data/source/bcbc-2024.json`)
 - `OUTPUT_DIR` - Output directory (default: `apps/web/public/data`)
-- `SAMPLE_MODE` - Use sample data (default: `false`)
-
-**Pipeline Steps:**
 
 1. **Clean Output Directory** - Remove old generated assets
 2. **Load Source Data** - Read and parse BCBC JSON
@@ -132,13 +126,7 @@ This ensures:
    npx pnpm generate-assets
    ```
 
-3. **Testing with Sample Data:**
-   ```bash
-   cp data/samples/bcbc-sample.json data/source/bcbc-2024.json
-   npx pnpm generate-assets
-   ```
-
-4. **Before Deployment:**
+3. **Before Deployment:**
    ```bash
    npx pnpm generate-assets
    npx pnpm build

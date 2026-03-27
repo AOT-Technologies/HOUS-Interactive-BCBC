@@ -113,6 +113,18 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
       };
     }
 
+    if (listType === 'bibliography') {
+      return {
+        type: 'bibliography',
+        header: (item as { header?: string }).header,
+        items: rawItems
+          .filter((entry): entry is { id?: string; content: string } =>
+            Boolean(entry && typeof entry === 'object' && typeof (entry as { content?: unknown }).content === 'string')
+          )
+          .map((entry) => ({ id: entry.id, content: entry.content })),
+      };
+    }
+
     return null;
   };
 
@@ -198,6 +210,31 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
   ): item is DivisionAppendixSection =>
     item.type === 'appendix_section' || item.type === 'note_division';
 
+  /**
+   * Derives a display number from an appendix element ID.
+   * e.g. "nbc.divB.appendixD.appsect2.subsect11.article3" → "D-2.11.3."
+   */
+  const deriveAppendixNumber = (id: string): string => {
+    const letter = appendix.letter;
+    // Extract numeric segments from appsect, subsect, article parts
+    const sectionMatch = id.match(/appsect(\d+)/);
+    const subsectMatch = id.match(/subsect(\d+)/);
+    const articleMatch = id.match(/article(\d+)/);
+
+    // If no numbered segments found, return empty string (e.g. Appendix C uses div1, div2)
+    if (!sectionMatch && !subsectMatch && !articleMatch) {
+      return '';
+    }
+
+    const parts: string[] = [`${letter}-`];
+    if (sectionMatch) parts.push(sectionMatch[1]);
+    if (subsectMatch) parts.push(`.${subsectMatch[1]}`);
+    if (articleMatch) parts.push(`.${articleMatch[1]}`);
+    parts.push('.');
+
+    return parts.join('');
+  };
+
   return (
     <div className="reading-view__appendix">
       <h2 className="reading-view__appendix-heading">
@@ -265,7 +302,7 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
               id={section.id}
               className="reading-view__appendix-division"
             >
-              {section.title ? <h3>{section.title}</h3> : null}
+              {section.title ? <h3>{deriveAppendixNumber(section.id) ? `${deriveAppendixNumber(section.id)}\u00A0\u00A0\u00A0${section.title}` : section.title}</h3> : null}
               {renderSectionContent(section, section.id)}
               {section.subsections?.map((subsection: DivisionAppendixSubsection) => (
                 <section
@@ -273,19 +310,32 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                   id={subsection.id}
                   className="reading-view__appendix-division"
                 >
-                  <h4>{subsection.title}</h4>
-                  {subsection.articles.map((article: DivisionAppendixArticle) => (
+                  <h4>{deriveAppendixNumber(subsection.id) ? `${deriveAppendixNumber(subsection.id)}\u00A0\u00A0\u00A0${subsection.title}` : subsection.title}</h4>
+                  {subsection.paragraphs?.map((paragraph: AppendixParagraph, index: number) =>
+                    renderParagraph(paragraph, subsection.id, index)
+                  )}
+                  {subsection.articles.map((article: DivisionAppendixArticle) => {
+                    const articleTableCount = article.content?.filter(
+                      (item) => (item as { type?: string }).type === 'table'
+                    ).length ?? 0;
+                    return (
                     <article
                       key={article.id}
                       id={article.id}
                       className="reading-view__appendix-note"
                     >
-                      <h5 className="reading-view__appendix-note-title">{article.title}</h5>
+                      <h5 className="reading-view__appendix-note-title">{deriveAppendixNumber(article.id) ? `${deriveAppendixNumber(article.id)}\u00A0\u00A0\u00A0${article.title}` : article.title}</h5>
+                      {article.see_also?.trim() ? (
+                        <p className="reading-view__appendix-note-see-also">
+                          {parseTextWithMarkers(article.see_also.trim(), [], interactive, [], [], appendixContext)}
+                        </p>
+                      ) : null}
                       <div className="reading-view__appendix-note-content">
-                        {article.paragraphs?.map((paragraph: AppendixParagraph, index: number) =>
-                          renderParagraph(paragraph, article.id, index)
-                        )}
                         {article.content?.map((item: NonNullable<typeof article.content>[number], index: number) => {
+                          if (item.type === 'paragraph' || (!('type' in item) && 'content' in item)) {
+                            return renderParagraph(item as AppendixParagraph, article.id, index);
+                          }
+
                           if (item.type === 'table') {
                             return (
                               <TableBlock
@@ -294,6 +344,7 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                                 interactive={interactive}
                                 effectiveDate={effectiveDate}
                                 renderContext={appendixContext}
+                                appendixSiblingTableCount={articleTableCount}
                               />
                             );
                           }
@@ -313,7 +364,8 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                         })}
                       </div>
                     </article>
-                  ))}
+                  );
+                  })}
                 </section>
               ))}
             </section>

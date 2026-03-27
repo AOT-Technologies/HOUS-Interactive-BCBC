@@ -51,6 +51,7 @@ export type {
   VariableList,
   DefinitionList,
   OrganizationList,
+  BibliographyList,
   StructuredList,
 } from './types';
 
