@@ -1,41 +1,37 @@
 # How to Add a New BC Building Code Version
 
-**Quick guide for adding a new version (e.g., 2027) after the multi-version infrastructure is in place.**
+**Guide for adding a new version of BC building code (e.g. 2027)**
 
 ---
 
 ## Prerequisites
 
-- Multi-version infrastructure completed (Phases 1-8)
-- New BC Building Code JSON file available (e.g., `bcbc-2027.json`)
-- Access to source code repository
+- New BC Building Code JSON file available (e.g., `bcbc-2027.json`) and validated as per the [validation pipeline document](https://github.com/bcgov/BC-Building-Code/blob/develop/docs/VALIDATION_PIPELINE.md) on the BCBC JSON Generation repo 
+- Access to the [BCBC Interactive repo](https://github.com/bcgov/HOUS-Interactive-BCBC) 
+- Local Git clone + ability to create pull requests and get them merged to the main branch)
+- Bash shell  (gitbash or other)
+- Node.js installed. npm (or pnpm) and tsx available. 
+-  [These instructions](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/COMMANDS.md) may prove useful in setting up your node.js environment
 
 ---
 
 ## Steps
 
-### 1. Add Source File
+### 1. Add new version of BCBC json to to local git repo 
 
-Copy the new BC Building Code JSON to the source directory:
+Copy the local copy of the new BC Building Code JSON to the source directory:
+(assume local copy folder is \$local and the github project root is $gitproj)
 
 ```bash
-cp ~/Downloads/bcbc-2027.json data/source/
+cp $local/bcbc-2027.json $gitproj/data/source/
 ```
 
-**Verify file:**
-```bash
-# Check file exists and is valid JSON
-cat data/source/bcbc-2027.json | jq . > /dev/null && echo "Valid JSON" || echo "Invalid JSON"
-
-# Check file size
-ls -lh data/source/bcbc-2027.json
-```
 
 ---
 
 ### 2. Update versions.json
 
-Edit `data/source/versions.json` to add the new version:
+Edit `$gitproj/data/source/versions.json` to add the new version:
 
 **Before:**
 ```json
@@ -63,18 +59,18 @@ Edit `data/source/versions.json` to add the new version:
       "year": 2024,
       "title": "BC Building Code 2024",
       "sourceFile": "bcbc-2024.json",
-      "isDefault": true,
+      "isDefault": false,
       "publishedDate": "2024-01-01",
-      "status": "current"
+      "status": "archived"
     },
     {
       "id": "2027",
       "year": 2027,
       "title": "BC Building Code 2027",
       "sourceFile": "bcbc-2027.json",
-      "isDefault": false,
+      "isDefault": true,
       "publishedDate": "2027-01-01",
-      "status": "draft"
+      "status": "current"
     }
   ]
 }
@@ -89,6 +85,11 @@ Edit `data/source/versions.json` to add the new version:
 - `publishedDate`: Official publication date
 - `status`: `"current"`, `"draft"`, or `"archived"`
 
+Note that the 2027 file has the `status` of "current" and `isDefault` of "true", while the 2024 file has the `status` of "archived" and the `isDefault` of "false" . These should be set according to the release strategy.  
+
+These  settings manifest themselves in the following way:
+- URL's in the BCBC viewer can have a version parameter. The  version with `isDefault` set to true is the version displayed if NO version parameter is present in the URL (this is the default) 
+- The`status` field value is not currently exposed in the UI
 ---
 
 ### 3. Generate Assets
@@ -97,7 +98,7 @@ Run the asset generation pipeline:
 
 ```bash
 # Generate assets for all versions
-pnpm generate-assets
+ npm run generate-assets 
 ```
 
 **What happens:**
@@ -128,7 +129,35 @@ apps/web/public/data/
 ls -lh apps/web/public/data/2027/
 
 # Check versions.json includes both versions
-cat apps/web/public/data/versions.json | jq '.versions[].id'
+cat apps/web/public/data/versions.json 
+```
+should contain both versions as follows
+```json
+{
+  "generatedAt": "2026-03-26T23:00:36.586Z",
+  "defaultVersion": "2024",
+  "versions": [
+    {
+      "id": "2024",
+      "year": 2024,
+      "title": "BC Building Code 2024",
+      "isDefault": false,
+      "status": "archive",
+      "revisionCount": 6,
+      "latestRevision": "2025-06-16",
+      "dataPath": "/data/2024"
+    },
+    {
+      "id": "2027",
+      "year": 2027,
+      "title": "BC Building Code 2027",
+      "isDefault": true,
+      "status": "current",
+      "revisionCount": 6,
+      "latestRevision": "2027-06-16",
+      "dataPath": "/data/2027"
+    }  ]
+}
 ```
 
 ---
@@ -137,23 +166,35 @@ cat apps/web/public/data/versions.json | jq '.versions[].id'
 
 Start the development server and test:
 
-```bash
-pnpm dev
-```
+Use instructions [here](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/COMMANDS.md) to run on your local machine
 
 **Test Checklist:**
-
+- [ ] **Default version** 
+  - Navigate to default URL (http://localhost:3000)
+  - Verify that the sidebar shows "BC Building Code 2027"
+  - Perform a search
+  - Verify that the results are from the 2027 version
 - [ ] **Version Selector**
   - Open sidebar
   - Verify dropdown shows both "BC Building Code 2024" and "BC Building Code 2027"
   - Dropdown should be enabled (not disabled)
 
-- [ ] **Switch to 2027**
+- [ ] **Switch to 2024**
+  - Select "BC Building Code 2024" from dropdown
+  - Verify URL updates: `?version=2024`
+  - Verify version badge shows "2024"
+  - Verify navigation tree loads for 2024
+  - Verify content loads for 2024
+  
+- [ ] **Search in 2024**
+  - Perform a search
+  - Verify results are from 2024 version
+  - Verify search filters work
+
+- [ ] **Switch back to 2027**
   - Select "BC Building Code 2027" from dropdown
-  - Verify URL updates: `?version=2027`
-  - Verify version badge shows "2027"
-  - Verify navigation tree loads for 2027
-  - Verify content loads for 2027
+  - Verify everything switches back correctly
+  - Verify no data corruption or errors
 
 - [ ] **Search in 2027**
   - Perform a search
@@ -165,16 +206,12 @@ pnpm dev
   - Verify dates are specific to 2027
   - Select a date and verify content updates
 
-- [ ] **Switch Back to 2024**
-  - Select "BC Building Code 2024" from dropdown
-  - Verify everything switches back correctly
-  - Verify no data corruption or errors
-
 - [ ] **URL Handling**
   - Bookmark a 2027 URL: `/code/division-b/part-3?version=2027`
   - Close and reopen bookmark
   - Verify 2027 loads correctly
   - Test browser back/forward buttons
+  - Try the same with 2024 version
 
 - [ ] **Performance**
   - Measure version switch time (should be < 2 seconds)
@@ -185,114 +222,23 @@ pnpm dev
 
 ### 5. Commit Changes
 
-Commit the new version to Git:
+Commit the new version of the BCBC json file to Git using your git UI / command line , and push to the online repo dev branch (this should be default). Create a pull-request to merge the json file to the main branch.  
+**Note** :  Only the bcbc json file (nom. "bcbc-2027.json") and the "versions.json" file should be committed and pushed. The generated assets in  `apps/web/public/data/` are NOT committed (in .gitignore)
 
-```bash
-# Add source file (if not using Git LFS)
-git add data/source/bcbc-2027.json
 
-# Or if using Git LFS for large files
-git lfs track "data/source/bcbc-2027.json"
-git add .gitattributes
-git add data/source/bcbc-2027.json
 
-# Add updated versions.json
-git add data/source/versions.json
-
-# Commit
-git commit -m "Add BC Building Code 2027
-
-- Added bcbc-2027.json source file
-- Updated versions.json to include 2027
-- Status: draft
-"
-
-# Push
-git push origin main
-```
-
-**Note:** Generated assets in `apps/web/public/data/` are NOT committed (in .gitignore)
-
----
 
 ### 6. Deploy
 
-Deploy to staging first, then production:
+Deployment to the dev environment is described in [Deployment](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/DEPLOYMENT.md).  On successful deployment, run through tests as per 4. again (obviously replacing the "localhost:3000" with the dev URL)
 
-```bash
-# Build for production
-pnpm build
+On successful testing, deploy to production environment as per the [Deployment](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/DEPLOYMENT.md) instructions.
 
-# Deploy to staging
-# (deployment command depends on your infrastructure)
-
-# Test on staging
-# - Verify both versions work
-# - Verify version switching works
-# - Verify search works per version
-
-# Deploy to production
-# (deployment command depends on your infrastructure)
-```
-
----
 
 ### 7. Announce
 
 Communicate the new version to users:
 
-- Update website announcement banner
-- Send email to subscribers
-- Post on social media
-- Update documentation
-
-**Example announcement:**
-> "BC Building Code 2027 (Draft) is now available! Switch between versions using the dropdown in the sidebar. Note: 2027 is a draft version and subject to change."
-
----
-
-## Changing Default Version
-
-To make 2027 the default version (when it becomes official):
-
-**Edit `data/source/versions.json`:**
-
-```json
-{
-  "versions": [
-    {
-      "id": "2024",
-      "year": 2024,
-      "title": "BC Building Code 2024",
-      "sourceFile": "bcbc-2024.json",
-      "isDefault": false,  // Changed from true
-      "publishedDate": "2024-01-01",
-      "status": "archived"  // Changed from current
-    },
-    {
-      "id": "2027",
-      "year": 2027,
-      "title": "BC Building Code 2027",
-      "sourceFile": "bcbc-2027.json",
-      "isDefault": true,  // Changed from false
-      "publishedDate": "2027-01-01",
-      "status": "current"  // Changed from draft
-    }
-  ]
-}
-```
-
-**Regenerate assets:**
-```bash
-pnpm generate-assets
-```
-
-**Result:**
-- URLs without version parameter now default to 2027
-- Version selector shows 2027 first
-- 2024 remains available but marked as archived
-
----
 
 ## Removing Old Versions
 
@@ -374,5 +320,5 @@ To remove an old version (e.g., 2021):
 
 ---
 
-**Last Updated:** 2026-02-03  
+**Last Updated:** 2026-26-03  
 **Version:** 1.0
