@@ -1,0 +1,22 @@
+# Development environment values
+namespace: d6af69-test
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+route:
+  enabled: true
+  host: test.buildingcode.gov.bc.ca
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+    secretName: buildingcode-route-tls
+
+autoscaling:
+  enabled: false
