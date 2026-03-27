@@ -13,6 +13,8 @@ export interface TableBlockProps {
   interactive?: boolean;
   effectiveDate?: string;
   renderContext?: ReferenceRenderContext;
+  /** Number of sibling tables in the same appendix article. When 1, letter suffix is omitted. */
+  appendixSiblingTableCount?: number;
 }
 
 const LANDSCAPE_PRINT_CAPACITY_REM = 65;
@@ -524,7 +526,7 @@ const buildArticleReference = (referenceId: string): string | null => {
   return `${parsed.part}.${parsed.section}.${parsed.subsection}.${parsed.article}`;
 };
 
-const getResolvedTableNumber = (table: TableWithRawSupport): string => {
+const getResolvedTableNumber = (table: TableWithRawSupport, siblingTableCount?: number): string => {
   if (table.number) {
     return String(table.number);
   }
@@ -532,12 +534,18 @@ const getResolvedTableNumber = (table: TableWithRawSupport): string => {
   const parsedFromId = parseInternalReference(table.id);
   if (parsedFromId.appendixLetter && parsedFromId.table) {
     if (parsedFromId.appendixSection && parsedFromId.subsection && parsedFromId.article) {
-      return [
-        parsedFromId.appendixLetter,
+      const baseNumber = `${parsedFromId.appendixLetter}-${[
         parsedFromId.appendixSection,
         parsedFromId.subsection,
         parsedFromId.article,
-      ].join('.');
+      ].join('.')}`;
+      // Only append letter suffix when there are multiple tables in the article
+      if (siblingTableCount != null && siblingTableCount <= 1) {
+        return baseNumber;
+      }
+      const tableIndex = parseInt(parsedFromId.table, 10);
+      const tableLetter = toAlphabetOrdinal(tableIndex).toUpperCase();
+      return `${baseNumber}-${tableLetter}`;
     }
 
     return `${parsedFromId.appendixLetter}-${parsedFromId.table}`;
@@ -550,12 +558,17 @@ const getResolvedTableNumber = (table: TableWithRawSupport): string => {
     parsedFromId.article &&
     parsedFromId.table
   ) {
-    return [
-      parsedFromId.appendixLetter,
+    const baseNumber = `${parsedFromId.appendixLetter}-${[
       parsedFromId.appendixSection,
       parsedFromId.subsection,
       parsedFromId.article,
-    ].join('.');
+    ].join('.')}`;
+    if (siblingTableCount != null && siblingTableCount <= 1) {
+      return baseNumber;
+    }
+    const tableIndex = parseInt(parsedFromId.table, 10);
+    const tableLetter = toAlphabetOrdinal(tableIndex).toUpperCase();
+    return `${baseNumber}-${tableLetter}`;
   }
 
   const formingPartEntries = table.formingPart ?? table.forming_part;
@@ -567,29 +580,30 @@ const getResolvedTableNumber = (table: TableWithRawSupport): string => {
 
 const formatFormingPartLabel = (reference: ParsedInternalReference): string | null => {
   if (reference.appendixLetter) {
-    const appendixReference = [
-      reference.appendixLetter,
+    // Build appendix number in D-X.Y.Z. format
+    const segments = [
       reference.appendixSection,
       reference.subsection,
       reference.article,
-    ]
-      .filter(Boolean)
-      .join('.');
+    ].filter(Boolean);
+    const appendixNumber = segments.length > 0
+      ? `${reference.appendixLetter}-${segments.join('.')}.`
+      : reference.appendixLetter;
 
-    if (reference.paragraph && appendixReference) {
-      return `Sentence ${appendixReference}.(${reference.paragraph})`;
+    if (reference.paragraph) {
+      return `Sentence ${appendixNumber}(${reference.paragraph})`;
     }
 
-    if (reference.article && appendixReference) {
-      return `Article ${appendixReference}`;
+    if (reference.article) {
+      return appendixNumber;
     }
 
-    if (reference.subsection && appendixReference) {
-      return `Subsection ${appendixReference}`;
+    if (reference.subsection) {
+      return appendixNumber;
     }
 
-    if (reference.appendixSection && appendixReference) {
-      return `Section ${appendixReference}`;
+    if (reference.appendixSection) {
+      return appendixNumber;
     }
 
     return `Appendix ${reference.appendixLetter}`;
@@ -652,6 +666,12 @@ const formatFormingPartText = (formingPart: FormingPartReference[] | undefined):
 
 const getTableNumberDisplay = (tableNumber: string): string => {
   const normalized = tableNumber.trim();
+
+  // If the number already includes "Table" prefix (from source data), use as-is
+  if (/^Table\s/i.test(normalized)) {
+    return normalized.endsWith('.') || normalized.endsWith(')') ? normalized : `${normalized}.`;
+  }
+
   const omitTrailingDot =
     normalized.endsWith(')') || /^[A-Za-z]-\d+$/i.test(normalized);
 
@@ -1249,6 +1269,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   interactive = true,
   effectiveDate,
   renderContext,
+  appendixSiblingTableCount,
 }) => {
   const [headerOffset, setHeaderOffset] = useState(0);
   const [scrollbarCompensation, setScrollbarCompensation] = useState(0);
@@ -1263,7 +1284,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const resolvedCaption = activeRevision?.caption ?? rawTable.caption;
   const resolvedTableNotes = activeRevision?.table_notes ?? rawTable.table_notes ?? [];
   const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
-  const tableNumber = getResolvedTableNumber(rawTable);
+  const tableNumber = getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
   const formingPartText = formatFormingPartText(formingPartEntries);

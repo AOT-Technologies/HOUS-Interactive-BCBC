@@ -221,6 +221,11 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
     const subsectMatch = id.match(/subsect(\d+)/);
     const articleMatch = id.match(/article(\d+)/);
 
+    // If no numbered segments found, return empty string (e.g. Appendix C uses div1, div2)
+    if (!sectionMatch && !subsectMatch && !articleMatch) {
+      return '';
+    }
+
     const parts: string[] = [`${letter}-`];
     if (sectionMatch) parts.push(sectionMatch[1]);
     if (subsectMatch) parts.push(`.${subsectMatch[1]}`);
@@ -297,7 +302,7 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
               id={section.id}
               className="reading-view__appendix-division"
             >
-              {section.title ? <h3>{`${deriveAppendixNumber(section.id)}\u00A0\u00A0\u00A0${section.title}`}</h3> : null}
+              {section.title ? <h3>{deriveAppendixNumber(section.id) ? `${deriveAppendixNumber(section.id)}\u00A0\u00A0\u00A0${section.title}` : section.title}</h3> : null}
               {renderSectionContent(section, section.id)}
               {section.subsections?.map((subsection: DivisionAppendixSubsection) => (
                 <section
@@ -305,17 +310,21 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                   id={subsection.id}
                   className="reading-view__appendix-division"
                 >
-                  <h4>{`${deriveAppendixNumber(subsection.id)}\u00A0\u00A0\u00A0${subsection.title}`}</h4>
+                  <h4>{deriveAppendixNumber(subsection.id) ? `${deriveAppendixNumber(subsection.id)}\u00A0\u00A0\u00A0${subsection.title}` : subsection.title}</h4>
                   {subsection.paragraphs?.map((paragraph: AppendixParagraph, index: number) =>
                     renderParagraph(paragraph, subsection.id, index)
                   )}
-                  {subsection.articles.map((article: DivisionAppendixArticle) => (
+                  {subsection.articles.map((article: DivisionAppendixArticle) => {
+                    const articleTableCount = article.content?.filter(
+                      (item) => (item as { type?: string }).type === 'table'
+                    ).length ?? 0;
+                    return (
                     <article
                       key={article.id}
                       id={article.id}
                       className="reading-view__appendix-note"
                     >
-                      <h5 className="reading-view__appendix-note-title">{`${deriveAppendixNumber(article.id)}\u00A0\u00A0\u00A0${article.title}`}</h5>
+                      <h5 className="reading-view__appendix-note-title">{deriveAppendixNumber(article.id) ? `${deriveAppendixNumber(article.id)}\u00A0\u00A0\u00A0${article.title}` : article.title}</h5>
                       {article.see_also?.trim() ? (
                         <p className="reading-view__appendix-note-see-also">
                           {parseTextWithMarkers(article.see_also.trim(), [], interactive, [], [], appendixContext)}
@@ -335,6 +344,7 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                                 interactive={interactive}
                                 effectiveDate={effectiveDate}
                                 renderContext={appendixContext}
+                                appendixSiblingTableCount={articleTableCount}
                               />
                             );
                           }
@@ -354,7 +364,8 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                         })}
                       </div>
                     </article>
-                  ))}
+                  );
+                  })}
                 </section>
               ))}
             </section>
