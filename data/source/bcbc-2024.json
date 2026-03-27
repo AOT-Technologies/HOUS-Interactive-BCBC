@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-27T16:10:58.893-07:00",
+  "generated_timestamp" : "2026-03-27T16:57:36.67-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -33,6 +33,10 @@
       "content" : 
       [ 
        { "type" : "paragraph",
+        "id" : "nbc.2020.preface.intro",
+        "content" : "<bold>The following preface is reprinted from the model National Building Code of Canada (NBC), on which the British Columbia Building Code (BCBC) is substantially based. As such, this information also pertains to the BCBC. Material that is not relevant to the BCBC has been deleted; minor BCBC-specific edits within the text have been made. Additional information only relevant to the BCBC has been included in text boxes within the document.<\/bold>" },
+       
+       { "type" : "paragraph",
         "id" : "nbc.2020.preface.para1",
         "content" : "The BC Building Code of Canada 2020 (NBC), together with the National Plumbing Code of Canada 2020 (NPC), the National Fire Code of Canada 2020 (NFC) and the National Energy Code of Canada for Buildings 2020 (NECB), has been developed by the Canadian Commission on Building and Fire Codes (CCBFC) as an objective-based national model code that can be adopted by provincial and territorial governments." },
        
@@ -41,12 +45,28 @@
         "content" : "In Canada, provincial and territorial governments have the authority to enact legislation that regulates building design and construction within their jurisdictions. This may involve the adoption of the NBC without change or with modifications to suit local needs, and the enactment of other laws and regulations regarding building design and construction, including requirements for professional involvement." },
        
        { "type" : "paragraph",
+        "id" : "nbc.2020.preface.para2a",
+        "content" : "<bold>In British Columbia, the NBC, together with the National Plumbing Code of Canada, are adopted, including any variations considered necessary, as Book I (General) and Book II (Plumbing Systems) of the BCBC, pursuant to the Building Act.<\/bold>" },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.para2b",
+        "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Services Act.<\/bold>" },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.para2c",
+        "content" : "<bold>The National Energy Code of Canada for Buildings (NECB) is adopted by reference from Book I (General) of the British Columbia Building Code.<\/bold>" },
+       
+       { "type" : "paragraph",
         "id" : "nbc.2020.preface.para3",
         "content" : "The NBC is a model code in the sense that it helps promote consistency among provincial and territorial building codes. Persons involved in the design or construction of a building should consult the provincial or territorial jurisdiction concerned to find out which building code is applicable." },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para4",
         "content" : "This edition of the NBC succeeds the 2015 edition." },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.para4a",
+        "content" : "<bold>This edition of the BCBC succeeds the 2018 edition.<\/bold>" },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div1.title",
@@ -64,6 +84,10 @@
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div1.para3",
         "content" : "Codes Canada staff within the Construction Research Centre at the NRC provide technical and administrative support to the CCBFC and its standing committees, and coordinate the provision of evidence-based research to inform Codes development. The NRC publishes the National Model Codes and periodic revisions to the Codes to address pressing issues." },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div1.para3a",
+        "content" : "<bold>Similar to the Codes themselves, such periodic revisions do not have legal effect until adopted into law by the Province of British Columbia.<\/bold>" },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div1.para4",
@@ -97,6 +121,10 @@
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.para4",
         "content" : "The provisions of the NBC can be considered as the minimum acceptable measures required to adequately achieve the above-listed objectives, as recommended by the CCBFC. Once they are adopted into law or regulation by an authority having jurisdiction, the provisions become minimum acceptable requirements representing the minimum level of performance required to achieve the objectives that is acceptable to the adopting authority." },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div2.para4a",
+        "content" : "<bold>In context of the preceding paragraph, the terms \"authority having jurisdiction\" and \"adopting authority\" refer to the government of the Province of British Columbia. This differs from the context of application and enforcement of the BCBC, for which the Code contains a distinct definition of the term \"authority having jurisdiction\". (See Article 1.4.1.2. of Division A.)<\/bold>" },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.para5",
@@ -167,6 +195,10 @@
         "content" : "The NBC has been published in an objective-based code format since 2005." },
        
        { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div3.para1a",
+        "content" : "<bold>The 2006 BCBC (including plumbing services as Part 7) and the 2006 BCFC were the first objective-based codes adopted by the Province of British Columbia. The following relates also to Book II (Plumbing Systems), of this Code.<\/bold>" },
+       
+       { "type" : "paragraph",
         "id" : "nbc.2020.preface.div3.para2",
         "content" : "As described in more detail in the section entitled Structure of the NBC, the Code comprises three Divisions:[LIST:bulleted]" },
        
@@ -203,6 +235,10 @@
         "id" : "nbc.2020.preface.div3.sub1.para5",
         "content" : "The objectives attributed to the requirements or portions of requirements in Division B are listed in a table following the provisions in each Part of Division B." },
        
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div3.sub1.para5a",
+        "content" : "<bold>Objectives have also been attributed to any requirements specific to British Columbia.<\/bold>" },
+       
        { "type" : "heading",
         "id" : "nbc.2020.preface.div3.sub2.title",
         "content" : "Functional Statements",
@@ -224,6 +260,10 @@
         "id" : "nbc.2020.preface.div3.sub2.para4",
         "content" : "The functional statements attributed to the requirements or portions of requirements in Division B are listed in a table following the provisions in each Part of Division B." },
        
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div3.sub2.para4a",
+        "content" : "<bold>Functional Statements have also been attributed to any requirements specific to British Columbia.<\/bold>" },
+       
        { "type" : "heading",
         "id" : "nbc.2020.preface.div3.sub3.title",
         "content" : "Intent Statements",
@@ -237,6 +277,10 @@
         "id" : "nbc.2020.preface.div3.sub3.para2",
         "content" : "The intent statements serve explanatory purposes only and do not form an integral part of the Code provisions. As such, they are similar in function to the explanatory Notes at the end of each Part. Due to the sheer volume of intent statements—thousands for the NBC alone—they are made available as a separate electronic document entitled “Supplement to the NBC 2020: Intent Statements,” which is posted on the NRC's website." },
        
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div3.sub3.para2a",
+        "content" : "<bold>\"Supplement to the NBC 2020: Intent Statements\" is not available at the time of printing of this Code. Intent statements have not been attributed to any requirements specific to British Columbia.<\/bold>" },
+       
        { "type" : "heading",
         "id" : "nbc.2020.preface.div4.title",
         "content" : "Structure of the NBC",
@@ -245,6 +289,10 @@
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.para1",
         "content" : "The NBC is organized into three Divisions, which are distributed across two volumes." },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div4.para1c",
+        "content" : "<bold>The remainder of this section relates also to Book II (Plumbing Systems) of this Code.<\/bold>" },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div4.sub1.title",
@@ -269,6 +317,10 @@
         "content" : "The term “acceptable solutions” refers to the technical requirements contained in the Code. It reflects the principle that building codes establish an acceptable level of risk or performance and underlines the fact that a code cannot describe all possible valid design and construction options. Acceptable solutions represent the minimum level of performance that will satisfy the NBC's objectives and that is acceptable to an authority that adopts the NBC into law or regulation." },
        
        { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div4.sub2.para1a",
+        "content" : "<bold>In context of the preceding paragraph, the phrase \"authority that adopts the NBC into law or regulation\" refers to the government of the Province of British Columbia. This differs from the context of application and enforcement of the BCBC, for which the Code contains a distinct definition of the term \"authority having jurisdiction\". (See Article 1.4.1.2. of Division A.)<\/bold>" },
+       
+       { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub2.para2",
         "content" : "Most of the requirements in Division B—the acceptable solutions—are linked to at least one objective and functional statement found in Division A. These linkages play an important role in allowing objective-based codes to accommodate innovation." },
        
@@ -286,6 +338,10 @@
         "content" : "Division C contains administrative provisions relating to the application of the Code. Many provinces and territories establish their own administrative provisions upon adopting or adapting the NBC; having all the administrative provisions in one Division facilitates their customization to suit jurisdictional needs." },
        
        { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div4.sub3.para1a",
+        "content" : "<bold>The BCBC contains some unique administrative provisions in Division C.<\/bold>" },
+       
+       { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub3.para2",
         "content" : "In addition, a separate document entitled Administrative Requirements for Use with the National Building Code of Canada 1985 is automatically adopted, in accordance with Article 2.2.1.1. of Division C, if the authority having jurisdiction does not provide other administrative requirements." },
        
@@ -297,6 +353,14 @@
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub4.para1",
         "content" : "[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1:long] is a very important sentence: it is a precise statement of the relationship between Divisions A and B and is central to the concept of objective-based codes." },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div4.sub4.para1a",
+        "content" : "1) Compliance with this Code shall be achieved by[LIST:bulleted]" },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div4.sub4.para1b",
+        "content" : "<bold>See Article 1.2.1.1. of the BCBC, which differs from above. Additional requirements apply in British Columbia.<\/bold>" },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub4.para2",
@@ -615,6 +679,14 @@
         "id" : "nbc.2020.preface.div6.sub3.para1",
         "content" : "As a courtesy to Code users, efforts have been made to identify technical changes relative to the 2015 edition. Where a technical addition or revision has been made, a vertical line has been added in the margin next to the affected provision to indicate the approximate location of the new or revised content. No change indication is provided for editorial revisions or for renumbered or deleted content." },
        
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div6.sub3.para1a",
+        "content" : "<bold>In addition to the above noted vertical lines, which indicate a change to the NBC, further unique to British Columbia technical changes, additions, and variations relative to the 2023 edition of the BCBC are identified. These changes are shown by a bold vertical line added in the margin next to the affected provision to indicate the approximate location of the unique to B.C. content, wherever practical. The bold vertical lines are for convenience only and have no legal effect. No change indication is provided for renumbered or deleted provisions.<\/bold>" },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div6.sub3.para1b",
+        "content" : "<bold>The term \"reserved\" is included in place of certain deleted Codes Canada model content which has not been adopted. The term \"reserved\" is generally used so that the numbering structure of the model National Codes is maintained, easing comparability and harmonization.<\/bold>" },
+       
        { "type" : "heading",
         "id" : "nbc.2020.preface.div6.sub4.title",
         "content" : "Units",
@@ -676,6 +748,10 @@
         "id" : "nbc.2020.intro.2.para3",
         "content" : "The SCC is a non-profit federal Crown corporation responsible for the coordination of voluntary standardization in Canada. It also coordinates Canadian participation in voluntary international standardization activities." },
        
+       { "type" : "paragraph",
+        "id" : "nbc.2020.intro.2.para3a",
+        "content" : "<bold>The remainder of this section relates also to Book II (Plumbing Systems) of this Code.<\/bold>" },
+       
        { "type" : "heading",
         "id" : "nbc.2020.intro.2.div1.title",
         "content" : "Canadian Standards",
@@ -712,8 +788,16 @@
         "content" : "The NBC establishes minimum measures, which are set out within its own text or within referenced standards. However, the NBC does not set out who is responsible for assessing conformity to the measures or how those with this responsibility might carry it out. This responsibility is usually established by the governing legislation of the adopting provinces and territories. Provincial or territorial authorities should be consulted to determine who is responsible for conformity assessment within their jurisdiction." },
        
        { "type" : "paragraph",
+        "id" : "nbc.2020.intro.2.div3.para1a",
+        "content" : "<bold>In British Columbia, local authorities are authorized to, by bylaw, regulate construction and to enforce the requirements of the BCBC.<\/bold>" },
+       
+       { "type" : "paragraph",
         "id" : "nbc.2020.intro.2.div3.para2",
         "content" : "Those persons responsible for ensuring that materials, appliances, systems and equipment meet the requirements of this Code have several means available to assist them, ranging from on-site inspection to the use of certification services provided by accredited third-party organizations. Test reports or mill certificates provided by manufacturers or suppliers can also assist in the acceptance of products. Engineering reports may be required for more complex products." },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.intro.2.div3.para2a",
+        "content" : "<bold>Requirements for Registered Professionals are located in Division C of the BCBC.<\/bold>" },
        
        { "type" : "heading",
         "id" : "nbc.2020.intro.2.div3.sub1.title",
