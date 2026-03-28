@@ -203,6 +203,33 @@ function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: 
   return displayText.slice(displayMatch[0].length);
 }
 
+function ensureTrailingPeriodBeforeTitleRef(
+  precedingSegment: string,
+  referenceId?: string,
+  format?: InternalRefFormat
+): string {
+  if (format !== 'title' || !referenceId) return precedingSegment;
+
+  const parsedReference = parseReferenceId(referenceId);
+  if (!parsedReference || parsedReference.kind !== 'section' || !parsedReference.section) {
+    return precedingSegment;
+  }
+
+  const match = precedingSegment.match(/^(.*?)(\s*)$/s);
+  if (!match) return precedingSegment;
+
+  const body = match[1];
+  const trailingWhitespace = match[2] || '';
+  if (!body || body.endsWith('.')) return precedingSegment;
+
+  // Apply for section/subsection/article numbering tokens like "9.3", "9.3.1", "9.3.1.4".
+  if (!/\b\d+(?:\.\d+)+$/.test(body)) {
+    return precedingSegment;
+  }
+
+  return `${body}.${trailingWhitespace}`;
+}
+
 export interface TextEquationEntry {
   id: string;
   type?: 'display' | 'inline' | string;
@@ -1213,9 +1240,18 @@ export function parseTextWithMarkers(
     }
     // Add plain text before the marker
     if (marker.start > lastIndex) {
+      const precedingSegment =
+        marker.type === 'crossref'
+          ? ensureTrailingPeriodBeforeTitleRef(
+              sanitizedText.substring(lastIndex, marker.start),
+              marker.referenceId,
+              marker.format as InternalRefFormat
+            )
+          : sanitizedText.substring(lastIndex, marker.start);
+
       nodes.push(
         ...parseInlineFormatting(
-          sanitizedText.substring(lastIndex, marker.start),
+          precedingSegment,
           interactive,
           lastIndex
         )

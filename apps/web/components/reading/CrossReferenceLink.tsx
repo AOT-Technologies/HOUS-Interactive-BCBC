@@ -35,6 +35,9 @@ const normalizeStandardsKey = (value: string): string =>
 
 const isHttpReference = (value: string): boolean => /^https?:\/\//i.test(value.trim());
 
+const ensureTrailingPeriodInNumberTitle = (value: string): string =>
+  value.replace(/^(\d+(?:\.\d+)+)(?!\.)\s+/, '$1. ');
+
 export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   referenceId,
   displayText,
@@ -75,7 +78,9 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
 
   const resolvedDisplayText =
     format === 'title'
-      ? findNodeById(navigationTree, referenceId)?.title || displayText
+      ? ensureTrailingPeriodInNumberTitle(
+          findNodeById(navigationTree, referenceId)?.title || displayText
+        )
       : displayText;
 
   const trailingClauseQualifier =

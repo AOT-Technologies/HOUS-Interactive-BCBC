@@ -324,6 +324,17 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(renderedText).toContain(' and as required by Sentence ');
   });
 
+  it('adds trailing period to numbered prefix before title-format internal references', () => {
+    const input = 'See 9.3.1.4 [REF:internal:nbc.divBV2.part9.sect3.subsect1.art4:title]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const renderedText = getTextContent(nodes);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 9.3.1.4.');
+    expect(renderedText).toContain('See 9.3.1.4. ');
+  });
+
   it('renders long sentence references with full numbering when preceded by Sentence', () => {
     const input =
       'Sentence [REF:internal:nbc.divBV2.part9.sect7.subsect4.art3.sent2:long]';
