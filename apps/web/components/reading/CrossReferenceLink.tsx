@@ -166,7 +166,9 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
         return;
       }
 
-      const noteLabel = `Note ${matchedNote.number}`;
+      const rawNumber = matchedNote.number;
+      const prefixedNumber = rawNumber.startsWith('A-') ? rawNumber : `A-${rawNumber}`;
+      const noteLabel = `Note ${prefixedNumber}`;
       const longLabel =
         matchedNote.title && matchedNote.title.trim()
           ? `${noteLabel} ${matchedNote.title.trim()}`

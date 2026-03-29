@@ -534,7 +534,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           };
         }
 
-        const noteLabel = note.number ? `Note ${note.number}` : 'Note';
+        const rawNoteNum = note.number?.trim();
+        const prefixedNoteNum = rawNoteNum ? (rawNoteNum.startsWith('A-') ? rawNoteNum : `A-${rawNoteNum}`) : null;
+        const noteLabel = prefixedNoteNum ? `Note ${prefixedNoteNum}` : 'Note';
         const heading = [noteLabel, note.title].filter(Boolean).join(' ').trim();
         return {
           referenceId,
@@ -1281,7 +1283,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   const getNoteDisplayLabel = (note: ApplicationNote): string => {
     if (note.number && note.number.trim()) {
-      return `Note ${note.number.trim()}`;
+      const num = note.number.trim();
+      return num.startsWith('A-') ? num : `A-${num}`;
     }
     return 'Note';
   };
@@ -1309,7 +1312,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   } => {
     const tableNumberById = new Map<string, string>();
     const figureNumberById = new Map<string, string>();
-    const noteNumber = note.number?.trim();
+    const rawNoteNumber = note.number?.trim();
+    const noteNumber = rawNoteNumber ? (rawNoteNumber.startsWith('A-') ? rawNoteNumber : `A-${rawNoteNumber}`) : undefined;
 
     if (!noteNumber) {
       return { tableNumberById, figureNumberById };

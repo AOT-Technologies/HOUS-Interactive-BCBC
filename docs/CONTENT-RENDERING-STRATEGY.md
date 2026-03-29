@@ -717,7 +717,7 @@ export function parseTextWithMarkers(
 - Non-interactive mode: Plain text, no icon
 
 **Special Handling**:
-- **Application Notes**: Rendered as "Note A-2.1.1.2.(6)."
+- **Application Notes**: Rendered as "A-2.1.1.2.(6)."
 - **Standards References**: Fetches display text from `standards-map.json`
 
 ```typescript
