@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-27T16:57:36.67-07:00",
+  "generated_timestamp" : "2026-03-28T21:25:35.922-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -112,7 +112,21 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.para2",
-        "content" : "The NBC establishes requirements to address the following five objectives:[LIST:bulleted]" },
+        "content" : "The NBC establishes requirements to address the following five objectives:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "safety" },
+           
+           { "content" : "health" },
+           
+           { "content" : "accessibility" },
+           
+           { "content" : "fire and structural protection of buildings" },
+           
+           { "content" : "environment" } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.para3",
@@ -149,7 +163,21 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.sub1.para3",
-        "content" : "The NFC covers:[LIST:bulleted]" },
+        "content" : "The NFC covers:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "the ongoing maintenance and use of the fire safety and fire protection features incorporated in buildings" },
+           
+           { "content" : "the conduct of activities that might cause fire hazards in and around buildings" },
+           
+           { "content" : "limitations on hazardous contents in and around buildings" },
+           
+           { "content" : "the establishment of fire safety plans" },
+           
+           { "content" : "fire safety at construction and demolition sites" } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.sub1.para4",
@@ -179,7 +207,23 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.sub3.para2",
-        "content" : "In processing proposed changes or additions to any of the National Model Codes, the CCBFC considers many issues such as the following:[LIST:bulleted]" },
+        "content" : "In processing proposed changes or additions to any of the National Model Codes, the CCBFC considers many issues such as the following:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "Does the proposed requirement provide the minimum level of performance—and no more than the minimum—needed to achieve the Code's objectives?" },
+           
+           { "content" : "Will persons responsible for Code compliance be able to act on or implement the requirement using commonly accepted practices?" },
+           
+           { "content" : "Will enforcement agencies be able to enforce the requirement?" },
+           
+           { "content" : "Are the costs of implementing the requirement justifiable?" },
+           
+           { "content" : "Have the potential policy implications of the requirement been identified and addressed?" },
+           
+           { "content" : "Is there broad consensus on this requirement among Code users representing all facets of the design and construction industries as well as among provincial and territorial governments?" } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.sub3.para3",
@@ -200,15 +244,31 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div3.para2",
-        "content" : "As described in more detail in the section entitled Structure of the NBC, the Code comprises three Divisions:[LIST:bulleted]" },
+        "content" : "As described in more detail in the section entitled Structure of the NBC, the Code comprises three Divisions:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "Division A, which defines the scope of the Code and contains the objectives, the functional statements and the conditions necessary to achieve compliance;" },
+           
+           { "content" : "Division B, which contains acceptable solutions (commonly referred to as “technical requirements”) deemed to satisfy the objectives and functional statements listed in Division A; and" },
+           
+           { "content" : "Division C, which contains administrative provisions." } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div3.para3",
-        "content" : "Most of the requirements in Division B are linked to three types of information:[LIST:bulleted]" },
-       
-       { "type" : "paragraph",
-        "id" : "nbc.2020.preface.div3.para4",
-        "content" : "All this additional information—objectives, functional statements and intent statements—is intended to facilitate the implementation of the Code in two ways:[LIST:bulleted]" },
+        "content" : "Most of the requirements in Division B are linked to three types of information:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "objectives (Code objectives, such as safety or health, which individual requirements help to address)," },
+           
+           { "content" : "functional statements (statements of the functions of the building that a particular requirement helps to achieve), and" },
+           
+           { "content" : "intent statements (detailed statements of the specific intent of the requirement)." } ] } ] },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div3.sub1.title",
@@ -280,6 +340,18 @@
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div3.sub3.para2a",
         "content" : "<bold>\"Supplement to the NBC 2020: Intent Statements\" is not available at the time of printing of this Code. Intent statements have not been attributed to any requirements specific to British Columbia.<\/bold>" },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div3.para4",
+        "content" : "All this additional information—objectives, functional statements and intent statements—is intended to facilitate the implementation of the Code in two ways:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "Clarity of intent: The objectives, functional statements and intent statements linked to a Code requirement clarify the reasoning behind that requirement and facilitate understanding of what must be done to satisfy that requirement. This added information may also help avoid disputes between practitioners and officials over these types of issues." },
+           
+           { "content" : "Flexibility: The additional information allows for flexibility in Code compliance. A person seeking to propose a new method or material not described or covered in the Code will be able to use the added information to understand the expected level of performance that their alternative solution must achieve to satisfy the Code." } ] } ] },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div4.title",
@@ -356,7 +428,15 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub4.para1a",
-        "content" : "1) Compliance with this Code shall be achieved by[LIST:bulleted]" },
+        "content" : "1) Compliance with this Code shall be achieved by[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "a) complying with the applicable acceptable solutions in Division B (see Note A-1.2.1.1.(1)(a)), or" },
+           
+           { "content" : "b) using alternative solutions that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see Note A-1.2.1.1.(1)(b))." } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub4.para1b",
@@ -381,7 +461,15 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub5.para2",
-        "content" : "For example:[LIST:bulleted]" },
+        "content" : "For example:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "Provisions pertaining to fire safety issues related to heating, ventilating and air-conditioning (HVAC) systems are located in Part 3, Fire Protection, Occupant Safety and Accessibility, and not in Part 6, Heating, Ventilating and Air-conditioning." },
+           
+           { "content" : "Structural requirements related to loads on handrails and grab bars are located in Part 3, Fire Protection, Occupant Safety and Accessibility, while structural requirements related to loads on guards and handrails are located in Part 4, Structural Design." } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div4.sub5.para3",
@@ -703,7 +791,25 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div6.sub5.para1",
-        "content" : "The following publications are referenced in the NBC 2020 or facilitate the application of its requirements:[LIST:bulleted]" },
+        "content" : "The following publications are referenced in the NBC 2020 or facilitate the application of its requirements:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "National Energy Code of Canada for Buildings 2020" },
+           
+           { "content" : "National Farm Building Code of Canada 1995" },
+           
+           { "content" : "National Fire Code of Canada 2020" },
+           
+           { "content" : "National Plumbing Code of Canada 2020" },
+           
+           { "content" : "Illustrated User's Guide – NBC 2020: Part 9 of Division B, Housing and Small Buildings" },
+           
+           { "content" : "Structural Commentaries (User's Guide – NBC 2020: Part 4 of Division B)" },
+           
+           { "content" : "Supplement to the NBC 2020: Intent Statements" } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div6.sub5.para2",
@@ -716,7 +822,23 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div7.para1",
-        "content" : "Copyright for the NBC is owned by the NRC. All rights are reserved. Commercial reproduction by any means of the NRC's copyright material is prohibited without the written consent of the NRC. To request permission to reproduce the NBC, please contact:[LIST:bulleted]" },
+        "content" : "Copyright for the NBC is owned by the NRC. All rights are reserved. Commercial reproduction by any means of the NRC's copyright material is prohibited without the written consent of the NRC. To request permission to reproduce the NBC, please contact:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "Production and Marketing Manager" },
+           
+           { "content" : "Codes Canada" },
+           
+           { "content" : "National Research Council of Canada" },
+           
+           { "content" : "1200 Montreal Road" },
+           
+           { "content" : "Ottawa, Ontario K1A 0R6" },
+           
+           { "content" : "E-mail: Codes@nrc-cnrc.gc.ca" } ] } ] },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div8.title",
@@ -729,7 +851,21 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div8.para2",
-        "content" : "To submit comments or suggestions, please contact: [LIST:bulleted]" } ] },
+        "content" : "To submit comments or suggestions, please contact: [LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "The Secretary" },
+           
+           { "content" : "Canadian Commission on Building and Fire Codes" },
+           
+           { "content" : "1200 Montreal Road" },
+           
+           { "content" : "Ottawa, Ontario K1A 0R6" },
+           
+           { "content" : "E-mail: CCBFCSecretary-SecretaireCCCBPI@nrc-cnrc.gc.ca" } ] } ] } ] },
      "introduction" : 
      { "id" : "nbc.2020.intro.2",
       "type" : "introduction",
@@ -763,7 +899,27 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.intro.2.div1.para2",
-        "content" : "The following organizations are accredited as standards development organizations in Canada:[LIST:bulleted]" },
+        "content" : "The following organizations are accredited as standards development organizations in Canada:[LIST:bulleted]",
+        "lists" : 
+        [ 
+         { "type" : "bulleted",
+          "items" : 
+          [ 
+           { "content" : "Air-Conditioning, Heating and Refrigeration Institute (AHRI)" },
+           
+           { "content" : "ASTM International" },
+           
+           { "content" : "Bureau de normalisation du Québec (BNQ)" },
+           
+           { "content" : "Canadian General Standards Board (CGSB)" },
+           
+           { "content" : "CSA Group" },
+           
+           { "content" : "International Association of Plumbing and Mechanical Officials (IAPMO)" },
+           
+           { "content" : "ULC Standards" },
+           
+           { "content" : "Underwriters' Laboratories Inc. (UL)" } ] } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.intro.2.div1.para3",
@@ -371777,7 +371933,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure23",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row4.figure23",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -371850,7 +372006,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure24",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row5.figure24",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -371923,7 +372079,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure25",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row6.figure25",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -372002,7 +372158,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure26",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row7.figure26",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -372075,7 +372231,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure27",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row8.figure27",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -372148,7 +372304,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure28",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row9.figure28",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -372227,7 +372383,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure29",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row10.figure29",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -372300,7 +372456,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure30",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row11.figure30",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -372373,7 +372529,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure31",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row12.figure31",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -372452,7 +372608,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure32",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row13.figure32",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -372525,7 +372681,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure33",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row14.figure33",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -372598,7 +372754,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure34",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row15.figure34",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -372677,7 +372833,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure35",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row16.figure35",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -372750,7 +372906,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure36",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row17.figure36",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -372823,7 +372979,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure37",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row18.figure37",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -372902,7 +373058,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure38",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row19.figure38",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -372975,7 +373131,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure39",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row20.figure39",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -373048,7 +373204,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure40",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1.row21.figure40",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -373988,7 +374144,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure01",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row1.figure01",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -374352,7 +374508,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure02",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row7.figure02",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -374716,7 +374872,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure03",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row13.figure03",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -375086,7 +375242,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure04",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row19.figure04",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -375450,7 +375606,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure05",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row25.figure05",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -375814,7 +375970,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure06",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row31.figure06",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -376184,7 +376340,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure07",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row37.figure07",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -376548,7 +376704,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure08",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row43.figure08",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -376912,7 +377068,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure09",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row49.figure09",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -377282,7 +377438,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure10",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row55.figure10",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -377646,7 +377802,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure11",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row61.figure11",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -378010,7 +378166,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure12",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row67.figure12",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -378380,7 +378536,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure13",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row73.figure13",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -378744,7 +378900,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure14",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row79.figure14",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -379108,7 +379264,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure15",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row85.figure15",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -379478,7 +379634,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure16",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row91.figure16",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -379842,7 +379998,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure17",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row97.figure17",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -380206,7 +380362,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure18",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row103.figure18",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -380576,7 +380732,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure19",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row109.figure19",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -380940,7 +381096,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure20",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row115.figure20",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -381304,7 +381460,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure21",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row121.figure21",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -381674,7 +381830,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure22",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row127.figure22",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -382038,7 +382194,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure23",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row133.figure23",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00555a",
@@ -382402,7 +382558,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure24",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3.row139.figure24",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00554a",
@@ -382895,7 +383051,7 @@
                        "value" : "[REF:term:tr:storey]" },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure25",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row2.figure25",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row1",
@@ -382905,7 +383061,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure26",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row2.figure26",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_only",
@@ -383011,7 +383167,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure27",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row8.figure27",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_1floor_only",
@@ -383117,7 +383273,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure28",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row14.figure28",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -383279,7 +383435,7 @@
                        "value" : " faces) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure29",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row21.figure29",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row2",
@@ -383289,7 +383445,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure30",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row21.figure30",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_only",
@@ -383419,7 +383575,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure31",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row27.figure31",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_1floor_only",
@@ -383549,7 +383705,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure32",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row33.figure32",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -383706,7 +383862,7 @@
                        "value" : " faces) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure33",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row39.figure33",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/gg00556a",
@@ -383716,7 +383872,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure34",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row39.figure34",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_only",
@@ -383846,7 +384002,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure35",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row45.figure35",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_1floor_only",
@@ -383976,7 +384132,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure36",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row51.figure36",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -384139,7 +384295,7 @@
                        "value" : " faces)) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure37",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row57.figure37",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row4",
@@ -384149,7 +384305,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure38",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row57.figure38",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange",
@@ -384279,7 +384435,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure39",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row63.figure39",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_2floor_orange",
@@ -384439,7 +384595,7 @@
                        "value" : " faces)) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure40",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row69.figure40",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row5",
@@ -384449,7 +384605,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure41",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row69.figure41",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange2",
@@ -384579,7 +384735,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure42",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row75.figure42",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange2",
@@ -384739,7 +384895,7 @@
                        "value" : " face(s) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure43",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row81.figure43",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row6",
@@ -384749,7 +384905,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure44",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row81.figure44",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange2",
@@ -384876,7 +385032,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure45",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row87.figure45",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange2",
@@ -385036,7 +385192,7 @@
                        "value" : " face(s) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure46",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row93.figure46",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row7",
@@ -385046,7 +385202,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure47",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row93.figure47",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange2",
@@ -385173,7 +385329,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure48",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row99.figure48",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_2floor_orange",
@@ -385391,7 +385547,7 @@
                        "value" : " face(s) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure49",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row107.figure49",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row8",
@@ -385401,7 +385557,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure50",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row107.figure50",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_only",
@@ -385528,7 +385684,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure51",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row113.figure51",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_1floor_only",
@@ -385655,7 +385811,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure52",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row119.figure52",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -385809,7 +385965,7 @@
                        "value" : " face(s) " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure53",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row125.figure53",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row9",
@@ -385819,7 +385975,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure54",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row125.figure54",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_only",
@@ -385946,7 +386102,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure55",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row131.figure55",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_1floor_only",
@@ -386073,7 +386229,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure56",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row137.figure56",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -386227,7 +386383,7 @@
                        "value" : " face(s). " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure57",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row143.figure57",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row10",
@@ -386237,7 +386393,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure58",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row143.figure58",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -386364,7 +386520,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure59",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row149.figure59",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -386518,7 +386674,7 @@
                        "value" : " face(s). " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure60",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row155.figure60",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row11",
@@ -386528,7 +386684,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure61",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row155.figure61",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange",
@@ -386655,7 +386811,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure62",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row161.figure62",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_2floor_orange",
@@ -386809,7 +386965,7 @@
                        "value" : " face(s). " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure63",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row167.figure63",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row12",
@@ -386819,7 +386975,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure64",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row167.figure64",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange2",
@@ -386946,7 +387102,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure65",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row173.figure65",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_2floor_orange",
@@ -387100,7 +387256,7 @@
                        "value" : " face(s). " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure66",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row179.figure66",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row13",
@@ -387110,7 +387266,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure67",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row179.figure67",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_1floor_orange",
@@ -387237,7 +387393,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure68",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row185.figure68",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_and_2floor_orange",
@@ -387397,7 +387553,7 @@
                        "value" : " face(s). " },
                       
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure69",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row191.figure69",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-row14",
@@ -387407,7 +387563,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure70",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row191.figure70",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof_only",
@@ -387498,7 +387654,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure71",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row196.figure71",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_1floor_only",
@@ -387589,7 +387745,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure72",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row201.figure72",
                        "source" : "bc",
                        "graphic" : 
                        { "src" : "bc-graphics\/figure-9-23-13-7-d-roof-and_2floor_only",
@@ -388559,7 +388715,7 @@
                       { "content" : 
                        [ 
                         { "type" : "figure",
-                         "id" : "nbc.divBV2.part9.figure23",
+                         "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure23",
                          "source" : "bc",
                          "title" : "Single storey building configuration",
                          "graphic" : 
@@ -388623,7 +388779,7 @@
                       { "content" : 
                        [ 
                         { "type" : "figure",
-                         "id" : "nbc.divBV2.part9.figure28",
+                         "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure28",
                          "source" : "bc",
                          "title" : "Three storey building configuration",
                          "graphic" : 
@@ -388687,7 +388843,7 @@
                       { "content" : 
                        [ 
                         { "type" : "figure",
-                         "id" : "nbc.divBV2.part9.figure24",
+                         "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure24",
                          "source" : "bc",
                          "title" : "Three storey building configuration",
                          "graphic" : 
@@ -389110,7 +389266,7 @@
                       { "content" : 
                        [ 
                         { "type" : "figure",
-                         "id" : "nbc.divBV2.part9.figure25",
+                         "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure25",
                          "source" : "bc",
                          "title" : "Single storey building configuration",
                          "graphic" : 
@@ -389174,7 +389330,7 @@
                       { "content" : 
                        [ 
                         { "type" : "figure",
-                         "id" : "nbc.divBV2.part9.figure16",
+                         "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure16",
                          "source" : "bc",
                          "title" : "Two storey building configuration",
                          "graphic" : 
@@ -389233,7 +389389,7 @@
                       { "content" : 
                        [ 
                         { "type" : "figure",
-                         "id" : "nbc.divBV2.part9.figure26",
+                         "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure26",
                          "source" : "bc",
                          "title" : "Three storey building configuration",
                          "graphic" : 
@@ -389677,7 +389833,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure27",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure27",
                        "source" : "bc",
                        "title" : "Single storey building configuration",
                        "graphic" : 
@@ -389741,7 +389897,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure8",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure8",
                        "source" : "bc",
                        "title" : "Two storey building with masonry veneer configuration",
                        "graphic" : 
@@ -389810,7 +389966,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure31",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure31",
                        "source" : "bc",
                        "title" : "Three storey building configuration",
                        "graphic" : 
@@ -390026,7 +390182,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure29",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure29",
                        "source" : "bc",
                        "title" : "Single storey building configuration",
                        "graphic" : 
@@ -390090,7 +390246,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure21",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure21",
                        "source" : "bc",
                        "title" : "Two storey building with masonry veneer configuration",
                        "graphic" : 
@@ -390154,7 +390310,7 @@
                     { "content" : 
                      [ 
                       { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.figure30",
+                       "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure30",
                        "source" : "bc",
                        "title" : "Three storey building configuration",
                        "graphic" : 
