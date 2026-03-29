@@ -24,12 +24,21 @@ export const FrontMatterRenderer: React.FC<FrontMatterRendererProps> = ({
 }) => {
   const renderContentItem = (item: FrontMatterContentItem): React.ReactNode => {
     switch (item.type) {
-      case 'paragraph':
+      case 'paragraph': {
+        const paragraphLists = item.lists || [];
+        const paragraphEquations = item.equations || [];
+        const hasBlockContent =
+          Boolean(paragraphLists.length) ||
+          /\[LIST:[^\]]+\]|\[EQ:display(?::[^\]]*)?\]/i.test(item.content || '');
+        const WrapperTag = hasBlockContent ? 'div' : 'p';
         return (
-          <p key={item.id} id={item.id} className="front-matter__paragraph">
-            {item.content ? parseTextWithMarkers(item.content, [], interactive) : ''}
-          </p>
+          <WrapperTag key={item.id} id={item.id} className="front-matter__paragraph">
+            {item.content
+              ? parseTextWithMarkers(item.content, [], interactive, paragraphEquations, paragraphLists)
+              : ''}
+          </WrapperTag>
         );
+      }
 
       case 'heading':
         const HeadingTag = `h${Math.min(item.level || 2, 6)}` as keyof React.JSX.IntrinsicElements;
