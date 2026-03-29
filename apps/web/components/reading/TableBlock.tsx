@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { FormingPartReference, StructuredList, Table, TableCellContent } from '@bc-building-code/bcbc-parser';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import type { ReferenceRenderContext } from '../../lib/cross-reference';
@@ -18,6 +18,10 @@ export interface TableBlockProps {
 }
 
 const LANDSCAPE_PRINT_CAPACITY_REM = 65;
+const LARGE_TABLE_ROW_THRESHOLD = 250;
+const INITIAL_BODY_ROW_RENDER_COUNT = 120;
+const BODY_ROW_RENDER_CHUNK_SIZE = 120;
+const ROW_LOAD_SCROLL_THRESHOLD_PX = 240;
 
 type RawTableCell = {
   content?: string | RawTableCellContent[];
@@ -1271,12 +1275,15 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   renderContext,
   appendixSiblingTableCount,
 }) => {
-  const [headerOffset, setHeaderOffset] = useState(0);
+  const [isPrintMode, setIsPrintMode] = useState(false);
+  const [renderedBodyRowCount, setRenderedBodyRowCount] = useState<number>(INITIAL_BODY_ROW_RENDER_COUNT);
   const [scrollbarCompensation, setScrollbarCompensation] = useState(0);
   const [availableWidth, setAvailableWidth] = useState(0);
   const [headerRowTops, setHeaderRowTops] = useState<number[]>([]);
   const bodyViewportRef = useRef<HTMLDivElement | null>(null);
   const bodyContainerRef = useRef<HTMLDivElement | null>(null);
+  const tableWrapperRef = useRef<HTMLDivElement | null>(null);
+  const headerTrackRef = useRef<HTMLDivElement | null>(null);
   const theadRef = useRef<HTMLTableSectionElement | null>(null);
   const rawTable = table as TableWithRawSupport;
   const activeRevision = getActiveRevision(rawTable.revisions, effectiveDate);
@@ -1314,6 +1321,14 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const bodyRows = useMemo(
     () => normalizedRows.filter((row) => !row.cells.every((cell) => cell.isHeader)),
     [normalizedRows]
+  );
+  const shouldProgressivelyRenderBodyRows = bodyRows.length >= LARGE_TABLE_ROW_THRESHOLD;
+  const renderedBodyRows = useMemo(
+    () =>
+      shouldProgressivelyRenderBodyRows && !isPrintMode
+        ? bodyRows.slice(0, Math.min(renderedBodyRowCount, bodyRows.length))
+        : bodyRows,
+    [bodyRows, isPrintMode, renderedBodyRowCount, shouldProgressivelyRenderBodyRows]
   );
 
   const maxColumnCount = normalizedRows.reduce((max, row) => {
@@ -1385,6 +1400,112 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     () => getPrintColumnWidthPercentages(columnWidthsRem, columnProfiles, needsLandscapePrint),
     [columnProfiles, columnWidthsRem, needsLandscapePrint]
   );
+  const renderedHeaderRowsMarkup = useMemo(
+    () => renderRows(displayHeaderRows, interactive, renderContext),
+    [displayHeaderRows, interactive, renderContext]
+  );
+  const renderedBodyRowsMarkup = useMemo(
+    () => renderRows(renderedBodyRows, interactive, renderContext),
+    [interactive, renderContext, renderedBodyRows]
+  );
+  const fullBodyRowsMarkup = useMemo(
+    () => renderRows(bodyRows, interactive, renderContext),
+    [bodyRows, interactive, renderContext]
+  );
+  const fullDisplayRowsMarkup = useMemo(
+    () => renderRows(displayRows, interactive, renderContext),
+    [displayRows, interactive, renderContext]
+  );
+  const loadNextBodyRowChunk = useCallback(() => {
+    if (
+      !shouldProgressivelyRenderBodyRows ||
+      isPrintMode ||
+      renderedBodyRowCount >= bodyRows.length
+    ) {
+      return;
+    }
+
+    setRenderedBodyRowCount((current) =>
+      Math.min(current + BODY_ROW_RENDER_CHUNK_SIZE, bodyRows.length)
+    );
+  }, [
+    bodyRows.length,
+    isPrintMode,
+    renderedBodyRowCount,
+    shouldProgressivelyRenderBodyRows,
+  ]);
+
+  const maybeLoadMoreRowsOnScroll = useCallback(
+    (scrollElement: HTMLElement) => {
+      if (!shouldProgressivelyRenderBodyRows || isPrintMode || renderedBodyRowCount >= bodyRows.length) {
+        return;
+      }
+
+      const nearBottom =
+        scrollElement.scrollTop + scrollElement.clientHeight >=
+        scrollElement.scrollHeight - ROW_LOAD_SCROLL_THRESHOLD_PX;
+
+      if (nearBottom) {
+        loadNextBodyRowChunk();
+      }
+    },
+    [
+      bodyRows.length,
+      isPrintMode,
+      loadNextBodyRowChunk,
+      renderedBodyRowCount,
+      shouldProgressivelyRenderBodyRows,
+    ]
+  );
+
+  useEffect(() => {
+    if (!shouldProgressivelyRenderBodyRows || isPrintMode) {
+      setRenderedBodyRowCount(bodyRows.length);
+      return;
+    }
+
+    setRenderedBodyRowCount(Math.min(INITIAL_BODY_ROW_RENDER_COUNT, bodyRows.length));
+  }, [bodyRows.length, isPrintMode, shouldProgressivelyRenderBodyRows]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const enablePrintMode = () => setIsPrintMode(true);
+    const disablePrintMode = () => setIsPrintMode(false);
+    const mediaQuery = window.matchMedia('print');
+    const onMediaChange = (event: MediaQueryListEvent) => setIsPrintMode(event.matches);
+
+    window.addEventListener('beforeprint', enablePrintMode);
+    window.addEventListener('afterprint', disablePrintMode);
+    mediaQuery.addEventListener('change', onMediaChange);
+
+    return () => {
+      window.removeEventListener('beforeprint', enablePrintMode);
+      window.removeEventListener('afterprint', disablePrintMode);
+      mediaQuery.removeEventListener('change', onMediaChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!shouldProgressivelyRenderBodyRows || isPrintMode || renderedBodyRowCount >= bodyRows.length) {
+      return;
+    }
+
+    const scrollRoot = usesSplitScrollLayout ? bodyViewportRef.current : tableWrapperRef.current;
+    if (!scrollRoot) return;
+
+    // If current chunk does not fill the viewport yet, pull one more chunk.
+    if (scrollRoot.scrollHeight <= scrollRoot.clientHeight + 1) {
+      loadNextBodyRowChunk();
+    }
+  }, [
+    bodyRows.length,
+    isPrintMode,
+    loadNextBodyRowChunk,
+    renderedBodyRowCount,
+    shouldProgressivelyRenderBodyRows,
+    usesSplitScrollLayout,
+  ]);
 
   useEffect(() => {
     if (!usesSplitScrollLayout) {
@@ -1507,7 +1628,13 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         className={`table-block__body${usesHorizontalScrollLayout ? ' table-block__body--scroll' : ''}`}
       >
         <div
+          ref={tableWrapperRef}
           className={`table-block__wrapper${usesHorizontalScrollLayout ? ' table-block__wrapper--scroll' : ''}${usesSplitScrollLayout ? ' table-block__wrapper--split' : ''}`}
+          onScroll={
+            usesSplitScrollLayout
+              ? undefined
+              : (event) => maybeLoadMoreRowsOnScroll(event.currentTarget)
+          }
         >
           {usesSplitScrollLayout ? (
             <>
@@ -1518,10 +1645,11 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                   style={{ paddingRight: `${scrollbarCompensation}px` }}
                 >
                   <div
+                    ref={headerTrackRef}
                     className="table-block__header-track"
                     style={{
                       width: `${minWidthRem}rem`,
-                      transform: `translateX(-${headerOffset}px)`,
+                      transform: 'translateX(0px)',
                     }}
                   >
                     <table
@@ -1529,7 +1657,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                       style={{ width: `${minWidthRem}rem`, minWidth: `${minWidthRem}rem` }}
                     >
                       {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
-                      <thead>{renderRows(displayHeaderRows, interactive, renderContext)}</thead>
+                      <thead>{renderedHeaderRowsMarkup}</thead>
                     </table>
                   </div>
                 </div>
@@ -1538,7 +1666,10 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                   ref={bodyViewportRef}
                   onScroll={(event) => {
                     const currentTarget = event.currentTarget;
-                    setHeaderOffset(currentTarget.scrollLeft);
+                    if (headerTrackRef.current) {
+                      headerTrackRef.current.style.transform = `translateX(-${currentTarget.scrollLeft}px)`;
+                    }
+                    maybeLoadMoreRowsOnScroll(currentTarget);
                   }}
                 >
                   <table
@@ -1546,19 +1677,21 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                     style={{ width: `${minWidthRem}rem`, minWidth: `${minWidthRem}rem` }}
                   >
                     {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
-                    <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
+                    <tbody>{renderedBodyRowsMarkup}</tbody>
                   </table>
                 </div>
               </div>
               {/* Print-only unified table: combines header + body in one <table> so browsers can repeat <thead> on each page */}
-              <table
-                className="table-block__table table-block__table--print-unified"
-                aria-hidden="true"
-              >
-                {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
-                <thead>{renderRows(displayHeaderRows, interactive, renderContext)}</thead>
-                <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
-              </table>
+              {isPrintMode && (
+                <table
+                  className="table-block__table table-block__table--print-unified"
+                  aria-hidden="true"
+                >
+                  {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
+                  <thead>{renderedHeaderRowsMarkup}</thead>
+                  <tbody>{fullBodyRowsMarkup}</tbody>
+                </table>
+              )}
             </>
           ) : (
             <table
@@ -1605,10 +1738,10 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                       </tr>
                     ))}
                   </thead>
-                  <tbody>{renderRows(bodyRows, interactive, renderContext)}</tbody>
+                  <tbody>{renderedBodyRowsMarkup}</tbody>
                 </>
               ) : (
-                <tbody>{renderRows(displayRows, interactive, renderContext)}</tbody>
+                <tbody>{fullDisplayRowsMarkup}</tbody>
               )}
             </table>
           )}

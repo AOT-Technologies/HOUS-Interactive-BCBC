@@ -180,11 +180,13 @@
 }
 
 /* Sticky header row for standard (non-split) tables */
-.table-block__thead-sticky .table-block__header-cell {
+.table-block__thead-sticky .table-block__header-cell,
+.table-block__thead-sticky .table-block__cell {
   position: sticky;
   top: var(--sticky-top, 0px);
-  z-index: 1;
+  z-index: 3;
   background-color: var(--surface-color-background-light-gray, #faf9f8);
+  background-clip: padding-box;
 }
 
 /* border-collapse: collapse causes content to bleed through sticky headers.
