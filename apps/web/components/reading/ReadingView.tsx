@@ -182,7 +182,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   
   // Use date from URL, or undefined to show latest
   const effectiveDate = urlDate || undefined;
-  const modalQueryParam = searchParams.get('modal');
+  const modalQueryParamFromRouter = searchParams.get('modal');
+  const [modalQueryParam, setModalQueryParam] = useState<string | null>(modalQueryParamFromRouter);
   
   const {
     currentSection,
@@ -327,7 +328,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
   const updateModalInUrl = useCallback(
     (referenceId: string | null) => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams(
+        typeof window !== 'undefined' ? window.location.search : searchParams.toString()
+      );
       if (referenceId) {
         params.set('modal', referenceId);
       } else {
@@ -344,13 +347,25 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           : `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
 
       if (nextUrl === currentUrl) {
+        setModalQueryParam(referenceId);
+        return;
+      }
+
+      if (typeof window !== 'undefined') {
+        window.history.replaceState(window.history.state, '', nextUrl);
+        setModalQueryParam(referenceId);
         return;
       }
 
       router.replace(nextUrl, { scroll: false });
+      setModalQueryParam(referenceId);
     },
     [pathname, router, searchParams]
   );
+
+  useEffect(() => {
+    setModalQueryParam(modalQueryParamFromRouter);
+  }, [modalQueryParamFromRouter]);
 
   const fetchTargetSection = useCallback(
     async (referenceId: string): Promise<SectionWithAppendix | null> => {
