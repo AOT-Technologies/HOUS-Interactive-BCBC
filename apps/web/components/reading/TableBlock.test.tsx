@@ -218,6 +218,46 @@ describe('TableBlock', () => {
     expect(screen.getByText('Buildings containing only dwelling units')).toBeInTheDocument();
   });
 
+  it('renders raw symbol list_type table cell content from generated appendix data', () => {
+    const table = {
+      id: 'test-table-raw-symbol-list-cell',
+      type: 'table' as const,
+      number: '4.1.1.3',
+      title: 'Raw Symbol List Cell Table',
+      headers: [],
+      rows: [],
+      structure: {
+        body_rows: [
+          {
+            id: 'row-1',
+            type: 'body_row' as const,
+            cells: [
+              {
+                content: [
+                  {
+                    type: 'list' as const,
+                    list_type: 'symbol' as const,
+                    items: [
+                      { symbol: 'D', description: 'dead load' },
+                      { symbol: 'L', description: 'live load' },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    expect(screen.getByText('D')).toBeInTheDocument();
+    expect(screen.getByText('dead load')).toBeInTheDocument();
+    expect(screen.getByText('L')).toBeInTheDocument();
+    expect(screen.getByText('live load')).toBeInTheDocument();
+  });
+
   it('applies text alignment classes', () => {
     const table: Table = {
       id: 'test-table-3',

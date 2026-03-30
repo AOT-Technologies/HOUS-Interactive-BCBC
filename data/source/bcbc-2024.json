@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-28T22:57:53.691-07:00",
+  "generated_timestamp" : "2026-03-29T20:45:13.932-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -5280,7 +5280,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing exterior decorations are not required to fully comply to the anchorage requirements of [REF:internal:nbc.divB.part4.sect1.subsect8:long] . provided: (a) adequate means of protection is provided, or (b) there is no exposure to the public." } ] } ] },
+                       "value" : "Existing exterior decorations are not required to fully comply to the anchorage requirements of " },
+                      
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divB.part4.sect1.subsect8:long] " },
+                      
+                      { "type" : "text",
+                       "value" : ". provided:" },
+                      
+                      { "type" : "list",
+                       "list_type" : "alphabetic",
+                       "items" : 
+                       [ 
+                        { "content" : "adequate means of protection is provided, or" },
+                        
+                        { "content" : "there is no exposure to the public." } ] } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row37",
                    "type" : "body_row",
@@ -7188,7 +7202,143 @@
                { "id" : "nbc.divA.part1.sect4.subsect2.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "The symbols and other abbreviations in this Code shall have the meanings assigned to them in this Article and [REF:internal:nbc.divB.part1.sect3.subsect2.art1:long] . 1 in 2slope of 1 vertical to 2 horizontal cmcentimetre(s) °degree(s) °Cdegree(s) Celsius dBAA-weighted sound level diamdiameter ggram(s) hhour(s) HDDheating degree-day(s) HVACheating, ventilating and air-conditioning Hzhertz Jjoule(s) Kdegree(s) Kelvin kgkilogram(s) kNkilonewton(s) kPakilopascal(s) kWkilowatt(s) kWhkilowatt hour(s) Llitre(s) lxlux mmetre(s) Mmetric nomenclature for reinforcing bars max.maximum min.minimum minminute(s) MJmegajoule(s) mmmillimetre(s) MPamegapascal(s) Nnewton n\/anot applicable ngnanogram(s) No.number(s) o.c.on centre OSBoriented strandboard PMparticulate matter ppbpart(s) per billion ppmpart(s) per million Rthermal resistance value (imperial unit) RSIthermal resistance value (metric unit) ssecond(s) Wwatt(s) %percent µgmicrogram(s) µmmicrometre(s) U-valueoverall thermal transmittance" } ] } ] } ] },
+                "text" : "The symbols and other abbreviations in this Code shall have the meanings assigned to them in this Article and [REF:internal:nbc.divB.part1.sect3.subsect2.art1:long] .[LIST:symbol]",
+                "lists" : 
+                [ 
+                 { "type" : "symbol",
+                  "items" : 
+                  [ 
+                   { "symbol" : "1 in 2",
+                    "description" : "slope of 1 vertical to 2 horizontal" },
+                   
+                   { "symbol" : "cm",
+                    "description" : "centimetre(s)" },
+                   
+                   { "symbol" : "°",
+                    "description" : "degree(s)" },
+                   
+                   { "symbol" : "°C",
+                    "description" : "degree(s) Celsius" },
+                   
+                   { "symbol" : "dBA",
+                    "description" : "A-weighted sound level" },
+                   
+                   { "symbol" : "diam",
+                    "description" : "diameter" },
+                   
+                   { "symbol" : "g",
+                    "description" : "gram(s)" },
+                   
+                   { "symbol" : "h",
+                    "description" : "hour(s)" },
+                   
+                   { "symbol" : "HDD",
+                    "description" : "heating degree-day(s)" },
+                   
+                   { "symbol" : "HVAC",
+                    "description" : "heating, ventilating and air-conditioning" },
+                   
+                   { "symbol" : "Hz",
+                    "description" : "hertz" },
+                   
+                   { "symbol" : "J",
+                    "description" : "joule(s)" },
+                   
+                   { "symbol" : "K",
+                    "description" : "degree(s) Kelvin" },
+                   
+                   { "symbol" : "kg",
+                    "description" : "kilogram(s)" },
+                   
+                   { "symbol" : "kN",
+                    "description" : "kilonewton(s)" },
+                   
+                   { "symbol" : "kPa",
+                    "description" : "kilopascal(s)" },
+                   
+                   { "symbol" : "kW",
+                    "description" : "kilowatt(s)" },
+                   
+                   { "symbol" : "L",
+                    "description" : "litre(s)" },
+                   
+                   { "symbol" : "lx",
+                    "description" : "lux" },
+                   
+                   { "symbol" : "m",
+                    "description" : "metre(s)" },
+                   
+                   { "symbol" : "M",
+                    "description" : "metric nomenclature for reinforcing bars" },
+                   
+                   { "symbol" : "max.",
+                    "description" : "maximum" },
+                   
+                   { "symbol" : "min.",
+                    "description" : "minimum" },
+                   
+                   { "symbol" : "min",
+                    "description" : "minute(s)" },
+                   
+                   { "symbol" : "MJ",
+                    "description" : "megajoule(s)" },
+                   
+                   { "symbol" : "mm",
+                    "description" : "millimetre(s)" },
+                   
+                   { "symbol" : "MPa",
+                    "description" : "megapascal(s)" },
+                   
+                   { "symbol" : "N",
+                    "description" : "newton" },
+                   
+                   { "symbol" : "n\/a",
+                    "description" : "not applicable" },
+                   
+                   { "symbol" : "ng",
+                    "description" : "nanogram(s)" },
+                   
+                   { "symbol" : "No.",
+                    "description" : "number(s)" },
+                   
+                   { "symbol" : "o.c.",
+                    "description" : "on centre" },
+                   
+                   { "symbol" : "OSB",
+                    "description" : "oriented strandboard" },
+                   
+                   { "symbol" : "PM",
+                    "description" : "particulate matter" },
+                   
+                   { "symbol" : "ppb",
+                    "description" : "part(s) per billion" },
+                   
+                   { "symbol" : "ppm",
+                    "description" : "part(s) per million" },
+                   
+                   { "symbol" : "R",
+                    "description" : "thermal resistance value (imperial unit)" },
+                   
+                   { "symbol" : "RSI",
+                    "description" : "thermal resistance value (metric unit)" },
+                   
+                   { "symbol" : "s",
+                    "description" : "second(s)" },
+                   
+                   { "symbol" : "W",
+                    "description" : "watt(s)" },
+                   
+                   { "symbol" : "%",
+                    "description" : "percent" },
+                   
+                   { "symbol" : "µg",
+                    "description" : "microgram(s)" },
+                   
+                   { "symbol" : "µm",
+                    "description" : "micrometre(s)" },
+                   
+                   { "symbol" : "U-value",
+                    "description" : "overall thermal transmittance" } ] } ] } ] } ] } ] },
          
          { "id" : "nbc.divA.part1.sect5",
           "type" : "section",
@@ -129821,7 +129971,47 @@
                { "id" : "nbc.divB.part4.sect1.subsect2.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in [REF:internal:nbc.divB.part4.sect1.subsect2.art2:long] , the following categories of loads, specified loads and effects shall be taken into consideration in the design of a [REF:term:bldng:building] and its structural members and connections: D [REF:term:dd-ld:dead load] – a permanent load due to the weight of [REF:term:bldng:building] components, as specified in [REF:internal:nbc.divB.part4.sect1.subsect4:long] , Eearthquake load and effects – a rare load due to an earthquake, as specified in [REF:internal:nbc.divB.part4.sect1.subsect8:long] , Ha permanent load due to lateral earth pressure, including [REF:term:grndwtr:groundwater] , L [REF:term:lv-ld:live load] – a variable load due to intended use and [REF:term:ccpnc:occupancy] (including loads due to cranes and the pressure of liquids in containers), as specified in [REF:internal:nbc.divB.part4.sect1.subsect5:long] , L_{XC}[REF:term:lv-ld:live load] exclusive of crane loads, C [REF:term:lv-ld:live load] due to cranes including self weight, C_{d}self weight of all cranes positioned for maximum effects, C_{7}crane bumper impact load, Ppermanent effects caused by pre-stress, Svariable load due to snow, including ice and associated rain, as specified in [REF:internal:nbc.divB.part4.sect1.subsect6.art2:long] , or due to rain, as specified in [REF:internal:nbc.divB.part4.sect1.subsect6.art4:long] , Teffects due to contraction, expansion, or deflection caused by temperature changes, shrinkage, moisture changes, creep, ground settlement, or a combination thereof (see [REF:internal:nbc.divB.part4.appendix.appnote5:short] ), and Wwind load – a variable load due to wind, as specified in [REF:internal:nbc.divB.part4.sect1.subsect7:long] , where",
+                "text" : "Except as provided in [REF:internal:nbc.divB.part4.sect1.subsect2.art2:long] , the following categories of loads, specified loads and effects shall be taken into consideration in the design of a [REF:term:bldng:building] and its structural members and connections:[LIST:symbol]where",
+                "lists" : 
+                [ 
+                 { "type" : "symbol",
+                  "items" : 
+                  [ 
+                   { "symbol" : "D",
+                    "description" : "[REF:term:dd-ld:dead load] – a permanent load due to the weight of [REF:term:bldng:building] components, as specified in [REF:internal:nbc.divB.part4.sect1.subsect4:long] ," },
+                   
+                   { "symbol" : "E",
+                    "description" : "earthquake load and effects – a rare load due to an earthquake, as specified in [REF:internal:nbc.divB.part4.sect1.subsect8:long] ," },
+                   
+                   { "symbol" : "H",
+                    "description" : "a permanent load due to lateral earth pressure, including [REF:term:grndwtr:groundwater] ," },
+                   
+                   { "symbol" : "L",
+                    "description" : "[REF:term:lv-ld:live load] – a variable load due to intended use and [REF:term:ccpnc:occupancy] (including loads due to cranes and the pressure of liquids in containers), as specified in [REF:internal:nbc.divB.part4.sect1.subsect5:long] ," },
+                   
+                   { "symbol" : "L_{XC}",
+                    "description" : "[REF:term:lv-ld:live load] exclusive of crane loads," },
+                   
+                   { "symbol" : "C",
+                    "description" : "[REF:term:lv-ld:live load] due to cranes including self weight," },
+                   
+                   { "symbol" : "C_{d}",
+                    "description" : "self weight of all cranes positioned for maximum effects," },
+                   
+                   { "symbol" : "C_{7}",
+                    "description" : "crane bumper impact load," },
+                   
+                   { "symbol" : "P",
+                    "description" : "permanent effects caused by pre-stress," },
+                   
+                   { "symbol" : "S",
+                    "description" : "variable load due to snow, including ice and associated rain, as specified in [REF:internal:nbc.divB.part4.sect1.subsect6.art2:long] , or due to rain, as specified in [REF:internal:nbc.divB.part4.sect1.subsect6.art4:long] ," },
+                   
+                   { "symbol" : "T",
+                    "description" : "effects due to contraction, expansion, or deflection caused by temperature changes, shrinkage, moisture changes, creep, ground settlement, or a combination thereof (see [REF:internal:nbc.divB.part4.appendix.appnote5:short] ), and" },
+                   
+                   { "symbol" : "W",
+                    "description" : "wind load – a variable load due to wind, as specified in [REF:internal:nbc.divB.part4.sect1.subsect7:long] ," } ] } ],
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part4.sect1.subsect2.art1.sent1.clause1",

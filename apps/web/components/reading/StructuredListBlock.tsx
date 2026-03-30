@@ -38,8 +38,9 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
         </ol>
       );
     case 'variable':
+    case 'symbol':
       return (
-        <dl className="structuredList structuredList--variable">
+        <dl className={`structuredList structuredList--${list.type}`}>
           {list.items.map((item, index) => (
             <div
               key={item.id || `${list.type}-${index}`}

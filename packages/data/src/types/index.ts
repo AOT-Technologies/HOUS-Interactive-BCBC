@@ -137,6 +137,11 @@ export interface VariableList {
   items: VariableListItem[];
 }
 
+export interface SymbolList {
+  type: 'symbol';
+  items: VariableListItem[];
+}
+
 export interface DefinitionList {
   type: 'definition';
   items: DefinitionListItem[];
@@ -150,6 +155,7 @@ export interface OrganizationList {
 export type StructuredList =
   | BulletedList
   | VariableList
+  | SymbolList
   | DefinitionList
   | OrganizationList;
 

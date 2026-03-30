@@ -50,6 +50,34 @@ describe('SentenceBlock', () => {
     expect(screen.getByText('= gross area')).toBeInTheDocument();
   });
 
+  it('renders symbol lists inline where the placeholder appears', () => {
+    const sentence: Sentence = {
+      id: 'sentence-symbol',
+      type: 'sentence',
+      number: '1',
+      text: 'The following symbols apply[LIST:symbol]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'symbol',
+          items: [
+            {
+              id: 'sym-dead-load',
+              symbol: 'D',
+              description: 'dead load',
+            },
+          ],
+        },
+      ],
+    };
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    expect(screen.getByText('The following symbols apply')).toBeInTheDocument();
+    expect(screen.getByText('D')).toBeInTheDocument();
+    expect(screen.getByText('dead load')).toBeInTheDocument();
+  });
+
   it('renders organizations as a table when sentence contains organizations', () => {
     const sentence: Sentence = {
       id: 'sentence-1',

@@ -244,7 +244,7 @@ interface RawTextList {
 }
 
 interface RawVariableList {
-  type: 'variable';
+  type: 'variable' | 'symbol';
   items: RawVariableListItem[];
 }
 
@@ -269,7 +269,14 @@ type RawTableCellContentItem =
     }
   | {
       type: 'list';
-      list_type?: 'bulleted' | 'numbered' | 'alphabetic' | 'variable' | 'definition' | 'organization';
+      list_type?:
+        | 'bulleted'
+        | 'numbered'
+        | 'alphabetic'
+        | 'variable'
+        | 'symbol'
+        | 'definition'
+        | 'organization';
       items?: unknown[];
     };
 
@@ -586,8 +593,9 @@ function parseStructuredLists(
           });
           break;
         case 'variable':
+        case 'symbol':
           parsedLists.push({
-            type: 'variable',
+            type: list.type,
             items: list.items
               .filter(
                 (item) =>
@@ -739,6 +747,7 @@ function extractTableCellContentText(content: string | TableCellContent[]): stri
           case 'alphabetic':
             return item.list.items.map((entry) => entry.content).join(' ');
           case 'variable':
+          case 'symbol':
             return item.list.items
               .map((entry) => `${entry.symbol} ${entry.description}`.trim())
               .join(' ');

@@ -274,6 +274,83 @@ describe('parseBCBC', () => {
       },
     });
   });
+
+  it('parses symbol lists in sentence lists and table cell list content', () => {
+    const raw = createRawDocument();
+    raw.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].content[0] = {
+      id: 'sent-1',
+      type: 'sentence',
+      number: 1,
+      text: 'Symbols are listed here[LIST:symbol]',
+      lists: [
+        {
+          type: 'symbol',
+          items: [{ symbol: 'D', description: 'dead load' }],
+        },
+      ],
+    };
+    raw.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].content.push({
+      id: 'table-2',
+      type: 'table',
+      number: '4.1.1.3',
+      title: 'Loads',
+      rows: [
+        {
+          id: 'row-1',
+          type: 'body_row',
+          cells: [
+            {
+              content: [
+                {
+                  type: 'list',
+                  list_type: 'symbol',
+                  items: [
+                    { symbol: 'D', description: 'dead load' },
+                    { symbol: 'L', description: 'live load' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    });
+
+    const result = parseBCBC(raw);
+    const article = result.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0];
+    const sentence = article.content[0];
+    const table = article.content[1];
+
+    expect(sentence?.type).toBe('sentence');
+    if (!sentence || sentence.type !== 'sentence') {
+      throw new Error('Expected sentence content node');
+    }
+    expect(sentence.lists?.[0]).toEqual({
+      type: 'symbol',
+      items: [{ id: undefined, symbol: 'D', description: 'dead load' }],
+    });
+
+    expect(table?.type).toBe('table');
+    if (!table || table.type !== 'table') {
+      throw new Error('Expected table content node');
+    }
+    const cellContent = table.rows[0]?.cells[0]?.content;
+    expect(Array.isArray(cellContent)).toBe(true);
+    if (!Array.isArray(cellContent)) {
+      throw new Error('Expected array table cell content');
+    }
+
+    expect(cellContent[0]).toEqual({
+      type: 'list',
+      list: {
+        type: 'symbol',
+        items: [
+          { id: undefined, symbol: 'D', description: 'dead load' },
+          { id: undefined, symbol: 'L', description: 'live load' },
+        ],
+      },
+    });
+  });
 });
 
 describe('extractContentIds', () => {
