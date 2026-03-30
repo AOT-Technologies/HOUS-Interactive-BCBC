@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-28T21:25:35.922-07:00",
+  "generated_timestamp" : "2026-03-28T22:57:53.691-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -4505,7 +4505,7 @@
                 "type" : "sentence",
                 "number" : 5,
                 "source" : "bc",
-                "text" : "For [REF:term:bc-hrtg-bldng:heritage buildings] , the Alternate Compliance Methods for Heritage Buildings in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table1:long] may be substituted for requirements contained elsewhere in this Code. (See [REF:internal:nbc.divA.part1.appendix.appnote3:short] .)" },
+                "text" : "For [REF:term:bc-hrtg-bldng:heritage buildings] , the Alternate Compliance Methods for Heritage Buildings in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table1:long] may be substituted for requirements contained elsewhere in this Code. (See [REF:internal:nbc.divA.part1.appendix.appnote2a:short] .)" },
                
                { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1",
                 "type" : "table",
@@ -7329,7 +7329,7 @@
           
           { "id" : "nbc.divA.part1.appendix.appnote2",
            "type" : "application_note",
-           "number" : "1.1.1.1.(2)",
+           "number" : "1.1.1.1.(3)",
            "title" : "Factory-Constructed Buildings",
            "refs" : "es000109",
            "source" : "bc",
@@ -7426,54 +7426,6 @@
                 
                 { "id" : "nbc.divA.part1.appendix.appnote2b.item4",
                  "content" : "combined these options." } ] } ] } ] },
-          
-          { "id" : "nbc.divA.part1.appendix.appnote2c",
-           "type" : "application_note",
-           "number" : "1.1.1.2.(1)",
-           "title" : "Application to Existing Buildings",
-           "refs" : "es000112",
-           "source" : "bc",
-           "content" : 
-           [ 
-            { "type" : "paragraph",
-             "content" : "This Code is most often applied to existing or relocated [REF:term:bldng:buildings] when an owner wishes to rehabilitate a [REF:term:bldng:building] , change its use, or build an addition, or when an enforcement authority decrees that a [REF:term:bldng:building] or class of [REF:term:bldng:buildings] be altered for reasons of public safety. It is not intended that the British Columbia Building Code be used to enforce the retrospective application of new requirements to existing [REF:term:bldng:buildings] or existing portions of relocated [REF:term:bldng:buildings] , unless specifically required by local regulations or bylaws. For example, although the British Columbia Fire Code could be interpreted to require the installation of fire alarm, standpipe and hose, and automatic sprinkler systems in an existing [REF:term:bldng:building] for which there were no requirements at the time of construction, it is not intented that the British Columbia Fire Code be applied in this manner to these [REF:term:bldng:buildings] unless the [REF:term:bc-thrt-hvn:authority having jurisdiction] has determined that there is an inherent threat to occupant safety and has issued an order to eliminate the [REF:term:nf-cndtn:unsafe condition] , or where substantial changes or additions are being made to an existing [REF:term:bldng:building] or the [REF:term:ccpnc:occupancy] has been changed. (See also Note A-1.1.1.1.(1) of Division A of the British Columbia Fire Code.)" },
-            
-            { "type" : "paragraph",
-             "content" : "Relocated [REF:term:bldng:buildings] that have been in use in another location for a number of years can be considered as existing [REF:term:bldng:buildings] , in part, and the same analytical process can be applied as for existing [REF:term:bldng:buildings] . It should be noted, however, that a change in [REF:term:ccpnc:occupancy] may affect some requirements (e.g. loads and [REF:term:fr-prtn:fire separations] ) and relocation to an area with different wind, snow or earthquake loads will require the application of current code requirements. Depending on the construction of the [REF:term:bldng:building] and the changes in load, structural modifications may be required. Similarly, parts of a relocated or existing [REF:term:bldng:building] that are reconstructed, such as foundations and basements, or parts being modified are required to be built to current codes." },
-            
-            { "type" : "paragraph",
-             "content" : "Whatever the reason, Code application to existing or relocated [REF:term:bldng:buildings] requires careful consideration of the level of safety needed for that [REF:term:bldng:building] . This consideration involves an analytical process similar to that required to assess alternative design proposals for new construction. See [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] for information on achieving compliance with the Code using alternative solutions." },
-            
-            { "type" : "paragraph",
-             "content" : "In developing Code requirements for new [REF:term:bldng:buildings] , consideration has been given to the cost they impose on a design in relation to the perceived benefits in terms of safety. The former is definable; the latter difficult to establish on a quantitative basis. In applying the Code requirements to an existing [REF:term:bldng:building] , the benefits derived are the same as in new [REF:term:bldng:buildings] . On the other hand, the increased cost of implementing in an existing [REF:term:bldng:building] a design solution that would normally be intended for a new [REF:term:bldng:building] may be prohibitive." },
-            
-            { "type" : "paragraph",
-             "content" : "The successful application of Code requirements to existing construction becomes a matter of balancing the cost of implementing a requirement with the relative importance of that requirement to the overall Code objectives. The degree to which any particular requirement can be relaxed without affecting the intended level of safety of the Code requires considerable judgment on the part of both the designer and the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
-            
-            { "type" : "paragraph",
-             "content" : "Further information on the application of Code requirements to existing or relocated [REF:term:bldng:buildings] can be found in the following publications: [LIST:bulleted]",
-             "lists" : 
-             [ 
-              { "type" : "bulleted",
-               "items" : 
-               [ 
-                { "id" : "nbc.divA.part1.appendix.appnote2c.item1",
-                 "content" : "User's Guide -- NBC 1995 Fire Protection, Occupant Safety and Accessibility (Part 3)" },
-                
-                { "id" : "nbc.divA.part1.appendix.appnote2c.item2",
-                 "content" : "Guidelines for Application of Part 3 of the National Building Code of Canada to Existing Buildings" },
-                
-                { "id" : "nbc.divA.part1.appendix.appnote2c.item3",
-                 "content" : "Commentary entitled Application of NBC Part 4 of Division B for the Structural Evaluation and Upgrading of Existing Buildings of the Structural Commentaries (User's Guide -- NBC 2020: Part 4 of Division B)" },
-                
-                { "id" : "nbc.divA.part1.appendix.appnote2c.item4",
-                 "content" : "User's Guide -- NBC 1995, Application of Part 9 to Existing Buildings" },
-                
-                { "id" : "nbc.divA.part1.appendix.appnote2c.item5",
-                 "content" : "CBD 230, Applying building codes to existing buildings" } ] } ] },
-            
-            { "type" : "paragraph",
-             "content" : "These publications can be accessed through the NRC Publications Archive at https:\/\/nrc-publications.canada.ca." } ] },
           
           { "id" : "nbc.divA.part1.appendix.appnote3",
            "type" : "application_note",
@@ -692909,7 +692861,7 @@
    "total_tables" : 351,
    "total_figures" : 318,
    "total_spectables" : 2,
-   "total_application_notes" : 828,
+   "total_application_notes" : 827,
    "total_index_entries_vol1" : 5574,
    "total_index_entries_vol2" : 5574,
    "total_index_references_vol1" : 7928,
