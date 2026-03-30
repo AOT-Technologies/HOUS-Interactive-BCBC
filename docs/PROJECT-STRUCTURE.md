@@ -197,9 +197,9 @@ bc-building-code/
 │   ├── USER-FLOW.md                   # User flow documentation
 │   ├── search-component-architecture.md  # Search component design
 │   ├── figma-screenshots/             # Figma design reference images
-│   └── sprints/                       # Sprint progress records
-│       ├── Sprint-One-DesignSystem-LandingPage.md
-│       └── Sprint-Zero-Completed.md
+│   └── specs/                         # Project specifications
+│       ├── requirements.md            # User stories and acceptance criteria
+│       └── design.md                  # Architecture and design principles
 │
 ├── .gitignore                         # Git ignore rules
 ├── turbo.json                         # Turborepo configuration
@@ -405,7 +405,6 @@ apps/web/public/data/
 - `COMMANDS.md` - Command reference
 - `DATA-MANAGEMENT.md` - Data management guide
 - `PROJECT-STRUCTURE.md` - This file
-- `Sprint-Zero-Completed.md` - Sprint progress
 
 **Git:** ✅ Committed to version control
 

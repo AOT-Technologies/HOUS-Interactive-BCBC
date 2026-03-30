@@ -402,7 +402,6 @@ function NavigationTree() {
 
 ## Related Documentation
 
-- **Requirements**: `.kiro/specs/bcbc-interactive-web-app/requirements.md` (4.8, 4.9)
-- **Design**: `.kiro/specs/bcbc-interactive-web-app/design.md`
+- **Requirements**: `docs/specs/requirements.md` (4.8, 4.9)
+- **Design**: `docs/specs/design.md`
 - **User Flow**: `docs/USER-FLOW.md` (Deep Linking section)
-- **Tasks**: `.kiro/specs/bcbc-interactive-web-app/tasks.md` (Task 17)

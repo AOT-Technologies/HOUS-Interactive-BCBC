@@ -1,6 +1,6 @@
 # BC Building Code Interactive Web Application - Project Description
 
-> **Note:** This document is the original project planning document and reflects early-stage design decisions. Some details (e.g. the component library) have evolved during implementation. Refer to `BC-DESIGN-SYSTEM.md`, `PROJECT-STRUCTURE.md`, and the `.kiro/steering/` docs for current architecture.
+> **Note:** This document is the original project planning document and reflects early-stage design decisions. Some details (e.g. the component library) have evolved during implementation. Refer to `BC-DESIGN-SYSTEM.md`, `PROJECT-STRUCTURE.md`, and other docs in this folder for current architecture.
 
 ## Project Overview
 

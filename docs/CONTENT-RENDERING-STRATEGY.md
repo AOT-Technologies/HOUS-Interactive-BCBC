@@ -1342,8 +1342,8 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
 - [Refactor Summary](./REFACTOR-SUMMARY.md)
 - [Reading View Fix](./READING-VIEW-FIX.md)
 - [User Flow](./USER-FLOW.md)
-- [Technology Stack](../.kiro/steering/tech.md)
-- [Project Structure](../.kiro/steering/structure.md)
+- [Technology Stack](./PLAN.md)
+- [Project Structure](./PROJECT-STRUCTURE.md)
 
 ---
 
