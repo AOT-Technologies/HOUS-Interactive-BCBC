@@ -173,7 +173,6 @@ When adding new scripts:
 
 - **Project Structure**: `docs/PROJECT-STRUCTURE.md`
 - **Data Management**: `docs/DATA-MANAGEMENT.md`
-- **Build Pipeline**: `.kiro/specs/bcbc-interactive-web-app/tasks.md` (Sprint 0 Task 6)
 - **Parser Package**: `packages/bcbc-parser/README.md`
 - **Search Indexer**: `packages/search-indexer/README.md`
 - **Content Chunker**: `packages/content-chunker/README.md`

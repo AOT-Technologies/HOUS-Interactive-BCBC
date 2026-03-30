@@ -1297,9 +1297,8 @@ Users can copy URL from browser and share - recipients see identical view.
 
 ## Related Documentation
 
-- **Requirements:** `.kiro/specs/bcbc-interactive-web-app/requirements.md`
-- **Design:** `.kiro/specs/bcbc-interactive-web-app/design.md`
-- **Tasks:** `.kiro/specs/bcbc-interactive-web-app/tasks.md`
-- **Tech Stack:** `.kiro/steering/tech.md`
-- **Project Structure:** `.kiro/steering/structure.md`
+- **Requirements:** `docs/specs/requirements.md`
+- **Design:** `docs/specs/design.md`
+- **Tech Stack:** `docs/PLAN.md`
+- **Project Structure:** `docs/PROJECT-STRUCTURE.md`
 - **BC Design System:** `docs/BC-DESIGN-SYSTEM.md`
