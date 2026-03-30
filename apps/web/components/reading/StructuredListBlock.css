@@ -38,7 +38,8 @@
   margin: 0.25rem 0 0;
 }
 
-.structuredList--variable .structuredList__description {
+.structuredList--variable .structuredList__description,
+.structuredList--symbol .structuredList__description {
   margin: 0;
 }
 

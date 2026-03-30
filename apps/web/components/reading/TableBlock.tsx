@@ -295,8 +295,9 @@ const normalizeStructuredList = (
           })),
       };
     case 'variable':
+    case 'symbol':
       return {
-        type: 'variable',
+        type: listType,
         items: items
           .filter(
             (item): item is { id?: string; symbol: string; description: string } =>
@@ -705,6 +706,7 @@ const getStructuredListPlainText = (list: StructuredList): string => {
     case 'alphabetic':
       return list.items.map((item) => item.content).join(' ');
     case 'variable':
+    case 'symbol':
       return list.items.map((item) => `${item.symbol} ${item.description}`.trim()).join(' ');
     case 'definition':
       return list.items.map((item) => `${item.term} ${item.definition}`.trim()).join(' ');
