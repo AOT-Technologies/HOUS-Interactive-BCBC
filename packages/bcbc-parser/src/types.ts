@@ -409,6 +409,7 @@ export interface Sentence {
   number: string;
   type: 'sentence';
   text: string;
+  see_also?: string;
   glossaryTerms: string[];
   equations?: Equation[];
   lists?: StructuredList[];
@@ -433,6 +434,7 @@ export interface Clause {
   number: string;
   type: 'clause';
   text: string;
+  see_also?: string;
   glossaryTerms: string[];
   equations?: Equation[];
   lists?: StructuredList[];
@@ -450,6 +452,7 @@ export interface Subclause {
   number: string;
   type: 'subclause';
   text: string;
+  see_also?: string;
   glossaryTerms: string[];
   equations?: Equation[];
   lists?: StructuredList[];

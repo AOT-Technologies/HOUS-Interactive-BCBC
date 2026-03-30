@@ -176,6 +176,7 @@ interface RawSentence {
   type: 'sentence';
   number: number;
   text: string;
+  see_also?: string | RawSeeAlsoEntry[];
   lists?: RawStructuredList[];
   definitions?: Definition[];
   organizations?: Organization[];
@@ -191,6 +192,7 @@ interface RawClause {
   type: 'clause';
   letter: string;
   text: string;
+  see_also?: string | RawSeeAlsoEntry[];
   lists?: RawStructuredList[];
   subclauses?: RawSubclause[];
   tables?: RawTable[];
@@ -204,6 +206,7 @@ interface RawSubclause {
   type: 'subclause';
   number: number;
   text: string;
+  see_also?: string | RawSeeAlsoEntry[];
   lists?: RawStructuredList[];
   tables?: RawTable[];
   figures?: RawFigure[];
@@ -214,6 +217,11 @@ interface RawSubclause {
 interface RawTextListItem {
   id?: string;
   content: string;
+}
+
+interface RawSeeAlsoEntry {
+  id?: string;
+  content?: string;
 }
 
 interface RawVariableListItem {
@@ -680,6 +688,24 @@ function parseStructuredLists(
   return parsedLists.length > 0 ? parsedLists : undefined;
 }
 
+function parseSeeAlso(rawSeeAlso?: string | RawSeeAlsoEntry[]): string | undefined {
+  if (typeof rawSeeAlso === 'string') {
+    return rawSeeAlso.trim() ? rawSeeAlso : undefined;
+  }
+
+  if (!Array.isArray(rawSeeAlso)) {
+    return undefined;
+  }
+
+  const text = rawSeeAlso
+    .map((entry) => (entry && typeof entry.content === 'string' ? entry.content.trim() : ''))
+    .filter((entry) => entry.length > 0)
+    .join(' ')
+    .trim();
+
+  return text || undefined;
+}
+
 function parseTableCellContentItem(item: RawTableCellContentItem): TableCellContent | null {
   if (!item || typeof item !== 'object' || typeof item.type !== 'string') {
     return null;
@@ -977,6 +1003,7 @@ function parseSentenceData(raw: RawSentence): Sentence | null {
     number: String(raw.number),
     type: 'sentence',
     text: raw.text,
+    see_also: parseSeeAlso(raw.see_also),
     glossaryTerms: extractGlossaryTerms(raw.text),
     equations: equations && equations.length > 0 ? equations : undefined,
     lists: parseStructuredLists(raw.lists, raw.definitions, raw.organizations),
@@ -1028,6 +1055,7 @@ function parseClauseData(raw: RawClause): Clause {
     number: raw.letter,
     type: 'clause',
     text: raw.text,
+    see_also: parseSeeAlso(raw.see_also),
     glossaryTerms: extractGlossaryTerms(raw.text),
     equations: equations && equations.length > 0 ? equations : undefined,
     lists: parseStructuredLists(raw.lists),
@@ -1072,6 +1100,7 @@ function parseSubclauseData(raw: RawSubclause): Subclause {
     number: String(raw.number),
     type: 'subclause',
     text: raw.text,
+    see_also: parseSeeAlso(raw.see_also),
     glossaryTerms: extractGlossaryTerms(raw.text),
     equations: equations && equations.length > 0 ? equations : undefined,
     lists: parseStructuredLists(raw.lists),

@@ -351,6 +351,75 @@ describe('parseBCBC', () => {
       },
     });
   });
+
+  it('normalizes sentence, clause, and subclause see_also arrays into text', () => {
+    const raw = createRawDocument();
+    raw.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].content[0] = {
+      id: 'sent-1',
+      type: 'sentence',
+      number: 1,
+      text: 'Sentence text.',
+      see_also: [
+        {
+          id: 'sent-see-also',
+          content: '(See [REF:internal:nbc.divA.part1.appendix.appnote6:short] .)',
+        },
+      ],
+      clauses: [
+        {
+          id: 'clause-a',
+          type: 'clause',
+          letter: 'a',
+          text: 'Clause text.',
+          see_also: [
+            {
+              id: 'clause-see-also',
+              content: '(See [REF:internal:nbc.divA.part1.appendix.appnote7:short] .)',
+            },
+          ],
+          subclauses: [
+            {
+              id: 'subclause-1',
+              type: 'subclause',
+              number: 1,
+              text: 'Subclause text.',
+              see_also: [
+                {
+                  id: 'subclause-see-also',
+                  content: '(See [REF:internal:nbc.divA.part1.appendix.appnote8:short] .)',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = parseBCBC(raw);
+    const article = result.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0];
+    const sentence = article.content[0];
+
+    expect(sentence?.type).toBe('sentence');
+    if (!sentence || sentence.type !== 'sentence') {
+      throw new Error('Expected sentence content node');
+    }
+
+    expect(sentence.see_also).toBe('(See [REF:internal:nbc.divA.part1.appendix.appnote6:short] .)');
+    const clause = sentence.content?.[0];
+    expect(clause?.type).toBe('clause');
+    if (!clause || clause.type !== 'clause') {
+      throw new Error('Expected clause content node');
+    }
+
+    expect(clause.see_also).toBe('(See [REF:internal:nbc.divA.part1.appendix.appnote7:short] .)');
+    const subclause = clause.content?.[0];
+    expect(subclause?.type).toBe('subclause');
+    if (!subclause || subclause.type !== 'subclause') {
+      throw new Error('Expected subclause content node');
+    }
+
+    expect(subclause.see_also).toBe('(See [REF:internal:nbc.divA.part1.appendix.appnote8:short] .)');
+  });
 });
 
 describe('extractContentIds', () => {

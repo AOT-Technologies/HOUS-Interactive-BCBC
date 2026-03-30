@@ -24,6 +24,27 @@ export interface ClauseBlockProps {
   renderContext?: ReferenceRenderContext;
 }
 
+function resolveSeeAlsoText(
+  value: string | Array<{ content?: string }> | undefined
+): string | undefined {
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    return trimmed || undefined;
+  }
+
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+
+  const joined = value
+    .map((entry) => (entry && typeof entry.content === 'string' ? entry.content.trim() : ''))
+    .filter(Boolean)
+    .join(' ')
+    .trim();
+
+  return joined || undefined;
+}
+
 export const ClauseBlock: React.FC<ClauseBlockProps> = ({ 
   clause, 
   effectiveDate,
@@ -36,6 +57,9 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
 
   const clauseEquations = (filteredClause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
   const clauseLists = (filteredClause as Clause & { lists?: StructuredList[] }).lists || [];
+  const clauseSeeAlso = resolveSeeAlsoText(
+    (filteredClause as Clause & { see_also?: string | Array<{ content?: string }> }).see_also
+  );
 
   return (
     <div className="clauseBlock" id={filteredClause.id}>
@@ -51,7 +75,7 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
             renderContext
           )}
         </div>
-        
+
         {/* Render nested content (subclauses, tables, figures, equations) */}
         {filteredClause.content && filteredClause.content.length > 0 && (
           <div className="clauseNestedContent">
@@ -67,6 +91,12 @@ export const ClauseBlock: React.FC<ClauseBlockProps> = ({
             ))}
           </div>
         )}
+
+        {clauseSeeAlso ? (
+          <div className="clauseSeeAlso">
+            {parseTextWithMarkers(clauseSeeAlso, [], interactive, [], [], renderContext)}
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -28,6 +28,14 @@
   min-width: 0;
 }
 
+.sentenceSeeAlso {
+  margin: 0 0 var(--layout-margin-small) 0;
+  font: var(--typography-regular-body);
+  color: var(--typography-color-primary);
+  line-height: 27.008px;
+  min-width: 0;
+}
+
 .sentenceNestedContent {
   margin-left: var(--layout-margin-medium);
   margin-top: var(--layout-margin-small);

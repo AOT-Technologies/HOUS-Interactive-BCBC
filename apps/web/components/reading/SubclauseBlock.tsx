@@ -24,6 +24,27 @@ export interface SubclauseBlockProps {
   renderContext?: ReferenceRenderContext;
 }
 
+function resolveSeeAlsoText(
+  value: string | Array<{ content?: string }> | undefined
+): string | undefined {
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    return trimmed || undefined;
+  }
+
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+
+  const joined = value
+    .map((entry) => (entry && typeof entry.content === 'string' ? entry.content.trim() : ''))
+    .filter(Boolean)
+    .join(' ')
+    .trim();
+
+  return joined || undefined;
+}
+
 const toLowerRoman = (value: number): string => {
   const romanMap: Array<[number, string]> = [
     [1000, 'm'],
@@ -81,6 +102,9 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
 
   const subclauseEquations = (filteredSubclause as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
   const subclauseLists = (filteredSubclause as Subclause & { lists?: StructuredList[] }).lists || [];
+  const subclauseSeeAlso = resolveSeeAlsoText(
+    (filteredSubclause as Subclause & { see_also?: string | Array<{ content?: string }> }).see_also
+  );
 
   return (
     <div className="subclauseBlock" id={filteredSubclause.id}>
@@ -96,7 +120,7 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
             renderContext
           )}
         </div>
-        
+
         {/* Render nested content (tables, figures, equations) */}
         {filteredSubclause.content && filteredSubclause.content.length > 0 && (
           <div className="subclauseNestedContent">
@@ -112,6 +136,12 @@ export const SubclauseBlock: React.FC<SubclauseBlockProps> = ({
             ))}
           </div>
         )}
+
+        {subclauseSeeAlso ? (
+          <div className="subclauseSeeAlso">
+            {parseTextWithMarkers(subclauseSeeAlso, [], interactive, [], [], renderContext)}
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-29T20:45:13.932-07:00",
+  "generated_timestamp" : "2026-03-29T21:23:53.564-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -5686,7 +5686,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "Where a [REF:term:bldng:building] is altered, rehabilitated, renovated or repaired, or there is a change in [REF:term:ccpnc:occupancy] , the level of life safety and [REF:term:bldng:building] performance shall not be decreased below a level that already exists. (See [REF:internal:nbc.divA.part1.appendix.appnote5:short] .)" } ] } ] },
+                "text" : "Where a [REF:term:bldng:building] is altered, rehabilitated, renovated or repaired, or there is a change in [REF:term:ccpnc:occupancy] , the level of life safety and [REF:term:bldng:building] performance shall not be decreased below a level that already exists. (See [REF:internal:nbc.divA.part1.appendix.appnote1:short] .)" } ] } ] },
            
            { "id" : "nbc.divA.part1.sect1.subsect2",
             "type" : "subsection",
@@ -5945,7 +5945,7 @@
                   "type" : "clause",
                   "letter" : "c",
                   "source" : "bc",
-                  "text" : "be the registered owner and occupant or intended occupant of the single detached dwelling in which plumbing work will occur." } ] } ] } ] } ] },
+                  "text" : "be the registered [REF:term:bc-wnr:owner] and occupant or intended occupant of the single detached dwelling in which plumbing work will occur." } ] } ] } ] } ] },
          
          { "id" : "nbc.divA.part1.sect3",
           "type" : "section",
@@ -6383,7 +6383,7 @@
                    
                    { "id" : "bc-dptbl-dwllng-nt",
                     "term" : "Adaptable dwelling unit",
-                    "definition" : "means a [REF:term:dwllng-n:dwelling unit] designed and constructed with some <italic>accessible<\/italic> features and which accommodates the future modification to provide more <italic>accessible<\/italic> features." },
+                    "definition" : "means a [REF:term:dwllng-n:dwelling unit] designed and constructed with some [REF:term:bc-cc-t-ccbl:accessible] features and which accommodates the future modification to provide more [REF:term:bc-cc-t-ccbl:accessible] features." },
                    
                    { "id" : "dfrzng",
                     "term" : "Adfreezing",
@@ -7647,7 +7647,7 @@
            "content" : 
            [ 
             { "type" : "paragraph",
-             "content" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent1:long] is not intended to imply that a person who becomes the owner of a [REF:term:bldng:building] must bring the entire [REF:term:bldng:building] into compliance with the Code. The Code applies only in the cases and to the extent specified by [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] , and the owner of a [REF:term:bldng:building] is therefore made responsible for ensuring the [REF:term:bldng:building] complies with the Code by [REF:internal:nbc.divA.part1.sect2.subsect1.art2.sent1:long] only in the cases and to the extent specified by [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] . If none of the provisions in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent1:long] apply to the [REF:term:bldng:building] , the owner is not required to make any changes to the [REF:term:bldng:building] ." } ] },
+             "content" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent1:long] is not intended to imply that a person who becomes the owner of a [REF:term:bldng:building] must bring the entire [REF:term:bldng:building] into compliance with the Code. The Code applies only in the cases and to the extent specified by [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] , and the [REF:term:bc-wnr:owner] of a [REF:term:bldng:building] is therefore made responsible for ensuring the [REF:term:bldng:building] complies with the Code by [REF:internal:nbc.divA.part1.sect2.subsect1.art2.sent1:long] only in the cases and to the extent specified by [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] . If none of the provisions in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent1:long] apply to the [REF:term:bldng:building] , the owner is not required to make any changes to the [REF:term:bldng:building] ." } ] },
           
           { "id" : "nbc.divA.part1.appendix.appnote5",
            "type" : "application_note",
@@ -122821,7 +122821,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote101.para1",
-             "content" : "Experience with high buildings has shown that the time required for complete evacuation can exceed that which is considered necessary for the safe egress of all occupants. Studies of the \"chimney effect\" and observations of smoke movement in actual fires have shown that fire compartmentation to contain a fire on any one storey will not usually prevent the movement of smoke through elevator, stair and other vertical shafts to the upper floors of a high building. Occupants of a high building in which an automatic sprinkler system is not installed, and particularly those on upper storeys, could be faced with severe smoke conditions from fires occurring in storeys below them before their own evacuation is possible. The requirements of [REF:internal:nbc.divB.part3.sect2.subsect6:long] are intended to maintain safe conditions for occupants of a high building who may have to remain in the building during a fire, and to assist the firefighters by providing efficient access to the fire floor. The Notes for [REF:internal:nbc.divB.part3.sect2.subsect6:long] are intended to assist a designer in complying with the requirements of [REF:internal:nbc.divB.part3.sect2.subsect6:long] The knowledge requirements are well within the capabilities of a competent designer. The designer should appreciate, however, that successful application requires a clear understanding of the principles that govern smoke movement. [REF:internal:nbc.divB.part3.sect2.subsect6:long] contains only those items that relate to the design and construction of a building; operation of the facilities and recommended actions to be taken by the building owner, occupant and fire department are covered by the British Columbia Fire Code." },
+             "content" : "Experience with high buildings has shown that the time required for complete evacuation can exceed that which is considered necessary for the safe egress of all occupants. Studies of the \"chimney effect\" and observations of smoke movement in actual fires have shown that fire compartmentation to contain a fire on any one storey will not usually prevent the movement of smoke through elevator, stair and other vertical shafts to the upper floors of a high building. Occupants of a high building in which an automatic sprinkler system is not installed, and particularly those on upper storeys, could be faced with severe smoke conditions from fires occurring in storeys below them before their own evacuation is possible. The requirements of [REF:internal:nbc.divB.part3.sect2.subsect6:long] are intended to maintain safe conditions for occupants of a high building who may have to remain in the building during a fire, and to assist the firefighters by providing efficient access to the fire floor. The Notes for [REF:internal:nbc.divB.part3.sect2.subsect6:long] are intended to assist a designer in complying with the requirements of [REF:internal:nbc.divB.part3.sect2.subsect6:long] The knowledge requirements are well within the capabilities of a competent designer. The designer should appreciate, however, that successful application requires a clear understanding of the principles that govern smoke movement. [REF:internal:nbc.divB.part3.sect2.subsect6:long] contains only those items that relate to the design and construction of a building; operation of the facilities and recommended actions to be taken by the building [REF:term:bc-wnr:owner] , occupant and fire department are covered by the British Columbia Fire Code." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote101.para2",
@@ -687306,7 +687306,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-dptbl-dwllng-nt" : 
    { "term" : "Adaptable dwelling unit",
-    "definition" : "means a [REF:term:dwllng-n:dwelling unit] designed and constructed with some <italic>accessible<\/italic> features and which accommodates the future modification to provide more <italic>accessible<\/italic> features.",
+    "definition" : "means a [REF:term:dwllng-n:dwelling unit] designed and constructed with some [REF:term:bc-cc-t-ccbl:accessible] features and which accommodates the future modification to provide more [REF:term:bc-cc-t-ccbl:accessible] features.",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "dfrzng" : 
    { "term" : "Adfreezing",
