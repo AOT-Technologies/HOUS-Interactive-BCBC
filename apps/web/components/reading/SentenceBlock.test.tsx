@@ -113,4 +113,73 @@ describe('SentenceBlock', () => {
     const websiteLink = screen.getByRole('link', { name: 'https://www.fgiaonline.org' });
     expect(websiteLink).toHaveAttribute('href', 'https://www.fgiaonline.org');
   });
+
+  it('renders sentence and clause see_also content when provided as arrays', () => {
+    const sentence = {
+      id: 'sentence-see-also',
+      type: 'sentence',
+      number: '2',
+      text: 'Main sentence text.',
+      glossaryTerms: [],
+      see_also: [
+        {
+          id: 'sentence-see-also-1',
+          content: '(See [REF:internal:nbc.divA.part1.appendix.appnote6:short] .)',
+        },
+      ],
+      content: [
+        {
+          id: 'sentence-see-also-clause-a',
+          type: 'clause',
+          number: 'a',
+          text: 'Clause text.',
+          glossaryTerms: [],
+          see_also: [
+            {
+              id: 'clause-see-also-1',
+              content: '(See [REF:internal:nbc.divA.part1.appendix.appnote7:short] .)',
+            },
+          ],
+        },
+      ],
+    } as unknown as Sentence;
+
+    const { container } = render(<SentenceBlock sentence={sentence} />);
+
+    expect(container.textContent).toContain('Main sentence text.');
+    expect(container.textContent).toContain('Clause text.');
+    expect(container.textContent).toContain('See');
+    expect(container.textContent).not.toContain('[REF:internal:');
+  });
+
+  it('renders sentence see_also after nested clauses', () => {
+    const sentence = {
+      id: 'sentence-see-also-order',
+      type: 'sentence',
+      number: '2',
+      text: 'Sentence text.',
+      glossaryTerms: [],
+      see_also: [
+        {
+          id: 'sentence-see-also-1',
+          content: '(See [REF:internal:nbc.divA.part1.appendix.appnote6:short] .)',
+        },
+      ],
+      content: [
+        {
+          id: 'sentence-see-also-clause-a',
+          type: 'clause',
+          number: 'a',
+          text: 'Clause text.',
+          glossaryTerms: [],
+        },
+      ],
+    } as unknown as Sentence;
+
+    const { container } = render(<SentenceBlock sentence={sentence} />);
+    const text = container.textContent || '';
+
+    expect(text.indexOf('Clause text.')).toBeGreaterThan(-1);
+    expect(text.indexOf('See')).toBeGreaterThan(text.indexOf('Clause text.'));
+  });
 });

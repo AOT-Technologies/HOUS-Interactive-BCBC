@@ -26,6 +26,27 @@ export interface SentenceBlockProps {
   renderContext?: ReferenceRenderContext;
 }
 
+function resolveSeeAlsoText(
+  value: string | Array<{ content?: string }> | undefined
+): string | undefined {
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    return trimmed || undefined;
+  }
+
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+
+  const joined = value
+    .map((entry) => (entry && typeof entry.content === 'string' ? entry.content.trim() : ''))
+    .filter(Boolean)
+    .join(' ')
+    .trim();
+
+  return joined || undefined;
+}
+
 export const SentenceBlock: React.FC<SentenceBlockProps> = ({ 
   sentence, 
   effectiveDate,
@@ -40,6 +61,9 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
     (filteredSentence as Sentence & { organizations?: Organization[] }).organizations || [];
   const sentenceEquations = (filteredSentence as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
   const sentenceLists = (filteredSentence as Sentence & { lists?: StructuredList[] }).lists || [];
+  const sentenceSeeAlso = resolveSeeAlsoText(
+    (filteredSentence as Sentence & { see_also?: string | Array<{ content?: string }> }).see_also
+  );
 
   return (
     <div className="sentenceBlock" id={filteredSentence.id}>
@@ -55,7 +79,7 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
             renderContext
           )}
         </div>
-        
+
         {/* Render definitions list if present */}
         {filteredSentence.definitions && filteredSentence.definitions.length > 0 && (
           <DefinitionsList 
@@ -116,6 +140,12 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
             ))}
           </div>
         )}
+
+        {sentenceSeeAlso ? (
+          <div className="sentenceSeeAlso">
+            {parseTextWithMarkers(sentenceSeeAlso, [], interactive, [], [], renderContext)}
+          </div>
+        ) : null}
       </div>
     </div>
   );
