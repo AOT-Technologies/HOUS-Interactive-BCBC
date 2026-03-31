@@ -2,44 +2,41 @@
 
 BC Building Code Interactive Web Application — project documentation.
 
-## Product & Architecture
+## User Experience
 
-- [PLAN.md](PLAN.md) — Product overview, architecture, and technical design
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) — Directory layout and data flow
-- [USER-FLOW.md](USER-FLOW.md) — User flow for all pages and interactions
+- [USER-FLOW.md](USER-FLOW.md) — User flow for all pages, interactions, and navigation patterns
 
 ## Specifications
 
 - [specs/requirements.md](specs/requirements.md) — User stories and acceptance criteria
 - [specs/design.md](specs/design.md) — Architecture, state management, and design principles
 
-## Design System & UI
+## Architecture
 
-- [BC-DESIGN-SYSTEM.md](BC-DESIGN-SYSTEM.md) — BC Design System components, CSS variables, and Figma integration
-- [SEARCH-COMPONENT-ARCHITECTURE.md](SEARCH-COMPONENT-ARCHITECTURE.md) — Search component architecture and shared hook pattern
-- [IMAGE-CONFIGURATION.md](IMAGE-CONFIGURATION.md) — Image handling and configuration
+- [architecture/PLAN.md](architecture/PLAN.md) — Product overview, architecture, and technical design
+- [architecture/PROJECT-STRUCTURE.md](architecture/PROJECT-STRUCTURE.md) — Directory layout and data flow
+- [architecture/CONTENT-RENDERING-STRATEGY.md](architecture/CONTENT-RENDERING-STRATEGY.md) — End-to-end content rendering pipeline
+- [architecture/CONTENT-MARKERS.md](architecture/CONTENT-MARKERS.md) — Bracket marker syntax and rendering
+- [architecture/SEARCH-COMPONENT-ARCHITECTURE.md](architecture/SEARCH-COMPONENT-ARCHITECTURE.md) — Search component architecture and shared hook pattern
+- [architecture/URL-SYNCHRONIZATION.md](architecture/URL-SYNCHRONIZATION.md) — URL state synchronization
+- [architecture/STATIC-PATH-GENERATION.md](architecture/STATIC-PATH-GENERATION.md) — Static path generation for Next.js
+- [architecture/STORE-USAGE-EXAMPLES.md](architecture/STORE-USAGE-EXAMPLES.md) — Store usage patterns and examples
 
-## Content Rendering
+## Guides
 
-- [CONTENT-RENDERING-STRATEGY.md](CONTENT-RENDERING-STRATEGY.md) — End-to-end content rendering pipeline
-- [CONTENT-MARKERS.md](CONTENT-MARKERS.md) — Bracket marker syntax and rendering
-- [FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md](FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md) — Functional statements and objectives
+- [guides/COMMANDS.md](guides/COMMANDS.md) — Common commands and build scripts
+- [guides/HOW-TO-ADD-NEW-VERSION.md](guides/HOW-TO-ADD-NEW-VERSION.md) — Adding a new BC Building Code version
+- [guides/DATA-MANAGEMENT.md](guides/DATA-MANAGEMENT.md) — Data pipeline and management
+- [guides/BC-DESIGN-SYSTEM.md](guides/BC-DESIGN-SYSTEM.md) — BC Design System components, CSS variables, and Figma integration
 
-## Data & State Management
+## Deployment
 
-- [DATA-MANAGEMENT.md](DATA-MANAGEMENT.md) — Data pipeline and management
-- [STORE-USAGE-EXAMPLES.md](STORE-USAGE-EXAMPLES.md) — Store usage patterns and examples
-- [URL-SYNCHRONIZATION.md](URL-SYNCHRONIZATION.md) — URL state synchronization
-- [STATIC-PATH-GENERATION.md](STATIC-PATH-GENERATION.md) — Static path generation for Next.js
+- [deployment/DEPLOYMENT.md](deployment/DEPLOYMENT.md) — Deployment configuration
+- [deployment/MANUAL-DEPLOYMENT-GUIDE.md](deployment/MANUAL-DEPLOYMENT-GUIDE.md) — Step-by-step manual deployment
 
-## Operations & Deployment
+## Reference
 
-- [COMMANDS.md](COMMANDS.md) — Common commands and build scripts
-- [DEPLOYMENT.md](DEPLOYMENT.md) — Deployment configuration
-- [MANUAL-DEPLOYMENT-GUIDE.md](MANUAL-DEPLOYMENT-GUIDE.md) — Step-by-step manual deployment
-- [HOW-TO-ADD-NEW-VERSION.md](HOW-TO-ADD-NEW-VERSION.md) — Adding a new BC Building Code version
-
-## Troubleshooting
-
-- [LONG-TABLE-PERFORMANCE-ISSUE.md](LONG-TABLE-PERFORMANCE-ISSUE.md) — Long table rendering performance
-- [READING-SYSTEM-TECHNICAL.md](READING-SYSTEM-TECHNICAL.md) — Reading system technical details
+- [reference/FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md](reference/FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md) — Functional statements and objectives
+- [reference/IMAGE-CONFIGURATION.md](reference/IMAGE-CONFIGURATION.md) — Image handling and configuration
+- [reference/LONG-TABLE-PERFORMANCE-ISSUE.md](reference/LONG-TABLE-PERFORMANCE-ISSUE.md) — Long table rendering performance
+- [reference/READING-SYSTEM-TECHNICAL.md](reference/READING-SYSTEM-TECHNICAL.md) — Reading system technical details

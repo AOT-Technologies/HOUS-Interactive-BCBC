@@ -187,16 +187,30 @@ bc-building-code/
 │   ├── DATA-MANAGEMENT.md             # Data management guide
 │   ├── DEPLOYMENT.md                  # OpenShift deployment guide
 │   ├── FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md  # FS/Objective refs
-│   ├── HOW-TO-ADD-NEW-VERSION.md      # Adding a new code version
-│   ├── IMAGE-CONFIGURATION.md         # Image format configuration
-│   ├── MANUAL-DEPLOYMENT-GUIDE.md     # Manual GitHub Actions deployment
-│   ├── PLAN.md                        # Original project design doc (historical)
-│   ├── PROJECT-STRUCTURE.md           # This file
-│   ├── STATIC-ANALYSIS-REPORT.md      # Static code analysis snapshot
-│   ├── STATIC-PATH-GENERATION.md      # Next.js static export path gen
-│   ├── USER-FLOW.md                   # User flow documentation
-│   ├── search-component-architecture.md  # Search component design
-│   ├── figma-screenshots/             # Figma design reference images
+│   ├── USER-FLOW.md                   # User flow documentation (UX source of truth)
+│   ├── README.md                      # Documentation index and navigation
+│   ├── architecture/                  # Software architecture & design
+│   │   ├── PLAN.md                    # Product overview and technical design
+│   │   ├── PROJECT-STRUCTURE.md       # This file
+│   │   ├── CONTENT-RENDERING-STRATEGY.md  # Content rendering pipeline
+│   │   ├── CONTENT-MARKERS.md         # Bracket marker syntax
+│   │   ├── SEARCH-COMPONENT-ARCHITECTURE.md  # Search component design
+│   │   ├── URL-SYNCHRONIZATION.md     # URL state synchronization
+│   │   ├── STATIC-PATH-GENERATION.md  # Next.js static export path gen
+│   │   └── STORE-USAGE-EXAMPLES.md    # Store usage patterns
+│   ├── guides/                        # How-to & operational guides
+│   │   ├── COMMANDS.md                # Common commands and build scripts
+│   │   ├── HOW-TO-ADD-NEW-VERSION.md  # Adding a new code version
+│   │   ├── DATA-MANAGEMENT.md         # Data pipeline and management
+│   │   └── BC-DESIGN-SYSTEM.md        # BC Design System integration
+│   ├── deployment/                    # Deployment & infrastructure
+│   │   ├── DEPLOYMENT.md              # Deployment configuration
+│   │   └── MANUAL-DEPLOYMENT-GUIDE.md # Manual GitHub Actions deployment
+│   ├── reference/                     # Technical reference & troubleshooting
+│   │   ├── FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md
+│   │   ├── IMAGE-CONFIGURATION.md     # Image format configuration
+│   │   ├── LONG-TABLE-PERFORMANCE-ISSUE.md
+│   │   └── READING-SYSTEM-TECHNICAL.md
 │   └── specs/                         # Project specifications
 │       ├── requirements.md            # User stories and acceptance criteria
 │       └── design.md                  # Architecture and design principles
@@ -509,7 +523,7 @@ cp ~/bcbc-2027.json data/source/
 # Edit data/source/versions.json to add 2027
 npx pnpm generate-assets
 
-# See docs/HOW-TO-ADD-NEW-VERSION.md for complete guide
+# See docs/guides/HOW-TO-ADD-NEW-VERSION.md for complete guide
 ```
 
 ---

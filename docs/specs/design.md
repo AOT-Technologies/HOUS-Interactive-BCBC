@@ -2,7 +2,7 @@
 
 ## Overview
 
-The BC Building Code Interactive Web Application is a client-side static web application built with Next.js 14+ that transforms the British Columbia Building Code from a difficult-to-navigate PDF into an intuitive, searchable interface. The application operates entirely without a backend by pre-generating search indexes and content chunks at build time.
+The BC Building Code Interactive Web Application is a client-side static web application built with Next.js 16+ that transforms the British Columbia Building Code from a difficult-to-navigate PDF into an intuitive, searchable interface. The application operates entirely without a backend by pre-generating search indexes and content chunks at build time.
 
 ### Important: Data Structure Updates (February 2026)
 
@@ -227,14 +227,12 @@ export function GlossaryModal({ term, definition, onClose }) {
 }
 ```
 
-### Missing Dependencies
+### Supporting Packages
 
-The UI package references two additional packages that need to be created:
+The UI package uses two additional shared packages:
 
-1. **@repo/constants**: Shared constants (URLs, IDs, test IDs)
-2. **@repo/data**: Data types and hooks
-
-These will be created as part of the implementation to support the UI components.
+1. **@repo/constants**: Shared constants (URLs, IDs, test IDs) — ✅ IMPLEMENTED
+2. **@repo/data**: Data types and hooks — ✅ IMPLEMENTED
 
 ## Figma Design Integration
 
@@ -264,7 +262,7 @@ The application will strictly follow Figma design specifications across all brea
 
 ### Design Tokens
 
-All design tokens will be extracted from Figma and implemented in Chakra UI theme:
+All design tokens are extracted from Figma and implemented using BC Design System CSS variables (defined in `packages/ui/src/variables.css`):
 
 **Typography**:
 - Font families, sizes, weights, line heights
@@ -483,7 +481,10 @@ The store transforms the JSON file format to the internal store format:
 }
 ```
 
-**UI Store**:
+**UI Store** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/lib/stores/ui-store.ts`
+
 ```typescript
 interface UIStore {
   sidebarOpen: boolean;
@@ -496,6 +497,30 @@ interface UIStore {
   closeModal: () => void;
 }
 ```
+
+**Content Store** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/lib/stores/content-store.ts`
+
+Manages general content loading and caching.
+
+**Functional Statements Store** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/stores/functional-statements-store.ts`
+
+Loads and caches functional statements from Division A for cross-reference resolution.
+
+**Objectives Store** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/stores/objectives-store.ts`
+
+Loads and caches objectives and sub-objectives from Division A for cross-reference resolution.
+
+**Spectables Map Store** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/stores/spectables-map-store.ts`
+
+Loads and caches the spectables (span tables) map for resolving spectables references in content.
 
 **Front Matter Store** ✅ IMPLEMENTED:
 
@@ -740,13 +765,10 @@ All data-loading stores (search, navigation, content, glossary, amendment-date) 
 ```
 bc-building-code/
 ├── data/
-│   ├── source/                       # Source BC Building Code JSON (input)
-│   │   ├── bcbc-2024.json           # Main source file (10-50 MB)
-│   │   └── README.md                 # Source data documentation
-│   │
-│   └── samples/                      # Sample/test data
-│       ├── bcbc-sample.json         # Small sample for testing
-│       └── README.md                 # Sample data documentation
+│   └── source/                       # Source BC Building Code JSON (input)
+│       ├── versions.json             # Version configuration
+│       ├── bcbc-2024.json            # Main source file (10-50 MB)
+│       └── README.md                 # Source data documentation
 │
 ├── apps/
 │   └── web/                          # Next.js application
@@ -754,6 +776,7 @@ bc-building-code/
 │       ├── components/               # React components
 │       ├── hooks/                    # Custom React hooks
 │       ├── lib/                      # Utility libraries
+│       ├── stores/                   # Zustand stores (global state)
 │       ├── public/data/              # Generated static assets (output)
 │       └── styles/                   # Theme configuration
 │
@@ -761,8 +784,11 @@ bc-building-code/
 │   ├── bcbc-parser/                  # BCBC JSON parsing & validation
 │   ├── search-indexer/               # FlexSearch index generation
 │   ├── content-chunker/              # Content splitting & metadata extraction
-│   ├── ui/                           # Shared UI components
-│   └── tsconfig/                     # Shared TypeScript configs
+│   ├── ui/                           # BC Design System UI components
+│   ├── constants/                    # Shared constants (URLs, IDs, test IDs)
+│   ├── data/                         # Data types and hooks
+│   ├── eslint-config/                # Shared ESLint config
+│   └── typescript-config/            # Shared TypeScript configs
 │
 ├── scripts/
 │   └── generate-assets.ts            # Build-time orchestration
@@ -1062,7 +1088,7 @@ interface SearchOptions {
 2. Parse and extract searchable content into `SearchDocument` objects
 3. Create FlexSearch document index with configured fields
 4. Add all articles, sections, notes, and glossary terms to index
-5. Export index to `/apps/web/public/data/search-index.json` for client-side loading
+5. Export index to `/apps/web/public/data/{versionId}/search/documents.json` and metadata to `/apps/web/public/data/{versionId}/search/metadata.json` for client-side loading
 6. Generate metadata for result display (breadcrumbs, paths, hierarchy info)
 
 #### 3. content-chunker Package
@@ -1182,65 +1208,13 @@ The `resolveCrossReference` function handles all reference types:
 
 #### Search Components
 
-**SearchCombobox Component** ✅ IMPLEMENTED:
-
-**Location**: `packages/ui/src/search-combobox/SearchCombobox.tsx`
-
-This is the base search input component with autocomplete functionality that is reused across the application.
-
-**Features**:
-- Text input with search icon
-- Autocomplete dropdown using React Aria Combobox
-- Keyboard navigation (Enter, Arrow keys, Escape)
-- Loading state indicator
-- Empty state message
-- Size variants (small, medium, large, xlarge)
-- Fully accessible (WCAG AAA compliant)
-- Responsive styling
-
-**Props**:
-```typescript
-interface SearchComboboxProps {
-  query: string;
-  onQueryChange: (query: string) => void;
-  onSubmit: () => void;
-  suggestions: string[];
-  onSelectSuggestion: (suggestion: string) => void;
-  isLoading?: boolean;
-  placeholder?: string;
-  size?: "small" | "medium" | "large" | "xlarge";
-  showIcon?: boolean;
-  className?: string;
-  inputClassName?: string;
-  dropdownClassName?: string;
-  ariaLabel?: string;
-}
-```
-
-**Usage**:
-```typescript
-<SearchCombobox
-  query={query}
-  onQueryChange={setQuery}
-  onSubmit={handleSearch}
-  suggestions={suggestions}
-  onSelectSuggestion={handleSelect}
-  size="medium"
-  placeholder="Search..."
-/>
-```
-
-**Design Pattern**: This component is a pure UI component that handles presentation and user interaction. It does not contain business logic - that is provided by the `useSearch` hook. This separation allows the component to be reused in different contexts (HeaderSearch, HeroSearch) with different behaviors.
-
-**Note on React Aria Compatibility**: Due to TypeScript compatibility issues between React 19 and react-aria-components, the SearchCombobox component currently has TypeScript errors but remains functionally correct. As a workaround, HeaderSearch and HeroSearch have been refactored to use custom inline dropdown implementations instead of SearchCombobox.
-
 **HeaderSearch Component** ✅ IMPLEMENTED:
 
 **Location**: `packages/ui/src/header-search/HeaderSearch.tsx`
 
 Compact search variant for the application header with toggle behavior.
 
-**Implementation**: Custom inline dropdown (workaround for React Aria TypeScript issues)
+**Implementation**: Custom inline dropdown with autocomplete suggestions.
 
 **Features**:
 - Toggleable search (icon button → full search input)
@@ -1257,7 +1231,7 @@ Compact search variant for the application header with toggle behavior.
 
 Large, prominent search variant for the homepage hero section.
 
-**Implementation**: Custom inline dropdown (workaround for React Aria TypeScript issues)
+**Implementation**: Custom inline dropdown with autocomplete suggestions.
 
 **Features**:
 - Always visible (no toggle)
@@ -1274,20 +1248,13 @@ Large, prominent search variant for the homepage hero section.
 
 The search components follow a layered architecture:
 1. **useSearch Hook** (packages/data/src/hooks/useSearch.ts) - Provides search state management and business logic
-2. **SearchCombobox** (packages/ui/src/search-combobox/SearchCombobox.tsx) - Base UI component (currently has TypeScript issues)
-3. **HeaderSearch & HeroSearch** - Variant components with custom inline implementations as workaround
+2. **HeaderSearch & HeroSearch** - Variant components with custom inline dropdown implementations
 
 This architecture allows for:
 - Shared search logic via the useSearch hook
 - Consistent behavior across variants
-- Flexibility to work around library compatibility issues
+- Simple debugging (all UI code in one file per variant)
 - Easy testing and maintenance
-
-**SearchInput Component** (Deprecated - replaced by SearchCombobox):
-- Debounced input handling (300ms)
-- Autocomplete suggestions
-- Clear button
-- Loading indicator
 
 **SearchResults Component**:
 - Result list with highlighting
@@ -1468,69 +1435,35 @@ const search = useSearch({
 - Both can be used together: hook for input behavior, store for results display
 ```
 
-**useNavigation Hook**:
-```typescript
-function useNavigation() {
-  const [navigationTree, setNavigationTree] = useState<NavigationNode[]>([]);
-  const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
-  const [currentPath, setCurrentPath] = useState<string>('');
-  
-  const toggleNode = useCallback((nodeId: string) => {
-    setExpandedNodes(prev => {
-      const next = new Set(prev);
-      if (next.has(nodeId)) {
-        next.delete(nodeId);
-      } else {
-        next.add(nodeId);
-      }
-      return next;
-    });
-  }, []);
-  
-  return { navigationTree, expandedNodes, toggleNode, currentPath, setCurrentPath };
-}
-```
+**useNavigation** — Navigation state is managed by the Zustand `navigation-store` (see Global Stores section above). There is no separate `useNavigation` hook.
 
-**useGlossary Hook**:
-```typescript
-function useGlossary() {
-  const [glossaryMap, setGlossaryMap] = useState<Map<string, GlossaryEntry>>(new Map());
-  const [selectedTerm, setSelectedTerm] = useState<string | null>(null);
-  
-  const getTerm = useCallback((term: string) => {
-    return glossaryMap.get(term.toLowerCase());
-  }, [glossaryMap]);
-  
-  return { glossaryMap, selectedTerm, setSelectedTerm, getTerm };
-}
-```
+**useGlossary** — Glossary state is managed by the Zustand `glossary-store` (see Global Stores section above). There is no separate `useGlossary` hook.
 
-**useAmendmentDate Hook**:
-```typescript
-function useAmendmentDate() {
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [availableDates, setAvailableDates] = useState<AmendmentDate[]>([]);
-  
-  useEffect(() => {
-    // Load from localStorage or URL
-    const storedDate = localStorage.getItem('amendmentDate');
-    const urlDate = new URLSearchParams(window.location.search).get('date');
-    setSelectedDate(urlDate || storedDate);
-  }, []);
-  
-  useEffect(() => {
-    // Persist to localStorage and URL
-    if (selectedDate) {
-      localStorage.setItem('amendmentDate', selectedDate);
-      const url = new URL(window.location.href);
-      url.searchParams.set('date', selectedDate);
-      window.history.replaceState({}, '', url);
-    }
-  }, [selectedDate]);
-  
-  return { selectedDate, setSelectedDate, availableDates };
-}
-```
+**useAmendmentDate** — Amendment date state is managed by the Zustand `amendment-date-store` (see Global Stores section above). There is no separate `useAmendmentDate` hook.
+
+**useSearchClient Hook** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/hooks/useSearchClient.ts`
+
+Provides access to the FlexSearch client for performing searches and getting suggestions. Handles initialization and caching of the search index.
+
+**useUrlNavigation Hook** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/hooks/useUrlNavigation.ts`
+
+Manages URL-based navigation and state synchronization between the URL and application state.
+
+**useFunctionalStatements Hook** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/hooks/useFunctionalStatements.ts`
+
+Loads and provides access to functional statements data for cross-reference resolution.
+
+**useObjectives Hook** ✅ IMPLEMENTED:
+
+**Location**: `apps/web/hooks/useObjectives.ts`
+
+Loads and provides access to objectives and sub-objectives data for cross-reference resolution.
 
 ## Data Models
 
@@ -1833,8 +1766,8 @@ All filter options, navigation structure, and content organization are pre-gener
 }
 ```
 
-#### 6. `search-index.json`
-**Purpose:** Pre-built FlexSearch index  
+#### 6. `search/documents.json` and `search/metadata.json`
+**Purpose:** Pre-built FlexSearch index and search metadata  
 **Used By:**
 - Search functionality (header, hero, search page)
 - Autocomplete suggestions
@@ -1917,7 +1850,7 @@ All filter options, navigation structure, and content organization are pre-gener
 2. **Extract structure** → Generate `navigation-tree.json`
 3. **Extract dates** → Generate `amendment-dates.json`
 4. **Analyze content types** → Generate `content-types.json`
-5. **Build search index** → Generate `search-index.json`
+5. **Build search index** → Generate `search/documents.json` + `search/metadata.json`
 6. **Extract glossary** → Generate `glossary-map.json`
 7. **Extract functional statements** → Generate `functional-statements.json`
 8. **Extract objectives** → Generate `objectives.json`
@@ -1933,7 +1866,7 @@ All filter options, navigation structure, and content organization are pre-gener
   - `quick-access.json`
 
 - **Lazy Load (on demand):**
-  - `search-index.json` (when search is first used)
+  - `search/documents.json` + `search/metadata.json` (when search is first used)
   - `glossary-map.json` (when first glossary term clicked)
   - `content/{path}.json` (when specific content accessed)
 
@@ -2283,7 +2216,7 @@ test('build pipeline generates all required assets for any valid BCBC JSON', () 
 
 ### Unit Testing Strategy
 
-**Testing Framework**: Jest with React Testing Library
+**Testing Framework**: Vitest with React Testing Library
 
 **Component Testing**:
 - Render tests for all components
@@ -2309,41 +2242,50 @@ test('build pipeline generates all required assets for any valid BCBC JSON', () 
 
 ### Test Organization
 
+Tests are co-located with their source files (not in separate `__tests__/` directories):
+
 ```
 apps/web/
-├── __tests__/
-│   ├── components/
-│   │   ├── layout/
-│   │   ├── search/
-│   │   ├── navigation/
-│   │   ├── content/
-│   │   ├── glossary/
-│   │   └── notes/
-│   ├── hooks/
-│   ├── lib/
-│   └── integration/
+├── components/
+│   ├── navigation/
+│   │   ├── NavigationTree.tsx
+│   │   ├── NavigationTree.test.tsx      # Co-located test
+│   │   ├── Breadcrumbs.tsx
+│   │   └── Breadcrumbs.test.tsx
+│   ├── download/
+│   │   ├── DownloadPage.tsx
+│   │   └── DownloadPage.test.tsx
+│   └── ...
+├── hooks/
+│   ├── useSearchClient.ts
+│   └── useSearchClient.test.ts
+├── stores/
+│   ├── navigation-store.ts
+│   └── navigation-store.test.ts
+├── lib/stores/
+│   ├── appendix-store.ts
+│   └── appendix-store.test.ts
 │
 packages/bcbc-parser/
-├── __tests__/
-│   ├── parser.test.ts
-│   ├── validators.test.ts
-│   └── properties.test.ts
+├── src/
+│   ├── parser.ts
+│   └── parser.test.ts
 │
 packages/search-indexer/
-├── __tests__/
-│   ├── indexer.test.ts
-│   └── properties.test.ts
+├── src/
+│   ├── indexer.ts
+│   └── indexer.test.ts
 │
 packages/content-chunker/
-├── __tests__/
-│   ├── chunker.test.ts
-│   └── properties.test.ts
+├── src/
+│   ├── chunker.ts
+│   └── chunker.test.ts
 ```
 
 ### Accessibility Testing
 
 **Automated Testing**:
-- jest-axe for automated accessibility checks
+- vitest-axe for automated accessibility checks
 - Test all components for WCAG AAA compliance
 - Verify color contrast ratios
 - Check ARIA attributes
@@ -2394,7 +2336,7 @@ packages/content-chunker/
 
 ```
 1. Install dependencies (pnpm install)
-2. Generate static assets (pnpm generate-assets)
+2. Generate static assets (pnpm generate-assets or pnpm generate-assets:multi)
    - Parse BCBC JSON
    - Generate FlexSearch index
    - Generate navigation tree
@@ -2404,12 +2346,9 @@ packages/content-chunker/
 3. Build Next.js application (pnpm build)
    - Compile TypeScript
    - Bundle JavaScript
-   - Generate static HTML
+   - Generate static HTML/CSS/JS
    - Optimize assets
-4. Export static site (pnpm export)
-   - Generate static HTML for all routes
-   - Copy public assets
-   - Create deployment package
+   - Static export included (configured via next.config)
 ```
 
 ### Docker Container
@@ -2421,9 +2360,8 @@ COPY package.json pnpm-lock.yaml ./
 RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 COPY . .
-RUN pnpm generate-assets
+RUN pnpm generate-assets:multi
 RUN pnpm build
-RUN pnpm export
 
 FROM nginx:alpine
 COPY --from=builder /app/apps/web/out /usr/share/nginx/html
@@ -2575,6 +2513,6 @@ This design provides a comprehensive blueprint for building a static, client-sid
 - **Comprehensive testing**: Both unit and property-based testing
 - **Accessibility-first**: WCAG AAA compliance built into every component
 - **Monorepo structure**: Clear separation of concerns with shared packages
-- **Modern tech stack**: Next.js, TypeScript, React, Chakra UI, FlexSearch
+- **Modern tech stack**: Next.js, TypeScript, React, BC Design System, FlexSearch
 
 The implementation will follow an agile sprint approach, with each sprint delivering incremental value while building toward the complete vision.

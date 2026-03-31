@@ -86,7 +86,7 @@ bc-building-code/
 npx pnpm install
 
 # 2. Set up version configuration
-# Create data/source/versions.json (see docs/HOW-TO-ADD-NEW-VERSION.md)
+# Create data/source/versions.json (see docs/guides/HOW-TO-ADD-NEW-VERSION.md)
 
 # 3. Place BC Building Code JSON in data/source/
 cp ~/path/to/bcbc-2024.json data/source/
@@ -109,7 +109,7 @@ The application currently supports BC Building Code 2024. Additional versions ca
 
 ### Adding a New Version
 
-See [docs/HOW-TO-ADD-NEW-VERSION.md](docs/HOW-TO-ADD-NEW-VERSION.md) for complete instructions.
+See [docs/guides/HOW-TO-ADD-NEW-VERSION.md](docs/guides/HOW-TO-ADD-NEW-VERSION.md) for complete instructions.
 
 **Quick steps:**
 1. Add source JSON: `data/source/bcbc-2027.json`
