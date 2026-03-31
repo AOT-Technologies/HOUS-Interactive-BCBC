@@ -37,7 +37,7 @@ public abstract class TestBase
         Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
         Browser = await Playwright.Chromium.LaunchAsync(new()
         {
-            Headless = false,
+            Headless = true,
             SlowMo = 0
         });
     }
