@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-29T22:10:38.872-07:00",
+  "generated_timestamp" : "2026-03-30T22:00:16.468-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -7259,6 +7259,9 @@
                    { "symbol" : "kW",
                     "description" : "kilowatt(s)" },
                    
+                   { "symbol" : "kWh",
+                    "description" : "kilowatt hour(s)" },
+                   
                    { "symbol" : "L",
                     "description" : "litre(s)" },
                    
@@ -7430,48 +7433,54 @@
          [ 
           { "id" : "nbc.divA.part1.appendix.appnote1",
            "type" : "application_note",
-           "number" : "1.1.1.1.(1)",
+           "number" : "1.1.1.2.(1)",
            "title" : "Application to Existing Buildings",
            "refs" : "es000101",
+           "source" : "bc",
            "content" : 
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote1.para1",
-             "content" : "This Code is most often applied to existing or relocated buildings when an owner wishes to rehabilitate a building, change its use, or build an addition, or when an enforcement authority decrees that a building or class of buildings be altered for reasons of public safety. It is not intended that the NBC be used to enforce the retrospective application of new requirements to existing buildings or existing portions of relocated buildings, unless specifically required by local regulations or bylaws. For example, although the [REF:standard:nrcc-nfc] could be interpreted to require the installation of fire alarm, standpipe and hose, and automatic sprinkler systems in an existing building for which there were no requirements at the time of construction, it is the intent of the CCBFC that the NFC not be applied in this manner to these buildings unless the authority having jurisdiction has determined that there is an inherent threat to occupant safety and has issued an order to eliminate the unsafe condition, or where substantial changes or additions are being made to an existing building or the occupancy has been changed. (See also [REF:external:nfc:Note A-1.1.1.1.(1) of Division A of the NFC] .)" },
+             "content" : "This Code is most often applied to existing or relocated [REF:term:bldng:buildings] when an owner wishes to rehabilitate a [REF:term:bldng:building] , change its use, or build an addition, or when an enforcement authority decrees that a [REF:term:bldng:building] or class of [REF:term:bldng:buildings] be altered for reasons of public safety. It is not intended that the British Columbia Building Code be used to enforce the retrospective application of new requirements to existing [REF:term:bldng:buildings] or existing portions of relocated [REF:term:bldng:buildings] , unless specifically required by local regulations or bylaws. For example, although the British Columbia Fire Code could be interpreted to require the installation of fire alarm, standpipe and hose, and automatic sprinkler systems in an existing [REF:term:bldng:building] for which there were no requirements at the time of construction, it is not intended that the British Columbia Fire Code be applied in this manner to these [REF:term:bldng:buildings] unless the [REF:term:bc-thrt-hvn:authority having jurisdiction] has determined that there is an inherent threat to occupant safety and has issued an order to eliminate the unsafe condition, or where substantial changes or additions are being made to an existing [REF:term:bldng:building] or the [REF:term:ccpnc:occupancy] has been changed. (See also Note A-1.1.1.1.(1) of Division A of the British Columbia Fire Code.)" },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote1.para2",
-             "content" : "Relocated buildings that have been in use in another location for a number of years can be considered as existing buildings, in part, and the same analytical process can be applied as for existing buildings. It should be noted, however, that a change in occupancy may affect some requirements (e.g. loads and fire separations) and relocation to an area with different wind, snow or earthquake loads will require the application of current code requirements. Depending on the construction of the building and the changes in load, structural modifications may be required. Similarly, parts of a relocated or existing building that are reconstructed, such as foundations and basements, or parts being modified are required to be built to current codes." },
+             "content" : "Relocated [REF:term:bldng:buildings] that have been in use in another location for a number of years can be considered as existing [REF:term:bldng:buildings] , in part, and the same analytical process can be applied as for existing [REF:term:bldng:buildings] . It should be noted, however, that a change in [REF:term:ccpnc:occupancy] may affect some requirements (e.g. loads and [REF:term:fr-prtn:fire separations] ) and relocation to an area with different wind, snow or earthquake loads will require the application of current code requirements. Depending on the construction of the [REF:term:bldng:building] and the changes in load, structural modifications may be required. Similarly, parts of a relocated or existing [REF:term:bldng:building] that are reconstructed, such as foundations and basements, or parts being modified are required to be built to current codes." },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote1.para3",
-             "content" : "Whatever the reason, Code application to existing or relocated buildings requires careful consideration of the level of safety needed for that building. This consideration involves an analytical process similar to that required to assess alternative design proposals for new construction. See [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] for information on achieving compliance with the Code using alternative solutions." },
+             "content" : "Whatever the reason, Code application to existing or relocated [REF:term:bldng:buildings] requires careful consideration of the level of safety needed for that [REF:term:bldng:building] . This consideration involves an analytical process similar to that required to assess alternative design proposals for new construction. See [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] for information on achieving compliance with the Code using alternative solutions." },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote1.para4",
-             "content" : "In developing Code requirements for new buildings, consideration has been given to the cost they impose on a design in relation to the perceived benefits in terms of safety. The former is definable; the latter difficult to establish on a quantitative basis. In applying the Code requirements to an existing building, the benefits derived are the same as in new buildings. On the other hand, the increased cost of implementing in an existing building a design solution that would normally be intended for a new building may be prohibitive." },
+             "content" : "In developing Code requirements for new [REF:term:bldng:buildings] , consideration has been given to the cost they impose on a design in relation to the perceived benefits in terms of safety. The former is definable; the latter difficult to establish on a quantitative basis. In applying the Code requirements to an existing [REF:term:bldng:building] , the benefits derived are the same as in new [REF:term:bldng:buildings] . On the other hand, the increased cost of implementing in an existing [REF:term:bldng:building] a design solution that would normally be intended for a new [REF:term:bldng:building] may be prohibitive." },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote1.para5",
-             "content" : "The successful application of Code requirements to existing construction becomes a matter of balancing the cost of implementing a requirement with the relative importance of that requirement to the overall Code objectives. The degree to which any particular requirement can be relaxed without affecting the intended level of safety of the Code requires considerable judgment on the part of both the designer and the authority having jurisdiction." },
+             "content" : "The successful application of Code requirements to existing construction becomes a matter of balancing the cost of implementing a requirement with the relative importance of that requirement to the overall Code objectives. The degree to which any particular requirement can be relaxed without affecting the intended level of safety of the Code requires considerable judgment on the part of both the designer and the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote1.para6",
-             "content" : "Further information on the application of Code requirements to existing or relocated buildings can be found in the following publications:[LIST:bulleted]",
+             "content" : "Further information on the application of Code requirements to existing or relocated [REF:term:bldng:buildings] can be found in the following publications:[LIST:bulleted]",
              "lists" : 
              [ 
               { "type" : "bulleted",
                "items" : 
                [ 
-                { "content" : "[REF:standard:nrcc40383]" },
+                { "id" : "nbc.divA.part1.appendix.appnote1.item1",
+                 "content" : "\"User's Guide – NBC 1995 Fire Protection, Occupant Safety and Accessibility (Part 3)\"" },
                 
-                { "content" : "[REF:standard:nrcc35951]" },
+                { "id" : "nbc.divA.part1.appendix.appnote1.item2",
+                 "content" : "\"Guidelines for Application of Part 3 of the National Building Code of Canada to Existing Buildings\"" },
                 
-                { "content" : "Commentary entitled “Application of NBC Part 4 of Division B for the Structural Evaluation and Upgrading of Existing Buildings” of the [REF:standard:nrcc-nbcug4]" },
+                { "id" : "nbc.divA.part1.appendix.appnote1.item3",
+                 "content" : "Commentary entitled \"Application of NBC Part 4 of Division B for the Structural Evaluation and Upgrading of Existing Buildings\" of the \"Structural Commentaries (User's Guide – NBC 2020: Part 4 of Division B)\"" },
                 
-                { "content" : "[REF:standard:nrcc43963]" },
+                { "id" : "nbc.divA.part1.appendix.appnote1.item4",
+                 "content" : "\"User's Guide – NBC 1995, Application of Part 9 to Existing Buildings\"" },
                 
-                { "content" : "[REF:standard:cbd230]" } ] } ] },
+                { "id" : "nbc.divA.part1.appendix.appnote1.item5",
+                 "content" : "CBD 230, \"Applying building codes to existing buildings\"" } ] } ] },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote1.para7",
@@ -8843,7 +8852,7 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divA.part2.appendix.appnote2.div1.para1",
-               "content" : "Any gaps in the numbering sequence of the objectives are due to the fact that there is a master list of objectives covering the principal Code Documents---the British Columbia Building Code Book I: General, British Columbia Building Code Book II: Plumbing Systems, and the [REF:bc-code:bcfc:British Columbia Fire Code] ---but not all objectives are pertinent to all Codes." } ] },
+               "content" : "Any gaps in the numbering sequence of the objectives are due to the fact that there is a master list of objectives covering the principal Code Documents---the British Columbia Building Code Book I: General, British Columbia Building Code Book II: Plumbing Systems, and the British Columbia Fire Code---but not all objectives are pertinent to all Codes." } ] },
             
             { "id" : "nbc.divA.part2.appendix.appnote2.div2",
              "type" : "note_division",
@@ -9298,7 +9307,7 @@
                [ 
                 { "content" : "Each group has unused numbers which allows for the possible future creation of additional functional statements within any one group." },
                 
-                { "content" : "There is a master list of functional statements covering the principal Code Documents---the British Columbia Building Code Book I: General, British Columbia Building Code Book II: Plumbing Systems, and the [REF:bc-code:bcfc:British Columbia Fire Code] ---but not all functional statements are pertinent to all Codes." } ] } ] } ] } ] } } ] },
+                { "content" : "There is a master list of functional statements covering the principal Code Documents---the British Columbia Building Code Book I: General, British Columbia Building Code Book II: Plumbing Systems, and the British Columbia Fire Code---but not all functional statements are pertinent to all Codes." } ] } ] } ] } ] } } ] },
      
      { "id" : "nbc.divB",
       "type" : "division",
