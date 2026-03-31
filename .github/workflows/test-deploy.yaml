@@ -1,5 +1,8 @@
 name: Deploy to TEST
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:
@@ -80,6 +83,7 @@ jobs:
       - name: Deploy Application in OpenShift
         run: |
           helm upgrade --install interactive-bcbc-app . \
+            -f values.yaml \
             -f values-test.yaml \
             --set image.repository=${{ vars.ARTIFACTORY_URL }}/${{ secrets.ARTIFACTORY_REPOSITORY_NAME }}/interactive-bcbc-app \
             --set image.tag=${{ needs.build.outputs.image-tag }} \

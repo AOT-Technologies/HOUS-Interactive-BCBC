@@ -1,5 +1,9 @@
 name: sync-from-repo-a
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   repository_dispatch:
     types: [sync-from-repo-a]
