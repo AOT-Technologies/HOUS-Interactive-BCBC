@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-30T22:00:16.468-07:00",
+  "generated_timestamp" : "2026-03-30T22:31:25.095-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -5818,7 +5818,7 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "except as required by [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent3:short] , using alternative solutions, accepted by the [REF:term:bc-thrt-hvn:authority having jurisdiction] under [REF:internal:nbc.divC.part2.sect3:long] of Division C, that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see [REF:internal:nbc.divA.part1.appendix.appnote4:short] )." } ] },
+                  "text" : "except as required by [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent3:short] , using alternative solutions, accepted by the [REF:term:bc-thrt-hvn:authority having jurisdiction] under [REF:internal:nbc.divC.part2.sect3:long] , that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see [REF:internal:nbc.divA.part1.appendix.appnote4:short] )." } ] },
                
                { "id" : "nbc.divA.part1.sect2.subsect1.art1.sent2",
                 "type" : "sentence",
@@ -6108,7 +6108,7 @@
                 "number" : 2,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "Parts 3, 4, 5 and 6 of Division B apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] of Division B.",
+                "text" : "Parts 3, 4, 5 and 6 of Division B apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] .",
                 "revisions" : 
                 [ 
                  { "type" : "original",
@@ -6121,7 +6121,7 @@
                   "sequence" : 1,
                   "effective_date" : "2024-08-27",
                   "status" : "current",
-                  "text" : "Parts 3, 4, 5 and 6 of Division B apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] of Division B.",
+                  "text" : "Parts 3, 4, 5 and 6 of Division B apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] .",
                   "change_summary" : "Added new sentence to extend application of Parts 3, 4, 5 and 6 to buildings designed per Subsection 3.2.10.",
                   "note" : "Ministerial Order BA 2024 03" } ] } ] },
              
@@ -6174,7 +6174,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "Part 9 of Division B does not apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] of Division B." } ],
+                "text" : "Part 9 of Division B does not apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long]" } ],
               "revisions" : 
               [ 
                { "type" : "original",
@@ -6263,7 +6263,7 @@
                   "type" : "sentence",
                   "number" : 2,
                   "source" : "bc",
-                  "text" : "Part 9 of Division B does not apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] of Division B." } ],
+                  "text" : "Part 9 of Division B does not apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long]" } ],
                 "change_summary" : "Replaced Article 1.3.3.3. - Modified Sentence 1 to add exception reference and reorganized clauses; added new Sentence 2 to exclude buildings designed per Subsection 3.2.10. from Part 9 application.",
                 "note" : "Ministerial Order BA 2024 03" } ] },
              
@@ -6943,7 +6943,7 @@
                    
                    { "id" : "bc-rgstrd-prfssnl-f-rcrd",
                     "term" : "Registered professional of record",
-                    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and field review in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] of Division C." },
+                    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and field review in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] ." },
                    
                    { "id" : "rpr-grg",
                     "term" : "Repair garage",
@@ -179405,7 +179405,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "The scope of this Part shall be as described in [REF:internal:nbc.divA.part1.sect3.subsect3:long] of Division A." } ] },
+                "text" : "The scope of this Part shall be as described in [REF:internal:nbc.divA.part1.sect3.subsect3:long] ." } ] },
              
              { "id" : "nbc.divB.part10.sect1.subsect1.art2",
               "type" : "article",
@@ -179418,7 +179418,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "The application of this Part shall be as described in [REF:internal:nbc.divA.part1.sect3.subsect3:long] of Division A." } ] } ] },
+                "text" : "The application of this Part shall be as described in [REF:internal:nbc.divA.part1.sect3.subsect3:long] ." } ] } ] },
            
            { "id" : "nbc.divB.part10.sect1.subsect2",
             "type" : "subsection",
@@ -183103,7 +183103,7 @@
              "content" : "Alterations, rehabilitation, renovations and changes of occupancy to existing [REF:term:bldng:buildings] or [REF:term:mjr-ccpn:major occupancies] that were originally designed and constructed to previous editions of the ANSI\/ASHRAE\/IES 90.1 standard are to comply with the edition of the ANSI\/ASHRAE\/IES 90.1 standard referenced in this Code, or the requirements of [REF:internal:nbc.divB.part10.sect2.subsect3:long] . Alterations, rehabilitation, renovations and changes of occupancy to existing [REF:term:bldng:buildings] or [REF:term:mjr-ccpn:major occupancies] that were originally designed and constructed to previous editions of the NECB or [REF:internal:nbc.divB.part10.sect2.subsect3:long] are to comply with the edition of the NECB referenced in this Code, or to [REF:internal:nbc.divB.part10.sect2.subsect3:long] . Existing [REF:term:bldng:buildings] or [REF:term:mjr-ccpn:major occupancies] that were not designed and constructed to any version of the ANSI\/ASHRAE\/IES 90.1 standard, the NECB or [REF:internal:nbc.divB.part10.sect2.subsect3:long] , may use the edition of the ANSI\/ASHRAE\/IES 90.1 standard or the NECB referenced in this Code, or [REF:internal:nbc.divB.part10.sect2.subsect3:long] for alterations, rehabilitation, renovations and changes in occupancy." },
             
             { "type" : "paragraph",
-             "content" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art2.sent1:long] of Division A states that the level of [REF:term:bldng:building] performance shall not be decreased below a level that already exists. For example, a new [REF:term:ccpnc:occupancy] may be permitted a higher lighting power density by the ANSI\/ASHRAE\/IES 90.1 standard or the NECB than the lighting power density that was permitted for a previous [REF:term:ccpnc:occupancy] . This does not constitute a decrease in the level of [REF:term:bldng:building] performance, provided the design meets the minimum requirements of the relevant Code or standard." } ] },
+             "content" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art2.sent1:long] states that the level of [REF:term:bldng:building] performance shall not be decreased below a level that already exists. For example, a new [REF:term:ccpnc:occupancy] may be permitted a higher lighting power density by the ANSI\/ASHRAE\/IES 90.1 standard or the NECB than the lighting power density that was permitted for a previous [REF:term:ccpnc:occupancy] . This does not constitute a decrease in the level of [REF:term:bldng:building] performance, provided the design meets the minimum requirements of the relevant Code or standard." } ] },
           
           { "id" : "nbc.divB.part10.appendix.appnote3",
            "type" : "application_note",
@@ -343568,7 +343568,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "This Part may apply to a Group A, Division 2 [REF:term:mbl-ccpn:assembly occupancy] that is permitted by [REF:internal:nbc.divB.part3.sect1.subsect2.art7:long] to be classified as a Group D, [REF:term:bn-nd-pr:business and personal services occupancy] , provided the [REF:term:bldng:building] in which the [REF:term:mbl-ccpn:assembly occupancy] is located complies with [REF:internal:nbc.divA.part1.sect3.subsect3.art3.sent1:long] of Division A. (See Note A-3.1.2.7.)" } ] } ] },
+                "text" : "This Part may apply to a Group A, Division 2 [REF:term:mbl-ccpn:assembly occupancy] that is permitted by [REF:internal:nbc.divB.part3.sect1.subsect2.art7:long] to be classified as a Group D, [REF:term:bn-nd-pr:business and personal services occupancy] , provided the [REF:term:bldng:building] in which the [REF:term:mbl-ccpn:assembly occupancy] is located complies with [REF:internal:nbc.divA.part1.sect3.subsect3.art3.sent1:long] . (See Note A-3.1.2.7.)" } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect10.subsect3",
             "type" : "subsection",
@@ -632971,11 +632971,11 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote295a.para1",
-             "content" : "The words floor area, as used in [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent1:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent3:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art3.sent1:long] , [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent1:long] , and [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent2:long] of Division B, and [REF:internal:nbc.divC.part2.sect2.subsect8.art3.sent3:long] of Division C are not italicized, to differentiate them from the defined term [REF:term:flr-r:floor area] in [REF:internal:nbc.divA.part1.sect4.subsect1.art2:long] of Division A." },
+             "content" : "The words floor area, as used in [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent1:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent3:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art3.sent1:long] , [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent1:long] , and [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent2:long] and [REF:internal:nbc.divC.part2.sect2.subsect8.art3.sent3:long] are not italicized, to differentiate them from the defined term [REF:term:flr-r:floor area] in [REF:internal:nbc.divA.part1.sect4.subsect1.art2:long] ." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote295a.para2",
-             "content" : "Different modelling approaches identify the applicable floor area in various ways (e.g. modelled floor area, heated floor area, treated floor area, etc.) and the use of the words floor area in [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent1:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent3:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art3.sent1:long] , [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent1:long] , and [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent2:long] of Division B, and [REF:internal:nbc.divC.part2.sect2.subsect8.art3.sent3:long] of Division C is intended to accommodate the various modelling approaches." } ] },
+             "content" : "Different modelling approaches identify the applicable floor area in various ways (e.g. modelled floor area, heated floor area, treated floor area, etc.) and the use of the words floor area in [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent1:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art2.sent3:long] , [REF:internal:nbc.divBV2.part9.sect37.subsect6.art3.sent1:long] , [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent1:long] , and [REF:internal:nbc.divB.part10.sect2.subsect3.art2.sent2:long] , and [REF:internal:nbc.divC.part2.sect2.subsect8.art3.sent3:long] is intended to accommodate the various modelling approaches." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote295b",
            "type" : "application_note",
@@ -683317,7 +683317,7 @@
     "sequence" : 1,
     "effective_date" : "2024-08-27",
     "status" : "current",
-    "content" : "Parts 3, 4, 5 and 6 of Division B apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] of Division B.",
+    "content" : "Parts 3, 4, 5 and 6 of Division B apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] .",
     "change_summary" : "Added new sentence to extend application of Parts 3, 4, 5 and 6 to buildings designed per Subsection 3.2.10.",
     "note" : "Ministerial Order BA 2024 03" },
    
@@ -683333,7 +683333,7 @@
     "sequence" : 1,
     "effective_date" : "2024-08-27",
     "status" : "current",
-    "content" : "Application of Part 9Except as provided in [REF:internal:nbc.divA.part1.sect3.subsect3.art3.sent2:short] , Part 9 of Division B applies to all [REF:term:bldng:buildings] described in [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] of 3 [REF:term:tr:storeys] or less in [REF:term:bldng-hg:building height] , having a [REF:term:bldng-r:building area] not exceeding 600 m^{2} , and used for [REF:term:mjr-ccpn:major occupancies] classified asreservedGroup C, [REF:term:rdntl-cc:residential occupancies] (see [REF:internal:nbc.divBV2.part9.appendix.appnote1:long] ),Group D, [REF:term:bn-nd-pr:business and personal services occupancies] ,Group E, [REF:term:mrcntl-c:mercantile occupancies] , orGroup F, Divisions 2 and 3, [REF:term:mdm-hzrd:medium-] and [REF:term:lw-hzrd-:low-hazard industrial occupancies] .Part 9 of Division B does not apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long] of Division B.",
+    "content" : "Application of Part 9Except as provided in [REF:internal:nbc.divA.part1.sect3.subsect3.art3.sent2:short] , Part 9 of Division B applies to all [REF:term:bldng:buildings] described in [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] of 3 [REF:term:tr:storeys] or less in [REF:term:bldng-hg:building height] , having a [REF:term:bldng-r:building area] not exceeding 600 m^{2} , and used for [REF:term:mjr-ccpn:major occupancies] classified asreservedGroup C, [REF:term:rdntl-cc:residential occupancies] (see [REF:internal:nbc.divBV2.part9.appendix.appnote1:long] ),Group D, [REF:term:bn-nd-pr:business and personal services occupancies] ,Group E, [REF:term:mrcntl-c:mercantile occupancies] , orGroup F, Divisions 2 and 3, [REF:term:mdm-hzrd:medium-] and [REF:term:lw-hzrd-:low-hazard industrial occupancies] .Part 9 of Division B does not apply to [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:long]",
     "change_summary" : "Replaced Article 1.3.3.3. - Modified Sentence 1 to add exception reference and reorganized clauses; added new Sentence 2 to exclude buildings designed per Subsection 3.2.10. from Part 9 application.",
     "note" : "Ministerial Order BA 2024 03" },
    
@@ -687875,7 +687875,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-rgstrd-prfssnl-f-rcrd" : 
    { "term" : "Registered professional of record",
-    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and field review in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] of Division C.",
+    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and field review in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] .",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "rpr-grg" : 
    { "term" : "Repair garage",

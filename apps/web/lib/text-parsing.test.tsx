@@ -96,7 +96,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Figure 4.1.6.10.');
+    expect(crossRefs[0].props.displayText).toBe('Figure 4.1.6.10. of Division B');
   });
 
   it('formats internal figure references with BC figure numbering for shortNum format', () => {
@@ -114,7 +114,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Table 9.3.1.7.');
+    expect(crossRefs[0].props.displayText).toBe('Table 9.3.1.7. of Division B');
   });
 
   it('formats part-level references as part labels for long format', () => {
@@ -124,7 +124,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
 
     expect(crossRefs).toHaveLength(1);
     expect(crossRefs[0].props.referenceId).toBe('nbc.divB.part5');
-    expect(crossRefs[0].props.displayText).toBe('Part 5');
+    expect(crossRefs[0].props.displayText).toBe('Part 5 of Division B');
   });
 
   it('consumes explicit part labels following a long-format part reference marker', () => {
@@ -277,7 +277,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Article 1.3.3.2');
+    expect(crossRefs[0].props.displayText).toBe('Article 1.3.3.2. of Division A');
   });
 
   it('avoids duplicate trailing period for generated appnote labels when source has period', () => {
@@ -342,7 +342,25 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2)');
+    expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2) of Division BV2');
+  });
+
+  it('formats subsection long references with division suffix', () => {
+    const input = '[REF:internal:nbc.divB.part1.sect1.subsect2:long]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Subsection 1.1.2. of Division B');
+  });
+
+  it('formats sentence long references with division suffix', () => {
+    const input = '[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1:long]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Sentence 1.2.1.1.(1) of Division A');
   });
 
   it('renders medium sentence references with full numbering when preceded by Sentence', () => {
