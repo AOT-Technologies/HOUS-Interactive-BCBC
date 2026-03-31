@@ -1299,6 +1299,6 @@ Users can copy URL from browser and share - recipients see identical view.
 
 - **Requirements:** `docs/specs/requirements.md`
 - **Design:** `docs/specs/design.md`
-- **Tech Stack:** `docs/PLAN.md`
-- **Project Structure:** `docs/PROJECT-STRUCTURE.md`
-- **BC Design System:** `docs/BC-DESIGN-SYSTEM.md`
+- **Tech Stack:** `docs/architecture/PLAN.md`
+- **Project Structure:** `docs/architecture/PROJECT-STRUCTURE.md`
+- **BC Design System:** `docs/guides/BC-DESIGN-SYSTEM.md`

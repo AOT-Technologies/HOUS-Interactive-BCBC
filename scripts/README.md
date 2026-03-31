@@ -171,8 +171,8 @@ When adding new scripts:
 
 ## Related Documentation
 
-- **Project Structure**: `docs/PROJECT-STRUCTURE.md`
-- **Data Management**: `docs/DATA-MANAGEMENT.md`
+- **Project Structure**: `docs/architecture/PROJECT-STRUCTURE.md`
+- **Data Management**: `docs/guides/DATA-MANAGEMENT.md`
 - **Parser Package**: `packages/bcbc-parser/README.md`
 - **Search Indexer**: `packages/search-indexer/README.md`
 - **Content Chunker**: `packages/content-chunker/README.md`

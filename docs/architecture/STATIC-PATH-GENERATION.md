@@ -281,7 +281,7 @@ If content updates become more frequent, consider migrating to Incremental Stati
 3. Add `revalidate` to page component
 4. Deploy to Node.js server instead of static hosting
 
-See `docs/DEPLOYMENT-OPTIONS.md` for detailed comparison.
+See `docs/deployment/DEPLOYMENT.md` for deployment details.
 
 ## Related Documentation
 

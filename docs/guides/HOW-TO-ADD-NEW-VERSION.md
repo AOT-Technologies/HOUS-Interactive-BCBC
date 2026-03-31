@@ -11,7 +11,7 @@
 - Local Git clone + ability to create pull requests and get them merged to the main branch)
 - Bash shell  (gitbash or other)
 - Node.js installed. npm (or pnpm) and tsx available. 
--  [These instructions](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/COMMANDS.md) may prove useful in setting up your node.js environment
+-  [These instructions](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/guides/COMMANDS.md) may prove useful in setting up your node.js environment
 
 ---
 
@@ -166,7 +166,7 @@ should contain both versions as follows
 
 Start the development server and test:
 
-Use instructions [here](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/COMMANDS.md) to run on your local machine
+Use instructions [here](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/guides/COMMANDS.md) to run on your local machine
 
 **Test Checklist:**
 - [ ] **Default version** 
@@ -230,9 +230,9 @@ Commit the new version of the BCBC json file to Git using your git UI / command 
 
 ### 6. Deploy
 
-Deployment to the dev environment is described in [Deployment](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/DEPLOYMENT.md).  On successful deployment, run through tests as per 4. again (obviously replacing the "localhost:3000" with the dev URL)
+Deployment to the dev environment is described in [Deployment](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/deployment/DEPLOYMENT.md).  On successful deployment, run through tests as per 4. again (obviously replacing the "localhost:3000" with the dev URL)
 
-On successful testing, deploy to production environment as per the [Deployment](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/DEPLOYMENT.md) instructions.
+On successful testing, deploy to production environment as per the [Deployment](https://github.com/bcgov/HOUS-Interactive-BCBC/blob/develop/docs/deployment/DEPLOYMENT.md) instructions.
 
 
 ### 7. Announce
