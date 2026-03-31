@@ -610,6 +610,10 @@ function getCrossReferenceDisplayText(
 }
 
 function formatInternalReference(referenceId: string, format?: InternalRefFormat): string {
+  const division = extractNumeric(referenceId, /\.div([A-Za-z0-9]+)/i)?.toUpperCase();
+  const withDivisionSuffix = (label: string): string =>
+    format === 'long' && division ? `${label} of Division ${division}` : label;
+
   const spectablesMatch = referenceId.match(
     /^nbc\.div([A-Za-z0-9]+)\.part(\d+)\.spectables(\d+)(?:\.table(\d+))?/i
   );
@@ -670,7 +674,6 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     return `Appendix ${appendixLetter}`;
   }
 
-  const division = extractNumeric(referenceId, /\.div([A-Za-z0-9]+)/i)?.toUpperCase();
   const part = extractNumeric(referenceId, /\.part(\d+)/i);
   const section = extractNumeric(referenceId, /\.sect(\d+)/i);
   const subsection = extractNumeric(referenceId, /\.subsect(\d+)/i);
@@ -705,7 +708,7 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
 
   if (subclause) {
     const number = toRoman(asNumber(subclause) ?? Number.NaN);
-    return isShortNumeric ? `(${number})` : `Subclause (${number})`;
+    return isShortNumeric ? `(${number})` : withDivisionSuffix(`Subclause (${number})`);
   }
 
   if (clause) {
@@ -719,10 +722,10 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (sentenceNumber) {
-      return `Clause ${sentenceNumber}(${number})`;
+      return withDivisionSuffix(`Clause ${sentenceNumber}(${number})`);
     }
 
-    return `Clause (${number})`;
+    return withDivisionSuffix(`Clause (${number})`);
   }
 
   if (sentence) {
@@ -735,44 +738,44 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (containerNumber) {
-      return `Sentence ${containerNumber}.(${sentence})`;
+      return withDivisionSuffix(`Sentence ${containerNumber}.(${sentence})`);
     }
 
-    return `Sentence (${sentence})`;
+    return withDivisionSuffix(`Sentence (${sentence})`);
   }
 
   if (table) {
     if (containerNumber) {
-      return isShortNumeric ? containerNumber : `Table ${containerNumber}.`;
+      return isShortNumeric ? containerNumber : withDivisionSuffix(`Table ${containerNumber}.`);
     }
-    return isShortNumeric ? table : `Table ${table}`;
+    return isShortNumeric ? table : withDivisionSuffix(`Table ${table}`);
   }
 
   if (figure) {
     if (containerNumber) {
-      return isShortNumeric ? containerNumber : `Figure ${containerNumber}.`;
+      return isShortNumeric ? containerNumber : withDivisionSuffix(`Figure ${containerNumber}.`);
     }
-    return isShortNumeric ? figure : `Figure ${figure}`;
+    return isShortNumeric ? figure : withDivisionSuffix(`Figure ${figure}`);
   }
 
   if (article) {
-    return isShortNumeric ? articleNumber : `Article ${articleNumber}.`;
+    return isShortNumeric ? articleNumber : withDivisionSuffix(`Article ${articleNumber}.`);
   }
 
   if (subsection) {
-    return isShortNumeric ? subsectionNumber : `Subsection ${subsectionNumber}.`;
+    return isShortNumeric ? subsectionNumber : withDivisionSuffix(`Subsection ${subsectionNumber}.`);
   }
 
   if (sectionNumber) {
-    return isShortNumeric ? sectionNumber : `Section ${sectionNumber}.`;
+    return isShortNumeric ? sectionNumber : withDivisionSuffix(`Section ${sectionNumber}.`);
   }
 
   if (part) {
-    return `Part ${part}`;
+    return withDivisionSuffix(`Part ${part}`);
   }
 
   if (table) {
-    return `Table ${table}`;
+    return withDivisionSuffix(`Table ${table}`);
   }
 
   return referenceId;
