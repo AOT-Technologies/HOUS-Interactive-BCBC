@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs wc -l)",
+      "Bash(ls -la packages/*/src/)",
+      "Bash(grep -rn \"^[[:space:]]*//.*function\\\\|^[[:space:]]*//.*const\\\\|^[[:space:]]*//.*export\" /c/Projects/HOUS-Interactive-BCBC/packages/bcbc-parser/src/parser.ts)",
+      "Bash(grep -rn \"^[[:space:]]*//[[:space:]]*\\(function|const|export|for|if|return|async\\)\" /c/Projects/HOUS-Interactive-BCBC/packages/bcbc-parser/src/parser.ts)",
+      "Bash(grep -v \"//\")",
+      "Bash(ls -1 /c/Projects/HOUS-Interactive-BCBC/packages/ui/src/icon/icons/*.tsx)",
+      "Bash(ls -1 /c/Projects/HOUS-Interactive-BCBC/apps/web/stores/*.ts)",
+      "Bash(xargs basename -a)",
+      "Bash(npx turbo build)",
+      "Bash(npx turbo test)",
+      "Bash(npx vitest run)",
+      "Bash(npx playwright --version)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3456)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "mcp__plugin_playwright_playwright__browser_close",
+      "Bash(pkill -f \"serve out -l 3456\")",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "Bash(python3 -c \":*)",
+      "Bash(node -e \":*)",
+      "Bash(node -e 'const fs = require\\(\"\"fs\"\"\\); const docs = JSON.parse\\(fs.readFileSync\\(\"\"c:/Projects/HOUS-Interactive-BCBC/apps/web/public/data/2027/search/documents.json\"\"\\)\\); docs.forEach\\(d => { if \\(typeof d.title !== \"\"string\"\"\\) { console.log\\(\"\"id=\"\" + d.id + \"\" title=\"\" + JSON.stringify\\(d.title\\) + \"\" type=\"\" + typeof d.title\\); } }\\);')",
+      "Bash(node check-titles.js)",
+      "Bash(npm run generate-assets)",
+      "Bash(node -e 'const fs=require\\(\"\"fs\"\"\\);const d=JSON.parse\\(fs.readFileSync\\(\"\"c:/Projects/HOUS-Interactive-BCBC/apps/web/public/data/2024/search/documents.json\"\"\\)\\);let c=0;d.forEach\\(x=>{if\\(typeof x.title!==\"\"string\"\"\\){console.log\\(x.id,JSON.stringify\\(x.title\\).slice\\(0,80\\)\\);c++}}\\);console.log\\(\"\"non-string:\"\",c,\"\"total:\"\",d.length\\)')",
+      "Bash(node check-titles.js 2024)",
+      "Bash(npx tsc --noEmit -p packages/search-indexer/tsconfig.json)",
+      "Bash(xargs grep -l \"table-block__wrapper--scroll\\\\|table-block__split\")",
+      "Bash(xargs grep -l \"window.print\\\\|@media print\\\\|export.*PDF\\\\|PDF.*export\")",
+      "Bash(xargs grep -l \"type Table\\\\|interface Table\")",
+      "Bash(npx tsc --noEmit --project apps/web/tsconfig.json)",
+      "Bash(npx vitest run apps/web/components/reading/TableBlock.test.tsx)"
+    ]
+  }
+}

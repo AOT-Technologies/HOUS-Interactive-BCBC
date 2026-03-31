@@ -73,10 +73,13 @@ bc-building-code/
 │   └── content-chunker/   # Content splitting utilities
 ├── scripts/               # Build-time asset generation
 └── docs/                  # Documentation
-    ├── COMMANDS.md        # Command reference
-    ├── DATA-MANAGEMENT.md # Data management guide
-    ├── HOW-TO-ADD-NEW-VERSION.md # Version management guide
-    └── BC-DESIGN-SYSTEM.md # BC Design System integration guide
+    ├── README.md          # Documentation index and navigation
+    ├── USER-FLOW.md       # User flow (UX source of truth)
+    ├── architecture/      # Software architecture & design
+    ├── guides/            # How-to & operational guides
+    ├── deployment/        # Deployment & infrastructure
+    ├── reference/         # Technical reference & troubleshooting
+    └── specs/             # Requirements and design specs
 ```
 
 ## Quick Start
@@ -169,7 +172,7 @@ The Download page is configured from `data/source/downloadOptions.json`.
 Important: when you add a new version in `data/source/versions.json`, you must also add that version in `data/source/downloadOptions.json`; otherwise the Download page will not have PDF links and revision/errata content for that version.
 
 
-See [docs/DATA-MANAGEMENT.md](docs/DATA-MANAGEMENT.md) for complete data management guide.
+See [docs/guides/DATA-MANAGEMENT.md](docs/guides/DATA-MANAGEMENT.md) for complete data management guide.
 
 ## Key Commands
 
@@ -181,7 +184,7 @@ See [docs/DATA-MANAGEMENT.md](docs/DATA-MANAGEMENT.md) for complete data managem
 | `npx pnpm lint` | Run linting |
 | `npx pnpm test` | Run tests |
 
-See [docs/COMMANDS.md](docs/COMMANDS.md) for complete command reference.
+See [docs/guides/COMMANDS.md](docs/guides/COMMANDS.md) for complete command reference.
 
 ## Image Configuration
 
@@ -198,7 +201,7 @@ NEXT_PUBLIC_IMAGE_EXTENSION=.png npx pnpm build
 NEXT_PUBLIC_IMAGE_EXTENSION=.eps npx pnpm build
 ```
 
-See [docs/IMAGE-CONFIGURATION.md](docs/IMAGE-CONFIGURATION.md) for complete details.
+See [docs/reference/IMAGE-CONFIGURATION.md](docs/reference/IMAGE-CONFIGURATION.md) for complete details.
 
 ## BC Design System
 
@@ -210,7 +213,7 @@ The application uses the BC Design System UI component library with 20+ accessib
 - Modals: ModalSide, ConfirmationModal
 - Display: Icon, Image, Tooltip
 
-All components meet WCAG AAA accessibility standards. See [docs/BC-DESIGN-SYSTEM.md](docs/BC-DESIGN-SYSTEM.md) for complete integration guide.
+All components meet WCAG AAA accessibility standards. See [docs/guides/BC-DESIGN-SYSTEM.md](docs/guides/BC-DESIGN-SYSTEM.md) for complete integration guide.
 
 ## Deployment
 
