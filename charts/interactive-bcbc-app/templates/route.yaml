@@ -1,4 +1,8 @@
 {{- if .Values.route.enabled }}
+{{- $secret := dict }}
+{{- if .Values.route.tls.secretName }}
+{{- $secret = (lookup "v1" "Secret" (.Values.namespace | default .Release.Namespace) .Values.route.tls.secretName) }}
+{{- end }}
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -15,6 +19,20 @@ spec:
   tls:
     termination: {{ .Values.route.tls.termination }}
     insecureEdgeTerminationPolicy: {{ .Values.route.tls.insecureEdgeTerminationPolicy }}
+    {{- if $secret }}
+    {{- if hasKey $secret.data "tls.crt" }}
+    certificate: |
+{{ index $secret.data "tls.crt" | b64dec | indent 6 }}
+    {{- end }}
+    {{- if hasKey $secret.data "tls.key" }}
+    key: |
+{{ index $secret.data "tls.key" | b64dec | indent 6 }}
+    {{- end }}
+    {{- if hasKey $secret.data "ca.crt" }}
+    caCertificate: |
+{{ index $secret.data "ca.crt" | b64dec | indent 6 }}
+    {{- end }}
+    {{- end }}
   to:
     kind: Service
     name: {{ include "interactive-bcbc-app.fullname" . }}
