@@ -48,7 +48,7 @@ This document specifies the requirements for the BC Building Code Interactive We
 6. WHEN the build pipeline executes, THE Build_Pipeline SHALL generate a content types JSON file listing all available content types (Article, Table, Figure, Note, Application Note)
 7. WHEN the build pipeline executes, THE Build_Pipeline SHALL generate a quick access JSON file with frequently accessed sections
 8. WHEN the build pipeline executes, THE Build_Pipeline SHALL split content into optimized JSON chunks by division/part/section
-9. THE Build_Pipeline SHALL output all generated assets to apps/web/public/data/
+9. THE Build_Pipeline SHALL output all generated assets to apps/web/public/data/ (legacy single-version) or apps/web/public/data/{versionId}/ (multi-version)
 10. THE Build_Pipeline SHALL complete successfully before the Next.js build starts
 
 ### Requirement 3: Full-Text Search with FlexSearch

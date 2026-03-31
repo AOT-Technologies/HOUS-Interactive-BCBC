@@ -4,14 +4,15 @@
 
 Before starting any task, read the relevant documentation in the `docs/` folder:
 
-- `docs/PLAN.md` - Product overview, architecture, and technical design
-- `docs/PROJECT-STRUCTURE.md` - Project structure, directory layout, and data flow
-- `docs/COMMANDS.md` - Common commands and build scripts
+- `docs/README.md` - Documentation index and navigation
 - `docs/USER-FLOW.md` - User flow documentation for all pages and interactions
-- `docs/BC-DESIGN-SYSTEM.md` - BC Design System components, CSS variables, and Figma integration rules
-- `docs/CONTENT-RENDERING-STRATEGY.md` - End-to-end content rendering pipeline
-- `docs/CONTENT-MARKERS.md` - Bracket marker syntax and rendering
-- `docs/HOW-TO-ADD-NEW-VERSION.md` - Adding a new BC Building Code version
+- `docs/architecture/PLAN.md` - Product overview, architecture, and technical design
+- `docs/architecture/PROJECT-STRUCTURE.md` - Project structure, directory layout, and data flow
+- `docs/guides/COMMANDS.md` - Common commands and build scripts
+- `docs/guides/BC-DESIGN-SYSTEM.md` - BC Design System components, CSS variables, and Figma integration rules
+- `docs/architecture/CONTENT-RENDERING-STRATEGY.md` - End-to-end content rendering pipeline
+- `docs/architecture/CONTENT-MARKERS.md` - Bracket marker syntax and rendering
+- `docs/guides/HOW-TO-ADD-NEW-VERSION.md` - Adding a new BC Building Code version
 
 ### Specifications
 
