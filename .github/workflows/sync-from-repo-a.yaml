@@ -1,19 +1,19 @@
 name: sync-from-repo-a
 
-permissions:
-  contents: read
-  pull-requests: write
-
 on:
   repository_dispatch:
     types: [sync-from-repo-a]
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 
 jobs:
   sync:
+    if: >
+      github.event.client_payload.branch == 'develop' &&
+      github.event.client_payload.source_repo == 'bcgov/BC-Building-Code' &&
+      github.event.client_payload.workflow == 'Generate BC Building Code Artifact'
     runs-on: ubuntu-latest
 
     steps:
