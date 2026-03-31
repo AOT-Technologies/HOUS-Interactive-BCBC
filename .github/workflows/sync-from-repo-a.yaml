@@ -1,0 +1,66 @@
+name: sync-from-repo-a
+
+on:
+  repository_dispatch:
+    types: [sync-from-repo-a]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout destination repo branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.branch }}
+
+      - name: Install GitHub CLI
+        run: sudo apt install gh -y
+
+      - name: Download artifact from Repo A
+        env:
+          GH_TOKEN: ${{ secrets.REPO_A_READ_TOKEN }}
+        run: |
+          gh run download \
+            --repo bcgov/BC-Building-Code \
+            --name bc-building-code-artifact \
+            --dir incoming
+
+      - name: Replace replica files
+        run: |
+          mkdir -p apps/web/public data/source
+
+          rsync -av --delete incoming/bc-graphics/ apps/web/public/bc-graphics/
+          rsync -av --delete incoming/graphics/ apps/web/public/graphics/
+
+          rsync -av incoming/json-generation-pipeline/output/bc-building-code-schema.json data/source/
+          rsync -av incoming/json-generation-pipeline/output/bcbc-2024.json data/source/
+
+      #The commented section commits directly to the branch
+      # - name: Commit and push changes
+      #   run: |
+      #     git config user.name "github-actions"
+      #     git config user.email "github-actions@github.com"
+
+      #     git add apps/web/public data/source
+
+      #     git diff --staged --quiet || git commit -m "chore: sync generated files from Repo A (run $GITHUB_RUN_ID)"
+      #     git push
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: sync generated files from Repo BC-Building-Code (run ${{ github.run_id }})"
+          branch: repo-sync-${{ github.run_id }}
+          title: "Sync generated files from Repo BC-Building-Code"
+          body: "Automated artifact sync from Repo BC-Building-Code"
+          delete-branch: true
+          base: develop
+          add-paths: |
+            apps/web/public
+            data/source
