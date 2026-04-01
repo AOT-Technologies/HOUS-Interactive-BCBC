@@ -37,7 +37,7 @@ jobs:
         run: pwsh tests/HOUS-Interactive-BCBC-E2E-Tests/bin/Debug/net10.0/playwright.ps1 install --with-deps
 
       - name: Run E2E tests
-        run: dotnet test tests/HOUS-Interactive-BCBC-E2E-Tests/HOUS-Interactive-BCBC-2E2-Tests.csproj --no-build  --settings .github/test.runsettings --results-directory TestResults  --logger "trx;LogFileName=test-results.trx"
+        run: dotnet test tests/HOUS-Interactive-BCBC-E2E-Tests/HOUS-Interactive-BCBC-2E2-Tests.csproj --no-build  --settings .github/test.runsettings --results-directory TestResults"
 
       - name: Publish test report
         if: always()
@@ -52,4 +52,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: '**/*.trx'
+          path: |
+              TestResults/**/*.trx
+              TestResults/**/*.html
