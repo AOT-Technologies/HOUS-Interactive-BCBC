@@ -2,6 +2,8 @@ name: E2E Tests
 
 permissions:
   contents: read
+  checks: write
+  pull-requests: write
 
 on:
   push:
@@ -37,6 +39,8 @@ jobs:
         run: pwsh tests/HOUS-Interactive-BCBC-E2E-Tests/bin/Debug/net10.0/playwright.ps1 install --with-deps
 
       - name: Run E2E tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
         run: dotnet test tests/HOUS-Interactive-BCBC-E2E-Tests/HOUS-Interactive-BCBC-2E2-Tests.csproj --no-build --results-directory TestResults  --logger "trx;LogFileName=test_results.trx"
 
       - name: Publish test report
