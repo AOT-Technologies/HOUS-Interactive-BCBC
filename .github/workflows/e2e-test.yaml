@@ -40,7 +40,7 @@ jobs:
 
       - name: Run E2E tests
         env:
-          BASE_URL: ${{ secrets.BASE_URL }}
+          BASE_URL: dev.buildingcode.gov.bc.ca #${{ secrets.BASE_URL }}
         run: dotnet test tests/HOUS-Interactive-BCBC-E2E-Tests/HOUS-Interactive-BCBC-2E2-Tests.csproj --no-build --results-directory TestResults  --logger "trx;LogFileName=test_results.trx"
 
       - name: Publish test report
