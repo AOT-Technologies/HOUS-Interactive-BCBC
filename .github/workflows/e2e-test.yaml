@@ -19,9 +19,14 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: [dev, test]  # Add 'prod' when ready
+    environment: ${{ matrix.environment }}
 
-    env:
-      BASE_URL: ${{ secrets.BASE_URL }}
+    # env:
+    #   BASE_URL: ${{ secrets.BASE_URL }}
 
     steps:
       - name: Checkout code
@@ -38,9 +43,9 @@ jobs:
       - name: Install Playwright browsers with deps
         run: pwsh tests/HOUS-Interactive-BCBC-E2E-Tests/bin/Debug/net10.0/playwright.ps1 install --with-deps
 
-      - name: Run E2E tests
+      - name: Run E2E tests - ${{ matrix.environment }}
         env:
-          BASE_URL: https://dev.buildingcode.gov.bc.ca #${{ secrets.BASE_URL }}
+          BASE_URL: https://${{ matrix.environment }}.buildingcode.gov.bc.ca
         run: dotnet test tests/HOUS-Interactive-BCBC-E2E-Tests/HOUS-Interactive-BCBC-2E2-Tests.csproj --no-build --results-directory TestResults  --logger "trx;LogFileName=test_results.trx"
 
       - name: Publish test report
