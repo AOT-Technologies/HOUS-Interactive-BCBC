@@ -9,7 +9,7 @@ export interface NavigationLink {
 }
 
 // URL titles
-export const URL_GLOSSARY_TITLE = 'Glossary';
+export const URL_GLOSSARY_TITLE = 'Defined Terms';
 export const URL_DOWNLOAD_TITLE = 'Download';
 
 // URL paths
@@ -20,7 +20,7 @@ export const URL_DOWNLOAD = '/download';
 // Main navigation links (Header)
 export const URLS_MAIN_NAVIGATION: NavigationLink[] = [
   {
-    title: 'Glossary',
+    title: 'Defined Terms',
     href: '/glossary',
   },
   {

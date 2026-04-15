@@ -261,7 +261,7 @@ export const GlossarySidebar: React.FC = () => {
             type="button"
             className="glossary-sidebar__close"
             onClick={closeGlossarySidebar}
-            aria-label="Close glossary"
+            aria-label="Close defined terms"
           >
             <svg
               className="glossary-sidebar__close-icon"
@@ -281,8 +281,8 @@ export const GlossarySidebar: React.FC = () => {
         </div>
 
         <div className="glossary-sidebar__header">
-          <h2 id="glossary-sidebar-title" className="glossary-sidebar__title">Glossary of Defined Terms</h2>
-          <p className="glossary-sidebar__subtitle">Definitions from the BC Building Code</p>
+          <h2 id="glossary-sidebar-title" className="glossary-sidebar__title">1.4.1.2. Defined Terms</h2>
+          <p className="glossary-sidebar__subtitle">The words and terms in italics in this Code shall have the following meanings:</p>
         </div>
 
         <div className="glossary-sidebar__controls">
@@ -321,7 +321,7 @@ export const GlossarySidebar: React.FC = () => {
 
         <div ref={contentRef} className="glossary-sidebar__content">
           {loading && entries.length === 0 ? (
-            <p className="glossary-sidebar__status">Loading glossary terms...</p>
+            <p className="glossary-sidebar__status">Loading defined terms...</p>
           ) : filteredEntries.length === 0 ? (
             <p className="glossary-sidebar__status">No matching terms.</p>
           ) : isSearching ? (
