@@ -118,7 +118,7 @@ references: {
 ```
 
 Reference types:
-- `term`: Glossary term references (`[REF:term:bldng]building`)
+- `term`: Defined term references (`[REF:term:bldng]building`)
 - `internal`: Internal code references (`[REF:internal:nbc.divB.part3:long]`)
 - `external`: External document references
 - `standard`: Standard references (CSA, ASTM, etc.)

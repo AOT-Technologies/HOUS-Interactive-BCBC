@@ -10,7 +10,7 @@ Comprehensive TypeScript type definitions for:
 
 - **Document Structure**: `BCBCDocument`, `Division`, `Part`, `Section`, `Subsection`, `Article`
 - **Content Elements**: `Clause`, `Table`, `Figure`, `Equation`
-- **Glossary & Notes**: `GlossaryEntry`, `NoteReference`, `AmendmentDate`
+- **Defined Terms & Notes**: `GlossaryEntry`, `NoteReference`, `AmendmentDate`
 - **Search**: `SearchResult`, `SearchFilters`
 - **Navigation**: `NavigationNode`
 
