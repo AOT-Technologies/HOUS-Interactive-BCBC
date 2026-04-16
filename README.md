@@ -132,7 +132,7 @@ Users can switch between versions using the dropdown in the sidebar. The applica
 - Preserves version selection in localStorage
 - Supports bookmarking and sharing links with version
 
-## Data Sources
+## Data Source
 
 ### Version Configuration
 
