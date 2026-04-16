@@ -26,16 +26,16 @@ The parser extracts and transforms:
 - **Equations** with LaTeX notation
 - **Note references** embedded in text
 
-### 3. Glossary Term Extraction
+### 3. Defined Term Extraction
 
-The parser automatically extracts glossary term references from text:
+The parser automatically extracts defined term references from text:
 - Format: `[REF:term:termId]termText`
 - Example: `[REF:term:bldng]building` → extracts term ID "bldng"
 - Terms are stored in the `glossaryTerms` array for each clause
 
-### 4. Glossary Parsing
+### 4. Defined Terms Parsing
 
-The source glossary is stored as an object with term IDs as keys:
+The source defined terms are stored as an object with term IDs as keys:
 ```json
 {
   "bldng": {
@@ -143,7 +143,7 @@ const document = parseBCBC(sourceJson);
 // Get all content IDs
 const ids = extractContentIds(document);
 
-// Create glossary lookup map
+// Create defined terms lookup map
 const glossaryMap = getGlossaryMap(document);
 const term = glossaryMap.get('bldng'); // Get by ID
 const termByName = glossaryMap.get('building'); // Get by lowercase term
@@ -155,7 +155,7 @@ const termByName = glossaryMap.get('building'); // Get by lowercase term
 Extracts all IDs from the document hierarchy (divisions, parts, sections, subsections, articles, clauses).
 
 ### `getGlossaryMap(document)`
-Creates a Map for fast glossary lookups by both term ID and lowercase term name.
+Creates a Map for fast defined term lookups by both term ID and lowercase term name.
 
 ### `getAmendmentDates(document)`
 Extracts unique amendment dates sorted chronologically.

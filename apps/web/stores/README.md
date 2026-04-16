@@ -51,18 +51,18 @@ Manages current content, loading state, and content caching.
 - `clearContent()`: Clear current content
 - `clearError()`: Clear error state
 
-### Glossary Store (`glossary-store.ts`)
+### Defined Terms Store (`glossary-store.ts`)
 Manages glossary map and selected term.
 
 **State:**
-- `glossaryMap`: Map of glossary terms to definitions
-- `selectedTerm`: Currently selected glossary term
-- `loading`: Loading state for glossary operations
+- `glossaryMap`: Map of defined terms to definitions
+- `selectedTerm`: Currently selected defined term
+- `loading`: Loading state for defined terms operations
 
 **Actions:**
 - `setSelectedTerm(term)`: Set selected term
-- `getTerm(term)`: Get glossary entry by term
-- `loadGlossary()`: Load glossary from JSON
+- `getTerm(term)`: Get defined term entry by term
+- `loadGlossary()`: Load defined terms from JSON
 
 ### Amendment Date Store (`amendment-date-store.ts`)
 Manages selected amendment date and available dates. URL is the source of truth.

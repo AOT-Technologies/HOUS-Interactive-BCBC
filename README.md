@@ -44,7 +44,7 @@ A client-side search application for the British Columbia Building Code, enablin
 - **Multi-version support** with seamless switching between BC Building Code versions
 - **Full-text search** with instant results via FlexSearch
 - **Hierarchical navigation** (Division → Part → Section → Article)
-- **Inline glossary** with clickable term definitions
+- **Inline defined terms** with clickable term definitions
 - **Effective date filtering** for viewing amendments
 - **Responsive design** for desktop and mobile
 - **WCAG AAA accessible**

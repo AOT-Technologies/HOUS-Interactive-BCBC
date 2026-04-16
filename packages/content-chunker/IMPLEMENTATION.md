@@ -2,7 +2,7 @@
 
 ## Overview
 
-The content-chunker package has been fully implemented to split BCBC content into optimized chunks and extract metadata for navigation, glossary, and filtering.
+The content-chunker package has been fully implemented to split BCBC content into optimized chunks and extract metadata for navigation, defined terms, and filtering.
 
 ## Implemented Features
 
@@ -35,7 +35,7 @@ The content-chunker package has been fully implemented to split BCBC content int
    - Division → Part → Section → Subsection → Article
    - Each node includes: id, type, number, title, path, children
 
-2. **Glossary Map** - Term definitions for inline glossary
+2. **Defined Terms Map** - Term definitions for inline defined terms
    - Lowercase keys for case-insensitive lookups
    - Maps term → GlossaryEntry
 
@@ -99,7 +99,7 @@ This package will be integrated into the build pipeline (task 11) to:
 ## Requirements Satisfied
 
 - ✅ Requirement 2.3: Generate navigation tree JSON file
-- ✅ Requirement 2.4: Generate glossary map JSON file
+- ✅ Requirement 2.4: Generate defined terms map JSON file
 - ✅ Requirement 2.5: Generate amendment dates JSON file
 - ✅ Requirement 2.6: Generate content types JSON file
 - ✅ Requirement 2.7: Generate quick access JSON file

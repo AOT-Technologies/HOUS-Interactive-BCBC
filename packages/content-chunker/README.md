@@ -4,13 +4,13 @@ Content splitting and metadata extraction for BC Building Code.
 
 ## Purpose
 
-This package splits BCBC content into optimized chunks and extracts metadata for navigation, glossary, and filtering.
+This package splits BCBC content into optimized chunks and extracts metadata for navigation, defined terms, and filtering.
 
 ## Features
 
 - Content splitting by section level
 - Navigation tree generation
-- Glossary map extraction
+- Defined terms map extraction
 - Amendment dates extraction
 - Content types extraction
 - Quick access sections extraction
@@ -51,7 +51,7 @@ Content is split by Section level:
 
 Generated metadata files:
 1. `navigation-tree.json` - Hierarchical TOC structure
-2. `glossary-map.json` - Term definitions
+2. `glossary-map.json` - Defined term definitions
 3. `amendment-dates.json` - Effective dates
 4. `content-types.json` - Filter options
 5. `quick-access.json` - Homepage pins
