@@ -182,4 +182,41 @@ describe('SentenceBlock', () => {
     expect(text.indexOf('Clause text.')).toBeGreaterThan(-1);
     expect(text.indexOf('See')).toBeGreaterThan(text.indexOf('Clause text.'));
   });
+
+  it('renders a variable sub-list nested inside a bulleted list item', () => {
+    const sentence = {
+      id: 'sentence-nested-list',
+      type: 'sentence',
+      number: '2',
+      text: 'The following conditions are met:[LIST:bulleted]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'its equivalent thickness is not less than 200 mm ,' },
+            { content: 'the effective length, kl_u, is not more than 3.7 m where[LIST:variable]' },
+          ],
+        },
+        {
+          type: 'variable',
+          items: [
+            { symbol: 'k', description: '= effective length factor' },
+            { symbol: 'l_u', description: '= unsupported length of the wall in metres.' },
+          ],
+        },
+      ],
+    } as unknown as Sentence;
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    expect(screen.getByText(/its equivalent thickness/)).toBeInTheDocument();
+    expect(screen.getByText(/the effective length/)).toBeInTheDocument();
+    // Variable sub-list must render beneath the last bullet
+    expect(screen.getByText('k')).toBeInTheDocument();
+    expect(screen.getByText('= effective length factor')).toBeInTheDocument();
+    expect(screen.getByText(/= unsupported length/)).toBeInTheDocument();
+    // Raw marker must not leak into the DOM
+    expect(screen.queryByText(/\[LIST:variable\]/)).not.toBeInTheDocument();
+  });
 });

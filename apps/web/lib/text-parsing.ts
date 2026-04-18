@@ -559,14 +559,14 @@ function getCrossReferenceDisplayText(
       consumed: text.length,
     };
   }
-  
+
   // Match different patterns based on format:
   // - long: "Articles 3.2.4.7." or "Article 3.2.4.7." or "Section 3.3." or "Sentence (2)"
   // - short: "Sentence (2)" or "(2)"
   // - number/shortNum: "3.2.4.7." or "3.2.2.93."
-  
+
   let displayTextMatch: RegExpMatchArray | null = null;
-  
+
   if (format === 'long') {
     // Match "Article X.X.X." / "Figure X.X.X.-A" / "Section X.X." / "Sentence (X)" etc.
     displayTextMatch = remaining.match(/^((?:Parts?|Articles?|Figures?|Sections?|Sentences?|Clauses?|Subclauses?|Tables?|Note)\s+[A-Z0-9][A-Z0-9.\-()]*\.?)/i);
@@ -577,7 +577,7 @@ function getCrossReferenceDisplayText(
     // Match just the number like "3.2.4.7." or "3.2.2.93."
     displayTextMatch = remaining.match(/^([A-Z]?[0-9]+(?:\.[0-9]+)*\.?)/);
   }
-  
+
   if (displayTextMatch) {
     const text = displayTextMatch[1];
     return {
@@ -585,7 +585,7 @@ function getCrossReferenceDisplayText(
       consumed: text.length,
     };
   }
-  
+
   // Fallback: generate display text from referenceId
   const fallback = formatInternalReference(
     referenceId,
@@ -809,30 +809,30 @@ export function parseTextWithGlossary(
   interactive: boolean = true
 ): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
-  
+
   // Regex to match [REF:term:termId]
   const glossaryRegex = /\[REF:term:([^\]]+)\]/g;
-  
+
   let lastIndex = 0;
   let match: RegExpExecArray | null;
-  
+
   while ((match = glossaryRegex.exec(text)) !== null) {
     const glossaryMarker = parseGlossaryMarkerPayload(match[1]);
     const termId = glossaryMarker.termId;
     const matchStart = match.index;
     const matchEnd = glossaryRegex.lastIndex;
-    
+
     // Add plain text before the marker
     if (matchStart > lastIndex) {
       nodes.push(text.substring(lastIndex, matchStart));
     }
-    
+
     // Extract the term text from the original text
     // The term text is the content between the marker and the next marker or end
     // For now, we'll use the termId as the display text
     // In a real implementation, this would look up the term from glossary
     const glossaryDisplay = getGlossaryDisplayText(text, matchEnd, termId, glossaryMarker.label);
-    
+
     // Add GlossaryTerm component
     nodes.push(
       React.createElement(GlossaryTerm, {
@@ -842,20 +842,20 @@ export function parseTextWithGlossary(
         interactive,
       })
     );
-    
+
     lastIndex = matchEnd + glossaryDisplay.consumed;
   }
-  
+
   // Add remaining text after last marker
   if (lastIndex < text.length) {
     nodes.push(text.substring(lastIndex));
   }
-  
+
   // If no markers found, return the original text
   if (nodes.length === 0) {
     nodes.push(text);
   }
-  
+
   return nodes;
 }
 
@@ -873,23 +873,23 @@ export function parseTextWithCrossReferences(
   interactive: boolean = true
 ): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
-  
+
   // Regex to match:
   // - [REF:internal:referenceId]
   // - [REF:internal:referenceId:format]
   // - [REF:internal:referenceId:format:custom label]
   const crossRefRegex = /\[REF:internal:([^\]:]+)(?::([a-zA-Z]+)(?::([^\]]+))?)?\]/g;
-  
+
   let lastIndex = 0;
   let match: RegExpExecArray | null;
-  
+
   while ((match = crossRefRegex.exec(text)) !== null) {
     const referenceId = match[1];
     const format = match[2] as InternalRefFormat;
     const customLabel = match[3]?.trim();
     const matchStart = match.index;
     const matchEnd = crossRefRegex.lastIndex;
-    
+
     // Add plain text before the marker
     if (matchStart > lastIndex) {
       nodes.push(text.substring(lastIndex, matchStart));
@@ -908,7 +908,7 @@ export function parseTextWithCrossReferences(
       avoidDuplicateLeadingReferenceType(text.slice(0, matchStart), displayText),
       text.slice(matchEnd + (qualifierMatch ? qualifierMatch[1].length : 0))
     );
-    
+
     nodes.push(
       React.createElement(CrossReferenceLink, {
         key: `crossref-${matchStart}`,
@@ -919,7 +919,7 @@ export function parseTextWithCrossReferences(
         preserveDisplayText: Boolean(customLabel || spectableTableNoteLabel),
       })
     );
-    
+
     lastIndex = matchEnd + (qualifierMatch ? qualifierMatch[1].length : 0);
   }
 
@@ -927,12 +927,12 @@ export function parseTextWithCrossReferences(
   if (lastIndex < text.length) {
     nodes.push(text.substring(lastIndex));
   }
-  
+
   // If no markers found, return the original text
   if (nodes.length === 0) {
     nodes.push(text);
   }
-  
+
   return nodes;
 }
 
@@ -950,30 +950,30 @@ export function parseTextWithNotes(
   interactive: boolean = true
 ): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
-  
+
   // Dedicated note references only (excluding application notes).
   const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)(?::([^\]]+))?\]/gi;
-  
+
   let lastIndex = 0;
   let match: RegExpExecArray | null;
-  
+
   while ((match = noteRegex.exec(text)) !== null) {
     const noteId = match[1];
     const format = match[2] as 'short' | 'long';
     const customLabel = match[3]?.trim();
     const matchStart = match.index;
     const matchEnd = noteRegex.lastIndex;
-    
+
     // Add plain text before the marker
     if (matchStart > lastIndex) {
       nodes.push(text.substring(lastIndex, matchStart));
     }
-    
+
     // Generate display text based on format
     // For short format, typically shows a number like "(1)"
     // For long format, shows more descriptive text
     const displayText = customLabel || (format === 'short' ? getNoteLabel(noteId) : noteId);
-    
+
     // Add NoteReference component
     nodes.push(
       React.createElement(NoteReference, {
@@ -983,20 +983,20 @@ export function parseTextWithNotes(
         interactive,
       })
     );
-    
+
     lastIndex = matchEnd;
   }
-  
+
   // Add remaining text after last marker
   if (lastIndex < text.length) {
     nodes.push(text.substring(lastIndex));
   }
-  
+
   // If no markers found, return the original text
   if (nodes.length === 0) {
     nodes.push(text);
   }
-  
+
   return nodes;
 }
 
@@ -1044,11 +1044,11 @@ export function parseTextWithMarkers(
   );
   const consumedLocalEquationIds = new Set<string>();
   const consumedLocalListIndexes = new Set<number>();
-  
+
   // Find all glossary term markers
   const glossaryRegex = /\[REF:term:([^\]]+)\]/g;
   let match: RegExpExecArray | null;
-  
+
   while ((match = glossaryRegex.exec(sanitizedText)) !== null) {
     const glossaryMarker = parseGlossaryMarkerPayload(match[1]);
     markers.push({
@@ -1059,12 +1059,12 @@ export function parseTextWithMarkers(
       glossaryLabel: glossaryMarker.label,
     });
   }
-  
+
   // Find dedicated note reference markers (must check before cross-references).
   // This intentionally excludes application notes (appnote), which are handled
   // as regular cross-references (e.g., "Note A-2.1.1.2.(6).").
   const noteRegex = /\[REF:internal:([^:\]]*\.note\d+[^:\]]*):(short|long)(?::([^\]]+))?\]/gi;
-  
+
   while ((match = noteRegex.exec(sanitizedText)) !== null) {
     if (getSpectableTableNoteNumber(match[1])) {
       continue;
@@ -1091,7 +1091,7 @@ export function parseTextWithMarkers(
       tableNoteId: match[1],
     });
   }
-  
+
   // Find all cross-reference markers.
   // Supports optional format and optional inline display label payload.
   // Examples:
@@ -1099,13 +1099,13 @@ export function parseTextWithMarkers(
   // - [REF:internal:nbc.divB.part9:short]
   // - [REF:internal:nbc.divC.part2.appendix.appnote1:short:Note A-2.2.1.2.(1)]
   const crossRefRegex = /\[REF:internal:([^\]:]+)(?::([a-zA-Z]+)(?::([^\]]+))?)?\]/g;
-  
+
   while ((match = crossRefRegex.exec(sanitizedText)) !== null) {
     // Check if this position is already occupied by a note marker
     const isNoteMarker = markers.some(
       m => m.type === 'note' && m.start === match!.index
     );
-    
+
     if (!isNoteMarker) {
       markers.push({
         type: 'crossref',
@@ -1226,13 +1226,13 @@ export function parseTextWithMarkers(
       }
     }
   }
-  
+
   // Sort markers by position to maintain source order
   markers.sort((a, b) => a.start - b.start);
-  
+
   // Build the node array
   let lastIndex = 0;
-  
+
   for (let markerIndex = 0; markerIndex < markers.length; markerIndex += 1) {
     const marker = markers[markerIndex];
     const previousMarker = markerIndex > 0 ? markers[markerIndex - 1] : undefined;
@@ -1246,10 +1246,10 @@ export function parseTextWithMarkers(
       const precedingSegment =
         marker.type === 'crossref'
           ? ensureTrailingPeriodBeforeTitleRef(
-              sanitizedText.substring(lastIndex, marker.start),
-              marker.referenceId,
-              marker.format as InternalRefFormat
-            )
+            sanitizedText.substring(lastIndex, marker.start),
+            marker.referenceId,
+            marker.format as InternalRefFormat
+          )
           : sanitizedText.substring(lastIndex, marker.start);
 
       nodes.push(
@@ -1260,7 +1260,7 @@ export function parseTextWithMarkers(
         )
       );
     }
-    
+
     // Add the appropriate component based on marker type
     switch (marker.type) {
       case 'glossary': {
@@ -1286,27 +1286,27 @@ export function parseTextWithMarkers(
         );
         break;
       }
-      
+
       case 'crossref': {
         const spectableTableNoteLabel = getSpectableTableNoteLabel(marker.referenceId!);
 
         const crossRefDisplay = marker.crossRefLabel
           ? (() => {
-              const trailing = sanitizedText.slice(marker.end);
-              const qualifierMatch = marker.crossRefLabel.startsWith('Note ')
-                ? trailing.match(/^(\s*\([^)]+\))/)
-                : null;
-              if (qualifierMatch) {
-                return {
-                  text: `${marker.crossRefLabel} ${qualifierMatch[1].trim()}`.replace(/\s+/g, ' ').trim(),
-                  consumed: qualifierMatch[1].length,
-                };
-              }
-              return { text: marker.crossRefLabel, consumed: 0 };
-            })()
+            const trailing = sanitizedText.slice(marker.end);
+            const qualifierMatch = marker.crossRefLabel.startsWith('Note ')
+              ? trailing.match(/^(\s*\([^)]+\))/)
+              : null;
+            if (qualifierMatch) {
+              return {
+                text: `${marker.crossRefLabel} ${qualifierMatch[1].trim()}`.replace(/\s+/g, ' ').trim(),
+                consumed: qualifierMatch[1].length,
+              };
+            }
+            return { text: marker.crossRefLabel, consumed: 0 };
+          })()
           : spectableTableNoteLabel
             ? { text: spectableTableNoteLabel, consumed: 0 }
-          : getCrossReferenceDisplayText(
+            : getCrossReferenceDisplayText(
               sanitizedText,
               marker.end,
               marker.referenceId!,
@@ -1414,12 +1414,12 @@ export function parseTextWithMarkers(
         lastIndex = skipWhitespaceBeforePunctuation(sanitizedText, marker.end);
         break;
       }
-      
+
       case 'note': {
         const displayText = marker.noteLabel || (marker.format === 'short'
           ? getNoteLabel(marker.noteId!)
           : marker.noteId!);
-        
+
         nodes.push(
           React.createElement(NoteReference, {
             key: `note-${marker.start}`,
@@ -1500,13 +1500,20 @@ export function parseTextWithMarkers(
         consumedLocalListIndexes.add(targetIndex);
         const list = localLists[targetIndex];
 
+        // Collect remaining unconsumed lists so nested [LIST:...] markers
+        // inside list item content (e.g. a bulleted item ending with [LIST:variable])
+        // can resolve their sub-lists.
+        const remainingLists = localLists.filter(
+          (_, i) => !consumedLocalListIndexes.has(i)
+        );
+
         nodes.push(
           React.createElement(StructuredListBlock, {
             key: `list-${marker.start}`,
             list,
             interactive,
             renderText: (value: string) =>
-              parseTextWithMarkers(value, [], interactive, [], [], renderContext),
+              parseTextWithMarkers(value, [], interactive, [], remainingLists, renderContext),
           })
         );
         lastIndex = marker.end;
@@ -1547,11 +1554,11 @@ export function parseTextWithMarkers(
         // Render compound references with square brackets: [ F03 - OS1.2 ]
         const parts = marker.compoundParts || [];
         const displayParts: React.ReactNode[] = [];
-        
+
         for (let i = 0; i < parts.length; i++) {
           const part = parts[i];
           const isLast = i === parts.length - 1;
-          
+
           if (part.type === 'functionalStatement') {
             // Format: "F03" not "FS03"
             const displayText = part.id.toUpperCase().replace(/^FS/, 'F');
@@ -1575,7 +1582,7 @@ export function parseTextWithMarkers(
               })
             );
           }
-          
+
           // Add separator if not last
           if (!isLast) {
             // Determine separator based on next part type
@@ -1584,7 +1591,7 @@ export function parseTextWithMarkers(
             displayParts.push(separator);
           }
         }
-        
+
         nodes.push(
           React.createElement('span', {
             key: `compound-${marker.start}`,
@@ -1596,24 +1603,24 @@ export function parseTextWithMarkers(
       }
     }
   }
-  
+
   // Add remaining text after last marker
   if (lastIndex < sanitizedText.length) {
-      nodes.push(
-        ...parseInlineFormatting(
-          sanitizedText.substring(lastIndex),
-          interactive,
-          lastIndex
-        )
-      );
+    nodes.push(
+      ...parseInlineFormatting(
+        sanitizedText.substring(lastIndex),
+        interactive,
+        lastIndex
+      )
+    );
   }
-  
+
   // Only fall back to raw text when no markers were found at all.
   // If markers were found but could not be resolved, returning the raw text
   // would leak placeholder tokens like [LIST:bulleted] into the UI.
   if (nodes.length === 0 && markers.length === 0) {
     return parseInlineFormatting(sanitizedText, interactive, 0);
   }
-  
+
   return nodes;
 }
