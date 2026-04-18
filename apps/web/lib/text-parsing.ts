@@ -1500,20 +1500,39 @@ export function parseTextWithMarkers(
         consumedLocalListIndexes.add(targetIndex);
         const list = localLists[targetIndex];
 
-        // Collect remaining unconsumed lists so nested [LIST:...] markers
-        // inside list item content (e.g. a bulleted item ending with [LIST:variable])
-        // can resolve their sub-lists.
+        // Pre-assign sub-lists to each item that contains a [LIST:...] marker.
+        // We do this at parse time (synchronously, before React renders) so the
+        // renderText callback is a pure function with no shared mutable state —
+        // which is required for correctness under React StrictMode double-renders
+        // and any other re-renders.
         const remainingLists = localLists.filter(
           (_, i) => !consumedLocalListIndexes.has(i)
         );
+
+        // Walk through items in order, assigning sub-lists sequentially.
+        let subListCursor = 0;
+        const itemSubLists: StructuredList[][] = list.items.map((item) => {
+          const itemContent = (item as { content?: string; symbol?: string; description?: string; definition?: string }).content
+            ?? (item as { symbol?: string }).symbol
+            ?? (item as { description?: string }).description
+            ?? (item as { definition?: string }).definition
+            ?? '';
+          const markerCount = (itemContent.match(/\[LIST:[a-z-]+\]/gi) || []).length;
+          if (markerCount === 0) return [];
+          const assigned = remainingLists.slice(subListCursor, subListCursor + markerCount);
+          subListCursor += assigned.length;
+          return assigned;
+        });
 
         nodes.push(
           React.createElement(StructuredListBlock, {
             key: `list-${marker.start}`,
             list,
             interactive,
-            renderText: (value: string) =>
-              parseTextWithMarkers(value, [], interactive, [], remainingLists, renderContext),
+            renderText: (value: string, itemIndex?: number) => {
+              const subLists = itemIndex !== undefined ? (itemSubLists[itemIndex] ?? []) : [];
+              return parseTextWithMarkers(value, [], interactive, [], subLists, renderContext);
+            },
           })
         );
         lastIndex = marker.end;

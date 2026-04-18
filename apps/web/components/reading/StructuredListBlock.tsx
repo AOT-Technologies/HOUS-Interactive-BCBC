@@ -5,7 +5,7 @@ import './StructuredListBlock.css';
 export interface StructuredListBlockProps {
   list: StructuredList;
   interactive?: boolean;
-  renderText: (text: string) => React.ReactNode[];
+  renderText: (text: string, itemIndex?: number) => React.ReactNode[];
 }
 
 export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
@@ -17,7 +17,7 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
       return (
         <ul className="structuredList structuredList--bulleted">
           {list.items.map((item, index) => (
-            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content)}</li>
+            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content, index)}</li>
           ))}
         </ul>
       );
@@ -25,7 +25,7 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
       return (
         <ol className="structuredList structuredList--numbered">
           {list.items.map((item, index) => (
-            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content)}</li>
+            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content, index)}</li>
           ))}
         </ol>
       );
@@ -33,7 +33,7 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
       return (
         <ol className="structuredList structuredList--alphabetic" type="a">
           {list.items.map((item, index) => (
-            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content)}</li>
+            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content, index)}</li>
           ))}
         </ol>
       );

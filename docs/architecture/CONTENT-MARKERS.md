@@ -196,7 +196,7 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 - List items come from the sibling `lists` array of the containing JSON node, not from the marker text itself
 - The marker acts as a placeholder anchoring where the list should appear in the text flow
 - Lists are consumed in order — the first unconsumed list whose `type` matches the marker type is used
-- **Nested lists:** a list item's `content` string may itself contain a `[LIST:...]` marker. The remaining unconsumed lists from the parent node are threaded into the recursive `renderText` call, so sub-lists resolve correctly. Example: a bulleted list whose last item ends with `[LIST:variable]` will render the variable definition table inline beneath that bullet.
+- **Nested lists:** a list item's `content` string may itself contain a `[LIST:...]` marker. Sub-lists are pre-assigned to each item at parse time (before React renders) by scanning each item's content for `[LIST:...]` markers and slicing the remaining lists sequentially. This makes `renderText` a pure function, safe under React StrictMode re-renders. Example: a bulleted list whose items b and d each end with `[LIST:bulleted]` will receive the 2nd and 3rd bulleted lists respectively.
 
 ---
 
@@ -534,4 +534,4 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | Functional statement key wrong format | Check `key` field in `functional-statements.json` and formatting logic in `FunctionalStatementLink.tsx` |
 | Self-referencing cross-link appears | `shouldSuppressReferenceInContext()` returning `false` — check `renderContext` prop is passed correctly |
 | Compound reference renders as two separate tokens | Ensure `[[REF:…]-[REF:…]]` uses double brackets and the dash is unspaced |
-| Nested `[LIST:variable]` inside a bulleted item not rendering | `parseTextWithMarkers` must pass remaining unconsumed lists to the `renderText` callback in `StructuredListBlock` — see the `remainingLists` fix in the `case 'list'` branch |
+| Nested `[LIST:variable]` inside a bulleted item not rendering | Sub-lists are pre-assigned per item in the `case 'list'` branch of `parseTextWithMarkers` — check `itemSubLists` construction and that `StructuredListBlock` passes `itemIndex` to `renderText` |

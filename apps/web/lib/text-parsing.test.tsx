@@ -713,4 +713,50 @@ describe('parseTextWithMarkers - nested lists', () => {
     expect(screen.getByText('A')).toBeInTheDocument();
     expect(screen.getByText('= area')).toBeInTheDocument();
   });
+
+  it('assigns distinct sub-lists to separate parent bullets in order', () => {
+    // Mirrors the "Wired Glass Assembly Support" case:
+    // bullet b → gets sub-list 2, bullet d → gets sub-list 3 (not sub-list 2 again)
+    const sentence: Sentence = {
+      id: 'sentence-multi-nested',
+      type: 'sentence',
+      number: '1',
+      text: 'The wired glass is[LIST:bulleted]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'not less than 6 mm thick;' },
+            { content: 'reinforced by a wire mesh having dimensions of[LIST:bulleted]' },
+            { content: 'set in fixed steel frames; and' },
+            { content: 'limited in area so that[LIST:bulleted]' },
+          ],
+        },
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'approximately 25 mm across the flats, or' },
+            { content: 'approximately 13 mm across the flats.' },
+          ],
+        },
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'individual panes are not more than 0.84 m, and' },
+            { content: 'the area not supported by mullions is not more than 7.5 m.' },
+          ],
+        },
+      ],
+    } as unknown as Sentence;
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    // Sub-list 2 items appear once each
+    expect(screen.getAllByText(/approximately 25 mm/)).toHaveLength(1);
+    expect(screen.getAllByText(/approximately 13 mm/)).toHaveLength(1);
+    // Sub-list 3 items appear once each (not duplicated from sub-list 2)
+    expect(screen.getAllByText(/individual panes/)).toHaveLength(1);
+    expect(screen.getAllByText(/not supported by mullions/)).toHaveLength(1);
+  });
 });
