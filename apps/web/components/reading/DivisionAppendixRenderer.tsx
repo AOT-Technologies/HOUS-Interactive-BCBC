@@ -65,9 +65,9 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
           .filter((entry): entry is { id?: string; symbol: string; description: string } =>
             Boolean(
               entry &&
-                typeof entry === 'object' &&
-                typeof (entry as { symbol?: unknown }).symbol === 'string' &&
-                typeof (entry as { description?: unknown }).description === 'string'
+              typeof entry === 'object' &&
+              typeof (entry as { symbol?: unknown }).symbol === 'string' &&
+              typeof (entry as { description?: unknown }).description === 'string'
             )
           )
           .map((entry) => ({ id: entry.id, symbol: entry.symbol, description: entry.description })),
@@ -81,10 +81,10 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
           .filter((entry): entry is { id: string; term: string; definition: string } =>
             Boolean(
               entry &&
-                typeof entry === 'object' &&
-                typeof (entry as { id?: unknown }).id === 'string' &&
-                typeof (entry as { term?: unknown }).term === 'string' &&
-                typeof (entry as { definition?: unknown }).definition === 'string'
+              typeof entry === 'object' &&
+              typeof (entry as { id?: unknown }).id === 'string' &&
+              typeof (entry as { term?: unknown }).term === 'string' &&
+              typeof (entry as { definition?: unknown }).definition === 'string'
             )
           )
           .map((entry) => ({ id: entry.id, term: entry.term, definition: entry.definition })),
@@ -98,10 +98,10 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
           .filter((entry): entry is { id: string; abbreviation: string; fullName: string; website?: string } =>
             Boolean(
               entry &&
-                typeof entry === 'object' &&
-                typeof (entry as { id?: unknown }).id === 'string' &&
-                typeof (entry as { abbreviation?: unknown }).abbreviation === 'string' &&
-                typeof (entry as { fullName?: unknown }).fullName === 'string'
+              typeof entry === 'object' &&
+              typeof (entry as { id?: unknown }).id === 'string' &&
+              typeof (entry as { abbreviation?: unknown }).abbreviation === 'string' &&
+              typeof (entry as { fullName?: unknown }).fullName === 'string'
             )
           )
           .map((entry) => ({
@@ -128,17 +128,39 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
     return null;
   };
 
+  // Appendix D uses "bulleted" in the source data for sub-items that the
+  // printed code renders as alphabetic (a, b, c). Detect this by checking
+  // whether the appendix letter maps to one that uses appsect/subsect structure.
+  // Appendix C uses div1/div2 style with genuine bullet lists that must stay as-is.
+  const appendixUsesAlphabeticStyle = appendix.sections.some(
+    (s) => s.id && /appsect\d+/i.test(s.id)
+  );
+
   const renderParagraph = (
     paragraph: AppendixParagraph,
     keyPrefix: string,
     index: number
   ) => {
+    // Remap bulleted → alphabetic only for appendices that use the appsect
+    // numbering scheme (e.g. Appendix D). Other appendices (e.g. Appendix C)
+    // use genuine bullet lists that must stay as-is.
+    const normalizedLists = appendixUsesAlphabeticStyle
+      ? paragraph.lists?.map((list) =>
+        list.type === 'bulleted' ? { ...list, type: 'alphabetic' as const } : list
+      )
+      : paragraph.lists;
+
+    const normalizedContent =
+      appendixUsesAlphabeticStyle && normalizedLists?.some((l) => l.type === 'alphabetic')
+        ? (paragraph.content || '').replace(/\[LIST:bulleted\]/gi, '[LIST:alphabetic]')
+        : (paragraph.content || '');
+
     const content = parseTextWithMarkers(
-      paragraph.content || '',
+      normalizedContent,
       [],
       interactive,
       paragraph.equations || [],
-      paragraph.lists || [],
+      normalizedLists || [],
       appendixContext
     );
     const WrapperTag = hasBlockLevelInlineContent(paragraph) ? 'div' : 'p';
@@ -319,52 +341,52 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
                       (item) => (item as { type?: string }).type === 'table'
                     ).length ?? 0;
                     return (
-                    <article
-                      key={article.id}
-                      id={article.id}
-                      className="reading-view__appendix-note"
-                    >
-                      <h5 className="reading-view__appendix-note-title">{deriveAppendixNumber(article.id) ? `${deriveAppendixNumber(article.id)}\u00A0\u00A0\u00A0${article.title}` : article.title}</h5>
-                      {article.see_also?.trim() ? (
-                        <p className="reading-view__appendix-note-see-also">
-                          {parseTextWithMarkers(article.see_also.trim(), [], interactive, [], [], appendixContext)}
-                        </p>
-                      ) : null}
-                      <div className="reading-view__appendix-note-content">
-                        {article.content?.map((item: NonNullable<typeof article.content>[number], index: number) => {
-                          if (item.type === 'paragraph' || (!('type' in item) && 'content' in item)) {
-                            return renderParagraph(item as AppendixParagraph, article.id, index);
-                          }
+                      <article
+                        key={article.id}
+                        id={article.id}
+                        className="reading-view__appendix-note"
+                      >
+                        <h5 className="reading-view__appendix-note-title">{deriveAppendixNumber(article.id) ? `${deriveAppendixNumber(article.id)}\u00A0\u00A0\u00A0${article.title}` : article.title}</h5>
+                        {article.see_also?.trim() ? (
+                          <p className="reading-view__appendix-note-see-also">
+                            {parseTextWithMarkers(article.see_also.trim(), [], interactive, [], [], appendixContext)}
+                          </p>
+                        ) : null}
+                        <div className="reading-view__appendix-note-content">
+                          {article.content?.map((item: NonNullable<typeof article.content>[number], index: number) => {
+                            if (item.type === 'paragraph' || (!('type' in item) && 'content' in item)) {
+                              return renderParagraph(item as AppendixParagraph, article.id, index);
+                            }
 
-                          if (item.type === 'table') {
-                            return (
-                              <TableBlock
-                                key={`${article.id}-table-${item.id || index}`}
-                                table={item}
-                                interactive={interactive}
-                                effectiveDate={effectiveDate}
-                                renderContext={appendixContext}
-                                appendixSiblingTableCount={articleTableCount}
-                              />
-                            );
-                          }
+                            if (item.type === 'table') {
+                              return (
+                                <TableBlock
+                                  key={`${article.id}-table-${item.id || index}`}
+                                  table={item}
+                                  interactive={interactive}
+                                  effectiveDate={effectiveDate}
+                                  renderContext={appendixContext}
+                                  appendixSiblingTableCount={articleTableCount}
+                                />
+                              );
+                            }
 
-                          if (item.type === 'figure') {
-                            return (
-                              <FigureBlock
-                                key={`${article.id}-figure-${item.id || index}`}
-                                figure={item}
-                                interactive={interactive}
-                                renderContext={appendixContext}
-                              />
-                            );
-                          }
+                            if (item.type === 'figure') {
+                              return (
+                                <FigureBlock
+                                  key={`${article.id}-figure-${item.id || index}`}
+                                  figure={item}
+                                  interactive={interactive}
+                                  renderContext={appendixContext}
+                                />
+                              );
+                            }
 
-                          return null;
-                        })}
-                      </div>
-                    </article>
-                  );
+                            return null;
+                          })}
+                        </div>
+                      </article>
+                    );
                   })}
                 </section>
               ))}
