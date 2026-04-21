@@ -136,6 +136,8 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 
 **Rendered as** — inline superscript within table cells pointing to the associated table note row.
 
+**Note**: Table note `content` fields support all standard inline markers including `[LIST:bulleted]`. When a note contains a list, the JSON node must include a sibling `list` field (a `StructuredList` object with `type` and `items`).
+
 ---
 
 ### Standards & External Links
@@ -195,6 +197,23 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 **Rendered as** → `StructuredListBlock` component
 - List items come from the sibling `lists` array of the containing JSON node, not from the marker text itself
 - The marker acts as a placeholder anchoring where the list should appear in the text flow
+- Supported in: sentence, clause, subclause content, and **table note** content
+
+**Table note example** (note that `list` is a single object, not an array):
+```json
+{
+  "id": "nbc.divBV2.part9.sect8.subsect4.art1.table1.note1",
+  "content": "Private stairs are exterior and interior stairs that serve[LIST:bulleted]",
+  "list": {
+    "type": "bulleted",
+    "items": [
+      { "content": "single [REF:term:dwllng-n:dwelling units] ," },
+      { "content": "houses with a [REF:term:scnd-t:secondary suite] including their common spaces, or" },
+      { "content": "garages that serve houses described in Clause a) or b)." }
+    ]
+  }
+}
+```
 - Lists are consumed in order — the first unconsumed list whose `type` matches the marker type is used
 - **Nested lists:** a list item's `content` string may itself contain a `[LIST:...]` marker. Sub-lists are pre-assigned to each item at parse time (before React renders) by scanning each item's content for `[LIST:...]` markers and slicing the remaining lists sequentially. This makes `renderText` a pure function, safe under React StrictMode re-renders. Example: a bulleted list whose items b and d each end with `[LIST:bulleted]` will receive the 2nd and 3rd bulleted lists respectively.
 
@@ -534,4 +553,5 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | Functional statement key wrong format | Check `key` field in `functional-statements.json` and formatting logic in `FunctionalStatementLink.tsx` |
 | Self-referencing cross-link appears | `shouldSuppressReferenceInContext()` returning `false` — check `renderContext` prop is passed correctly |
 | Compound reference renders as two separate tokens | Ensure `[[REF:…]-[REF:…]]` uses double brackets and the dash is unspaced |
+| `[LIST:…]` in a table note renders nothing / disappears | Ensure the note's JSON node has a `list` field (not `lists`) with the matching `type` — `RawTableNote` in `TableBlock.tsx` and `renderFormattedText` must receive it as `localLists` |
 | Nested `[LIST:variable]` inside a bulleted item not rendering | Sub-lists are pre-assigned per item in the `case 'list'` branch of `parseTextWithMarkers` — check `itemSubLists` construction and that `StructuredListBlock` passes `itemIndex` to `renderText` |

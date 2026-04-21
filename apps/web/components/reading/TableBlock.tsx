@@ -70,6 +70,7 @@ type RawTableNote = {
   id?: string;
   vendor_id?: string;
   content?: string;
+  list?: StructuredList;
 };
 
 type TableWithRawSupport = Table & {
@@ -128,7 +129,8 @@ const TableCellFigure: React.FC<{ figure: TableCellFigureContent }> = ({ figure 
 const renderFormattedText = (
   text: string,
   interactive: boolean,
-  renderContext?: ReferenceRenderContext
+  renderContext?: ReferenceRenderContext,
+  localLists: StructuredList[] = []
 ): React.ReactNode[] => {
   const normalizedText = text
     // Legacy placeholders used in some table content
@@ -159,7 +161,7 @@ const renderFormattedText = (
             [],
             interactive,
             [],
-            [],
+            localLists,
             renderContext
           )}
         </React.Fragment>
@@ -171,28 +173,28 @@ const renderFormattedText = (
       const italicText = token.replace(/^<italic>/i, '').replace(/<\/italic>$/i, '');
       nodes.push(
         <em key={`table-italic-${chunkIndex}`}>
-          {parseTextWithMarkers(italicText, [], interactive, [], [], renderContext)}
+          {parseTextWithMarkers(italicText, [], interactive, [], localLists, renderContext)}
         </em>
       );
     } else if (/^<bold>/i.test(token)) {
       const boldText = token.replace(/^<bold>/i, '').replace(/<\/bold>$/i, '');
       nodes.push(
         <strong key={`table-bold-${chunkIndex}`}>
-          {parseTextWithMarkers(boldText, [], interactive, [], [], renderContext)}
+          {parseTextWithMarkers(boldText, [], interactive, [], localLists, renderContext)}
         </strong>
       );
     } else if (/^\^\{/.test(token)) {
       const superText = token.replace(/^\^\{/, '').replace(/\}$/, '');
       nodes.push(
         <sup key={`table-sup-${chunkIndex}`}>
-          {parseTextWithMarkers(superText, [], interactive, [], [], renderContext)}
+          {parseTextWithMarkers(superText, [], interactive, [], localLists, renderContext)}
         </sup>
       );
     } else if (/^_\{/.test(token)) {
       const subText = token.replace(/^_\{/, '').replace(/\}$/, '');
       nodes.push(
         <sub key={`table-sub-${chunkIndex}`}>
-          {parseTextWithMarkers(subText, [], interactive, [], [], renderContext)}
+          {parseTextWithMarkers(subText, [], interactive, [], localLists, renderContext)}
         </sub>
       );
     }
@@ -204,7 +206,7 @@ const renderFormattedText = (
   if (lastIndex < normalizedText.length) {
     nodes.push(
       <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
-        {parseTextWithMarkers(normalizedText.slice(lastIndex), [], interactive, [], [], renderContext)}
+        {parseTextWithMarkers(normalizedText.slice(lastIndex), [], interactive, [], localLists, renderContext)}
       </React.Fragment>
     );
   }
@@ -212,7 +214,7 @@ const renderFormattedText = (
   if (nodes.length === 0) {
     nodes.push(
       <React.Fragment key={`table-text-chunk-${chunkIndex}`}>
-        {parseTextWithMarkers(normalizedText, [], interactive, [], [], renderContext)}
+        {parseTextWithMarkers(normalizedText, [], interactive, [], localLists, renderContext)}
       </React.Fragment>
     );
   }
@@ -1759,7 +1761,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
               >
                 <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
                 <span className="table-block__note-content">
-                  {renderFormattedText(note.content || '', interactive, renderContext)}
+                  {renderFormattedText(note.content || '', interactive, renderContext, note.list ? [note.list] : [])}
                 </span>
               </div>
             ))}
