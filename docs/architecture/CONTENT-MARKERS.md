@@ -136,6 +136,8 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 
 **Rendered as** — inline superscript within table cells pointing to the associated table note row.
 
+**Note**: Table note `content` fields support all standard inline markers including `[LIST:bulleted]`. When a note contains a list, the JSON node must include a sibling `list` field (a `StructuredList` object with `type` and `items`).
+
 ---
 
 ### Standards & External Links
@@ -195,6 +197,23 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 **Rendered as** → `StructuredListBlock` component
 - List items come from the sibling `list` field of the containing JSON node, not from the marker text itself
 - The marker acts as a placeholder anchoring where the list should appear in the text flow
+- Supported in: sentence, clause, subclause content, and **table note** content
+
+**Table note example** (note that `list` is a single object, not an array):
+```json
+{
+  "id": "nbc.divBV2.part9.sect8.subsect4.art1.table1.note1",
+  "content": "Private stairs are exterior and interior stairs that serve[LIST:bulleted]",
+  "list": {
+    "type": "bulleted",
+    "items": [
+      { "content": "single [REF:term:dwllng-n:dwelling units] ," },
+      { "content": "houses with a [REF:term:scnd-t:secondary suite] including their common spaces, or" },
+      { "content": "garages that serve houses described in Clause a) or b)." }
+    ]
+  }
+}
+```
 
 ---
 
@@ -532,3 +551,4 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | Functional statement key wrong format | Check `key` field in `functional-statements.json` and formatting logic in `FunctionalStatementLink.tsx` |
 | Self-referencing cross-link appears | `shouldSuppressReferenceInContext()` returning `false` — check `renderContext` prop is passed correctly |
 | Compound reference renders as two separate tokens | Ensure `[[REF:…]-[REF:…]]` uses double brackets and the dash is unspaced |
+| `[LIST:…]` in a table note renders nothing / disappears | Ensure the note's JSON node has a `list` field (not `lists`) with the matching `type` — `RawTableNote` in `TableBlock.tsx` and `renderFormattedText` must receive it as `localLists` |
