@@ -4,13 +4,15 @@
 
 .structuredList--bulleted,
 .structuredList--numbered,
-.structuredList--alphabetic {
+.structuredList--alphabetic,
+.structuredList--roman {
   padding-left: 1.5rem;
 }
 
 .structuredList--bulleted li,
 .structuredList--numbered li,
-.structuredList--alphabetic li {
+.structuredList--alphabetic li,
+.structuredList--roman li {
   margin-top: 0.5rem;
 }
 

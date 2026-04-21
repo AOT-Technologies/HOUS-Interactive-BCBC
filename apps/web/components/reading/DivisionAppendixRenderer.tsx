@@ -144,15 +144,26 @@ export const DivisionAppendixRenderer: React.FC<DivisionAppendixRendererProps> =
     // Remap bulleted → alphabetic only for appendices that use the appsect
     // numbering scheme (e.g. Appendix D). Other appendices (e.g. Appendix C)
     // use genuine bullet lists that must stay as-is.
+    // Within a paragraph: 1st bulleted list → alphabetic (a, b, c)
+    //                     subsequent bulleted lists → roman (i, ii, iii) for sub-items
+    let bulletedCount = 0;
     const normalizedLists = appendixUsesAlphabeticStyle
-      ? paragraph.lists?.map((list) =>
-        list.type === 'bulleted' ? { ...list, type: 'alphabetic' as const } : list
-      )
+      ? paragraph.lists?.map((list) => {
+        if (list.type === 'bulleted') {
+          bulletedCount++;
+          return { ...list, type: (bulletedCount === 1 ? 'alphabetic' : 'roman') as 'alphabetic' | 'roman' };
+        }
+        return list;
+      })
       : paragraph.lists;
 
+    let contentBulletedCount = 0;
     const normalizedContent =
-      appendixUsesAlphabeticStyle && normalizedLists?.some((l) => l.type === 'alphabetic')
-        ? (paragraph.content || '').replace(/\[LIST:bulleted\]/gi, '[LIST:alphabetic]')
+      appendixUsesAlphabeticStyle && normalizedLists?.some((l) => l.type === 'alphabetic' || l.type === 'roman')
+        ? (paragraph.content || '').replace(/\[LIST:bulleted\]/gi, () => {
+          contentBulletedCount++;
+          return contentBulletedCount === 1 ? '[LIST:alphabetic]' : '[LIST:roman]';
+        })
         : (paragraph.content || '');
 
     const content = parseTextWithMarkers(

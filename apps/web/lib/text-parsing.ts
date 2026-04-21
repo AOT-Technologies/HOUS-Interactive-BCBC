@@ -1531,7 +1531,16 @@ export function parseTextWithMarkers(
             interactive,
             renderText: (value: string, itemIndex?: number) => {
               const subLists = itemIndex !== undefined ? (itemSubLists[itemIndex] ?? []) : [];
-              return parseTextWithMarkers(value, [], interactive, [], subLists, renderContext);
+              // Rewrite [LIST:bulleted] markers in the item content to match the
+              // actual type of each assigned sub-list. This is needed when the
+              // parent renderParagraph has remapped bulleted→roman for sub-lists
+              // but the item content string still contains [LIST:bulleted].
+              let subListIdx = 0;
+              const rewrittenValue = value.replace(/\[LIST:bulleted\]/gi, () => {
+                const subList = subLists[subListIdx++];
+                return subList ? `[LIST:${subList.type}]` : '[LIST:bulleted]';
+              });
+              return parseTextWithMarkers(rewrittenValue, [], interactive, [], subLists, renderContext);
             },
           })
         );

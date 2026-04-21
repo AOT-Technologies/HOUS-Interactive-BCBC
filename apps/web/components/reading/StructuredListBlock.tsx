@@ -37,6 +37,14 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
           ))}
         </ol>
       );
+    case 'roman':
+      return (
+        <ol className="structuredList structuredList--roman" type="i">
+          {list.items.map((item, index) => (
+            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content, index)}</li>
+          ))}
+        </ol>
+      );
     case 'variable':
     case 'symbol':
       return (
