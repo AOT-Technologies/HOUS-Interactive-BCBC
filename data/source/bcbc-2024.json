@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-03-30T22:31:25.095-07:00",
+  "generated_timestamp" : "2026-04-21T10:37:49.497911-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -45264,7 +45264,14 @@
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect3.art1.table2.note1",
                   "vendor_id" : "et000137-1",
-                  "content" : "Apply whichever ratio is greater.[LIST:variable]" } ],
+                  "content" : "Apply whichever ratio is greater.[LIST:variable]",
+                  "list" : 
+                  { "type" : "variable",
+                   "items" : 
+                   [ 
+                    { "content" : "L= Length of [REF:term:xpng-bld:exposing building face]" },
+                    
+                    { "content" : "H= Height of [REF:term:xpng-bld:exposing building face]" } ] } } ],
                 "structure" : 
                 { "columns" : 28,
                  "colsep" : "1",
@@ -55249,7 +55256,14 @@
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect3.art1.table3.note1",
                   "vendor_id" : "et000138-1",
-                  "content" : "Apply whichever ratio is greater. [LIST:variable]" } ],
+                  "content" : "Apply whichever ratio is greater. [LIST:variable]",
+                  "list" : 
+                  { "type" : "variable",
+                   "items" : 
+                   [ 
+                    { "content" : "L= Length of [REF:term:xpng-bld:exposing building face]" },
+                    
+                    { "content" : "H= Height of [REF:term:xpng-bld:exposing building face]" } ] } } ],
                 "structure" : 
                 { "columns" : 32,
                  "colsep" : "1",
@@ -271362,7 +271376,14 @@
                  
                  { "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.table7.note3",
                   "vendor_id" : "et000289-3",
-                  "content" : "Applies to cellulose fibre: [LIST:bulleted]" } ],
+                  "content" : "Applies to cellulose fibre: [LIST:bulleted]",
+                  "list" : 
+                  { "type" : "bulleted",
+                   "items" : 
+                   [ 
+                    { "content" : "for wood joists, wood I-joist and wood trusses–that is spray-applied with a minimum density of 50 kg\/m^{3}, a minimum depth of 90 mm on the underside of the subfloor, and of 90 mm on the sides of the structural members;" },
+                    
+                    { "content" : "for cold-formed-steel joists–that is spray-applied with a minimum density of 50 kg\/m^{3} and a minimum thickness of 90 mm on the underside of the subfloor, of 90 mm on the sides of the structural members, and of 13 mm on the underside of the bottom flange other than at resilient metal channel locations." } ] } } ],
                 "structure" : 
                 { "columns" : 2,
                  "colsep" : "1",
@@ -338413,272 +338434,7 @@
                 "type" : "sentence",
                 "number" : 4,
                 "source" : "bc",
-                "text" : "Reserved." },
-               
-               { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1",
-                "type" : "table",
-                "title" : "Maximum U-value or Minimum Temperature Index (I) for Windows, Doors and Skylights",
-                "forming_part" : 
-                [ 
-                 { "type" : "internal",
-                  "target" : "nbc.divBV2.part9.sect7.subsect3.art3.sent3",
-                  "display_type" : "long" } ],
-                "frame" : "all",
-                "table_notes" : 
-                [ 
-                 { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1.note1",
-                  "vendor_id" : "et001225-1",
-                  "content" : "U-values for specific products can be determined according to measures referenced in [REF:standard:csa101a440] Temperature index (I) is determined according to the physical test procedure given in [REF:standard:csaa440.2a440.3]" },
-                 
-                 { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1.note2",
-                  "vendor_id" : "et001225-2",
-                  "content" : "There is no appropriate test procedure available for testing the condensation resistance of sloped glazing." } ],
-                "structure" : 
-                { "columns" : 7,
-                 "column_specs" : 
-                 [ 
-                  { "name" : "col1",
-                   "width" : "48.00*" },
-                  
-                  { "name" : "col2",
-                   "width" : "48.00*" },
-                  
-                  { "name" : "col3",
-                   "width" : "48.00*" },
-                  
-                  { "name" : "col4",
-                   "width" : "48.00*" },
-                  
-                  { "name" : "col5",
-                   "width" : "48.00*" },
-                  
-                  { "name" : "col6",
-                   "width" : "48.00*" },
-                  
-                  { "name" : "col7",
-                   "width" : "48.00*" } ],
-                 "header_rows" : 
-                 [ 
-                  { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1.row1",
-                   "type" : "header_row",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Component" } ],
-                     "align" : "center",
-                     "valign" : "middle",
-                     "rowsep" : "1",
-                     "rowspan" : 3 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "2.5% January Design Temperature" } ],
-                     "align" : "center",
-                     "valign" : "top",
-                     "colsep" : "1",
-                     "colspan" : 6 } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1.row2",
-                   "type" : "header_row",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Warmer than –15°C" } ],
-                     "align" : "center",
-                     "valign" : "top",
-                     "colsep" : "1",
-                     "colspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Between –15°C and –30°C" } ],
-                     "align" : "center",
-                     "valign" : "top",
-                     "colsep" : "1",
-                     "colspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Colder than –30°C" } ],
-                     "align" : "center",
-                     "valign" : "top",
-                     "colsep" : "1",
-                     "colspan" : 2 } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1.row3",
-                   "type" : "header_row",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "max. U-value, W\/(m²×K)" } ],
-                     "align" : "center",
-                     "valign" : "top" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "min. I" } ],
-                     "align" : "center",
-                     "valign" : "top" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "max. U-value, W\/(m²×K)" } ],
-                     "align" : "center",
-                     "valign" : "top" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "min. I" } ],
-                     "align" : "center",
-                     "valign" : "top" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "max. U-value, W\/(m²×K)" } ],
-                     "align" : "center",
-                     "valign" : "top" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "min. I" } ],
-                     "align" : "center",
-                     "valign" : "top" } ] } ],
-                 "body_rows" : 
-                 [ 
-                  { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1.row4",
-                   "type" : "body_row",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Windows and doors" } ],
-                     "colsep" : "1",
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "2.5" } ],
-                     "align" : "char",
-                     "valign" : "middle",
-                     "colsep" : "1",
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "54" } ],
-                     "align" : "center",
-                     "valign" : "middle",
-                     "colsep" : "1",
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "2.0" } ],
-                     "align" : "center",
-                     "valign" : "middle",
-                     "colsep" : "1",
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "68" } ],
-                     "align" : "center",
-                     "valign" : "middle",
-                     "colsep" : "1",
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "1.7" } ],
-                     "align" : "center",
-                     "valign" : "middle",
-                     "colsep" : "1",
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "77" } ],
-                     "align" : "center",
-                     "valign" : "middle",
-                     "colsep" : "1",
-                     "rowsep" : "1" } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.table1.row5",
-                   "type" : "body_row",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Skylights" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "3.5" } ],
-                     "align" : "char",
-                     "valign" : "middle" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:table-note:nbc.divBV2.part9.sect7.subsect3.art3.table1.note2]" } ],
-                     "align" : "center",
-                     "valign" : "middle" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "3.0" } ],
-                     "align" : "center",
-                     "valign" : "middle" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:table-note:nbc.divBV2.part9.sect7.subsect3.art3.table1.note2]" } ],
-                     "align" : "center",
-                     "valign" : "middle" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "2.7" } ],
-                     "align" : "center",
-                     "valign" : "middle" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:table-note:nbc.divBV2.part9.sect7.subsect3.art3.table1.note2]" } ],
-                     "align" : "center",
-                     "valign" : "middle" } ] } ] } },
-               
-               { "id" : "nbc.divBV2.part9.sect7.subsect3.art3.sent4",
-                "type" : "sentence",
-                "number" : 4,
-                "text" : "Windows, doors and skylights with or without storm doors or sash that are installed in portions of [REF:term:bldng:buildings] where the intended use of the interior space will result in high moisture generation shall be designed in conformance with [REF:internal:nbc.divB.part5.sect3:long] (See [REF:internal:nbc.divBV2.part9.appendix.appnote155:long] )" } ] } ] },
+                "text" : "Reserved." } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect7.subsect4",
             "type" : "subsection",
@@ -339463,7 +339219,16 @@
                 [ 
                  { "id" : "nbc.divBV2.part9.sect8.subsect4.art1.table1.note1",
                   "vendor_id" : "et001049-2",
-                  "content" : "Private stairs are exterior and interior stairs that serve[LIST:bulleted]" },
+                  "content" : "Private stairs are exterior and interior stairs that serve[LIST:bulleted]",
+                  "list" : 
+                  { "type" : "bulleted",
+                   "items" : 
+                   [ 
+                    { "content" : "single [REF:term:dwllng-n:dwelling units] ," },
+                    
+                    { "content" : "houses with a [REF:term:scnd-t:secondary suite] including their common spaces, or" },
+                    
+                    { "content" : "garages that serve houses described in Clause a) or b)." } ] } },
                  
                  { "id" : "nbc.divBV2.part9.sect8.subsect4.art1.table1.note2",
                   "vendor_id" : "et001049-3",
@@ -339599,7 +339364,16 @@
                 [ 
                  { "id" : "nbc.divBV2.part9.sect8.subsect4.art2.table1.note1",
                   "vendor_id" : "et001231-1",
-                  "content" : "Private stairs are exterior and interior stairs that serve[LIST:bulleted]" },
+                  "content" : "Private stairs are exterior and interior stairs that serve[LIST:bulleted]",
+                  "list" : 
+                  { "type" : "bulleted",
+                   "items" : 
+                   [ 
+                    { "content" : "single [REF:term:dwllng-n:dwelling units] ," },
+                    
+                    { "content" : "houses with a [REF:term:scnd-t:secondary suite] including their common spaces, or" },
+                    
+                    { "content" : "garages that serve houses described in Clause a) or b)." } ] } },
                  
                  { "id" : "nbc.divBV2.part9.sect8.subsect4.art2.table1.note2",
                   "vendor_id" : "et001231-2",
@@ -340229,6 +340003,250 @@
                 "number" : 1,
                 "source" : "bc",
                 "text" : "Except as provided in Sentences (2) to (4), handrails shall be installed on stairs and [REF:term:rmp:ramps] in accordance with [REF:internal:nbc.divBV2.part9.sect8.subsect7.art1.table1:long]" },
+               
+               { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.table1",
+                "type" : "table",
+                "source" : "bc",
+                "title" : "Number of Sides of Stair or Ramp Required to Have a Handrail",
+                "forming_part" : 
+                [ 
+                 { "type" : "internal",
+                  "target" : "nbc.divBV2.part9.sect8.subsect7.art1.sent1",
+                  "display_type" : "long" } ],
+                "frame" : "all",
+                "structure" : 
+                { "columns" : 6,
+                 "column_specs" : 
+                 [ 
+                  { "name" : "col1",
+                   "width" : "48.00*" },
+                  
+                  { "name" : "col2",
+                   "width" : "48.00*" },
+                  
+                  { "name" : "col3",
+                   "width" : "48.00*" },
+                  
+                  { "name" : "col4",
+                   "width" : "48.00*" },
+                  
+                  { "name" : "col5",
+                   "width" : "48.00*" },
+                  
+                  { "name" : "col6",
+                   "width" : "48.00*" } ],
+                 "header_rows" : 
+                 [ 
+                  { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.table1.row1",
+                   "type" : "header_row",
+                   "valign" : "middle",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Location of Stair or [REF:term:rmp:Ramp]" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1",
+                     "rowspan" : 4 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Handrails Serving Stairs" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1",
+                     "colspan" : 3 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Handrails Serving [REF:term:rmp:Ramps]" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1",
+                     "colspan" : 2 } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.table1.row2",
+                   "type" : "header_row",
+                   "valign" : "middle",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Stairs < 1 100 mm Wide" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1",
+                     "colspan" : 2 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Stairs ≥ 1 100 mm Wide" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:term:rmp:Ramps]< 1 100 mm Wide" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:term:rmp:Ramps]≥ 1 100 mm Wide" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.table1.row3",
+                   "type" : "header_row",
+                   "valign" : "middle",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Straight" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Curved" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "All" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Straight or Curved" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "All" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.table1.row4",
+                   "type" : "header_row",
+                   "valign" : "middle",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Number of Sides Required to Have a Handrail" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1",
+                     "colspan" : 5 } ] } ],
+                 "body_rows" : 
+                 [ 
+                  { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.table1.row5",
+                   "type" : "body_row",
+                   "valign" : "middle",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Within a [REF:term:dwllng-n:dwelling unit] or a house with a [REF:term:scnd-t:secondary suite]" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "1" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "1" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "1" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "1" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "2" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.table1.row6",
+                   "type" : "body_row",
+                   "valign" : "middle",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "All other locations" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "1" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "2" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "2" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "2" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "2" } ],
+                     "colsep" : "1",
+                     "rowsep" : "1" } ] } ] } },
                
                { "id" : "nbc.divBV2.part9.sect8.subsect7.art1.sent2",
                 "type" : "sentence",
@@ -364114,6 +364132,22 @@
                 "type" : "table",
                 "source" : "bc",
                 "title" : "Nailing for Framing",
+                "table_notes" : 
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art4.table1.note1",
+                  "content" : "See Note A-9.23.3.1.(2)." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art4.table1.note2",
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4:long] for requirements on the nailing of top plates splices in [REF:term:br-wl-bnd:braced wall bands] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art4.table1.note3",
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect3.art4.sent2:short] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art4.table1.note4",
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect3.art4.sent3:short] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art4.table1.note5",
+                  "content" : "Where heavyweight construction is used in the roof of the space, at least 8 nails are required (see Note A-9.23.13.2.(3))." } ],
                 "structure" : 
                 { "columns" : 3,
                  "column_specs" : 
@@ -365093,6 +365127,10 @@
                 "type" : "table",
                 "source" : "bc",
                 "title" : "Fastening of Subflooring, Wall Sheathing Not in a Required Braced Wall Panel, and Roof Sheathing Where HWP ≤ 0.6 kPa and S_{max} for Site Class C ≤ 0.47",
+                "table_notes" : 
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table1.note1",
+                  "content" : "See Note A-9.23.3.1.(2)." } ],
                 "structure" : 
                 { "columns" : 6,
                  "column_specs" : 
@@ -365470,6 +365508,16 @@
                 "type" : "table",
                 "source" : "bc",
                 "title" : "Fastening of Roof Sheathing Where 0.6 kPa < HWP ≤ 1.2 kPa or Where S_{max} for Site Class C > 0.47 and S_{max} ≤ 2.6",
+                "table_notes" : 
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table2.note1",
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect4.subsect2.art5:long] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table2.note2",
+                  "content" : "See Note A-9.23.3.1.(2)." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table2.note3",
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect16.art5:long] ." } ],
                 "structure" : 
                 { "columns" : 6,
                  "column_specs" : 
@@ -365758,6 +365806,34 @@
                 "type" : "table",
                 "source" : "bc",
                 "title" : "Fastening of Wall Sheathing in Required Braced Wall Panels Where HWP ≤ 1.2kPa and S_{max} ≤ 2.6",
+                "table_notes" : 
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note1",
+                  "content" : "See Note A-Table 9.23.3.5.-C." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note2",
+                  "content" : "Plywood, OSB, waferboard and board lumber shall conform to the material standards specified in [REF:internal:nbc.divBV2.part9.sect23.subsect17:long] . Wood-based panels may be installed vertically or horizontally. Gypsum sheathing shall conform to the requirements of gypsum board in [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note3",
+                  "content" : "See Note A-9.23.3.1.(2)." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note4",
+                  "content" : "For plywood, OSB, or waferboard panel sheathing, the maximum fastener spacing along intermediate supports shall be 300 mm o.c. For gypsum sheathing, the maximum spacing along intermediate supports shall conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art8.sent4:medium] for nails and [REF:internal:nbc.divBV2.part9.sect29.subsect5.art9.sent4:medium] for screws." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note5",
+                  "content" : "Nails for GWB framing types shall conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art6:long] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note6",
+                  "content" : "Screws for GWB framing types shall conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art7:long] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note7",
+                  "content" : "Where blocking is required, horizontal joints of panel sheathing shall occur over blocking consisting of not less than 38 mm x 89 mm lumber oriented either edgewise or flatwise, and the panel sheathing shall be fastened to the blocking." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note8",
+                  "content" : "Nails for WSP and DWB framing types shall conform to [REF:internal:nbc.divBV2.part9.sect23.subsect3.art1:long] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note9",
+                  "content" : "NP = Not permitted" } ],
                 "structure" : 
                 { "columns" : 5,
                  "column_specs" : 
@@ -389058,6 +389134,13 @@
                   "effective_date" : "2025-06-16",
                   "status" : "current",
                   "title" : "Minimum Total Length of Braced Wall Panels where HWP ≤ 0.5 kPa and S_{max} ≤ 0.3",
+                  "table_notes" : 
+                  [ 
+                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table1.note1",
+                    "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect3.art5.sent3:short] for a description of framing types and fastening requirements." },
+                   
+                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table1.note2",
+                    "content" : "NP = not permitted. Values within round brackets are permitted for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on both sides." } ],
                   "structure" : 
                   { "columns" : 11,
                    "column_specs" : 
@@ -389604,6 +389687,13 @@
                   "effective_date" : "2025-06-16",
                   "status" : "current",
                   "title" : "Minimum Total Length of Braced Wall Panels Where HWP ≤ 0.6 kPa and S_{max} ≤ 0.47",
+                  "table_notes" : 
+                  [ 
+                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table2.note1",
+                    "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect3.art5.sent3:short] for a description of framing types and fastening requirements." },
+                   
+                   { "id" : "nbc.divBV2.part9.sect23.subsect13.art11.table2.note2",
+                    "content" : "NP = not permitted. Values within round brackets are permitted for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on both sides." } ],
                   "structure" : 
                   { "columns" : 11,
                    "column_specs" : 
@@ -390729,7 +390819,14 @@
                 [ 
                  { "id" : "nbc.divBV2.part9.sect23.subsect14.art8.table1.note1",
                   "vendor_id" : "et000193-1",
-                  "content" : "Nails with a diameter less than 3.66 mm are permitted to be used, provided the minimum number of nails stated in the Table is modified as follows:[LIST:bulleted]Where more than 10 nails are required, the connections between the rafters and the ceiling joists shall be designed in accordance with [REF:internal:nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause2:long] or [REF:internal:nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause3:short] ." },
+                  "content" : "Nails with a diameter less than 3.66 mm are permitted to be used, provided the minimum number of nails stated in the Table is modified as follows:Where more than 10 nails are required, the connections between the rafters and the ceiling joists shall be designed in accordance with [REF:internal:nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause2:long] or [REF:internal:nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause3:short] .[LIST:bulleted]",
+                  "list" : 
+                  { "type" : "bulleted",
+                   "items" : 
+                   [ 
+                    { "content" : "For a nail diameter greater than or equal to 2.86 mm and less than 3.25 mm , add 3 nails to the minimum number of nails, up to a maximum of 10 nails ." },
+                    
+                    { "content" : "For a nail diameter greater than or equal to 3.25 mm and less than 3.66 mm , add 2 nails to the minimum number of nails, up to a maximum of 10 nails ." } ] } },
                  
                  { "id" : "nbc.divBV2.part9.sect23.subsect14.art8.table1.note2",
                   "vendor_id" : "et000193-2",
@@ -394485,6 +394582,13 @@
                 "type" : "table",
                 "source" : "bc",
                 "title" : "Wall Sheathing Thickness and Specifications",
+                "table_notes" : 
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect17.art2.table1.note1",
+                  "content" : "See also Sentences 9.27.5.1.(2) to (4)." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect23.subsect17.art2.table1.note2",
+                  "content" : "The [REF:term:flm-prd-:flame-spread rating] of gypsum board shall be determined in accordance with CAN\/ULC-S102, \"Standard Method of Test for Surface Burning Characteristics of Building Materials and Assemblies.\"" } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -416527,7 +416631,36 @@
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect3.art10.table1.note1",
                   "vendor_id" : "et001375-1",
-                  "content" : "The symbols and abbreviations that appear in this column have the following meanings:[LIST:variable]" },
+                  "content" : "The symbols and abbreviations that appear in this column have the following meanings:[LIST:variable]",
+                  "list" : 
+                  { "type" : "variable",
+                   "items" : 
+                   [ 
+                    { "content" : "AFUE= annual fuel utilization efficiency" },
+                    
+                    { "content" : "CEER= combined energy-efficiency ratio, in (Btu\/h)\/W" },
+                    
+                    { "content" : "COP_{c}= coefficient of performance in cooling mode, in W\/W" },
+                    
+                    { "content" : "COP_{h}= coefficient of performance in heating mode, in W\/W" },
+                    
+                    { "content" : "EER= energy-efficiency ratio, in (Btu\/h)\/W" },
+                    
+                    { "content" : "EF= energy factor, in %\/h" },
+                    
+                    { "content" : "E_{t}= thermal efficiency" },
+                    
+                    { "content" : "FE= fireplace efficiency" },
+                    
+                    { "content" : "HSPF V= heating seasonal performance factor for region V (see map in [REF:standard:csac656] ), in (Btu\/h)\/W" },
+                    
+                    { "content" : "ICOP= integrated coefficient of performance, in W\/W" },
+                    
+                    { "content" : "OTPF= overall thermal performance factor" },
+                    
+                    { "content" : "SEER= seasonal energy-efficiency ratio, in (Btu\/h)\/W" },
+                    
+                    { "content" : "TPF= thermal performance factor" } ] } },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect3.art10.table1.note2",
                   "vendor_id" : "et001375-2",
@@ -418410,7 +418543,28 @@
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect4.art2.table1.note2",
                   "vendor_id" : "et001376-2",
-                  "content" : "The symbols and abbreviations used in this column have the following meanings:[LIST:variable]" },
+                  "content" : "The symbols and abbreviations used in this column have the following meanings:[LIST:variable]",
+                  "list" : 
+                  { "type" : "variable",
+                   "items" : 
+                   [ 
+                    { "content" : "EF= energy factor" },
+                    
+                    { "content" : "E_{t}= thermal efficiency with a 38.9°C (70°F) water temperature difference" },
+                    
+                    { "content" : "OTPF= overall thermal performance factor" },
+                    
+                    { "content" : "Q= nameplate input rate, in kW" },
+                    
+                    { "content" : "SL= standby loss, in W" },
+                    
+                    { "content" : "TPF= thermal performance factor" },
+                    
+                    { "content" : "UEF= uniform energy factor" },
+                    
+                    { "content" : "V_{r}= rated nominal storage volume, in L" },
+                    
+                    { "content" : "Vs= measured storage volume, in L" } ] } },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect4.art2.table1.note3",
                   "vendor_id" : "et001376-4",
@@ -423249,7 +423403,12 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent1" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableA.note1",
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableA.note2",
+                  "content" : "See Table 9.36.7.4." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -423401,7 +423560,12 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent1" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableB.note1",
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableB.note2",
+                  "content" : "See Table 9.36.7.4." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -423553,7 +423717,12 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent1" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableC.note1",
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableC.note2",
+                  "content" : "See Table 9.36.7.4." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -423705,7 +423874,12 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent1" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableD.note1",
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableD.note2",
+                  "content" : "See Table 9.36.7.4." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -423857,7 +424031,12 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent1" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableE.note1",
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableE.note2",
+                  "content" : "See Table 9.36.7.4." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -424009,7 +424188,12 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent1" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableF.note1",
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableF.note2",
+                  "content" : "See Table 9.36.7.4." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -424167,7 +424351,18 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent5" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableG.note1",
+                  "content" : "When a \"house\" is a dwelling unit forming part of a multi-unit building, as per Sentence 9.36.6.1.(1), requirements of Subsection 9.36.6. apply to entire building." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableG.note2",
+                  "content" : "See Table 9.36.7.4." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableG.note3",
+                  "content" : "See Sentence 9.36.6.5.(6)" },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableG.note4",
+                  "content" : "See Sentence 9.36.6.5.(7)" } ],
                 "structure" : 
                 { "columns" : 5,
                  "column_specs" : 
@@ -424370,7 +424565,9 @@
                  { "type" : "internal",
                   "target" : "nbc.divBV2.part9.sect36.subsect6.art3.sent1" } ],
                 "table_notes" : 
-                [  ],
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableH.note1",
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." } ],
                 "structure" : 
                 { "columns" : 9,
                  "column_specs" : 
@@ -499102,7 +499299,14 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note10",
               "vendor_id" : "et000261-18",
-              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] values are achieved as follows:[LIST:bulleted]" },
+              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] values are achieved as follows:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "for a single row of studs, by installing blocking at a spacing of not more than 1 524 mm o.c. as shown in Case A of [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure5:long] , or" },
+                
+                { "content" : "for two rows of studs on separate plates, by installing blocking in both rows at a spacing of not more than 1 524 mm o.c. as shown in Case B of [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure5:long] ." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note11",
               "vendor_id" : "et000261-16",
@@ -499178,7 +499382,20 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note7",
               "vendor_id" : "et000261-5",
-              "content" : "The complete descriptions of indicated finishes are as follows:[LIST:bulleted]" },
+              "content" : "The complete descriptions of indicated finishes are as follows:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "12.7 mm regular gypsum board – 12.7 mm regular gypsum board conforming to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art2:long]" },
+                
+                { "content" : "12.7 mm Type X gypsum board – 12.7 mm special fire-resistant Type X gypsum board conforming to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art2:long]" },
+                
+                { "content" : "15.9 mm Type X gypsum board – 15.9 mm special fire-resistant Type X gypsum board conforming to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art2:long]" },
+                
+                { "content" : "Except for exterior walls (see [REF:internal:nbc.divBV2.part9.spectables1.table1.note15:long] ), the outer layer of finish on both sides of the wall must have its joints taped and finished." },
+                
+                { "content" : "Except as otherwise required for fastener spacing (see  Table Notes [REF:internal:nbc.divBV2.part9.spectables1.table1.note14:long] , [REF:internal:nbc.divBV2.part9.spectables1.table1.note16:short]  and [REF:internal:nbc.divBV2.part9.spectables1.table1.note22:short] ), fastener type, spacing and penetration depth for the attachment of gypsum board must conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] and fasteners must consist of[LIST:bulleted]" } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note8",
               "vendor_id" : "et000261-6",
@@ -513061,7 +513278,14 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note13",
               "vendor_id" : "et000456-11",
-              "content" : "Wood floor joists are:[LIST:bulleted]" },
+              "content" : "Wood floor joists are:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "wood joists with a minimum member size of 38 mm (width) × 235 mm (depth) , except as otherwise noted (see [REF:internal:nbc.divBV2.part9.spectables1.table2.note16:long] ); or" },
+                
+                { "content" : "wood I-joists with a minimum flange size of 38 mm × 38 mm , a minimum OSB or plywood web thickness of 9.5 mm , and a minimum joist depth of 241 mm ." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note14",
               "vendor_id" : "et000456-13",
@@ -513069,11 +513293,27 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note15",
               "vendor_id" : "et000456-12",
-              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] value within square brackets is achieved only where absorptive material includes spray-applied cellulose fibre with [LIST:bulleted]" },
+              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] value within square brackets is achieved only where absorptive material includes spray-applied cellulose fibre with [LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "adhesive that is capable of providing a minimum cohesive\/adhesive bond strength per unit area of 5 times the weight of the material under the test plate when tested in accordance with [REF:standard:astme736] ," },
+                
+                { "content" : "a minimum density of 35 kg\/m^{3} , and" },
+                
+                { "content" : "a minimum thickness of 90 mm on the underside of the subfloor or deck, of 90 mm on the sides of the structural members, and for cold-formed steel joists, of 13 mm on the underside of the bottom flange other than at resilient metal channel locations." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note16",
               "vendor_id" : "et000456-26",
-              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] value within square brackets only applies to assemblies with solid wood joists and is achieved only where absorptive material includes:[LIST:bulleted]" },
+              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] value within square brackets only applies to assemblies with solid wood joists and is achieved only where absorptive material includes:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "fibre processed from rock or slag with a minimum thickness of 90 mm and a minimum surface area mass of 2.8 kg\/m^{2} ; or" },
+                
+                { "content" : "spray-applied cellulose fibre with a minimum density of 50 kg\/m^{3} and a minimum depth of 90 mm on the underside of the subfloor and of 90 mm on the sides of the floor joists." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note17",
               "vendor_id" : "et000456-14",
@@ -513081,7 +513321,14 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note18",
               "vendor_id" : "et000456-15",
-              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] value within square brackets is achieved only where absorptive material includes:[LIST:bulleted]" },
+              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] value within square brackets is achieved only where absorptive material includes:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "fibre processed from rock or slag with a minimum thickness of 90 mm and a minimum surface area mass of 2.8 kg\/m^{2} ; or" },
+                
+                { "content" : "spray-applied cellulose fibre with a minimum density of 50 kg\/m^{3} and a minimum depth of 90 mm on the underside of the subfloor and of 90 mm on the webs or the sides of the structural members." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note19",
               "vendor_id" : "et000456-16",
@@ -513093,7 +513340,14 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note20",
               "vendor_id" : "et000456-17",
-              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] and [REF:term:stc:sound transmission class] values are achieved only where absorptive material includes:[LIST:bulleted]" },
+              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] and [REF:term:stc:sound transmission class] values are achieved only where absorptive material includes:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "fibre processed from rock or slag that fills the joist cavity and has a minimum surface area mass of 2.8 kg\/m^{2} , and for structural members at least 270 mm in depth, the fibre includes three layers each of which has a minimum thickness of 90 mm ; or" },
+                
+                { "content" : "dry-blown cellulose fibre with a minimum density of 40 kg\/m^{3} filling the entire cavity; the cellulose fibre is supported on zinc-coated (galvanized) steel poultry fence fabric conforming to [REF:standard:astma390] , which has 25-mm-wide hexagonal mesh openings and 0.81-mm-thick (20-gauge) wire and is attached to wood joists or wood I-joists with metal staples having legs that are 50 mm or 30 mm long , respectively." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note21",
               "vendor_id" : "et000456-18",
@@ -513101,7 +513355,14 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note22",
               "vendor_id" : "et000456-19",
-              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] and [REF:term:stc:sound transmission class] values are achieved only where absorptive material includes:[LIST:bulleted]" },
+              "content" : "The [REF:term:fr-rtnc-:fire-resistance rating] and [REF:term:stc:sound transmission class] values are achieved only where absorptive material includes:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "fibre processed from rock or slag that fills the joist cavity and has a minimum surface area mass of 2.8 kg\/m^{2} , and for structural members at least 270 mm in depth, the fibre includes three layers each of which has a minimum thickness of 90 mm ; or" },
+                
+                { "content" : "dry-blown cellulose fibre with a minimum density of 40 kg\/m^{3} filling the entire cavity; the cellulose fibre is supported on zinc-coated (galvanized) steel poultry fence fabric conforming to [REF:standard:astma390] , which has 25-mm-wide hexagonal mesh openings and 0.81-mm-thick (20-gauge) wire and is attached to wood joists with metal staples having legs that are 50 mm long." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note23",
               "vendor_id" : "et000456-20",
@@ -513109,7 +513370,16 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note24",
               "vendor_id" : "et000456-21",
-              "content" : "Wood floor trusses are:[LIST:bulleted]" },
+              "content" : "Wood floor trusses are:[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "metal-plate-connected wood trusses with wood framing members not less than 38 mm × 64 mm , metal connector plates not less than 1 mm (nominal) thick with teeth not less than 8 mm long, and a minimum truss depth of 305 mm ;" },
+                
+                { "content" : "metal-web wood trusses with wood chords not less than 38 mm × 64 mm , V-shaped webs made from galvanized steel of 1 mm (nominal) thickness with plate areas having teeth not less than 8 mm long, and a minimum truss depth of 286 mm ; or" },
+                
+                { "content" : "fingerjoined wood trusses with glued fingerjoined connections, chord members not less than 38 mm × 64 mm , web members not less than 38 mm × 38 mm and a minimum truss depth of 330 mm , all of which is glued together with an R-14 phenol-resorcinol resin conforming to [REF:standard:csao112.10] ." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note25",
               "vendor_id" : "et000456-22",
@@ -513137,7 +513407,14 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note5",
               "vendor_id" : "et000456-4",
-              "content" : "Sound absorptive material includes[LIST:bulleted]To obtain the listed [REF:term:stc:sound transmission class] rating, the nominal insulation thickness is 150 mm for rock, slag, or glass fibres or loose-fill cellulose fibre, and 90 mm for spray-applied cellulose fibre, unless otherwise specified. Absorptive material will affect the [REF:term:stc:sound transmission class] by approximately adding or subtracting 1 per 50 mm change of thickness. However, no additional [REF:term:stc:sound transmission class] value is achieved by adding a greater thickness of insulation than the depth of the assembly." },
+              "content" : "Sound absorptive material includesTo obtain the listed [REF:term:stc:sound transmission class] rating, the nominal insulation thickness is 150 mm for rock, slag, or glass fibres or loose-fill cellulose fibre, and 90 mm for spray-applied cellulose fibre, unless otherwise specified. Absorptive material will affect the [REF:term:stc:sound transmission class] by approximately adding or subtracting 1 per 50 mm change of thickness. However, no additional [REF:term:stc:sound transmission class] value is achieved by adding a greater thickness of insulation than the depth of the assembly.[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "fibre processed from rock, slag, or glass, and" },
+                
+                { "content" : "loose-fill or spray-applied cellulose fibre." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note6",
               "vendor_id" : "et000456-5",
@@ -513145,7 +513422,18 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note7",
               "vendor_id" : "et000456-6",
-              "content" : "To obtain the listed rating, fastener type, spacing and penetration depth for the attachment of gypsum board must conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] , and[LIST:bulleted]For wood- and steel-framed assemblies, if fasteners are spaced less than 300 mm o.c ., subtract 1 from the [REF:term:stc:sound transmission class] value; if fasteners are spaced less than 200 mm o.c. , subtract 2 from the [REF:term:stc:sound transmission class] value. Narrower fastener spacing is not detrimental to the [REF:term:fr-rtnc-:fire-resistance rating] ." },
+              "content" : "To obtain the listed rating, fastener type, spacing and penetration depth for the attachment of gypsum board must conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] , andFor wood- and steel-framed assemblies, if fasteners are spaced less than 300 mm o.c ., subtract 1 from the [REF:term:stc:sound transmission class] value; if fasteners are spaced less than 200 mm o.c. , subtract 2 from the [REF:term:stc:sound transmission class] value. Narrower fastener spacing is not detrimental to the [REF:term:fr-rtnc-:fire-resistance rating] .[LIST:bulleted]",
+              "list" : 
+              { "type" : "bulleted",
+               "items" : 
+               [ 
+                { "content" : "fastener distance to board edges and butt ends should be not less than 38 mm , except for fasteners on the butt ends of the base layer in ceilings with two layers (see [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure2:long] )," },
+                
+                { "content" : "fasteners are spaced not more than 300 mm o.c.," },
+                
+                { "content" : "fasteners must consist of nails or screws when attaching gypsum board to wood members, and" },
+                
+                { "content" : "fasteners must consist of screws when attaching gypsum board to cold-formed steel channels or resilient metal channels." } ] } },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note8",
               "vendor_id" : "et000456-7",
@@ -605078,7 +605366,145 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote123.para3",
-             "content" : "The spacing of joists in the span tables can be conservatively adjusted to allow for the increased load by using the spans in  Span Table [REF:internal:nbc.divBV2.part9.spectables2.table4:long] for 600 mm spacing, but spacing the joists 400 mm apart. Similarly, floor beam span tables can be adjusted by using 4.8 m supported length spans for cases where the supported length equals 3.6 m ." } ] },
+             "content" : "The spacing of joists in the span tables can be conservatively adjusted to allow for the increased load by using the spans in  Span Table [REF:internal:nbc.divBV2.part9.spectables2.table4:long] for 600 mm spacing, but spacing the joists 400 mm apart. Similarly, floor beam span tables can be adjusted by using 4.8 m supported length spans for cases where the supported length equals 3.6 m ." },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote123.example1.para1",
+             "content" : "Assumptions:" },
+            
+            { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1",
+             "type" : "table",
+             "title" : "",
+             "frame" : "none",
+             "structure" : 
+             { "columns" : 2,
+              "colsep" : "0",
+              "rowsep" : "0",
+              "column_specs" : 
+              [ 
+               { "name" : "col1",
+                "width" : "271.62*" },
+               
+               { "name" : "col2",
+                "width" : "279.38*" } ],
+              "body_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1.row1",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "- basic dead load" } ],
+                  "valign" : "top" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "= 0.5 kPa" } ],
+                  "align" : "left",
+                  "valign" : "top" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1.row2",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "- topping dead load" } ],
+                  "valign" : "top" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "= 0.8 kPa" } ],
+                  "align" : "left",
+                  "valign" : "top" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1.row3",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "- total dead load" } ],
+                  "valign" : "top" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "= 1.3 kPa" } ],
+                  "align" : "left",
+                  "valign" : "top" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1.row4",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "- live load" } ],
+                  "valign" : "top" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "= 1.9 kPa" } ],
+                  "align" : "left",
+                  "valign" : "top" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1.row5",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "- vibration limit" } ],
+                  "valign" : "top" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "per [REF:internal:nbc.divBV2.part9.appendix.appnote120:long]" } ],
+                  "align" : "left",
+                  "valign" : "top" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1.row6",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "- deflection limit" } ],
+                  "valign" : "top" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "= 1\/360" } ],
+                  "align" : "left",
+                  "valign" : "top" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote123.example1.table1.row7",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "- ceiling attached directly to joists, no bridging" } ],
+                  "valign" : "top" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ] } ] } ] } } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote123a",
            "type" : "application_note",
@@ -607317,7 +607743,20 @@
              [ 
               { "id" : "nbc.divBV2.part9.appendix.appnote152.table1.note1",
                "vendor_id" : "et000269-1",
-               "content" : "Air leakage and vapour permeance values derived from:[LIST:bulleted]" },
+               "content" : "Air leakage and vapour permeance values derived from:[LIST:bulleted]",
+               "list" : 
+               { "type" : "bulleted",
+                "items" : 
+                [ 
+                 { "content" : "Bombaru, D., Jutras, R. and Patenaude, A. [REF:standard:cmhc-apbm] Summary Report prepared by AIR-INS Inc. for Canada Mortgage and Housing Corporation, Ottawa, 1988. Values indicate properties of tested materials only; values for specific products may vary significantly." },
+                 
+                 { "content" : "[REF:standard:twc_absh] Tarion Warranty Corporation (formerly Ontario New Home Warranty Program), Toronto, 1993." },
+                 
+                 { "content" : "Kumaran, M.K., et al., ASHRAE Research Report 1018 RP, A Thermal and Moisture Transport Property Database for Common Building and Insulating Materials." },
+                 
+                 { "content" : "Kumaran, M.K., Lackey, J., Normandin, N., van Reenen, D., Tariku, F., Summary Report from Task 3 of MEWS Project at the Institute for Research in Construction-Hygrothermal Properties of Several Building Materials, IRC-RR-110, March 2002." },
+                 
+                 { "content" : "Mukhopadhyaya, P., Kumaran, M.K., et al., Hygrothermal Properties of Exterior Claddings, Sheathings Boards, Membranes and Insulation Materials for Building Envelope Design, Proceedings of Thermal Perfomance of the Exterior Envelopes of Whole Building X, Clearwater, Florida, December 2-7, 2007, pp. 1-16 (NRCC-50287)." } ] } },
               
               { "id" : "nbc.divBV2.part9.appendix.appnote152.table1.note2",
                "vendor_id" : "et000269-2",
@@ -611253,7 +611692,121 @@
            "title" : "Energy Used by the Building",
            "refs" : "es006856",
            "content" : 
-           [  ] },
+           [ 
+            { "id" : "nbc.divBV2.part9.appendix.appnote210.example1.table1",
+             "type" : "table",
+             "title" : "",
+             "frame" : "none",
+             "structure" : 
+             { "columns" : 3,
+              "column_specs" : 
+              [ 
+               { "name" : "col1",
+                "width" : "85*" },
+               
+               { "name" : "col2",
+                "width" : "5*" },
+               
+               { "name" : "col3",
+                "width" : "171*" } ],
+              "body_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote210.example1.table1.row1",
+                "type" : "body_row",
+                "valign" : "middle",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Energy used by the building" } ],
+                  "colsep" : "0",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "=" } ],
+                  "colsep" : "0",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "space-heating energy lost and gained through building envelope" } ],
+                  "rowsep" : "0" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote210.example1.table1.row2",
+                "type" : "body_row",
+                "valign" : "middle",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "+" } ],
+                  "colsep" : "0",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "losses due to inefficiencies of heating equipment" } ],
+                  "rowsep" : "0" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote210.example1.table1.row3",
+                "type" : "body_row",
+                "valign" : "middle",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "+" } ],
+                  "colsep" : "0",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "energy necessary to heat outdoor air to ventilate the building" } ],
+                  "rowsep" : "0" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote210.example1.table1.row4",
+                "type" : "body_row",
+                "valign" : "middle",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "+" } ],
+                  "colsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "energy used to heat service water" } ] } ] } ] } } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote211",
            "type" : "application_note",
@@ -622812,7 +623365,22 @@
                 
                 { "id" : "nbc.divBV2.part9.appendix.appnote232.div2.table1.note4",
                  "vendor_id" : "et001353-5",
-                 "content" : "Example: To determine what additional materials would be needed to make up 0.42 (m²×K)\/W, the RSI values of the other components in the wall assembly are added up as follows:[LIST:bulleted]Result: no additional materials are needed to meet the effective thermal resistance required for this particular wall assembly." },
+                 "content" : "Example: To determine what additional materials would be needed to make up 0.42 (m²×K)\/W, the RSI values of the other components in the wall assembly are added up as follows:Result: no additional materials are needed to meet the effective thermal resistance required for this particular wall assembly.[LIST:bulleted]",
+                 "list" : 
+                 { "type" : "bulleted",
+                  "items" : 
+                  [ 
+                   { "content" : "interior air film coefficient (walls): 0.12 (m²×K)\/W" },
+                   
+                   { "content" : "12.7 mm gypsum board interior finish: 0.08 (m²×K)\/W" },
+                   
+                   { "content" : "12.7 mm gypsum board exterior sheathing: 0.08 (m²×K)\/W" },
+                   
+                   { "content" : "metal or vinyl siding: 0.11 (m²×K)\/W" },
+                   
+                   { "content" : "exterior air film coefficient (walls): 0.03 (m²×K)\/W" },
+                   
+                   { "content" : "RSI of other components in assembly: 0.12 + 0.08 + 0.08 + 0.11 + 0.03 = 0.42 (m²×K)\/W" } ] } },
                 
                 { "id" : "nbc.divBV2.part9.appendix.appnote232.div2.table1.note5",
                  "vendor_id" : "et001353-4",
@@ -631103,7 +631671,483 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote250.para1",
-             "content" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art11.sent2:long] applies where a designer wants to use a wall or ceiling assembly with a lower effective thermal resistance than required by [REF:internal:nbc.divBV2.part9.sect36.subsect2:long] in one building envelope area and an assembly with a compensating higher effective thermal resistance in another building envelope area to achieve the same energy performance through the combined total areas as would be achieved by complying with [REF:internal:nbc.divBV2.part9.sect36.subsect2:long]" } ] },
+             "content" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art11.sent2:long] applies where a designer wants to use a wall or ceiling assembly with a lower effective thermal resistance than required by [REF:internal:nbc.divBV2.part9.sect36.subsect2:long] in one building envelope area and an assembly with a compensating higher effective thermal resistance in another building envelope area to achieve the same energy performance through the combined total areas as would be achieved by complying with [REF:internal:nbc.divBV2.part9.sect36.subsect2:long]" },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote250.example1",
+             "content" : "<bold>– Trading RSI values of Above-ground Opaque Building Envelope Assemblies<\/bold>" },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote250.example1.para1",
+             "content" : "A designer wants to reduce the insulation in 40 m^{2} of wall area in the proposed design from the required effective RSI value of 3.27 (R24 batts in a 38 × 140 mm frame, 406 mm o.c.) to a value of 2.93 (R20 batts). The proposed design has 200 m^{2} of attic space where more insulation could be added to compensate for the lower RSI value in the 40 m^{2} of wall." },
+            
+            { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table1",
+             "type" : "table",
+             "title" : "",
+             "frame" : "all",
+             "structure" : 
+             { "columns" : 6,
+              "column_specs" : 
+              [ 
+               { "name" : "col1",
+                "width" : "48.00*" },
+               
+               { "name" : "col2",
+                "width" : "48.00*" },
+               
+               { "name" : "col3",
+                "width" : "48.00*" },
+               
+               { "name" : "col4",
+                "width" : "48.00*" },
+               
+               { "name" : "col5",
+                "width" : "48.00*" },
+               
+               { "name" : "col6",
+                "width" : "48.00*" } ],
+              "body_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table1.row1",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Assemblies Being Traded" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Area of Each Assembly (A)" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Reference Design Values" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "colspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Proposed Design Values" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "colspan" : 2 } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table1.row2",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "RSI values (R)" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "A\/R Values" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "RSI values (R)" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "A\/R Values" } ],
+                  "align" : "center" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table1.row3",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Attic" } ],
+                  "align" : "left",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "200 m^{2}" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "8.66 (m^{2}×K)\/W" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "23.09 W\/K" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "8.66 (m^{2}×K)\/W" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "23.09 W\/K" } ],
+                  "align" : "center",
+                  "rowsep" : "0" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table1.row4",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Wall" } ],
+                  "align" : "left",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "40 m^{2}" } ],
+                  "align" : "center",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "3.27 (m^{2}×K)\/W" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "12.23 W\/K" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "2.93 (m^{2}×K)\/W" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "13.65 W\/K" } ],
+                  "align" : "center" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table1.row5",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "align" : "right",
+                  "colsep" : "1",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total A\/R value: 35.32 W\/K" } ],
+                  "align" : "center",
+                  "colsep" : "1",
+                  "rowsep" : "1",
+                  "colspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total A\/R value: 36.74 W\/K" } ],
+                  "align" : "center",
+                  "colsep" : "1",
+                  "rowsep" : "1",
+                  "colspan" : 2 } ] } ] } },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote250.example1.para2",
+             "content" : "The increased total A\/R value for the attic and wall assemblies of the proposed design, which is caused by less insulation in the wall, now has to be compensated for by an increase in attic insulation while keeping the respective areas of the building assemblies constant. To determine the RSI value to be made up by insulation in the attic (i.e. increase in effective thermal resistance of attic assembly), first calculate the difference between the two total A\/R values:[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "36.74 W\/K – 35.32 W\/K = 1.42 W\/K" } ] },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote250.example1.para3",
+             "content" : "Then, subtract this residual A\/R value from the A\/R value required for the attic insulation:[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "23.09 W\/K – 1.42 W\/K = 21.67 W\/K" } ] },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote250.example1.para4",
+             "content" : "Adding this decreased A\/R value for the proposed attic to the increased A\/R value for the proposed wall now gives a total A\/R value that is less than or equal to that of the reference design:[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "21.67 W\/K + 13.65 W\/K = 35.32 W\/K" } ] },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote250.example1.para5",
+             "content" : "To determine the RSI value to be made up by insulation in the attic of the proposed design, divide the area of the attic by the decreased A\/R value required for the attic of the proposed design (21.67 W\/K):[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "200 m^{2}\/21.67 W\/K = 9.23 (m^{2}×K)\/W (R52.4)" } ] },
+            
+            { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table2",
+             "type" : "table",
+             "title" : "",
+             "frame" : "all",
+             "structure" : 
+             { "columns" : 6,
+              "column_specs" : 
+              [ 
+               { "name" : "col1",
+                "width" : "48.00*" },
+               
+               { "name" : "col2",
+                "width" : "48.00*" },
+               
+               { "name" : "col3",
+                "width" : "48.00*" },
+               
+               { "name" : "col4",
+                "width" : "48.00*" },
+               
+               { "name" : "col5",
+                "width" : "48.00*" },
+               
+               { "name" : "col6",
+                "width" : "48.00*" } ],
+              "body_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table2.row1",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Assemblies Being Traded" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Area of Each Assembly (A)" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Reference Design Values" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "colspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Proposed Design Trade-off Values" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "colspan" : 2 } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table2.row2",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "RSI values (R)" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "A\/R Values" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "RSI values (R)" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "A\/R Values" } ],
+                  "align" : "center",
+                  "valign" : "middle" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table2.row3",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Attic" } ],
+                  "align" : "left",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "200 m^{2}" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "8.66 (m^{2}×K)\/W" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "23.09 W\/K" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "9.23 (m^{2}×K)\/W" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "21.67 W\/K" } ],
+                  "align" : "center",
+                  "rowsep" : "0" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table2.row4",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Wall" } ],
+                  "align" : "left" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "40 m^{2}" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "3.27 (m^{2}×K)\/W" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "12.23 W\/K" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "2.93 (m^{2}×K)\/W" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "13.65 W\/K" } ],
+                  "align" : "center" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote250.example1.table2.row5",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "align" : "right",
+                  "colsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total A\/R value: 35.32 W\/K" } ],
+                  "align" : "center",
+                  "colsep" : "1",
+                  "colspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total A\/R value: 35.32 W\/K" } ],
+                  "align" : "center",
+                  "colsep" : "1",
+                  "colspan" : 2 } ] } ] } } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote251",
            "type" : "application_note",
@@ -631159,7 +632203,484 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote252.para1",
-             "content" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art11.sent3:long] applies where a designer wants to install one or more windows having a U-value above the maximum permitted by [REF:internal:nbc.divBV2.part9.sect36.subsect2.art7:long] and reduce the U-value of other windows to achieve the same overall energy performance through the combined total area of all windows as would be achieved by complying with [REF:internal:nbc.divBV2.part9.sect36.subsect2.art7:long] (Note that R-values, not U-values as are typically used in relation to windows, are used in this Note.)" } ] },
+             "content" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art11.sent3:long] applies where a designer wants to install one or more windows having a U-value above the maximum permitted by [REF:internal:nbc.divBV2.part9.sect36.subsect2.art7:long] and reduce the U-value of other windows to achieve the same overall energy performance through the combined total area of all windows as would be achieved by complying with [REF:internal:nbc.divBV2.part9.sect36.subsect2.art7:long] (Note that R-values, not U-values as are typically used in relation to windows, are used in this Note.)" },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote252.example1",
+             "content" : "<bold>– Trading R-values of Windows<\/bold>" },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote252.example1.para1",
+             "content" : "A designer wants to install a large stained glass window on the south side of the proposed house as well as other windows for a total 12 m^{2} in area. The designer wants the stained glass window to have a U-value of 2.7 W\/(m^{2}×K) (R-value 0.37 (m^{2}×K)\/W), which is higher than the maximum permitted by [REF:internal:nbc.divBV2.part9.sect7.subsect3:long] for condensation resistance, and proposes to compensate for its reduced energy performance by reducing the U-value of the remaining windows on that side, which total 10 m^{2} ." },
+            
+            { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table1",
+             "type" : "table",
+             "title" : "",
+             "frame" : "all",
+             "structure" : 
+             { "columns" : 4,
+              "column_specs" : 
+              [ 
+               { "name" : "col1",
+                "width" : "48.00*" },
+               
+               { "name" : "col2",
+                "width" : "48.00*" },
+               
+               { "name" : "col3",
+                "width" : "48.00*" },
+               
+               { "name" : "col4",
+                "width" : "48.00*" } ],
+              "header_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table1.row1",
+                "type" : "header_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Assemblies on South Side" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total Area of Assemblies (A)" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Reference Design Values" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "colspan" : 2 } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table1.row2",
+                "type" : "header_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "R-value (R)" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "A\/R Value" } ],
+                  "align" : "center",
+                  "valign" : "middle" } ] } ],
+              "body_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table1.row3",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Windows" } ],
+                  "align" : "left",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "12 m^{2}" } ],
+                  "align" : "center",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "0.56 (m^{2}×K)\/W" } ],
+                  "align" : "center",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "21.54 W\/K" } ],
+                  "align" : "center",
+                  "rowsep" : "1" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table1.row4",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "align" : "right",
+                  "colsep" : "1",
+                  "rowsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total A\/R value: 21.54 W\/K" } ],
+                  "align" : "center",
+                  "colsep" : "1",
+                  "rowsep" : "1",
+                  "colspan" : 2 } ] } ] } },
+            
+            { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table2",
+             "type" : "table",
+             "title" : "",
+             "frame" : "all",
+             "structure" : 
+             { "columns" : 4,
+              "column_specs" : 
+              [ 
+               { "name" : "col1",
+                "width" : "48.00*" },
+               
+               { "name" : "col2",
+                "width" : "48.00*" },
+               
+               { "name" : "col3",
+                "width" : "48.00*" },
+               
+               { "name" : "col4",
+                "width" : "48.00*" } ],
+              "header_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table2.row1",
+                "type" : "header_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Assemblies Being Traded on South Side" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total Area of Assemblies (A)" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Proposed Design Values" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "colspan" : 2 } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table2.row2",
+                "type" : "header_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "R-value (R)" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "A\/R Values" } ],
+                  "align" : "center",
+                  "valign" : "middle" } ] } ],
+              "body_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table2.row3",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Stained glass window" } ],
+                  "align" : "left",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "2 m^{2}" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "0.37 (m^{2}×K)\/W" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "5.41 W\/K" } ],
+                  "align" : "center",
+                  "rowsep" : "0" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table2.row4",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Other windows" } ],
+                  "align" : "left" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "10 m^{2}" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "0.56 (m^{2}×K)\/W" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "17.86 W\/K" } ],
+                  "align" : "center" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table2.row5",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "align" : "right" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total A\/R value: 23.27 W\/K" } ],
+                  "align" : "center",
+                  "colsep" : "1",
+                  "colspan" : 2 } ] } ] } },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote252.example1.para2",
+             "content" : "The increased total A\/R value for the window assemblies on the south side of the proposed house, which is due to the stained glass window, now has to be compensated for by better windows (i.e. with a lower U-value than the maximum allowed) while keeping the total area of windows in the house constant (12 m²). To determine the R-value required to be made up by the rest of the windows on the south side, first calculate the difference between the two total A\/R values:[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "23.27 W\/K – 21.54 W\/K = 1.73 W\/K" } ] },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote252.example1.para3",
+             "content" : "This value (1.73 W\/K) now has to be subtracted from the A\/R value for the 10 m^{2} of windows to determine the compensating energy performance needed:[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "17.86 W\/K – 1.73 W\/K = 16.13 W\/K" } ] },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote252.example1.para4",
+             "content" : "Adding this decreased A\/R value for the windows to the increased A\/R value for the stained glass window will now give a total A\/R value that is less than or equal to that of the reference design:[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "16.13 W\/K + 5.41 W\/K = 21.54 W\/K" } ] },
+            
+            { "type" : "paragraph",
+             "id" : "nbc.divBV2.part9.appendix.appnote252.example1.para5",
+             "content" : "To determine the R-value to be made up by the rest of the windows on the south side of the proposed house, divide the area of the remaining windows by the decreased A\/R value for the 10 m^{2} of windows:[EQ:display:]",
+             "equations" : 
+             [ 
+              { "id" : "",
+               "type" : "display",
+               "plainText" : "10 m^{2}\/16.13 W\/K = 0.62 (m^{2}×K)\/W (or a U-value of 1.6 W\/(m^{2}×K))" } ] },
+            
+            { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table3",
+             "type" : "table",
+             "title" : "",
+             "frame" : "all",
+             "structure" : 
+             { "columns" : 4,
+              "column_specs" : 
+              [ 
+               { "name" : "col1",
+                "width" : "48.00*" },
+               
+               { "name" : "col2",
+                "width" : "48.00*" },
+               
+               { "name" : "col3",
+                "width" : "48.00*" },
+               
+               { "name" : "col4",
+                "width" : "48.00*" } ],
+              "header_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table3.row1",
+                "type" : "header_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Assemblies Being Traded on South Side" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total Area of Assemblies (A)" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "rowspan" : 2 },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Proposed Design Trade-off Values" } ],
+                  "align" : "center",
+                  "valign" : "middle",
+                  "colspan" : 2 } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table3.row2",
+                "type" : "header_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "R-values (R)" } ],
+                  "align" : "center",
+                  "valign" : "middle" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "A\/R Values" } ],
+                  "align" : "center",
+                  "valign" : "middle" } ] } ],
+              "body_rows" : 
+              [ 
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table3.row3",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Stained glass window" } ],
+                  "align" : "left",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "2 m^{2}" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "0.37 (m^{2}×K)\/W" } ],
+                  "align" : "center",
+                  "rowsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "5.41 W\/K" } ],
+                  "align" : "center",
+                  "rowsep" : "0" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table3.row4",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Other windows" } ],
+                  "align" : "left" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "10 m^{2}" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "0.62 (m^{2}×K)\/W" } ],
+                  "align" : "center" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "16.13 W\/K" } ],
+                  "align" : "center" } ] },
+               
+               { "id" : "nbc.divBV2.part9.appendix.appnote252.example1.table3.row5",
+                "type" : "body_row",
+                "cells" : 
+                [ 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "colsep" : "0" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "" } ],
+                  "align" : "right",
+                  "colsep" : "1" },
+                 
+                 { "content" : 
+                  [ 
+                   { "type" : "text",
+                    "value" : "Total A\/R value: 21.54 W\/K" } ],
+                  "align" : "center",
+                  "colsep" : "1",
+                  "colspan" : 2 } ] } ] } } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote253",
            "type" : "application_note",
@@ -686677,7 +688198,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "Minimum Total Length of Braced Wall Panels where HWP ≤ 0.5 kPa and S_{max} ≤ 0.3<italic>Storey<\/italic><italic>Minimum Total Length Braced Wall Panels<\/italic>, m<bold>Diagonal-Lumber-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold><bold>Gypsum-Sheathed Framing Type (with gypsum board on only one side)^{(1)(2)}<\/bold><bold>Wood-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold>DWBGWB-AGWB-BGWB-CGWB-DWSP-AWSP-BWSP-CWSP-DWSP-ESingle storey building configuration[GRAPHIC:bc-graphics\/gg00555a:Single storey building configuration]1.81.81.81.81.81.81.81.81.81.8",
+    "content" : "Minimum Total Length of Braced Wall Panels where HWP ≤ 0.5 kPa and S_{max} ≤ 0.3<italic>Storey<\/italic><italic>Minimum Total Length Braced Wall Panels<\/italic>, m<bold>Diagonal-Lumber-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold><bold>Gypsum-Sheathed Framing Type (with gypsum board on only one side)^{(1)(2)}<\/bold><bold>Wood-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold>DWBGWB-AGWB-BGWB-CGWB-DWSP-AWSP-BWSP-CWSP-DWSP-ESingle storey building configuration[GRAPHIC:bc-graphics\/gg00555a:Single storey building configuration]1.81.81.81.81.81.81.81.81.81.8See [REF:internal:nbc.divBV2.part9.sect23.subsect3.art5.sent3:short] for a description of framing types and fastening requirements.NP = not permitted. Values within round brackets are permitted for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on both sides.",
     "change_summary" : "Struck out the image in the second row of the Storey column and substituted bc-graphics\/gg00555a.eps",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -686693,7 +688214,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "Minimum Total Length of Braced Wall Panels Where HWP ≤ 0.6 kPa and S_{max} ≤ 0.47<italic>Storey<\/italic><italic>Minimum Total Length Braced Wall Panels<\/italic>, m<bold>Diagonal-Lumber-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold><bold>Gypsum-Sheathed Framing Type (with gypsum board on only one side)^{(1)(2)}<\/bold><bold>Wood-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold>DWBGWB-AGWB-BGWB-CGWB-DWSP-AWSP-BWSP-CWSP-DWSP-ESingle storey building configuration[GRAPHIC:bc-graphics\/gg00556a:Single storey building configuration]2.2711.36 (5.68)6.60 (3.30)4.89 (2.45)3.98 (1.99)3.47 (1.74)3.07 (1.54)2.75 (1.38)2.49 (1.25)2.27 (1.14)",
+    "content" : "Minimum Total Length of Braced Wall Panels Where HWP ≤ 0.6 kPa and S_{max} ≤ 0.47<italic>Storey<\/italic><italic>Minimum Total Length Braced Wall Panels<\/italic>, m<bold>Diagonal-Lumber-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold><bold>Gypsum-Sheathed Framing Type (with gypsum board on only one side)^{(1)(2)}<\/bold><bold>Wood-Sheathed Framing Type (with gypsum board on opposite side)^{(1)}<\/bold>DWBGWB-AGWB-BGWB-CGWB-DWSP-AWSP-BWSP-CWSP-DWSP-ESingle storey building configuration[GRAPHIC:bc-graphics\/gg00556a:Single storey building configuration]2.2711.36 (5.68)6.60 (3.30)4.89 (2.45)3.98 (1.99)3.47 (1.74)3.07 (1.54)2.75 (1.38)2.49 (1.25)2.27 (1.14)See [REF:internal:nbc.divBV2.part9.sect23.subsect3.art5.sent3:short] for a description of framing types and fastening requirements.NP = not permitted. Values within round brackets are permitted for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on both sides.",
     "change_summary" : "Struck out the image in the second row of the Storey column and substituted bc-graphics\/gg00556a.eps",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -693056,8 +694577,8 @@
    "total_parts" : 15,
    "total_sections" : 100,
    "total_articles" : 2020,
-   "total_sentences" : 5130,
-   "total_tables" : 351,
+   "total_sentences" : 5129,
+   "total_tables" : 358,
    "total_figures" : 318,
    "total_spectables" : 2,
    "total_application_notes" : 827,
