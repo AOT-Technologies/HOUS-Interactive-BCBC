@@ -1,10 +1,13 @@
 import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { parseTextWithMarkers } from './text-parsing';
 import { FunctionalStatementLink } from '../components/reading/FunctionalStatementLink';
 import { ObjectiveLink } from '../components/reading/ObjectiveLink';
 import { CrossReferenceLink } from '../components/reading/CrossReferenceLink';
 import { GlossaryTerm } from '../components/reading/GlossaryTerm';
+import { SentenceBlock } from '../components/reading/SentenceBlock';
 import type { ReferenceRenderContext } from './cross-reference';
+import type { Sentence } from '@bc-building-code/bcbc-parser';
 import { useStandardsMapStore } from '../stores/standards-map-store';
 import { useVersionStore } from '../stores/version-store';
 
@@ -644,5 +647,116 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(glossaryTerms).toHaveLength(1);
     expect(glossaryTerms[0].props.termId).toBe('bldng');
     expect(glossaryTerms[0].props.text).toBe('buildings');
+  });
+});
+
+describe('parseTextWithMarkers - nested lists', () => {
+  it('renders a variable sub-list embedded inside a bulleted list item', () => {
+    const sentence: Sentence = {
+      id: 'sentence-nested-list',
+      type: 'sentence',
+      number: '2',
+      text: 'The following conditions are met:[LIST:bulleted]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'its equivalent thickness is not less than 200 mm ,' },
+            { content: 'the effective length, kl_u, is not more than 3.7 m where[LIST:variable]' },
+          ],
+        },
+        {
+          type: 'variable',
+          items: [
+            { symbol: 'k', description: '= effective length factor' },
+            { symbol: 'l_u', description: '= unsupported length of the wall in metres.' },
+          ],
+        },
+      ],
+    } as unknown as Sentence;
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    expect(screen.getByText(/its equivalent thickness/)).toBeInTheDocument();
+    expect(screen.getByText(/the effective length/)).toBeInTheDocument();
+    expect(screen.getByText('k')).toBeInTheDocument();
+    expect(screen.getByText('= effective length factor')).toBeInTheDocument();
+    expect(screen.getByText(/= unsupported length/)).toBeInTheDocument();
+  });
+
+  it('does not leak [LIST:variable] as raw text when sub-list is present', () => {
+    const sentence: Sentence = {
+      id: 'sentence-no-leak',
+      type: 'sentence',
+      number: '1',
+      text: 'Conditions:[LIST:bulleted]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'first condition,' },
+            { content: 'second condition where[LIST:variable]' },
+          ],
+        },
+        {
+          type: 'variable',
+          items: [{ symbol: 'A', description: '= area' }],
+        },
+      ],
+    } as unknown as Sentence;
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    expect(screen.queryByText(/\[LIST:variable\]/)).not.toBeInTheDocument();
+    expect(screen.getByText('A')).toBeInTheDocument();
+    expect(screen.getByText('= area')).toBeInTheDocument();
+  });
+
+  it('assigns distinct sub-lists to separate parent bullets in order', () => {
+    // Mirrors the "Wired Glass Assembly Support" case:
+    // bullet b → gets sub-list 2, bullet d → gets sub-list 3 (not sub-list 2 again)
+    const sentence: Sentence = {
+      id: 'sentence-multi-nested',
+      type: 'sentence',
+      number: '1',
+      text: 'The wired glass is[LIST:bulleted]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'not less than 6 mm thick;' },
+            { content: 'reinforced by a wire mesh having dimensions of[LIST:bulleted]' },
+            { content: 'set in fixed steel frames; and' },
+            { content: 'limited in area so that[LIST:bulleted]' },
+          ],
+        },
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'approximately 25 mm across the flats, or' },
+            { content: 'approximately 13 mm across the flats.' },
+          ],
+        },
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'individual panes are not more than 0.84 m, and' },
+            { content: 'the area not supported by mullions is not more than 7.5 m.' },
+          ],
+        },
+      ],
+    } as unknown as Sentence;
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    // Sub-list 2 items appear once each
+    expect(screen.getAllByText(/approximately 25 mm/)).toHaveLength(1);
+    expect(screen.getAllByText(/approximately 13 mm/)).toHaveLength(1);
+    // Sub-list 3 items appear once each (not duplicated from sub-list 2)
+    expect(screen.getAllByText(/individual panes/)).toHaveLength(1);
+    expect(screen.getAllByText(/not supported by mullions/)).toHaveLength(1);
   });
 });

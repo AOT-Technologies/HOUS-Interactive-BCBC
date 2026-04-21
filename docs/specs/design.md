@@ -1197,13 +1197,13 @@ The `resolveCrossReference` function handles all reference types:
 - `TableBlock` - Table rendering with revision support
 - `FigureBlock` - Figure/image rendering
 - `EquationBlock` - Equation rendering
-- `StructuredListBlock` - Bulleted, numbered, variable, definition, organization lists
+- `StructuredListBlock` - Bulleted, numbered, alphabetic, roman, variable, definition, organization lists
 - `CrossReferenceLink` - Clickable reference link
 - `CrossReferenceModal` - Side panel modal for reference preview
 - `GlossaryTerm` - Inline glossary term with click handler
 - `NoteReference` - Note badge link
 - `FrontMatterRenderer` - Preface/introduction/committees content
-- `DivisionAppendixRenderer` - Division-level appendix content
+- `DivisionAppendixRenderer` - Division-level appendix content (normalizes bulleted → alphabetic/roman for Appendix D)
 - `SpectablesRenderer` - Span tables content
 
 #### Search Components

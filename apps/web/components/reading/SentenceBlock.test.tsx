@@ -182,4 +182,86 @@ describe('SentenceBlock', () => {
     expect(text.indexOf('Clause text.')).toBeGreaterThan(-1);
     expect(text.indexOf('See')).toBeGreaterThan(text.indexOf('Clause text.'));
   });
+
+  it('renders a variable sub-list nested inside a bulleted list item', () => {
+    const sentence = {
+      id: 'sentence-nested-list',
+      type: 'sentence',
+      number: '2',
+      text: 'The following conditions are met:[LIST:bulleted]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'its equivalent thickness is not less than 200 mm ,' },
+            { content: 'the effective length, kl_u, is not more than 3.7 m where[LIST:variable]' },
+          ],
+        },
+        {
+          type: 'variable',
+          items: [
+            { symbol: 'k', description: '= effective length factor' },
+            { symbol: 'l_u', description: '= unsupported length of the wall in metres.' },
+          ],
+        },
+      ],
+    } as unknown as Sentence;
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    expect(screen.getByText(/its equivalent thickness/)).toBeInTheDocument();
+    expect(screen.getByText(/the effective length/)).toBeInTheDocument();
+    // Variable sub-list must render beneath the last bullet
+    expect(screen.getByText('k')).toBeInTheDocument();
+    expect(screen.getByText('= effective length factor')).toBeInTheDocument();
+    expect(screen.getByText(/= unsupported length/)).toBeInTheDocument();
+    // Raw marker must not leak into the DOM
+    expect(screen.queryByText(/\[LIST:variable\]/)).not.toBeInTheDocument();
+  });
+
+  it('assigns distinct sub-lists to separate parent bullets without duplication', () => {
+    // Mirrors the "Wired Glass Assembly Support" case where bullet b and bullet d
+    // each embed a [LIST:bulleted] that must resolve to different sub-lists.
+    const sentence = {
+      id: 'sentence-multi-nested',
+      type: 'sentence',
+      number: '1',
+      text: 'The wired glass is[LIST:bulleted]',
+      glossaryTerms: [],
+      lists: [
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'not less than 6 mm thick;' },
+            { content: 'reinforced by a wire mesh having dimensions of[LIST:bulleted]' },
+            { content: 'set in fixed steel frames; and' },
+            { content: 'limited in area so that[LIST:bulleted]' },
+          ],
+        },
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'approximately 25 mm across the flats, or' },
+            { content: 'approximately 13 mm across the flats.' },
+          ],
+        },
+        {
+          type: 'bulleted',
+          items: [
+            { content: 'individual panes are not more than 0.84 m, and' },
+            { content: 'the area not supported by mullions is not more than 7.5 m.' },
+          ],
+        },
+      ],
+    } as unknown as Sentence;
+
+    render(<SentenceBlock sentence={sentence} />);
+
+    // Each sub-list item must appear exactly once — no duplication
+    expect(screen.getAllByText(/approximately 25 mm/)).toHaveLength(1);
+    expect(screen.getAllByText(/approximately 13 mm/)).toHaveLength(1);
+    expect(screen.getAllByText(/individual panes/)).toHaveLength(1);
+    expect(screen.getAllByText(/not supported by mullions/)).toHaveLength(1);
+  });
 });

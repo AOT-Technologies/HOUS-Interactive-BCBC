@@ -189,15 +189,42 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 
 **Syntax**
 ```
-[LIST:ordered]
-[LIST:unordered]
-[LIST:<custom-type>]
+[LIST:bulleted]
+[LIST:numbered]
+[LIST:alphabetic]
+[LIST:roman]
+[LIST:variable]
+[LIST:symbol]
+[LIST:definition]
+[LIST:organization]
+[LIST:bibliography]
 ```
 
 **Rendered as** → `StructuredListBlock` component
-- List items come from the sibling `list` field of the containing JSON node, not from the marker text itself
+- List items come from the sibling `lists` array of the containing JSON node, not from the marker text itself
 - The marker acts as a placeholder anchoring where the list should appear in the text flow
 - Supported in: sentence, clause, subclause content, and **table note** content
+
+**Supported list types:**
+
+| Type | HTML | Description |
+|------|------|-------------|
+| `bulleted` | `<ul>` | Unordered bullet list |
+| `numbered` | `<ol>` | Ordered numeric list (1, 2, 3) |
+| `alphabetic` | `<ol type="a">` | Ordered alphabetic list (a, b, c) |
+| `roman` | `<ol type="i">` | Ordered roman numeral list (i, ii, iii) |
+| `variable` | `<dl>` | Definition list with symbol/description pairs |
+| `symbol` | `<dl>` | Same as variable, for symbol definitions |
+| `definition` | `<dl>` | Definition list with term/definition pairs |
+| `organization` | `<table>` | Organization table with abbreviation/name/website |
+| `bibliography` | `<ol>` | Numbered bibliography entries |
+
+**Appendix D list type normalization:**
+The source data uses `"type": "bulleted"` for appendix article sub-items that the printed code renders as alphabetic (a, b, c) and roman (i, ii, iii). `DivisionAppendixRenderer.renderParagraph` normalizes these at render time:
+- 1st `bulleted` list in a paragraph → `alphabetic` (a, b, c)
+- Subsequent `bulleted` lists (sub-lists) → `roman` (i, ii, iii)
+- This only applies to appendices whose section IDs contain `appsect` (e.g. Appendix D). Appendix C uses `div1`/`div2` IDs and its genuine bullet lists are left as-is.
+- The `[LIST:bulleted]` markers in both the paragraph content string and nested item content strings are rewritten to match the normalized list types.
 
 **Table note example** (note that `list` is a single object, not an array):
 ```json
@@ -214,6 +241,8 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
   }
 }
 ```
+- Lists are consumed in order — the first unconsumed list whose `type` matches the marker type is used
+- **Nested lists:** a list item's `content` string may itself contain a `[LIST:...]` marker. Sub-lists are pre-assigned to each item at parse time (before React renders) by scanning each item's content for `[LIST:...]` markers and slicing the remaining lists sequentially. This makes `renderText` a pure function, safe under React StrictMode re-renders. The `renderText` callback also rewrites any `[LIST:bulleted]` markers in item content to match the actual type of the assigned sub-list (e.g. `[LIST:roman]`), so that type-remapped sub-lists resolve correctly.
 
 ---
 
@@ -552,3 +581,5 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | Self-referencing cross-link appears | `shouldSuppressReferenceInContext()` returning `false` — check `renderContext` prop is passed correctly |
 | Compound reference renders as two separate tokens | Ensure `[[REF:…]-[REF:…]]` uses double brackets and the dash is unspaced |
 | `[LIST:…]` in a table note renders nothing / disappears | Ensure the note's JSON node has a `list` field (not `lists`) with the matching `type` — `RawTableNote` in `TableBlock.tsx` and `renderFormattedText` must receive it as `localLists` |
+| Nested `[LIST:variable]` inside a bulleted item not rendering | Sub-lists are pre-assigned per item in the `case 'list'` branch of `parseTextWithMarkers` — check `itemSubLists` construction and that `StructuredListBlock` passes `itemIndex` to `renderText` |
+| Appendix D lists showing bullets instead of a)/b)/i)/ii) | `DivisionAppendixRenderer.renderParagraph` normalizes `bulleted` → `alphabetic`/`roman` — check `appendixUsesAlphabeticStyle` detection and the marker rewriting in both paragraph content and the `renderText` callback |
