@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-04-21T13:42:17.1537614-07:00",
+  "generated_timestamp" : "2026-04-21T17:23:54.753472-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -603059,7 +603059,28 @@
                 
                 { "content" : "roof loads are carried to the exterior wall," },
                 
-                { "content" : "dead loads: roof 0.50 kPa floor 0.47 kPa wall (with siding) 0.32 kPa wall (with masonry veneer) 1.94 kPa foundation wall 0.27 kPa partitions 0.20 kPa" } ] } ] } ] },
+                { "content" : "dead loads:[LIST:variable]" } ] },
+              
+              { "type" : "variable",
+               "items" : 
+               [ 
+                { "symbol" : "roof",
+                 "description" : "0.50 kPa" },
+                
+                { "symbol" : "floor",
+                 "description" : "0.47 kPa" },
+                
+                { "symbol" : "wall (with siding)",
+                 "description" : "0.32 kPa" },
+                
+                { "symbol" : "wall (with masonry veneer)",
+                 "description" : "1.94 kPa" },
+                
+                { "symbol" : "foundation wall",
+                 "description" : "0.27 kPa" },
+                
+                { "symbol" : "partitions",
+                 "description" : "0.20 kPa" } ] } ] } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote96",
            "type" : "application_note",
