@@ -20,14 +20,15 @@ export interface ArticleBlockProps {
   interactive?: boolean;
 }
 
-export const ArticleBlock: React.FC<ArticleBlockProps> = ({ 
+export const ArticleBlock: React.FC<ArticleBlockProps> = ({
   article,
   subsectionNumberPrefix,
   effectiveDate,
-  interactive = true 
+  interactive = true
 }) => {
   const articleWithSeeAlso = article as Article & { see_also?: string };
   const seeAlsoText = articleWithSeeAlso.see_also?.trim();
+  const articleNoteText = (article as Article & { note?: string }).note?.trim();
   const fullArticleNumber = subsectionNumberPrefix
     ? `${subsectionNumberPrefix}.${article.number}`
     : article.number;
@@ -46,11 +47,16 @@ export const ArticleBlock: React.FC<ArticleBlockProps> = ({
           {parseTextWithMarkers(seeAlsoText, [], interactive, [], [], renderContext)}
         </p>
       ) : null}
-      
+      {articleNoteText ? (
+        <p className="articleSeeAlso">
+          {parseTextWithMarkers(articleNoteText, [], interactive, [], [], renderContext)}
+        </p>
+      ) : null}
+
       {/* Render all content in source order using type-driven dispatcher */}
       <div className="articleContent">
         {(article.content || []).map((item, index) => (
-          <ContentRenderer 
+          <ContentRenderer
             key={`${article.id}-content-${index}`}
             node={item}
             effectiveDate={effectiveDate}

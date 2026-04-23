@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-04-21T17:23:54.753472-07:00",
+  "generated_timestamp" : "2026-04-23T11:09:28.2663294-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -73818,6 +73818,7 @@
               "number" : 1,
               "source" : "bc",
               "title" : "Application",
+              "note" : "",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect2.subsect10.art1.sent1",
@@ -73930,6 +73931,7 @@
               "number" : 2,
               "source" : "bc",
               "title" : "Building Construction",
+              "note" : "",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect2.subsect10.art2.sent1",
@@ -74068,6 +74070,7 @@
               "number" : 4,
               "source" : "bc",
               "title" : "Doors in Public Corridors and Suite Entry Doors",
+              "note" : "",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect2.subsect10.art4.sent1",
@@ -74109,6 +74112,7 @@
                 "number" : 1,
                 "source" : "bc",
                 "title" : "Application",
+                "note" : "",
                 "content" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect10.art1.sent1",
@@ -74221,6 +74225,7 @@
                 "number" : 2,
                 "source" : "bc",
                 "title" : "Building Construction",
+                "note" : "",
                 "content" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect10.art2.sent1",
@@ -74359,6 +74364,7 @@
                 "number" : 4,
                 "source" : "bc",
                 "title" : "Doors in Public Corridors and Suite Entry Doors",
+                "note" : "",
                 "content" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect10.art4.sent1",
@@ -123008,7 +123014,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote107.para1",
-             "content" : "The requirements of [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent1:long] are met by incorporating in a floor area windows or wall panels, as described in [REF:internal:en000439.1:short] , by smoke shafts as described in  Sentences [REF:internal:en000439.2:short] to [REF:internal:en000439.8:short] , or by the use of building exhaust systems as described in [REF:internal:en000439.9:short] ." },
+             "content" : "The requirements of [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent1:long:Sentence 3.2.6.6.(1)] are met by incorporating in a floor area windows or wall panels, as described in [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent1:short:Sentence (1)] , by smoke shafts as described in  Sentences [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent2:short:Sentences (2)] to [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent8:short:to (8)] , or by the use of building exhaust systems as described in [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent9:short:Sentence (9)] ." },
             
             { "id" : "nbc.divB.part3.appendix.appnote107.table1",
              "type" : "table",
@@ -363715,6 +363721,7 @@
               "number" : 1,
               "title" : "Limitations",
               "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote112:short] )",
+              "note" : "(See Note A-9.23.1.1.(1).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect1.art1.sent1",
@@ -365096,6 +365103,7 @@
               "number" : 5,
               "source" : "bc",
               "title" : "Fasteners for Sheathing or Subflooring",
+              "note" : "(See [REF:internal:nbc.divBV2.part9.sect23.subsect13.art2.sent3:medium] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.sent1",
@@ -367715,6 +367723,7 @@
               "number" : 1,
               "source" : "bc",
               "title" : "Anchorage of Building Frames",
+              "note" : "(See [REF:internal:nbc.divBV2.part9.sect23.subsect13.art2.sent3:medium] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect6.art1.sent1",
@@ -371480,6 +371489,7 @@
               "number" : 4,
               "source" : "bc",
               "title" : "Braced Wall Bands",
+              "note" : "(See Note A-9.23.13.4.)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art4.sent1",
@@ -388340,6 +388350,7 @@
               "number" : 8,
               "source" : "bc",
               "title" : "Foundation Cripple Walls",
+              "note" : "(See Note A-9.23.13.8.)(See Note A-9.23.13.8.(2).)(See Note A-9.23.13.8.(3).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art8.sent1",
@@ -388441,6 +388452,7 @@
               "number" : 9,
               "source" : "bc",
               "title" : "Cripple Walls in Stepped Foundations",
+              "note" : "(See Note A-9.23.13.9.(1).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art9.sent1",
@@ -388473,6 +388485,7 @@
               "number" : 10,
               "source" : "bc",
               "title" : "Additional System Considerations",
+              "note" : "(See Note A-9.23.13.10.(2).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art10.sent1",
@@ -407068,13 +407081,13 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "is located where the January design temperature, on a 2.5% basis determined in conformance with [REF:internal:nbc.divA.sect1.subsect1.art3.sent1:long] , is greater than −20°C," },
+                    "text" : "is located where the January design temperature, on a 2.5% basis determined in conformance with [REF:internal:nbc.divA.sect1.subsect1.art3.sent1:long:Article 1.1.3.1.] , is greater than −20°C," },
                    
                    { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause1.subclause2",
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "has only 1 [REF:term:tr:storey] and a [REF:term:flr-r:floor area] of less than 168 m^{2} within the [REF:term:bldng-r:building envelope] ," },
+                    "text" : "has only 1 [REF:term:tr:storey] and a [REF:term:flr-r:floor area] of less than 168 m^{2} within the [REF:term:bldng-r:building envelope] (see Note A-9.32.3.4.(6)(a)(ii))," },
                    
                    { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause1.subclause3",
                     "type" : "subclause",
@@ -407086,7 +407099,7 @@
                     "type" : "subclause",
                     "number" : 4,
                     "source" : "bc",
-                    "text" : "except for a [REF:term:bc-scnd-t:secondary suite] , is not located in a [REF:term:bldng:building] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long] or [REF:internal:nbc.divBV2.part2.sect2.subsect3:long] , and" } ] },
+                    "text" : "except for a [REF:term:bc-scnd-t:secondary suite] , is not located in a [REF:term:bldng:building] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long:Subsection 9.36.6.] or [REF:internal:nbc.divBV2.part2.sect2.subsect3:long:10.2.3.] , and" } ] },
                  
                  { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause2",
                   "type" : "clause",
@@ -407099,7 +407112,7 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "are located in each bedroom, at least one common area and each ancillary space described in [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3:medium] ," },
+                    "text" : "are located in each bedroom, at least one common area and each ancillary space described in [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3:medium:Subclause (2)(a)(iii)] ," },
                    
                    { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause2.subclause2",
                     "type" : "subclause",
@@ -408780,7 +408793,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "The design and installation of heating systems, including requirements for combustion air, and air-conditioning systems other than those described in [REF:internal:nbc.divBV2.part9.sect33.subsect1.art1.sent1:short] shall conform to [REF:internal:nbc.divB.part6:long] . (See [REF:internal:en000354:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect10:long] )" },
+                "text" : "The design and installation of heating systems, including requirements for combustion air, and air-conditioning systems other than those described in [REF:internal:nbc.divBV2.part9.sect33.subsect1.art1.sent1:short] shall conform to [REF:internal:nbc.divB.part6:long:Part 6] . (See [REF:internal:en000354:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect10:long:Subsection 9.10.10.] )" },
                
                { "id" : "nbc.divBV2.part9.sect33.subsect1.art1.sent3",
                 "type" : "sentence",
@@ -410255,6 +410268,7 @@
               "number" : 13,
               "title" : "Return-Air System",
               "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote206:short] )",
+              "note" : "(See Note A-9.33.6.13.)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect33.subsect6.art13.sent1",
@@ -419507,13 +419521,14 @@
               "number" : 3,
               "source" : "bc",
               "title" : "Compliance",
+              "note" : "(See [REF:internal:en001088:short] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "The performance compliance calculations shall determine the annual energy consumption of the proposed house and the house energy target of a reference house in accordance with(See [REF:internal:en001475:short] .)",
+                "text" : "The performance compliance calculations shall determine the annual energy consumption of the proposed house and the house energy target of a reference house in accordance with",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent1.clause1",
@@ -419526,7 +419541,11 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "the EnerGuide Rating System, version 15, and [REF:internal:nbc.divBV2.part9.sect36.subsect5.art3.sent2:short] ." } ] },
+                  "text" : "the EnerGuide Rating System, version 15, and [REF:internal:nbc.divBV2.part9.sect36.subsect5.art3.sent2:short] ." } ],
+                "see_also" : 
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent1.seealso1",
+                  "content" : "(See [REF:internal:en001475:short] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent2",
                 "type" : "sentence",
@@ -423243,6 +423262,7 @@
               "number" : 2,
               "source" : "bc",
               "title" : "Definitions",
+              "note" : "(See Note A-9.36.6.2.)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect36.subsect6.art2.sent1",
@@ -603384,7 +603404,9 @@
              "equations" : 
              [ 
               { "id" : "",
-               "type" : "display" } ],
+               "type" : "display",
+               "latex" : "S_{adj} = S_{table} \\times (D_{red}\/D_{table})^{2}",
+               "plainText" : "S_{adj} = S_{table} \\times (D_{red}\/D_{table})^{2}" } ],
              "lists" : 
              [ 
               { "type" : "variable",
@@ -603408,7 +603430,9 @@
              "equations" : 
              [ 
               { "id" : "",
-               "type" : "display" } ],
+               "type" : "display",
+               "latex" : "N_{adj} = N_{table} \\times (D_{table}\/D_{red})^{2}",
+               "plainText" : "N_{adj} = N_{table} \\times (D_{table}\/D_{red})^{2}" } ],
              "lists" : 
              [ 
               { "type" : "variable",
@@ -606065,7 +606089,9 @@
                "equations" : 
                [ 
                 { "id" : "nbc.divBV2.part9.appendix.appnote129a.div5.eq1",
-                 "type" : "display" } ] },
+                 "type" : "display",
+                 "latex" : "\\frac{(1.25\\ \\mathrm{kPa})(25\\ \\mathrm{m}^2) + (0.45\\ \\mathrm{kPa})(375\\ \\mathrm{m}^2)}{400\\ \\mathrm{m}^2} = 0.5\\ \\mathrm{kPa}",
+                 "plainText" : "\\frac{(1.25\\ \\mathrm{kPa})(25\\ \\mathrm{m}^2) + (0.45\\ \\mathrm{kPa})(375\\ \\mathrm{m}^2)}{400\\ \\mathrm{m}^2} = 0.5\\ \\mathrm{kPa}" } ] },
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote129a.div5.para2",
@@ -606327,7 +606353,9 @@
              "equations" : 
              [ 
               { "id" : "nbc.divBV2.part9.appendix.appnote134b.eq1",
-               "type" : "display" } ] },
+               "type" : "display",
+               "latex" : "L_{w} = C_{Wstorey} K_{Wframe} HWP (K_{exp} K_{roof} K_{Wspacing} K_{Wnumber} K_{gyp} K_{sheath}) \\geq BWP_{min}",
+               "plainText" : "L_{w} = C_{Wstorey} K_{Wframe} HWP (K_{exp} K_{roof} K_{Wspacing} K_{Wnumber} K_{gyp} K_{sheath}) \\geq BWP_{min}" } ] },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote134b.para2",
