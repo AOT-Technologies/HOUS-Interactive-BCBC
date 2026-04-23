@@ -54,8 +54,8 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
               key={item.id || `${list.type}-${index}`}
               className="structuredList__row structuredList__row--variable"
             >
-              <dt className="structuredList__term">{renderText(item.symbol)}</dt>
-              <dd className="structuredList__description">{renderText(item.description)}</dd>
+              <dt className="structuredList__term">{renderText(item.symbol ?? '')}</dt>
+              <dd className="structuredList__description">{renderText(item.description ?? '')}</dd>
             </div>
           ))}
         </dl>
