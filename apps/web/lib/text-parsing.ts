@@ -296,7 +296,12 @@ function parseInlineFormatting(text: string, interactive: boolean = true, startI
 
   // Check if text contains any formatting tags or script notation
   if (!text.includes('<italic>') && !text.includes('<bold>') && !text.includes('_{') && !text.includes('^{')) {
-    return [text];
+    if (!text.includes('\n')) return [text];
+    return text.split('\n').reduce<React.ReactNode[]>((acc, line, i) => {
+      if (i > 0) acc.push(React.createElement('br', { key: `nl-${startIndex}-${i}` }));
+      if (line) acc.push(line);
+      return acc;
+    }, []);
   }
 
   const nodes: React.ReactNode[] = [];
@@ -311,9 +316,9 @@ function parseInlineFormatting(text: string, interactive: boolean = true, startI
     const matchEnd = formatRegex.lastIndex;
     const keyIndex = startIndex + matchStart;
 
-    // Add plain text before this match
+    // Add plain text before this match (preserving newlines as <br>)
     if (matchStart > lastIndex) {
-      nodes.push(text.substring(lastIndex, matchStart));
+      nodes.push(...parseInlineFormatting(text.substring(lastIndex, matchStart), interactive, startIndex + lastIndex));
     }
 
     // Handle different formatting types
@@ -346,9 +351,9 @@ function parseInlineFormatting(text: string, interactive: boolean = true, startI
     lastIndex = matchEnd;
   }
 
-  // Add remaining text
+  // Add remaining text (preserving newlines as <br>)
   if (lastIndex < text.length) {
-    nodes.push(text.substring(lastIndex));
+    nodes.push(...parseInlineFormatting(text.substring(lastIndex), interactive, startIndex + lastIndex));
   }
 
   return nodes.length > 0 ? nodes : [text];
