@@ -84,6 +84,28 @@ function normalizeStandardsKey(value: string): string {
   return value.replace(/[^a-z0-9.]/gi, '').toLowerCase();
 }
 
+/**
+ * Legacy/external reference IDs that have display text mappings but no
+ * navigable content in the application. These should render as plain text.
+ */
+const NON_NAVIGABLE_REFERENCE_IDS = new Set([
+  'ex000109.7',
+  'en000354',
+  'en000437.1',
+  'en000437.2',
+  'en000439.1',
+  'en000439.2',
+  'en000439.8',
+  'en000439.9',
+  'en001211',
+  'en001271',
+  'en001475',
+]);
+
+function isNonNavigableReferenceId(referenceId: string): boolean {
+  return NON_NAVIGABLE_REFERENCE_IDS.has(referenceId);
+}
+
 function stripTrailingStandardsEdition(value: string): string {
   return value.replace(/-\d{2,4}[A-Za-z0-9]*$/u, '');
 }
@@ -109,6 +131,12 @@ function findStandardReferenceEntry(
     if (normalizeStandardsKey(key) === normalizedRefId) return true;
     if (value.standard_ref_id && normalizeStandardsKey(value.standard_ref_id) === normalizedRefId) return true;
     if (value.standard_id && normalizeStandardsKey(value.standard_id) === normalizedRefId) return true;
+    // Some map keys have a "d-" prefix (Appendix D standards) that the reference
+    // ID omits. Try matching the normalized key with the "d-" prefix stripped.
+    if (key.startsWith('d-')) {
+      const strippedKey = normalizeStandardsKey(key.slice(2));
+      if (strippedKey && strippedKey === normalizedRefId) return true;
+    }
     return false;
   })?.[1];
 
@@ -539,6 +567,20 @@ function getCrossReferenceDisplayText(
   format?: InternalRefFormat,
   renderContext?: ReferenceRenderContext
 ): GlossaryDisplay {
+  // Legacy external IDs that don't follow the nbc.* naming convention.
+  // Map them to their known display text.
+  const legacyIdMap: Record<string, string> = {
+    'ex000109.7': 'Section D-6',
+    'en000354': 'Note A-9.33.1.1.(2)',
+    'en001211': 'Note A-9.7.5.2.(2)',
+    'en001271': 'Note A-9.33.2.1.(2)',
+    'en001475': 'Note A-9.36.5.3.(1)',
+  };
+  const legacyText = legacyIdMap[referenceId];
+  if (legacyText) {
+    return { text: legacyText, consumed: 0 };
+  }
+
   const remaining = fullText.slice(markerEnd);
   const parsedReference = parseReferenceId(referenceId);
   const shouldExpandShortArticleRef =
@@ -1322,8 +1364,9 @@ export function parseTextWithMarkers(
           sanitizedText.slice(marker.end + crossRefDisplay.consumed)
         );
         const suppressReference =
-          interactive &&
-          shouldSuppressReferenceInContext(marker.referenceId!, renderContext);
+          (interactive &&
+            shouldSuppressReferenceInContext(marker.referenceId!, renderContext)) ||
+          isNonNavigableReferenceId(marker.referenceId!);
 
         if (suppressReference) {
           nodes.push(

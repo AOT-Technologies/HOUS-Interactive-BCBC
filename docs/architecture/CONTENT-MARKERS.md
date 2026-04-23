@@ -103,6 +103,11 @@ At render time, the main parser function `parseTextWithMarkers()` in
   - **Modal reference**: opens `CrossReferenceModal` showing the full quoted content
   - **Navigate reference**: updates URL / navigation store
 - Display text is resolved by `getCrossReferenceDisplayText()` in `text-parsing.ts`
+- **Legacy IDs:** Some source data uses non-standard reference IDs that don't follow the `nbc.*` naming convention. Two known patterns exist:
+  - `ex*` IDs (e.g. `ex000109.7`) — legacy section/appendix references
+  - `en*` IDs (e.g. `en000354`) — legacy application note references, typically displayed as "Note A-X.Y.Z.W.(N)"
+  
+  These are mapped to display text via `legacyIdMap` in `getCrossReferenceDisplayText()` and rendered as plain text (not clickable) via `isNonNavigableReferenceId()`. To add a new legacy ID: add the ID and its display text to `legacyIdMap`, and add the ID to `NON_NAVIGABLE_REFERENCE_IDS` in `text-parsing.ts`.
 
 ---
 
@@ -159,6 +164,7 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 **Rendered as** → styled external link
 - `standardId` is resolved via `standards-map-store`
 - URL-form renders a plain anchor with the supplied label
+- **Key matching:** `findStandardReferenceEntry()` normalizes both the reference ID and map keys (stripping non-alphanumeric characters). It also strips the `d-` prefix from map keys as a fallback, since some Appendix D standards are stored with a `d-` prefix (e.g. `d-astmd2898`) but referenced without it (`astmd2898`).
 
 ---
 
@@ -583,3 +589,5 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | `[LIST:…]` in a table note renders nothing / disappears | Ensure the note's JSON node has a `list` field (not `lists`) with the matching `type` — `RawTableNote` in `TableBlock.tsx` and `renderFormattedText` must receive it as `localLists` |
 | Nested `[LIST:variable]` inside a bulleted item not rendering | Sub-lists are pre-assigned per item in the `case 'list'` branch of `parseTextWithMarkers` — check `itemSubLists` construction and that `StructuredListBlock` passes `itemIndex` to `renderText` |
 | Appendix D lists showing bullets instead of a)/b)/i)/ii) | `DivisionAppendixRenderer.renderParagraph` normalizes `bulleted` → `alphabetic`/`roman` — check `appendixUsesAlphabeticStyle` detection and the marker rewriting in both paragraph content and the `renderText` callback |
+| `[REF:standard:...]` showing raw ID instead of citation | `findStandardReferenceEntry()` in `text-parsing.ts` — check the standards map has the key. If the key has a `d-` prefix, the fallback prefix-stripping logic should match it |
+| `[REF:internal:...]` renders as a dead link (no content on click) | If the reference ID is a legacy/external ID (`ex*` for sections, `en*` for notes), add it to `NON_NAVIGABLE_REFERENCE_IDS` and `legacyIdMap` in `text-parsing.ts` so it renders as plain text with the correct display label |
