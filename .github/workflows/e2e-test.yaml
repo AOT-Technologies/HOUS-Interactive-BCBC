@@ -60,7 +60,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: test-results-${{ github.job }}-${{ github.run_id }}
           path: |
               TestResults/**/*.trx
               TestResults/**/*.html
