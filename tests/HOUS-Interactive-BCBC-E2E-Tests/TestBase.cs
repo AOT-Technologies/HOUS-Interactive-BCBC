@@ -8,14 +8,14 @@ namespace Interactive_BCBC_E2E;
 public abstract class TestBase
 {
     public const string BaseUrlEnvironmentVariableName = "BASE_URL";
-    public const string DefaultBaseUrl = "https://interactive-bcbc-app-d6af69-dev.apps.silver.devops.gov.bc.ca/";
+    //public const string DefaultBaseUrl = "http://localhost:3000"; // For local debugging, but in CI we expect the environment variable to be set.
     public const int DefaultViewportWidth = 1280;
     public const int DefaultViewportHeight = 720;
     public const string DesktopProfileName = "Desktop";
     public const string IPhone13ProfileName = "iPhone 13";
     public const string Pixel5ProfileName = "Pixel 5";
 
-    public static readonly string BaseUrl = Environment.GetEnvironmentVariable(BaseUrlEnvironmentVariableName) ?? DefaultBaseUrl;
+    public static readonly string BaseUrl = Environment.GetEnvironmentVariable(BaseUrlEnvironmentVariableName); // ?? DefaultBaseUrl;
     public static readonly int DefaultTimeout = 10_000;
     public static readonly int NavigationTimeout = 20_000;
     public static readonly int ViewportSizeWidth = DefaultViewportWidth;
