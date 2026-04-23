@@ -90,6 +90,7 @@ function normalizeStandardsKey(value: string): string {
  */
 const NON_NAVIGABLE_REFERENCE_IDS = new Set([
   'ex000109.7',
+  'en000321',
   'en000354',
   'en000437.1',
   'en000437.2',
@@ -97,6 +98,8 @@ const NON_NAVIGABLE_REFERENCE_IDS = new Set([
   'en000439.2',
   'en000439.8',
   'en000439.9',
+  'en000471',
+  'en001088',
   'en001211',
   'en001271',
   'en001475',
@@ -572,6 +575,7 @@ function getCrossReferenceDisplayText(
   const legacyIdMap: Record<string, string> = {
     'ex000109.7': 'Section D-6',
     'en000354': 'Note A-9.33.1.1.(2)',
+    'en001088': 'Note A-9.36.5.3.',
     'en001211': 'Note A-9.7.5.2.(2)',
     'en001271': 'Note A-9.33.2.1.(2)',
     'en001475': 'Note A-9.36.5.3.(1)',

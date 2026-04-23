@@ -384,6 +384,9 @@ ContentRenderer.tsx      — recursive type-driven dispatcher
   │  routes by node.type → SentenceBlock | ClauseBlock | SubclauseBlock
   │                         TableBlock | FigureBlock | EquationBlock | NoteBlock
   ▼
+ArticleBlock.tsx         — renders article heading, see_also, note, and content
+  │                         (note field renders "(See Note A-…)" before sentences)
+  ▼
 SentenceBlock.tsx        — calls parseTextWithMarkers(text, glossaryTerms, …)
   │
   ▼
@@ -591,3 +594,4 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | Appendix D lists showing bullets instead of a)/b)/i)/ii) | `DivisionAppendixRenderer.renderParagraph` normalizes `bulleted` → `alphabetic`/`roman` — check `appendixUsesAlphabeticStyle` detection and the marker rewriting in both paragraph content and the `renderText` callback |
 | `[REF:standard:...]` showing raw ID instead of citation | `findStandardReferenceEntry()` in `text-parsing.ts` — check the standards map has the key. If the key has a `d-` prefix, the fallback prefix-stripping logic should match it |
 | `[REF:internal:...]` renders as a dead link (no content on click) | If the reference ID is a legacy/external ID (`ex*` for sections, `en*` for notes), add it to `NON_NAVIGABLE_REFERENCE_IDS` and `legacyIdMap` in `text-parsing.ts` so it renders as plain text with the correct display label |
+| Article-level "(See Note A-…)" missing before sentences | The article JSON may use a `note` field instead of `see_also`. `ArticleBlock.tsx` renders both — check the JSON has the field and that the `en*` ID inside it is mapped in `legacyIdMap` |
