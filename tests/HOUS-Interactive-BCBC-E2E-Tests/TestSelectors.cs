@@ -48,11 +48,11 @@ public static class TestSelectors
     public const string SearchMainButtonTestId = "button-hero-search-button";
     public const string HeaderSearchInputTestId = "header-search-input";
     public const string HeaderSearchCancelButtonTestId = "button-header-search-cancel";
-    
+
     // ===== Buttons - Glossary =====
     public const string GlossaryButtonTestId = "glossary-button";
     public const string GlossaryButtonSelector = "button:has-text('Glossary')";
-    
+
     // ===== Buttons - Download =====
     public const string DownloadButtonTestId = "download-button";
     public const string DownloadButtonSelector = "button:has-text('Download')";
@@ -67,7 +67,7 @@ public static class TestSelectors
 
     // ===== Header / Navigation =====
     public const string HeaderMobileNavButtonTestId = "button-header-mobile-nav-button";
-    public const string GlossaryLinkTestId = "link-header-nav-item-glossary";
+    public const string GlossaryLinkTestId = "link-header-nav-item-defined-terms";
     public const string HtmlButtonSelector = "button";
     public const string HtmlSelectSelector = "select";
     public const string HtmlOptionSelector = "option";
@@ -158,5 +158,3 @@ public static class TestSelectors
     public const int SearchResultsCardVisibilityTimeout = 10000;
 
 }
-
-
