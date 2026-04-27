@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-04-23T14:07:43.796272-07:00",
+  "generated_timestamp" : "2026-04-27T12:04:40.260414-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -73818,6 +73818,7 @@
               "number" : 1,
               "source" : "bc",
               "title" : "Application",
+              "note" : "",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect2.subsect10.art1.sent1",
@@ -73930,6 +73931,7 @@
               "number" : 2,
               "source" : "bc",
               "title" : "Building Construction",
+              "note" : "",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect2.subsect10.art2.sent1",
@@ -74068,6 +74070,7 @@
               "number" : 4,
               "source" : "bc",
               "title" : "Doors in Public Corridors and Suite Entry Doors",
+              "note" : "",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect2.subsect10.art4.sent1",
@@ -74109,6 +74112,7 @@
                 "number" : 1,
                 "source" : "bc",
                 "title" : "Application",
+                "note" : "",
                 "content" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect10.art1.sent1",
@@ -74221,6 +74225,7 @@
                 "number" : 2,
                 "source" : "bc",
                 "title" : "Building Construction",
+                "note" : "",
                 "content" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect10.art2.sent1",
@@ -74359,6 +74364,7 @@
                 "number" : 4,
                 "source" : "bc",
                 "title" : "Doors in Public Corridors and Suite Entry Doors",
+                "note" : "",
                 "content" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect10.art4.sent1",
@@ -123008,7 +123014,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote107.para1",
-             "content" : "The requirements of [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent1:long] are met by incorporating in a floor area windows or wall panels, as described in [REF:internal:en000439.1:short] , by smoke shafts as described in  Sentences [REF:internal:en000439.2:short] to [REF:internal:en000439.8:short] , or by the use of building exhaust systems as described in [REF:internal:en000439.9:short] ." },
+             "content" : "The requirements of [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent1:long:Sentence 3.2.6.6.(1)] are met by incorporating in a floor area windows or wall panels, as described in [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent1:short:Sentence (1)] , by smoke shafts as described in  Sentences [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent2:short:Sentences (2)] to [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent8:short:to (8)] , or by the use of building exhaust systems as described in [REF:internal:nbc.divB.part3.sect2.subsect6.art6.sent9:short:Sentence (9)] ." },
             
             { "id" : "nbc.divB.part3.appendix.appnote107.table1",
              "type" : "table",
@@ -332049,7 +332055,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Maximum Size of Coarse Aggregate, mm (in.)" } ],
+                       "value" : "Maximum Size of Coarse Aggregate, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colname" : "1",
@@ -332146,7 +332152,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "14 (½)" } ],
+                       "value" : "14" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
@@ -332200,7 +332206,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "20 (¾)" } ],
+                       "value" : "20" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
@@ -332254,7 +332260,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "28 (1 1\/16)" } ],
+                       "value" : "28" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
@@ -332307,7 +332313,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "40 (1 ½)" } ],
+                       "value" : "40" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
@@ -334818,14 +334824,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Width, mm (in.)" } ],
+                       "value" : "Minimum Width, mm" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Height, mm (in.)" } ],
+                       "value" : "Minimum Height, mm" } ],
                      "align" : "center",
                      "valign" : "middle" } ] } ],
                  "body_rows" : 
@@ -334845,7 +334851,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "810 (32)" } ],
+                       "value" : "810" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "rowspan" : 2 },
@@ -334853,7 +334859,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1 980 (78)" } ],
+                       "value" : "1 980" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "rowspan" : 2 } ] },
@@ -334884,7 +334890,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "810 (32)" } ],
+                       "value" : "810" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "rowspan" : 3 },
@@ -334892,7 +334898,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1 980 (78)" } ],
+                       "value" : "1 980" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "rowspan" : 3 } ] },
@@ -334934,14 +334940,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "610 (24)" } ],
+                       "value" : "610" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1 980 (78)" } ],
+                       "value" : "1 980" } ],
                      "align" : "center",
                      "valign" : "middle" } ] },
                   
@@ -334959,14 +334965,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "610 (24)" } ],
+                       "value" : "610" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1 980 (78)" } ],
+                       "value" : "1 980" } ],
                      "align" : "center",
                      "valign" : "middle" } ] },
                   
@@ -334984,14 +334990,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "610 (24)" } ],
+                       "value" : "610" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1 980 (78)" } ],
+                       "value" : "1 980" } ],
                      "align" : "center",
                      "valign" : "middle" } ] },
                   
@@ -335009,14 +335015,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "760 (30)" } ],
+                       "value" : "760" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1 980 (78)" } ],
+                       "value" : "1 980" } ],
                      "align" : "center",
                      "valign" : "middle" } ] } ] } } ] },
              
@@ -351642,24 +351648,24 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.2 m (3 ft. 11 in.)[REF:table-note:nbc.divBV2.part9.sect12.subsect2.art2.table1.note3]" } ],
+                       "value" : "1.2 m [REF:table-note:nbc.divBV2.part9.sect12.subsect2.art2.table1.note3]" } ],
                      "align" : "center" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.2 m (3 ft. 11 in.)" } ],
+                       "value" : "1.2 m" } ],
                      "align" : "center" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.2 m (3 ft. 11 in.) but not less than the depth of frost penetration [REF:table-note:nbc.divBV2.part9.sect12.subsect2.art2.table1.note3]" } ] },
+                       "value" : "1.2 m but not less than the depth of frost penetration [REF:table-note:nbc.divBV2.part9.sect12.subsect2.art2.table1.note3]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.2 m (3 ft. 11 in.) but not less than the depth of frost penetration" } ] } ] } ] } },
+                       "value" : "1.2 m but not less than the depth of frost penetration" } ] } ] } ] } },
                
                { "id" : "nbc.divBV2.part9.sect12.subsect2.art2.sent2",
                 "type" : "sentence",
@@ -353510,7 +353516,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Width of Strip Footings, mm (in.)" } ],
+                       "value" : "Minimum Width of Strip Footings, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 2 },
@@ -353518,7 +353524,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Footing Area for Columns Spaced 3 m(9 ft. 10 in.) o.c., [REF:table-note:nbc.divBV2.part9.sect15.subsect3.art4.table1.note1] m^{2}(ft.^{2})" } ],
+                       "value" : "Minimum Footing Area for Columns Spaced 3 m o.c., [REF:table-note:nbc.divBV2.part9.sect15.subsect3.art4.table1.note1] m^{2}" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colname" : "tbody4",
@@ -353558,21 +353564,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "250 (9 ⅞)" } ],
+                       "value" : "250" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "200 (7 ⅞)" } ],
+                       "value" : "200" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.4 (4.3)" } ],
+                       "value" : "0.4" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -353591,21 +353597,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "350 (13 ¾)" } ],
+                       "value" : "350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "350 (13 ¾)" } ],
+                       "value" : "350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.75 (8.1)" } ],
+                       "value" : "0.75" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -353623,21 +353629,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "450 (17 ¾)" } ],
+                       "value" : "450" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "500 (19 ¾)" } ],
+                       "value" : "500" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1.0 (10.9)" } ],
+                       "value" : "1.0" } ],
                      "align" : "center",
                      "valign" : "top" } ] } ] } } ] },
              
@@ -358386,7 +358392,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Angle Size, mm (in.)" } ],
+                       "value" : "Minimum Angle Size, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 3 },
@@ -358394,7 +358400,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Maximum Allowable Spans, m (ft.-in.)" } ],
+                       "value" : "Maximum Allowable Spans, m" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 3 } ] },
@@ -358428,21 +358434,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Supporting 75 mm(3 in.) Brick" } ],
+                       "value" : "Supporting 75 mm Brick" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Supporting 90 mm(3½ in.) Brick" } ],
+                       "value" : "Supporting 90 mm Brick" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Supporting 100 mm(4 in.) Stone" } ],
+                       "value" : "Supporting 100 mm Stone" } ],
                      "align" : "center",
                      "valign" : "middle" } ] } ],
                  "body_rows" : 
@@ -358454,28 +358460,28 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "89 (3½)" } ],
+                       "value" : "89" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "76 (3)" } ],
+                       "value" : "76" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "6.4 (¼)" } ],
+                       "value" : "6.4" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2.55 (8-4)" } ],
+                       "value" : "2.55" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -358500,42 +358506,42 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "89 (3½)" } ],
+                       "value" : "89" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "89 (3½)" } ],
+                       "value" : "89" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "6.4 (¼)" } ],
+                       "value" : "6.4" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2.59 (8-6)" } ],
+                       "value" : "2.59" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2.47 (8-1)" } ],
+                       "value" : "2.47" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2.30 (7-7)" } ],
+                       "value" : "2.30" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -358546,42 +358552,42 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "102 (4)" } ],
+                       "value" : "102" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "89 (3½)" } ],
+                       "value" : "89" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "6.4 (¼)" } ],
+                       "value" : "6.4" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2.79 (9-2)" } ],
+                       "value" : "2.79" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2.66 (8-9)" } ],
+                       "value" : "2.66" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2.48 (8-2)" } ],
+                       "value" : "2.48" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -358592,42 +358598,42 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "127 (4⅞)" } ],
+                       "value" : "127" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "89 (3½)" } ],
+                       "value" : "89" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "7.9 (5\/16)" } ],
+                       "value" : "7.9" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.47 (11-5)" } ],
+                       "value" : "3.47" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.31 (10-10)" } ],
+                       "value" : "3.31" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.08 (10-1)" } ],
+                       "value" : "3.08" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -358638,42 +358644,42 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "127 (4⅞)" } ],
+                       "value" : "127" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "89 (3½)" } ],
+                       "value" : "89" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "11 (⅜)" } ],
+                       "value" : "11" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.64 (11-11)" } ],
+                       "value" : "3.64" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.48 (11-5)" } ],
+                       "value" : "3.48" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.24 (10-8)" } ],
+                       "value" : "3.24" } ],
                      "align" : "center",
                      "valign" : "top" } ] } ] } },
                
@@ -363715,6 +363721,7 @@
               "number" : 1,
               "title" : "Limitations",
               "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote112:short] )",
+              "note" : "(See Note A-9.23.1.1.(1).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect1.art1.sent1",
@@ -365096,6 +365103,7 @@
               "number" : 5,
               "source" : "bc",
               "title" : "Fasteners for Sheathing or Subflooring",
+              "note" : "(See [REF:internal:nbc.divBV2.part9.sect23.subsect13.art2.sent3:medium] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.sent1",
@@ -367715,6 +367723,7 @@
               "number" : 1,
               "source" : "bc",
               "title" : "Anchorage of Building Frames",
+              "note" : "(See [REF:internal:nbc.divBV2.part9.sect23.subsect13.art2.sent3:medium] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect6.art1.sent1",
@@ -371480,6 +371489,7 @@
               "number" : 4,
               "source" : "bc",
               "title" : "Braced Wall Bands",
+              "note" : "(See Note A-9.23.13.4.)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art4.sent1",
@@ -388340,6 +388350,7 @@
               "number" : 8,
               "source" : "bc",
               "title" : "Foundation Cripple Walls",
+              "note" : "(See Note A-9.23.13.8.)(See Note A-9.23.13.8.(2).)(See Note A-9.23.13.8.(3).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art8.sent1",
@@ -388441,6 +388452,7 @@
               "number" : 9,
               "source" : "bc",
               "title" : "Cripple Walls in Stepped Foundations",
+              "note" : "(See Note A-9.23.13.9.(1).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art9.sent1",
@@ -388473,6 +388485,7 @@
               "number" : 10,
               "source" : "bc",
               "title" : "Additional System Considerations",
+              "note" : "(See Note A-9.23.13.10.(2).)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art10.sent1",
@@ -400663,7 +400676,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Nail or Staple Length, mm (in.)[REF:table-note:nbc.divBV2.part9.sect27.subsect5.art4.table1.note1]" } ],
+                       "value" : "Minimum Nail or Staple Length, mm [REF:table-note:nbc.divBV2.part9.sect27.subsect5.art4.table1.note1]" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
@@ -400677,7 +400690,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Maximum Nail or Staple Spacing, mm (in.) o.c." } ],
+                       "value" : "Maximum Nail or Staple Spacing, mm o.c." } ],
                      "align" : "center",
                      "valign" : "middle" } ] } ],
                  "body_rows" : 
@@ -400696,7 +400709,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "51 (2)" } ],
+                       "value" : "51" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -400710,7 +400723,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "600 (24)" } ],
+                       "value" : "600" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -400728,7 +400741,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "51 (2)" } ],
+                       "value" : "51" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -400742,7 +400755,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "600 (24)" } ],
+                       "value" : "600" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -400761,7 +400774,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "38 (1½)" } ],
+                       "value" : "38" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -400775,7 +400788,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "600 (24) (nailed to framing)" } ],
+                       "value" : "600 (nailed to framing)" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -400807,7 +400820,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 (16) (nailed to sheathing only)" } ],
+                       "value" : "400 (nailed to sheathing only)" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -400852,14 +400865,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "up to 200 mm(8 in.) in width" } ],
+                       "value" : "up to 200 mm in width" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "51 (2)" } ],
+                       "value" : "51" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -400884,14 +400897,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "over 200 mm(8 in.) in width" } ],
+                       "value" : "over 200 mm in width" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "51 (2)" } ],
+                       "value" : "51" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -400950,14 +400963,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "up to 200 mm(8 in.) in width" } ],
+                       "value" : "up to 200 mm in width" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "32 (1¼)" } ],
+                       "value" : "32" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -400982,14 +400995,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "over 200 mm(8 in.) in width" } ],
+                       "value" : "over 200 mm in width" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "32 (1¼)" } ],
+                       "value" : "32" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -401174,14 +401187,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "up to 7 mm(¼ in.) thick" } ],
+                       "value" : "up to 7 mm thick" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "38 (1½)" } ],
+                       "value" : "38" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -401195,7 +401208,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "150 (6) (along edges)" } ],
+                       "value" : "150 (along edges)" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -401206,14 +401219,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "over 7 mm(¼ in.) thick" } ],
+                       "value" : "over 7 mm thick" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "51 (2)" } ],
+                       "value" : "51" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -401227,7 +401240,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "300 (12) (along intermediate supports)" } ],
+                       "value" : "300 (along intermediate supports)" } ],
                      "align" : "center",
                      "valign" : "top" } ] } ] } },
                
@@ -401249,7 +401262,7 @@
                 [ 
                  { "id" : "nbc.divBV2.part9.sect27.subsect5.art4.table2.note1",
                   "vendor_id" : "et000484-1",
-                  "content" : "Wood shakes and wood shingles are permitted to be attached to horizontal wood furring members in accordance with [REF:internal:nbc.divBV2.part9.sect27.subsect5.art4.table1:long] . The wood furring members shall be attached to the web fastening strips of flat wall ICF units with screws not less than 4.2 mm in diameter (No. 8) spaced horizontally not more than 400 or 450 mm o.c. (two horizontal spacing options are given to accommodate the 150 and 200 mm o.c. horizontal spacing options for web fastening strips)." },
+                  "content" : "Wood shakes and wood shingles are permitted to be attached to horizontal wood furring members in accordance with [REF:internal:nbc.divBV2.part9.sect27.subsect5.art4.table1:long] . The wood furring members shall be attached to the web fastening strips of flat wall ICF units with screws not less than 4.2 mm in diameter spaced horizontally not more than 400 or 450 mm o.c. (two horizontal spacing options are given to accommodate the 150 and 200 mm o.c. horizontal spacing options for web fastening strips)." },
                  
                  { "id" : "nbc.divBV2.part9.sect27.subsect5.art4.table2.note2",
                   "vendor_id" : "et000484-2",
@@ -401302,14 +401315,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Screw Diameter, mm (gauge)" } ],
+                       "value" : "Minimum Screw Diameter, mm" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Maximum Horizontal Spacing of Screws, mm (in.) o.c. [REF:table-note:nbc.divBV2.part9.sect27.subsect5.art4.table2.note2]" } ],
+                       "value" : "Maximum Horizontal Spacing of Screws, mm o.c. [REF:table-note:nbc.divBV2.part9.sect27.subsect5.art4.table2.note2]" } ],
                      "align" : "center",
                      "valign" : "middle" } ] } ],
                  "body_rows" : 
@@ -401334,14 +401347,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.5 (No. 6)" } ],
+                       "value" : "3.5" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 or 450 (16 or 18) (screwed to web fastening strip)" } ],
+                       "value" : "400 or 450 (screwed to web fastening strip)" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -401365,13 +401378,13 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "4.2 (No. 8)" } ],
+                       "value" : "4.2" } ],
                      "align" : "center" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 or 450 (16 or 18) (screwed to web fastening strip)" } ],
+                       "value" : "400 or 450 (screwed to web fastening strip)" } ],
                      "align" : "center" } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect27.subsect5.art4.table2.row4",
@@ -401397,7 +401410,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "4.2 (No. 8)" } ],
+                       "value" : "4.2" } ],
                      "align" : "center",
                      "valign" : "top",
                      "rowsep" : "1" },
@@ -401405,7 +401418,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 or 450 (16 or 18) (screwed to web fastening strip)" } ],
+                       "value" : "400 or 450 (screwed to web fastening strip)" } ],
                      "align" : "center",
                      "valign" : "top",
                      "rowsep" : "1" } ] },
@@ -401430,14 +401443,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.5 (No. 6)" } ],
+                       "value" : "3.5" } ],
                      "align" : "center",
                      "rowsep" : "1" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 or 450 (16 or 18) (screwed to web fastening strip)" } ],
+                       "value" : "400 or 450 (screwed to web fastening strip)" } ],
                      "align" : "center",
                      "rowsep" : "1" } ] },
                   
@@ -401461,13 +401474,13 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "4.2 (No. 8)" } ],
+                       "value" : "4.2" } ],
                      "align" : "center" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 or 450 (16 or 18) (masonry tie screwed to web fastening strip)" } ],
+                       "value" : "400 or 450 (masonry tie screwed to web fastening strip)" } ],
                      "align" : "center" } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect27.subsect5.art4.table2.row7",
@@ -401510,7 +401523,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "up to 7 mm(¼ in.) thick" } ],
+                       "value" : "up to 7 mm thick" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
@@ -401523,7 +401536,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "3.5 (No. 6)" } ],
+                       "value" : "3.5" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -401541,7 +401554,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "over 7 mm(¼ in.) thick" } ],
+                       "value" : "over 7 mm thick" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
@@ -401554,7 +401567,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "4.2 (No. 8)" } ],
+                       "value" : "4.2" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -401859,7 +401872,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Shake or Shingle Length, mm (in.)" } ],
+                       "value" : "Shake or Shingle Length, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colname" : "tbody1",
@@ -401868,7 +401881,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Maximum Exposure, mm (in.)" } ],
+                       "value" : "Maximum Exposure, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 2 },
@@ -401876,7 +401889,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Butt Thickness, mm (in.)" } ],
+                       "value" : "Minimum Butt Thickness, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colname" : "tbody4",
@@ -401909,28 +401922,28 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 (16)" } ],
+                       "value" : "400" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "190 (7 ½)" } ],
+                       "value" : "190" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "305 (12)" } ],
+                       "value" : "305" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "10 (⅜)" } ],
+                       "value" : "10" } ],
                      "align" : "center",
                      "valign" : "middle" } ] },
                   
@@ -401942,28 +401955,28 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "450 (17 ¾)" } ],
+                       "value" : "450" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "216 (8 ½)" } ],
+                       "value" : "216" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "356 (14)" } ],
+                       "value" : "356" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "11 (7\/16)" } ],
+                       "value" : "11" } ],
                      "align" : "center",
                      "valign" : "middle" } ] },
                   
@@ -401974,28 +401987,28 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "600 (24)" } ],
+                       "value" : "600" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "292 (11 ½)" } ],
+                       "value" : "292" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "406 (16)" } ],
+                       "value" : "406" } ],
                      "align" : "center",
                      "valign" : "middle" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "13 (½)" } ],
+                       "value" : "13" } ],
                      "align" : "center",
                      "valign" : "middle" } ] } ] } } ] } ] },
            
@@ -402089,7 +402102,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Spacing of Supports, mm (in.)" } ],
+                       "value" : "Spacing of Supports, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colname" : "tbody1",
@@ -402098,7 +402111,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum Thickness, mm (in.)" } ],
+                       "value" : "Minimum Thickness, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 2 } ] },
@@ -402130,21 +402143,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "400 (16)" } ],
+                       "value" : "400" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "8 (5\/16)" } ],
+                       "value" : "8" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "6 (¼)" } ],
+                       "value" : "6" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -402155,21 +402168,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "600 (24)" } ],
+                       "value" : "600" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "11 (7\/16)" } ],
+                       "value" : "11" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "8 (5\/16)" } ],
+                       "value" : "8" } ],
                      "align" : "center",
                      "valign" : "top" } ] } ] } },
                
@@ -407068,13 +407081,13 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "is located where the January design temperature, on a 2.5% basis determined in conformance with [REF:internal:nbc.divA.sect1.subsect1.art3.sent1:long] , is greater than −20°C," },
+                    "text" : "is located where the January design temperature, on a 2.5% basis determined in conformance with [REF:internal:nbc.divA.sect1.subsect1.art3.sent1:long:Article 1.1.3.1.] , is greater than −20°C," },
                    
                    { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause1.subclause2",
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "has only 1 [REF:term:tr:storey] and a [REF:term:flr-r:floor area] of less than 168 m^{2} within the [REF:term:bldng-r:building envelope] ," },
+                    "text" : "has only 1 [REF:term:tr:storey] and a [REF:term:flr-r:floor area] of less than 168 m^{2} within the [REF:term:bldng-r:building envelope] (see Note A-9.32.3.4.(6)(a)(ii))," },
                    
                    { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause1.subclause3",
                     "type" : "subclause",
@@ -407086,7 +407099,7 @@
                     "type" : "subclause",
                     "number" : 4,
                     "source" : "bc",
-                    "text" : "except for a [REF:term:bc-scnd-t:secondary suite] , is not located in a [REF:term:bldng:building] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long] or [REF:internal:nbc.divBV2.part2.sect2.subsect3:long] , and" } ] },
+                    "text" : "except for a [REF:term:bc-scnd-t:secondary suite] , is not located in a [REF:term:bldng:building] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long:Subsection 9.36.6.] or [REF:internal:nbc.divBV2.part2.sect2.subsect3:long:10.2.3.] , and" } ] },
                  
                  { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause2",
                   "type" : "clause",
@@ -407099,7 +407112,7 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "are located in each bedroom, at least one common area and each ancillary space described in [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3:medium] ," },
+                    "text" : "are located in each bedroom, at least one common area and each ancillary space described in [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3:medium:Subclause (2)(a)(iii)] ," },
                    
                    { "id" : "nbc.divBV2.part9.sect32.subsect3.art4.sent6.clause2.subclause2",
                     "type" : "subclause",
@@ -408780,7 +408793,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "The design and installation of heating systems, including requirements for combustion air, and air-conditioning systems other than those described in [REF:internal:nbc.divBV2.part9.sect33.subsect1.art1.sent1:short] shall conform to [REF:internal:nbc.divB.part6:long] . (See [REF:internal:en000354:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect10:long] )" },
+                "text" : "The design and installation of heating systems, including requirements for combustion air, and air-conditioning systems other than those described in [REF:internal:nbc.divBV2.part9.sect33.subsect1.art1.sent1:short] shall conform to [REF:internal:nbc.divB.part6:long:Part 6] . (See [REF:internal:en000354:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect10:long:Subsection 9.10.10.] )" },
                
                { "id" : "nbc.divBV2.part9.sect33.subsect1.art1.sent3",
                 "type" : "sentence",
@@ -409589,7 +409602,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Maximum Diameter, mm (in.)" } ],
+                       "value" : "Maximum Diameter, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colname" : "2",
@@ -409598,7 +409611,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Maximum Width or Depth, mm (in.)" } ],
+                       "value" : "Maximum Width or Depth, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colname" : "3",
@@ -409607,7 +409620,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Minimum metal thickness, mm (in.)" } ],
+                       "value" : "Minimum metal thickness, mm" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 2 } ] },
@@ -409657,7 +409670,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "125 (5) or less" } ],
+                       "value" : "125 or less" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -409671,14 +409684,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.254 (.010)" } ],
+                       "value" : "0.254" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.30 (.012)" } ],
+                       "value" : "0.30" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -409700,7 +409713,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "350 (14)" } ],
+                       "value" : "350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -409714,14 +409727,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.33 (.013)" } ],
+                       "value" : "0.33" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.30 (.012)" } ],
+                       "value" : "0.30" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -409732,7 +409745,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Over 350 (14)" } ],
+                       "value" : "Over 350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
@@ -409746,14 +409759,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -409782,21 +409795,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "350 (14)" } ],
+                       "value" : "350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.33 (.013)" } ],
+                       "value" : "0.33" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.30 (.012)" } ],
+                       "value" : "0.30" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -409814,21 +409827,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Over 350 (14)" } ],
+                       "value" : "Over 350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -409840,7 +409853,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Rectangular, not enclosed, for single [REF:term:dwllng-n:dwelling units] , with required clearance up to 12 mm(½ in.)" } ],
+                       "value" : "Rectangular, not enclosed, for single [REF:term:dwllng-n:dwelling units] , with required clearance up to 12 mm" } ],
                      "align" : "left",
                      "valign" : "middle",
                      "rowsep" : "1",
@@ -409857,21 +409870,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "350 (14)" } ],
+                       "value" : "350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.33 (.013)" } ],
+                       "value" : "0.33" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -409889,21 +409902,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Over 350 (14)" } ],
+                       "value" : "Over 350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.48 (.019)" } ],
+                       "value" : "0.48" } ],
                      "align" : "center",
                      "valign" : "top" } ] },
                   
@@ -409915,7 +409928,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Rectangular, not enclosed, with required clearance of more than 12 mm(½ in.)" } ],
+                       "value" : "Rectangular, not enclosed, with required clearance of more than 12 mm" } ],
                      "align" : "left",
                      "valign" : "middle",
                      "colname" : "1",
@@ -409932,7 +409945,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "350 (14)" } ],
+                       "value" : "350" } ],
                      "align" : "center",
                      "valign" : "top",
                      "rowsep" : "0" },
@@ -409940,7 +409953,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top",
                      "rowsep" : "0" },
@@ -409948,7 +409961,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.41 (.016)" } ],
+                       "value" : "0.41" } ],
                      "align" : "center",
                      "valign" : "top",
                      "rowsep" : "0" } ] },
@@ -409967,21 +409980,21 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Over 350 (14)" } ],
+                       "value" : "Over 350" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.48 (.019)" } ],
+                       "value" : "0.48" } ],
                      "align" : "center",
                      "valign" : "top" },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "0.48 (.019)" } ],
+                       "value" : "0.48" } ],
                      "align" : "center",
                      "valign" : "top" } ] } ] } } ] },
              
@@ -410255,6 +410268,7 @@
               "number" : 13,
               "title" : "Return-Air System",
               "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote206:short] )",
+              "note" : "(See Note A-9.33.6.13.)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect33.subsect6.art13.sent1",
@@ -419507,13 +419521,14 @@
               "number" : 3,
               "source" : "bc",
               "title" : "Compliance",
+              "note" : "(See [REF:internal:en001088:short] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "The performance compliance calculations shall determine the annual energy consumption of the proposed house and the house energy target of a reference house in accordance with\n(See [REF:internal:en001475:short] .)",
+                "text" : "The performance compliance calculations shall determine the annual energy consumption of the proposed house and the house energy target of a reference house in accordance with",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent1.clause1",
@@ -419526,7 +419541,11 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "the EnerGuide Rating System, version 15, and [REF:internal:nbc.divBV2.part9.sect36.subsect5.art3.sent2:short] ." } ] },
+                  "text" : "the EnerGuide Rating System, version 15, and [REF:internal:nbc.divBV2.part9.sect36.subsect5.art3.sent2:short] ." } ],
+                "see_also" : 
+                [ 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent1.seealso1",
+                  "content" : "(See [REF:internal:en001475:short] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect5.art3.sent2",
                 "type" : "sentence",
@@ -423243,6 +423262,7 @@
               "number" : 2,
               "source" : "bc",
               "title" : "Definitions",
+              "note" : "(See Note A-9.36.6.2.)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect36.subsect6.art2.sent1",
@@ -603406,7 +603426,9 @@
              "equations" : 
              [ 
               { "id" : "",
-               "type" : "display" } ],
+               "type" : "display",
+               "latex" : "S_{adj} = S_{table} \\times (D_{red}\/D_{table})^{2}",
+               "plainText" : "S_{adj} = S_{table} \\times (D_{red}\/D_{table})^{2}" } ],
              "lists" : 
              [ 
               { "type" : "variable",
@@ -603430,7 +603452,9 @@
              "equations" : 
              [ 
               { "id" : "",
-               "type" : "display" } ],
+               "type" : "display",
+               "latex" : "N_{adj} = N_{table} \\times (D_{table}\/D_{red})^{2}",
+               "plainText" : "N_{adj} = N_{table} \\times (D_{table}\/D_{red})^{2}" } ],
              "lists" : 
              [ 
               { "type" : "variable",
@@ -604576,7 +604600,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Subfloor Thickness, mm (in.)" } ],
+                    "value" : "Subfloor Thickness, mm" } ],
                   "valign" : "middle",
                   "colname" : "1",
                   "rowspan" : 3 },
@@ -604609,21 +604633,21 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joist Spacing, mm (in.)" } ],
+                    "value" : "Joist Spacing, mm" } ],
                   "valign" : "middle",
                   "colspan" : 3 },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joist Spacing, mm (in.)" } ],
+                    "value" : "Joist Spacing, mm" } ],
                   "valign" : "middle",
                   "colspan" : 3 },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joist Spacing, mm (in.)" } ],
+                    "value" : "Joist Spacing, mm" } ],
                   "valign" : "middle",
                   "colspan" : 3 } ] },
                
@@ -604634,55 +604658,55 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "300 (12)" } ],
+                    "value" : "300" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "400 (16)" } ],
+                    "value" : "400" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "600 (24)" } ],
+                    "value" : "600" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "300 (12)" } ],
+                    "value" : "300" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "400 (16)" } ],
+                    "value" : "400" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "600 (24)" } ],
+                    "value" : "600" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "300 (12)" } ],
+                    "value" : "300" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "400 (16)" } ],
+                    "value" : "400" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "600 (24)" } ],
+                    "value" : "600" } ],
                   "valign" : "middle" } ] } ],
               "body_rows" : 
               [ 
@@ -604706,7 +604730,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "15.5 (⅝)" } ],
+                    "value" : "15.5" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
@@ -604770,7 +604794,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "19.0 (¾)" } ],
+                    "value" : "19.0" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
@@ -604878,11 +604902,11 @@
              [ 
               { "id" : "nbc.divBV2.part9.appendix.appnote120.table2.note1",
                "vendor_id" : "et000265-1",
-               "content" : "Wood furring means 19 × 89 mm(1 × 4) boards not more than 600 mm(24 in.) o.c., or 19 × 64 mm(1 × 3) boards not more than 300 mm(12 in.) o.c. For all other cases, see [REF:internal:nbc.divBV2.part9.appendix.appnote120.table1:long] ." },
+               "content" : "Wood furring means 19 × 89 mm boards not more than 600 mm o.c., or 19 × 64 mm boards not more than 300 mm o.c. For all other cases, see [REF:internal:nbc.divBV2.part9.appendix.appnote120.table1:long] ." },
               
               { "id" : "nbc.divBV2.part9.appendix.appnote120.table2.note2",
                "vendor_id" : "et000265-2",
-               "content" : "30 mm to 51 mm(1 ¼ to 2 in.) normal weight concrete (not less than 20 MPa ) placed directly on the subflooring." } ],
+               "content" : "30 mm to 51 mm normal weight concrete (not less than 20 MPa ) placed directly on the subflooring." } ],
              "structure" : 
              { "columns" : 10,
               "colsep" : "1",
@@ -604927,7 +604951,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Subfloor Thickness, mm (in.)" } ],
+                    "value" : "Subfloor Thickness, mm" } ],
                   "valign" : "middle",
                   "colname" : "1",
                   "rowspan" : 4 },
@@ -604935,7 +604959,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joists with Ceiling Attached to Wood FurringWood furring means 19 × 89 mm(1 × 4) boards not more than 600 mm(24 in.) o.c., or 19 × 64 mm(1 × 3) boards not more than 300 mm(12 in.) o.c. For all other cases, see [REF:internal:nbc.divBV2.part9.appendix.appnote120.table1:long] ." } ],
+                    "value" : "Joists with Ceiling Attached to Wood FurringWood furring means 19 × 89 mm boards not more than 600 mm o.c., or 19 × 64 mm boards not more than 300 mm o.c. For all other cases, see [REF:internal:nbc.divBV2.part9.appendix.appnote120.table1:long] ." } ],
                   "valign" : "middle",
                   "colspan" : 6 },
                  
@@ -604978,21 +605002,21 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joist Spacing, mm (in.)" } ],
+                    "value" : "Joist Spacing, mm" } ],
                   "valign" : "middle",
                   "colspan" : 3 },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joist Spacing, mm (in.)" } ],
+                    "value" : "Joist Spacing, mm" } ],
                   "valign" : "middle",
                   "colspan" : 3 },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joist Spacing, mm (in.)" } ],
+                    "value" : "Joist Spacing, mm" } ],
                   "valign" : "middle",
                   "colspan" : 3 } ] },
                
@@ -605003,55 +605027,55 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "300 (12)" } ],
+                    "value" : "300" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "400 (16)" } ],
+                    "value" : "400" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "600 (24)" } ],
+                    "value" : "600" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "300 (12)" } ],
+                    "value" : "300" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "400 (16)" } ],
+                    "value" : "400" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "600 (24)" } ],
+                    "value" : "600" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "300 (12)" } ],
+                    "value" : "300" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "400 (16)" } ],
+                    "value" : "400" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "600 (24)" } ],
+                    "value" : "600" } ],
                   "valign" : "middle" } ] } ],
               "body_rows" : 
               [ 
@@ -605081,7 +605105,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "15.5 (⅝)" } ],
+                    "value" : "15.5" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
@@ -605145,7 +605169,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "19.0 (¾)" } ],
+                    "value" : "19.0" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
@@ -606087,7 +606111,9 @@
                "equations" : 
                [ 
                 { "id" : "nbc.divBV2.part9.appendix.appnote129a.div5.eq1",
-                 "type" : "display" } ] },
+                 "type" : "display",
+                 "latex" : "\\frac{(1.25\\ \\mathrm{kPa})(25\\ \\mathrm{m}^2) + (0.45\\ \\mathrm{kPa})(375\\ \\mathrm{m}^2)}{400\\ \\mathrm{m}^2} = 0.5\\ \\mathrm{kPa}",
+                 "plainText" : "\\frac{(1.25\\ \\mathrm{kPa})(25\\ \\mathrm{m}^2) + (0.45\\ \\mathrm{kPa})(375\\ \\mathrm{m}^2)}{400\\ \\mathrm{m}^2} = 0.5\\ \\mathrm{kPa}" } ] },
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote129a.div5.para2",
@@ -606349,7 +606375,9 @@
              "equations" : 
              [ 
               { "id" : "nbc.divBV2.part9.appendix.appnote134b.eq1",
-               "type" : "display" } ] },
+               "type" : "display",
+               "latex" : "L_{w} = C_{Wstorey} K_{Wframe} HWP (K_{exp} K_{roof} K_{Wspacing} K_{Wnumber} K_{gyp} K_{sheath}) \\geq BWP_{min}",
+               "plainText" : "L_{w} = C_{Wstorey} K_{Wframe} HWP (K_{exp} K_{roof} K_{Wspacing} K_{Wnumber} K_{gyp} K_{sheath}) \\geq BWP_{min}" } ] },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote134b.para2",
@@ -607951,7 +607979,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "12.7-mm (½ in.) foil-backed gypsum board" } ],
+                    "value" : "12.7-mm foil-backed gypsum board" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -607976,7 +608004,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "12.7-mm (½ in.) gypsum board sheathing" } ],
+                    "value" : "12.7-mm gypsum board sheathing" } ],
                   "valign" : "middle" },
                  
                  { "content" : 
@@ -608000,7 +608028,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "6.4-mm (¼ in.) plywood" } ],
+                    "value" : "6.4-mm plywood" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -608025,7 +608053,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "11-mm (7\/16 in.) oriented strandboard" } ],
+                    "value" : "11-mm oriented strandboard" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -608123,7 +608151,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "17-mm (11\/16 in.) wood sheathing" } ],
+                    "value" : "17-mm wood sheathing" } ],
                   "align" : "left",
                   "valign" : "middle",
                   "rowsep" : "1" },
@@ -608225,7 +608253,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "25-mm (1 in.) extruded polystyrene" } ],
+                    "value" : "25-mm extruded polystyrene" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -608250,7 +608278,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "25-mm (1 in.) expanded polystyrene (Type 2)" } ],
+                    "value" : "25-mm expanded polystyrene (Type 2)" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -608880,7 +608908,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "38 × 89 (2 × 4) Framing" } ],
+                      "value" : "38 × 89 Framing" } ],
                     "align" : "center",
                     "valign" : "middle",
                     "colspan" : 5 },
@@ -608888,7 +608916,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "38 × 140 (2 × 6) Framing" } ],
+                      "value" : "38 × 140 Framing" } ],
                     "align" : "center",
                     "valign" : "middle",
                     "colspan" : 5 } ] },
