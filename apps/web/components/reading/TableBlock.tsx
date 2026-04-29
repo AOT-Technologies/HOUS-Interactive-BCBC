@@ -35,22 +35,22 @@ type RawTableCell = {
 type RawTableCellContent =
   | TableCellContent
   | {
-      type: 'list';
-      list_type?: StructuredList['type'];
-      items?: unknown[];
-    };
+    type: 'list';
+    list_type?: StructuredList['type'];
+    items?: unknown[];
+  };
 
 type RawTableRow =
   | {
-      id?: string;
-      type?: 'header_row' | 'body_row';
+    id?: string;
+    type?: 'header_row' | 'body_row';
+    cells?: RawTableCell[];
+    revisions?: Array<{
+      effective_date?: string;
+      deleted?: boolean;
       cells?: RawTableCell[];
-      revisions?: Array<{
-        effective_date?: string;
-        deleted?: boolean;
-        cells?: RawTableCell[];
-      }>;
-    }
+    }>;
+  }
   | RawTableCell[];
 
 type RawTableStructure = {
@@ -305,9 +305,9 @@ const normalizeStructuredList = (
             (item): item is { id?: string; symbol: string; description: string } =>
               Boolean(
                 item &&
-                  typeof item === 'object' &&
-                  typeof (item as { symbol?: unknown }).symbol === 'string' &&
-                  typeof (item as { description?: unknown }).description === 'string'
+                typeof item === 'object' &&
+                typeof (item as { symbol?: unknown }).symbol === 'string' &&
+                typeof (item as { description?: unknown }).description === 'string'
               )
           )
           .map((item) => ({
@@ -324,10 +324,10 @@ const normalizeStructuredList = (
             (item): item is { id: string; term: string; definition: string } =>
               Boolean(
                 item &&
-                  typeof item === 'object' &&
-                  typeof (item as { id?: unknown }).id === 'string' &&
-                  typeof (item as { term?: unknown }).term === 'string' &&
-                  typeof (item as { definition?: unknown }).definition === 'string'
+                typeof item === 'object' &&
+                typeof (item as { id?: unknown }).id === 'string' &&
+                typeof (item as { term?: unknown }).term === 'string' &&
+                typeof (item as { definition?: unknown }).definition === 'string'
               )
           )
           .map((item) => ({
@@ -344,10 +344,10 @@ const normalizeStructuredList = (
             (item): item is { id: string; abbreviation: string; fullName: string; website?: string } =>
               Boolean(
                 item &&
-                  typeof item === 'object' &&
-                  typeof (item as { id?: unknown }).id === 'string' &&
-                  typeof (item as { abbreviation?: unknown }).abbreviation === 'string' &&
-                  typeof (item as { fullName?: unknown }).fullName === 'string'
+                typeof item === 'object' &&
+                typeof (item as { id?: unknown }).id === 'string' &&
+                typeof (item as { abbreviation?: unknown }).abbreviation === 'string' &&
+                typeof (item as { fullName?: unknown }).fullName === 'string'
               )
           )
           .map((item) => ({
@@ -394,8 +394,8 @@ const normalizeTableCellContent = (item: RawTableCellContent): TableCellContent 
 const normalizeCell = (cell: RawTableCell, isHeader: boolean) => ({
   content: Array.isArray(cell.content)
     ? cell.content
-        .map(normalizeTableCellContent)
-        .filter((item): item is TableCellContent => item !== null)
+      .map(normalizeTableCellContent)
+      .filter((item): item is TableCellContent => item !== null)
     : cell.content ?? cell.text ?? '',
   align: cell.align,
   colspan: typeof cell.colspan === 'number' && cell.colspan > 0 ? cell.colspan : undefined,
@@ -410,28 +410,28 @@ const normalizeRows = (
   rowPrefix: string = 'row'
 ) => {
   return (
-  rows
-    .map((row, rowIndex) => {
-    const rowObject = Array.isArray(row) ? { cells: row } : row;
-    const activeRowRevision = Array.isArray(row)
-      ? undefined
-      : getActiveRevision(rowObject.revisions, effectiveDate);
-    if (activeRowRevision && 'deleted' in activeRowRevision && activeRowRevision.deleted) {
-      return null;
-    }
-    const resolvedCells = activeRowRevision?.cells || rowObject.cells || [];
-    const cells = resolvedCells.map((cell) => normalizeCell(cell, isHeader));
-    return {
-      id: rowObject.id || `${rowPrefix}-${rowIndex}`,
-      type: rowObject.type,
-      cells,
-    };
-    })
-    .filter(Boolean) as Array<{
-      id?: string;
-      type?: 'header_row' | 'body_row';
-      cells: ReturnType<typeof normalizeCell>[];
-    }>
+    rows
+      .map((row, rowIndex) => {
+        const rowObject = Array.isArray(row) ? { cells: row } : row;
+        const activeRowRevision = Array.isArray(row)
+          ? undefined
+          : getActiveRevision(rowObject.revisions, effectiveDate);
+        if (activeRowRevision && 'deleted' in activeRowRevision && activeRowRevision.deleted) {
+          return null;
+        }
+        const resolvedCells = activeRowRevision?.cells || rowObject.cells || [];
+        const cells = resolvedCells.map((cell) => normalizeCell(cell, isHeader));
+        return {
+          id: rowObject.id || `${rowPrefix}-${rowIndex}`,
+          type: rowObject.type,
+          cells,
+        };
+      })
+      .filter(Boolean) as Array<{
+        id?: string;
+        type?: 'header_row' | 'body_row';
+        cells: ReturnType<typeof normalizeCell>[];
+      }>
   );
 };
 
@@ -992,9 +992,9 @@ const inferHeaderSpans = (
   const isPlaceholderCell = (cell: NormalizedCell | undefined): boolean =>
     Boolean(
       cell &&
-        getCellText(cell) === '' &&
-        (typeof cell.colspan !== 'number' || cell.colspan <= 1) &&
-        (typeof cell.rowspan !== 'number' || cell.rowspan <= 1)
+      getCellText(cell) === '' &&
+      (typeof cell.colspan !== 'number' || cell.colspan <= 1) &&
+      (typeof cell.rowspan !== 'number' || cell.rowspan <= 1)
     );
 
   const buildRowLayouts = (rows: NormalizedRow[]) => {
@@ -1253,7 +1253,7 @@ const renderRows = (
         const figureClass = hasFigureContent ? 'table-block__cell--has-figure' : '';
         const spanClass =
           (typeof cell.colspan === 'number' && cell.colspan > 1) ||
-          (typeof cell.rowspan === 'number' && cell.rowspan > 1)
+            (typeof cell.rowspan === 'number' && cell.rowspan > 1)
             ? 'table-block__cell--spanned'
             : '';
 
@@ -1293,7 +1293,21 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const activeRevision = getActiveRevision(rawTable.revisions, effectiveDate);
   const resolvedTitle = activeRevision?.title ?? rawTable.title ?? '';
   const resolvedCaption = activeRevision?.caption ?? rawTable.caption;
-  const resolvedTableNotes = activeRevision?.table_notes ?? rawTable.table_notes ?? [];
+  const rawTableNotes = activeRevision?.table_notes ?? rawTable.table_notes ?? [];
+  const filteredHeaderCount = rawTableNotes.filter((note) => {
+    const content = (note.content || '').trim();
+    if (/^Notes to Table\b.*:$/.test(content)) return true;
+    if ((note.id || '').endsWith('.notes.header')) return true;
+    return false;
+  }).length;
+  const resolvedTableNotes = rawTableNotes.filter((note) => {
+    // Filter out notes that are just the "Notes to Table X:" header text,
+    // since the component already renders its own heading from the table number.
+    const content = (note.content || '').trim();
+    if (/^Notes to Table\b.*:$/.test(content)) return false;
+    if ((note.id || '').endsWith('.notes.header')) return false;
+    return true;
+  });
   const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
   const tableNumber = getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
@@ -1306,14 +1320,14 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     () =>
       hasDirectRows
         ? table.rows.map((row, rowIndex) => ({
-            id: row.id || `row-${rowIndex}`,
-            type: row.type,
-            cells: row.cells.map((cell) => normalizeCell(cell as RawTableCell, Boolean(cell.isHeader))),
-          }))
+          id: row.id || `row-${rowIndex}`,
+          type: row.type,
+          cells: row.cells.map((cell) => normalizeCell(cell as RawTableCell, Boolean(cell.isHeader))),
+        }))
         : [
-            ...normalizeRows(structure?.header_rows || [], true, effectiveDate, 'header-row'),
-            ...normalizeRows(structure?.body_rows || [], false, effectiveDate, 'body-row'),
-          ],
+          ...normalizeRows(structure?.header_rows || [], true, effectiveDate, 'header-row'),
+          ...normalizeRows(structure?.body_rows || [], false, effectiveDate, 'body-row'),
+        ],
     [effectiveDate, hasDirectRows, structure, table.rows]
   );
 
@@ -1584,7 +1598,9 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     const noteId = (note.id || '').trim();
     const numericSuffix = noteId.match(/\.note(\d+)$/i)?.[1];
     if (numericSuffix) {
-      return `(${numericSuffix})`;
+      // Adjust numbering when header notes were filtered out
+      const adjustedNumber = Number(numericSuffix) - filteredHeaderCount;
+      return `(${adjustedNumber > 0 ? adjustedNumber : index + 1})`;
     }
 
     return `(${index + 1})`;
@@ -1597,9 +1613,9 @@ export const TableBlock: React.FC<TableBlockProps> = ({
       style={
         needsLandscapePrint
           ? ({
-              '--table-print-natural-width': `${minWidthRem}rem`,
-              '--table-print-scale': `${printScale}`,
-            } as React.CSSProperties)
+            '--table-print-natural-width': `${minWidthRem}rem`,
+            '--table-print-scale': `${printScale}`,
+          } as React.CSSProperties)
           : undefined
       }
     >
@@ -1724,7 +1740,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                           const figureClass = hasFigureContent ? 'table-block__cell--has-figure' : '';
                           const spanClass =
                             (typeof cell.colspan === 'number' && cell.colspan > 1) ||
-                            (typeof cell.rowspan === 'number' && cell.rowspan > 1)
+                              (typeof cell.rowspan === 'number' && cell.rowspan > 1)
                               ? 'table-block__cell--spanned'
                               : '';
 

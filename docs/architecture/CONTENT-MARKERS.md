@@ -143,6 +143,8 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 
 **Note**: Table note `content` fields support all standard inline markers including `[LIST:bulleted]`. When a note contains a list, the JSON node must include a sibling `list` field (a `StructuredList` object with `type` and `items`).
 
+**Header Note Filtering**: The source data often includes the "Notes to Table X.X.X.:" heading as the first entry in the `table_notes` array (with an ID ending in `.note1` or `.notes.header`). Since `TableBlock` already generates its own heading from the table number, these header entries are filtered out at render time. The filter removes any note whose `content` matches `^Notes to Table\b.*:$` or whose `id` ends with `.notes.header`. After filtering, note labels are renumbered by subtracting the count of filtered headers from each note's ID suffix (e.g., `.note2` becomes `(1)` when one header was removed).
+
 ---
 
 ### Standards & External Links
@@ -590,6 +592,7 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | Self-referencing cross-link appears | `shouldSuppressReferenceInContext()` returning `false` — check `renderContext` prop is passed correctly |
 | Compound reference renders as two separate tokens | Ensure `[[REF:…]-[REF:…]]` uses double brackets and the dash is unspaced |
 | `[LIST:…]` in a table note renders nothing / disappears | Ensure the note's JSON node has a `list` field (not `lists`) with the matching `type` — `RawTableNote` in `TableBlock.tsx` and `renderFormattedText` must receive it as `localLists` |
+| Table notes heading duplicated as note (1) | The source data includes "Notes to Table X:" as the first `table_notes` entry. `TableBlock.tsx` filters these out via regex (`^Notes to Table\b.*:$`) and `.notes.header` ID suffix check. Note labels are then renumbered by subtracting `filteredHeaderCount` from each ID suffix. If a new variant appears, update the filter in `resolvedTableNotes` |
 | Nested `[LIST:variable]` inside a bulleted item not rendering | Sub-lists are pre-assigned per item in the `case 'list'` branch of `parseTextWithMarkers` — check `itemSubLists` construction and that `StructuredListBlock` passes `itemIndex` to `renderText` |
 | Appendix D lists showing bullets instead of a)/b)/i)/ii) | `DivisionAppendixRenderer.renderParagraph` normalizes `bulleted` → `alphabetic`/`roman` — check `appendixUsesAlphabeticStyle` detection and the marker rewriting in both paragraph content and the `renderText` callback |
 | `[REF:standard:...]` showing raw ID instead of citation | `findStandardReferenceEntry()` in `text-parsing.ts` — check the standards map has the key. If the key has a `d-` prefix, the fallback prefix-stripping logic should match it |
