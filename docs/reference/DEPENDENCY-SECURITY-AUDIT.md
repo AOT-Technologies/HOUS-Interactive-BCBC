@@ -5,6 +5,8 @@
 This document records the Dependabot security alerts addressed in the April 2026 audit, the actions taken, and any alerts intentionally deferred.
 
 **Date:** April 29, 2026
+**Last Reviewed:** April 29, 2026
+**Next Review:** July 29, 2026 (quarterly)
 **Scope:** All critical and high severity Dependabot alerts on `pnpm-lock.yaml`
 
 ## Approach
@@ -51,17 +53,26 @@ Updated in: `apps/web/package.json`, `packages/ui/package.json`, `packages/bcbc-
 
 ## Deferred Alerts
 
+Items below were intentionally deferred due to breaking changes. Each has an owner, target date, and resolution path. These should be revisited at the next review date (see header).
+
 ### ajv (>=6.14.0 requested) — #49
 
 **Current version:** 6.12.6
+**Severity:** Moderate
+**Owner:** TBD (assign to team member)
+**Target date:** Q3 2026
 **Why deferred:** `ajv@6.14.0` does not exist — ajv jumped from 6.12.x to 8.x. The only way to resolve this is upgrading to ajv 8.x, but eslint 8.x (used throughout the project) depends on ajv 6.x internally. Forcing ajv 8.x breaks eslint.
-**Resolution path:** Upgrade eslint from 8.x to 9.x (which uses ajv 8.x). This is a larger migration that should be planned separately.
+**Resolution path:** Upgrade eslint from 8.x to 9.x (which uses ajv 8.x). This requires migrating to eslint flat config and updating all eslint plugins/configs across the monorepo.
 **Risk:** Moderate severity, dev-only — used by eslint for config schema validation, not exposed in production.
 
 ### PostCSS XSS (#96)
 
 **Current version:** 8.5.12
-**Status:** The `postcss >= 8.5.10` override is already in place and 8.5.12 is the only version in the lockfile. This alert may require a newer patch (e.g., `>=8.5.13`). Monitor for updated fix version from Dependabot.
+**Severity:** Moderate
+**Owner:** TBD (assign to team member)
+**Target date:** May 2026 (check for patched postcss release)
+**Status:** The `postcss >= 8.5.10` override is already in place and 8.5.12 is the only version in the lockfile. This alert (#96, opened yesterday) may require a newer patch (e.g., `>=8.5.13`). Monitor for updated fix version from Dependabot.
+**Resolution path:** Update the postcss override to the patched version once available, then run `pnpm install`.
 
 ## Impact Assessment
 
