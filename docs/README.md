@@ -36,6 +36,7 @@ BC Building Code Interactive Web Application — project documentation.
 
 ## Reference
 
+- [reference/DEPENDENCY-SECURITY-AUDIT.md](reference/DEPENDENCY-SECURITY-AUDIT.md) — April 2026 dependency security audit and Dependabot alert resolutions
 - [reference/FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md](reference/FUNCTIONAL-STATEMENTS-OBJECTIVES-IMPLEMENTATION.md) — Functional statements and objectives
 - [reference/IMAGE-CONFIGURATION.md](reference/IMAGE-CONFIGURATION.md) — Image handling and configuration
 - [reference/LONG-TABLE-PERFORMANCE-ISSUE.md](reference/LONG-TABLE-PERFORMANCE-ISSUE.md) — Long table rendering performance
