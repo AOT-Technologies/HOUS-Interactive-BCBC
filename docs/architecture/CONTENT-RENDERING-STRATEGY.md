@@ -1334,6 +1334,10 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
 - **Verify**: ContentRenderer dispatches to TableBlock
 - **Solution**: Ensure table nodes have correct `type` field
 
+**Issue**: Table notes heading text rendered as note (1)
+- **Cause**: Source data includes "Notes to Table X.X.X.:" as the first entry in `table_notes` arrays
+- **Solution**: `TableBlock.tsx` filters out header entries from `resolvedTableNotes` using a regex (`^Notes to Table\b.*:$`) and `.notes.header` ID suffix check. The component generates its own heading from the table number via `tableNotesHeading`. After filtering, `getTableNoteLabel` subtracts the filtered header count from each note's ID suffix so labels renumber sequentially (e.g., `.note2` → `(1)`, `.note3` → `(2)`).
+
 ---
 
 ## Related Documentation
