@@ -1,0 +1,19 @@
+.TestingBanner {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #e8f4f8;
+  border-bottom: 2px solid #1a5276;
+  padding: 8px var(--layout-padding-container, 16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TestingBanner--text {
+  margin: 0;
+  font-family: 'BC Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1a5276;
+  text-align: center;
+}
