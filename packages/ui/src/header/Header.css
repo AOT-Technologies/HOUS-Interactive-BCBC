@@ -242,6 +242,21 @@ a.ui-Header--NavLink {
 
 /* DESKTOP - 912px */
 @media (min-width: 57rem) {
+  /* When search is open, let it flex within the content section instead of
+     overflowing with a fixed 391px width, which cuts off the site title. */
+  .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-HeaderSearch {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0;
+  }
+
+  .ui-Header--Container:has(.ui-HeaderSearch.--open) .ui-HeaderSearch--SearchWrapper {
+    flex: 1;
+    width: auto;
+    max-width: 391px;
+    min-width: 180px;
+  }
+
   button.ui-Header--NavMobileToggle {
     display: none;
   }
