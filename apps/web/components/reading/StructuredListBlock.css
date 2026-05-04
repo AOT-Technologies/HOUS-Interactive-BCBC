@@ -33,6 +33,11 @@
   margin: 0;
 }
 
+.structuredList--variable .structuredList__term,
+.structuredList--symbol .structuredList__term {
+  font-weight: var(--typography-font-weights-regular);
+}
+
 .structuredList__description {
   margin: 0.25rem 0 0;
 }
@@ -53,7 +58,7 @@
 
 li .structuredList--variable,
 li .structuredList--symbol {
-  padding-left: 8.5rem;
+  padding-left: 3rem;
 }
 
 .structuredList--organization {
