@@ -1198,12 +1198,15 @@ The `resolveCrossReference` function handles all reference types:
 - `FigureBlock` - Figure/image rendering
 - `EquationBlock` - Equation rendering
 - `StructuredListBlock` - Bulleted, numbered, alphabetic, roman, variable, definition, organization lists
+  - `variable` / `symbol` list terms render in **regular weight** (not bold); values column uses `column-gap: 6rem`
+  - When a `variable` / `symbol` list is nested inside an `<li>`, it receives `padding-left: 3rem` to align with bullet text
 - `CrossReferenceLink` - Clickable reference link
 - `CrossReferenceModal` - Side panel modal for reference preview
 - `GlossaryTerm` - Inline glossary term with click handler
 - `NoteReference` - Note badge link
 - `FrontMatterRenderer` - Preface/introduction/committees content
 - `DivisionAppendixRenderer` - Division-level appendix content (normalizes bulleted → alphabetic/roman for Appendix D)
+- `TestingBanner` (`apps/web/components/layout/TestingBanner.tsx`) - Full-width banner rendered between `<Header>` and `<main>` on every page to indicate the site is under active development. Remove this component and its import in `apps/web/app/layout.tsx` when the site exits the testing phase.
 - `SpectablesRenderer` - Span tables content
 
 #### Search Components
@@ -1224,6 +1227,8 @@ Compact search variant for the application header with toggle behavior.
 - Cancel button to close search
 - Responsive behavior (always visible on mobile)
 - Fully accessible (WCAG AAA compliant)
+
+**Desktop layout note**: When the search is open on desktop (≥ 57rem), the search wrapper uses `flex: 1; max-width: 391px` rather than a fixed `391px` width. This prevents the expanded search bar from overflowing into the "BC Building Code" site title when nav link labels are wide (e.g. "Defined Terms"). The fix is in `packages/ui/src/header/Header.css` inside the `@media (min-width: 57rem)` block.
 
 **HeroSearch Component** ✅ IMPLEMENTED:
 

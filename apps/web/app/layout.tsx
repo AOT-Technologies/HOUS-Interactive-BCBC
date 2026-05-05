@@ -11,6 +11,7 @@ import '@bcgov/bc-sans/css/BC_Sans.css';
 import '@repo/ui/cssVariables';
 import Header from '@repo/ui/header';
 import Footer from '@repo/ui/footer';
+import TestingBanner from '@/components/layout/TestingBanner';
 import { ID_MAIN_CONTENT, ID_SKIP_TO_CONTENT } from '@repo/constants';
 import { URL_GLOSSARY_TITLE } from '@repo/constants/src/urls';
 import './globals.css';
@@ -128,6 +129,7 @@ export default function RootLayout({
             searchPlaceholder="Search building code..."
             onNavLinkClick={handleHeaderNavClick}
           />
+          <TestingBanner />
           <main id={ID_MAIN_CONTENT}>{children}</main>
           <GlossarySidebar />
           <Footer />
