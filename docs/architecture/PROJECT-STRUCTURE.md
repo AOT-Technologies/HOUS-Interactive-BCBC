@@ -151,7 +151,7 @@ bc-building-code/
 │   │   │   ├── indexer.ts             # Index creation logic
 │   │   │   ├── config.ts              # FlexSearch configuration
 │   │   │   ├── export.ts              # Index serialization
-│   │   │   └── text-extractor.ts      # Text extraction utilities
+│   │   │   └── text-extractor.ts      # Text extraction from articles, tables, clauses, lists, and application notes
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │

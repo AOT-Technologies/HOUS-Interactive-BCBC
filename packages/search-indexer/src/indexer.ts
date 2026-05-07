@@ -21,6 +21,7 @@ import {
 } from './config';
 import {
   extractArticleText,
+  extractApplicationNoteText,
   extractTableText,
   generateSnippet,
   hasTablesInContent,
@@ -49,6 +50,24 @@ interface BCBCPart {
   number: number;
   title: string;
   sections: BCBCSection[];
+  appendix?: BCBCAppendix;
+}
+
+interface BCBCAppendix {
+  id?: string;
+  type?: string;
+  introduction?: any;
+  application_notes?: BCBCApplicationNote[];
+}
+
+interface BCBCApplicationNote {
+  id: string;
+  type: string;
+  number: string;
+  title: string;
+  refs?: string;
+  source?: string;
+  content?: Array<{ type?: string; content?: string; id?: string; lists?: any[] }>;
 }
 
 interface BCBCSection {
@@ -63,7 +82,7 @@ interface BCBCSubsection {
   id: string;
   type: string;
   number: number;
-  title: string | { revised: boolean; text: string; [key: string]: any };
+  title: string | { revised: boolean; text: string;[key: string]: any };
   articles: BCBCArticle[];
 }
 
@@ -145,7 +164,7 @@ interface BCBCDocument {
  * Resolve a title that may be a string or a revision object to a plain string.
  * Some titles in the source data are objects like { revised: true, text: "..." }
  */
-function resolveTitle(title: string | { text: string; [key: string]: any } | unknown): string {
+function resolveTitle(title: string | { text: string;[key: string]: any } | unknown): string {
   if (typeof title === 'string') return title;
   if (title && typeof title === 'object' && 'text' in title) return String((title as any).text);
   return String(title ?? '');
@@ -195,10 +214,10 @@ export function buildSearchIndex(
   }
 
   // Process divisions (either from volumes or directly)
-  const divisions = bcbcData.volumes 
+  const divisions = bcbcData.volumes
     ? bcbcData.volumes.flatMap((v) => v.divisions)
     : (bcbcData.divisions || []);
-  
+
   for (const division of divisions) {
     const divisionTocItem = processDivision(
       division,
@@ -214,15 +233,15 @@ export function buildSearchIndex(
   if (bcbcData.glossary && fullConfig.contentTypes.glossary.enabled) {
     const glossaryEntries = Array.isArray(bcbcData.glossary)
       ? bcbcData.glossary.map((entry, index) => ({
-          id: entry.id || `glossary-${index}`,
-          term: entry.term,
-          definition: entry.definition,
-        }))
+        id: entry.id || `glossary-${index}`,
+        term: entry.term,
+        definition: entry.definition,
+      }))
       : Object.entries(bcbcData.glossary).map(([id, entry]) => ({
-          id,
-          term: entry.term,
-          definition: entry.definition,
-        }));
+        id,
+        term: entry.term,
+        definition: entry.definition,
+      }));
     processGlossary(glossaryEntries, documents, fullConfig);
     contentTypesFound.add('glossary');
   }
@@ -345,6 +364,14 @@ function processPart(
     }
   }
 
+  // Process application notes in appendix
+  if (part.appendix?.application_notes && config.contentTypes['application-note'].enabled) {
+    for (const note of part.appendix.application_notes) {
+      documents.push(createApplicationNoteDocument(division, part, note, config));
+    }
+    contentTypesFound.add('application-note');
+  }
+
   return tocItem;
 }
 
@@ -462,7 +489,7 @@ function processArticle(
 ): TableOfContentsItem {
   // Check for revisions
   const revisionInfo = extractRevisionInfo(article, revisionDatesMap);
-  
+
   // Add article document if enabled
   if (config.contentTypes.article.enabled) {
     documents.push(createArticleDocument(
@@ -481,7 +508,7 @@ function processArticle(
         ));
         contentTypesFound.add('table');
       }
-      
+
       if (content.type === 'figure' && config.contentTypes.figure.enabled) {
         const figureRevInfo = extractContentRevisionInfo(content, revisionDatesMap);
         documents.push(createFigureDocument(
@@ -583,10 +610,10 @@ function trackRevisionDate(
   revisionDatesMap: Map<string, { count: number; types: Set<string> }>
 ): void {
   if (!revision.effective_date) return;
-  
-  const existing = revisionDatesMap.get(revision.effective_date) || { 
-    count: 0, 
-    types: new Set<string>() 
+
+  const existing = revisionDatesMap.get(revision.effective_date) || {
+    count: 0,
+    types: new Set<string>()
   };
   existing.count++;
   existing.types.add(revision.type);
@@ -678,7 +705,7 @@ function createPartDocument(
 ): SearchDocument {
   const articleNumber = `${division.letter}.${part.number}`;
   const urlPath = `/code/${division.id}/${part.number}`;
-  
+
   return {
     ...createBaseDocument(division, part, null, null, config),
     id: part.id,
@@ -705,7 +732,7 @@ function createSectionDocument(
 ): SearchDocument {
   const articleNumber = `${division.letter}.${part.number}.${section.number}`;
   const urlPath = `/code/${division.id}/${part.number}/${section.number}`;
-  
+
   return {
     ...createBaseDocument(division, part, section, null, config),
     id: section.id,
@@ -733,7 +760,7 @@ function createSubsectionDocument(
 ): SearchDocument {
   const articleNumber = `${division.letter}.${part.number}.${section.number}.${subsection.number}`;
   const urlPath = `/code/${division.id}/${part.number}/${section.number}/${subsection.number}`;
-  
+
   return {
     ...createBaseDocument(division, part, section, subsection, config),
     id: subsection.id,
@@ -763,23 +790,23 @@ function createArticleDocument(
 ): SearchDocument {
   const articleNumber = `${division.letter}.${part.number}.${section.number}.${subsection.number}.${article.number}`;
   const urlPath = `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}`;
-  
+
   // Extract text from content
   const { text, referenceIds } = extractArticleText(
     article.content,
     config.textExtraction,
     config.references
   );
-  
+
   // Check for references in raw text (before stripping)
   const rawText = article.content?.map(c => c.text || '').join(' ') || '';
-  
+
   // Calculate priority with amendment boost
   let priority = config.contentTypes.article.priority;
   if (revisionInfo.hasAmendment) {
     priority *= config.contentTypes.article.amendmentBoost;
   }
-  
+
   return {
     ...createBaseDocument(division, part, section, subsection, config),
     id: article.id,
@@ -821,17 +848,17 @@ function createTableDocument(
   const articleNumber = `${division.letter}.${part.number}.${section.number}.${subsection.number}.${article.number}`;
   const fullNumber = `${articleNumber} Table ${tableNum}`;
   const urlPath = `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}#${table.id}`;
-  
+
   // Extract text from table
   const { text, referenceIds } = extractTableText(table, config.textExtraction, config.references);
   const title = table.title || `Table ${tableNum}`;
-  
+
   // Calculate priority
   let priority = config.contentTypes.table.priority;
   if (revisionInfo.hasAmendment) {
     priority *= config.contentTypes.table.amendmentBoost;
   }
-  
+
   return {
     ...createBaseDocument(division, part, section, subsection, config),
     id: table.id || `${article.id}.table${tableNum}`,
@@ -869,16 +896,16 @@ function createFigureDocument(
   const articleNumber = `${division.letter}.${part.number}.${section.number}.${subsection.number}.${article.number}`;
   const fullNumber = `${articleNumber} Figure ${figureNum}`;
   const urlPath = `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}#${figure.id}`;
-  
+
   const title = figure.title || `Figure ${figureNum}`;
   const text = normalizeWhitespace(stripReferences(title, config.references));
-  
+
   // Calculate priority
   let priority = config.contentTypes.figure.priority;
   if (revisionInfo.hasAmendment) {
     priority *= config.contentTypes.figure.amendmentBoost;
   }
-  
+
   return {
     ...createBaseDocument(division, part, section, subsection, config),
     id: figure.id || `${article.id}.figure${figureNum}`,
@@ -899,6 +926,61 @@ function createFigureDocument(
 }
 
 /**
+ * Create application note document
+ */
+function createApplicationNoteDocument(
+  division: BCBCDivision,
+  part: BCBCPart,
+  note: BCBCApplicationNote,
+  config: IndexerConfig
+): SearchDocument {
+  const articleNumber = `${division.letter}.${part.number} Note ${note.number}`;
+  const urlPath = `/code/${division.id}/${part.number}/appendix#${note.id}`;
+
+  // Extract text from note content paragraphs
+  const { text, referenceIds } = extractApplicationNoteText(
+    note.content,
+    config.textExtraction,
+    config.references
+  );
+
+  const title = note.title || `Application Note ${note.number}`;
+  const priority = config.contentTypes['application-note'].priority;
+
+  return {
+    id: note.id,
+    type: 'application-note' as IndexableContentType,
+    articleNumber,
+    title: stripReferences(title, config.references),
+    text,
+    snippet: generateSnippet(text, config.textExtraction.snippetLength),
+    divisionId: division.id,
+    divisionLetter: division.letter,
+    divisionTitle: division.title,
+    partId: part.id,
+    partNumber: part.number,
+    partTitle: part.title,
+    sectionId: '',
+    sectionNumber: 0,
+    sectionTitle: '',
+    subsectionId: '',
+    subsectionNumber: 0,
+    subsectionTitle: '',
+    path: `Division ${division.letter} > Part ${part.number} > Appendix > Note ${note.number}`,
+    breadcrumbs: [division.title, part.title, 'Appendix', title],
+    urlPath,
+    hasAmendment: false,
+    hasInternalRefs: false,
+    hasExternalRefs: false,
+    hasTermRefs: false,
+    hasTables: false,
+    hasFigures: false,
+    searchPriority: priority,
+    referenceIds: config.references.preserveReferenceIds ? referenceIds : undefined,
+  } as SearchDocument;
+}
+
+/**
  * Process front matter (preface)
  */
 function processFrontMatter(
@@ -909,7 +991,7 @@ function processFrontMatter(
   if (!frontMatter.preface) return null;
 
   const preface = frontMatter.preface;
-  
+
   // Extract text from all content items
   const textParts: string[] = [];
   for (const item of preface.content) {
@@ -917,10 +999,10 @@ function processFrontMatter(
       textParts.push(item.content);
     }
   }
-  
+
   const fullText = textParts.join(' ');
   const text = stripReferences(fullText, config.references);
-  
+
   // Create a single document for the preface
   documents.push({
     id: preface.id,
@@ -986,7 +1068,7 @@ function processGlossary(
     // Preserve glossary definitions as-is from source data so marker payloads
     // (e.g. [REF:term:id:label]) remain available for the glossary sidebar renderer.
     const text = entry.definition;
-    
+
     documents.push({
       id: entry.id,
       type: 'glossary',

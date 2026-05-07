@@ -617,11 +617,21 @@ interface AmendmentDate {
 
 **Location:** `/apps/web/public/data/{version}/search/documents.json`
 
+**Indexed Content:**
+- **Articles** (sentences, clauses, subclauses, and list items within them)
+- **Tables** (title, caption, all header rows, and all body rows)
+- **Figures** (title and caption)
+- **Application Notes** (all paragraphs and list items from part appendixes)
+- **Glossary** (terms and definitions)
+- **Structural nodes** (part, section, subsection titles)
+
 **Notes:**
 - Typical file size: 5-15 MB
-- Binary FlexSearch index format
+- Array of SearchDocument objects loaded by FlexSearch at runtime
 - Loaded by search client on initialization
 - Enables instant client-side search
+- Text is stripped of reference markers (`[REF:...]`) before indexing
+- Table cells use the `structure.header_rows` and `structure.body_rows` format with `content[].value` cell structure
 
 ### 7. search/metadata.json
 
@@ -772,5 +782,5 @@ DEBUG=* npx pnpm generate-assets
 
 ---
 
-**Last Updated:** January 19, 2026  
-**Version:** 1.0
+**Last Updated:** May 6, 2026  
+**Version:** 1.1

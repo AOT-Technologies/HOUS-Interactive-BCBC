@@ -75,6 +75,26 @@ npx pnpm generate-assets
 7. Write to /apps/web/public/data/{version}/
 ```
 
+### Search Index Generation
+
+The search indexer (`@bc-building-code/search-indexer`) creates a comprehensive full-text search index by extracting text from:
+
+| Content Type | What Gets Indexed |
+|---|---|
+| **Articles** | Sentence text, clause text (recursive), subclause text, list items within sentences and clauses |
+| **Tables** | Title, caption, all header row cells, all body row cells (no row limit) |
+| **Figures** | Title and caption |
+| **Application Notes** | All paragraphs and list items from `part.appendix.application_notes[]` |
+| **Glossary** | Term name and definition |
+| **Structural** | Part, section, and subsection titles |
+
+**Key behaviors:**
+- Reference markers (`[REF:term:...]`, `[REF:internal:...]`, etc.) are stripped from indexed text
+- Table cells use the `structure.header_rows[].cells[].content[].value` format
+- List items (definition lists, bulleted lists, numbered lists) within sentences and clauses are indexed
+- Text is truncated at 10,000 characters per document
+- Each document gets a 200-character snippet for search result display
+
 ### Generated Assets
 
 For each version (e.g., `2024`, `2027`):
