@@ -62,6 +62,7 @@ import {
   scrollTargetIntoView,
 } from './reference-target';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
+import { PrintFooter } from './PrintFooter';
 import './ReadingView.css';
 
 type SectionWithAppendix = Section & {
@@ -1795,6 +1796,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               interactive={true}
             />
           </div>
+          <PrintFooter />
         </div>
       </CrossReferenceContext.Provider>
     );
@@ -1839,6 +1841,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               queryString={queryString}
             />
           </div>
+          <PrintFooter />
         </div>
       </CrossReferenceContext.Provider>
     );
@@ -1913,6 +1916,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               </div>
             </div>
           </div>
+          <PrintFooter />
           <CrossReferenceModal
             open={Boolean(modalData)}
             heading={modalData?.heading || 'Cross reference'}
@@ -1978,6 +1982,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               effectiveDate={effectiveDate}
             />
           </div>
+          <PrintFooter />
           <CrossReferenceModal
             open={Boolean(modalData)}
             heading={modalData?.heading || 'Cross reference'}
@@ -2044,6 +2049,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
               effectiveDate={effectiveDate}
             />
           </div>
+          <PrintFooter />
           <CrossReferenceModal
             open={Boolean(modalData)}
             heading={modalData?.heading || 'Cross reference'}
@@ -2135,7 +2141,6 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     >
       <div className="reading-view" ref={contentContainerRef}>
         <ReadingViewHeader pdfLabel={pdfLabel} />
-        
         <div className="reading-view__content">
           <PartTitle title={sectionViewPartTitle} />
           {subtree.mode === 'section' && (
@@ -2167,7 +2172,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             </div>
           )}
         </div>
-
+        <PrintFooter />
         <CrossReferenceModal
           open={Boolean(modalData)}
           heading={modalData?.heading || 'Cross reference'}

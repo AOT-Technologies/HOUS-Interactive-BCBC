@@ -97,6 +97,12 @@ html:has(.u-show-footer-skip-link) a[data-skip-link-footer] {
   overflow: hidden;
 }
 
+@page {
+  /* Reserve space at the bottom of each printed page for the custom PrintFooter.
+     This prevents the fixed footer from overlapping the last line of content. */
+  margin-bottom: 1.5cm;
+}
+
 @media print {
   .breadcrumbs,
   .reading-view-header__actions,
