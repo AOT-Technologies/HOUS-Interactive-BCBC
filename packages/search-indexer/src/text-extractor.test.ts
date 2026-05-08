@@ -10,8 +10,8 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { stripReferences } from './text-extractor';
-import { DEFAULT_REFERENCE_CONFIG } from './config';
+import { stripReferences, extractListText, extractClauseText, extractArticleText, extractTableText, extractApplicationNoteText } from './text-extractor';
+import { DEFAULT_REFERENCE_CONFIG, DEFAULT_TEXT_EXTRACTION_CONFIG } from './config';
 
 describe('Bug Condition: Non-term reference markers stripped to empty string', () => {
   /**
@@ -299,5 +299,404 @@ describe('Preservation: Term references, config bypass, and plain text unchanged
         expect(stripReferences(text, cfg)).toBe(text);
       }
     }
+  });
+});
+
+
+/**
+ * Tests for extractListText()
+ */
+describe('extractListText', () => {
+  it('should return empty string for undefined input', () => {
+    expect(extractListText(undefined)).toBe('');
+  });
+
+  it('should return empty string for empty lists array', () => {
+    expect(extractListText([])).toBe('');
+  });
+
+  it('should extract content from list items', () => {
+    const lists = [
+      {
+        type: 'bulleted',
+        items: [
+          { content: 'First item' },
+          { content: 'Second item' },
+        ],
+      },
+    ];
+    const result = extractListText(lists);
+    expect(result).toContain('First item');
+    expect(result).toContain('Second item');
+  });
+
+  it('should extract term and definition from definition lists', () => {
+    const lists = [
+      {
+        type: 'definition',
+        items: [
+          { term: 'Building', definition: 'A structure used for shelter.' },
+          { term: 'Occupancy', definition: 'The use of a building.' },
+        ],
+      },
+    ];
+    const result = extractListText(lists);
+    expect(result).toContain('Building');
+    expect(result).toContain('A structure used for shelter.');
+    expect(result).toContain('Occupancy');
+    expect(result).toContain('The use of a building.');
+  });
+
+  it('should extract text field from list items', () => {
+    const lists = [
+      {
+        type: 'numbered',
+        items: [
+          { text: 'Item with text field' },
+        ],
+      },
+    ];
+    const result = extractListText(lists);
+    expect(result).toContain('Item with text field');
+  });
+
+  it('should handle multiple lists', () => {
+    const lists = [
+      { type: 'bulleted', items: [{ content: 'List 1 item' }] },
+      { type: 'numbered', items: [{ content: 'List 2 item' }] },
+    ];
+    const result = extractListText(lists);
+    expect(result).toContain('List 1 item');
+    expect(result).toContain('List 2 item');
+  });
+
+  it('should handle lists with no items', () => {
+    const lists = [{ type: 'bulleted' }];
+    const result = extractListText(lists as any);
+    expect(result).toBe('');
+  });
+});
+
+/**
+ * Tests for extractClauseText with list extraction
+ */
+describe('extractClauseText with lists', () => {
+  it('should extract list items from clauses', () => {
+    const clauses = [
+      {
+        id: 'clause1',
+        type: 'clause',
+        text: 'The following applies:',
+        lists: [
+          {
+            type: 'bulleted',
+            items: [
+              { content: 'requirement one' },
+              { content: 'requirement two' },
+            ],
+          },
+        ],
+      },
+    ];
+    const result = extractClauseText(clauses, DEFAULT_TEXT_EXTRACTION_CONFIG);
+    expect(result).toContain('The following applies:');
+    expect(result).toContain('requirement one');
+    expect(result).toContain('requirement two');
+  });
+
+  it('should extract lists from subclauses', () => {
+    const clauses = [
+      {
+        id: 'clause1',
+        type: 'clause',
+        text: 'Main clause',
+        subclauses: [
+          {
+            id: 'subclause1',
+            type: 'subclause',
+            text: 'Sub clause with list:',
+            lists: [
+              {
+                type: 'bulleted',
+                items: [{ content: 'nested list item' }],
+              },
+            ],
+          },
+        ],
+      },
+    ];
+    const result = extractClauseText(clauses, DEFAULT_TEXT_EXTRACTION_CONFIG);
+    expect(result).toContain('Main clause');
+    expect(result).toContain('Sub clause with list:');
+    expect(result).toContain('nested list item');
+  });
+});
+
+/**
+ * Tests for extractArticleText with list extraction
+ */
+describe('extractArticleText with lists', () => {
+  it('should extract list items from sentences', () => {
+    const content = [
+      {
+        id: 'sent1',
+        type: 'sentence',
+        number: 1,
+        text: 'The following terms are defined:',
+        lists: [
+          {
+            type: 'definition',
+            items: [
+              { term: 'Access', definition: 'means an area which is easy to approach' },
+              { term: 'Exit', definition: 'means that part of a means of egress' },
+            ],
+          },
+        ],
+      },
+    ];
+    const { text } = extractArticleText(content as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('The following terms are defined:');
+    expect(text).toContain('Access');
+    expect(text).toContain('means an area which is easy to approach');
+    expect(text).toContain('Exit');
+    expect(text).toContain('means that part of a means of egress');
+  });
+
+  it('should not extract lists when includeSentences is false', () => {
+    const content = [
+      {
+        id: 'sent1',
+        type: 'sentence',
+        number: 1,
+        text: 'Sentence text',
+        lists: [
+          { type: 'bulleted', items: [{ content: 'list item' }] },
+        ],
+      },
+    ];
+    const config = { ...DEFAULT_TEXT_EXTRACTION_CONFIG, includeSentences: false };
+    const { text } = extractArticleText(content as any, config, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toBe('');
+  });
+});
+
+/**
+ * Tests for extractTableText with actual BCBC data format
+ */
+describe('extractTableText with actual data format', () => {
+  it('should extract text from header_rows with content[].value cells', () => {
+    const table = {
+      type: 'table',
+      title: 'Test Table',
+      structure: {
+        header_rows: [
+          {
+            id: 'rowh1',
+            type: 'header_row',
+            cells: [
+              { content: [{ type: 'text', value: 'Column A' }] },
+              { content: [{ type: 'text', value: 'Column B' }] },
+            ],
+          },
+        ],
+        body_rows: [],
+      },
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('Test Table');
+    expect(text).toContain('Column A');
+    expect(text).toContain('Column B');
+  });
+
+  it('should extract text from body_rows with content[].value cells', () => {
+    const table = {
+      type: 'table',
+      title: 'Data Table',
+      structure: {
+        header_rows: [
+          {
+            cells: [
+              { content: [{ type: 'text', value: 'Header' }] },
+            ],
+          },
+        ],
+        body_rows: [
+          {
+            cells: [
+              { content: [{ type: 'text', value: 'Row 1 data' }] },
+            ],
+          },
+          {
+            cells: [
+              { content: [{ type: 'text', value: 'Row 2 data' }] },
+            ],
+          },
+          {
+            cells: [
+              { content: [{ type: 'text', value: 'Row 3 data' }] },
+            ],
+          },
+        ],
+      },
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('Data Table');
+    expect(text).toContain('Header');
+    expect(text).toContain('Row 1 data');
+    expect(text).toContain('Row 2 data');
+    expect(text).toContain('Row 3 data');
+  });
+
+  it('should index ALL body rows (no row limit)', () => {
+    const rows = Array.from({ length: 20 }, (_, i) => ({
+      cells: [{ content: [{ type: 'text', value: `Row ${i + 1} content` }] }],
+    }));
+    const table = {
+      type: 'table',
+      title: 'Large Table',
+      structure: { header_rows: [], body_rows: rows },
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('Row 1 content');
+    expect(text).toContain('Row 10 content');
+    expect(text).toContain('Row 20 content');
+  });
+
+  it('should handle cells with multiple content items', () => {
+    const table = {
+      type: 'table',
+      structure: {
+        header_rows: [],
+        body_rows: [
+          {
+            cells: [
+              {
+                content: [
+                  { type: 'text', value: 'Part one ' },
+                  { type: 'text', value: 'part two' },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('Part one');
+    expect(text).toContain('part two');
+  });
+
+  it('should still support legacy format (structure.headers and structure.rows)', () => {
+    const table = {
+      type: 'table',
+      title: 'Legacy Table',
+      structure: {
+        headers: [{ text: 'Legacy Header' }],
+        rows: [
+          { cells: [{ text: 'Legacy Cell' }] },
+        ],
+      },
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('Legacy Table');
+    expect(text).toContain('Legacy Header');
+    expect(text).toContain('Legacy Cell');
+  });
+
+  it('should strip references from table cell text', () => {
+    const table = {
+      type: 'table',
+      structure: {
+        header_rows: [],
+        body_rows: [
+          {
+            cells: [
+              { content: [{ type: 'text', value: '[REF:term:bldng:building] requirements' }] },
+            ],
+          },
+        ],
+      },
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('building requirements');
+    expect(text).not.toContain('[REF:');
+  });
+});
+
+/**
+ * Tests for extractApplicationNoteText
+ */
+describe('extractApplicationNoteText', () => {
+  it('should return empty for undefined content', () => {
+    const { text } = extractApplicationNoteText(undefined, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toBe('');
+  });
+
+  it('should extract text from paragraph content items', () => {
+    const content = [
+      { type: 'paragraph', id: 'para1', content: 'First paragraph of the note.' },
+      { type: 'paragraph', id: 'para2', content: 'Second paragraph with more details.' },
+    ];
+    const { text } = extractApplicationNoteText(content, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('First paragraph of the note.');
+    expect(text).toContain('Second paragraph with more details.');
+  });
+
+  it('should extract list items from paragraphs', () => {
+    const content = [
+      {
+        type: 'paragraph',
+        id: 'para1',
+        content: 'The following applies:',
+        lists: [
+          {
+            type: 'bulleted',
+            items: [
+              { content: 'First requirement' },
+              { content: 'Second requirement' },
+            ],
+          },
+        ],
+      },
+    ];
+    const { text } = extractApplicationNoteText(content, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('The following applies:');
+    expect(text).toContain('First requirement');
+    expect(text).toContain('Second requirement');
+  });
+
+  it('should strip references from application note text', () => {
+    const content = [
+      {
+        type: 'paragraph',
+        id: 'para1',
+        content: 'This applies to [REF:term:bldng:buildings] when an owner wishes to rehabilitate.',
+      },
+    ];
+    const { text } = extractApplicationNoteText(content, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('buildings');
+    expect(text).toContain('when an owner wishes to rehabilitate');
+    expect(text).not.toContain('[REF:');
+  });
+
+  it('should extract reference IDs from content', () => {
+    const content = [
+      {
+        type: 'paragraph',
+        id: 'para1',
+        content: 'See [REF:term:bldng:building] for details.',
+      },
+    ];
+    const { referenceIds } = extractApplicationNoteText(content, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(referenceIds.length).toBeGreaterThan(0);
+    expect(referenceIds.some(id => id.includes('bldng'))).toBe(true);
+  });
+
+  it('should truncate text at maxTextLength', () => {
+    const longContent = 'A'.repeat(20000);
+    const content = [{ type: 'paragraph', id: 'para1', content: longContent }];
+    const config = { ...DEFAULT_TEXT_EXTRACTION_CONFIG, maxTextLength: 100 };
+    const { text } = extractApplicationNoteText(content, config, DEFAULT_REFERENCE_CONFIG);
+    expect(text.length).toBeLessThanOrEqual(100);
   });
 });

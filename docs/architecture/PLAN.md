@@ -82,9 +82,10 @@ The BCBC is currently available only as a PDF, which users find difficult to nav
 
 **Implementation Details:**
 - Pre-indexed at build time using FlexSearch's export/import capability
-- Searches across: article titles, clause text, notes, glossary terms
+- Searches across: article text (sentences, clauses, subclauses, list items), table content (all header and body rows), application notes, glossary terms, and structural titles
 - Returns results with breadcrumb paths (e.g., "Division A > Part 1 > Section 1.1 > 1.1.1.1")
 - Supports fuzzy matching and phrase search
+- Behaves like a CTRL+F search of the full document — every occurrence of a term is indexed
 
 **Search Results Display:**
 - Ranked by relevance

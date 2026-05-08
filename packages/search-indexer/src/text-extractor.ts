@@ -5,10 +5,10 @@
  * including reference parsing and text normalization.
  */
 
-import type { 
-  ReferenceParsingConfig, 
+import type {
+  ReferenceParsingConfig,
   TextExtractionConfig,
-  ReferenceType 
+  ReferenceType
 } from './config';
 
 /**
@@ -344,10 +344,10 @@ function extractTrailingDisplayText(text: string, markerEndIndex: number): strin
 export function extractReferences(text: string): ExtractedReference[] {
   const references: ExtractedReference[] = [];
   let match;
-  
+
   // Reset regex state
   REFERENCE_PATTERN.lastIndex = 0;
-  
+
   while ((match = REFERENCE_PATTERN.exec(text)) !== null) {
     const [fullMatch, type, payload] = match;
     const { id, displayText } = parseReferencePayload(
@@ -356,7 +356,7 @@ export function extractReferences(text: string): ExtractedReference[] {
       text,
       match.index + fullMatch.length
     );
-    
+
     references.push({
       type: type as ReferenceType,
       id,
@@ -364,7 +364,7 @@ export function extractReferences(text: string): ExtractedReference[] {
       fullMatch,
     });
   }
-  
+
   return references;
 }
 
@@ -376,13 +376,13 @@ export function extractReferences(text: string): ExtractedReference[] {
  * @returns Clean text with references stripped
  */
 export function stripReferences(
-  text: string, 
+  text: string,
   config: ReferenceParsingConfig
 ): string {
   if (!config.stripFromSearchText) {
     return text;
   }
-  
+
   return text.replace(REFERENCE_PATTERN, (match, type, payload, offset, sourceText) => {
     // Only process configured reference types
     if (!config.processTypes.includes(type as ReferenceType)) {
@@ -421,7 +421,7 @@ export function extractReferenceIds(
   if (!config.preserveReferenceIds) {
     return [];
   }
-  
+
   const refs = extractReferences(text);
   return refs
     .filter(ref => config.processTypes.includes(ref.type))
@@ -431,6 +431,18 @@ export function extractReferenceIds(
 /**
  * Clause structure from BCBC JSON
  */
+interface ListItem {
+  content?: string;
+  term?: string;
+  definition?: string;
+  text?: string;
+}
+
+interface List {
+  type?: string;
+  items?: ListItem[];
+}
+
 interface Clause {
   id?: string;
   type?: string;
@@ -439,6 +451,7 @@ interface Clause {
   text?: string;
   clauses?: Clause[];
   subclauses?: Clause[];
+  lists?: List[];
 }
 
 /**
@@ -463,11 +476,39 @@ interface ContentItem {
   text?: string;
   title?: string;
   clauses?: Clause[];
+  lists?: List[];
   structure?: {
     headers?: Array<{ text?: string } | string>;
     rows?: Array<{ cells?: Array<{ text?: string } | string> }>;
+    header_rows?: Array<{ cells?: Array<{ content?: Array<{ type?: string; value?: string }> }> }>;
+    body_rows?: Array<{ cells?: Array<{ content?: Array<{ type?: string; value?: string }> }> }>;
   };
   caption?: string;
+  content?: Array<{ type?: string; content?: string; id?: string }>;
+}
+
+/**
+ * Extract text from list items
+ * 
+ * @param lists - Array of lists containing items
+ * @returns Extracted text from all list items
+ */
+export function extractListText(lists: List[] | undefined): string {
+  if (!lists) return '';
+
+  const texts: string[] = [];
+
+  for (const list of lists) {
+    if (!list.items) continue;
+    for (const item of list.items) {
+      if (item.content) texts.push(item.content);
+      if (item.text) texts.push(item.text);
+      if (item.term) texts.push(item.term);
+      if (item.definition) texts.push(item.definition);
+    }
+  }
+
+  return texts.filter(t => t).join(' ');
 }
 
 /**
@@ -486,25 +527,30 @@ export function extractClauseText(
   if (!clauses || !config.includeClauses) {
     return '';
   }
-  
+
   const texts: string[] = [];
-  
+
   for (const clause of clauses) {
     if (clause.text) {
       texts.push(clause.text);
     }
-    
+
+    // Extract list items within clauses
+    if (clause.lists) {
+      texts.push(extractListText(clause.lists));
+    }
+
     // Process subclauses if enabled
     if (config.includeSubclauses && clause.subclauses) {
       texts.push(extractClauseText(clause.subclauses, config, depth + 1));
     }
-    
+
     // Some structures use nested 'clauses' instead of 'subclauses'
     if (config.includeSubclauses && clause.clauses) {
       texts.push(extractClauseText(clause.clauses, config, depth + 1));
     }
   }
-  
+
   return texts.filter(t => t).join(' ');
 }
 
@@ -524,10 +570,10 @@ export function extractArticleText(
   if (!content) {
     return { text: '', referenceIds: [] };
   }
-  
+
   const texts: string[] = [];
   const allReferenceIds: string[] = [];
-  
+
   for (const item of content) {
     if (item.type === 'sentence' && config.includeSentences) {
       // Extract sentence text
@@ -535,34 +581,62 @@ export function extractArticleText(
         texts.push(item.text);
         allReferenceIds.push(...extractReferenceIds(item.text, refConfig));
       }
-      
+
       // Extract clause text
       if (item.clauses) {
         const clauseText = extractClauseText(item.clauses, config);
         texts.push(clauseText);
         allReferenceIds.push(...extractReferenceIds(clauseText, refConfig));
       }
+
+      // Extract list items within sentences
+      if (item.lists) {
+        const listText = extractListText(item.lists);
+        if (listText) {
+          texts.push(listText);
+          allReferenceIds.push(...extractReferenceIds(listText, refConfig));
+        }
+      }
     }
   }
-  
+
   // Join and clean text
   let fullText = texts.filter(t => t).join(' ');
-  
+
   // Strip references from searchable text
   fullText = stripReferences(fullText, refConfig);
-  
+
   // Normalize whitespace
   fullText = normalizeWhitespace(fullText);
-  
+
   // Truncate if needed
   if (fullText.length > config.maxTextLength) {
     fullText = fullText.substring(0, config.maxTextLength);
   }
-  
+
   return {
     text: fullText,
     referenceIds: [...new Set(allReferenceIds)], // Deduplicate
   };
+}
+
+/**
+ * Extract text from a table cell
+ * Handles the actual BCBC format: { content: [{ type: "text", value: "..." }] }
+ * 
+ * @param cell - Table cell object
+ * @returns Extracted text from the cell
+ */
+function extractCellText(cell: { content?: Array<{ type?: string; value?: string }> } | { text?: string } | string): string {
+  if (typeof cell === 'string') return cell;
+  if ('text' in cell && cell.text) return cell.text;
+  if ('content' in cell && Array.isArray(cell.content)) {
+    return cell.content
+      .map(item => item.value || '')
+      .filter(t => t)
+      .join(' ');
+  }
+  return '';
 }
 
 /**
@@ -580,7 +654,7 @@ export function extractTableText(
 ): { text: string; referenceIds: string[] } {
   const texts: string[] = [];
   const allReferenceIds: string[] = [];
-  
+
   // Add title/caption
   if (table.title) {
     texts.push(table.title);
@@ -590,10 +664,25 @@ export function extractTableText(
     texts.push(table.caption);
     allReferenceIds.push(...extractReferenceIds(table.caption, refConfig));
   }
-  
+
   // Extract from structure
   if (table.structure) {
-    // Headers
+    // Header rows (actual format: structure.header_rows[].cells[].content[].value)
+    if (table.structure.header_rows) {
+      for (const row of table.structure.header_rows) {
+        if (row.cells) {
+          for (const cell of row.cells) {
+            const cellText = extractCellText(cell);
+            if (cellText) {
+              texts.push(cellText);
+              allReferenceIds.push(...extractReferenceIds(cellText, refConfig));
+            }
+          }
+        }
+      }
+    }
+
+    // Legacy format: structure.headers (array of strings or {text} objects)
     if (table.structure.headers) {
       for (const header of table.structure.headers) {
         const headerText = typeof header === 'string' ? header : header.text;
@@ -603,12 +692,25 @@ export function extractTableText(
         }
       }
     }
-    
-    // Rows (limit to first few rows to avoid bloat)
+
+    // Body rows (actual format: structure.body_rows[].cells[].content[].value)
+    if (table.structure.body_rows) {
+      for (const row of table.structure.body_rows) {
+        if (row.cells) {
+          for (const cell of row.cells) {
+            const cellText = extractCellText(cell);
+            if (cellText) {
+              texts.push(cellText);
+              allReferenceIds.push(...extractReferenceIds(cellText, refConfig));
+            }
+          }
+        }
+      }
+    }
+
+    // Legacy format: structure.rows (array of {cells} with string or {text} cells)
     if (table.structure.rows) {
-      const maxRows = 5;
-      for (let i = 0; i < Math.min(table.structure.rows.length, maxRows); i++) {
-        const row = table.structure.rows[i];
+      for (const row of table.structure.rows) {
         if (row.cells) {
           for (const cell of row.cells) {
             const cellText = typeof cell === 'string' ? cell : cell.text;
@@ -621,16 +723,66 @@ export function extractTableText(
       }
     }
   }
-  
+
   // Join and clean
   let fullText = texts.filter(t => t).join(' ');
   fullText = stripReferences(fullText, refConfig);
   fullText = normalizeWhitespace(fullText);
-  
+
   if (fullText.length > config.maxTextLength) {
     fullText = fullText.substring(0, config.maxTextLength);
   }
-  
+
+  return {
+    text: fullText,
+    referenceIds: [...new Set(allReferenceIds)],
+  };
+}
+
+/**
+ * Extract text from an application note's content paragraphs
+ * 
+ * @param noteContent - Array of paragraph content items from an application note
+ * @param config - Text extraction configuration
+ * @param refConfig - Reference parsing configuration
+ * @returns Extracted and cleaned text with reference IDs
+ */
+export function extractApplicationNoteText(
+  noteContent: Array<{ type?: string; content?: string; id?: string; lists?: List[] }> | undefined,
+  config: TextExtractionConfig,
+  refConfig: ReferenceParsingConfig
+): { text: string; referenceIds: string[] } {
+  if (!noteContent) {
+    return { text: '', referenceIds: [] };
+  }
+
+  const texts: string[] = [];
+  const allReferenceIds: string[] = [];
+
+  for (const item of noteContent) {
+    if (item.content) {
+      texts.push(item.content);
+      allReferenceIds.push(...extractReferenceIds(item.content, refConfig));
+    }
+    // Extract list items within paragraphs
+    if (item.lists) {
+      const listText = extractListText(item.lists);
+      if (listText) {
+        texts.push(listText);
+        allReferenceIds.push(...extractReferenceIds(listText, refConfig));
+      }
+    }
+  }
+
+  // Join and clean text
+  let fullText = texts.filter(t => t).join(' ');
+  fullText = stripReferences(fullText, refConfig);
+  fullText = normalizeWhitespace(fullText);
+
+  if (fullText.length > config.maxTextLength) {
+    fullText = fullText.substring(0, config.maxTextLength);
+  }
+
   return {
     text: fullText,
     referenceIds: [...new Set(allReferenceIds)],
@@ -646,21 +798,21 @@ export function extractTableText(
  */
 export function generateSnippet(text: string, length: number): string {
   if (!text) return '';
-  
+
   const cleaned = normalizeWhitespace(text);
-  
+
   if (cleaned.length <= length) {
     return cleaned;
   }
-  
+
   // Try to break at word boundary
   const truncated = cleaned.substring(0, length);
   const lastSpace = truncated.lastIndexOf(' ');
-  
+
   if (lastSpace > length * 0.7) {
     return truncated.substring(0, lastSpace) + '...';
   }
-  
+
   return truncated + '...';
 }
 
