@@ -82,15 +82,17 @@ The BCBC is currently available only as a PDF, which users find difficult to nav
 
 **Implementation Details:**
 - Pre-indexed at build time using FlexSearch's export/import capability
-- Searches across: article text (sentences, clauses, subclauses, list items), table content (all header and body rows), application notes, glossary terms, and structural titles
+- Searches across: article text (sentences, clauses, subclauses, list items), table content (all header and body rows, table notes), application notes (including note_division sub-sections), glossary terms/definitions, and structural titles
 - Returns results with breadcrumb paths (e.g., "Division A > Part 1 > Section 1.1 > 1.1.1.1")
 - Supports fuzzy matching and phrase search
 - Behaves like a CTRL+F search of the full document — every occurrence of a term is indexed
+- Indexed text is cleaned of formatting markers (`[LIST:]`, `^{}`, `_{}`, `<bold>`, `<italic>`) and reference markers (`[REF:]`)
 
 **Search Results Display:**
 - Ranked by relevance
-- Shows matched context snippet
+- Shows matched context snippet (clean, no raw markers)
 - Displays full hierarchical path
+- Includes glossary term results with "GLOSSARY" badge
 - Pagination support (configurable results per page)
 
 ### 2. Hierarchical Navigation

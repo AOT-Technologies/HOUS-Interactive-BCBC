@@ -82,18 +82,30 @@ The search indexer (`@bc-building-code/search-indexer`) creates a comprehensive 
 | Content Type | What Gets Indexed |
 |---|---|
 | **Articles** | Sentence text, clause text (recursive), subclause text, list items within sentences and clauses |
-| **Tables** | Title, caption, all header row cells, all body row cells (no row limit) |
+| **Tables** | Title, caption, all header row cells, all body row cells (no row limit), table notes |
 | **Figures** | Title and caption |
-| **Application Notes** | All paragraphs and list items from `part.appendix.application_notes[]` |
-| **Glossary** | Term name and definition |
+| **Application Notes** | Title, all paragraphs, list items, and `note_division` titles and content from `part.appendix.application_notes[]` |
+| **Glossary** | Term name and definition (with references stripped) |
 | **Structural** | Part, section, and subsection titles |
 
+**Text cleaning pipeline (applied to all indexed text):**
+1. Reference markers (`[REF:term:...]`, `[REF:internal:...]`, etc.) are stripped, preserving display text
+2. Formatting markers are stripped via `stripFormattingMarkers()`:
+   - `[LIST:type]` placeholders removed (e.g., `[LIST:definition]`, `[LIST:bulleted]`)
+   - Superscript `^{2}` → `2` (plain text)
+   - Subscript `_{2}` → `2` (plain text)
+   - `<bold>text</bold>` → `text`
+   - `<italic>text</italic>` → `text`
+3. Whitespace is normalized (collapsed, trimmed)
+4. Text is truncated at 10,000 characters per document
+5. Each document gets a 200-character snippet for search result display
+
 **Key behaviors:**
-- Reference markers (`[REF:term:...]`, `[REF:internal:...]`, etc.) are stripped from indexed text
 - Table cells use the `structure.header_rows[].cells[].content[].value` format
 - List items (definition lists, bulleted lists, numbered lists) within sentences and clauses are indexed
-- Text is truncated at 10,000 characters per document
-- Each document gets a 200-character snippet for search result display
+- Application notes with `note_division` sub-sections have their titles and nested content indexed
+- Glossary definitions are stripped of reference markers for search (the glossary sidebar uses `glossary-map.json` which preserves raw markers)
+- Glossary results appear in search alongside code content results
 
 ### Generated Assets
 
