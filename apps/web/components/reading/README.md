@@ -29,6 +29,7 @@ All components have co-located CSS files using BC Design System variables:
 - `ContentRenderer` - Recursive content renderer (core component)
 - `PartRenderer` - Part-level content rendering
 - `SectionRenderer` - Section-level content rendering
+- `PrintFooter` - Print-only footer showing edition and effective date (see details below)
 
 **Content Block Components:**
 - `PartTitle` - Part title display
@@ -43,6 +44,22 @@ All components have co-located CSS files using BC Design System variables:
 - `TableBlock` - Table rendering with horizontal scroll, sticky first column, and pinned header overlay (see details below)
 - `FigureBlock` - Figure/image rendering
 - `EquationBlock` - Equation/formula rendering
+
+### PrintFooter — Print-Only Edition & Date Footer
+
+`PrintFooter` is `display: none` on screen and rendered as a `position: fixed; bottom: 0` element in `@media print`, so it repeats on every printed page above the browser's native URL/page-number line.
+
+**Content:**
+- Left: version title from `useVersionStore` (e.g. `"BC Building Code 2024"`)
+- Right: selected effective date label from `useAmendmentDateStore` (e.g. `"Effective: June 16, 2025 (Latest)"`)
+
+**Placement:** inserted into all six printable branches of `ReadingView` (front-matter, part-level, part-appendix, division-appendix, spectables, main section).
+
+**`@page { margin-bottom: 1.5cm }`** in `globals.css` reserves space so page content does not overlap the footer.
+
+**Browser limitation:** the alternating left/right footer seen in the official BC government static PDF is produced by a professional PDF engine using `@page :left` / `@page :right` CSS Paged Media selectors, which are not supported by browser print dialogs. Our footer appears consistently at the bottom of every page. The effective date shown is a value-add over the static PDF.
+
+---
 
 ### TableBlock — Horizontal Scroll & Sticky Column
 
