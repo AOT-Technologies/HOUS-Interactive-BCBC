@@ -122,8 +122,20 @@
   border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
 }
 
+/* Same border-collapse fix as split-body: the counter-translated first-column
+   header cell must paint above adjacent cells. border-collapse: collapse merges
+   cell borders into a shared layer, breaking that stacking order. */
+.table-block__table--split-header {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Remove top and left borders to prevent doubled lines with separate borders.
+   The existing rules already zero out outer left/right edges; the top border
+   on all header cells was already removed, so only left needs to be added. */
 .table-block__table--split-header .table-block__header-cell {
-  border-top: 0;
+  border-top: none;
+  border-left: none;
 }
 
 .table-block__table--split-header .table-block__header-cell:first-child,
@@ -246,9 +258,12 @@
   border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
 }
 
-/* Sticky first column — keeps the group label visible during horizontal scroll */
+/* Sticky first column — keeps the group label visible during horizontal scroll.
+   Uses .table-block__cell--first-col (set by renderBodyRowsWithColTracking) rather
+   than :first-child so that rows whose visual column 0 is covered by a rowspan
+   do not have their first DOM child incorrectly pinned. */
 .table-block__wrapper--scroll .table-block__header-cell:first-child,
-.table-block__wrapper--scroll .table-block__cell:first-child {
+.table-block__wrapper--scroll .table-block__cell--first-col {
   position: sticky;
   left: 0;
   z-index: 2;
@@ -256,13 +271,12 @@
   box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.12);
 }
 
-.table-block__wrapper--scroll .table-block__cell:first-child {
+.table-block__wrapper--scroll .table-block__cell--first-col {
   background-color: var(--surface-color-background-white, #fff);
 }
 
 /* Split layout: sticky first column in the scrollable body viewport */
-.table-block__table--split-body .table-block__cell:first-child,
-.table-block__table--split-body .table-block__header-cell:first-child {
+.table-block__table--split-body .table-block__cell--first-col {
   position: sticky;
   left: 0;
   z-index: 2;
@@ -271,14 +285,36 @@
   box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.12);
 }
 
-/* Split layout: counter-translated first-column header cell stays pinned at left: 0.
-   Needs a background and z-index so content scrolling behind it is hidden. */
-[data-sticky-first-col="true"] {
+/* Pinned first-column overlay inside the split-scroll header viewport.
+   A separate absolutely-positioned table so it always paints above the
+   translating header track — no z-index battle between table row groups. */
+.table-block__header-viewport {
   position: relative;
-  z-index: 1;
+}
+
+.table-block__pinned-header-col {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  overflow: hidden;
   background-color: var(--surface-color-background-light-gray, #faf9f8);
   background-clip: padding-box;
   box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.12);
+}
+
+.table-block__table--pinned-col {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Remove all cell borders from the pinned column overlay. The header viewport's
+   own border-bottom provides the visual separator between header and body;
+   internal cell borders would create a false split when the cell's natural
+   content height is shorter than the full header viewport height. */
+.table-block__table--pinned-col .table-block__header-cell {
+  border: none;
 }
 
 /* Text alignment modifiers */
@@ -539,21 +575,20 @@
     page-break-after: avoid;
   }
 
+  /* Hide the pinned header overlay — the print-unified table replaces it */
+  .table-block__pinned-header-col {
+    display: none !important;
+  }
+
   /* Disable sticky headers and sticky first column in print */
   .table-block__thead-sticky .table-block__header-cell,
   .table-block__wrapper--scroll .table-block__header-cell:first-child,
-  .table-block__wrapper--scroll .table-block__cell:first-child,
-  .table-block__table--split-body .table-block__cell:first-child,
-  .table-block__table--split-body .table-block__header-cell:first-child {
+  .table-block__wrapper--scroll .table-block__cell--first-col,
+  .table-block__table--split-body .table-block__cell--first-col {
     position: static !important;
     box-shadow: none !important;
   }
 
-  /* Reset JS counter-transform on first-column header cells */
-  [data-sticky-first-col="true"] {
-    transform: none !important;
-    box-shadow: none !important;
-  }
 
   /* Restore collapse for print — the split-scroll pair is hidden anyway,
      but this prevents any stray border rendering on the print-unified table. */

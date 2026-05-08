@@ -1272,37 +1272,51 @@ const renderRows = (
   ));
 };
 
+
 /**
- * Renders header rows for the split-scroll layout, adding
- * data-sticky-first-col="true" to every cell that sits at column position 0.
- * The scroll handler uses this marker to apply a counter-translateX so the
- * first header column stays pinned while the rest of the header track scrolls.
+ * Like renderRows but tracks actual column positions across rows (accounting
+ * for active rowspans) and adds `table-block__cell--first-col` only to cells
+ * that genuinely occupy visual column 0.  This prevents rows whose column 0 is
+ * covered by a rowspan from having their first DOM child incorrectly styled as
+ * a sticky pinned cell.
  */
-const renderHeaderRowsWithFirstColMark = (
+const renderBodyRowsWithColTracking = (
   rows: NormalizedRow[],
   interactive: boolean,
   renderContext?: ReferenceRenderContext
-) => {
-  // Track whether column 0 is occupied by a rowspan from a previous row.
-  let col0ActiveRowspan = 0;
+): React.ReactNode[] => {
+  const activeRowspans: number[] = [];
 
   return rows.map((row, rowIndex) => {
-    const firstCellIsAtColZero = col0ActiveRowspan === 0;
+    let colCursor = 0;
+    const cellStartCols: number[] = [];
 
-    if (firstCellIsAtColZero && row.cells.length > 0) {
-      const rs =
-        typeof row.cells[0].rowspan === 'number' && row.cells[0].rowspan > 1
-          ? row.cells[0].rowspan - 1
-          : 0;
-      col0ActiveRowspan = rs;
-    } else if (col0ActiveRowspan > 0) {
-      col0ActiveRowspan -= 1;
+    row.cells.forEach((cell) => {
+      while ((activeRowspans[colCursor] ?? 0) > 0) colCursor++;
+      cellStartCols.push(colCursor);
+
+      const colspan = typeof cell.colspan === 'number' && cell.colspan > 0 ? cell.colspan : 1;
+      const rowspan = typeof cell.rowspan === 'number' && cell.rowspan > 1 ? cell.rowspan : 0;
+
+      if (rowspan > 0) {
+        for (let i = 0; i < colspan; i++) {
+          const col = colCursor + i;
+          while (activeRowspans.length <= col) activeRowspans.push(0);
+          activeRowspans[col] = rowspan - 1;
+        }
+      }
+      colCursor += colspan;
+    });
+
+    for (let i = 0; i < activeRowspans.length; i++) {
+      if ((activeRowspans[i] ?? 0) > 0) activeRowspans[i]--;
     }
 
     return (
       <tr key={row.id || rowIndex}>
         {row.cells.map((cell, cellIndex) => {
           const CellTag = cell.isHeader ? 'th' : 'td';
+          const isFirstCol = cellStartCols[cellIndex] === 0;
           const alignClass = cell.align ? `table-block__cell--${cell.align}` : '';
           const hasFigureContent = Array.isArray(cell.content)
             ? cell.content.some((item) => item.type === 'figure')
@@ -1313,16 +1327,12 @@ const renderHeaderRowsWithFirstColMark = (
             (typeof cell.rowspan === 'number' && cell.rowspan > 1)
               ? 'table-block__cell--spanned'
               : '';
+          const firstColClass = isFirstCol ? 'table-block__cell--first-col' : '';
 
           return (
             <CellTag
               key={cellIndex}
-              {...(cellIndex === 0 && firstCellIsAtColZero
-                ? { 'data-sticky-first-col': 'true' }
-                : {})}
-              className={`${
-                cell.isHeader ? 'table-block__header-cell' : 'table-block__cell'
-              } ${alignClass} ${figureClass} ${spanClass}`.trim()}
+              className={`${cell.isHeader ? 'table-block__header-cell' : 'table-block__cell'} ${alignClass} ${figureClass} ${spanClass} ${firstColClass}`.trim()}
               colSpan={cell.colspan}
               rowSpan={cell.rowspan}
             >
@@ -1332,47 +1342,6 @@ const renderHeaderRowsWithFirstColMark = (
         })}
       </tr>
     );
-  });
-};
-
-/**
- * Expands rowspan cells in the first column of body rows so that group labels
- * (e.g. "Concrete Slabs") appear in every row rather than only in the anchor row.
- * Subsequent rows whose first column is covered by a rowspan get an inline copy
- * of the anchor cell's content (rowspan attribute stripped). All other columns
- * are left untouched.
- */
-const expandBodyFirstColumnRowspans = (rows: NormalizedRow[]): NormalizedRow[] => {
-  if (rows.length === 0) return rows;
-
-  let activeSpan: { cell: NormalizedCell; remaining: number } | null = null;
-
-  return rows.map((row) => {
-    // Column 0 is covered by a rowspan from a previous row — inject a copy.
-    if (activeSpan !== null) {
-      const injected: NormalizedCell = { ...activeSpan.cell, rowspan: undefined };
-      activeSpan.remaining -= 1;
-      if (activeSpan.remaining <= 0) activeSpan = null;
-      return { ...row, cells: [injected, ...row.cells] };
-    }
-
-    // Column 0 is free — check if the first cell starts a new rowspan.
-    const firstCell = row.cells[0];
-    const rowspan =
-      firstCell && typeof firstCell.rowspan === 'number' && firstCell.rowspan > 1
-        ? firstCell.rowspan
-        : 0;
-
-    if (rowspan > 0) {
-      activeSpan = { cell: firstCell, remaining: rowspan - 1 };
-      // Strip rowspan so the anchor row renders normally (no cell spanning).
-      return {
-        ...row,
-        cells: [{ ...firstCell, rowspan: undefined }, ...row.cells.slice(1)],
-      };
-    }
-
-    return row;
   });
 };
 
@@ -1445,20 +1414,13 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     [normalizedRows]
   );
 
-  // Flatten first-column rowspans so every body row shows its group label
-  // (e.g. "Concrete Slabs") even after scrolling past the anchor cell.
-  const expandedBodyRows = useMemo(
-    () => expandBodyFirstColumnRowspans(bodyRows),
-    [bodyRows]
-  );
-
-  const shouldProgressivelyRenderBodyRows = expandedBodyRows.length >= LARGE_TABLE_ROW_THRESHOLD;
+  const shouldProgressivelyRenderBodyRows = bodyRows.length >= LARGE_TABLE_ROW_THRESHOLD;
   const renderedBodyRows = useMemo(
     () =>
       shouldProgressivelyRenderBodyRows && !isPrintMode
-        ? expandedBodyRows.slice(0, Math.min(renderedBodyRowCount, expandedBodyRows.length))
-        : expandedBodyRows,
-    [expandedBodyRows, isPrintMode, renderedBodyRowCount, shouldProgressivelyRenderBodyRows]
+        ? bodyRows.slice(0, Math.min(renderedBodyRowCount, bodyRows.length))
+        : bodyRows,
+    [bodyRows, isPrintMode, renderedBodyRowCount, shouldProgressivelyRenderBodyRows]
   );
 
   const maxColumnCount = normalizedRows.reduce((max, row) => {
@@ -1534,19 +1496,34 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     () => renderRows(displayHeaderRows, interactive, renderContext),
     [displayHeaderRows, interactive, renderContext]
   );
-  // Split-layout header: uses the first-col marker variant so the scroll handler
-  // can counter-translate column-0 cells to keep them pinned.
-  const splitHeaderRowsMarkup = useMemo(
-    () => renderHeaderRowsWithFirstColMark(displayHeaderRows, interactive, renderContext),
-    [displayHeaderRows, interactive, renderContext]
-  );
+  // Extract just the first-column cells from the header for the pinned overlay.
+  // Rows where column 0 is covered by a rowspan from a previous row get an
+  // empty cell list so the overlay table still has the right number of rows
+  // for height matching.
+  const pinnedHeaderFirstColRows = useMemo(() => {
+    if (!usesSplitScrollLayout) return [];
+    let col0ActiveRowspan = 0;
+    return displayHeaderRows.map((row) => {
+      const isCol0Covered = col0ActiveRowspan > 0;
+      if (!isCol0Covered && row.cells.length > 0) {
+        const rs =
+          typeof row.cells[0].rowspan === 'number' && row.cells[0].rowspan > 1
+            ? row.cells[0].rowspan - 1
+            : 0;
+        col0ActiveRowspan = rs;
+      } else if (col0ActiveRowspan > 0) {
+        col0ActiveRowspan -= 1;
+      }
+      return { ...row, cells: isCol0Covered ? [] : row.cells.slice(0, 1) };
+    });
+  }, [displayHeaderRows, usesSplitScrollLayout]);
   const renderedBodyRowsMarkup = useMemo(
-    () => renderRows(renderedBodyRows, interactive, renderContext),
+    () => renderBodyRowsWithColTracking(renderedBodyRows, interactive, renderContext),
     [interactive, renderContext, renderedBodyRows]
   );
   const fullBodyRowsMarkup = useMemo(
-    () => renderRows(expandedBodyRows, interactive, renderContext),
-    [expandedBodyRows, interactive, renderContext]
+    () => renderBodyRowsWithColTracking(bodyRows, interactive, renderContext),
+    [bodyRows, interactive, renderContext]
   );
   const fullDisplayRowsMarkup = useMemo(
     () => renderRows(displayRows, interactive, renderContext),
@@ -1795,9 +1772,50 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                       style={{ width: `${minWidthRem}rem`, minWidth: `${minWidthRem}rem` }}
                     >
                       {renderColGroup(columnWidthsRem, printColumnWidthsPct)}
-                      <thead>{splitHeaderRowsMarkup}</thead>
+                      <thead>{renderedHeaderRowsMarkup}</thead>
                     </table>
                   </div>
+                  {/* Pinned first-column overlay — absolutely positioned so it always
+                      sits above the translating header track, avoiding z-index fights
+                      with multi-row/colspan header cells in other columns. */}
+                  {pinnedHeaderFirstColRows.length > 0 && columnWidthsRem[0] && (
+                    <div
+                      className="table-block__pinned-header-col"
+                      style={{ width: `${columnWidthsRem[0]}rem` }}
+                      aria-hidden="true"
+                    >
+                      <table
+                        className="table-block__table table-block__table--split-header table-block__table--pinned-col"
+                        style={{ width: `${columnWidthsRem[0]}rem`, minWidth: `${columnWidthsRem[0]}rem` }}
+                      >
+                        <colgroup>
+                          <col
+                            className="table-block__col"
+                            style={{ '--table-column-width-rem': columnWidthsRem[0] } as React.CSSProperties}
+                          />
+                        </colgroup>
+                        <thead>
+                          {pinnedHeaderFirstColRows.map((row, rowIndex) => (
+                            <tr key={row.id || rowIndex}>
+                              {row.cells.map((cell, cellIndex) => {
+                                const CellTag = cell.isHeader ? 'th' : 'td';
+                                return (
+                                  <CellTag
+                                    key={cellIndex}
+                                    className="table-block__header-cell"
+                                    colSpan={cell.colspan}
+                                    rowSpan={cell.rowspan}
+                                  >
+                                    {renderCellContent(cell.content, interactive, renderContext)}
+                                  </CellTag>
+                                );
+                              })}
+                            </tr>
+                          ))}
+                        </thead>
+                      </table>
+                    </div>
+                  )}
                 </div>
                 <div
                   className="table-block__body-viewport"
@@ -1807,13 +1825,6 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                     const { scrollLeft } = currentTarget;
                     if (headerTrackRef.current) {
                       headerTrackRef.current.style.transform = `translateX(-${scrollLeft}px)`;
-                      // Counter-translate first-column header cells so they stay
-                      // pinned at left: 0 while the rest of the header track scrolls.
-                      headerTrackRef.current
-                        .querySelectorAll<HTMLElement>('[data-sticky-first-col="true"]')
-                        .forEach((cell) => {
-                          cell.style.transform = `translateX(${scrollLeft}px)`;
-                        });
                     }
                     maybeLoadMoreRowsOnScroll(currentTarget);
                   }}
