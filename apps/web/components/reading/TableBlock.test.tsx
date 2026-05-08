@@ -364,6 +364,10 @@ describe('TableBlock', () => {
     const wrapper = container.querySelector('.table-block__wrapper');
     const bodyViewport = container.querySelector('.table-block__body-viewport');
     const splitLayout = container.querySelector('.table-block__split-scroll');
+    // Split layout produces 3 <table> elements:
+    //   [0] scrolling header track  (.table-block__table--split-header)
+    //   [1] pinned first-column overlay (.table-block__table--pinned-col)
+    //   [2] scrollable body  (.table-block__table--split-body)
     const splitTables = container.querySelectorAll('.table-block__table');
 
     expect(wrapper).toHaveClass('table-block__wrapper--scroll');
@@ -371,7 +375,8 @@ describe('TableBlock', () => {
     expect(splitLayout).toBeInTheDocument();
     expect(bodyViewport).toBeInTheDocument();
     expect(splitTables).toHaveLength(3);
-    expect(splitTables[1]?.getAttribute('style')).toMatch(/min-width:\s*\d+(\.\d+)?rem/i);
+    // The split-header and pinned-col tables both carry explicit min-width styles.
+    expect(splitTables[0]?.getAttribute('style')).toMatch(/min-width:\s*\d+(\.\d+)?rem/i);
     restoreWidths();
   });
 
@@ -876,6 +881,149 @@ describe('TableBlock', () => {
     expect(heatingHeader).toHaveAttribute('colspan', '6');
     expect(minimumHeader).toHaveAttribute('colspan', '6');
     expect(container.querySelector('.table-block__wrapper--split')).toBeInTheDocument();
+    restoreWidths();
+  });
+
+  it('applies table-block__cell--first-col only to cells at visual column 0, not rowspan sub-rows', () => {
+    // Table where column 0 uses rowspan grouping. Sub-rows have their first DOM
+    // child at visual column 1+, so first-col must not be applied there.
+    const table = {
+      id: 'test-first-col-rowspan',
+      type: 'table' as const,
+      number: '9.36.3.9',
+      title: 'First Col Rowspan Test',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Type of Equipment' }] },
+              { content: [{ type: 'text' as const, value: 'Capacity' }] },
+              { content: [{ type: 'text' as const, value: 'Standard' }] },
+              { content: [{ type: 'text' as const, value: 'Performance' }] },
+            ],
+          },
+        ],
+        body_rows: [
+          {
+            // Anchor row: column 0 has rowspan=3
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Split system' }], rowspan: 3 },
+              { content: [{ type: 'text' as const, value: '< 19' }], rowspan: 3 },
+              { content: [{ type: 'text' as const, value: 'CSA C656' }], rowspan: 3 },
+              { content: [{ type: 'text' as const, value: 'SEER = 14.5' }] },
+            ],
+          },
+          {
+            // Sub-row 1: column 0 covered by rowspan — first DOM child is at col 3
+            id: 'body-2',
+            type: 'body_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'EER = 11.5' }] }],
+          },
+          {
+            // Sub-row 2 (last): the off-by-one bug caused this to get first-col incorrectly
+            id: 'body-3',
+            type: 'body_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'HSPF = 7.1' }] }],
+          },
+          {
+            // New anchor: column 0 is free again
+            id: 'body-4',
+            type: 'body_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Single-package system' }], rowspan: 2 },
+              { content: [{ type: 'text' as const, value: '< 19' }], rowspan: 2 },
+              { content: [{ type: 'text' as const, value: 'CSA C656' }], rowspan: 2 },
+              { content: [{ type: 'text' as const, value: 'SEER = 14.0' }] },
+            ],
+          },
+          {
+            // Last sub-row of second group
+            id: 'body-5',
+            type: 'body_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'EER = 10.0' }] }],
+          },
+        ],
+      },
+    };
+
+    const { container } = render(<TableBlock table={table as unknown as Table} />);
+    const firstColCells = container.querySelectorAll('.table-block__cell--first-col');
+
+    // Only the 2 anchor rows (visual col 0) should carry the class
+    expect(firstColCells).toHaveLength(2);
+    expect(firstColCells[0]?.textContent).toContain('Split system');
+    expect(firstColCells[1]?.textContent).toContain('Single-package system');
+
+    // Middle sub-rows must NOT have the class
+    expect(screen.getByText('EER = 11.5').closest('td')).not.toHaveClass('table-block__cell--first-col');
+    // Last sub-row of each group must also NOT have the class (off-by-one fix)
+    expect(screen.getByText('HSPF = 7.1').closest('td')).not.toHaveClass('table-block__cell--first-col');
+    expect(screen.getByText('EER = 10.0').closest('td')).not.toHaveClass('table-block__cell--first-col');
+  });
+
+  it('renders a pinned first-column header overlay inside the split layout header viewport', () => {
+    const restoreWidths = mockElementWidth(320);
+    const table = {
+      id: 'test-pinned-header-overlay',
+      type: 'table' as const,
+      number: '9.99.9.8',
+      title: 'Pinned Overlay',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [
+              { content: [{ type: 'text' as const, value: 'Type of Assembly' }] },
+              { content: [{ type: 'text' as const, value: 'Heating or Cooling Capacity, kW' }] },
+              { content: [{ type: 'text' as const, value: 'Performance Testing Standard' }] },
+              { content: [{ type: 'text' as const, value: 'Minimum Performance' }] },
+            ],
+          },
+        ],
+        body_rows: [
+          {
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: [
+              {
+                content: [
+                  { type: 'text' as const, value: 'Extremely Long Equipment Name That Forces Scroll Mode' },
+                ],
+              },
+              { content: [{ type: 'text' as const, value: '< 19' }] },
+              { content: [{ type: 'text' as const, value: 'CSA C656, Standard for split-system air conditioners' }] },
+              { content: [{ type: 'text' as const, value: 'SEER = 14.5' }] },
+            ],
+          },
+        ],
+      },
+    };
+
+    const { container } = render(<TableBlock table={table as unknown as Table} />);
+    const headerViewport = container.querySelector('.table-block__header-viewport');
+    const pinnedOverlay = container.querySelector('.table-block__pinned-header-col');
+    const pinnedTable = container.querySelector('.table-block__table--pinned-col');
+
+    // Overlay and its inner table must be present inside the header viewport
+    expect(pinnedOverlay).toBeInTheDocument();
+    expect(pinnedTable).toBeInTheDocument();
+    expect(headerViewport?.contains(pinnedOverlay)).toBe(true);
+
+    // The overlay must reproduce the first-column header text
+    expect(pinnedOverlay?.textContent).toContain('Type of Assembly');
+
+    // The overlay must NOT contain other column headers
+    expect(pinnedOverlay?.textContent).not.toContain('Heating or Cooling Capacity');
+    expect(pinnedOverlay?.textContent).not.toContain('Performance Testing Standard');
     restoreWidths();
   });
 

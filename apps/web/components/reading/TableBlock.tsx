@@ -1272,6 +1272,81 @@ const renderRows = (
   ));
 };
 
+
+/**
+ * Like renderRows but tracks actual column positions across rows (accounting
+ * for active rowspans) and adds `table-block__cell--first-col` only to cells
+ * that genuinely occupy visual column 0.  This prevents rows whose column 0 is
+ * covered by a rowspan from having their first DOM child incorrectly styled as
+ * a sticky pinned cell.
+ */
+const renderBodyRowsWithColTracking = (
+  rows: NormalizedRow[],
+  interactive: boolean,
+  renderContext?: ReferenceRenderContext
+): React.ReactNode[] => {
+  const activeRowspans: number[] = [];
+
+  return rows.map((row, rowIndex) => {
+    let colCursor = 0;
+    const cellStartCols: number[] = [];
+
+    row.cells.forEach((cell) => {
+      while ((activeRowspans[colCursor] ?? 0) > 0) colCursor++;
+      cellStartCols.push(colCursor);
+
+      const colspan = typeof cell.colspan === 'number' && cell.colspan > 0 ? cell.colspan : 1;
+      const rowspan = typeof cell.rowspan === 'number' && cell.rowspan > 1 ? cell.rowspan : 0;
+
+      if (rowspan > 0) {
+        for (let i = 0; i < colspan; i++) {
+          const col = colCursor + i;
+          while (activeRowspans.length <= col) activeRowspans.push(0);
+          // Store the full rowspan value so the end-of-row decrement leaves
+          // rowspan-1 remaining — correctly covering all N-1 sub-rows.
+          activeRowspans[col] = rowspan;
+        }
+      }
+      colCursor += colspan;
+    });
+
+    for (let i = 0; i < activeRowspans.length; i++) {
+      if ((activeRowspans[i] ?? 0) > 0) activeRowspans[i]--;
+    }
+
+    return (
+      <tr key={row.id || rowIndex}>
+        {row.cells.map((cell, cellIndex) => {
+          const CellTag = cell.isHeader ? 'th' : 'td';
+          const isFirstCol = cellStartCols[cellIndex] === 0;
+          const alignClass = cell.align ? `table-block__cell--${cell.align}` : '';
+          const hasFigureContent = Array.isArray(cell.content)
+            ? cell.content.some((item) => item.type === 'figure')
+            : false;
+          const figureClass = hasFigureContent ? 'table-block__cell--has-figure' : '';
+          const spanClass =
+            (typeof cell.colspan === 'number' && cell.colspan > 1) ||
+            (typeof cell.rowspan === 'number' && cell.rowspan > 1)
+              ? 'table-block__cell--spanned'
+              : '';
+          const firstColClass = isFirstCol ? 'table-block__cell--first-col' : '';
+
+          return (
+            <CellTag
+              key={cellIndex}
+              className={`${cell.isHeader ? 'table-block__header-cell' : 'table-block__cell'} ${alignClass} ${figureClass} ${spanClass} ${firstColClass}`.trim()}
+              colSpan={cell.colspan}
+              rowSpan={cell.rowspan}
+            >
+              {renderCellContent(cell.content, interactive, renderContext)}
+            </CellTag>
+          );
+        })}
+      </tr>
+    );
+  });
+};
+
 export const TableBlock: React.FC<TableBlockProps> = ({
   table,
   interactive = true,
@@ -1340,6 +1415,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     () => normalizedRows.filter((row) => !row.cells.every((cell) => cell.isHeader)),
     [normalizedRows]
   );
+
   const shouldProgressivelyRenderBodyRows = bodyRows.length >= LARGE_TABLE_ROW_THRESHOLD;
   const renderedBodyRows = useMemo(
     () =>
@@ -1422,12 +1498,33 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     () => renderRows(displayHeaderRows, interactive, renderContext),
     [displayHeaderRows, interactive, renderContext]
   );
+  // Extract just the first-column cells from the header for the pinned overlay.
+  // Rows where column 0 is covered by a rowspan from a previous row get an
+  // empty cell list so the overlay table still has the right number of rows
+  // for height matching.
+  const pinnedHeaderFirstColRows = useMemo(() => {
+    if (!usesSplitScrollLayout) return [];
+    let col0ActiveRowspan = 0;
+    return displayHeaderRows.map((row) => {
+      const isCol0Covered = col0ActiveRowspan > 0;
+      if (!isCol0Covered && row.cells.length > 0) {
+        const rs =
+          typeof row.cells[0].rowspan === 'number' && row.cells[0].rowspan > 1
+            ? row.cells[0].rowspan - 1
+            : 0;
+        col0ActiveRowspan = rs;
+      } else if (col0ActiveRowspan > 0) {
+        col0ActiveRowspan -= 1;
+      }
+      return { ...row, cells: isCol0Covered ? [] : row.cells.slice(0, 1) };
+    });
+  }, [displayHeaderRows, usesSplitScrollLayout]);
   const renderedBodyRowsMarkup = useMemo(
-    () => renderRows(renderedBodyRows, interactive, renderContext),
+    () => renderBodyRowsWithColTracking(renderedBodyRows, interactive, renderContext),
     [interactive, renderContext, renderedBodyRows]
   );
   const fullBodyRowsMarkup = useMemo(
-    () => renderRows(bodyRows, interactive, renderContext),
+    () => renderBodyRowsWithColTracking(bodyRows, interactive, renderContext),
     [bodyRows, interactive, renderContext]
   );
   const fullDisplayRowsMarkup = useMemo(
@@ -1680,14 +1777,56 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                       <thead>{renderedHeaderRowsMarkup}</thead>
                     </table>
                   </div>
+                  {/* Pinned first-column overlay — absolutely positioned so it always
+                      sits above the translating header track, avoiding z-index fights
+                      with multi-row/colspan header cells in other columns. */}
+                  {pinnedHeaderFirstColRows.length > 0 && columnWidthsRem[0] && (
+                    <div
+                      className="table-block__pinned-header-col"
+                      style={{ width: `${columnWidthsRem[0]}rem` }}
+                      aria-hidden="true"
+                    >
+                      <table
+                        className="table-block__table table-block__table--split-header table-block__table--pinned-col"
+                        style={{ width: `${columnWidthsRem[0]}rem`, minWidth: `${columnWidthsRem[0]}rem` }}
+                      >
+                        <colgroup>
+                          <col
+                            className="table-block__col"
+                            style={{ '--table-column-width-rem': columnWidthsRem[0] } as React.CSSProperties}
+                          />
+                        </colgroup>
+                        <thead>
+                          {pinnedHeaderFirstColRows.map((row, rowIndex) => (
+                            <tr key={row.id || rowIndex}>
+                              {row.cells.map((cell, cellIndex) => {
+                                const CellTag = cell.isHeader ? 'th' : 'td';
+                                return (
+                                  <CellTag
+                                    key={cellIndex}
+                                    className="table-block__header-cell"
+                                    colSpan={cell.colspan}
+                                    rowSpan={cell.rowspan}
+                                  >
+                                    {renderCellContent(cell.content, interactive, renderContext)}
+                                  </CellTag>
+                                );
+                              })}
+                            </tr>
+                          ))}
+                        </thead>
+                      </table>
+                    </div>
+                  )}
                 </div>
                 <div
                   className="table-block__body-viewport"
                   ref={bodyViewportRef}
                   onScroll={(event) => {
                     const currentTarget = event.currentTarget;
+                    const { scrollLeft } = currentTarget;
                     if (headerTrackRef.current) {
-                      headerTrackRef.current.style.transform = `translateX(-${currentTarget.scrollLeft}px)`;
+                      headerTrackRef.current.style.transform = `translateX(-${scrollLeft}px)`;
                     }
                     maybeLoadMoreRowsOnScroll(currentTarget);
                   }}
