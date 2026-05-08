@@ -1302,7 +1302,9 @@ const renderBodyRowsWithColTracking = (
         for (let i = 0; i < colspan; i++) {
           const col = colCursor + i;
           while (activeRowspans.length <= col) activeRowspans.push(0);
-          activeRowspans[col] = rowspan - 1;
+          // Store the full rowspan value so the end-of-row decrement leaves
+          // rowspan-1 remaining — correctly covering all N-1 sub-rows.
+          activeRowspans[col] = rowspan;
         }
       }
       colCursor += colspan;
