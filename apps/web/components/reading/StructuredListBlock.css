@@ -24,10 +24,6 @@
   margin-top: 0;
 }
 
-.structuredList__row--variable {
-  display: contents;
-}
-
 .structuredList__term {
   font-weight: var(--typography-font-weights-bold);
   margin: 0;
@@ -37,23 +33,47 @@
   margin: 0.25rem 0 0;
 }
 
+/* VARIABLE / SYMBOL: flex per row so each symbol uses its own natural width.
+   A grid with max-content column 1 breaks when symbols have very different
+   widths (e.g. RSI_F vs % area of framing in the same list). */
 .structuredList--variable,
 .structuredList--symbol {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  column-gap: 6rem;
-  row-gap: 0.75rem;
+  display: block;
+}
+
+.structuredList__row--variable {
+  display: flex;
   align-items: baseline;
+  gap: 0.5rem;
+}
+
+.structuredList--variable .structuredList__term,
+.structuredList--symbol .structuredList__term {
+  font-weight: var(--typography-font-weights-regular);
+  flex-shrink: 0;
 }
 
 .structuredList--variable .structuredList__description,
 .structuredList--symbol .structuredList__description {
   margin: 0;
+  flex: 1;
 }
 
+/* Inside <li> (e.g. dead loads table): restore grid so symbol and value
+   columns align across all rows. */
 li .structuredList--variable,
 li .structuredList--symbol {
-  padding-left: 8.5rem;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 6rem;
+  row-gap: 0.75rem;
+  align-items: baseline;
+  padding-left: 3rem;
+}
+
+li .structuredList--variable .structuredList__row--variable,
+li .structuredList--symbol .structuredList__row--variable {
+  display: contents;
 }
 
 .structuredList--organization {

@@ -712,6 +712,22 @@ fetchSection() {
 - Fast CDN delivery
 - Predictable performance
 
+### 8. Table Horizontal Scroll (Split Layout)
+
+Wide tables activate a **split-scroll layout**: the header and body are rendered as two separate `<table>` elements inside a shared container, allowing the body to scroll independently while the header stays aligned via `translateX`.
+
+**Sticky first column**:
+
+Body rows are rendered by `renderBodyRowsWithColTracking` which tracks the true visual column position of every cell across active rowspans. Only cells genuinely at column 0 get `table-block__cell--first-col` → `position: sticky; left: 0`. Using a class (rather than CSS `:first-child`) is necessary because rows whose column 0 is covered by a prior rowspan have a different first DOM child.
+
+**Pinned header column**:
+
+A `table-block__pinned-header-col` overlay (absolutely positioned, `z-index: 5`) is rendered as a sibling of the scrolling header track inside `.table-block__header-viewport`. The overlay contains a single-column mini-table with only the first-column header cells, extracted by the `pinnedHeaderFirstColRows` memo. Because the overlay is later in the DOM than the scrolling track it always paints above it, avoiding the z-index fragility of the earlier counter-`translateX` approach.
+
+**`border-collapse: separate`**:
+
+Both split-header and split-body tables use `border-collapse: separate; border-spacing: 0` so sticky/positioned cells get their own compositing layer. Without this, `border-collapse: collapse`'s shared border layer allows scrolling cells to paint above sticky ones. Double-border side-effects are removed with `border-top: none; border-left: none` on all cells.
+
 ---
 
 ## Known Limitations & Optimization Opportunities

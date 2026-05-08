@@ -32,6 +32,8 @@ bc-building-code/
 │       │   │   ├── NavigationTree.tsx
 │       │   │   └── PrevNextNav.tsx
 │       │   └── layout/                # Layout components
+│       │       ├── MainLayout.tsx          # Main page layout (sidebar / full-width)
+│       │       └── TestingBanner.tsx       # Full-width "In Testing" banner (shown above <main> on every page)
 │       │
 │       ├── hooks/                      # Custom React hooks
 │       │   ├── useSearchClient.ts     # Version-aware search hook
