@@ -10,7 +10,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { stripReferences, extractListText, extractClauseText, extractArticleText, extractTableText, extractApplicationNoteText } from './text-extractor';
+import { stripReferences, extractListText, extractClauseText, extractArticleText, extractTableText, extractApplicationNoteText, stripFormattingMarkers } from './text-extractor';
 import { DEFAULT_REFERENCE_CONFIG, DEFAULT_TEXT_EXTRACTION_CONFIG } from './config';
 
 describe('Bug Condition: Non-term reference markers stripped to empty string', () => {
@@ -621,6 +621,35 @@ describe('extractTableText with actual data format', () => {
     expect(text).toContain('building requirements');
     expect(text).not.toContain('[REF:');
   });
+
+  it('should extract text from table_notes', () => {
+    const table = {
+      type: 'table',
+      title: 'Referenced Standards',
+      structure: { header_rows: [], body_rows: [] },
+      table_notes: [
+        { id: 'note1', content: 'While every effort was made to ensure accuracy of the information.' },
+        { id: 'note2', content: 'Users should refer to the most recent official versions.' },
+      ],
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).toContain('ensure accuracy of the information');
+    expect(text).toContain('most recent official versions');
+  });
+
+  it('should handle table_notes with references', () => {
+    const table = {
+      type: 'table',
+      title: 'Test',
+      structure: { header_rows: [], body_rows: [] },
+      table_notes: [
+        { id: 'note1', content: 'See [REF:internal:nbc.divB.part3:long] for requirements.' },
+      ],
+    };
+    const { text } = extractTableText(table as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).not.toContain('[REF:');
+    expect(text).toContain('requirements');
+  });
 });
 
 /**
@@ -698,5 +727,126 @@ describe('extractApplicationNoteText', () => {
     const config = { ...DEFAULT_TEXT_EXTRACTION_CONFIG, maxTextLength: 100 };
     const { text } = extractApplicationNoteText(content, config, DEFAULT_REFERENCE_CONFIG);
     expect(text.length).toBeLessThanOrEqual(100);
+  });
+
+  it('should extract titles and content from note_division items', () => {
+    const content = [
+      {
+        type: 'paragraph',
+        id: 'para1',
+        content: 'Top-level paragraph text.',
+      },
+      {
+        type: 'note_division',
+        id: 'div1',
+        title: 'Air Barrier Systems and Vapour Barriers',
+        content: [
+          {
+            type: 'paragraph',
+            id: 'div1.para1',
+            content: 'Articles require the installation of air barrier systems and vapour barriers only where insulation is installed.',
+          },
+        ],
+      },
+      {
+        type: 'note_division',
+        id: 'div2',
+        title: 'Interior Wall and Ceiling Finishes',
+        content: [
+          {
+            type: 'paragraph',
+            id: 'div2.para1',
+            content: 'The choice of interior wall and ceiling finishes has implications for fire safety.',
+          },
+        ],
+      },
+    ];
+    const { text } = extractApplicationNoteText(content as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    // Should include note_division titles
+    expect(text).toContain('Air Barrier Systems and Vapour Barriers');
+    expect(text).toContain('Interior Wall and Ceiling Finishes');
+    // Should include note_division paragraph content
+    expect(text).toContain('air barrier systems and vapour barriers only where insulation is installed');
+    expect(text).toContain('interior wall and ceiling finishes has implications for fire safety');
+    // Should include top-level paragraph
+    expect(text).toContain('Top-level paragraph text.');
+  });
+});
+
+
+/**
+ * Tests for stripFormattingMarkers
+ */
+describe('stripFormattingMarkers', () => {
+  it('should remove [LIST:type] placeholders', () => {
+    expect(stripFormattingMarkers('meanings:[LIST:definition]')).toBe('meanings:');
+    expect(stripFormattingMarkers('items:[LIST:bulleted]')).toBe('items:');
+    expect(stripFormattingMarkers('list:[LIST:numbered]')).toBe('list:');
+  });
+
+  it('should convert superscript markers to plain text', () => {
+    expect(stripFormattingMarkers('600 m^{2}')).toBe('600 m2');
+    expect(stripFormattingMarkers('10^{3} Pa')).toBe('103 Pa');
+    expect(stripFormattingMarkers('x^{n}')).toBe('xn');
+  });
+
+  it('should convert subscript markers to plain text', () => {
+    expect(stripFormattingMarkers('H_{2}O')).toBe('H2O');
+    expect(stripFormattingMarkers('CO_{2}')).toBe('CO2');
+  });
+
+  it('should remove <bold> tags but keep content', () => {
+    expect(stripFormattingMarkers('<bold>Important</bold> text')).toBe('Important text');
+  });
+
+  it('should remove <italic> tags but keep content', () => {
+    expect(stripFormattingMarkers('<italic>emphasized</italic> word')).toBe('emphasized word');
+  });
+
+  it('should handle multiple markers in one string', () => {
+    const input = 'Area of 600 m^{2} with [LIST:bulleted] and <bold>note</bold>';
+    const result = stripFormattingMarkers(input);
+    expect(result).toBe('Area of 600 m2 with  and note');
+    expect(result).not.toContain('[LIST:');
+    expect(result).not.toContain('^{');
+    expect(result).not.toContain('<bold>');
+  });
+
+  it('should return text unchanged when no markers present', () => {
+    const input = 'Plain text with no formatting markers';
+    expect(stripFormattingMarkers(input)).toBe(input);
+  });
+});
+
+/**
+ * Tests for formatting markers being stripped during article extraction
+ */
+describe('extractArticleText strips formatting markers', () => {
+  it('should strip [LIST:] markers from sentence text', () => {
+    const content = [
+      {
+        id: 'sent1',
+        type: 'sentence',
+        number: 1,
+        text: 'The following terms are defined:[LIST:definition]',
+      },
+    ];
+    const { text } = extractArticleText(content as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).not.toContain('[LIST:');
+    expect(text).toContain('The following terms are defined:');
+  });
+
+  it('should convert superscript markers in sentence text', () => {
+    const content = [
+      {
+        id: 'sent1',
+        type: 'sentence',
+        number: 1,
+        text: 'not more than 600 m^{2} in area',
+      },
+    ];
+    const { text } = extractArticleText(content as any, DEFAULT_TEXT_EXTRACTION_CONFIG, DEFAULT_REFERENCE_CONFIG);
+    expect(text).not.toContain('^{');
+    expect(text).toContain('600 m2 in area');
   });
 });

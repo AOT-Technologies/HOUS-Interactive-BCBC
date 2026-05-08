@@ -266,6 +266,10 @@ packages/data/src/hooks/
 
 apps/web/lib/
 └── search-client.ts                (FlexSearch integration)
+
+apps/web/components/search/
+├── SearchResultsPage.tsx           (results page with filtering + text cleaning)
+└── SearchResultCard.tsx            (individual result card with glossary support)
 ```
 
 ---

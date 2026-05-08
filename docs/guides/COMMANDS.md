@@ -150,9 +150,15 @@ OUTPUT_DIR=apps/web/public/data npx pnpm generate-assets
 
 **When to use:**
 - After updating source BCBC JSON
-- Before building the application
+- Before building the application (must run BEFORE `npx pnpm build`)
 - When testing search or navigation
 - As part of CI/CD pipeline
+
+**Important:** Run `generate-assets` BEFORE `build`. The correct order is:
+```bash
+npx pnpm generate-assets   # 1. Generate fresh data
+npx pnpm build              # 2. Build app (copies public/data/ into output)
+```
 
 ---
 
@@ -552,6 +558,24 @@ PORT=3001 npx pnpm dev
 npx turbo clean
 npx turbo build --force
 ```
+
+#### Issue: Search results showing raw formatting markers (`[LIST:]`, `m^{2}`)
+
+**Solution:** Regenerate assets and clear all caches before restarting
+
+```bash
+# 1. Generate fresh search data
+npx pnpm generate-assets
+
+# 2. Clear all caches
+npx turbo clean
+Remove-Item -Recurse -Force apps/web/.next -ErrorAction SilentlyContinue
+
+# 3. Restart dev server
+npx pnpm dev
+```
+
+**Important:** Always run `generate-assets` BEFORE `build`. The build copies `public/data/` into the output, so stale data in `public/` produces stale builds.
 
 #### Issue: ESLint or Prettier errors
 

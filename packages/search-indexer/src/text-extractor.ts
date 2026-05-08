@@ -485,6 +485,7 @@ interface ContentItem {
   };
   caption?: string;
   content?: Array<{ type?: string; content?: string; id?: string }>;
+  table_notes?: Array<{ id?: string; content?: string }>;
 }
 
 /**
@@ -606,6 +607,9 @@ export function extractArticleText(
   // Strip references from searchable text
   fullText = stripReferences(fullText, refConfig);
 
+  // Strip formatting markers ([LIST:...], ^{}, _{}, <bold>, <italic>)
+  fullText = stripFormattingMarkers(fullText);
+
   // Normalize whitespace
   fullText = normalizeWhitespace(fullText);
 
@@ -724,9 +728,20 @@ export function extractTableText(
     }
   }
 
+  // Extract table notes
+  if (table.table_notes) {
+    for (const note of table.table_notes) {
+      if (note.content) {
+        texts.push(note.content);
+        allReferenceIds.push(...extractReferenceIds(note.content, refConfig));
+      }
+    }
+  }
+
   // Join and clean
   let fullText = texts.filter(t => t).join(' ');
   fullText = stripReferences(fullText, refConfig);
+  fullText = stripFormattingMarkers(fullText);
   fullText = normalizeWhitespace(fullText);
 
   if (fullText.length > config.maxTextLength) {
@@ -740,15 +755,26 @@ export function extractTableText(
 }
 
 /**
- * Extract text from an application note's content paragraphs
+ * Application note content item (paragraph or note_division)
+ */
+interface ApplicationNoteContentItem {
+  type?: string;
+  content?: string | ApplicationNoteContentItem[];
+  id?: string;
+  title?: string;
+  lists?: List[];
+}
+
+/**
+ * Extract text from an application note's content paragraphs and note_divisions
  * 
- * @param noteContent - Array of paragraph content items from an application note
+ * @param noteContent - Array of content items from an application note
  * @param config - Text extraction configuration
  * @param refConfig - Reference parsing configuration
  * @returns Extracted and cleaned text with reference IDs
  */
 export function extractApplicationNoteText(
-  noteContent: Array<{ type?: string; content?: string; id?: string; lists?: List[] }> | undefined,
+  noteContent: ApplicationNoteContentItem[] | undefined,
   config: TextExtractionConfig,
   refConfig: ReferenceParsingConfig
 ): { text: string; referenceIds: string[] } {
@@ -759,24 +785,41 @@ export function extractApplicationNoteText(
   const texts: string[] = [];
   const allReferenceIds: string[] = [];
 
-  for (const item of noteContent) {
-    if (item.content) {
-      texts.push(item.content);
-      allReferenceIds.push(...extractReferenceIds(item.content, refConfig));
-    }
-    // Extract list items within paragraphs
-    if (item.lists) {
-      const listText = extractListText(item.lists);
-      if (listText) {
-        texts.push(listText);
-        allReferenceIds.push(...extractReferenceIds(listText, refConfig));
+  function processItems(items: ApplicationNoteContentItem[]): void {
+    for (const item of items) {
+      // Extract title from note_division items
+      if (item.type === 'note_division' && item.title) {
+        texts.push(item.title);
+      }
+
+      // Extract paragraph text content
+      if (typeof item.content === 'string') {
+        texts.push(item.content);
+        allReferenceIds.push(...extractReferenceIds(item.content, refConfig));
+      }
+
+      // Recursively process nested content (note_division children)
+      if (Array.isArray(item.content)) {
+        processItems(item.content);
+      }
+
+      // Extract list items within paragraphs
+      if (item.lists) {
+        const listText = extractListText(item.lists);
+        if (listText) {
+          texts.push(listText);
+          allReferenceIds.push(...extractReferenceIds(listText, refConfig));
+        }
       }
     }
   }
 
+  processItems(noteContent);
+
   // Join and clean text
   let fullText = texts.filter(t => t).join(' ');
   fullText = stripReferences(fullText, refConfig);
+  fullText = stripFormattingMarkers(fullText);
   fullText = normalizeWhitespace(fullText);
 
   if (fullText.length > config.maxTextLength) {
@@ -827,6 +870,28 @@ export function normalizeWhitespace(text: string): string {
     .replace(/\s+/g, ' ')  // Collapse multiple whitespace
     .replace(/\n/g, ' ')   // Replace newlines with spaces
     .trim();
+}
+
+/**
+ * Strip inline formatting markers from text for search indexing.
+ * Removes list placeholders, superscript/subscript markers, and HTML-like tags
+ * while preserving the readable content.
+ * 
+ * @param text - Text containing formatting markers
+ * @returns Clean text suitable for search indexing
+ */
+export function stripFormattingMarkers(text: string): string {
+  return text
+    // Remove [LIST:type] placeholders (e.g., [LIST:definition], [LIST:bulleted])
+    .replace(/\[LIST:[^\]]*\]/g, '')
+    // Convert superscript markers to plain text (e.g., m^{2} → m2)
+    .replace(/\^{([^}]*)}/g, '$1')
+    // Convert subscript markers to plain text (e.g., H_{2}O → H2O)
+    .replace(/_{([^}]*)}/g, '$1')
+    // Remove <bold>...</bold> tags but keep content
+    .replace(/<bold>(.*?)<\/bold>/g, '$1')
+    // Remove <italic>...</italic> tags but keep content
+    .replace(/<italic>(.*?)<\/italic>/g, '$1');
 }
 
 /**

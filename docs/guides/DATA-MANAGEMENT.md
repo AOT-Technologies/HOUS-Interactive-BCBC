@@ -619,19 +619,26 @@ interface AmendmentDate {
 
 **Indexed Content:**
 - **Articles** (sentences, clauses, subclauses, and list items within them)
-- **Tables** (title, caption, all header rows, and all body rows)
+- **Tables** (title, caption, all header rows, all body rows, and table notes)
 - **Figures** (title and caption)
-- **Application Notes** (all paragraphs and list items from part appendixes)
-- **Glossary** (terms and definitions)
+- **Application Notes** (all paragraphs, list items, and `note_division` titles/content from part appendixes)
+- **Glossary** (terms and definitions, with references stripped)
 - **Structural nodes** (part, section, subsection titles)
+
+**Text Cleaning:**
+All indexed text goes through a cleaning pipeline:
+1. Reference markers (`[REF:term:...]`, `[REF:internal:...]`) stripped, preserving display text
+2. Formatting markers stripped: `[LIST:type]` removed, `^{2}` → `2`, `_{2}` → `2`, `<bold>`/`<italic>` tags removed
+3. Whitespace normalized
 
 **Notes:**
 - Typical file size: 5-15 MB
 - Array of SearchDocument objects loaded by FlexSearch at runtime
 - Loaded by search client on initialization
 - Enables instant client-side search
-- Text is stripped of reference markers (`[REF:...]`) before indexing
+- Glossary results appear in search results alongside code content
 - Table cells use the `structure.header_rows` and `structure.body_rows` format with `content[].value` cell structure
+- The `SearchResultsPage` also applies `stripFormattingMarkers` when generating display overrides from section JSON chunks
 
 ### 7. search/metadata.json
 

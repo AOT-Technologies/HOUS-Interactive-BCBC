@@ -31,6 +31,7 @@ import {
   hasTermRefs,
   normalizeWhitespace,
   stripReferences,
+  stripFormattingMarkers,
 } from './text-extractor';
 
 /**
@@ -898,7 +899,7 @@ function createFigureDocument(
   const urlPath = `/code/${division.id}/${part.number}/${section.number}/${subsection.number}/${article.number}#${figure.id}`;
 
   const title = figure.title || `Figure ${figureNum}`;
-  const text = normalizeWhitespace(stripReferences(title, config.references));
+  const text = normalizeWhitespace(stripFormattingMarkers(stripReferences(title, config.references)));
 
   // Calculate priority
   let priority = config.contentTypes.figure.priority;
@@ -1065,9 +1066,14 @@ function processGlossary(
   config: IndexerConfig
 ): void {
   for (const entry of glossary) {
-    // Preserve glossary definitions as-is from source data so marker payloads
-    // (e.g. [REF:term:id:label]) remain available for the glossary sidebar renderer.
-    const text = entry.definition;
+    // Strip reference markers from definition for search indexing.
+    // The glossary sidebar renderer uses glossary-map.json (separate file)
+    // which preserves the raw markers for interactive display.
+    const text = normalizeWhitespace(
+      stripFormattingMarkers(
+        stripReferences(entry.definition, config.references)
+      )
+    );
 
     documents.push({
       id: entry.id,

@@ -98,6 +98,11 @@ export function SearchResultCard({ result, href, testId, displayTitle, displaySn
   const volumeLabel = useMemo(() => getVolumeLabel(document.divisionId), [document.divisionId]);
 
   const pathLabel = useMemo(() => {
+    // Glossary items don't have a hierarchical path
+    if (document.type === 'glossary') {
+      return 'Defined Terms';
+    }
+
     const fullSectionNumber = buildSectionNumber(document.partNumber, document.sectionNumber);
     const fullSubsectionNumber = buildSubsectionNumber(
       document.partNumber,
@@ -150,7 +155,9 @@ export function SearchResultCard({ result, href, testId, displayTitle, displaySn
     >
       <header className="search-results-card__header-row">
         <span className="search-results-card__badge">
-          {volumeLabel.toUpperCase()} - DIVISION {document.divisionLetter} - PART {document.partNumber}
+          {document.type === 'glossary'
+            ? 'GLOSSARY'
+            : `${volumeLabel.toUpperCase()} - DIVISION ${document.divisionLetter} - PART ${document.partNumber}`}
         </span>
         <span className="search-results-card__type">{typeLabel}</span>
       </header>
