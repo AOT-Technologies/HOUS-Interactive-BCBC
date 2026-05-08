@@ -97,6 +97,31 @@
   table-layout: fixed;
 }
 
+/* border-collapse: collapse causes position: sticky cells to paint behind
+   their siblings (collapsed borders share the same stacking layer), letting
+   scrolled columns bleed visually through the pinned first column.
+   Switching to separate + spacing: 0 gives sticky cells their own stacking
+   context so they always paint on top of scrolled content. */
+.table-block__table--split-body {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* With border-collapse: separate every cell renders its own borders, creating
+   doubled lines between cells. Remove top and left borders on all cells and
+   restore them only on the table edges so the result looks identical to
+   border-collapse: collapse. */
+.table-block__table--split-body .table-block__cell,
+.table-block__table--split-body .table-block__header-cell {
+  border-top: none;
+  border-left: none;
+}
+
+.table-block__table--split-body tr:first-child .table-block__cell,
+.table-block__table--split-body tr:first-child .table-block__header-cell {
+  border-top: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
+}
+
 .table-block__table--split-header .table-block__header-cell {
   border-top: 0;
 }
@@ -528,6 +553,13 @@
   [data-sticky-first-col="true"] {
     transform: none !important;
     box-shadow: none !important;
+  }
+
+  /* Restore collapse for print — the split-scroll pair is hidden anyway,
+     but this prevents any stray border rendering on the print-unified table. */
+  .table-block__table--split-body {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
   }
 
   /* Undo border-collapse: separate overrides for print */
