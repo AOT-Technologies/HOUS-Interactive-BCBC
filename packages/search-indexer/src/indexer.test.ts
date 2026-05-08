@@ -212,6 +212,44 @@ describe('search-indexer', () => {
       expect(metadata.tableOfContents).toHaveLength(1);
     });
 
+    it('should strip references from glossary definitions for search', () => {
+      const mockData = {
+        document_type: 'bc_building_code',
+        version: '2024',
+        divisions: [],
+        glossary: {
+          'test-term': {
+            term: 'Fire Separation',
+            definition: 'a [REF:term:cnstrtn:construction] assembly that acts as a barrier against the spread of [REF:term:fr:fire]',
+          },
+          'test-term-2': {
+            term: 'Occupancy',
+            definition: 'the use or intended use of a [REF:term:bldng:building] or part thereof for the shelter',
+          },
+        },
+      };
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { documents } = buildSearchIndex(mockData as any);
+
+      const glossaryDocs = documents.filter(d => d.type === 'glossary');
+      expect(glossaryDocs).toHaveLength(2);
+
+      // Glossary text should have references stripped for search
+      const fireSep = glossaryDocs.find(d => d.title === 'Fire Separation');
+      expect(fireSep).toBeDefined();
+      expect(fireSep?.text).not.toContain('[REF:');
+      expect(fireSep?.text).toContain('construction');
+      expect(fireSep?.text).toContain('fire');
+      expect(fireSep?.text).toContain('barrier against the spread');
+
+      const occupancy = glossaryDocs.find(d => d.title === 'Occupancy');
+      expect(occupancy).toBeDefined();
+      expect(occupancy?.text).not.toContain('[REF:');
+      expect(occupancy?.text).toContain('building');
+      expect(occupancy?.text).toContain('shelter');
+    });
+
     it('should detect amendments and track revision dates', () => {
       const mockData = {
         document_type: 'bc_building_code',
@@ -656,5 +694,44 @@ describe('article indexing with list items', () => {
     expect(article?.text).toContain('means an area which is easy to approach');
     expect(article?.text).toContain('Egress');
     expect(article?.text).toContain('means a path of travel to the exterior');
+  });
+});
+
+
+describe('glossary searchability', () => {
+  it('should produce glossary documents with clean searchable text (no REF markers)', () => {
+    const mockData = {
+      document_type: 'bc_building_code',
+      version: '2024',
+      divisions: [],
+      glossary: {
+        'prchd-gr': {
+          term: 'Perched groundwater',
+          definition: 'means a free standing body of water in the ground extending to a limited depth.',
+        },
+        'bldng': {
+          term: 'Building',
+          definition: 'any [REF:term:strctr:structure] used or intended for supporting or sheltering any use or [REF:term:ccpnc:occupancy]',
+        },
+      },
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { documents } = buildSearchIndex(mockData as any);
+
+    const glossaryDocs = documents.filter(d => d.type === 'glossary');
+    expect(glossaryDocs).toHaveLength(2);
+
+    // "Perched groundwater" should be directly searchable by title
+    const perched = glossaryDocs.find(d => d.title === 'Perched groundwater');
+    expect(perched).toBeDefined();
+    expect(perched?.text).toBe('means a free standing body of water in the ground extending to a limited depth.');
+
+    // "Building" definition should have references stripped for search
+    const building = glossaryDocs.find(d => d.title === 'Building');
+    expect(building).toBeDefined();
+    expect(building?.text).not.toContain('[REF:');
+    expect(building?.text).toContain('structure');
+    expect(building?.text).toContain('occupancy');
   });
 });

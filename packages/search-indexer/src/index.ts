@@ -88,6 +88,7 @@ export {
   extractTableText,
   extractClauseText,
   extractListText,
+  stripFormattingMarkers,
   generateSnippet,
   normalizeWhitespace,
   hasTablesInContent,

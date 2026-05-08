@@ -17,7 +17,7 @@ import {
 } from '@repo/constants';
 import Button from '@repo/ui/button';
 import Icon from '@repo/ui/icon';
-import { DEFAULT_REFERENCE_CONFIG, stripReferences } from '@bc-building-code/search-indexer';
+import { DEFAULT_REFERENCE_CONFIG, stripReferences, stripFormattingMarkers } from '@bc-building-code/search-indexer';
 import { getSearchClient, type SearchResult } from '@/lib/search-client';
 import { resolveSectionForEffectiveDate } from '@/lib/revision-resolver';
 import { useVersionStore } from '@/stores/version-store';
@@ -149,7 +149,7 @@ function normalizeText(value: string): string {
 
 function formatReferenceText(value: string): string {
   if (!value) return '';
-  return normalizeText(stripReferences(value, DEFAULT_REFERENCE_CONFIG));
+  return normalizeText(stripFormattingMarkers(stripReferences(value, DEFAULT_REFERENCE_CONFIG)));
 }
 
 function snippetFromText(text: string, maxLength: number = 280): string {
@@ -434,9 +434,9 @@ export default function SearchResultsPage() {
         const payload = await response.json();
         const options: DateOption[] = Array.isArray(payload?.dates)
           ? payload.dates.map((item: any) => ({
-              effectiveDate: item.effectiveDate,
-              displayDate: item.displayDate,
-            }))
+            effectiveDate: item.effectiveDate,
+            displayDate: item.displayDate,
+          }))
           : [];
 
         if (!isMounted) return;
@@ -529,8 +529,10 @@ export default function SearchResultsPage() {
     }
 
     if (!result.document.urlPath.startsWith('/code/')) {
-      visibilityCacheRef.current.set(cacheKey, false);
-      return false;
+      // Glossary terms are always visible regardless of effective date
+      const isAlwaysVisible = result.document.type === 'glossary';
+      visibilityCacheRef.current.set(cacheKey, isAlwaysVisible);
+      return isAlwaysVisible;
     }
 
     if (result.document.type === 'part' || !result.document.sectionNumber) {
@@ -624,7 +626,7 @@ export default function SearchResultsPage() {
         setDivisions(searchClient.getDivisions(version) as DivisionOption[]);
         setContentTypes(searchClient.getContentTypes(version));
 
-        let filtered = rawResults.filter((item) => item.document.urlPath.startsWith('/code/'));
+        let filtered = rawResults.filter((item) => item.document.urlPath.startsWith('/code/') || item.document.type === 'glossary');
 
         if (divisionIdFilter) {
           filtered = filtered.filter((item) => item.document.divisionId === divisionIdFilter);
@@ -1003,7 +1005,7 @@ export default function SearchResultsPage() {
                 aria-label="Select content type"
               >
                 <option value="">Select</option>
-                {contentTypes.filter((item) => item !== 'glossary').map((item) => (
+                {contentTypes.map((item) => (
                   <option key={item} value={item}>
                     {formatContentTypeLabel(item)}
                   </option>
@@ -1085,7 +1087,9 @@ export default function SearchResultsPage() {
                 <SearchResultCard
                   key={item.document.id}
                   result={item}
-                  href={buildResultHref(item.document.urlPath, version, date || undefined)}
+                  href={item.document.type === 'glossary'
+                    ? `#${item.document.id}`
+                    : buildResultHref(item.document.urlPath, version, date || undefined)}
                   testId={item.document.id}
                   displayTitle={displayOverrides[item.document.id]?.title}
                   displaySnippet={displayOverrides[item.document.id]?.snippet}
