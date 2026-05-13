@@ -60,7 +60,7 @@ This document specifies the requirements for the BC Building Code Interactive We
 1. WHEN a user enters a search query, THE Search_Engine SHALL return matching results within 100ms
 2. WHEN a user enters a search query, THE Search_Engine SHALL search across article titles, sentence text, clause text, notes, and glossary terms
 3. WHEN displaying search results, THE Application SHALL show the article number, title, matched snippet, and hierarchical breadcrumb path
-4. WHEN displaying search results, THE Application SHALL rank results by relevance score
+4. WHEN displaying search results, THE Application SHALL sort results primarily by content hierarchy level (Part > Section > Subsection > Article > Note > Table/Figure > Glossary), then by relevance score within the same level
 5. WHEN displaying search results, THE Application SHALL implement infinite scroll loading results in batches of 20-50 items
 6. WHEN displaying search results, THE Application SHALL display a search input box that auto-populates with the query from the URL
 7. THE Search_Engine SHALL support fuzzy matching for misspelled queries

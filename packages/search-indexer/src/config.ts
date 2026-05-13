@@ -13,12 +13,12 @@ export type ReferenceType = 'term' | 'internal' | 'external' | 'standard';
 /**
  * Content types that can be indexed
  */
-export type IndexableContentType = 
-  | 'article' 
-  | 'table' 
-  | 'figure' 
-  | 'part' 
-  | 'section' 
+export type IndexableContentType =
+  | 'article'
+  | 'table'
+  | 'figure'
+  | 'part'
+  | 'section'
   | 'subsection'
   | 'glossary'
   | 'note'
@@ -121,15 +121,15 @@ export const DEFAULT_REFERENCE_CONFIG: ReferenceParsingConfig = {
  * Default content type configuration
  */
 export const DEFAULT_CONTENT_TYPE_CONFIG: Record<IndexableContentType, ContentTypeConfig> = {
-  article: { enabled: true, priority: 5, amendmentBoost: 1.5 },
-  table: { enabled: true, priority: 7, amendmentBoost: 1.3 },
-  figure: { enabled: true, priority: 7, amendmentBoost: 1.3 },
+  article: { enabled: true, priority: 7, amendmentBoost: 1.5 },
+  table: { enabled: true, priority: 4, amendmentBoost: 1.3 },
+  figure: { enabled: true, priority: 4, amendmentBoost: 1.3 },
   part: { enabled: true, priority: 10, amendmentBoost: 1.0 },
   section: { enabled: true, priority: 9, amendmentBoost: 1.0 },
   subsection: { enabled: true, priority: 8, amendmentBoost: 1.0 },
-  glossary: { enabled: true, priority: 6, amendmentBoost: 1.0 },
-  note: { enabled: true, priority: 4, amendmentBoost: 1.2 },
-  'application-note': { enabled: true, priority: 4, amendmentBoost: 1.2 },
+  glossary: { enabled: true, priority: 3, amendmentBoost: 1.0 },
+  note: { enabled: true, priority: 5, amendmentBoost: 1.2 },
+  'application-note': { enabled: true, priority: 5, amendmentBoost: 1.2 },
 };
 
 /**
@@ -190,7 +190,7 @@ export interface SearchDocument {
   text: string;
   /** Text snippet for display */
   snippet: string;
-  
+
   // Hierarchy information
   divisionId: string;
   divisionLetter: string;
@@ -204,14 +204,14 @@ export interface SearchDocument {
   subsectionId: string;
   subsectionNumber: number;
   subsectionTitle: string;
-  
+
   /** Breadcrumb path for display */
   path: string;
   /** Breadcrumb array */
   breadcrumbs: string[];
   /** URL path for navigation */
   urlPath: string;
-  
+
   // Flags for filtering
   hasAmendment: boolean;
   amendmentType?: 'add' | 'replace' | 'delete' | 'amendment';
@@ -221,10 +221,10 @@ export interface SearchDocument {
   hasTermRefs: boolean;
   hasTables: boolean;
   hasFigures: boolean;
-  
+
   /** Search priority (computed from config) */
   searchPriority: number;
-  
+
   /** Extracted reference IDs (if preserveReferenceIds is true) */
   referenceIds?: string[];
 }

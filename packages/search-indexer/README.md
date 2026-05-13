@@ -89,16 +89,18 @@ const { documents, metadata } = buildSearchIndex(bcbcData, config);
 
 Control which content types are indexed and their search priority:
 
-| Content Type | Default Priority | Description |
-|--------------|-----------------|-------------|
-| `part` | 10 | Part-level navigation |
-| `section` | 9 | Section-level navigation |
-| `subsection` | 8 | Subsection-level navigation |
-| `table` | 7 | Tables within articles |
-| `figure` | 7 | Figures within articles |
-| `glossary` | 6 | Glossary terms |
-| `article` | 5 | Code articles |
-| `note` | 4 | Notes and application notes |
+| Content Type | Default Priority | Hierarchy Boost (1.5^p) | Description |
+|--------------|-----------------|------------------------|-------------|
+| `part` | 10 | ~57.7x | Part-level navigation |
+| `section` | 9 | ~38.4x | Section-level navigation |
+| `subsection` | 8 | ~25.6x | Subsection-level navigation |
+| `article` | 7 | ~17.1x | Code articles |
+| `note` | 5 | ~7.6x | Notes and application notes |
+| `table` | 4 | ~5.1x | Tables within articles |
+| `figure` | 4 | ~5.1x | Figures within articles |
+| `glossary` | 3 | ~3.4x | Glossary terms |
+
+The runtime search client applies an exponential hierarchy boost (`Math.pow(1.5, searchPriority)`) to ensure higher-level content types consistently rank above lower-level types in search results when text relevance is comparable.
 
 ### Reference Parsing
 

@@ -54,7 +54,7 @@ export class BCBCSearchClient {
   private indexCache: Map<string, FlexSearch.Document<SearchDocument>> = new Map();
   private documentsCache: Map<string, Map<string, SearchDocument>> = new Map();
   private metadataCache: Map<string, SearchMetadata> = new Map();
-  
+
   // Current version state
   private currentVersion: string | null = null;
   private initialized = false;
@@ -88,7 +88,7 @@ export class BCBCSearchClient {
     // Set default URLs with version path
     const defaultDocumentsUrl = `/data/${version}/search/documents.json`;
     const defaultMetadataUrl = `/data/${version}/search/metadata.json`;
-    
+
     const finalDocumentsUrl = documentsUrl || defaultDocumentsUrl;
     const finalMetadataUrl = metadataUrl || defaultMetadataUrl;
 
@@ -148,7 +148,7 @@ export class BCBCSearchClient {
 
       // Create documents map for this version
       const documents = new Map<string, SearchDocument>();
-      
+
       // Add documents to index and map
       documentsData.forEach((doc: SearchDocument) => {
         documents.set(doc.id, doc);
@@ -159,7 +159,7 @@ export class BCBCSearchClient {
       this.indexCache.set(version, index);
       this.documentsCache.set(version, documents);
       this.metadataCache.set(version, metadataData);
-      
+
       // Set as current version
       this.currentVersion = version;
       this.initialized = true;
@@ -182,11 +182,11 @@ export class BCBCSearchClient {
    */
   async search(query: string, options: SearchOptions = {}, version?: string): Promise<SearchResult[]> {
     const searchVersion = version || this.currentVersion;
-    
+
     if (!searchVersion) {
       throw new Error('No version specified and no current version set');
     }
-    
+
     // Ensure version is initialized
     if (!this.indexCache.has(searchVersion)) {
       await this.initialize(searchVersion);
@@ -195,7 +195,7 @@ export class BCBCSearchClient {
     if (!query || query.trim().length < 2) {
       return [];
     }
-    
+
     const index = this.indexCache.get(searchVersion)!;
     const documents = this.documentsCache.get(searchVersion)!;
 
@@ -266,32 +266,32 @@ export class BCBCSearchClient {
       .filter(({ doc }) => {
         // Division filter
         if (divisionFilter && doc.divisionLetter !== divisionFilter) return false;
-        
+
         // Part filter
         if (partFilter !== undefined && doc.partNumber !== partFilter) return false;
-        
+
         // Section filter
         if (sectionFilter !== undefined && doc.sectionNumber !== sectionFilter) return false;
-        
+
         // Amendments filter
         if (amendmentsOnly && !doc.hasAmendment) return false;
-        
+
         // Tables filter
         if (tablesOnly && !doc.hasTables) return false;
-        
+
         // Figures filter
         if (figuresOnly && !doc.hasFigures) return false;
-        
+
         // Content types filter
         if (contentTypes && contentTypes.length > 0 && !contentTypes.includes(doc.type)) {
           return false;
         }
-        
+
         // Effective date filter
         if (effectiveDate && doc.latestAmendmentDate && doc.latestAmendmentDate !== effectiveDate) {
           return false;
         }
-        
+
         return true;
       })
       .map(({ doc, fieldScores }) => ({
@@ -300,8 +300,15 @@ export class BCBCSearchClient {
         highlights: this.generateHighlights(doc, query),
       }));
 
-    // Sort by score (descending)
-    filtered.sort((a, b) => b.score - a.score);
+    // Sort by hierarchy first (higher searchPriority = higher in hierarchy),
+    // then by relevance score within the same hierarchy level.
+    // This ensures Part > Section > Subsection > Article ordering is always
+    // respected regardless of text-match differences.
+    filtered.sort((a, b) => {
+      const priorityDiff = b.document.searchPriority - a.document.searchPriority;
+      if (priorityDiff !== 0) return priorityDiff;
+      return b.score - a.score;
+    });
 
     // Apply pagination
     return filtered.slice(offset, offset + limit);
@@ -313,7 +320,7 @@ export class BCBCSearchClient {
   private searchByArticleNumber(articleNum: string, version: string): SearchResult[] {
     const results: SearchResult[] = [];
     const documents = this.documentsCache.get(version);
-    
+
     if (!documents) {
       return results;
     }
@@ -334,17 +341,36 @@ export class BCBCSearchClient {
 
   /**
    * Calculate final score for a document
+   * 
+   * Hierarchy priority ensures higher-level content types (Part, Section)
+   * consistently rank above lower-level types (Article, Note) when text
+   * relevance is comparable. The hierarchy boost uses an exponential scale
+   * so that structural importance dominates over minor text-match differences.
+   * 
+   * Priority hierarchy (highest to lowest):
+   *   Part (10) > Section (9) > Subsection (8) > Article (7) >
+   *   Note/Application-Note (5) > Table/Figure (4) > Glossary (3)
    */
   private calculateFinalScore(
     doc: SearchDocument,
     fieldScores: number[],
     query: string
   ): number {
-    // Sum field scores
+    // Sum field scores (base relevance from text matching)
     let score = fieldScores.reduce((sum, s) => sum + s, 0);
 
-    // Apply search priority from document
-    score *= doc.searchPriority / 5;
+    // Apply hierarchy boost using exponential scaling.
+    // This ensures a Part (priority 10) scores significantly higher than
+    // an Article (priority 7) even when the Article has slightly better
+    // text relevance. The exponent base of 1.5 creates meaningful separation:
+    //   Part (10):    1.5^10 ≈ 57.7
+    //   Section (9):  1.5^9  ≈ 38.4
+    //   Subsection (8): 1.5^8 ≈ 25.6
+    //   Article (7):  1.5^7  ≈ 17.1
+    //   Note (5):     1.5^5  ≈ 7.6
+    //   Table/Figure (4): 1.5^4 ≈ 5.1
+    //   Glossary (3): 1.5^3  ≈ 3.4
+    score *= Math.pow(1.5, doc.searchPriority);
 
     // Boost amendments
     if (doc.hasAmendment) {
@@ -421,16 +447,16 @@ export class BCBCSearchClient {
    */
   async getSuggestions(query: string, limit: number = 5, version?: string): Promise<string[]> {
     const searchVersion = version || this.currentVersion;
-    
+
     if (!searchVersion || query.length < 2) {
       return [];
     }
 
     const results = await this.search(query, { limit: limit * 3 }, searchVersion);
-    
+
     // Extract unique titles, prioritizing shorter/more relevant ones
     const suggestions = new Set<string>();
-    
+
     // Sort by relevance and title length (shorter titles first)
     const sorted = results.sort((a, b) => {
       // First by score
@@ -438,12 +464,12 @@ export class BCBCSearchClient {
       // Then by title length (shorter is better for suggestions)
       return a.document.title.length - b.document.title.length;
     });
-    
+
     for (const result of sorted) {
       const title = result.document.title.trim();
       // Skip empty titles
       if (!title) continue;
-      
+
       suggestions.add(title);
       if (suggestions.size >= limit) break;
     }
@@ -461,7 +487,7 @@ export class BCBCSearchClient {
   getDocument(id: string, version?: string): SearchDocument | undefined {
     const searchVersion = version || this.currentVersion;
     if (!searchVersion) return undefined;
-    
+
     const documents = this.documentsCache.get(searchVersion);
     return documents?.get(id);
   }
@@ -474,7 +500,7 @@ export class BCBCSearchClient {
   getMetadata(version?: string): SearchMetadata | null {
     const searchVersion = version || this.currentVersion;
     if (!searchVersion) return null;
-    
+
     return this.metadataCache.get(searchVersion) || null;
   }
 
@@ -526,7 +552,7 @@ export class BCBCSearchClient {
   isInitialized(version?: string): boolean {
     const searchVersion = version || this.currentVersion;
     if (!searchVersion) return false;
-    
+
     return this.indexCache.has(searchVersion);
   }
 
@@ -538,18 +564,18 @@ export class BCBCSearchClient {
   getDocumentCount(version?: string): number {
     const searchVersion = version || this.currentVersion;
     if (!searchVersion) return 0;
-    
+
     const documents = this.documentsCache.get(searchVersion);
     return documents?.size || 0;
   }
-  
+
   /**
    * Get current version ID
    */
   getCurrentVersion(): string | null {
     return this.currentVersion;
   }
-  
+
   /**
    * Clear cache for a specific version (useful for memory management)
    * 
@@ -559,15 +585,15 @@ export class BCBCSearchClient {
     this.indexCache.delete(version);
     this.documentsCache.delete(version);
     this.metadataCache.delete(version);
-    
+
     if (this.currentVersion === version) {
       this.currentVersion = null;
       this.initialized = false;
     }
-    
+
     console.log(`Cleared cache for version ${version}`);
   }
-  
+
   /**
    * Clear all version caches
    */
@@ -577,7 +603,7 @@ export class BCBCSearchClient {
     this.metadataCache.clear();
     this.currentVersion = null;
     this.initialized = false;
-    
+
     console.log('Cleared all version caches');
   }
 }
