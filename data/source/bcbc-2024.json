@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-04-27T12:04:40.260414-07:00",
+  "generated_timestamp" : "2026-05-13T12:44:58.50033-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -281964,7 +281964,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote1",
            "type" : "application_note",
            "number" : "2.2.1.2.(1)",
-           "title" : "Structural Design. Part 4 of Division B is written on the assumption that structural design will be",
+           "title" : "Structural Design.",
            "source" : "bc",
            "content" : 
            [ 
@@ -282187,7 +282187,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote6",
            "type" : "application_note",
            "number" : "2.3.1.",
-           "title" : "Alternative Solutions. Beyond the purposes of demonstrating compliance and acquiring a building perm",
+           "title" : "Alternative Solutions.",
            "source" : "bc",
            "content" : 
            [ 
@@ -282230,7 +282230,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote7",
            "type" : "application_note",
            "number" : "2.2.7.",
-           "title" : "Professional Design and Review. This Subsection provides for the use of what are generally called L",
+           "title" : "Professional Design and Review.",
            "source" : "bc",
            "content" : 
            [ 
@@ -282253,7 +282253,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote8",
            "type" : "application_note",
            "number" : "2.2.7.1.(1)(c)(i)",
-           "title" : "c)(i) Structural Components. The reference to “structural components of buildings that fall withi",
+           "title" : "Structural Components.",
            "source" : "bc",
            "content" : 
            [ 
@@ -282264,7 +282264,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote9",
            "type" : "application_note",
            "number" : "2.2.7.2.(1)(a)",
-           "title" : "a) Coordinating Registered Professional. The coordinating registered professional is responsible",
+           "title" : "Coordinating Registered Professional.",
            "source" : "bc",
            "content" : 
            [ 
@@ -282275,7 +282275,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote10",
            "type" : "application_note",
            "number" : "2.2.7.2.(1)(b)",
-           "title" : "b) Schedule B. The purpose of Schedule B is to clearly identify the appropriate registered profes",
+           "title" : "Schedule B.",
            "source" : "bc",
            "content" : 
            [ 
@@ -282286,7 +282286,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote11",
            "type" : "application_note",
            "number" : "2.2.7.2.(2)",
-           "title" : "Schedule C-A. Schedule C-A provides confirmation that the coordinating registered professional has",
+           "title" : "Schedule C-A.",
            "source" : "bc",
            "content" : 
            [ 
@@ -282297,7 +282297,7 @@
           { "id" : "nbc.divC.part2.appendix.appnote12",
            "type" : "application_note",
            "number" : "2.2.7.3.",
-           "title" : "Demonstration of the Coordinated Fire and Life Safety Systems. The design drawings and supporting d",
+           "title" : "Demonstration of the Coordinated Fire and Life Safety Systems.",
            "source" : "bc",
            "content" : 
            [ 
@@ -364142,7 +364142,7 @@
                 "table_notes" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect23.subsect3.art4.table1.note1",
-                  "content" : "See Note A-9.23.3.1.(2)." },
+                  "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote115:short]" },
                  
                  { "id" : "nbc.divBV2.part9.sect23.subsect3.art4.table1.note2",
                   "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4:long] for requirements on the nailing of top plates splices in [REF:term:br-wl-bnd:braced wall bands] ." },
@@ -365138,7 +365138,7 @@
                 "table_notes" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table1.note1",
-                  "content" : "See Note A-9.23.3.1.(2)." } ],
+                  "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote115:short]" } ],
                 "structure" : 
                 { "columns" : 6,
                  "column_specs" : 
@@ -365522,7 +365522,7 @@
                   "content" : "See [REF:internal:nbc.divBV2.part9.sect4.subsect2.art5:long] ." },
                  
                  { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table2.note2",
-                  "content" : "See Note A-9.23.3.1.(2)." },
+                  "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote115:short]" },
                  
                  { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table2.note3",
                   "content" : "See [REF:internal:nbc.divBV2.part9.sect23.subsect16.art5:long] ." } ],
@@ -365823,7 +365823,7 @@
                   "content" : "Plywood, OSB, waferboard and board lumber shall conform to the material standards specified in [REF:internal:nbc.divBV2.part9.sect23.subsect17:long] . Wood-based panels may be installed vertically or horizontally. Gypsum sheathing shall conform to the requirements of gypsum board in [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] ." },
                  
                  { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note3",
-                  "content" : "See Note A-9.23.3.1.(2)." },
+                  "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote115:short]" },
                  
                  { "id" : "nbc.divBV2.part9.sect23.subsect3.art5.table3.note4",
                   "content" : "For plywood, OSB, or waferboard panel sheathing, the maximum fastener spacing along intermediate supports shall be 300 mm o.c. For gypsum sheathing, the maximum spacing along intermediate supports shall conform to [REF:internal:nbc.divBV2.part9.sect29.subsect5.art8.sent4:medium] for nails and [REF:internal:nbc.divBV2.part9.sect29.subsect5.art9.sent4:medium] for screws." },
@@ -371984,7 +371984,7 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "For resistance to wind pressure, the minimum total length of [REF:term:br-wl-pnl:braced wall panels] in each [REF:term:br-wl-bnd:braced wall band] , L_{w}, shall be determined by applying the adjustment factors provided in Table 9.23.13.7.-B to the unadjusted minimum total [REF:term:br-wl-pnl:braced wall panel] length L_{uw} provided in Table 9.23.13.7.-A using the following equation:\nL_{w} = L_{uw}K_{exp}K_{roof}K_{Wspacing}K_{Wnumber}K_{gyp}K_{sheath} ≥ BWP_{min}\nwhere\nK_{exp} = wind exposure adjustment factor, and = 1 for rough terrain (suburban, urban or wooded terrain extending upwind from the [REF:term:bldng:building] uninterrupted for at least 1 km),\nK_{roof} = roof eave-to-ridge height adjustment factor, and = 1 for a roof eave-to-ridge height of 3 m\nK_{Wspacing} = [REF:term:br-wl-bnd:braced wall band] spacing adjustment factor for wind (see [REF:internal:nbc.divBV2.part9.sect23.subsect13.art7.sent5:short] ),per [REF:term:bldng:building] plan direction, and = 1 for a [REF:term:br-wl-bnd:braced wall band] spacing of 7.6 m\nK_{Wnumber} = number of parallel [REF:term:br-wl-bnd:braced wall bands] adjustment factor for wind, per [REF:term:bldng:building] plan direction, and = 1 for two exterior walls and no intermediate [REF:term:br-wl-bnd:braced wall bands] ,\nK_{gyp} = interior gypsum board adjustment factor, and = 1 for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on the interior side,\nK_{sheath} = intermittent [REF:term:br-wl-pnl:braced wall panels] adjustment factor, and = 1 for continuously sheathed [REF:term:br-wl-bnd:braced wall bands] , and\nBWP_{min} = Minimum length of individual [REF:term:br-wl-pnl:braced wall panels] as per [REF:internal:nbc.divBV2.part9.sect23.subsect13.art5.table1:long] .\n(See Note A-9.23.13.7.(3) for an alternative procedure to calculate L_{w}, directly and Note A-9.23.13.7.(4).)" },
+                "text" : "For resistance to wind pressure, the minimum total length of [REF:term:br-wl-pnl:braced wall panels] in each [REF:term:br-wl-bnd:braced wall band] , L_{w}, shall be determined by applying the adjustment factors provided in Table 9.23.13.7.-B to the unadjusted minimum total [REF:term:br-wl-pnl:braced wall panel] length L_{uw} provided in Table 9.23.13.7.-A using the following equation:\nL_{w} = L_{uw}K_{exp}K_{roof}K_{Wspacing}K_{Wnumber}K_{gyp}K_{sheath} ≥ BWP_{min}\nwhere\nK_{exp} = wind exposure adjustment factor, and\n= 1 for rough terrain (suburban, urban or wooded terrain extending upwind from the [REF:term:bldng:building] uninterrupted for at least 1 km),\nK_{roof} = roof eave-to-ridge height adjustment factor, and\n= 1 for a roof eave-to-ridge height of 3 m\nK_{Wspacing} = [REF:term:br-wl-bnd:braced wall band] spacing adjustment factor for wind (see [REF:internal:nbc.divBV2.part9.sect23.subsect13.art7.sent5:short] ),per [REF:term:bldng:building] plan direction, and\n= 1 for a [REF:term:br-wl-bnd:braced wall band] spacing of 7.6 m\nK_{Wnumber} = number of parallel [REF:term:br-wl-bnd:braced wall bands] adjustment factor for wind, per [REF:term:bldng:building] plan direction, and\n= 1 for two exterior walls and no intermediate [REF:term:br-wl-bnd:braced wall bands] ,\nK_{gyp} = interior gypsum board adjustment factor, and\n= 1 for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on the interior side,\nK_{sheath} = intermittent [REF:term:br-wl-pnl:braced wall panels] adjustment factor, and\n= 1 for continuously sheathed [REF:term:br-wl-bnd:braced wall bands] , and\nBWP_{min} = Minimum length of individual [REF:term:br-wl-pnl:braced wall panels] as per [REF:internal:nbc.divBV2.part9.sect23.subsect13.art5.table1:long] .\n(See Note A-9.23.13.7.(3) for an alternative procedure to calculate L_{w}, directly and Note A-9.23.13.7.(4).)" },
                
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table1",
                 "type" : "table",
@@ -423428,7 +423428,7 @@
                   "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableA.note2",
-                  "content" : "See Table 9.36.7.4." } ],
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect7.art4.table1:long] ." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -423585,7 +423585,7 @@
                   "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableB.note2",
-                  "content" : "See Table 9.36.7.4." } ],
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect7.art4.table1:long] ." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -423742,7 +423742,7 @@
                   "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableC.note2",
-                  "content" : "See Table 9.36.7.4." } ],
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect7.art4.table1:long] ." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -423899,7 +423899,7 @@
                   "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableD.note2",
-                  "content" : "See Table 9.36.7.4." } ],
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect7.art4.table1:long] ." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -424056,7 +424056,7 @@
                   "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableE.note2",
-                  "content" : "See Table 9.36.7.4." } ],
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect7.art4.table1:long] ." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -424213,7 +424213,7 @@
                   "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableF.note2",
-                  "content" : "See Table 9.36.7.4." } ],
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect7.art4.table1:long] ." } ],
                 "structure" : 
                 { "columns" : 4,
                  "column_specs" : 
@@ -424376,7 +424376,7 @@
                   "content" : "When a \"house\" is a dwelling unit forming part of a multi-unit building, as per Sentence 9.36.6.1.(1), requirements of Subsection 9.36.6. apply to entire building." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableG.note2",
-                  "content" : "See Table 9.36.7.4." },
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect7.art4.table1:long] ." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableG.note3",
                   "content" : "See Sentence 9.36.6.5.(6)" },
