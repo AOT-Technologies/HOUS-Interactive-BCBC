@@ -57,7 +57,7 @@ describe('TableBlock', () => {
     };
 
     render(<TableBlock table={table} />);
-    
+
     expect(screen.getByText('Table 1.3.1.2.')).toBeInTheDocument();
     expect(screen.getByText('Test Table')).toBeInTheDocument();
     expect(screen.getByText('Cell 1')).toBeInTheDocument();
@@ -125,16 +125,16 @@ describe('TableBlock', () => {
     };
 
     const { container } = render(<TableBlock table={table} />);
-    
+
     expect(screen.getByText('Table 2.')).toBeInTheDocument();
     expect(screen.getByText('Mixed Content Table')).toBeInTheDocument();
     expect(screen.getByText('8.08')).toBeInTheDocument();
     expect(screen.getByText('10.5')).toBeInTheDocument();
-    
+
     // Check for text content using container.textContent which includes all text
     expect(container.textContent).toContain('Text before image');
     expect(container.textContent).toContain('Text after image');
-    
+
     // Check for figures
     const images = screen.getAllByRole('img');
     expect(images).toHaveLength(2);
@@ -277,7 +277,7 @@ describe('TableBlock', () => {
     };
 
     const { container } = render(<TableBlock table={table} />);
-    
+
     const cells = container.querySelectorAll('td');
     expect(cells[0]).toHaveClass('table-block__cell--left');
     expect(cells[1]).toHaveClass('table-block__cell--center');
@@ -300,7 +300,7 @@ describe('TableBlock', () => {
     };
 
     render(<TableBlock table={table} />);
-    
+
     expect(screen.getByText('This is a caption')).toBeInTheDocument();
   });
 
@@ -676,7 +676,7 @@ describe('TableBlock', () => {
 
     render(<TableBlock table={table} />);
 
-    expect(screen.getByText('Table D.1.1.2.')).toBeInTheDocument();
+    expect(screen.getByText('Table D-1.1.2-A.')).toBeInTheDocument();
   });
 
   it('renders top-level appendix table numbering and forming part labels', () => {

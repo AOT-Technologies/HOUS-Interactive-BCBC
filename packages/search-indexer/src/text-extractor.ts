@@ -118,7 +118,10 @@ function formatInternalReference(referenceId: string, format?: string): string {
     const paragraph = appendixDocumentMatch[6];
     const table = appendixDocumentMatch[7];
     const figure = appendixDocumentMatch[8];
-    const baseNumber = [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
+    // Appendix numbering uses a hyphen after the letter: D-2.3.4
+    const baseNumber = appendixLetter
+      ? `${appendixLetter}-${[appendixSection, subsection, article].filter(Boolean).join('.')}`
+      : [appendixSection, subsection, article].filter(Boolean).join('.');
     const isShortNumeric = format === 'shortNum' || format === 'number';
 
     if (paragraph) {
@@ -128,12 +131,19 @@ function formatInternalReference(referenceId: string, format?: string): string {
     }
 
     if (table) {
-      const tableNumber = baseNumber || [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
-      return isShortNumeric ? tableNumber : `Table ${tableNumber}.`;
+      // When an article contains multiple tables, they are suffixed with
+      // a letter: table1 → -A, table2 → -B, etc. For table1, omit the
+      // suffix since it may be the only table in the article.
+      const tableNum = Number(table);
+      const tableSuffix = tableNum > 1 ? `-${String.fromCharCode(64 + tableNum)}` : '';
+      const tableNumber = baseNumber || appendixLetter || '';
+      return isShortNumeric
+        ? `${tableNumber}.${tableSuffix}`
+        : `Table ${tableNumber}.${tableSuffix}`;
     }
 
     if (figure) {
-      const figureNumber = baseNumber || [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
+      const figureNumber = baseNumber || appendixLetter || '';
       return isShortNumeric ? figureNumber : `Figure ${figureNumber}.`;
     }
 
@@ -142,12 +152,16 @@ function formatInternalReference(referenceId: string, format?: string): string {
     }
 
     if (subsection) {
-      const subsectionNumber = [appendixLetter, appendixSection, subsection].filter(Boolean).join('.');
+      const subsectionNumber = appendixLetter
+        ? `${appendixLetter}-${[appendixSection, subsection].filter(Boolean).join('.')}`
+        : [appendixSection, subsection].filter(Boolean).join('.');
       return isShortNumeric ? subsectionNumber : `Subsection ${subsectionNumber}.`;
     }
 
     if (appendixSection) {
-      const sectionNumber = [appendixLetter, appendixSection].filter(Boolean).join('.');
+      const sectionNumber = appendixLetter
+        ? `${appendixLetter}-${appendixSection}`
+        : appendixSection || '';
       return isShortNumeric ? sectionNumber : `Section ${sectionNumber}.`;
     }
 

@@ -188,7 +188,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(0);
-    expect(getTextContent(nodes)).toContain('Sentence D.1.2.1.(2)');
+    expect(getTextContent(nodes)).toContain('Sentence D-1.2.1.(2)');
   });
 
   it('renders same application-note references as plain text when note context is provided', () => {
@@ -299,7 +299,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('D.1.1.2.');
+    expect(crossRefs[0].props.displayText).toBe('D-1.1.2.');
   });
 
   it('avoids duplicating the leading type label for Appendix D sentence references', () => {
@@ -309,7 +309,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('D.1.2.1.(2).');
+    expect(crossRefs[0].props.displayText).toBe('D-1.2.1.(2).');
   });
 
   it('avoids duplicating the leading sentence label after plural Sentences text', () => {
