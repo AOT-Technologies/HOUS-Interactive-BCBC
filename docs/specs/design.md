@@ -1913,7 +1913,7 @@ All filter options, navigation structure, and content organization are pre-gener
 **Validates: Requirements 3.3**
 
 **Property 8: Search Result Ordering**
-*For any* set of search results, they should be sorted by relevance score in descending order.
+*For any* set of search results, they should be sorted primarily by content hierarchy level (Part > Section > Subsection > Article > Table/Figure > Note/Application-Note > Glossary), then by relevance score within the same hierarchy level. A lower-hierarchy item may override this ordering only when its relevance score exceeds the higher-hierarchy item's score by more than 3x, indicating an overwhelmingly stronger match. The relevance score within each level incorporates field match weights, an exponential hierarchy boost (`1.5^searchPriority`), amendment boosts, and title match boosts.
 **Validates: Requirements 3.4**
 
 **Property 9: Search Pagination**

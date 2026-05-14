@@ -89,16 +89,20 @@ const { documents, metadata } = buildSearchIndex(bcbcData, config);
 
 Control which content types are indexed and their search priority:
 
-| Content Type | Default Priority | Description |
-|--------------|-----------------|-------------|
-| `part` | 10 | Part-level navigation |
-| `section` | 9 | Section-level navigation |
-| `subsection` | 8 | Subsection-level navigation |
-| `table` | 7 | Tables within articles |
-| `figure` | 7 | Figures within articles |
-| `glossary` | 6 | Glossary terms |
-| `article` | 5 | Code articles |
-| `note` | 4 | Notes and application notes |
+| Content Type | Default Priority | Hierarchy Boost (1.5^p) | Description |
+|--------------|-----------------|------------------------|-------------|
+| `part` | 10 | ~57.7x | Part-level navigation |
+| `section` | 9 | ~38.4x | Section-level navigation |
+| `subsection` | 8 | ~25.6x | Subsection-level navigation |
+| `article` | 7 | ~17.1x | Code articles |
+| `table` | 6 | ~11.4x | Tables within articles |
+| `figure` | 6 | ~11.4x | Figures within articles |
+| `note` | 5 | ~7.6x | Notes and application notes |
+| `glossary` | 3 | ~3.4x | Glossary terms |
+
+The `searchPriority` field stored in documents reflects the hierarchy level only (not amendment boosts). The runtime search client applies an exponential hierarchy boost (`Math.pow(1.5, searchPriority)`) for scoring, and sorts results by hierarchy first, then by relevance within each level. A lower-level item can override hierarchy only when its score exceeds the higher-level item by more than 3x.
+
+**Important:** The `amendmentBoost` config values are reserved for future use. Amendment boosting is currently handled at runtime (1.5x multiplier for all amended documents) and does not affect the indexed `searchPriority` values.
 
 ### Reference Parsing
 
@@ -170,7 +174,7 @@ textExtraction: {
     "hasTermRefs": true,
     "hasTables": false,
     "hasFigures": false,
-    "searchPriority": 5
+    "searchPriority": 7
   }
 ]
 ```

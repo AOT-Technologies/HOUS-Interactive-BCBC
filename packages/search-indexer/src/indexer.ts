@@ -802,11 +802,8 @@ function createArticleDocument(
   // Check for references in raw text (before stripping)
   const rawText = article.content?.map(c => c.text || '').join(' ') || '';
 
-  // Calculate priority with amendment boost
-  let priority = config.contentTypes.article.priority;
-  if (revisionInfo.hasAmendment) {
-    priority *= config.contentTypes.article.amendmentBoost;
-  }
+  // searchPriority reflects hierarchy level only; amendment boost is applied at runtime
+  const priority = config.contentTypes.article.priority;
 
   return {
     ...createBaseDocument(division, part, section, subsection, config),
@@ -854,11 +851,8 @@ function createTableDocument(
   const { text, referenceIds } = extractTableText(table, config.textExtraction, config.references);
   const title = table.title || `Table ${tableNum}`;
 
-  // Calculate priority
-  let priority = config.contentTypes.table.priority;
-  if (revisionInfo.hasAmendment) {
-    priority *= config.contentTypes.table.amendmentBoost;
-  }
+  // searchPriority reflects hierarchy level only; amendment boost is applied at runtime
+  const priority = config.contentTypes.table.priority;
 
   return {
     ...createBaseDocument(division, part, section, subsection, config),
@@ -901,11 +895,8 @@ function createFigureDocument(
   const title = figure.title || `Figure ${figureNum}`;
   const text = normalizeWhitespace(stripFormattingMarkers(stripReferences(title, config.references)));
 
-  // Calculate priority
-  let priority = config.contentTypes.figure.priority;
-  if (revisionInfo.hasAmendment) {
-    priority *= config.contentTypes.figure.amendmentBoost;
-  }
+  // searchPriority reflects hierarchy level only; amendment boost is applied at runtime
+  const priority = config.contentTypes.figure.priority;
 
   return {
     ...createBaseDocument(division, part, section, subsection, config),
