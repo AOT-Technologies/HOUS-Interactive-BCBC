@@ -122,8 +122,8 @@ export const DEFAULT_REFERENCE_CONFIG: ReferenceParsingConfig = {
  */
 export const DEFAULT_CONTENT_TYPE_CONFIG: Record<IndexableContentType, ContentTypeConfig> = {
   article: { enabled: true, priority: 7, amendmentBoost: 1.5 },
-  table: { enabled: true, priority: 4, amendmentBoost: 1.3 },
-  figure: { enabled: true, priority: 4, amendmentBoost: 1.3 },
+  table: { enabled: true, priority: 6, amendmentBoost: 1.3 },
+  figure: { enabled: true, priority: 6, amendmentBoost: 1.3 },
   part: { enabled: true, priority: 10, amendmentBoost: 1.0 },
   section: { enabled: true, priority: 9, amendmentBoost: 1.0 },
   subsection: { enabled: true, priority: 8, amendmentBoost: 1.0 },

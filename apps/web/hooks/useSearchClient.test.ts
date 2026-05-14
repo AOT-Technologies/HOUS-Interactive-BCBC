@@ -61,7 +61,7 @@ describe('useSearchClient', () => {
         hasTermRefs: false,
         hasTables: false,
         hasFigures: false,
-        searchPriority: 5,
+        searchPriority: 7,
       },
       score: 10,
       highlights: [],
@@ -246,7 +246,7 @@ describe('useSearchClient', () => {
     });
 
     it('should handle suggestion errors gracefully', async () => {
-      const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
+      const consoleError = vi.spyOn(console, 'error').mockImplementation(() => { });
       mockClient.getSuggestions.mockRejectedValue(new Error('Failed'));
 
       const { result } = renderHook(() => useSearchClient());
@@ -389,7 +389,7 @@ describe('useSearchMetadata', () => {
 
   it('should return null metadata before initialization', () => {
     mockClient.isInitialized.mockReturnValue(false);
-    mockClient.initialize.mockImplementation(() => new Promise(() => {}));
+    mockClient.initialize.mockImplementation(() => new Promise(() => { }));
     mockClient.getMetadata.mockReturnValue(null);
 
     const { result } = renderHook(() => useSearchMetadata());

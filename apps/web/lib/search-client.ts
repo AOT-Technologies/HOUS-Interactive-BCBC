@@ -300,13 +300,29 @@ export class BCBCSearchClient {
         highlights: this.generateHighlights(doc, query),
       }));
 
-    // Sort by hierarchy first (higher searchPriority = higher in hierarchy),
-    // then by relevance score within the same hierarchy level.
-    // This ensures Part > Section > Subsection > Article ordering is always
-    // respected regardless of text-match differences.
+    // Sort results respecting content hierarchy while preserving relevance
+    // for strong matches. A higher-hierarchy item (Part, Section) always ranks
+    // above a lower-hierarchy item UNLESS the lower item's score is more than
+    // 3x the higher item's score (indicating a much stronger text match).
+    // This prevents tangentially-matching Parts from burying precise Article matches.
     filtered.sort((a, b) => {
       const priorityDiff = b.document.searchPriority - a.document.searchPriority;
-      if (priorityDiff !== 0) return priorityDiff;
+      if (priorityDiff !== 0) {
+        // Higher-hierarchy item has lower score — check if the lower-hierarchy
+        // item has an overwhelmingly better match (>3x score ratio)
+        const higherPriorityItem = priorityDiff > 0 ? b : a;
+        const lowerPriorityItem = priorityDiff > 0 ? a : b;
+        if (
+          higherPriorityItem.score > 0 &&
+          lowerPriorityItem.score > higherPriorityItem.score * 3
+        ) {
+          // Lower-hierarchy item has overwhelmingly better relevance — let score win
+          return b.score - a.score;
+        }
+        // Otherwise hierarchy wins
+        return priorityDiff;
+      }
+      // Same hierarchy level: sort by score
       return b.score - a.score;
     });
 
@@ -349,7 +365,7 @@ export class BCBCSearchClient {
    * 
    * Priority hierarchy (highest to lowest):
    *   Part (10) > Section (9) > Subsection (8) > Article (7) >
-   *   Note/Application-Note (5) > Table/Figure (4) > Glossary (3)
+   *   Table/Figure (6) > Note/Application-Note (5) > Glossary (3)
    */
   private calculateFinalScore(
     doc: SearchDocument,
@@ -363,13 +379,13 @@ export class BCBCSearchClient {
     // This ensures a Part (priority 10) scores significantly higher than
     // an Article (priority 7) even when the Article has slightly better
     // text relevance. The exponent base of 1.5 creates meaningful separation:
-    //   Part (10):    1.5^10 ≈ 57.7
-    //   Section (9):  1.5^9  ≈ 38.4
-    //   Subsection (8): 1.5^8 ≈ 25.6
-    //   Article (7):  1.5^7  ≈ 17.1
-    //   Note (5):     1.5^5  ≈ 7.6
-    //   Table/Figure (4): 1.5^4 ≈ 5.1
-    //   Glossary (3): 1.5^3  ≈ 3.4
+    //   Part (10):       1.5^10 ≈ 57.7
+    //   Section (9):     1.5^9  ≈ 38.4
+    //   Subsection (8):  1.5^8  ≈ 25.6
+    //   Article (7):     1.5^7  ≈ 17.1
+    //   Table/Figure (6): 1.5^6 ≈ 11.4
+    //   Note (5):        1.5^5  ≈ 7.6
+    //   Glossary (3):    1.5^3  ≈ 3.4
     score *= Math.pow(1.5, doc.searchPriority);
 
     // Boost amendments

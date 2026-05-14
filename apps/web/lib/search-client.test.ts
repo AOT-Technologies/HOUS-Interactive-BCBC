@@ -1,13 +1,16 @@
 /**
  * Unit tests for BCBCSearchClient scoring and ranking logic.
  *
- * These tests verify that search results are sorted by hierarchy first
- * (Part > Section > Subsection > Article > Note > Table > Glossary),
- * then by relevance score within the same hierarchy level.
+ * These tests verify that search results respect content hierarchy
+ * (Part > Section > Subsection > Article > Table/Figure > Note > Glossary)
+ * while still allowing overwhelmingly strong matches to surface.
  *
  * Hierarchy priorities (from config.ts):
  *   Part (10) > Section (9) > Subsection (8) > Article (7) >
- *   Note/Application-Note (5) > Table/Figure (4) > Glossary (3)
+ *   Table/Figure (6) > Note/Application-Note (5) > Glossary (3)
+ *
+ * Sort rule: hierarchy wins unless the lower-level item's score
+ * exceeds the higher-level item's score by more than 3x.
  */
 
 import { describe, it, expect, beforeEach } from 'vitest';
@@ -62,11 +65,22 @@ function calculateScore(
 
 /**
  * Replicate the sort logic used in the search client.
+ * Hierarchy wins unless lower-level item has >3x the score.
  */
-function sortByHierarchyThenScore(results: Array<{ document: any; score: number; highlights: any[] }>) {
+function sortResults(results: Array<{ document: any; score: number; highlights: any[] }>) {
     return [...results].sort((a, b) => {
         const priorityDiff = b.document.searchPriority - a.document.searchPriority;
-        if (priorityDiff !== 0) return priorityDiff;
+        if (priorityDiff !== 0) {
+            const higherPriorityItem = priorityDiff > 0 ? b : a;
+            const lowerPriorityItem = priorityDiff > 0 ? a : b;
+            if (
+                higherPriorityItem.score > 0 &&
+                lowerPriorityItem.score > higherPriorityItem.score * 3
+            ) {
+                return b.score - a.score;
+            }
+            return priorityDiff;
+        }
         return b.score - a.score;
     });
 }
@@ -119,7 +133,17 @@ describe('BCBCSearchClient scoring', () => {
             expect(articleScore).toBeGreaterThan(glossaryScore);
         });
 
-        it('should maintain full hierarchy order: Part > Section > Subsection > Article > Note > Table > Glossary', () => {
+        it('should score an Article higher than a Table with the same field scores', () => {
+            const articleDoc = makeDoc({ type: 'article', searchPriority: 7 });
+            const tableDoc = makeDoc({ type: 'table', searchPriority: 6 });
+
+            const articleScore = calculateScore(client, articleDoc, [5], 'test');
+            const tableScore = calculateScore(client, tableDoc, [5], 'test');
+
+            expect(articleScore).toBeGreaterThan(tableScore);
+        });
+
+        it('should maintain full hierarchy order: Part > Section > Subsection > Article > Table > Note > Glossary', () => {
             const fieldScores = [5];
             const query = 'test';
 
@@ -127,16 +151,16 @@ describe('BCBCSearchClient scoring', () => {
             const sectionScore = calculateScore(client, makeDoc({ searchPriority: 9 }), fieldScores, query);
             const subsectionScore = calculateScore(client, makeDoc({ searchPriority: 8 }), fieldScores, query);
             const articleScore = calculateScore(client, makeDoc({ searchPriority: 7 }), fieldScores, query);
+            const tableScore = calculateScore(client, makeDoc({ searchPriority: 6 }), fieldScores, query);
             const noteScore = calculateScore(client, makeDoc({ searchPriority: 5 }), fieldScores, query);
-            const tableScore = calculateScore(client, makeDoc({ searchPriority: 4 }), fieldScores, query);
             const glossaryScore = calculateScore(client, makeDoc({ searchPriority: 3 }), fieldScores, query);
 
             expect(partScore).toBeGreaterThan(sectionScore);
             expect(sectionScore).toBeGreaterThan(subsectionScore);
             expect(subsectionScore).toBeGreaterThan(articleScore);
-            expect(articleScore).toBeGreaterThan(noteScore);
-            expect(noteScore).toBeGreaterThan(tableScore);
-            expect(tableScore).toBeGreaterThan(glossaryScore);
+            expect(articleScore).toBeGreaterThan(tableScore);
+            expect(tableScore).toBeGreaterThan(noteScore);
+            expect(noteScore).toBeGreaterThan(glossaryScore);
         });
     });
 
@@ -193,28 +217,26 @@ describe('BCBCSearchClient scoring', () => {
         it('should sum multiple field scores before applying multipliers', () => {
             const doc = makeDoc({ title: 'Something Unrelated', searchPriority: 7 });
 
-            // Multiple field matches: articleNumber(10) + title(5) + text(1)
             const score = calculateScore(client, doc, [10, 5, 1], 'query');
 
-            // Expected: (10+5+1) * 1.5^7 = 16 * 17.09 ≈ 273.4
+            // Expected: (10+5+1) * 1.5^7
             expect(score).toBeCloseTo(16 * Math.pow(1.5, 7), 0);
         });
     });
 
-    describe('hierarchy-first sort order', () => {
-        it('should always place Subsection above Article regardless of score', () => {
-            // Article has title match + multiple fields, Subsection has weak text match
+    describe('hierarchy-respecting sort with relevance override', () => {
+        it('should place Subsection above Article when scores are comparable', () => {
             const subsectionDoc = makeDoc({ id: 'subsect-1', type: 'subsection', title: 'General', searchPriority: 8 });
-            const articleDoc = makeDoc({ id: 'art-1', type: 'article', title: 'Fire Exit', searchPriority: 7 });
+            const articleDoc = makeDoc({ id: 'art-1', type: 'article', title: 'General', searchPriority: 7 });
 
+            // Both match in text field only — no title boost for either
             const subsectionScore = calculateScore(client, subsectionDoc, [1], 'fire exit');
-            const articleScore = calculateScore(client, articleDoc, [10, 5, 1], 'fire exit');
+            const articleScore = calculateScore(client, articleDoc, [1], 'fire exit');
 
-            // Article has much higher raw score
-            expect(articleScore).toBeGreaterThan(subsectionScore);
+            // Verify article score is NOT more than 3x subsection score
+            expect(articleScore).toBeLessThan(subsectionScore * 3);
 
-            // But hierarchy-first sort still places Subsection first
-            const sorted = sortByHierarchyThenScore([
+            const sorted = sortResults([
                 { document: articleDoc, score: articleScore, highlights: [] },
                 { document: subsectionDoc, score: subsectionScore, highlights: [] },
             ]);
@@ -223,18 +245,17 @@ describe('BCBCSearchClient scoring', () => {
             expect(sorted[1].document.id).toBe('art-1');
         });
 
-        it('should always place Article above Glossary regardless of score', () => {
+        it('should place Article above Glossary when scores are comparable', () => {
             const articleDoc = makeDoc({ id: 'art-1', type: 'article', title: 'General', searchPriority: 7 });
             const glossaryDoc = makeDoc({ id: 'gloss-1', type: 'glossary', title: 'Fire Exit', searchPriority: 3 });
 
             const articleScore = calculateScore(client, articleDoc, [1], 'fire exit');
-            const glossaryScore = calculateScore(client, glossaryDoc, [10, 5], 'fire exit');
+            const glossaryScore = calculateScore(client, glossaryDoc, [5], 'fire exit');
 
-            // Glossary has higher raw score
-            expect(glossaryScore).toBeGreaterThan(articleScore);
+            // Verify glossary score is NOT more than 3x article score
+            expect(glossaryScore).toBeLessThan(articleScore * 3);
 
-            // But hierarchy-first sort places Article first
-            const sorted = sortByHierarchyThenScore([
+            const sorted = sortResults([
                 { document: glossaryDoc, score: glossaryScore, highlights: [] },
                 { document: articleDoc, score: articleScore, highlights: [] },
             ]);
@@ -243,29 +264,27 @@ describe('BCBCSearchClient scoring', () => {
             expect(sorted[1].document.id).toBe('gloss-1');
         });
 
-        it('should always place Part above Section above Subsection above Article', () => {
-            const partDoc = makeDoc({ id: 'part-1', type: 'part', searchPriority: 10 });
-            const sectionDoc = makeDoc({ id: 'sect-1', type: 'section', searchPriority: 9 });
-            const subsectionDoc = makeDoc({ id: 'subsect-1', type: 'subsection', searchPriority: 8 });
-            const articleDoc = makeDoc({ id: 'art-1', type: 'article', title: 'Fire Exit', searchPriority: 7 });
+        it('should allow a very strong lower-level match to override hierarchy (>3x score)', () => {
+            // Article with exact title match + multiple fields vs Part with weak text match
+            const partDoc = makeDoc({ id: 'part-1', type: 'part', title: 'General', searchPriority: 10 });
+            const articleDoc = makeDoc({ id: 'art-1', type: 'article', title: 'Fire Exit Requirements', searchPriority: 7 });
 
-            // Give Article the strongest match
+            // Part: weak match (text only)
             const partScore = calculateScore(client, partDoc, [1], 'fire exit');
-            const sectionScore = calculateScore(client, sectionDoc, [1], 'fire exit');
-            const subsectionScore = calculateScore(client, subsectionDoc, [1], 'fire exit');
+            // Article: strong match (articleNumber + title + text + title boost)
             const articleScore = calculateScore(client, articleDoc, [10, 5, 1], 'fire exit');
 
-            const sorted = sortByHierarchyThenScore([
-                { document: articleDoc, score: articleScore, highlights: [] },
-                { document: sectionDoc, score: sectionScore, highlights: [] },
+            // Verify article score IS more than 3x part score
+            expect(articleScore).toBeGreaterThan(partScore * 3);
+
+            const sorted = sortResults([
                 { document: partDoc, score: partScore, highlights: [] },
-                { document: subsectionDoc, score: subsectionScore, highlights: [] },
+                { document: articleDoc, score: articleScore, highlights: [] },
             ]);
 
-            expect(sorted[0].document.id).toBe('part-1');
-            expect(sorted[1].document.id).toBe('sect-1');
-            expect(sorted[2].document.id).toBe('subsect-1');
-            expect(sorted[3].document.id).toBe('art-1');
+            // Article wins because its score is overwhelmingly better
+            expect(sorted[0].document.id).toBe('art-1');
+            expect(sorted[1].document.id).toBe('part-1');
         });
 
         it('should sort by relevance score within the same hierarchy level', () => {
@@ -273,17 +292,42 @@ describe('BCBCSearchClient scoring', () => {
             const art2 = makeDoc({ id: 'art-2', type: 'article', title: 'General', searchPriority: 7 });
 
             const score1 = calculateScore(client, art1, [5], 'fire exit'); // title match → 2x
-            const score2 = calculateScore(client, art2, [1], 'fire exit'); // text only, no title match
+            const score2 = calculateScore(client, art2, [1], 'fire exit'); // text only
 
             expect(score1).toBeGreaterThan(score2);
 
-            const sorted = sortByHierarchyThenScore([
+            const sorted = sortResults([
                 { document: art2, score: score2, highlights: [] },
                 { document: art1, score: score1, highlights: [] },
             ]);
 
             expect(sorted[0].document.id).toBe('art-1');
             expect(sorted[1].document.id).toBe('art-2');
+        });
+
+        it('should maintain hierarchy for typical search scenarios', () => {
+            // Typical case: all items match in text field with similar strength
+            const partDoc = makeDoc({ id: 'part-1', type: 'part', searchPriority: 10 });
+            const sectionDoc = makeDoc({ id: 'sect-1', type: 'section', searchPriority: 9 });
+            const subsectionDoc = makeDoc({ id: 'subsect-1', type: 'subsection', searchPriority: 8 });
+            const articleDoc = makeDoc({ id: 'art-1', type: 'article', searchPriority: 7 });
+
+            const partScore = calculateScore(client, partDoc, [1], 'fire');
+            const sectionScore = calculateScore(client, sectionDoc, [1], 'fire');
+            const subsectionScore = calculateScore(client, subsectionDoc, [1], 'fire');
+            const articleScore = calculateScore(client, articleDoc, [1], 'fire');
+
+            const sorted = sortResults([
+                { document: articleDoc, score: articleScore, highlights: [] },
+                { document: partDoc, score: partScore, highlights: [] },
+                { document: subsectionDoc, score: subsectionScore, highlights: [] },
+                { document: sectionDoc, score: sectionScore, highlights: [] },
+            ]);
+
+            expect(sorted[0].document.id).toBe('part-1');
+            expect(sorted[1].document.id).toBe('sect-1');
+            expect(sorted[2].document.id).toBe('subsect-1');
+            expect(sorted[3].document.id).toBe('art-1');
         });
     });
 });

@@ -47,6 +47,8 @@ The Docker build process:
    - Build Next.js static export (`pnpm build`)
    - Output: `apps/web/out/` directory
 
+> **Note:** The search index (`documents.json`) is always regenerated from source during the build stage. There is no risk of deploying stale index data. If you are testing locally after pulling changes to search priority or scoring logic, run `pnpm generate-assets` to regenerate the index before starting the dev server.
+
 2. **Production Stage** (Nginx 1.25 Alpine):
    - Copy custom nginx configuration
    - Copy static assets from build stage
