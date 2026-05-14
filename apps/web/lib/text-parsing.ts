@@ -218,6 +218,16 @@ function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: 
     return displayText.slice(displayMatch[0].length);
   }
 
+  // When the preceding text ends with "Article" and the reference is a Figure
+  // or Table within that article, strip the type prefix since the source text
+  // uses "Article" to refer to the containing article (e.g. "see Article [REF:figure1]").
+  if (
+    (duplicatedType.toLowerCase() === 'figure' || duplicatedType.toLowerCase() === 'table') &&
+    /(?:Article|Articles)\s*$/i.test(precedingText)
+  ) {
+    return displayText.slice(displayMatch[0].length);
+  }
+
   const normalizedPrecedingText = precedingText
     .replace(/\[REF:[^\]]+\]/gi, '(ref)')
     .replace(/\s+/g, ' ')
@@ -228,6 +238,26 @@ function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: 
   );
 
   if (!priorReferenceListPattern.test(normalizedPrecedingText)) {
+    // Also detect when prior cross-references of the SAME type form a list
+    // (comma/or/and separated). Extract the last [REF:internal:...] marker
+    // before this position and check if it references the same element type.
+    const refMarkersInPreceding = [...precedingText.matchAll(/\[REF:internal:([^\]:]+)/gi)];
+    if (refMarkersInPreceding.length > 0) {
+      const lastRefId = refMarkersInPreceding[refMarkersInPreceding.length - 1][1];
+      const priorIsTable = /\.table\d+$/i.test(lastRefId);
+      const priorIsFigure = /\.figure\d+$/i.test(lastRefId);
+      const currentIsTable = duplicatedType.toLowerCase() === 'table';
+      const currentIsFigure = duplicatedType.toLowerCase() === 'figure';
+      const sameType = (priorIsTable && currentIsTable) || (priorIsFigure && currentIsFigure);
+
+      if (sameType) {
+        // Verify the prior ref is in a list context (comma/or/and separated)
+        const trailingAfterLastRef = /\[REF:[^\]]+\]\s*(?:,\s*)?(?:(?:and|or)\s*)?$/i;
+        if (trailingAfterLastRef.test(precedingText)) {
+          return displayText.slice(displayMatch[0].length);
+        }
+      }
+    }
     return displayText;
   }
 
@@ -689,7 +719,10 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     const paragraph = appendixDocumentMatch[6];
     const table = appendixDocumentMatch[7];
     const figure = appendixDocumentMatch[8];
-    const baseNumber = [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
+    // Appendix numbering uses a hyphen after the letter: D-2.3.4
+    const baseNumber = appendixLetter
+      ? `${appendixLetter}-${[appendixSection, subsection, article].filter(Boolean).join('.')}`
+      : [appendixSection, subsection, article].filter(Boolean).join('.');
     const isShortNumeric = format === 'shortNum' || format === 'number';
 
     if (paragraph) {
@@ -699,12 +732,20 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (table) {
-      const tableNumber = baseNumber || [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
-      return isShortNumeric ? tableNumber : `Table ${tableNumber}.`;
+      // When an article contains multiple tables, they are suffixed with
+      // a letter: table1 → -A, table2 → -B, etc. For table1, omit the
+      // suffix since it may be the only table in the article; multi-table
+      // articles provide explicit custom labels for table1 references.
+      const tableNum = Number(table);
+      const tableSuffix = tableNum > 1 ? `-${String.fromCharCode(64 + tableNum)}` : '';
+      const tableNumber = baseNumber || appendixLetter || '';
+      return isShortNumeric
+        ? `${tableNumber}.${tableSuffix}`
+        : `Table ${tableNumber}.${tableSuffix}`;
     }
 
     if (figure) {
-      const figureNumber = baseNumber || [appendixLetter, appendixSection, subsection, article].filter(Boolean).join('.');
+      const figureNumber = baseNumber || appendixLetter || '';
       return isShortNumeric ? figureNumber : `Figure ${figureNumber}.`;
     }
 
@@ -713,12 +754,16 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (subsection) {
-      const subsectionNumber = [appendixLetter, appendixSection, subsection].filter(Boolean).join('.');
+      const subsectionNumber = appendixLetter
+        ? `${appendixLetter}-${[appendixSection, subsection].filter(Boolean).join('.')}`
+        : [appendixSection, subsection].filter(Boolean).join('.');
       return isShortNumeric ? subsectionNumber : `Subsection ${subsectionNumber}.`;
     }
 
     if (appendixSection) {
-      const sectionNumber = [appendixLetter, appendixSection].filter(Boolean).join('.');
+      const sectionNumber = appendixLetter
+        ? `${appendixLetter}-${appendixSection}`
+        : appendixSection || '';
       return isShortNumeric ? sectionNumber : `Section ${sectionNumber}.`;
     }
 
