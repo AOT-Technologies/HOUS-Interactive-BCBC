@@ -818,7 +818,7 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   }
 
   if (sectionNumber) {
-    return isShortNumeric ? sectionNumber : withDivisionSuffix(`Section ${sectionNumber}.`);
+    return isShortNumeric ? sectionNumber : `Section ${sectionNumber}.`;
   }
 
   if (part) {

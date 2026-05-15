@@ -352,7 +352,16 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2)');
   });
 
-  it('formats subsection long references with full numbering', () => {
+  it('formats section long references with full numbering (no division suffix)', () => {
+    const input = '[REF:internal:nbc.divBV2.part9.sect8:long]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Section 9.8.');
+  });
+
+  it('formats subsection long references with full numbering (no division suffix)', () => {
     const input = '[REF:internal:nbc.divB.part1.sect1.subsect2:long]';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
