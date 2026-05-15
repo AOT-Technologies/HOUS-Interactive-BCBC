@@ -173,19 +173,19 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const [spectablesLoading, setSpectablesLoading] = useState(false);
   const [spectablesError, setSpectablesError] = useState<string | null>(null);
   const [hashTargetId, setHashTargetId] = useState('');
-  
+
   // Extract version and date from URL query parameters
   const urlVersion = searchParams.get('version');
   const urlDate = searchParams.get('date');
-  
+
   // Use version from URL, fallback to props, then default to '2024'
   const version = urlVersion || initialVersion || '2024';
-  
+
   // Use date from URL, or undefined to show latest
   const effectiveDate = urlDate || undefined;
   const modalQueryParamFromRouter = searchParams.get('modal');
   const [modalQueryParam, setModalQueryParam] = useState<string | null>(modalQueryParamFromRouter);
-  
+
   const {
     currentSection,
     currentPath,
@@ -199,7 +199,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const fetchSpectables = useSpectablesStore((s) => s.fetchSpectables);
   const fetchStandardsMap = useStandardsMapStore((s) => s.fetchStandardsMap);
   const standardsMapCache = useStandardsMapStore((s) => s.cache);
-  
+
   const {
     currentSection: currentFrontMatter,
     loading: frontMatterLoading,
@@ -566,8 +566,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       if (parsed.kind === 'appendix_document') {
         const appendix =
           (isDivisionAppendixLevel &&
-          divisionAppendix &&
-          divisionAppendix.letter.toUpperCase() === parsed.appendixLetter
+            divisionAppendix &&
+            divisionAppendix.letter.toUpperCase() === parsed.appendixLetter
             ? divisionAppendix
             : null) || (await fetchTargetDivisionAppendix(referenceId));
 
@@ -593,8 +593,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       if (parsed.kind === 'spectables') {
         const spectablesPayload =
           (isSpectablesLevel &&
-          spectables &&
-          String(spectables.id).toLowerCase().includes(`spectables${parsed.spectables || ''}`.toLowerCase())
+            spectables &&
+            String(spectables.id).toLowerCase().includes(`spectables${parsed.spectables || ''}`.toLowerCase())
             ? spectables
             : null) || (await fetchTargetSpectables(referenceId));
 
@@ -724,10 +724,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
         if (subsection) {
           // Handle subsection title - after revision resolution it should be a string
-          const subsectionTitle = typeof subsection.title === 'string' 
-            ? subsection.title 
+          const subsectionTitle = typeof subsection.title === 'string'
+            ? subsection.title
             : (subsection.title as any)?.text || '';
-          
+
           return {
             referenceId,
             heading: subsectionTitle.trim(),
@@ -867,24 +867,24 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   // Sync navigation state from URL on mount and when path changes
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
+
     const initializeNavigation = async () => {
       const navStore = useNavigationStore.getState();
-      
+
       // Ensure navigation tree is loaded for the current version
       if (navStore.navigationTree.length === 0 || navStore.currentVersion !== version) {
         await navStore.loadNavigationTree(version);
       }
-      
+
       const { navigationTree, setCurrentPath, expandToNode } = useNavigationStore.getState();
-      
+
       // Set current path from the URL pathname (without updating URL back)
       // Normalize by stripping trailing slash to match node.path format
       const normalizedPathname = pathname.replace(/\/$/, '');
       if (useNavigationStore.getState().currentPath !== normalizedPathname) {
         setCurrentPath(normalizedPathname, false);
       }
-      
+
       // Find the node whose path matches the current URL pathname
       const findNodeIdByPath = (nodes: NavigationNode[]): string | null => {
         for (const node of nodes) {
@@ -899,7 +899,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         }
         return null;
       };
-      
+
       const nodeId = findNodeIdByPath(navigationTree);
       if (nodeId) {
         // On reading routes, URL path is the source of truth for open tree state.
@@ -907,7 +907,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         expandToNode(nodeId, { replaceExpandedNodes: true });
       }
     };
-    
+
     initializeNavigation();
   }, [pathname, version, setCurrentPath]);
 
@@ -1435,8 +1435,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             .filter((entry): entry is { id?: string; content: string } =>
               Boolean(
                 entry &&
-                  typeof entry === 'object' &&
-                  typeof (entry as { content?: unknown }).content === 'string'
+                typeof entry === 'object' &&
+                typeof (entry as { content?: unknown }).content === 'string'
               )
             )
             .map((entry) => ({ id: entry.id, content: entry.content })),
@@ -1450,9 +1450,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             .filter((entry): entry is { id?: string; symbol: string; description: string } =>
               Boolean(
                 entry &&
-                  typeof entry === 'object' &&
-                  typeof (entry as { symbol?: unknown }).symbol === 'string' &&
-                  typeof (entry as { description?: unknown }).description === 'string'
+                typeof entry === 'object' &&
+                typeof (entry as { symbol?: unknown }).symbol === 'string' &&
+                typeof (entry as { description?: unknown }).description === 'string'
               )
             )
             .map((entry) => ({ id: entry.id, symbol: entry.symbol, description: entry.description })),
@@ -1466,10 +1466,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             .filter((entry): entry is { id: string; term: string; definition: string } =>
               Boolean(
                 entry &&
-                  typeof entry === 'object' &&
-                  typeof (entry as { id?: unknown }).id === 'string' &&
-                  typeof (entry as { term?: unknown }).term === 'string' &&
-                  typeof (entry as { definition?: unknown }).definition === 'string'
+                typeof entry === 'object' &&
+                typeof (entry as { id?: unknown }).id === 'string' &&
+                typeof (entry as { term?: unknown }).term === 'string' &&
+                typeof (entry as { definition?: unknown }).definition === 'string'
               )
             )
             .map((entry) => ({ id: entry.id, term: entry.term, definition: entry.definition })),
@@ -1483,10 +1483,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             .filter((entry): entry is { id: string; abbreviation: string; fullName: string; website?: string } =>
               Boolean(
                 entry &&
-                  typeof entry === 'object' &&
-                  typeof (entry as { id?: unknown }).id === 'string' &&
-                  typeof (entry as { abbreviation?: unknown }).abbreviation === 'string' &&
-                  typeof (entry as { fullName?: unknown }).fullName === 'string'
+                typeof entry === 'object' &&
+                typeof (entry as { id?: unknown }).id === 'string' &&
+                typeof (entry as { abbreviation?: unknown }).abbreviation === 'string' &&
+                typeof (entry as { fullName?: unknown }).fullName === 'string'
               )
             )
             .map((entry) => ({
@@ -1781,7 +1781,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     }
 
     const sectionTitle = currentFrontMatter.title || slug[1];
-    const pdfLabel = `Front Matter - ${sectionTitle} PDF`;
+    const pdfLabel = `Preface - ${sectionTitle} PDF`;
 
     return (
       <CrossReferenceContext.Provider
@@ -2144,7 +2144,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
         <div className="reading-view__content">
           <PartTitle title={sectionViewPartTitle} />
           {subtree.mode === 'section' && (
-              <SectionRenderer
+            <SectionRenderer
               section={resolvedSection}
               partNumber={slug[1]}
               effectiveDate={effectiveDate}

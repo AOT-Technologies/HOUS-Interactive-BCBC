@@ -86,7 +86,7 @@ export const FrontMatterRenderer: React.FC<FrontMatterRendererProps> = ({
     if (section.title) {
       return section.title;
     }
-    
+
     // Default titles based on section type
     switch (section.type) {
       case 'preface':
@@ -96,18 +96,18 @@ export const FrontMatterRenderer: React.FC<FrontMatterRendererProps> = ({
       case 'committees':
         return 'Committees';
       default:
-        return 'Front Matter';
+        return 'Preface';
     }
   };
 
   return (
     <div className="front-matter-renderer">
       <h1 className="front-matter-renderer__title">{getSectionTitle()}</h1>
-      
+
       <div className="front-matter-renderer__content">
         {/* Render content items (paragraphs, headings, etc.) */}
         {section.content?.map((item) => renderContentItem(item))}
-        
+
         {/* Render tables (for committees section) */}
         {section.tables?.map((table, index) => (
           <TableBlock
@@ -116,7 +116,7 @@ export const FrontMatterRenderer: React.FC<FrontMatterRendererProps> = ({
             interactive={interactive}
           />
         ))}
-        
+
         {/* Render notes (for committees section) */}
         {section.notes?.map((note, index) => (
           <div key={note.id || `note-${index}`} className="front-matter__note">
