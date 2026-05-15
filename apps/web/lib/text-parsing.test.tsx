@@ -352,13 +352,13 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2)');
   });
 
-  it('formats subsection long references with division suffix', () => {
+  it('formats subsection long references with full numbering', () => {
     const input = '[REF:internal:nbc.divB.part1.sect1.subsect2:long]';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Subsection 1.1.2. of Division B');
+    expect(crossRefs[0].props.displayText).toBe('Subsection 1.1.2.');
   });
 
   it('formats sentence long references with full numbering', () => {
