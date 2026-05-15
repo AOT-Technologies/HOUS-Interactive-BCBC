@@ -135,7 +135,7 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
     // 1. Add Front Matter sections (if they exist in this volume)
     if (volume.frontMatter) {
       const frontMatterChildren: NavigationNode[] = [];
-      
+
       // Add Preface
       if (volume.frontMatter.preface) {
         frontMatterChildren.push({
@@ -145,7 +145,7 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
           path: `/code/front-matter/preface`,
         });
       }
-      
+
       // Add Introduction
       if (volume.frontMatter.introduction) {
         frontMatterChildren.push({
@@ -155,7 +155,7 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
           path: `/code/front-matter/introduction`,
         });
       }
-      
+
       // Add Committees
       if (volume.frontMatter.committees) {
         frontMatterChildren.push({
@@ -165,13 +165,13 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
           path: `/code/front-matter/committees`,
         });
       }
-      
-      // Add Front Matter node with children if any sections exist
+
+      // Add Preface node with children if any sections exist
       if (frontMatterChildren.length > 0) {
         volumeNode.children?.push({
           id: volume.frontMatter.id,
           type: 'division',
-          title: 'Front Matter',
+          title: 'Preface',
           path: `/code/front-matter`,
           children: frontMatterChildren,
         });
@@ -235,8 +235,8 @@ function buildDivisionNode(division: any): NavigationNode {
         // NEW: Hierarchical numbering (Part.Section.Subsection)
         const subsectionNumber = `${sectionNumber}.${subsection.number}`;
         // Handle subsection title as either string or revision history object
-        const subsectionTitle = typeof subsection.title === 'string' 
-          ? subsection.title 
+        const subsectionTitle = typeof subsection.title === 'string'
+          ? subsection.title
           : subsection.title.text;
         const subsectionNode: NavigationNode = {
           id: subsection.id,
@@ -473,45 +473,45 @@ export function extractFunctionalStatementsFromRaw(
   try {
     // Navigate to Division A, Part 3, Section 2, Subsection 1, Article 1
     const volumes = rawData.volumes || [];
-    
+
     for (const volume of volumes) {
       const divisions = volume.divisions || [];
       const divA = divisions.find((d: any) => d.id === 'nbc.divA');
-      
+
       if (!divA) continue;
-      
+
       const parts = divA.parts || [];
       const part3 = parts.find((p: any) => String(p.number) === '3');
-      
+
       if (!part3) continue;
-      
+
       const sections = part3.sections || [];
       const section2 = sections.find((s: any) => String(s.number) === '2');
-      
+
       if (!section2) continue;
-      
+
       const subsections = section2.subsections || [];
       const subsection1 = subsections.find((ss: any) => String(ss.number) === '1');
-      
+
       if (!subsection1) continue;
-      
+
       const articles = subsection1.articles || [];
       const article1 = articles.find((a: any) => String(a.number) === '1');
-      
+
       if (!article1) continue;
-      
+
       // Find the sentence with functional_statements
       const content = article1.content || [];
-      const sentenceWithFS = content.find((item: any) => 
+      const sentenceWithFS = content.find((item: any) =>
         item.type === 'sentence' && item.functional_statements
       );
-      
+
       if (!sentenceWithFS || !Array.isArray(sentenceWithFS.functional_statements)) continue;
-      
+
       // Extract functional statements
       for (const statement of sentenceWithFS.functional_statements) {
         const normalizedKey = statement.key.toLowerCase();
-        
+
         statementsMap[normalizedKey] = {
           id: statement.id,
           key: statement.key,
@@ -530,7 +530,7 @@ export function extractFunctionalStatementsFromRaw(
           statementsMap[fsKey] = statementsMap[normalizedKey];
         }
       }
-      
+
       break; // Found it, no need to continue
     }
   } catch (error) {
@@ -562,45 +562,45 @@ export function extractObjectivesFromRaw(
   try {
     // Navigate to Division A, Part 2, Section 2, Subsection 1, Article 1
     const volumes = rawData.volumes || [];
-    
+
     for (const volume of volumes) {
       const divisions = volume.divisions || [];
       const divA = divisions.find((d: any) => d.id === 'nbc.divA');
-      
+
       if (!divA) continue;
-      
+
       const parts = divA.parts || [];
       const part2 = parts.find((p: any) => String(p.number) === '2');
-      
+
       if (!part2) continue;
-      
+
       const sections = part2.sections || [];
       const section2 = sections.find((s: any) => String(s.number) === '2');
-      
+
       if (!section2) continue;
-      
+
       const subsections = section2.subsections || [];
       const subsection1 = subsections.find((ss: any) => String(ss.number) === '1');
-      
+
       if (!subsection1) continue;
-      
+
       const articles = subsection1.articles || [];
       const article1 = articles.find((a: any) => String(a.number) === '1');
-      
+
       if (!article1) continue;
-      
+
       // Find the sentence with objectives
       const content = article1.content || [];
-      const sentenceWithObj = content.find((item: any) => 
+      const sentenceWithObj = content.find((item: any) =>
         item.type === 'sentence' && item.objectives
       );
-      
+
       if (!sentenceWithObj || !Array.isArray(sentenceWithObj.objectives)) continue;
-      
+
       // Extract objectives
       for (const objective of sentenceWithObj.objectives) {
         const normalizedKey = objective.key.toLowerCase();
-        
+
         const objectiveEntry: Objective = {
           id: objective.id,
           key: objective.key,
@@ -624,7 +624,7 @@ export function extractObjectivesFromRaw(
         if (objective.sub_objectives) {
           for (const subObj of objective.sub_objectives) {
             const subNormalizedKey = subObj.key.toLowerCase();
-            
+
             const subObjectiveEntry: SubObjective = {
               id: subObj.id,
               key: subObj.key,
@@ -636,7 +636,7 @@ export function extractObjectivesFromRaw(
             // Add with various key formats
             objectivesMap[subNormalizedKey] = subObjectiveEntry;
             objectivesMap[`nbc-obj-${subNormalizedKey}`] = subObjectiveEntry;
-            
+
             // Also add with dot notation (e.g., "os1.1" -> "os1-1")
             const dottedKey = subNormalizedKey.replace(/\./g, '-');
             if (dottedKey !== subNormalizedKey) {
@@ -646,7 +646,7 @@ export function extractObjectivesFromRaw(
           }
         }
       }
-      
+
       break; // Found it, no need to continue
     }
   } catch (error) {

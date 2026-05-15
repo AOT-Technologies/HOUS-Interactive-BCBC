@@ -160,7 +160,7 @@ describe('extractNavigationTree', () => {
 
     expect(tree).toHaveLength(1);
     expect(tree[0].type).toBe('volume');
-    expect(tree[0].children?.[0].title).toBe('Front Matter');
+    expect(tree[0].children?.[0].title).toBe('Preface');
     expect(tree[0].children?.[1].type).toBe('division');
     expect(tree[0].children?.[1].children?.[0].type).toBe('part');
     expect(tree[0].children?.[1].children?.[0].children?.[0].type).toBe('section');

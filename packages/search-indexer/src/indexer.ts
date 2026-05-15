@@ -1005,7 +1005,7 @@ function processFrontMatter(
     snippet: generateSnippet(text, config.textExtraction.snippetLength),
     divisionId: 'front-matter',
     divisionLetter: '',
-    divisionTitle: 'Front Matter',
+    divisionTitle: 'Preface',
     partId: '',
     partNumber: 0,
     partTitle: '',
@@ -1015,8 +1015,8 @@ function processFrontMatter(
     subsectionId: '',
     subsectionNumber: 0,
     subsectionTitle: '',
-    path: 'Front Matter > Preface',
-    breadcrumbs: ['Front Matter', 'Preface'],
+    path: 'Preface > Preface',
+    breadcrumbs: ['Preface', 'Preface'],
     urlPath: '/preface',
     hasAmendment: false,
     hasInternalRefs: hasInternalRefs(fullText),
@@ -1032,7 +1032,7 @@ function processFrontMatter(
     id: 'front-matter',
     type: 'division',
     number: '',
-    title: 'Front Matter',
+    title: 'Preface',
     level: 0,
     children: [
       {
