@@ -36,18 +36,21 @@ export interface ContentRendererProps {
   interactive?: boolean;
   parentHasBcSource?: boolean;
   renderContext?: ReferenceRenderContext;
+  /** Pre-computed table number passed down from ArticleBlock for multi-table articles. */
+  tableNumberOverride?: string;
 }
 
 /**
  * Type-driven content renderer
  * Dispatches to appropriate component based on node.type
  */
-export const ContentRenderer: React.FC<ContentRendererProps> = ({ 
-  node, 
+export const ContentRenderer: React.FC<ContentRendererProps> = ({
+  node,
   effectiveDate,
   interactive = true,
   parentHasBcSource = false,
   renderContext,
+  tableNumberOverride,
 }) => {
   const source = (node as { source?: string }).source;
   const nodeType = (node as { type?: string }).type;
@@ -105,6 +108,7 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
           interactive={interactive}
           effectiveDate={effectiveDate}
           renderContext={renderContext}
+          tableNumberOverride={tableNumberOverride}
         />
       );
     
