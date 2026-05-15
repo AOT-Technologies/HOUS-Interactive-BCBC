@@ -99,7 +99,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Figure 4.1.6.10. of Division B');
+    expect(crossRefs[0].props.displayText).toBe('Figure 4.1.6.10.');
   });
 
   it('formats internal figure references with BC figure numbering for shortNum format', () => {
@@ -117,7 +117,7 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Table 9.3.1.7. of Division B');
+    expect(crossRefs[0].props.displayText).toBe('Table 9.3.1.7.');
   });
 
   it('formats part-level references as part labels for long format', () => {
@@ -274,13 +274,17 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(textNodes.join('')).not.toContain(' (a)');
   });
 
-  it('avoids duplicate trailing period for generated article labels when source has period', () => {
+  it('strips trailing period from article label when source period follows (avoids double period)', () => {
+    // Input: "(See [REF...:long].)" — the source "." closes the sentence.
+    // Display text "Article 1.3.3.2." ends with ".", so the duplicate-period
+    // logic strips it to "Article 1.3.3.2", and the source period renders the
+    // closing "(See Article 1.3.3.2.)" correctly with a single period.
     const input = '(See [REF:internal:nbc.divA.part1.sect3.subsect3.art2:long].)';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Article 1.3.3.2. of Division A');
+    expect(crossRefs[0].props.displayText).toBe('Article 1.3.3.2');
   });
 
   it('avoids duplicate trailing period for generated appnote labels when source has period', () => {
@@ -345,25 +349,34 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2) of Division BV2');
+    expect(crossRefs[0].props.displayText).toBe('9.7.4.3.(2)');
   });
 
-  it('formats subsection long references with division suffix', () => {
+  it('formats section long references with full numbering (no division suffix)', () => {
+    const input = '[REF:internal:nbc.divBV2.part9.sect8:long]';
+    const nodes = parseTextWithMarkers(input, [], true);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Section 9.8.');
+  });
+
+  it('formats subsection long references with full numbering (no division suffix)', () => {
     const input = '[REF:internal:nbc.divB.part1.sect1.subsect2:long]';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Subsection 1.1.2. of Division B');
+    expect(crossRefs[0].props.displayText).toBe('Subsection 1.1.2.');
   });
 
-  it('formats sentence long references with division suffix', () => {
+  it('formats sentence long references with full numbering', () => {
     const input = '[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1:long]';
     const nodes = parseTextWithMarkers(input, [], true);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('Sentence 1.2.1.1.(1) of Division A');
+    expect(crossRefs[0].props.displayText).toBe('Sentence 1.2.1.1.(1)');
   });
 
   it('renders medium sentence references with full numbering when preceded by Sentence', () => {

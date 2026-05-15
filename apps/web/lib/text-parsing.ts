@@ -818,10 +818,10 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (sentenceNumber) {
-      return withDivisionSuffix(`Clause ${sentenceNumber}(${number})`);
+      return `Clause ${sentenceNumber}(${number})`;
     }
 
-    return withDivisionSuffix(`Clause (${number})`);
+    return `Clause (${number})`;
   }
 
   if (sentence) {
@@ -834,36 +834,36 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (containerNumber) {
-      return withDivisionSuffix(`Sentence ${containerNumber}.(${sentence})`);
+      return `Sentence ${containerNumber}.(${sentence})`;
     }
 
-    return withDivisionSuffix(`Sentence (${sentence})`);
+    return `Sentence (${sentence})`;
   }
 
   if (table) {
     if (containerNumber) {
-      return isShortNumeric ? containerNumber : withDivisionSuffix(`Table ${containerNumber}.`);
+      return isShortNumeric ? containerNumber : `Table ${containerNumber}.`;
     }
-    return isShortNumeric ? table : withDivisionSuffix(`Table ${table}`);
+    return isShortNumeric ? table : `Table ${table}`;
   }
 
   if (figure) {
     if (containerNumber) {
-      return isShortNumeric ? containerNumber : withDivisionSuffix(`Figure ${containerNumber}.`);
+      return isShortNumeric ? containerNumber : `Figure ${containerNumber}.`;
     }
-    return isShortNumeric ? figure : withDivisionSuffix(`Figure ${figure}`);
+    return isShortNumeric ? figure : `Figure ${figure}`;
   }
 
   if (article) {
-    return isShortNumeric ? articleNumber : withDivisionSuffix(`Article ${articleNumber}.`);
+    return isShortNumeric ? articleNumber : `Article ${articleNumber}.`;
   }
 
   if (subsection) {
-    return isShortNumeric ? subsectionNumber : withDivisionSuffix(`Subsection ${subsectionNumber}.`);
+    return isShortNumeric ? subsectionNumber : `Subsection ${subsectionNumber}.`;
   }
 
   if (sectionNumber) {
-    return isShortNumeric ? sectionNumber : withDivisionSuffix(`Section ${sectionNumber}.`);
+    return isShortNumeric ? sectionNumber : `Section ${sectionNumber}.`;
   }
 
   if (part) {
