@@ -1370,6 +1370,10 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
 - **Cause**: Source data includes "Notes to Table X.X.X.:" as the first entry in `table_notes` arrays
 - **Solution**: `TableBlock.tsx` filters out header entries from `resolvedTableNotes` using a regex (`^Notes to Table\b.*:$`) and `.notes.header` ID suffix check. The component generates its own heading from the table number via `tableNotesHeading`. After filtering, `getTableNoteLabel` subtracts the filtered header count from each note's ID suffix so labels renumber sequentially (e.g., `.note2` → `(1)`, `.note3` → `(2)`).
 
+**Issue**: Appendix D table note lists render as bullets instead of roman numerals (i, ii, iii)
+- **Cause**: Source data uses `"type": "bulleted"` for sub-item lists in table notes. `DivisionAppendixRenderer` normalizes paragraph-level lists but `TableBlock` renders table notes independently.
+- **Solution**: `TableBlock.tsx` detects Appendix D tables by checking if the table ID matches both `appendixD` and `appsect` patterns (`isAppendixDStyle`). When matched, bulleted lists in table notes are remapped to `roman` type, and the `[LIST:bulleted]` marker in the note content text is rewritten to `[LIST:roman]` so `parseTextWithMarkers` can match it correctly.
+
 ---
 
 ## Related Documentation

@@ -401,23 +401,21 @@
 }
 
 .table-block__note {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.45rem;
   font-size: 0.95rem;
   line-height: 1.4;
   color: var(--typography-color-secondary, #6c6c6e);
 }
 
 .table-block__note-label {
-  flex: 0 0 auto;
   font-weight: var(--typography-font-weights-semibold, 600);
   color: var(--typography-color-primary, #313132);
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  margin-right: 0.2em;
 }
 
-.table-block__note-content {
-  flex: 1 1 auto;
-}
+.table-block__note-content {}
 
 /* Print-only unified table: hidden on screen, shown in print for proper header repetition */
 .table-block__table--print-unified {
@@ -651,6 +649,7 @@
 }
 
 @media (max-width: 37.9375rem) {
+
   .table-block__wrapper:not(.table-block__wrapper--split),
   .table-block__body-viewport {
     max-height: 200px;

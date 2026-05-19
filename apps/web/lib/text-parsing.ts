@@ -732,12 +732,11 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (table) {
-      // When an article contains multiple tables, they are suffixed with
-      // a letter: table1 → -A, table2 → -B, etc. For table1, omit the
-      // suffix since it may be the only table in the article; multi-table
-      // articles provide explicit custom labels for table1 references.
+      // Appendix tables are always suffixed with a letter: table1 → -A,
+      // table2 → -B, etc. This matches the BC Building Code convention
+      // (e.g. Table D-2.3.4.-A, Table D-2.3.4.-B).
       const tableNum = Number(table);
-      const tableSuffix = tableNum > 1 ? `-${String.fromCharCode(64 + tableNum)}` : '';
+      const tableSuffix = `-${String.fromCharCode(64 + tableNum)}`;
       const tableNumber = baseNumber || appendixLetter || '';
       return isShortNumeric
         ? `${tableNumber}.${tableSuffix}`

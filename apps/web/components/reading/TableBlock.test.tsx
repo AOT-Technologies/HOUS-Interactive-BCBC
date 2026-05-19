@@ -1027,6 +1027,110 @@ describe('TableBlock', () => {
     restoreWidths();
   });
 
+  it('normalizes bulleted table note lists to roman in Appendix D tables', () => {
+    const table = {
+      id: 'nbc.divB.appendixD.appsect2.subsect3.article4.table7',
+      type: 'table' as const,
+      number: 'D-2.3.4',
+      title: 'Appendix D Table with Note List',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'Header' }] }],
+          },
+        ],
+        body_rows: [
+          {
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'Data' }] }],
+          },
+        ],
+      },
+      table_notes: [
+        {
+          id: 'nbc.divB.appendixD.appsect2.subsect3.article4.table7.note3',
+          content: 'Applies to cellulose fibre: [LIST:bulleted]',
+          list: {
+            type: 'bulleted' as const,
+            items: [
+              { content: 'for wood joists, wood I-joist and wood trusses' },
+              { content: 'for cold-formed-steel joists' },
+            ],
+          },
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table as unknown as Table} />);
+
+    // The list should render as an ordered list with type="i" (roman), not as <ul> bullets
+    const noteContent = container.querySelector('.table-block__note-content');
+    const orderedList = noteContent?.querySelector('ol[type="i"]');
+    const unorderedList = noteContent?.querySelector('ul');
+
+    expect(orderedList).toBeInTheDocument();
+    expect(unorderedList).not.toBeInTheDocument();
+    expect(container.textContent).toContain('for wood joists, wood I-joist and wood trusses');
+    expect(container.textContent).toContain('for cold-formed-steel joists');
+  });
+
+  it('keeps bulleted table note lists as bullets for non-Appendix D tables', () => {
+    const table = {
+      id: 'nbc.divBV2.part9.spectables1.table1',
+      type: 'table' as const,
+      number: '9.10.3.1.-A',
+      title: 'Non-Appendix Table with Note List',
+      headers: [],
+      rows: [],
+      structure: {
+        header_rows: [
+          {
+            id: 'header-1',
+            type: 'header_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'Header' }] }],
+          },
+        ],
+        body_rows: [
+          {
+            id: 'body-1',
+            type: 'body_row' as const,
+            cells: [{ content: [{ type: 'text' as const, value: 'Data' }] }],
+          },
+        ],
+      },
+      table_notes: [
+        {
+          id: 'nbc.divBV2.part9.spectables1.table1.note5',
+          content: 'Applies to: [LIST:bulleted]',
+          list: {
+            type: 'bulleted' as const,
+            items: [
+              { content: 'item one' },
+              { content: 'item two' },
+            ],
+          },
+        },
+      ],
+    };
+
+    const { container } = render(<TableBlock table={table as unknown as Table} />);
+
+    // The list should remain as <ul> bullets for non-Appendix D tables
+    const noteContent = container.querySelector('.table-block__note-content');
+    const unorderedList = noteContent?.querySelector('ul.structuredList--bulleted');
+    const orderedList = noteContent?.querySelector('ol.structuredList--roman');
+
+    expect(unorderedList).toBeInTheDocument();
+    expect(orderedList).not.toBeInTheDocument();
+    expect(container.textContent).toContain('item one');
+    expect(container.textContent).toContain('item two');
+  });
+
   it('infers rowspans for placeholder header cells in appendix tables', () => {
     const table = {
       id: 'nbc.divA.part1.appendix.appnote7.div5.table1',
