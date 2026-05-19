@@ -103,6 +103,7 @@ At render time, the main parser function `parseTextWithMarkers()` in
   - **Modal reference**: opens `CrossReferenceModal` showing the full quoted content
   - **Navigate reference**: updates URL / navigation store
 - Display text is resolved by `getCrossReferenceDisplayText()` in `text-parsing.ts`
+- **Appendix table numbering:** Appendix document table references always include a letter suffix derived from the table index: `table1` → `-A`, `table2` → `-B`, etc. For example, `nbc.divB.appendixD.appsect2.subsect3.article4.table1` renders as "Table D-2.3.4.-A". This is handled by `formatInternalReference()` in `text-parsing.ts` and matches the BC Building Code convention for multi-table articles.
 - **Legacy IDs:** Some source data uses non-standard reference IDs that don't follow the `nbc.*` naming convention. Two known patterns exist:
   - `ex*` IDs (e.g. `ex000109.7`) — legacy section/appendix references
   - `en*` IDs (e.g. `en000354`) — legacy application note references, typically displayed as "Note A-X.Y.Z.W.(N)"
@@ -142,8 +143,12 @@ Note references use the same `[REF:internal:...]` syntax but the `referenceId` t
 **Rendered as** — inline superscript within table cells pointing to the associated table note row.
 
 **Note**: Table note `content` fields support all standard inline markers including `[LIST:bulleted]`. When a note contains a list, the JSON node must include a sibling `list` field (a `StructuredList` object with `type` and `items`).
+s
+**Appendix D Table Note List Normalization**: For tables whose ID matches the Appendix D pattern (contains both `appendixD` and `appsect`), `TableBlock` normalizes any `bulleted` list in a table note to `roman` (i, ii, iii) at render time — matching the same normalization that `DivisionAppendixRenderer.renderParagraph` applies to paragraph-level lists. The `[LIST:bulleted]` marker in the note's content text is also rewritten to `[LIST:roman]` so that `parseTextWithMarkers` can match it against the normalized list type. Non-Appendix D tables keep their bulleted lists as-is.
 
 **Header Note Filtering**: The source data often includes the "Notes to Table X.X.X.:" heading as the first entry in the `table_notes` array (with an ID ending in `.note1` or `.notes.header`). Since `TableBlock` already generates its own heading from the table number, these header entries are filtered out at render time. The filter removes any note whose `content` matches `^Notes to Table\b.*:$` or whose `id` ends with `.notes.header`. After filtering, note labels are renumbered by subtracting the count of filtered headers from each note's ID suffix (e.g., `.note2` becomes `(1)` when one header was removed).
+
+**Note Label Styling**: Table note labels (e.g. "(1)", "(2)") are rendered as superscript text — smaller font size (`0.75em`) with `vertical-align: super`. This matches the BC Building Code print convention where note numbers appear as raised indicators alongside the note content, rather than inline at the same size.
 
 ---
 
@@ -233,6 +238,7 @@ The source data uses `"type": "bulleted"` for appendix article sub-items that th
 - Subsequent `bulleted` lists (sub-lists) → `roman` (i, ii, iii)
 - This only applies to appendices whose section IDs contain `appsect` (e.g. Appendix D). Appendix C uses `div1`/`div2` IDs and its genuine bullet lists are left as-is.
 - The `[LIST:bulleted]` markers in both the paragraph content string and nested item content strings are rewritten to match the normalized list types.
+- **Table notes**: `TableBlock` applies the same normalization for tables whose ID contains both `appendixD` and `appsect`. Bulleted lists in table notes are remapped to `roman`, and the `[LIST:bulleted]` marker in the note content text is rewritten to `[LIST:roman]`.
 
 **Table note example** (note that `list` is a single object, not an array):
 ```json
@@ -585,6 +591,7 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | Tooltip not appearing | Check store is loaded; check hover delay logic in the component's CSS/JS |
 | Modal opens but shows empty content | `section-store` fetch failing — check network, `versionId`, or reference ID format |
 | Wrong display text for a cross-reference | `getCrossReferenceDisplayText()` in `text-parsing.ts`; also check `parseReferenceId()` return value |
+| Appendix table reference missing letter suffix (e.g. "D-2.3.4." instead of "D-2.3.4.-A") | `formatInternalReference()` in `text-parsing.ts` — the table suffix is always derived from the table index (`table1` → `-A`). If the source data provides an explicit inline label (third colon-separated segment in the marker), that label takes precedence |
 | Glossary term not italicised / no icon | `interactive` prop not passed down to `parseTextWithMarkers()` call in `SentenceBlock` |
 | Note superscript missing | Check `isNoteReference()` in `cross-reference.ts`; also check `appendix-store` has loaded |
 | Equation not rendering | Check `equation-store` contains the `equationId`; check LaTeX/MathML in the data file |
@@ -594,7 +601,7 @@ Follow these steps to introduce a new marker (e.g. `[REF:figure:...]`):
 | `[LIST:…]` in a table note renders nothing / disappears | Ensure the note's JSON node has a `list` field (not `lists`) with the matching `type` — `RawTableNote` in `TableBlock.tsx` and `renderFormattedText` must receive it as `localLists` |
 | Table notes heading duplicated as note (1) | The source data includes "Notes to Table X:" as the first `table_notes` entry. `TableBlock.tsx` filters these out via regex (`^Notes to Table\b.*:$`) and `.notes.header` ID suffix check. Note labels are then renumbered by subtracting `filteredHeaderCount` from each ID suffix. If a new variant appears, update the filter in `resolvedTableNotes` |
 | Nested `[LIST:variable]` inside a bulleted item not rendering | Sub-lists are pre-assigned per item in the `case 'list'` branch of `parseTextWithMarkers` — check `itemSubLists` construction and that `StructuredListBlock` passes `itemIndex` to `renderText` |
-| Appendix D lists showing bullets instead of a)/b)/i)/ii) | `DivisionAppendixRenderer.renderParagraph` normalizes `bulleted` → `alphabetic`/`roman` — check `appendixUsesAlphabeticStyle` detection and the marker rewriting in both paragraph content and the `renderText` callback |
+| Appendix D lists showing bullets instead of a)/b)/i)/ii) | `DivisionAppendixRenderer.renderParagraph` normalizes `bulleted` → `alphabetic`/`roman` for paragraph-level lists — check `appendixUsesAlphabeticStyle` detection and the marker rewriting in both paragraph content and the `renderText` callback. For table note lists, `TableBlock` applies the same normalization when the table ID matches the Appendix D pattern (`appendixD` + `appsect`) — check the `isAppendixDStyle` detection and content text rewriting in the table notes rendering section |
 | `[REF:standard:...]` showing raw ID instead of citation | `findStandardReferenceEntry()` in `text-parsing.ts` — check the standards map has the key. If the key has a `d-` prefix, the fallback prefix-stripping logic should match it |
 | `[REF:internal:...]` renders as a dead link (no content on click) | If the reference ID is a legacy/external ID (`ex*` for sections, `en*` for notes), add it to `NON_NAVIGABLE_REFERENCE_IDS` and `legacyIdMap` in `text-parsing.ts` so it renders as plain text with the correct display label |
 | Article-level "(See Note A-…)" missing before sentences | The article JSON may use a `note` field instead of `see_also`. `ArticleBlock.tsx` renders both — check the JSON has the field and that the `en*` ID inside it is mapped in `legacyIdMap` |

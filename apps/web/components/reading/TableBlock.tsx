@@ -1326,7 +1326,7 @@ const renderBodyRowsWithColTracking = (
           const figureClass = hasFigureContent ? 'table-block__cell--has-figure' : '';
           const spanClass =
             (typeof cell.colspan === 'number' && cell.colspan > 1) ||
-            (typeof cell.rowspan === 'number' && cell.rowspan > 1)
+              (typeof cell.rowspan === 'number' && cell.rowspan > 1)
               ? 'table-block__cell--spanned'
               : '';
           const firstColClass = isFirstCol ? 'table-block__cell--first-col' : '';
@@ -1908,18 +1908,34 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         {resolvedTableNotes.length > 0 && (
           <div className="table-block__notes" aria-label="Table notes">
             <div className="table-block__notes-title">{tableNotesHeading}</div>
-            {resolvedTableNotes.map((note, index) => (
-              <div
-                className="table-block__note"
-                id={note.id}
-                key={note.id || note.vendor_id || `note-${index}`}
-              >
-                <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
-                <span className="table-block__note-content">
-                  {renderFormattedText(note.content || '', interactive, renderContext, note.list ? [note.list] : [])}
-                </span>
-              </div>
-            ))}
+            {resolvedTableNotes.map((note, index) => {
+              // Appendix D tables (IDs containing appendixD + appsect) use
+              // alphabetic/roman markers instead of bullets. Normalize bulleted
+              // lists in table notes to roman (i, ii, iii) to match the printed code.
+              const tableId = rawTable.id || '';
+              const isAppendixDStyle = /appendix[dD]/i.test(tableId) && /appsect/i.test(tableId);
+              const noteList = note.list && isAppendixDStyle && note.list.type === 'bulleted'
+                ? { ...note.list, type: 'roman' as const }
+                : note.list;
+              // Rewrite the [LIST:bulleted] marker in the content text to match
+              // the normalized list type so parseTextWithMarkers can match them.
+              const noteContent = isAppendixDStyle && note.list?.type === 'bulleted'
+                ? (note.content || '').replace(/\[LIST:bulleted\]/gi, '[LIST:roman]')
+                : (note.content || '');
+
+              return (
+                <div
+                  className="table-block__note"
+                  id={note.id}
+                  key={note.id || note.vendor_id || `note-${index}`}
+                >
+                  <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
+                  <span className="table-block__note-content">
+                    {renderFormattedText(noteContent, interactive, renderContext, noteList ? [noteList] : [])}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
