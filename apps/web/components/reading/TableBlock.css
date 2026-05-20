@@ -51,7 +51,7 @@
 
 .table-block__wrapper {
   display: block;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
   margin-inline: auto;
 }
@@ -69,7 +69,7 @@
 }
 
 .table-block__table {
-  width: auto;
+  width: 100%;
   max-width: 100%;
   min-width: 0;
   table-layout: auto;
