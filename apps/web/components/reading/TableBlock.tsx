@@ -701,7 +701,9 @@ const getTableNumberDisplay = (tableNumber: string): string => {
   }
 
   const omitTrailingDot =
-    normalized.endsWith(')') || /^[A-Za-z]-\d+$/i.test(normalized);
+    normalized.endsWith(')') ||
+    /^[A-Za-z]-\d+$/i.test(normalized) ||
+    /\.-[A-Z]$/i.test(normalized); // letter suffix e.g. 3.2.3.1.-A
 
   return `Table ${normalized}${omitTrailingDot ? '' : '.'}`;
 };

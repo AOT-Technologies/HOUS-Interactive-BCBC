@@ -1136,6 +1136,7 @@ describe('TableBlock', () => {
 
     render(<TableBlock table={table as unknown as Table} tableNumberOverride="3.3.1.5.-A" />);
 
-    expect(screen.getByText('Table 3.3.1.5.-A.')).toBeInTheDocument();
+    // Letter-suffix format: dot before letter, no trailing dot
+    expect(screen.getByText('Table 3.3.1.5.-A')).toBeInTheDocument();
   });
 });
