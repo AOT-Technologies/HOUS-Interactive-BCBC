@@ -127,12 +127,6 @@ function ReferenceLinks({ references }: { references: IndexReference[] }) {
     );
 }
 
-function formatReferences(references: IndexReference[]): string {
-    return references
-        .map((ref) => targetToArticleNumber(ref.target))
-        .join(', ');
-}
-
 /**
  * Renders the Conversion Factors section content.
  * Uses the existing table-block CSS classes for consistent table styling
