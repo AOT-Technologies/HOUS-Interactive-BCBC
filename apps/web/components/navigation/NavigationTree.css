@@ -50,7 +50,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px; /* Gap between border and text */
+  gap: 16px;
+  /* Gap between border and text */
   width: 100%;
   min-height: 43px;
   position: relative;
@@ -166,6 +167,12 @@
   line-height: 1.5;
 }
 
+.nav-tree-link--index,
+.nav-tree-link--conversions {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 /* Number styling */
 .nav-tree-number {
   font-weight: inherit;
@@ -177,7 +184,8 @@
 .nav-tree-separator {
   font-weight: inherit;
   color: inherit;
-  white-space: pre;         /* Preserves spaces */
+  white-space: pre;
+  /* Preserves spaces */
 }
 
 /* Title styling */
@@ -210,11 +218,11 @@
     font-size: 14px;
     padding: 6px 12px 6px 0px;
   }
-  
+
   .nav-tree-link-wrapper {
     min-height: 38px;
   }
-  
+
   .nav-tree-selection--active {
     height: 38px;
   }

@@ -110,8 +110,10 @@ BCBC
 │   └── Part 2 - Objectives
 ├── Division B - Acceptable Solutions
 │   └── ...
-└── Division C - Administrative Provisions
-    └── ...
+├── Division C - Administrative Provisions
+│   └── ...
+├── Index
+└── Conversion Factors
 ```
 
 **UI Behavior:**
@@ -425,7 +427,7 @@ export interface NavigationNode {
   id: string;
   number: string;
   title: string;
-  type: 'division' | 'part' | 'section' | 'subsection' | 'article';
+  type: 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables' | 'index' | 'conversions';
   path: string;
   children?: NavigationNode[];
 }

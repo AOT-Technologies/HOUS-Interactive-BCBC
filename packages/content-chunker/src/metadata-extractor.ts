@@ -15,7 +15,7 @@ import type {
  */
 export interface NavigationNode {
   id: string;
-  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables' | 'index' | 'conversions';
   number?: string;
   title: string;
   path: string;
@@ -109,9 +109,7 @@ export function extractMetadata(document: BCBCDocument): ExtractedMetadata {
  * Extract navigation tree from BCBC document
  * 
  * Generates a hierarchical navigation structure:
- * Volume → Preface/Divisions → Part → Section → Subsection → Article
- * 
- * Note: Index and Conversion Factors are excluded from the navigation tree.
+ * Volume → Preface/Divisions → Index → Conversion Factors → Part → Section → Subsection → Article
  * 
  * @param document - BCBC document
  * @returns Navigation tree
@@ -183,7 +181,25 @@ export function extractNavigationTree(document: BCBCDocument): NavigationNode[] 
       volumeNode.children?.push(buildDivisionNode(division));
     }
 
-    // Note: Index and Conversion Factors are intentionally excluded from navigation tree
+    // 3. Add Index (if it exists in this volume)
+    if (volume.index) {
+      volumeNode.children?.push({
+        id: volume.index.id,
+        type: 'index',
+        title: 'Index',
+        path: `/code/index/volume-${volume.number}`,
+      });
+    }
+
+    // 4. Add Conversion Factors (if they exist in this volume)
+    if (volume.conversions) {
+      volumeNode.children?.push({
+        id: volume.conversions.id,
+        type: 'conversions',
+        title: 'Conversion Factors',
+        path: `/code/conversions/volume-${volume.number}`,
+      });
+    }
 
     tree.push(volumeNode);
   }

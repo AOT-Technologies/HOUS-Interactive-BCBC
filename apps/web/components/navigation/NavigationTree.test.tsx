@@ -76,7 +76,7 @@ describe('NavigationTree', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    
+
     // Default mock implementation
     (useNavigationStore as any).mockReturnValue({
       navigationTree: mockNavigationTree,
@@ -253,10 +253,10 @@ describe('NavigationTree', () => {
     it('should call onNodeClick callback when provided', () => {
       const onNodeClick = vi.fn();
       render(<NavigationTree onNodeClick={onNodeClick} />);
-      
+
       const divisionAButton = screen.getByText('Division A').closest('button');
       fireEvent.click(divisionAButton!);
-      
+
       expect(onNodeClick).toHaveBeenCalledWith(
         expect.objectContaining({
           id: 'division-a',
@@ -403,10 +403,10 @@ describe('NavigationTree', () => {
 
       render(<NavigationTree />);
       const part3Button = screen.getByText('Part 3').closest('button');
-      
+
       fireEvent.keyDown(part3Button!, { key: 'ArrowRight' });
       expect(mockToggleNode).not.toHaveBeenCalled();
-      
+
       fireEvent.keyDown(part3Button!, { key: 'ArrowLeft' });
       expect(mockToggleNode).not.toHaveBeenCalled();
     });
@@ -427,7 +427,7 @@ describe('NavigationTree', () => {
       });
 
       render(<NavigationTree />);
-      
+
       // Verify all levels are rendered
       expect(screen.getByText('Division A')).toBeInTheDocument();
       expect(screen.getByText('Part 1')).toBeInTheDocument();
@@ -449,13 +449,13 @@ describe('NavigationTree', () => {
       });
 
       render(<NavigationTree />);
-      
+
       // Padding is applied to the wrapper div, not the button itself
       const divisionWrapper = screen.getByText('Division A').closest('button')!.closest('.nav-tree-link-wrapper');
       const partWrapper = screen.getByText('Part 1').closest('button')!.closest('.nav-tree-link-wrapper');
       const sectionWrapper = screen.getByText('Section 1.1').closest('button')!.closest('.nav-tree-link-wrapper');
       const articleWrapper = screen.getByText('Article 1.1.1.1').closest('button')!.closest('.nav-tree-link-wrapper');
-      
+
       // Level 0: 0px, Level 1: 32px, Level 2: 48px, Level 3: 64px
       expect(divisionWrapper).toHaveStyle({ paddingLeft: '0px' });
       expect(partWrapper).toHaveStyle({ paddingLeft: '32px' });
@@ -508,10 +508,10 @@ describe('NavigationTree', () => {
   describe('Requirements Validation', () => {
     it('should satisfy Requirement 4.1: Display collapsible navigation tree', () => {
       render(<NavigationTree />);
-      
+
       // Tree is displayed
       expect(screen.getByTestId(TESTID_NAV_TREE)).toBeInTheDocument();
-      
+
       // Nodes are collapsible (have expand/collapse controls)
       const divisionAButton = screen.getByText('Division A').closest('button');
       expect(divisionAButton).toHaveAttribute('aria-expanded');
@@ -519,10 +519,10 @@ describe('NavigationTree', () => {
 
     it('should satisfy Requirement 4.3: Expand/collapse on click', () => {
       render(<NavigationTree />);
-      
+
       const divisionAButton = screen.getByText('Division A').closest('button');
       fireEvent.click(divisionAButton!);
-      
+
       expect(mockToggleNode).toHaveBeenCalledWith('division-a');
     });
 
@@ -540,12 +540,73 @@ describe('NavigationTree', () => {
       });
 
       render(<NavigationTree />);
-      
+
       // Part is a navigable type
       const part1Button = screen.getByText('Part 1').closest('button');
       fireEvent.click(part1Button!);
-      
+
       expect(mockSetCurrentPath).toHaveBeenCalledWith('/division-a/part-1', false);
+    });
+
+    it('should navigate when clicking index or conversions nodes', () => {
+      const treeWithIndexAndConversions: NavigationNode[] = [
+        {
+          id: 'volume-1',
+          number: '1',
+          title: 'Volume 1',
+          type: 'volume',
+          path: '/volume/1',
+          children: [
+            {
+              id: 'division-a',
+              number: 'A',
+              title: 'Division A',
+              type: 'division',
+              path: '/division-a',
+            },
+            {
+              id: 'vol-1-index',
+              number: '',
+              title: 'Index',
+              type: 'index',
+              path: '/code/index/volume-1',
+            },
+            {
+              id: 'vol-1-conversions',
+              number: '',
+              title: 'Conversion Factors',
+              type: 'conversions',
+              path: '/code/conversions/volume-1',
+            },
+          ],
+        },
+      ];
+
+      (useNavigationStore as any).mockReturnValue({
+        navigationTree: treeWithIndexAndConversions,
+        expandedNodes: new Set(['volume-1']),
+        currentPath: '',
+        toggleNode: mockToggleNode,
+        setCurrentPath: mockSetCurrentPath,
+        loading: false,
+        searchQuery: '',
+        filteredTree: [],
+        matchingNodeIds: new Set<string>(),
+      });
+
+      render(<NavigationTree />);
+
+      // Index is a navigable type
+      const indexButton = screen.getByText('Index').closest('button');
+      fireEvent.click(indexButton!);
+      expect(mockSetCurrentPath).toHaveBeenCalledWith('/code/index/volume-1', false);
+
+      vi.clearAllMocks();
+
+      // Conversion Factors is a navigable type
+      const conversionsButton = screen.getByText('Conversion Factors').closest('button');
+      fireEvent.click(conversionsButton!);
+      expect(mockSetCurrentPath).toHaveBeenCalledWith('/code/conversions/volume-1', false);
     });
 
     it('should satisfy Requirement 4.5: Highlight current location', () => {
@@ -562,7 +623,7 @@ describe('NavigationTree', () => {
       });
 
       render(<NavigationTree />);
-      
+
       const part1Button = screen.getByText('Part 1').closest('button');
       expect(part1Button).toHaveClass('nav-tree-link--active');
       expect(part1Button).toHaveAttribute('aria-current', 'page');
@@ -570,21 +631,21 @@ describe('NavigationTree', () => {
 
     it('should satisfy Requirement 10.1: Full keyboard navigation', () => {
       render(<NavigationTree />);
-      
+
       const divisionAButton = screen.getByText('Division A').closest('button');
-      
+
       // Test Enter key
       fireEvent.keyDown(divisionAButton!, { key: 'Enter' });
       expect(mockToggleNode).toHaveBeenCalled();
-      
+
       vi.clearAllMocks();
-      
+
       // Test Space key
       fireEvent.keyDown(divisionAButton!, { key: ' ' });
       expect(mockToggleNode).toHaveBeenCalled();
-      
+
       vi.clearAllMocks();
-      
+
       // Test Arrow keys
       fireEvent.keyDown(divisionAButton!, { key: 'ArrowRight' });
       expect(mockToggleNode).toHaveBeenCalled();

@@ -31,6 +31,19 @@ function createBaseDocument(): BCBCDocument {
             content: [],
           },
         },
+        index: {
+          id: 'vol-1-index',
+          type: 'index',
+          introduction: 'Index introduction text',
+          letters: [],
+        },
+        conversions: {
+          id: 'vol-1-conversions',
+          type: 'conversions',
+          table_id: 'conv-table-1',
+          table_title: 'Conversion Factors',
+          table_structure: { columns: 3, column_specs: [], rows: [] },
+        },
         divisions: [
           {
             id: 'nbc.divA',
@@ -182,6 +195,43 @@ describe('extractNavigationTree', () => {
     expect(divisionNode?.path).toBe('/code/nbc.divA');
     expect(partNode?.path).toBe('/code/nbc.divA/1');
     expect(sectionNode?.path).toBe('/code/nbc.divA/1/1');
+  });
+
+  it('includes Index and Conversion Factors nodes after divisions', () => {
+    const tree = extractNavigationTree(createBaseDocument());
+    const volumeChildren = tree[0].children!;
+    const lastTwo = volumeChildren.slice(-2);
+
+    expect(lastTwo[0]).toMatchObject({
+      id: 'vol-1-index',
+      type: 'index',
+      title: 'Index',
+      path: '/code/index/volume-1',
+    });
+    expect(lastTwo[1]).toMatchObject({
+      id: 'vol-1-conversions',
+      type: 'conversions',
+      title: 'Conversion Factors',
+      path: '/code/conversions/volume-1',
+    });
+  });
+
+  it('omits Index node when volume has no index', () => {
+    const doc = createBaseDocument();
+    delete doc.volumes[0].index;
+    const tree = extractNavigationTree(doc);
+    const volumeChildren = tree[0].children!;
+    const indexNode = volumeChildren.find(c => c.type === 'index');
+    expect(indexNode).toBeUndefined();
+  });
+
+  it('omits Conversion Factors node when volume has no conversions', () => {
+    const doc = createBaseDocument();
+    delete doc.volumes[0].conversions;
+    const tree = extractNavigationTree(doc);
+    const volumeChildren = tree[0].children!;
+    const conversionsNode = volumeChildren.find(c => c.type === 'conversions');
+    expect(conversionsNode).toBeUndefined();
   });
 });
 

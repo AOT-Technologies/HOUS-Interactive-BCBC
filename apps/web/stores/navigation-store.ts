@@ -16,7 +16,7 @@ export interface NavigationNode {
   id: string;
   number: string;
   title: string;
-  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables' | 'index' | 'conversions';
   path: string;
   children?: NavigationNode[];
 }
@@ -76,18 +76,18 @@ export const useNavigationStore = create<NavigationStore>()(
 
       setCurrentPath: (path, updateUrl = true) => {
         set({ currentPath: path });
-        
+
         // Optionally sync URL without navigation
         if (updateUrl && typeof window !== 'undefined') {
           // Preserve existing query parameters (version, date, etc.)
           const currentUrl = new URL(window.location.href);
           const searchParams = currentUrl.searchParams;
-          
+
           // Build new URL with path and preserved query params
-          const newUrl = searchParams.toString() 
+          const newUrl = searchParams.toString()
             ? `${path}?${searchParams.toString()}`
             : path;
-          
+
           updateUrlWithoutNavigation(newUrl);
         }
       },
@@ -126,23 +126,23 @@ export const useNavigationStore = create<NavigationStore>()(
 
       loadNavigationTree: async (version?: string) => {
         set({ loading: true });
-        
+
         // Get version data path from version store
         const versionStore = useVersionStore.getState();
         const dataPath = versionStore.getVersionDataPath(version);
         const versionId = version || versionStore.currentVersion || '2024';
-        
+
         try {
           const response = await fetch(`${dataPath}/navigation-tree.json`);
           if (response.ok) {
             const data = await response.json();
-            
+
             // Transform the data to add path property to each node
             const addPathToNodes = (nodes: any[], parentPath: string = ''): NavigationNode[] => {
               return nodes.map((node) => {
                 // Use existing path from JSON if available, otherwise build it
                 let path = node.path || parentPath;
-                
+
                 // Only build path if not provided in JSON
                 if (!node.path) {
                   if (node.type === 'volume') {
@@ -168,7 +168,7 @@ export const useNavigationStore = create<NavigationStore>()(
                     path = `${parentPath}/spectables/${node.number}`;
                   }
                 }
-                
+
                 return {
                   id: node.id,
                   number: node.number?.toString() || '',
@@ -179,14 +179,14 @@ export const useNavigationStore = create<NavigationStore>()(
                 };
               });
             };
-            
+
             // Handle both old structure (data.divisions) and new structure (data.tree with volumes)
             const sourceNodes = data.tree || data.divisions || [];
             const transformedTree = addPathToNodes(sourceNodes);
-            set({ 
-              navigationTree: transformedTree, 
+            set({
+              navigationTree: transformedTree,
               currentVersion: versionId,
-              loading: false 
+              loading: false
             });
           } else {
             console.error('Failed to load navigation tree');
@@ -206,21 +206,21 @@ export const useNavigationStore = create<NavigationStore>()(
        */
       syncFromUrl: () => {
         if (typeof window === 'undefined') return;
-        
+
         const pathname = window.location.pathname;
         const search = window.location.search;
         const params = parseContentPath(pathname);
-        
+
         if (params) {
           // Build the path from params, including query string
           const path = buildContentPath(params) + search;
-          
+
           // Update current path without triggering URL update
           set({ currentPath: path });
-          
+
           // Find and expand to the current node
           const nodeId = params.article || params.subsection || params.section || params.part;
-          
+
           if (nodeId) {
             get().expandToNode(nodeId);
           }
@@ -239,30 +239,30 @@ export const useNavigationStore = create<NavigationStore>()(
         const amendmentDateStore = useAmendmentDateStore.getState();
         const currentVersion = versionStore.currentVersion;
         const selectedDate = amendmentDateStore.selectedDate;
-        
+
         // Merge provided query params with version and date
         const mergedQueryParams: Record<string, string> = {
           ...queryParams,
           version: currentVersion || '',
         };
-        
+
         // Add date if selected
         if (selectedDate) {
           mergedQueryParams.date = selectedDate;
         }
-        
+
         const path = buildContentPath(params, mergedQueryParams);
-        
+
         // Update store state
         set({ currentPath: path });
-        
+
         // Update URL and trigger navigation
         if (typeof window !== 'undefined') {
           window.history.pushState({}, '', path);
           // Dispatch popstate to trigger any navigation listeners
           window.dispatchEvent(new PopStateEvent('popstate'));
         }
-        
+
         // Expand to the target node
         const nodeId = params.article || params.subsection || params.section || params.part;
         if (nodeId) {
@@ -276,24 +276,24 @@ export const useNavigationStore = create<NavigationStore>()(
        */
       setSearchQuery: (query: string) => {
         const trimmedQuery = query.trim();
-        
+
         if (!trimmedQuery) {
           // Clear search
-          set({ 
-            searchQuery: '', 
-            filteredTree: [], 
-            matchingNodeIds: new Set() 
+          set({
+            searchQuery: '',
+            filteredTree: [],
+            matchingNodeIds: new Set()
           });
           return;
         }
 
         const { navigationTree, expandedNodes } = get();
-        
+
         // Save current expanded state before first search
         if (!get().searchQuery) {
           set({ preSearchExpandedNodes: new Set(expandedNodes) });
         }
-        
+
         const lowerQuery = trimmedQuery.toLowerCase();
         const matchingIds = new Set<string>();
         const nodesToExpand = new Set<string>();
@@ -306,18 +306,18 @@ export const useNavigationStore = create<NavigationStore>()(
           if (node.title.toLowerCase().includes(lowerQuery)) {
             return true;
           }
-          
+
           // Match against number
           if (node.number && node.number.toString().includes(lowerQuery)) {
             return true;
           }
-          
+
           // Match against type + number (e.g., "Part 3", "Section 2")
           const typeNumber = `${node.type} ${node.number}`.toLowerCase();
           if (typeNumber.includes(lowerQuery)) {
             return true;
           }
-          
+
           return false;
         };
 
@@ -326,7 +326,7 @@ export const useNavigationStore = create<NavigationStore>()(
          * Returns true if this node or any descendant matches
          */
         const searchTree = (
-          nodes: NavigationNode[], 
+          nodes: NavigationNode[],
           parentIds: string[] = []
         ): NavigationNode[] => {
           const results: NavigationNode[] = [];
@@ -340,7 +340,7 @@ export const useNavigationStore = create<NavigationStore>()(
             if (nodeMatches(node)) {
               matchingIds.add(node.id);
               includeNode = true;
-              
+
               // Add all parent IDs to expansion set
               parentIds.forEach(id => nodesToExpand.add(id));
               nodesToExpand.add(node.id);
@@ -349,7 +349,7 @@ export const useNavigationStore = create<NavigationStore>()(
             // Recursively search children
             if (node.children && node.children.length > 0) {
               filteredChildren = searchTree(node.children, currentPath);
-              
+
               // If any children match, include this node as parent
               if (filteredChildren.length > 0) {
                 includeNode = true;
@@ -387,9 +387,9 @@ export const useNavigationStore = create<NavigationStore>()(
        */
       clearSearch: () => {
         const { preSearchExpandedNodes } = get();
-        set({ 
-          searchQuery: '', 
-          filteredTree: [], 
+        set({
+          searchQuery: '',
+          filteredTree: [],
           matchingNodeIds: new Set(),
           expandedNodes: preSearchExpandedNodes,
           preSearchExpandedNodes: new Set(),
