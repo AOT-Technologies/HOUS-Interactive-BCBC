@@ -1188,4 +1188,59 @@ describe('TableBlock', () => {
     expect(screen.getByText('Class')).toBeInTheDocument();
     expect(screen.getByText('Descriptor')).toBeInTheDocument();
   });
+
+  it('adds sentence suffix from own-article forming_part for single tables', () => {
+    const table = {
+      id: 'nbc.divA.part1.sect1.subsect1.art1.table1',
+      type: 'table' as const,
+      title: 'Heritage Buildings',
+      headers: [['Col']],
+      rows: [{ cells: [{ content: 'Data' }] }],
+      formingPart: [
+        { type: 'internal', target: 'nbc.divA.part1.sect1.subsect1.art1.sent5', display_type: 'long' },
+      ],
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    // getTableNumberDisplay omits trailing dot when number ends with ')'
+    expect(screen.getByText('Table 1.1.1.1.(5)')).toBeInTheDocument();
+  });
+
+  it('does not use forming_part from a different article for the table number', () => {
+    const table = {
+      id: 'nbc.divB.part3.sect2.subsect3.art1.table4',
+      type: 'table' as const,
+      title: 'Unprotected Openings',
+      headers: [['Col']],
+      rows: [{ cells: [{ content: 'Data' }] }],
+      formingPart: [
+        { type: 'internal', target: 'nbc.divB.part3.sect1.subsect6.art9.sent5', display_type: 'long' },
+        { type: 'internal', target: 'nbc.divB.part3.sect2.subsect3.art1', display_type: 'long' },
+      ],
+    };
+
+    render(<TableBlock table={table as unknown as Table} />);
+
+    // Must derive number from own ID (3.2.3.1), not the wrong-article forming_part target
+    expect(screen.getByText('Table 3.2.3.1.')).toBeInTheDocument();
+  });
+
+  it('uses tableNumberOverride when provided', () => {
+    const table = {
+      id: 'nbc.divB.part3.sect3.subsect1.art5.table1',
+      type: 'table' as const,
+      title: 'Egress',
+      headers: [['Col']],
+      rows: [{ cells: [{ content: 'Data' }] }],
+      formingPart: [
+        { type: 'internal', target: 'nbc.divB.part3.sect3.subsect1.art5.sent1', display_type: 'long' },
+      ],
+    };
+
+    render(<TableBlock table={table as unknown as Table} tableNumberOverride="3.3.1.5.-A" />);
+
+    // Letter-suffix format: dot before letter, no trailing dot
+    expect(screen.getByText('Table 3.3.1.5.-A')).toBeInTheDocument();
+  });
 });

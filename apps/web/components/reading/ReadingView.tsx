@@ -1381,6 +1381,18 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
 
     appendBlockNumbers(note);
 
+    // Single table/figure in a note uses the bare note number (no letter suffix)
+    if (tableIndex === 1) {
+      for (const id of tableNumberById.keys()) {
+        tableNumberById.set(id, noteNumber);
+      }
+    }
+    if (figureIndex === 1) {
+      for (const id of figureNumberById.keys()) {
+        figureNumberById.set(id, noteNumber);
+      }
+    }
+
     return { tableNumberById, figureNumberById };
   };
 

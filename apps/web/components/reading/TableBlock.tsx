@@ -15,6 +15,8 @@ export interface TableBlockProps {
   renderContext?: ReferenceRenderContext;
   /** Number of sibling tables in the same appendix article. When 1, letter suffix is omitted. */
   appendixSiblingTableCount?: number;
+  /** Pre-computed table number from the parent (e.g. ArticleBlock). Overrides internal derivation. */
+  tableNumberOverride?: string;
 }
 
 const LANDSCAPE_PRINT_CAPACITY_REM = 65;
@@ -579,10 +581,29 @@ const getResolvedTableNumber = (table: TableWithRawSupport, siblingTableCount?: 
   }
 
   const formingPartEntries = table.formingPart ?? table.forming_part;
-  const formingPartTarget = formingPartEntries?.find((entry) => typeof entry?.target === 'string')?.target;
-  const referenceFromTarget = formingPartTarget ? buildArticleReference(formingPartTarget) : null;
+  const articleRef = buildArticleReference(table.id);
+  if (articleRef) {
+    // Only use sentences from this table's own article to avoid wrong-article fallback
+    const ownArticlePrefix = table.id.replace(/\.table\d+$/i, '');
+    const ownSentences = (formingPartEntries ?? [])
+      .filter(
+        (e) =>
+          e?.type === 'internal' &&
+          typeof e?.target === 'string' &&
+          e.target.startsWith(ownArticlePrefix) &&
+          e.target.includes('.sent')
+      )
+      .map((e) => extractNumeric(e.target, /\.sent(\d+)/i))
+      .filter(Boolean);
+    if (ownSentences.length === 1) {
+      return `${articleRef}.(${ownSentences[0]})`;
+    }
+    return articleRef;
+  }
 
-  return referenceFromTarget || buildArticleReference(table.id) || '';
+  // Fallback: derive article reference from forming_part target
+  const formingPartTarget = formingPartEntries?.find((entry) => typeof entry?.target === 'string')?.target;
+  return (formingPartTarget ? buildArticleReference(formingPartTarget) : null) ?? '';
 };
 
 const formatFormingPartLabel = (reference: ParsedInternalReference): string | null => {
@@ -680,7 +701,9 @@ const getTableNumberDisplay = (tableNumber: string): string => {
   }
 
   const omitTrailingDot =
-    normalized.endsWith(')') || /^[A-Za-z]-\d+$/i.test(normalized);
+    normalized.endsWith(')') ||
+    /^[A-Za-z]-\d+$/i.test(normalized) ||
+    /\.-[A-Z]$/i.test(normalized); // letter suffix e.g. 3.2.3.1.-A
 
   return `Table ${normalized}${omitTrailingDot ? '' : '.'}`;
 };
@@ -1353,6 +1376,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   effectiveDate,
   renderContext,
   appendixSiblingTableCount,
+  tableNumberOverride,
 }) => {
   const [isPrintMode, setIsPrintMode] = useState(false);
   const [renderedBodyRowCount, setRenderedBodyRowCount] = useState<number>(INITIAL_BODY_ROW_RENDER_COUNT);
@@ -1384,7 +1408,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     return true;
   });
   const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
-  const tableNumber = getResolvedTableNumber(rawTable, appendixSiblingTableCount);
+  const tableNumber = tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
   const formingPartText = formatFormingPartText(formingPartEntries);
