@@ -10,7 +10,7 @@ import path from 'path';
 
 interface NavigationNode {
   id: string;
-  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables';
+  type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables' | 'index' | 'conversions';
   number?: string;
   title: string;
   path: string;
@@ -44,10 +44,10 @@ interface VersionsData {
 function extractSlugFromPath(navPath: string): string[] {
   // Remove leading "/code/" prefix
   const cleanPath = navPath.replace(/^\/code\//, '');
-  
+
   // Split by "/" to get segments
   const segments = cleanPath.split('/').filter(Boolean);
-  
+
   return segments;
 }
 
@@ -64,21 +64,23 @@ function extractPathsFromNode(node: NavigationNode, paths: string[][] = []): str
     node.type === 'division_appendix' ||
     node.type === 'section' ||
     node.type === 'subsection' ||
-    node.type === 'article'
+    node.type === 'article' ||
+    node.type === 'index' ||
+    node.type === 'conversions'
   ) {
     const slug = extractSlugFromPath(node.path);
     if (slug.length > 0) {
       paths.push(slug);
     }
   }
-  
+
   // Recursively process children
   if (node.children && node.children.length > 0) {
     for (const child of node.children) {
       extractPathsFromNode(child, paths);
     }
   }
-  
+
   return paths;
 }
 
@@ -91,11 +93,11 @@ function loadNavigationTree(version: string): NavigationTree | null {
     // Check if we're in apps/web or monorepo root
     const cwd = process.cwd();
     const isInAppsWeb = cwd.endsWith('apps/web') || cwd.endsWith('apps\\web');
-    
+
     const navTreePath = isInAppsWeb
       ? path.join(cwd, 'public/data', version, 'navigation-tree.json')
       : path.join(cwd, 'apps/web/public/data', version, 'navigation-tree.json');
-    
+
     // Use try-catch instead of existsSync to avoid Turbopack warnings
     const content = fs.readFileSync(navTreePath, 'utf-8');
     return JSON.parse(content) as NavigationTree;
@@ -114,11 +116,11 @@ function loadVersions(): VersionsData | null {
     // Check if we're in apps/web or monorepo root
     const cwd = process.cwd();
     const isInAppsWeb = cwd.endsWith('apps/web') || cwd.endsWith('apps\\web');
-    
+
     const versionsPath = isInAppsWeb
       ? path.join(cwd, 'public/data/versions.json')
       : path.join(cwd, 'apps/web/public/data/versions.json');
-    
+
     // Use try-catch instead of existsSync to avoid Turbopack warnings
     const content = fs.readFileSync(versionsPath, 'utf-8');
     return JSON.parse(content) as VersionsData;
@@ -134,42 +136,42 @@ function loadVersions(): VersionsData | null {
  */
 export function generateAllStaticPaths(): { slug: string[] }[] {
   const allPaths: { slug: string[] }[] = [];
-  
+
   // Load versions
   const versionsData = loadVersions();
   if (!versionsData) {
     console.warn('No versions data found, returning empty paths');
     return allPaths;
   }
-  
+
   console.log(`Generating static paths for ${versionsData.versions.length} version(s)...`);
-  
+
   // Generate paths for each version
   for (const version of versionsData.versions) {
     console.log(`Processing version ${version.id} (${version.title})...`);
-    
+
     const navTree = loadNavigationTree(version.id);
     if (!navTree) {
       console.warn(`Skipping version ${version.id} - navigation tree not found`);
       continue;
     }
-    
+
     // Extract paths from all nodes in the tree
     const versionPaths: string[][] = [];
     for (const rootNode of navTree.tree) {
       extractPathsFromNode(rootNode, versionPaths);
     }
-    
+
     console.log(`  Found ${versionPaths.length} paths for version ${version.id}`);
-    
+
     // Add to all paths
     for (const slug of versionPaths) {
       allPaths.push({ slug });
     }
   }
-  
+
   console.log(`Total static paths generated: ${allPaths.length}`);
-  
+
   return allPaths;
 }
 
@@ -178,22 +180,22 @@ export function generateAllStaticPaths(): { slug: string[] }[] {
  */
 export function generateStaticPathsForVersion(version: string): { slug: string[] }[] {
   const paths: { slug: string[] }[] = [];
-  
+
   const navTree = loadNavigationTree(version);
   if (!navTree) {
     console.warn(`Navigation tree not found for version ${version}`);
     return paths;
   }
-  
+
   // Extract paths from all nodes in the tree
   const versionPaths: string[][] = [];
   for (const rootNode of navTree.tree) {
     extractPathsFromNode(rootNode, versionPaths);
   }
-  
+
   for (const slug of versionPaths) {
     paths.push({ slug });
   }
-  
+
   return paths;
 }

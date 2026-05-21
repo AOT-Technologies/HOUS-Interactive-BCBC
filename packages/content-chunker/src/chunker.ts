@@ -23,6 +23,8 @@ export interface RawDocumentForChunking {
 interface RawVolume {
   front_matter?: RawFrontMatter;
   divisions?: RawDivision[];
+  index?: RawIndexSection;
+  conversions?: RawConversionsSection;
 }
 
 interface RawFrontMatter {
@@ -80,12 +82,29 @@ interface RawSpectables {
   [key: string]: unknown;
 }
 
+interface RawIndexSection {
+  id: string;
+  type: 'index';
+  introduction?: string;
+  letters?: unknown[];
+  [key: string]: unknown;
+}
+
+interface RawConversionsSection {
+  id: string;
+  type: 'conversions';
+  table_id?: string;
+  table_title?: string;
+  table_structure?: unknown;
+  [key: string]: unknown;
+}
+
 /**
  * Content chunk where data is the raw section object from source JSON.
  */
 export interface RawContentChunk {
   path: string;
-  data: RawSection | RawPartAppendix | RawDivisionAppendix | RawFrontMatterSection | RawSpectables;
+  data: RawSection | RawPartAppendix | RawDivisionAppendix | RawFrontMatterSection | RawSpectables | RawIndexSection | RawConversionsSection;
   size: number;
 }
 
@@ -110,10 +129,10 @@ export function chunkContent(document: BCBCDocument): ContentChunk[] {
       for (const section of part.sections) {
         // Generate path for this section chunk
         const path = generateChunkPath(division.id, part.number, section.number);
-        
+
         // Section data includes all subsections and articles
         const data = section;
-        
+
         // Calculate size in bytes (JSON string length)
         const size = JSON.stringify(data).length;
 
@@ -139,7 +158,7 @@ export function chunkRawContent(document: RawDocumentForChunking): RawContentChu
     // Process front matter sections first
     if (volume.front_matter) {
       const frontMatter = volume.front_matter;
-      
+
       // Add preface chunk
       if (frontMatter.preface) {
         const prefacePath = generateFrontMatterChunkPath('preface');
@@ -150,7 +169,7 @@ export function chunkRawContent(document: RawDocumentForChunking): RawContentChu
           size: prefaceSize,
         });
       }
-      
+
       // Add introduction chunk
       if (frontMatter.introduction) {
         const introPath = generateFrontMatterChunkPath('introduction');
@@ -161,7 +180,7 @@ export function chunkRawContent(document: RawDocumentForChunking): RawContentChu
           size: introSize,
         });
       }
-      
+
       // Add committees chunk
       if (frontMatter.committees) {
         const committeesPath = generateFrontMatterChunkPath('committees');
@@ -238,6 +257,30 @@ export function chunkRawContent(document: RawDocumentForChunking): RawContentChu
         }
       }
     }
+
+    // Process index section
+    if (volume.index) {
+      const volumeNumber = volumes.indexOf(volume) + 1;
+      const indexPath = generateIndexChunkPath(volumeNumber);
+      const indexSize = JSON.stringify(volume.index).length;
+      chunks.push({
+        path: indexPath,
+        data: volume.index,
+        size: indexSize,
+      });
+    }
+
+    // Process conversions section
+    if (volume.conversions) {
+      const volumeNumber = volumes.indexOf(volume) + 1;
+      const conversionsPath = generateConversionsChunkPath(volumeNumber);
+      const conversionsSize = JSON.stringify(volume.conversions).length;
+      chunks.push({
+        path: conversionsPath,
+        data: volume.conversions,
+        size: conversionsSize,
+      });
+    }
   }
 
   return chunks;
@@ -261,10 +304,10 @@ export function generateChunkPath(
 ): string {
   // Normalize division ID to lowercase and replace dots with hyphens
   const normalizedDivision = divisionId.toLowerCase().replace(/\./g, '-');
-  
+
   // Normalize section number by replacing dots with hyphens
   const normalizedSection = sectionNumber.replace(/\./g, '-');
-  
+
   return `content/${normalizedDivision}/part-${partNumber}/section-${normalizedSection}.json`;
 }
 
@@ -304,6 +347,32 @@ export function generateSpectablesChunkPath(
  */
 export function generateFrontMatterChunkPath(section: string): string {
   return `content/front-matter/${section}.json`;
+}
+
+/**
+ * Generate chunk file path for index section
+ * 
+ * Generates a path in the format: content/index/volume-{number}.json
+ * Example: content/index/volume-1.json
+ * 
+ * @param volumeNumber - Volume number (1 or 2)
+ * @returns Chunk file path
+ */
+export function generateIndexChunkPath(volumeNumber: number): string {
+  return `content/index/volume-${volumeNumber}.json`;
+}
+
+/**
+ * Generate chunk file path for conversions section
+ * 
+ * Generates a path in the format: content/conversions/volume-{number}.json
+ * Example: content/conversions/volume-1.json
+ * 
+ * @param volumeNumber - Volume number (1 or 2)
+ * @returns Chunk file path
+ */
+export function generateConversionsChunkPath(volumeNumber: number): string {
+  return `content/conversions/volume-${volumeNumber}.json`;
 }
 
 /**

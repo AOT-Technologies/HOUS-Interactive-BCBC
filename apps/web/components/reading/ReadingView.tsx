@@ -31,6 +31,7 @@ import {
 } from '../../lib/stores/appendix-store';
 import { useSpectablesStore, type Spectables } from '../../lib/stores/spectables-store';
 import { useFrontMatterStore } from '../../lib/stores/front-matter-store';
+import { useIndexConversionsStore } from '../../lib/stores/index-conversions-store';
 import { useNavigationStore, NavigationNode } from '../../stores/navigation-store';
 import { useEquationStore } from '../../stores/equation-store';
 import { useStandardsMapStore, type StandardReferenceEntry } from '../../stores/standards-map-store';
@@ -52,6 +53,7 @@ import { TableBlock } from './TableBlock';
 import { FigureBlock } from './FigureBlock';
 import { StructuredListBlock } from './StructuredListBlock';
 import { FrontMatterRenderer } from './FrontMatterRenderer';
+import { IndexRenderer, ConversionsRenderer } from './IndexConversionsRenderer';
 import { CrossReferenceContext } from './CrossReferenceContext';
 import { CrossReferenceModal } from './CrossReferenceModal';
 import { DivisionAppendixRenderer } from './DivisionAppendixRenderer';
@@ -209,6 +211,14 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   } = useFrontMatterStore();
 
   const {
+    currentContent: currentIndexConversions,
+    loading: indexConversionsLoading,
+    error: indexConversionsError,
+    fetchContent: fetchIndexConversions,
+    clearError: clearIndexConversionsError,
+  } = useIndexConversionsStore();
+
+  const {
     navigationTree,
     loading: navigationLoading,
     currentVersion,
@@ -239,6 +249,9 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
   const slug = liveSlug || initialSlug;
   const isPartLevel = slug.length === 2;
   const isFrontMatterLevel = slug.length === 2 && slug[0]?.toLowerCase() === 'front-matter';
+  const isIndexLevel = slug.length === 2 && slug[0]?.toLowerCase() === 'index';
+  const isConversionsLevel = slug.length === 2 && slug[0]?.toLowerCase() === 'conversions';
+  const isIndexOrConversionsLevel = isIndexLevel || isConversionsLevel;
   const isPartAppendixLevel = slug.length === 3 && slug[2]?.toLowerCase() === 'appendix';
   const isDivisionAppendixLevel = slug.length === 3 && slug[1]?.toLowerCase() === 'appendix';
   const isSpectablesLevel = slug.length === 4 && slug[2]?.toLowerCase() === 'spectables';
@@ -1029,6 +1042,25 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     loadFrontMatter();
   }, [slugKey, version, fetchFrontMatter, isFrontMatterLevel, slug]);
 
+  // Fetch index or conversions content
+  useEffect(() => {
+    if (!isIndexOrConversionsLevel) {
+      return;
+    }
+
+    const loadIndexConversions = async () => {
+      try {
+        const contentType = slug[0]?.toLowerCase() as 'index' | 'conversions';
+        const volumeSlug = slug[1]; // e.g., "volume-1" or "volume-2"
+        await fetchIndexConversions(version, contentType, volumeSlug);
+      } catch (err) {
+        console.error('Failed to load index/conversions:', err);
+      }
+    };
+
+    loadIndexConversions();
+  }, [slugKey, version, fetchIndexConversions, isIndexOrConversionsLevel, slug]);
+
   useEffect(() => {
     fetchStandardsMap(version).catch(() => {
       // Inline standard references fall back to the raw token if the map is unavailable.
@@ -1186,7 +1218,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       (isSectionLevelOrDeeper && loading) ||
       (isAppendixLevel && appendixLoading) ||
       (isSpectablesLevel && spectablesLoading) ||
-      (isFrontMatterLevel && frontMatterLoading);
+      (isFrontMatterLevel && frontMatterLoading) ||
+      (isIndexOrConversionsLevel && indexConversionsLoading);
     if (contentStillLoading) {
       return;
     }
@@ -1754,9 +1787,64 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     loading ||
     (isAppendixLevel && appendixLoading) ||
     (isFrontMatterLevel && frontMatterLoading) ||
+    (isIndexOrConversionsLevel && indexConversionsLoading) ||
     (isSpectablesLevel && spectablesLoading)
   ) {
     return renderLoadingSkeleton();
+  }
+
+  // Index / Conversion Factors rendering
+  if (isIndexOrConversionsLevel) {
+    if (indexConversionsError) {
+      return (
+        <div className="reading-view">
+          <div className="reading-view__error">
+            <h2>Unable to Load Content</h2>
+            <p>{indexConversionsError}</p>
+            <div className="reading-view__error-actions">
+              <button
+                onClick={() => {
+                  clearIndexConversionsError();
+                  const contentType = slug[0]?.toLowerCase() as 'index' | 'conversions';
+                  fetchIndexConversions(version, contentType, slug[1]);
+                }}
+                className="reading-view__error-button"
+              >
+                Try Again
+              </button>
+              <a href="/" className="reading-view__error-link">
+                Return to Homepage
+              </a>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (!currentIndexConversions) {
+      return renderLoadingSkeleton();
+    }
+
+    const title = isIndexLevel ? 'Index' : 'Conversion Factors';
+    const pdfLabel = `${title} PDF`;
+
+    return (
+      <CrossReferenceContext.Provider
+        value={{ openReference: openReferenceModal, navigateReference: navigateToReference }}
+      >
+        <div className="reading-view" ref={contentContainerRef}>
+          <ReadingViewHeader pdfLabel={pdfLabel} />
+          <div className="reading-view__content">
+            {currentIndexConversions.type === 'index' ? (
+              <IndexRenderer data={currentIndexConversions as any} />
+            ) : (
+              <ConversionsRenderer data={currentIndexConversions as any} />
+            )}
+          </div>
+          <PrintFooter />
+        </div>
+      </CrossReferenceContext.Provider>
+    );
   }
 
   // Front matter rendering

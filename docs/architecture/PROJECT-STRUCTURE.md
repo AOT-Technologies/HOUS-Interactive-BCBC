@@ -77,7 +77,17 @@ bc-building-code/
 │       │       │       │   │   ├── section-1.json
 │       │       │       │   │   └── section-2.json
 │       │       │       │   └── part-2/
-│       │       │       └── nbc-divb/
+│       │       │       ├── nbc-divb/
+│       │       │       ├── front-matter/    # Front matter chunks
+│       │       │       │   ├── preface.json
+│       │       │       │   ├── introduction.json
+│       │       │       │   └── committees.json
+│       │       │       ├── index/           # Index chunks (per volume)
+│       │       │       │   ├── volume-1.json
+│       │       │       │   └── volume-2.json
+│       │       │       └── conversions/     # Conversion Factors (per volume)
+│       │       │           ├── volume-1.json
+│       │       │           └── volume-2.json
 │       │       └── 2027/              # BC Building Code 2027 (future)
 │       │           └── ... (same structure as 2024)
 │       │

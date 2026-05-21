@@ -12,7 +12,7 @@ interface NavigationTreeProps {
    * Optional CSS class name for styling
    */
   className?: string;
-  
+
   /**
    * Optional callback when a node is clicked
    */
@@ -40,12 +40,12 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { 
-    navigationTree, 
-    expandedNodes, 
-    currentPath, 
-    toggleNode, 
-    setCurrentPath, 
+  const {
+    navigationTree,
+    expandedNodes,
+    currentPath,
+    toggleNode,
+    setCurrentPath,
     loading,
     searchQuery,
     filteredTree,
@@ -153,9 +153,11 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
         node.type === 'division_appendix' ||
         node.type === 'section' ||
         node.type === 'subsection' ||
-        node.type === 'article';
+        node.type === 'article' ||
+        node.type === 'index' ||
+        node.type === 'conversions';
       const wasExpanded = expandedNodes.has(node.id);
-      
+
       // Toggle expansion if node has children
       if (node.children && node.children.length > 0) {
         toggleNode(node.id);
@@ -165,7 +167,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
           scrollExpandedChildrenIntoView(triggerElement);
         }
       }
-      
+
       // Only part and deeper levels are routable content pages.
       if (isNavigable) {
         const targetUrl = buildTargetUrl(node.path);
@@ -184,7 +186,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
           router.push(targetUrl);
         }
       }
-      
+
       // Call optional callback
       if (onNodeClick) {
         onNodeClick(node);
@@ -265,7 +267,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
           className={`nav-tree-item`}
           data-testid={`${TESTID_NAV_NODE}-${node.id}`}
         >
-          <div 
+          <div
             className={`nav-tree-link-wrapper ${isActive ? 'nav-tree-link-wrapper--active' : ''} ${isMatching ? 'nav-tree-link-wrapper--matching' : ''}`}
             style={{ paddingLeft }}
           >
@@ -275,7 +277,7 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
             ) : level > 0 ? (
               <div className="nav-tree-selection nav-tree-selection--inactive" />
             ) : null}
-            
+
             {/* Link label */}
             <button
               ref={isActive ? activeNodeRef : null}
@@ -313,10 +315,10 @@ export function NavigationTree({ className = '', onNodeClick }: NavigationTreePr
 
   if (!displayTree || displayTree.length === 0) {
     // Show different message for search with no results vs empty tree
-    const message = searchQuery 
+    const message = searchQuery
       ? `No results found for "${searchQuery}"`
       : 'No navigation data available';
-      
+
     return (
       <div className={`nav-tree nav-tree--empty ${className}`} data-testid={TESTID_NAV_TREE}>
         <p className="nav-tree-empty-message">{message}</p>

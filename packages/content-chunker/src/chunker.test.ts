@@ -3,6 +3,8 @@ import {
   chunkContent,
   chunkRawContent,
   generateChunkPath,
+  generateIndexChunkPath,
+  generateConversionsChunkPath,
   getChunkStats,
   isOptimalChunkSize,
 } from './chunker';
@@ -188,5 +190,87 @@ describe('getChunkStats', () => {
     expect(stats.averageSize).toBe(100 * 1024);
     expect(stats.minSize).toBe(50 * 1024);
     expect(stats.maxSize).toBe(150 * 1024);
+  });
+});
+
+describe('generateIndexChunkPath', () => {
+  it('generates correct index chunk paths', () => {
+    expect(generateIndexChunkPath(1)).toBe('content/index/volume-1.json');
+    expect(generateIndexChunkPath(2)).toBe('content/index/volume-2.json');
+  });
+});
+
+describe('generateConversionsChunkPath', () => {
+  it('generates correct conversions chunk paths', () => {
+    expect(generateConversionsChunkPath(1)).toBe('content/conversions/volume-1.json');
+    expect(generateConversionsChunkPath(2)).toBe('content/conversions/volume-2.json');
+  });
+});
+
+describe('chunkRawContent - index and conversions', () => {
+  it('generates chunks for index and conversions sections', () => {
+    const mockRawDocument = {
+      volumes: [
+        {
+          divisions: [
+            {
+              id: 'nbc.divA',
+              parts: [
+                {
+                  number: 1,
+                  sections: [
+                    { id: 'sect-1', number: 1, type: 'section', subsections: [] },
+                  ],
+                },
+              ],
+            },
+          ],
+          index: {
+            id: 'nbc.2020.vol1.index',
+            type: 'index',
+            introduction: 'Index intro',
+            letters: [{ id: 'letter-A', letter: 'A', groups: [] }],
+          },
+          conversions: {
+            id: 'nbc.2020.vol1.conversions',
+            type: 'conversions',
+            table_id: 'conv-1',
+            table_title: 'Conversion Factors',
+            table_structure: { columns: 6, column_specs: [], header_rows: [], body_rows: [] },
+          },
+        },
+      ],
+    };
+
+    const chunks = chunkRawContent(mockRawDocument);
+
+    // Should have 3 chunks: 1 section + 1 index + 1 conversions
+    expect(chunks).toHaveLength(3);
+
+    const indexChunk = chunks.find(c => c.path === 'content/index/volume-1.json');
+    expect(indexChunk).toBeDefined();
+    expect((indexChunk!.data as any).type).toBe('index');
+    expect((indexChunk!.data as any).introduction).toBe('Index intro');
+
+    const conversionsChunk = chunks.find(c => c.path === 'content/conversions/volume-1.json');
+    expect(conversionsChunk).toBeDefined();
+    expect((conversionsChunk!.data as any).type).toBe('conversions');
+    expect((conversionsChunk!.data as any).table_title).toBe('Conversion Factors');
+  });
+
+  it('omits index chunk when volume has no index', () => {
+    const mockRawDocument = {
+      volumes: [
+        {
+          divisions: [
+            { id: 'nbc.divA', parts: [{ number: 1, sections: [{ id: 's1', number: 1, type: 'section' }] }] },
+          ],
+        },
+      ],
+    };
+
+    const chunks = chunkRawContent(mockRawDocument);
+    const indexChunk = chunks.find(c => c.path.includes('index'));
+    expect(indexChunk).toBeUndefined();
   });
 });

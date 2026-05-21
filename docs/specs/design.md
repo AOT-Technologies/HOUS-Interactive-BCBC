@@ -1106,6 +1106,9 @@ interface SearchOptions {
 - Split by Section level (e.g., Division A → Part 1 → Section 1.1)
 - Each chunk contains all subsections and articles within that section
 - Chunks stored as `/apps/web/public/data/content/[division]/[part]/[section].json`
+- Front matter chunks: `/apps/web/public/data/content/front-matter/[section].json`
+- Index chunks: `/apps/web/public/data/content/index/volume-[number].json`
+- Conversion Factors chunks: `/apps/web/public/data/content/conversions/volume-[number].json`
 - Typical chunk size: 50-200KB per section
 
 **Generated Metadata Files**:
@@ -1505,7 +1508,7 @@ interface NavigationNode {
   id: string;
   number: string;
   title: string;
-  type: 'division' | 'part' | 'section' | 'subsection' | 'article';
+  type: 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables' | 'index' | 'conversions';
   path: string;
   children?: NavigationNode[];
 }
@@ -1647,22 +1650,37 @@ All filter options, navigation structure, and content organization are pre-gener
 **Structure:**
 ```json
 {
-  "divisions": [
+  "tree": [
     {
-      "id": "division-a",
-      "title": "Division A - Compliance, Objectives and Functional Statements",
-      "parts": [
+      "id": "nbc.2020.vol1",
+      "type": "volume",
+      "title": "Volume 1",
+      "path": "/volume/1",
+      "children": [
         {
-          "id": "part-1",
-          "title": "Part 1 - Compliance",
-          "sections": [
+          "id": "nbc.divA",
+          "type": "division",
+          "title": "Division A - Compliance, Objectives and Functional Statements",
+          "children": [
             {
-              "id": "section-1-1",
-              "title": "Section 1.1 - General",
-              "subsections": [...],
-              "articles": [...]
+              "id": "nbc.divA.part1",
+              "type": "part",
+              "title": "Part 1 - Compliance",
+              "children": [...]
             }
           ]
+        },
+        {
+          "id": "nbc.2020.vol1.index",
+          "type": "index",
+          "title": "Index",
+          "path": "/code/index/volume-1"
+        },
+        {
+          "id": "nbc.2020.vol1.conversions",
+          "type": "conversions",
+          "title": "Conversion Factors",
+          "path": "/code/conversions/volume-1"
         }
       ]
     }
@@ -1935,7 +1953,7 @@ All filter options, navigation structure, and content organization are pre-gener
 ### Navigation Properties
 
 **Property 13: Navigation Tree Structure**
-*For any* navigation tree, it should follow the hierarchical structure: Division → Part → Section → Subsection → Article.
+*For any* navigation tree, it should follow the hierarchical structure: Volume → Division → Part → Section → Subsection → Article, with Index and Conversion Factors as leaf nodes after divisions within each volume.
 **Validates: Requirements 4.2**
 
 **Property 14: Navigation Node Interaction**

@@ -108,7 +108,7 @@ Primary entry point for users to discover and search the BC Building Code.
   - Reloads all data for selected version
   
 - **Hierarchical Navigation Tree:**
-  - Division → Part → Section → Article structure
+  - Volume → Division → Part → Section → Article structure, with Index and Conversion Factors after divisions
   - Expandable/collapsible sections
   - Loaded from `{version}/navigation-tree.json` (generated metadata)
   - Visual indicators for current location
@@ -354,6 +354,18 @@ The reading page can render content at multiple hierarchy levels:
    - Displays specific Article content
    - Most granular level
    - Includes all article details, tables, figures, notes
+
+5. **Index Level:** `/code/index/volume-{number}`
+   - Displays the alphabetical Index for the specified volume
+   - Groups terms by letter with centered bold letter headings
+   - Shows subterms indented under parent terms
+   - References rendered as clickable links navigating to the referenced article
+
+6. **Conversion Factors Level:** `/code/conversions/volume-{number}`
+   - Displays the Conversion Factors table for the specified volume
+   - 3-column table: "To Convert", "To", "Multiply by"
+   - Superscript/subscript markers rendered correctly (e.g., m² not m^{2})
+   - Uses standard table-block styling with centered headers
 
 ### Entry Points
 - Click on TOC item (sidebar) - any level
@@ -923,22 +935,37 @@ All filter options, navigation structure, and content organization are pre-gener
 **Structure:**
 ```json
 {
-  "divisions": [
+  "tree": [
     {
-      "id": "division-a",
-      "title": "Division A - Compliance, Objectives and Functional Statements",
-      "parts": [
+      "id": "nbc.2020.vol1",
+      "type": "volume",
+      "title": "Volume 1",
+      "path": "/volume/1",
+      "children": [
         {
-          "id": "part-1",
-          "title": "Part 1 - Compliance",
-          "sections": [
+          "id": "nbc.divA",
+          "type": "division",
+          "title": "Division A - Compliance, Objectives and Functional Statements",
+          "children": [
             {
-              "id": "section-1-1",
-              "title": "Section 1.1 - General",
-              "subsections": [...],
-              "articles": [...]
+              "id": "nbc.divA.part1",
+              "type": "part",
+              "title": "Part 1 - Compliance",
+              "children": [...]
             }
           ]
+        },
+        {
+          "id": "nbc.2020.vol1.index",
+          "type": "index",
+          "title": "Index",
+          "path": "/code/index/volume-1"
+        },
+        {
+          "id": "nbc.2020.vol1.conversions",
+          "type": "conversions",
+          "title": "Conversion Factors",
+          "path": "/code/conversions/volume-1"
         }
       ]
     }
