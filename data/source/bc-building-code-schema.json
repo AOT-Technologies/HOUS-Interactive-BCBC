@@ -259,6 +259,10 @@
             }
           }
         },
+        "hide_label": {
+          "type": "boolean",
+          "description": "True when the source XML figure uses hideLabel='true'"
+        },
         "list_type": {
           "type": "string",
           "enum": ["bulleted", "numbered", "bibliography"],
@@ -1236,6 +1240,10 @@
               "type": "string",
               "description": "Figure title/caption"
             },
+            "hide_label": {
+              "type": "boolean",
+              "description": "True when the source XML figure uses hideLabel='true'"
+            },
             "graphic": {
               "type": "object",
               "required": ["src"],
@@ -1302,6 +1310,10 @@
         "type": {
           "type": "string",
           "const": "figure"
+        },
+        "hide_label": {
+          "type": "boolean",
+          "description": "True when the source XML figure uses hideLabel='true'"
         },
         "deleted": {
           "type": "boolean",
