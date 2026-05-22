@@ -27,7 +27,7 @@ All components have co-located CSS files using BC Design System variables:
 - `ReadingView` - Main container and layout orchestration
 - `ReadingViewHeader` - Header with breadcrumbs and actions
 - `ContentRenderer` - Recursive content renderer (core component)
-- `PartRenderer` - Part-level content rendering
+- `PartRenderer` - Part-level content rendering (section cards, appendix card, spectables cards)
 - `SectionRenderer` - Section-level content rendering
 - `PrintFooter` - Print-only footer showing edition and effective date (see details below)
 

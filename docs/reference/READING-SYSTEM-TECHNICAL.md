@@ -418,7 +418,9 @@ ReadingView (container)
   ├── ReadingViewHeader
   ├── PartRenderer (part-level)
   │   └── PartTitle
-  │   └── Section cards (links)
+  │   └── Section cards (links to sections)
+  │   └── Part appendix card (link to "Notes to Part X", if present)
+  │   └── Spectables cards (links to span tables, if present)
   │
   ├── SectionRenderer (section-level)
   │   ├── SectionTitle

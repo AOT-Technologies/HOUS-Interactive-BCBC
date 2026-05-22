@@ -1151,7 +1151,7 @@ The ReadingView is the top-level container component for the Content Reading pag
 
 **Content Type Routing**:
 The ReadingView determines what to render based on the URL slug structure:
-- `/code/{division}/{part}` → PartRenderer (part overview with child section links)
+- `/code/{division}/{part}` → PartRenderer (part overview with child section, appendix, and spectables cards)
 - `/code/{division}/{part}/{section}` → SectionRenderer (full section with subsections)
 - `/code/{division}/{part}/{section}/{subsection}` → SubsectionBlock
 - `/code/{division}/{part}/{section}/{subsection}/{article}` → ArticleBlock
