@@ -668,9 +668,11 @@ function getCrossReferenceDisplayText(
   }
 
   // Fallback: generate display text from referenceId
+  const currentDivision = renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase();
   const fallback = formatInternalReference(
     referenceId,
-    shouldExpandShortArticleRef ? 'medium' : format
+    shouldExpandShortArticleRef ? 'medium' : format,
+    currentDivision
   );
   const qualifierMatch = fallback.startsWith('Note ')
     ? remaining.match(/^(\s*\([^)]+\))/)
@@ -690,7 +692,7 @@ function getCrossReferenceDisplayText(
   };
 }
 
-function formatInternalReference(referenceId: string, format?: InternalRefFormat): string {
+function formatInternalReference(referenceId: string, format?: InternalRefFormat, currentDivision?: string): string {
   const division = extractNumeric(referenceId, /\.div([A-Za-z0-9]+)/i)?.toUpperCase();
   const withDivisionSuffix = (label: string): string =>
     format === 'long' && division ? `${label} of Division ${division}` : label;
@@ -862,7 +864,10 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   }
 
   if (sectionNumber) {
-    return isShortNumeric ? sectionNumber : `Section ${sectionNumber}.`;
+    if (isShortNumeric) return sectionNumber;
+    return format === 'long' && division && currentDivision && division !== currentDivision
+      ? `Section ${sectionNumber}. of Division ${division}`
+      : `Section ${sectionNumber}.`;
   }
 
   if (part) {
