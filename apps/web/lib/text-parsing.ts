@@ -860,7 +860,10 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   }
 
   if (subsection) {
-    return isShortNumeric ? subsectionNumber : `Subsection ${subsectionNumber}.`;
+    if (isShortNumeric) return subsectionNumber;
+    return format === 'long' && division && currentDivision && division !== currentDivision
+      ? `Subsection ${subsectionNumber}. of Division ${division}`
+      : `Subsection ${subsectionNumber}.`;
   }
 
   if (sectionNumber) {
