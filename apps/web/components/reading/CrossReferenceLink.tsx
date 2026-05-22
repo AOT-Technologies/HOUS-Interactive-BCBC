@@ -18,6 +18,7 @@ interface CrossReferenceLinkProps {
   format?: 'short' | 'long' | 'medium' | 'title' | 'number' | 'shortNum';
   interactive?: boolean;
   preserveDisplayText?: boolean;
+  currentDivision?: string;
 }
 
 type ApplicationNoteMeta = {
@@ -44,6 +45,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   format,
   interactive = true,
   preserveDisplayText = false,
+  currentDivision,
 }) => {
   const { openReference, navigateReference } = useCrossReferenceContext();
   const searchParams = useSearchParams();
@@ -169,8 +171,13 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
       const rawNumber = matchedNote.number;
       const prefixedNumber = rawNumber.startsWith('A-') ? rawNumber : `A-${rawNumber}`;
       const noteLabel = `Note ${prefixedNumber}`;
-      const longLabel =
-        matchedNote.title && matchedNote.title.trim()
+      // Derive canonical division letter (e.g. "BV2" → "B") from the note's division path
+      const divCode = parsedReference.division.replace(/^nbc\.div/i, '');
+      const canonicalLetter = divCode.match(/^([A-Za-z])/)?.[1]?.toUpperCase() || divCode;
+      const isCrossDivision = currentDivision && canonicalLetter !== currentDivision;
+      const longLabel = isCrossDivision
+        ? `${noteLabel} of Division ${canonicalLetter}`
+        : matchedNote.title && matchedNote.title.trim()
           ? `${noteLabel} ${matchedNote.title.trim()}`
           : noteLabel;
       const nextText = format === 'long' ? longLabel : noteLabel;
@@ -184,7 +191,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     return () => {
       active = false;
     };
-  }, [effectiveDate, fetchAppendix, format, parsedReference, referenceId, shouldResolveAppnoteDisplayText, version]);
+  }, [currentDivision, effectiveDate, fetchAppendix, format, parsedReference, referenceId, shouldResolveAppnoteDisplayText, version]);
 
   useEffect(() => {
     let active = true;

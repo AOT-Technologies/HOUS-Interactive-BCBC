@@ -1446,6 +1446,7 @@ export function parseTextWithMarkers(
               format: marker.format as InternalRefFormat,
               interactive,
               preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
+              currentDivision: renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase(),
             })
           );
         }
