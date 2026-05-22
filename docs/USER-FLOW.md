@@ -117,6 +117,7 @@ Primary entry point for users to discover and search the BC Building Code.
 - **Effective Date Filter:**
   - Dropdown to select amendment date
   - Loaded from `{version}/amendment-dates.json`
+  - Displays revision number alongside date (e.g., "Revision 6 – June 16, 2025 (Latest)")
   - Filters visible content based on effective date
   - Default: Latest version
   - Updates when version changes
@@ -984,20 +985,38 @@ All filter options, navigation structure, and content organization are pre-gener
 **Structure:**
 ```json
 {
+  "version": "2020",
+  "generatedAt": "2026-05-22T15:07:11.039Z",
   "dates": [
     {
-      "date": "2024-01-01",
-      "label": "January 1, 2024",
-      "isLatest": true
+      "effectiveDate": "2025-06-16",
+      "displayDate": "June 16, 2025",
+      "count": 50,
+      "type": "amendment",
+      "revisionLabel": "Revision 6"
     },
     {
-      "date": "2023-01-01",
-      "label": "January 1, 2023",
-      "isLatest": false
+      "effectiveDate": "2025-03-10",
+      "displayDate": "March 10, 2025",
+      "count": 4,
+      "type": "amendment",
+      "revisionLabel": "Revision 4 & 5"
+    },
+    {
+      "effectiveDate": "2024-03-08",
+      "displayDate": "March 8, 2024",
+      "count": 104,
+      "type": "original"
     }
   ]
 }
 ```
+
+**Notes:**
+- `revisionLabel` is derived from the `revision_id` in the source BCBC JSON (ministerial order number)
+- When multiple ministerial orders share the same effective date, labels are combined (e.g., "Revision 4 & 5")
+- Original entries do not include a `revisionLabel`
+- Dropdown displays: `Revision 6 – June 16, 2025 (Latest)`
 
 #### 3. `content-types.json`
 **Purpose:** Available content types for filtering  

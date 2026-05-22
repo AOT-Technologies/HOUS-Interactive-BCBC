@@ -442,13 +442,27 @@ This section documents the structure of all generated metadata files in `/apps/w
 ```json
 {
   "version": "2020",                    // Source version identifier
-  "generatedAt": "2026-02-04T01:43:12.273Z",  // ISO timestamp of generation
+  "generatedAt": "2026-05-22T15:07:11.039Z",  // ISO timestamp of generation
   "dates": [
     {
       "effectiveDate": "2025-06-16",    // ISO date string (YYYY-MM-DD)
-      "displayDate": "June 15, 2025",   // Human-readable date for display
-      "count": 44,                       // Number of provisions affected
-      "type": "amendment" | "original"   // Type of change
+      "displayDate": "June 16, 2025",   // Human-readable date for display
+      "count": 50,                       // Number of provisions affected
+      "type": "amendment",               // Type of change: "amendment" | "original"
+      "revisionLabel": "Revision 6"     // Optional: revision number label
+    },
+    {
+      "effectiveDate": "2025-03-10",
+      "displayDate": "March 10, 2025",
+      "count": 4,
+      "type": "amendment",
+      "revisionLabel": "Revision 4 & 5"
+    },
+    {
+      "effectiveDate": "2024-03-08",
+      "displayDate": "March 8, 2024",
+      "count": 104,
+      "type": "original"
     }
   ]
 }
@@ -461,12 +475,20 @@ This section documents the structure of all generated metadata files in `/apps/w
 - `type`: 
   - `"amendment"`: Changes made after original publication
   - `"original"`: Original provisions from initial publication
+- `revisionLabel`: Optional human-readable revision identifier (e.g., "Revision 6", "Revision 4 & 5"). Derived from the `revision_id` field in the source BCBC JSON. The revision ID format is `bc-mo-YYYY-NN-NNN` where `NN` is the ministerial order number. When multiple ministerial orders share the same effective date, they are combined. Omitted for original entries.
 
 **Notes:**
 - Dates are sorted in descending order (most recent first)
 - The first date in the array is considered the "latest" date
 - The amendment date store transforms this format to its internal format during loading
 - Typical file size: 1-5 KB
+
+**Dropdown Display Format:**
+The effective date dropdown displays revision labels alongside dates:
+- `Revision 6 – June 16, 2025 (Latest)`
+- `Revision 4 & 5 – March 10, 2025`
+- `Revision 3 – August 27, 2024`
+- `March 8, 2024` (original, no revision label)
 
 **Runtime Transformation:**
 The amendment date store (`apps/web/stores/amendment-date-store.ts`) transforms this JSON format to:

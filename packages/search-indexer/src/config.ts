@@ -237,6 +237,7 @@ export interface RevisionDate {
   displayDate: string;
   count: number;
   type: 'original' | 'amendment' | 'mixed';
+  revisionLabel?: string;
 }
 
 /**
