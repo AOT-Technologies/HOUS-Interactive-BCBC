@@ -422,6 +422,8 @@ The reading page can render content at multiple hierarchy levels:
 - **Part Title:** Code reference and full title
 - **Part Overview:** Introduction or summary text
 - **Child Sections List:** Expandable list of all Sections in the Part
+- **Part Appendix Card:** "Notes to Part X" card (if the Part has notes/appendix content)
+- **Spectables Cards:** "Fire and Sound Resistance Tables", "Span Tables", etc. (if the Part has span tables)
 - **Complete Content:** All text, tables, figures within the Part (if no subsections)
 
 ##### Section Level Content

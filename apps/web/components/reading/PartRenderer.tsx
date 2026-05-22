@@ -13,7 +13,12 @@ export const PartRenderer: React.FC<PartRendererProps> = ({
   part,
   queryString = '',
 }) => {
-  const sectionNodes = (part.children || []).filter((child) => child.type === 'section');
+  const sectionNodes = (part.children || []).filter(
+    (child) =>
+      child.type === 'section' ||
+      child.type === 'part_appendix' ||
+      child.type === 'spectables'
+  );
 
   const buildHref = (path: string): string => {
     return queryString ? `${path}?${queryString}` : path;
@@ -42,9 +47,11 @@ export const PartRenderer: React.FC<PartRendererProps> = ({
             key={section.id}
             href={buildHref(section.path)}
             className="partSectionCard"
-            aria-label={`Open Section ${section.title}`}
+            aria-label={`Open ${section.type === 'section' ? `Section ${section.title}` : section.title}`}
           >
-            <h3 className="partSectionCardNumber">{section.number}</h3>
+            {section.number && section.type === 'section' && (
+              <h3 className="partSectionCardNumber">{section.number}</h3>
+            )}
             <p className="partSectionCardTitle">{getSectionName(section)}</p>
           </Link>
         ))}
