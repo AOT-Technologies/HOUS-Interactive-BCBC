@@ -110,6 +110,7 @@ interface BCBCContent {
 interface BCBCRevision {
   type: 'original' | 'revision';
   revision_type?: 'amendment' | 'add' | 'replace' | 'delete';
+  revision_id?: string;
   effective_date: string;
   status?: string;
   text?: string;
@@ -201,7 +202,7 @@ export function buildSearchIndex(
   };
 
   const documents: SearchDocument[] = [];
-  const revisionDatesMap = new Map<string, { count: number; types: Set<string> }>();
+  const revisionDatesMap = new Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>();
   const tableOfContents: TableOfContentsItem[] = [];
   const contentTypesFound = new Set<IndexableContentType>();
 
@@ -290,7 +291,7 @@ export function buildSearchIndex(
 function processDivision(
   division: BCBCDivision,
   documents: SearchDocument[],
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>,
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>,
   contentTypesFound: Set<IndexableContentType>,
   config: IndexerConfig
 ): TableOfContentsItem {
@@ -329,7 +330,7 @@ function processPart(
   division: BCBCDivision,
   part: BCBCPart,
   documents: SearchDocument[],
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>,
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>,
   contentTypesFound: Set<IndexableContentType>,
   config: IndexerConfig
 ): TableOfContentsItem {
@@ -384,7 +385,7 @@ function processSection(
   part: BCBCPart,
   section: BCBCSection,
   documents: SearchDocument[],
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>,
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>,
   contentTypesFound: Set<IndexableContentType>,
   config: IndexerConfig
 ): TableOfContentsItem {
@@ -433,7 +434,7 @@ function processSubsection(
   section: BCBCSection,
   subsection: BCBCSubsection,
   documents: SearchDocument[],
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>,
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>,
   contentTypesFound: Set<IndexableContentType>,
   config: IndexerConfig
 ): TableOfContentsItem {
@@ -484,7 +485,7 @@ function processArticle(
   subsection: BCBCSubsection,
   article: BCBCArticle,
   documents: SearchDocument[],
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>,
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>,
   contentTypesFound: Set<IndexableContentType>,
   config: IndexerConfig
 ): TableOfContentsItem {
@@ -535,7 +536,7 @@ function processArticle(
  */
 function extractRevisionInfo(
   article: BCBCArticle,
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>
 ): { hasAmendment: boolean; amendmentType?: string; latestDate?: string } {
   let hasAmendment = false;
   let amendmentType: string | undefined;
@@ -581,7 +582,7 @@ function extractRevisionInfo(
  */
 function extractContentRevisionInfo(
   content: BCBCContent,
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>
 ): { hasAmendment: boolean; amendmentType?: string; latestDate?: string } {
   let hasAmendment = false;
   let amendmentType: string | undefined;
@@ -608,16 +609,28 @@ function extractContentRevisionInfo(
  */
 function trackRevisionDate(
   revision: BCBCRevision,
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>
 ): void {
   if (!revision.effective_date) return;
 
   const existing = revisionDatesMap.get(revision.effective_date) || {
     count: 0,
-    types: new Set<string>()
+    types: new Set<string>(),
+    revisionNumbers: new Set<number>()
   };
   existing.count++;
   existing.types.add(revision.type);
+
+  // Extract revision number from revision_id (format: bc-mo-YYYY-NN-NNN)
+  // The NN portion represents the ministerial order number which maps to the revision number
+  if (revision.revision_id) {
+    const match = revision.revision_id.match(/^bc-mo-\d{4}-(\d{2})-/);
+    if (match) {
+      const revisionNumber = parseInt(match[1], 10);
+      existing.revisionNumbers.add(revisionNumber);
+    }
+  }
+
   revisionDatesMap.set(revision.effective_date, existing);
 }
 
@@ -625,7 +638,7 @@ function trackRevisionDate(
  * Build revision dates array from map
  */
 function buildRevisionDates(
-  revisionDatesMap: Map<string, { count: number; types: Set<string> }>
+  revisionDatesMap: Map<string, { count: number; types: Set<string>; revisionNumbers: Set<number> }>
 ): RevisionDate[] {
   return Array.from(revisionDatesMap.entries())
     .map(([date, info]) => ({
@@ -633,8 +646,46 @@ function buildRevisionDates(
       displayDate: formatDisplayDate(date),
       count: info.count,
       type: determineRevisionType(info.types),
+      revisionLabel: buildRevisionLabel(info.revisionNumbers, info.types),
     }))
     .sort((a, b) => new Date(b.effectiveDate).getTime() - new Date(a.effectiveDate).getTime());
+}
+
+/**
+ * Build a revision label from the set of revision numbers.
+ * Examples: "Revision 6", "Revision 4 & 5"
+ * Returns undefined for original (non-amendment) entries.
+ */
+function buildRevisionLabel(
+  revisionNumbers: Set<number>,
+  types: Set<string>
+): string | undefined {
+  // Don't label the original entry
+  if (types.has('original') && types.size === 1) {
+    return undefined;
+  }
+
+  if (revisionNumbers.size === 0) {
+    return undefined;
+  }
+
+  const sorted = Array.from(revisionNumbers).sort((a, b) => a - b);
+
+  if (sorted.length === 1) {
+    return `Revision ${sorted[0]}`;
+  }
+
+  // Check if numbers are consecutive
+  const isConsecutive = sorted.every((num, i) => i === 0 || num === sorted[i - 1] + 1);
+
+  if (isConsecutive && sorted.length === 2) {
+    return `Revision ${sorted[0]} & ${sorted[1]}`;
+  } else if (isConsecutive && sorted.length > 2) {
+    return `Revision ${sorted[0]}–${sorted[sorted.length - 1]}`;
+  } else {
+    // Non-consecutive: join with " & "
+    return `Revision ${sorted.join(' & ')}`;
+  }
 }
 
 /**

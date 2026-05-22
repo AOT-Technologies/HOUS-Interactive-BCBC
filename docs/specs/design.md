@@ -465,9 +465,10 @@ The store transforms the JSON file format to the internal store format:
   "dates": [
     {
       "effectiveDate": "2025-06-16",    // ISO date string
-      "displayDate": "June 15, 2025",   // Human-readable date
-      "count": 44,                       // Number of provisions
-      "type": "amendment" | "original"   // Type of change
+      "displayDate": "June 16, 2025",   // Human-readable date
+      "count": 50,                       // Number of provisions
+      "type": "amendment" | "original",  // Type of change
+      "revisionLabel": "Revision 6"     // Optional: revision number label (omitted for original)
     }
   ]
 }
@@ -475,11 +476,21 @@ The store transforms the JSON file format to the internal store format:
 // Store format (AmendmentDate interface)
 {
   date: "2025-06-16",                                    // From effectiveDate
-  label: "June 15, 2025",                                // From displayDate
-  description: "44 amendments",                          // Generated from count + type
+  label: "June 16, 2025",                                // From displayDate
+  description: "50 amendments",                          // Generated from count + type
   isLatest: true                                         // First date is latest
 }
 ```
+
+**Revision Label Generation:**
+The `revisionLabel` field is derived automatically from the `revision_id` field in the source BCBC JSON. The revision ID format is `bc-mo-YYYY-NN-NNN` where `NN` is the ministerial order number (which maps to the revision number). When multiple ministerial orders share the same effective date, they are combined (e.g., "Revision 4 & 5"). Original entries do not receive a revision label.
+
+**Dropdown Display Format:**
+The effective date dropdown displays revision labels alongside dates:
+- `Revision 6 – June 16, 2025 (Latest)`
+- `Revision 4 & 5 – March 10, 2025`
+- `Revision 3 – August 27, 2024`
+- `March 8, 2024` (original, no revision label)
 
 **UI Store** ✅ IMPLEMENTED:
 
@@ -1697,20 +1708,38 @@ All filter options, navigation structure, and content organization are pre-gener
 **Structure:**
 ```json
 {
+  "version": "2020",
+  "generatedAt": "2026-05-22T15:07:11.039Z",
   "dates": [
     {
-      "date": "2024-01-01",
-      "label": "January 1, 2024",
-      "isLatest": true
+      "effectiveDate": "2025-06-16",
+      "displayDate": "June 16, 2025",
+      "count": 50,
+      "type": "amendment",
+      "revisionLabel": "Revision 6"
     },
     {
-      "date": "2023-01-01",
-      "label": "January 1, 2023",
-      "isLatest": false
+      "effectiveDate": "2025-03-10",
+      "displayDate": "March 10, 2025",
+      "count": 4,
+      "type": "amendment",
+      "revisionLabel": "Revision 4 & 5"
+    },
+    {
+      "effectiveDate": "2024-03-08",
+      "displayDate": "March 8, 2024",
+      "count": 104,
+      "type": "original"
     }
   ]
 }
 ```
+
+**Notes:**
+- `revisionLabel` is derived from the `revision_id` field in the source BCBC JSON (ministerial order number)
+- When multiple ministerial orders share the same effective date, labels are combined (e.g., "Revision 4 & 5")
+- Original entries do not include a `revisionLabel`
+- The dropdown displays: `{revisionLabel} – {displayDate} (Latest)` for the first entry
 
 #### 3. `content-types.json`
 **Purpose:** Available content types for filtering  

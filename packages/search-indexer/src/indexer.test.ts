@@ -293,6 +293,7 @@ describe('search-indexer', () => {
                               {
                                 type: 'revision' as const,
                                 revision_type: 'amendment' as const,
+                                revision_id: 'bc-mo-2024-03-001',
                                 effective_date: '2024-08-27',
                               },
                             ],
@@ -323,6 +324,179 @@ describe('search-indexer', () => {
       // TOC should show hasRevisions
       const tocArticle = metadata.tableOfContents[0]?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0];
       expect(tocArticle?.hasRevisions).toBe(true);
+    });
+
+    it('should generate revision labels from revision_id', () => {
+      const mockData = {
+        document_type: 'bc_building_code',
+        version: '2024',
+        divisions: [
+          {
+            id: 'nbc.divA',
+            type: 'division',
+            letter: 'A',
+            title: 'Compliance',
+            parts: [
+              {
+                id: 'nbc.divA.part1',
+                type: 'part',
+                number: 1,
+                title: 'General',
+                sections: [
+                  {
+                    id: 'nbc.divA.part1.sect1',
+                    type: 'section',
+                    number: 1,
+                    title: 'Application',
+                    subsections: [
+                      {
+                        id: 'nbc.divA.part1.sect1.subsect1',
+                        type: 'subsection',
+                        number: 1,
+                        title: 'Scope',
+                        articles: [
+                          {
+                            id: 'nbc.divA.part1.sect1.subsect1.art1',
+                            type: 'article',
+                            number: 1,
+                            title: 'Article with Revision 1',
+                            content: [],
+                            revisions: [
+                              {
+                                type: 'revision' as const,
+                                revision_type: 'amendment' as const,
+                                revision_id: 'bc-mo-2024-01-001',
+                                effective_date: '2024-04-05',
+                              },
+                            ],
+                          },
+                          {
+                            id: 'nbc.divA.part1.sect1.subsect1.art2',
+                            type: 'article',
+                            number: 2,
+                            title: 'Article with Revision 3',
+                            content: [],
+                            revisions: [
+                              {
+                                type: 'revision' as const,
+                                revision_type: 'amendment' as const,
+                                revision_id: 'bc-mo-2024-03-001',
+                                effective_date: '2024-08-27',
+                              },
+                            ],
+                          },
+                          {
+                            id: 'nbc.divA.part1.sect1.subsect1.art3',
+                            type: 'article',
+                            number: 3,
+                            title: 'Article with Revisions 4 and 5',
+                            content: [],
+                            revisions: [
+                              {
+                                type: 'revision' as const,
+                                revision_type: 'amendment' as const,
+                                revision_id: 'bc-mo-2024-04-001',
+                                effective_date: '2025-03-10',
+                              },
+                              {
+                                type: 'revision' as const,
+                                revision_type: 'amendment' as const,
+                                revision_id: 'bc-mo-2024-05-001',
+                                effective_date: '2025-03-10',
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      };
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { metadata } = buildSearchIndex(mockData as any);
+
+      // Should have 3 revision dates (sorted descending by date)
+      expect(metadata.revisionDates).toHaveLength(3);
+
+      // Most recent: 2025-03-10 with Revisions 4 & 5 combined
+      expect(metadata.revisionDates[0].effectiveDate).toBe('2025-03-10');
+      expect(metadata.revisionDates[0].revisionLabel).toBe('Revision 4 & 5');
+
+      // Middle: 2024-08-27 with Revision 3
+      expect(metadata.revisionDates[1].effectiveDate).toBe('2024-08-27');
+      expect(metadata.revisionDates[1].revisionLabel).toBe('Revision 3');
+
+      // Oldest: 2024-04-05 with Revision 1
+      expect(metadata.revisionDates[2].effectiveDate).toBe('2024-04-05');
+      expect(metadata.revisionDates[2].revisionLabel).toBe('Revision 1');
+    });
+
+    it('should not generate revision label for original entries', () => {
+      const mockData = {
+        document_type: 'bc_building_code',
+        version: '2024',
+        divisions: [
+          {
+            id: 'nbc.divA',
+            type: 'division',
+            letter: 'A',
+            title: 'Compliance',
+            parts: [
+              {
+                id: 'nbc.divA.part1',
+                type: 'part',
+                number: 1,
+                title: 'General',
+                sections: [
+                  {
+                    id: 'nbc.divA.part1.sect1',
+                    type: 'section',
+                    number: 1,
+                    title: 'Application',
+                    subsections: [
+                      {
+                        id: 'nbc.divA.part1.sect1.subsect1',
+                        type: 'subsection',
+                        number: 1,
+                        title: 'Scope',
+                        articles: [
+                          {
+                            id: 'nbc.divA.part1.sect1.subsect1.art1',
+                            type: 'article',
+                            number: 1,
+                            title: 'Original Article',
+                            content: [],
+                            revisions: [
+                              {
+                                type: 'original' as const,
+                                effective_date: '2024-03-08',
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      };
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { metadata } = buildSearchIndex(mockData as any);
+
+      // Should have 1 revision date (the original)
+      expect(metadata.revisionDates).toHaveLength(1);
+      expect(metadata.revisionDates[0].effectiveDate).toBe('2024-03-08');
+      expect(metadata.revisionDates[0].type).toBe('original');
+      expect(metadata.revisionDates[0].revisionLabel).toBeUndefined();
     });
 
     it('should respect content type configuration', () => {

@@ -13,6 +13,7 @@ interface AmendmentDate {
   displayDate: string;
   count: number;
   type: 'amendment' | 'original';
+  revisionLabel?: string;
 }
 
 interface AmendmentDatesData {
@@ -50,11 +51,11 @@ export default function HomeSidebarContent({
   const [allDates, setAllDates] = useState<AmendmentDate[]>([]);
   const [localSearchValue, setLocalSearchValue] = useState('');
   const [hasMounted, setHasMounted] = useState(false);
-  
+
   // Track if this is the initial load vs a version change
   const isInitialLoad = useRef(true);
   const previousVersion = useRef<string | null>(null);
-  
+
   // Get current version details
   const currentVersionData = hasMounted ? getVersion(currentVersion || undefined) : undefined;
   const versionYear = currentVersionData?.year || 2024;
@@ -87,17 +88,17 @@ export default function HomeSidebarContent({
     if (!currentVersion) {
       return;
     }
-    
+
     // Determine if this is initial load or version change
     const isVersionChange = previousVersion.current !== null && previousVersion.current !== currentVersion;
     const shouldApplyHomepageDefaultExpansion = enableDefaultVolumeExpansion && isInitialLoad.current;
     previousVersion.current = currentVersion;
-    
+
     // If version hasn't changed and we've already loaded, skip
     if (!isVersionChange && !isInitialLoad.current) {
       return;
     }
-    
+
     // Load navigation tree for current version
     loadNavigationTree(currentVersion).then(() => {
       // Apply homepage-only default expansion on first landing load.
@@ -105,17 +106,17 @@ export default function HomeSidebarContent({
         applyHomepageDefaultExpansion();
       }
     });
-    
+
     // Get current selected date from store (for initial load check)
     const currentSelectedDate = useAmendmentDateStore.getState().selectedDate;
-    
+
     // Load amendment dates from version-specific path
     fetch(`/data/${currentVersion}/amendment-dates.json`)
       .then(res => res.json())
       .then((data: AmendmentDatesData) => {
         if (data.dates && data.dates.length > 0) {
           setAllDates(data.dates);
-          
+
           if (isVersionChange) {
             // Version changed: always reset to latest date
             useAmendmentDateStore.getState().setSelectedDate(data.dates[0].effectiveDate);
@@ -176,18 +177,18 @@ export default function HomeSidebarContent({
         <p className="home-sidebar-description">
           {hasMounted ? `${versionYear} ` : ''}Consolidated code version including all active revisions and errata
         </p>
-        
+
         {/* Version Selector - Position 1 */}
         <VersionSelector />
-        
+
         {/* Effective Date Filter - Position 2 - Loaded from amendment-dates.json */}
         <div className="home-sidebar-filter">
           <label className="home-sidebar-filter-label" htmlFor="effective-date-select">
             Effective Date
           </label>
-          <select 
+          <select
             id="effective-date-select"
-            className="home-sidebar-select" 
+            className="home-sidebar-select"
             aria-label="Select effective date"
             value={selectedDate || ''} // Convert null to empty string
             onChange={handleDateChange}
@@ -195,7 +196,7 @@ export default function HomeSidebarContent({
             {allDates.length > 0 ? (
               allDates.map((date, index) => (
                 <option key={date.effectiveDate} value={date.effectiveDate}>
-                  {date.displayDate} {index === 0 ? '(Latest)' : ''}
+                  {date.revisionLabel ? `${date.revisionLabel} \u2013 ` : ''}{date.displayDate}{index === 0 ? ' (Latest)' : ''}
                 </option>
               ))
             ) : (

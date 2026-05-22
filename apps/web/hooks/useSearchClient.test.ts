@@ -357,7 +357,7 @@ describe('useSearchMetadata', () => {
       totalGlossaryTerms: 50,
     },
     divisions: [{ id: 'nbc.divA', letter: 'A', title: 'Division A', parts: [] }],
-    revisionDates: [{ effectiveDate: '2024-08-27', displayDate: 'Aug 27, 2024', count: 1, type: 'amendment' as const }],
+    revisionDates: [{ effectiveDate: '2024-08-27', displayDate: 'Aug 27, 2024', count: 1, type: 'amendment' as const, revisionLabel: 'Revision 3' }],
     tableOfContents: [],
     contentTypes: ['article', 'table'] as const,
   };
