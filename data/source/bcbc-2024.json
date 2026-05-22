@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-05-13T12:44:58.50033-07:00",
+  "generated_timestamp" : "2026-05-21T12:16:06.251719-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -281954,7 +281954,79 @@
                 "type" : "sentence",
                 "number" : 6,
                 "source" : "bc",
-                "text" : "Where more than one person is responsible for the design of a [REF:term:bldng:building] or facility that includes a proposed alternative solution, the person requesting the use of the alternative solution shall identify a single person to co-ordinate the preparation of the design, Code analysis and documentation referred to in this Article." } ] } ] } ] } ],
+                "text" : "Where more than one person is responsible for the design of a [REF:term:bldng:building] or facility that includes a proposed alternative solution, the person requesting the use of the alternative solution shall identify a single person to co-ordinate the preparation of the design, Code analysis and documentation referred to in this Article." },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure1",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-1",
+                 "alt_text" : "British Columbia Building Code 2024 Schedule A form titled 'Confirmation of Commitment by Owner and Coordinating Registered Professional' for building permit applications, including sections for jurisdiction, project details, professional seal, signature, and date." } },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure2",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-2",
+                 "alt_text" : "Second page of the British Columbia Building Code 2024 Schedule A form continuation, containing sections for coordinating registered professional and owner information, addresses, signatures, professional seal, firm details, and certification statements related to building permit coordination and compliance." } },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure3",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-3",
+                 "alt_text" : "British Columbia Building Code 2024 Schedule B form titled 'Assurance of Professional Design and Commitment for Field Review,' including sections for jurisdiction, project details, professional disciplines such as architectural, structural, mechanical, plumbing, electrical, and geotechnical, along with professional seal, signature, and compliance assurance statements." } },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure4",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-4",
+                 "alt_text" : "Second page of the British Columbia Building Code 2024 Schedule B continuation form, containing sections for registered professional information, project address, discipline, professional seal and signature, firm membership declaration, and certification statements for field review responsibilities and professional compliance." } },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure5",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-5",
+                 "alt_text" : "Third page of the British Columbia Building Code 2024 Schedule B continuation form titled 'Summary of Design and Field Review Requirements,' listing architectural, structural, and mechanical review items such as fire resistance, egress systems, structural capacity, HVAC systems, waterproofing, glazing, seismic restraint, and energy code requirements, with sections for professional seal, signature, date, and CRP initials." } },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure6",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-6",
+                 "alt_text" : "Fourth page of the British Columbia Building Code 2024 Schedule B continuation form listing plumbing, fire suppression systems, electrical, and geotechnical field review requirements, including drainage systems, sprinklers, alarms, electrical systems, excavation, soil bearing capacity, and seismic considerations, with sections for professional seal, signature, date, and CRP initials." } },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure7",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-7",
+                 "alt_text" : "British Columbia Building Code 2024 Schedule C-A form titled 'Assurance of Coordination of Professional Field Review,' including sections for jurisdiction, project information, coordinating registered professional details, professional seal and signature, field review coordination assurances, firm declaration, and compliance statements related to building permit and occupancy requirements." } },
+               
+               { "id" : "nbc.divC.part2.sect3.subsect1.art2.figure8",
+                "type" : "figure",
+                "hide_label" : true,
+                "source" : "bc",
+                "title" : "",
+                "graphic" : 
+                { "src" : "bc-graphics\/figure-c-2-3-1-2-8",
+                 "alt_text" : "British Columbia Building Code 2024 Schedule C-B form titled 'Assurance of Professional Field Review and Compliance,' including sections for jurisdiction, discipline, project information, registered professional details, professional seal and signature, compliance assurance statements, firm declaration, and certification requirements related to final inspection and building permit compliance." } } ] } ] } ] } ],
         "appendix" : 
         { "id" : "nbc.divC.part2.appendix",
          "type" : "part_appendix",
@@ -374153,7 +374225,7 @@
                 "type" : "sentence",
                 "number" : 4,
                 "source" : "bc",
-                "text" : "For resistance to seismic forces, the minimum total length of [REF:term:br-wl-pnl:braced wall panels] in each [REF:term:br-wl-bnd:braced wall band] , L_{s}, shall be determined by applying the adjustment factors provided in Table 9.23.13.7.-D to the unadjusted minimum total [REF:term:br-wl-pnl:braced wall panel] length, L_{us}, provided in Table 9.23.13.7.-C using the following equation:\nL_{s} = L_{us}K_{weight}K_{snow}K_{Sspacing}K_{Snumber}K_{gyp}K_{sheath} ≥ BWP_{min}\nwhere\nK_{weight} = weight of construction and cladding adjustment factor, and = 1 for normal-weight construction (see [REF:internal:nbc.divBV2.part9.sect23.subsect13.art2.sent3:short] ),\nK_{snow} = roof snow load adjustment factor, and = 1 for a specified roof snow load of 2 kPa or less, as calculated in accordance with [REF:internal:nbc.divBV2.part9.sect4.subsect2.art2:long] ,\nK_{Sspacing} = [REF:term:br-wl-bnd:braced wall band] spacing adjustment factor for seismic forces (see [REF:internal:nbc.divBV2.part9.sect23.subsect13.art7.sent5:short] ), per [REF:term:bldng:building] plan direction, and = 1 for a [REF:term:br-wl-bnd:braced wall band] spacing of 7.6 m ,\nK_{Snumber} = number of parallel [REF:term:br-wl-bnd:braced wall bands] adjustment factor for seismic forces, per [REF:term:bldng:building] plan direction, and = 1 for two exterior walls and no intermediate [REF:term:br-wl-bnd:braced wall bands] ,\nK_{gyp} = interior gypsum board adjustment factor, and = 1 for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on the interior side,\nK_{sheath} = intermittent [REF:term:br-wl-pnl:braced wall panels] adjustment factor, and = 1 for continuously sheathed [REF:term:br-wl-bnd:braced wall bands] , and\nBWP_{min} = minimum length of individual [REF:term:br-wl-pnl:braced wall panels] , per [REF:internal:nbc.divBV2.part9.sect23.subsect13.art5.table1:long] . (See Note A-9.23.13.7.(4) for an alternative procedure to calculate L_{s} directly and Note A-9.23.13.7.(3) and (4).)" },
+                "text" : "For resistance to seismic forces, the minimum total length of [REF:term:br-wl-pnl:braced wall panels] in each [REF:term:br-wl-bnd:braced wall band] , L_{s}, shall be determined by applying the adjustment factors provided in Table 9.23.13.7.-D to the unadjusted minimum total [REF:term:br-wl-pnl:braced wall panel] length, L_{us}, provided in Table 9.23.13.7.-C using the following equation:\nL_{s} = L_{us}K_{weight}K_{snow}K_{Sspacing}K_{Snumber}K_{gyp}K_{sheath} ≥ BWP_{min}\nWhere:\nK_{weight} = weight of construction and cladding adjustment factor, and\n= 1 for normal-weight construction (see [REF:internal:nbc.divBV2.part9.sect23.subsect13.art2.sent3:short] ),\nK_{snow} = roof snow load adjustment factor, and\n= 1 for a specified roof snow load of 2 kPa or less, as calculated in accordance with [REF:internal:nbc.divBV2.part9.sect4.subsect2.art2:long] ,\nK_{Sspacing} = [REF:term:br-wl-bnd:braced wall band] spacing adjustment factor for seismic forces (see [REF:internal:nbc.divBV2.part9.sect23.subsect13.art7.sent5:short] ), per [REF:term:bldng:building] plan direction, and\n= 1 for a [REF:term:br-wl-bnd:braced wall band] spacing of 7.6 m ,\nK_{Snumber} = number of parallel [REF:term:br-wl-bnd:braced wall bands] adjustment factor for seismic forces, per [REF:term:bldng:building] plan direction, and\n= 1 for two exterior walls and no intermediate [REF:term:br-wl-bnd:braced wall bands] ,\nK_{gyp} = interior gypsum board adjustment factor, and\n= 1 for [REF:term:br-wl-pnl:braced wall panels] with gypsum board installed on the interior side,\nK_{sheath} = intermittent [REF:term:br-wl-pnl:braced wall panels] adjustment factor, and\n= 1 for continuously sheathed [REF:term:br-wl-bnd:braced wall bands] , and\nBWP_{min} = minimum length of individual [REF:term:br-wl-pnl:braced wall panels] , per [REF:internal:nbc.divBV2.part9.sect23.subsect13.art5.table1:long] . (See Note A-9.23.13.7.(4) for an alternative procedure to calculate L_{s} directly and Note A-9.23.13.7.(3) and (4).)" },
                
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table3",
                 "type" : "table",
@@ -694650,7 +694722,7 @@
    "total_articles" : 2020,
    "total_sentences" : 5129,
    "total_tables" : 358,
-   "total_figures" : 318,
+   "total_figures" : 326,
    "total_spectables" : 2,
    "total_application_notes" : 827,
    "total_index_entries_vol1" : 5574,
