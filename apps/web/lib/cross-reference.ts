@@ -30,6 +30,10 @@ export type ReferenceRenderContext =
   | {
       kind: 'application-note';
       referenceId: string;
+    }
+  | {
+      kind: 'table';
+      referenceId: string;
     };
 
 const PART_APPENDIX_REF_REGEX =

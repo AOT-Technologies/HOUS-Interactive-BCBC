@@ -99,10 +99,20 @@ export function filterSentence(
     })
     .filter(item => item !== null);
 
+  // Clauses must appear in alphabetical letter order regardless of source array order.
+  // The source data can store clauses out of order (e.g. a deleted clause with letter "e"
+  // placed first in the array), so we sort by the number field (which holds the letter).
+  const sortedContent = filteredContent?.slice().sort((a, b) => {
+    if (a.type === 'clause' && b.type === 'clause') {
+      return (a as Clause).number.localeCompare((b as Clause).number);
+    }
+    return 0;
+  });
+
   return {
     ...sentence,
     text,
-    content: filteredContent && filteredContent.length > 0 ? filteredContent : undefined,
+    content: sortedContent && sortedContent.length > 0 ? sortedContent : undefined,
   };
 }
 
