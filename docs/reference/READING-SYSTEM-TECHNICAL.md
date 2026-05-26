@@ -404,7 +404,7 @@ switch (node.type) {
   case 'clause': return <ClauseBlock />
   case 'subclause': return <SubclauseBlock />
   case 'table': return <TableBlock />
-  case 'figure': return <FigureBlock />
+  case 'figure': return <FigureBlock />   // hide_label:true suppresses "Figure X" label
   case 'equation': return <EquationBlock />
   case 'note': return <NoteBlock />
   default: console.warn('Unknown type')
