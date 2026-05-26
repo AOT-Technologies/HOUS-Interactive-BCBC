@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-05-21T12:16:06.251719-07:00",
+  "generated_timestamp" : "2026-05-26T14:56:56.996449-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -183339,10 +183339,10 @@
            
            { "type" : "paragraph",
             "id" : "nbc.divB.appendixC.div8.para2",
-            "content" : "The estimation of the design snow load on a roof from snow depth observations involves the following steps:[LIST:bulleted]",
+            "content" : "The estimation of the design snow load on a roof from snow depth observations involves the following steps:[LIST:numbered]",
             "lists" : 
             [ 
-             { "type" : "bulleted",
+             { "type" : "numbered",
               "items" : 
               [ 
                { "content" : "The depth of snow on the ground, which has an annual probability of exceedance of 1-in-50, is computed." },
@@ -267711,7 +267711,23 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect7.article4.example2.para1",
-                "content" : "A 2 h fire-resistance rating is required for a hollow masonry wall of Type N concrete with a 12.7 mm Type X gypsum board finish on each face." },
+                "content" : "A 2 h fire-resistance rating is required for a hollow masonry wall of Type N concrete with a 12.7 mm Type X gypsum board finish on each face. [LIST:bulleted]",
+                "lists" : 
+                [ 
+                 { "type" : "bulleted",
+                  "items" : 
+                  [ 
+                   { "content" : "Since gypsum board is used, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long] applies. The 12.7 mm gypsum board finish on the fire-exposed side is, therefore, assigned 25 min by using [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] ." },
+                   
+                   { "content" : "The fire resistance required of the balance of the assembly is 120 min - 25 min = 95 min ." },
+                   
+                   { "content" : "Interpolating between 1.5 h and 2 h in [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article1.table1:long] for 95 min fire resistance, the equivalent thickness for hollow masonry units required is 95 mm + ( 18 mm × 5\/30) = 95 mm + 3 mm = 98 mm." },
+                   
+                   { "content" : "The contribution to the equivalent thickness of the wall of the 12.7 mm gypsum board finish on the non-fire-exposed side using [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.table1:long] = 12.7 × 1.25 = 16 mm ." },
+                   
+                   { "content" : "Equivalent thickness required of concrete masonry unit = 98 - 16 = 82 mm ." },
+                   
+                   { "content" : "The fire-resistance rating of a concrete masonry wall having an equivalent thickness of 82 mm = 1 h for 73 mm + ( 9 mm × 30\/22) = 1 h12 min ." } ] } ] },
                
                { "type" : "list",
                 "list_type" : "bulleted",
@@ -272219,7 +272235,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article9.para5",
-                "content" : "6) In a double layer application of gypsum board on wood supports, fastener spacing shall conform to [REF:standard:d-astmc840]" } ] },
+                "content" : "5) In a double layer application of gypsum board on wood supports, fastener spacing shall conform to [REF:standard:d-astmc840]" } ] },
              
              { "id" : "nbc.divB.appendixD.appsect2.subsect3.article10",
               "type" : "appendix_article",
@@ -276171,7 +276187,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect6.article6.para1",
-                "content" : "A fire-resistance rating, R, is permitted to be assigned to concentrically loaded hollow steel columns that are filled with plain concrete, steel-fibre reinforced concrete or bar-reinforced concrete, that are fabricated and erected within the tolerances stipulated in [REF:standard:d-csas16] and that comply with  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para2:short] and [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para3:short] , provided:[EQ:display:eg02533a]where[LIST:variable]but shall not exceed[LIST:alphabetic]where[LIST:variable]where[LIST:variable]subject to the validity limits stated in [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.table2:long] .",
+                "content" : "1) A fire-resistance rating, R, is permitted to be assigned to concentrically loaded hollow steel columns that are filled with plain concrete, steel-fibre reinforced concrete or bar-reinforced concrete, that are fabricated and erected within the tolerances stipulated in [REF:standard:d-csas16] and that comply with  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para2:short] and [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para3:short] , provided:[EQ:display:eg02533a]where[LIST:variable]but shall not exceed[LIST:alphabetic]where[LIST:variable]where[LIST:variable]subject to the validity limits stated in [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.table2:long] .",
                 "equations" : 
                 [ 
                  { "id" : "eg02533a",
@@ -276656,7 +276672,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect6.article6.para2",
-                "content" : "A pair of steam vent holes shall be provided at each end of the hollow steel column and at each intermediate floor level, and the holes shall be[LIST:bulleted]",
+                "content" : "2) A pair of steam vent holes shall be provided at each end of the hollow steel column and at each intermediate floor level, and the holes shall be[LIST:bulleted]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -276672,7 +276688,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect6.article6.para3",
-                "content" : "Load application and reaction shall be through end bearing in accordance with [REF:standard:d-csas16]" },
+                "content" : "3) Load application and reaction shall be through end bearing in accordance with [REF:standard:d-csas16]" },
                
                { "id" : "nbc.divB.appendixD.appsect2.subsect6.article6.table2",
                 "type" : "table",
@@ -278764,15 +278780,15 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article1.para1",
-                "content" : "The calculation methods described in this Subsection are intended to be used to determine fire-resistance ratings for structural mass timber elements on the basis of the elements being subjected to the standard fire exposure conditions described in [REF:standard:d-ulcs101]" },
+                "content" : "1) The calculation methods described in this Subsection are intended to be used to determine fire-resistance ratings for structural mass timber elements on the basis of the elements being subjected to the standard fire exposure conditions described in [REF:standard:d-ulcs101]" },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article1.para2",
-                "content" : "Loadbearing mass timber members, such as beams and columns, subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short] are assigned a fire-resistance rating that relates to the time at which the applied load is no longer sustained." },
+                "content" : "2) Loadbearing mass timber members, such as beams and columns, subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short] are assigned a fire-resistance rating that relates to the time at which the applied load is no longer sustained." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article1.para3",
-                "content" : "Mass timber wall, floor and roof assemblies subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short] are assigned a fire-resistance rating that relates to the lesser of the times at which[LIST:bulleted]",
+                "content" : "3) Mass timber wall, floor and roof assemblies subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short] are assigned a fire-resistance rating that relates to the lesser of the times at which[LIST:bulleted]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -278791,15 +278807,15 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article2.para1",
-                "content" : "Method A described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article3:long] applies to glued-laminated timber beams and columns required to have fire-resistance ratings greater than those afforded under the provisions of  Article [REF:internal:nbc.divB.part3.sect1.subsect4.art6:long]" },
+                "content" : "1) Method A described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article3:long] applies to glued-laminated timber beams and columns required to have fire-resistance ratings greater than those afforded under the provisions of  Article [REF:internal:nbc.divB.part3.sect1.subsect4.art6:long]" },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article2.para2",
-                "content" : "Method B described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4:long] applies to mass timber elements, including solid sawn timber and glued-laminated timber beams and columns, required to have fire-resistance ratings greater than those afforded under the provisions of  Article [REF:internal:nbc.divB.part3.sect1.subsect4.art6:long]" },
+                "content" : "2) Method B described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4:long] applies to mass timber elements, including solid sawn timber and glued-laminated timber beams and columns, required to have fire-resistance ratings greater than those afforded under the provisions of  Article [REF:internal:nbc.divB.part3.sect1.subsect4.art6:long]" },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article2.para3",
-                "content" : "The calculation methods described in  Articles [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article3:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4:long] are separate and independent methods that use different approaches to determine fire-resistance ratings for mass timber elements." } ] },
+                "content" : "3) The calculation methods described in  Articles [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article3:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4:long] are separate and independent methods that use different approaches to determine fire-resistance ratings for mass timber elements." } ] },
              
              { "id" : "nbc.divB.appendixD.appsect2.subsect11.article3",
               "type" : "appendix_article",
@@ -600919,10 +600935,10 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote74.para1",
-             "content" : "Studies at the National Fire Laboratory of the National Research Council have shown that, where an exposing building face is stepped back from the property line or is at an angle to the property line, it is possible to increase the percentage of glazing in those portions of the exposing building face further from the property line without increasing the amount of radiated energy that would reach the property line in the event of a fire in such a building.  Figures [REF:internal:nbc.divBV2.part9.appendix.appnote74.figure1:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote74.figure2:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote74.figure3:long] show how  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent1:long] and [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent2:short] ,  and [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent2:long] and [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent3:short] can be applied to exposing building faces that are stepped back from or not parallel to the property line. The following procedure can be used to establish the maximum permitted area of glazed openings for such facades:[LIST:bulleted]",
+             "content" : "Studies at the National Fire Laboratory of the National Research Council have shown that, where an exposing building face is stepped back from the property line or is at an angle to the property line, it is possible to increase the percentage of glazing in those portions of the exposing building face further from the property line without increasing the amount of radiated energy that would reach the property line in the event of a fire in such a building.  Figures [REF:internal:nbc.divBV2.part9.appendix.appnote74.figure1:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote74.figure2:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote74.figure3:long] show how  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent1:long] and [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent2:short] ,  and [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent2:long] and [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent3:short] can be applied to exposing building faces that are stepped back from or not parallel to the property line. The following procedure can be used to establish the maximum permitted area of glazed openings for such facades:[LIST:numbered]",
              "lists" : 
              [ 
-              { "type" : "bulleted",
+              { "type" : "numbered",
                "items" : 
                [ 
                 { "content" : "Calculate the total area of the exposing building face, i.e. facade of the fire compartment, as described in the definition of exposing building face." },
@@ -601221,10 +601237,10 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote75.para3",
-             "content" : "A smoke alarm is not required on each level in a split-level dwelling unit as each level does not count as a separate storey. Determine the number of storeys in a split-level dwelling unit and which levels are part of which storey as follows:[LIST:bulleted]",
+             "content" : "A smoke alarm is not required on each level in a split-level dwelling unit as each level does not count as a separate storey. Determine the number of storeys in a split-level dwelling unit and which levels are part of which storey as follows:[LIST:numbered]",
              "lists" : 
              [ 
-              { "type" : "bulleted",
+              { "type" : "numbered",
                "items" : 
                [ 
                 { "content" : "establish grade, which is the lowest of the average levels of finished ground adjoining each exterior wall of a building;" },
@@ -606253,10 +606269,10 @@
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote131.div1.para3",
-               "content" : "Where the braced wall bands are not parallel, the adjacent band is identified as follows using [REF:internal:nbc.divBV2.part9.appendix.appnote131.figure2:long:Figure Table A-9.23.13.5.-B] as an example:[LIST:bulleted]",
+               "content" : "Where the braced wall bands are not parallel, the adjacent band is identified as follows using [REF:internal:nbc.divBV2.part9.appendix.appnote131.figure2:long:Figure Table A-9.23.13.5.-B] as an example:[LIST:numbered]",
                "lists" : 
                [ 
-                { "type" : "bulleted",
+                { "type" : "numbered",
                  "items" : 
                  [ 
                   { "id" : "nbc.divBV2.part9.appendix.appnote131.div1.para3.item1",
@@ -612404,18 +612420,18 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote223.div2.para1",
-               "content" : "To calculate the effective thermal resistance of a building envelope assembly containing wood framing, RSI_{eff}, add up the results of the following calculations:[LIST:bulleted][EQ:display:eg02626a]where[LIST:variable]",
+               "content" : "To calculate the effective thermal resistance of a building envelope assembly containing wood framing, RSI_{eff}, add up the results of the following calculations:[LIST:alphabetic][EQ:display:eg02626a]where[LIST:variable]",
                "equations" : 
                [ 
                 { "id" : "eg02626a",
                  "type" : "display",
-                 "latex" : "RSI_{parallel}=\\frac{100}{\\frac{\\text{%}areaofframing}{RSI_{F}}+\\frac{\\text{%}areaofcavity}{RSI_{C}}}",
+                 "latex" : "\n                              RSI\n                              _{parallel}\n                              =\n                              \\frac{100}{\\frac{\\text{%}areaofframing}{RSI_{F}}+\\frac{\\text{%}areaofcavity}{RSI_{C}}}\n                           ",
                  "plainText" : "RSI_parallel=(100)\/((%areaofframing)\/(RSI_F)+(%areaofcavity)\/(RSI_C))",
-                 "mathml" : "<math xmlns=\"http:\/\/www.w3.org\/1998\/Math\/MathML\" display=\"block\">\n                              <mi xmlns=\"\">RSI<\/mi>\n                              <msub xmlns=\"\">\n                                 <mrow\/>\n                                 <mrow>\n                                    <mi>parallel<\/mi>\n                                 <\/mrow>\n                              <\/msub>\n                              <mo xmlns=\"\">=<\/mo>\n                              <mfrac xmlns=\"\">\n                                 <mrow>\n                                    <mn>100<\/mn>\n                                 <\/mrow>\n                                 <mrow>\n                                    <mfrac>\n                                       <mrow>\n                                          <mtext>%<\/mtext>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>area<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>of<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>framing<\/mi>\n                                       <\/mrow>\n                                       <mrow>\n                                          <mi>RSI<\/mi>\n                                          <msub>\n                                             <mrow\/>\n                                             <mrow>\n                                                <mi>F<\/mi>\n                                             <\/mrow>\n                                          <\/msub>\n                                       <\/mrow>\n                                    <\/mfrac>\n                                    <mo>+<\/mo>\n                                    <mfrac>\n                                       <mrow>\n                                          <mtext>%<\/mtext>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>area<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>of<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>cavity<\/mi>\n                                       <\/mrow>\n                                       <mrow>\n                                          <mi>RSI<\/mi>\n                                          <msub>\n                                             <mrow\/>\n                                             <mrow>\n                                                <mi>C<\/mi>\n                                             <\/mrow>\n                                          <\/msub>\n                                       <\/mrow>\n                                    <\/mfrac>\n                                 <\/mrow>\n                              <\/mfrac>\n                           <\/math>",
+                 "mathml" : "<math display=\"block\">\n                              <mi>RSI<\/mi>\n                              <msub>\n                                 <mrow\/>\n                                 <mrow>\n                                    <mi>parallel<\/mi>\n                                 <\/mrow>\n                              <\/msub>\n                              <mo>=<\/mo>\n                              <mfrac>\n                                 <mrow>\n                                    <mn>100<\/mn>\n                                 <\/mrow>\n                                 <mrow>\n                                    <mfrac>\n                                       <mrow>\n                                          <mtext>%<\/mtext>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>area<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>of<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>framing<\/mi>\n                                       <\/mrow>\n                                       <mrow>\n                                          <mi>RSI<\/mi>\n                                          <msub>\n                                             <mrow\/>\n                                             <mrow>\n                                                <mi>F<\/mi>\n                                             <\/mrow>\n                                          <\/msub>\n                                       <\/mrow>\n                                    <\/mfrac>\n                                    <mo>+<\/mo>\n                                    <mfrac>\n                                       <mrow>\n                                          <mtext>%<\/mtext>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>area<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>of<\/mi>\n                                          <mspace width=\"0.5em\"\/>\n                                          <mi>cavity<\/mi>\n                                       <\/mrow>\n                                       <mrow>\n                                          <mi>RSI<\/mi>\n                                          <msub>\n                                             <mrow\/>\n                                             <mrow>\n                                                <mi>C<\/mi>\n                                             <\/mrow>\n                                          <\/msub>\n                                       <\/mrow>\n                                    <\/mfrac>\n                                 <\/mrow>\n                              <\/mfrac>\n                           <\/math>",
                  "htmlSrc" : "graphics\/eg\/026\/eg02626a" } ],
                "lists" : 
                [ 
-                { "type" : "bulleted",
+                { "type" : "alphabetic",
                  "items" : 
                  [ 
                   { "content" : "calculate the effective thermal resistance of all layers with continuous materials using the isothermal-planes method, and" },
@@ -612454,34 +612470,34 @@
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote223.div2.example1.para1",
-               "content" : "[LIST:bulleted]",
+               "content" : "[LIST:numbered]",
                "equations" : 
                [ 
                 { "id" : "eg02630a",
                  "type" : "display",
-                 "latex" : "RSI_{parallel}=\\frac{100}{(\\frac{23}{1.19})+(\\frac{77}{3.34})}=2.36(m^{2}\\\\timesK)\/W(U\\text{–}value=0.42W\/(m^{2}\\\\timesK))",
+                 "latex" : "\n                                    RSI\n                                    _{parallel}\n                                    =\n                                    \\frac{100}{(\\frac{23}{1.19})+(\\frac{77}{3.34})}\n                                    =\n                                    2.36\n                                    (\n                                    m\n                                    ^{2}\n                                    \\\\times\n                                    K\n                                    )\n                                    \/\n                                    W\n                                    \n                                    \n                                    \n                                    \n                                    \n                                    (\n                                    U\n                                    \\text{–}\n                                    value\n                                    =\n                                    0.42\n                                    W\n                                    \/\n                                    (\n                                    m\n                                    ^{2}\n                                    \\\\times\n                                    K\n                                    )\n                                    )\n                                 ",
                  "plainText" : "RSI_parallel=(100)\/(((23)\/(1.19))+((77)\/(3.34)))=2.36(m^2×K)\/W(U–value=0.42W\/(m^2×K))",
-                 "mathml" : "<math xmlns=\"http:\/\/www.w3.org\/1998\/Math\/MathML\" display=\"block\">\n                                    <mi xmlns=\"\">RSI<\/mi>\n                                    <msub xmlns=\"\">\n                                       <mrow\/>\n                                       <mrow>\n                                          <mi>parallel<\/mi>\n                                       <\/mrow>\n                                    <\/msub>\n                                    <mo xmlns=\"\">=<\/mo>\n                                    <mfrac xmlns=\"\">\n                                       <mrow>\n                                          <mn>100<\/mn>\n                                       <\/mrow>\n                                       <mrow>\n                                          <mo>(<\/mo>\n                                          <mfrac>\n                                             <mrow>\n                                                <mn>23<\/mn>\n                                             <\/mrow>\n                                             <mrow>\n                                                <mn>1.19<\/mn>\n                                             <\/mrow>\n                                          <\/mfrac>\n                                          <mo>)<\/mo>\n                                          <mo>+<\/mo>\n                                          <mo>(<\/mo>\n                                          <mfrac>\n                                             <mrow>\n                                                <mn>77<\/mn>\n                                             <\/mrow>\n                                             <mrow>\n                                                <mn>3.34<\/mn>\n                                             <\/mrow>\n                                          <\/mfrac>\n                                          <mo>)<\/mo>\n                                       <\/mrow>\n                                    <\/mfrac>\n                                    <mo xmlns=\"\">=<\/mo>\n                                    <mn xmlns=\"\">2.36<\/mn>\n                                    <mo xmlns=\"\">(<\/mo>\n                                    <mi xmlns=\"\">m<\/mi>\n                                    <msup xmlns=\"\">\n                                       <mrow\/>\n                                       <mrow>\n                                          <mn>2<\/mn>\n                                       <\/mrow>\n                                    <\/msup>\n                                    <mo xmlns=\"\">×<\/mo>\n                                    <mi xmlns=\"\">K<\/mi>\n                                    <mo xmlns=\"\">)<\/mo>\n                                    <mo xmlns=\"\">\/<\/mo>\n                                    <mi xmlns=\"\">W<\/mi>\n                                    <mspace xmlns=\"\" width=\"0.5em\"\/>\n                                    <mspace xmlns=\"\" width=\"0.5em\"\/>\n                                    <mspace xmlns=\"\" width=\"0.5em\"\/>\n                                    <mspace xmlns=\"\" width=\"0.5em\"\/>\n                                    <mspace xmlns=\"\" width=\"0.5em\"\/>\n                                    <mo xmlns=\"\">(<\/mo>\n                                    <mi xmlns=\"\">U<\/mi>\n                                    <mtext xmlns=\"\">–<\/mtext>\n                                    <mi xmlns=\"\">value<\/mi>\n                                    <mo xmlns=\"\">=<\/mo>\n                                    <mn xmlns=\"\">0.42<\/mn>\n                                    <mi xmlns=\"\">W<\/mi>\n                                    <mo xmlns=\"\">\/<\/mo>\n                                    <mo xmlns=\"\">(<\/mo>\n                                    <mi xmlns=\"\">m<\/mi>\n                                    <msup xmlns=\"\">\n                                       <mrow\/>\n                                       <mrow>\n                                          <mn>2<\/mn>\n                                       <\/mrow>\n                                    <\/msup>\n                                    <mo xmlns=\"\">×<\/mo>\n                                    <mi xmlns=\"\">K<\/mi>\n                                    <mo xmlns=\"\">)<\/mo>\n                                    <mo xmlns=\"\">)<\/mo>\n                                 <\/math>",
+                 "mathml" : "<math display=\"block\">\n                                    <mi>RSI<\/mi>\n                                    <msub>\n                                       <mrow\/>\n                                       <mrow>\n                                          <mi>parallel<\/mi>\n                                       <\/mrow>\n                                    <\/msub>\n                                    <mo>=<\/mo>\n                                    <mfrac>\n                                       <mrow>\n                                          <mn>100<\/mn>\n                                       <\/mrow>\n                                       <mrow>\n                                          <mo>(<\/mo>\n                                          <mfrac>\n                                             <mrow>\n                                                <mn>23<\/mn>\n                                             <\/mrow>\n                                             <mrow>\n                                                <mn>1.19<\/mn>\n                                             <\/mrow>\n                                          <\/mfrac>\n                                          <mo>)<\/mo>\n                                          <mo>+<\/mo>\n                                          <mo>(<\/mo>\n                                          <mfrac>\n                                             <mrow>\n                                                <mn>77<\/mn>\n                                             <\/mrow>\n                                             <mrow>\n                                                <mn>3.34<\/mn>\n                                             <\/mrow>\n                                          <\/mfrac>\n                                          <mo>)<\/mo>\n                                       <\/mrow>\n                                    <\/mfrac>\n                                    <mo>=<\/mo>\n                                    <mn>2.36<\/mn>\n                                    <mo>(<\/mo>\n                                    <mi>m<\/mi>\n                                    <msup>\n                                       <mrow\/>\n                                       <mrow>\n                                          <mn>2<\/mn>\n                                       <\/mrow>\n                                    <\/msup>\n                                    <mo>×<\/mo>\n                                    <mi>K<\/mi>\n                                    <mo>)<\/mo>\n                                    <mo>\/<\/mo>\n                                    <mi>W<\/mi>\n                                    <mspace width=\"0.5em\"\/>\n                                    <mspace width=\"0.5em\"\/>\n                                    <mspace width=\"0.5em\"\/>\n                                    <mspace width=\"0.5em\"\/>\n                                    <mspace width=\"0.5em\"\/>\n                                    <mo>(<\/mo>\n                                    <mi>U<\/mi>\n                                    <mtext>–<\/mtext>\n                                    <mi>value<\/mi>\n                                    <mo>=<\/mo>\n                                    <mn>0.42<\/mn>\n                                    <mi>W<\/mi>\n                                    <mo>\/<\/mo>\n                                    <mo>(<\/mo>\n                                    <mi>m<\/mi>\n                                    <msup>\n                                       <mrow\/>\n                                       <mrow>\n                                          <mn>2<\/mn>\n                                       <\/mrow>\n                                    <\/msup>\n                                    <mo>×<\/mo>\n                                    <mi>K<\/mi>\n                                    <mo>)<\/mo>\n                                    <mo>)<\/mo>\n                                 <\/math>",
                  "htmlSrc" : "graphics\/eg\/026\/eg02630a" } ],
                "lists" : 
                [ 
-                { "type" : "bulleted",
+                { "type" : "numbered",
                  "items" : 
                  [ 
                   { "content" : "Determine the thermal resistance of each continuous material layer incorporated in the assembly using [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3:long] ." },
                   
-                  { "content" : "Calculate the thermal resistance of a section of framing and adjacent cavity portion, RSI_{parallel}, using the parallel-path flow method as follows:[LIST:bulleted]Look up the % area of framing and cavity for a typical 38 × 140 mm wood-frame wall assembly with studs 400 mm o.c. using [REF:internal:nbc.divBV2.part9.appendix.appnote223.div2.table1:long] :[LIST:bulleted]Then, combine the sums of RSI_{F} and RSI_{C} in proportion to the relative areas of framing and insulation to calculate the value of RSI_{parallel} (thermal resistance of the framing portion): [EQ:display:eg02630a]" },
+                  { "content" : "Calculate the thermal resistance of a section of framing and adjacent cavity portion, RSI_{parallel}, using the parallel-path flow method as follows:[LIST:roman]Look up the % area of framing and cavity for a typical 38 × 140 mm wood-frame wall assembly with studs 400 mm o.c. using [REF:internal:nbc.divBV2.part9.appendix.appnote223.div2.table1:long] :[LIST:none]Then, combine the sums of RSI_{F} and RSI_{C} in proportion to the relative areas of framing and insulation to calculate the value of RSI_{parallel} (thermal resistance of the framing portion): [EQ:display:eg02630a]" },
                   
                   { "content" : "Add up the values obtained in steps 1 and 2 to determine the effective thermal resistance of the wall assembly, RSI_{eff}." } ] },
                 
-                { "type" : "bulleted",
+                { "type" : "roman",
                  "items" : 
                  [ 
                   { "content" : "along a line that goes through the framing, which is designated RSI_{F}, and" },
                   
                   { "content" : "along a line that goes through the cavity (usually filled with insulation), which is designated RSI_{C}." } ] },
                 
-                { "type" : "bulleted",
+                { "type" : "none",
                  "items" : 
                  [ 
                   { "content" : "% area of framing = 23%, and" },
