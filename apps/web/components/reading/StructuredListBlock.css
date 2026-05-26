@@ -5,14 +5,20 @@
 .structuredList--bulleted,
 .structuredList--numbered,
 .structuredList--alphabetic,
-.structuredList--roman {
+.structuredList--roman,
+.structuredList--none {
   padding-left: 1.5rem;
+}
+
+.structuredList--none {
+  list-style-type: none;
 }
 
 .structuredList--bulleted li,
 .structuredList--numbered li,
 .structuredList--alphabetic li,
-.structuredList--roman li {
+.structuredList--roman li,
+.structuredList--none li {
   margin-top: 0.5rem;
 }
 
