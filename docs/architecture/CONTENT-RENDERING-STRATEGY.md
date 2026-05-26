@@ -1374,6 +1374,10 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
 - **Cause**: Source data uses `"type": "bulleted"` for sub-item lists in table notes. `DivisionAppendixRenderer` normalizes paragraph-level lists but `TableBlock` renders table notes independently.
 - **Solution**: `TableBlock.tsx` detects Appendix D tables by checking if the table ID matches both `appendixD` and `appsect` patterns (`isAppendixDStyle`). When matched, bulleted lists in table notes are remapped to `roman` type, and the `[LIST:bulleted]` marker in the note content text is rewritten to `[LIST:roman]` so `parseTextWithMarkers` can match it correctly.
 
+**Issue**: Figure shows unwanted "Figure X.X.X.X.-A" label (e.g. for form/schedule images)
+- **Cause**: `FigureBlock` auto-generates a label from the figure's ID. For figures that represent full-page forms (e.g. Letters of Assurance in Division C Section 2.3), this label is inappropriate.
+- **Solution**: Set `"hide_label": true` on the figure JSON node. `FigureBlock.tsx` checks this field and skips rendering the `.figure-block__number` element.
+
 ---
 
 ## Related Documentation
