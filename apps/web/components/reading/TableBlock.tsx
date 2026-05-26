@@ -1260,11 +1260,17 @@ const renderColGroup = (columnWidthsRem: number[], printColumnWidthsPct: number[
   );
 };
 
+const toTableRenderContext = (
+  ctx?: ReferenceRenderContext
+): ReferenceRenderContext | undefined =>
+  ctx ? { kind: 'table', referenceId: ctx.referenceId } : undefined;
+
 const renderRows = (
   rows: NormalizedRow[],
   interactive: boolean,
   renderContext?: ReferenceRenderContext
 ) => {
+  const tableCtx = toTableRenderContext(renderContext);
   return rows.map((row, rowIndex) => (
     <tr key={row.id || rowIndex}>
       {row.cells.map((cell, cellIndex) => {
@@ -1287,7 +1293,7 @@ const renderRows = (
             colSpan={cell.colspan}
             rowSpan={cell.rowspan}
           >
-            {renderCellContent(cell.content, interactive, renderContext)}
+            {renderCellContent(cell.content, interactive, tableCtx)}
           </CellTag>
         );
       })}
@@ -1308,6 +1314,7 @@ const renderBodyRowsWithColTracking = (
   interactive: boolean,
   renderContext?: ReferenceRenderContext
 ): React.ReactNode[] => {
+  const tableCtx = toTableRenderContext(renderContext);
   const activeRowspans: number[] = [];
 
   return rows.map((row, rowIndex) => {
@@ -1361,7 +1368,7 @@ const renderBodyRowsWithColTracking = (
               colSpan={cell.colspan}
               rowSpan={cell.rowspan}
             >
-              {renderCellContent(cell.content, interactive, renderContext)}
+              {renderCellContent(cell.content, interactive, tableCtx)}
             </CellTag>
           );
         })}
@@ -1378,6 +1385,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   appendixSiblingTableCount,
   tableNumberOverride,
 }) => {
+  const tableRenderContext = toTableRenderContext(renderContext);
   const [isPrintMode, setIsPrintMode] = useState(false);
   const [renderedBodyRowCount, setRenderedBodyRowCount] = useState<number>(INITIAL_BODY_ROW_RENDER_COUNT);
   const [scrollbarCompensation, setScrollbarCompensation] = useState(0);
@@ -1519,8 +1527,8 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     [columnProfiles, columnWidthsRem, needsLandscapePrint]
   );
   const renderedHeaderRowsMarkup = useMemo(
-    () => renderRows(displayHeaderRows, interactive, renderContext),
-    [displayHeaderRows, interactive, renderContext]
+    () => renderRows(displayHeaderRows, interactive, tableRenderContext),
+    [displayHeaderRows, interactive, tableRenderContext]
   );
   // Extract just the first-column cells from the header for the pinned overlay.
   // Rows where column 0 is covered by a rowspan from a previous row get an
@@ -1544,16 +1552,16 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     });
   }, [displayHeaderRows, usesSplitScrollLayout]);
   const renderedBodyRowsMarkup = useMemo(
-    () => renderBodyRowsWithColTracking(renderedBodyRows, interactive, renderContext),
-    [interactive, renderContext, renderedBodyRows]
+    () => renderBodyRowsWithColTracking(renderedBodyRows, interactive, tableRenderContext),
+    [interactive, tableRenderContext, renderedBodyRows]
   );
   const fullBodyRowsMarkup = useMemo(
-    () => renderBodyRowsWithColTracking(bodyRows, interactive, renderContext),
-    [bodyRows, interactive, renderContext]
+    () => renderBodyRowsWithColTracking(bodyRows, interactive, tableRenderContext),
+    [bodyRows, interactive, tableRenderContext]
   );
   const fullDisplayRowsMarkup = useMemo(
-    () => renderRows(displayRows, interactive, renderContext),
-    [displayRows, interactive, renderContext]
+    () => renderRows(displayRows, interactive, tableRenderContext),
+    [displayRows, interactive, tableRenderContext]
   );
   const loadNextBodyRowChunk = useCallback(() => {
     if (
@@ -1744,24 +1752,24 @@ export const TableBlock: React.FC<TableBlockProps> = ({
         <div className="table-block__header">
           {tableNumber && (
             <div className="table-block__number">
-              {renderFormattedText(tableNumberDisplay || '', interactive, renderContext)}
+              {renderFormattedText(tableNumberDisplay || '', interactive, tableRenderContext)}
             </div>
           )}
           {resolvedTitle && (
             <div className="table-block__title">
-              {renderFormattedText(resolvedTitle, interactive, renderContext)}
+              {renderFormattedText(resolvedTitle, interactive, tableRenderContext)}
             </div>
           )}
           {formingPartText && (
             <div className="table-block__forming-part">
-              {renderFormattedText(formingPartText, interactive, renderContext)}
+              {renderFormattedText(formingPartText, interactive, tableRenderContext)}
             </div>
           )}
         </div>
       )}
       {resolvedCaption && (
         <div className="table-block__caption">
-          {renderFormattedText(resolvedCaption, interactive, renderContext)}
+          {renderFormattedText(resolvedCaption, interactive, tableRenderContext)}
         </div>
       )}
       <div
@@ -1832,7 +1840,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                                     colSpan={cell.colspan}
                                     rowSpan={cell.rowspan}
                                   >
-                                    {renderCellContent(cell.content, interactive, renderContext)}
+                                    {renderCellContent(cell.content, interactive, tableRenderContext)}
                                   </CellTag>
                                 );
                               })}
@@ -1914,7 +1922,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                               colSpan={cell.colspan}
                               rowSpan={cell.rowspan}
                             >
-                              {renderCellContent(cell.content, interactive, renderContext)}
+                              {renderCellContent(cell.content, interactive, tableRenderContext)}
                             </CellTag>
                           );
                         })}
@@ -1955,7 +1963,7 @@ export const TableBlock: React.FC<TableBlockProps> = ({
                 >
                   <span className="table-block__note-label">{getTableNoteLabel(note, index)}</span>
                   <span className="table-block__note-content">
-                    {renderFormattedText(noteContent, interactive, renderContext, noteList ? [noteList] : [])}
+                    {renderFormattedText(noteContent, interactive, tableRenderContext, noteList ? [noteList] : [])}
                   </span>
                 </div>
               );

@@ -667,8 +667,13 @@ function getCrossReferenceDisplayText(
     };
   }
 
-  // Fallback: generate display text from referenceId
-  const currentDivision = renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase();
+  // Fallback: generate display text from referenceId.
+  // Cross-division suffix (e.g. "of Division B") is only applied for prose contexts
+  // (article, appendix, application-note). Table cells rely on inline source text instead.
+  const currentDivision =
+    renderContext?.kind !== 'table'
+      ? renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase()
+      : undefined;
   const fallback = formatInternalReference(
     referenceId,
     shouldExpandShortArticleRef ? 'medium' : format,
@@ -684,6 +689,18 @@ function getCrossReferenceDisplayText(
       text: `${fallback} ${qualifier}`.replace(/\s+/g, ' ').trim(),
       consumed: qualifierMatch[1].length,
     };
+  }
+
+  // If the fallback ends with a cross-division suffix (e.g. "of Division B"), check
+  // whether the source text immediately after the marker already contains the same
+  // phrase (e.g. " . of Division B"). If so, consume it to prevent duplication.
+  const divisionSuffix = fallback.match(/ of Division ([A-Za-z0-9]+)$/i);
+  if (divisionSuffix) {
+    const divLabel = divisionSuffix[1];
+    const redundant = remaining.match(new RegExp(`^\\s*\\.?\\s*of Division ${divLabel}\\b`, 'i'));
+    if (redundant) {
+      return { text: fallback, consumed: redundant[0].length };
+    }
   }
 
   return {
@@ -1446,7 +1463,10 @@ export function parseTextWithMarkers(
               format: marker.format as InternalRefFormat,
               interactive,
               preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
-              currentDivision: renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase(),
+              currentDivision:
+                renderContext?.kind !== 'table'
+                  ? renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase()
+                  : undefined,
             })
           );
         }
