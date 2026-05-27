@@ -873,7 +873,10 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   }
 
   if (article) {
-    return isShortNumeric ? articleNumber : `Article ${articleNumber}.`;
+    if (isShortNumeric) return articleNumber;
+    return format === 'long' && division && currentDivision && division !== currentDivision
+      ? `Article ${articleNumber}. of Division ${division}`
+      : `Article ${articleNumber}.`;
   }
 
   if (subsection) {

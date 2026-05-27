@@ -426,6 +426,26 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(plainText).not.toContain('of Division B');
   });
 
+  it('formats cross-division article long references with division suffix', () => {
+    const input = '[REF:internal:nbc.divB.part3.sect2.subsect1.art2:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 3.2.1.2. of Division B');
+  });
+
+  it('suppresses cross-division suffix for article references in table context', () => {
+    const tableContext: ReferenceRenderContext = { kind: 'table', referenceId: 'nbc.divA.part1.sect1.subsect1.art1.table1' };
+    const input = '[REF:internal:nbc.divB.part3.sect2.subsect1.art2:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], tableContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 3.2.1.2.');
+    expect(crossRefs[0].props.currentDivision).toBeUndefined();
+  });
+
   it('formats sentence long references with full numbering', () => {
     const input = '[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1:long]';
     const nodes = parseTextWithMarkers(input, [], true);
