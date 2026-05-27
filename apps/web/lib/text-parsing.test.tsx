@@ -435,6 +435,25 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.displayText).toBe('Article 3.2.1.2. of Division B');
   });
 
+  it('normalizes compound division codes (e.g. BV2) to canonical letter in section suffix', () => {
+    // nbc.divBV2 is Volume 2 of Division B — display should say "of Division B" not "of Division BV2"
+    const input = '[REF:internal:nbc.divBV2.part9.sect36:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Section 9.36. of Division B');
+  });
+
+  it('normalizes compound division codes (e.g. BV2) to canonical letter in article suffix', () => {
+    const input = '[REF:internal:nbc.divBV2.part9.sect36.subsect1.art3:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 9.36.1.3. of Division B');
+  });
+
   it('suppresses cross-division suffix for article references in table context', () => {
     const tableContext: ReferenceRenderContext = { kind: 'table', referenceId: 'nbc.divA.part1.sect1.subsect1.art1.table1' };
     const input = '[REF:internal:nbc.divB.part3.sect2.subsect1.art2:long]';
