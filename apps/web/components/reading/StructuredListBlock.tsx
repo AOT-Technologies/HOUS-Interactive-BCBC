@@ -116,6 +116,14 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
           </ol>
         </div>
       );
+    case 'none':
+      return (
+        <ul className="structuredList structuredList--none">
+          {list.items.map((item, index) => (
+            <li key={item.id || `${list.type}-${index}`}>{renderText(item.content, index)}</li>
+          ))}
+        </ul>
+      );
     default:
       return null;
   }
