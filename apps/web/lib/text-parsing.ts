@@ -836,7 +836,12 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (sentenceNumber) {
-      return `Clause ${sentenceNumber}(${number})`;
+      const isCrossDivision =
+        (format === 'long' || format === 'medium') &&
+        division && currentDivision && division !== currentDivision;
+      return isCrossDivision
+        ? `Clause ${sentenceNumber}(${number}) of Division ${division}`
+        : `Clause ${sentenceNumber}(${number})`;
     }
 
     return `Clause (${number})`;
