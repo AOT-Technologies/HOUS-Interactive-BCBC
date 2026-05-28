@@ -14,6 +14,7 @@ import type { Organization, Sentence, StructuredList } from '@bc-building-code/b
 import { filterSentence } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { DefinitionsList } from './DefinitionsList';
+import { ObjectivesList } from './ObjectivesList';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import type { ReferenceRenderContext } from '../../lib/cross-reference';
 import './SentenceBlock.css';
@@ -47,8 +48,8 @@ function resolveSeeAlsoText(
   return joined || undefined;
 }
 
-export const SentenceBlock: React.FC<SentenceBlockProps> = ({ 
-  sentence, 
+export const SentenceBlock: React.FC<SentenceBlockProps> = ({
+  sentence,
   effectiveDate,
   interactive = true,
   parentHasBcSource = false,
@@ -82,8 +83,17 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
 
         {/* Render definitions list if present */}
         {filteredSentence.definitions && filteredSentence.definitions.length > 0 && (
-          <DefinitionsList 
+          <DefinitionsList
             definitions={filteredSentence.definitions}
+            interactive={interactive}
+            renderContext={renderContext}
+          />
+        )}
+
+        {/* Render objectives list if present */}
+        {filteredSentence.objectives && filteredSentence.objectives.length > 0 && (
+          <ObjectivesList
+            objectives={filteredSentence.objectives}
             interactive={interactive}
             renderContext={renderContext}
           />
@@ -124,12 +134,12 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
             </table>
           </div>
         )}
-        
+
         {/* Render nested content (clauses, tables, figures, equations) */}
         {filteredSentence.content && filteredSentence.content.length > 0 && (
           <div className="sentenceNestedContent">
             {filteredSentence.content.map((item, index) => (
-              <ContentRenderer 
+              <ContentRenderer
                 key={`${filteredSentence.id}-content-${index}`}
                 node={item}
                 effectiveDate={effectiveDate}

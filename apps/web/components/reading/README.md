@@ -89,6 +89,7 @@ Both `.table-block__table--split-header` and `.table-block__table--split-body` u
 - `SourceBadges` - Source legend badges
 - `PdfDownloadButton` - PDF download button
 - `DefinitionsList` - Definitions list display
+- `ObjectivesList` - Objectives list display (Division A, Part 2, Section 2.2.1.1)
 - `ErrorState` - Error state display
 - `LiveRegion` - Accessibility live region
 - `SkipLink` - Skip navigation link

@@ -171,6 +171,21 @@ interface RawArticle {
   revisions?: RawRevision[];
 }
 
+interface RawObjectiveSubObjective {
+  id: string;
+  key: string;
+  title: string;
+  definition: string;
+}
+
+interface RawObjective {
+  id: string;
+  key: string;
+  title: string;
+  definition: string;
+  sub_objectives?: RawObjectiveSubObjective[];
+}
+
 interface RawSentence {
   id: string;
   type: 'sentence';
@@ -180,6 +195,7 @@ interface RawSentence {
   lists?: RawStructuredList[];
   definitions?: Definition[];
   organizations?: Organization[];
+  objectives?: RawObjective[];
   clauses?: RawClause[];
   tables?: RawTable[];
   figures?: RawFigure[];
@@ -265,28 +281,28 @@ type RawStructuredList =
 
 type RawTableCellContentItem =
   | {
-      type: 'text';
-      value?: string;
-    }
+    type: 'text';
+    value?: string;
+  }
   | {
-      type: 'figure';
-      id?: string;
-      source?: string;
-      title?: string;
-      graphic?: { src: string; alt_text: string };
-    }
+    type: 'figure';
+    id?: string;
+    source?: string;
+    title?: string;
+    graphic?: { src: string; alt_text: string };
+  }
   | {
-      type: 'list';
-      list_type?:
-        | 'bulleted'
-        | 'numbered'
-        | 'alphabetic'
-        | 'variable'
-        | 'symbol'
-        | 'definition'
-        | 'organization';
-      items?: unknown[];
-    };
+    type: 'list';
+    list_type?:
+    | 'bulleted'
+    | 'numbered'
+    | 'alphabetic'
+    | 'variable'
+    | 'symbol'
+    | 'definition'
+    | 'organization';
+    items?: unknown[];
+  };
 
 interface RawTableCell {
   content?: string | RawTableCellContentItem[];
@@ -487,7 +503,7 @@ export function parseBCBC(jsonData: unknown): BCBCDocument {
   const glossary: GlossaryEntry[] = parseGlossary(raw.glossary || {});
 
   // Extract amendment dates from bc_amendments
-  const amendmentDates: AmendmentDate[] = raw.bc_amendments 
+  const amendmentDates: AmendmentDate[] = raw.bc_amendments
     ? extractAmendmentDatesFromBCAmendments(raw.bc_amendments)
     : [];
 
@@ -998,6 +1014,22 @@ function parseSentenceData(raw: RawSentence): Sentence | null {
     }
   }
 
+  // Parse objectives
+  const objectives = raw.objectives && Array.isArray(raw.objectives)
+    ? raw.objectives.map((obj) => ({
+      id: obj.id,
+      key: obj.key,
+      title: obj.title,
+      definition: obj.definition,
+      subObjectives: obj.sub_objectives?.map((sub) => ({
+        id: sub.id,
+        key: sub.key,
+        title: sub.title,
+        definition: sub.definition,
+      })),
+    }))
+    : undefined;
+
   return {
     id: raw.id,
     number: String(raw.number),
@@ -1007,6 +1039,7 @@ function parseSentenceData(raw: RawSentence): Sentence | null {
     glossaryTerms: extractGlossaryTerms(raw.text),
     equations: equations && equations.length > 0 ? equations : undefined,
     lists: parseStructuredLists(raw.lists, raw.definitions, raw.organizations),
+    objectives: objectives && objectives.length > 0 ? objectives : undefined,
     content: content.length > 0 ? content : undefined,
     revisions: raw.revisions,
     revised: (raw as any).revised,
@@ -1122,38 +1155,38 @@ function parseTableData(raw: RawTable): Table {
   if (raw.rows && Array.isArray(raw.rows)) {
     for (const row of raw.rows) {
       const isHeader = row.type === 'header_row';
-      
-          const parsedRow: TableRow = {
-            id: row.id,
-            type: row.type,
-            cells: row.cells.map((cell) => ({
-              content: Array.isArray(cell.content)
-                ? cell.content
-                    .map(parseTableCellContentItem)
-                    .filter((item): item is TableCellContent => item !== null)
-                : cell.content || '',
-              align: cell.align,
-              colspan: cell.colspan,
-              rowspan: cell.rowspan,
+
+      const parsedRow: TableRow = {
+        id: row.id,
+        type: row.type,
+        cells: row.cells.map((cell) => ({
+          content: Array.isArray(cell.content)
+            ? cell.content
+              .map(parseTableCellContentItem)
+              .filter((item): item is TableCellContent => item !== null)
+            : cell.content || '',
+          align: cell.align,
+          colspan: cell.colspan,
+          rowspan: cell.rowspan,
           isHeader,
         })),
       };
-      
+
       rows.push(parsedRow);
-      
+
       // Build headers array for backward compatibility
       if (isHeader) {
-          headers.push(
-            row.cells.map((cell) => {
-              const parsedContent = Array.isArray(cell.content)
-                ? cell.content
-                    .map(parseTableCellContentItem)
-                    .filter((item): item is TableCellContent => item !== null)
-                : cell.content || '';
-              return extractTableCellContentText(parsedContent);
-            })
-          );
-        }
+        headers.push(
+          row.cells.map((cell) => {
+            const parsedContent = Array.isArray(cell.content)
+              ? cell.content
+                .map(parseTableCellContentItem)
+                .filter((item): item is TableCellContent => item !== null)
+              : cell.content || '';
+            return extractTableCellContentText(parsedContent);
+          })
+        );
+      }
     }
   }
   // Structure with header_rows and body_rows
@@ -1169,8 +1202,8 @@ function parseTableData(raw: RawTable): Table {
             cells: (headerRow as any).cells.map((cell: any) => ({
               content: Array.isArray(cell.content)
                 ? cell.content
-                    .map(parseTableCellContentItem)
-                    .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
+                  .map(parseTableCellContentItem)
+                  .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
                 : cell.content || '',
               align: cell.align,
               colspan: cell.colspan,
@@ -1178,16 +1211,16 @@ function parseTableData(raw: RawTable): Table {
               isHeader: true,
             })),
           };
-          
+
           rows.push(parsedRow);
-          
+
           // Build headers array
           headers.push(
             (headerRow as any).cells.map((cell: any) => {
               const parsedContent = Array.isArray(cell.content)
                 ? cell.content
-                    .map(parseTableCellContentItem)
-                    .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
+                  .map(parseTableCellContentItem)
+                  .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
                 : cell.content || '';
               return extractTableCellContentText(parsedContent);
             })
@@ -1204,7 +1237,7 @@ function parseTableData(raw: RawTable): Table {
               isHeader: true,
             })),
           });
-          
+
           headers.push(headerRow.map((cell) => cell.content || ''));
         }
       }
@@ -1221,8 +1254,8 @@ function parseTableData(raw: RawTable): Table {
             cells: (bodyRow as any).cells.map((cell: any) => ({
               content: Array.isArray(cell.content)
                 ? cell.content
-                    .map(parseTableCellContentItem)
-                    .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
+                  .map(parseTableCellContentItem)
+                  .filter((item: TableCellContent | null): item is TableCellContent => item !== null)
                 : cell.content || '',
               align: cell.align,
               colspan: cell.colspan,
@@ -1274,11 +1307,11 @@ function parseFigureData(raw: RawFigure): Figure {
     altText: raw.alt_text || raw.title || 'Figure',
     notes: Array.isArray(raw.notes)
       ? raw.notes
-          .filter((note) => note && typeof note.id === 'string')
-          .map((note) => ({
-            id: note.id,
-            content: note.content || '',
-          }))
+        .filter((note) => note && typeof note.id === 'string')
+        .map((note) => ({
+          id: note.id,
+          content: note.content || '',
+        }))
       : undefined,
   };
 }
@@ -1337,12 +1370,12 @@ function parseGlossary(raw: Record<string, RawGlossaryEntry>): GlossaryEntry[] {
  */
 function extractAmendmentDatesFromBCAmendments(bcAmendments: any[]): AmendmentDate[] {
   const datesMap = new Map<string, { date: string; count: number; sections: Set<string> }>();
-  
+
   for (const amendment of bcAmendments) {
     if (amendment.effective_date || amendment.date) {
       const date = amendment.effective_date || amendment.date;
       const existing = datesMap.get(date);
-      
+
       if (existing) {
         existing.count++;
         if (amendment.location_id) {
@@ -1357,7 +1390,7 @@ function extractAmendmentDatesFromBCAmendments(bcAmendments: any[]): AmendmentDa
       }
     }
   }
-  
+
   // Convert map to array and sort by date
   const dates = Array.from(datesMap.entries())
     .map(([date, { count, sections }]) => ({
@@ -1367,12 +1400,12 @@ function extractAmendmentDatesFromBCAmendments(bcAmendments: any[]): AmendmentDa
       isLatest: false,
     }))
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  
+
   // Mark the latest date
   if (dates.length > 0) {
     dates[dates.length - 1].isLatest = true;
   }
-  
+
   return dates;
 }
 
@@ -1618,10 +1651,10 @@ function extractTableNumber(
  */
 export function parseDivision(jsonData: unknown, divisionId: string): Division | null {
   const document = parseBCBC(jsonData);
-  
+
   // Get divisions from volumes
   const divisions = document.volumes?.flatMap(v => v.divisions) || [];
-    
+
   return divisions.find((d) => d.id === divisionId) || null;
 }
 
