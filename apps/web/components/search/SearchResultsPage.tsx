@@ -626,7 +626,7 @@ export default function SearchResultsPage() {
         setDivisions(searchClient.getDivisions(version) as DivisionOption[]);
         setContentTypes(searchClient.getContentTypes(version));
 
-        let filtered = rawResults.filter((item) => item.document.urlPath.startsWith('/code/') || item.document.type === 'glossary');
+        let filtered = rawResults.filter((item) => item.document.urlPath.startsWith('/code/'));
 
         if (divisionIdFilter) {
           filtered = filtered.filter((item) => item.document.divisionId === divisionIdFilter);
@@ -657,10 +657,53 @@ export default function SearchResultsPage() {
               nextOverrides[id] = display;
             }
           }
+
+          // Override snippets with search term context (takes priority over date snippets)
+          const escaped = q.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const phraseRegex = new RegExp(escaped + '\\w*', 'i');
+          for (const item of filtered) {
+            const docText = item.document.text || '';
+            const title = item.document.title || '';
+            const match = phraseRegex.exec(docText);
+            if (match) {
+              const idx = match.index;
+              const matchLen = match[0].length;
+              const start = Math.max(0, idx - 50);
+              const end = Math.min(docText.length, idx + matchLen + 50);
+              const fragment = docText.substring(start, end);
+              const prefix = start > 0 ? '...' : '';
+              const suffix = end < docText.length ? '...' : '';
+              nextOverrides[item.document.id] = { ...nextOverrides[item.document.id], snippet: prefix + fragment + suffix };
+            } else if (phraseRegex.test(title)) {
+              nextOverrides[item.document.id] = { ...nextOverrides[item.document.id], snippet: title };
+            }
+          }
+
           setDisplayOverrides(nextOverrides);
           setIsDateFiltering(false);
         } else {
-          setDisplayOverrides({});
+          // No date filter: generate snippet overrides only
+          const escaped = q.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const phraseRegex = new RegExp(escaped + '\\w*', 'i');
+          const snippetOverrides: Record<string, SearchResultDisplayOverride> = {};
+          for (const item of filtered) {
+            const docText = item.document.text || '';
+            const title = item.document.title || '';
+            const match = phraseRegex.exec(docText);
+            if (match) {
+              const idx = match.index;
+              const matchLen = match[0].length;
+              const start = Math.max(0, idx - 50);
+              const end = Math.min(docText.length, idx + matchLen + 50);
+              const fragment = docText.substring(start, end);
+              const prefix = start > 0 ? '...' : '';
+              const suffix = end < docText.length ? '...' : '';
+              snippetOverrides[item.document.id] = { snippet: prefix + fragment + suffix };
+            } else if (phraseRegex.test(title)) {
+              snippetOverrides[item.document.id] = { snippet: title };
+            }
+          }
+          setDisplayOverrides(snippetOverrides);
         }
 
         if (sort === 'code-order') {
@@ -1093,6 +1136,7 @@ export default function SearchResultsPage() {
                   testId={item.document.id}
                   displayTitle={displayOverrides[item.document.id]?.title}
                   displaySnippet={displayOverrides[item.document.id]?.snippet}
+                  query={q}
                 />
               ))}
 

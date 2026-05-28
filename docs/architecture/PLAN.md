@@ -84,7 +84,9 @@ The BCBC is currently available only as a PDF, which users find difficult to nav
 - Pre-indexed at build time using FlexSearch's export/import capability
 - Searches across: article text (sentences, clauses, subclauses, list items), table content (all header and body rows, table notes), application notes (including note_division sub-sections), glossary terms/definitions, and structural titles
 - Returns results with breadcrumb paths (e.g., "Division A > Part 1 > Section 1.1 > 1.1.1.1")
-- Supports fuzzy matching and phrase search
+- Supports fuzzy matching and phrase search (multi-word/hyphenated queries use prefix matching against title and text, mimicking PDF Ctrl+F)
+- Search results show 50 characters of context around the matched term with yellow highlighting
+- Indexed content includes: article text (sentences, clauses, subclauses, list items, sentence notes), table content, application notes, glossary terms, spectables, and volume index entries
 - Behaves like a CTRL+F search of the full document — every occurrence of a term is indexed
 - Indexed text is cleaned of formatting markers (`[LIST:]`, `^{}`, `_{}`, `<bold>`, `<italic>`) and reference markers (`[REF:]`)
 

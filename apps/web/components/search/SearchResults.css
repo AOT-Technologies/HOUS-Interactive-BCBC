@@ -240,8 +240,7 @@
   height: 1.25rem;
   transform: translateY(-50%);
   pointer-events: none;
-  background: center / contain no-repeat
-    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23474343' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23474343' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .search-results-page__filter-group select {
@@ -394,6 +393,13 @@
   color: var(--typography-color-primary);
 }
 
+.search-results-card__title .search-highlight {
+  background-color: #fef08a;
+  color: inherit;
+  padding: 0.05em 0.15em;
+  border-radius: 2px;
+}
+
 .search-results-card__path {
   margin: 0;
   font: var(--typography-regular-small-body);
@@ -409,6 +415,13 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 5;
+}
+
+.search-results-card__snippet .search-highlight {
+  background-color: #fef08a;
+  color: inherit;
+  padding: 0.05em 0.15em;
+  border-radius: 2px;
 }
 
 .search-results-card__footer-row {
