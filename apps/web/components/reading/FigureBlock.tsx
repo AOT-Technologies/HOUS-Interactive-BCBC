@@ -17,6 +17,7 @@ type FigureWithRawGraphic = Figure & {
   forming_part?: FormingPartReference[];
   formingPart?: FormingPartReference[];
   imageUrl?: string;
+  hide_label?: boolean;
   notes?: Array<{
     id: string;
     content: string;
@@ -215,13 +216,14 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({
   const altText = figure.altText || figure.graphic?.alt_text || figure.title || 'Figure';
   const figureNumber = extractFigureNumberFromId(figure.id) || figure.number;
   const figureLabel = figureNumber ? `Figure ${figureNumber}` : 'Figure';
+  const hideLabel = figure.hide_label === true;
   const formingPartEntries = figure.formingPart ?? figure.forming_part;
   const formingPartText = formatFormingPartText(formingPartEntries);
   const figureNotes = Array.isArray(figure.notes) ? figure.notes.filter((note) => note?.content) : [];
 
   return (
     <figure className="figure-block" id={figure.id} data-node-id={figure.id}>
-      <div className="figure-block__number">{figureLabel}</div>
+      {!hideLabel && <div className="figure-block__number">{figureLabel}</div>}
       {figure.title && (
         <div className="figure-block__title">
           {parseTextWithMarkers(figure.title, [], interactive, [], [], renderContext)}

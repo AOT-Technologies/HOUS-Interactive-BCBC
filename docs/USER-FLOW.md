@@ -108,7 +108,7 @@ Primary entry point for users to discover and search the BC Building Code.
   - Reloads all data for selected version
   
 - **Hierarchical Navigation Tree:**
-  - Volume → Division → Part → Section → Article structure, with Index and Conversion Factors after divisions
+  - Volume → Division → Part → Section → Article structure, with Index and Conversion Factors after divisions in Volume 2
   - Expandable/collapsible sections
   - Loaded from `{version}/navigation-tree.json` (generated metadata)
   - Visual indicators for current location

@@ -363,7 +363,7 @@ export interface VariableListItem {
 }
 
 export interface BulletedList {
-  type: 'bulleted' | 'numbered' | 'alphabetic' | 'roman';
+  type: 'bulleted' | 'numbered' | 'alphabetic' | 'roman' | 'none';
   items: TextListItem[];
 }
 

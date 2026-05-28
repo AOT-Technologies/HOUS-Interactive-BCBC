@@ -1209,7 +1209,7 @@ The `resolveCrossReference` function handles all reference types:
 - `SubsectionBlock` - Subsection with all articles
 - `ArticleBlock` - Article with sentences, clauses, tables, figures
 - `TableBlock` - Table rendering with revision support
-- `FigureBlock` - Figure/image rendering
+- `FigureBlock` - Figure/image rendering; supports `hide_label: true` on the JSON node to suppress the auto-generated "Figure X.X.X.X.-A" label (used for form/schedule images such as the Letters of Assurance in Division C Section 2.3)
 - `EquationBlock` - Equation rendering
 - `StructuredListBlock` - Bulleted, numbered, alphabetic, roman, variable, definition, organization lists
   - `variable` / `symbol` list terms render in **regular weight** (not bold); values column uses `column-gap: 6rem`
@@ -1982,7 +1982,7 @@ All filter options, navigation structure, and content organization are pre-gener
 ### Navigation Properties
 
 **Property 13: Navigation Tree Structure**
-*For any* navigation tree, it should follow the hierarchical structure: Volume → Division → Part → Section → Subsection → Article, with Index and Conversion Factors as leaf nodes after divisions within each volume.
+*For any* navigation tree, it should follow the hierarchical structure: Volume → Division → Part → Section → Subsection → Article, with Index and Conversion Factors as leaf nodes after divisions in Volume 2 only (excluded from Volume 1).
 **Validates: Requirements 4.2**
 
 **Property 14: Navigation Node Interaction**

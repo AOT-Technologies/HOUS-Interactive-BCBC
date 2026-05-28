@@ -388,6 +388,44 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[0].props.displayText).toBe('Subsection 1.1.2. of Division B');
   });
 
+  it('suppresses cross-division suffix for section references in table context', () => {
+    const tableContext: ReferenceRenderContext = { kind: 'table', referenceId: 'nbc.divA.part1.sect1.subsect1.art1.table1' };
+    const input = '[REF:internal:nbc.divC.part2.sect3:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], tableContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Section 2.3.');
+    expect(crossRefs[0].props.currentDivision).toBeUndefined();
+  });
+
+  it('suppresses cross-division suffix for subsection references in table context', () => {
+    const tableContext: ReferenceRenderContext = { kind: 'table', referenceId: 'nbc.divA.part1.sect1.subsect1.art1.table1' };
+    const input = '[REF:internal:nbc.divB.part3.sect2.subsect8:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], tableContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Subsection 3.2.8.');
+  });
+
+  it('consumes redundant inline "of Division B" following a cross-division subsection reference', () => {
+    // Source has ". of Division B" inline after the marker — should not duplicate the generated suffix.
+    // The cross-reference link carries the suffix in its displayText prop; the inline source text
+    // should be consumed (not rendered as additional plain text).
+    const input = 'need not comply with [REF:internal:nbc.divB.part3.sect2.subsect8:long] . of Division B, provided';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+    const plainText = getTextContent(nodes);
+
+    expect(crossRefs).toHaveLength(1);
+    // The cross-ref link's displayText includes the suffix exactly once
+    expect(crossRefs[0].props.displayText).toBe('Subsection 3.2.8. of Division B');
+    // The plain text outside the cross-ref link does NOT contain "of Division B" —
+    // the inline ". of Division B" was consumed and not rendered twice
+    expect(plainText).not.toContain('of Division B');
+  });
+
   it('formats sentence long references with full numbering', () => {
     const input = '[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1:long]';
     const nodes = parseTextWithMarkers(input, [], true);

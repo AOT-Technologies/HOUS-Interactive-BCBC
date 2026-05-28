@@ -361,6 +361,8 @@ Output: <CrossReferenceLink referenceId="..." displayText="Article 3.1.2.1." />
 - Regex patterns for each format type
 - Hardcoded format strings ("Article", "Section", "Sentence")
 - Assumes specific text patterns follow markers
+- For `long`-format section and subsection references in prose contexts, appends "of Division X" when the target division differs from `currentDivision` (extracted from `renderContext.referenceId`). Table cells use `kind: 'table'` context, which suppresses this auto-generation.
+- Detects and consumes redundant inline "of Division X" source text that follows the marker when the generated label already includes the same suffix.
 
 **Limitation**: Brittle if source text format changes
 
@@ -404,7 +406,7 @@ switch (node.type) {
   case 'clause': return <ClauseBlock />
   case 'subclause': return <SubclauseBlock />
   case 'table': return <TableBlock />
-  case 'figure': return <FigureBlock />
+  case 'figure': return <FigureBlock />   // hide_label:true suppresses "Figure X" label
   case 'equation': return <EquationBlock />
   case 'note': return <NoteBlock />
   default: console.warn('Unknown type')
@@ -573,6 +575,10 @@ Section
 ```
 
 ### Special Cases
+
+#### Clause Letter Ordering
+
+After filtering, `filterSentence()` in `packages/bcbc-parser/src/revision-filter.ts` sorts clause-type items in `sentence.content` alphabetically by their `number` field (which holds the clause letter). This is necessary because source data revisions can store clauses in non-alphabetical array order (e.g. a clause with `letter: "e"` placed first in the array), which would otherwise render in the wrong sequence. Non-clause items (tables, figures, equations) retain their relative positions via the stable sort's tie-breaking.
 
 #### Title Revisions
 
