@@ -197,22 +197,54 @@ describe('extractNavigationTree', () => {
     expect(sectionNode?.path).toBe('/code/nbc.divA/1/1');
   });
 
-  it('includes Index and Conversion Factors nodes after divisions', () => {
+  it('excludes Index and Conversion Factors from Volume 1 navigation', () => {
     const tree = extractNavigationTree(createBaseDocument());
     const volumeChildren = tree[0].children!;
-    const lastTwo = volumeChildren.slice(-2);
+    const indexNode = volumeChildren.find(c => c.type === 'index');
+    const conversionsNode = volumeChildren.find(c => c.type === 'conversions');
+    expect(indexNode).toBeUndefined();
+    expect(conversionsNode).toBeUndefined();
+  });
+
+  it('includes Index and Conversion Factors for Volume 2', () => {
+    const doc = createBaseDocument();
+    // Add a second volume with number 2
+    doc.volumes.push({
+      id: 'vol-2',
+      type: 'volume',
+      number: 2,
+      title: 'Volume 2',
+      divisions: [],
+      index: {
+        id: 'vol-2-index',
+        type: 'index',
+        introduction: 'Index introduction text',
+        letters: [],
+      },
+      conversions: {
+        id: 'vol-2-conversions',
+        type: 'conversions',
+        table_id: 'conv-table-2',
+        table_title: 'Conversion Factors',
+        table_structure: { columns: 3, column_specs: [], rows: [] },
+      },
+    } as any);
+
+    const tree = extractNavigationTree(doc);
+    const vol2Children = tree[1].children!;
+    const lastTwo = vol2Children.slice(-2);
 
     expect(lastTwo[0]).toMatchObject({
-      id: 'vol-1-index',
+      id: 'vol-2-index',
       type: 'index',
       title: 'Index',
-      path: '/code/index/volume-1',
+      path: '/code/index/volume-2',
     });
     expect(lastTwo[1]).toMatchObject({
-      id: 'vol-1-conversions',
+      id: 'vol-2-conversions',
       type: 'conversions',
       title: 'Conversion Factors',
-      path: '/code/conversions/volume-1',
+      path: '/code/conversions/volume-2',
     });
   });
 

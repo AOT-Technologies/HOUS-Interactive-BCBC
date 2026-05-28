@@ -90,7 +90,7 @@ This document specifies the requirements for the BC Building Code Interactive We
 #### Acceptance Criteria
 
 1. THE Application SHALL display a collapsible navigation tree in the left sidebar
-2. THE Navigation_Tree SHALL show the hierarchy: Volume → Division → Part → Section → Subsection → Article, with Index and Conversion Factors as navigable leaf nodes after divisions within each volume
+2. THE Navigation_Tree SHALL show the hierarchy: Volume → Division → Part → Section → Subsection → Article, with Index and Conversion Factors as navigable leaf nodes after divisions in Volume 2 only (excluded from Volume 1)
 3. WHEN a user clicks a navigation node, THE Application SHALL expand/collapse that node's children
 4. WHEN a user clicks a navigation node, THE Application SHALL navigate to the corresponding content
 5. WHEN displaying content, THE Application SHALL highlight the current location in the navigation tree

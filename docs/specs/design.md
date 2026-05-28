@@ -1982,7 +1982,7 @@ All filter options, navigation structure, and content organization are pre-gener
 ### Navigation Properties
 
 **Property 13: Navigation Tree Structure**
-*For any* navigation tree, it should follow the hierarchical structure: Volume → Division → Part → Section → Subsection → Article, with Index and Conversion Factors as leaf nodes after divisions within each volume.
+*For any* navigation tree, it should follow the hierarchical structure: Volume → Division → Part → Section → Subsection → Article, with Index and Conversion Factors as leaf nodes after divisions in Volume 2 only (excluded from Volume 1).
 **Validates: Requirements 4.2**
 
 **Property 14: Navigation Node Interaction**
