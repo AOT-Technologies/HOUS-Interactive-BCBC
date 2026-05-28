@@ -14,6 +14,7 @@ interface SearchResultCardProps {
   testId?: string;
   displayTitle?: string;
   displaySnippet?: string;
+  query?: string;
 }
 
 function getVolumeLabel(divisionId: string): string {
@@ -55,11 +56,18 @@ function buildSubsectionNumber(partNumber: number, sectionNumber?: number, subse
   return `${fullSection}.${subsection}`;
 }
 
-function normalizeHighlightedSnippet(input: string): string {
-  return input.replace(/<mark[^>]*>/gi, '').replace(/<\/mark>/gi, '');
+/**
+ * Wrap occurrences of the query in <mark> tags for yellow highlighting.
+ * Only highlights the exact search term, not extended variants.
+ */
+function applyHighlight(text: string, query: string): string {
+  if (!query || query.trim().length < 2 || !text) return text;
+  const escaped = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`(${escaped})`, 'gi');
+  return text.replace(regex, '<mark class="search-highlight">$1</mark>');
 }
 
-export function SearchResultCard({ result, href, testId, displayTitle, displaySnippet }: SearchResultCardProps) {
+export function SearchResultCard({ result, href, testId, displayTitle, displaySnippet, query }: SearchResultCardProps) {
   const router = useRouter();
   const { document } = result;
   const titleForDisplay = displayTitle || document.title;
@@ -69,17 +77,27 @@ export function SearchResultCard({ result, href, testId, displayTitle, displaySn
     return formatNumberedTitle(number, titleForDisplay);
   }, [document.articleNumber, document.divisionLetter, titleForDisplay]);
 
+  const headingHtml = useMemo(() => {
+    if (!query || query.trim().length < 2) return heading;
+    return applyHighlight(heading, query);
+  }, [heading, query]);
+
   const previewHtml = useMemo(() => {
     if (displaySnippet) {
-      return normalizeHighlightedSnippet(displaySnippet);
+      return applyHighlight(displaySnippet, query || '');
     }
 
-    const textHighlight = result.highlights.find((item) => item.field === 'text')?.text;
-    const preview = textHighlight || document.snippet || '';
-    return normalizeHighlightedSnippet(preview);
-  }, [displaySnippet, document.snippet, result.highlights]);
+    // The search client already sets document.snippet to the contextual text
+    // around the search term. Just apply highlighting.
+    return applyHighlight(document.snippet || '', query || '');
+  }, [displaySnippet, document.snippet, query]);
 
   const typeLabel = useMemo(() => {
+    // Index entries use 'note' type but should display as "Index"
+    if (document.divisionTitle === 'Index') {
+      return 'Index';
+    }
+
     const map: Record<string, string> = {
       article: 'Article',
       section: 'Section',
@@ -93,7 +111,7 @@ export function SearchResultCard({ result, href, testId, displayTitle, displaySn
     };
 
     return map[document.type] || document.type;
-  }, [document.type]);
+  }, [document.type, document.divisionTitle]);
 
   const volumeLabel = useMemo(() => getVolumeLabel(document.divisionId), [document.divisionId]);
 
@@ -101,6 +119,11 @@ export function SearchResultCard({ result, href, testId, displayTitle, displaySn
     // Glossary items don't have a hierarchical path
     if (document.type === 'glossary') {
       return 'Defined Terms';
+    }
+
+    // Index entries show just "Index"
+    if (document.divisionTitle === 'Index') {
+      return 'Index';
     }
 
     const fullSectionNumber = buildSectionNumber(document.partNumber, document.sectionNumber);
@@ -157,12 +180,17 @@ export function SearchResultCard({ result, href, testId, displayTitle, displaySn
         <span className="search-results-card__badge">
           {document.type === 'glossary'
             ? 'GLOSSARY'
-            : `${volumeLabel.toUpperCase()} - DIVISION ${document.divisionLetter} - PART ${document.partNumber}`}
+            : document.divisionTitle === 'Index'
+              ? 'INDEX'
+              : `${volumeLabel.toUpperCase()} - DIVISION ${document.divisionLetter} - PART ${document.partNumber}`}
         </span>
         <span className="search-results-card__type">{typeLabel}</span>
       </header>
 
-      <h3 className="search-results-card__title">{heading}</h3>
+      <h3
+        className="search-results-card__title"
+        dangerouslySetInnerHTML={{ __html: headingHtml }}
+      />
 
       <p className="search-results-card__path">
         {pathLabel}

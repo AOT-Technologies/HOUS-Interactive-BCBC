@@ -175,6 +175,11 @@ export class BCBCSearchClient {
   /**
    * Perform a search
    * 
+   * Multi-word queries enforce exact phrase matching: only documents containing
+   * the full phrase (contiguous, in order) in at least one searchable field
+   * (title, text, path, articleNumber) are returned. Single-word queries use
+   * standard FlexSearch token matching.
+   * 
    * @param query - Search query string
    * @param options - Search options (filters, pagination)
    * @param version - Optional version ID (defaults to current version)
@@ -261,6 +266,31 @@ export class BCBCSearchClient {
       });
     });
 
+    // Phrase matching: require the query to appear in the document's actual content
+    // (title or text). This mimics PDF Ctrl+F behavior — only results where the
+    // search term is visible in the content are returned.
+    // Uses prefix matching so "fire extinguisher" also matches "fire extinguishers".
+    const queryWords = query.trim().split(/\s+/);
+    const hasMultipleTokens = queryWords.length > 1 || /[-]/.test(query.trim());
+    const phraseLower = query.trim().toLowerCase();
+    // Build a regex: escape the query, then allow optional word chars at the end
+    const escapedPhrase = phraseLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const phraseRegex = new RegExp(escapedPhrase + '\\w*', 'i');
+
+    if (hasMultipleTokens) {
+      for (const [id, entry] of resultMap) {
+        const doc = entry.doc;
+        const title = typeof doc.title === 'string' ? doc.title : (doc.title as any)?.text ?? '';
+        // Only check title and text — mimics PDF search (actual visible content only)
+        if (
+          !phraseRegex.test(title) &&
+          !phraseRegex.test(doc.text)
+        ) {
+          resultMap.delete(id);
+        }
+      }
+    }
+
     // Apply filters and calculate final scores
     let filtered = Array.from(resultMap.values())
       .filter(({ doc }) => {
@@ -294,11 +324,28 @@ export class BCBCSearchClient {
 
         return true;
       })
-      .map(({ doc, fieldScores }) => ({
-        document: doc,
-        score: this.calculateFinalScore(doc, fieldScores, query),
-        highlights: this.generateHighlights(doc, query),
-      }));
+      .map(({ doc, fieldScores }) => {
+        // Override the document snippet with contextual text around the search term
+        const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const snippetRegex = new RegExp(escapedQuery + '\\w*', 'i');
+        const match = snippetRegex.exec(doc.text);
+        if (match) {
+          const idx = match.index;
+          const matchLen = match[0].length;
+          const start = Math.max(0, idx - 50);
+          const end = Math.min(doc.text.length, idx + matchLen + 50);
+          const fragment = doc.text.substring(start, end);
+          const prefix = start > 0 ? '...' : '';
+          const suffix = end < doc.text.length ? '...' : '';
+          doc = { ...doc, snippet: prefix + fragment + suffix };
+        }
+
+        return {
+          document: doc,
+          score: this.calculateFinalScore(doc, fieldScores, query),
+          highlights: this.generateHighlights(doc, query),
+        };
+      });
 
     // Sort results respecting content hierarchy while preserving relevance
     // for strong matches. A higher-hierarchy item (Part, Section) always ranks
@@ -418,7 +465,7 @@ export class BCBCSearchClient {
       });
     }
 
-    // Text snippet highlight
+    // Text snippet highlight — extract 50 chars before and after the search term
     const textLower = doc.text.toLowerCase();
     const index = textLower.indexOf(queryLower);
     if (index !== -1) {
@@ -433,17 +480,39 @@ export class BCBCSearchClient {
           this.highlightText(snippet, query) +
           (end < doc.text.length ? '...' : ''),
       });
+    } else if (docTitle.toLowerCase().includes(queryLower)) {
+      // Phrase found in title but not in text body — show the title as the
+      // highlighted snippet so the user can see why this result matched.
+      highlights.push({
+        field: 'text',
+        text: this.highlightText(docTitle, query),
+      });
+    } else {
+      // Phrase found in path or articleNumber — highlight individual words
+      // in the snippet so the card isn't blank.
+      const queryWords = query.trim().split(/\s+/);
+      let snippetText = doc.snippet || doc.text.substring(0, 200);
+      for (const word of queryWords) {
+        if (word.length >= 2) {
+          const wordRegex = new RegExp(`(${this.escapeRegex(word)})`, 'gi');
+          snippetText = snippetText.replace(wordRegex, '<mark class="search-highlight">$1</mark>');
+        }
+      }
+      highlights.push({
+        field: 'text',
+        text: snippetText,
+      });
     }
 
     return highlights;
   }
 
   /**
-   * Highlight query text in a string
+   * Highlight query text in a string (exact query only, not extended variants)
    */
   private highlightText(text: string, query: string): string {
     const regex = new RegExp(`(${this.escapeRegex(query)})`, 'gi');
-    return text.replace(regex, '<mark class="bg-yellow-200 px-0.5">$1</mark>');
+    return text.replace(regex, '<mark class="search-highlight">$1</mark>');
   }
 
   /**

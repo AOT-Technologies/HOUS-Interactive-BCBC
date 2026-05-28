@@ -612,6 +612,16 @@ export function extractArticleText(
           allReferenceIds.push(...extractReferenceIds(listText, refConfig));
         }
       }
+
+      // Extract notes within sentences
+      if ((item as any).notes) {
+        for (const note of (item as any).notes) {
+          if (note.content) {
+            texts.push(note.content);
+            allReferenceIds.push(...extractReferenceIds(note.content, refConfig));
+          }
+        }
+      }
     }
   }
 

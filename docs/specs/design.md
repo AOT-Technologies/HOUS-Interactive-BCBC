@@ -1972,7 +1972,7 @@ All filter options, navigation structure, and content organization are pre-gener
 **Validates: Requirements 3.6**
 
 **Property 11: Phrase Search**
-*For any* quoted search phrase, all results should contain the exact phrase in the specified order.
+*For any* multi-word or hyphenated search query, all results must contain the query (with optional word-ending extensions for plurals/variants) in the document's title or text. Single-word queries without hyphens use standard token matching. The match is case-insensitive and uses prefix matching (e.g., "fire extinguisher" matches "fire extinguishers"). Search results display 50 characters of context around the matched term with the search term highlighted in yellow. Results include content from articles, tables, figures, application notes, glossary terms, and volume index entries.
 **Validates: Requirements 3.7**
 
 **Property 12: Search Result Navigation**

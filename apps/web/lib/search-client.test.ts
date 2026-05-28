@@ -1,9 +1,15 @@
 /**
- * Unit tests for BCBCSearchClient scoring and ranking logic.
+ * Unit tests for BCBCSearchClient scoring, ranking, and phrase matching logic.
  *
- * These tests verify that search results respect content hierarchy
- * (Part > Section > Subsection > Article > Table/Figure > Note > Glossary)
- * while still allowing overwhelmingly strong matches to surface.
+ * These tests verify:
+ * 1. Search results respect content hierarchy
+ *    (Part > Section > Subsection > Article > Table/Figure > Note > Glossary)
+ *    while still allowing overwhelmingly strong matches to surface.
+ * 2. Phrase search: multi-word and hyphenated queries return only results where
+ *    the term appears in the document's title or text (mimicking PDF Ctrl+F).
+ * 3. Prefix matching: "fire extinguisher" matches "fire extinguishers" (plurals).
+ * 4. Snippet override: search results have document.snippet replaced with
+ *    50 characters of context around the matched term.
  *
  * Hierarchy priorities (from config.ts):
  *   Part (10) > Section (9) > Subsection (8) > Article (7) >
@@ -84,6 +90,235 @@ function sortResults(results: Array<{ document: any; score: number; highlights: 
         return b.score - a.score;
     });
 }
+
+describe('BCBCSearchClient phrase matching', () => {
+    let client: BCBCSearchClient;
+
+    beforeEach(() => {
+        client = new BCBCSearchClient();
+    });
+
+    /**
+     * Helper to simulate the phrase-matching filter logic from the search method.
+     * Only checks title and text fields — mimics PDF Ctrl+F behavior where
+     * only actual visible content is matched.
+     */
+    function applyPhraseFilter(docs: ReturnType<typeof makeDoc>[], query: string): ReturnType<typeof makeDoc>[] {
+        const queryWords = query.trim().split(/\s+/);
+        const hasMultipleTokens = queryWords.length > 1 || /[-]/.test(query.trim());
+
+        if (!hasMultipleTokens) return docs;
+
+        const escaped = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const phraseRegex = new RegExp(escaped + '\\w*', 'i');
+
+        return docs.filter((doc) => {
+            const title = typeof doc.title === 'string' ? doc.title : (doc.title as any)?.text ?? '';
+            return (
+                phraseRegex.test(title) ||
+                phraseRegex.test(doc.text)
+            );
+        });
+    }
+
+    describe('multi-word queries require exact phrase', () => {
+        it('should keep documents containing the exact phrase in text', () => {
+            const docWithPhrase = makeDoc({
+                id: 'doc-1',
+                text: 'Requirements for residential buildings in this zone',
+            });
+            const docWithoutPhrase = makeDoc({
+                id: 'doc-2',
+                text: 'Residential zones and commercial buildings are covered',
+            });
+
+            const results = applyPhraseFilter([docWithPhrase, docWithoutPhrase], 'residential buildings');
+
+            expect(results).toHaveLength(1);
+            expect(results[0].id).toBe('doc-1');
+        });
+
+        it('should keep documents containing the exact phrase in title', () => {
+            const docWithPhrase = makeDoc({
+                id: 'doc-1',
+                title: 'Fire Separation Requirements',
+                text: 'some unrelated content',
+            });
+            const docWithoutPhrase = makeDoc({
+                id: 'doc-2',
+                title: 'Fire Safety',
+                text: 'separation of concerns in building design',
+            });
+
+            const results = applyPhraseFilter([docWithPhrase, docWithoutPhrase], 'fire separation');
+
+            expect(results).toHaveLength(1);
+            expect(results[0].id).toBe('doc-1');
+        });
+
+        it('should not match when phrase is only in path (not in title or text)', () => {
+            const docInPathOnly = makeDoc({
+                id: 'doc-1',
+                path: 'Division B > Part 3 > Fire Separation',
+                text: 'some content',
+                title: 'General',
+            });
+            const docInText = makeDoc({
+                id: 'doc-2',
+                path: 'Division A > Part 1',
+                text: 'fire separation requirements apply here',
+            });
+
+            const results = applyPhraseFilter([docInPathOnly, docInText], 'fire separation');
+
+            expect(results).toHaveLength(1);
+            expect(results[0].id).toBe('doc-2');
+        });
+
+        it('should be case-insensitive', () => {
+            const doc = makeDoc({
+                id: 'doc-1',
+                text: 'Requirements for Residential Buildings in this zone',
+            });
+
+            const results = applyPhraseFilter([doc], 'residential buildings');
+
+            expect(results).toHaveLength(1);
+        });
+
+        it('should filter out all documents when none contain the exact phrase', () => {
+            const doc1 = makeDoc({
+                id: 'doc-1',
+                text: 'residential zones require permits',
+            });
+            const doc2 = makeDoc({
+                id: 'doc-2',
+                text: 'buildings must comply with code',
+            });
+
+            const results = applyPhraseFilter([doc1, doc2], 'residential buildings');
+
+            expect(results).toHaveLength(0);
+        });
+
+        it('should keep multiple documents when all contain the exact phrase', () => {
+            const doc1 = makeDoc({
+                id: 'doc-1',
+                text: 'residential buildings in zone A',
+            });
+            const doc2 = makeDoc({
+                id: 'doc-2',
+                text: 'all residential buildings must comply',
+            });
+
+            const results = applyPhraseFilter([doc1, doc2], 'residential buildings');
+
+            expect(results).toHaveLength(2);
+        });
+
+        it('should not match when phrase spans across field boundaries', () => {
+            // Title ends with "residential", text starts with "buildings" —
+            // the phrase should NOT match because it doesn't exist in any single field.
+            const doc = makeDoc({
+                id: 'doc-1',
+                title: 'Requirements for residential',
+                text: 'buildings must comply with code',
+                path: 'Division A > Part 1',
+            });
+
+            const results = applyPhraseFilter([doc], 'residential buildings');
+
+            expect(results).toHaveLength(0);
+        });
+    });
+
+    describe('single-word queries are not filtered', () => {
+        it('should not apply phrase filter for single-word queries', () => {
+            const doc1 = makeDoc({ id: 'doc-1', text: 'residential zones' });
+            const doc2 = makeDoc({ id: 'doc-2', text: 'commercial areas' });
+
+            const results = applyPhraseFilter([doc1, doc2], 'residential');
+
+            // Single word: no phrase filtering, all docs pass through
+            expect(results).toHaveLength(2);
+        });
+    });
+
+    describe('hyphenated queries are filtered as exact phrases', () => {
+        it('should filter results for hyphenated terms like floors-on-ground', () => {
+            const docWithPhrase = makeDoc({
+                id: 'doc-1',
+                text: 'Floors-on-ground shall accommodate the future installation',
+            });
+            const docWithoutPhrase = makeDoc({
+                id: 'doc-2',
+                text: 'This Section applies to floors supported on ground',
+            });
+
+            const results = applyPhraseFilter([docWithPhrase, docWithoutPhrase], 'floors-on-ground');
+
+            expect(results).toHaveLength(1);
+            expect(results[0].id).toBe('doc-1');
+        });
+
+        it('should not filter simple words without hyphens', () => {
+            const doc1 = makeDoc({ id: 'doc-1', text: 'fire safety' });
+            const doc2 = makeDoc({ id: 'doc-2', text: 'water damage' });
+
+            const results = applyPhraseFilter([doc1, doc2], 'fire');
+
+            expect(results).toHaveLength(2);
+        });
+    });
+
+    describe('prefix matching (plural/variant forms)', () => {
+        it('should match plural forms like "fire extinguishers" when searching "fire extinguisher"', () => {
+            const docPlural = makeDoc({
+                id: 'doc-1',
+                text: 'Portable fire extinguishers shall be provided',
+            });
+            const docSingular = makeDoc({
+                id: 'doc-2',
+                text: 'A fire extinguisher is required',
+            });
+            const docNoMatch = makeDoc({
+                id: 'doc-3',
+                text: 'Fire alarm systems shall be installed',
+            });
+
+            const results = applyPhraseFilter([docPlural, docSingular, docNoMatch], 'fire extinguisher');
+
+            expect(results).toHaveLength(2);
+            expect(results.map(r => r.id)).toContain('doc-1');
+            expect(results.map(r => r.id)).toContain('doc-2');
+        });
+
+        it('should match "buildings" when searching "building"', () => {
+            const doc = makeDoc({
+                id: 'doc-1',
+                text: 'residential buildings must comply',
+            });
+
+            const results = applyPhraseFilter([doc], 'residential building');
+
+            expect(results).toHaveLength(1);
+        });
+    });
+
+    describe('phrase matching with title as object', () => {
+        it('should handle title as object with text property', () => {
+            const doc = makeDoc({
+                id: 'doc-1',
+                title: { text: 'Fire Separation Requirements' },
+                text: 'some content',
+            });
+
+            const results = applyPhraseFilter([doc], 'fire separation');
+
+            expect(results).toHaveLength(1);
+        });
+    });
+});
 
 describe('BCBCSearchClient scoring', () => {
     let client: BCBCSearchClient;

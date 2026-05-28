@@ -47,7 +47,7 @@ function IndexLetterSection({ letter }: { letter: IndexLetter }) {
 
 function IndexGroupItem({ group }: { group: IndexGroup }) {
     return (
-        <div style={{ marginBottom: '0.25rem' }}>
+        <div id={group.id} style={{ marginBottom: '0.25rem' }}>
             <div style={{ fontWeight: 400 }}>
                 {group.term}
                 {group.references && group.references.length > 0 && (

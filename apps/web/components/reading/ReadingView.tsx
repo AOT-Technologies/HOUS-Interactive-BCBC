@@ -1297,6 +1297,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     appendixLoading,
     frontMatterLoading,
     hashTargetId,
+    indexConversionsLoading,
     isAppendixLevel,
     isFrontMatterLevel,
     isSectionLevelOrDeeper,

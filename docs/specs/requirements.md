@@ -64,8 +64,11 @@ This document specifies the requirements for the BC Building Code Interactive We
 5. WHEN displaying search results, THE Application SHALL implement infinite scroll loading results in batches of 20-50 items
 6. WHEN displaying search results, THE Application SHALL display a search input box that auto-populates with the query from the URL
 7. THE Search_Engine SHALL support fuzzy matching for misspelled queries
-8. THE Search_Engine SHALL support phrase search using quoted strings
+8. THE Search_Engine SHALL support phrase search for multi-word and hyphenated queries, returning only results that contain the query (with prefix matching for plurals/variants) in the document title or text, mimicking PDF Ctrl+F behavior
 9. WHEN a user clicks a search result, THE Application SHALL navigate to the corresponding content page
+10. WHEN displaying search results, THE Application SHALL show 50 characters of context around the matched search term in the result snippet
+11. WHEN displaying search results, THE Application SHALL highlight the search term in yellow in both the title and snippet
+12. THE Search_Engine SHALL index content from articles, tables, figures, application notes, glossary terms, sentence notes, spectables, and volume index entries
 
 ### Requirement 3A: Search Filters and Advanced Search
 

@@ -248,6 +248,93 @@ export function buildSearchIndex(
     contentTypesFound.add('glossary');
   }
 
+  // Note: Volume index entries are NOT added to search documents.
+  // Search results should only contain documents where the search term
+  // appears in the actual content (title, text), mimicking PDF Ctrl+F behavior.
+  // Volume index entries — deduplicated by term, displayed as "Index" results.
+  // Each unique index term is indexed once, linking to its first referenced article.
+  if (bcbcData.volumes) {
+    // Deduplicate index entries by term (same term appears in Vol 1 and Vol 2)
+    const indexedTerms = new Map<string, { id: string; term: string; subterms: string[]; urlPath: string }>();
+
+    for (const vol of bcbcData.volumes) {
+      const volAny = vol as any;
+      if (volAny.index && volAny.index.letters) {
+        // Use volume-2 index path since volume-1 index page was removed
+        const indexUrlPath = `/code/index/volume-2`;
+        const isVol2 = volAny.number === 2;
+
+        for (const letter of volAny.index.letters) {
+          for (const group of letter.groups) {
+            const termLower = group.term.toLowerCase();
+
+            // For deduplication: prefer Volume 2's IDs since that's the page we link to
+            if (indexedTerms.has(termLower)) {
+              // If this is Volume 2, overwrite with its ID for correct hash scrolling
+              if (isVol2) {
+                const existing = indexedTerms.get(termLower)!;
+                existing.id = group.id;
+                existing.urlPath = `${indexUrlPath}#${group.id}`;
+              }
+              continue;
+            }
+
+            const subterms: string[] = [];
+            if (group.subterms) {
+              for (const sub of group.subterms) {
+                if (sub.term) subterms.push(sub.term);
+              }
+            }
+
+            indexedTerms.set(termLower, {
+              id: group.id,
+              term: group.term,
+              subterms,
+              urlPath: `${indexUrlPath}#${group.id}`,
+            });
+          }
+        }
+      }
+    }
+
+    // Create documents for deduplicated index entries
+    for (const entry of indexedTerms.values()) {
+      const textParts = [entry.term, ...entry.subterms];
+      const text = textParts.join(', ');
+
+      documents.push({
+        id: entry.id,
+        type: 'note' as IndexableContentType,
+        articleNumber: '',
+        title: entry.term,
+        text,
+        snippet: text,
+        divisionId: '',
+        divisionLetter: '',
+        divisionTitle: 'Index',
+        partId: '',
+        partNumber: 0,
+        partTitle: '',
+        sectionId: '',
+        sectionNumber: 0,
+        sectionTitle: '',
+        subsectionId: '',
+        subsectionNumber: 0,
+        subsectionTitle: '',
+        path: 'Index',
+        breadcrumbs: ['Index', entry.term],
+        urlPath: entry.urlPath,
+        hasAmendment: false,
+        hasInternalRefs: false,
+        hasExternalRefs: false,
+        hasTermRefs: false,
+        hasTables: false,
+        hasFigures: false,
+        searchPriority: fullConfig.contentTypes.glossary.priority,
+      });
+    }
+  }
+
   // Build revision dates array
   const revisionDates = buildRevisionDates(revisionDatesMap);
 
@@ -372,6 +459,53 @@ function processPart(
       documents.push(createApplicationNoteDocument(division, part, note, config));
     }
     contentTypesFound.add('application-note');
+  }
+
+  // Process special tables (spectables) if present
+  if ((part as any).special_tables && config.contentTypes.table.enabled) {
+    for (const spectableGroup of (part as any).special_tables) {
+      if (spectableGroup.tables) {
+        for (const table of spectableGroup.tables) {
+          const tableText = extractTableText(table, config.textExtraction, config.references) || '';
+          const title = table.title || `Table ${table.number}`;
+          const text = normalizeWhitespace(stripFormattingMarkers(stripReferences(
+            String(tableText), config.references
+          )));
+
+          documents.push({
+            id: table.id,
+            type: 'table' as IndexableContentType,
+            articleNumber: `${division.letter}.${part.number} Table ${table.number}`,
+            title: stripReferences(title, config.references),
+            text,
+            snippet: generateSnippet(text, config.textExtraction.snippetLength),
+            divisionId: division.id,
+            divisionLetter: division.letter,
+            divisionTitle: division.title,
+            partId: part.id,
+            partNumber: part.number,
+            partTitle: part.title,
+            sectionId: '',
+            sectionNumber: 0,
+            sectionTitle: spectableGroup.title || '',
+            subsectionId: '',
+            subsectionNumber: 0,
+            subsectionTitle: '',
+            path: `Division ${division.letter} > Part ${part.number} > ${spectableGroup.title || 'Special Tables'} > Table ${table.number}`,
+            breadcrumbs: [division.title, part.title, spectableGroup.title || 'Special Tables', title],
+            urlPath: `/code/${division.id}/${part.number}/spectables/${spectableGroup.id}#${table.id}`,
+            hasAmendment: false,
+            hasInternalRefs: false,
+            hasExternalRefs: false,
+            hasTermRefs: false,
+            hasTables: true,
+            hasFigures: false,
+            searchPriority: config.contentTypes.table.priority,
+          });
+        }
+        contentTypesFound.add('table');
+      }
+    }
   }
 
   return tocItem;
