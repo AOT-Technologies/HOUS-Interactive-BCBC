@@ -211,6 +211,7 @@ Section
             ├── Sentence
             │   ├── text: string
             │   ├── glossaryTerms: string[]
+            │   ├── objectives?: SentenceObjective[]  (Division A, Part 2, Section 2.2.1.1)
             │   └── content: SentenceContentNode[]
             │       ├── Clause
             │       │   ├── text: string
@@ -1200,6 +1201,14 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
         {filteredSentence.definitions && filteredSentence.definitions.length > 0 && (
           <DefinitionsList 
             definitions={filteredSentence.definitions}
+            interactive={interactive}
+          />
+        )}
+
+        {/* Render objectives list if present (for Division A, Part 2, Section 2.2.1.1) */}
+        {filteredSentence.objectives && filteredSentence.objectives.length > 0 && (
+          <ObjectivesList
+            objectives={filteredSentence.objectives}
             interactive={interactive}
           />
         )}

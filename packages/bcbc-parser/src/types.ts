@@ -402,6 +402,27 @@ export type StructuredList =
   | BibliographyList;
 
 /**
+ * Sub-objective within an objective (e.g., OS1 "Fire Safety" under OS "Safety")
+ */
+export interface SentenceSubObjective {
+  id: string;
+  key: string;
+  title: string;
+  definition: string;
+}
+
+/**
+ * Objective entry within a sentence (e.g., OS "Safety", OH "Health")
+ */
+export interface SentenceObjective {
+  id: string;
+  key: string;
+  title: string;
+  definition: string;
+  subObjectives?: SentenceSubObjective[];
+}
+
+/**
  * Sentence within an article
  */
 export interface Sentence {
@@ -415,6 +436,7 @@ export interface Sentence {
   lists?: StructuredList[];
   definitions?: Definition[];
   organizations?: Organization[];
+  objectives?: SentenceObjective[];
   content?: SentenceContentNode[];
   revisions?: Revision[];
   revised?: boolean;

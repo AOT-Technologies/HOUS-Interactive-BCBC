@@ -170,12 +170,14 @@ describe('parseTextWithMarkers - objective-based code references', () => {
   });
 
   it('expands short clause references to full numbering when they target a different article', () => {
+    // Cross-division ref (DivB clause in DivA context): stripped of duplicate "Clause" prefix,
+    // but gains "of Division B" suffix because it's cross-division.
     const input = 'Clause [REF:internal:nbc.divB.part10.sect2.subsect2.art1.sent1.clause1:short] applies.';
     const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
     const crossRefs = getElementsByType(nodes, CrossReferenceLink);
 
     expect(crossRefs).toHaveLength(1);
-    expect(crossRefs[0].props.displayText).toBe('10.2.2.1.(1)(a)');
+    expect(crossRefs[0].props.displayText).toBe('10.2.2.1.(1)(a) of Division B');
   });
 
   it('renders same-appendix references as plain text when appendix context is provided', () => {
@@ -424,6 +426,56 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     // The plain text outside the cross-ref link does NOT contain "of Division B" —
     // the inline ". of Division B" was consumed and not rendered twice
     expect(plainText).not.toContain('of Division B');
+  });
+
+  it('formats cross-division article long references with division suffix', () => {
+    const input = '[REF:internal:nbc.divB.part3.sect2.subsect1.art2:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 3.2.1.2. of Division B');
+  });
+
+  it('normalizes compound division codes (e.g. BV2) to canonical letter in section suffix', () => {
+    // nbc.divBV2 is Volume 2 of Division B — display should say "of Division B" not "of Division BV2"
+    const input = '[REF:internal:nbc.divBV2.part9.sect36:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Section 9.36. of Division B');
+  });
+
+  it('normalizes compound division codes (e.g. BV2) to canonical letter in article suffix', () => {
+    const input = '[REF:internal:nbc.divBV2.part9.sect36.subsect1.art3:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], articleContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 9.36.1.3. of Division B');
+  });
+
+  it('formats cross-division clause medium references with division suffix', () => {
+    // DivB context referencing a DivA clause: should append "of Division A"
+    const divBContext: ReferenceRenderContext = { kind: 'article', referenceId: 'nbc.divB.part1.sect1.subsect2.art1' };
+    const input = '[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], divBContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Clause 1.2.1.1.(1)(b) of Division A');
+  });
+
+  it('suppresses cross-division suffix for article references in table context', () => {
+    const tableContext: ReferenceRenderContext = { kind: 'table', referenceId: 'nbc.divA.part1.sect1.subsect1.art1.table1' };
+    const input = '[REF:internal:nbc.divB.part3.sect2.subsect1.art2:long]';
+    const nodes = parseTextWithMarkers(input, [], true, [], [], tableContext);
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('Article 3.2.1.2.');
+    expect(crossRefs[0].props.currentDivision).toBeUndefined();
   });
 
   it('formats sentence long references with full numbering', () => {
