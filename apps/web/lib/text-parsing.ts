@@ -672,7 +672,7 @@ function getCrossReferenceDisplayText(
   // (article, appendix, application-note). Table cells rely on inline source text instead.
   const currentDivision =
     renderContext?.kind !== 'table'
-      ? renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase()
+      ? renderContext?.referenceId.match(/\.div([A-Za-z])/i)?.[1]?.toUpperCase()
       : undefined;
   const fallback = formatInternalReference(
     referenceId,
@@ -710,7 +710,7 @@ function getCrossReferenceDisplayText(
 }
 
 function formatInternalReference(referenceId: string, format?: InternalRefFormat, currentDivision?: string): string {
-  const division = extractNumeric(referenceId, /\.div([A-Za-z0-9]+)/i)?.toUpperCase();
+  const division = extractNumeric(referenceId, /\.div([A-Za-z])/i)?.toUpperCase();
   const withDivisionSuffix = (label: string): string =>
     format === 'long' && division ? `${label} of Division ${division}` : label;
 
@@ -836,7 +836,12 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
     }
 
     if (sentenceNumber) {
-      return `Clause ${sentenceNumber}(${number})`;
+      const isCrossDivision =
+        (format === 'long' || format === 'medium') &&
+        division && currentDivision && division !== currentDivision;
+      return isCrossDivision
+        ? `Clause ${sentenceNumber}(${number}) of Division ${division}`
+        : `Clause ${sentenceNumber}(${number})`;
     }
 
     return `Clause (${number})`;
@@ -873,7 +878,10 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
   }
 
   if (article) {
-    return isShortNumeric ? articleNumber : `Article ${articleNumber}.`;
+    if (isShortNumeric) return articleNumber;
+    return format === 'long' && division && currentDivision && division !== currentDivision
+      ? `Article ${articleNumber}. of Division ${division}`
+      : `Article ${articleNumber}.`;
   }
 
   if (subsection) {
@@ -1465,7 +1473,7 @@ export function parseTextWithMarkers(
               preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
               currentDivision:
                 renderContext?.kind !== 'table'
-                  ? renderContext?.referenceId.match(/\.div([A-Za-z0-9]+)/i)?.[1]?.toUpperCase()
+                  ? renderContext?.referenceId.match(/\.div([A-Za-z])/i)?.[1]?.toUpperCase()
                   : undefined,
             })
           );
