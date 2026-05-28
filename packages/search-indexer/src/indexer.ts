@@ -260,13 +260,24 @@ export function buildSearchIndex(
     for (const vol of bcbcData.volumes) {
       const volAny = vol as any;
       if (volAny.index && volAny.index.letters) {
-        const volNumber = volAny.number || 1;
-        const indexUrlPath = `/code/index/volume-${volNumber}`;
+        // Use volume-2 index path since volume-1 index page was removed
+        const indexUrlPath = `/code/index/volume-2`;
+        const isVol2 = volAny.number === 2;
 
         for (const letter of volAny.index.letters) {
           for (const group of letter.groups) {
             const termLower = group.term.toLowerCase();
-            if (indexedTerms.has(termLower)) continue;
+
+            // For deduplication: prefer Volume 2's IDs since that's the page we link to
+            if (indexedTerms.has(termLower)) {
+              // If this is Volume 2, overwrite with its ID for correct hash scrolling
+              if (isVol2) {
+                const existing = indexedTerms.get(termLower)!;
+                existing.id = group.id;
+                existing.urlPath = `${indexUrlPath}#${group.id}`;
+              }
+              continue;
+            }
 
             const subterms: string[] = [];
             if (group.subterms) {
