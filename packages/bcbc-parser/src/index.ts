@@ -25,6 +25,8 @@ export type {
   Article,
   ArticleContentNode,
   Sentence,
+  SentenceObjective,
+  SentenceSubObjective,
   SentenceContentNode,
   Clause,
   ClauseContentNode,

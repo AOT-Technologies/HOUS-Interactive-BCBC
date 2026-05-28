@@ -1,0 +1,92 @@
+/**
+ * ObjectivesList Styles
+ * 
+ * Displays code objectives and sub-objectives in a structured,
+ * readable format using definition list (dl/dt/dd) semantic HTML.
+ */
+
+.objectivesList {
+    margin: var(--layout-margin-16) 0;
+}
+
+.objectivesList__list {
+    margin: 0;
+    padding: 0;
+}
+
+.objectivesList__item {
+    margin-bottom: var(--layout-margin-24);
+    padding-bottom: var(--layout-padding-16);
+    border-bottom: var(--layout-border-width-small) solid var(--surface-color-border-default);
+}
+
+.objectivesList__item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.objectivesList__term,
+.objectivesList__subTerm {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0 0 var(--layout-margin-8) 0;
+}
+
+.objectivesList__key {
+    font: var(--typography-bold-body);
+    color: var(--typography-color-primary);
+    white-space: nowrap;
+}
+
+.objectivesList__title {
+    font: var(--typography-bold-h5);
+    color: var(--typography-color-primary);
+}
+
+.objectivesList__definition,
+.objectivesList__subDefinition {
+    font: var(--typography-regular-body);
+    color: var(--typography-color-primary);
+    margin: 0 0 var(--layout-margin-8) 0;
+    line-height: var(--typography-line-heights-sparse);
+}
+
+.objectivesList__subObjectives {
+    margin: var(--layout-margin-16) 0 0 var(--layout-margin-24);
+    padding: 0;
+}
+
+.objectivesList__subList {
+    margin: 0;
+    padding: 0;
+}
+
+.objectivesList__subItem {
+    margin-bottom: var(--layout-margin-16);
+    padding-bottom: var(--layout-padding-12);
+    border-bottom: var(--layout-border-width-small) solid var(--surface-color-border-default);
+}
+
+.objectivesList__subItem:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.objectivesList__subTerm .objectivesList__title {
+    font: var(--typography-bold-body);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .objectivesList__item {
+        margin-bottom: var(--layout-margin-16);
+        padding-bottom: var(--layout-padding-12);
+    }
+
+    .objectivesList__subObjectives {
+        margin-left: var(--layout-margin-16);
+    }
+}

@@ -219,6 +219,90 @@ describe('parseBCBC', () => {
     );
   });
 
+  it('parses objectives from sentence data', () => {
+    const raw = createRawDocument();
+    raw.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].content[0] = {
+      id: 'sent-1',
+      type: 'sentence',
+      number: 1,
+      text: 'The objectives of this Code are as follows:',
+      objectives: [
+        {
+          id: 'nbc.objective.OS',
+          key: 'OS',
+          title: 'Safety',
+          definition: 'An objective of this Code is to limit the probability of injury.',
+          sub_objectives: [
+            {
+              id: 'nbc.objective.OS1',
+              key: 'OS1',
+              title: 'Fire Safety',
+              definition: 'Limit probability of injury due to fire.',
+            },
+            {
+              id: 'nbc.objective.OS2',
+              key: 'OS2',
+              title: 'Structural Safety',
+              definition: 'Limit probability of injury due to structural failure.',
+            },
+          ],
+        },
+        {
+          id: 'nbc.objective.OH',
+          key: 'OH',
+          title: 'Health',
+          definition: 'An objective of this Code is to limit the probability of illness.',
+        },
+      ],
+    };
+
+    const result = parseBCBC(raw);
+    const article = result.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0];
+    const sentence = article.content[0];
+
+    expect(sentence?.type).toBe('sentence');
+    if (!sentence || sentence.type !== 'sentence') {
+      throw new Error('Expected sentence content node');
+    }
+
+    expect(sentence.objectives).toBeDefined();
+    expect(sentence.objectives).toHaveLength(2);
+
+    // Check main objective
+    const os = sentence.objectives![0];
+    expect(os.id).toBe('nbc.objective.OS');
+    expect(os.key).toBe('OS');
+    expect(os.title).toBe('Safety');
+    expect(os.definition).toBe('An objective of this Code is to limit the probability of injury.');
+
+    // Check sub-objectives (snake_case → camelCase conversion)
+    expect(os.subObjectives).toHaveLength(2);
+    expect(os.subObjectives![0].id).toBe('nbc.objective.OS1');
+    expect(os.subObjectives![0].key).toBe('OS1');
+    expect(os.subObjectives![0].title).toBe('Fire Safety');
+    expect(os.subObjectives![1].key).toBe('OS2');
+
+    // Check objective without sub-objectives
+    const oh = sentence.objectives![1];
+    expect(oh.id).toBe('nbc.objective.OH');
+    expect(oh.key).toBe('OH');
+    expect(oh.title).toBe('Health');
+    expect(oh.subObjectives).toBeUndefined();
+  });
+
+  it('omits objectives field when sentence has no objectives', () => {
+    const result = createDocument();
+    const article = result.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0];
+    const sentence = article.content[0];
+
+    expect(sentence?.type).toBe('sentence');
+    if (!sentence || sentence.type !== 'sentence') {
+      throw new Error('Expected sentence content node');
+    }
+
+    expect(sentence.objectives).toBeUndefined();
+  });
+
   it('parses embedded list content inside table cells', () => {
     const raw = createRawDocument();
     raw.volumes[0].divisions[0].parts[0].sections[0].subsections[0].articles[0].content.push({
