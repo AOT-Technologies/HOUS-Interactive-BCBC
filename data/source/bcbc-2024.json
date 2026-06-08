@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-05-26T14:56:56.996449-07:00",
+  "generated_timestamp" : "2026-06-08T12:17:19.929194-07:00",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -38,7 +38,7 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para1",
-        "content" : "The BC Building Code of Canada 2020 (NBC), together with the National Plumbing Code of Canada 2020 (NPC), the National Fire Code of Canada 2020 (NFC) and the National Energy Code of Canada for Buildings 2020 (NECB), has been developed by the Canadian Commission on Building and Fire Codes (CCBFC) as an objective-based national model code that can be adopted by provincial and territorial governments." },
+        "content" : "The National Building Code of Canada 2020 (NBC), together with the National Plumbing Code of Canada 2020 (NPC), the National Fire Code of Canada 2020 (NFC) and the National Energy Code of Canada for Buildings 2020 (NECB), has been developed by the Canadian Commission on Building and Fire Codes (CCBFC) as an objective-based national model code that can be adopted by provincial and territorial governments." },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para2",
@@ -50,7 +50,23 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para2b",
-        "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Services Act.<\/bold>" },
+        "revised" : true,
+        "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act.<\/bold>",
+        "revisions" : 
+        [ 
+         { "type" : "original",
+          "effective_date" : "2024-03-08",
+          "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Services Act.<\/bold>" },
+         
+         { "type" : "revision",
+          "revision_type" : "amendment",
+          "revision_id" : "bc-mo-2024-06-001",
+          "sequence" : 1,
+          "effective_date" : "2025-06-16",
+          "status" : "current",
+          "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act.<\/bold>",
+          "change_summary" : "Strike out \"Fire Services Act\" and substitute \"Fire Safety Act\"",
+          "note" : "Ministerial Order BA 2024 06" } ] },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para2c",
@@ -4399,7 +4415,7 @@
                   "letter" : "a",
                   "revised" : true,
                   "source" : "bc",
-                  "text" : "[REF:term:swg:sewage] , water, electrical, telephone, rail or similar public infrastructure systems located in a [REF:term:trt:street] or a public transit right of way,",
+                  "text" : "sewage, water, electrical, telephone, rail or similar public infrastructure systems located in a [REF:term:trt:street] or a public transit right of way,",
                   "revisions" : 
                   [ 
                    { "type" : "original",
@@ -4412,7 +4428,7 @@
                     "sequence" : 1,
                     "effective_date" : "2025-06-16",
                     "status" : "current",
-                    "text" : "[REF:term:swg:sewage] , water, electrical, telephone, rail or similar public infrastructure systems located in a [REF:term:trt:street] or a public transit right of way,",
+                    "text" : "sewage, water, electrical, telephone, rail or similar public infrastructure systems located in a [REF:term:trt:street] or a public transit right of way,",
                     "change_summary" : "Amended Clause 1.1.1.1.(2)(a) by striking out \"sewage\" and substituting \"sewage\"",
                     "note" : "Ministerial Order BA 2024 06" } ] },
                  
@@ -4505,7 +4521,7 @@
                 "type" : "sentence",
                 "number" : 5,
                 "source" : "bc",
-                "text" : "For [REF:term:bc-hrtg-bldng:heritage buildings] , the Alternate Compliance Methods for Heritage Buildings in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table1:long] may be substituted for requirements contained elsewhere in this Code. (See [REF:internal:nbc.divA.part1.appendix.appnote2a:short] .)" },
+                "text" : "For [REF:term:bc-hrtg-bldng:heritage buildings] , the Alternate Compliance Methods for Heritage Buildings in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table1:long:Table 1.1.1.1.(5)] may be substituted for requirements contained elsewhere in this Code. (See [REF:internal:nbc.divA.part1.appendix.appnote2a:short] .)" },
                
                { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1",
                 "type" : "table",
@@ -4602,7 +4618,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:ncmbtbl-:Noncombustible Construction]  [REF:internal:nbc.divB.part3.sect1.subsect5:long] , [REF:internal:nbc.divB.part3.sect1.subsect5.art6.sent1:long] . All materials used in [REF:term:nncmbtbl-cnstrctn:noncombustible construction] must be [REF:term:nncmbtbl:noncombustible] unless otherwise permitted." } ] },
+                       "value" : "[REF:term:ncmbtbl-:Noncombustible Construction]  [REF:internal:nbc.divB.part3.sect1.subsect5:long] , [REF:internal:nbc.divB.part9.sect10.subsect6.art1:long] . All materials used in [REF:term:nncmbtbl-cnstrctn:noncombustible construction] must be [REF:term:nncmbtbl:noncombustible] unless otherwise permitted." } ] },
                     
                     { "content" : 
                      [ 
@@ -4907,7 +4923,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Stairs, Ramps, Handrails and <italic>Guards<\/italic>[REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.9., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
+                       "value" : "Stairs, [REF:term:rmp:Ramps] , Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.9., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -4927,7 +4943,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Stairs, [REF:term:rmp:Ramps] , Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
+                         "value" : "Stairs, Ramps, Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
                       
                       { "content" : 
                        [ 
@@ -4950,7 +4966,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Stairs, Ramps, Handrails and <italic>Guards<\/italic>[REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.9., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
+                         "value" : "Stairs, [REF:term:rmp:Ramps] , Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.9., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
                       
                       { "content" : 
                        [ 
@@ -5309,12 +5325,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Mechanical and <italic>Plumbing Systems<\/italic> Part 6 and Part 7" } ] },
+                       "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an unsafe condition and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
+                       "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
                    "revisions" : 
                    [ 
                     { "type" : "original",
@@ -5334,7 +5350,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ] },
+                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an unsafe condition and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ] },
                     
                     { "type" : "revision",
                      "revision_type" : "amendment",
@@ -5352,12 +5368,12 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Mechanical and <italic>Plumbing Systems<\/italic> Part 6 and Part 7" } ] },
+                         "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7" } ] },
                       
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an unsafe condition and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
+                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
                      "change_summary" : "Amended Table 1.1.1.1.(5), Item 37 by striking out term-referenced \"unsafe condition\" and substituting plain text \"unsafe condition\"",
                      "note" : "Ministerial Order BA 2024 06" } ] } ] } },
                
@@ -5365,7 +5381,7 @@
                 "type" : "sentence",
                 "number" : 6,
                 "source" : "bc",
-                "text" : "For the design and construction of [REF:term:ltrtn:alterations] to existing [REF:term:bldng:buildings] to add a [REF:term:scnd-t:secondary suite] , not including the design and construction of new additions or new [REF:term:bldng:buildings] , the Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long] may be substituted for requirements contained elsewhere in this Code. (See [REF:internal:nbc.divA.part1.appendix.appnote2b:short] .)" },
+                "text" : "For the design and construction of [REF:term:ltrtn:alterations] to existing [REF:term:bldng:buildings] to add a [REF:term:scnd-t:secondary suite] , not including the design and construction of new additions or new [REF:term:bldng:buildings] , the Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table1:long:Table 1.1.1.1.(6)] may be substituted for requirements contained elsewhere in this Code. (See [REF:internal:nbc.divA.part1.appendix.appnote2b:short] .)" },
                
                { "id" : "nbc.divA.part1.sect1.subsect1.art1.table2",
                 "type" : "table",
@@ -5501,7 +5517,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and Ramps [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or ramp of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or ramp provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
+                       "value" : "Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
                     
                     { "content" : 
                      [ 
@@ -5544,7 +5560,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and Ramps [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or ramp of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or ramp provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
+                         "value" : "Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
                       
                       { "content" : 
                        [ 
@@ -5585,7 +5601,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Fire-Resistance Ratings and Fire-Protection Ratings [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1.sent3:long] In a house with a <italic>secondary suite<\/italic>, where a minimum [REF:term:fr-rtnc-:fire-resistance rating] of 30 min is permitted, it is permitted to use wood-frame construction where stud and joist spaces are filled with absorptive material,resilient metal channel spaced 400 or 600 mm o.c. is on one side and not less than 12.7 mm thick gypsum board is installed on ceilings and on both sides of walls." } ] },
+                       "value" : "[REF:term:fr-rtnc-:Fire-Resistance Rating] and [REF:term:fr-prtct:Fire-Protection Ratings]  [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1.sent3:long] In a house with a [REF:term:bc-scnd-t:secondary suite] , where a minimum [REF:term:fr-rtnc-:fire-resistance rating] of 30 min is permitted, it is permitted to use wood-frame construction where stud and joist spaces are filled with absorptive material,resilient metal channel spaced 400 or 600 mm o.c. is on one side and not less than 12.7 mm thick gypsum board is installed on ceilings and on both sides of walls." } ] },
                     
                     { "content" : 
                      [ 
@@ -5628,7 +5644,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Fire-Resistance Ratings and Fire-Protection Ratings [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1.sent3:long] In a house with a <italic>secondary suite<\/italic>, where a minimum [REF:term:fr-rtnc-:fire-resistance rating] of 30 min is permitted, it is permitted to use wood-frame construction where stud and joist spaces are filled with absorptive material,resilient metal channel spaced 400 or 600 mm o.c. is on one side and not less than 12.7 mm thick gypsum board is installed on ceilings and on both sides of walls." } ] },
+                         "value" : "[REF:term:fr-rtnc-:Fire-Resistance Rating] and [REF:term:fr-prtct:Fire-Protection Ratings]  [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1.sent3:long] In a house with a [REF:term:bc-scnd-t:secondary suite] , where a minimum [REF:term:fr-rtnc-:fire-resistance rating] of 30 min is permitted, it is permitted to use wood-frame construction where stud and joist spaces are filled with absorptive material,resilient metal channel spaced 400 or 600 mm o.c. is on one side and not less than 12.7 mm thick gypsum board is installed on ceilings and on both sides of walls." } ] },
                       
                       { "content" : 
                        [ 
@@ -5733,7 +5749,7 @@
               "type" : "article",
               "number" : 1,
               "source" : "bc",
-              "title" : "Appendices, Notes and References to Appendices and Notes have No Legal Effect",
+              "title" : "Notes and References to Notes have No Legal Effect",
               "content" : 
               [ 
                { "id" : "nbc.divA.part1.sect1.subsect3.art1.sent1",
@@ -5774,7 +5790,7 @@
                 "type" : "article",
                 "number" : 1,
                 "source" : "bc",
-                "title" : "Appendices, Notes and References to Appendices and Notes have No Legal Effect",
+                "title" : "Notes and References to Notes have No Legal Effect",
                 "content" : 
                 [ 
                  { "id" : "nbc.divA.part1.sect1.subsect3.art1.sent1",
@@ -5939,7 +5955,7 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "be an indentured apprentice supervised by a journeyperson who meets the criteria set out in [REF:internal:nbc.divA.part1.sect2.subsect3.art1.sent1.clause1:long] , or" },
+                  "text" : "be an indentured apprentice supervised by a journeyperson who meets the criteria set out in [REF:internal:nbc.divA.part1.sect2.subsect3.art1.sent1.clause1:long:Clause (a)] , or" },
                  
                  { "id" : "nbc.divA.part1.sect2.subsect3.art1.sent1.clause3",
                   "type" : "clause",
@@ -684889,6 +684905,22 @@
           "valign" : "middle" } ] } ] } } } ],
   "bc_amendments" : 
   [ 
+   { "location_id" : "nbc.2020.preface.para2b",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Services Act.<\/bold>" },
+   
+   { "location_id" : "nbc.2020.preface.para2b",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-001",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act.<\/bold>",
+    "change_summary" : "Strike out \"Fire Services Act\" and substitute \"Fire Safety Act\"",
+    "note" : "Ministerial Order BA 2024 06" },
+   
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.sent2.clause1",
     "type" : "original",
     "effective_date" : "2024-03-08",
@@ -684901,14 +684933,14 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "[REF:term:swg:sewage] , water, electrical, telephone, rail or similar public infrastructure systems located in a [REF:term:trt:street] or a public transit right of way,",
+    "content" : "sewage, water, electrical, telephone, rail or similar public infrastructure systems located in a [REF:term:trt:street] or a public transit right of way,",
     "change_summary" : "Amended Clause 1.1.1.1.(2)(a) by striking out \"sewage\" and substituting \"sewage\"",
     "note" : "Ministerial Order BA 2024 06" },
    
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row19",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "19Stairs, [REF:term:rmp:Ramps] , Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] .Existing conditions that do not comply fully with the requirements are permitted if they are acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
+    "content" : "19Stairs, Ramps, Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] .Existing conditions that do not comply fully with the requirements are permitted if they are acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
    
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row19",
     "type" : "revision",
@@ -684917,14 +684949,14 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "19Stairs, Ramps, Handrails and <italic>Guards<\/italic>[REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.9., [REF:internal:nbc.divBV2.part9.sect8:long] .Existing conditions that do not comply fully with the requirements are permitted if they are acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] .",
+    "content" : "19Stairs, [REF:term:rmp:Ramps] , Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.9., [REF:internal:nbc.divBV2.part9.sect8:long] .Existing conditions that do not comply fully with the requirements are permitted if they are acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] .",
     "change_summary" : "Amended Table 1.1.1.1.(5), Item 19 by striking out italic \"Ramps\" and substituting regular \"Ramps\", and by striking out \"3.4.6.79.\" and substituting \"3.4.6.9.\"",
     "note" : "Ministerial Order BA 2024 06" },
    
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row37",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "37Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
+    "content" : "37Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an unsafe condition and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
    
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row37",
     "type" : "revision",
@@ -684933,7 +684965,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "37Mechanical and <italic>Plumbing Systems<\/italic> Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an unsafe condition and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] .",
+    "content" : "37Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] .",
     "change_summary" : "Amended Table 1.1.1.1.(5), Item 37 by striking out term-referenced \"unsafe condition\" and substituting plain text \"unsafe condition\"",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -684949,7 +684981,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "5Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and Ramps [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or ramp of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or ramp provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space.Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a <italic>secondary suite<\/italic> are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] .",
+    "content" : "5Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space.Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a <italic>secondary suite<\/italic> are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] .",
     "change_summary" : "Amended Table 1.1.1.1.(6), Item 5 by striking out italic \"Ramps\" and substituting regular \"Ramps\", and by striking out italic \"ramp\" and substituting regular \"ramp\" throughout Item 5",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -684965,7 +684997,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "7Fire-Resistance Ratings and Fire-Protection Ratings [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1.sent3:long] In a house with a <italic>secondary suite<\/italic>, where a minimum [REF:term:fr-rtnc-:fire-resistance rating] of 30 min is permitted, it is permitted to use wood-frame construction where stud and joist spaces are filled with absorptive material,resilient metal channel spaced 400 or 600 mm o.c. is on one side and not less than 12.7 mm thick gypsum board is installed on ceilings and on both sides of walls.Adding resilient metal channel spaced 400 or 600 mm o.c. and an additional layer of not less than 12.7 mm gypsum board to one side of an existing finished wall assembly that has not less than 12.7 mm gypsum board on each side or an existing finished floor-ceiling assembly that has not less than 12.7 mm gypsum on the ceiling side is permitted to be used where a 30 min [REF:term:fr-rtnc-:fire-resistance rating] is required.",
+    "content" : "7[REF:term:fr-rtnc-:Fire-Resistance Rating] and [REF:term:fr-prtct:Fire-Protection Ratings]  [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1.sent3:long] In a house with a [REF:term:bc-scnd-t:secondary suite] , where a minimum [REF:term:fr-rtnc-:fire-resistance rating] of 30 min is permitted, it is permitted to use wood-frame construction where stud and joist spaces are filled with absorptive material,resilient metal channel spaced 400 or 600 mm o.c. is on one side and not less than 12.7 mm thick gypsum board is installed on ceilings and on both sides of walls.Adding resilient metal channel spaced 400 or 600 mm o.c. and an additional layer of not less than 12.7 mm gypsum board to one side of an existing finished wall assembly that has not less than 12.7 mm gypsum board on each side or an existing finished floor-ceiling assembly that has not less than 12.7 mm gypsum on the ceiling side is permitted to be used where a 30 min [REF:term:fr-rtnc-:fire-resistance rating] is required.",
     "change_summary" : "Amended Table 1.1.1.1.(6), Item 7 by striking out \"Fire-Resistance and Fire-Protection Ratings\" and substituting \"Fire-Resistance Ratings and Fire-Protection Ratings\"",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -684981,7 +685013,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "NotesAppendices, Notes and References to Appendices and Notes have No Legal EffectExcept for Notes A-Table 9.23.3.5.-B and A-9.23.13., including Table A-9.23.13. in Division B, Notes to Parts of this Code have no legal effect.",
+    "content" : "NotesNotes and References to Notes have No Legal EffectExcept for Notes A-Table 9.23.3.5.-B and A-9.23.13., including Table A-9.23.13. in Division B, Notes to Parts of this Code have no legal effect.",
     "change_summary" : "Amended title by striking out “Appendices,” and “and Annotations”",
     "note" : "Ministerial Order BA 2024 06" },
    
