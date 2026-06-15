@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-06-08T12:17:19.929194-07:00",
+  "generated_timestamp" : "2026-06-15T17:49:19.301465987Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -4661,7 +4661,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:hv-tmbr-:Heavy timber construction] is permitted to have a [REF:term:fr-rtnc-:fire-resistance rating] less than would be required by the Code provided the [REF:term:bldng:building] : (a) is [REF:term:prnklrd:sprinklered] , and (b) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] ." } ] } ] },
+                       "value" : "[REF:term:hv-tmbr-:Heavy timber construction] is permitted to have a [REF:term:fr-rtnc-:fire-resistance rating] less than would be required by the Code provided the [REF:term:bldng:building] : (a) is [REF:term:prnklrd:sprinklered] , and (b) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row6",
                    "type" : "body_row",
@@ -5517,12 +5517,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
+                       "value" : "Openings Near Unenclosed Exterior [REF:term:xt:Exit] Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]  [REF:term:nprtctd-:Unprotected openings] in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] of a house with a [REF:term:bc-scnd-t:secondary suite] shall be protected where the unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] provides the only [REF:term:mn-f-gr:means of egress] from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a <italic>secondary suite<\/italic> are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] ." } ] } ],
+                       "value" : "Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a [REF:term:bc-scnd-t:secondary suite] are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] ." } ] } ],
                    "revisions" : 
                    [ 
                     { "type" : "original",
@@ -5537,7 +5537,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Openings Near Unenclosed Exterior [REF:term:xt:Exit] Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]  [REF:term:nprtctd-:Unprotected openings] in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior [REF:term:xt:exit] stair or ramp of a house with a [REF:term:bc-scnd-t:secondary suite] shall be protected where the unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] provides the only [REF:term:mn-f-gr:means of egress] from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
+                         "value" : "Openings Near Unenclosed Exterior [REF:term:xt:Exit] Stairs and Ramps [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]  [REF:term:nprtctd-:Unprotected openings] in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior [REF:term:xt:exit] stair or ramp of a house with a [REF:term:bc-scnd-t:secondary suite] shall be protected where the unenclosed exterior [REF:term:xt:exit] stair or ramp provides the only [REF:term:mn-f-gr:means of egress] from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
                       
                       { "content" : 
                        [ 
@@ -5560,12 +5560,12 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
+                         "value" : "Openings Near Unenclosed Exterior [REF:term:xt:Exit] Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]  [REF:term:nprtctd-:Unprotected openings] in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] of a house with a [REF:term:bc-scnd-t:secondary suite] shall be protected where the unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] provides the only [REF:term:mn-f-gr:means of egress] from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space." } ] },
                       
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a <italic>secondary suite<\/italic> are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] ." } ] } ],
+                         "value" : "Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a [REF:term:bc-scnd-t:secondary suite] are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] ." } ] } ],
                      "change_summary" : "Amended Table 1.1.1.1.(6), Item 5 by striking out italic \"Ramps\" and substituting regular \"Ramps\", and by striking out italic \"ramp\" and substituting regular \"ramp\" throughout Item 5",
                      "note" : "Ministerial Order BA 2024 06" } ] },
                   
@@ -5942,7 +5942,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "Personnel performing the installation, alteration, renewal or repair of a [REF:term:plmbng-t:plumbing system] shall",
+                "text" : "Personnel performing the installation, [REF:term:ltrtn:alteration] , renewal or repair of a [REF:term:plmbng-t:plumbing system] shall",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divA.part1.sect2.subsect3.art1.sent1.clause1",
@@ -6201,32 +6201,38 @@
                  { "id" : "nbc.divA.part1.sect3.subsect3.art3.sent1",
                   "type" : "sentence",
                   "number" : 1,
+                  "source" : "bc",
                   "text" : "Part 9 of Division B applies to all [REF:term:bldng:buildings] described in [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] of 3 [REF:term:tr:storeys] or less in [REF:term:bldng-hg:building height] , having a [REF:term:bldng-r:building area] not exceeding 600 m^{2} , and used for [REF:term:mjr-ccpn:major occupancies] classified as",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divA.part1.sect3.subsect3.art3.sent1.clause1",
                     "type" : "clause",
-                    "letter" : "e",
-                    "text" : "Group B, Division 4, [REF:term:hm-tp-ccpnc:home-type care occupancies] ," },
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "reserved" },
                    
                    { "id" : "nbc.divA.part1.sect3.subsect3.art3.sent1.clause2",
                     "type" : "clause",
-                    "letter" : "a",
+                    "letter" : "b",
+                    "source" : "bc",
                     "text" : "Group C, [REF:term:rdntl-cc:residential occupancies] (see [REF:internal:nbc.divBV2.part9.appendix.appnote1:long] )," },
                    
                    { "id" : "nbc.divA.part1.sect3.subsect3.art3.sent1.clause3",
                     "type" : "clause",
-                    "letter" : "b",
+                    "letter" : "c",
+                    "source" : "bc",
                     "text" : "Group D, [REF:term:bn-nd-pr:business and personal services occupancies] ," },
                    
                    { "id" : "nbc.divA.part1.sect3.subsect3.art3.sent1.clause4",
                     "type" : "clause",
-                    "letter" : "c",
+                    "letter" : "d",
+                    "source" : "bc",
                     "text" : "Group E, [REF:term:mrcntl-c:mercantile occupancies] , or" },
                    
                    { "id" : "nbc.divA.part1.sect3.subsect3.art3.sent1.clause5",
                     "type" : "clause",
-                    "letter" : "d",
+                    "letter" : "e",
+                    "source" : "bc",
                     "text" : "Group F, Divisions 2 and 3, [REF:term:mdm-hzrd:medium-] and [REF:term:lw-hzrd-:low-hazard industrial occupancies] ." } ] } ] },
                
                { "type" : "revision",
@@ -6990,8 +6996,8 @@
                     "definition" : "means a drainage system that conducts sewage." },
                    
                    { "id" : "bc-scnd-t",
-                    "term" : "",
-                    "definition" : "" },
+                    "term" : "Secondary suite",
+                    "definition" : "means a self-contained [REF:term:dwllng-n:dwelling unit] located within a [REF:term:bldng:building] or portion of a [REF:term:bldng:building][LIST:bulleted] (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] .)" },
                    
                    { "id" : "rvc-rm",
                     "term" : "Service room",
@@ -684972,7 +684978,7 @@
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table2.row5",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "5Openings Near Unenclosed Exterior [REF:term:xt:Exit] Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]  [REF:term:nprtctd-:Unprotected openings] in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior [REF:term:xt:exit] stair or ramp of a house with a [REF:term:bc-scnd-t:secondary suite] shall be protected where the unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] provides the only [REF:term:mn-f-gr:means of egress] from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space.Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a [REF:term:bc-scnd-t:secondary suite] are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] ." },
+    "content" : "5Openings Near Unenclosed Exterior [REF:term:xt:Exit] Stairs and Ramps [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]  [REF:term:nprtctd-:Unprotected openings] in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior [REF:term:xt:exit] stair or ramp of a house with a [REF:term:bc-scnd-t:secondary suite] shall be protected where the unenclosed exterior [REF:term:xt:exit] stair or ramp provides the only [REF:term:mn-f-gr:means of egress] from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space.Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a [REF:term:bc-scnd-t:secondary suite] are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] ." },
    
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table2.row5",
     "type" : "revision",
@@ -684981,7 +684987,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "5Openings Near Unenclosed Exterior <italic>Exit<\/italic> Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]<italic>Unprotected openings<\/italic> in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] of a house with a <italic>secondary suite<\/italic> shall be protected where the unenclosed exterior <italic>exit<\/italic> stair or [REF:term:rmp:ramp] provides the only <italic>means of egress<\/italic> from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space.Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a <italic>secondary suite<\/italic> are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] .",
+    "content" : "5Openings Near Unenclosed Exterior [REF:term:xt:Exit] Stairs and [REF:term:rmp:Ramps]  [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long]  [REF:term:nprtctd-:Unprotected openings] in exterior walls that are within 3 m horizontally and less than 10 m below or less than 5 m above an unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] of a house with a [REF:term:bc-scnd-t:secondary suite] shall be protected where the unenclosed exterior [REF:term:xt:exit] stair or [REF:term:rmp:ramp] provides the only [REF:term:mn-f-gr:means of egress] from a [REF:term:t:suite] and is exposed to fire from [REF:term:nprtctd-:unprotected openings] in the exterior walls of another [REF:term:dwllng-n:dwelling unit] , ancillary space or common space.Protection of the [REF:term:nprtctd-:unprotected openings] as described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art4.sent1:long] is not required when all [REF:term:mk-lrm:smoke alarms] within a house with a [REF:term:bc-scnd-t:secondary suite] are of photo-electric type and interconnected as described in [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5.sent2.clause1:long] .",
     "change_summary" : "Amended Table 1.1.1.1.(6), Item 5 by striking out italic \"Ramps\" and substituting regular \"Ramps\", and by striking out italic \"ramp\" and substituting regular \"ramp\" throughout Item 5",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -685036,7 +685042,7 @@
    { "location_id" : "nbc.divA.part1.sect3.subsect3.art3",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Application of Part 9Part 9 of Division B applies to all [REF:term:bldng:buildings] described in [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] of 3 [REF:term:tr:storeys] or less in [REF:term:bldng-hg:building height] , having a [REF:term:bldng-r:building area] not exceeding 600 m^{2} , and used for [REF:term:mjr-ccpn:major occupancies] classified asGroup B, Division 4, [REF:term:hm-tp-ccpnc:home-type care occupancies] ,Group C, [REF:term:rdntl-cc:residential occupancies] (see [REF:internal:nbc.divBV2.part9.appendix.appnote1:long] ),Group D, [REF:term:bn-nd-pr:business and personal services occupancies] ,Group E, [REF:term:mrcntl-c:mercantile occupancies] , orGroup F, Divisions 2 and 3, [REF:term:mdm-hzrd:medium-] and [REF:term:lw-hzrd-:low-hazard industrial occupancies] ." },
+    "content" : "Application of Part 9Part 9 of Division B applies to all [REF:term:bldng:buildings] described in [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] of 3 [REF:term:tr:storeys] or less in [REF:term:bldng-hg:building height] , having a [REF:term:bldng-r:building area] not exceeding 600 m^{2} , and used for [REF:term:mjr-ccpn:major occupancies] classified asreservedGroup C, [REF:term:rdntl-cc:residential occupancies] (see [REF:internal:nbc.divBV2.part9.appendix.appnote1:long] ),Group D, [REF:term:bn-nd-pr:business and personal services occupancies] ,Group E, [REF:term:mrcntl-c:mercantile occupancies] , orGroup F, Divisions 2 and 3, [REF:term:mdm-hzrd:medium-] and [REF:term:lw-hzrd-:low-hazard industrial occupancies] ." },
    
    { "location_id" : "nbc.divA.part1.sect3.subsect3.art3",
     "type" : "revision",
@@ -685111,22 +685117,6 @@
     "status" : "current",
     "content" : "",
     "change_summary" : "Struck out the defined term \"High-hazard agricultural occupancy\" and its definition",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "bc-scnd-t",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "Secondary suitemeans a self-contained [REF:term:dwllng-n:dwelling unit] located within a [REF:term:bldng:building] or portion of a [REF:term:bldng:building][LIST:bulleted] (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] .)" },
-   
-   { "location_id" : "bc-scnd-t",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-012",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "Secondary suitemeans a self-contained [REF:term:dwllng-n:dwelling unit] with a prescribed [REF:term:flr-r:floor area] located in a [REF:term:bldng:building] or portion of a [REF:term:bldng:building] of only [REF:term:rdntl-cc:residential occupancy] that contains only one other [REF:term:dwllng-n:dwelling unit] and common spaces, and where both [REF:term:dwllng-n:dwelling units] constitute a single real estate entity. (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] and [REF:internal:nbc.divBV2.part9.sect1.subsect2.art1:long] .)",
-    "change_summary" : "Amended definition of Secondary suite by striking out \"of Division B\" in the note reference",
     "note" : "Ministerial Order BA 2024 06" },
    
    { "location_id" : "nbc.divA.part1.appendix.appnote7.div5.para4",
@@ -689618,8 +689608,8 @@
     "definition" : "means a drainage system that conducts sewage.",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-scnd-t" : 
-   { "term" : "",
-    "definition" : "",
+   { "term" : "Secondary suite",
+    "definition" : "means a self-contained [REF:term:dwllng-n:dwelling unit] located within a [REF:term:bldng:building] or portion of a [REF:term:bldng:building][LIST:bulleted] (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "rvc-rm" : 
    { "term" : "Service room",
