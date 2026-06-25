@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-06-19T21:22:47.857659643Z",
+  "generated_timestamp" : "2026-06-25T21:08:57.159731304Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -7455,7 +7455,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote2",
            "type" : "application_note",
            "number" : "1.1.1.1.(3)",
-           "title" : "Factory-Constructed Buildings",
+           "title" : "Factory-Constructed Buildings.",
            "refs" : "es000109",
            "source" : "bc",
            "content" : 
@@ -7475,7 +7475,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote2a",
            "type" : "application_note",
            "number" : "1.1.1.1.(5)",
-           "title" : "Heritage Buildings",
+           "title" : "Heritage Buildings.",
            "refs" : "es000110",
            "source" : "bc",
            "content" : 
@@ -7494,7 +7494,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote2a.para4",
-             "content" : "The use of the Alternate Compliance Methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long] is not mandatory, and an owner may choose [LIST:bulleted]",
+             "content" : "The use of the Alternate Compliance Methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table1:long:Table 1.1.1.1.(5)] is not mandatory, and an owner may choose [LIST:bulleted]",
              "lists" : 
              [ 
               { "type" : "bulleted",
@@ -7507,7 +7507,7 @@
                  "content" : "to apply alternate solutions under [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] ," },
                 
                 { "id" : "nbc.divA.part1.appendix.appnote2a.item3",
-                 "content" : "to apply alternate compliance methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long] , or" },
+                 "content" : "to apply alternate compliance methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table1:long:Table 1.1.1.1.(5)] , or" },
                 
                 { "id" : "nbc.divA.part1.appendix.appnote2a.item4",
                  "content" : "to combined these options." } ] } ] } ] },
@@ -7522,19 +7522,19 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote2b.para1",
-             "content" : "The requirements in Division B for the construction of [REF:term:bc-scnd-t:secondary suites] was written primarily for new construction and provides for a performance level that is higher than what may exist in existing [REF:term:bldng:buildings] . To apply present Code provisions to existing [REF:term:bldng:buildings] is in many cases impractical. The Table of Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite was developed to provide alternate methods, when dealing with existing construction, without compromising the objectives of the Code. [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long] may be considered when assessing an existing additional [REF:term:dwllng-n:dwelling unit] located in a single family dwelling [REF:term:bldng:building] (house), however is not intended to be applied as a retroactive code to these existing units, nor be applied to [REF:term:bldng:buildings] of new construction where there are no existing assemblies to act as practical barriers to compliance with Division B of this Code. [REF:internal:nbc.divA.part1.appendix.appnote2b.figure1:long] illustrates the application of [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long] to existing [REF:term:bldng:buildings] ." },
+             "content" : "The requirements in Division B for the construction of [REF:term:bc-scnd-t:secondary suites] was written primarily for new construction and provides for a performance level that is higher than what may exist in existing [REF:term:bldng:buildings] . To apply present Code provisions to existing [REF:term:bldng:buildings] is in many cases impractical. The Table of Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite was developed to provide alternate methods, when dealing with existing construction, without compromising the objectives of the Code. [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] may be considered when assessing an existing additional [REF:term:dwllng-n:dwelling unit] located in a single family dwelling [REF:term:bldng:building] (house), however is not intended to be applied as a retroactive code to these existing units, nor be applied to [REF:term:bldng:buildings] of new construction where there are no existing assemblies to act as practical barriers to compliance with Division B of this Code. [REF:internal:nbc.divA.part1.appendix.appnote2b.figure1:long] illustrates the application of [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] to existing [REF:term:bldng:buildings] ." },
             
             { "id" : "nbc.divA.part1.appendix.appnote2b.figure1",
              "type" : "figure",
              "source" : "bc",
-             "title" : "Figure A-1.1.1.1.(6) Application of Alternative Compliance Methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long]",
+             "title" : "Figure A-1.1.1.1.(6) Application of Alternative Compliance Methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)]",
              "graphic" : 
              { "src" : "bc-graphics\/figure-a-1-1-1-1-6-of-division-a",
               "alt_text" : "Diagram illustrating application of alternative compliance methods for secondary suites in existing buildings" } },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote2b.para2",
-             "content" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long] is not mandatory, and an owner may choose to [LIST:bulleted]",
+             "content" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] is not mandatory, and an owner may choose to [LIST:bulleted]",
              "lists" : 
              [ 
               { "type" : "bulleted",
@@ -7547,7 +7547,7 @@
                  "content" : "apply alternative solutions under [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] ," },
                 
                 { "id" : "nbc.divA.part1.appendix.appnote2b.item3",
-                 "content" : "apply alternate compliance methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long] , or" },
+                 "content" : "apply alternate compliance methods in [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] , or" },
                 
                 { "id" : "nbc.divA.part1.appendix.appnote2b.item4",
                  "content" : "combined these options." } ] } ] } ] },
@@ -7699,7 +7699,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote6.para1",
-             "content" : "Application of the definition of grade to stepped buildings on sloping sites often results in such buildings being designated as being greater than 4 storeys in building height even though there may be only 2, 3 or 4 storeys at any one location. [REF:internal:nbc.divA.part1.appendix.appnote6.figure1:long] illustrates this application compared to a similar building on a flat site." },
+             "content" : "Application of the definition of grade to stepped buildings on sloping sites often results in such buildings being designated as being greater than 4 storeys in building height even though there may be only 2, 3 or 4 storeys at any one location. [REF:internal:nbc.divA.part1.appendix.appnote6.figure1:long:Figure A-1.3.3.4.(2)] illustrates this application compared to a similar building on a flat site." },
             
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote6.para2",
@@ -7815,10 +7815,10 @@
                  "content" : "Notes to Table A-1.4.1.2.(1):" },
                 
                 { "id" : "nbc.divA.part1.appendix.appnote7.div5.table1.note2",
-                 "content" : "^{(1)} The WHMIS has various descriptors for this Class of products based on their toxicity." },
+                 "content" : "The WHMIS has various descriptors for this Class of products based on their toxicity." },
                 
                 { "id" : "nbc.divA.part1.appendix.appnote7.div5.table1.note3",
-                 "content" : "^{(2)} The WHMIS has various descriptors for this Class of products based on the nature of the danger presented by the product." } ],
+                 "content" : "The WHMIS has various descriptors for this Class of products based on the nature of the danger presented by the product." } ],
                "structure" : 
                { "columns" : 4,
                 "column_specs" : 
@@ -8523,7 +8523,7 @@
              "content" : 
              [ 
               { "type" : "paragraph",
-               "content" : "The definition of tapered tread includes treads in curved stairs and treads in winder stairs. However, requirements for winders differ from those for other tapered treads. Requirements for tapered treads are found in [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] , [REF:internal:nbc.divB.part3.sect4.subsect6.art9:long] , and [REF:internal:nbc.divBV2.part9.sect8.subsect4.art3:long] of Division B. Requirements for winders are found in [REF:internal:nbc.divBV2.part9.sect8.subsect4.art6:long] of Division B." } ] },
+               "content" : "The definition of tapered tread includes treads in curved stairs and treads in winder stairs, However, requirements for winders differ from those for other tapered treads. Requirements for tapered treads are found in [REF:internal:nbc.divB.part3.sect3.subsect1.art16] , [REF:internal:nbc.divB.part3.sect4.subsect6.art9] , and [REF:internal:nbc.divBV2.part9.sect8.subsect4.art3] of Division B. Requirements for winders are found in [REF:internal:nbc.divBV2.part9.sect8.subsect4.art6] of Division B." } ] },
             
             { "id" : "nbc.divA.part1.appendix.appnote7.div21",
              "type" : "note_division",
