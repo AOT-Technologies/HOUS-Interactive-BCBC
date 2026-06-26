@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-06-25T21:08:57.159731304Z",
+  "generated_timestamp" : "2026-06-26T19:42:51.00210818Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -34,7 +34,7 @@
       [ 
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.intro",
-        "content" : "<bold>The following preface is reprinted from the model National Building Code of Canada (NBC), on which the British Columbia Building Code (BCBC) is substantially based. As such, this information also pertains to the BCBC. Material that is not relevant to the BCBC has been deleted; minor BCBC-specific edits within the text have been made. Additional information only relevant to the BCBC has been included in text boxes within the document.<\/bold>" },
+        "content" : "The following preface is reprinted from the model National Building Code of Canada (NBC), on which the British Columbia Building Code (BCBC) is substantially based. As such, this information also pertains to the BCBC. Material that is not relevant to the BCBC has been deleted; minor BCBC-specific edits within the text have been made. Additional information only relevant to the BCBC has been included in text boxes within the document." },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para1",
@@ -42,21 +42,13 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para2",
-        "content" : "In Canada, provincial and territorial governments have the authority to enact legislation that regulates building design and construction within their jurisdictions. This may involve the adoption of the NBC without change or with modifications to suit local needs, and the enactment of other laws and regulations regarding building design and construction, including requirements for professional involvement." },
-       
-       { "type" : "paragraph",
-        "id" : "nbc.2020.preface.para2a",
-        "content" : "<bold>In British Columbia, the NBC, together with the National Plumbing Code of Canada, are adopted, including any variations considered necessary, as Book I (General) and Book II (Plumbing Systems) of the BCBC, pursuant to the Building Act.<\/bold>" },
-       
-       { "type" : "paragraph",
-        "id" : "nbc.2020.preface.para2b",
         "revised" : true,
-        "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act.<\/bold>",
+        "content" : "In British Columbia, the NBC, together with the National Plumbing Code of Canada, are adopted, including any variations considered necessary, as Book I (General) and Book II (Plumbing Systems) of the BCBC, pursuant to the Building Act. The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act. The National Energy Code of Canada for Buildings (NECB) is adopted by reference from Book I (General) of the British Columbia Building Code.",
         "revisions" : 
         [ 
          { "type" : "original",
           "effective_date" : "2024-03-08",
-          "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Services Act.<\/bold>" },
+          "content" : "In Canada, provincial and territorial governments have the authority to enact legislation that regulates building design and construction within their jurisdictions. This may involve the adoption of the NBC without change or with modifications to suit local needs, and the enactment of other laws and regulations regarding building design and construction, including requirements for professional involvement." },
          
          { "type" : "revision",
           "revision_type" : "amendment",
@@ -64,13 +56,9 @@
           "sequence" : 1,
           "effective_date" : "2025-06-16",
           "status" : "current",
-          "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act.<\/bold>",
+          "content" : "In British Columbia, the NBC, together with the National Plumbing Code of Canada, are adopted, including any variations considered necessary, as Book I (General) and Book II (Plumbing Systems) of the BCBC, pursuant to the Building Act. The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act. The National Energy Code of Canada for Buildings (NECB) is adopted by reference from Book I (General) of the British Columbia Building Code.",
           "change_summary" : "Strike out \"Fire Services Act\" and substitute \"Fire Safety Act\"",
           "note" : "Ministerial Order BA 2024 06" } ] },
-       
-       { "type" : "paragraph",
-        "id" : "nbc.2020.preface.para2c",
-        "content" : "<bold>The National Energy Code of Canada for Buildings (NECB) is adopted by reference from Book I (General) of the British Columbia Building Code.<\/bold>" },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para3",
@@ -82,7 +70,7 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.para4a",
-        "content" : "<bold>This edition of the BCBC succeeds the 2018 edition.<\/bold>" },
+        "content" : "This edition of the BCBC succeeds the 2018 edition." },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div1.title",
@@ -103,7 +91,7 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div1.para3a",
-        "content" : "<bold>Similar to the Codes themselves, such periodic revisions do not have legal effect until adopted into law by the Province of British Columbia.<\/bold>" },
+        "content" : "Similar to the Codes themselves, such periodic revisions do not have legal effect until adopted into law by the Province of British Columbia." },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div1.para4",
@@ -154,7 +142,7 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.para4a",
-        "content" : "<bold>In context of the preceding paragraph, the terms \"authority having jurisdiction\" and \"adopting authority\" refer to the government of the Province of British Columbia. This differs from the context of application and enforcement of the BCBC, for which the Code contains a distinct definition of the term \"authority having jurisdiction\". (See Article 1.4.1.2. of Division A.)<\/bold>" },
+        "content" : "In context of the preceding paragraph, the terms \"authority having jurisdiction\" and \"adopting authority\" refer to the government of the Province of British Columbia. This differs from the context of application and enforcement of the BCBC, for which the Code contains a distinct definition of the term \"authority having jurisdiction\". (See Article 1.4.1.2. of Division A.)" },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.para5",
@@ -170,8 +158,12 @@
         "level" : 3 },
        
        { "type" : "paragraph",
-        "id" : "nbc.2020.preface.div2.sub1.para1",
-        "content" : "The NBC and NFC each contain provisions that relate to the safety of persons in buildings in the event of a fire and the protection of buildings from the effects of fire.The NFC also applies to other types of facilities besides buildings (e.g. tank farms and storage yards). Those applications are not discussed here. These two model codes are developed as complementary and coordinated documents to minimize the possibility of their containing conflicting provisions. It is expected that buildings comply with both the NBC and the NFC." },
+        "id" : "nbc.2020.preface.div2.sub1.para1a",
+        "content" : "The NBC and NFC each contain provisions that relate to the safety of persons in buildings in the event of a fire and the protection of buildings from the effects of fire." },
+       
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div2.sub1.para1b",
+        "content" : "These two model codes are developed as complementary and coordinated documents to minimize the possibility of their containing conflicting provisions. It is expected that buildings comply with both the NBC and the NFC." },
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.sub1.para2",
@@ -210,7 +202,7 @@
        
        { "type" : "paragraph",
         "id" : "nbc.2020.preface.div2.sub2.para1",
-        "content" : "The provisions in Section 9.38. of Division B of the NBC are tied to the environment objective. These provisions, which apply to housing and small buildings, have a similar scope to that of the NECB, except that they do not address lighting and electrical power systems. The NECB is referenced in NBC Section 9.38. as an acceptable solution." },
+        "content" : "The provisions in Section 9.36. of Division B of the NBC are tied to the environment objective. These provisions, which apply to housing and small buildings, have a similar scope to that of the NECB, except that they do not address lighting and electrical power systems. The NECB is referenced in NBC Section 9.36. as an acceptable solution." },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div2.sub3.title",
@@ -7515,7 +7507,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote2b",
            "type" : "application_note",
            "number" : "1.1.1.1.(6)",
-           "title" : "Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite",
+           "title" : "Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite.",
            "refs" : "es000111",
            "source" : "bc",
            "content" : 
@@ -7555,7 +7547,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote1",
            "type" : "application_note",
            "number" : "1.1.1.2.(1)",
-           "title" : "Application to Existing Buildings",
+           "title" : "Application to Existing Buildings.",
            "refs" : "es000101",
            "source" : "bc",
            "content" : 
@@ -7671,7 +7663,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote4a",
            "type" : "application_note",
            "number" : "1.2.1.2.(1)",
-           "title" : "Responsibility of Owner",
+           "title" : "Responsibility of Owner.",
            "refs" : "es000113",
            "source" : "bc",
            "content" : 
@@ -8559,7 +8551,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote8",
            "type" : "application_note",
            "number" : "1.5.1.1.(1)",
-           "title" : "Application of Referenced Documents",
+           "title" : "Application of Referenced Documents.",
            "refs" : "es007219",
            "source" : "bc",
            "content" : 
@@ -684910,19 +684902,19 @@
           "valign" : "middle" } ] } ] } } } ],
   "bc_amendments" : 
   [ 
-   { "location_id" : "nbc.2020.preface.para2b",
+   { "location_id" : "nbc.2020.preface.para2",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Services Act.<\/bold>" },
+    "content" : "In Canada, provincial and territorial governments have the authority to enact legislation that regulates building design and construction within their jurisdictions. This may involve the adoption of the NBC without change or with modifications to suit local needs, and the enactment of other laws and regulations regarding building design and construction, including requirements for professional involvement." },
    
-   { "location_id" : "nbc.2020.preface.para2b",
+   { "location_id" : "nbc.2020.preface.para2",
     "type" : "revision",
     "revision_type" : "amendment",
     "revision_id" : "bc-mo-2024-06-001",
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "<bold>The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act.<\/bold>",
+    "content" : "In British Columbia, the NBC, together with the National Plumbing Code of Canada, are adopted, including any variations considered necessary, as Book I (General) and Book II (Plumbing Systems) of the BCBC, pursuant to the Building Act. The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Safety Act. The National Energy Code of Canada for Buildings (NECB) is adopted by reference from Book I (General) of the British Columbia Building Code.",
     "change_summary" : "Strike out \"Fire Services Act\" and substitute \"Fire Safety Act\"",
     "note" : "Ministerial Order BA 2024 06" },
    
