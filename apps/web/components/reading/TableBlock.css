@@ -198,7 +198,7 @@
   padding: 0.5rem 0.6rem;
   border: var(--layout-border-width-small) solid var(--surface-color-border-default, #e0e0e0);
   text-align: left;
-  vertical-align: middle;
+  vertical-align: top;
   white-space: pre-line;
   min-inline-size: 5.75rem;
   overflow-wrap: break-word;

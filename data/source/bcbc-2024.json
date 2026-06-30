@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-06-29T19:45:00.75782418Z",
+  "generated_timestamp" : "2026-06-30T21:28:15.648654432Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -484,20 +484,6 @@
         "content" : "For this reason, the Part-based structure of Division B is not well suited for use as the basis for allocating responsibilities to different professions or as the basis for contractual arrangements." },
        
        { "type" : "heading",
-        "id" : "nbc.2020.preface.div5.title",
-        "content" : "What's New in the 2020 Edition",
-        "level" : 2 },
-       
-       { "type" : "heading",
-        "id" : "nbc.2020.preface.div5.sub1.title",
-        "content" : "New Part 2",
-        "level" : 3 },
-       
-       { "type" : "paragraph",
-        "id" : "nbc.2020.preface.div5.sub1.para1",
-        "content" : "New Part 2 of Division B, Farm Buildings, has been added to introduce technical requirements for large farm buildings into the NBC, including requirements related to fire protection and occupant safety, structural loads and procedures, and HVAC." },
-       
-       { "type" : "heading",
         "id" : "nbc.2020.preface.div6.title",
         "content" : "Additional Information",
         "level" : 2 },
@@ -511,243 +497,27 @@
         "id" : "nbc.2020.preface.div6.sub1.para1",
         "content" : "A consistent numbering system has been used throughout the National Model Codes. The first number indicates the Part of the Code; the second, the Section in the Part; the third, the Subsection; and the fourth, the Article in the Subsection. The detailed provisions are found at the Sentence level (indicated by numbers in brackets), and Sentences may be broken down into Clauses and Subclauses. This structure is illustrated as follows:" },
        
-       { "type" : "table",
-        "id" : "nbc.2020.preface.div6.sub1.table1",
-        "structure" : 
-        { "columns" : 4,
-         "colsep" : "0",
-         "rowsep" : "0",
-         "column_specs" : 
-         [ 
-          { "name" : "col1",
-           "width" : "72" },
-          
-          { "name" : "col2",
-           "width" : "96" },
-          
-          { "name" : "col3",
-           "width" : "96" },
-          
-          { "name" : "col4",
-           "width" : "72" } ],
-         "body_rows" : 
-         [ 
-          { "id" : "nbc.2020.preface.div6.sub1.table1.row1",
-           "type" : "body_row",
-           "cells" : 
-           [ 
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "3" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "Part" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "align" : "left",
-             "valign" : "middle" } ] },
-          
-          { "id" : "nbc.2020.preface.div6.sub1.table1.row2",
-           "type" : "body_row",
-           "cells" : 
-           [ 
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "3.5." } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "Section" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "align" : "left",
-             "valign" : "middle" } ] },
-          
-          { "id" : "nbc.2020.preface.div6.sub1.table1.row3",
-           "type" : "body_row",
-           "cells" : 
-           [ 
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "3.5.2." } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "Subsection" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "align" : "left",
-             "valign" : "middle" } ] },
-          
-          { "id" : "nbc.2020.preface.div6.sub1.table1.row4",
-           "type" : "body_row",
-           "cells" : 
-           [ 
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "3.5.2.1." } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "Article" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "align" : "left",
-             "valign" : "middle" } ] },
-          
-          { "id" : "nbc.2020.preface.div6.sub1.table1.row5",
-           "type" : "body_row",
-           "cells" : 
-           [ 
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "3.5.2.1.(2)" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "Sentence" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "align" : "left",
-             "valign" : "middle" } ] },
-          
-          { "id" : "nbc.2020.preface.div6.sub1.table1.row6",
-           "type" : "body_row",
-           "cells" : 
-           [ 
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "3.5.2.1.(2)(a)" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "Clause" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "align" : "left",
-             "valign" : "middle" } ] },
-          
-          { "id" : "nbc.2020.preface.div6.sub1.table1.row7",
-           "type" : "body_row",
-           "cells" : 
-           [ 
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "3.5.2.1.(2)(a)(i)" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "Subclause" } ],
-             "align" : "left",
-             "valign" : "middle" },
-            
-            { "content" : 
-             [ 
-              { "type" : "text",
-               "value" : "" } ],
-             "align" : "left",
-             "valign" : "middle" } ] } ] } },
+       { "type" : "paragraph",
+        "id" : "nbc.2020.preface.div6.sub1.para1a",
+        "content" : "[LIST:none]",
+        "lists" : 
+        [ 
+         { "type" : "none",
+          "items" : 
+          [ 
+           { "content" : "3                          Part" },
+           
+           { "content" : "3.5.                      Section" },
+           
+           { "content" : "3.5.2.                   Subsection" },
+           
+           { "content" : "3.5.2.1.                Article" },
+           
+           { "content" : "3.5.2.1.(2)           Sentence" },
+           
+           { "content" : "3.5.2.1.(2)(a)      Clause" },
+           
+           { "content" : "3.5.2.1.(2)(a)(i)   Subclause" } ] } ] },
        
        { "type" : "heading",
         "id" : "nbc.2020.preface.div6.sub2.title",
@@ -4568,7 +4338,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:fr-prtn:Fire Separations]  [REF:internal:nbc.divB.part3.sect1.subsect3.art1.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect3.art1.table1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9:long] . 2 h [REF:term:fr-prtn:fire separation] required between some [REF:term:mjr-ccpn:major occupancies] ." } ] },
+                       "value" : "[REF:term:fr-prtn:Fire Separations]\n[REF:internal:nbc.divB.part3.sect1.subsect3.art1.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect3.art1.table1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9:long] .\n 2 h [REF:term:fr-prtn:fire separation] required between some [REF:term:mjr-ccpn:major occupancies] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -4587,7 +4357,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:fr-prtn:Fire Separations]  [REF:internal:nbc.divB.part3.sect1.subsect3.art1.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect3.art1.table1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9:long] . 1 h [REF:term:fr-prtn:fire separation] required between some [REF:term:mjr-ccpn:major occupancies] ." } ] },
+                       "value" : "[REF:term:fr-prtn:Fire Separations]\n[REF:internal:nbc.divB.part3.sect1.subsect3.art1.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect3.art1.table1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9:long] .\n 1 h [REF:term:fr-prtn:fire separation] required between some [REF:term:mjr-ccpn:major occupancies] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -4606,12 +4376,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:ncmbtbl-:Noncombustible Construction]  [REF:internal:nbc.divB.part3.sect1.subsect5:long] , [REF:internal:nbc.divB.part9.sect10.subsect6.art1:long] . All materials used in [REF:term:nncmbtbl-cnstrctn:noncombustible construction] must be [REF:term:nncmbtbl:noncombustible] unless otherwise permitted." } ] },
+                       "value" : "[REF:term:ncmbtbl-:Noncombustible Construction]\n[REF:internal:nbc.divB.part3.sect1.subsect5:long] , [REF:internal:nbc.divB.part9.sect10.subsect6.art1:long] .\n All materials used in [REF:term:nncmbtbl-cnstrctn:noncombustible construction] must be [REF:term:nncmbtbl:noncombustible] unless otherwise permitted." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1. Roofs may be of [REF:term:cmbtbl-cnstrctn:combustible construction] provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] . 2. Up to 10% gross [REF:term:flr-r:floor area] to a maximum of 10% of any one [REF:term:flr-r:floor area] may be of [REF:term:cmbtbl-cnstrctn:combustible construction] provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
+                       "value" : "1. Roofs may be of [REF:term:cmbtbl-cnstrctn:combustible construction] provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] .\n 2. Up to 10% gross [REF:term:flr-r:floor area] to a maximum of 10% of any one [REF:term:flr-r:floor area] may be of [REF:term:cmbtbl-cnstrctn:combustible construction] provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row4",
                    "type" : "body_row",
@@ -4625,12 +4395,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:fr-rtnc-:Fire-resistance Rating]  [REF:internal:nbc.divB.part3.sect1.subsect7.art1.sent1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1:long] . Where a material, assembly of materials or structural member is required to have a [REF:term:fr-rtnc-:fire-resistance rating] it shall be tested in accordance with CAN\/ULC-S101, \"Fire Endurance Tests of Building Construction Materials.\"" } ] },
+                       "value" : "[REF:term:fr-rtnc-:Fire-resistance Rating]\n[REF:internal:nbc.divB.part3.sect1.subsect7.art1.sent1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1:long] .\n Where a material, assembly of materials or structural member is required to have a [REF:term:fr-rtnc-:fire-resistance rating] it shall be tested in accordance with CAN\/ULC-S101, \"Fire Endurance Tests of Building Construction Materials.\"" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "A [REF:term:fr-rtnc-:fire-resistance rating] may also be used based on: (a) HUD No. 8 Guideline on Fire Ratings of Archaic Materials and Assemblies., (b) Fire Endurance of Protected Steel Columns and Beams, DBR Technical Paper No. 194., (c) Fire Endurance of Unit Masonry Walls, DBR Technical Paper No. 207., (d) Fire Endurance of Light-Framed and Miscellaneous Assemblies, DBR Technical Paper No. 222." } ] } ] },
+                       "value" : "A [REF:term:fr-rtnc-:fire-resistance rating] may also be used based on:\n (a) HUD No. 8 Guideline on Fire Ratings of Archaic Materials and Assemblies.,\n (b) Fire Endurance of Protected Steel Columns and Beams, DBR Technical Paper No. 194.,\n (c) Fire Endurance of Unit Masonry Walls, DBR Technical Paper No. 207.,\n (d) Fire Endurance of Light-Framed and Miscellaneous Assemblies, DBR Technical Paper No. 222." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row5",
                    "type" : "body_row",
@@ -4644,12 +4414,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Rating of Supporting Construction [REF:internal:nbc.divB.part3.sect1.subsect7.art5:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect8.art3:long] . Supporting assemblies to have [REF:term:fr-rtnc-:fire-resistance rating] at least equivalent to that of the supported floor." } ] },
+                       "value" : "Rating of Supporting Construction\n[REF:internal:nbc.divB.part3.sect1.subsect7.art5:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect8.art3:long] .\n Supporting assemblies to have [REF:term:fr-rtnc-:fire-resistance rating] at least equivalent to that of the supported floor." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:hv-tmbr-:Heavy timber construction] is permitted to have a [REF:term:fr-rtnc-:fire-resistance rating] less than would be required by the Code provided the [REF:term:bldng:building] : (a) is [REF:term:prnklrd:sprinklered] , and (b) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] ." } ] } ] },
+                       "value" : "[REF:term:hv-tmbr-:Heavy timber construction] is permitted to have a [REF:term:fr-rtnc-:fire-resistance rating] less than would be required by the Code provided the [REF:term:bldng:building] :\n (a) is [REF:term:prnklrd:sprinklered] , and\n (b) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row6",
                    "type" : "body_row",
@@ -4663,12 +4433,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Continuity of [REF:term:fr-prtn:Fire Separations]  [REF:internal:nbc.divB.part3.sect1.subsect8.art3.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect8.art3.sent2:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2:long] . [REF:term:fr-prtn:Fire separations] are required to be continuous above the ceiling space." } ] },
+                       "value" : "Continuity of [REF:term:fr-prtn:Fire Separations]\n[REF:internal:nbc.divB.part3.sect1.subsect8.art3.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect8.art3.sent2:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2:long] .\n[REF:term:fr-prtn:Fire separations] are required to be continuous above the ceiling space." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:fr-prtn:Fire separations] are not required to be continuous above a ceiling space where (a) the ceiling space is [REF:term:nncmbtbl-cnstrctn:noncombustible construction] , (b) both [REF:term:fr-cmprt:fire compartments] are [REF:term:prnklrd:sprinklered] , or (c) the ceiling has a minimum rating of 30 minutes." } ] } ] },
+                       "value" : "[REF:term:fr-prtn:Fire separations] are not required to be continuous above a ceiling space where\n (a) the ceiling space is [REF:term:nncmbtbl-cnstrctn:noncombustible construction] ,\n (b) both [REF:term:fr-cmprt:fire compartments] are [REF:term:prnklrd:sprinklered] , or\n (c) the ceiling has a minimum rating of 30 minutes." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row7",
                    "type" : "body_row",
@@ -4682,7 +4452,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Wired Glass [REF:internal:nbc.divB.part3.sect1.subsect8.art5.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent2:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect13.art1:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect13.art5:long] . 6 mm wired glass in steel frame required in [REF:term:fr-prtn:fire separations] ." } ] },
+                       "value" : "Wired Glass\n[REF:internal:nbc.divB.part3.sect1.subsect8.art5.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent2:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect13.art1:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect13.art5:long] .\n 6 mm wired glass in steel frame required in [REF:term:fr-prtn:fire separations] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -4701,7 +4471,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:mzznn:Mezzanines]  [REF:internal:nbc.divB.part3.sect2.subsect1.art1.sent4:long] and [REF:internal:nbc.divB.part3.sect2.subsect1.art1.sent7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect4.art1:long] . [REF:term:mzznn:Mezzanines] enclosing more than 10% above the horizontal plane are considered as [REF:term:tr:storey] in [REF:term:bldng-hght:building height] ." } ] },
+                       "value" : "[REF:term:mzznn:Mezzanines]\n[REF:internal:nbc.divB.part3.sect2.subsect1.art1.sent4:long] and [REF:internal:nbc.divB.part3.sect2.subsect1.art1.sent7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect4.art1:long] .\n[REF:term:mzznn:Mezzanines] enclosing more than 10% above the horizontal plane are considered as [REF:term:tr:storey] in [REF:term:bldng-hght:building height] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -4720,12 +4490,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:bldng-hg:Building Height]  [REF:internal:nbc.divB.part3.sect2.subsect2.art20:long] . to [REF:internal:nbc.divB.part3.sect2.subsect2.art90:long] . [REF:term:ncmbtbl-:Noncombustible construction] required for some [REF:term:bldng:buildings] ." } ] },
+                       "value" : "[REF:term:bldng-hg:Building Height]\n[REF:internal:nbc.divB.part3.sect2.subsect2.art20:long] . to [REF:internal:nbc.divB.part3.sect2.subsect2.art90:long] .\n[REF:term:ncmbtbl-:Noncombustible construction] required for some [REF:term:bldng:buildings] ." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:bldng:Buildings] may be of [REF:term:cmbtbl-cnstrctn:combustible construction] up to 6 [REF:term:tr:storeys] provided: (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] , (b) the [REF:term:bldng:building] contains Group C, D, E, F, Division 2 or F, Division 3 [REF:term:ccpnc:occupancies] , and (c) floor assemblies not required to exceed 1 h [REF:term:fr-prtn:fire separation] requirements may be of [REF:term:hv-tmbr-:heavy timber construction] ." } ] } ] },
+                       "value" : "[REF:term:bldng:Buildings] may be of [REF:term:cmbtbl-cnstrctn:combustible construction] up to 6 [REF:term:tr:storeys] provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ,\n (b) the [REF:term:bldng:building] contains Group C, D, E, F, Division 2 or F, Division 3 [REF:term:ccpnc:occupancies] , and\n (c) floor assemblies not required to exceed 1 h [REF:term:fr-prtn:fire separation] requirements may be of [REF:term:hv-tmbr-:heavy timber construction] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row10",
                    "type" : "body_row",
@@ -4739,12 +4509,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Spatial Separation [REF:internal:nbc.divB.part3.sect2.subsect3:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect14:long] . The area of [REF:term:nprtctd-:unprotected opening] shall not exceed the limits in Tables 3.2.3.1.A to Table 3.2.3.1.E" } ] },
+                       "value" : "Spatial Separation\n[REF:internal:nbc.divB.part3.sect2.subsect3:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect14:long] .\n The area of [REF:term:nprtctd-:unprotected opening] shall not exceed the limits in Tables 3.2.3.1.A to Table 3.2.3.1.E" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "The area of [REF:term:nprtctd-:unprotected opening] is not limited provided: (a) the [REF:term:lmtng-dstnc:limiting distance] is a minimum 1 m, (b) the [REF:term:bldng:building] has a supervised sprinkler system in conformance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] , and (c) the sprinkler system is connected to the fire department in conformance with [REF:internal:nbc.divB.part3.sect2.subsect4.art7.sent4:long] ." } ] } ] },
+                       "value" : "The area of [REF:term:nprtctd-:unprotected opening] is not limited provided:\n (a) the [REF:term:lmtng-dstnc:limiting distance] is a minimum 1 m,\n (b) the [REF:term:bldng:building] has a supervised sprinkler system in conformance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] , and\n (c) the sprinkler system is connected to the fire department in conformance with [REF:internal:nbc.divB.part3.sect2.subsect4.art7.sent4:long] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row11",
                    "type" : "body_row",
@@ -4758,7 +4528,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Construction of [REF:term:xpng-bld:Exposing Building Face]  [REF:internal:nbc.divB.part3.sect2.subsect3.art7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5:long] . The [REF:term:xpsng-bldng-fc:exposing building face] is required to have a [REF:term:fr-rtnc-:fire-resistance rating] and\/or be of [REF:term:nncmbtbl-cnstrctn:noncombustible construction] ." } ] },
+                       "value" : "Construction of [REF:term:xpng-bld:Exposing Building Face]\n[REF:internal:nbc.divB.part3.sect2.subsect3.art7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5:long] .\n The [REF:term:xpsng-bldng-fc:exposing building face] is required to have a [REF:term:fr-rtnc-:fire-resistance rating] and\/or be of [REF:term:nncmbtbl-cnstrctn:noncombustible construction] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -4777,7 +4547,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Roof Covering Rating [REF:internal:nbc.divB.part3.sect1.subsect15.art2.sent1:long] Class A, B or C roof covering in conformance with CAN\/ ULC-S107, \"Fire Tests of Roof Coverings\" required." } ] },
+                       "value" : "Roof Covering Rating\n[REF:internal:nbc.divB.part3.sect1.subsect15.art2.sent1:long]\n Class A, B or C roof covering in conformance with CAN\/ ULC-S107, \"Fire Tests of Roof Coverings\" required." } ] },
                     
                     { "content" : 
                      [ 
@@ -4796,7 +4566,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:mk-lrm:Smoke Alarms]  [REF:internal:nbc.divB.part3.sect2.subsect4.art20.sent7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect19.art4.sent1:long]  [REF:term:mk-lrm:Smoke alarms] are required to be connected to an electric circuit." } ] },
+                       "value" : "[REF:term:mk-lrm:Smoke Alarms]\n[REF:internal:nbc.divB.part3.sect2.subsect4.art20.sent7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect19.art4.sent1:long]\n[REF:term:mk-lrm:Smoke alarms] are required to be connected to an electric circuit." } ] },
                     
                     { "content" : 
                      [ 
@@ -4815,12 +4585,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:ntrcnnct:Interconnected Floor Space]  [REF:internal:nbc.divB.part3.sect2.subsect8:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect1.art3.sent6:long]" } ] },
+                       "value" : "[REF:term:ntrcnnct:Interconnected Floor Space]\n[REF:internal:nbc.divB.part3.sect2.subsect8:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect1.art3.sent6:long]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1. Open stairs in [REF:term:bldng:buildings] of maximum 4 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] need not comply with [REF:internal:nbc.divB.part3.sect2.subsect8:long] ., provided (a) the [REF:term:bldng:building] contains a Group C or D [REF:term:ccpnc:occupancy] , (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast-response sprinklers, (c) corridors opening into the [REF:term:ntrconnctd-flr-spc:interconnected floor space] are separated from the [REF:term:ntrconnctd-flr-spc:interconnected floor space] by a [REF:term:fr-prtn:fire separation] with the rating required for the corridor, and (d) [REF:term:mk-dtctr:smoke detectors] are installed in the rooms opening into the [REF:term:ntrconnctd-flr-spc:interconnected floor space] and the [REF:term:mk-dtctr:smoke detectors] are connected to the fire alarm system.2. Open stairs in [REF:term:bldng:buildings] of maximum 3 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , or first 2 [REF:term:tr:storeys] and [REF:term:bmnt:basement] , need not comply with [REF:internal:nbc.divB.part3.sect2.subsect8:long] . of Division B, provided: (a) the [REF:term:bldng:building] contains a Group C or D [REF:term:ccpnc:occupancy] , (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, (c) [REF:term:mk-dtctr:smoke detectors] are installed in the rooms opening into the [REF:term:ntrconnctd-flr-spc:interconnected floor space] and the [REF:term:mk-dtctr:smoke detectors] are connected to the fire alarm system, and (d) at least one [REF:term:mn-f-gr:means of egress] is not through the [REF:term:ntrconnctd-flr-spc:interconnected floor space] ." } ] } ] },
+                       "value" : "1. Open stairs in [REF:term:bldng:buildings] of maximum 4 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] need not comply with [REF:internal:nbc.divB.part3.sect2.subsect8:long] ., provided\n (a) the [REF:term:bldng:building] contains a Group C or D [REF:term:ccpnc:occupancy] ,\n (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast-response sprinklers,\n (c) corridors opening into the [REF:term:ntrconnctd-flr-spc:interconnected floor space] are separated from the [REF:term:ntrconnctd-flr-spc:interconnected floor space] by a [REF:term:fr-prtn:fire separation] with the rating required for the corridor, and\n (d) [REF:term:mk-dtctr:smoke detectors] are installed in the rooms opening into the [REF:term:ntrconnctd-flr-spc:interconnected floor space] and the [REF:term:mk-dtctr:smoke detectors] are connected to the fire alarm system.\n 2. Open stairs in [REF:term:bldng:buildings] of maximum 3 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , or first 2 [REF:term:tr:storeys] and [REF:term:bmnt:basement] , need not comply with [REF:internal:nbc.divB.part3.sect2.subsect8:long] . of Division B, provided:\n (a) the [REF:term:bldng:building] contains a Group C or D [REF:term:ccpnc:occupancy] ,\n (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers,\n (c) [REF:term:mk-dtctr:smoke detectors] are installed in the rooms opening into the [REF:term:ntrconnctd-flr-spc:interconnected floor space] and the [REF:term:mk-dtctr:smoke detectors] are connected to the fire alarm system, and\n (d) at least one [REF:term:mn-f-gr:means of egress] is not through the [REF:term:ntrconnctd-flr-spc:interconnected floor space] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row15",
                    "type" : "body_row",
@@ -4834,7 +4604,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Separation of [REF:term:t:Suites]  [REF:internal:nbc.divB.part3.sect3.subsect1.art1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9.art13:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect9.art14:long] . [REF:term:t:Suites] are required to be separated from adjoining [REF:term:t:suites] by a [REF:term:fr-prtn:fire separation] having a fire resistance rating of 45 min or 1 hr." } ] },
+                       "value" : "Separation of [REF:term:t:Suites]\n[REF:internal:nbc.divB.part3.sect3.subsect1.art1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9.art13:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect9.art14:long] .\n[REF:term:t:Suites] are required to be separated from adjoining [REF:term:t:suites] by a [REF:term:fr-prtn:fire separation] having a fire resistance rating of 45 min or 1 hr." } ] },
                     
                     { "content" : 
                      [ 
@@ -4853,12 +4623,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Corridor [REF:term:fr-prtn:fire separation]  [REF:internal:nbc.divB.part3.sect3.subsect1.art4:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect9.art15:long] . [REF:term:pblc-crr:Public corridors] are required to be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of at least 45 min." } ] },
+                       "value" : "Corridor [REF:term:fr-prtn:fire separation]\n[REF:internal:nbc.divB.part3.sect3.subsect1.art4:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect9.art15:long] .\n[REF:term:pblc-crr:Public corridors] are required to be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of at least 45 min." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing corridors with 30 min fire resistance ratings, such as wood lath and plaster in good condition, are acceptable in [REF:term:rdntl-cc:residential occupancies] provided the [REF:term:bldng:building] : (a) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , and (b) is fully [REF:term:prnklrd:sprinklered] with fast response sprinklers." } ] } ] },
+                       "value" : "Existing corridors with 30 min fire resistance ratings, such as wood lath and plaster in good condition, are acceptable in [REF:term:rdntl-cc:residential occupancies] provided the [REF:term:bldng:building] :\n (a) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , and\n (b) is fully [REF:term:prnklrd:sprinklered] with fast response sprinklers." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row17",
                    "type" : "body_row",
@@ -4872,12 +4642,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Corridor Width [REF:internal:nbc.divB.part3.sect3.subsect1.art9:long] ., [REF:internal:nbc.divB.part3.sect4.subsect3:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect3.art3:long] . [REF:term:pblc-crr:Public corridors] and [REF:term:xt:exit] corridors are permitted to have a minimum width of 1 100 mm." } ] },
+                       "value" : "Corridor Width\n[REF:internal:nbc.divB.part3.sect3.subsect1.art9:long] ., [REF:internal:nbc.divB.part3.sect4.subsect3:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect3.art3:long] .\n[REF:term:pblc-crr:Public corridors] and [REF:term:xt:exit] corridors are permitted to have a minimum width of 1 100 mm." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:pblc-crr:Public corridors] and [REF:term:xt:exit] corridors are permitted with a minimum width of 800 mm provided: (a) the [REF:term:ccpnt-ld:occupant load] of the [REF:term:bldng:building] is maximum 20 people, and (b) the [REF:term:bldng:building] does not exceed 3 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] ." } ] } ] },
+                       "value" : "[REF:term:pblc-crr:Public corridors] and [REF:term:xt:exit] corridors are permitted with a minimum width of 800 mm provided:\n (a) the [REF:term:ccpnt-ld:occupant load] of the [REF:term:bldng:building] is maximum 20 people, and\n (b) the [REF:term:bldng:building] does not exceed 3 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row18",
                    "type" : "body_row",
@@ -4891,12 +4661,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Door Swing [REF:internal:nbc.divB.part3.sect3.subsect1.art10:long] ., [REF:internal:nbc.divB.part3.sect4.subsect6.art12:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect6.art5:long] . Doors required to swing in the direction of [REF:term:xt:exit] travel." } ] },
+                       "value" : "Door Swing\n[REF:internal:nbc.divB.part3.sect3.subsect1.art10:long] ., [REF:internal:nbc.divB.part3.sect4.subsect6.art12:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect6.art5:long] .\n Doors required to swing in the direction of [REF:term:xt:exit] travel." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "2nd egress door from a room is not required to swing in the direction of [REF:term:xt:exit] travel provided: (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] and the system is supervised in conformance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] , and (b) the [REF:term:ccpnt-ld:occupant load] of the [REF:term:bldng:building] is maximum 100 people." } ] } ] },
+                       "value" : "2nd egress door from a room is not required to swing in the direction of [REF:term:xt:exit] travel provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] and the system is supervised in conformance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] , and\n (b) the [REF:term:ccpnt-ld:occupant load] of the [REF:term:bldng:building] is maximum 100 people." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row19",
                    "type" : "body_row",
@@ -4931,7 +4701,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Stairs, Ramps, Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
+                         "value" : "Stairs, Ramps, Handrails and [REF:term:guard:Guards]\n[REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] ." } ] },
                       
                       { "content" : 
                        [ 
@@ -4975,7 +4745,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Transparent Doors and Panels [REF:internal:nbc.divB.part3.sect3.subsect1.art19:long] ., [REF:internal:nbc.divBV2.part9.sect6.subsect1.art4:long] . Safety glass required." } ] },
+                       "value" : "Transparent Doors and Panels\n[REF:internal:nbc.divB.part3.sect3.subsect1.art19:long] ., [REF:internal:nbc.divBV2.part9.sect6.subsect1.art4:long] .\n Safety glass required." } ] },
                     
                     { "content" : 
                      [ 
@@ -4994,12 +4764,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Dead-end Corridors [REF:internal:nbc.divB.part3.sect3.subsect1.art9.sent5:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect7.art3:long] . Dead-end corridors are permitted to a maximum length of 6 m." } ] },
+                       "value" : "Dead-end Corridors\n[REF:internal:nbc.divB.part3.sect3.subsect1.art9.sent5:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect7.art3:long] .\n Dead-end corridors are permitted to a maximum length of 6 m." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1. Dead-end corridors are permitted to a maximum length of 10 m in Group C [REF:term:ccpnc:occupancies] provided: (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and (b) [REF:term:mk-dtctr:smoke detectors] are installed in the corridor system. 2. Dead-end corridors are permitted to a maximum of 15 m in length in Group D, E, F, Division 2 and F, Division 3 [REF:term:ccpnc:occupancies] provided: (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and (b) [REF:term:mk-dtctr:smoke detectors] are installed in the corridor system." } ] } ] },
+                       "value" : "1. Dead-end corridors are permitted to a maximum length of 10 m in Group C [REF:term:ccpnc:occupancies] provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (b) [REF:term:mk-dtctr:smoke detectors] are installed in the corridor system.\n 2. Dead-end corridors are permitted to a maximum of 15 m in length in Group D, E, F, Division 2 and F, Division 3 [REF:term:ccpnc:occupancies] provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (b) [REF:term:mk-dtctr:smoke detectors] are installed in the corridor system." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row22",
                    "type" : "body_row",
@@ -5013,12 +4783,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:xt:Exits]  [REF:internal:nbc.divB.part3.sect4.subsect2.art1:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect8.art2:long] . [REF:term:flr-r:Floor areas] shall be served by not fewer than 2 [REF:term:xt:exits] except as permitted by [REF:internal:nbc.divB.part3.sect4.subsect2.art1.sent2:long] ." } ] },
+                       "value" : "[REF:term:xt:Exits]\n[REF:internal:nbc.divB.part3.sect4.subsect2.art1:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect8.art2:long] .\n[REF:term:flr-r:Floor areas] shall be served by not fewer than 2 [REF:term:xt:exits] except as permitted by [REF:internal:nbc.divB.part3.sect4.subsect2.art1.sent2:long] ." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:flr-r:Floor areas] may be served by a single [REF:term:xt:exit] within the limits of [REF:internal:nbc.divB.part3.sect4.subsect2.art1.sent2:long] provided: (a) the [REF:term:bldng:building] does not exceed 3 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and (c) all [REF:term:flr-r:floor areas] are protected by a system of [REF:term:mk-dtctr:smoke detectors] connected to a fire alarm system." } ] } ] },
+                       "value" : "[REF:term:flr-r:Floor areas] may be served by a single [REF:term:xt:exit] within the limits of [REF:internal:nbc.divB.part3.sect4.subsect2.art1.sent2:long] provided:\n (a) the [REF:term:bldng:building] does not exceed 3 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] ,\n (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (c) all [REF:term:flr-r:floor areas] are protected by a system of [REF:term:mk-dtctr:smoke detectors] connected to a fire alarm system." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row23",
                    "type" : "body_row",
@@ -5032,12 +4802,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Reduction of [REF:term:xt:Exit] Width [REF:internal:nbc.divB.part3.sect4.subsect3.art3.sent2:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect6.art1:long] . Swinging doors in their swing shall not reduce the effective width of [REF:term:xt:exit] stairs and landings to less than 750 mm." } ] },
+                       "value" : "Reduction of [REF:term:xt:Exit] Width\n[REF:internal:nbc.divB.part3.sect4.subsect3.art3.sent2:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect6.art1:long] .\n Swinging doors in their swing shall not reduce the effective width of [REF:term:xt:exit] stairs and landings to less than 750 mm." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing swinging doors in their swing are permitted to reduce the effective width of [REF:term:xt:exit] stairs and landings to a minimum of 550 mm provided: (a) they serve Group C or D [REF:term:ccpnc:occupancies] , (b) the [REF:term:bldng:building] does not exceed 4 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , and(c) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
+                       "value" : "Existing swinging doors in their swing are permitted to reduce the effective width of [REF:term:xt:exit] stairs and landings to a minimum of 550 mm provided:\n (a) they serve Group C or D [REF:term:ccpnc:occupancies] ,\n (b) the [REF:term:bldng:building] does not exceed 4 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , and\n (c) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row24",
                    "type" : "body_row",
@@ -5051,12 +4821,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:fr-prtn:Fire Separation] of [REF:term:xt:Exits]  [REF:internal:nbc.divB.part3.sect4.subsect4.art1:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect4:long] . [REF:term:xt:Exits] are required to be separated from the remainder of the [REF:term:flr-r:floor area] by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of not less than required by [REF:internal:nbc.divB.part3.sect2.subsect2:long] . , but not less than 45 min." } ] },
+                       "value" : "[REF:term:fr-prtn:Fire Separation] of [REF:term:xt:Exits]\n[REF:internal:nbc.divB.part3.sect4.subsect4.art1:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect4:long] .\n[REF:term:xt:Exits] are required to be separated from the remainder of the [REF:term:flr-r:floor area] by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of not less than required by [REF:internal:nbc.divB.part3.sect2.subsect2:long] . , but not less than 45 min." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1. [REF:term:bldng:Buildings] of 3 [REF:term:tr:storeys] or less may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] that does not have a [REF:term:fr-rtnc-:fire-resistance rating] provided: (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and (b) the sprinkler system is supervised in accordance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] . 2. [REF:term:bldng:Buildings] not exceeding 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] having a fire resistance rating of not less than 45 min provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
+                       "value" : "1. [REF:term:bldng:Buildings] of 3 [REF:term:tr:storeys] or less may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] that does not have a [REF:term:fr-rtnc-:fire-resistance rating] provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (b) the sprinkler system is supervised in accordance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] .\n 2. [REF:term:bldng:Buildings] not exceeding 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] having a fire resistance rating of not less than 45 min provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row25",
                    "type" : "body_row",
@@ -5070,12 +4840,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:xt:Exits] Through Lobbies [REF:internal:nbc.divB.part3.sect4.subsect4.art2:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect8.art5:long] . Rooms adjacent to the lobby are required to be separated by a [REF:term:fr-prtn:fire separation] ." } ] },
+                       "value" : "[REF:term:xt:Exits] Through Lobbies\n[REF:internal:nbc.divB.part3.sect4.subsect4.art2:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect8.art5:long] .\n Rooms adjacent to the lobby are required to be separated by a [REF:term:fr-prtn:fire separation] ." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Rooms adjacent to the lobby are not required to be separated by a [REF:term:fr-prtn:fire separation] provided: (a) the [REF:term:flr-r:floor area] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and (b) [REF:term:mk-dtctr:smoke detectors] are installed in the adjacent rooms." } ] } ] },
+                       "value" : "Rooms adjacent to the lobby are not required to be separated by a [REF:term:fr-prtn:fire separation] provided:\n (a) the [REF:term:flr-r:floor area] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (b) [REF:term:mk-dtctr:smoke detectors] are installed in the adjacent rooms." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row26",
                    "type" : "body_row",
@@ -5089,12 +4859,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Rooms Opening into [REF:term:xt:Exit]  [REF:internal:nbc.divB.part3.sect4.subsect4.art4.sent7:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect5.art9:long] . [REF:term:rvc-rm:Service rooms] and ancillary rooms are not permitted to open directly into an [REF:term:xt:exit] ." } ] },
+                       "value" : "Rooms Opening into [REF:term:xt:Exit]\n[REF:internal:nbc.divB.part3.sect4.subsect4.art4.sent7:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect5.art9:long] .\n[REF:term:rvc-rm:Service rooms] and ancillary rooms are not permitted to open directly into an [REF:term:xt:exit] ." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:rvc-rm:Service rooms] and ancillary rooms may open directly into an [REF:term:xt:exit] provided: (a) the room is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and (b) weatherstripping is installed on the door to prevent the passage of smoke." } ] } ] },
+                       "value" : "[REF:term:rvc-rm:Service rooms] and ancillary rooms may open directly into an [REF:term:xt:exit] provided:\n (a) the room is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (b) weatherstripping is installed on the door to prevent the passage of smoke." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row27",
                    "type" : "body_row",
@@ -5108,7 +4878,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Illumination of [REF:term:xt:Exit] Signs [REF:internal:nbc.divB.part3.sect4.subsect5.art1.sent3:long] and [REF:internal:nbc.divB.part3.sect4.subsect5.art1.sent4:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect11.art3.sent3:long] and [REF:internal:nbc.divBV2.part9.sect9.subsect11.art3.sent4:long]  [REF:term:xt:Exit] signs are required to be illuminated continuously while the [REF:term:bldng:building] is occupied." } ] },
+                       "value" : "Illumination of [REF:term:xt:Exit] Signs\n[REF:internal:nbc.divB.part3.sect4.subsect5.art1.sent3:long] and [REF:internal:nbc.divB.part3.sect4.subsect5.art1.sent4:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect11.art3.sent3:long] and [REF:internal:nbc.divBV2.part9.sect9.subsect11.art3.sent4:long]\n[REF:term:xt:Exit] signs are required to be illuminated continuously while the [REF:term:bldng:building] is occupied." } ] },
                     
                     { "content" : 
                      [ 
@@ -5127,7 +4897,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Clearance from [REF:term:xt:Exit] Doors [REF:internal:nbc.divB.part3.sect4.subsect6.art11.sent1:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect6.art6:long] . Stair risers shall not be closer than 300 mm from an [REF:term:xt:exit] door." } ] },
+                       "value" : "Clearance from [REF:term:xt:Exit] Doors\n[REF:internal:nbc.divB.part3.sect4.subsect6.art11.sent1:long] , [REF:internal:nbc.divBV2.part9.sect9.subsect6.art6:long] .\n Stair risers shall not be closer than 300 mm from an [REF:term:xt:exit] door." } ] },
                     
                     { "content" : 
                      [ 
@@ -5146,12 +4916,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Fire Escapes [REF:internal:nbc.divB.part3.sect4.subsect7:long] . , [REF:internal:nbc.divBV2.part9.sect9.subsect2.art1.sent2:long] Fire escapes are required to conform to [REF:internal:nbc.divB.part3.sect4.subsect7:long] ." } ] },
+                       "value" : "Fire Escapes\n[REF:internal:nbc.divB.part3.sect4.subsect7:long] . , [REF:internal:nbc.divBV2.part9.sect9.subsect2.art1.sent2:long]\n Fire escapes are required to conform to [REF:internal:nbc.divB.part3.sect4.subsect7:long] ." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing fire escapes that do not completely conform to [REF:internal:nbc.divB.part3.sect4.subsect7:long] . are acceptable provided: (a) the fire escapes are acceptable and (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
+                       "value" : "Existing fire escapes that do not completely conform to [REF:internal:nbc.divB.part3.sect4.subsect7:long] . are acceptable provided:\n (a) the fire escapes are acceptable and\n (b) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row30",
                    "type" : "body_row",
@@ -5165,7 +4935,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Fire Escape Construction [REF:internal:nbc.divB.part3.sect4.subsect7.art2:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect2.art1.sent2:long]" } ] },
+                       "value" : "Fire Escape Construction\n[REF:internal:nbc.divB.part3.sect4.subsect7.art2:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect2.art1.sent2:long]" } ] },
                     
                     { "content" : 
                      [ 
@@ -5184,12 +4954,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Protection of Fire Escapes [REF:internal:nbc.divB.part3.sect4.subsect7.art4:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect2.art1.sent2:long] Openings in the exterior wall adjacent to the fire escape are required to be protected by [REF:term:clr:closures] ." } ] },
+                       "value" : "Protection of Fire Escapes\n[REF:internal:nbc.divB.part3.sect4.subsect7.art4:long] ., [REF:internal:nbc.divBV2.part9.sect9.subsect2.art1.sent2:long]\n Openings in the exterior wall adjacent to the fire escape are required to be protected by [REF:term:clr:closures] ." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing openings in the exterior wall adjacent to the fire escape are not required to be protected by [REF:term:clr:closures] provided: (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] , and (b) a sprinkler head is located within 1.5 m of the opening required to be protected by [REF:internal:nbc.divB.part3.sect4.subsect7.art4:long] ." } ] } ] },
+                       "value" : "Existing openings in the exterior wall adjacent to the fire escape are not required to be protected by [REF:term:clr:closures] provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] , and\n (b) a sprinkler head is located within 1.5 m of the opening required to be protected by [REF:internal:nbc.divB.part3.sect4.subsect7.art4:long] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row32",
                    "type" : "body_row",
@@ -5203,7 +4973,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:vrtcl-rv:Vertical Service Space]  [REF:internal:nbc.divB.part3.sect6.subsect3.art1:long] . [REF:term:vrtcl-rv:Vertical service spaces] are required to be separated from the adjacent [REF:term:flr-r:floor area] by a rated [REF:term:fr-prtn:fire separation] ." } ] },
+                       "value" : "[REF:term:vrtcl-rv:Vertical Service Space]\n[REF:internal:nbc.divB.part3.sect6.subsect3.art1:long] .\n[REF:term:vrtcl-rv:Vertical service spaces] are required to be separated from the adjacent [REF:term:flr-r:floor area] by a rated [REF:term:fr-prtn:fire separation] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -5222,7 +4992,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Height of Rooms [REF:internal:nbc.divB.part3.sect7.subsect1:long] ., [REF:internal:nbc.divBV2.part9.sect5:long] . The height of rooms is required to comply to minimum dimension requirements." } ] },
+                       "value" : "Height of Rooms\n[REF:internal:nbc.divB.part3.sect7.subsect1:long] ., [REF:internal:nbc.divBV2.part9.sect5:long] .\n The height of rooms is required to comply to minimum dimension requirements." } ] },
                     
                     { "content" : 
                      [ 
@@ -5241,7 +5011,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Washroom Requirements [REF:internal:nbc.divB.part3.sect7.subsect2:long] ., [REF:internal:nbc.divBV2.part9.sect31:long] . [REF:term:bldng:Buildings] are required to be provided with a minimum number of washroom fixtures." } ] },
+                       "value" : "Washroom Requirements\n[REF:internal:nbc.divB.part3.sect7.subsect2:long] ., [REF:internal:nbc.divBV2.part9.sect31:long] .\n[REF:term:bldng:Buildings] are required to be provided with a minimum number of washroom fixtures." } ] },
                     
                     { "content" : 
                      [ 
@@ -5260,7 +5030,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<italic>Access for Persons with Disabilities<\/italic>[REF:internal:nbc.divB.part3.sect8:long] . of Division B" } ] },
+                       "value" : "<italic>Access for Persons with Disabilities<\/italic>\n[REF:internal:nbc.divB.part3.sect8:long] . of Division B" } ] },
                     
                     { "content" : 
                      [ 
@@ -5279,7 +5049,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Seismic Anchorage of Exterior Decoration [REF:internal:nbc.divB.part4.sect1.subsect8:long] ." } ] },
+                       "value" : "Seismic Anchorage of Exterior Decoration\n[REF:internal:nbc.divB.part4.sect1.subsect8:long] ." } ] },
                     
                     { "content" : 
                      [ 
@@ -5333,12 +5103,12 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7" } ] },
+                         "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems]\n Part 6 and Part 7" } ] },
                       
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an unsafe condition and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ] },
+                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided:\n (a) it is not an unsafe condition and\n (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ] },
                     
                     { "type" : "revision",
                      "revision_type" : "amendment",
@@ -684933,7 +684703,7 @@
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row19",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "19Stairs, Ramps, Handrails and [REF:term:guard:Guards]  [REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] .Existing conditions that do not comply fully with the requirements are permitted if they are acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
+    "content" : "19Stairs, Ramps, Handrails and [REF:term:guard:Guards]\n[REF:internal:nbc.divB.part3.sect3.subsect1.art14:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art16:long] ., [REF:internal:nbc.divB.part3.sect3.subsect1.art18:long] ., Articles 3.4.6.5 to 3.4.6.79., [REF:internal:nbc.divBV2.part9.sect8:long] .Existing conditions that do not comply fully with the requirements are permitted if they are acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
    
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row19",
     "type" : "revision",
@@ -684949,7 +684719,7 @@
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row37",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "37Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an unsafe condition and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
+    "content" : "37Mechanical and [REF:term:plmbng-t:Plumbing Systems]\n Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided:\n (a) it is not an unsafe condition and\n (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." },
    
    { "location_id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row37",
     "type" : "revision",
@@ -694746,7 +694516,7 @@
    "total_sections" : 100,
    "total_articles" : 2020,
    "total_sentences" : 5129,
-   "total_tables" : 358,
+   "total_tables" : 357,
    "total_figures" : 326,
    "total_spectables" : 2,
    "total_application_notes" : 827,
