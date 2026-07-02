@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-02T20:36:51.000990446Z",
+  "generated_timestamp" : "2026-07-02T21:17:58.685578854Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -941,7 +941,7 @@
             { "content" : 
              [ 
               { "type" : "text",
-               "value" : "C. Joseph [REF:table-note:Codes-start]" } ],
+               "value" : "C. Joseph" } ],
              "valign" : "middle" },
             
             { "content" : 
@@ -3360,7 +3360,7 @@
        
        { "id" : "nbc.2020.committees.table10",
         "type" : "table",
-        "title" : "Standing Committee onStructural Design",
+        "title" : "Standing Committee on Structural Design",
         "structure" : 
         { "columns" : 2,
          "colsep" : "0",
@@ -4005,13 +4005,7 @@
       "notes" : 
       [ 
        { "id" : "nbc.2020.committees.note1",
-        "content" : "Resigned on September 23, 2016, due to employment opportunity with Codes Canada." },
-       
-       { "id" : "nbc.2020.committees.note2",
-        "content" : "Term ended on June 4, 2018." },
-       
-       { "id" : "nbc.2020.committees.note3",
-        "content" : "Term started on May 10, 2018." } ] } },
+        "content" : "1. Resigned on September 23, 2016, due to employment opportunity with Codes Canada.\n 2. Term ended on June 4, 2018.\n 3. Term started on May 10, 2018." } ] } },
     "divisions" : 
     [ 
      { "id" : "nbc.divA",
@@ -5083,12 +5077,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7" } ] },
+                       "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems]\n Part 6 and Part 7" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
+                       "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided:\n (a) it is not an [REF:term:nf-cndtn:unsafe condition] and\n (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
                    "revisions" : 
                    [ 
                     { "type" : "original",
@@ -5126,12 +5120,12 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7" } ] },
+                         "value" : "Mechanical and [REF:term:plmbng-t:Plumbing Systems]\n Part 6 and Part 7" } ] },
                       
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
+                         "value" : "Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided:\n (a) it is not an [REF:term:nf-cndtn:unsafe condition] and\n (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] } ],
                      "change_summary" : "Amended Table 1.1.1.1.(5), Item 37 by striking out term-referenced \"unsafe condition\" and substituting plain text \"unsafe condition\"",
                      "note" : "Ministerial Order BA 2024 06" } ] } ] } },
                
@@ -5198,7 +5192,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Reinforcement for Grab Bars [REF:internal:nbc.divB.part3.sect8.subsect5.art1.sent2:long] One bathroom in a [REF:term:bc-scnd-t:secondary suite] shall have walls adjacent the water closet and shower or bathtub location reinforced to accommodate the future installation of grab bars." } ] },
+                       "value" : "Reinforcement for Grab Bars [REF:internal:nbc.divB.part3.sect8.subsect5.art1.sent2:long] One bathroom in a [REF:term:bc-scnd-t:secondary suite] shall have walls adjacent the water closer and shower or bathtub location reinforced to accommodate the future installation of grab bars." } ] },
                     
                     { "content" : 
                      [ 
@@ -5222,7 +5216,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Except as required by [REF:internal:nbc.divBV2.part9.sect9.subsect3.art4.sent3:long] , the minimum ceiling heights in a [REF:term:bc-scnd-t:secondary suite] over the required area as indicated in [REF:internal:nbc.divBV2.part9.sect5.subsect3.art1.table1:long] . shall be not less than 1.95 m. It shall be possible to travel from the required area of one room to the required areas of all other rooms within the [REF:term:bc-scnd-t:secondary suite] without reduction of the ceiling height to less than 1.95 m.Except as required by [REF:internal:nbc.divBV2.part9.sect9.subsect3.art4.sent3:long] , the minimum clear height under beams and ducting, including where located over stairs, in a [REF:term:bc-scnd-t:secondary suite] shall be not less than 1.85 m." } ] } ] },
+                       "value" : "Except as required by [REF:internal:nbc.divBV2.part9.sect9.subsect3.art4.sent3:long] , the minimum ceiling heights in a [REF:term:bc-scnd-t:secondary suite] over the required area as indicated in [REF:internal:nbc.divBV2.part9.sect5.subsect3.art1.table1:long] . shall be not less than 1.95 m. It shall be possible to travel from the required area of one room to the required areas of all other rooms within the [REF:term:bc-scnd-t:secondary suite] without reduction of the ceiling height to less than 1.95 m.\n\n Except as required by [REF:internal:nbc.divBV2.part9.sect9.subsect3.art4.sent3:long] , the minimum clear height under beams and ducting, including where located over stairs, in a [REF:term:bc-scnd-t:secondary suite] shall be not less than 1.85 m." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table2.row3",
                    "type" : "body_row",
@@ -5339,7 +5333,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Openings Near [REF:term:xt:Exit] Doors [REF:internal:nbc.divBV2.part9.sect9.subsect4.art6.sent1:long] Where an exterior [REF:term:xt:exit] door in one [REF:term:fr-cmprt:fire compartment] iswithin 3 m horizontally of an [REF:term:nprtctd-:unprotected opening] inanother [REF:term:fr-cmprt:fire compartment] and the exterior walls of these [REF:term:fr-cmprt:fire compartments] intersect at an exterior angle of less than 135°, the opening shall be protected." } ] },
+                       "value" : "Openings Near [REF:term:xt:Exit] Doors [REF:internal:nbc.divBV2.part9.sect9.subsect4.art6.sent1:long] Where an exterior [REF:term:xt:exit] door in one [REF:term:fr-cmprt:fire compartment] is within 3 m horizontally of an [REF:term:nprtctd-:unprotected opening] in another [REF:term:fr-cmprt:fire compartment] and the exterior walls of these [REF:term:fr-cmprt:fire compartments] intersect at an exterior angle of less than 135°, the opening shall be protected." } ] },
                     
                     { "content" : 
                      [ 
@@ -684748,7 +684742,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "37Mechanical and [REF:term:plmbng-t:Plumbing Systems] Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided: (a) it is not an [REF:term:nf-cndtn:unsafe condition] and (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] .",
+    "content" : "37Mechanical and [REF:term:plmbng-t:Plumbing Systems]\n Part 6 and Part 7Existing mechanical and [REF:term:plmbng-t:plumbing systems] in [REF:term:bldng:buildings] are not required to fully comply to the requirements of Parts 6 or Part 7 provided:\n (a) it is not an [REF:term:nf-cndtn:unsafe condition] and\n (b) it is acceptable to the [REF:term:bc-thrt-hvn:authority having jurisdiction] .",
     "change_summary" : "Amended Table 1.1.1.1.(5), Item 37 by striking out term-referenced \"unsafe condition\" and substituting plain text \"unsafe condition\"",
     "note" : "Ministerial Order BA 2024 06" },
    
