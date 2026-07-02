@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-02T19:58:28.242769709Z",
+  "generated_timestamp" : "2026-07-02T20:36:51.000990446Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -8366,93 +8366,109 @@
              { "id" : "nbc.divA.part2.sect1.subsect1.art2",
               "type" : "article",
               "number" : 2,
+              "source" : "bc",
               "title" : "Application of Objectives",
-              "see_also" : "(See [REF:internal:nbc.divA.part2.appendix.appnote2:long] .)",
+              "see_also" : "(See [REF:internal:nbc.divA.part2.appendix.appnote2] .)",
               "content" : 
               [ 
                { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent2:short] to [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent6:short] , the objectives described in this Part apply",
+                "source" : "bc",
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent2:short] to [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent6:short:(6)] , the objectives described in this Part apply",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "to all [REF:term:bldng:buildings] covered in this Code (see [REF:internal:nbc.divA.part1.sect1.subsect1.art1:long] ), and" },
                  
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "only to the extent that they relate to compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1:long]" } ] },
                
                { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent2",
                 "type" : "sentence",
                 "number" : 2,
+                "source" : "bc",
                 "text" : "Objective OS4, Resistance to Unwanted Entry, applies only to [REF:term:dwllng-n:dwelling units] in [REF:term:bldng:buildings] covered in Part 9 of Division B. (See [REF:internal:nbc.divA.part1.sect3.subsect3.art3:long] )" },
                
                { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent3",
                 "type" : "sentence",
                 "number" : 3,
+                "source" : "bc",
                 "text" : "Objective OH3, Noise Protection, applies only to [REF:term:dwllng-n:dwelling units] ." },
                
                { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent4",
                 "type" : "sentence",
                 "number" : 4,
+                "source" : "bc",
                 "text" : "Objective OH5, Hazardous Substances Containment, applies only to the extent defined in",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent4.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the [REF:standard:nrcc-npc] and" },
+                  "source" : "bc",
+                  "text" : "Book II (Plumbing Systems) of this Code, and" },
                  
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent4.clause2",
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "the British Columbia Fire Code" } ] },
+                  "text" : "the British Columbia Fire Code." } ] },
                
                { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent5",
                 "type" : "sentence",
                 "number" : 5,
-                "text" : "Objective OA, Accessibility (including Objectives OA1, Barrier-Free Path of Travel, and OA2, Barrier-Free Facilities), does not apply to",
+                "source" : "bc",
+                "text" : "Objective OA, Accessibility (including Objectives OA1, Accessible Path of Travel, and OA2, Accessible Facilities), does not apply to",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent5.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "detached houses, semi-detached houses, houses with a [REF:term:scnd-t:secondary suite] , duplexes, triplexes, townhouses, row houses and boarding houses (see [REF:internal:nbc.divA.part1.appendix.appnote7.div16:long] , Secondary Suite)," },
+                  "source" : "bc",
+                  "text" : "reserved" },
                  
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent5.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "[REF:term:bldng:buildings] of Group F, Division 1 [REF:term:mjr-ccpn:major occupancy] , and" },
                  
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent5.clause3",
                   "type" : "clause",
                   "letter" : "c",
+                  "source" : "bc",
                   "text" : "[REF:term:bldng:buildings] that are not intended to be occupied on a daily or full-time basis, including automatic telephone exchanges, pumphouses and substations." } ] },
                
                { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent6",
                 "type" : "sentence",
                 "number" : 6,
-                "text" : "Objective OE, Environment (including Objectives OE1, Resources, and OE1.1, Excessive Use of Energy), applies only to",
+                "source" : "bc",
+                "text" : "Objective OE, Environment, applies only to",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent6.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "[REF:term:bldng:buildings] of [REF:term:rdntl-cc:residential occupancy] to which Part 9 of Division B applies," },
                  
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent6.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "[REF:term:bldng:buildings] containing [REF:term:bn-nd-pr:business and personal services] , [REF:term:mrcntl-c:mercantile] or [REF:term:lw-hzrd-:low-hazard industrial occupancies] to which Part 9 of Division B applies whose combined total [REF:term:flr-r:floor area] does not exceed 300 m^{2} , and" },
                  
                  { "id" : "nbc.divA.part2.sect1.subsect1.art2.sent6.clause3",
                   "type" : "clause",
                   "letter" : "c",
+                  "source" : "bc",
                   "text" : "[REF:term:bldng:buildings] containing a mix of the [REF:term:rdntl-cc:residential] and non- [REF:term:rdntl-cc:residential occupancies] described in  Clauses [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent6.clause1:short] and [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent6.clause2:short] ." } ],
                 "see_also" : 
                 [ 
