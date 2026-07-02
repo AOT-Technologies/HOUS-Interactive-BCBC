@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-02T17:46:34.782073152Z",
+  "generated_timestamp" : "2026-07-02T19:58:28.242769709Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -7280,7 +7280,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divA.part1.appendix.appnote2b.para1",
-             "content" : "The requirements in Division B for the construction of [REF:term:bc-scnd-t:secondary suites] was written primarily for new construction and provides for a performance level that is higher than what may exist in existing [REF:term:bldng:buildings] . To apply present Code provisions to existing [REF:term:bldng:buildings] is in many cases impractical. The Table of Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite was developed to provide alternate methods, when dealing with existing construction, without compromising the objectives of the Code. [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] may be considered when assessing an existing additional [REF:term:dwllng-n:dwelling unit] located in a single family dwelling [REF:term:bldng:building] (house), however is not intended to be applied as a retroactive code to these existing units, nor be applied to [REF:term:bldng:buildings] of new construction where there are no existing assemblies to act as practical barriers to compliance with Division B of this Code. [REF:internal:nbc.divA.part1.appendix.appnote2b.figure1:long] illustrates the application of [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] to existing [REF:term:bldng:buildings] ." },
+             "content" : "The requirements in Division B for the construction of [REF:term:bc-scnd-t:secondary suites] was written primarily for new construction and provides for a performance level that is higher than what may exist in existing [REF:term:bldng:buildings] . To apply present Code provisions to existing [REF:term:bldng:buildings] is in many cases impractical. The Table of Alternate Compliance Methods for Alterations to Existing Buildings to Add a Secondary Suite was developed to provide alternate methods, when dealing with existing construction, without compromising the objectives of the Code. [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] may be considered when assessing an existing additional [REF:term:dwllng-n:dwelling unit] located in a single family dwelling [REF:term:bldng:building] (house), however is not intended to be applied as a retroactive code to these existing units, nor be applied to [REF:term:bldng:buildings] of new construction where there are no existing assemblies to act as practical barriers to compliance with Division B of this Code. [REF:internal:nbc.divA.part1.appendix.appnote2b.figure1:long:Figure A-1.1.1.1.(6)] illustrates the application of [REF:internal:nbc.divA.part1.sect1.subsect1.art1.table2:long:Table 1.1.1.1.(6)] to existing [REF:term:bldng:buildings] ." },
             
             { "id" : "nbc.divA.part1.appendix.appnote2b.figure1",
              "type" : "figure",
@@ -8216,8 +8216,9 @@
               
               { "id" : "nbc.divA.part1.appendix.appnote7.div16.figure1",
                "type" : "figure",
+               "hide_label" : true,
                "source" : "bc",
-               "title" : "Figure A-1.4.1.2.(1)-C Building Types where Secondary Suites are Permitted",
+               "title" : "Figure A-1.4.1.2.(1)-C \n Building Types where Secondary Suites are Permitted",
                "graphic" : 
                { "src" : "bc-graphics\/figure-a-1-4-1-2-1-c-of-division-a",
                 "alt_text" : "Diagram showing building types where secondary suites are permitted and not permitted" } } ] },
@@ -8233,6 +8234,7 @@
             
             { "id" : "nbc.divA.part1.appendix.appnote7.div18",
              "type" : "note_division",
+             "source" : "bc",
              "title" : "Solid Masonry Units",
              "content" : 
              [ 
@@ -8242,7 +8244,9 @@
               
               { "id" : "nbc.divA.part1.appendix.appnote7.div18.figure1",
                "type" : "figure",
-               "title" : "Net solid area of masonry unit",
+               "hide_label" : true,
+               "source" : "bc",
+               "title" : "Figure A-1.4.1.2.(1)-B\n Net solid area of masonry unit",
                "graphic" : 
                { "src" : "graphics\/eg\/013\/eg01325a",
                 "alt_text" : "Net solid area of masonry unit" } } ] },
