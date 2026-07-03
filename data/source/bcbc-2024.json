@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-02T21:17:58.685578854Z",
+  "generated_timestamp" : "2026-07-03T20:08:06.93805031Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -8616,25 +8616,26 @@
         "appendix" : 
         { "id" : "nbc.divA.part2.appendix",
          "type" : "part_appendix",
-         "introduction" : "These Notes are included for explanatory purposes only and do not form part of the requirements. The number that introduces each Note corresponds to the applicable requirement in this Part.",
          "application_notes" : 
          [ 
           { "id" : "nbc.divA.part2.appendix.appnote1",
            "type" : "application_note",
            "number" : "2.1.1.2.(6)",
-           "title" : "Application of Environment Objective",
+           "title" : "Application of Environment Objective.",
            "refs" : "es006850",
+           "source" : "bc",
            "content" : 
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divA.part2.appendix.appnote1.para1",
-             "content" : "Objective OE, Environment (including its sub-objectives), is attributed to the requirements in [REF:internal:nbc.divBV2.part9.sect36:long] , which address energy efficiency for small residential buildings and certain small non-residential and mixed-use buildings (see [REF:internal:nbc.divBV2.part9.sect36.subsect1.art3:long] ). The objectives, functional statements and energy efficiency requirements for larger Part 9 residential buildings as well as for non-residential buildings whose combined total floor area exceeds 300 m^{2} and some mixed-use buildings are addressed in the [REF:standard:nrcc-necb]" } ] },
+             "content" : "Objective OE, Environment (including its sub-objectives), is attributed to the requirements in [REF:internal:nbc.divBV2.part9.sect36:long] , which address energy efficiency for small residential buildings and certain small non-residential and mixed-use buildings (see [REF:internal:nbc.divBV2.part9.sect36.subsect1.art3:long] ). The objectives, functional statements and energy efficiency requirements for larger Part 9 residential buildings as well as for non-residential buildings whose combined total floor area exceeds 300 m^{2} and some mixed-use buildings are addressed in the National Energy Code for Buildings." } ] },
           
           { "id" : "nbc.divA.part2.appendix.appnote2",
            "type" : "application_note",
            "number" : "2.2.1.1.(1)",
-           "title" : "Objectives",
+           "title" : "Objectives.",
            "refs" : "es007237",
+           "source" : "bc",
            "content" : 
            [ 
             { "id" : "nbc.divA.part2.appendix.appnote2.div1",
@@ -8645,7 +8646,7 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divA.part2.appendix.appnote2.div1.para1",
-               "content" : "Any gaps in the numbering sequence of the objectives are due to the fact that there is a master list of objectives covering the principal Code Documents---the British Columbia Building Code Book I: General, British Columbia Building Code Book II: Plumbing Systems, and the British Columbia Fire Code---but not all objectives are pertinent to all Codes." } ] },
+               "content" : "Any gaps in the numbering sequence of the objectives are due to the fact that there is a master list of objectives covering the principal Code Documents-the British Columbia Building Code Book I: General, British Columbia Building Code Book II: Plumbing Systems, and the British Columbia Fire Code-but not all objectives are pertinent to all Codes." } ] },
             
             { "id" : "nbc.divA.part2.appendix.appnote2.div2",
              "type" : "note_division",
@@ -8655,16 +8656,17 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divA.part2.appendix.appnote2.div2.para1",
-               "content" : "Where the term \"the building\" is used in the wording of the objectives, it refers to the building for which compliance with the British Columbia Building Code is being assessed." } ] },
+               "content" : "Where the term \"the building\" is used in the wording of the objectives, it refers to the building for which compliance with the National Building Code is being assessed." } ] },
             
             { "id" : "nbc.divA.part2.appendix.appnote2.div3",
              "type" : "note_division",
+             "source" : "bc",
              "title" : "Emergency",
              "content" : 
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divA.part2.appendix.appnote2.div3.para1",
-               "content" : "The term “emergency”—in the context of safety in buildings—is often equated to the term “fire emergency;” however, the wording of objectives OS3.7 and OS5.9 makes it clear that the Code addresses any type of emergency that would require the rapid evacuation of the building, such as a bomb threat or the presence of intruders." } ] },
+               "content" : "The term \"emergency\"-in the context of safety in buildings-is often equated to the term \"fire emergency;\" however, the wording of objectives OS3.7 and OS5.9 makes it clear that the Code addresses any type of emergency that would require the rapid evacuation of the building, such as a bomb threat or the presence of intruders." } ] },
             
             { "id" : "nbc.divA.part2.appendix.appnote2.div4",
              "type" : "note_division",
@@ -8674,7 +8676,7 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divA.part2.appendix.appnote2.div4.para1",
-               "content" : "An objective of this Code is to limit the probability that, as a result of the design and construction of the building, a [REF:term:fr:fire] will start or, if it does start, that it will spread beyond the [REF:term:fr-cmprt:fire compartment] in which it started." },
+               "content" : "In the definition of Objective OS1, Fire Safety, the term “person” refers to any individual in or adjacent to the building, including the occupants, the public, and emergency responders including firefighters when performing their duties." },
               
               { "type" : "paragraph",
                "id" : "nbc.divA.part2.appendix.appnote2.div4.para2",
