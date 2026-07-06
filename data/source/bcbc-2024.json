@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-03T20:08:06.93805031Z",
+  "generated_timestamp" : "2026-07-06T19:58:57.486377301Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -8817,13 +8817,7 @@
                  { "id" : "nbc.divA.part3.sect1.subsect1.art2.sent3.clause3",
                   "type" : "clause",
                   "letter" : "c",
-                  "text" : "[REF:term:bldng:buildings] that are not intended to be occupied on a daily or full-time basis, including automatic telephone exchanges, pumphouses and substations." } ] },
-               
-               { "id" : "nbc.divA.part3.sect1.subsect1.art2.sent4",
-                "type" : "sentence",
-                "number" : 4,
-                "source" : "bc",
-                "text" : "Functional Statement F75 applies only to [REF:term:dptbl-d:adaptable dwelling units] in multiple unit [REF:term:rdntl-cc:residential occupancy]  [REF:term:bldng:buildings] that contain interior corridors and exterior passageways for [REF:term:ccs:access] to the [REF:term:dptbl-d:adaptable dwelling units] ." } ] } ] } ] },
+                  "text" : "[REF:term:bldng:buildings] that are not intended to be occupied on a daily or full-time basis, including automatic telephone exchanges, pumphouses and substations." } ] } ] } ] } ] },
          
          { "id" : "nbc.divA.part3.sect2",
           "type" : "section",
@@ -8846,248 +8840,17 @@
                { "id" : "nbc.divA.part3.sect2.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "The objectives of this Code are achieved by measures, such as those described in the acceptable solutions in Division B, that are intended to allow the [REF:term:bldng:building] or its elements to perform the following functions (see [REF:internal:nbc.divA.part3.appendix.appnote1:short] ):",
-                "functional_statements" : 
-                [ 
-                 { "id" : "nbc.functional.F01",
-                  "key" : "F01",
-                  "definition" : "To minimize the risk of accidental ignition." },
-                 
-                 { "id" : "nbc.functional.F02",
-                  "key" : "F02",
-                  "definition" : "To limit the severity and effects of fire or explosions." },
-                 
-                 { "id" : "nbc.functional.F03",
-                  "key" : "F03",
-                  "definition" : "To retard the effects of fire on areas beyond its point of origin." },
-                 
-                 { "id" : "nbc.functional.F04",
-                  "key" : "F04",
-                  "definition" : "To retard failure or collapse due to the effects of fire." },
-                 
-                 { "id" : "nbc.functional.F05",
-                  "key" : "F05",
-                  "definition" : "To retard the effects of fire on emergency egress facilities." },
-                 
-                 { "id" : "nbc.functional.F06",
-                  "key" : "F06",
-                  "definition" : "To retard the effects of fire on facilities for notification, suppression and emergency response." },
-                 
-                 { "id" : "nbc.functional.F10",
-                  "key" : "F10",
-                  "definition" : "To facilitate the timely movement of persons to a safe place in an emergency." },
-                 
-                 { "id" : "nbc.functional.F11",
-                  "key" : "F11",
-                  "definition" : "To notify persons, in a timely manner, of the need to take action in an emergency." },
-                 
-                 { "id" : "nbc.functional.F12",
-                  "key" : "F12",
-                  "definition" : "To facilitate emergency response." },
-                 
-                 { "id" : "nbc.functional.F13",
-                  "key" : "F13",
-                  "definition" : "To notify emergency responders, in a timely manner, of the need to take action in an emergency." },
-                 
-                 { "id" : "nbc.functional.F20",
-                  "key" : "F20",
-                  "definition" : "To support and withstand expected loads and forces." },
-                 
-                 { "id" : "nbc.functional.F21",
-                  "key" : "F21",
-                  "definition" : "To limit or accommodate dimensional change." },
-                 
-                 { "id" : "nbc.functional.F22",
-                  "key" : "F22",
-                  "definition" : "To limit movement under expected loads and forces." },
-                 
-                 { "id" : "nbc.functional.F23",
-                  "key" : "F23",
-                  "definition" : "To maintain equipment in place during structural movement." },
-                 
-                 { "id" : "nbc.functional.F30",
-                  "key" : "F30",
-                  "definition" : "To minimize the risk of injury to persons as a result of tripping, slipping, falling, contact, drowning or collision." },
-                 
-                 { "id" : "nbc.functional.F31",
-                  "key" : "F31",
-                  "definition" : "To minimize the risk of injury to persons as a result of contact with hot surfaces or substances." },
-                 
-                 { "id" : "nbc.functional.F32",
-                  "key" : "F32",
-                  "definition" : "To minimize the risk of injury to persons as a result of contact with energized equipment." },
-                 
-                 { "id" : "nbc.functional.F33",
-                  "key" : "F33",
-                  "definition" : "To limit the level of sound of a fire alarm system." },
-                 
-                 { "id" : "nbc.functional.F34",
-                  "key" : "F34",
-                  "definition" : "To resist or discourage unwanted access or entry." },
-                 
-                 { "id" : "nbc.functional.F35",
-                  "key" : "F35",
-                  "definition" : "To facilitate the identification of potential intruders." },
-                 
-                 { "id" : "nbc.functional.F36",
-                  "key" : "F36",
-                  "definition" : "To minimize the risk that persons will be trapped in confined spaces." },
-                 
-                 { "id" : "nbc.functional.F40",
-                  "key" : "F40",
-                  "definition" : "To limit the level of contaminants." },
-                 
-                 { "id" : "nbc.functional.F41",
-                  "key" : "F41",
-                  "definition" : "To minimize the risk of generation of contaminants." },
-                 
-                 { "id" : "nbc.functional.F42",
-                  "key" : "F42",
-                  "definition" : "To resist the entry of vermin and insects." },
-                 
-                 { "id" : "nbc.functional.F43",
-                  "key" : "F43",
-                  "definition" : "To minimize the risk of release of hazardous substances." },
-                 
-                 { "id" : "nbc.functional.F44",
-                  "key" : "F44",
-                  "definition" : "To limit the spread of hazardous substances beyond their point of release." },
-                 
-                 { "id" : "nbc.functional.F46",
-                  "key" : "F46",
-                  "definition" : "To minimize the risk of contamination of potable water." },
-                 
-                 { "id" : "nbc.functional.F50",
-                  "key" : "F50",
-                  "definition" : "To provide air suitable for breathing." },
-                 
-                 { "id" : "nbc.functional.F51",
-                  "key" : "F51",
-                  "definition" : "To maintain appropriate air and surface temperatures." },
-                 
-                 { "id" : "nbc.functional.F52",
-                  "key" : "F52",
-                  "definition" : "To maintain appropriate relative humidity." },
-                 
-                 { "id" : "nbc.functional.F53",
-                  "key" : "F53",
-                  "definition" : "To maintain appropriate indoor\/outdoor air pressure differences." },
-                 
-                 { "id" : "nbc.functional.F54",
-                  "key" : "F54",
-                  "definition" : "To limit drafts." },
-                 
-                 { "id" : "nbc.functional.F55",
-                  "key" : "F55",
-                  "definition" : "To resist the transfer of air through environmental separators." },
-                 
-                 { "id" : "nbc.functional.F56",
-                  "key" : "F56",
-                  "definition" : "To limit the transmission of airborne sound into a [REF:term:dwllng-n:dwelling unit] from spaces elsewhere in the [REF:term:bldng:building] (see [REF:internal:nbc.divA.part3.sect1.subsect1.art2.sent2:long] for application limitation)." },
-                 
-                 { "id" : "nbc.functional.F60",
-                  "key" : "F60",
-                  "definition" : "To control the accumulation and pressure of water on and in the ground." },
-                 
-                 { "id" : "nbc.functional.F61",
-                  "key" : "F61",
-                  "definition" : "To resist the ingress of precipitation, water or moisture from the exterior or from the ground." },
-                 
-                 { "id" : "nbc.functional.F62",
-                  "key" : "F62",
-                  "definition" : "To facilitate the dissipation of water and moisture from the [REF:term:bldng:building] ." },
-                 
-                 { "id" : "nbc.functional.F63",
-                  "key" : "F63",
-                  "definition" : "To limit moisture condensation." },
-                 
-                 { "id" : "nbc.functional.F70",
-                  "key" : "F70",
-                  "definition" : "To provide potable water." },
-                 
-                 { "id" : "nbc.functional.F71",
-                  "key" : "F71",
-                  "definition" : "To provide facilities for personal hygiene." },
-                 
-                 { "id" : "nbc.functional.F72",
-                  "key" : "F72",
-                  "definition" : "To provide facilities for the sanitary disposal of human and domestic wastes." },
-                 
-                 { "id" : "nbc.functional.F73",
-                  "key" : "F73",
-                  "source" : "bc",
-                  "definition" : "To facilitate access to and circulation in the building and its facilities by persons with disabilities" },
-                 
-                 { "id" : "nbc.functional.F74",
-                  "key" : "F74",
-                  "source" : "bc",
-                  "definition" : "To facilitate the use of the building's facilities by persons with disabilities" },
-                 
-                 { "id" : "nbc.functional.F74a",
-                  "key" : "F74a",
-                  "definition" : "To minimize obstacles for future modification to provide [REF:term:ccs:access] (see [REF:internal:nbc.divA.part3.sect1.subsect1.art2.sent4:long] for application limitation)." },
-                 
-                 { "id" : "nbc.functional.F80",
-                  "key" : "F80",
-                  "definition" : "To resist deterioration resulting from expected service conditions." },
-                 
-                 { "id" : "nbc.functional.F81",
-                  "key" : "F81",
-                  "definition" : "To minimize the risk of malfunction, interference, damage, tampering, lack of use or misuse." },
-                 
-                 { "id" : "nbc.functional.F82",
-                  "key" : "F82",
-                  "definition" : "To minimize the risk of inadequate performance due to improper maintenance or lack of maintenance." },
-                 
-                 { "id" : "nbc.functional.F90",
-                  "key" : "F90",
-                  "definition" : "To limit the amount of uncontrolled air leakage through the [REF:term:bldng:building] envelope." },
-                 
-                 { "id" : "nbc.functional.F91",
-                  "key" : "F91",
-                  "definition" : "To limit the amount of uncontrolled air leakage through system components." },
-                 
-                 { "id" : "nbc.functional.F92",
-                  "key" : "F92",
-                  "definition" : "To limit the amount of uncontrolled thermal transfer through the [REF:term:bldng:building] envelope." },
-                 
-                 { "id" : "nbc.functional.F93",
-                  "key" : "F93",
-                  "definition" : "To limit the amount of uncontrolled thermal transfer through system components." },
-                 
-                 { "id" : "nbc.functional.F95",
-                  "key" : "F95",
-                  "definition" : "To limit the unnecessary demand and\/or consumption of energy for heating and cooling." },
-                 
-                 { "id" : "nbc.functional.F96",
-                  "key" : "F96",
-                  "definition" : "To limit the unnecessary demand and\/or consumption of energy for service water heating." },
-                 
-                 { "id" : "nbc.functional.F98",
-                  "key" : "F98",
-                  "definition" : "To limit the inefficiency of equipment." },
-                 
-                 { "id" : "nbc.functional.F99",
-                  "key" : "F99",
-                  "definition" : "To limit the inefficiency of systems." },
-                 
-                 { "id" : "nbc.functional.F100",
-                  "key" : "F100",
-                  "definition" : "To limit the unnecessary rejection of reusable waste energy." },
-                 
-                 { "id" : "nbc.functional.F100a",
-                  "key" : "F100a",
-                  "definition" : "To limit excessive emission of greenhouse gases into the environment." } ] } ] } ] } ] } ],
+                "source" : "bc",
+                "text" : "The objectives of this Code are achieved by measures, such as those described in the acceptable solutions in Division B, that are intended to allow the [REF:term:bldng:building] or its elements to perform the following functions (see [REF:internal:nbc.divA.part3.appendix.appnote1:short] ):\n<bold>F01<\/bold>        To minimize the risk of accidental ignition.\n<bold>F02<\/bold>        To limit the severity and effects of fire or explosions.\n<bold>F03<\/bold>        To retard the effects of fire on areas beyond its point of origin.\n<bold>F04<\/bold>        To retard failure or collapse due to the effects of fire.\n<bold>F05<\/bold>        To retard the effects of fire on emergency egress facilities.\n<bold>F06<\/bold>        To retard the effects of fire on facilities for notification, suppression and emergency response.\n<bold>F10<\/bold>        To facilitate the timely movement of persons to a safe place in an emergency.\n<bold>F11<\/bold>        To notify persons, in a timely manner, of the need to take action in an emergency.\n<bold>F12<\/bold>        To facilitate emergency response.\n<bold>F13<\/bold>        To notify emergency responders, in a timely manner, of the need to take action in an emergency.\n<bold>F20<\/bold>        To support and withstand expected loads and forces.\n<bold>F21<\/bold>        To limit or accommodate dimensional change.\n<bold>F22<\/bold>        To limit movement under expected loads and forces.\n<bold>F23<\/bold>        To maintain equipment in place during structural movement.\n<bold>F30<\/bold>        To minimize the risk of injury to persons as a result of tripping, slipping, falling, contact, drowning or collision.\n<bold>F31<\/bold>        To minimize the risk of injury to persons as a result of contact with hot surfaces or substances.\n<bold>F32<\/bold>        To minimize the risk of injury to persons as a result of contact with energized equipment.\n<bold>F33<\/bold>        To limit the level of sound of a fire alarm system.\n<bold>F34<\/bold>        To resist or discourage unwanted access or entry.\n<bold>F35<\/bold>        To facilitate the identification of potential intruders.\n<bold>F36<\/bold>        To minimize the risk that persons will be trapped in confined spaces.\n<bold>F40<\/bold>        To limit the level of contaminants.\n<bold>F41<\/bold>        To minimize the risk of generation of contaminants.\n<bold>F42<\/bold>        To resist the entry of vermin and insects.\n<bold>F43<\/bold>        To minimize the risk of release of hazardous substances.\n<bold>F44<\/bold>        To limit the spread of hazardous substances beyond their point of release.\n<bold>F46<\/bold>        To minimize the risk of contamination of potable water.\n<bold>F50<\/bold>        To provide air suitable for breathing.\n<bold>F51<\/bold>        To maintain appropriate air and surface temperatures.\n<bold>F52<\/bold>        To maintain appropriate relative humidity.\n<bold>F53<\/bold>        To maintain appropriate indoor\/outdoor air pressure differences.\n<bold>F54<\/bold>        To limit drafts.\n<bold>F55<\/bold>        To resist the transfer of air through environmental separators.\n<bold>F56<\/bold>        To limit the transmission of airborne sound into a dwelling unit from spaces elsewhere in the building.\n<bold>F60<\/bold>        To control the accumulation and pressure of water on and in the ground.\n<bold>F61<\/bold>        To resist the ingress of precipitation, water or moisture from the exterior or from the ground.\n<bold>F62<\/bold>        To facilitate the dissipation of water and moisture from the building.\n<bold>F63<\/bold>        To limit moisture condensation.\n<bold>F70<\/bold>        To provide potable water.\n<bold>F71<\/bold>        To provide facilities for personal hygiene.\n<bold>F72<\/bold>        To provide facilities for the sanitary disposal of human and domestic wastes.\n<bold>F73<\/bold>        To facilitate access to and circulation in the building and its facilities by persons with disabilities.\n<bold>F74<\/bold>        To facilitate the use of the building's facilities by persons with disabilities.\n<bold>F74a<\/bold>      To minimize obstacles for future modification to provide access.\n<bold>F80<\/bold>        To resist deterioration resulting from expected service conditions.\n<bold>F81<\/bold>        To minimize the risk of malfunction, interference, damage, tampering, lack of use or misuse.\n<bold>F82<\/bold>        To minimize the risk of inadequate performance due to improper maintenance or lack of maintenance.\n<bold>F90<\/bold>        To limit the amount of uncontrolled air leakage through the building envelope.\n<bold>F91<\/bold>        To limit the amount of uncontrolled air leakage through system components.\n<bold>F92<\/bold>        To limit the amount of uncontrolled thermal transfer through the building envelope.\n<bold>F93<\/bold>        To limit the amount of uncontrolled thermal transfer through system components.\n<bold>F95<\/bold>        To limit the unnecessary demand and\/or consumption of energy for heating and cooling.\n<bold>F96<\/bold>        To limit the unnecessary demand and\/or consumption of energy for service water heating.\n<bold>F98<\/bold>        To limit the inefficiency of equipment.\n<bold>F99<\/bold>        To limit the inefficiency of systems.\n<bold>F100<\/bold>      To limit the unnecessary rejection of reusable waste energy.\n<bold>F100a<\/bold>    To limit excessive emission of greenhouse gases into the environment." } ] } ] } ] } ],
         "appendix" : 
         { "id" : "nbc.divA.part3.appendix",
          "type" : "part_appendix",
-         "introduction" : "These Notes are included for explanatory purposes only and do not form part of the requirements. The number that introduces each Note corresponds to the applicable requirement in this Part.",
          "application_notes" : 
          [ 
           { "id" : "nbc.divA.part3.appendix.appnote1",
            "type" : "application_note",
            "number" : "3.2.1.1.(1)",
-           "title" : "Listing of Functional Statements",
+           "title" : "Listing of Functional Statements.",
            "refs" : "es007242",
            "source" : "bc",
            "content" : 
@@ -694531,7 +694294,7 @@
    "total_parts" : 15,
    "total_sections" : 100,
    "total_articles" : 2020,
-   "total_sentences" : 5129,
+   "total_sentences" : 5128,
    "total_tables" : 357,
    "total_figures" : 326,
    "total_spectables" : 2,
