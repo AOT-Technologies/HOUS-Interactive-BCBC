@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-09T23:40:45.223735361Z",
+  "generated_timestamp" : "2026-07-13T20:37:18.793589509Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6404,8 +6404,8 @@
                     "definition" : "means a [REF:term:bldng:building ] or part thereof that contains an [REF:term:grc-ccp:agricultural occupancy] . (See [REF:internal:nbc.divA.part1.appendix.appnote7.div7:short] .)" },
                    
                    { "id" : "bc-fld-rvw",
-                    "term" : "",
-                    "definition" : "" },
+                    "term" : "Field review",
+                    "definition" : "means a review of the work[LIST:bulleted]that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional." },
                    
                    { "id" : "fll",
                     "term" : "Fill",
@@ -280196,7 +280196,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "For design carried out in accordance with [REF:internal:nbc.divB.part4:short:Part 4 of Division B] , the <italic>designer<\/italic> shall be a [REF:term:bc-rgstrd-prfssnl:registered professional] skilled in the work concerned. (See [REF:internal:nbc.divC.part2.appendix.appnote1:short:Note A-2.2.1.2.(1)] .)" } ] } ] },
+                "text" : "For design carried out in accordance with [REF:internal:nbc.divB.part4:short:Part 4 of Division B] , the [REF:term:dgnr:designer] shall be a [REF:term:bc-rgstrd-prfssnl:registered professional] skilled in the work concerned. (See [REF:internal:nbc.divC.part2.appendix.appnote1:short:Note A-2.2.1.2.(1)] .)" } ] } ] },
            
            { "id" : "nbc.divC.part2.sect2.subsect2",
             "type" : "subsection",
@@ -280264,13 +280264,13 @@
                   "type" : "clause",
                   "letter" : "g",
                   "source" : "bc",
-                  "text" : "the <italic>accessible<\/italic> entrances, work areas and washrooms," },
+                  "text" : "the [REF:term:bc-cc-t-ccbl:accessible] entrances, work areas and washrooms," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect2.art1.sent2.clause8",
                   "type" : "clause",
                   "letter" : "h",
                   "source" : "bc",
-                  "text" : "the <italic>accessible<\/italic> facilities particular to the [REF:term:ccpnc:occupancies] , and" },
+                  "text" : "the [REF:term:bc-cc-t-ccbl:accessible] facilities particular to the [REF:term:ccpnc:occupancies] , and" },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect2.art1.sent2.clause9",
                   "type" : "clause",
@@ -280332,7 +280332,7 @@
                   "type" : "clause",
                   "letter" : "e",
                   "source" : "bc",
-                  "text" : "the <italic>accessible<\/italic> paths of travel to the [REF:term:bldng:building] from",
+                  "text" : "the [REF:term:bc-cc-t-ccbl:accessible] paths of travel to the [REF:term:bldng:building] from",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divC.part2.sect2.subsect2.art2.sent2.clause5.subclause1",
@@ -280345,7 +280345,7 @@
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "if provided, exterior parking stalls for <italic>persons with disabilities<\/italic> and exterior passenger-loading zones." } ] } ] } ] } ] },
+                    "text" : "if provided, exterior parking stalls for [REF:term:bc-prsn-wth-dsblts:persons with disabilities] and exterior passenger-loading zones." } ] } ] } ] } ] },
            
            { "id" : "nbc.divC.part2.sect2.subsect3",
             "type" : "subsection",
@@ -280651,7 +280651,7 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "structural components that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] (See [REF:internal:nbc.divC.part2.appendix.appnote8:short] )," },
+                    "text" : "structural components that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] (See [REF:internal:nbc.divC.part2.appendix.appnote8:short] .)," },
                    
                    { "id" : "nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause2",
                     "type" : "subclause",
@@ -280752,7 +280752,7 @@
                       "type" : "subclause",
                       "number" : 1,
                       "source" : "bc",
-                      "text" : "structural components that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] (See [REF:internal:nbc.divC.part2.appendix.appnote8:short] )," },
+                      "text" : "structural components that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] (See [REF:internal:nbc.divC.part2.appendix.appnote8:short] .)," },
                      
                      { "id" : "nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause2",
                       "type" : "subclause",
@@ -280792,7 +280792,7 @@
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "retain a coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] to coordinate all design work and field reviews of the registered professionals of record required for the project in order to ascertain that (see [REF:internal:nbc.divC.part2.appendix.appnote7:short:Note A-2.2.7.2.(1)] (a))",
+                  "text" : "retain a [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] to coordinate all design work and [REF:term:bc-fld-rvw:field reviews] of the [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] required for the project in order to ascertain that (see [REF:internal:nbc.divC.part2.appendix.appnote9:short:Note A-2.2.7.2.(1)] (a))",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divC.part2.sect2.subsect7.art2.sent1.clause1.subclause1",
@@ -280805,51 +280805,52 @@
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "the construction of the project will substantially comply with the British Columbia [REF:term:bldng:Building] Code and other applicable enactments respecting safety, not including the construction safety aspects, and" } ] },
+                    "text" : "the construction of the project will substantially comply with the British Columbia Building Code and other applicable enactments respecting safety, not including the construction safety aspects, and" } ] },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect7.art2.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "if a [REF:term:bldng:building] permit is required, deliver to the [REF:term:bc-thrt-hvn:authority having jurisdiction] letters in the forms set out in Schedules A and B. (See the end of Division C and [REF:internal:nbc.divC.part2.appendix.appnote7:short:Note A-2.2.7.2.(1)] (b).)" } ] },
+                  "text" : "if a [REF:term:bldng:building] permit is required, deliver to the [REF:term:bc-thrt-hvn:authority having jurisdiction] letters in the forms set out in Schedules A and B. (See the end of Division C and [REF:internal:nbc.divC.part2.appendix.appnote10:short:Note A-2.2.7.2.(1)] (b).)" } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect7.art2.sent2",
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "If an [REF:term:ccpnc:occupancy] permit or final inspection from an [REF:term:bc-thrt-hvn:authority having jurisdiction] is required and before an owner occupies or receives permission to occupy the [REF:term:bldng:building] , the owner or coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] shall deliver to that authority letters in the forms set out in Schedules C-A and C-B (See the end of Division C and [REF:internal:nbc.divC.part2.appendix.appnote7:short:Note A-2.2.7.2.(2)] .)" } ] },
+                "text" : "If an occupancy permit or final inspection from an [REF:term:bc-thrt-hvn:authority having jurisdiction] is required and before an [REF:term:bc-wnr:owner] occupies or receives permission to occupy the [REF:term:bldng:building] , the [REF:term:bc-wnr:owner] or [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] shall deliver to that authority letters in the forms set out in Schedules C-A and C-B (See the end of Division C and [REF:internal:nbc.divC.part2.appendix.appnote11:short:Note A-2.2.7.2.(2)] .)" } ] },
              
              { "id" : "nbc.divC.part2.sect2.subsect7.art3",
               "type" : "article",
               "number" : 3,
               "source" : "bc",
               "title" : "Registered Professional Responsibilities",
+              "note" : "(See [REF:internal:nbc.divC.part2.appendix.appnote12:short:Note A-2.2.7.3.] )",
               "content" : 
               [ 
                { "id" : "nbc.divC.part2.sect2.subsect7.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "A [REF:term:bc-rgstrd-prfssnl:registered professional] of record who signs a letter, the form of which is set out in a Schedule to this Subsection, and an owner who signs or has an agent sign a letter the form of which is set out in a Schedule to this Subsection, shall comply with this Subsection and the provisions of the letter that apply to the person signing." },
+                "text" : "A [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professional of record] who signs a letter, the form of which is set out in a Schedule to this Subsection, and an [REF:term:bc-wnr:owner] who signs or has an agent sign a letter the form of which is set out in a Schedule to this Subsection, shall comply with this Subsection and the provisions of the letter that apply to the person signing." },
                
                { "id" : "nbc.divC.part2.sect2.subsect7.art3.sent2",
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "A [REF:term:bc-rgstrd-prfssnl:registered professional] of record or coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] who is responsible for a field review shall keep a record of the field review and of any corrective action taken as a result of the field review and shall make the record available to the [REF:term:bc-thrt-hvn:authority having jurisdiction] on the request of that authority." },
+                "text" : "A [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professional of record] or [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] who is responsible for a [REF:term:bc-fld-rvw:field review] shall keep a record of the [REF:term:bc-fld-rvw:field review] and of any corrective action taken as a result of the [REF:term:bc-fld-rvw:field review] and shall make the record available to the [REF:term:bc-thrt-hvn:authority having jurisdiction] on the request of that authority." },
                
                { "id" : "nbc.divC.part2.sect2.subsect7.art3.sent3",
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "A [REF:term:bc-rgstrd-prfssnl:registered professional] of record who is retained to undertake design work and field reviews and who is required to provide letters pursuant to [REF:internal:nbc.divC.part2.sect2.subsect7.art2.sent1.clause2:short:Clause 2.2.7.2.(1)(b)] shall",
+                "text" : "A [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professional of record] who is retained to undertake design work and [REF:term:bc-fld-rvw:field reviews] and who is required to provide letters pursuant to [REF:internal:nbc.divC.part2.sect2.subsect7.art2.sent1.clause2:short:Clause 2.2.7.2.(1)(b)] shall",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divC.part2.sect2.subsect7.art3.sent3.clause1",
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "place their professional seal or stamp on the plans submitted by them in support of the application for a [REF:term:bldng:building] permit, after ascertaining that they substantially comply with the British Columbia [REF:term:bldng:Building] Code and other applicable enactments respecting safety," },
+                  "text" : "place their professional seal or stamp on the plans submitted by them in support of the application for a [REF:term:bldng:building] permit, after ascertaining that they substantially comply with the British Columbia Building Code and other applicable enactments respecting safety," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect7.art3.sent3.clause2",
                   "type" : "clause",
@@ -280862,13 +280863,13 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "the plans and supporting documents prepared by the [REF:term:bc-rgstrd-prfssnl:registered professional] of record, and" },
+                    "text" : "the plans and supporting documents prepared by the [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professional of record] , and" },
                    
                    { "id" : "nbc.divC.part2.sect2.subsect7.art3.sent3.clause2.subclause2",
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "the requirements of the British Columbia [REF:term:bldng:Building] Code and other applicable enactments respecting safety, not including construction safety aspects." } ] } ] } ] },
+                    "text" : "the requirements of the British Columbia Building Code and other applicable enactments respecting safety, not including construction safety aspects." } ] } ] } ] },
              
              { "id" : "nbc.divC.part2.sect2.subsect7.art4",
               "type" : "article",
@@ -280881,20 +280882,20 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "An owner must not terminate the appointment of a coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] or [REF:term:bc-rgstrd-prfssnl:registered professional] of record unless",
+                "text" : "An [REF:term:bc-wnr:owner] must not terminate the appointment of a [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] or [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] unless",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divC.part2.sect2.subsect7.art4.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "the owner immediately replaces the coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] or [REF:term:bc-rgstrd-prfssnl:registered professional] of record, or" },
+                  "text" : "the [REF:term:bc-wnr:owner] immediately replaces the [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] or [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] , or" },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect7.art4.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "the owner has complied with Clause (1)(b) and Sentence (2) of [REF:internal:nbc.divC.part2.sect2.subsect7.art2:short:Article 2.2.7.2.] by delivering letters in the forms set out in Schedule A, B, C-A and C-B, as applicable, to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] },
+                  "text" : "the [REF:term:bc-wnr:owner] has complied with Clause (1)(b) and Sentence (2) of [REF:internal:nbc.divC.part2.sect2.subsect7.art2:short:Article 2.2.7.2.] by delivering letters in the forms set out in Schedule A, B, C-A and C-B, as applicable, to the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect7.art4.sent2",
                 "type" : "sentence",
@@ -280907,13 +280908,13 @@
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "if the coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] ceases to be retained at any time before the completion of the project, both the owner and the coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] shall notify the [REF:term:bc-thrt-hvn:authority having jurisdiction] , and" },
+                  "text" : "if the [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] ceases to be retained at any time before the completion of the project, both the [REF:term:bc-wnr:owner] and the [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] shall notify the [REF:term:bc-thrt-hvn:authority having jurisdiction] , and" },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect7.art4.sent2.clause2",
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "if a [REF:term:bc-rgstrd-prfssnl:registered professional] of record ceases to be retained at any time before the completion of the project, both the coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] and the [REF:term:bc-rgstrd-prfssnl:registered professional] of record shall notify the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] },
+                  "text" : "if a [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] ceases to be retained at any time before the completion of the project, both the [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] and the [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] shall notify the [REF:term:bc-thrt-hvn:authority having jurisdiction] ." } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect7.art4.sent3",
                 "type" : "sentence",
@@ -280926,7 +280927,7 @@
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "if possible, before the coordinating [REF:term:bc-rgstrd-prfssnl:registered professional] or [REF:term:bc-rgstrd-prfssnl:registered professional] of record, as the case may be, ceases to be retained, or" },
+                  "text" : "if possible, before the [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] or [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] , as the case may be, ceases to be retained, or" },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect7.art4.sent3.clause2",
                   "type" : "clause",
@@ -687455,7 +687456,7 @@
     "sequence" : 1,
     "effective_date" : "2024-08-27",
     "status" : "current",
-    "content" : "The requirements of this Subsection apply to[REF:term:bldng:buildings] within the scope of [REF:internal:nbc.divB.part3:short:Part 3 of Division B] which include [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:short] of Division B,[REF:term:bldng:buildings] within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] that are designed with common egress systems for the occupants and require the use of [REF:term:frwll:firewalls] according to [REF:internal:nbc.divA.part1.sect3.subsect3.art4:short:Article 1.3.3.4.] of Division A, andthe following, in respect of [REF:term:bldng:buildings] within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] other than [REF:term:bldng:buildings] described in Clause (b),structural components that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] (See [REF:internal:nbc.divC.part2.appendix.appnote8:short] ),geotechnical conditions at [REF:term:bldng:building] sites that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] ,sprinkler systems designed to NFPA 13, \"Installation of Sprinkler Systems\", andstandpipe and hose systems designed to NFPA 14, \"Installation of Standpipe and Hose Systems\".",
+    "content" : "The requirements of this Subsection apply to[REF:term:bldng:buildings] within the scope of [REF:internal:nbc.divB.part3:short:Part 3 of Division B] which include [REF:term:bldng:buildings] designed and constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect10:short] of Division B,[REF:term:bldng:buildings] within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] that are designed with common egress systems for the occupants and require the use of [REF:term:frwll:firewalls] according to [REF:internal:nbc.divA.part1.sect3.subsect3.art4:short:Article 1.3.3.4.] of Division A, andthe following, in respect of [REF:term:bldng:buildings] within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] other than [REF:term:bldng:buildings] described in Clause (b),structural components that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] (See [REF:internal:nbc.divC.part2.appendix.appnote8:short] .),geotechnical conditions at [REF:term:bldng:building] sites that are not within the scope of [REF:internal:nbc.divB.part9:short:Part 9 of Division B] ,sprinkler systems designed to NFPA 13, \"Installation of Sprinkler Systems\", andstandpipe and hose systems designed to NFPA 14, \"Installation of Standpipe and Hose Systems\".",
     "change_summary" : "Repealed and substituted Sentence 2.2.7.1.(1) to expand Division C scope to include buildings designed under Subsection 3.2.10 and clarify application to Part 9 buildings",
     "note" : "Ministerial Order BA 2024 03" },
    
@@ -688804,8 +688805,8 @@
     "definition" : "means a [REF:term:bldng:building ] or part thereof that contains an [REF:term:grc-ccp:agricultural occupancy] . (See [REF:internal:nbc.divA.part1.appendix.appnote7.div7:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-fld-rvw" : 
-   { "term" : "",
-    "definition" : "",
+   { "term" : "Field review",
+    "definition" : "means a review of the work[LIST:bulleted]that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "fll" : 
    { "term" : "Fill",
