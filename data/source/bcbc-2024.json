@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-13T20:37:18.793589509Z",
+  "generated_timestamp" : "2026-07-14T18:13:15.133257504Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -280817,7 +280817,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "If an occupancy permit or final inspection from an [REF:term:bc-thrt-hvn:authority having jurisdiction] is required and before an [REF:term:bc-wnr:owner] occupies or receives permission to occupy the [REF:term:bldng:building] , the [REF:term:bc-wnr:owner] or [REF:term:bc-rgstrd-prfssnl-f-rcrd:registered professionals of record] shall deliver to that authority letters in the forms set out in Schedules C-A and C-B (See the end of Division C and [REF:internal:nbc.divC.part2.appendix.appnote11:short:Note A-2.2.7.2.(2)] .)" } ] },
+                "text" : "If an occupancy permit or final inspection from an [REF:term:bc-thrt-hvn:authority having jurisdiction] is required and before an [REF:term:bc-wnr:owner] occupies or receives permission to occupy the [REF:term:bldng:building] , the [REF:term:bc-wnr:owner] or [REF:term:bc-crdntng-rgstrd-prfsnl:coordinating registered professional] shall deliver to that authority letters in the forms set out in Schedules C-A and C-B (See the end of Division C and [REF:internal:nbc.divC.part2.appendix.appnote11:short:Note A-2.2.7.2.(2)] .)" } ] },
              
              { "id" : "nbc.divC.part2.sect2.subsect7.art3",
               "type" : "article",
@@ -280952,7 +280952,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "This Subsection applies only to houses with or without a secondary suite including their common spaces and to buildings containing only dwelling units and common spaces whose total [REF:term:flr-r:floor area] does not exceed 20% of the total [REF:term:flr-r:floor area] of the [REF:term:bldng:building] that are modeled in accordance with Subsection 9.36.5. and 9.37.1 of Division B as applicable .(See [REF:internal:nbc.divC.part2.appendix.appnote8:short:Note A-2.2.8.1.(1)] .) (See also [REF:internal:nbc.divBV2.part9.sect36.subsect1.art2.sent1:medium:Sentence 9.36.1.2.(1)] and Note A-9.36.1.3.(3) of Division B.)" } ] },
+                "text" : "This Subsection applies only to houses with or without a [REF:term:bc-scnd-t:secondary suite] including their common spaces and to [REF:term:bldng:buildings] containing only [REF:term:dwllng-n:dwelling units] and common spaces whose total [REF:term:flr-r:floor area] does not exceed 20% of the total [REF:term:flr-r:floor area] of the [REF:term:bldng:building] that are modeled in accordance with [REF:internal:nbc.divBV2.part9.sect36.subsect5:short] and [REF:internal:nbc.divBV2.part9.sect37.subsect5:short:9.37.1] of Division B as applicable. (See [REF:internal:nbc.divC.part2.appendix.appnote4:short:Note A-2.2.8.1.(1)] .) (See also [REF:internal:nbc.divBV2.part9.sect36.subsect1.art2.sent1:medium:Sentence 9.36.1.2.(1)] and [REF:internal:nbc.divBV2.part9.appendix.appnote216.div1.para1:medium:Note A-9.36.1.3.(3)] of Division B.)" } ] },
              
              { "id" : "nbc.divC.part2.sect2.subsect8.art2",
               "type" : "article",
@@ -281114,7 +281114,7 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "the annual energy consumption of all energy sources calculated for the proposed house (see [REF:internal:nbc.divC.part2.appendix.appnote8:short:Note A-2.2.8.3.(2)] (c)(i)), and" },
+                    "text" : "the annual energy consumption of all energy sources calculated for the proposed house (see [REF:internal:nbc.divC.part2.appendix.appnote5.para1:short:Note A-2.2.8.3.(2)(c)(i)] ), and" },
                    
                    { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent2.clause3.subclause2",
                     "type" : "subclause",
@@ -281152,13 +281152,13 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "Subsection 9.36.5. of Division B," },
+                    "text" : "[REF:internal:nbc.divBV2.part9.sect36.subsect5:medium:Subsection 9.36.5.] of Division B," },
                    
                    { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent2.clause5.subclause2",
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "[REF:internal:nbc.divBV2.part9.sect36.subsect6.art3.sent3:medium:Sentence 9.36.6.3.(3)] of Division B, or" },
+                    "text" : "[REF:internal:nbc.divBV2.part9.sect36.subsect6.art3.sent4:medium:Sentence 9.36.6.3.(3)] of Division B, or" },
                    
                    { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent2.clause5.subclause3",
                     "type" : "subclause",
@@ -281170,7 +281170,7 @@
                   "type" : "clause",
                   "letter" : "f",
                   "source" : "bc",
-                  "text" : "where applicable, the emissions factor or factors used to calculate GHG emission compliance in accordance with Subsection 9.37.1. of Division B, and",
+                  "text" : "where applicable, the emissions factor or factors used to calculate GHG emission compliance in accordance with [REF:internal:nbc.divBV2.part9.sect37.subsect1:medium:Subsection 9.37.1.] of Division B, and",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent2.clause6.subclause1",
@@ -281189,14 +281189,14 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "Where a [REF:term:bldng:building] complies with Subsection 9.36.6. of Division B, the energy performance data summary in Clause (2)(c) shall also contain:",
+                "text" : "Where a [REF:term:bldng:building] complies with [REF:internal:nbc.divBV2.part9.sect36.subsect6:medium:Subsection 9.36.6.] of Division B, the energy performance data summary in Clause (2)(c) shall also contain:",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent3.clause1",
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "the [REF:term:flr-r:floor area] of conditioned space used for the energy modelling calculations (see Note A-9.36.6.2. of Division B)," },
+                  "text" : "the [REF:term:flr-r:floor area] of [REF:term:cnd-sp:conditioned space] used for the energy modelling calculations (see [REF:internal:nbc.divBV2.part9.appendix.appnote295a:short:Note A-9.36.6.2.] of Division B)," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent3.clause2",
                   "type" : "clause",
@@ -281220,7 +281220,7 @@
                   "type" : "clause",
                   "letter" : "e",
                   "source" : "bc",
-                  "text" : "for buildings conforming to Steps 3 to 5, the airtightness of the [REF:term:bldng:building] as tested that is accounted for in accordance with [REF:internal:nbc.divBV2.part9.sect36.subsect6.art4.sent3:medium:Sentence 9.36.6.4.(3)] of Division B, and derived in accordance with Subsection 9.36.7., recorded in",
+                  "text" : "for [REF:term:bldng:buildings] conforming to Steps 3 to 5, the airtightness of the [REF:term:bldng:building] as tested that is accounted for in accordance with [REF:internal:nbc.divBV2.part9.sect36.subsect6.art4.sent3:medium:Sentence 9.36.6.4.(3)] of Division B, and derived in accordance with [REF:internal:nbc.divBV2.part9.sect36.subsect7:medium:Subsection 9.36.7.] , recorded in",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent3.clause5.subclause1",
@@ -281245,7 +281245,7 @@
                   "type" : "clause",
                   "letter" : "f",
                   "source" : "bc",
-                  "text" : "percent of the [REF:term:bldng:building] ’s conditioned space served by space-cooling equipment." } ] },
+                  "text" : "percent of the [REF:term:bldng:building] ’s [REF:term:cnd-sp:conditioned space] served by space-cooling equipment." } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent4",
                 "type" : "sentence",
@@ -281358,7 +281358,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "For buildings and [REF:term:mjr-ccpn:major occupancies] that are designed and constructed in compliance with [REF:internal:nbc.divB.part10.sect2.subsect3:short:Subsection 10.2.3.] and [REF:internal:nbc.divB.part10.sect3:short:Section 10.3.] of Division B, as applicable, before an owner occupies or receives permission to occupy the [REF:term:bldng:building] , an energy report shall indicate:",
+                "text" : "For buildings and [REF:term:mjr-ccpn:major occupancies] that are designed and constructed in compliance with [REF:internal:nbc.divB.part10.sect2.subsect3:short:Subsection 10.2.3.] and [REF:internal:nbc.divB.part10.sect3:short:Section 10.3.] of Division B, as applicable, before an [REF:term:bc-wnr:owner] occupies or receives permission to occupy the [REF:term:bldng:building] , an energy report shall indicate:",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divC.part2.sect2.subsect9.art2.sent2.clause1",
@@ -281464,7 +281464,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "For the purposes of [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium:Clause 1.2.1.1.(1)(b)] of Division A, on written request by the owner of a [REF:term:bldng:building] or an authorized agent of that owner, the [REF:term:bc-thrt-hvn:authority having jurisdiction] shall accept a measure as an alternate solution to an acceptable solution for the [REF:term:bldng:building] if satisfied that",
+                "text" : "For the purposes of [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:medium:Clause 1.2.1.1.(1)(b)] of Division A, on written request by the [REF:term:bc-wnr:owner] of a [REF:term:bldng:building] or an authorized agent of that owner, the [REF:term:bc-thrt-hvn:authority having jurisdiction] shall accept a measure as an alternate solution to an acceptable solution for the [REF:term:bldng:building] if satisfied that",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divC.part2.sect3.subsect1.art1.sent1.clause1",
@@ -281477,7 +281477,7 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "the acceptable solution does not expressly require conformance to a provincial enactment other than the British Columbia [REF:term:bldng:Building] Code." } ] } ] },
+                  "text" : "the acceptable solution does not expressly require conformance to a provincial enactment other than the British Columbia Building Code." } ] } ] },
              
              { "id" : "nbc.divC.part2.sect3.subsect1.art2",
               "type" : "article",
