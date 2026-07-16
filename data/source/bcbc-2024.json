@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-14T18:13:15.133257504Z",
+  "generated_timestamp" : "2026-07-16T19:24:05.887043266Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -280356,48 +280356,57 @@
              { "id" : "nbc.divC.part2.sect2.subsect3.art1",
               "type" : "article",
               "number" : 1,
+              "source" : "bc",
               "title" : "Information Required for Fire Protection Components",
               "content" : 
               [ 
                { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
+                "source" : "bc",
                 "text" : "Information shall be submitted to show the major components of fire protection including",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "the division of the [REF:term:bldng:building] by [REF:term:frwll:firewalls] ," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "the [REF:term:bldng-r:building area] ," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1.clause3",
                   "type" : "clause",
                   "letter" : "c",
+                  "source" : "bc",
                   "text" : "the degree of [REF:term:fr-prtn:fire separation] of [REF:term:tr:storeys] , shafts and special rooms or areas, including the location and rating of [REF:term:clr:closures] in [REF:term:fr-prtn:fire separations] ," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1.clause4",
                   "type" : "clause",
                   "letter" : "d",
+                  "source" : "bc",
                   "text" : "the source of information for [REF:term:fr-rtnc-:fire-resistance ratings] of elements of construction (to be indicated on large-scale sections)," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1.clause5",
                   "type" : "clause",
-                  "letter" : "g",
+                  "letter" : "e",
+                  "source" : "bc",
                   "text" : "the source of information for [REF:term:ncps-rtng:encapsulation ratings] of mass timber elements of construction (to be indicated on large-scale sections)," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1.clause6",
                   "type" : "clause",
-                  "letter" : "e",
+                  "letter" : "f",
+                  "source" : "bc",
                   "text" : "the location of [REF:term:xt:exits] , and" },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect3.art1.sent1.clause7",
                   "type" : "clause",
-                  "letter" : "f",
+                  "letter" : "g",
+                  "source" : "bc",
                   "text" : "fire detection, suppression and alarm systems." } ] } ] },
              
              { "id" : "nbc.divC.part2.sect2.subsect3.art2",
@@ -280938,7 +280947,8 @@
            { "id" : "nbc.divC.part2.sect2.subsect8",
             "type" : "subsection",
             "number" : 8,
-            "title" : "Drawings, Specifications and Calculations for Energy Performance Compliance",
+            "source" : "bc",
+            "title" : "Drawings, Specifications and Calculations for Energy Performance and Greenhouse Gas Emissions Compliance",
             "articles" : 
             [ 
              { "id" : "nbc.divC.part2.sect2.subsect8.art1",
@@ -281177,13 +281187,13 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "the maximum GHG emissions by house, expressed in kgCO2e\/year, and" },
+                    "text" : "the maximum GHG emissions by house, expressed in kgCO_{2e}\/year, and" },
                    
                    { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent2.clause6.subclause2",
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "where applicable, the maximum GHGI of the house, expressed in kgCO2e\/m2\/year." } ] } ] },
+                    "text" : "where applicable, the maximum GHGI of the house, expressed in kgCO_{2e}\/m^{2}\/year." } ] } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent3",
                 "type" : "sentence",
@@ -281257,7 +281267,7 @@
             "type" : "subsection",
             "number" : 9,
             "source" : "bc",
-            "title" : "Energy Performance",
+            "title" : "Drawings, Specifications and Calculations for Subsection 10.2.3. and Section 10.3.",
             "articles" : 
             [ 
              { "id" : "nbc.divC.part2.sect2.subsect9.art1",
@@ -281340,7 +281350,7 @@
                   "type" : "clause",
                   "letter" : "d",
                   "source" : "bc",
-                  "text" : "the air leakage rate as derived in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art4.sent3:short:Sentence 10.2.3.4.(3)] . of Division B, and recorded in L\/(s•m2) at 75 Pa." },
+                  "text" : "the air leakage rate as derived in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art4.sent3:short:Sentence 10.2.3.4.(3)] . of Division B, and recorded in L\/(s•m^{2}) at 75 Pa." },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect9.art2.sent1.clause5",
                   "type" : "clause",
@@ -281352,7 +281362,7 @@
                   "type" : "clause",
                   "letter" : "f",
                   "source" : "bc",
-                  "text" : "the maximum GHGI of the [REF:term:bldng:building] , expressed in kgCO2e\/m2\/year, as applicable." } ] },
+                  "text" : "the maximum GHGI of the [REF:term:bldng:building] , expressed in kgCO_{2e}\/m^{2}\/year, as applicable." } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect9.art2.sent2",
                 "type" : "sentence",
@@ -281414,13 +281424,13 @@
                   "type" : "clause",
                   "letter" : "d",
                   "source" : "bc",
-                  "text" : "for [REF:term:bldng:buildings] conforming to Step 2, the air leakage rate as tested, derived in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art5:short:Article 10.2.3.5.] of Division B, and recorded in L\/(s•m2) at 75 Pa, and" },
+                  "text" : "for [REF:term:bldng:buildings] conforming to Step 2, the air leakage rate as tested, derived in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art5:short:Article 10.2.3.5.] of Division B, and recorded in L\/(s•m^{2}) at 75 Pa, and" },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect9.art2.sent2.clause5",
                   "type" : "clause",
                   "letter" : "e",
                   "source" : "bc",
-                  "text" : "for [REF:term:bldng:buildings] conforming to any of Steps 2 to 4, the air leakage rate as tested that is accounted for in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art4.sent2:short:Sentence 10.2.3.4.(2)] of Division B and derived in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art5:short:Article 10.2.3.5.] of Division B, recorded in L\/(s•m2) at 75 Pa," },
+                  "text" : "for [REF:term:bldng:buildings] conforming to any of Steps 2 to 4, the air leakage rate as tested that is accounted for in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art4.sent2:short:Sentence 10.2.3.4.(2)] of Division B and derived in accordance with [REF:internal:nbc.divB.part10.sect2.subsect3.art5:short:Article 10.2.3.5.] of Division B, recorded in L\/(s•m^{2}) at 75 Pa," },
                  
                  { "id" : "nbc.divC.part2.sect2.subsect9.art2.sent2.clause6",
                   "type" : "clause",
@@ -281432,7 +281442,7 @@
                   "type" : "clause",
                   "letter" : "g",
                   "source" : "bc",
-                  "text" : "the maximum GHGI of the [REF:term:bldng:building] , expressed in kgCO2e\/m2\/year, as applicable." } ] },
+                  "text" : "the maximum GHGI of the [REF:term:bldng:building] , expressed in kgCO_{2e}\/m^{2}\/year, as applicable." } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect9.art2.sent3",
                 "type" : "sentence",
@@ -281449,7 +281459,8 @@
            { "id" : "nbc.divC.part2.sect3.subsect1",
             "type" : "subsection",
             "number" : 1,
-            "title" : "Documentation of Alternative Solutions",
+            "source" : "bc",
+            "title" : "Alternative Solutions",
             "see_also" : "(See [REF:internal:nbc.divC.part2.appendix.appnote6:short] )",
             "articles" : 
             [ 
