@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-07-23T22:51:00.335964435Z",
+  "generated_timestamp" : "2026-08-04T16:00:33.97515175Z",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -7348,7 +7348,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote3",
            "type" : "application_note",
            "number" : "1.2.1.1.(1)(a)",
-           "title" : "Code Compliance via Acceptable Solutions",
+           "title" : "Code Compliance via Acceptable Solutions.",
            "refs" : "es007221a",
            "content" : 
            [ 
@@ -7359,7 +7359,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote4",
            "type" : "application_note",
            "number" : "1.2.1.1.(1)(b)",
-           "title" : "Code Compliance via Alternative Solutions",
+           "title" : "Code Compliance via Alternative Solutions.",
            "refs" : "es007221b",
            "content" : 
            [ 
@@ -7420,7 +7420,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote5",
            "type" : "application_note",
            "number" : "1.3.3.4.(1)",
-           "title" : "Buildings Divided by Firewalls",
+           "title" : "Buildings Divided by Firewalls.",
            "refs" : "es000111",
            "content" : 
            [ 
@@ -7431,7 +7431,7 @@
           { "id" : "nbc.divA.part1.appendix.appnote6",
            "type" : "application_note",
            "number" : "1.3.3.4.(2)",
-           "title" : "Buildings on Sloping Sites",
+           "title" : "Buildings on Sloping Sites.",
            "refs" : "es000112",
            "content" : 
            [ 
@@ -7457,28 +7457,10 @@
           { "id" : "nbc.divA.part1.appendix.appnote7",
            "type" : "application_note",
            "number" : "1.4.1.2.(1)",
-           "title" : "Defined Terms",
+           "title" : "Defined Terms.",
            "refs" : "es007694",
            "content" : 
            [ 
-            { "id" : "nbc.divA.part1.appendix.appnote7.div1",
-             "type" : "note_division",
-             "title" : "Agricultural Occupancy",
-             "content" : 
-             [ 
-              { "type" : "paragraph",
-               "id" : "nbc.divA.part1.appendix.appnote7.div1.para1",
-               "content" : "The term “processing” refers to activities carried out for the purpose of maintaining the quality of agricultural products or to the minimum amount of activity necessary to produce a saleable product." } ] },
-            
-            { "id" : "nbc.divA.part1.appendix.appnote7.div2",
-             "type" : "note_division",
-             "title" : "Agricultural Occupancy with No Human Occupants",
-             "content" : 
-             [ 
-              { "type" : "paragraph",
-               "id" : "nbc.divA.part1.appendix.appnote7.div2.para1",
-               "content" : "Group G, Division 4 occupancies may be accessed on a temporary basis during maintenance, cleaning or emptying operations." } ] },
-            
             { "id" : "nbc.divA.part1.appendix.appnote7.div3",
              "type" : "note_division",
              "title" : "ASTC and STC",
@@ -8111,19 +8093,6 @@
                "id" : "nbc.divA.part1.appendix.appnote7.div10.para1",
                "content" : "Localized depressions that need not be considered in the determination of the elevation of grade include such features as vehicle and pedestrian entrances and other minor depressions that do not affect accessibility for firefighting or evacuation." } ] },
             
-            { "id" : "nbc.divA.part1.appendix.appnote7.div11",
-             "type" : "note_division",
-             "title" : "Home-Type Care Occupancy",
-             "content" : 
-             [ 
-              { "type" : "paragraph",
-               "id" : "nbc.divA.part1.appendix.appnote7.div11.para1",
-               "content" : "Support services rendered to the residents of a home-type care occupancy refer to services provided at a cost by caregivers who are responsible for the care for a period exceeding 24 consecutive hours. They do not refer to services provided by family members of the residents, or to services arranged directly by residents with outside agencies." },
-              
-              { "type" : "paragraph",
-               "id" : "nbc.divA.part1.appendix.appnote7.div11.para2",
-               "content" : "In the context of home-type care occupancies, these services may include a daily assessment of the resident's functioning, awareness of their whereabouts, the making of appointments for residents and reminding them of those appointments, the ability and readiness to intervene if a crisis arises for a resident, supervision in areas of nutrition or medication, and provision of transient medical services. Services may also include activities of daily living such as bathing, dressing, feeding, and assistance in the use of washroom facilities, etc. No actual treatment is provided by the caregivers." } ] },
-            
             { "id" : "nbc.divA.part1.appendix.appnote7.div12",
              "type" : "note_division",
              "title" : "Mechanically Vented",
@@ -8190,10 +8159,6 @@
                "id" : "nbc.divA.part1.appendix.appnote7.div16.para3",
                "content" : "Where a building has multiple vertically separated occupancies, the secondary suite can only be created in a vertically separated portion of the building that is of residential occupancy. A vertical fire separation extends continuously through all crawlspaces, storeys and attic spaces of the building. Apartment buildings have dwelling units above and below others that share a horizontal assembly and are therefore not permitted to have secondary suites. Figure A-1.4.1.2.(1)-C shows building types where secondary suites are permitted as well as building types where other dwelling units or other occupancies are located above or below such that secondary suites are not permitted." },
               
-              { "type" : "paragraph",
-               "id" : "nbc.divA.part1.appendix.appnote7.div16.para4",
-               "content" : "Neither dwelling unit in a house can be strata-titled or otherwise subdivided from the remainder of the house under provincial or territorial legislation. This means that both dwelling units are registered under the same title." },
-              
               { "id" : "nbc.divA.part1.appendix.appnote7.div16.figure1",
                "type" : "figure",
                "hide_label" : true,
@@ -8201,7 +8166,11 @@
                "title" : "Figure A-1.4.1.2.(1)-C \n Building Types where Secondary Suites are Permitted",
                "graphic" : 
                { "src" : "bc-graphics\/figure-a-1-4-1-2-1-c-of-division-a",
-                "alt_text" : "Diagram showing building types where secondary suites are permitted and not permitted" } } ] },
+                "alt_text" : "Diagram showing building types where secondary suites are permitted and not permitted" } },
+              
+              { "type" : "paragraph",
+               "id" : "nbc.divA.part1.appendix.appnote7.div16.para4",
+               "content" : "Neither the secondary suite nor the other dwelling unit in a house can be strata-titled or otherwise subdivided from the remainder of the house under provincial or territorial legislation. This means that both dwelling units are registered under the same title." } ] },
             
             { "id" : "nbc.divA.part1.appendix.appnote7.div17",
              "type" : "note_division",
@@ -8488,27 +8457,27 @@
                    { "id" : "nbc.objective.OS1",
                     "key" : "OS1",
                     "title" : "Fire Safety",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in or adjacent to the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to fire. The risks of injury due to fire addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in or adjacent to the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to fire. The risks of injury due to fire addressed in this Code are those caused by— \n OS1.1– fire or explosion occurring \n OS1.2– fire or explosion impacting areas beyond its point of origin \n OS1.3– collapse of physical elements due to a fire or explosion \n OS1.4– fire safety systems failing to function as expected \n OS1.5– persons being delayed in or impeded from moving to a safe place during a fire emergency" },
                    
                    { "id" : "nbc.objective.OS2",
                     "key" : "OS2",
                     "title" : "Structural Safety",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in or adjacent to the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to structural failure. The risks of injury due to structural failure addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in or adjacent to the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to structural failure. The risks of injury due to structural failure addressed in this Code are those caused by— \n OS2.1– loads bearing on the [REF:term:bldng:building] elements that exceed their [REF:term:ldbrng:loadbearing] capacity \n OS2.2– loads bearing on the [REF:term:bldng:building] that exceed the [REF:term:ldbrng:loadbearing] properties of the supporting medium \n OS2.3– damage to or deterioration of [REF:term:bldng:building] elements \n OS2.4– vibration or deflection of [REF:term:bldng:building] elements \n OS2.5– instability of the [REF:term:bldng:building] or part thereof \n OS2.6– collapse of the [REF:term:xcvtn:excavation]" },
                    
                    { "id" : "nbc.objective.OS3",
                     "key" : "OS3",
                     "title" : "Safety in Use",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in or adjacent to the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to hazards. The risks of injury due to hazards addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in or adjacent to the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to hazards. The risks of injury due to hazards addressed in this Code are those caused by— \n OS3.1– tripping, slipping, falling, contact, drowning or collision \n OS3.2– contact with hot surfaces or substances \n OS3.3– contact with energized equipment \n OS3.4– exposure to hazardous substances \n OS3.5– exposure to high levels of sound from fire alarm systems 41 \n OS3.6– persons becoming trapped in confined spaces \n OS3.7– persons being delayed in or impeded from moving to a safe place during an emergency (see [REF:internal:nbc.divA.part2.appendix.appnote2:short] )" },
                    
                    { "id" : "nbc.objective.OS4",
                     "key" : "OS4",
                     "title" : "Resistance to Unwanted Entry",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to the [REF:term:bldng:building's] low level of resistance to unwanted entry (see [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent2:long] for application limitation). The risks of injury due to unwanted entry addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of injury due to the [REF:term:bldng:building's] low level of resistance to unwanted entry (see [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent2:long] for application limitation). The risks of injury due to unwanted entry addressed in this Code are those caused by— \n OS4.1– intruders being able to force their way through locked doors or windows \n OS4.2– occupants being unable to identify potential intruders as such" },
                    
                    { "id" : "nbc.objective.OS5",
                     "key" : "OS5",
                     "title" : "Safety at Construction and Demolition Sites",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the construction or demolition of the [REF:term:bldng:building] , the public adjacent to a construction or demolition site will be exposed to an unacceptable risk of injury due to hazards. The risks of injury due to construction and demolition hazards addressed in this Code are those caused by—" } ] },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the construction or demolition of the [REF:term:bldng:building] , the public adjacent to a construction or demolition site will be exposed to an unacceptable risk of injury due to hazards. The risks of injury due to construction and demolition hazards addressed in this Code are those caused by— \n OS5.1– objects projected onto [REF:term:pblc-w:public ways]\n OS5.2– vehicular accidents on [REF:term:pblc-w:public ways]\n OS5.3– damage to or obstruction of [REF:term:pblc-w:public ways]\n OS5.4– water accumulated in [REF:term:xcvtn:excavations]\n OS5.5– entry into the site \n OS5.6– exposure to hazardous substances and activities \n OS5.7– loads bearing on a covered way that exceed its [REF:term:ldbrng:loadbearing] capacity \n OS5.8– collapse of the [REF:term:xcvtn:excavation]\n OS5.9– persons being delayed in or impeded from moving to a safe place during an emergency (see [REF:internal:nbc.divA.part2.appendix.appnote2:short] )" } ] },
                  
                  { "id" : "nbc.objective.OH",
                   "key" : "OH",
@@ -8519,17 +8488,17 @@
                    { "id" : "nbc.objective.OH1",
                     "key" : "OH1",
                     "title" : "Indoor Conditions",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of illness due to indoor conditions. The risks of illness due to indoor conditions addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of illness due to indoor conditions. The risks of illness due to indoor conditions addressed in this Code are those caused by— \n OH1.1– inadequate indoor air quality \n OH1.2– inadequate thermal comfort \n OH1.3– contact with moisture" },
                    
                    { "id" : "nbc.objective.OH2",
                     "key" : "OH2",
                     "title" : "Sanitation",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of illness due to unsanitary conditions. The risks of illness due to unsanitary conditions addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of illness due to unsanitary conditions. The risks of illness due to unsanitary conditions addressed in this Code are those caused by— \n OH2.1– exposure to human or domestic waste \n OH2.2– consumption of contaminated water \n OH2.3– inadequate facilities for personal hygiene \n OH2.4– contact with contaminated surfaces \n OH2.5– contact with vermin and insects" },
                    
                    { "id" : "nbc.objective.OH3",
                     "key" : "OH3",
                     "title" : "Noise Protection",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of illness due to high levels of sound originating in adjacent spaces in the [REF:term:bldng:building] (see [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent3:long] for application limitation). The risks of illness due to high levels of sound addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , a person in the [REF:term:bldng:building] will be exposed to an unacceptable risk of illness due to high levels of sound originating in adjacent spaces in the [REF:term:bldng:building] (see [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent3:long] for application limitation). The risks of illness due to high levels of sound addressed in this Code are those caused by— \n OH3.1– exposure to airborne sound transmitted through assemblies separating [REF:term:dwllng-n:dwelling units] from adjacent spaces in the [REF:term:bldng:building]" },
                    
                    { "id" : "nbc.objective.OH4",
                     "key" : "OH4",
@@ -8549,8 +8518,9 @@
                   [ 
                    { "id" : "nbc.objective.OA1",
                     "key" : "OA1",
+                    "source" : "bc",
                     "title" : "Accessible Path of Travel",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , persons with disabilities will be unacceptably impeded from accessing the [REF:term:bldng:building] or circulating within it (see [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent5:long] for application limitations)." },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , [REF:term:bc-prsn-wth-dsblts:persons with disabilities] will be unacceptably impeded from accessing the [REF:term:bldng:building] or circulating within it (see [REF:internal:nbc.divA.part2.sect1.subsect1.art2.sent5:long] for application limitations)." },
                    
                    { "id" : "nbc.objective.OA2",
                     "key" : "OA2",
@@ -8566,39 +8536,39 @@
                    { "id" : "nbc.objective.OP1",
                     "key" : "OP1",
                     "title" : "Fire Protection of the Building",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of its design or construction, the [REF:term:bldng:building] will be exposed to an unacceptable risk of damage due to fire. The risks of damage due to fire addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of its design or construction, the [REF:term:bldng:building] will be exposed to an unacceptable risk of damage due to fire. The risks of damage due to fire addressed in this Code are those caused by— \n OP1.1– fire or explosion occurring \n OP1.2– fire or explosion impacting areas beyond its point of origin \n OP1.3– collapse of physical elements due to a fire or explosion \n OP1.4– fire safety systems failing to function as expected" },
                    
                    { "id" : "nbc.objective.OP2",
                     "key" : "OP2",
                     "title" : "Structural Sufficiency of the Building",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of its design or construction, the [REF:term:bldng:building] or part thereof will be exposed to an unacceptable risk of damage or loss of use due to structural failure or lack of structural serviceability. The risks of damage and of loss of use due to structural failure or lack of structural serviceability addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of its design or construction, the [REF:term:bldng:building] or part thereof will be exposed to an unacceptable risk of damage or loss of use due to structural failure or lack of structural serviceability. The risks of damage and of loss of use due to structural failure or lack of structural serviceability addressed in this Code are those caused by— \n OP2.1– loads bearing on the [REF:term:bldng:building] elements that exceed their [REF:term:ldbrng:loadbearing] capacity \n OP2.2– loads bearing on the [REF:term:bldng:building] that exceed the [REF:term:ldbrng:loadbearing] properties of the supporting medium \n OP2.3– damage to or deterioration of [REF:term:bldng:building] elements \n OP2.4– vibration or deflection of [REF:term:bldng:building] elements \n OP2.5– instability of the [REF:term:bldng:building] or part thereof \n OP2.6– instability or movement of the supporting medium" },
                    
                    { "id" : "nbc.objective.OP3",
                     "key" : "OP3",
                     "title" : "Protection of Adjacent Buildings from Fire",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , adjacent [REF:term:bldng:buildings] will be exposed to an unacceptable risk of damage due to fire. The risks of damage to adjacent [REF:term:bldng:buildings] due to fire addressed in this Code are those caused by—" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design or construction of the [REF:term:bldng:building] , adjacent [REF:term:bldng:buildings] will be exposed to an unacceptable risk of damage due to fire. The risks of damage to adjacent [REF:term:bldng:buildings] due to fire addressed in this Code are those caused by— \n OP3.1– fire or explosion impacting areas beyond the [REF:term:bldng:building] of origin" },
                    
                    { "id" : "nbc.objective.OP4",
                     "key" : "OP4",
                     "title" : "Protection of Adjacent Buildings from Structural Damage",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design, construction or demolition of the [REF:term:bldng:building] , adjacent [REF:term:bldng:buildings] will be exposed to an unacceptable risk of structural damage. The risks of structural damage to adjacent [REF:term:bldng:buildings] addressed in this Code are those caused by—" } ] },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design, construction or demolition of the [REF:term:bldng:building] , adjacent [REF:term:bldng:buildings] will be exposed to an unacceptable risk of structural damage. The risks of structural damage to adjacent [REF:term:bldng:buildings] addressed in this Code are those caused by— \n OP4.1– settlement of the medium supporting adjacent [REF:term:bldng:buildings]\n OP4.2– collapse of the building or portion thereof onto adjacent [REF:term:bldng:buildings]\n OP4.3– impact of the building on adjacent [REF:term:bldng:buildings]\n OP4.4– collapse of the excavation" } ] },
                  
                  { "id" : "nbc.objective.OE",
                   "key" : "OE",
                   "source" : "bc",
                   "title" : "Environment",
-                  "definition" : "An objective of this Code is to limit the probability that, as a result of the design, construction or renovation of the [REF:term:bldng:building] or of the plumbing system, the environment will be affected in an unacceptable manner.",
+                  "definition" : "An objective of this Code is to limit the probability that, as a result of the design, construction or renovation of the [REF:term:bldng:building] or of the [REF:term:plmbng-t:plumbing system] , the environment will be affected in an unacceptable manner.",
                   "sub_objectives" : 
                   [ 
                    { "id" : "nbc.objective.OE1",
                     "key" : "OE1",
                     "title" : "Energy Efficiency and Water Use",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design, construction or renovation of the [REF:term:bldng:building] , the use of energy will be inefficient or the use of water will be excessive. The risks of inefficient energy use or excessive water use addressed in this Code are those caused by –" },
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of the design, construction or renovation of the [REF:term:bldng:building] , the use of energy will be inefficient or the use of water will be excessive. The risks of inefficient energy use or excessive water use addressed in this Code are those caused by – \n OE1.1– inefficient energy performance of [REF:term:bldng:buildings] or [REF:term:bldng:building] components" },
                    
                    { "id" : "nbc.objective.OE2",
                     "key" : "OE2",
                     "title" : "Greenhouse Gases",
-                    "definition" : "An objective of this Code is to limit the probability that, as a result of design and construction of the [REF:term:bldng:building] , including the [REF:term:bldng:building's] systems, and the energy consumed in the operation of those systems, the production of greenhouse gases will be excessive. The risks of excessive greenhouse gas emissions addressed in this Code are those caused by-" } ] } ] } ] } ] } ] } ],
+                    "definition" : "An objective of this Code is to limit the probability that, as a result of design and construction of the [REF:term:bldng:building] , including the [REF:term:bldng:building's] systems, and the energy consumed in the operation of those systems, the production of greenhouse gases will be excessive. The risks of excessive greenhouse gas emissions addressed in this Code are those caused by- \n OE2.1– excessive emissions as a result of the design and construction of the [REF:term:bldng:building] , including the [REF:term:bldng:building’s] systems, and the energy consumed in the operation of those systems" } ] } ] } ] } ] } ] } ],
         "appendix" : 
         { "id" : "nbc.divA.part2.appendix",
          "type" : "part_appendix",
@@ -8642,7 +8612,7 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divA.part2.appendix.appnote2.div2.para1",
-               "content" : "Where the term \"the building\" is used in the wording of the objectives, it refers to the building for which compliance with the National Building Code is being assessed." } ] },
+               "content" : "Where the term \"the building\" is used in the wording of the objectives, it refers to the building for which compliance with the British Columbia Building Code is being assessed." } ] },
             
             { "id" : "nbc.divA.part2.appendix.appnote2.div3",
              "type" : "note_division",
@@ -8827,7 +8797,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "The objectives of this Code are achieved by measures, such as those described in the acceptable solutions in Division B, that are intended to allow the [REF:term:bldng:building] or its elements to perform the following functions (see [REF:internal:nbc.divA.part3.appendix.appnote1:short] ):\n<bold>F01<\/bold>        To minimize the risk of accidental ignition.\n<bold>F02<\/bold>        To limit the severity and effects of fire or explosions.\n<bold>F03<\/bold>        To retard the effects of fire on areas beyond its point of origin.\n<bold>F04<\/bold>        To retard failure or collapse due to the effects of fire.\n<bold>F05<\/bold>        To retard the effects of fire on emergency egress facilities.\n<bold>F06<\/bold>        To retard the effects of fire on facilities for notification, suppression and emergency response.\n<bold>F10<\/bold>        To facilitate the timely movement of persons to a safe place in an emergency.\n<bold>F11<\/bold>        To notify persons, in a timely manner, of the need to take action in an emergency.\n<bold>F12<\/bold>        To facilitate emergency response.\n<bold>F13<\/bold>        To notify emergency responders, in a timely manner, of the need to take action in an emergency.\n<bold>F20<\/bold>        To support and withstand expected loads and forces.\n<bold>F21<\/bold>        To limit or accommodate dimensional change.\n<bold>F22<\/bold>        To limit movement under expected loads and forces.\n<bold>F23<\/bold>        To maintain equipment in place during structural movement.\n<bold>F30<\/bold>        To minimize the risk of injury to persons as a result of tripping, slipping, falling, contact, drowning or collision.\n<bold>F31<\/bold>        To minimize the risk of injury to persons as a result of contact with hot surfaces or substances.\n<bold>F32<\/bold>        To minimize the risk of injury to persons as a result of contact with energized equipment.\n<bold>F33<\/bold>        To limit the level of sound of a fire alarm system.\n<bold>F34<\/bold>        To resist or discourage unwanted access or entry.\n<bold>F35<\/bold>        To facilitate the identification of potential intruders.\n<bold>F36<\/bold>        To minimize the risk that persons will be trapped in confined spaces.\n<bold>F40<\/bold>        To limit the level of contaminants.\n<bold>F41<\/bold>        To minimize the risk of generation of contaminants.\n<bold>F42<\/bold>        To resist the entry of vermin and insects.\n<bold>F43<\/bold>        To minimize the risk of release of hazardous substances.\n<bold>F44<\/bold>        To limit the spread of hazardous substances beyond their point of release.\n<bold>F46<\/bold>        To minimize the risk of contamination of potable water.\n<bold>F50<\/bold>        To provide air suitable for breathing.\n<bold>F51<\/bold>        To maintain appropriate air and surface temperatures.\n<bold>F52<\/bold>        To maintain appropriate relative humidity.\n<bold>F53<\/bold>        To maintain appropriate indoor\/outdoor air pressure differences.\n<bold>F54<\/bold>        To limit drafts.\n<bold>F55<\/bold>        To resist the transfer of air through environmental separators.\n<bold>F56<\/bold>        To limit the transmission of airborne sound into a dwelling unit from spaces elsewhere in the building.\n<bold>F60<\/bold>        To control the accumulation and pressure of water on and in the ground.\n<bold>F61<\/bold>        To resist the ingress of precipitation, water or moisture from the exterior or from the ground.\n<bold>F62<\/bold>        To facilitate the dissipation of water and moisture from the building.\n<bold>F63<\/bold>        To limit moisture condensation.\n<bold>F70<\/bold>        To provide potable water.\n<bold>F71<\/bold>        To provide facilities for personal hygiene.\n<bold>F72<\/bold>        To provide facilities for the sanitary disposal of human and domestic wastes.\n<bold>F73<\/bold>        To facilitate access to and circulation in the building and its facilities by persons with disabilities.\n<bold>F74<\/bold>        To facilitate the use of the building's facilities by persons with disabilities.\n<bold>F74a<\/bold>      To minimize obstacles for future modification to provide access.\n<bold>F80<\/bold>        To resist deterioration resulting from expected service conditions.\n<bold>F81<\/bold>        To minimize the risk of malfunction, interference, damage, tampering, lack of use or misuse.\n<bold>F82<\/bold>        To minimize the risk of inadequate performance due to improper maintenance or lack of maintenance.\n<bold>F90<\/bold>        To limit the amount of uncontrolled air leakage through the building envelope.\n<bold>F91<\/bold>        To limit the amount of uncontrolled air leakage through system components.\n<bold>F92<\/bold>        To limit the amount of uncontrolled thermal transfer through the building envelope.\n<bold>F93<\/bold>        To limit the amount of uncontrolled thermal transfer through system components.\n<bold>F95<\/bold>        To limit the unnecessary demand and\/or consumption of energy for heating and cooling.\n<bold>F96<\/bold>        To limit the unnecessary demand and\/or consumption of energy for service water heating.\n<bold>F98<\/bold>        To limit the inefficiency of equipment.\n<bold>F99<\/bold>        To limit the inefficiency of systems.\n<bold>F100<\/bold>      To limit the unnecessary rejection of reusable waste energy.\n<bold>F100a<\/bold>    To limit excessive emission of greenhouse gases into the environment." } ] } ] } ] } ],
+                "text" : "The objectives of this Code are achieved by measures, such as those described in the acceptable solutions in Division B, that are intended to allow the [REF:term:bldng:building] or its elements to perform the following functions (see [REF:internal:nbc.divA.part3.appendix.appnote1:short] ):\n<bold>F01<\/bold>        To minimize the risk of accidental ignition.\n<bold>F02<\/bold>        To limit the severity and effects of fire or explosions.\n<bold>F03<\/bold>        To retard the effects of fire on areas beyond its point of origin.\n<bold>F04<\/bold>        To retard failure or collapse due to the effects of fire.\n<bold>F05<\/bold>        To retard the effects of fire on emergency egress facilities.\n<bold>F06<\/bold>        To retard the effects of fire on facilities for notification, suppression and emergency response.\n<bold>F10<\/bold>        To facilitate the timely movement of persons to a safe place in an emergency.\n<bold>F11<\/bold>        To notify persons, in a timely manner, of the need to take action in an emergency.\n<bold>F12<\/bold>        To facilitate emergency response.\n<bold>F13<\/bold>        To notify emergency responders, in a timely manner, of the need to take action in an emergency.\n<bold>F20<\/bold>        To support and withstand expected loads and forces.\n<bold>F21<\/bold>        To limit or accommodate dimensional change.\n<bold>F22<\/bold>        To limit movement under expected loads and forces.\n<bold>F23<\/bold>        To maintain equipment in place during structural movement.\n<bold>F30<\/bold>        To minimize the risk of injury to persons as a result of tripping, slipping, falling, contact, drowning or collision.\n<bold>F31<\/bold>        To minimize the risk of injury to persons as a result of contact with hot surfaces or substances.\n<bold>F32<\/bold>        To minimize the risk of injury to persons as a result of contact with energized equipment.\n<bold>F33<\/bold>        To limit the level of sound of a fire alarm system.\n<bold>F34<\/bold>        To resist or discourage unwanted access or entry.\n<bold>F35<\/bold>        To facilitate the identification of potential intruders.\n<bold>F36<\/bold>        To minimize the risk that persons will be trapped in confined spaces.\n<bold>F40<\/bold>        To limit the level of contaminants.\n<bold>F41<\/bold>        To minimize the risk of generation of contaminants.\n<bold>F42<\/bold>        To resist the entry of vermin and insects.\n<bold>F43<\/bold>        To minimize the risk of release of hazardous substances.\n<bold>F44<\/bold>        To limit the spread of hazardous substances beyond their point of release.\n<bold>F46<\/bold>        To minimize the risk of contamination of potable water.\n<bold>F50<\/bold>        To provide air suitable for breathing.\n<bold>F51<\/bold>        To maintain appropriate air and surface temperatures.\n<bold>F52<\/bold>        To maintain appropriate relative humidity.\n<bold>F53<\/bold>        To maintain appropriate indoor\/outdoor air pressure differences.\n<bold>F54<\/bold>        To limit drafts.\n<bold>F55<\/bold>        To resist the transfer of air through environmental separators.\n<bold>F56<\/bold>        To limit the transmission of airborne sound into a [REF:term:dwllng-n:dwelling unit ] from spaces elsewhere in the [REF:term:bldng:building] (see [REF:internal:nbc.divA.part3.sect1.subsect1.art2.sent2:long:Sentence 3.1.1.2.(2)] for application limitation).\n<bold>F60<\/bold>        To control the accumulation and pressure of water on and in the ground.\n<bold>F61<\/bold>        To resist the ingress of precipitation, water or moisture from the exterior or from the ground.\n<bold>F62<\/bold>        To facilitate the dissipation of water and moisture from the [REF:term:bldng:building] .\n<bold>F63<\/bold>        To limit moisture condensation.\n<bold>F70<\/bold>        To provide potable water.\n<bold>F71<\/bold>        To provide facilities for personal hygiene.\n<bold>F72<\/bold>        To provide facilities for the sanitary disposal of human and domestic wastes.\n<bold>F73<\/bold>        To facilitate [REF:term:bc-cc-t-ccbl:access] to and circulation in the [REF:term:bldng:building] and its facilities by [REF:term:bc-prsn-wth-dsblts:persons with disabilities] (see [REF:internal:nbc.divA.part3.sect1.subsect1.art2.sent3:long:Sentence 3.1.1.2.(3)] for application limitation).\n<bold>F74<\/bold>        To facilitate the use of the [REF:term:bldng:building's] facilities by [REF:term:bc-prsn-wth-dsblts:persons with disabilities] (see [REF:internal:nbc.divA.part3.sect1.subsect1.art2.sent3:long:Sentence 3.1.1.2.(3)] for application limitation).\n<bold>F75<\/bold>      To minimize obstacles for future modification to provide [REF:term:bc-cc-t-ccbl:access] .\n<bold>F80<\/bold>        To resist deterioration resulting from expected service conditions.\n<bold>F81<\/bold>        To minimize the risk of malfunction, interference, damage, tampering, lack of use or misuse.\n<bold>F82<\/bold>        To minimize the risk of inadequate performance due to improper maintenance or lack of maintenance.\n<bold>F90<\/bold>        To limit the amount of uncontrolled air leakage through the [REF:term:bldng:building] envelope.\n<bold>F91<\/bold>        To limit the amount of uncontrolled air leakage through system components.\n<bold>F92<\/bold>        To limit the amount of uncontrolled thermal transfer through the [REF:term:bldng:building] envelope.\n<bold>F93<\/bold>        To limit the amount of uncontrolled thermal transfer through system components.\n<bold>F95<\/bold>        To limit the unnecessary demand and\/or consumption of energy for heating and cooling.\n<bold>F96<\/bold>        To limit the unnecessary demand and\/or consumption of energy for service water heating.\n<bold>F98<\/bold>        To limit the inefficiency of equipment.\n<bold>F99<\/bold>        To limit the inefficiency of systems.\n<bold>F100<\/bold>      To limit the unnecessary rejection of reusable waste energy.\n<bold>F101<\/bold>    To limit excessive emission of greenhouse gases into the environment." } ] } ] } ] } ],
         "appendix" : 
         { "id" : "nbc.divA.part3.appendix",
          "type" : "part_appendix",
@@ -9372,7 +9342,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]\n[REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number:6.3.2.14.(2)]\n[REF:internal:nbc.divB.part6.appendix.appnote9:number]" } ] } ] },
+                         "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]\n[REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number:6.3.2.14.(2)]\n[REF:internal:nbc.divB.part6.appendix.appnote9:number:A-6.3.1.5.]" } ] } ] },
                     
                     { "type" : "revision",
                      "revision_type" : "amendment",
@@ -10010,7 +9980,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.appendix.appnote223:number]  [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3:long]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.appendix.appnote223:number]\n[REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.example1.table1:number:Table A-9.36.2.4.(1)-D]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row29",
                    "type" : "body_row",
@@ -10034,7 +10004,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art15.sent9:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art16.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]\n[REF:internal:nbc.divB.part6.sect3.subsect2.art15.sent9:number:6.3.2.15.(9)]\n[REF:internal:nbc.divB.part6.sect3.subsect2.art16.sent1:number:6.3.2.16.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row30",
                    "type" : "body_row",
@@ -10082,7 +10052,31 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent2:number]  [REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent3:number]  [REF:internal:nbc.divB.part6.sect3.subsect2.art2.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent2:number:6.3.1.1.(2)]\n[REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent3:number:6.3.1.1.(3)]\n[REF:internal:nbc.divB.part6.sect3.subsect2.art2.sent1:number:6.3.2.2.(1)]" } ] } ] },
+                  
+                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row31a",
+                   "type" : "body_row",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "ASHRAE" } ] },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "ANSI\/ASHRAE\/IES 90.1-2019" } ] },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Energy Standard for Buildings Except Low-Rise Residential Buildings" } ] },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divB.part10.sect2.subsect2.art1.sent1:number:10.2.2.1.(1)]\n[REF:internal:nbc.divB.part10.appendix.appnote2:number:A-10.2.2.2.]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row32",
                    "type" : "body_row",
@@ -10106,7 +10100,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect5.art4.sent8:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect5.art4.sent8:number:9.36.5.4.(8)]\n[REF:internal:nbc.divBV2.part9.sect36.subsect6.art4.sent1:number:9.36.6.4.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row33",
                    "type" : "body_row",
@@ -10158,7 +10152,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect3.art1.sent3:number]  [REF:internal:nbc.divBV2.part9.appendix.appnote116:number]" } ],
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect23.subsect3.art1.sent3:number:9.23.3.1.(3)]\n[REF:internal:nbc.divBV2.part9.appendix.appnote116:short:A-9.23.3.1.(3)]" } ],
                      "rowsep" : "1" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row35",
@@ -10186,7 +10180,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part3.sect2.subsect6.art7.sent2:number]  [REF:internal:nbc.divB.part3.sect5.subsect2.art1.sent1:number]  [REF:internal:nbc.divB.part3.sect5.subsect2.art1.sent2:number]  [REF:internal:nbc.divB.part3.sect5.subsect2.art1.sent3:number]  [REF:internal:nbc.divB.part3.sect5.subsect4.art1.sent2:number]  [REF:internal:nbc.divB.part3.sect5.subsect4.art2.sent1:number]  [REF:internal:nbc.divB.part3.appendix.appnote169:number]  [REF:internal:nbc.divB.part4.sect1.subsect5.art11.table1:long]  [REF:internal:nbc.divB.part4.sect1.subsect8.art18.table1:long]" } ],
+                       "value" : "[REF:internal:nbc.divB.part3.sect5.subsect2.art1.sent3:number:3.5.2.1.(3)]\n[REF:internal:nbc.divB.part3.sect5.subsect4.art1.sent2:number:3.5.4.1.(2)]\n[REF:internal:nbc.divB.part3.sect5.subsect4.art2.sent1:number:3.5.4.2.(1)]\n[REF:internal:nbc.divB.part3.sect8.subsect3.art7.sent1:number:3.8.3.7.(1)]" } ],
                      "rowsep" : "1" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row36",
@@ -10211,7 +10205,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect20.subsect16.art1.table1:long]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect20.subsect16.art1.table1:long]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row37",
                    "type" : "body_row",
@@ -10235,7 +10229,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect20.subsect16.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect2.art4.sent2:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect20.subsect16.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect23.subsect2.art4.sent2:number:9.23.2.4.(2)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row38",
                    "type" : "body_row",
@@ -10259,7 +10253,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number:4.2.3.8.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row39",
                    "type" : "body_row",
@@ -10283,7 +10277,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number:4.2.3.8.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row40",
                    "type" : "body_row",
@@ -10331,7 +10325,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect3.subsect3.art2.sent1:number]  [REF:internal:nbc.divBV2.part9.sect23.subsect2.art4.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect3.subsect3.art2.sent1:number:9.3.3.2.(1)]\n[REF:internal:nbc.divBV2.part9.sect23.subsect2.art4.sent1:number:9.23.2.4.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row42",
                    "type" : "body_row",
@@ -10355,7 +10349,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect3.subsect3.art2.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect3.subsect3.art2.sent1:number:9.3.3.2.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row43",
                    "type" : "body_row",
@@ -10379,7 +10373,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number:4.2.3.8.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row44",
                    "type" : "body_row",
@@ -10403,7 +10397,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part4.sect2.subsect3.art8.sent1:number:4.2.3.8.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row45",
                    "type" : "body_row",
@@ -10427,7 +10421,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect14.subsect3.art1.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect14.subsect3.art1.sent1:number:9.14.3.1.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row46",
                    "type" : "body_row",
@@ -10451,7 +10445,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect21.subsect3.art4.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect21.subsect3.art4.sent1:number:9.21.3.4.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row47",
                    "type" : "body_row",
@@ -10475,7 +10469,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect20.subsect2.art1.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect20.subsect2.art1.sent1:number:9.20.2.1.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row48",
                    "type" : "body_row",
@@ -10499,7 +10493,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect20.subsect2.art1.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]\n[REF:internal:nbc.divBV2.part9.sect20.subsect2.art1.sent1:number:9.20.2.1.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row49",
                    "type" : "body_row",
@@ -10523,7 +10517,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art2.sent1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art2.sent1:number:9.36.2.2.(1)]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row50",
                    "type" : "body_row",
@@ -684765,7 +684759,7 @@
    { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row8",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "ACGIH28th EditionIndustrial Ventilation: A Manual of Recommended Practice for Design[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]\n[REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number:6.3.2.14.(2)]\n[REF:internal:nbc.divB.part6.appendix.appnote9:number]" },
+    "content" : "ACGIH28th EditionIndustrial Ventilation: A Manual of Recommended Practice for Design[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]\n[REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:number:6.3.2.14.(2)]\n[REF:internal:nbc.divB.part6.appendix.appnote9:number:A-6.3.1.5.]" },
    
    { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row8",
     "type" : "revision",
