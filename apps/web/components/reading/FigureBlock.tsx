@@ -223,17 +223,6 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({
 
   return (
     <figure className="figure-block" id={figure.id} data-node-id={figure.id}>
-      {!hideLabel && <div className="figure-block__number">{figureLabel}</div>}
-      {figure.title && (
-        <div className="figure-block__title">
-          {parseTextWithMarkers(figure.title, [], interactive, [], [], renderContext)}
-        </div>
-      )}
-      {formingPartText && (
-        <div className="figure-block__forming-part">
-          {parseTextWithMarkers(formingPartText, [], interactive, [], [], renderContext)}
-        </div>
-      )}
       {imagePath && (
         <img
           src={imagePath}
@@ -246,6 +235,17 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({
         <figcaption className="figure-block__caption">
           {parseTextWithMarkers(figure.caption, [], interactive, [], [], renderContext)}
         </figcaption>
+      )}
+      {!hideLabel && <div className="figure-block__number">{figureLabel}</div>}
+      {figure.title && (
+        <div className="figure-block__title">
+          {parseTextWithMarkers(figure.title, [], interactive, [], [], renderContext)}
+        </div>
+      )}
+      {formingPartText && (
+        <div className="figure-block__forming-part">
+          {parseTextWithMarkers(formingPartText, [], interactive, [], [], renderContext)}
+        </div>
       )}
       {figureNotes.length > 0 && (
         <div className="figure-block__notes">

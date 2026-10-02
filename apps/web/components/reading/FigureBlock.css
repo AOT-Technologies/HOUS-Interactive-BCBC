@@ -16,12 +16,16 @@
   font: var(--typography-bold-medium, 700 1.05rem/1.4 'BCSans', sans-serif);
   color: var(--typography-color-primary, #313132);
   margin-bottom: 0.2rem;
+  text-align: left;
+  width: 100%;
 }
 
 .figure-block__title {
   font: var(--typography-bold-medium, 700 1rem/1.45 'BCSans', sans-serif);
   color: var(--typography-color-primary, #313132);
   margin-bottom: var(--layout-margin-small, 0.5rem);
+  text-align: left;
+  width: 100%;
 }
 
 .figure-block__forming-part {

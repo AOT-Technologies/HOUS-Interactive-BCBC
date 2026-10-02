@@ -1993,8 +1993,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
           <ReadingViewHeader pdfLabel={appendixPdfLabel} />
           <div className="reading-view__content">
             <div className="reading-view__appendix">
-              <PartTitle title={currentPartNode.title} />
               <h2 className="reading-view__appendix-heading">{appendixHeading}</h2>
+              <PartTitle title={currentPartNode.title} />
               {resolvedPartAppendix.introduction ? (
                 <p className="reading-view__appendix-introduction">
                   {parseTextWithMarkers(
