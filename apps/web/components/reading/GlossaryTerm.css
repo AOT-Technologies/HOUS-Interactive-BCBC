@@ -12,6 +12,11 @@
   position: relative;
 }
 
+/* Remove italics in app notes */
+.reading-view__appendix-note-content .glossary-term--interactive {
+  font-style: normal;
+}
+
 .glossary-term--interactive {
   cursor: pointer;
   /* Minimum 44x44px tap target */

@@ -43,6 +43,7 @@
 .objectivesList__title {
     font: var(--typography-bold-h5);
     color: var(--typography-color-primary);
+    font-size: 16px;
 }
 
 .objectivesList__definition,
