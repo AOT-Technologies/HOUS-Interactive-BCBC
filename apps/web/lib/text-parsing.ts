@@ -252,7 +252,8 @@ function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: 
 
       if (sameType) {
         // Verify the prior ref is in a list context (comma/or/and separated)
-        const trailingAfterLastRef = /\[REF:[^\]]+\]\s*(?:,\s*)?(?:(?:and|or)\s*)?$/i;
+        // Line breaks (from <lb/>) separate refs visually; they are not list separators.
+        const trailingAfterLastRef = /\[REF:[^\]]+\][^\S\n]*(?:,\s*)?(?:(?:and|or)\s*)?$/i;
         if (trailingAfterLastRef.test(precedingText)) {
           return displayText.slice(displayMatch[0].length);
         }
