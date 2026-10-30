@@ -25,6 +25,10 @@ HEALTH_URL="${HEALTH_URL:-http://127.0.0.1:9090/health}"
 LOG_FILE="${LOG_FILE:-/var/log/bcbc/deploy.log}"
 STATE_DIR="${STATE_DIR:-/var/lib/bcbc}"
 
+# Leave the caller's directory: the deploy user may not be able to read it
+# (e.g. sudo from /home/ubuntu), and git fails when it cannot stat the cwd.
+cd /
+
 # Always run as the deploy user (member of the docker group).
 if [[ $EUID -eq 0 && "$DEPLOY_USER" != "root" ]]; then
   exec runuser -u "$DEPLOY_USER" -- "$0" "$@"

@@ -37,8 +37,9 @@ Override the branch with `BRANCH=...` when running `setup-host.sh`.
 
 ## Prerequisites
 
-- Ubuntu 24.04 LTS (Debian and Amazon Linux also work), x86_64 or arm64. Docker is installed
-  from Docker's official apt repository (engine plus compose and buildx plugins).
+- **Ubuntu 24.04 LTS** (the scripts stop on any other OS), x86_64 or arm64. Docker comes from
+  Docker's official apt repository (engine plus compose and buildx plugins); nginx, certbot and
+  webhook come from Ubuntu's own repositories.
 - Instance with **≥ 4 GB RAM** recommended (t3.medium). The build runs on the host;
   `setup-host.sh` adds a 4 GB swap file on smaller instances.
 - ~20 GB disk for images and build cache.
@@ -48,10 +49,12 @@ Override the branch with `BRANCH=...` when running `setup-host.sh`.
 
 ## Setup (once per server)
 
-Copy this folder to the server (or clone the repo) and run, using `qa` or `prod`:
+Copy this folder to the server (FileZilla/scp, or clone the repo), then run as the `ubuntu`
+user, using `qa` or `prod`. Uploads via FileZilla/SFTP lose the execute bit, hence `chmod`:
 
 ```bash
 cd deploy/setup
+chmod +x *.sh
 sudo ./setup-host.sh qa
 sudo WEBHOOK_SECRET='<secret>' ./setup-webhook.sh
 sudo CERTBOT_EMAIL='you@aot-technologies.com' ./setup-nginx.sh qa

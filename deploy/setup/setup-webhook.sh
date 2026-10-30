@@ -5,10 +5,10 @@
 #   sudo WEBHOOK_SECRET=<github-webhook-secret> ./setup-webhook.sh
 #   sudo ./setup-webhook.sh          # prompts for the secret
 #
+# Ubuntu only (written for 24.04 LTS); webhook comes from Ubuntu's apt repo.
 # Run setup-host.sh first; branch and deploy user are read from /etc/bcbc/deploy.env.
 #
 # Optional overrides (environment variables):
-#   WEBHOOK_VERSION   release to download when not available via apt (default: 2.8.2)
 #   WEBHOOK_BIND      listen address (default: 127.0.0.1 - behind a reverse proxy;
 #                     use 0.0.0.0 only if an AWS ALB forwards straight to the port)
 #   WEBHOOK_PORT      listen port (default: 9000)
@@ -16,13 +16,15 @@
 set -Eeuo pipefail
 
 [[ $EUID -eq 0 ]] || { echo "Run as root (sudo)." >&2; exit 1; }
+if [[ "$(. /etc/os-release 2>/dev/null && echo "$ID")" != "ubuntu" ]]; then
+  echo "This script supports Ubuntu only (written for 24.04 LTS)." >&2; exit 1
+fi
 [[ -f /etc/bcbc/deploy.env ]] || { echo "/etc/bcbc/deploy.env not found - run setup-host.sh first." >&2; exit 1; }
 
 # shellcheck source=/dev/null
 source /etc/bcbc/deploy.env
 : "${BRANCH:?}" "${DEPLOY_USER:?}"
 
-WEBHOOK_VERSION="${WEBHOOK_VERSION:-2.8.2}"
 WEBHOOK_BIND="${WEBHOOK_BIND:-127.0.0.1}"
 WEBHOOK_PORT="${WEBHOOK_PORT:-9000}"
 HOOK_ID="${HOOK_ID:-redeploy-app}"
@@ -46,25 +48,11 @@ fi
 
 log "Installing webhook"
 if ! command -v webhook >/dev/null; then
-  if command -v apt-get >/dev/null; then
-    export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
-    apt-get update && apt-get install -y webhook
-    # The Debian package ships its own webhook.service; we use bcbc-webhook.service instead.
-    systemctl disable --now webhook.service 2>/dev/null || true
-  else
-    case "$(uname -m)" in
-      x86_64) ARCH=amd64 ;;
-      aarch64) ARCH=arm64 ;;
-      *) echo "Unsupported architecture: $(uname -m)" >&2; exit 1 ;;
-    esac
-    TMP="$(mktemp -d)"
-    trap 'rm -rf "$TMP"' EXIT
-    curl -fsSL -o "$TMP/webhook.tar.gz" \
-      "https://github.com/adnanh/webhook/releases/download/$WEBHOOK_VERSION/webhook-linux-$ARCH.tar.gz"
-    tar -xzf "$TMP/webhook.tar.gz" -C "$TMP"
-    install -m 0755 "$TMP/webhook-linux-$ARCH/webhook" /usr/local/bin/webhook
-  fi
+  export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
+  apt-get update && apt-get install -y webhook
 fi
+# The Ubuntu package ships its own webhook.service; we use bcbc-webhook.service instead.
+systemctl disable --now webhook.service 2>/dev/null || true
 WEBHOOK_BIN="$(command -v webhook)"
 "$WEBHOOK_BIN" -version
 
