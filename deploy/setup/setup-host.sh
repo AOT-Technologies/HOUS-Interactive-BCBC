@@ -3,6 +3,9 @@
 #
 #   sudo ./setup-host.sh <prod|qa>
 #
+# Written for Ubuntu 24.04 (Docker from Docker's official apt repo); Debian and
+# Amazon Linux (dnf/yum) also work.
+#
 # Installs git, Docker, the compose and buildx plugins, creates the deploy user,
 # installs the compose file and deploy script, and runs the first deploy.
 # There is no local checkout: docker compose builds the image straight from GitHub.
@@ -54,9 +57,22 @@ if command -v dnf >/dev/null; then
 elif command -v yum >/dev/null; then
   yum install -y git docker tar
 elif command -v apt-get >/dev/null; then
+  # No interactive prompts (Ubuntu's needrestart would otherwise stop the script).
+  export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
   apt-get update
-  apt-get install -y git curl tar
-  command -v docker >/dev/null || apt-get install -y docker.io
+  apt-get install -y ca-certificates curl git tar
+  if ! command -v docker >/dev/null; then
+    # Docker's official repo: current engine plus the compose and buildx plugins.
+    DISTRO_ID="$(. /etc/os-release && echo "$ID")"
+    CODENAME="$(. /etc/os-release && echo "$VERSION_CODENAME")"
+    install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL "https://download.docker.com/linux/$DISTRO_ID/gpg" -o /etc/apt/keyrings/docker.asc
+    chmod a+r /etc/apt/keyrings/docker.asc
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/$DISTRO_ID $CODENAME stable" \
+      > /etc/apt/sources.list.d/docker.list
+    apt-get update
+    apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  fi
 else
   echo "No supported package manager found (dnf/yum/apt-get)." >&2; exit 1
 fi

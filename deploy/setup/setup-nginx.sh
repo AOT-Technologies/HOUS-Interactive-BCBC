@@ -45,6 +45,7 @@ if command -v dnf >/dev/null; then
 elif command -v yum >/dev/null; then
   yum install -y nginx
 else
+  export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
   apt-get update && apt-get install -y nginx
   rm -f /etc/nginx/sites-enabled/default
 fi
