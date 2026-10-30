@@ -3,6 +3,7 @@
 #   https://<domain>/hooks/  -> GitHub webhook service on :9000
 #   https://<domain>/        -> app container published on :9090
 # and optionally obtain a Let's Encrypt certificate.
+# Ubuntu only (written for 24.04 LTS); nginx and certbot come from Ubuntu's apt repo.
 #   prod: buildingcode.aot-technologies.com
 #   qa:   qa.buildingcode.aot-technologies.com
 #
@@ -25,6 +26,9 @@ case "$ENV_NAME" in
 esac
 
 [[ $EUID -eq 0 ]] || { echo "Run as root (sudo)." >&2; exit 1; }
+if [[ "$(. /etc/os-release 2>/dev/null && echo "$ID")" != "ubuntu" ]]; then
+  echo "This script supports Ubuntu only (written for 24.04 LTS)." >&2; exit 1
+fi
 
 DOMAIN="${DOMAIN:-${PREFIX}buildingcode.aot-technologies.com}"
 ENABLE_TLS="${ENABLE_TLS:-1}"
@@ -40,15 +44,9 @@ if [[ "$ENABLE_TLS" == "1" && -z "${CERTBOT_EMAIL:-}" ]]; then
 fi
 
 log "Installing nginx"
-if command -v dnf >/dev/null; then
-  dnf install -y nginx
-elif command -v yum >/dev/null; then
-  yum install -y nginx
-else
-  export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
-  apt-get update && apt-get install -y nginx
-  rm -f /etc/nginx/sites-enabled/default
-fi
+export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
+apt-get update && apt-get install -y nginx
+rm -f /etc/nginx/sites-enabled/default
 
 log "Writing $CONF_FILE"
 cat > "$CONF_FILE" <<EOF
@@ -85,47 +83,12 @@ systemctl restart nginx
 
 if [[ "$ENABLE_TLS" == "1" ]]; then
   log "Obtaining Let's Encrypt certificate (DNS must already point here, port 80 open)"
-  if ! command -v certbot >/dev/null; then
-    if command -v apt-get >/dev/null; then
-      apt-get install -y certbot python3-certbot-nginx
-    elif ! dnf install -y certbot python3-certbot-nginx 2>/dev/null; then
-      # Not packaged on some Amazon Linux releases: use the EFF-recommended venv install.
-      dnf install -y python3 augeas-libs
-      python3 -m venv /opt/certbot
-      /opt/certbot/bin/pip install --quiet --upgrade pip certbot certbot-nginx
-      ln -sf /opt/certbot/bin/certbot /usr/local/bin/certbot
-    fi
-  fi
+  apt-get install -y certbot python3-certbot-nginx
 
   certbot --nginx --non-interactive --agree-tos --redirect -m "$CERTBOT_EMAIL" -d "$DOMAIN"
 
-  if systemctl list-unit-files certbot-renew.timer >/dev/null 2>&1 \
-     || systemctl list-unit-files certbot.timer >/dev/null 2>&1; then
-    systemctl enable --now certbot-renew.timer 2>/dev/null || systemctl enable --now certbot.timer
-  else
-    cat > /etc/systemd/system/certbot-renew.service <<'EOF'
-[Unit]
-Description=Renew Let's Encrypt certificates
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/certbot renew --quiet --deploy-hook "systemctl reload nginx"
-EOF
-    cat > /etc/systemd/system/certbot-renew.timer <<'EOF'
-[Unit]
-Description=Twice-daily Let's Encrypt renewal check
-
-[Timer]
-OnCalendar=*-*-* 00,12:00:00
-RandomizedDelaySec=1h
-Persistent=true
-
-[Install]
-WantedBy=timers.target
-EOF
-    systemctl daemon-reload
-    systemctl enable --now certbot-renew.timer
-  fi
+  # Ubuntu's certbot package ships certbot.timer (twice-daily renewal).
+  systemctl enable --now certbot.timer
 fi
 
 log "nginx ready"

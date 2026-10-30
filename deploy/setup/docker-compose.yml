@@ -23,7 +23,9 @@ services:
     environment:
       - NODE_ENV=production
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/health"]
+      # 127.0.0.1, not localhost: localhost resolves to ::1 in the image and the
+      # app's nginx listens on IPv4 only, so the check would always fail.
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/health"]
       interval: 30s
       timeout: 10s
       retries: 3
