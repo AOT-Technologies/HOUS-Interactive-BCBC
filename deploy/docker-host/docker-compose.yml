@@ -1,0 +1,30 @@
+# Server-side compose file: builds the image straight from GitHub, so the host
+# needs no checkout of the repository. Installed by setup-host.sh as
+# /opt/bcbc/docker-compose.yml and driven by bcbc-deploy.
+#
+# BuildKit clones the repo at BCBC_GIT_REF (a branch, tag or full commit SHA) and
+# builds the repo's Dockerfile from it. bcbc-deploy pins it to the commit SHA it
+# resolved, so the build matches exactly what was pushed.
+#
+# Manual build/run:
+#   docker compose -p bcbc -f /opt/bcbc/docker-compose.yml build
+#   BCBC_GIT_REF=develop docker compose -p bcbc -f /opt/bcbc/docker-compose.yml up -d --build
+
+services:
+  interactive-bcbc-app:
+    build:
+      context: ${BCBC_REPO_URL:-https://github.com/AOT-Technologies/HOUS-Interactive-BCBC.git}#${BCBC_GIT_REF:-main}
+      dockerfile: Dockerfile
+    image: bcbc-interactive-bcbc-app:latest
+    container_name: interactive-bcbc-app
+    ports:
+      - "127.0.0.1:9090:8080"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
