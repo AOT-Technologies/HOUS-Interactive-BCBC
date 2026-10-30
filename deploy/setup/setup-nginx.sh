@@ -51,7 +51,7 @@ fi
 
 log "Writing $CONF_FILE"
 cat > "$CONF_FILE" <<EOF
-# Managed by deploy/docker-host/setup-nginx.sh - re-run the script instead of editing.
+# Managed by deploy/setup/setup-nginx.sh - re-run the script instead of editing.
 
 server {
     listen 80;

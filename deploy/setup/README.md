@@ -49,7 +49,7 @@ Override the branch with `BRANCH=...` when running `setup-host.sh`.
 Copy this folder to the server (or clone the repo) and run, using `qa` or `prod`:
 
 ```bash
-cd deploy/docker-host
+cd deploy/setup
 sudo ./setup-host.sh qa
 sudo WEBHOOK_SECRET='<secret>' ./setup-webhook.sh
 sudo CERTBOT_EMAIL='you@aot-technologies.com' ./setup-nginx.sh qa
