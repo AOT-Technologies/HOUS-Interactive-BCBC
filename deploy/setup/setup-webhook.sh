@@ -47,6 +47,7 @@ fi
 log "Installing webhook"
 if ! command -v webhook >/dev/null; then
   if command -v apt-get >/dev/null; then
+    export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
     apt-get update && apt-get install -y webhook
     # The Debian package ships its own webhook.service; we use bcbc-webhook.service instead.
     systemctl disable --now webhook.service 2>/dev/null || true

@@ -1,6 +1,6 @@
 # Docker Compose deployment on EC2 (webhook redeploys)
 
-Runs the app with Docker Compose on an Amazon Linux EC2 host. The host keeps **no
+Runs the app with Docker Compose on an Ubuntu EC2 host. The host keeps **no
 checkout** of the repo: `docker-compose.yml` in this folder uses the GitHub repo as
 its build context, so Docker clones
 `https://github.com/AOT-Technologies/HOUS-Interactive-BCBC.git` (branch `main` by
@@ -37,12 +37,14 @@ Override the branch with `BRANCH=...` when running `setup-host.sh`.
 
 ## Prerequisites
 
-- Amazon Linux 2023 (AL2 and Debian/Ubuntu also work), x86_64 or arm64.
+- Ubuntu 24.04 LTS (Debian and Amazon Linux also work), x86_64 or arm64. Docker is installed
+  from Docker's official apt repository (engine plus compose and buildx plugins).
 - Instance with **≥ 4 GB RAM** recommended (t3.medium). The build runs on the host;
   `setup-host.sh` adds a 4 GB swap file on smaller instances.
 - ~20 GB disk for images and build cache.
 - A DNS A record for the environment's domain (table above) pointing at the instance.
 - Security group: inbound **80 and 443** open. Do **not** open 9090 or 9000.
+  (`ufw` is inactive on Ubuntu EC2 images by default; if you enable it, allow `Nginx Full` and SSH.)
 
 ## Setup (once per server)
 
