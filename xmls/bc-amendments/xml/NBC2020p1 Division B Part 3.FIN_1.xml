@@ -5700,7 +5700,9 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect1.art1.sent1" number="1">
-                        <text>This Section is concerned with the design and construction of <ref type="term" target="bldng">buildings</ref> and occupancies to make them accessible.</text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1120 Formatting 27d1d5e6a1 -->
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1121 Formatting 73bd78aa02 -->
+                        <text>This Section is concerned with the design and construction of <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="ccpnc">occupancies</ref> to make them <ref type="term" target="bc-cc-t-ccbl">accessible</ref>.</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -5717,7 +5719,8 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect1.art1.sent2" number="2">
-                        <text><ref type="term" target="bldng">Buildings</ref> and facilities required to be accessible in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect2" display-type="long"/> shall be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1122 Formatting 89d06328fb -->
+                        <text><ref type="term" target="bldng">Buildings</ref> and facilities required to be <ref type="term" target="bc-cc-t-ccbl">accessible</ref> in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect2" display-type="long"/> shall be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
                     </sentence>
                 </new-content>
             </replace>
@@ -5772,7 +5775,9 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art2.sent1" number="1">
-                        <text>Except for service entrances and entrances to <ref type="term" target="t">suites</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art3.sent2.clause12" display-type="long"/>, all pedestrian entrances to an accessible <ref type="term" target="tr">storey</ref> of a <ref type="term" target="bldng">building</ref> referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1" display-type="long"/> shall be accessible and shall connect to an accessible exterior path of travel complying with <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art5.sent1" display-type="long"/>.</text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1127 Formatting a6a4be4616 -->
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1128 Formatting c6c71320f5 -->
+                        <text>Except for service entrances and entrances to <ref type="term" target="t">suites</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art3.sent2.clause12" display-type="long"/>, all pedestrian entrances to an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> <ref type="term" target="tr">storey</ref> of a <ref type="term" target="bldng">building</ref> referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1" display-type="long"/> shall be <ref type="term" target="bc-cc-t-ccbl">accessible</ref> and shall connect to an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> exterior path of travel complying with <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art5.sent1" display-type="long"/>.</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -5789,7 +5794,8 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art2.sent2" number="2">
-                        <text>An accessible entrance required by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2.sent1" display-type="short"/> shall be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1129 Formatting cef5999e87 -->
+                        <text>An <ref type="term" target="bc-cc-t-ccbl">accessible</ref> entrance required by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2.sent1" display-type="short"/> shall be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
                     </sentence>
                 </new-content>
             </replace>
@@ -5806,7 +5812,8 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art2.sent3" number="3">
-                        <text>At an accessible entrance that includes more than one doorway, only one of the doorways is required to be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1130 Formatting 703185de55 -->
+                        <text>At an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> entrance that includes more than one doorway, only one of the doorways is required to be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
                     </sentence>
                 </new-content>
             </replace>
@@ -5823,7 +5830,8 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art2.sent4" number="4">
-                        <text>If a <ref type="term" target="wlkw">walkway</ref> or pedestrian bridge connects two accessible <ref type="term" target="tr">storeys</ref> in different <ref type="term" target="bldng">buildings</ref>, the path of travel from one <ref type="term" target="tr">storey</ref> to the other <ref type="term" target="tr">storey</ref> by means of the <ref type="term" target="wlkw">walkway</ref> or bridge shall be accessible.</text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1132 Formatting 8c96900de0 -->
+                        <text>If a <ref type="term" target="wlkw">walkway</ref> or pedestrian bridge connects two <ref type="term" target="bc-cc-t-ccbl">accessible</ref> <ref type="term" target="tr">storeys</ref> in different <ref type="term" target="bldng">buildings</ref>, the path of travel from one <ref type="term" target="tr">storey</ref> to the other <ref type="term" target="tr">storey</ref> by means of the <ref type="term" target="wlkw">walkway</ref> or bridge shall be <ref type="term" target="bc-cc-t-ccbl">accessible</ref>.</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -5857,7 +5865,12 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art3.sent1" number="1">
-                        <text>Except as permitted by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art3.sent2" display-type="short"/>, an accessible path of travel from the entrances required by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2.sent1" display-type="long"/> to be accessible shall be provided throughout the entrance <ref type="term" target="tr">storey</ref> and within all other normally occupied areas of <ref type="term" target="bldng">buildings</ref>. (See <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7" display-type="long"/> for additional requirements regarding <ref type="term" target="flr-r">floor areas</ref> which an accessible path of travel is required.)</text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1133 Incorrect Content 9612628812 -->
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1134 Incorrect Content b134e1a759 -->
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:7510 Formatting f22893813c -->
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:7511 Formatting 215b401dc0 -->
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:7512 Formatting 8d71e4b161 -->
+                        <text>Except as permitted by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art3.sent2" display-type="short"/>, an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel from the entrances required by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2.sent1" display-type="long"/> to be <ref type="term" target="bc-cc-t-ccbl">accessible</ref> shall be provided throughout all entrance <ref type="term" target="tr">stories</ref> and within all other normally occupied areas of the <ref type="term" target="bldng">building</ref>. (See <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7" display-type="long"/> for additional requirements regarding <ref type="term" target="flr-r">floor areas</ref> which an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel is required.)</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -5874,7 +5887,8 @@ each 25 females.</find>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2" number="2">
-                        <text>Access is not required</text>
+                        <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6712 Formatting 590585d95b -->
+                        <text><ref type="term" target="bc-cc-t-ccbl">Access</ref> is not required</text>
                         <clause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause1" letter="a">
                             <text>to <ref type="term" target="rvc-rm">service rooms</ref>,</text>
                         </clause>
@@ -5909,19 +5923,23 @@ each 25 females.</find>
                             </subclause>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause8" letter="h">
-                            <text>within a parking level with no accessible parking spaces,</text>
+                            <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1135 Formatting d27cab965c -->
+                            <text>within a parking level with no <ref type="term" target="bc-cc-t-ccbl">accessible</ref> parking spaces,</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause9" letter="i">
                             <text>within <ref type="term" target="hgh-hzrd">high-hazard industrial occupancies</ref>,</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause10" letter="j">
-                            <text>within portions of a <ref type="term" target="flr-r">floor area</ref> with fixed seats in an <ref type="term" target="mbl-ccpn">assembly occupancy</ref> where those portions are not part of the accessible path of travel to spaces designated for wheelchair use,</text>
+                            <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1136 Formatting 79df01345f -->
+                            <text>within portions of a <ref type="term" target="flr-r">floor area</ref> with fixed seats in an <ref type="term" target="mbl-ccpn">assembly occupancy</ref> where those portions are not part of the <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel to spaces designated for wheelchair use,</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause11" letter="k">
                             <text>within floor levels of a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> that are not at the same level as the entry level to the <ref type="term" target="t">suite</ref>,</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause12" letter="l">
-                            <text>within a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> that has not been designated by this Code or an <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> to be accessible or designed and constructed as an adaptable dwelling unit, or</text>
+                            <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1137 Formatting f82c7b77d0 -->
+                            <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1138 Formatting 7caeda7b62 -->
+                            <text>within a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> that has not been designated by this Code or an <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> to be <ref type="term" target="bc-cc-t-ccbl">accessible</ref> or designed and constructed as an <ref type="term" target="bc-dptbl-dwllng-nt">adaptable dwelling unit</ref>, or</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause13" letter="m">
                             <text>in a <ref type="term" target="bldng">building</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> that is not more than two <ref type="term" target="tr">storeys</ref> that contains multiple <ref type="term" target="dwllng-n">dwelling units</ref> and common interior space served by a common <ref type="term" target="bldng">building</ref> entrance, on a floor level that</text>
@@ -5935,7 +5953,8 @@ each 25 females.</find>
                                 <text>is not a <ref type="term" target="bldng">building</ref> entrance level, and</text>
                             </subclause>
                             <subclause xml:id="nbc.divB.part3.sect8.subsect2.art3.sent2.clause13.subclause4" number="4">
-                                <text>does not contain common facilities that are not also provided on an accessible level.</text>
+                                <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1139 Formatting 3976d864a1 -->
+                                <text>does not contain common facilities that are not also provided on an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> level.</text>
                             </subclause>
                         </clause>
                     </sentence>
@@ -5979,10 +5998,12 @@ each 25 females.</find>
                     <article xml:id="nbc.divB.part3.sect8.subsect2.art4" number="4">
                         <title>Access to Storeys Served by Escalators and Moving Walks</title>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art4.sent1" number="1">
-                            <text>In a <ref type="term" target="bldng">building</ref> in which a ramp, escalator or inclined moving walk provides access to any floor level, an interior <ref type="term" target="brrr-fr">accessible</ref> path of travel shall also be provided to that floor level. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote188" display-type="short"/>.)</text>
+                            <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1140 Incorrect Content d57b7a8583 -->
+                            <text>In a <ref type="term" target="bldng">building</ref> in which escalator or inclined moving walk provides access to any floor level, an interior <ref type="term" target="brrr-fr">accessible</ref> path of travel shall also be provided to that floor level. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote188" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art4.sent2" number="2">
-                            <text>The route from the ramp, escalator or inclined moving walk to the <ref type="term" target="brrr-fr">accessible</ref> path of travel that leads from floor to floor as required by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art4.sent1" display-type="short"/> shall be clearly indicated by appropriate signs.</text>
+                            <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1141 Incorrect Content ff91070275 -->
+                            <text>The route from escalator or inclined moving walk to the <ref type="term" target="brrr-fr">accessible</ref> path of travel that leads from floor to floor as required by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art4.sent1" display-type="short"/> shall be clearly indicated by appropriate signs.</text>
                         </sentence>
                     </article>
                 </new-content>
