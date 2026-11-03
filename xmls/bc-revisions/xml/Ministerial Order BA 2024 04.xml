@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Ministerial Order BA 2024 04 - Zero Carbon Step Code
+     
+     Effective: March 10, 2025
+     Revision 4 amends Zero Carbon Step Code to require new buildings to meet at least EL-1
+     
+     Uses snapshot-based revision history approach for date-based versioning.
+     Display content is derived from the latest revision (status="current").
+-->
+<bc-overlay
+  id="bc-mo-ba-2024-04"
+  version="1.0"
+  nbc-target-version="2020"
+  effective-date="2025-03-10"
+  >
+  
+  <metadata>
+    <title>Ministerial Order BA 2024 04 - Zero Carbon Step Code</title>
+    <description>Revision 4 amends Zero Carbon Step Code to require new buildings to meet at least EL-1 (Energy Level 1)</description>
+    <authority>BC Ministry of Housing - Building and Safety Standards Branch</authority>
+    <author>BC Building and Safety Standards Branch</author>
+    <source-document>Ministerial Order BA 2024 04</source-document>
+  </metadata>
+  
+  <amendments>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 1: Repeal and substitute Sentence 9.37.1.3.(1)         -->
+    <!-- Zero Carbon Step Code - GHG Emission Levels for Part 9 Buildings  -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-04-001" sequence="2000"
+               description="Repeal and substitute Sentence 9.37.1.3.(1) requiring buildings to conform to GHG Emission Levels EL-1, EL-2, EL-3 or EL-4">
+      <target type="canonical-id" id="nbc.divBV2.part9.sect37.subsect1.art3.sent1"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art3.sent1" number="1" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will auto-populate from bc-building-code.xml -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2025-03-10" id="bc-mo-2024-04-001" status="current">
+                <content>
+                  <text><ref type="term" target="bldng">Buildings</ref> shall conform to the requirements of any of GHG Emission Levels EL-1, EL-2, EL-3 or EL-4 and shall be designed and constructed to conform to one of the GHG emission compliance options in Table 9.37.1.3.</text>
+                </content>
+                <change-summary>Repealed and substituted Sentence 9.37.1.3.(1) to require buildings to conform to GHG Emission Levels EL-1, EL-2, EL-3 or EL-4 with reference to Table 9.37.1.3</change-summary>
+                <note>Ministerial Order BA 2024 04</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 2: Repeal and substitute Sentence 10.3.1.3.(1)         -->
+    <!-- Zero Carbon Step Code - GHG Emission Levels for Part 10 Buildings -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-04-002" sequence="2001"
+               description="Repeal and substitute Sentence 10.3.1.3.(1) requiring buildings to conform to GHG Emission Levels EL-1, EL-2, EL-3 or EL-4 based on occupancy">
+      <target type="canonical-id" id="nbc.divB.part10.sect3.subsect1.art3.sent1"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <sentence xml:id="nbc.divB.part10.sect3.subsect1.art3.sent1" number="1" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will auto-populate from bc-building-code.xml -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2025-03-10" id="bc-mo-2024-04-002" status="current">
+                <content>
+                  <text><ref type="term" target="bldng">Buildings</ref> shall conform to the requirements of any of GHG Emission Levels EL-1, EL-2, EL-3 or EL-4 and shall be designed and constructed to conform to Table 10.3.1.3. based on <ref type="term" target="ccpnc">occupancy</ref>.</text>
+                </content>
+                <change-summary>Repealed and substituted Sentence 10.3.1.3.(1) to require buildings to conform to GHG Emission Levels EL-1, EL-2, EL-3 or EL-4 with reference to Table 10.3.1.3 based on occupancy</change-summary>
+                <note>Ministerial Order BA 2024 04</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+  </amendments>
+</bc-overlay>

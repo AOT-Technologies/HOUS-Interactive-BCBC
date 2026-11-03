@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="test-text-replacement" version="1.0" nbc-target-version="2020">
+    
+    <metadata>
+        <title>Test Text Replacement</title>
+        <description>Test global text replacement feature</description>
+        <authority>Test</authority>
+        <author>Test</author>
+        <source-document>Test</source-document>
+    </metadata>
+    
+    <!-- ================================================================== -->
+    <!-- GLOBAL TEXT REPLACEMENTS (PRE-PROCESSING)                          -->
+    <!-- ================================================================== -->
+    <!-- Applied to the source document BEFORE amendments are processed.    -->
+    <!-- This means subsequent amendments can reference the NEW IDs.        -->
+    <!--                                                                    -->
+    <!-- Use cases:                                                         -->
+    <!--   - Renumbering sections (e.g., sect37 -> sect38)                  -->
+    <!--   - Updating IDs when content is reorganized                       -->
+    <!--   - Bulk terminology changes                                       -->
+    <!--                                                                    -->
+    <!-- Affects ALL text content AND ALL attribute values:                 -->
+    <!--   - xml:id attributes                                              -->
+    <!--   - vendor-id attributes                                           -->
+    <!--   - ref target attributes                                          -->
+    <!--   - Text content                                                   -->
+    <!-- ================================================================== -->
+    <text-replacements>
+        <!-- ================================================================== -->
+        <!-- SMART NUMBER ATTRIBUTE UPDATE ENABLED                              -->
+        <!-- The merge engine now automatically updates number attributes       -->
+        <!-- when it detects ID changes (e.g., sect36 -> sect37)               -->
+        <!-- No need to manually specify number attribute replacements!         -->
+        <!-- ================================================================== -->
+        
+        <!-- Swapping Part 9 sec 36 and 37 to match the bc code -->
+        <!-- Note: number attributes will be auto-updated by merge engine -->
+        <replace from="nbc.divBV2.part9.sect36" to="nbc.divBV2.part9.sect36_bkp"/>
+        <replace from="nbc.divBV2.part9.sect37" to="nbc.divBV2.part9.sect36"/>
+        <replace from="nbc.divBV2.part9.sect36_bkp" to="nbc.divBV2.part9.sect37"/>
+        
+        <!-- Swap display text (9.36. ↔ 9.37.) -->
+        <replace from="9.36." to="9.36_bkp."/>
+        <replace from="9.37." to="9.36."/>
+        <replace from="9.36_bkp." to="9.37."/>
+        
+        <!-- Renumber existing subsect6-8 to make room for new 9.36.6 -->
+        <!-- Work backwards to avoid conflicts -->
+        <!-- Note: subsection number attributes will be auto-updated -->
+        <replace from="sect36.subsect8" to="sect36.subsect9"/>
+        <replace from="9.36.8." to="9.36.9."/>
+        
+        <replace from="sect36.subsect7" to="sect36.subsect8"/>
+        <replace from="9.36.7." to="9.36.8."/>
+        
+        <replace from="sect36.subsect6" to="sect36.subsect7"/>
+        <replace from="9.36.6." to="9.36.7."/>
+        
+        <!-- Renumber sect37 to sect38 to make space for inserting new 37  Amendment 328--> 
+        <!-- Note: section number attribute will be auto-updated from 37 to 38 -->
+        <replace from="nbc.divBV2.part9.sect37" to="nbc.divBV2.part9.sect38"/>
+        
+        <!-- Swap display text (9.37. ↔ 9.38.) -->
+        <replace from="9.37." to="9.38."/>
+        
+        <!-- ================================================================== -->
+        <!-- Part 5: Move sect9→sect8, sect10→sect9, sect11→sect10              -->
+        <!-- Process sect9 first so sect10→sect9 doesn't collide with it        -->
+        <!-- Note: number attributes will be auto-updated by merge engine       -->
+        <!-- ================================================================== -->
+        
+        <!-- Renumber sect9 → sect8 (do first so sect10→sect9 won't collide) -->
+        <replace from="nbc.divB.part5.sect9" to="nbc.divB.part5.sect8"/>
+        <replace from="5.9." to="5.8."/>
+        
+        <!-- Renumber sect10 → sect9 -->
+        <replace from="nbc.divB.part5.sect10" to="nbc.divB.part5.sect9"/>
+        <replace from="5.10." to="5.9."/>
+        
+        <!-- Renumber sect11 → sect10 -->
+        <replace from="nbc.divB.part5.sect11" to="nbc.divB.part5.sect10"/>
+        <replace from="5.11." to="5.10."/>
+    </text-replacements>
+</bc-overlay>

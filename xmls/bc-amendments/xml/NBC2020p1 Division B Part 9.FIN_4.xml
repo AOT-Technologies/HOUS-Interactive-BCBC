@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-part9-amendments-2023" 
+            version="1.0" 
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020 - PART 9 (4)                  -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Part 9</title>
+        <description>British Columbia-specific amendments for Part 9 (Housing and Small Buildings)</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Part 9.FIN_backup.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- SECTION 9.38 - ENERGY EFFICIENCY - TABLE 9.38.1.1 AMENDMENTS       -->
+        <!-- ================================================================== -->
+        
+        <!-- bc-444: Insert 9.36.6.3 "Compliance Requirements" rows into Table 9.38.1.1 -->
+        <!-- BC adds new article 9.36.6.3 "Compliance Requirements" which doesn't exist in NBC -->
+        <!-- This inserts rows for new subsection 6 content into Table 9.38.1.1 -->
+        <!-- Note: Table is in sect38 (was sect37 before text-replacement) -->
+        <amendment id="bc-444" sequence="444" description="Insert 9.36.6.3 Compliance Requirements rows into Table 9.38.1.1">
+            <target type="position" 
+                    parent-id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925"
+                    position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <!-- Row 1: Article title row for 9.36.6.3 Compliance Requirements -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925a">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art3"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 2: Sentence (5) with functional statements [F90,F91,F92,F93,F95,F96,F98,F99,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925b">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art3.sent5"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs96"/>,<ref type="functional-statement" target="fs98"/>,<ref type="functional-statement" target="fs99"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 3: Article title row for 9.36.6.5 Energy Performance Improvement Compliance Calculations -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925c">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 4: Sentence (2) with [F95-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925d">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent2"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs95"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 5: Sentence (3) with [F90,F91,F92,F93,F95,F96,F98,F99,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925e">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent3"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs96"/>,<ref type="functional-statement" target="fs98"/>,<ref type="functional-statement" target="fs99"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 6: Sentence (5) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925f">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent5"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 7: Sentence (6) with [F99-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925g">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent6"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs99"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 8: Sentence (7) with [F99-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925h">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent7"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs99"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 7: Sentence (8) with [F90,F91,F92,F93,F95,F96,F98,F99,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925i">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent8"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs96"/>,<ref type="functional-statement" target="fs98"/>,<ref type="functional-statement" target="fs99"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 8: Sentence (9) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925j">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent9"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 1: Article title row for 9.36.7.3 Determination of Airtightness -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925k">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art3"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 2: Sentence (1) with [F90-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925l">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art3.sent1"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 1: Article title row for 9.36.7.4 Determination of Airtightness Level -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925m">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 2: Sentence (1) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925n">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4.sent1"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 3: Sentence (2) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925o">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 4: Sentence (3) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925p">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 5: Sentence (4) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925q">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- DELETE NBC ROWS FROM END OF TABLE 9.36.1.1                         -->
+        <!-- BC table ends at 9.36.7.4 sentence (4) - NBC continues with        -->
+        <!-- additional rows for Section 9.37 that don't exist in BC            -->
+        <!-- Delete rows 5933 through 5968 (36 rows total)                      -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-448" sequence="448" description="Delete NBC row 5933 from Table 9.36.1.1 (9.37.7.2 title)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5933"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-449" sequence="449" description="Delete NBC row 5934 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5934"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-450" sequence="450" description="Delete NBC row 5935 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5935"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-451" sequence="451" description="Delete NBC row 5936 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5936"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-452" sequence="452" description="Delete NBC row 5937 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5937"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-453" sequence="453" description="Delete NBC row 5938 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5938"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-454" sequence="454" description="Delete NBC row 5939 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5939"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-455" sequence="455" description="Delete NBC row 5940 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5940"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-456" sequence="456" description="Delete NBC row 5941 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5941"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-457" sequence="457" description="Delete NBC row 5942 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5942"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-458" sequence="458" description="Delete NBC row 5943 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5943"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-459" sequence="459" description="Delete NBC row 5944 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5944"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-460" sequence="460" description="Delete NBC row 5945 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5945"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-461" sequence="461" description="Delete NBC row 5946 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5946"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-462" sequence="462" description="Delete NBC row 5947 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5947"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-463" sequence="463" description="Delete NBC row 5948 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5948"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-464" sequence="464" description="Delete NBC row 5949 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5949"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-465" sequence="465" description="Delete NBC row 5950 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5950"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-466" sequence="466" description="Delete NBC row 5951 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5951"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-467" sequence="467" description="Delete NBC row 5952 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5952"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-468" sequence="468" description="Delete NBC row 5953 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5953"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-469" sequence="469" description="Delete NBC row 5954 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5954"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-470" sequence="470" description="Delete NBC row 5955 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5955"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-471" sequence="471" description="Delete NBC row 5956 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5956"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-472" sequence="472" description="Delete NBC row 5957 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5957"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-473" sequence="473" description="Delete NBC row 5958 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5958"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-474" sequence="474" description="Delete NBC row 5959 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5959"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-475" sequence="475" description="Delete NBC row 5960 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5960"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-476" sequence="476" description="Delete NBC row 5961 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5961"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-477" sequence="477" description="Delete NBC row 5962 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5962"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-478" sequence="478" description="Delete NBC row 5963 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5963"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-479" sequence="479" description="Delete NBC row 5964 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5964"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-480" sequence="480" description="Delete NBC row 5965 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5965"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-481" sequence="481" description="Delete NBC row 5966 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5966"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-482" sequence="482" description="Delete NBC row 5967 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5967"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-483" sequence="483" description="Delete NBC row 5968 from Table 9.36.1.1 (last row)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5968"/>
+            <delete/>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 484: Change list type in A-9.36.2.4.(1) note procedure -->
+        <!-- Effective thermal resistance wood framing - numbered steps        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-484" sequence="484" description="Change Application Note A-9.36.2.4.(1) procedure list from bulleted to numbered">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote223.div2.para1"/>
+            <replace preserve-references="true">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote223.div2.para1">To calculate the effective thermal resistance of a building
+envelope assembly containing wood framing, RSI<sub>eff</sub>, add
+up the results of the following calculations:<list type="alphabetic">
+                                <item>calculate the effective thermal resistance of all layers
+with continuous materials using the isothermal-planes method, and</item>
+                                <item>calculate the effective thermal resistance of the framing
+portion, RSI<sub>parallel</sub>, using the following equation, which
+is taken from the “parallel-path flow method” described in the <ref type="standard" target="ashr-hb-fun" standardId="ashr-hb-fun"/>:</item>
+                            </list>
+                            <equation type="display" html-src="graphics/eg/026/eg02626a">
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi xmlns="">RSI</mi>
+                                    <msub xmlns="">
+                                        <mrow/>
+                                        <mrow>
+                                            <mi>parallel</mi>
+                                        </mrow>
+                                    </msub>
+                                    <mo xmlns="">=</mo>
+                                    <mfrac xmlns="">
+                                        <mrow>
+                                            <mn>100</mn>
+                                        </mrow>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mtext>%</mtext>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>area</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>of</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>framing</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi>RSI</mi>
+                                                    <msub>
+                                                        <mrow/>
+                                                        <mrow>
+                                                            <mi>F</mi>
+                                                        </mrow>
+                                                    </msub>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mtext>%</mtext>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>area</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>of</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>cavity</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi>RSI</mi>
+                                                    <msub>
+                                                        <mrow/>
+                                                        <mrow>
+                                                            <mi>C</mi>
+                                                        </mrow>
+                                                    </msub>
+                                                </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                    </mfrac>
+                                </math>
+                            </equation>where<list type="variable">
+                                <item>
+                                    <variable>RSI<sub>F</sub>
+                                    </variable>
+                                    <description>= thermal resistance of the framing member obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div3.table3"
+                                                display-type="long"/>,</description>
+                                </item>
+                                <item>
+                                    <variable>RSI<sub>C</sub>
+                                    </variable>
+                                    <description>= thermal resistance of the cavity (usually filled with insulation)
+obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div3.table3"
+                                                display-type="long"/>,</description>
+                                </item>
+                                <item>
+                                    <variable>% area of framing</variable>
+                                    <description>= value between 0 and 100 obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div2.table1"
+                                                display-type="long"/> or by calculation, and</description>
+                                </item>
+                                <item>
+                                    <variable>% area of cavity</variable>
+                                    <description>= value between 0 and 100 obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div2.table1"
+                                                display-type="long"/> or by calculation.</description>
+                                </item>
+                            </list>
+                        </paragraph>
+                    </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-485" sequence="485" description="Change Application Note A-9.36.2.4.(1) example procedure list from bulleted to numbered">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote223.div2.example1.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote223.div2.example1.para1">
+                        <list type="numbered">
+                           <item>Determine the thermal resistance of each continuous material
+layer incorporated in the assembly using <ref type="internal"
+                                   target="nbc.divBV2.part9.appendix.appnote223.div3.table3"
+                                   display-type="long"/>.</item>
+                           <item>Calculate the thermal resistance of a section of framing
+and adjacent cavity portion, RSI<sub>parallel</sub>, using the parallel-path
+flow method as follows:<list type="roman">
+                                 <item>along a line that goes through the framing, which is designated
+RSI<sub>F</sub>, and</item>
+                                 <item>along a line that goes through the cavity (usually filled
+with insulation), which is designated RSI<sub>C</sub>. </item>
+                              </list>Look up the % area of framing and cavity for a typical <measurement units="metric">38 × 140 mm</measurement> wood-frame wall assembly with studs <measurement units="metric">400
+mm</measurement> o.c. using <ref type="internal"
+                                   target="nbc.divBV2.part9.appendix.appnote223.div2.table1"
+                                   display-type="long"/>:<list type="none">
+                                 <item>% area of framing = 23%, and </item>
+                                 <item>% area of cavity = 77%</item>
+                              </list>Then, combine the sums of RSI<sub>F</sub> and RSI<sub>C</sub> in proportion to the relative areas of framing
+and insulation to calculate the value of RSI<sub>parallel</sub> (thermal
+resistance of the framing portion): <equation type="display" html-src="graphics/eg/026/eg02630a">
+                                 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi xmlns="">RSI</mi>
+                                    <msub xmlns="">
+                                       <mrow/>
+                                       <mrow>
+                                          <mi>parallel</mi>
+                                       </mrow>
+                                    </msub>
+                                    <mo xmlns="">=</mo>
+                                    <mfrac xmlns="">
+                                       <mrow>
+                                          <mn>100</mn>
+                                       </mrow>
+                                       <mrow>
+                                          <mo>(</mo>
+                                          <mfrac>
+                                             <mrow>
+                                                <mn>23</mn>
+                                             </mrow>
+                                             <mrow>
+                                                <mn>1.19</mn>
+                                             </mrow>
+                                          </mfrac>
+                                          <mo>)</mo>
+                                          <mo>+</mo>
+                                          <mo>(</mo>
+                                          <mfrac>
+                                             <mrow>
+                                                <mn>77</mn>
+                                             </mrow>
+                                             <mrow>
+                                                <mn>3.34</mn>
+                                             </mrow>
+                                          </mfrac>
+                                          <mo>)</mo>
+                                       </mrow>
+                                    </mfrac>
+                                    <mo xmlns="">=</mo>
+                                    <mn xmlns="">2.36</mn>
+                                    <mo xmlns="">(</mo>
+                                    <mi xmlns="">m</mi>
+                                    <msup xmlns="">
+                                       <mrow/>
+                                       <mrow>
+                                          <mn>2</mn>
+                                       </mrow>
+                                    </msup>
+                                    <mo xmlns="">×</mo>
+                                    <mi xmlns="">K</mi>
+                                    <mo xmlns="">)</mo>
+                                    <mo xmlns="">/</mo>
+                                    <mi xmlns="">W</mi>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mo xmlns="">(</mo>
+                                    <mi xmlns="">U</mi>
+                                    <mtext xmlns="">–</mtext>
+                                    <mi xmlns="">value</mi>
+                                    <mo xmlns="">=</mo>
+                                    <mn xmlns="">0.42</mn>
+                                    <mi xmlns="">W</mi>
+                                    <mo xmlns="">/</mo>
+                                    <mo xmlns="">(</mo>
+                                    <mi xmlns="">m</mi>
+                                    <msup xmlns="">
+                                       <mrow/>
+                                       <mrow>
+                                          <mn>2</mn>
+                                       </mrow>
+                                    </msup>
+                                    <mo xmlns="">×</mo>
+                                    <mi xmlns="">K</mi>
+                                    <mo xmlns="">)</mo>
+                                    <mo xmlns="">)</mo>
+                                 </math>
+                              </equation>
+                           </item>
+                           <item>Add up the values obtained in steps 1 and 2 to determine
+the effective thermal resistance of the wall assembly, RSI<sub>eff</sub>.</item>
+                        </list>
+                     </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        
+    </amendments>
+    
+</bc-overlay>

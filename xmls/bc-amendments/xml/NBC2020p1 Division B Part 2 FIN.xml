@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-part2-reserved" 
+            version="1.0" 
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE - DIVISION B PART 2 RESERVED                      -->
+    <!-- Replace entire Part 2 (Farm Buildings) with RESERVED text          -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code - Division B Part 2 Reserved</title>
+        <description>Replace Division B Part 2 (Farm Buildings) with RESERVED text for BC Building Code</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Part 2.FIN.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 1: Replace entire Part 2 with RESERVED                   -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-part2-001" sequence="1" 
+                   description="Replace Division B Part 2 (Farm Buildings) with RESERVED">
+            <target type="canonical-id" id="nbc.divB.part2"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <part xml:id="nbc.divB.part2" number="2">
+                        <title>RESERVED</title>
+                        <section xml:id="nbc.divB.part2.sect1" number="1">
+                            <title>RESERVED</title>
+                            <subsection xml:id="nbc.divB.part2.sect1.subsect1" number="1">
+                                <title>RESERVED</title>
+                                <article xml:id="nbc.divB.part2.sect1.subsect1.art1" number="1">
+                                    <title>RESERVED</title>
+                                    <sentence xml:id="nbc.divB.part2.sect1.subsect1.art1.sent1" number="1">
+                                        <text>RESERVED</text>
+                                    </sentence>
+                                </article>
+                            </subsection>
+                        </section>
+                    </part>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 2: Placeholder replacement for selected Division A text  -->
+        <!-- Uses identical source content and can be edited later              -->
+        <!-- ================================================================== -->
+
+        <amendment id="bc-part2-002" sequence="2"
+                   description="Placeholder replace for Article 2.1.1.2 Application of Objectives">
+            <target type="canonical-id" id="nbc.divA.part2.sect1.subsect1.art2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divA.part2.sect1.subsect1.art2"
+                             number="2"
+                             vendor-id="ea004135">
+                        <title>Application of Objectives</title>
+                        <see-also xml:id="nbc.divA.part2.sect1.subsect1.art2.seealso">(See <ref type="internal"
+                                target="nbc.divA.part2.appendix.appnote2"/>.)</see-also>
+                        <sentence xml:id="nbc.divA.part2.sect1.subsect1.art2.sent1"
+                                  number="1"
+                                  vendor-id="es007232">
+                            <text>Except as provided in <ref type="internal"
+                                    target="nbc.divA.part2.sect1.subsect1.art2.sent2"
+                                    display-type="short"
+                                    pretext="Sentences"/>
+                               <ref type="internal"
+                                    target="nbc.divA.part2.sect1.subsect1.art2.sent6"
+                                    display-type="short"
+                                    pretext="to">(6)</ref>, the objectives described in this Part apply</text>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent1.clause1"
+                                    letter="a"
+                                    vendor-id="es007232a">
+                                <text>to all <ref type="term" target="bldng">buildings</ref> covered in this
+Code (see <ref type="internal"
+                                       target="nbc.divA.part1.sect1.subsect1.art1"
+                                       display-type="long"/>), and</text>
+                            </clause>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent1.clause2"
+                                    letter="b"
+                                    vendor-id="es007232b">
+                                <text>only to the extent that they relate to compliance with this
+Code as required in <ref type="internal"
+                                       target="nbc.divA.part1.sect2.subsect1.art1"
+                                       display-type="long"/>
+                                </text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divA.part2.sect1.subsect1.art2.sent2"
+                                  number="2"
+                                  vendor-id="es007233">
+                            <text>Objective OS4, Resistance to Unwanted Entry, applies only to <ref type="term" target="dwllng-n">dwelling units</ref> in <ref type="term" target="bldng">buildings</ref> covered in Part 9 of Division B. (See <ref type="internal"
+                                    target="nbc.divA.part1.sect3.subsect3.art3"
+                                    display-type="long"/>)</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divA.part2.sect1.subsect1.art2.sent3"
+                                  number="3"
+                                  vendor-id="es007234">
+                            <text>Objective OH3, Noise Protection, applies only to <ref type="term" target="dwllng-n">dwelling units</ref>.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divA.part2.sect1.subsect1.art2.sent4"
+                                  number="4"
+                                  vendor-id="es007235">
+                            <text>Objective OH5, Hazardous Substances Containment, applies only
+to the extent defined in</text>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent4.clause1"
+                                    letter="a"
+                                    vendor-id="es007235a">
+                                <text>Book II (Plumbing Systems) of this Code, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent4.clause2"
+                                    letter="b"
+                                    vendor-id="es007235b">
+                                <text>the British Columbia Fire Code.
+                                </text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divA.part2.sect1.subsect1.art2.sent5"
+                                  number="5"
+                                  vendor-id="es007236">
+                            <text>Objective OA, Accessibility (including Objectives OA1, Accessible Path of Travel, and
+OA2, Accessible Facilities), does not apply to</text>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent5.clause1"
+                                    letter="a"
+                                    vendor-id="es007236a">
+                                <text>reserved</text>
+                            </clause>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent5.clause2"
+                                    letter="b"
+                                    vendor-id="es007236b">
+                                <text>
+                                  <ref type="term" target="bldng">buildings</ref> of Group F, Division 1 <ref type="term" target="mjr-ccpn">major occupancy</ref>, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent5.clause3"
+                                    letter="c"
+                                    vendor-id="es007236c">
+                                <text>
+                                  <ref type="term" target="bldng">buildings</ref> that are not intended to
+be occupied on a daily or full-time basis, including automatic telephone
+exchanges, pumphouses and substations.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divA.part2.sect1.subsect1.art2.sent6"
+                                  number="6"
+                                  vendor-id="es006850">
+                            <text>Objective OE, Environment, applies only to</text>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent6.clause1"
+                                    letter="a"
+                                    vendor-id="es006850a">
+                                <text>
+                                  <ref type="term" target="bldng">buildings</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> to which Part 9 of Division B applies,</text>
+                            </clause>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent6.clause2"
+                                    letter="b"
+                                    vendor-id="es006850b">
+                                <text>
+                                  <ref type="term" target="bldng">buildings</ref> containing <ref type="term" target="bn-nd-pr">business and personal services</ref>, <ref type="term" target="mrcntl-c">mercantile</ref> or <ref type="term" target="lw-hzrd-">low-hazard
+industrial occupancies</ref> to which Part 9 of Division B applies
+whose combined total <ref type="term" target="flr-r">floor area</ref> does not
+exceed <measurement units="metric">300 m<super>2</super>
+                                  </measurement>, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divA.part2.sect1.subsect1.art2.sent6.clause3"
+                                    letter="c"
+                                    vendor-id="es006850c">
+                                <text>
+                                  <ref type="term" target="bldng">buildings</ref> containing a mix of the <ref type="term" target="rdntl-cc">residential</ref> and non-<emphasis style="italic">residential occupancies</emphasis> described in <ref type="internal"
+                                       target="nbc.divA.part2.sect1.subsect1.art2.sent6.clause1"
+                                       display-type="short"
+                                       pretext="Clauses"/>
+                                  <ref type="internal"
+                                       target="nbc.divA.part2.sect1.subsect1.art2.sent6.clause2"
+                                       display-type="short"
+                                       pretext="and"/>.</text>
+                            </clause>
+                            <see-also xml:id="nbc.divA.part2.sect1.subsect1.art2.sent6.seealso">(See <ref type="internal"
+                                    target="nbc.divA.part2.appendix.appnote1"
+                                    display-type="short"/>.) (See also <ref type="internal"
+                                    target="nbc.divA.part1.sect3.subsect3.art3"
+                                    display-type="long"/>)</see-also>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+        
+    </amendments>
+</bc-overlay>

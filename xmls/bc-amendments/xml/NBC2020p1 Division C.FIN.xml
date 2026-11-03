@@ -1,0 +1,1261 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bc-overlay id="bc-divc-amendments-2023" version="1.0" nbc-target-version="2020" effective-date="2023-12-15">
+
+    
+    
+    
+    
+
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Division C.FIN</title>
+        <description>British Columbia-specific amendments for Division C (Administrative Provisions).</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division C.FIN.docx</source-document>
+    </metadata>
+
+    <amendments>
+
+        
+        <amendment id="bc-001" sequence="1" description="Replace Article 1.2.1.1 (Non-defined Terms) - 1/4 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part1.sect2.subsect1.art1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part1.sect2.subsect1.art1" number="1">
+                        <title>Non-defined Terms</title>
+                        <sentence xml:id="nbc.divC.part1.sect2.subsect1.art1.sent1" number="1">
+                            <text>Words and phrases used in Division C that are not included in the list of definitions in <ref type="internal" target="nbc.divA.part1.sect4.subsect1.art2" display-type="medium">Article 1.4.1.2.</ref> of Division A shall have the meanings that are commonly assigned to them in the context in which they are used, taking into account the specialized use of terms by the various trades and professions to which the terminology applies.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part1.sect2.subsect1.art1.sent2" number="2">
+                            <text>Where objectives and functional statements are referred to in Division C, they shall be the objectives and functional statements described in Parts 2 and 3 of Division A.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part1.sect2.subsect1.art1.sent3" number="3">
+                            <text>Where acceptable solutions are referred to in Division C, they shall be the provisions stated in Parts 3 to 10 of Division B.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part1.sect2.subsect1.art1.sent4" number="4">
+                            <text>Where alternative solutions are referred to in Division C, they shall be the alternative solutions mentioned in <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="medium">Clause 1.2.1.1.(1)(b)</ref> of Division A.</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-002" sequence="2" description="Replace Article 2.2.1.1 (Conformance with Administrative Requirem) - 1/1 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect1.art1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect1.art1" number="1">
+                        <title>Conformance with Administrative Requirements</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect1.art1.sent1" number="1">
+                            <text>This Code is made pursuant to Section 3 of the Building Act.</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-003" sequence="3" description="Replace Article 2.2.1.2 (Structural Design) - 1/1 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect1.art2" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect1.art2" number="2">
+                        <title>Structural Design</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect1.art2.sent1" number="1">
+                            <text>For design carried out in accordance with <ref type="internal" target="nbc.divB.part4" display-type="short">Part 4 of Division B</ref>, the <ref type="term" target="dgnr">designer</ref> shall be a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref> skilled in the work concerned. (See <ref type="internal" target="nbc.divC.part2.appendix.appnote1" display-type="short">Note A-2.2.1.2.(1)</ref>.)</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-004" sequence="4" description="Replace Article 2.2.2.1 (General Information Required) - 10/12 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect2.art1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect2.art1" number="1">
+                        <title>General Information Required</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect2.art1.sent1" number="1">
+                            <text>Sufficient information shall be provided to show that the proposed work will conform to this Code and whether or not it may affect adjacent property.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2" number="2">
+                            <text>Plans shall be drawn to scale and shall indicate</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause1" letter="a">
+                                <text>the nature and extent of the work or proposed <ref type="term" target="ccpnc">occupancy</ref> in sufficient detail to establish that, when completed, the work and the proposed <ref type="term" target="ccpnc">occupancy</ref> will conform to this Code,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause2" letter="b">
+                                <text>the applicable edition of the Code,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause3" letter="c">
+                                <text>whether the <ref type="term" target="bldng">building</ref> is designed under Part 3 or Part 9,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause4" letter="d">
+                                <text>the <ref type="term" target="mjr-ccpn">major occupancy</ref> classifications of the <ref type="term" target="bldng">building</ref>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause5" letter="e">
+                                <text>the <ref type="term" target="bldng-r">building area</ref> and <ref type="term" target="bldng-hg">building height</ref>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause6" letter="f">
+                                <text>the number of <ref type="term" target="trt">streets</ref> the <ref type="term" target="bldng">building</ref> faces,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause7" letter="g">
+                                <text>the <ref type="term" target="bc-cc-t-ccbl">accessible</ref> entrances, work areas and washrooms,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause8" letter="h">
+                                <text>the <ref type="term" target="bc-cc-t-ccbl">accessible</ref> facilities particular to the <ref type="term" target="ccpnc">occupancies</ref>, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art1.sent2.clause9" letter="i">
+                                <text>the energy compliance path to which the <ref type="term" target="bldng">building</ref> conforms, and, where a <ref type="term" target="bldng">building</ref> conforms to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long">Subsection 9.36.6.</ref> or <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long">10.2.3.</ref> of Division B, the Step to which it conforms.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect2.art1.sent3" number="3">
+                            <text>When proposed work is changed during construction, information on the changes shall comply with the requirements of this Section for proposed work.</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-005" sequence="5" description="Replace Article 2.2.2.2 (Site Plans) - 4/9 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect2.art2" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect2.art2" number="2">
+                        <title>Site Plans</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect2.art2.sent1" number="1">
+                            <text>Site plans shall be referenced to an up-to-date survey and, when required to prove compliance with this Code, a copy of the survey shall be provided.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2" number="2">
+                            <text>Site plans shall show</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2.clause1" letter="a">
+                                <text>by dimensions from property lines, the location of the proposed <ref type="term" target="bldng">building</ref>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2.clause2" letter="b">
+                                <text>the similarly dimensioned location of every adjacent existing <ref type="term" target="bldng">building</ref> on the property,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2.clause3" letter="c">
+                                <text>existing and finished ground levels to an established datum at or adjacent to the site,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2.clause4" letter="d">
+                                <text>the access routes for firefighting, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2.clause5" letter="e">
+                                <text>the <ref type="term" target="bc-cc-t-ccbl">accessible</ref> paths of travel to the <ref type="term" target="bldng">building</ref> from</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2.clause5.subclause1" number="1">
+                                    <text>the sidewalk, roadway or <ref type="term" target="trt">street</ref>, and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect2.art2.sent2.clause5.subclause2" number="2">
+                                    <text>if provided, exterior parking stalls for <ref type="term" target="bc-prsn-wth-dsblts">persons with disabilities</ref> and exterior passenger-loading zones.</text>
+                                </subclause>
+                            </clause>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-006" sequence="6" description="Replace Article 2.2.8.1 (Application) - 1/1 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect8.art1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect8.art1" number="1">
+                        <title>Application</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art1.sent1" number="1">
+                            <text>This Subsection applies only to houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces and to <ref type="term" target="bldng">buildings</ref> containing only <ref type="term" target="dwllng-n">dwelling units</ref> and common spaces whose total <ref type="term" target="flr-r">floor area</ref> does not exceed 20% of the total <ref type="term" target="flr-r">floor area</ref> of the <ref type="term" target="bldng">building</ref> that are modeled in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="short"/> and <ref type="internal" target="nbc.divBV2.part9.sect37.subsect5" display-type="short">9.37.1</ref> of Division B as applicable. (See <ref type="internal" target="nbc.divC.part2.appendix.appnote4" display-type="short">Note A-2.2.8.1.(1)</ref>.) (See also <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art2.sent1" display-type="medium">Sentence 9.36.1.2.(1)</ref> and <ref type="internal" target="nbc.divBV2.part9.appendix.appnote216.div1.para1" display-type="medium">Note A-9.36.1.3.(3)</ref> of Division B.)</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-007" sequence="7" description="Replace Article 2.2.8.2 (Information Required on Drawings and Spe) - 2/12 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect8.art2" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect8.art2" number="2">
+                        <title>Information Required on Drawings and Specifications</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1" number="1">
+                            <text>Except as provided in Sentences (2) to (4), the drawings and specifications for the proposed house shall include</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1.clause1" letter="a">
+                                <text>the effective thermal resistance values and respective areas of all opaque <ref type="term" target="bldng">building</ref> envelope assemblies, including all above-ground and below-ground roof/ceiling, wall, and floor assemblies,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1.clause2" letter="b">
+                                <text>the overall thermal transmittance (U-value), solar heat gain coefficient and respective areas of all fenestration and door components,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1.clause3" letter="c">
+                                <text>the ratio of total vertical fenestration and door area to gross wall area,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1.clause4" letter="d">
+                                <text>the performance rating, energy source, and types of all equipment required for space-heating and -cooling and service water heating,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1.clause5" letter="e">
+                                <text>the design basis for the ventilation rates,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1.clause6" letter="f">
+                                <text>where a test is used to determine the airtightness of a house, the measured airtightness of the <ref type="term" target="bldng">building</ref> envelope in air changes per hour, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art2.sent1.clause7" letter="g">
+                                <text>any additional features used in the energy model calculations that account for a significant difference in house energy performance.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art2.sent2" number="2">
+                            <text>The effective thermal resistance values and respective areas of opaque <ref type="term" target="bldng">building</ref> envelope assemblies that cover less than 2% of the total area of their respective assembly type need not be provided in the drawings and specifications required in Sentence (1).</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art2.sent3" number="3">
+                            <text>Where part-load characteristics are used in the modeling of the HVAC equipment, they need not be provided in the drawings and specifications required in Sentence (1).</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art2.sent4" number="4">
+                            <text>The features of the proposed house that differ from those of the reference house shall be detailed in the specifications required in Sentence (1).</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art2.sent5" number="5">
+                            <text>The drawings and specifications for the proposed house shall include the GHG Emission Level achieved, as applicable. (See <ref type="internal" target="nbc.divBV2.part9.sect37.subsect1.art2.sent5" display-type="medium">Sentence 9.37.1.2.(5)</ref> of Division B).</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-008" sequence="8" description="Replace Article 2.2.8.3 (House Performance Compliance Calculation) - 19/34 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect8.art3" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect8.art3" number="3">
+                        <title>House Performance Compliance Calculation Report</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art3.sent1" number="1">
+                            <text>A house performance compliance calculation report shall be provided in accordance with Sentence (2) for each proposed house design.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2" number="2">
+                            <text>In addition to the drawings and specifications required in <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art2" display-type="medium">Article 2.2.8.2.</ref>, the house performance compliance calculation report shall include</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause1" letter="a">
+                                <text>a project information section containing</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause1.subclause1" number="1">
+                                    <text>the name or identifier of the project,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause1.subclause2" number="2">
+                                    <text>a description of the project,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause1.subclause3" number="3">
+                                    <text>the address of the project,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause1.subclause4" number="4">
+                                    <text>the name and version of the calculation tool,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause1.subclause5" number="5">
+                                    <text>the geographic region in which the proposed house is to be built, and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause1.subclause6" number="6">
+                                    <text>the identifier for the climatic data set used for analysis,</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause2" letter="b">
+                                <text>a summary of the characteristics of the <ref type="term" target="bldng">building</ref> envelope, HVAC system and service water heating system reflecting the information provided in <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art2" display-type="medium">Article 2.2.8.2.</ref>, including energy sources for the <ref type="term" target="bldng">building</ref>’s systems, as applicable,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause3" letter="c">
+                                <text>an energy performance data summary containing</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause3.subclause1" number="1">
+                                    <text>the annual energy consumption of all energy sources calculated for the proposed house (see <ref type="internal" target="nbc.divC.part2.appendix.appnote5.para1" display-type="short">Note A-2.2.8.3.(2)(c)(i)</ref>), and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause3.subclause2" number="2">
+                                    <text>the house energy target of all energy sources calculated for the reference house,</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause4" letter="d">
+                                <text>where a software program is used to determine compliance,</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause4.subclause1" number="1">
+                                    <text>the name of the software program(s), and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause4.subclause2" number="2">
+                                    <text>a list of any adaptations made by the user to the software relating to input or output values, and</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause5" letter="e">
+                                <text>a statement that the calculation was performed in compliance with</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause5.subclause1" number="1">
+                                    <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="medium">Subsection 9.36.5.</ref> of Division B,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause5.subclause2" number="2">
+                                    <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art3.sent4" display-type="medium">Sentence 9.36.6.3.(3)</ref> of Division B, or</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause5.subclause3" number="3">
+                                    <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art4.sent2" display-type="medium">Sentence 9.36.6.4.(2)</ref> of Division B, and</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause6" letter="f">
+                                <text>where applicable, the emissions factor or factors used to calculate GHG emission compliance in accordance with <ref type="internal" target="nbc.divBV2.part9.sect37.subsect1" display-type="medium">Subsection 9.37.1.</ref> of Division B, and</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause6.subclause1" number="1">
+                                    <text>the maximum GHG emissions by house, expressed in kgCO<sub>2e</sub>/year, and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause6.subclause2" number="2">
+                                    <text>where applicable, the maximum GHGI of the house, expressed in kgCO<sub>2e</sub>/m<super>2</super>/year.</text>
+                                </subclause>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3" number="3">
+                            <text>Where a <ref type="term" target="bldng">building</ref> complies with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="medium">Subsection 9.36.6.</ref> of Division B, the energy performance data summary in Clause (2)(c) shall also contain:</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause1" letter="a">
+                                <text>the <ref type="term" target="flr-r">floor area</ref> of <ref type="term" target="cnd-sp">conditioned space</ref> used for the energy modelling calculations (see <ref type="internal" target="nbc.divBV2.part9.appendix.appnote295a" display-type="short">Note A-9.36.6.2.</ref> of Division B),</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause2" letter="b">
+                                <text>the mechanical energy use intensity,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause3" letter="c">
+                                <text>the thermal energy demand intensity,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause4" letter="d">
+                                <text>where applicable, the percent heat loss reduction and percent improvement,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause5" letter="e">
+                                <text>for <ref type="term" target="bldng">buildings</ref> conforming to Steps 3 to 5, the airtightness of the <ref type="term" target="bldng">building</ref> as tested that is accounted for in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art4.sent3" display-type="medium">Sentence 9.36.6.4.(3)</ref> of Division B, and derived in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7" display-type="medium">Subsection 9.36.7.</ref>, recorded in</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause5.subclause1" number="1">
+                                    <text>air changes per hour at 50 Pa,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause5.subclause2" number="2">
+                                    <text>normalized leakage area at 10 Pa, or</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause5.subclause3" number="3">
+                                    <text>normalized leakage rate at 50 Pa, and</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause6" letter="f">
+                                <text>percent of the <ref type="term" target="bldng">building</ref>’s <ref type="term" target="cnd-sp">conditioned space</ref> served by space-cooling equipment.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect8.art3.sent4" number="4">
+                            <text>The mechanical energy use intensity in Clause (3)(b), the thermal energy demand intensity in Clause (3)(c), and the percent heat loss reduction and percent improvement in Clause (3)(d) shall account for the airtightness referenced in Clause (3)(e) or (f), as applicable.</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-009" sequence="9" description="Insert new Subsection 2.2.9 (Energy Performance) with Articles 2.2.9.1 and 2.2.9.2 - entirely new BC content">
+            <target type="position" parent-id="nbc.divC.part2.sect2" position="last-child" />
+            <insert><new-content source="bc">
+                    <subsection xml:id="nbc.divC.part2.sect2.subsect9" number="9"><title>Drawings, Specifications and Calculations for Subsection 10.2.3. and
+Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number="1">
+                        <title>Application</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect9.art1.sent1" number="1">
+                            <text>This Subsection applies to <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> in <ref type="term" target="bldng">buildings</ref> to which <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="short">Subsection 10.2.3.</ref> and <ref type="internal" target="nbc.divB.part10.sect3" display-type="short">Section 10.3.</ref> of Division B are applicable.</text>
+                        </sentence>
+                    </article>
+            <article xml:id="nbc.divC.part2.sect2.subsect9.art2" number="2">
+                        <title>Information Required</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1" number="1">
+                            <text>For <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> that are designed and constructed in compliance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="short">Subsection 10.2.3.</ref> and <ref type="internal" target="nbc.divB.part10.sect3" display-type="short">Section 10.3.</ref> of Division B, design drawings, specifications, or an energy design report shall indicate:</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause1" letter="a">
+                                <text>the total energy use intensity as defined by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent1" display-type="short">Sentence 10.2.3.2.(1)</ref> of Division B,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause2" letter="b">
+                                <text>the energy use intensity of major energy services separately, including</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause2.subclause1" number="1">
+                                    <text>space heating,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause2.subclause2" number="2">
+                                    <text>space cooling,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause2.subclause3" number="3">
+                                    <text>service water heating,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause2.subclause4" number="4">
+                                    <text>lighting, and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause2.subclause5" number="5">
+                                    <text>other plug loads,</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause3" letter="c">
+                                <text>the thermal energy demand intensity as defined by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent2" display-type="short">Sentence 10.2.3.2.(2)</ref> of Division B, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause4" letter="d">
+                                <text>the air leakage rate as derived in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art4.sent3" display-type="short">Sentence 10.2.3.4.(3)</ref>. of Division B, and recorded in L/(s•m<super>2</super>) at 75 Pa.</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause5" letter="e">
+                                <text>the GHG Emission Level achieved, as applicable, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent1.clause6" letter="f">
+                                <text>the maximum GHGI of the <ref type="term" target="bldng">building</ref>, expressed in kgCO<sub>2e</sub>/m<super>2</super>/year, as applicable.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2" number="2">
+                            <text>For buildings and <ref type="term" target="mjr-ccpn">major occupancies</ref> that are designed and constructed in compliance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="short">Subsection 10.2.3.</ref> and <ref type="internal" target="nbc.divB.part10.sect3" display-type="short">Section 10.3.</ref> of Division B, as applicable,  before an <ref type="term" target="bc-wnr">owner</ref> occupies or receives permission to occupy the <ref type="term" target="bldng">building</ref>, an energy report shall indicate:</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause1" letter="a">
+                                <text>the total energy use intensity as defined by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent1" display-type="short">Sentence 10.2.3.2.(1)</ref> of Division B,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause2" letter="b">
+                                <text>the energy use intensity of major energy services separately, including</text>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause2.subclause1" number="1">
+                                    <text>space heating,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause2.subclause2" number="2">
+                                    <text>space cooling,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause2.subclause3" number="3">
+                                    <text>service water heating,</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause2.subclause4" number="4">
+                                    <text>lighting, and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause2.subclause5" number="5">
+                                    <text>other plug loads,</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause3" letter="c">
+                                <text>the thermal energy demand intensity as defined by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent2" display-type="short">Sentence 10.2.3.2.(2)</ref> of Division B,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause4" letter="d">
+                                <text>for <ref type="term" target="bldng">buildings</ref> conforming to Step 2, the air leakage rate as tested, derived in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art5" display-type="short">Article 10.2.3.5.</ref> of Division B, and recorded in L/(s•m<super>2</super>) at 75 Pa, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause5" letter="e">
+                                <text>for <ref type="term" target="bldng">buildings</ref> conforming to any of Steps 2 to 4, the air leakage rate as tested that is accounted for in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art4.sent2" display-type="short">Sentence 10.2.3.4.(2)</ref> of Division B and derived in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art5" display-type="short">Article 10.2.3.5.</ref> of Division B, recorded in L/(s•m<super>2</super>) at 75 Pa,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause6" letter="f">
+                                <text>the GHG Emission Level achieved, as applicable, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause7" letter="g">
+                                <text>the maximum GHGI of the <ref type="term" target="bldng">building</ref>, expressed in kgCO<sub>2e</sub>/m<super>2</super>/year, as applicable.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect9.art2.sent3" number="3">
+                            <text>The total energy use intensity in Clause (2)(a) and the thermal energy demand intensity in Clause (2)(c) shall account for the airtightness referenced in Clause (2)(d) or (e), as applicable.</text>
+                        </sentence>
+                    </article>
+            </subsection></new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-011" sequence="11" description="Replace Article 2.3.1.1 (Application) - 3/3 sentences changed">
+            <target type="canonical-id" id="nbc.divC.part2.sect3.subsect1.art1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect3.subsect1.art1" number="1">
+                        <title>Application</title>
+                        <sentence xml:id="nbc.divC.part2.sect3.subsect1.art1.sent1" number="1">
+                            <text>For the purposes of <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="medium">Clause 1.2.1.1.(1)(b)</ref> of Division A, on written request by the <ref type="term" target="bc-wnr">owner</ref> of a <ref type="term" target="bldng">building</ref> or an authorized agent of that owner, the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> shall accept a measure as an alternate solution to an acceptable solution for the <ref type="term" target="bldng">building</ref> if satisfied that</text>
+                            <clause xml:id="nbc.divC.part2.sect3.subsect1.art1.sent1.clause1" letter="a">
+                                <text>the measure will achieve at least the level of performance required by <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="medium">Clause 1.2.1.1.(1)(b)</ref> of Division A, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect3.subsect1.art1.sent1.clause2" letter="b">
+                                <text>the acceptable solution does not expressly require conformance to a provincial enactment other than the British Columbia Building Code.</text>
+                            </clause>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-012" sequence="12" description="Insert Article 2.3.1.2 (Documentation) - 2/8 sentences changed">
+            <target type="position" parent-id="nbc.divC.part2.sect3.subsect1" position="last-child" />
+            <insert><new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect3.subsect1.art2" number="2">
+                        <title>Documentation</title>
+                        <sentence xml:id="nbc.divC.part2.sect3.subsect1.art2.sent1" number="1">
+                            <text>The <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> may require a person requesting the use of an alternative solution to provide documentation to demonstrate that the proposed alternative solution will achieve at least the level of performance required by <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="short">Clause 1.2.1.1.(1)(b)</ref> of Division A.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect3.subsect1.art2.sent2" number="2">
+                            <text>The documentation referred to in Sentence (1) shall include</text>
+                            <clause xml:id="nbc.divC.part2.sect3.subsect1.art2.sent2.clause1" letter="a">
+                                <text>a Code analysis outlining the analytical methods and rationales used to determine that a proposed alternative solution will achieve at least the level of performance required by <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="short">Clause 1.2.1.1.(1)(b)</ref> of Division A, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect3.subsect1.art2.sent2.clause2" letter="b">
+                                <text>information concerning any special maintenance or operational requirements, including any <ref type="term" target="bldng">building</ref> component commissioning requirements, that are necessary for the alternative solution to achieve compliance with the Code after the <ref type="term" target="bldng">building</ref> is constructed.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect3.subsect1.art2.sent3" number="3">
+                            <text>The Code analysis referred to in Clause (2)(a) shall identify the applicable objectives, functional statements and acceptable solutions, and any assumptions, limiting or restricting factors, testing procedures, engineering studies or <ref type="term" target="bldng">building</ref> performance parameters that will support a Code compliance assessment.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect3.subsect1.art2.sent4" number="4">
+                            <text>The Code analysis referred to in Clause (2)(a) shall include information about the qualifications, experience and background of the person or persons taking responsibility for the design.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect3.subsect1.art2.sent5" number="5">
+                            <text>The information provided under Sentence (3) shall be in sufficient detail to convey the design intent and to support the validity, accuracy, relevance and precision of the Code analysis.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divC.part2.sect3.subsect1.art2.sent6" number="6">
+                            <text>Where more than one person is responsible for the design of a <ref type="term" target="bldng">building</ref> or facility that includes a proposed alternative solution, the person requesting the use of the alternative solution shall identify a single person to co-ordinate the preparation of the design, Code analysis and documentation referred to in this Article.</text>
+                        </sentence>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure1"
+                            hideLabel="true"
+                            >
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-1"
+                                alt="British Columbia Building Code 2024 Schedule A form titled 'Confirmation of Commitment by Owner and Coordinating Registered Professional' for building permit applications, including sections for jurisdiction, project details, professional seal, signature, and date."
+                                />
+                        </figure>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure2" 
+                            hideLabel="true"
+                            >
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-2"
+                                alt="Second page of the British Columbia Building Code 2024 Schedule A form continuation, containing sections for coordinating registered professional and owner information, addresses, signatures, professional seal, firm details, and certification statements related to building permit coordination and compliance."
+                                />
+                        </figure>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure3"
+                            hideLabel="true"
+                             >
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-3"
+                                alt="British Columbia Building Code 2024 Schedule B form titled 'Assurance of Professional Design and Commitment for Field Review,' including sections for jurisdiction, project details, professional disciplines such as architectural, structural, mechanical, plumbing, electrical, and geotechnical, along with professional seal, signature, and compliance assurance statements."
+                                />
+                        </figure>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure4"
+                            hideLabel="true"
+                            >
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-4"
+                                alt="Second page of the British Columbia Building Code 2024 Schedule B continuation form, containing sections for registered professional information, project address, discipline, professional seal and signature, firm membership declaration, and certification statements for field review responsibilities and professional compliance."
+                                />
+                        </figure>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure5"
+                            hideLabel="true"
+                            >
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-5"
+                                alt="Third page of the British Columbia Building Code 2024 Schedule B continuation form titled 'Summary of Design and Field Review Requirements,' listing architectural, structural, and mechanical review items such as fire resistance, egress systems, structural capacity, HVAC systems, waterproofing, glazing, seismic restraint, and energy code requirements, with sections for professional seal, signature, date, and CRP initials."
+                                />
+                        </figure>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure6"
+                            hideLabel="true">
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-6"
+                                alt="Fourth page of the British Columbia Building Code 2024 Schedule B continuation form listing plumbing, fire suppression systems, electrical, and geotechnical field review requirements, including drainage systems, sprinklers, alarms, electrical systems, excavation, soil bearing capacity, and seismic considerations, with sections for professional seal, signature, date, and CRP initials."
+                                />
+                        </figure>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure7"
+                            hideLabel="true"
+                            >
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-7"
+                                alt="British Columbia Building Code 2024 Schedule C-A form titled 'Assurance of Coordination of Professional Field Review,' including sections for jurisdiction, project information, coordinating registered professional details, professional seal and signature, field review coordination assurances, firm declaration, and compliance statements related to building permit and occupancy requirements."
+                                />
+                        </figure>
+                        <figure 
+                            xml:id="nbc.divC.part2.sect3.subsect1.art2.figure8"
+                            hideLabel="true"
+                            >
+                            <graphic
+                                src="bc-graphics/figure-c-2-3-1-2-8"
+                                alt="British Columbia Building Code 2024 Schedule C-B form titled 'Assurance of Professional Field Review and Compliance,' including sections for jurisdiction, discipline, project information, registered professional details, professional seal and signature, compliance assurance statements, firm declaration, and certification requirements related to final inspection and building permit compliance."
+                                />
+                        </figure>
+                    </article>
+            </new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-013" sequence="13" description="Replace Subsection 2.2.7 (Professional Design and Review) with BC-specific registered professional requirements (Articles 2.2.7.1-2.2.7.4)">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect7" />
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <subsection xml:id="nbc.divC.part2.sect2.subsect7" number="7">
+                        <title>Professional Design and Review</title>
+                        <note>
+                            <text>(See <ref type="internal" target="nbc.divC.part2.appendix.appnote12" display-type="short">Note A-2.2.7.3.</ref>)</text>
+                        </note>
+                        <article xml:id="nbc.divC.part2.sect2.subsect7.art1" number="1">
+                            <title>Application</title>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1" number="1">
+                                <text>The requirements of this Subsection apply to</text>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause1" letter="a">
+                                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part3" display-type="short">Part 3 of Division B</ref>,</text>
+                                </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause2" letter="b">
+                                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> that are designed with common egress systems for the occupants and require the use of <ref type="term" target="frwll">firewalls</ref> according to <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art4" display-type="short">Article 1.3.3.4.</ref> of Division A, and</text>
+                                </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3" letter="c">
+                                    <text>the following, in respect of <ref type="term" target="bldng">buildings</ref> within the scope of Part 9 of Division B other than <ref type="term" target="bldng">buildings</ref> described in Clause (b),</text>
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause1" number="1">
+                                        <text>structural components that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref></text>
+                                    </subclause>
+                                
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause2" number="2">
+                                        <text>geotechnical conditions at <ref type="term" target="bldng">building</ref> sites that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref>,</text>
+                                    </subclause>
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause3" number="3">
+                                        <text>sprinkler systems designed to NFPA 13, "Installation of Sprinkler Systems", and</text>
+                                    </subclause>
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause4" number="4">
+                                        <text>standpipe and hose systems designed to NFPA 14, “Installation of Standpipe and Hose Systems”.2.2.7.2. Owner Responsibilities</text>
+                                    </subclause>
+                                </clause>
+                            </sentence>
+                        </article>
+                        <article xml:id="nbc.divC.part2.sect2.subsect7.art2" number="2">
+                            <title>Owner Responsibilities</title>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art2.sent1" number="1">
+                                <text>Before the construction of or the <ref type="term" target="ltrtn">alteration</ref> to a <ref type="term" target="bldng">building</ref>, the owner shall</text>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art2.sent1.clause1" letter="a">
+                                    <text>retain a <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> to coordinate all design work and <ref type="term" target="bc-fld-rvw">field reviews</ref> of the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> required for the project in order to ascertain that (see <ref type="internal" target="nbc.divC.part2.appendix.appnote9" display-type="short">Note A-2.2.7.2.(1)</ref>(a))</text>
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art2.sent1.clause1.subclause1" number="1">
+                                        <text>the design will substantially comply with the British Columbia <ref type="term" target="bldng">Building</ref> Code and other applicable enactments respecting safety, and</text>
+                                    </subclause>
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art2.sent1.clause1.subclause2" number="2">
+                                        <text>the construction of the project will substantially comply with the British Columbia Building Code and other applicable enactments respecting safety, not including the construction safety aspects, and</text>
+                                    </subclause>
+                                </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art2.sent1.clause2" letter="b">
+                                    <text>if a <ref type="term" target="bldng">building</ref> permit is required, deliver to the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> letters in the forms set out in Schedules A and B. (See the end of Division C and <ref type="internal" target="nbc.divC.part2.appendix.appnote10" display-type="short">Note A-2.2.7.2.(1)</ref>(b).)</text>
+                                </clause>
+                            </sentence>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art2.sent2" number="2">
+                                <text>If an occupancy permit or final inspection from an <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> is required and before an <ref type="term" target="bc-wnr">owner</ref> occupies or receives permission to occupy the <ref type="term" target="bldng">building</ref>, the <ref type="term" target="bc-wnr">owner</ref> or <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> shall deliver to that authority letters in the forms set out in Schedules C-A and C-B (See the end of Division C and <ref type="internal" target="nbc.divC.part2.appendix.appnote11" display-type="short">Note A-2.2.7.2.(2)</ref>.)</text>
+                            </sentence>
+                        </article>
+                        <article xml:id="nbc.divC.part2.sect2.subsect7.art3" number="3">
+                            <title>Registered Professional Responsibilities</title>
+                            <note>
+                                <text>(See <ref type="internal" target="nbc.divC.part2.appendix.appnote12" display-type="short">Note A-2.2.7.3.</ref>)</text>
+                            </note>
+                            
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art3.sent1" number="1">
+                                <text>A <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref> who signs a letter, the form of which is set out in a Schedule to this Subsection, and an <ref type="term" target="bc-wnr">owner</ref> who signs or has an agent sign a letter the form of which is set out in a Schedule to this Subsection, shall comply with this Subsection and the provisions of the letter that apply to the person signing.</text>
+                            </sentence>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art3.sent2" number="2">
+                                <text>A <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref> or <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> who is responsible for a <ref type="term" target="bc-fld-rvw">field review</ref> shall keep a record of the <ref type="term" target="bc-fld-rvw">field review</ref> and of any corrective action taken as a result of the <ref type="term" target="bc-fld-rvw">field review</ref> and shall make the record available to the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> on the request of that authority.</text>
+                            </sentence>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art3.sent3" number="3">
+                                <text>A <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref> who is retained to undertake design work and <ref type="term" target="bc-fld-rvw">field reviews</ref> and who is required to provide letters pursuant to <ref type="internal" target="nbc.divC.part2.sect2.subsect7.art2.sent1.clause2" display-type="short">Clause 2.2.7.2.(1)(b)</ref> shall</text>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art3.sent3.clause1" letter="a">
+                                    <text>place their professional seal or stamp on the plans submitted by them in support of the application for a <ref type="term" target="bldng">building</ref> permit, after ascertaining that they substantially comply with the British Columbia Building Code and other applicable enactments respecting safety,</text>
+                                </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art3.sent3.clause2" letter="b">
+                                    <text>provide to the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> a letter in the form of Schedule C-B (see the end of Division C) after ascertaining that the components of the project for which the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> is responsible are constructed so as to substantially comply, in all material respects, with</text>
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art3.sent3.clause2.subclause1" number="1">
+                                        <text>the plans and supporting documents prepared by the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref>, and</text>
+                                    </subclause>
+                                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art3.sent3.clause2.subclause2" number="2">
+                                        <text>the requirements of the British Columbia Building Code and other applicable enactments respecting safety, not including construction safety aspects.</text>
+                                    </subclause>
+                                </clause>
+                            </sentence>
+                        </article>
+                        <article xml:id="nbc.divC.part2.sect2.subsect7.art4" number="4">
+                            <title>Termination</title>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art4.sent1" number="1">
+                                <text>An <ref type="term" target="bc-wnr">owner</ref> must not terminate the appointment of a <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> unless</text>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent1.clause1" letter="a">
+                                    <text>the <ref type="term" target="bc-wnr">owner</ref> immediately replaces the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref>, or</text>
+                                </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent1.clause2" letter="b">
+                                    <text>the <ref type="term" target="bc-wnr">owner</ref> has complied with Clause (1)(b) and Sentence (2) of <ref type="internal" target="nbc.divC.part2.sect2.subsect7.art2" display-type="short">Article 2.2.7.2.</ref> by delivering letters in the forms set out in Schedule A, B, C-A and C-B, as applicable, to the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>.</text>
+                                </clause>
+                            </sentence>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art4.sent2" number="2">
+                                <text>In respect of a project to which this Subsection applies,</text>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent2.clause1" letter="a">
+                                    <text>if the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> ceases to be retained at any time before the completion of the project, both the <ref type="term" target="bc-wnr">owner</ref> and the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> shall notify the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>, and</text>
+                                </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent2.clause2" letter="b">
+                                    <text>if a <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> ceases to be retained at any time before the completion of the project, both the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> and the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> shall notify the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>.</text>
+                                </clause>
+                            </sentence>
+                            <sentence xml:id="nbc.divC.part2.sect2.subsect7.art4.sent3" number="3">
+                                <text>Notification under Sentences (1) and (2) shall be made,</text>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent3.clause1" letter="a">
+                                    <text>if possible, before the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref>, as the case may be, ceases to be retained, or</text>
+                                </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent3.clause2" letter="b">
+                                    <text>if advance notice is not possible, as soon as possible..</text>
+                                </clause>
+                            </sentence>
+                        </article>
+                    </subsection>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-014" sequence="14" description="Replace appnote A-2.2.1.2.(1)   Structural Design. Part 4 of Division B is written on the assump">
+            <target type="canonical-id" id="nbc.divC.part2.appendix.appnote1" />
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote1">
+                        <number>2.2.1.2.(1)</number>
+                        <title>Structural Design.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote1.para1">A-2.2.1.2.(1)   Structural Design. Part 4 of Division B is written on the assumption that structural design will be carried out by a professional who is qualified to perform such design. Sentence 2.2.1.2.(1) is not intended to imply that a professional may not also be required in the application of requirements in other Parts of the British Columbia Building Code.</paragraph>
+                    </application-note>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-015" sequence="15" description="Insert new BC appnote: A-2.2.7.   Professional Design and Review.  This Subsection provides f">
+            <target type="position" parent-id="nbc.divC.part2.appendix" position="last-child" />
+            <insert><new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote7">
+                        <number>2.2.7.</number>
+                        <title>Professional Design and Review.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote7.para1">A-2.2.7.   Professional Design and Review.  This Subsection provides for the use of what are generally called Letters of Assurance. The letters themselves, known as Schedules A, B, C-A and C-B and located at the end of Division C, are intended to put on paper the responsibilities of the owner and the various registered professionals in a construction project. The Letters of Assurance do not impose any additional responsibilities on the registered professionals nor are they intended to alter the roles and responsibilities of the authorities having jurisdiction.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote7.para2">The Schedules have been very carefully scrutinized by the Province of British Columbia, Union of BC Municipalities, Building Officials’ Association of British Columbia, Architectural Institute of British Columbia, Association of Professional Engineers and Geoscientists of British Columbia and their respective legal counsel. The precise wording in the letters is extremely critical and must not be modified. Any notations on these Schedules which are absolutely necessary to suit a particular project must be clearly and legibly marked in ink on the copies.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote7.para3">It is typical that the registered professional responsible for the design is also responsible for the field review. There are instances where this is not the case and having a different registered professional doing the field reviews is unavoidable. Schedule C-B requires that the registered professional who provides the field review provide assurance that the building as finally constructed is in substantial conformance with the Code. In the event that another registered professional is to provide field review, the field reviewer takes on the responsibility to confirm that the construction substantially complies with the plans and supporting documents that were submitted for the building permit. The responsibility for code compliance of the design remains with the original registered professional who undertook the design. In this event, the Schedule C-B must be modified by the field reviewer by crossing out and initialing Clause (b)(i) and providing the effective transition date.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote7.para4">Note that Schedules A, B, C-A &amp; C-B, as required by Subsection 2.2.7., must be signed, sealed and submitted to the authority having jurisdiction, as applicable for each specific project. Conditional or qualified Schedules are not typically acceptable. Any fire and life safety issue relative to the Schedule B disciplines is to be remedied before the Schedules C-A / C-B are released, not accommodated by conditions or qualifications placed on the Schedule or by any attached document. See the Guide to Letters of Assurance, available from the Building and Safety Standards Branch Web site, for more details.</paragraph>
+                    </application-note>
+            </new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-016" sequence="16" description="Insert new BC appnote: A-2.2.7.1.(1)(c)(i)   Structural Components.  The reference to “struct">
+            <target type="position" parent-id="nbc.divC.part2.appendix" position="last-child" />
+            <insert><new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote8">
+                        <number>2.2.7.1.(1)(c)(i)</number>
+                        <title>Structural Components.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote8.para1">A-2.2.7.1.(1)(c)(i)   Structural Components.  The reference to “structural components of buildings that fall within the scope of Part 4” includes the situation where a building is classified under Part 9 due to its size and occupancy but also contains some structural components (such as beams supporting concentrated loads) which must be designed under Part 4. In this situation only Schedules B and C-B for the structural components are required. Schedule A and Schedules B, C-A and C-B relating to non-structural components are not required.</paragraph>
+                    </application-note>
+            </new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-017" sequence="17" description="Insert new BC appnote: A-2.2.7.2.(1)(a)   Coordinating Registered Professional.  The coordina">
+            <target type="position" parent-id="nbc.divC.part2.appendix" position="last-child" />
+            <insert><new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote9">
+                        <number>2.2.7.2.(1)(a)</number>
+                        <title>Coordinating Registered Professional.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote9.para1">A-2.2.7.2.(1)(a)   Coordinating Registered Professional.  The coordinating registered professional is responsible to ascertain that all Code related aspects which are relevant to the project are clearly identified by each of the registered professionals in the collection of Schedules B. If a registered professional of record has crossed out any item on their Schedule B, the coordinating registered professional must confirm this item is not applicable to the project or resolve the issue with the registered professional of record.</paragraph>
+                    </application-note>
+            </new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-018" sequence="18" description="Insert new BC appnote: A-2.2.7.2.(1)(b)   Schedule B.  The purpose of Schedule B is to clearl">
+            <target type="position" parent-id="nbc.divC.part2.appendix" position="last-child" />
+            <insert><new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote10">
+                        <number>2.2.7.2.(1)(b)</number>
+                        <title>Schedule B.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote10.para1">A-2.2.7.2.(1)(b)   Schedule B.  The purpose of Schedule B is to clearly identify the appropriate registered professional of record who has the overall responsibility in each discipline for compliance with the various Code related aspects of the project. Detailed design of certain building components may be undertaken by other registered professionals. The registered professional of record is responsible for monitoring the design work and field review of the other registered professionals within their discipline for components listed in Schedule B. In the event that the other registered professionals provide design and field review, the registered professional of record must be satisfied that such design and field reviews have been performed and is responsible for Schedule C-B.</paragraph>
+                    </application-note>
+            </new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-019" sequence="19" description="Insert new BC appnote: A-2.2.7.2.(2)   Schedule C-A.   Schedule C-A provides confirmation tha">
+            <target type="position" parent-id="nbc.divC.part2.appendix" position="last-child" />
+            <insert><new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote11">
+                        <number>2.2.7.2.(2)</number>
+                        <title>Schedule C-A.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote11.para1">A-2.2.7.2.(2)   Schedule C-A.   Schedule C-A provides confirmation that the coordinating registered professional has completed the obligation to coordinate the various registered professionals engaged in the project. It also confirms that the testing of the interrelated fire and life safety systems, such as fire alarms and sprinklers, has been completed and the systems function as intended.</paragraph>
+                    </application-note>
+            </new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-020" sequence="20" description="Insert new BC appnote: A-2.2.7.3.   Demonstration of the Coordinated Fire and Life Safety Sys">
+            <target type="position" parent-id="nbc.divC.part2.appendix" position="last-child" />
+            <insert><new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote12">
+                        <number>2.2.7.3.</number>
+                        <title>Demonstration of the Coordinated Fire and Life Safety Systems.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para1">A-2.2.7.3.   Demonstration of the Coordinated Fire and Life Safety Systems.  The design drawings and supporting documents must clearly indicate all essential details of the Coordinated Fire and Life Safety Systems prior to the construction of or the alteration to a building. Demonstration of the proper, integrated operation of the Fire and Life Safety Systems must be conducted prior to occupancy.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para2">Note that Schedules A, B, C-A &amp; C-B, as required by Subsection 2.2.7., must be signed and sealed and submitted to the authority having jurisdiction, as appropriate for each specific project.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para3">The following is an example of the steps required to coordinate the installation and testing of fire and life safety systems in buildings.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para4">1.0.   General</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para5">Referencing Schedule B:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para6">• Item No. 1.14 "Functional Testing of Architecturally Related Fire Emergency Systems and Devices,"</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para7">• Item No. 3.4 "Functional Testing of Mechanically Related Fire Emergency Systems and Devices,"</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para8">• Item No. 4.5 "Functional Testing of Plumbing Related Fire Emergency Systems and Devices,"</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para9">• Item No. 5.14 "Functional Testing of Fire Suppression Systems and Devices," and</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para10">• Item No. 6.3 "Functional Testing of Electrical Related Fire Emergency Systems and Devices."</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para11">The Coordinating Registered Professional (CRP) and Registered Professionals of Record (RPRs) must demonstrate that the Fire and Life Safety Systems' design has been coordinated prior to the issuance of the Building Permit. That is, the CRP/RPRs must accumulate and submit the necessary documentation, such as:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para12">• complete drawings,</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para13">• schedules,</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para14">• schematic diagrams,</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para15">• a fire alarm system sequencing description showing coordination between mechanical and electrical fire protection and life safety systems,</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para16">• mechanical fire protection and life safety schematic riser diagrams,</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para17">• an electrical fire alarm riser diagram,</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para18">• a motor data list coordinated with fire alarm system sequencing, and</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para19">• other documentation, as appropriate,</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para20">to demonstrate that the interface of the Fire and Life Safety Systems has been designed and coordinated so that when built correctly they will function as an integrated system. Further, it is intended that when the construction of the Fire &amp; Life Safety Systems is indicated by the Contractor to be complete, the RPRs/CRP witness the demonstration of the testing of the Fire and Life Safety Systems to confirm compliance that the as-built systems function as intended by the design.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para21">The required list of items will depend on the simplicity or complexity of the Project. The following is a comprehensive list of items for Fire and Life Safety Systems for a complex project, which must be coordinated in order to demonstrate compliance:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para22">Notes: It is the responsibility of the Coordinating Registered Professional (CRP) and Registered Professionals of Record (RPRs) to determine the best method of "How To" demonstrate to the Authority Having Jurisdiction (AHJ) that the Fire and Life Safety Systems have been coordinated for each project. That is, the method(s) used (i.e., charts, drawings, matrices, tables, etc.) for demonstration purposes should be project-specific and relate only to that project.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para23">It is not the intent of this Appendix material to dictate or produce "checklists" or other prescriptive methods for demonstrating compliance since this is best left to the professional discretion of the appropriate CRP/RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para24">2.0.   Design Phase — Building Permit Application Stage &amp; Final Construction Phase — Occupancy Permit Application Stage</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para25">2.1.   Fire Protection and Life Safety Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para26">2.1.1.   Automatic Sprinkler Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para27">• design requirements to appropriate Standard</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para28">2.1.2.   Standpipe Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para29">• design requirements to appropriate Standard</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para30">• Class I/Class II</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para31">• locations</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para32">• coverage</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para33">• F.D. connections</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para34">2.1.3.   Fire Pump Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para35">• design requirements to appropriate Standard</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para36">2.1.4.   Fire Alarm Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para37">• one/two stage system(s)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para38">• no. of systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para39">• design requirements to appropriate Standard</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para40">• sequence of operation</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para41">• fire alarm system zoning</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para42">• location of fire alarm system devices</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para43">• annunciator panel (location and design criteria)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para44">• annunciator panel shop drawings (detail design)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para45">• sprinkler zone/waterflow device</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para46">• smoke detectors</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para47">• smoke alarms</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para48">• manual pull stations</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para49">• signals to Fire Department via an acceptable central monitoring station</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para50">• activation of ancillary devices</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para51">2.1.6.   Emergency Telephone System</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para52">• each exit stair</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para53">2.1.7.   Emergency Power</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para54">• design requirements to appropriate Standard</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para55">• supervisory provisions for fire alarm</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para56">• emergency electrical load</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para57">• emergency generator</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para58">2.1.8.   Emergency Lighting</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para59">• exits</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para60">• access to exits</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para61">• public corridors</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para62">• other floor areas</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para63">2.1.9.   Exit Signs</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para64">2.2.   Additional Requirements for High Buildings</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para65">2.2.1.   Interface Condition between Highrise and Lowrise Components (Measure 'N' Vestibules)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para66">2.2.2.   Smoke Control — Measure A</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para67">• design requirements to appropriate Standard</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para68">• venting above-grade stairs</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para69">• separation of above-grade and below-grade stairs</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para70">• venting below-grade stairs</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para71">• pressurization of below-grade stairs at bottom</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para72">• above-grade elevator shaft serving below-grade protected with a "protected" vestibule</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para73">• additional controls at CACF (annunciator panel shop drawings)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para74">2.2.3.   Smoke Venting</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para75">2.2.4.   Fire Fighters' Elevators</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para76">• fire fighting controls</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para77">• emergency recall</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para78">2.2.5.   Protection of Emergency Electrical Conductors</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para79">• highrise elevator</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para80">• emergency generator(s)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para81">• fire pump(s)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para82">• smoke control systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para83">• smoke venting systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para84">• fire alarm and emergency voice communication systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para85">2.2.6.   Emergency Voice Communications</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para86">• integrated with fire alarm system</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para87">• audible to appropriate Standard</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para88">• zoning of speakers</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para89">3.0.   Roles and Responsibilities for the Demonstration of the Coordinated Fire and Life Safety Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para90">3.1.   Roles and Responsibilities for the Design, Commissioning and Functional Testing of Fire and Life Safety Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para91">3.1.1.   Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para92">RPRs will clearly indicate on their drawings and supporting documents the details of the fire and life safety systems for each applicable item of Section 2 for their particular discipline. RPRs will also coordinate the design of the components in their system with the designs of other RPRs on the project. RPRs are to indicate what functional testing, system verification, etc., must be performed by the Contractor or subtrades and establish the documentation to be provided.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para93">The CRP will develop the project-specific test protocol and procedures in consultation with the RPRs. The CRP will act as the facilitator for the coordination of the design of the fire and life safety systems among the various RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para94">3.1.2.   Construction Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para95">The Contractor will coordinate the activities of the subtrade contractors for the installation of the fire and life safety systems in accordance with the contract documents.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para96">RPRs will provide field reviews to ascertain that the construction of the fire and life safety systems substantially complies with their design.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para97">RPRs will review shop drawings of the fire and life safety systems to determine that they accurately reflect their design intent. They will also coordinate their reviews with those of the other RPRs on the project.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para98">The CRP will coordinate the shop drawing reviews and field reviews by the RPs with the objective that the entire fire and life safety system will correctly operate as an integrated system.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para99">3.1.3.   Occupancy Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para100">The Contractor will coordinate the subtrade contractors for the commissioning and functional testing of the fire and life safety systems. The Contractor will also collect all of the required Occupancy Permit submission documents from the various subtrade contractors and forward them to the CRP.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para101">The CRP will take the lead role in coordinating the activities of the RPRs required for the commissioning and functional testing of the fire and life safety systems. The CRP will distribute the test protocol and test procedures, as developed in the Design Stage, to the various parties involved in the process.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para102">RPRs will ascertain that the appropriate commissioning and functional testing of the fire and life safety systems of the components in their disciplines have been satisfactorily completed by the subtrade contractors. They will also determine that the appropriate Occupancy Permit submission documents have been submitted and filled in correctly.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para103">The CRP will be responsible for collecting all of the required Occupancy Permit submission documents, reviewing them for completeness and accuracy, and forwarding them to the AHJ in a complete package at least 24 hours prior to the Coordinated Final AHJ Review.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para104">3.2.   Sample Summary of Roles and Responsibilities for Demonstration of the Coordinated Fire and Life Safety Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para105">The following is a sample summary (only) of the roles and responsibilities for a typical highrise building with underground parking. The precise roles and responsibilities for each project will vary depending on the complexity. The CRP will ascertain that the appropriate roles and responsibilities for each project are fulfilled by the RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para106">3.2.1.   Coordinating Registered Professional</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para107">Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para108">• Determine the appropriate RPRs required for the project and make arrangements with the owner for their services.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para109">• Clarify the roles and responsibilities of the various RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para110">• Coordinate the design of the fire and life safety systems by the RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para111">• Coordinate and develop the test protocol and procedures for functional testing of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para112">• Coordinate the submission of the design drawings and supporting documents for the Building Permit application.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para113">Construction Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para114">• Coordinate and monitor the field reviews of the RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para115">• Coordinate and monitor the review of shop drawings by the RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para116">• Facilitate the information flow among the RPRs and Contractor.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para117">Occupancy Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para118">• In conjunction with the RPRs, finalize the project-specific test protocol and procedures for the fire and life safety systems, and review the requirements with the Contractor, subtrades and RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para119">• Finalize the list of project-specific occupancy permit submission documents and the schedule for submissions and confirm completeness with AHJ.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para120">• Organize the "Coordinated Final Consultant Review" at least one week prior to "Coordinated AHJ Final Review."</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para121">• Take a lead role in coordinating the functional testing of the fire and life safety systems during the "Coordinated Final Consultant Review."</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para122">• Coordinate the RPRs' review of Occupancy Permit submission documents for completeness and accuracy. • Coordinate Certification of Equivalencies, if applicable.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para123">• Collect all of the required Occupancy Permit submission documents and submit them in a complete package to the AHJ.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para124">• Organize the "Coordinated AHJ Final Review."</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para125">• Record any deficiencies identified at the "Coordinated AHJ Final Review" and monitor RPRs' field review of the corrective actions by the subtrades.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para126">• Assist in finalizing the list of outstanding requirements which need to be met for the issuance of the Occupancy Permit.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para127">• Follow-up on minor deficiencies post-Occupancy.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para128">3.2.2.   Architectural Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para129">• Establish the conceptual design for the fire and life safety systems in consultation with RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para130">• Determine equivalency reports required and coordinate the implementation on the drawings and supporting documents.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para131">• Clearly indicate on drawings and supporting documents:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para132">• Major occupancies and code classifications.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para133">• Fire separations and fire-resistance ratings.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para134">• Closures:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para135">• Fire-protection rating</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para136">• Temperature rise requirements</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para137">• Amount of glazing</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para138">• Hardware for closures</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para139">• Panic hardware</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para140">• Hold-open devices</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para141">• Electromagnetic locks</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para142">• Egress systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para143">• Provisions for fire fighting access.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para144">• Interior and exterior finishes.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para145">• Elevating devices c/w integrated controls to the fire alarm panel.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para146">• Signage coordinated with fire alarm system and annunciation.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para147">Construction Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para148">• Provide field reviews of architectural components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para149">• Review shop drawings for architectural components and coordinate requirements with other RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para150">• Review shop drawings for other disciplines which may influence architectural components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para151">Occupancy Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para152">• Ascertain that the architectural components substantially conform to the architectural drawings and supporting documents.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para153">• Perform an active role in witnessing the functional testing of the architectural components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para154">• Coordinate the signage with the fire alarm annunciator and the fire safety plans.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para155">• Review the architecturally-related Occupancy Permit submission documents provided by the Contractor and subtrades for completeness and accuracy.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para156">• Prepare and forward to the CRP the architectural Schedule C-B and other assurance letters required for the Occupancy Permit.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para157">3.2.3.   Mechanical/Plumbing Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para158">• Coordinate mechanical/plumbing clearances and functional requirements with other RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para159">• Clearly indicate on drawings and supporting documents:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para160">• Details of the mechanical/plumbing components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para161">• Schematic diagram of the smoke venting system showing all fans, ducts, motorized dampers, fusible link dampers and backdraft dampers.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para162">• Location and fire-protection ratings of fusible link fire dampers and fire stop flaps.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para163">• Location and fire-protection ratings of motorized fire dampers.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para164">• Location and fire-resistance ratings of fire-rated duct enclosures.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para165">• Fire stop systems for mechanical/plumbing penetrations of fire separations.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para166">• Kitchen exhaust system/suppression system.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para167">• Mechanical fans/motorized dampers sequence of operations:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para168">• Describe operation under normal mode</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para169">• Describe operation under fire alarm mode</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para170">• Indicate fire alarm initiation devices that activate change of operation</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para171">Construction Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para172">• Provide field reviews of mechanical/plumbing components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para173">• Review shop drawings for mechanical/plumbing components and coordinate requirements with other RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para174">• Review shop drawings for other disciplines which may influence mechanical/plumbing components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para175">Occupancy Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para176">• Ascertain that the mechanical/plumbing components substantially conform to the mechanical/plumbing drawings and supporting documents.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para177">• Perform an active role in witnessing the functional testing of the mechanical/ plumbing components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para178">• Review the mechanical/plumbing related occupancy permit submission documents provided by the Contractor and subtrades for completeness and accuracy.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para179">• Prepare and forward to the CRP the mechanical/plumbing Schedule C-B and other assurance letters and documentation required for the Occupancy Permit.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para180">3.2.4.   Fire Suppression</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para181">The design of sprinkler systems can be accomplished by at least two possible scenarios:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para182">Scenario 1</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para183">• The engineer of record undertakes the complete detailed design prior to the building permit application.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para184">• The engineer of record submits Schedule B with the BP application.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para185">• The engineer of record provides field reviews during construction and submits a Schedule C-B prior to Occupancy Permit.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para186">Scenario 2</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para187">• The engineer of record provides a detailed performance specification for the sprinkler design, as well as sufficient drawings to demonstrate/assure layout feasibility and interface with other components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para188">• The engineer of record submits Schedule B with the BP application for overall coordination of the sprinkler design. Schedule B can be annotated "For Performance Specification Only."</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para189">• The performance specifications may include a requirement that a separate sprinkler design engineer be responsible for detailed sprinkler design, preparation of sprinkler shop drawings and hydraulic calculations, letter of assurance Schedule B, (for field review during construction), and Schedule C-B (for Detailed Design) prior to Occupancy Permit.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para190">• The engineer of record reviews the detailed sprinkler design and shop drawings to ascertain that they substantially comply with the performance specifications.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para191">• The engineer of record provides a Schedule C-B prior to Occupancy Permit to confirm overall coordination of the sprinkler design and installation. Schedule C-B can be annotated "For Performance Specification Only." The engineer of record is entitled to rely upon the professional seal of the sprinkler design engineer for the detailed design and field review of the sprinkler system.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para192">For purposes of this example, Scenario 2 Roles and Responsibilities are outlined below:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para193">Design Phase by Engineer of Record</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para194">• Coordinate fire suppression spatial and functional requirements with other RPRs/CRP.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para195">• Clearly indicate on the drawings and performance specification:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para196">• Fundamental design parameters for the fire suppression system to appropriate Standard.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para197">• Location of fire department siamese hose connections.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para198">• Location and size of standpipes and hose connections.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para199">• Details of special sprinkler protection as per equivalent reports.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para200">• Fire stop systems for pipe penetrations of fire separations.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para201">• Zoning of the sprinkler system to be coordinated with the electrical engineer for the fire alarm annunciation and clearly identified in the performance specifications.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para202">Construction Phase by Sprinkler Design Engineer</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para203">• Prepare, sign and seal shop drawings and hydraulic calculations, clearly indicating:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para204">• Details of the fire suppression components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para205">• Schematic riser diagram of sprinkler and standpipe systems c/w all devices that will be connected to the fire alarm system (flow switches, tamper switches, pressure switches, freeze monitoring, heat trace monitoring).</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para206">• Location of fire department siamese hose connections.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para207">• Location and size of standpipes and hose connections.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para208">• Details of special sprinkler protection as per equivalent reports.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para209">• Zoning of the sprinkler system to be coordinated with the electrical engineer for the fire alarm annunciation and clearly identified on the sprinkler shop drawings.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para210">• Coordinate fire suppression location and functional requirements with engineer of record/CRP.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para211">• Provide field reviews of fire suppression components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para212">Construction Phase by Engineer of Record</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para213">• Review shop drawings and hydraulic calculations for fire suppression components to determine substantial conformance to the performance specifications.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para214">• Provide field reviews of fire suppression components to determine substantial conformance to the performance specifications.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para215">• Monitor the field reviews by the Sprinkler Design Engineer to determine substantial conformance with the performance specifications.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para216">• Review shop drawings for other disciplines which may influence fire suppression components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para217">Occupancy Phase by the Engineer of Record</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para218">• Ascertain that the fire suppression components substantially conform to the performance specifications.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para219">• Perform an active role in witnessing the functional testing of the fire suppression components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para220">• Review the fire suppression-related Occupancy Permit submission documents by the Contractor and subtrades for completeness and accuracy.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para221">• Collect the Schedule C-B from the Sprinkler Design Engineer, review for accuracy and completeness and forward to the CRP.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para222">• Collect other Occupancy Permit documents from the subtrade contractor (e.g., Contractor's Material and Test Certificates), review for completeness and forward to the CRP.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para223">• Prepare and forward to the CRP the fire suppression Schedule C-B for overall coordination of the fire suppression system.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para224">Occupancy Phase by the Sprinkler Design Engineer</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para225">• Ascertain that the fire suppression components substantially conform to the sprinkler shop drawings and supporting documents.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para226">• Perform an active role in witnessing the functional testing of the fire suppression components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para227">• Review the fire suppression-related Occupancy Permit submission documents by the Contractor and subtrades for completeness and accuracy.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para228">• Prepare and forward to the Engineer of Record the fire suppression Schedule C-B and other assurance letters and documentation required for the Occupancy Permit.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para229">3.2.5.   Electrical</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para230">Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para231">• Coordinate with the CRP and RPRs the test protocol and procedures for functional testing of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para232">• Details of the electrical components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para233">• Clearly indicate on drawings and supporting documents:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para234">• Fire Alarm System</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para235">• Location of fire alarm annunciator panel and central alarm control facility</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para236">• Location of fire alarm initiating devices (smoke detectors, heat detectors, manual pull stations) • Fire alarm riser diagram c/w ancillary device connections</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para237">• Audibility of fire alarm signal throughout floor area</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para238">• Zoning of fire alarm initiation devices and audible signal appliances</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para239">• Monitoring of fire alarm</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para240">• Routing and method of protection of emergency conductors</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para241">• Wiring methods for equipment</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para242">• Testing/verification requirements and the documentation to be submitted to the RPR</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para243">• Sprinkler System</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para244">• Coordinate design with sprinkler design engineer</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para245">• Sprinkler system alarm initiation and monitoring to be indicated on the fire alarm riser diagram (flow, tamper, pressure, etc.)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para246">• Detailed diagrams for freeze protection systems (heat trace monitoring, low temperature monitoring, etc.)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para247">• Fire Pump Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para248">• Riser diagram to indicate monitoring of the fire pump (pump running, power failure, phase reversal, wiring details for device connections)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para249">• Routing and method for protection of fire pump feeders from fire and power source, so that a fire from one source will not interrupt power from the other source</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para250">• Electrical requirements to appropriate Standard and documents to be submitted to RPR (overcurrent protection details, location of controller and transfer switches, voltage drop, etc.)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para251">• Kitchen Exhaust/Fire Suppression System</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para252">• Emergency Generator</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para253">• Generator load calculations</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para254">• Details and wiring diagram for monitoring through the fire alarm system</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para255">• Details for testing to appropriate Standard and documents to be submitted to RPR</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para256">• Smoke Venting Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para257">• Coordinate design with the mechanical engineer</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para258">• Fire alarm riser diagram to indicate smoke venting fans and motorized dampers and HVAC/exhaust fan shutdown</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para259">• Detailed wiring diagrams for fan shut-offs, exhaust fan operation, pressurization fan operation, damper operation (opening, closing, throttling)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para260">• Sequence of operation of smoke venting system in a narrative form</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para261">• Describe operation under normal mode</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para262">• Describe operation under fire alarm mode</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para263">• Indicate fire alarm initiating devices that activate changes of operation/sequence</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para264">• Routing methods for protection of emergency conductors</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para265">• Electromagnetic Locks and Hold-Open Devices</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para266">• Coordinate design with the architect</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para267">• Sequence of operation in both normal and fire alarm mode</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para268">• Wiring diagrams for connection of devices</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para269">• Locations of devices on the floor plans</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para270">• Elevators</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para271">• Sequence of operation in a narrative form</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para272">• Wiring diagram details</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para273">• Routing and method of protection of emergency conductors</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para274">• Fire stop systems for electrical penetrations of fire separations</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para275">• Coordinate electrical equipment location and functional requirements with other RPRs/CRP.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para276">Construction Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para277">• Provide field reviews of electrical components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para278">• Review shop drawings for electrical components and coordinate requirements with other RPRs.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para279">• Review shop drawings for other disciplines which may influence electrical components.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para280">Occupancy Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para281">• Ascertain that the electrical components substantially conform to the electrical drawings and supporting documents.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para282">• Perform an active role in witnessing the functional testing of the electrical components of the fire and life safety systems.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para283">• Review the electrical-related Occupancy Permit submission documents provided by the Contractor and subtrades for completeness and accuracy.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para284">• Prepare and forward to the CRP the electrical Schedule C-B and other assurance letters and documents required for the Occupancy Permit.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para285">4.0.   Sample Occupancy Demonstration/Witnessing Flowchart</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para286">DEVELOP TESTING PROTOCOL/PROCEDURE (Design Stage)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para287">CRP/RPRs develop Testing Demonstration/Witness Protocol</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para288">— Issue to Authorities Having Jurisdiction &amp; Contractor</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para289">||</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para290">\/</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para291">DOCUMENTATION SUBMISSION</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para292">Contractor/Subtrades submit/deliver all appropriate documentation to CRP/RPRs, including:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para293">— The original Contractor’s Materials and Test Certificate for the sprinkler system</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para294">— Fire Pump Flow Test Certificate(s)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para295">— Back Flow Prevention Certificate(s)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para296">— Emergency generator commissioning and verification reports</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para297">— The original Certificate of Verification for the fire alarm system</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para298">— Appendix “A” to the fire alarm verification report</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para299">— ULC Certificate for Protective Signaling Service</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para300">— Other documentation, as appropriate</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para301">||</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para302">\/</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para303">CONTRACTOR DEMONSTRATION — CONSTRUCTION COMPLETE</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para304">Contractor &amp; Subtrades</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para305">(Mechanical, Electrical, Elevator, Sprinkler, Fire Alarm, etc.) as appropriate</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para306">||</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para307">\/</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para308">COORDINATED FINAL CONSULTANT REVIEW DEMONSTRATION/WITNESSING CRP/RPRs</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para309">(Architect, Mechanical Engineer, Electrical Engineer, Sprinkler Engineer, Equivalency Consultant, etc.) as appropriate</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para310">||</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para311">\/</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para312">OCCUPANCY SUBMISSION DOCUMENTS</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para313">CRP to collect all submission documents, including Schedule Cs from RPRs, and submit to AHJ in a complete package</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para314">||</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para315">\/</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para316">COORDINATED FINAL AHJ REVIEW DEMONSTRATION/WITNESSING</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para317">Contractor, Subtrades, CRP/RPRs demonstrate to AHJ</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para318">(Building, Fire, Mechanical, Electrical and Sprinkler)</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para319">||</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para320">\/</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para321">OP ISSUED</paragraph>
+                    </application-note>
+            </new-content></insert>
+        </amendment>
+
+        
+        <amendment id="bc-021" sequence="21" description="Replace appnote A-2.3.1.    Alternative Solutions. Beyond the purposes of demonstrating complian">
+            <target type="canonical-id" id="nbc.divC.part2.appendix.appnote6" />
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divC.part2.appendix.appnote6">
+                        <number>2.3.1.</number>
+                        <title>Alternative Solutions.</title>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para1">A-2.3.1.    Alternative Solutions. Beyond the purposes of demonstrating compliance and acquiring a building permit, there are other important reasons for requiring that the proponent of an alternative solution submit project documentation (i.e. a compliance report) to the authority having jurisdiction and for the authority having jurisdiction to retain that documentation for a substantial period following the construction of a building:</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para2">•   Alternative solutions made possible by objective-based codes may have special maintenance requirements, which would be described in the documentation.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para3">•   Documentation helps consultants perform code compliance assessments of existing buildings before they are sold and informs current owners or prospective buyers of existing buildings of any limitations pertaining to their future use or development.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para4">•   Documentation provides design professionals with the basic information necessary to design changes to an existing building.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para5">•   An alternative solution could be invalidated by a proposed alteration to a building. Designers and regulators must therefore know the details of the particular alternative solutions that were integral to the original design. Complete documentation should provide insight as to why one alternative solution was chosen over another.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para6">•   Documentation is the “paper trail” of the alternative solution negotiated between the designer and the regulator and should demonstrate that a rational process led to the acceptance of the alternative solution as an equivalency.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para7">•   It is possible that over time a particular alternative solution may be shown to be inadequate. It would be advantageous for a jurisdiction to know which buildings included that alternative solution as part of their design: documentation will facilitate this type of analysis.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para8">•   Project documentation provides important information to a forensic team that is called to investigate an accident or why a design failed to provide the level of performance expected.</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote6.para9">This subject is discussed in further detail in “Recommended Documentation Requirements for Projects Using Alternative Solutions in the Context of Objective-Based Codes,” which was prepared for the CCBFC Task Group on Implementation of Objective-Based Codes and is available on the NRC's website.</paragraph>
+                    </application-note>
+                </new-content>
+            </replace>
+        </amendment>
+
+        
+        <amendment id="bc-022" sequence="22" description="Replace Sentence 2.2.4.1.(1) (Application) - placeholder content">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect4.art1.sent1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divC.part2.sect2.subsect4.art1.sent1" number="1">
+                        <text>This Subsection applies only to <ref type="term" target="bldng">buildings</ref> covered in <ref type="internal" target="nbc.divB.part4" display-type="short">Part 4 of Division B</ref>. (See <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art2" display-type="long"/>.)</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-023" sequence="23" description="Add 'of Division B' after 4.2.2.4.(1) and (2)">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect4.art7.sent1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divC.part2.sect2.subsect4.art7.sent1"
+                               number="1"
+                               vendor-id="es000130">
+                        <text>Where conditions as described under <ref type="internal"
+                                target="nbc.divB.part4.sect2.subsect2.art4.sent1"
+                                display-type="long"
+                                pretext="Sentences"/>
+                           <ref type="internal"
+                                target="nbc.divB.part4.sect2.subsect2.art4.sent2"
+                                display-type="short"
+                                pretext="and">(2)</ref> of Division B are encountered, or where <ref type="term" target="fndtn-nt"> foundation
+units</ref> or their locations are altered, this information shall
+be recorded on appropriate drawings or new “as constructed” drawings. </text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-024" sequence="24" description="Update 2.2.5.1.(1): Missing ref to Part 5 of Division B">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect5.art1.sent1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divC.part2.sect2.subsect5.art1.sent1"
+                               number="1"
+                               vendor-id="es008654">
+                        <text>This Subsection applies to <ref type="term" target="bldng">building</ref> materials, components and assemblies to which <ref type="internal" target="nbc.divB.part5" display-type="short">Part 5 of Division B</ref> applies. (See <ref type="internal"
+                                target="nbc.divA.part1.sect3.subsect3.art2"
+                                display-type="long"/>.)</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-025" sequence="25" description="2.2.5.2.(1): See Note A-2.2.6.2.(1) - has the note title, although it does not exist in the Word document">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect5.art2.sent1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divC.part2.sect2.subsect5.art2.sent1"
+                               number="1"
+                               vendor-id="es008655">
+                        <text>Information shown on drawings and in specifications shall be
+clear and legible, and shall contain sufficient details to demonstrate
+conformance with this Code. (See <ref type="internal"
+                                target="nbc.divC.part2.appendix.appnote2"
+                                display-type="short"/>.)</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-026" sequence="26" description="Replace Article 2.2.3.1 (Information Required for Fire Protection Components) - same content placeholder">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect3.art1" />
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divC.part2.sect2.subsect3.art1"
+                             number="1"
+                             vendor-id="ea000119">
+                        <title>Information Required for Fire Protection Components</title>
+                        <sentence xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1"
+                                  number="1"
+                                  vendor-id="es000121">
+                            <text>Information shall be submitted to show the major components
+of fire protection including</text>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1.clause1"
+                                    letter="a"
+                                    vendor-id="es000121a">
+                                <text>the division of the <ref type="term" target="bldng">building</ref> by <ref type="term" target="frwll">firewalls</ref>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1.clause2"
+                                    letter="b"
+                                    vendor-id="es000121b">
+                                <text>the <ref type="term" target="bldng-r">building area</ref>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1.clause3"
+                                    letter="c"
+                                    vendor-id="es000121c">
+                                <text>the degree of <ref type="term" target="fr-prtn">fire separation</ref> of <ref type="term" target="tr">storeys</ref>, shafts and special rooms or areas, including
+the location and rating of <ref type="term" target="clr">closures</ref> in <ref type="term" target="fr-prtn">fire separations</ref>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1.clause4"
+                                    letter="d"
+                                    vendor-id="es000121d">
+                                <text>the source of information for <ref type="term" target="fr-rtnc-">fire-resistance
+ratings</ref> of elements of construction (to be indicated on large-scale
+sections),</text>
+                            </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1.clause5"
+                                    letter="e"
+                                    vendor-id="es000121g">
+                                <text>the source of information
+for <ref type="term" target="ncps-rtng">encapsulation ratings</ref> of mass timber
+elements of construction (to be indicated on large-scale sections),</text>
+                            </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1.clause6"
+                                    letter="f"
+                                    vendor-id="es000121e">
+                                <text>the location of <ref type="term" target="xt">exits</ref>, and</text>
+                            </clause>
+                                <clause xml:id="nbc.divC.part2.sect2.subsect3.art1.sent1.clause7"
+                                    letter="g"
+                                    vendor-id="es000121f">
+                                <text>fire detection, suppression and alarm systems.</text>
+                                </clause>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-027" sequence="27" description="Replace Subsection 2.2.8 title with BC wording">
+            <target type="canonical-id" id="nbc.divC.part2.sect2.subsect8" />
+            <modify>
+                <element-replace element="title">
+                    <new-content source="bc">
+                        <title>Drawings, Specifications and Calculations for Energy
+Performance and Greenhouse Gas Emissions Compliance</title>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-028" sequence="28" description="Replace Section 2.3.1 title with BC wording">
+            <target type="canonical-id" id="nbc.divC.part2.sect3.subsect1" />
+            <modify>
+                <element-replace element="title">
+                    <new-content source="bc">
+                        <title>Alternative Solutions</title>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+    </amendments>
+
+</bc-overlay>

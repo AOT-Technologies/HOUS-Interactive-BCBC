@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    REVISION FILES LIST
+
+    List all revision amendment files you want to combine and apply.
+    They will be processed in the order listed.
+
+    Revision amendments use the snapshot-based revision-history approach
+    for date-based versioning. These are applied to bc-building-code.xml
+    (the output from overlay amendments) to produce bc-building-code-final.xml.
+
+    Usage:
+    Step 1: Combine revisions
+    java -jar json-generation-pipeline/tools/saxon.jar 
+         -xsl:json-generation-pipeline/transformation-xslt/combine-amendments.xsl
+         -s:json-generation-pipeline/source/bc-revisions/revision-list.xml
+         -o:json-generation-pipeline/output/bc-revisions-combined.xml
+
+    Step 2: Apply combined revisions to bc-building-code.xml
+    java -jar json-generation-pipeline/tools/saxon.jar 
+         -xsl:json-generation-pipeline/transformation-xslt/merge-engine-v3.xsl
+         -s:json-generation-pipeline/output/bc-building-code.xml
+         overlay-document=json-generation-pipeline/output/bc-revisions-combined.xml
+         -o:json-generation-pipeline/output/bc-building-code-final.xml
+-->
+<amendment-files>
+    <!-- Add your revision amendment files here in the order they should be processed -->
+    <!-- Paths are relative to this file (revision-list.xml) location -->
+
+    <!-- Ministerial Orders and Errata with Revision History -->
+    <file>xml/Ministerial Order BA 2024 01.xml</file>
+    <file>xml/Ministerial Order BA 2024 02.xml</file>
+    <file>xml/Ministerial Order BA 2024 03.xml</file>
+    <file>xml/Ministerial Order BA 2024 04.xml</file>
+    <file>xml/Ministerial Order BA 2024 05.xml</file>
+    <file>xml/Ministerial Order BA 2024 06.xml</file>
+
+    <!-- Add more revision files as needed -->
+    <!-- <file>xml/bc-errata-2025.xml</file> -->
+    <!-- <file>xml/bc-policy-updates-2025.xml</file> -->
+
+</amendment-files>
