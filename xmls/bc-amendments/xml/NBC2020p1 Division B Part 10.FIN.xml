@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-diva-amendments-2023" 
+            version="1.0" 
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020 - Division B Part 10       -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Division B Part 10</title>
+        <description>British Columbia-specific amendments for Division B Part 10</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Part 10.FIN.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 001: Insert Complete Part 10 - Energy Efficiency         -->
+        <!-- All sections, subsections, articles, tables, and application notes -->
+        <!-- ================================================================== -->
+        <amendment id="bc-001" sequence="1"
+                   description="Insert complete Part 10 - Energy Efficiency with all sections, tables, and application notes">
+            <target type="position" 
+                    parent-id="nbc.divB"
+                    position="after"
+                    reference-id="nbc.divB.part8"/>
+            <insert>
+                <new-content source="bc">
+                    <part xml:id="nbc.divB.part10" number="10">
+                        <title>Energy Efficiency</title>
+                        
+                        <!-- Section 10.1: General -->
+                        <section xml:id="nbc.divB.part10.sect1" number="1">
+                            <title>General</title>
+                            <subsection xml:id="nbc.divB.part10.sect1.subsect1" number="1">
+                                <title>Application</title>
+                                <article xml:id="nbc.divB.part10.sect1.subsect1.art1" number="1">
+                                    <title>Scope</title>
+                                    <sentence xml:id="nbc.divB.part10.sect1.subsect1.art1.sent1" number="1">
+                                        <text>The scope of this Part shall be as described in <ref type="internal" target="nbc.divA.part1.sect3.subsect3" display-type="long"/>.</text>
+                                    </sentence>
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect1.subsect1.art2" number="2">
+                                    <title>Application</title>
+                                    <sentence xml:id="nbc.divB.part10.sect1.subsect1.art2.sent1" number="1">
+                                        <text>The application of this Part shall be as described in <ref type="internal" target="nbc.divA.part1.sect3.subsect3" display-type="long"/>.</text>
+                                    </sentence>
+                                </article>
+                            </subsection>
+                            <subsection xml:id="nbc.divB.part10.sect1.subsect2" number="2">
+                                <title>Definitions</title>
+                                <article xml:id="nbc.divB.part10.sect1.subsect2.art1" number="1">
+                                    <title>Defined Terms</title>
+                                    <sentence xml:id="nbc.divB.part10.sect1.subsect2.art1.sent1" number="1">
+                                        <text>Words that appear in <emphasis style="italic">italics</emphasis> are defined in Article 1.4.1.2.</text>
+                                    </sentence>
+                                </article>
+                            </subsection>
+                        </section>
+                        
+                        <!-- Section 10.2: Energy Efficiency -->
+                        <section xml:id="nbc.divB.part10.sect2" number="2">
+                            <title>Energy Efficiency</title>
+                            <subsection xml:id="nbc.divB.part10.sect2.subsect1" number="1">
+                                <title>General</title>
+                                <article xml:id="nbc.divB.part10.sect2.subsect1.art1" number="1">
+                                    <title>Application</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect1.art1.sent1" number="1">
+                                        <text>This Section does not apply to <ref type="term" target="bldng">buildings</ref> described in Sentence 1.3.3.3.(1) of Division A.</text>
+                                    </sentence>
+                                </article>
+                            </subsection>
+                            <subsection xml:id="nbc.divB.part10.sect2.subsect2" number="2">
+                                <title>Design and Construction</title>
+                                <article xml:id="nbc.divB.part10.sect2.subsect2.art1" number="1">
+                                    <title>Design and Construction</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect2.art1.sent1" number="1">
+                                        <text>Except as permitted in <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art2" display-type="long"/>, <ref type="term" target="bldng">buildings</ref> shall be designed and constructed to conform to</text>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect2.art1.sent1.clause1" letter="a">
+                                            <text>ANSI/ASHRAE/IES 90.1, "Energy Standard for Buildings Except Low-Rise Residential Buildings" (except Subsection 8.4.2.),</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect2.art1.sent1.clause2" letter="b">
+                                            <text>the NECB, or</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect2.art1.sent1.clause3" letter="c">
+                                            <text><ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/>.</text>
+                                        </clause>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect2.art1.sent2" number="2">
+                                        <text>Where a <ref type="term" target="bldng">building</ref> contains one or more <ref type="term" target="mjr-ccpn">major occupancies</ref> listed in <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/>, those <ref type="term" target="mjr-ccpn">major occupancies</ref> shall conform to the requirements of any of Steps 2 to 4, as described in <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent3" display-type="long"/>, and where the <ref type="term" target="bldng">building</ref> contains <ref type="term" target="mjr-ccpn">major occupancies</ref> not listed in <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/>, those remaining <ref type="term" target="mjr-ccpn">major occupancies</ref> shall comply with Clause (1)(a) or (b).</text>
+                                    </sentence>
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect2.subsect2.art2" number="2">
+                                    <title>Application to Existing Buildings</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect2.art2.sent1" number="1">
+                                        <text>Where a <ref type="term" target="bldng">building</ref> or <ref type="term" target="mjr-ccpn">major occupancy</ref> designed and constructed to conform to any version of ANSI/ASHRAE/IES 90.1, "Energy Standard for Buildings Except Low-Rise Residential Buildings" is altered, rehabilitated, or renovated, or there is a change in <ref type="term" target="ccpnc">occupancy</ref>, the energy performance of the <ref type="term" target="ltrtn">alteration</ref>, rehabilitation, renovation, or change in <ref type="term" target="ccpnc">occupancy</ref> shall comply with <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause1" display-type="medium"/> or <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause3" display-type="short"/>.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect2.art2.sent2" number="2">
+                                        <text>Notwithstanding Article 1.1.1.1. of Division A of the NECB, where a <ref type="term" target="bldng">building</ref> or <ref type="term" target="mjr-ccpn">major occupancy</ref> designed and constructed to conform to any version of the NECB is altered, rehabilitated, or renovated, or there is a change in <ref type="term" target="ccpnc">occupancy</ref>, the energy performance of the <ref type="term" target="ltrtn">alteration</ref>, rehabilitation, renovation or change in <ref type="term" target="ccpnc">occupancy</ref>, shall comply with <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause2" display-type="medium"/> or <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause3" display-type="short"/>.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect2.art2.sent3" number="3">
+                                        <text>Notwithstanding Article 1.1.1.1. of Division A of the NECB, where a <ref type="term" target="bldng">building</ref> or <ref type="term" target="mjr-ccpn">major occupancy</ref> designed and constructed to conform to any version of <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/> is altered, rehabilitated, renovated, or there is a change in <ref type="term" target="ccpnc">occupancy</ref>, the energy performance of the <ref type="term" target="ltrtn">alteration</ref>, rehabilitation, renovation, or change in <ref type="term" target="ccpnc">occupancy</ref>, shall comply <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause2" display-type="medium" pretext="Clauses"/> or <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause3" display-type="short"/>.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect2.art2.sent4" number="4">
+                                        <text>Notwithstanding Article 1.1.1.1. of Division A of the NECB, where a <ref type="term" target="bldng">building</ref> or <ref type="term" target="mjr-ccpn">major occupancy</ref> that is not described in <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art2.sent1" display-type="short" pretext="Sentences"/> through <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art2.sent3" display-type="short"/> is altered, rehabilitated, renovated, or there is a change in <ref type="term" target="ccpnc">occupancy</ref>, the energy performance of the <ref type="term" target="ltrtn">alteration</ref>, rehabilitation, renovation, or change in <ref type="term" target="ccpnc">occupancy</ref> shall comply with <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1" display-type="long"/>.</text>
+                                    </sentence>
+                                </article>
+                            </subsection>
+                            <subsection xml:id="nbc.divB.part10.sect2.subsect3" number="3">
+                                <title>Energy Step Code</title>
+                                <article xml:id="nbc.divB.part10.sect2.subsect3.art1" number="1">
+                                    <title>Application</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art1.sent1" number="1">
+                                        <text>This Subsection applies to <ref type="term" target="bldng">buildings</ref> containing any of the following <ref type="term" target="mjr-ccpn">major occupancies</ref>:</text>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art1.sent1.clause1" letter="a">
+                                            <text><ref type="term" target="ssmbl">assembly</ref>, as described in Tables 10.2.3.3.-A, 10.2.3.3.-B, 10.2.3.3.-C and 10.2.3.3.-D,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art1.sent1.clause2" letter="b">
+                                            <text><ref type="term" target="trtm">treatment</ref>, as described in Table 10.2.3.3.-E,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art1.sent1.clause3" letter="c">
+                                            <text><ref type="term" target="clr">care</ref>, as described in Table 10.2.3.3.-F,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art1.sent1.clause4" letter="d">
+                                            <text><ref type="term" target="rdntl-cc">residential</ref>,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art1.sent1.clause5" letter="e">
+                                            <text><ref type="term" target="bn-nd-pr">business and personal service</ref>, or</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art1.sent1.clause6" letter="f">
+                                            <text><ref type="term" target="mrcntl-c">mercantile</ref>.</text>
+                                        </clause>
+                                    </sentence>
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect2.subsect3.art2" number="2">
+                                    <title>Definitions</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1" number="1">
+                                        <text>For the purpose of this Subsection, the term "total energy use intensity" shall mean a metric of the energy used over a year by the <ref type="term" target="bldng">building</ref>, estimated by using an energy model in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art4" display-type="long"/>, normalized per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> and expressed in kWh/(m<super>2</super>·year), for all of the following combined:</text>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause1" letter="a">
+                                            <text>space-heating equipment,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause2" letter="b">
+                                            <text>space-cooling equipment,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause3" letter="c">
+                                            <text>fans,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause4" letter="d">
+                                            <text>interior and exterior lighting devices,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause5" letter="e">
+                                            <text>service water heating equipment,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause6" letter="f">
+                                            <text>pumps,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause7" letter="g">
+                                            <text>auxiliary HVAC equipment,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause8" letter="h">
+                                            <text>receptacle loads and miscellaneous equipment,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause9" letter="i">
+                                            <text>appliances, and</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause10" letter="j">
+                                            <text>elevators and escalators.</text>
+                                        </clause>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2" number="2">
+                                        <text>For the purpose of this Subsection, the term "thermal energy demand intensity" shall mean a metric of the annual heating required by the <ref type="term" target="bldng">building</ref> for space conditioning and for conditioning of ventilation air, estimated by using an energy model in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art4" display-type="long"/>, normalized per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> and expressed in kWh/(m<super>2</super>·year), taking into account all of the following:</text>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.clause1" letter="a">
+                                            <text>thermal transmittance of above-ground walls and roof-ceiling assemblies,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.clause2" letter="b">
+                                            <text>thermal transmittance of floors and walls in contact with the ground, or space that is not <ref type="term" target="cnd-sp">conditioned space</ref>,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.clause3" letter="c">
+                                            <text>thermal transmittance and solar heat gain of windows, doors and skylights,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.clause4" letter="d">
+                                            <text>air leakage through the <ref type="term" target="r-brrr">air barrier system</ref>,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.clause5" letter="e">
+                                            <text>internal heat gains from occupants and equipment, and</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.clause6" letter="f">
+                                            <text>heat recovery from exhaust ventilation.</text>
+                                        </clause>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art2.sent3" number="3">
+                                        <text>For the purpose of this Subsection, the term "Step" shall mean a Step referred to in Tables 10.2.3.3.-A to 10.2.3.3.-J.</text>
+                                    </sentence>
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect2.subsect3.art3" number="3">
+                                    <title>Compliance Requirements</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art3.sent1" number="1">
+                                        <text><ref type="term" target="bldng">Buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> conforming to the requirements of any of Steps 2 to 4 shall be designed and constructed to conform to the applicable energy performance requirements in Tables 10.2.3.3.-A to 10.2.3.3.-J</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art3.sent2" number="2">
+                                        <text>Except as permitted by Sentence (3),</text>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art3.sent2.clause1" letter="a">
+                                            <text>energy performance shall be calculated in conformance with Article 10.2.3.4., and</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art3.sent2.clause2" letter="b">
+                                            <text>airtightness shall be tested in accordance with Article 10.2.3.5.</text>
+                                        </clause>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art3.sent3" number="3">
+                                        <text><ref type="term" target="bldng">Buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> designed and constructed to conform to Step 4 of Tables 10.2.3.3.-G to 10.2.3.3.-H or to Step 3 in Tables 10.2.3.3.-I and 10.2.3.3.-J, and to the Passive House Planning Package, version 9 or newer, are deemed to comply with this Subsection provided the energy model according to which the <ref type="term" target="bldng">building</ref> or the <ref type="term" target="mjr-ccpn">major occupancy</ref> of the <ref type="term" target="bldng">building</ref> is designed and constructed is prepared by a Certified Passive House Designer, or Certified Passive House Consultant, who is approved by the Passive House Institute.</text>
+                                    </sentence>
+                                    
+                                    <!-- Tables 10.2.3.3.-A through 10.2.3.3.-J -->
+                                    
+                                    <!-- Table A: Schools -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table1">
+                                        <title>Energy Performance Requirements for Schools Other than Colleges</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="3">
+                                            <colspec colname="col1" colwidth="0.5*"/>
+                                            <colspec colname="col2" colwidth="2*"/>
+                                            <colspec colname="col3" colwidth="2*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table1.rowh1">
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table1.row1">
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table1.row2">
+                                                    <entry>2</entry>
+                                                    <entry colspan="2">Conform to Part 8 of the NECB</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table B: Libraries -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table2">
+                                        <title>Energy Performance Requirements for Libraries</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="3">
+                                            <colspec colname="col1" colwidth="0.5*"/>
+                                            <colspec colname="col2" colwidth="2*"/>
+                                            <colspec colname="col3" colwidth="2*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table2.rowh1">
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table2.row1">
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table2.row2">
+                                                    <entry>2</entry>
+                                                    <entry colspan="2">Conform to Part 8 of the NECB</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table C: Colleges -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table3">
+                                        <title>Energy Performance Requirements for Colleges</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="3">
+                                            <colspec colname="col1" colwidth="0.5*"/>
+                                            <colspec colname="col2" colwidth="2*"/>
+                                            <colspec colname="col3" colwidth="2*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table3.rowh1">
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table3.row1">
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table3.row2">
+                                                    <entry>2</entry>
+                                                    <entry colspan="2">Conform to Part 8 of the NECB</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table D: Recreation Centres -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table4">
+                                        <title>Energy Performance Requirements for Recreation Centres</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="3">
+                                            <colspec colname="col1" colwidth="0.5*"/>
+                                            <colspec colname="col2" colwidth="2*"/>
+                                            <colspec colname="col3" colwidth="2*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table4.rowh1">
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table4.row1">
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table4.row2">
+                                                    <entry>2</entry>
+                                                    <entry colspan="2">Conform to Part 8 of the NECB</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table E: Hospitals -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table5">
+                                        <title>Energy Performance Requirements for Hospitals</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="3">
+                                            <colspec colname="col1" colwidth="0.5*"/>
+                                            <colspec colname="col2" colwidth="2*"/>
+                                            <colspec colname="col3" colwidth="2*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table5.rowh1">
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table5.row1">
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table5.row2">
+                                                    <entry>2</entry>
+                                                    <entry colspan="2">Conform to Part 8 of the NECB</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table F: Care Centres -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table6">
+                                        <title>Energy Performance Requirements for Care Centres</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="3">
+                                            <colspec colname="col1" colwidth="0.5*"/>
+                                            <colspec colname="col2" colwidth="2*"/>
+                                            <colspec colname="col3" colwidth="2*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table6.rowh1">
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table6.row1">
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table6.row2">
+                                                    <entry>2</entry>
+                                                    <entry colspan="2">Conform to Part 8 of the NECB</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    <!-- Table G: Hotels and Motels -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table7">
+                                        <title>Energy Performance Requirements for Hotels and Motels</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="4">
+                                            <colspec colname="col1" colwidth="1.5*"/>
+                                            <colspec colname="col2" colwidth="0.5*"/>
+                                            <colspec colname="col3" colwidth="1.5*"/>
+                                            <colspec colname="col4" colwidth="1.5*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.rowh1">
+                                                    <entry>Degree-Days Below 18°C</entry>
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row1">
+                                                    <entry>Less than 3000</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row2">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>170</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row3">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>140</entry>
+                                                    <entry>20</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row4">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>120</entry>
+                                                    <entry>15</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row5">
+                                                    <entry>3000 to 3999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row6">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>170</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row7">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>145</entry>
+                                                    <entry>21</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row8">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>130</entry>
+                                                    <entry>16</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row9">
+                                                    <entry>4000 to 4999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row10">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>170</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row11">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>145</entry>
+                                                    <entry>25</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row12">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>130</entry>
+                                                    <entry>18</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row13">
+                                                    <entry>Greater than 4999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row14">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>170</entry>
+                                                    <entry>32</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row15">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>150</entry>
+                                                    <entry>28</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table7.row16">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>145</entry>
+                                                    <entry>20</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table H: Other Residential Occupancies -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table8">
+                                        <title>Energy Performance Requirements for Other Residential Occupancies</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="4">
+                                            <colspec colname="col1" colwidth="1.5*"/>
+                                            <colspec colname="col2" colwidth="0.5*"/>
+                                            <colspec colname="col3" colwidth="1.5*"/>
+                                            <colspec colname="col4" colwidth="1.5*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.rowh1">
+                                                    <entry>Degree-Days Below 18°C</entry>
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row1">
+                                                    <entry>Less than 3000</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row2">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>130</entry>
+                                                    <entry>45</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row3">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>120</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row4">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>100</entry>
+                                                    <entry>15</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row5">
+                                                    <entry>3000 to 3999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row6">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>130</entry>
+                                                    <entry>45</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row7">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>120</entry>
+                                                    <entry>35</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row8">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>110</entry>
+                                                    <entry>22</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row9">
+                                                    <entry>4000 to 4999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row10">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>135</entry>
+                                                    <entry>50</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row11">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>120</entry>
+                                                    <entry>35</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row12">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>110</entry>
+                                                    <entry>22</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row13">
+                                                    <entry>5000 to 5999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row14">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>135</entry>
+                                                    <entry>55</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row15">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>120</entry>
+                                                    <entry>40</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row16">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>110</entry>
+                                                    <entry>22</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row17">
+                                                    <entry>6000 to 6999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row18">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>150</entry>
+                                                    <entry>60</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row19">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>140</entry>
+                                                    <entry>50</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row20">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>125</entry>
+                                                    <entry>35</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row21">
+                                                    <entry>Greater than 6999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row22">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>180</entry>
+                                                    <entry>90</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row23">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>160</entry>
+                                                    <entry>75</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table8.row24">
+                                                    <entry/>
+                                                    <entry>4</entry>
+                                                    <entry>140</entry>
+                                                    <entry>60</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table I: Offices -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table9">
+                                        <title>Energy Performance Requirements for Offices</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="4">
+                                            <colspec colname="col1" colwidth="1.5*"/>
+                                            <colspec colname="col2" colwidth="0.5*"/>
+                                            <colspec colname="col3" colwidth="1.5*"/>
+                                            <colspec colname="col4" colwidth="1.5*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.rowh1">
+                                                    <entry>Degree-Days Below 18°C</entry>
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row1">
+                                                    <entry>Less than 3000</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row2">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>110</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row3">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>100</entry>
+                                                    <entry>20</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row4">
+                                                    <entry>3000 to 3999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row5">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>110</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row6">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>100</entry>
+                                                    <entry>20</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row7">
+                                                    <entry>4000 to 4999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row8">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>110</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row9">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>100</entry>
+                                                    <entry>20</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row10">
+                                                    <entry>Greater than 4999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row11">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>115</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table9.row12">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>110</entry>
+                                                    <entry>20</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    <!-- Table J: Other Business and Mercantile -->
+                                    <table xml:id="nbc.divB.part10.sect2.subsect3.art3.table10">
+                                        <title>Energy Performance Requirements for Other Business and Personal Service or Mercantile Occupancies</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent1" display-type="short"/>
+                                            <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3.sent2" display-type="short"/>
+                                        </forming-part>
+                                        <tgroup cols="4">
+                                            <colspec colname="col1" colwidth="1.5*"/>
+                                            <colspec colname="col2" colwidth="0.5*"/>
+                                            <colspec colname="col3" colwidth="1.5*"/>
+                                            <colspec colname="col4" colwidth="1.5*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.rowh1">
+                                                    <entry>Degree-Days Below 18°C</entry>
+                                                    <entry>Step</entry>
+                                                    <entry>Equipment and Systems -- Maximum Total Energy Use Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                    <entry><ref type="term" target="bldng">Building</ref> Envelope -- Maximum Thermal Energy Demand Intensity, kWh/(m<super>2</super>·year)</entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row1">
+                                                    <entry>Less than 3000</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row2">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>145</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row3">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>120</entry>
+                                                    <entry>20</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row4">
+                                                    <entry>3000 to 3999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row5">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>145</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row6">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>125</entry>
+                                                    <entry>25</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row7">
+                                                    <entry>4000 to 4999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row8">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>145</entry>
+                                                    <entry>45</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row9">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>130</entry>
+                                                    <entry>30</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row10">
+                                                    <entry>Greater than 4999</entry>
+                                                    <entry>1</entry>
+                                                    <entry colspan="2">Reserved</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row11">
+                                                    <entry/>
+                                                    <entry>2</entry>
+                                                    <entry>170</entry>
+                                                    <entry>55</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect2.subsect3.art3.table10.row12">
+                                                    <entry/>
+                                                    <entry>3</entry>
+                                                    <entry>150</entry>
+                                                    <entry>40</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    
+                                    
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect2.subsect3.art4" number="4">
+                                    <title>Energy Modelling</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art4.sent1" number="1">
+                                        <text>Except as required by Sentence (2), for <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> conforming to the requirements of any of Steps 2 to 4, energy modelling shall conform to</text>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art4.sent1.clause1" letter="a">
+                                            <text>the applicable requirements of Part 8 of the NECB, and</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art4.sent1.clause2" letter="b">
+                                            <text>the City of Vancouver Energy Modelling Guidelines.</text>
+                                        </clause>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art4.sent2" number="2">
+                                        <text>Except as permitted by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art4.sent3" display-type="short"/>, energy modelling for <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> conforming to the requirements of any of Steps 2 to 4 shall account for the air leakage rate derived in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art5" display-type="long"/>.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art4.sent3" number="3">
+                                        <text>Until the air leakage rate determined by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art4.sent2" display-type="short"/> is available, an air leakage rate determined in accordance with the City of Vancouver Energy Modelling Guidelines shall be used.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art4.sent4" number="4">
+                                        <text>In case of conflict between the provisions of the NECB and the City of Vancouver Energy Modelling Guidelines, the provisions of the City of Vancouver Energy Modelling Guidelines shall govern.</text>
+                                    </sentence>
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect2.subsect3.art5" number="5">
+                                    <title>Building Envelope Airtightness Testing</title>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1" number="1">
+                                        <text>Except as required by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art5.sent2" display-type="short"/>, <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> shall be tested for airtightness in accordance with</text>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1.clause1" letter="a">
+                                            <text>ASTM E 779, "Standard Test Method for Determining Air Leakage Rate by Fan Pressurization",</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1.clause2" letter="b">
+                                            <text>USACE Version 3, "Air Leakage Test Protocol for Building Envelopes", or</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1.clause3" letter="c">
+                                            <text>ASTM E 3158, "Standard Test Method for Measuring the Air Leakage Rate of a Large or Multizone Building."</text>
+                                        </clause>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect2.subsect3.art5.sent2" number="2">
+                                        <text><ref type="term" target="bldng">Buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> shall be tested for airtightness to an induced test pressure of not less than 75 Pa.</text>
+                                    </sentence>
+                                </article>
+                            </subsection>
+                        </section>
+                        
+                        <!-- Section 10.3: Greenhouse Gas Emissions -->
+                        <section xml:id="nbc.divB.part10.sect3" number="3">
+                            <title>Greenhouse Gas Emissions</title>
+                            <subsection xml:id="nbc.divB.part10.sect3.subsect1" number="1">
+                                <title>General</title>
+                                <article xml:id="nbc.divB.part10.sect3.subsect1.art1" number="1">
+                                    <title>Application</title>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art1.sent1" number="1">
+                                        <text>The requirements of this Section apply only to <ref type="term" target="bldng">buildings</ref> that</text>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art1.sent1.clause1" letter="a">
+                                            <text>contain any of the following major occupancies as described in <ref type="internal" target="nbc.divB.part10.sect3.subsect1.art3.table1" display-type="long"/>:</text>
+                                            <subclause xml:id="nbc.divB.part10.sect3.subsect1.art1.sent1.clause1.subclause1" number="1">
+                                                <text><ref type="term" target="rdntl-cc">residential</ref>,</text>
+                                            </subclause>
+                                            <subclause xml:id="nbc.divB.part10.sect3.subsect1.art1.sent1.clause1.subclause2" number="2">
+                                                <text><ref type="term" target="bn-nd-pr">business and personal services</ref>, or</text>
+                                            </subclause>
+                                            <subclause xml:id="nbc.divB.part10.sect3.subsect1.art1.sent1.clause1.subclause3" number="3">
+                                                <text><ref type="term" target="mrcntl-c">mercantile</ref>, and</text>
+                                            </subclause>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art1.sent1.clause2" letter="b">
+                                            <text>are designed to Step 2, 3 or 4 in Tables 10.2.3.3.-G to 10.2.3.3.-J. (See also <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent3" display-type="long"/>.)</text>
+                                        </clause>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art1.sent2" number="2">
+                                        <text>Modeling of greenhouse gas emissions shall conform to the City of Vancouver Energy Modeling Guidelines.</text>
+                                    </sentence>
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect3.subsect1.art2" number="2">
+                                    <title>Definitions and Attributions</title>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent1" number="1">
+                                        <text>For the purposes of this Section, the term "greenhouse gas", expressed with the abbreviation "GHG", shall have the same meaning as defined in the Climate Change Accountability Act.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent2" number="2">
+                                        <text>For the purposes of this Section, the term "greenhouse gas intensity", expressed with the abbreviation "GHGI", shall mean the total greenhouse gas emissions, expressed as kgCO<sub>2e</sub> per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> per year, associated with the energy used by the <ref type="term" target="bldng">building's</ref> systems.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent3" number="3">
+                                        <text>For the purposes of this Section, the symbol "CO<sub>2e</sub>" shall mean carbon dioxide or carbon dioxide equivalent, with carbon dioxide equivalent meaning one or more greenhouse gases with a global warming potential equivalent to carbon dioxide.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent4" number="4">
+                                        <text>For the purposes of this Section, the term "Emissions Level" shall mean an Emissions Level referred to in <ref type="internal" target="nbc.divB.part10.sect3.subsect1.art3.table1" display-type="long"/>.</text>
+                                    </sentence>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent5" number="5">
+                                        <text>For the purposes of this Section, the term "measure only" shall mean that the GHGI and the total greenhouse gases are calculated, as applicable, and the values reported in accordance with Subsection 2.2.8. of Division C.</text>
+                                    </sentence>
+                                </article>
+                                <article xml:id="nbc.divB.part10.sect3.subsect1.art3" number="3">
+                                    <title>Compliance Requirements</title>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art3.sent1" number="1">
+                                        <text><ref type="term" target="bldng">Buildings</ref> conforming to the requirements of any of GHG Emission Levels EL-1 to EL-4 shall be designed and constructed to conform to <ref type="internal" target="nbc.divB.part10.sect3.subsect1.art3.table1" display-type="long"/> based on <ref type="term" target="ccpnc">occupancy</ref>.</text>
+                                    </sentence>
+                                    <table xml:id="nbc.divB.part10.sect3.subsect1.art3.table1">
+                                        <title>Greenhouse Gas Emissions</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect3.subsect1.art3.sent1" display-type="long"/>
+                                        </forming-part>
+                                        <tgroup cols="5">
+                                            <colspec colname="col1" colwidth="1*"/>
+                                            <colspec colname="col2" colwidth="1*"/>
+                                            <colspec colname="col3" colwidth="1*"/>
+                                            <colspec colname="col4" colwidth="1*"/>
+                                            <colspec colname="col5" colwidth="1*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect3.subsect1.art3.table1.rowh1">
+                                                    <entry>GHG Emission Level</entry>
+                                                    <entry colspan="4">Maximum GHGI of the <ref type="term" target="bldng">Building</ref>, Expressed in kgCO<sub>2e</sub>/m<super>2</super>/year</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect3.subsect1.art3.table1.rowh2">
+                                                    <entry/>
+                                                    <entry colspan="2"><ref type="term" target="rdntl-cc">Residential Major Occupancy</ref></entry>
+                                                    <entry colspan="2"><ref type="term" target="bn-nd-pr">Business and Personal Service</ref> and <ref type="term" target="mrcntl-c">Mercantile Major Occupancies</ref></entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect3.subsect1.art3.table1.rowh3">
+                                                    <entry/>
+                                                    <entry>Hotels and Motels</entry>
+                                                    <entry>Other <ref type="term" target="rdntl-cc">Residential Occupancies</ref></entry>
+                                                    <entry>Offices</entry>
+                                                    <entry>Other <ref type="term" target="bn-nd-pr">Business and Personal Service</ref> and <ref type="term" target="mrcntl-c">Mercantile Occupancies</ref></entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect3.subsect1.art3.table1.row1">
+                                                    <entry>EL-1</entry>
+                                                    <entry colspan="4">measure only</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect3.subsect1.art3.table1.row2">
+                                                    <entry>EL-2</entry>
+                                                    <entry>9.0</entry>
+                                                    <entry>7.0</entry>
+                                                    <entry>5.0</entry>
+                                                    <entry>6.0</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect3.subsect1.art3.table1.row3">
+                                                    <entry>EL-3</entry>
+                                                    <entry>4.0</entry>
+                                                    <entry>3.0</entry>
+                                                    <entry>3.0</entry>
+                                                    <entry>3.0</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect3.subsect1.art3.table1.row4">
+                                                    <entry>EL-4</entry>
+                                                    <entry>2.0</entry>
+                                                    <entry>1.8</entry>
+                                                    <entry>1.5</entry>
+                                                    <entry>2.0</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                    <sentence xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2" number="2">
+                                        <text>The emissions factors associated with the use of energy utilities consumed by the <ref type="term" target="bldng">building's</ref> systems shall be</text>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2.clause1" letter="a">
+                                            <text>0.011 kg CO<sub>2e</sub>/kWh for electricity,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2.clause2" letter="b">
+                                            <text>0.180 kg CO<sub>2e</sub>/kWh for natural gas,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2.clause3" letter="c">
+                                            <text>0.2155 kg CO<sub>2e</sub>/kWh for propane,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2.clause4" letter="d">
+                                            <text>0.2579 kg CO<sub>2e</sub>/kWh for light fuel oil (standard),</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2.clause5" letter="e">
+                                            <text>0.2689 kg CO<sub>2e</sub>/kWh for heavy fuel oil,</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2.clause6" letter="f">
+                                            <text>0.2581 kg CO<sub>2e</sub>/kWh for diesel fuel (standard), and</text>
+                                        </clause>
+                                        <clause xml:id="nbc.divB.part10.sect3.subsect1.art3.sent2.clause7" letter="g">
+                                            <text>0.0786 kg CO<sub>2e</sub>/kWh for wood fuel.</text>
+                                        </clause>
+                                    </sentence>
+                                </article>
+                            </subsection>
+                        </section>
+                        
+                        <!-- Section 10.4: Objectives and Functional Statements -->
+                        <section xml:id="nbc.divB.part10.sect4" number="4">
+                            <title>Objectives and Functional Statements</title>
+                            <subsection xml:id="nbc.divB.part10.sect4.subsect1" number="1">
+                                <title>Objectives and Functional Statements</title>
+                                <article xml:id="nbc.divB.part10.sect4.subsect1.art1" number="1">
+                                    <title>Attributions to Acceptable Solutions</title>
+                                    <sentence xml:id="nbc.divB.part10.sect4.subsect1.art1.sent1" number="1">
+                                        <text>For the purpose of compliance with this Code as required in <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="medium"/> of Division A, the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in <ref type="internal" target="nbc.divB.part10.sect4.subsect1.art1.table1" display-type="long"/>.</text>
+                                    </sentence>
+                                    <table xml:id="nbc.divB.part10.sect4.subsect1.art1.table1">
+                                        <title>Objectives and Functional Statements Attributed to the Acceptable Solutions in Part 10</title>
+                                        <forming-part>
+                                            <ref type="internal" target="nbc.divB.part10.sect4.subsect1.art1.sent1" display-type="long"/>
+                                        </forming-part>
+                                        <tgroup cols="2">
+                                            <colspec colname="col1" colwidth="2*"/>
+                                            <colspec colname="col2" colwidth="3*"/>
+                                            <thead>
+                                                <row xml:id="nbc.divB.part10.sect4.subsect1.art1.table1.rowh1">
+                                                    <entry><emphasis style="bold">Acceptable Solutions</emphasis></entry>
+                                                    <entry><emphasis style="bold">Functional Statements and Objectives</emphasis><super>(1)</super></entry>
+                                                </row>
+                                            </thead>
+                                            <tbody>
+                                                <row xml:id="nbc.divB.part10.sect4.subsect1.art1.table1.row1">
+                                                    <entry colspan="2">10.2.3.3. Compliance Requirements</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect4.subsect1.art1.table1.row2">
+                                                    <entry>(3)</entry>
+                                                    <entry>[<ref type="functional-statement" target="fs85"/>, <ref type="functional-statement" target="fs86"/>, <ref type="functional-statement" target="fs90"/>, <ref type="functional-statement" target="fs91"/>, <ref type="functional-statement" target="fs92"/>, <ref type="functional-statement" target="fs93"/>, <ref type="functional-statement" target="fs95"/>, <ref type="functional-statement" target="fs96"/>, <ref type="functional-statement" target="fs98"/>, <ref type="functional-statement" target="fs99"/>, <ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect4.subsect1.art1.table1.row3">
+                                                    <entry colspan="2">10.2.3.5. Building Envelope Airtightness Testing</entry>
+                                                </row>
+                                                <row xml:id="nbc.divB.part10.sect4.subsect1.art1.table1.row4">
+                                                    <entry>(1)</entry>
+                                                    <entry>[<ref type="functional-statement" target="fs90"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                </article>
+                            </subsection>
+                            
+                        </section>
+                        <part-appendix xml:id="nbc.divB.part10.sect4.appendix">
+                            <application-note xml:id="nbc.divB.part10.appendix.appnote1">
+                                <number>10.</number>
+                                <title>Water Efficiency</title>
+                                <paragraph>Water efficiency requirements have been relocated in Book II, Plumbing Services, of the British Columbia Building Code.</paragraph>
+                            </application-note>
+                            
+                            <application-note xml:id="nbc.divB.part10.appendix.appnote2">
+                                <number>10.2.2.2.</number>
+                                <title>Energy Requirements for Alterations to Buildings and Major Occupancies</title>
+                                <paragraph>Alterations, rehabilitation, renovations and changes of occupancy to existing <ref type="term" target="bldng">buildings</ref> or <ref type="term" target="mjr-ccpn">major occupancies</ref> that were originally designed and constructed to previous editions of the ANSI/ASHRAE/IES 90.1 standard are to comply with the edition of the ANSI/ASHRAE/IES 90.1 standard referenced in this Code, or the requirements of <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/>. Alterations, rehabilitation, renovations and changes of occupancy to existing <ref type="term" target="bldng">buildings</ref> or <ref type="term" target="mjr-ccpn">major occupancies</ref> that were originally designed and constructed to previous editions of the NECB or <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/> are to comply with the edition of the NECB referenced in this Code, or to <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/>. Existing <ref type="term" target="bldng">buildings</ref> or <ref type="term" target="mjr-ccpn">major occupancies</ref> that were not designed and constructed to any version of the ANSI/ASHRAE/IES 90.1 standard, the NECB or <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/>, may use the edition of the ANSI/ASHRAE/IES 90.1 standard or the NECB referenced in this Code, or <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/> for alterations, rehabilitation, renovations and changes in occupancy.</paragraph>
+                                <paragraph><ref type="internal" target="nbc.divA.part1.sect1.subsect1.art2.sent1" display-type="long"/> states that the level of <ref type="term" target="bldng">building</ref> performance shall not be decreased below a level that already exists. For example, a new <ref type="term" target="ccpnc">occupancy</ref> may be permitted a higher lighting power density by the ANSI/ASHRAE/IES 90.1 standard or the NECB than the lighting power density that was permitted for a previous <ref type="term" target="ccpnc">occupancy</ref>. This does not constitute a decrease in the level of <ref type="term" target="bldng">building</ref> performance, provided the design meets the minimum requirements of the relevant Code or standard.</paragraph>
+                            </application-note>
+                            
+                            <application-note xml:id="nbc.divB.part10.appendix.appnote3">
+                                <number>10.2.3.2.(2)</number>
+                                <title>Thermal Energy Demand Intensity (TEDI)</title>
+                                <paragraph>TEDI does not include receptacle loads and energy use from unusual uses such as spas and computer server rooms.</paragraph>
+                            </application-note>
+                            
+                            <application-note xml:id="nbc.divB.part10.appendix.appnote4">
+                                <number>10.2.3.3.(2)</number>
+                                <title>Energy Model Calculations for Step 1</title>
+                                <paragraph>Although the total energy use intensity and thermal energy demand intensity are not required for NECB conformance, they must still be calculated in conformance with <ref type="internal" target="nbc.divB.part10.sect3.subsect1.art4" display-type="long"/> and reported in accordance with Subsection 2.2.9. of Division C.</paragraph>
+                            </application-note>
+                            
+                            <application-note xml:id="nbc.divB.part10.appendix.appnote5">
+                                <number>10.2.3.4.</number>
+                                <title>Energy Modelling</title>
+                                <paragraph><emphasis style="bold">Energy Model Calculations for Steps 2 to 4</emphasis></paragraph>
+                                <paragraph>Notwithstanding the requirements of Part 8 of the NECB, a reference <ref type="term" target="bldng">building</ref> and <ref type="term" target="bldng">building</ref> energy target are not required for compliance with the requirements of Steps 2 to 4 in <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art3" display-type="long"/>. The performance requirements of Tables 10.2.3.3.-A. to 10.2.3.3.-J. are used to determine compliance.</paragraph>
+                                <paragraph><emphasis style="bold">Air Leakage Rate in Energy Model Calculations</emphasis></paragraph>
+                                <paragraph>The requirement to account for the air leakage rate as tested in all energy model calculations supersedes the NECB air leakage rate requirements. For <ref type="term" target="bldng">buildings</ref> that must conform to the requirements of any of Steps 2 to 4, higher than expected air leakage may require the <ref type="term" target="bldng">building</ref> design to be altered and the energy model calculations to be repeated. Alternatively, the air leakage rate could be retested after making alterations to the air barrier system to attain the desired air leakage rate.</paragraph>
+                                <paragraph><emphasis style="bold">Air Leakage Rate</emphasis></paragraph>
+                                <paragraph>Section 2.4. of the City of Vancouver's Energy Modelling Guidelines provides guidance on determining infiltration/air leakage rates for <ref type="term" target="bldng">buildings</ref> conforming with <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="long"/> at the design stage.</paragraph>
+                            </application-note>
+                            
+                            <application-note xml:id="nbc.divB.part10.appendix.appnote6">
+                                <number>10.2.3.5.(1)</number>
+                                <title>Building Airtightness Testing Requirements</title>
+                                <paragraph>The intent of this testing is to quantify the airtightness level of the air barrier system, not airtightness of the <ref type="term" target="bldng">building</ref> at in-service operating conditions.</paragraph>
+                            </application-note>
+                        </part-appendix>
+                    </part>
+                </new-content>
+            </insert>
+        </amendment>
+    </amendments>
+    
+</bc-overlay>

@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay
+    id="bc-preface-amendments-2023"
+    version="1.0"
+    nbc-target-version="2020"
+    effective-date="2023-12-15"
+    >
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020 - PREFACE                 -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Preface</title>
+        <description>British Columbia-specific amendments to the NBC 2020 Preface, including BC adoption information, legal context, and BC-specific requirements</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Preface.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 000: Insert introductory BC preface note                 -->
+        <!-- Before: "The National Building Code of Canada 2020..."             -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-000"
+            sequence="0"
+            description="Insert introductory BC preface note at beginning"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="first-child"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.intro" >
+                        The following preface is reprinted from the model National Building Code of Canada (NBC), on which the British Columbia Building Code (BCBC) is substantially based. As such, this information also pertains to the BCBC. Material that is not relevant to the BCBC has been deleted; minor BCBC-specific edits within the text have been made. Additional information only relevant to the BCBC has been included in text boxes within the document.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 001: Insert BC adoption information after para 1        -->
+        <!-- After: "...including requirements for professional involvement."   -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-001"
+            sequence="1"
+            description="Insert BC adoption information box after introductory paragraph"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.para2"
+                />
+            <insert>
+                <new-content source="bc">
+                        In British Columbia, the NBC, together with the National Plumbing Code of Canada, are adopted, including any variations considered necessary, as Book I (General) and Book II (Plumbing Systems) of the BCBC, pursuant to the Building Act.
+                        The National Fire Code of Canada is adopted, including any variations considered necessary, as the British Columbia Fire Code (BCFC), pursuant to the Fire Services Act.
+                        The National Energy Code of Canada for Buildings (NECB) is adopted by reference from Book I (General) of the British Columbia Building Code.
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 002: Insert BC edition succession note                  -->
+        <!-- After: "This edition of the NBC succeeds the 2015 edition."        -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-002"
+            sequence="2"
+            description="Insert BC edition succession note after NBC edition statement"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.para4"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.para4a" >
+                        This edition of the BCBC succeeds the 2018 edition.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 003: Insert BC legal effect note                        -->
+        <!-- After: "...to address pressing issues."                           -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-003"
+            sequence="3"
+            description="Insert BC legal effect note after periodic revisions statement"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div1.para3"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div1.para3a" >
+                        Similar to the Codes themselves, such periodic revisions do not have legal effect until adopted into law by the Province of British Columbia.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 004: Insert BC authority context note                   -->
+        <!-- After: "...acceptable to the adopting authority."                 -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-004"
+            sequence="4"
+            description="Insert BC authority having jurisdiction clarification after adopting authority statement"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div2.para4"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div2.para4a" >
+                        In context of the preceding paragraph, the terms "authority having jurisdiction" and "adopting authority" refer to the government of the Province of British Columbia. This differs from the context of application and enforcement of the BCBC, for which the Code contains a distinct definition of the term "authority having jurisdiction". (See Article 1.4.1.2. of Division A.)
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 005: Insert BC objective-based code adoption note       -->
+        <!-- After: "The NBC has been published in an objective-based code..." -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-005"
+            sequence="5"
+            description="Insert BC objective-based code adoption note after NBC objective-based format statement"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div3.para1"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div3.para1a">
+                        The 2006 BCBC (including plumbing services as Part 7) and the 2006 BCFC were the first objective-based codes adopted by the Province of British Columbia. The following relates also to Book II (Plumbing Systems), of this Code.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 006: Insert BC objectives attribution note              -->
+        <!-- After: "...listed in a table following the provisions..."         -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-006"
+            sequence="6"
+            description="Insert BC objectives attribution note"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div3.sub1.para5"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div3.sub1.para5a" >
+                        Objectives have also been attributed to any requirements specific to British Columbia.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 007: Insert BC functional statements attribution note   -->
+        <!-- After: "...listed in a table following the provisions..."         -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-007"
+            sequence="7"
+            description="Insert BC functional statements attribution note"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div3.sub2.para4"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div3.sub2.para4a" >
+                        Functional Statements have also been attributed to any requirements specific to British Columbia.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 008: Insert BC intent statements note                   -->
+        <!-- After: "...posted on the NRC's website."                          -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-008"
+            sequence="8"
+            description="Insert BC intent statements availability note"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div3.sub3.para2"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div3.sub3.para2a" >
+                        "Supplement to the NBC 2020: Intent Statements" is not available at the time of printing of this Code. Intent statements have not been attributed to any requirements specific to British Columbia.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 009: Insert Book II note in Structure section           -->
+        <!-- After: "...which are distributed across two volumes."             -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-009"
+            sequence="9"
+            description="Insert Book II note in Structure section"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div4.para1"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div4.para1c" >
+                        The remainder of this section relates also to Book II (Plumbing Systems) of this Code.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 010: Insert BC Division B authority context note        -->
+        <!-- After: "...acceptable to an authority that adopts the NBC..."     -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-010"
+            sequence="10"
+            description="Insert BC Division B authority context clarification"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div4.sub2.para1"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div4.sub2.para1a" >
+                        In context of the preceding paragraph, the phrase "authority that adopts the NBC into law or regulation" refers to the government of the Province of British Columbia. This differs from the context of application and enforcement of the BCBC, for which the Code contains a distinct definition of the term "authority having jurisdiction". (See Article 1.4.1.2. of Division A.)
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 011: Insert BC Division C unique provisions note        -->
+        <!-- After: "...facilitates their customization to suit jurisdictional" -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-011"
+            sequence="11"
+            description="Insert BC Division C unique provisions note"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div4.sub3.para1"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div4.sub3.para1a" >
+                        The BCBC contains some unique administrative provisions in Division C.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 012: Insert BC compliance clause in Relationship section -->
+        <!-- After: "...central to the concept of objective-based codes."       -->
+        <!-- Insert: Full compliance clause with list structure                -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-012"
+            sequence="12"
+            description="Insert BC compliance clause structure after Relationship intro paragraph"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div4.sub4.para1"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div4.sub4.para1a">1)       Compliance with this Code shall be achieved by<list type="bulleted">
+                            <item>a)       complying with the applicable acceptable solutions in Division B (see Note A-1.2.1.1.(1)(a)), or</item>
+                            <item>b)       using alternative solutions that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see Note A-1.2.1.1.(1)(b)).</item>
+                        </list></paragraph>
+                    <paragraph xml:id="nbc.2020.preface.div4.sub4.para1b">
+                        See Article 1.2.1.1. of the BCBC, which differs from above. Additional requirements apply in British Columbia.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 013: Insert BC change indication note                   -->
+        <!-- After: "...for renumbered or deleted content."                    -->
+        <!-- Insert: BC-specific change indication information                 -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-013"
+            sequence="13"
+            description="Insert BC change indication note for unique BC content"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.preface"
+                position="after"
+                reference-id="nbc.2020.preface.div6.sub3.para1"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div6.sub3.para1a">
+                        In addition to the above noted vertical lines, which indicate a change to the NBC, further unique to British Columbia technical changes, additions, and variations relative to the 2023 edition of the BCBC are identified. These changes are shown by a bold vertical line added in the margin next to the affected provision to indicate the approximate location of the unique to B.C. content, wherever practical. The bold vertical lines are for convenience only and have no legal effect. No change indication is provided for renumbered or deleted provisions.
+                        The term "reserved" is included in place of certain deleted Codes Canada model content which has not been adopted. The term "reserved" is generally used so that the numbering structure of the model National Codes is maintained, easing comparability and harmonization.
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 014: Insert Book II note in Introduction section        -->
+        <!-- After: "...coordinates Canadian participation in voluntary..."    -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-014"
+            sequence="14"
+            description="Insert Book II note in Introduction section"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.intro.2"
+                position="after"
+                reference-id="nbc.2020.intro.2.para3"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.intro.2.para3a">
+                        <emphasis style="bold">The remainder of this section relates also to Book II (Plumbing Systems) of this Code.</emphasis>
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 015: Insert BC conformity assessment note 1             -->
+        <!-- After: "...determine who is responsible for conformity..."        -->
+        <!-- Insert: BC authority information                                  -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-015"
+            sequence="15"
+            description="Insert BC conformity assessment authority note"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.intro.2"
+                position="after"
+                reference-id="nbc.2020.intro.2.div3.para1"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.intro.2.div3.para1a">
+                        <emphasis style="bold">In British Columbia, local authorities are authorized to, by bylaw, regulate construction and to enforce the requirements of the BCBC.</emphasis>
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 016: Insert BC registered professionals note            -->
+        <!-- After: "...Engineering reports may be required for more..."       -->
+        <!-- Insert: BC registered professionals information                   -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-016"
+            sequence="16"
+            description="Insert BC registered professionals note"
+            >
+            <target
+                type="position"
+                parent-id="nbc.2020.intro.2"
+                position="after"
+                reference-id="nbc.2020.intro.2.div3.para2"
+                />
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.intro.2.div3.para2a">
+                        <emphasis style="bold">Requirements for Registered Professionals are located in Division C of the BCBC.</emphasis>
+                    </paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 017: Replace Division 2 Subsection 1 paragraph 1 text   -->
+        <!-- Change to shortened NBC/NFC fire safety statement                 -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-017"
+            sequence="17"
+            description="Replace preface paragraph nbc.2020.preface.div2.sub1.para1 with shortened text"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.preface.div2.sub1.para1"
+                />
+            <replace>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div2.sub1.para1a">
+                        The NBC and NFC each contain provisions that relate to the safety of persons in buildings in the event of a fire and the protection of buildings from the effects of fire.
+                    </paragraph>
+                    <paragraph xml:id="nbc.2020.preface.div2.sub1.para1b">
+                        These two model codes are developed as complementary and coordinated documents to minimize the possibility of their containing conflicting provisions. It is expected that buildings comply with both the NBC and the NFC.
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 018: Rewrap Division 2 Subsection 2 paragraph 1 text    -->
+        <!-- Convert paragraph text to requested line wrapping                  -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-018"
+            sequence="18"
+            description="Replace preface paragraph nbc.2020.preface.div2.sub2.para1 with requested text wrapping"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.preface.div2.sub2.para1"
+                />
+            <replace>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div2.sub2.para1">The provisions in Section 9.36. of Division B of the NBC are tied to the environment objective. These provisions,
+which apply to housing and small buildings, have a similar scope to that of the NECB, except that they do not
+address lighting and electrical power systems. The NECB is referenced in NBC Section 9.36. as an acceptable
+solution.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 019: Delete What's New section title                    -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-019"
+            sequence="19"
+            description="Delete preface title nbc.2020.preface.div5.title"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.preface.div5.title"
+                />
+            <delete/>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 020: Delete New Part 2 subsection title                 -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-020"
+            sequence="20"
+            description="Delete preface title nbc.2020.preface.div5.sub1.title"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.preface.div5.sub1.title"
+                />
+            <delete/>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 021: Delete New Part 2 paragraph                        -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-021"
+            sequence="21"
+            description="Delete preface paragraph nbc.2020.preface.div5.sub1.para1"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.preface.div5.sub1.para1"
+                />
+            <delete/>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 022: Replace numbering system illustration table         -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-022"
+            sequence="22"
+            description="Replace preface table nbc.2020.preface.div6.sub1.table1 with a sentence"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.preface.div6.sub1.table1"
+                />
+            <replace>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.preface.div6.sub1.para1a">
+                        <list type="none">
+                            <item>3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Part</item>
+                            <item>3.5.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Section</item>
+                            <item>3.5.2.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Subsection</item>
+                            <item>3.5.2.1.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Article</item>
+                            <item>3.5.2.1.(2)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Sentence</item>
+                            <item>3.5.2.1.(2)(a)&#160;&#160;&#160;&#160;&#160;&#160;Clause</item>
+                            <item>3.5.2.1.(2)(a)(i)&#160;&#160;&#160;Subclause</item>
+                        </list>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 023: Replace committees table row 6 (no-op placeholder) -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-023"
+            sequence="23"
+            description="Replace committees row nbc.2020.committees.table1.row6 with identical text for later edits"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.committees.table1.row6"
+                />
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.2020.committees.table1.row6">
+                        <entry valign="middle">J. Chauvin</entry>
+                        <entry valign="middle">C. Joseph</entry>
+                        <entry valign="middle">A. Tabet</entry>
+                        <entry>A. Gribbon</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 024: Replace committees table 10 title (no-op placeholder) -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-024"
+            sequence="24"
+            description="Replace committees table title for nbc.2020.committees.table10 with identical text for later edits"
+            >
+            <target
+                type="child-element"
+                parent-id="nbc.2020.committees.table10"
+                element-name="title"
+                position="1"
+                />
+            <replace>
+                <new-content source="bc">
+                    <title>Standing Committee on Structural Design</title>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 025: Replace committees note 1 (no-op placeholder)     -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-025"
+            sequence="25"
+            description="Replace committees note nbc.2020.committees.note1 with identical text for later edits"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.committees.note1"
+                />
+            <replace>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.2020.committees.note1">
+                    1. Resigned on September 23, 2016, due to employment opportunity with Codes Canada.<lb/>
+                    2. Term ended on June 4, 2018.<lb/>
+                    3. Term started on May 10, 2018.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 026: Delete committees note 2                           -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-026"
+            sequence="26"
+            description="Delete committees note nbc.2020.committees.note2"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.committees.note2"
+                />
+            <delete/>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 027: Delete committees note 3                           -->
+        <!-- ================================================================== -->
+        <amendment
+            id="bc-preface-027"
+            sequence="27"
+            description="Delete committees note nbc.2020.committees.note3"
+            >
+            <target
+                type="canonical-id"
+                id="nbc.2020.committees.note3"
+                />
+            <delete/>
+        </amendment>
+        
+    </amendments>
+</bc-overlay>

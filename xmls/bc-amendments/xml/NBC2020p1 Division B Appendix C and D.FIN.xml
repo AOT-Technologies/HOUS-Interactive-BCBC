@@ -1,0 +1,1919 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-appendices-cd-amendments-2023"
+            version="1.0"
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020 - Appendices C and D      -->
+    <!-- SKELETON STRUCTURE WITH EXAMPLES                                   -->
+    <!-- Complete content to be filled in based on source document          -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Division B Appendices C and D</title>
+        <description>British Columbia-specific amendments for Division B Appendices C (Climatic and Seismic Information) and D (Fire-Performance Ratings)</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Appendix C and D.FIN.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 001: Replace "Canada" with "British Columbia" in para 1 -->
+        <!-- Appendix C Introduction - First paragraph                         -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-001" sequence="1"
+                   description="Replace Canada with British Columbia in Appendix C paragraph 1">
+            <target type="canonical-id" id="nbc.divB.appendixC.div1.para1"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Canada</find>
+                        <replace>British Columbia</replace>
+                    </find-replace>
+                </text-change>
+                <text-change xpath-within-target=".//text()">
+                    <find-replace regex="true">
+                        <find>National\s+Building\s+Code</find>
+                        <replace>British Columbia Building Code</replace>
+                    </find-replace>
+                </text-change>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>nationally</find>
+                        <replace>regionally</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 002: Replace location references in paragraph 3         -->
+        <!-- Appendix C Introduction - Third paragraph                          -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-002" sequence="2"
+                   description="Replace Canada with British Columbia and authority references in Appendix C paragraph 3">
+            <target type="canonical-id" id="nbc.divB.appendixC.div1.para3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Canada</find>
+                        <replace>British Columbia</replace>
+                    </find-replace>
+                </text-change>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>provincial, territorial or municipal building authorities</find>
+                        <replace>local government building authorities</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 003: Change location count from 600 to 100              -->
+        <!-- Appendix C General section - Location count paragraph             -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-003" sequence="3"
+                   description="Replace over 600 locations with over 100 locations in Appendix C">
+            <target type="canonical-id" id="nbc.divB.appendixC.div2.para2"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>over 600 locations</find>
+                        <replace>over 100 locations</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 004: Add BC Building Code reference to snow load para   -->
+        <!-- Appendix C Snow Load section - Ground snow load update paragraph  -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-004" sequence="4"
+                   description="Add reference to 1992 British Columbia Building Code in ground snow load paragraph">
+            <target type="canonical-id" id="nbc.divB.appendixC.div8.para10"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>for the ground snow load update in the 1990 edition.</find>
+                        <replace>for the ground snow load update in the 1990 edition, which was the basis for the 1992 British Columbia Building Code.</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 005: Update rainfall intensity edition year             -->
+        <!-- Appendix C Rainfall section - Rainfall intensity update paragraph -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-005" sequence="5"
+                   description="Change rainfall intensity update from 2010 edition to 2012 edition">
+            <target type="canonical-id" id="nbc.divB.appendixC.div11.para3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>2010 edition</find>
+                        <replace>2012 edition</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 006: Update wind velocity pressures edition year        -->
+        <!-- Appendix C Wind section - First wind velocity update paragraph    -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-006" sequence="6"
+                   description="Change wind velocity pressures update from 2010 edition to 2012 edition">
+            <target type="canonical-id" id="nbc.divB.appendixC.div18.para5"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>2010 edition</find>
+                        <replace>2012 edition</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 007: Update wind velocity 2020 to 2023 edition          -->
+        <!-- Appendix C Wind section - Second wind velocity update paragraph   -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-007" sequence="7"
+                   description="Change wind velocity pressures update from 2020 edition to 2023 edition and reference from 2010 to 2012">
+            <target type="canonical-id" id="nbc.divB.appendixC.div18.para10"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>For the 2020 edition</find>
+                        <replace>For the 2023 edition</replace>
+                    </find-replace>
+                </text-change>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>previous update for the 2010 edition</find>
+                        <replace>previous update for the 2012 edition</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 008: Update NBC 2015 reference to BCBC 2018             -->
+        <!-- Appendix C Wind section - Wind speed comparison paragraph         -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-008" sequence="8"
+                   description="Change NBC 2015 reference to BCBC 2018 in wind speed comparison">
+            <target type="canonical-id" id="nbc.divB.appendixC.div18.para11"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixC.div18.para11">The 1-in-50 hourly
+                        wind speeds, after adjusting for roughness to represent open exposure,
+                        were mapped and compared to the <ref type="standard" target="bcbc2018" standardId="bcbc2018"/> values for the locations in <ref type="internal"
+                                                                                                                                                        target="nbc.divB.appendixC.table2"
+                                                                                                                                                        display-type="long"/>. This updating procedure resulted in small changes
+                        to the 1-in-50 reference wind velocity pressures for <measurement units="metric">some locations</measurement>. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 010: Change specific location count to generic          -->
+        <!-- Appendix C Wind section - 1-in-10 wind velocity changes paragraph -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-010" sequence="10"
+                   description="Replace 322 locations with some locations in 1-in-10 wind velocity paragraph">
+            <target type="canonical-id" id="nbc.divB.appendixC.div18.para12"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>for 322 locations</find>
+                        <replace>for some locations</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 011: Change table title from Canada to British Columbia -->
+        <!-- Appendix C Table C-2 - Climatic Design Data table title           -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-011" sequence="11"
+                   description="Replace Canada with British Columbia in Table C-2 title">
+            <target type="canonical-id" id="nbc.divB.appendixC.table2"/>
+            <modify>
+                <element-change xpath-within-target=".">
+                    <replace-child element-name="title">
+                        <title>Climatic Design Data for Selected Locations in British Columbia</title>
+                    </replace-child>
+                </element-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 012: Insert Colwood Region and location rows            -->
+        <!-- Appendix C Table C-2 - Add Colwood Region header and 3 locations  -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-012" sequence="12"
+                   description="Insert Colwood Region header and three Colwood location rows after Chilliwack in Table C-2">
+            <target type="position" parent-id="nbc.divB.appendixC.table2.row20" position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixC.table2.row20_header">
+                        <entry>Colwood Region</entry>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                        <entry align="center"/>
+                    </row>
+                    <row xml:id="nbc.divB.appendixC.table2.row20a">
+                        <entry>Colwood (Colwood Corners)</entry>
+                        <entry align="center">64</entry>
+                        <entry align="center">-6</entry>
+                        <entry align="center">-8</entry>
+                        <entry align="center">26</entry>
+                        <entry align="center">18</entry>
+                        <entry align="center">2900</entry>
+                        <entry align="center">10</entry>
+                        <entry align="center">100</entry>
+                        <entry align="center">1000</entry>
+                        <entry align="center">1.13</entry>
+                        <entry align="center">1030</entry>
+                        <entry align="center">220</entry>
+                        <entry align="center">1.7</entry>
+                        <entry align="center">0.3</entry>
+                        <entry align="center">0.48</entry>
+                        <entry align="center">0.63</entry>
+                    </row>
+                    <row xml:id="nbc.divB.appendixC.table2.row20b">
+                        <entry>Colwood (Royal Bay Village)</entry>
+                        <entry align="center">20</entry>
+                        <entry align="center">-5</entry>
+                        <entry align="center">-7</entry>
+                        <entry align="center">24</entry>
+                        <entry align="center">17</entry>
+                        <entry align="center">2600</entry>
+                        <entry align="center">8</entry>
+                        <entry align="center">80</entry>
+                        <entry align="center">910</entry>
+                        <entry align="center">1.05</entry>
+                        <entry align="center">930</entry>
+                        <entry align="center">220</entry>
+                        <entry align="center">1.2</entry>
+                        <entry align="center">0.3</entry>
+                        <entry align="center">0.48</entry>
+                        <entry align="center">0.63</entry>
+                    </row>
+                    <row xml:id="nbc.divB.appendixC.table2.row20c">
+                        <entry>Colwood (Triangle Mountain)</entry>
+                        <entry align="center">220</entry>
+                        <entry align="center">-7</entry>
+                        <entry align="center">-9</entry>
+                        <entry align="center">25</entry>
+                        <entry align="center">17</entry>
+                        <entry align="center">3300</entry>
+                        <entry align="center">10</entry>
+                        <entry align="center">105</entry>
+                        <entry align="center">11885</entry>
+                        <entry align="center">1.29</entry>
+                        <entry align="center">1225</entry>
+                        <entry align="center">220</entry>
+                        <entry align="center">2.5</entry>
+                        <entry align="center">0.3</entry>
+                        <entry align="center">0.48</entry>
+                        <entry align="center">0.63</entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 013: Insert Oliver row after Ocean Falls                -->
+        <!-- Appendix C Table C-2 - Add Oliver location                        -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-013" sequence="13"
+                   description="Insert Oliver location row after Ocean Falls in Table C-2">
+            <target type="position" parent-id="nbc.divB.appendixC.table2.row61" position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixC.table2.row61a">
+                        <entry>Oliver</entry>
+                        <entry align="center">307</entry>
+                        <entry align="center">-16</entry>
+                        <entry align="center">-18</entry>
+                        <entry align="center">33</entry>
+                        <entry align="center">20</entry>
+                        <entry align="center">3400</entry>
+                        <entry align="center">10</entry>
+                        <entry align="center">40</entry>
+                        <entry align="center">275</entry>
+                        <entry align="center">0.28</entry>
+                        <entry align="center">300</entry>
+                        <entry align="center">60</entry>
+                        <entry align="center">1.0</entry>
+                        <entry align="center">0.1</entry>
+                        <entry align="center">0.40</entry>
+                        <entry align="center">0.52</entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 014: Insert Burnaby (General) after Vancouver Region    -->
+        <!-- Appendix C Table C-2 - Add Burnaby General location               -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-014" sequence="14"
+                   description="Insert Burnaby (General) location row after Vancouver Region in Table C-2">
+            <target type="position" parent-id="nbc.divB.appendixC.table2.row93" position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixC.table2.row93a">
+                        <entry>Burnaby (General)</entry>
+                        <entry align="center">137</entry>
+                        <entry align="center">-7</entry>
+                        <entry align="center">-9</entry>
+                        <entry align="center">25</entry>
+                        <entry align="center">17</entry>
+                        <entry align="center">2735</entry>
+                        <entry align="center">10</entry>
+                        <entry align="center">140</entry>
+                        <entry align="center">1840</entry>
+                        <entry align="center">1.92</entry>
+                        <entry align="center">1900</entry>
+                        <entry align="center">160</entry>
+                        <entry align="center">2.7</entry>
+                        <entry align="center">0.4</entry>
+                        <entry align="center">0.36</entry>
+                        <entry align="center">0.47</entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 015: Replace paragraph about Table C-3 reference        -->
+        <!-- Appendix C - Seismic Hazard for Part 9 paragraph                  -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-015" sequence="15"
+                   description="Replace paragraph referencing NBC 2015 Table C-3 with BC-specific text and tool reference">
+            <target type="canonical-id" id="nbc.divB.appendixC.div20.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixC.div20.para1">
+                        <ref type="internal" target="nbc.divB.appendixC.table3" display-type="long"/> lists the seismic hazard values to be used in the application of the prescriptive requirements in Part 9 relating to lateral loads due to earthquake. For locations not listed in Table C-3, the seismic hazard values to be used can be determined using the 2020 National Building Code of Canada Seismic Hazard Tool (https://doi.org/10.23687/b1bd3cf0-0672-47f4-8bfa-290ae75fde9b).
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 016: Insert detailed procedure for determining Smax     -->
+        <!-- Appendix C - After Table C-3 reference paragraph                  -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-016" sequence="16"
+                   description="Insert paragraphs describing the Tool and procedure for determining Smax">
+            <target type="position" parent-id="nbc.divB.appendixC.div20" position="after" reference-id="nbc.divB.appendixC.div20.para1"/>
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixC.div20.para2">The Tool provides seismic hazard values for any site in Canada based on the following information:</paragraph>
+                    <list type="bulleted">
+                        <item xml:id="nbc.divB.appendixC.div20.list1.item1">Latitude and longitude of the site's location: Seismic hazard values can be appreciably different for localities across a large locale. Therefore, applying the same seismic hazard value to a large geographic area could result in buildings being over-designed or under-designed.</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list1.item2">Site designation in terms of Site Class, X<sub>S</sub>, where S is the Site Class (see Sentence 4.1.8.4.(3)).</item>
+                    </list>
+                    <paragraph xml:id="nbc.divB.appendixC.div20.para3">The procedure to determine the seismic design parameter, S<sub>max</sub>, for a site is as follows:</paragraph>
+                    <list type="numbered">
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item1">Go to the 2020 National Building Code of Canada Seismic Hazard Tool (https://doi.org/10.23687/b1bd3cf0-0672-47f4-8bfa-290ae75fde9b).</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item2">Select "Site Class (X<sub>s</sub>)" as the site designation.</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item3">Select the appropriate Site Class (A, B, C, D or E).</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item4">Enter the latitude and longitude of the site's location manually, or determine the latitude and longitude from an address or current location.</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item5">Click "Obtain Seismic Hazard Values." The following values are needed to determine S<sub>max</sub>: S<sub>a</sub>(0.2,X<sub>S</sub>) and S<sub>a</sub>(0.5,X<sub>S</sub>).</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item6">Determine S(0.2,X<sub>S</sub>) in accordance with Sentence 4.1.8.4.(6):
+                            S(0.2,X<sub>S</sub>) = S<sub>a</sub>(0.2,X<sub>S</sub>) or S<sub>a</sub>(0.5,X<sub>S</sub>), whichever is greater</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item7">Determine S(0.5,X<sub>S</sub>) in accordance with Sentence 4.1.8.4.(6):
+                            S(0.5,X<sub>S</sub>) = Sa(0.5,X<sub>S</sub>)</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item8">Determine S<sub>max</sub>:
+                            S<sub>max</sub> = (2/3)S(0.2,X<sub>S</sub>) or S(0.5,X<sub>S</sub>), whichever is greater</item>
+                        <item xml:id="nbc.divB.appendixC.div20.list2.item9">Round S<sub>max</sub> to three significant digits.</item>
+                    </list>
+                    <paragraph xml:id="nbc.divB.appendixC.div20.para4">In cases where the Site Class is determined in accordance with Sentence 4.1.8.4.(3), S<sub>max</sub> is calculated for the determined Site Class. In cases where the Site Class is unknown, S<sub>max</sub> must be calculated for each of Site Classes A, B, C, D and E, by repeating Steps 1 to 9, and the highest value of S<sub>max</sub> among all the Site Classes used for design.</paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 017: Insert Example section for Strathmore calculation  -->
+        <!-- Appendix C - After Smax procedure paragraphs                      -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-017" sequence="17"
+                   description="Insert Example section showing Smax calculation for Strathmore, Alberta">
+            <target type="position" parent-id="nbc.divB.appendixC" position="before" reference-id="nbc.divB.appendixC.table3"/>
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para0"><emphasis style="bold">Example</emphasis></paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para1">Consider a site in Strathmore, Alberta, a location not listed in Table C-3. The latitude and longitude of Strathmore are 51.04040 and −113.40205, respectively. In this example, the Site Class is determined by a geotechnical investigation to be Site Class C.</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para2">Using the 2020 National Building Code of Canada Seismic Hazard Tool (Step 1), select "Site Class (X<sub>S</sub>)" as the site designation (Step 2). Select "C" as the Site Class (Step 3). Under "Location," enter the latitude, 51.04040, and longitude, −113.40205, and then click "Set coordinates" (Step 4). Click "Obtain Seismic Hazard Values" to obtain the values for S<sub>a</sub>(0.2,X<sub>C</sub>) and S<sub>a</sub>(0.5,X<sub>C</sub>), which are 0.191 and 0.125, respectively (Step 5).</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para3">Next, determine S(0.2,X<sub>C</sub>) as follows (Step 6):</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para4">S(0.2,X<sub>C</sub>) = S<sub>a</sub>(0.2,X<sub>C</sub>) or S<sub>a</sub>(0.5,X<sub>C</sub>), whichever is greater</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para5">S(0.2,X<sub>C</sub>) = 0.191 or 0.125, whichever is greater</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para6">S(0.2,X<sub>C</sub>) = 0.191</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para7">Now, determine S(0.5,X<sub>C</sub>) as follows (Step 7):</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para8">S(0.5,X<sub>C</sub>) = Sa(0.5,X<sub>C</sub>)</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para9">S(0.5,X<sub>C</sub>) = 0.125</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para10">Finally, determine S<sub>max</sub> for Site Class C as follows (Step 8):</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para11">S<sub>max</sub> = (2/3)S(0.2,X<sub>C</sub>) or S(0.5,X<sub>C</sub>), whichever is greater</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para12">S<sub>max</sub> = 0.127333 or 0.125, whichever is greater</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para13">S<sub>max</sub> = 0.127 (rounded to three significant digits according to Step 9)</paragraph>
+                    <paragraph xml:id="nbc.divB.appendixC.div22.para14">If the Site Class is unknown, this procedure is repeated to determine S<sub>max</sub> for each of Site Classes A, B, C, D and E. For Strathmore, the resulting values of S<sub>max</sub> are as follows: 0.071 for Site Class A, 0.097 for Site Class B, 0.127 for Site Class C, 0.213 for Site Class D, and 0.254 for Site Class E. The highest value is selected as S<sub>max</sub> for unknown Site Class: 0.254.</paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 018: Replace Table C-3 with BC version (PLACEHOLDER)    -->
+        <!-- Table C-3 - Complete table replacement with 7-column structure    -->
+        <!-- TODO: Full table content to be added from screenshots             -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-018" sequence="18"
+                   description="Replace Table C-3 with BC version showing Smax for multiple site classes (PLACEHOLDER - table content to be added)">
+            <target type="canonical-id" id="nbc.divB.appendixC.table3"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <!-- TODO: PLACEHOLDER FOR TABLE C-3 REPLACEMENT -->
+                    <!-- This table will be populated with BC-specific seismic data -->
+                    <!-- Structure: 7 columns (Province/Location, Smax for Unknown Site Class, Site Class A, B, C, D, E) -->
+                    <!-- Content to be added from table screenshots provided by user -->
+                    <table xml:id="nbc.divB.appendixC.table3" vendor-id="et000076">
+                        <title>Seismic Design Parameter, S<sub>max</sub>, for Selected Locations in Canada <ref type="internal" target="nbc.divB.appendixC" display-type="long"/></title>
+                        
+                        <tgroup cols="7">
+                            <colspec colname="col1" colwidth="20*"/>
+                            <colspec colname="col2" colwidth="13*"/>
+                            <colspec colname="col3" colwidth="13*"/>
+                            <colspec colname="col4" colwidth="13*"/>
+                            <colspec colname="col5" colwidth="13*"/>
+                            <colspec colname="col6" colwidth="13*"/>
+                            <colspec colname="col7" colwidth="13*"/>
+                            <thead>
+                                <row xml:id="nbc.divB.appendixC.table3.row1">
+                                    <entry align="center">Province and Location</entry>
+                                    <entry align="center">S<sub>max</sub> for Unknown Site Class</entry>
+                                    <entry align="center" colspan="5">S<sub>max</sub> According to Site Class</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row2">
+                                    <entry/>
+                                    <entry/>
+                                    <entry align="center">A</entry>
+                                    <entry align="center">B</entry>
+                                    <entry align="center">C</entry>
+                                    <entry align="center">D</entry>
+                                    <entry align="center">E</entry>
+                                </row>
+                            </thead>
+                            <tbody>
+                                <row xml:id="nbc.divB.appendixC.table3.row3">
+                                    <entry align="left">
+                                        <emphasis style="bold">British Columbia</emphasis>
+                                    </entry>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row4">
+                                    <entry align="left">100 Mile House</entry>
+                                    <entry>0.283</entry>
+                                    <entry>0.0661</entry>
+                                    <entry>0.084</entry>
+                                    <entry>0.144</entry>
+                                    <entry>0.239</entry>
+                                    <entry>0.283</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row5">
+                                    <entry align="left">Abbotsford</entry>
+                                    <entry>1.07</entry>
+                                    <entry>0.381</entry>
+                                    <entry>0.473</entry>
+                                    <entry>0.742</entry>
+                                    <entry>1.01</entry>
+                                    <entry>1.07</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row6">
+                                    <entry align="left">Agassiz</entry>
+                                    <entry>0.802</entry>
+                                    <entry>0.25</entry>
+                                    <entry>0.313</entry>
+                                    <entry>0.507</entry>
+                                    <entry>0.729</entry>
+                                    <entry>0.802</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row7">
+                                    <entry align="left">Alberni</entry>
+                                    <entry>1.62</entry>
+                                    <entry>0.573</entry>
+                                    <entry>0.74</entry>
+                                    <entry>1.25</entry>
+                                    <entry>1.57</entry>
+                                    <entry>1.62</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row8">
+                                    <entry align="left">Ashcroft</entry>
+                                    <entry>0.389</entry>
+                                    <entry>0.098</entry>
+                                    <entry>0.123</entry>
+                                    <entry>0.209</entry>
+                                    <entry>0.335</entry>
+                                    <entry>0.389</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row9">
+                                    <entry align="left">Bamfield</entry>
+                                    <entry>2.27</entry>
+                                    <entry>0.919</entry>
+                                    <entry>1.18</entry>
+                                    <entry>1.92</entry>
+                                    <entry>2.23</entry>
+                                    <entry>2.27</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row10">
+                                    <entry align="left">Beatton River</entry>
+                                    <entry>0.248</entry>
+                                    <entry>0.074</entry>
+                                    <entry>0.102</entry>
+                                    <entry>0.13</entry>
+                                    <entry>0.211</entry>
+                                    <entry>0.248</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row11">
+                                    <entry align="left">Bella Bella</entry>
+                                    <entry>0.585</entry>
+                                    <entry>0.126</entry>
+                                    <entry>0.169</entry>
+                                    <entry>0.312</entry>
+                                    <entry>0.501</entry>
+                                    <entry>0.585</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row12">
+                                    <entry align="left">Bella Coola</entry>
+                                    <entry>0.417</entry>
+                                    <entry>0.0887</entry>
+                                    <entry>0.117</entry>
+                                    <entry>0.22</entry>
+                                    <entry>0.355</entry>
+                                    <entry>0.417</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row13">
+                                    <entry align="left">Burns Lake</entry>
+                                    <entry>0.214</entry>
+                                    <entry>0.0475</entry>
+                                    <entry>0.0596</entry>
+                                    <entry>0.107</entry>
+                                    <entry>0.179</entry>
+                                    <entry>0.214</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row14">
+                                    <entry align="left">Cache Creek</entry>
+                                    <entry>0.381</entry>
+                                    <entry>0.0953</entry>
+                                    <entry>0.12</entry>
+                                    <entry>0.204</entry>
+                                    <entry>0.327</entry>
+                                    <entry>0.381</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row15">
+                                    <entry align="left">Campbell River</entry>
+                                    <entry>1.14</entry>
+                                    <entry>0.346</entry>
+                                    <entry>0.452</entry>
+                                    <entry>0.789</entry>
+                                    <entry>1.07</entry>
+                                    <entry>1.14</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row16">
+                                    <entry align="left">Carmi</entry>
+                                    <entry>0.298</entry>
+                                    <entry>0.0693</entry>
+                                    <entry>0.0867</entry>
+                                    <entry>0.153</entry>
+                                    <entry>0.251</entry>
+                                    <entry>0.298</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row17">
+                                    <entry align="left">Castlegar</entry>
+                                    <entry>0.252</entry>
+                                    <entry>0.0592</entry>
+                                    <entry>0.076</entry>
+                                    <entry>0.124</entry>
+                                    <entry>0.211</entry>
+                                    <entry>0.252</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row18">
+                                    <entry align="left">Chetwynd</entry>
+                                    <entry>0.334</entry>
+                                    <entry>0.0867</entry>
+                                    <entry>0.115</entry>
+                                    <entry>0.174</entry>
+                                    <entry>0.286</entry>
+                                    <entry>0.334</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row19">
+                                    <entry align="left">Chilliwack</entry>
+                                    <entry>0.887</entry>
+                                    <entry>0.294</entry>
+                                    <entry>0.367</entry>
+                                    <entry>0.583</entry>
+                                    <entry>0.82</entry>
+                                    <entry>0.887</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row20">
+                                    <entry align="left">Comox</entry>
+                                    <entry>1.27</entry>
+                                    <entry>0.408</entry>
+                                    <entry>0.53</entry>
+                                    <entry>0.912</entry>
+                                    <entry>1.21</entry>
+                                    <entry>1.27</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row21">
+                                    <entry align="left">Courtenay</entry>
+                                    <entry>1.29</entry>
+                                    <entry>0.415</entry>
+                                    <entry>0.538</entry>
+                                    <entry>0.926</entry>
+                                    <entry>1.22</entry>
+                                    <entry>1.29</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row22">
+                                    <entry align="left">Cranbrook</entry>
+                                    <entry>0.321</entry>
+                                    <entry>0.0713</entry>
+                                    <entry>0.0933</entry>
+                                    <entry>0.158</entry>
+                                    <entry>0.269</entry>
+                                    <entry>0.321</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row23">
+                                    <entry align="left">Crescent Valley</entry>
+                                    <entry>0.252</entry>
+                                    <entry>0.0589</entry>
+                                    <entry>0.076</entry>
+                                    <entry>0.124</entry>
+                                    <entry>0.211</entry>
+                                    <entry>0.252</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row24">
+                                    <entry align="left">Crofton</entry>
+                                    <entry>1.75</entry>
+                                    <entry>0.667</entry>
+                                    <entry>0.813</entry>
+                                    <entry>1.32</entry>
+                                    <entry>1.7</entry>
+                                    <entry>1.75</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row25">
+                                    <entry align="left">Dawson Creek</entry>
+                                    <entry>0.275</entry>
+                                    <entry>0.0767</entry>
+                                    <entry>0.105</entry>
+                                    <entry>0.14</entry>
+                                    <entry>0.233</entry>
+                                    <entry>0.275</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row26">
+                                    <entry align="left">Dease Lake</entry>
+                                    <entry>0.342</entry>
+                                    <entry>0.0648</entry>
+                                    <entry>0.0895</entry>
+                                    <entry>0.173</entry>
+                                    <entry>0.289</entry>
+                                    <entry>0.342</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row27">
+                                    <entry align="left">Dog Creek</entry>
+                                    <entry>0.338</entry>
+                                    <entry>0.08</entry>
+                                    <entry>0.101</entry>
+                                    <entry>0.177</entry>
+                                    <entry>0.287</entry>
+                                    <entry>0.338</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row28">
+                                    <entry align="left">Duncan</entry>
+                                    <entry>1.86</entry>
+                                    <entry>0.713</entry>
+                                    <entry>0.867</entry>
+                                    <entry>1.42</entry>
+                                    <entry>1.81</entry>
+                                    <entry>1.86</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row29">
+                                    <entry align="left">Elko</entry>
+                                    <entry>0.39</entry>
+                                    <entry>0.09</entry>
+                                    <entry>0.117</entry>
+                                    <entry>0.197</entry>
+                                    <entry>0.33</entry>
+                                    <entry>0.39</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row30">
+                                    <entry align="left">Fernie</entry>
+                                    <entry>0.404</entry>
+                                    <entry>0.104</entry>
+                                    <entry>0.137</entry>
+                                    <entry>0.21</entry>
+                                    <entry>0.345</entry>
+                                    <entry>0.404</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row31">
+                                    <entry align="left">Fort Nelson</entry>
+                                    <entry>0.284</entry>
+                                    <entry>0.0753</entry>
+                                    <entry>0.103</entry>
+                                    <entry>0.144</entry>
+                                    <entry>0.239</entry>
+                                    <entry>0.284</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row32">
+                                    <entry align="left">Fort St. John</entry>
+                                    <entry>0.27</entry>
+                                    <entry>0.076</entry>
+                                    <entry>0.104</entry>
+                                    <entry>0.138</entry>
+                                    <entry>0.229</entry>
+                                    <entry>0.27</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row33">
+                                    <entry align="left">Glacier</entry>
+                                    <entry>0.356</entry>
+                                    <entry>0.094</entry>
+                                    <entry>0.123</entry>
+                                    <entry>0.184</entry>
+                                    <entry>0.303</entry>
+                                    <entry>0.356</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row34">
+                                    <entry align="left">Golden</entry>
+                                    <entry>0.425</entry>
+                                    <entry>0.126</entry>
+                                    <entry>0.164</entry>
+                                    <entry>0.239</entry>
+                                    <entry>0.369</entry>
+                                    <entry>0.425</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row35">
+                                    <entry align="left">Gold River</entry>
+                                    <entry>1.73</entry>
+                                    <entry>0.6</entry>
+                                    <entry>0.776</entry>
+                                    <entry>1.31</entry>
+                                    <entry>1.66</entry>
+                                    <entry>1.73</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row36">
+                                    <entry align="left">Grand Forks</entry>
+                                    <entry>0.272</entry>
+                                    <entry>0.0641</entry>
+                                    <entry>0.0807</entry>
+                                    <entry>0.138</entry>
+                                    <entry>0.229</entry>
+                                    <entry>0.272</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row37">
+                                    <entry align="left">Greenwood</entry>
+                                    <entry>0.283</entry>
+                                    <entry>0.0662</entry>
+                                    <entry>0.0833</entry>
+                                    <entry>0.144</entry>
+                                    <entry>0.238</entry>
+                                    <entry>0.283</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row38">
+                                    <entry align="left">Hope</entry>
+                                    <entry>0.672</entry>
+                                    <entry>0.197</entry>
+                                    <entry>0.246</entry>
+                                    <entry>0.405</entry>
+                                    <entry>0.601</entry>
+                                    <entry>0.672</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row39">
+                                    <entry align="left">Jordan River</entry>
+                                    <entry>2.31</entry>
+                                    <entry>0.902</entry>
+                                    <entry>1.15</entry>
+                                    <entry>1.90</entry>
+                                    <entry>2.227</entry>
+                                    <entry>2.31</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row40">
+                                    <entry align="left">Kamloops</entry>
+                                    <entry>0.304</entry>
+                                    <entry>0.0707</entry>
+                                    <entry>0.0887</entry>
+                                    <entry>0.157</entry>
+                                    <entry>0.257</entry>
+                                    <entry>0.304</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row41">
+                                    <entry align="left">Kaslo</entry>
+                                    <entry>0.271</entry>
+                                    <entry>0.0615</entry>
+                                    <entry>0.08</entry>
+                                    <entry>0.132</entry>
+                                    <entry>0.226</entry>
+                                    <entry>0.271</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row42">
+                                    <entry align="left">Kelowna</entry>
+                                    <entry>0.302</entry>
+                                    <entry>0.07</entry>
+                                    <entry>0.088</entry>
+                                    <entry>0.155</entry>
+                                    <entry>0.255</entry>
+                                    <entry>0.302</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row43">
+                                    <entry align="left">Kimberley</entry>
+                                    <entry>0.311</entry>
+                                    <entry>0.0707</entry>
+                                    <entry>0.0927</entry>
+                                    <entry>0.153</entry>
+                                    <entry>0.261</entry>
+                                    <entry>0.311</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row44">
+                                    <entry align="left">Kitimat Plant</entry>
+                                    <entry>0.456</entry>
+                                    <entry>0.091</entry>
+                                    <entry>0.123</entry>
+                                    <entry>0.233</entry>
+                                    <entry>0.385</entry>
+                                    <entry>0.456</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row45">
+                                    <entry align="left">Kitimat Townsite</entry>
+                                    <entry>0.456</entry>
+                                    <entry>0.091</entry>
+                                    <entry>0.123</entry>
+                                    <entry>0.233</entry>
+                                    <entry>0.385</entry>
+                                    <entry>0.456</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row46">
+                                    <entry align="left">Ladysmith</entry>
+                                    <entry>1.7</entry>
+                                    <entry>0.636</entry>
+                                    <entry>0.773</entry>
+                                    <entry>1.28</entry>
+                                    <entry>1.65</entry>
+                                    <entry>1.7</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row47">
+                                    <entry align="left">Langford</entry>
+                                    <entry>2.07</entry>
+                                    <entry>0.887</entry>
+                                    <entry>1.09</entry>
+                                    <entry>1.74</entry>
+                                    <entry>2.06</entry>
+                                    <entry>2.07</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row48">
+                                    <entry align="left">Lillooet</entry>
+                                    <entry>0.503</entry>
+                                    <entry>0.147</entry>
+                                    <entry>0.187</entry>
+                                    <entry>0.289</entry>
+                                    <entry>0.442</entry>
+                                    <entry>0.503</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row49">
+                                    <entry align="left">Lytton</entry>
+                                    <entry>0.532</entry>
+                                    <entry>0.155</entry>
+                                    <entry>0.196</entry>
+                                    <entry>0.309</entry>
+                                    <entry>0.469</entry>
+                                    <entry>0.532</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row50">
+                                    <entry align="left">Mackenzie</entry>
+                                    <entry>0.314</entry>
+                                    <entry>0.0773</entry>
+                                    <entry>0.101</entry>
+                                    <entry>0.162</entry>
+                                    <entry>0.268</entry>
+                                    <entry>0.314</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row51">
+                                    <entry align="left">Masset</entry>
+                                    <entry>1.56</entry>
+                                    <entry>0.491</entry>
+                                    <entry>0.605</entry>
+                                    <entry>1.05</entry>
+                                    <entry>1.44</entry>
+                                    <entry>1.56</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row52">
+                                    <entry align="left">McBride</entry>
+                                    <entry>0.396</entry>
+                                    <entry>0.116</entry>
+                                    <entry>0.151</entry>
+                                    <entry>0.222</entry>
+                                    <entry>0.343</entry>
+                                    <entry>0.396</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row53">
+                                    <entry align="left">McLeod Lake</entry>
+                                    <entry>0.295</entry>
+                                    <entry>0.0707</entry>
+                                    <entry>0.092</entry>
+                                    <entry>0.15</entry>
+                                    <entry>0.251</entry>
+                                    <entry>0.295</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row54">
+                                    <entry align="left">Merritt</entry>
+                                    <entry>0.423</entry>
+                                    <entry>0.108</entry>
+                                    <entry>0.136</entry>
+                                    <entry>0.23</entry>
+                                    <entry>0.364</entry>
+                                    <entry>0.423</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row55">
+                                    <entry align="left">Mission City</entry>
+                                    <entry>1.01</entry>
+                                    <entry>0.354</entry>
+                                    <entry>0.439</entry>
+                                    <entry>0.692</entry>
+                                    <entry>0.949</entry>
+                                    <entry>1.01</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row56">
+                                    <entry align="left">Montrose</entry>
+                                    <entry>0.251</entry>
+                                    <entry>0.059</entry>
+                                    <entry>0.0753</entry>
+                                    <entry>0.124</entry>
+                                    <entry>0.21</entry>
+                                    <entry>0.251</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row57">
+                                    <entry align="left">Nakusp</entry>
+                                    <entry>0.259</entry>
+                                    <entry>0.0599</entry>
+                                    <entry>0.0773</entry>
+                                    <entry>0.127</entry>
+                                    <entry>0.216</entry>
+                                    <entry>0.259</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row58">
+                                    <entry align="left">Nanaimo</entry>
+                                    <entry>1.55</entry>
+                                    <entry>0.571</entry>
+                                    <entry>0.7</entry>
+                                    <entry>1.15</entry>
+                                    <entry>1.5</entry>
+                                    <entry>1.55</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row59">
+                                    <entry align="left">Nelson</entry>
+                                    <entry>0.255</entry>
+                                    <entry>0.0587</entry>
+                                    <entry>0.076</entry>
+                                    <entry>0.124</entry>
+                                    <entry>0.213</entry>
+                                    <entry>0.255</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row60">
+                                    <entry align="left">Ocean Falls</entry>
+                                    <entry>0.503</entry>
+                                    <entry>0.106</entry>
+                                    <entry>0.141</entry>
+                                    <entry>0.264</entry>
+                                    <entry>0.428</entry>
+                                    <entry>0.503</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row61">
+                                    <entry align="left">Osoyoos</entry>
+                                    <entry>0.365</entry>
+                                    <entry>0.0867</entry>
+                                    <entry>0.109</entry>
+                                    <entry>0.192</entry>
+                                    <entry>0.311</entry>
+                                    <entry>0.365</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row62">
+                                    <entry align="left">Parksville</entry>
+                                    <entry>1.46</entry>
+                                    <entry>0.509</entry>
+                                    <entry>0.638</entry>
+                                    <entry>1.08</entry>
+                                    <entry>1.41</entry>
+                                    <entry>1.46</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row63">
+                                    <entry align="left">Penticton</entry>
+                                    <entry>0.337</entry>
+                                    <entry>0.078</entry>
+                                    <entry>0.098</entry>
+                                    <entry>0.175</entry>
+                                    <entry>0.285</entry>
+                                    <entry>0.337</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row64">
+                                    <entry align="left">Port Alberni</entry>
+                                    <entry>1.66</entry>
+                                    <entry>0.594</entry>
+                                    <entry>0.768</entry>
+                                    <entry>1.29</entry>
+                                    <entry>1.61</entry>
+                                    <entry>1.66</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row65">
+                                    <entry align="left">Port Alice</entry>
+                                    <entry>1.86</entry>
+                                    <entry>0.84</entry>
+                                    <entry>1.06</entry>
+                                    <entry>1.64</entry>
+                                    <entry>1.85</entry>
+                                    <entry>1.86</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row66">
+                                    <entry align="left">Port Hardy</entry>
+                                    <entry>1.29</entry>
+                                    <entry>0.372</entry>
+                                    <entry>0.486</entry>
+                                    <entry>0.853</entry>
+                                    <entry>1.18</entry>
+                                    <entry>1.29</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row67">
+                                    <entry align="left">Port McNeill</entry>
+                                    <entry>1.31</entry>
+                                    <entry>0.385</entry>
+                                    <entry>0.504</entry>
+                                    <entry>0.878</entry>
+                                    <entry>1.21</entry>
+                                    <entry>1.31</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row68">
+                                    <entry align="left">Port Renfrew</entry>
+                                    <entry>2.32</entry>
+                                    <entry>0.923</entry>
+                                    <entry>1.18</entry>
+                                    <entry>1.94</entry>
+                                    <entry>2.28</entry>
+                                    <entry>2.32</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row69">
+                                    <entry align="left">Powell River</entry>
+                                    <entry>1.08</entry>
+                                    <entry>0.343</entry>
+                                    <entry>0.43</entry>
+                                    <entry>0.75</entry>
+                                    <entry>1.02</entry>
+                                    <entry>1.08</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row70">
+                                    <entry align="left">Prince George</entry>
+                                    <entry>0.234</entry>
+                                    <entry>0.0497</entry>
+                                    <entry>0.0644</entry>
+                                    <entry>0.114</entry>
+                                    <entry>0.195</entry>
+                                    <entry>0.234</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row71">
+                                    <entry align="left">Prince Rupert</entry>
+                                    <entry>0.684</entry>
+                                    <entry>0.149</entry>
+                                    <entry>0.199</entry>
+                                    <entry>0.367</entry>
+                                    <entry>0.587</entry>
+                                    <entry>0.684</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row72">
+                                    <entry align="left">Princeton</entry>
+                                    <entry>0.492</entry>
+                                    <entry>0.135</entry>
+                                    <entry>0.171</entry>
+                                    <entry>0.278</entry>
+                                    <entry>0.43</entry>
+                                    <entry>0.492</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row73">
+                                    <entry align="left">Qualicum Beach</entry>
+                                    <entry>1.45</entry>
+                                    <entry>0.496</entry>
+                                    <entry>0.633</entry>
+                                    <entry>1.08</entry>
+                                    <entry>1.39</entry>
+                                    <entry>1.45</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row74">
+                                    <entry align="left">Queen Charlotte City</entry>
+                                    <entry>2.52</entry>
+                                    <entry>1.05</entry>
+                                    <entry>1.28</entry>
+                                    <entry>2.03</entry>
+                                    <entry>2.45</entry>
+                                    <entry>2.52</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row75">
+                                    <entry align="left">Quesnel</entry>
+                                    <entry>0.225</entry>
+                                    <entry>0.0475</entry>
+                                    <entry>0.0605</entry>
+                                    <entry>0.111</entry>
+                                    <entry>0.188</entry>
+                                    <entry>0.225</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row76">
+                                    <entry align="left">Revelstoke</entry>
+                                    <entry>0.275</entry>
+                                    <entry>0.0634</entry>
+                                    <entry>0.082</entry>
+                                    <entry>0.135</entry>
+                                    <entry>0.23</entry>
+                                    <entry>0.275</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row77">
+                                    <entry align="left">Salmon Arm</entry>
+                                    <entry>0.264</entry>
+                                    <entry>0.0618</entry>
+                                    <entry>0.0787</entry>
+                                    <entry>0.132</entry>
+                                    <entry>0.222</entry>
+                                    <entry>0.264</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row78">
+                                    <entry align="left">Sandspit</entry>
+                                    <entry>2.2</entry>
+                                    <entry>0.833</entry>
+                                    <entry>1.02</entry>
+                                    <entry>1.68</entry>
+                                    <entry>2.11</entry>
+                                    <entry>2.2</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row79">
+                                    <entry align="left">Sechelt</entry>
+                                    <entry>1.25</entry>
+                                    <entry>0.455</entry>
+                                    <entry>0.559</entry>
+                                    <entry>0.9</entry>
+                                    <entry>1.2</entry>
+                                    <entry>1.25</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row80">
+                                    <entry align="left">Sidney</entry>
+                                    <entry>1.85</entry>
+                                    <entry>0.74</entry>
+                                    <entry>0.907</entry>
+                                    <entry>1.44</entry>
+                                    <entry>1.81</entry>
+                                    <entry>1.85</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row81">
+                                    <entry align="left">Smithers</entry>
+                                    <entry>0.236</entry>
+                                    <entry>0.0516</entry>
+                                    <entry>0.0645</entry>
+                                    <entry>0.118</entry>
+                                    <entry>0.197</entry>
+                                    <entry>0.236</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row82">
+                                    <entry align="left">Smith River</entry>
+                                    <entry>0.859</entry>
+                                    <entry>0.339</entry>
+                                    <entry>0.439</entry>
+                                    <entry>0.598</entry>
+                                    <entry>0.807</entry>
+                                    <entry>0.859</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row83">
+                                    <entry align="left">Sooke</entry>
+                                    <entry>2.21</entry>
+                                    <entry>0.873</entry>
+                                    <entry>1.07</entry>
+                                    <entry>1.78</entry>
+                                    <entry>2.17</entry>
+                                    <entry>2.21</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row84">
+                                    <entry align="left">Squamish</entry>
+                                    <entry>0.963</entry>
+                                    <entry>0.334</entry>
+                                    <entry>0.415</entry>
+                                    <entry>0.659</entry>
+                                    <entry>0.903</entry>
+                                    <entry>0.963</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row85">
+                                    <entry align="left">Stewart</entry>
+                                    <entry>0.427</entry>
+                                    <entry>0.0828</entry>
+                                    <entry>0.113</entry>
+                                    <entry>0.217</entry>
+                                    <entry>0.361</entry>
+                                    <entry>0.427</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row86">
+                                    <entry align="left">Tahsis</entry>
+                                    <entry>1.97</entry>
+                                    <entry>0.807</entry>
+                                    <entry>1</entry>
+                                    <entry>1.62</entry>
+                                    <entry>1.93</entry>
+                                    <entry>1.97</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row87">
+                                    <entry align="left">Taylor</entry>
+                                    <entry>0.267</entry>
+                                    <entry>0.0753</entry>
+                                    <entry>0.103</entry>
+                                    <entry>0.137</entry>
+                                    <entry>0.226</entry>
+                                    <entry>0.267</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row88">
+                                    <entry align="left">Terrace</entry>
+                                    <entry>0.406</entry>
+                                    <entry>0.08</entry>
+                                    <entry>0.107</entry>
+                                    <entry>0.205</entry>
+                                    <entry>0.342</entry>
+                                    <entry>0.406</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row89">
+                                    <entry align="left">Tofino</entry>
+                                    <entry>2.25</entry>
+                                    <entry>0.903</entry>
+                                    <entry>1.16</entry>
+                                    <entry>1.89</entry>
+                                    <entry>2.2</entry>
+                                    <entry>2.25</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row90">
+                                    <entry align="left">Trail</entry>
+                                    <entry>0.252</entry>
+                                    <entry>0.0594</entry>
+                                    <entry>0.076</entry>
+                                    <entry>0.125</entry>
+                                    <entry>0.21</entry>
+                                    <entry>0.252</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row91">
+                                    <entry align="left">Ucluelet</entry>
+                                    <entry>2.3</entry>
+                                    <entry>0.936</entry>
+                                    <entry>1.21</entry>
+                                    <entry>1.96</entry>
+                                    <entry>2.26</entry>
+                                    <entry>2.3</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row92">
+                                    <entry align="left">Vancouver Region</entry>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row93">
+                                    <entry align="left">Burnaby (Simon Fraser Univ.)</entry>
+                                    <entry>1.14</entry>
+                                    <entry>0.416</entry>
+                                    <entry>0.513</entry>
+                                    <entry>0.806</entry>
+                                    <entry>1.08</entry>
+                                    <entry>1.14</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row94">
+                                    <entry align="left">Cloverdale</entry>
+                                    <entry>1.18</entry>
+                                    <entry>0.434</entry>
+                                    <entry>0.535</entry>
+                                    <entry>0.839</entry>
+                                    <entry>1.13</entry>
+                                    <entry>1.18</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row95">
+                                    <entry align="left">Haney</entry>
+                                    <entry>1.06</entry>
+                                    <entry>0.378</entry>
+                                    <entry>0.467</entry>
+                                    <entry>0.736</entry>
+                                    <entry>1</entry>
+                                    <entry>1.06</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row96">
+                                    <entry align="left">Ladner</entry>
+                                    <entry>1.34</entry>
+                                    <entry>0.504</entry>
+                                    <entry>0.618</entry>
+                                    <entry>0.971</entry>
+                                    <entry>1.29</entry>
+                                    <entry>1.34</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row97">
+                                    <entry align="left">Langley</entry>
+                                    <entry>1.15</entry>
+                                    <entry>0.419</entry>
+                                    <entry>0.517</entry>
+                                    <entry>0.812</entry>
+                                    <entry>1.09</entry>
+                                    <entry>1.15</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row98">
+                                    <entry align="left">New Westminster</entry>
+                                    <entry>1.18</entry>
+                                    <entry>0.433</entry>
+                                    <entry>0.533</entry>
+                                    <entry>0.837</entry>
+                                    <entry>1.12</entry>
+                                    <entry>1.18</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row99">
+                                    <entry align="left">North Vancouver</entry>
+                                    <entry>1.17</entry>
+                                    <entry>0.429</entry>
+                                    <entry>0.529</entry>
+                                    <entry>0.831</entry>
+                                    <entry>1.11</entry>
+                                    <entry>1.17</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row100">
+                                    <entry align="left">Richmond</entry>
+                                    <entry>1.29</entry>
+                                    <entry>0.479</entry>
+                                    <entry>0.589</entry>
+                                    <entry>0.924</entry>
+                                    <entry>1.23</entry>
+                                    <entry>1.29</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row101">
+                                    <entry align="left">Surrey (88 Ave &amp; 156 St.)</entry>
+                                    <entry>1.17</entry>
+                                    <entry>0.427</entry>
+                                    <entry>0.525</entry>
+                                    <entry>0.824</entry>
+                                    <entry>1.11</entry>
+                                    <entry>1.17</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row102">
+                                    <entry align="left">Vancouver (City Hall)</entry>
+                                    <entry>1.24</entry>
+                                    <entry>0.458</entry>
+                                    <entry>0.563</entry>
+                                    <entry>0.884</entry>
+                                    <entry>1.18</entry>
+                                    <entry>1.24</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row103">
+                                    <entry align="left">Vancouver (Granville St. &amp; 41st Ave)</entry>
+                                    <entry>1.26</entry>
+                                    <entry>0.466</entry>
+                                    <entry>0.573</entry>
+                                    <entry>0.899</entry>
+                                    <entry>1.2</entry>
+                                    <entry>1.26</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row104">
+                                    <entry align="left">West Vancouver</entry>
+                                    <entry>1.2</entry>
+                                    <entry>0.441</entry>
+                                    <entry>0.544</entry>
+                                    <entry>0.855</entry>
+                                    <entry>1.14</entry>
+                                    <entry>1.2</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row105">
+                                    <entry align="left">Vernon</entry>
+                                    <entry>0.273</entry>
+                                    <entry>0.0639</entry>
+                                    <entry>0.0807</entry>
+                                    <entry>0.138</entry>
+                                    <entry>0.23</entry>
+                                    <entry>0.273</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row106">
+                                    <entry align="left">Victoria Region</entry>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                    <entry/>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row107">
+                                    <entry align="left">Victoria</entry>
+                                    <entry>2.01</entry>
+                                    <entry>0.86</entry>
+                                    <entry>1.06</entry>
+                                    <entry>1.68</entry>
+                                    <entry>2</entry>
+                                    <entry>2.01</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row108">
+                                    <entry align="left">Victoria (Gonzales Hts)</entry>
+                                    <entry>1.99</entry>
+                                    <entry>0.853</entry>
+                                    <entry>1.05</entry>
+                                    <entry>1.66</entry>
+                                    <entry>1.98</entry>
+                                    <entry>1.99</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row109">
+                                    <entry align="left">Victoria (Mt Tolmie)</entry>
+                                    <entry>1.96</entry>
+                                    <entry>0.82</entry>
+                                    <entry>1.01</entry>
+                                    <entry>1.6</entry>
+                                    <entry>1.94</entry>
+                                    <entry>1.96</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row110">
+                                    <entry align="left">Whistler</entry>
+                                    <entry>0.748</entry>
+                                    <entry>0.239</entry>
+                                    <entry>0.301</entry>
+                                    <entry>0.478</entry>
+                                    <entry>0.684</entry>
+                                    <entry>0.748</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row111">
+                                    <entry align="left">White Rock</entry>
+                                    <entry>1.27</entry>
+                                    <entry>0.471</entry>
+                                    <entry>0.579</entry>
+                                    <entry>0.907</entry>
+                                    <entry>1.21</entry>
+                                    <entry>1.27</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row112">
+                                    <entry align="left">Williams Lake</entry>
+                                    <entry>0.274</entry>
+                                    <entry>0.064</entry>
+                                    <entry>0.0813</entry>
+                                    <entry>0.14</entry>
+                                    <entry>0.231</entry>
+                                    <entry>0.274</entry>
+                                </row>
+                                <row xml:id="nbc.divB.appendixC.table3.row113">
+                                    <entry align="left">Youbou</entry>
+                                    <entry>1.92</entry>
+                                    <entry>0.707</entry>
+                                    <entry>0.9</entry>
+                                    <entry>1.5</entry>
+                                    <entry>1.87</entry>
+                                    <entry>1.92</entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </table>
+                </new-content>
+            </replace>
+        </amendment>
+        
+
+        <!-- ================================================================== -->
+        <!-- Amendment 019: Fix sentence number 4)→3) and table labels        -->
+        <!-- in D-2.3.3 para 3. NBC source has wrong number; refs render as   -->
+        <!-- D.2.3.4. instead of D-2.3.4.-A/B/C                               -->
+        <!-- ================================================================== -->
+
+        <amendment id="bc-019" sequence="19"
+                   description="Correct sentence number 4) to 3) and fix table labels to D-2.3.4.-A/B/C in D-2.3.3 paragraph 3">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article3.para3"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect3.article3.para3"
+                               vendor-id="en000477.3">3) The fire-resistance
+rating calculated by the component additive method cannot be increased
+by installing membranes in multiple layers, other than as specified
+in <ref type="internal"
+         target="nbc.divB.appendixD.appsect2.subsect3.article4.table1"
+         display-type="long"
+         pretext="Tables">Table D-2.3.4.-A</ref>,
+                        <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table2"
+                             display-type="medium">D-2.3.4.-B</ref> and
+                        <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table3"
+                             display-type="medium">D-2.3.4.-C</ref>.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendments 020-025: Add missing sentence numbers in D-2.11.4     -->
+        <!-- NBC source (en001102.1-6) omits <number> for all 6 paragraphs    -->
+        <!-- ================================================================== -->
+
+        <amendment id="bc-020" sequence="20"
+                   description="Add missing sentence number 1) to D-2.11.4 paragraph 1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para1"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para1"
+                               vendor-id="en001102.1">1) The fire-resistance rating of structural
+mass timber members, such as beams and columns constructed of glued-laminated
+timber, solid sawn timber, or structural composite lumber, is permitted
+to be determined using the calculation method described in Annex B,
+Fire resistance of large cross-section wood elements, of <ref type="standard" target="d-csao86" standardId="d-csao86"/>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-021" sequence="21"
+                   description="Add missing sentence number 2) to D-2.11.4 paragraph 2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para2"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para2"
+                               vendor-id="en001102.2">2) Except as provided in <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect11.article4.para3"
+                             display-type="short"
+                             pretext="Sentences"/>
+                        <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect11.article4.para6"
+                             display-type="short"
+                             pretext="to"/>, the fire-resistance
+rating of mass timber wall, floor and roof assemblies, including those
+constructed of cross-laminated timber, is permitted to be determined
+using the calculation method described in Annex B, Fire resistance
+of large cross-section wood elements, of <ref type="standard" target="d-csao86" standardId="d-csao86"/>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-022" sequence="22"
+                   description="Add missing sentence number 3) to D-2.11.4 paragraph 3">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para3"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para3"
+                               vendor-id="en001102.3">3) Except as provided in <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect11.article4.para4"
+                             display-type="short"/>, the assemblies described in <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect11.article4.para2"
+                             display-type="short"/> shall be protected to maintain the
+integrity and thermal insulation properties of the assembly for the
+time period corresponding to the calculated fire-resistance rating
+as follows:<list type="bulleted">
+                           <item>except as provided in Clause (b), for floor and roof assemblies,
+by applying at least one of the following layers to the unexposed
+surface of the assembly:<list type="bulleted">
+                                 <item>OSB or plywood not less than <measurement units="metric">12.5 mm thick</measurement>,
+with the joints in the layer staggered relative to those in the assembly,</item>
+                                 <item>concrete topping not less than <measurement units="metric">38 mm thick</measurement>,
+or</item>
+                                 <item>gypsum-concrete topping not less than <measurement units="metric">25 mm thick</measurement>,</item>
+                              </list>
+                           </item>
+                           <item>for plank decking designed in accordance with <ref type="external" target="csa086">Clause B.10 of</ref>
+                              <ref type="standard" target="d-csao86" standardId="d-csao86"/> by applying at least one of the layers
+described in <ref type="external" target="csa086">Clause B.10.4 of </ref>
+                              <ref type="standard" target="d-csao86" standardId="d-csao86"/> to the unexposed
+surface of the assembly,</item>
+                           <item>for interior wall assemblies, by applying at least one of
+the following layers to at least one side of the assembly, with the
+joints in the layer staggered relative to those in the assembly:<list type="bulleted">
+                                 <item>OSB or plywood not less than <measurement units="metric">12.5 mm thick</measurement>,
+or</item>
+                                 <item>Type X gypsum board not less than <measurement units="metric">12.7 mm thick</measurement>, and</item>
+                              </list>
+                           </item>
+                           <item>for exterior wall assemblies, by applying at least one of
+the following layers to at least one side of the assembly, with the
+joints in the layer staggered relative to those in the assembly: <list type="bulleted">
+                                 <item>OSB or plywood not less than <measurement units="metric">12.5 mm thick</measurement>,</item>
+                                 <item>Type X gypsum board not less than <measurement units="metric">12.7 mm thick</measurement>,</item>
+                                 <item>gypsum sheathing not less than <measurement units="metric">12.7 mm thick</measurement> applied to the exterior (unexposed) side of the assembly, or</item>
+                                 <item>rock or slag insulation sheathing not less than <measurement units="metric">50
+mm thick</measurement> applied to the exterior (unexposed) side of the assembly.</item>
+                              </list>
+                           </item>
+                        </list>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-023" sequence="23"
+                   description="Add missing sentence number 4) to D-2.11.4 paragraph 4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para4"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para4"
+                               vendor-id="en001102.4">4) For wall, floor and roof assemblies constructed
+of cross-laminated timber, the joints between cross-laminated timber
+panels in the assembly need not be protected in accordance with <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect11.article4.para3"
+                             display-type="short"/>, provided the joints are either
+lapped or splined to maintain the integrity and thermal insulation
+properties of the assembly for the time period corresponding to the
+calculated fire-resistance rating. (See <ref type="internal"
+                             target="nbc.divB.appendixD.appsect2.subsect11.article4.figure1"
+                             display-type="long"/>.)</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-024" sequence="24"
+                   description="Add missing sentence number 5) to D-2.11.4 paragraph 5">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para5"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para5"
+                               vendor-id="en001102.5">5) For interior wall assemblies, the additional
+times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
+                        <ref type="standard" target="d-csao86" standardId="d-csao86"/> shall only
+be applied to the calculated fire-resistance rating where both sides
+of the assembly are protected in accordance with <ref type="external" target="csao86">Clause B.8 of </ref>
+                        <ref type="standard" target="d-csao86" standardId="d-csao86"/>. Where the level of protection differs
+on the two sides, the additional time corresponding to the lesser
+level of protection shall be applied.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-025" sequence="25"
+                   description="Add missing sentence number 6) to D-2.11.4 paragraph 6">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para6"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para6"
+                               vendor-id="en001102.6">6) For exterior wall assemblies, the additional
+times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
+                        <ref type="standard" target="d-csao86" standardId="d-csao86"/> shall only
+be applied to the calculated fire-resistance rating where<list type="bulleted">
+                           <item>the interior (fire-exposed) side of the assembly is protected
+in accordance with <ref type="external" target="csao86">Clause B.8 of </ref>
+                              <ref type="standard" target="d-csao86" standardId="d-csao86"/>, and</item>
+                           <item>except where the assembly is constructed of cross-laminated
+timber panels with lapped or splined joints as described in <ref type="internal"
+                                   target="nbc.divB.appendixD.appsect2.subsect11.article4.para4"
+                                   display-type="short"/>, the exterior (unexposed) side of
+the assembly is protected in accordance with <ref type="internal"
+                                   target="nbc.divB.appendixD.appsect2.subsect11.article4.para3"
+                                   display-type="short"
+                                   pretext="Clause"/>(d).</item>
+                        </list>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-026" sequence="26"
+                   description="Add missing sentence number 2) to D-2.3.15 paragraph 2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article15.para2"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect3.article15.para2"
+                               vendor-id="en000488.2">2) It is intended that the structural mullions
+referred to in Subclause (1)(d)(ii) will not distort or be displaced
+to the extent that there would be a failure of the wired glass closure
+during the period for which a closure in the fire separation would
+be expected to function. Hollow structural steel tubing not less than <measurement units="metric">100 mm</measurement> square filled with a Portland cement-based grout will
+satisfy the intent of the Subclause.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 027: Nest Example 2 bullet list inside the paragraph    -->
+        <!-- Appendix D D-1.7.4 Example 2                                      -->
+        <!-- ================================================================== -->
+
+        <amendment id="bc-027" sequence="27"
+                   description="Nest the Example 2 bulleted list inside D-1.7.4 paragraph 1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect7.article4.example2.para1"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.appendixD.appsect1.subsect7.article4.example2.para1">A <measurement units="metric">2 h</measurement> fire-resistance rating is required for a
+hollow masonry wall of Type N concrete with a <measurement units="metric">12.7 mm</measurement> Type X gypsum board finish on each face.
+                        <list type="bulleted">
+                            <item>Since gypsum board is used, <ref type="internal"
+                                    target="nbc.divB.appendixD.appsect1.subsect7.article1.para5"
+                                    display-type="long"/> applies. The <measurement units="metric">12.7 mm</measurement> gypsum board finish
+on the fire-exposed side is, therefore, assigned <measurement units="metric">25 min</measurement> by using <ref type="internal"
+                                    target="nbc.divB.appendixD.appsect2.subsect3.article4.table1"
+                                    display-type="long"/>.</item>
+                            <item>The fire resistance required of the balance of the assembly
+is <measurement units="metric"> 120 min</measurement> - <measurement units="metric">25 min</measurement> = <measurement units="metric">95 min</measurement>.</item>
+                            <item>Interpolating between <measurement units="metric">1.5 h</measurement> and <measurement units="metric">2 h</measurement> in <ref type="internal"
+                                    target="nbc.divB.appendixD.appsect2.subsect1.article1.table1"
+                                    display-type="long"/> for <measurement units="metric">95 min</measurement> fire resistance,
+the equivalent thickness for hollow masonry units required is <measurement units="metric">95 mm</measurement> + (<measurement units="metric"> 18 mm</measurement> × 5/30) = <measurement units="metric">95 mm</measurement> + <measurement units="metric">3 mm</measurement> = 98 mm. </item>
+                            <item>The contribution to the equivalent thickness of the wall
+of the <measurement units="metric"> 12.7 mm</measurement> gypsum board finish on the non-fire-exposed
+side using <ref type="internal"
+                                    target="nbc.divB.appendixD.appsect1.subsect7.article1.table1"
+                                    display-type="long"/> = 12.7 × 1.25 = <measurement units="metric">16 mm</measurement>.</item>
+                            <item>Equivalent thickness required of concrete masonry unit =
+98 - 16 = <measurement units="metric">82 mm</measurement>. </item>
+                            <item>The fire-resistance rating of a concrete masonry wall having
+an equivalent thickness of <measurement units="metric">82 mm</measurement> = <measurement units="metric">1 h</measurement> for <measurement units="metric">73 mm</measurement> + (<measurement units="metric">9 mm</measurement> × 30/22) = <measurement units="metric">1 h</measurement>
+                                <measurement units="metric">12 min</measurement>.</item>
+                        </list>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-028" sequence="28"
+                   description="Correct sentence number 6) to 5) in D-2.3.9 paragraph 5">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article9.para5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect3.article9.para5"
+                               vendor-id="en000483.6">5) In a double layer application
+of gypsum board on wood supports, fastener spacing shall conform to <ref type="standard" target="d-astmc840" standardId="d-astmc840"/>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-029" sequence="29"
+                   description="Add missing sentence number 1) to D-2.6.6 paragraph 1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article6.para1"/>
+                <modify>
+                     <text-change xpath-within-target="text()">
+                          <find-replace>
+                                <find>A fire-resistance rating, R, is permitted</find>
+                                <replace>1) A fire-resistance rating, R, is permitted</replace>
+                          </find-replace>
+                     </text-change>
+                </modify>
+        </amendment>
+
+        <amendment id="bc-030" sequence="30"
+                   description="Add missing sentence number 2) to D-2.6.6 paragraph 2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article6.para2"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>A pair of steam vent holes shall</find>
+                        <replace>2) A pair of steam vent holes shall</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-031" sequence="31"
+                   description="Add missing sentence number 3) to D-2.6.6 paragraph 3">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article6.para3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Load application and reaction shall be</find>
+                        <replace>3) Load application and reaction shall be</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-032" sequence="32"
+                   description="Add missing sentence number 1) to D-2.11.1 paragraph 1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article1.para1"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>The calculation methods described in this</find>
+                        <replace>1) The calculation methods described in this</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-033" sequence="33"
+                   description="Add missing sentence number 2) to D-2.11.1 paragraph 2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article1.para2"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Loadbearing mass timber members, such</find>
+                        <replace>2) Loadbearing mass timber members, such</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-034" sequence="34"
+                   description="Add missing sentence number 3) to D-2.11.1 paragraph 3">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article1.para3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Mass timber wall, floor and roof assemblies</find>
+                        <replace>3) Mass timber wall, floor and roof assemblies</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-035" sequence="35"
+                   description="Add missing sentence number 1) to D-2.11.2 paragraph 1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article2.para1"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Method A described in </find>
+                        <replace>1) Method A described in </replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-036" sequence="36"
+                   description="Add missing sentence number 2) to D-2.11.2 paragraph 2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article2.para2"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Method B described in </find>
+                        <replace>2) Method B described in </replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-037" sequence="37"
+                   description="Add missing sentence number 3) to D-2.11.2 paragraph 3">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article2.para3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>The calculation methods</find>
+                        <replace>3) The calculation methods</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+
+        <amendment id="bc-038" sequence="38"
+                   description="Change Appendix C D-8 paragraph 2 list from bulleted to numbered">
+            <target type="canonical-id" id="nbc.divB.appendixC.div8.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixC.div8.para2">The estimation of the design snow load on a roof from snow depth
+observations involves the following steps:<list type="numbered">
+                     <item>The depth of snow on the ground, which has an annual probability
+of exceedance of 1-in-50, is computed.</item>
+                     <item>The appropriate specific weight is selected and used to
+convert snow depth to loads, S<sub>s</sub>.</item>
+                     <item>The load, S<sub>r</sub>, which is due to rain falling on
+the snow, is computed.</item>
+                     <item>Because the accumulation of snow on roofs is often different
+from that on the ground, adjustments are applied to the ground snow
+load to provide a design snow load on a roof.</item>
+                  </list>
+               </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+    </amendments>
+    
+</bc-overlay>

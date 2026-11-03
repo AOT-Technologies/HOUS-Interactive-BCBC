@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+     AMENDMENT FILES LIST
+     
+     List all amendment files you want to combine and apply.
+     They will be processed in the order listed.
+     
+     Usage:
+     Step 1: Combine amendments
+     java -jar json-generation-pipeline/tools/saxon.jar 
+          -xsl:json-generation-pipeline/transformation-xslt/combine-amendments.xsl 
+          -s:json-generation-pipeline/source/bc-amendments/amendment-list.xml 
+          -o:json-generation-pipeline/output/bc-amendments-combined.xml
+     
+     Step 2: Apply combined amendments
+     java -jar json-generation-pipeline/tools/saxon.jar 
+          -xsl:json-generation-pipeline/transformation-xslt/merge-engine-v3.xsl 
+          -s:json-generation-pipeline/output/nbc-canonical.xml 
+          overlay-document=json-generation-pipeline/output/bc-amendments-combined.xml 
+          -o:json-generation-pipeline/output/bc-building-code.xml
+-->
+<amendment-files>
+    <!-- Add your amendment files here in the order they should be processed -->
+    <!-- Paths are relative to this file (amendment-list.xml) location -->
+    
+    <!-- Re organize nodes to match with BC building code -->
+    <file>xml/re-organize-nodes.xml</file>
+    
+    <!-- Files Completed -->
+    
+    <!-- Front Matter -->
+    <file>xml/NBC2020p1 Preface.xml</file>
+    <file>xml/NBC2020p1 Division A_FIN.xml</file>
+    <file>xml/NBC2020p1 Division B Appendix C and D.FIN.xml</file>
+    <file>xml/NBC2020p1 Division B Part 1 FIN.xml</file>
+    <file>xml/NBC2020p1 Division B Part 2 FIN.xml</file>
+    <file>xml/NBC2020p1 Division B Part 3.FIN_1.xml</file>
+    <file>xml/NBC2020p1 Division B Part 3.FIN_2.xml</file>
+    <file>xml/NBC2020p1 Division B Part 4-8.FIN.xml</file>
+    <file>xml/NBC2020p1 Division B Part 9.FIN_1.xml</file>
+    <file>xml/NBC2020p1 Division B Part 9.FIN_2.xml</file>
+    <file>xml/NBC2020p1 Division B Part 9.FIN_3.xml</file>
+    <file>xml/NBC2020p1 Division B Part 9.FIN_4.xml</file>
+    <file>xml/NBC2020p1 Division B Part 10.FIN.xml</file>
+    <file>xml/NBC2020p1 Division C.FIN.xml</file>
+    
+    <!-- NOTE: Ministerial Orders with revision history moved to revision-list.xml -->
+    
+    <!-- Files in Progress -->
+    <!--<file>xml/amendments.xml</file>-->
+    
+    <!-- Add more files as needed -->
+    <!-- <file>xml/bc-amendments-2024.xml</file> -->
+    <!-- <file>xml/bc-local-amendments.xml</file> -->
+    
+</amendment-files>

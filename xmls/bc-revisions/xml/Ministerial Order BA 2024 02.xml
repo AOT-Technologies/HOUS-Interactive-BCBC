@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Ministerial Order BA 2024 02
+     
+     Uses snapshot-based revision history approach for date-based versioning.
+     Display content is derived from the latest revision (status="current").
+-->
+<bc-overlay id="bc-mo-ba-2024-02" version="1.0" nbc-target-version="2020" 
+            effective-date="2024-05-24">
+  
+  <metadata>
+    <title>Ministerial Order BA 2024 02 - Division A and B Amendments</title>
+    <description>Ameision 2 amends definition of "coordinating registered professional" and minor corrections to numbering and a referenced standard.</description>
+    <authority>BC Ministry of Housing - Building and Safety Standards Branch</authority>
+    <author>BC Building and Safety Standards Branch</author>
+    <source-document>Ministerial Order BA 2024 02</source-document>
+  </metadata>
+  
+  <amendments>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 1: Add definition "Coordinating registered professional" -->
+    <!-- Sentence 1.4.1.2.(1) of Division A                                 -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-02-001" sequence="2000" 
+               description="Add definition of 'Coordinating registered professional' to Sentence 1.4.1.2.(1)">
+      <target type="position" parent-id="nbc.divA.part1.sect4.subsect1.art2.sent1"
+              position="after" reference-id="cktp"/>
+      <insert>
+        <new-content source="bc">
+          <item xml:id="bc-crdntng-rgstrd-prfsnl" revised="yes">
+            <term>Coordinating registered professional</term>
+            <definition>
+              <revision-history>
+                <original effective-date="2024-05-24">
+                  <!-- New BC definition - no original NBC content -->
+                </original>
+                <revision seq="1" type="amendment" effective-date="2024-05-24" id="bc-mo-2024-02-001" status="current">
+                  <content>means a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref> retained under <ref type="internal" target="nbc.divC.part2.sect2.subsect7.art2.sent1.clause1" display-type="number" pretext="Clause"/> of Division C to coordinate all design work and field reviews of the <ref type="term" target="bc-rgstrd-prfssnl">registered professionals</ref> who are required for a project.</content>
+                  <change-summary>Added new definition for Coordinating registered professional</change-summary>
+                  <note>Ministerial Order BA 2024 02</note>
+                </revision>
+              </revision-history>
+            </definition>
+          </item>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 2: Sentence 6.2.1.5.(1) of Division B                    -->
+    <!-- Repeal and substitute - Installation Standards                     -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-02-002" sequence="2001" 
+               description="Repeal Sentence 6.2.1.5.(1) and substitute with new clauses for installation standards">
+      <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art5.sent1"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <sentence xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1" number="1" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will copy original content -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-05-24" id="bc-mo-2024-02-002" status="current">
+                <content>
+                  <text>Except as provided in <ref type="internal" target="nbc.divB.part6.sect9.subsect4.art2" display-type="long" pretext="Articles"/> and <ref type="internal" target="nbc.divB.part6.sect3.subsect1.art4" display-type="number"/>, the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to</text>
+                  <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause1" letter="a">
+                    <text>the Safety Standards Act and pursuant regulations,</text>
+                  </clause>
+                  <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause2" letter="b">
+                    <text>reserved,</text>
+                  </clause>
+                  <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause3" letter="c">
+                    <text><ref type="standard" target="csab139" standardId="csab139"/>, "Installation code for oil-burning equipment,"</text>
+                  </clause>
+                  <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause4" letter="d">
+                    <text>reserved,</text>
+                  </clause>
+                  <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause5" letter="e">
+                    <text><ref type="standard" target="csab365" standardId="csab365"/>, "Installation Code for Solid-Fuel-Burning Appliances and Equipment," or</text>
+                  </clause>
+                  <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause6" letter="f">
+                    <text>a combination thereof.</text>
+                  </clause>
+                </content>
+                <change-summary>Repealed and substituted Sentence 6.2.1.5.(1) with new clauses (a) through (f) for installation standards</change-summary>
+                <note>Ministerial Order BA 2024 02</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 3: Sentence 9.33.5.2.(1) of Division B                   -->
+    <!-- Repeal and substitute - Installation Standards (Part 9)            -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-02-003" sequence="2002" 
+               description="Repeal Sentence 9.33.5.2.(1) and substitute with new clauses for installation standards">
+      <target type="canonical-id" id="nbc.divBV2.part9.sect33.subsect5.art2.sent1"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <sentence xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1" number="1" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will copy original content -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-05-24" id="bc-mo-2024-02-003" status="current">
+                <content>
+                  <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art3" display-type="long" pretext="Articles"/> and <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art4" display-type="number"/>, the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to</text>
+                  <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause1" letter="a">
+                    <text>the Safety Standards Act and pursuant regulations,</text>
+                  </clause>
+                  <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause2" letter="b">
+                    <text>reserved,</text>
+                  </clause>
+                  <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause3" letter="c">
+                    <text><ref type="standard" target="csab139" standardId="csab139"/>, "Installation code for oil-burning equipment,"</text>
+                  </clause>
+                  <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause4" letter="d">
+                    <text>reserved,</text>
+                  </clause>
+                  <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause5" letter="e">
+                    <text>reserved,</text>
+                  </clause>
+                  <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause6" letter="f">
+                    <text><ref type="standard" target="csac448series" standardId="csac448series"/>, "Design and installation of earth energy systems," or</text>
+                  </clause>
+                  <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause7" letter="g">
+                    <text>a combination thereof.
+                      (See also <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art3.sent1" display-type="long" pretext="Sentence"/>.)</text>
+                  </clause>
+                </content>
+                <change-summary>Repealed and substituted Sentence 9.33.5.2.(1) with new clauses (a) through (g) for installation standards</change-summary>
+                <note>Ministerial Order BA 2024 02</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+  </amendments>
+</bc-overlay>

@@ -1,0 +1,995 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-part3-amendments-2023" 
+            version="1.0" 
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020 - PART 4-8   First File    -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Part 4-8</title>
+        <description>British Columbia-specific amendments for Part 4-8 (Structural Design)</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Part 4-8.FIN.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 001: Replace ASME A17.1 reference with Safety Standards Act -->
+        <!-- Article 4.1.5.11 Table 4.1.5.11 - Elevator impact loads           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-001" sequence="1"
+                   description="Replace ASME A17.1 reference with Safety Standards Act in Table 4.1.5.11">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect5.art11.table1"/>
+            <modify>
+                <element-replace element="row" position="4">
+                    <new-content source="bc">
+                        <row xml:id="nbc.divB.part4.sect1.subsect5.art11.table1.row4">
+                            <entry align="left">Operation of elevators</entry>
+                            <entry align="center">
+                                <note xml:id="nbc.divB.part4.sect1.subsect5.art11.table1.note1"
+                                      vendor-id="et000160-1">See the Safety Standards Act and pursuant regulations.</note>
+                            </entry>
+                        </row>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 002: Replace ASME A17.1 reference with Safety Standards Act -->
+        <!-- Article 4.1.8.18 Table 4.1.8.18 - Elevators and escalators       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-002" sequence="2"
+                   description="Replace ASME A17.1 reference with Safety Standards Act in Table 4.1.8.18">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.table1"/>
+            <modify>
+                <element-replace element="row" position="30">
+                    <new-content source="bc">
+                        <row xml:id="nbc.divB.part4.sect1.subsect8.art18.table1.row30">
+                            <entry>22</entry>
+                            <entry>Elevators and escalators<note xml:id="nbc.divB.part4.sect1.subsect8.art18.table1.note3"
+                                                                     vendor-id="et001041-3">See also the Safety Standards Act and pursuant regulations.</note>
+                            </entry>
+                            <entry/>
+                            <entry/>
+                            <entry/>
+                        </row>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 003: Add CSA A344.2 reference for steel pallet racks    -->
+        <!-- Article 4.1.8.18.(13) - Steel pallet storage racks design        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-003" sequence="3"
+                   description="Add CSA A344.2 reference for steel pallet storage racks in Article 4.1.8.18.(13)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.sent13"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Free-standing steel pallet storage racks are permitted to be designed according to CSA A344.2, "Standard for design and construction of steel storage racks," and to resist earthquake effects using rational analysis, provided design achieves the minimum performance level required by <ref type="internal"
+                                                                                                                                                                                                                                                                                                                                  target="nbc.divB.part4.sect1.subsect8"
+                                                                                                                                                                                                                                                                                                                                  display-type="long"/> (See <ref type="internal"
+                                                            target="nbc.divB.part4.appendix.appnote107"
+                                                            display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 004: Replace NPC/NBC reference with BC Building Code    -->
+        <!-- Appendix Note A-4.1.6.4.(3) - Flow Control Drains               -->
+        <!-- ================================================================== -->
+        <amendment id="bc-004" sequence="4"
+                   description="Replace NPC and NBC reference with BC Building Code in Note A-4.1.6.4.(3)">
+            <target type="canonical-id" id="nbc.divB.part4.appendix.appnote39"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph">
+                    <find-replace>
+                        <find>The designer must ensure that the building complies with both the NPC and the NBC.</find>
+                        <replace>The designer must ensure that the building complies with the BC Building Code Book I and Book II: Plumbing Systems</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 005: Replace NBC with British Columbia Building Code    -->
+        <!-- Article 5.1.5.1 - Requirements in Other Parts of the Code        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-005" sequence="5"
+                   description="Replace NBC with British Columbia Building Code in Article 5.1.5.1">
+            <target type="canonical-id" id="nbc.divB.part5.sect1.subsect5.art1.sent1"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>NBC</find>
+                        <replace>British Columbia Building Code</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 006: Replace NPC reference with BC Book II reference    -->
+        <!-- Article 5.6.2.2.(2) - Drainage requirements                      -->
+        <!-- ================================================================== -->
+        <amendment id="bc-006" sequence="6"
+                   description="Replace NPC reference with BC Book II reference in Article 5.6.2.2.(2)">
+            <target type="canonical-id" id="nbc.divB.part5.sect6.subsect2.art2.sent2"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect6.subsect2.art2.sent2" number="2" vendor-id="es001645">
+                        <text>Where precipitation can accumulate on sloped or horizontal assemblies,
+                            provision shall be made for drainage conforming with Article 2.4.10.4. of Division B of Book II (Plumbing Systems) of this Code.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 007: Replace wired glass text with fire-protection rating -->
+        <!-- Article 5.8.2.1.(3) - General                                    -->
+        <!-- ================================================================== -->
+        <amendment id="bc-007" sequence="7"
+                   description="Replace wired glass assembly text with fire-protection rating in Article 5.8.2.1.(3)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art1.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art1.sent3" number="3">
+                        <text>Windows, doors and skylights, including their components, that are required to have a <ref type="term" target="fr-prtn">fire-protection rating</ref> need not conform to the requirements of this Subsection. (See <ref type="internal" target="nbc.divB.part5.appendix.appnote43" display-type="short"/>.)</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 008: Add exception and components text to sentence      -->
+        <!-- Article 5.8.2.2.(1) - Applicable Standards                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-008" sequence="8"
+                   description="Add exception and components text to sentence in Article 5.8.2.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent5" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art3.sent1" display-type="long"/>, windows, doors, skylights, including their components, shall conform to the requirements
+                            in</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 009: Add exception text to clause (b)                   -->
+        <!-- Article 5.8.2.2.(1)(b) - Applicable Standards                    -->
+        <!-- ================================================================== -->
+        <amendment id="bc-009" sequence="9"
+                   description="Add exception text to clause (b) in Article 5.8.2.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent4" display-type="short"/>, <ref type="standard" target="csaa440S1" standardId="csaa440S1"/></text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 010: Add new sentence (4) about loads and procedures    -->
+        <!-- Article 5.8.2.2 - Applicable Standards                           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-010" sequence="10"
+                   description="Add new sentence (4) about loads and procedures in Article 5.8.2.2">
+            <target type="position" 
+                    parent-id="nbc.divB.part5.sect9.subsect2.art2"
+                    position="after"
+                    reference-id="nbc.divB.part5.sect9.subsect2.art2.sent3"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art2.sent4" number="4">
+                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long"/> may be used instead of the loads and procedures set out in the standard. (See Note 5.8.2.2.(4).)</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 011: Add new sentence (5) about Limited Water doors    -->
+        <!-- Article 5.8.2.2 - Applicable Standards                           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-011" sequence="11"
+                   description="Add new sentence (5) about Limited Water doors in Article 5.8.2.2">
+            <target type="position" 
+                    parent-id="nbc.divB.part5.sect9.subsect2.art2"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5" number="5">
+                        <text>A door designated as a "Limited Water" door in accordance with the standard referenced in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause1" display-type="medium"/> shall not be used unless the door</text>
+                        <clause xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5.clause1" letter="a">
+                            <text>separates a <ref type="term" target="dwllng-n">dwelling unit</ref> from an unconditioned <ref type="term" target="trg-grg">storage garage</ref> or a carport,</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5.clause2" letter="b">
+                            <text>is designed with a clear width, a clear and level space, a door-opening device and a door closer in conformance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> (see <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6" display-type="long"/>.), or</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5.clause3" letter="c">
+                            <text>meets the criteria in <ref type="internal" target="nbc.divBV2.part9.sect27.subsect3.art8.sent3" display-type="short"/> such that flashing would not be required.</text>
+                        </clause>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 012: Simplify sentence structure for non-conforming products -->
+        <!-- Article 5.8.2.3.(1) - Structural and Environmental Loads         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-012" sequence="12"
+                   description="Simplify sentence structure for non-conforming products in Article 5.8.2.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art3.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art3.sent1" number="1">
+                        <text>Windows, doors, skylights and their components that do not conform to <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2" display-type="long"/> shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4.art1" display-type="long"/>, <ref type="internal" target="nbc.divB.part5.sect4" display-type="long"/> and <ref type="internal" target="nbc.divB.part5.sect6" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote44" display-type="short"/>.)</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 013: Add sentence about fire-protection rating          -->
+        <!-- Article 5.8.3.1 - General                                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-013" sequence="13"
+                   description="Add sentence (2) about fire-protection rating in Article 5.8.3.1">
+            <target type="position" 
+                    parent-id="nbc.divB.part5.sect9.subsect3.art1"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect8.subsect3.art1.sent2" number="2">
+                        <text>Other fenestration assemblies and their components that are required to have a <ref type="term" target="fr-prtn">fire-protection rating</ref> need not conform to the requirements of this Subsection. (See <ref type="internal" target="nbc.divB.part5.appendix.appnote43" display-type="short"/>.)</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 014: Replace NBC with code in appendix note             -->
+        <!-- Appendix Note A-5.1.4.1.(2) - Multiple Functions                 -->
+        <!-- ================================================================== -->
+        <amendment id="bc-014" sequence="14"
+                   description="Replace NBC with code in Note A-5.1.4.1.(2)">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote5"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph[3]">
+                    <find-replace>
+                        <find>may impact compliance with other Parts of the NBC:</find>
+                        <replace>may impact compliance with other Parts of the code:</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 015: Replace NBC with British Columbia Building Code    -->
+        <!-- Appendix Note A-5.1.4.2 - Deterioration                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-015" sequence="15"
+                   description="Replace NBC with British Columbia Building Code in Note A-5.1.4.2">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote8"/>
+            <modify>
+                <element-replace element="paragraph" position="6">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote8.para6">It is also noted that <ref type="standard" target="csas478" standardId="csas478"/> contains requirements
+                            for actions beyond the scope of the British Columbia Building Code, which may not be the responsibility
+                            of the designer, builder or authority having jurisdiction. These include
+                            requirements relating to quality assurance, inspection, maintenance,
+                            minimum design service lives and potential impacts of climate change,
+                            which are not addressed in the Code. The reference herein to <ref type="standard" target="csas478" standardId="csas478"/> is not intended to
+                            imply that the designer, builder or authority having jurisdiction
+                            adopt, apply or enforce any of these requirements.</paragraph>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 016: Replace NBC with code in appendix note              -->
+        <!-- Appendix Note A-5.2.2.2.(4) - Membrane Roofing Systems            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-016" sequence="16"
+                   description="Replace NBC with code in Note A-5.2.2.2.(4)">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote13"/>
+            <modify>
+                <element-replace element="paragraph" position="4">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote13.para4">The wind uplift resistance obtained from the test method in <ref type="standard" target="csaa123.21" standardId="csaa123.21"/> is limited to configurations
+                            with specific fastener or adhesive patterns. To extrapolate the test
+                            data to non-tested configurations, refer to <ref type="standard" target="spriwd1" standardId="spriwd1"/> for a rational calculation procedure. However,
+                            in using this extrapolation procedure, wind loads should be calculated
+                            in accordance with the code. NRC's guide for wind design referenced
+                            above provides further guidance and examples of wind load calculations.</paragraph>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 017: Replace national reference with BC provincial       -->
+        <!-- Appendix Note A-5.3.1.2.(1) - Thermal Insulation                  -->
+        <!-- ================================================================== -->
+        <amendment id="bc-017" sequence="17"
+                   description="Replace national reference with BC provincial reference in Note A-5.3.1.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote17"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph[4]">
+                    <find-replace>
+                        <find>For most of the country, however, exterior design temperatures are much lower; for example, -20°C in Toronto and Charlottetown, and -50°C in Dawson.</find>
+                        <replace>In other areas of the Province, however, exterior design temperatures are much lower.</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 018: Replace application note with broader scope         -->
+        <!-- Appendix Note A-5.8.2.1.(3) - Airtightness and Watertightness     -->
+        <!-- ================================================================== -->
+        <amendment id="bc-018" sequence="18"
+                   description="Replace Note A-5.8.2.1.(3) with broader scope covering all fenestration assemblies">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote43"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part5.appendix.appnote43" vendor-id="en001183" refs="es007991">
+                        <number>5.8.2.1.(3)</number>
+                        <title>Airtightness and Watertightness of Windows, Doors, Skylights, Other Fenestration Assemblies and their Components Required to have a Fire-Protection Rating</title>
+                        <paragraph>The airtightness and watertightness requirements are waived for these products when used in such an application, in recognition of the fact that the availability of assemblies that meet both the requirements of the applicable standards and the requirements for fire resistance may be limited. However, control of air and water leakage should not be ignored: measures should be taken to attempt to comply with applicable requirements.</paragraph>
+                    </application-note>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 019: Add two ASTM standards to list                      -->
+        <!-- Appendix Note A-5.8.3 - Testing Standards                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-019" sequence="19"
+                   description="Add ASTM E 331 and E 547 standards to Note A-5.8.3">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote47"/>
+            <modify>
+                <element-change xpath-within-target=".//paragraph/list">
+                    <add-child>
+                        <item>
+                            <ref type="standard" target="astme331" standardId="astme331"/>
+                        </item>
+                        <item>
+                            <ref type="standard" target="astme547" standardId="astme547"/>
+                        </item>
+                    </add-child>
+                </element-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 020: Add sentence about indoor design temperatures       -->
+        <!-- Article 6.2.1.1 - Good Engineering Practice                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-020" sequence="20"
+                   description="Add sentence (2) about indoor design temperatures for residential buildings in Article 6.2.1.1">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect2.subsect1.art1"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art1.sent2" number="2">
+                        <text>Indoor design temperatures for residential <ref type="term" target="bldng">buildings</ref> shall be those established in <ref type="internal" target="nbc.divBV2.part9.sect33.subsect3.art1" display-type="long"/>.</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 021: Replace sentence 2 with Reserved                    -->
+        <!-- Article 6.2.1.2 - Outdoor Design Conditions                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-021" sequence="21"
+                   description="Replace sentence (2) with Reserved in Article 6.2.1.2">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art2.sent2"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art2.sent2" number="2">
+                        <text>Reserved</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 022: Replace sentence 3 with Reserved                    -->
+        <!-- Article 6.2.1.2 - Outdoor Design Conditions                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-022" sequence="22"
+                   description="Replace sentence (3) with Reserved in Article 6.2.1.2">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art2.sent3"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art2.sent3" number="3">
+                        <text>Reserved</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 023: Replace sentence 1 with BC Safety Standards Act     -->
+        <!-- Article 6.2.1.5 - Installation Standards                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-023" sequence="23"
+                   description="Replace sentence (1) with BC Safety Standards Act reference in Article 6.2.1.5">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art5.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1" number="1">
+                        <text>Except as provided in <ref type="internal" target="nbc.divB.part6.sect9.subsect4.art2" display-type="long" pretext="Articles"/> and <ref type="internal" target="nbc.divB.part6.sect3.subsect1.art4" display-type="number"/>, the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to the Safety Standards Act and pursuant regulations.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 024: Add sentence about solid-fuel burning boilers      -->
+        <!-- Article 6.2.1.5 - Installation Standards                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-024" sequence="24"
+                   description="Add sentence (2) about solid-fuel burning boilers in Article 6.2.1.5">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect2.subsect1.art5"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art5.sent2" number="2">
+                        <text>A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of <ref type="standard" target="csab365" standardId="csab365"/>.</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 025: Add sentence about suite ventilation                -->
+        <!-- Article 6.3.1.1 - Required Ventilation                            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-025" sequence="25"
+                   description="Add sentence (5) about suite ventilation in Article 6.3.1.1">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect3.subsect1.art1"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect3.subsect1.art1.sent5" number="5">
+                        <text>For suites in <ref type="term" target="bldng">buildings</ref> conforming to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/> or <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="number"/>, the outdoor air required by <ref type="internal" target="nbc.divB.part6.sect3.subsect1.art1.sent2" display-type="short"/> shall be supplied directly to each suite by mechanical ventilation through ducting.</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 026: REMOVED - Article 6.3.2.14 already exists in NBC   -->
+        <!-- Article 6.3.2.14 (Cleaning Devices) is present in canonical NBC   -->
+        <!-- No need to insert a Reserved placeholder                          -->
+        <!-- ================================================================== -->
+        <!-- REMOVED: Duplicate article insertion
+             <amendment id="bc-026" sequence="26"
+             description="Insert Reserved Article 6.3.2.14 after Article 6.3.2.13">
+             <target type="position"
+             parent-id="nbc.divB.part6.sect3.subsect2"
+             position="after"
+             reference-id="nbc.divB.part6.sect3.subsect2.art13"/>
+             <insert>
+             <new-content source="bc">
+             <article xml:id="nbc.divB.part6.sect3.subsect2.art14" number="14">
+             <title>Reserved</title>
+             <sentence xml:id="nbc.divB.part6.sect3.subsect2.art14.sent1" number="1">
+             <text>Reserved</text>
+             </sentence>
+             </article>
+             </new-content>
+             </insert>
+             </amendment>
+        -->
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 027: Replace NPC reference with BC code reference        -->
+        <!-- Article 6.3.2.15.(8) - Evaporative Heat Rejection Systems         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-027" sequence="27"
+                   description="Replace National Plumbing Code reference with BC code reference in Article 6.3.2.15.(8)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art15.sent8"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Make-up water connections shall be equipped with backflow prevention
+                            devices that conform to Article 2.6.2.1. of Division B of Book II, (Plumbing Systems), of this code. (See <ref type="internal"
+                                                                                                                                           target="nbc.divB.part6.appendix.appnote17"
+                                                                                                                                           display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 028: Replace NPC reference with BC code reference        -->
+        <!-- Article 6.3.2.15.(10) - Evaporative Heat Rejection Systems        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-028" sequence="28"
+                   description="Replace National Plumbing Code reference with BC code reference in Article 6.3.2.15.(10)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art15.sent10"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Clause 2.4.2.1.(1)(e) of Division B of the </find>
+                        <replace>Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code</replace>
+                    </find-replace>
+                </text-change>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find><ref type="standard" target="nrcc-npc" standardId="nrcc-npc"/>. </find>
+                        <replace>. </replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 029: Replace NPC reference with BC code reference        -->
+        <!-- Article 6.3.2.16.(6) - Evaporative Air Coolers                    -->
+        <!-- ================================================================== -->
+        <amendment id="bc-029" sequence="29"
+                   description="Replace National Plumbing Code reference with BC code reference in Article 6.3.2.16.(6)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art16.sent6"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Make-up water connections shall be equipped with backflow prevention
+                            devices that conform to Article 2.6.2.1. of Division B of Book II, (Plumbing Systems), of this code. (See <ref type="internal"
+                                                                                                                                           target="nbc.divB.part6.appendix.appnote19"
+                                                                                                                                           display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 030: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.3.4.2.(3) - General Ventilation                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-030" sequence="30"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.3.4.2.(3)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect4.art2.sent3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>A ventilation system required by this Subsection shall be maintained
+                            in conformance with Article 5.5.4.1. of Division B of the British Columbia Fire Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 031: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.3.4.3.(1) - Enclosure Exhaust Ventilation              -->
+        <!-- ================================================================== -->
+        <amendment id="bc-031" sequence="31"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.3.4.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect4.art3.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1" number="1">
+                        <text>The ventilation system for a power-ventilated enclosure required by Sentence 5.5.4.2.(1) of Division B of the British Columbia Fire Code shall</text>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause1" letter="a">
+                            <text>conform to <ref type="standard" target="nfpa91" standardId="nfpa91"/></text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause2" letter="b">
+                            <text>provide continuous exhaust ventilation at an air velocity sufficient to prevent the accumulation of <ref type="term" target="cmbtbl">combustible</ref> or reactive deposits in the power-ventilated enclosure and its <ref type="term" target="xht-dct">exhaust duct</ref> system,</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause3" letter="c">
+                            <text>confine <ref type="term" target="dngr-gd">dangerous goods</ref> vapours and particles to the area where they are generated and exhaust them to the outdoors,</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause4" letter="d">
+                            <text>not return the exhausted air to the <ref type="term" target="bldng">building</ref>, and</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause5" letter="e">
+                            <text>be provided with well identified control switches that are</text>
+                            <subclause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause5.subclause1" number="1">
+                                <text>located outside of the power-ventilated enclosure, and</text>
+                            </subclause>
+                            <subclause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause5.subclause2" number="2">
+                                <text>readily accessible in case of an emergency.</text>
+                            </subclause>
+                        </clause>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 032: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.3.4.4.(1) - Enclosure Construction                      -->
+        <!-- ================================================================== -->
+        <amendment id="bc-032" sequence="32"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.3.4.4.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect4.art4.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1" number="1">
+                        <text>The power-ventilated enclosure required by Sentence 5.5.4.2.(1) of Division B of the British Columbia Fire Code and its <ref type="term" target="xht-dct">exhaust duct</ref> system shall</text>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1.clause1" letter="a">
+                            <text>except as provided in <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent3" display-type="short"/>, be constructed of <ref type="term" target="ncmbtbl">noncombustible</ref> materials compatible with and chemically resistant to the <ref type="term" target="dngr-gd">dangerous goods</ref> vapours and particles being exhausted, and</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1.clause2" letter="b">
+                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust duct</ref> system.</text>
+                        </clause>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 033: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.9.1.2.(1) - Hazardous Gases, Dusts or Liquids          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-033" sequence="33"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.9.1.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect9.subsect1.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as provided in <ref type="internal"
+                                                             target="nbc.divB.part6.sect3.subsect4"
+                                                             display-type="long"
+                                                             pretext="Subsection"/>, systems serving spaces that contain hazardous
+                            gases, dusts or liquids shall be designed, constructed and installed
+                            to conform to the requirements of the applicable provincial or territorial
+                            regulations or municipal bylaws or, in the absence of such regulations
+                            or bylaws, to good engineering practice such as that described in
+                            the publications of the National Fire Protection Association and in
+                            the British Columbia Fire Code. (See <ref type="internal"
+                                                                      target="nbc.divB.part6.appendix.appnote22"
+                                                                      display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- Article 6.9.3.1 - Carbon Monoxide Alarms                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-034" sequence="34"
+                   description="Replace Article 6.9.3.1 with BC version expanding scope and requirements">
+            <target type="canonical-id" id="nbc.divB.part6.sect9.subsect3.art1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divB.part6.sect9.subsect3.art1" number="1">
+                        <title>Carbon Monoxide Alarms</title>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent1" number="1">
+                            <text>This Article applies to every <ref type="term" target="bldng">building</ref> that contains an assembly occupancy, a <ref type="term" target="ca-cc">care occupancy</ref> with individual <ref type="term" target="t">suites</ref> or containing sleeping rooms or bed spaces not within a suite, a residential occupancy, a business and personal services occupancy, or a mercantile occupancy, and that</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent1.clause1" letter="a">
+                                <text>is served by or contains a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent1.clause2" letter="b">
+                                <text>contains a <ref type="term" target="trg-grg">storage garage</ref>.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2" number="2">
+                            <text>Carbon monoxide (CO) alarms installed in a residential occupancy or a <ref type="term" target="ca-cc">care occupancy</ref> as required by this Article shall</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause1" letter="a">
+                                <text>conform to <ref type="standard" target="csa6.19" standardId="csa6.19"/>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause2" letter="b">
+                                <text>be equipped with an integral alarm that satisfies the audibility requirements of <ref type="standard" target="csa6.19" standardId="csa6.19"/>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause3" letter="c">
+                                <text>have no disconnect switch between the overcurrent device and the CO alarm, where the CO alarm is powered by the electrical system serving the <ref type="term" target="t">suite</ref> (see <ref type="internal" target="nbc.divB.part6.appendix.appnote23" display-type="short"/>), and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause4" letter="d">
+                                <text>be installed as recommended by the manufacturer.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent3" number="3">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning <ref type="term" target="pplnc">appliance</ref> is installed in a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> or in a <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref>, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent3.clause1" letter="a">
+                                <text>inside each sleeping room or bed space, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent3.clause2" letter="b">
+                                <text>outside each sleeping room or bed space, within <measurement units="metric">5 m</measurement> of each door serving a sleeping room or bed space, measured following corridors and doorways.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent4" number="4">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning <ref type="term" target="pplnc">appliance</ref> serves a residential occupancy or a <ref type="term" target="ca-cc">care occupancy</ref> and is installed in a <ref type="term" target="rvc-rm">service room</ref> that is not in a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> nor in a <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref>, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent4.clause1" letter="a">
+                                <text>either inside each sleeping room or bed space, or if outside, within <measurement units="metric">5 m</measurement> of each door serving a sleeping room or bed space, measured following corridors and doorways, in every <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> or <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref> that shares a wall or floor/ceiling assembly with the <ref type="term" target="rvc-rm">service room</ref>, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent4.clause2" letter="b">
+                                <text>in the <ref type="term" target="rvc-rm">service room</ref>.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent5" number="5">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> or <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref> that shares a wall or floor/ceiling assembly with a <ref type="term" target="trg-grg">storage garage</ref> or that is adjacent to an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> is also adjacent, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent5.clause1" letter="a">
+                                <text>inside each sleeping room or bed space, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent5.clause2" letter="b">
+                                <text>outside each sleeping room or bed space, within <measurement units="metric">5 m</measurement> of each bedroom door serving a sleeping room or bed space, measured following corridors and doorways.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6" number="6">
+                            <text>CO alarms installed in an assembly occupancy, a business and personal services occupancy, or a mercantile occupancy as required by this Article shall conform to</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause1" letter="a">
+                                <text><ref type="standard" target="csa6.19" standardId="csa6.19"/>, notwithstanding the scope of that standard,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause2" letter="b">
+                                <text><ref type="standard" target="ul2034" standardId="ul2034"/>, notwithstanding the scope of that standard, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause3" letter="c">
+                                <text>good engineering practice.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7" number="7">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning appliance serves an assembly occupancy, business and personal services occupancy, or mercantile occupancy, a CO alarm shall be,</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1" letter="a">
+                                <text>where the fuel-burning appliance is part of a system that could circulate or distribute CO to a suite of assembly occupancy, business and personal services occupancy or mercantile occupancy, installed</text>
+                                <subclause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1.subclause1" number="1">
+                                    <text>on each storey of each suite that may be exposed, and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1.subclause2" number="2">
+                                    <text>in a suite containing an assembly major occupancy, each classroom and dedicated gathering room or space, and</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause2" letter="b">
+                                <text>installed in the room or space in which the fuel-burning appliance is located.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8" number="8">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each suite of assembly occupancy, business and personal services occupancy, or mercantile occupancy that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance, or that is adjacent to either an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance is also adjacent, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause1" letter="a">
+                                <text>on each storey of the adjacent suite,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause2" letter="b">
+                                <text>where the adjacent suite contains an assembly major occupancy, each classroom and dedicated room or space, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause3" letter="c">
+                                <text>in each <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9" number="9">
+                            <text>CO detectors are permitted to be installed in lieu of CO alarms required by this Article provided the CO detectors</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause1" letter="a">
+                                <text>sound audible signals within the location they serve, as described in <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent3" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent5" display-type="number"/>, <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent7" display-type="number"/> and <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent8" display-type="number"/>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause2" letter="b">
+                                <text>are installed in conformance with <ref type="standard" target="ulcs524" standardId="ulcs524"/>, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause3" letter="c">
+                                <text>form part of the fire alarm system.</text>
+                            </clause>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 035: Add row for sentence (5) in attribution table      -->
+        <!-- Table 6.10.1.1 - Article 6.3.1.1.(5)                              -->
+        <!-- ================================================================== -->
+        <amendment id="bc-035" sequence="35"
+                   description="Add row for Article 6.3.1.1.(5) in Table 6.10.1.1">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect10.subsect1.art1.table1.row38"
+                    position="after"
+                />
+            <insert>
+                <new-content source="bc">
+                    <row>
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part6.sect3.subsect1.art1.sent5" display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 036: Add new application note A-6.2.1.2.(1)             -->
+        <!-- Outdoor Design Conditions                                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-036" sequence="36"
+                   description="Add new application note A-6.2.1.2.(1) about outdoor design conditions">
+            <target type="position"
+                    parent-id="nbc.divB.part6.appendix"
+                    position="after"
+                    reference-id="nbc.divB.part6.appendix.appnote1"/>
+            <insert>
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote1a">
+                        <number>6.2.1.2.(1)</number>
+                        <title>Outdoor Design Conditions</title>
+                        <paragraph>In the past, the practice of ventilating buildings with outdoor air assumed that the outdoor air was of better quality than the indoor air. It has become evident that the outdoor air in some areas of Canada may not be of an acceptable quality for ventilating buildings unless certain particles and gases are first removed or reduced. In order to manage the air quality of a building's indoor environment, thus reducing the potential for adverse effects on occupants' health, the quality of outdoor air for building ventilation purposes must be addressed.</paragraph>
+                    </application-note>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 037: Replace NBC with BC Building Code                  -->
+        <!-- Application Note A-6.2.1.4 - Structural Movement                  -->
+        <!-- ================================================================== -->
+        <amendment id="bc-037" sequence="37"
+                   description="Replace NBC with British Columbia Building Code in Note A-6.2.1.4">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote4"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph[2]">
+                    <find-replace>
+                        <find>The prime concern of the NBC is the safety of people in and around the building</find>
+                        <replace>The prime concern of the British Columbia Building Code is the safety of people in and around the building</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 038: Add new application note A-6.3.1.1.(5)             -->
+        <!-- Ventilation Air Supplied to Suites                                -->
+        <!-- ================================================================== -->
+        <amendment id="bc-038" sequence="38"
+                   description="Add new application note A-6.3.1.1.(5) about ventilation air supplied to suites">
+            <target type="position"
+                    parent-id="nbc.divB.part6.appendix"
+                    position="after"
+                    reference-id="nbc.divB.part6.appendix.appnote5"/>
+            <insert>
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote5a">
+                        <number>6.3.1.1.(5)</number>
+                        <title>Ventilation Air Supplied to Suites</title>
+                        <paragraph>The indirect supply of required outdoor ventilation air to normally occupied spaces through corridor pressurization or other indirect systems is not permitted.</paragraph>
+                    </application-note>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 039: Replace text in application note                   -->
+        <!-- Application Note A-6.9.3.1.(2)(c) - Carbon Monoxide Alarms        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-039" sequence="39"
+                   description="Replace mechanically fastened with installed as recommended by manufacturer in Note A-6.9.3.1.(2)(c)">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote23"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph">
+                    <find-replace>
+                        <find>Battery-powered carbon monoxide alarms are acceptable provided that they are mechanically fastened in place.</find>
+                        <replace>Battery-powered carbon monoxide alarms are acceptable provided that they are installed as recommended by the manufacturer.</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 040: Add three new application notes for CO alarms      -->
+        <!-- Application Notes A-6.9.3.1.(6), (7), and (8)                     -->
+        <!-- ================================================================== -->
+        <amendment id="bc-040" sequence="40"
+                   description="Add three new application notes A-6.9.3.1.(6), (7), and (8) for carbon monoxide alarms">
+            <target type="position"
+                    parent-id="nbc.divB.part6.appendix"
+                    position="after"
+                    reference-id="nbc.divB.part6.appendix.appnote23"/>
+            <insert>
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote23a">
+                        <number>6.9.3.1.(6)</number>
+                        <title>Carbon Monoxide Devices</title>
+                        <paragraph>Although the scope of <ref type="standard" target="csa6.19" standardId="csa6.19"/> and <ref type="standard" target="ul2034" standardId="ul2034"/> is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications.</paragraph>
+                    </application-note>
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote23b">
+                        <number>6.9.3.1.(7)</number>
+                        <title>Spaces Served by a Fuel-Burning Appliance</title>
+                        <paragraph>Where a fuel-burning appliance such as a furnace circulates or distributes air to a space there is the potential for leakage of combustion products into the duct system which could then circulate combustion products including carbon monoxide (CO) to that space, so a CO alarm is required to protect occupants of that space. Fuel-burning appliances such as a boiler do not have the same potential of the system circulating or distributing CO to the spaces served via the piping system. In both examples of a fuel-burning furnace and a fuel-burning boiler, a CO alarm is required in the service room containing the appliances.</paragraph>
+                    </application-note>
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote23c">
+                        <number>6.9.3.1.(8)</number>
+                        <title>Adjacent Suites</title>
+                        <paragraph>Suites that share a common attic or crawl space with a storage garage or service room, as well as suites that share a common wall or floor/ceiling assembly with a storage garage or service room are considered adjacent for the application of <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent8" display-type="short"/>.</paragraph>
+                    </application-note>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 041: Replace entire article with BC version             -->
+        <!-- Article 7.1.2.1 - Conformance                                     -->
+        <!-- ================================================================== -->
+        <amendment id="bc-041" sequence="41"
+                   description="Replace Article 7.1.2.1 with BC version referencing BC Building Code Book II">
+            <target type="canonical-id" id="nbc.divB.part7.sect1.subsect2.art1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divB.part7.sect1.subsect2.art1" number="1">
+                        <title>Conformance</title>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent1" number="1">
+                            <text>Every <ref type="term" target="plmbng-t">plumbing system</ref> shall be designed and installed in conformance with the British Columbia Building Code Book II (Plumbing Systems), that being the National Plumbing Code of Canada.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent2" number="2">
+                            <text>References to the following documents in the British Columbia Building Code Book II (Plumbing Systems) shall be replaced as follows:</text>
+                            <clause xml:id="nbc.divB.part7.sect1.subsect2.art1.sent2.clause1" letter="a">
+                                <text>references to the National Building Code of Canada and the National Energy Code of Canada for Buildings shall be replaced with the British Columbia Building Code, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part7.sect1.subsect2.art1.sent2.clause2" letter="b">
+                                <text>references to the National Fire Code of Canada shall be replaced with the British Columbia Fire Code.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent3" number="3">
+                            <text>Compliance with the British Columbia Building Code Book II (Plumbing Systems) may be achieved using alternative solutions as described in Clause 1.2.1.1.(1)(b) of Division A of this Code, using the objectives and functional statements attributed to the applicable acceptable solutions in Division B of the British Columbia Building Code Book II (Plumbing Systems).</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent4" number="4">
+                            <text>Notwithstanding <ref type="internal" target="nbc.divB.part7.sect1.subsect2.art1.sent1" display-type="short"/>, a water closet with a dual flush cycle of <measurement units="metric">6.0 L</measurement> and <measurement units="metric">4.1 L</measurement> or less is deemed to comply with Sentence 2.6.1.6.(3) and Table 2.6.2.6. of Division B of the British Columbia Building Code Book II (Plumbing Systems).</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 042: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 8.1.1.1.(3) - Scope                                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-042" sequence="42"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 8.1.1.1.(3)">
+            <target type="canonical-id" id="nbc.divB.part8.sect1.subsect1.art1.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part8.sect1.subsect1.art1.sent3" number="3">
+                        <text>Fire safety at construction and demolition sites shall conform to Section 5.6. of Division B of the British Columbia Fire Code.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 043: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 8.1.1.3.(1) - Demolition Procedures                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-043" sequence="43"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 8.1.1.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part8.sect1.subsect1.art3.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part8.sect1.subsect1.art3.sent1" number="1">
+                        <text>Measures shall be taken during demolition to protect the public in conformance with Section 5.6. of Division B of the British Columbia Fire Code.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- END OF AMENDMENTS                                                  -->
+        <!-- ================================================================== -->
+    </amendments>
+    
+</bc-overlay>

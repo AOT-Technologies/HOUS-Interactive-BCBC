@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-test-volume" version="1.0" nbc-target-version="2020">
+  
+  <metadata>
+    <title>Test Volume Attribute Support</title>
+    <description>Test amendment to verify volume attribute support in BC overlay schema for division elements</description>
+    <authority>BC Building and Safety Standards Branch</authority>
+    <author>Test Author</author>
+    <source-document>Test Document</source-document>
+  </metadata>
+  
+  <amendments>
+    <!-- Test amendment: Insert a test part to verify volume attribute is accepted in schema -->
+    <!-- This tests that bc-division-content definition properly includes the volume attribute -->
+    <amendment id="bc-test-volume-001" sequence="1" 
+               description="Test part insertion - verifies schema accepts volume attribute on divisions">
+      <target type="position" 
+              parent-id="nbc.divC"
+              position="last-child"/>
+      <insert>
+        <new-content source="bc">
+          <part xml:id="nbc.divC.part99" number="99">
+            <title>Test Part - Volume Attribute Schema Verification</title>
+            <section xml:id="nbc.divC.part99.sect1" number="1">
+              <title>Test Section</title>
+              <subsection xml:id="nbc.divC.part99.sect1.subsect1" number="1">
+                <title>Test Subsection</title>
+                <article xml:id="nbc.divC.part99.sect1.subsect1.art1" number="1">
+                  <title>Test Article</title>
+                  <sentence xml:id="nbc.divC.part99.sect1.subsect1.art1.sent1" number="1">
+                    <text>This test amendment verifies that the bc-overlay.rng schema has been updated to support the volume attribute on division elements. The volume attribute was added in Task 2 to allow BC amendments to specify which physical publication volume a division belongs to (1 or 2).</text>
+                  </sentence>
+                </article>
+              </subsection>
+            </section>
+          </part>
+        </new-content>
+      </insert>
+    </amendment>
+  </amendments>
+</bc-overlay>
