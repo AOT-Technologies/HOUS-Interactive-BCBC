@@ -1,0 +1,2764 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-amendments-2023" 
+            version="1.0" 
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020                            -->
+    <!-- Converted from your sample diff format to structured overlay       -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020</title>
+        <description>British Columbia-specific amendments to transform the National Building Code (NBC) 2020 into the BC Building Code</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Part 1.FIN.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 1: Update section references in Division B objectives    -->
+        <!-- Original: 3.9→3.10, 5.11→5.10, 9.36→9.38, added 10.4              -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-001" sequence="1" 
+                   description="Update section references in Division B objectives">
+            <target type="canonical-id" id="nbc.divB.part1.sect1.subsect2.art1.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part1.sect1.subsect2.art1.sent1" number="1">
+                        <text>For the purpose of compliance with this Code as required in 
+                            <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" 
+                                 display-type="medium"/>, the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in 
+                            <ref type="internal" target="nbc.divB.part2.sect5" pretext="Sections"/>
+                            <ref type="internal" target="nbc.divB.part3.sect10" pretext=","/>
+                            <ref type="internal" target="nbc.divB.part4.sect5" pretext=","/>
+                            <ref type="internal" target="nbc.divB.part5.sect10" pretext=","/>
+                            <ref type="internal" target="nbc.divB.part6.sect10" pretext=","/>
+                            <ref type="internal" target="nbc.divB.part7.sect2" pretext=","/>
+                            <ref type="internal" target="nbc.divB.part8.sect3" pretext=","/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect38" pretext=","/>
+                            <ref type="internal" target="nbc.divB.part10.sect4" pretext=" and" display-type="short"/>
+                            (See <ref type="internal" target="nbc.divB.part1.appendix.appnote1" display-type="short"/>.)
+                        </text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 2: Add reference to BC seismic requirements              -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-002" sequence="2" description="Add reference to Sentence 9.7.4.3.(2) for climatic and seismic values">
+            <target type="canonical-id" id="nbc.divB.part1.sect1.subsect3.art1.sent1"/>
+            <replace>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part1.sect1.subsect3.art1.sent1" number="1">
+                        <text>Except as provided in <ref type="internal" target="nbc.divB.part1.sect1.subsect3.art1.sent2" pretext="Sentences" display-type="short"/>
+                        <ref type="internal" target="nbc.divB.part1.sect1.subsect3.art1.sent4" pretext=" and" display-type="short"/> and as required by <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art3.sent2" pretext="Sentence" display-type="medium"/>, the
+                                    climatic and seismic values required for the design of 
+                    <ref type="term" target="bldng">buildings</ref> under this Code shall be in conformance with the
+                                    values established by the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>.
+                </text>
+            </sentence>
+        </new-content>
+        </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 3: Add new sentence for outside summer design temperatures -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-003" sequence="3"
+                   description="Add new sentence 5 for outside summer design temperatures">
+            <target type="position" 
+                    parent-id="nbc.divB.part1.sect1.subsect3.art1"
+                    position="after"
+                    reference-id="nbc.divB.part1.sect1.subsect3.art1.sent4"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part1.sect1.subsect3.art1.sent5" number="5">
+                        <text>The outside summer design temperatures determined from 
+                            <ref type="internal" target="nbc.divB.appendixC"/> shall be those listed for the July 2.5% dry values.
+                        </text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 4: Change fire safety plan reference to BC Fire Code     -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-004" sequence="4"
+                   description="Change fire safety plan reference to BC Fire Code">
+            <target type="canonical-id" id="nbc.divB.part1.sect1.subsect4.art1.sent1"/>
+            <replace>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part1.sect1.subsect4.art1.sent1" number="1">
+                        <text>Where a fire safety plan is required, it shall conform to Section 2.8. of Division B of the 
+                            <bc-ref type="bc-fire-code" target="bcfc-2023" section="2.8">British Columbia Fire Code</bc-ref>.
+                        </text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 5: Change acceptable solutions reference Parts 2-9 to 3-10 -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-005" sequence="5"
+                   description="Change acceptable solutions reference Parts 2-9 to 3-10">
+            <target type="canonical-id" id="nbc.divB.part1.sect2.subsect1.art1.sent3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>Parts 2 to 9</find>
+                        <replace>Parts 3 to 10</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 6: Change table title to reference BC Building Code      -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-006" sequence="6"
+                   description="Change table title to reference BC Building Code">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1"/>
+            <modify>
+                <element-replace element="title">
+                    <new-content source="bc">
+                        <title>Documents Referenced in Book I (General) of the British Columbia Building Code
+                        </title>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 7: Add BC Fire Code 2023 to referenced documents table   -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-007" sequence="7"
+                   description="Add BC Fire Code 2023 to referenced documents table">
+            <target type="position" 
+                    parent-id="nbc.divB.part1.sect3.subsect1.art2.table1.row474"
+                    position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.bc-row-1">
+                        <entry>BC</entry>
+                        <entry>2023</entry>
+                        <entry>British Columbia Fire Code</entry>
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part1.sect1.subsect4.art1.sent1" display-type="number"/>
+                        </entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 8: Add BC Building Code Book II (Plumbing) reference     -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-008" sequence="8"
+                   description="Add BC Building Code Book II (Plumbing Systems) reference">
+            <target type="position" 
+                    parent-id="nbc.divB.part1.sect3.subsect1.art2.table1.row474"
+                    position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.bc-row-2">
+                        <entry>BC</entry>
+                        <entry>2023</entry>
+                        <entry>Book II (Plumbing Systems) of the British Columbia Building Code</entry>
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part1.sect1.subsect2.art1" display-type="number"/>
+                        </entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 9: Add BC provincial acts to referenced documents        -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-009" sequence="9"
+                   description="Add BC provincial acts to referenced documents">
+            <target type="position" 
+                    parent-id="nbc.divB.part1.sect3.subsect1.art2.table1.row474"
+                    position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.bc-row-3">
+                        <entry>BC</entry>
+                        <entry>S.B.C. 2015</entry>
+                        <entry>Building Act</entry>
+                        <entry>
+                            2.2.1.1.(1)
+                        </entry>
+                    </row>
+                    
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.bc-row-4">
+                        <entry>BC</entry>
+                        <entry>S.B.C. 2003 c.39</entry>
+                        <entry>Safety Standards Act</entry>
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part3.sect2.subsect6.art7.sent2" display-type="number"/>
+                        </entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 10: Add City of Vancouver to organization list           -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-010" sequence="10"
+                   description="Add City of Vancouver to organization list">
+            <target type="position" 
+                    parent-id="nbc.divB.part1.sect3.subsect2.art1.sent1"
+                    position="after"
+                    reference-id="org.d1e20786"/>
+            <insert>
+                <new-content source="bc">
+                    <item xml:id="org.d1e20796A">
+                        <organization>CoV</organization>
+                        <address>City of Vancouver (<ref type="external" target="https://www.vancouver.ca">www.vancouver.ca</ref>)</address>
+                    </item>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 11: Add energy modeling standards                        -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-011" sequence="11"
+                   description="Add City of Vancouver Energy Modeling Guidelines">
+            <target type="position" 
+                    parent-id="nbc.divB.part1.sect3.subsect1.art2.table1.row474"
+                    position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.bc-row-5">
+                        <entry>CoV</entry>
+                        <entry>Version 2.0</entry>
+                        <entry>City of Vancouver Energy Modeling Guidelines</entry>
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part10.sect22.subsect3.art4.sent1" display-type="number"/>
+                        </entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 12: Ensure visible Code Reference text for AAMA rows     -->
+        <!-- ================================================================== -->
+
+        <amendment id="bc-p1-012" sequence="12"
+               description="Set explicit Code Reference text A-5.9.3. for AAMA row 2 in Table 1.3.1.2.">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row2"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row2">
+                        <entry>AAMA</entry>
+                        <entry standard-ref-number="501">501-05</entry>
+                        <entry standard-id="aama501-05"
+                               standard-ref-id="aama501"
+                               standard-ref-title="Methods of Test for Exterior Walls">Methods of Test for Exterior Walls</entry>
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divB.part5.appendix.appnote47"
+                                 display-type="number">A-5.9.3.</ref>
+                        </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-013" sequence="13"
+               description="Set explicit Code Reference text A-5.9.3. for AAMA row 3 in Table 1.3.1.2.">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row3"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row3">
+                        <entry>AAMA</entry>
+                        <entry standard-ref-number="501.1">501.1-05</entry>
+                        <entry standard-id="aama501.1-05"
+                               standard-ref-id="aama501.1"
+                               standard-ref-title="Standard Test Method for Water Penetration of Windows, Curtain Walls and Doors Using Dynamic Pressure">Standard Test Method for Water Penetration of Windows, Curtain Walls and Doors Using Dynamic Pressure</entry>
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divB.part5.appendix.appnote47"
+                                 display-type="number">A-5.9.3.</ref>
+                        </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-014" sequence="14"
+               description="Set explicit Code Reference text A-5.9.3. for AAMA row 4 in Table 1.3.1.2.">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row4"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row4">
+                        <entry>AAMA</entry>
+                        <entry standard-ref-number="501.2">501.2-09</entry>
+                        <entry standard-id="aama501.2-09"
+                               standard-ref-id="aama501.2"
+                               standard-ref-title="Quality Assurance and Diagnostic Water Leakage Field Check of Installed Storefronts, Curtain Walls, and Sloped Glazing Systems">Quality Assurance and Diagnostic Water Leakage Field Check of Installed Storefronts, Curtain Walls, and Sloped Glazing Systems</entry>
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divB.part5.appendix.appnote47"
+                                 display-type="number">A-5.9.3.</ref>
+                        </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-015" sequence="15"
+               description="Set explicit Code Reference text A-5.9.3. for AAMA row 5 in Table 1.3.1.2.">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row5"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row5">
+                        <entry>AAMA</entry>
+                        <entry standard-ref-number="501.4">501.4-09</entry>
+                        <entry standard-id="aama501.4-09"
+                               standard-ref-id="aama501.4"
+                               standard-ref-title="Recommended Static Test Method for Evaluating Curtain Wall and Storefront Systems Subjected to Seismic and Wind-Induced Inter-Story Drifts">Recommended Static Test Method for Evaluating Curtain Wall and Storefront Systems Subjected to Seismic and Wind-Induced Inter-Story Drifts</entry>
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divB.part5.appendix.appnote47"
+                                 display-type="number">A-5.9.3.</ref>
+                        </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-016" sequence="16"
+               description="Set explicit Code Reference text A-5.9.3. for AAMA row 6 in Table 1.3.1.2.">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row6"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row6">
+                        <entry>AAMA</entry>
+                        <entry standard-ref-number="501.5">501.5-07</entry>
+                        <entry standard-id="aama501.5-07"
+                               standard-ref-id="aama501.5"
+                               standard-ref-title="Test Method for Thermal Cycling of Exterior Walls">Test Method for Thermal Cycling of Exterior Walls</entry>
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divB.part5.appendix.appnote47"
+                                 display-type="number">A-5.9.3.</ref>
+                            <ref type="internal"
+                                 target="nbc.divB.part5.appendix.appnote50"
+                                 display-type="number">A-5.9.3.3.(1)</ref>
+                        </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-017" sequence="17"
+               description="Set explicit Code Reference text A-5.9.3. for AAMA row 7 in Table 1.3.1.2.">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row7"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row7" rowsep="1">
+                        <entry>AAMA</entry>
+                        <entry standard-ref-number="501.6">501.6-09</entry>
+                        <entry standard-id="aama501.6-09"
+                               standard-ref-id="aama501.6"
+                               standard-ref-title="Recommended Dynamic Test Method for Determining the Seismic Drift Causing Glass Fallout from a Wall System">Recommended Dynamic Test Method for Determining the Seismic Drift Causing Glass Fallout from a Wall System</entry>
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divB.part4.appendix.appnote108"
+                                 display-type="number">A-4.1.8.18.(14) and (15)</ref>
+                               <ref type="internal"
+                                   target="nbc.divB.part5.appendix.appnote47"
+                                   display-type="number">A-5.9.3.</ref>
+                        </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+         <amendment id="bc-p1-018" sequence="18"
+             description="Update Code Reference internal ref links for ASCE/SEI 7 in Table 1.3.1.2.">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row23"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row23">
+                                 <entry>ASCE</entry>
+                                 <entry standard-ref-number="ASCE/SEI 7">ASCE/SEI (7-10)</entry>
+                                 <entry standard-id="asce7-10"
+                                        standard-ref-id="asce7"
+                                        standard-ref-title="Minimum Design Loads for Buildings and Other Structures">Minimum Design Loads for Buildings and Other Structures</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.appendix.appnote108"
+                                         display-type="number">A-4.1.8.18.(14) and (15)</ref>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote10"
+                                         display-type="number">A-9.4.2.1. and 9.4.2.2.</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-019" sequence="19"
+             description="Placeholder replace for ACGIH row 8 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row8"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row8" rowsep="1">
+                                 <entry>ACGIH</entry>
+                                 <entry standard-ref-number="ACGIH">28th Edition</entry>
+                                 <entry standard-id="acgih-iv-mrp-28e"
+                                        standard-ref-id="acgih-iv-mrp"
+                                        standard-ref-title="Industrial Ventilation: A Manual of Recommended Practice for Design">Industrial Ventilation: A Manual of Recommended Practice for Design</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect2.subsect1.art1.sent1"
+                                         display-type="number">6.2.1.1.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect3.subsect2.art14.sent2"
+                                         display-type="number">6.3.2.14.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.appendix.appnote9"
+                                         display-type="number">A-6.3.1.5.</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-020" sequence="20"
+             description="Placeholder replace for ACI row 9 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row9"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row9">
+                                 <entry>ACI</entry>
+                                 <entry standard-ref-number="355.2">355.2-19</entry>
+                                 <entry standard-id="aci355.2-19"
+                                        standard-ref-id="aci355.2"
+                                        standard-ref-title="Qualification of Post-Installed Mechanical Anchors in Concrete (ACI 355.2-19) and Commentary">Qualification of Post-Installed Mechanical Anchors in Concrete (ACI 355.2-19) and Commentary</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.sect1.subsect8.art18.sent7"
+                                         display-type="number">4.1.8.18.(7)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-021" sequence="21"
+             description="Placeholder replace for ACI row 10 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row10"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row10" rowsep="1">
+                                 <entry>ACI</entry>
+                                 <entry standard-ref-number="355.4">355.4M-19</entry>
+                                 <entry standard-id="aci355.4M-19"
+                                        standard-ref-id="aci355.4"
+                                        standard-ref-title="Qualification of Post-Installed Adhesive Anchors in Concrete (ACI 355.4-19) and Commentary">Qualification of Post-Installed Adhesive Anchors in Concrete (ACI 355.4M-19) and Commentary</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.sect1.subsect8.art18.sent7"
+                                         display-type="number">4.1.8.18.(7)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-022" sequence="22"
+             description="Placeholder replace for AHRI row 12 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row12"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row12">
+                                 <entry>AHRI</entry>
+                                 <entry standard-ref-number="1060 (I-P)">1060 (I-P/2013)</entry>
+                                 <entry standard-id="ahri1060-13"
+                                        standard-ref-id="ahri1060"
+                                        standard-ref-title="Performance Rating of Air-to-Air Exchangers for Energy Recovery Ventilation Equipment">Performance Rating of Air-to-Air Exchangers for Energy Recovery Ventilation Equipment</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect37.subsect3.art8.sent4"
+                                         display-type="number">9.36.3.8.(4)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-023" sequence="23"
+             description="Placeholder replace for AISI row 14 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row14"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row14" rowsep="1">
+                                 <entry>AISI</entry>
+                                 <entry standard-ref-number="S201">S201-12</entry>
+                                 <entry standard-id="aisis201-12"
+                                        standard-ref-id="aisis201"
+                                        standard-ref-title="North American Standard for Cold-Formed Steel Framing - Product Data 2012 Edition">North American Standard for Cold-Formed Steel Framing - Product Data 2012 Edition</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect24.subsect1.art2.sent1"
+                                         display-type="number">9.24.1.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-024" sequence="24"
+             description="Placeholder replace for ANSI row 15 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row15"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row15">
+                                 <entry>ANSI</entry>
+                                 <entry standard-ref-number="A135.6">A135.6-2012</entry>
+                                 <entry standard-id="ansia135.6-2012"
+                                        standard-ref-id="ansia135.6"
+                                        standard-ref-title="Engineered Wood Siding">Engineered Wood Siding</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect9.art1.sent1"
+                                         display-type="number">9.27.9.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-025" sequence="25"
+             description="Placeholder replace for ANSI row 16 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row16"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row16">
+                                 <entry rowsep="1">ANSI</entry>
+                                 <entry rowsep="1" standard-ref-number="A208.1">A208.1-2009</entry>
+                                 <entry rowsep="1"
+                                        standard-id="ansia208.1-09"
+                                        standard-ref-id="ansia208.1"
+                                        standard-ref-title="Particleboard">Particleboard</entry>
+                                 <entry rowsep="1">
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect23.subsect15.art2.sent3"
+                                         display-type="number">9.23.15.2.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect29.subsect9.art1.sent1"
+                                         display-type="number">9.29.9.1.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect30.subsect2.art2.sent1"
+                                         display-type="number">9.30.2.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-026" sequence="26"
+             description="Placeholder replace for APA row 22 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row22"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row22" rowsep="1">
+                                 <entry>APA</entry>
+                                 <entry standard-ref-number="ANSI/APA PRG 320">ANSI/APA PRG 320-2018</entry>
+                                 <entry standard-id="apaprg320-18"
+                                        standard-ref-id="apaprg320"
+                                        standard-ref-title="Standard for Performance-Rated Cross-Laminated Timber">Standard for Performance-Rated Cross-Laminated Timber</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect6.art3.sent3"
+                                         display-type="number">3.1.6.3.(3)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-027" sequence="27"
+             description="Placeholder replace for ASCE row 25 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row25"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row25" rowsep="1">
+                                 <entry>ASCE</entry>
+                                 <entry standard-ref-number="ASCE/SEI 49">ASCE/SEI (49-12)</entry>
+                                 <entry standard-id="asce49-12"
+                                        standard-ref-id="asce49"
+                                        standard-ref-title="Wind Tunnel Testing for Buildings and Other Structures">Wind Tunnel Testing for Buildings and Other Structures</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.sect1.subsect7.art14.sent1"
+                                         display-type="number">4.1.7.14.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-028" sequence="28"
+             description="Placeholder replace for ASHRAE row 28 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row28"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row28">
+                                 <entry>ASHRAE</entry>
+                                 <entry standard-ref-number="2013">2013</entry>
+                                 <entry standard-id="ashr-hb-fun-13"
+                                        standard-ref-id="ashr-hb-fun"
+                                        standard-ref-title="ASHRAE Handbook – Fundamentals">ASHRAE Handbook – Fundamentals</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote223"
+                                         display-type="number">A-9.36.2.4.(1)</ref>
+                                    <lb/>                                         
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote223.div3.example1.table1"
+                                         display-type="number">Table A-9.36.2.4.(1)-D</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-029" sequence="29"
+             description="Placeholder replace for ASHRAE row 29 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row29"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row29">
+                                 <entry>ASHRAE</entry>
+                                 <entry standard-ref-number="Guideline 12">Guideline 12-2000</entry>
+                                 <entry standard-id="ashrae12-00"
+                                        standard-ref-id="ashrae12"
+                                        standard-ref-title="Minimizing the Risk of Legionellosis Associated with Building Water Systems">Minimizing the Risk of Legionellosis Associated with Building Water Systems</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect2.subsect1.art1.sent1"
+                                         display-type="number">6.2.1.1.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect3.subsect2.art15.sent9"
+                                         display-type="number">6.3.2.15.(9)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect3.subsect2.art16.sent1"
+                                         display-type="number">6.3.2.16.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-030" sequence="30"
+             description="Placeholder replace for ASHRAE row 31 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row31"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row31">
+                                 <entry>ASHRAE</entry>
+                                 <entry standard-ref-number="ANSI/ASHRAE 62.1">ANSI/ASHRAE 62.1-2016</entry>
+                                 <entry standard-id="ashrae62.1-16"
+                                        standard-ref-id="ashrae62.1"
+                                        standard-ref-title="Ventilation for Acceptable Indoor Air Quality">Ventilation for Acceptable Indoor Air Quality</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect3.subsect1.art1.sent2"
+                                         display-type="number">6.3.1.1.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect3.subsect1.art1.sent3"
+                                         display-type="number">6.3.1.1.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.sect3.subsect2.art2.sent1"
+                                         display-type="number">6.3.2.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-031" sequence="31"
+             description="Insert new row after row 31 in Table 1.3.1.2. (duplicate of ASHRAE 62.1-2016 row, content unchanged, pending update)">
+            <target type="position"
+                    parent-id="nbc.divB.part1.sect3.subsect1.art2.table1.row31"
+                    position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row31a">
+                                 <entry>ASHRAE</entry>
+                                 <entry standard-ref-number="ANSI/ASHRAE/IES 90.1-2019">ANSI/ASHRAE/IES 90.1-2019</entry>
+                                 <entry standard-id="ashrae62.1-16"
+                                        standard-ref-id="ashrae62.1"
+                                        standard-ref-title="Energy Standard for Buildings Except Low-Rise Residential Buildings">Energy Standard for Buildings Except Low-Rise Residential Buildings</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part10.sect2.subsect2.art1.sent1"
+                                         display-type="number">10.2.2.1.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part10.appendix.appnote2"
+                                         display-type="number">A-10.2.2.2.</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </insert>
+        </amendment>
+
+        <amendment id="bc-p1-032" sequence="32"
+             description="Placeholder replace for ASHRAE row 32 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row32"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row32">
+                                 <entry>ASHRAE</entry>
+                                 <entry standard-ref-number="ANSI/ASHRAE 140">ANSI/ASHRAE 140-2011</entry>
+                                 <entry standard-id="ashrae140-11"
+                                        standard-ref-id="ashrae140"
+                                        standard-ref-title="Standard Method of Test for the Evaluation of Building Energy Analysis Computer Programs">Standard Method of Test for the Evaluation of Building Energy Analysis Computer Programs</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect36.subsect5.art4.sent8"
+                                         display-type="number">9.36.5.4.(8)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect36.subsect6.art4.sent1"
+                                         display-type="number">9.36.6.4.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-033" sequence="33"
+             description="Placeholder replace for ASME row 34 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row34"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row34">
+                                 <entry rowsep="1">ASME</entry>
+                                 <entry rowsep="1" standard-ref-number="B18.6.1">B18.6.1-1981</entry>
+                                 <entry rowsep="1"
+                                        standard-id="asmeb18.6.1-81mod"
+                                        standard-ref-id="asmeb18.6.1"
+                                        standard-ref-title="Wood Screws (Inch Series)">Wood Screws (Inch Series)</entry>
+                                 <entry rowsep="1">
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect23.subsect3.art1.sent3"
+                                         display-type="number">9.23.3.1.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote116"
+                                         display-type="short">A-9.23.3.1.(3)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-034" sequence="34"
+             description="Placeholder replace for ASME/CSA row 35 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row35"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row35">
+                                 <entry rowsep="1">ASME/CSA</entry>
+                                 <entry rowsep="1" standard-ref-number="ASME A17.1/CSA B44">ASME A17.1-2016/CSA B44-16</entry>
+                                 <entry rowsep="1"
+                                        standard-id="asmea17.1-16"
+                                        standard-ref-id="asmea17.1"
+                                        standard-ref-title="Safety Code for Elevators and Escalators">Safety Code for Elevators and Escalators</entry>
+                                 <entry rowsep="1">
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect5.subsect2.art1.sent3"
+                                         display-type="number">3.5.2.1.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect5.subsect4.art1.sent2"
+                                         display-type="number">3.5.4.1.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect5.subsect4.art2.sent1"
+                                         display-type="number">3.5.4.2.(1)</ref>
+                                         <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect8.subsect3.art7.sent1"
+                                         display-type="number">3.8.3.7.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-035" sequence="35"
+             description="Placeholder replace for ASTM row 36 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row36"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row36">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A123/A123M">A123/A123M-17</entry>
+                                 <entry standard-id="astma123m-17"
+                                        standard-ref-id="astma123m"
+                                        standard-ref-title="Standard Specification for Zinc (Hot-Dip Galvanized) Coatings on Iron and Steel Products">Standard Specification for Zinc (Hot-Dip Galvanized) Coatings on Iron and Steel Products</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/> 
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect20.subsect16.art1.table1"
+                                         display-type="long"/>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-036" sequence="36"
+             description="Placeholder replace for ASTM row 37 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row37"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row37">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A153/A153M">A153/A153M-16a</entry>
+                                 <entry standard-id="astma153m-16a"
+                                        standard-ref-id="astma153m"
+                                        standard-ref-title="Standard Specification for Zinc Coating (Hot-Dip) on Iron and Steel Hardware">Standard Specification for Zinc Coating (Hot-Dip) on Iron and Steel Hardware</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect20.subsect16.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect23.subsect2.art4.sent2"
+                                         display-type="number">9.23.2.4.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-037" sequence="37"
+             description="Placeholder replace for ASTM row 38 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row38"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row38">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A252">A252-10</entry>
+                                 <entry standard-id="astma252-10"
+                                        standard-ref-id="astma252"
+                                        standard-ref-title="Standard Specification for Welded and Seamless Steel Pipe Piles">Standard Specification for Welded and Seamless Steel Pipe Piles</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.sect2.subsect3.art8.sent1"
+                                         display-type="number">4.2.3.8.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-038" sequence="38"
+             description="Placeholder replace for ASTM row 39 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row39"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row39">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A283/A283M">A283/A283M-18</entry>
+                                 <entry standard-id="astma283m-18"
+                                        standard-ref-id="astma283m"
+                                        standard-ref-title="Standard Specification for Low and Intermediate Tensile Strength Carbon Steel Plates">Standard Specification for Low and Intermediate Tensile Strength Carbon Steel Plates</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.sect2.subsect3.art8.sent1"
+                                         display-type="number">4.2.3.8.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-039" sequence="39"
+             description="Placeholder replace for ASTM row 41 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row41"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row41">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A653/A653M">A653/A653M-18</entry>
+                                 <entry standard-id="astma653m-18"
+                                        standard-ref-id="astma653m"
+                                        standard-ref-title="Standard Specification for Steel Sheet, Zinc-Coated (Galvanized) or Zinc-Iron Alloy-Coated (Galvannealed) by the Hot-Dip Process">Standard Specification for Steel Sheet, Zinc-Coated (Galvanized) or Zinc-Iron Alloy-Coated (Galvannealed) by the Hot-Dip Process</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect3.subsect3.art2.sent1"
+                                         display-type="number">9.3.3.2.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect23.subsect2.art4.sent1"
+                                         display-type="number">9.23.2.4.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-040" sequence="40"
+             description="Placeholder replace for ASTM row 42 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row42"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row42">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A792/A792M">A792/A792M-10</entry>
+                                 <entry standard-id="astma792m-15"
+                                        standard-ref-id="astma792m"
+                                        standard-ref-title="Standard Specification for Steel Sheet, 55% Aluminum-Zinc Alloy-Coated by the Hot-Dip Process">Standard Specification for Steel Sheet, 55% Aluminum-Zinc Alloy-Coated by the Hot-Dip Process</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect3.subsect3.art2.sent1"
+                                         display-type="number">9.3.3.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-041" sequence="41"
+             description="Placeholder replace for ASTM row 43 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row43"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row43">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A1008/A1008M">A1008/A1008M-18</entry>
+                                 <entry standard-id="astma1008m-18"
+                                        standard-ref-id="astma1008m"
+                                        standard-ref-title="Standard Specification for Steel, Sheet, Cold-Rolled, Carbon, Structural, High-Strength Low-Alloy, High-Strength Low-Alloy with Improved Formability, Solution Hardened, and Bake Hardenable">Standard Specification for Steel, Sheet, Cold-Rolled, Carbon, Structural, High-Strength Low-Alloy, High-Strength Low-Alloy with Improved Formability, Solution Hardened, and Bake Hardenable</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.sect2.subsect3.art8.sent1"
+                                         display-type="number">4.2.3.8.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-042" sequence="42"
+             description="Placeholder replace for ASTM row 44 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row44"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row44">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="A1011/A1011M">A1011/A1011M-18a</entry>
+                                 <entry standard-id="astma1011m-18a"
+                                        standard-ref-id="astma1011m"
+                                        standard-ref-title="Standard Specification for Steel, Sheet and Strip, Hot-Rolled, Carbon, Structural, High-Strength Low-Alloy, High-Strength Low-Alloy with Improved Formability, and Ultra-High Strength">Standard Specification for Steel, Sheet and Strip, Hot-Rolled, Carbon, Structural, High-Strength Low-Alloy, High-Strength Low-Alloy with Improved Formability, and Ultra-High Strength</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.sect2.subsect3.art8.sent1"
+                                         display-type="number">4.2.3.8.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-043" sequence="43"
+             description="Placeholder replace for ASTM row 45 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row45"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row45">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C4">C4-04</entry>
+                                 <entry standard-id="astmc4-04"
+                                        standard-ref-id="astmc4"
+                                        standard-ref-title="Standard Specification for Clay Drain Tile and Perforated Clay Drain Tile">Standard Specification for Clay Drain Tile and Perforated Clay Drain Tile</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect14.subsect3.art1.sent1"
+                                         display-type="number">9.14.3.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-044" sequence="44"
+             description="Placeholder replace for ASTM row 46 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row46"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row46">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C27">C27-98</entry>
+                                 <entry standard-id="astmc27-98"
+                                        standard-ref-id="astmc27"
+                                        standard-ref-title="Standard Classification of Fireclay and High-Alumina Refractory Brick">Standard Classification of Fireclay and High-Alumina Refractory Brick</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect21.subsect3.art4.sent1"
+                                         display-type="number">9.21.3.4.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-045" sequence="45"
+             description="Placeholder replace for ASTM row 47 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row47"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row47">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C73">C73-17</entry>
+                                 <entry standard-id="astmc73-17"
+                                        standard-ref-id="astmc73"
+                                        standard-ref-title="Standard Specification for Calcium Silicate Brick (Sand-Lime Brick)">Standard Specification for Calcium Silicate Brick (Sand-Lime Brick)</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect20.subsect2.art1.sent1"
+                                         display-type="number">9.20.2.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-046" sequence="46"
+             description="Placeholder replace for ASTM row 48 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row48"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row48">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C126">C126-13</entry>
+                                 <entry standard-id="astmc126-13"
+                                        standard-ref-id="astmc126"
+                                        standard-ref-title="Ceramic Glazed Structural Clay Facing Tile, Facing Brick, and Solid Masonry Units">Ceramic Glazed Structural Clay Facing Tile, Facing Brick, and Solid Masonry Units</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect20.subsect2.art1.sent1"
+                                         display-type="number">9.20.2.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-047" sequence="47"
+             description="Placeholder replace for ASTM row 49 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row49"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row49">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C177">C177-19</entry>
+                                 <entry standard-id="astmc177-19"
+                                        standard-ref-id="astmc177"
+                                        standard-ref-title="Standard Test Method for Steady-State Heat Flux Measurements and Thermal Transmission Properties by Means of the Guarded-Hot-Plate Apparatus">Standard Test Method for Steady-State Heat Flux Measurements and Thermal Transmission Properties by Means of the Guarded-Hot-Plate Apparatus</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect36.subsect2.art2.sent1"
+                                         display-type="number">9.36.2.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-048" sequence="48"
+             description="Fix invalid reference for ASHRAE row 26 in Table 1.3.1.2. (add missing display text to A-9.32.3.11. reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row26"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row26">
+                                 <entry>ASHRAE</entry>
+                                 <entry standard-ref-number="1997">1997</entry>
+                                 <entry standard-id="ashr-hb-fun-97"
+                                        standard-ref-id="ashr-hb-fun-97"
+                                        standard-ref-title="ASHRAE Handbook – Fundamentals">ASHRAE Handbook – Fundamentals</entry>
+                                 <entry>
+                                    A-9.32.3.11.
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-049" sequence="49"
+             description="Fix invalid reference for ASHRAE row 27 in Table 1.3.1.2. (add missing display text to A-2.4.2.1.(1) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row27"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row27">
+                                 <entry>ASHRAE</entry>
+                                 <entry standard-ref-number="2011">2011</entry>
+                                 <entry standard-id="ashr-hb-hvaca-11"
+                                        standard-ref-id="ashr-hb-hvaca"
+                                        standard-ref-title="ASHRAE Handbook – HVAC Applications">ASHRAE Handbook – HVAC Applications</entry>
+                                 <entry>
+                                    A-2.4.2.1.(1)
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-050" sequence="50"
+             description="Placeholder replace for ASTM row 50 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row50"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row50">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C212">C212-17</entry>
+                                 <entry standard-id="astmc212-17"
+                                        standard-ref-id="astmc212"
+                                        standard-ref-title="Standard Specification for Structural Clay Facing Tile">Standard Specification for Structural Clay Facing Tile</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect20.subsect2.art1.sent1"
+                                         display-type="number">9.20.2.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-051" sequence="51"
+             description="Placeholder replace for ASTM row 51 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row51"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row51">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C260">C260/C260M-10a</entry>
+                                 <entry standard-id="astmc260M-10a"
+                                        standard-ref-id="astmc260"
+                                        standard-ref-title="Standard Specification for Air-Entraining Admixtures for Concrete">Standard Specification for Air-Entraining Admixtures for Concrete</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect3.subsect1.art8.sent1"
+                                         display-type="number">9.3.1.8.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-052" sequence="52"
+             description="Placeholder replace for ASTM row 52 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row52"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row52">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C411">C411-19</entry>
+                                 <entry standard-id="astmc411-19"
+                                        standard-ref-id="astmc411"
+                                        standard-ref-title="Standard Specification for Hot-Surface Performance of High-Temperature Thermal Insulation">Standard Specification for Hot-Surface Performance of High-Temperature Thermal Insulation</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect6.subsect5.art4.sent4"
+                                         display-type="number">3.6.5.4.(4)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect6.subsect5.art5.sent1"
+                                         display-type="number">3.6.5.5.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect33.subsect6.art4.sent4"
+                                         display-type="number">9.33.6.4.(4)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect33.subsect8.art2.sent2"
+                                         display-type="number">9.33.8.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-053" sequence="53"
+             description="Placeholder replace for ASTM row 53 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row53"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row53">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C412M">C412M-15</entry>
+                                 <entry standard-id="astmc412m-15"
+                                        standard-ref-id="astmc412m"
+                                        standard-ref-title="Standard Specification for Concrete Drain Tile">Standard Specification for Concrete Drain Tile</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect14.subsect3.art1.sent1"
+                                         display-type="number">9.14.3.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-054" sequence="54"
+             description="Placeholder replace for ASTM row 54 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row54"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row54">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C444M">C444M-17</entry>
+                                 <entry standard-id="astmc444m-17"
+                                        standard-ref-id="astmc444m"
+                                        standard-ref-title="Standard Specification for Perforated Concrete Pipe">Standard Specification for Perforated Concrete Pipe</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect14.subsect3.art1.sent1"
+                                         display-type="number">9.14.3.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-055" sequence="55"
+             description="Placeholder replace for ASTM row 55 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row55"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row55">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C494/C494M">C494/C494M-17</entry>
+                                 <entry standard-id="astmc494m-17"
+                                        standard-ref-id="astmc494m"
+                                        standard-ref-title="Standard Specification for Chemical Admixtures for Concrete">Standard Specification for Chemical Admixtures for Concrete</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect3.subsect1.art8.sent1"
+                                         display-type="number">9.3.1.8.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-056" sequence="56"
+             description="Placeholder replace for ASTM row 56 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row56"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row56">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C516">C516-08e1</entry>
+                                 <entry standard-id="astmc516-13"
+                                        standard-ref-id="astmc516"
+                                        standard-ref-title="Standard Specification for Vermiculite Loose Fill Thermal Insulation">Standard Specification for Vermiculite Loose Fill Thermal Insulation</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote143"
+                                         display-type="number">A-9.25.2.4.(5)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-057" sequence="57"
+             description="Placeholder replace for ASTM row 57 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row57"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row57">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C518">C518-17</entry>
+                                 <entry standard-id="astmc518-17"
+                                        standard-ref-id="astmc518"
+                                        standard-ref-title="Standard Test Method for Steady-State Thermal Transmission Properties by Means of the Heat Flow Meter Apparatus">Standard Test Method for Steady-State Thermal Transmission Properties by Means of the Heat Flow Meter Apparatus</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect37.subsect2.art2.sent1"
+                                         display-type="number">9.36.2.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-058" sequence="58"
+             description="Placeholder replace for ASTM row 60 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row60"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row60">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C700">C700-18</entry>
+                                 <entry standard-id="astmc700-18"
+                                        standard-ref-id="astmc700"
+                                        standard-ref-title="Standard Specification for Vitrified Clay Pipe, Extra Strength, Standard Strength, and Perforated">Standard Specification for Vitrified Clay Pipe, Extra Strength, Standard Strength, and Perforated</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect10.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect14.subsect3.art1.sent1"
+                                         display-type="number">9.14.3.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-059" sequence="59"
+             description="Placeholder replace for ASTM row 61 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row61"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row61">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C726">C726-17</entry>
+                                 <entry standard-id="astmc726-17"
+                                        standard-ref-id="astmc726"
+                                        standard-ref-title="Standard Specification for Mineral Wool Roof Insulation Board">Standard Specification for Mineral Wool Roof Insulation Board</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect10.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect25.subsect2.art2.sent1"
+                                         display-type="number">9.25.2.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-060" sequence="60"
+             description="Placeholder replace for ASTM row 62 in Table 1.3.1.2. (content unchanged, pending update)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row62"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row62">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C754">C754-18</entry>
+                                 <entry standard-id="astmc754-18"
+                                        standard-ref-id="astmc754"
+                                        standard-ref-title="Standard Specification for Installation of Steel Framing Members to Receive Screw-Attached Gypsum Panel Products">Standard Specification for Installation of Steel Framing Members to Receive Screw-Attached Gypsum Panel Products</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote82.table1"
+                                         display-type="number">Table A-9.11.1.4.-A</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote82.table2"
+                                         display-type="number">Table A-9.11.1.4.-B</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote82.table3"
+                                         display-type="number">Table A-9.11.1.4.-C</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote82.table4"
+                                         display-type="number">Table A-9.11.1.4.-D</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-061" sequence="61"
+             description="Fix ASTM C834-17 row 63 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for 9.27.4.2.(2))">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row63"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row63">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C834">C834-17</entry>
+                                 <entry standard-id="astmc834-17"
+                                        standard-ref-id="astmc834"
+                                        standard-ref-title="Standard Specification for Latex Sealants">Standard Specification for Latex Sealants</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect4.art2.sent2"
+                                         display-type="number">9.27.4.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-062" sequence="62"
+             description="Fix ASTM C840-18b row 64 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row64"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row64">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C840">C840-18b</entry>
+                                 <entry standard-id="astmc840-18b"
+                                        standard-ref-id="astmc840"
+                                        standard-ref-title="Standard Specification for Application and Finishing of Gypsum Board">Standard Specification for Application and Finishing of Gypsum Board</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect6.art6.sent2"
+                                         display-type="number">3.1.6.6.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect29.subsect5.art1.sent3"
+                                         display-type="number">9.29.5.1.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote182"
+                                         display-type="number">A-9.29.5.1.(3)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-063" sequence="63"
+             description="Fix ASTM C920-18 row 65 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for 9.27.4.2.(2))">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row65"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row65">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C920">C920-18</entry>
+                                 <entry standard-id="astmc920-18"
+                                        standard-ref-id="astmc920"
+                                        standard-ref-title="Standard Specification for Elastomeric Joint Sealants">Standard Specification for Elastomeric Joint Sealants</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect4.art2.sent2"
+                                         display-type="number">9.27.4.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-064" sequence="64"
+             description="Fix ASTM C954-18 row 66 in Table 1.3.1.2. (add display text for 9.24.1.4.(1) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row66"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row66">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C954">C954-18</entry>
+                                 <entry standard-id="astmc954-18"
+                                        standard-ref-id="astmc954"
+                                        standard-ref-title="Standard Specification for Steel Drill Screws for the Application of Gypsum Panel Products or Metal Plaster Bases to Steel Studs from 0.033 in. (0.84 mm) to 0.112 in. (2.84 mm) in Thickness">Standard Specification for Steel Drill Screws for the Application of Gypsum Panel Products or Metal Plaster Bases to Steel Studs from 0.033 in. (0.84 mm) to 0.112 in. (2.84 mm) in Thickness</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect24.subsect1.art4.sent1"
+                                         display-type="number">9.24.1.4.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-065" sequence="65"
+             description="Fix ASTM C1002-07 row 68 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row68"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row68">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1002">C1002-07</entry>
+                                 <entry standard-id="astmc1002-07"
+                                        standard-ref-id="astmc1002"
+                                        standard-ref-title="Standard Specification for Steel Self-Piercing Tapping Screws for the Application of Gypsum Panel Products or Metal Plaster Bases to Wood Studs or Steel Studs">Standard Specification for Steel Self-Piercing Tapping Screws for the Application of Gypsum Panel Products or Metal Plaster Bases to Wood Studs or Steel Studs</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect24.subsect1.art4.sent1"
+                                         display-type="number">9.24.1.4.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect29.subsect5.art7.sent1"
+                                         display-type="number">9.29.5.7.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-066" sequence="66"
+             description="Fix ASTM C1055-03 row 69 in Table 1.3.1.2. (add display text for A-6.5.1.1.(3) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row69"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row69">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1055">C1055-03</entry>
+                                 <entry standard-id="astmc1055-03"
+                                        standard-ref-id="astmc1055"
+                                        standard-ref-title="Standard Guide for Heated System Surface Conditions that Produce Contact Burn Injuries">Standard Guide for Heated System Surface Conditions that Produce Contact Burn Injuries</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part6.appendix.appnote21"
+                                         display-type="number">A-6.5.1.1.(3)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-067" sequence="67"
+             description="Fix ASTM C1177/C1177M-17 row 70 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row70"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row70">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1177/C1177M">C1177/C1177M-17</entry>
+                                 <entry standard-id="astmc1177m-17"
+                                        standard-ref-id="astmc1177m"
+                                        standard-ref-title="Standard Specification for Glass Mat Gypsum Substrate for Use as Sheathing">Standard Specification for Glass Mat Gypsum Substrate for Use as Sheathing</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art14.sent6"
+                                         display-type="number">3.1.5.14.(6)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art15.sent4"
+                                         display-type="number">3.1.5.15.(4)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect23.subsect17.art2.table1"
+                                         display-type="long">Table 9.23.17.2.-A</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote180"
+                                         display-type="number">A-9.27.14.2.(2)(a)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-068" sequence="68"
+             description="Fix ASTM C1178/C1178M-18 row 71 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row71"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row71">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1178/C1178M">C1178/C1178M-18</entry>
+                                 <entry standard-id="astmc1178m-18"
+                                        standard-ref-id="astmc1178m"
+                                        standard-ref-title="Standard Specification for Coated Glass Mat Water-Resistant Gypsum Backing Panel">Standard Specification for Coated Glass Mat Water-Resistant Gypsum Backing Panel</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art14.sent6"
+                                         display-type="number">3.1.5.14.(6)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art15.sent4"
+                                         display-type="number">3.1.5.15.(4)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect29.subsect5.art2.sent1"
+                                         display-type="number">9.29.5.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-069" sequence="69"
+             description="Fix ASTM C1184-18e1 row 72 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for 9.27.4.2.(2))">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row72"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row72">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1184">C1184-18e1</entry>
+                                 <entry standard-id="astmc1184-18e1"
+                                        standard-ref-id="astmc1184"
+                                        standard-ref-title="Standard Specification for Structural Silicone Sealants">Standard Specification for Structural Silicone Sealants</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect4.art2.sent2"
+                                         display-type="number">9.27.4.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-070" sequence="70"
+             description="Fix ASTM C1193-16 row 73 in Table 1.3.1.2. (add display text for A-Table 5.9.1.1. and A-9.27.4.2.(1) references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row73"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row73">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1193">C1193-16</entry>
+                                 <entry standard-id="astmc1193-16"
+                                        standard-ref-id="astmc1193"
+                                        standard-ref-title="Standard Specification for Use of Joint Sealants">Standard Specification for Use of Joint Sealants</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote42"
+                                         display-type="number">A-Table 5.9.1.1.</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote172"
+                                         display-type="number">A-9.27.4.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-071" sequence="71"
+             description="Fix ASTM C1299-03 row 75 in Table 1.3.1.2. (add display text for A-9.27.4.2.(1) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row75"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row75">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1299">C1299-03</entry>
+                                 <entry standard-id="astmc1299-03"
+                                        standard-ref-id="astmc1299"
+                                        standard-ref-title="Standard Guide for Use in Selection of Liquid-Applied Sealants">Standard Guide for Use in Selection of Liquid-Applied Sealants</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote172"
+                                         display-type="number">A-9.27.4.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-072" sequence="72"
+             description="Fix ASTM C1311-14 row 76 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for 9.27.4.2.(2))">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row76"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row76">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1311">C1311-14</entry>
+                                 <entry standard-id="astmc1311-14"
+                                        standard-ref-id="astmc1311"
+                                        standard-ref-title="Standard Specification for Solvent Release Sealants">Standard Specification for Solvent Release Sealants</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect4.art2.sent2"
+                                         display-type="number">9.27.4.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-073" sequence="73"
+             description="Fix ASTM C1330-18 row 77 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for 9.27.4.2.(3))">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row77"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row77">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1330">C1330-18</entry>
+                                 <entry standard-id="astmc1330-18"
+                                        standard-ref-id="astmc1330"
+                                        standard-ref-title="Standard Specification for Cylindrical Sealant Backing for Use with Cold Liquid-Applied Sealants">Standard Specification for Cylindrical Sealant Backing for Use with Cold Liquid-Applied Sealants</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect4.art2.sent3"
+                                         display-type="number">9.27.4.2.(3)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-074" sequence="74"
+             description="Fix ASTM C1363-11 row 78 in Table 1.3.1.2. (retarget 9.36.2.2.(4) reference from non-existent sect37 to sect36 and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row78"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row78">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1363">C1363-11</entry>
+                                 <entry standard-id="astmc1363-11"
+                                        standard-ref-id="astmc1363"
+                                        standard-ref-title="Standard Test Method for Thermal Performance of Building Materials and Envelope Assemblies by Means of a Hot Box Apparatus">Standard Test Method for Thermal Performance of Building Materials and Envelope Assemblies by Means of a Hot Box Apparatus</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote56"
+                                         display-type="number">A-5.9.4.1.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect36.subsect2.art2.sent4"
+                                         display-type="number">9.36.2.2.(4)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-075" sequence="75"
+             description="Fix ASTM C1396/C1396M-17 row 79 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row79"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row79">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1396/C1396M">C1396/C1396M-17</entry>
+                                 <entry standard-id="astmc1396m-17"
+                                        standard-ref-id="astmc1396m"
+                                        standard-ref-title="Standard Specification for Gypsum Board">Standard Specification for Gypsum Board</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art14.sent6"
+                                         display-type="number">3.1.5.14.(6)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art15.sent4"
+                                         display-type="number">3.1.5.15.(4)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect6.art6.sent2"
+                                         display-type="number">3.1.6.6.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect6.art15.sent1"
+                                         display-type="number">3.1.6.15.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect23.subsect17.art2.table1"
+                                         display-type="long">Table 9.23.17.2.-A</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect29.subsect5.art2.sent1"
+                                         display-type="number">9.29.5.2.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect29.subsect5.art3.table1"
+                                         display-type="long"/>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-076" sequence="76"
+             description="Fix ASTM C1472-16 row 80 in Table 1.3.1.2. (add display text for A-Table 5.9.1.1. and A-9.27.4.2.(1) references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row80"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row80">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1472">C1472-16</entry>
+                                 <entry standard-id="astmc1472-16"
+                                        standard-ref-id="astmc1472"
+                                        standard-ref-title="Standard Guide for Calculating Movement and Other Effects When Establishing Sealant Joint Width">Standard Guide for Calculating Movement and Other Effects When Establishing Sealant Joint Width</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote42"
+                                         display-type="number">A-Table 5.9.1.1.</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote172"
+                                         display-type="number">A-9.27.4.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-077" sequence="77"
+             description="Fix ASTM C1658/C1658M-18 row 81 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for 3.1.5.14.(6))">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row81"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row81">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="C1658/C1658M">C1658/C1658M-18</entry>
+                                 <entry standard-id="astmc1658m-18"
+                                        standard-ref-id="astmc1658m"
+                                        standard-ref-title="Standard Specification for Glass Mat Gypsum Panels">Standard Specification for Glass Mat Gypsum Panels</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art14.sent6"
+                                         display-type="number">3.1.5.14.(6)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-078" sequence="78"
+             description="Fix ASTM D323-15a row 82 in Table 1.3.1.2. (add display text for Division A 1.4.1.2.(1) reference; table note (4) retained)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row82"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row82">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D323">D323-15a</entry>
+                                 <entry standard-id="astmd323-15a"
+                                        standard-ref-id="astmd323"
+                                        standard-ref-title="Standard Test Method for Vapor Pressure of Petroleum Products (Reid Method)">Standard Test Method for Vapor Pressure of Petroleum Products (Reid Method)</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divA.part1.sect4.subsect1.art2.sent1"
+                                         display-type="number">1.4.1.2.(1)</ref>
+                                    <ref type="table-note"
+                                         target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"
+                                         vendor-target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-079" sequence="79"
+             description="Fix ASTM D1037-12 row 83 in Table 1.3.1.2. (add display text for A-9.23.15.2.(4) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row83"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row83">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D1037">D1037-12</entry>
+                                 <entry standard-id="astmd1037-12"
+                                        standard-ref-id="astmd1037"
+                                        standard-ref-title="Standard Test Methods for Evaluating Properties of Wood-Base Fiber and Particle Panel Materials">Standard Test Methods for Evaluating Properties of Wood-Base Fiber and Particle Panel Materials</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote136"
+                                         display-type="number">A-9.23.15.2.(4)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-080" sequence="80"
+             description="Fix ASTM D1143/D1143M-07 row 84 in Table 1.3.1.2. (add display text for A-4.2.7.2.(2) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row84"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row84">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D1143/D1143M">D1143/D1143M-07</entry>
+                                 <entry standard-id="astmd1143m-07"
+                                        standard-ref-id="astmd1143m"
+                                        standard-ref-title="Standard Test Methods for Deep Foundations Under Static Axial Compressive Load">Standard Test Methods for Deep Foundations Under Static Axial Compressive Load</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part4.appendix.appnote126"
+                                         display-type="number">A-4.2.7.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-081" sequence="81"
+             description="Fix ASTM D1227/D1227M-13 row 85 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row85"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row85">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D1227/D1227M">D1227/D1227M-13</entry>
+                                 <entry standard-id="astmd1227-19e1"
+                                        standard-ref-id="astmd1227"
+                                        standard-ref-title="Standard Specification for Emulsified Asphalt Used as a Protective Coating for Roofing">Standard Specification for Emulsified Asphalt Used as a Protective Coating for Roofing</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect2.art2.sent2"
+                                         display-type="number">9.13.2.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect3.art2.sent2"
+                                         display-type="number">9.13.3.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-082" sequence="82"
+             description="Fix ASTM D1761-12 row 86 in Table 1.3.1.2. (add display text for A-9.27.5.4.(2) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row86"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row86">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D1761">D1761-12</entry>
+                                 <entry standard-id="astmd1761-12"
+                                        standard-ref-id="astmd1761"
+                                        standard-ref-title="Standard Test Methods for Mechanical Fasteners in Wood and Wood-Based Materials">Standard Test Methods for Mechanical Fasteners in Wood and Wood-Based Materials</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote173"
+                                         display-type="number">A-9.27.5.4.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-083" sequence="83"
+             description="Fix ASTM D2178/D2178M-13a row 87 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1.)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row87"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row87">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D2178/D2178M">D2178/D2178M-13a</entry>
+                                 <entry standard-id="astmd2178m-13a"
+                                        standard-ref-id="astmd2178m"
+                                        standard-ref-title="Standard Specification for Asphalt Glass Felt Used in Roofing and Waterproofing">Standard Specification for Asphalt Glass Felt Used in Roofing and Waterproofing</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-084" sequence="84"
+             description="Fix ASTM D2898-10 row 88 in Table 1.3.1.2. (add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row88"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row88">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D2898">D2898-10</entry>
+                                 <entry standard-id="astmd2898-10"
+                                        standard-ref-id="astmd2898"
+                                        standard-ref-title="Standard Practice for Accelerated Weathering of Fire-Retardant-Treated Wood for Fire Testing">Standard Practice for Accelerated Weathering of Fire-Retardant-Treated Wood for Fire Testing</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect4.art8.sent3"
+                                         display-type="number">3.1.4.8.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art5.sent3"
+                                         display-type="number">3.1.5.5.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect5.art24.sent1"
+                                         display-type="number">3.1.5.24.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect6.art9.sent6"
+                                         display-type="number">3.1.6.9.(6)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect2.subsect3.art7.sent4"
+                                         display-type="number">3.2.3.7.(4)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect10.subsect14.art5.sent3"
+                                         display-type="number">9.10.14.5.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect10.subsect15.art5.sent3"
+                                         display-type="number">9.10.15.5.(3)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-085" sequence="85"
+             description="Fix ASTM D3019/D3019M-17 row 89 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row89"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row89">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D3019/D3019M">D3019/D3019M-17</entry>
+                                 <entry standard-id="astmd3019-17"
+                                        standard-ref-id="astmd3019"
+                                        standard-ref-title="Standard Specification for Lap Cement Used with Asphalt Roll Roofing, Non-Fibered, and Fibered">Standard Specification for Lap Cement Used with Asphalt Roll Roofing, Non-Fibered, and Fibered</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect3.art2.sent2"
+                                         display-type="number">9.13.3.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect26.subsect2.art1.table2"
+                                         display-type="long">Table 9.26.2.1.-B</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-086" sequence="86"
+             description="Fix ASTM D3679-17 row 90 in Table 1.3.1.2. (add display text for 9.27.12.1.(1) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row90"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row90">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D3679">D3679-17</entry>
+                                 <entry standard-id="astmd3679-17"
+                                        standard-ref-id="astmd3679"
+                                        standard-ref-title="Standard Specification for Rigid Poly (Vinyl Chloride) (PVC) Siding">Standard Specification for Rigid Poly (Vinyl Chloride) (PVC) Siding</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect12.art1.sent1"
+                                         display-type="number">9.27.12.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-087" sequence="87"
+             description="Fix ASTM D4477-16 row 91 in Table 1.3.1.2. (add display text for 9.27.12.1.(3) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row91"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row91">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D4477">D4477-16</entry>
+                                 <entry standard-id="astmd4477-16"
+                                        standard-ref-id="astmd4477"
+                                        standard-ref-title="Standard Specification for Rigid (Unplasticized) Poly(Vinyl Chloride) (PVC) Soffit">Standard Specification for Rigid (Unplasticized) Poly(Vinyl Chloride) (PVC) Soffit</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect12.art1.sent3"
+                                         display-type="number">9.27.12.1.(3)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-088" sequence="88"
+             description="Fix ASTM D4479/D4479M-07e1 row 92 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row92"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row92">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D4479/D4479M">D4479/D4479M-07e1</entry>
+                                 <entry standard-id="astmd4479m-12e1"
+                                        standard-ref-id="astmd4479m"
+                                        standard-ref-title="Standard Specification for Asphalt Roof Coatings – Asbestos-Free">Standard Specification for Asphalt Roof Coatings – Asbestos-Free</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect2.art2.sent2"
+                                         display-type="number">9.13.2.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect3.art2.sent2"
+                                         display-type="number">9.13.3.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect26.subsect2.art1.table2"
+                                         display-type="long">Table 9.26.2.1.-B</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-089" sequence="89"
+             description="Fix ASTM D4637/D4637M-15 row 93 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row93"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row93">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D4637/D4637M">D4637/D4637M-15</entry>
+                                 <entry standard-id="astmd4637m-15"
+                                        standard-ref-id="astmd4637m"
+                                        standard-ref-title="Standard Specification for EPDM Sheet Used In Single-Ply Roof Membrane">Standard Specification for EPDM Sheet Used In Single-Ply Roof Membrane</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect3.art2.sent2"
+                                         display-type="number">9.13.3.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect26.subsect2.art1.table2"
+                                         display-type="long">Table 9.26.2.1.-B</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-090" sequence="90"
+             description="Fix ASTM D4811/D4811M-16 row 94 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row94"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row94">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D4811/D4811M">D4811/D4811M-16</entry>
+                                 <entry standard-id="astmd4811m-16"
+                                        standard-ref-id="astmd4811m"
+                                        standard-ref-title="Standard Specification for Nonvulcanized (Uncured) Rubber Sheet Used as Roof Flashing">Standard Specification for Nonvulcanized (Uncured) Rubber Sheet Used as Roof Flashing</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect3.art2.sent2"
+                                         display-type="number">9.13.3.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect26.subsect2.art1.table2"
+                                         display-type="long">Table 9.26.2.1.-B</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-091" sequence="91"
+             description="Fix ASTM D5456-19 row 95 in Table 1.3.1.2. (add display text for 3.1.11.7.(5) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row95"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row95">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D5456">D5456-19</entry>
+                                 <entry standard-id="astmd5456-19"
+                                        standard-ref-id="astmd5456"
+                                        standard-ref-title="Standard Specification for Evaluation of Structural Composite Lumber Products">Standard Specification for Evaluation of Structural Composite Lumber Products</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part3.sect1.subsect11.art7.sent5"
+                                         display-type="number">3.1.11.7.(5)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-092" sequence="92"
+             description="Fix ASTM D6878/D6878M-11a row 96 in Table 1.3.1.2. (retarget Part 5 standards table reference from sect10 to Table 5.9.1.1. and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row96"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row96">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D6878/D6878M">D6878/D6878M-11a</entry>
+                                 <entry standard-id="astmd6878M-11a"
+                                        standard-ref-id="astmd6878m"
+                                        standard-ref-title="Standard Specification for Thermoplastic Polyolefin Based Sheet Roofing">Standard Specification for Thermoplastic Polyolefin Based Sheet Roofing</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
+                                         display-type="long"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect3.art2.sent2"
+                                         display-type="number">9.13.3.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect26.subsect2.art1.table2"
+                                         display-type="long">Table 9.26.2.1.-B</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-093" sequence="93"
+             description="Fix ASTM D7254-17 row 97 in Table 1.3.1.2. (add display text for 9.27.13.1.(1) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row97"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row97">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D7254">D7254-17</entry>
+                                 <entry standard-id="astmd7254-17"
+                                        standard-ref-id="astmd7254"
+                                        standard-ref-title="Standard Specification for Polypropylene (PP) Siding">Standard Specification for Polypropylene (PP) Siding</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect13.art1.sent1"
+                                         display-type="number">9.27.13.1.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-094" sequence="94"
+             description="Fix ASTM D7793-17 row 98 in Table 1.3.1.2. (add display text for 9.27.12.1.(2) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row98"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row98">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D7793">D7793-17</entry>
+                                 <entry standard-id="astmd7793-17"
+                                        standard-ref-id="astmd7793"
+                                        standard-ref-title="Standard Specification for Insulated Vinyl Siding">Standard Specification for Insulated Vinyl Siding</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect27.subsect12.art1.sent2"
+                                         display-type="number">9.27.12.1.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-095" sequence="95"
+             description="Fix ASTM D8052/D8052M-17 row 99 in Table 1.3.1.2. (add display text for A-5.4.1.2.(1) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row99"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row99">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="D8052/D8052M">D8052/D8052M-17</entry>
+                                 <entry standard-id="astmd8052-17"
+                                        standard-ref-id="astmd8052"
+                                        standard-ref-title="Standard Test Method for Quantification of Air Leakage in Low-Sloped Membrane Roof Assemblies">Standard Test Method for Quantification of Air Leakage in Low-Sloped Membrane Roof Assemblies</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote24"
+                                         display-type="number">A-5.4.1.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-096" sequence="96"
+             description="Fix ASTM E90-09 row 100 in Table 1.3.1.2. (retarget Part 5 sound transmission references from non-existent sect9 to BC sect8 and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row100"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row100">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E90">E90-09</entry>
+                                 <entry standard-id="astme90-09"
+                                        standard-ref-id="astme90"
+                                        standard-ref-title="Standard Test Method for Laboratory Measurement of Airborne Sound Transmission Loss of Building Partitions and Elements">Standard Test Method for Laboratory Measurement of Airborne Sound Transmission Loss of Building Partitions and Elements</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art2.sent1"
+                                         display-type="number">5.8.1.2.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art4.sent1"
+                                         display-type="number">5.8.1.4.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect11.subsect1.art2.sent1"
+                                         display-type="number">9.11.1.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-097" sequence="97"
+             description="Fix ASTM E96/E96M-16 row 101 in Table 1.3.1.2. (add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row101"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row101">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E96/E96M">E96/E96M-16</entry>
+                                 <entry standard-id="astme96m-16"
+                                        standard-ref-id="astme96m"
+                                        standard-ref-title="Standard Test Methods for Water Vapor Transmission of Materials">Standard Test Methods for Water Vapor Transmission of Materials</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect5.subsect1.art2.sent3"
+                                         display-type="number">5.5.1.2.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect13.subsect2.art2.sent2"
+                                         display-type="number">9.13.2.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect25.subsect4.art2.sent1"
+                                         display-type="number">9.25.4.2.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect25.subsect4.art2.sent2"
+                                         display-type="number">9.25.4.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect25.subsect5.art1.sent1"
+                                         display-type="number">9.25.5.1.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect30.subsect1.art2.sent1"
+                                         display-type="number">9.30.1.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-098" sequence="98"
+             description="Fix ASTM E283-04 row 102 in Table 1.3.1.2. (retarget 5.9.3.4.(2) reference from non-existent sect10 to BC sect9 and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row102"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row102">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E283">E283-04</entry>
+                                 <entry standard-id="astme283-04"
+                                        standard-ref-id="astme283"
+                                        standard-ref-title="Standard Test Method for Determining Rate of Air Leakage Through Exterior Windows, Curtain Walls, and Doors Under Specified Pressure Differences Across the Specimen">Standard Test Method for Determining Rate of Air Leakage Through Exterior Windows, Curtain Walls, and Doors Under Specified Pressure Differences Across the Specimen</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect3.art4.sent2"
+                                         display-type="number">5.9.3.4.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote51"
+                                         display-type="number">A-5.9.3.4.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-099" sequence="99"
+             description="Fix ASTM E330/E330M-14 row 103 in Table 1.3.1.2. (add display text for A-5.9.3.2.(1) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row103"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row103">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E330/E330M">E330/E330M-14</entry>
+                                 <entry standard-id="astme330m-14"
+                                        standard-ref-id="astme330m"
+                                        standard-ref-title="Standard Test Method for Structural Performance of Exterior Windows, Doors, Skylights and Curtain Walls by Uniform Static Air Pressure Difference">Standard Test Method for Structural Performance of Exterior Windows, Doors, Skylights and Curtain Walls by Uniform Static Air Pressure Difference</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote49"
+                                         display-type="number">A-5.9.3.2.(1)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-100" sequence="100"
+             description="Fix ASTM E331-00 row 104 in Table 1.3.1.2. (retarget Part 5 references from non-existent pre-renumbering IDs to BC Part 5 numbering and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row104"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row104">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E331">E331-00</entry>
+                                 <entry standard-id="astme331-00"
+                                        standard-ref-id="astme331"
+                                        standard-ref-title="Standard Test Method for Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Uniform Static Air Pressure Difference">Standard Test Method for Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Uniform Static Air Pressure Difference</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect3.art5.sent2"
+                                         display-type="number">5.9.3.5.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote53"
+                                         display-type="number">A-5.9.3.5.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-101" sequence="101"
+             description="Fix ASTM E336-11 row 105 in Table 1.3.1.2. (retarget Part 5 references from non-existent pre-renumbering IDs to BC Part 5 numbering and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row105"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row105">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E336">E336-11</entry>
+                                 <entry standard-id="astme336-11"
+                                        standard-ref-id="astme336"
+                                        standard-ref-title="Standard Test Method for Measurement of Airborne Sound Attenuation between Rooms in Buildings">Standard Test Method for Measurement of Airborne Sound Attenuation between Rooms in Buildings</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art2.sent2"
+                                         display-type="number">5.8.1.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art4.sent7"
+                                         display-type="number">5.8.1.4.(7)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect11.subsect1.art2.sent2"
+                                         display-type="number">9.11.1.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote79"
+                                         display-type="number">A-9.11.</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-102" sequence="102"
+             description="Fix ASTM E413-16 row 106 in Table 1.3.1.2. (retarget Part 5 references from non-existent pre-renumbering IDs to BC Part 5 numbering and add display text for references; table note (4) retained)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row106"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row106">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E413">E413-16</entry>
+                                 <entry standard-id="astme413-16"
+                                        standard-ref-id="astme413"
+                                        standard-ref-title="Classification for Rating Sound Insulation">Classification for Rating Sound Insulation</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divA.part1.appendix.appnote7"
+                                         display-type="number">A-1.4.1.2.(1)</ref>
+                                    <ref type="table-note"
+                                         target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art2.sent1"
+                                         display-type="number">5.8.1.2.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art2.sent2"
+                                         display-type="number">5.8.1.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art4.sent7"
+                                         display-type="number">5.8.1.4.(7)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect8.subsect1.art5.sent3"
+                                         display-type="number">5.8.1.5.(3)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect11.subsect1.art2.sent1"
+                                         display-type="number">9.11.1.2.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.sect11.subsect1.art2.sent2"
+                                         display-type="number">9.11.1.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-103" sequence="103"
+             description="Fix ASTM E492-09e1 row 107 in Table 1.3.1.2. (add display text for A-9.11. reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row107"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row107">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E492">E492-09e1</entry>
+                                 <entry standard-id="astme492-16e1"
+                                        standard-ref-id="astme492"
+                                        standard-ref-title="Standard Test Method for Laboratory Measurement of Impact Sound Transmission Through Floor-Ceiling Assemblies Using the Tapping Machine">Standard Test Method for Laboratory Measurement of Impact Sound Transmission Through Floor-Ceiling Assemblies Using the Tapping Machine</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote79"
+                                         display-type="number">A-9.11.</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-104" sequence="104"
+             description="Fix ASTM E547-00 row 108 in Table 1.3.1.2. (retarget Part 5 references from non-existent pre-renumbering IDs to BC Part 5 numbering and add display text for references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row108"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row108">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E547">E547-00</entry>
+                                 <entry standard-id="astme547-00"
+                                        standard-ref-id="astme547"
+                                        standard-ref-title="Standard Test Method for Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Cyclic Static Air Pressure Difference">Standard Test Method for Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Cyclic Static Air Pressure Difference</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.sect9.subsect3.art5.sent2"
+                                         display-type="number">5.9.3.5.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote53"
+                                         display-type="number">A-5.9.3.5.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-105" sequence="105"
+             description="Fix ASTM E597-95 row 109 in Table 1.3.1.2. (add display text for A-9.11. reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row109"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row109">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E597">E597-95</entry>
+                                 <entry standard-id="astme597-95"
+                                        standard-ref-id="astme597"
+                                        standard-ref-title="Practice for Determining a Single Number Rating of Airborne Sound Insulation for Use in Multi-Unit Building Specifications">Practice for Determining a Single Number Rating of Airborne Sound Insulation for Use in Multi-Unit Building Specifications</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote79"
+                                         display-type="number">A-9.11.</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-106" sequence="106"
+             description="Fix ASTM E783-02 row 111 in Table 1.3.1.2. (add display text for appendix note references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row111"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row111">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E783">E783-02</entry>
+                                 <entry standard-id="astme783-02"
+                                        standard-ref-id="astme783"
+                                        standard-ref-title="Standard Test Method for Field Measurement of Air Leakage Through Installed Exterior Windows and Doors">Standard Test Method for Field Measurement of Air Leakage Through Installed Exterior Windows and Doors</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote25"
+                                         display-type="number">A-5.4.1.2.(2)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote45"
+                                         display-type="number">A-5.9.2.3.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote51"
+                                         display-type="number">A-5.9.3.4.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-107" sequence="107"
+             description="Fix ASTM E1007-19 row 112 in Table 1.3.1.2. (add display text for A-9.11. reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row112"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row112">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E1007">E1007-19</entry>
+                                 <entry standard-id="astme1007-19"
+                                        standard-ref-id="astme1007"
+                                        standard-ref-title="Standard Test Method for Field Measurement of Tapping Machine Impact Sound Transmission Through Floor-Ceiling Assemblies and Associated Support Structures">Standard Test Method for Field Measurement of Tapping Machine Impact Sound Transmission Through Floor-Ceiling Assemblies and Associated Support Structures</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divBV2.part9.appendix.appnote79"
+                                         display-type="number">A-9.11.</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-108" sequence="108"
+             description="Fix ASTM E1105-15 row 113 in Table 1.3.1.2. (add display text for appendix note references)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row113"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row113">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E1105">E1105-15</entry>
+                                 <entry standard-id="astme1105-15"
+                                        standard-ref-id="astme1105"
+                                        standard-ref-title="Standard Test Method for Field Determination of Water Penetration of Installed Exterior Windows, Skylights, Doors, and Curtain Walls, by Uniform or Cyclic Static Air Pressure Difference">Standard Test Method for Field Determination of Water Penetration of Installed Exterior Windows, Skylights, Doors, and Curtain Walls, by Uniform or Cyclic Static Air Pressure Difference</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote45"
+                                         display-type="number">A-5.9.2.3.(1)</ref>
+                                    <lb/>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote53"
+                                         display-type="number">A-5.9.3.5.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-p1-109" sequence="109"
+             description="Fix ASTM E1186-17 row 114 in Table 1.3.1.2. (add display text for A-5.4.1.2.(2) reference)">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row114"/>
+            <replace>
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row114">
+                                 <entry>ASTM</entry>
+                                 <entry standard-ref-number="E1186">E1186-17</entry>
+                                 <entry standard-id="astme1186-17"
+                                        standard-ref-id="astme1186"
+                                        standard-ref-title="Standard Practices for Air Leakage Site Detection in Building Envelopes and Air Barrier Systems">Standard Practices for Air Leakage Site Detection in Building Envelopes and Air Barrier Systems</entry>
+                                 <entry>
+                                    <ref type="internal"
+                                         target="nbc.divB.part5.appendix.appnote25"
+                                         display-type="number">A-5.4.1.2.(2)</ref>
+                                 </entry>
+                              </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+    </amendments>
+</bc-overlay>

@@ -1,0 +1,1227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Ministerial Order BA 2024 03
+     
+     Uses snapshot-based revision history approach for date-based versioning.
+     Display content is derived from the latest revision (status="current").
+-->
+<bc-overlay
+  id="bc-mo-ba-2024-03"
+  version="1.0"
+  nbc-target-version="2020"
+  effective-date="2024-08-27"
+  >
+  
+  <metadata>
+    <title>Ministerial Order BA 2024 03 - Division A and B Amendments</title>
+    <description>Revision 3 enables the construction of single exit stair buildings</description>
+    <authority>BC Ministry of Housing - Building and Safety Standards Branch</authority>
+    <author>BC Building and Safety Standards Branch</author>
+    <source-document>Ministerial Order BA 2024 03</source-document>
+  </metadata>
+  
+  <amendments>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 1: Add Sentence 2 to Article 1.3.3.2.                   -->
+    <!-- Application of Parts 3, 4, 5 and 6 to single exit stair buildings -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-001" sequence="1000"
+               description="Add Sentence 2 to Article 1.3.3.2. regarding application to buildings designed per Subsection 3.2.10.">
+      <target type="position" parent-id="nbc.divA.part1.sect3.subsect3.art2" position="after" reference-id="nbc.divA.part1.sect3.subsect3.art2.sent1"/>
+      <insert>
+        <new-content source="bc">
+          <sentence xml:id="nbc.divA.part1.sect3.subsect3.art2.sent2" number="2" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This sentence did not exist in the original -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-001" status="current">
+                <content>
+                  <text>Parts 3, 4, 5 and 6 of Division B apply to <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="long"/>.</text>
+                </content>
+                <change-summary>Added new sentence to extend application of Parts 3, 4, 5 and 6 to buildings designed per Subsection 3.2.10.</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 2: Replace Article 1.3.3.3.                             -->
+    <!-- Application of Part 9 - add exception for Subsection 3.2.10       -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-002" sequence="1001"
+               description="Replace Article 1.3.3.3. to add Sentence 2 exception for buildings under Subsection 3.2.10.">
+      <target type="canonical-id" id="nbc.divA.part1.sect3.subsect3.art3"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <article xml:id="nbc.divA.part1.sect3.subsect3.art3" number="3" vendor-id="ea004139" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will auto-populate from bc-building-code.xml -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-002" status="current">
+                <content>
+                  <title>Application of Part 9</title>
+                  <sentence xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1" number="1" vendor-id="es007226">
+                    <text>Except as provided in <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent2" display-type="short"/>, Part 9 of Division B applies to all <ref type="term" target="bldng">buildings</ref> described in <ref type="internal" target="nbc.divA.part1.sect1.subsect1.art1" display-type="long"/> of <measurement units="metric">3 <ref type="term" target="tr">storeys</ref></measurement> or less in <ref type="term" target="bldng-hg">building height</ref>, having a <ref type="term" target="bldng-r">building area</ref> not exceeding <measurement units="metric">600 m<super>2</super></measurement>, and used for <ref type="term" target="mjr-ccpn">major occupancies</ref> classified as</text>
+                    <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause1" letter="a" vendor-id="es007226a">
+                      <text>reserved</text>
+                    </clause>
+                    <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause2" letter="b" vendor-id="es007226b">
+                      <text>Group C, <ref type="term" target="rdntl-cc">residential occupancies</ref> (see <ref type="internal" target="nbc.divBV2.part9.appendix.appnote1" vendor-target="en000253" display-type="long"/>),</text>
+                    </clause>
+                    <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause3" letter="c" vendor-id="es007226c">
+                      <text>Group D, <ref type="term" target="bn-nd-pr">business and personal services occupancies</ref>,</text>
+                    </clause>
+                    <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause4" letter="d" vendor-id="es007226d">
+                      <text>Group E, <ref type="term" target="mrcntl-c">mercantile occupancies</ref>, or</text>
+                    </clause>
+                    <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause5" letter="e" vendor-id="es007226e">
+                      <text>Group F, Divisions 2 and 3, <ref type="term" target="mdm-hzrd">medium-</ref> and <ref type="term" target="lw-hzrd-">low-hazard industrial occupancies</ref>.</text>
+                    </clause>
+                  </sentence>
+                  <sentence xml:id="nbc.divA.part1.sect3.subsect3.art3.sent2" number="2">
+                    <text>Part 9 of Division B does not apply to <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="long"/></text>
+                  </sentence>
+                </content>
+                <change-summary>Replaced Article 1.3.3.3. - Modified Sentence 1 to add exception reference and reorganized clauses; added new Sentence 2 to exclude buildings designed per Subsection 3.2.10. from Part 9 application.</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </article>
+        </new-content>
+      </replace>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 3: Add Sentence 7 to Article 3.2.4.1.                   -->
+    <!-- Fire alarm requirement for buildings under Subsection 3.2.10      -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-003" sequence="1002"
+               description="Add Sentence 7 to Article 3.2.4.1. requiring fire alarm systems in buildings designed per Subsection 3.2.10.">
+      <target type="position" parent-id="nbc.divB.part3.sect2.subsect4.art1" position="after" reference-id="nbc.divB.part3.sect2.subsect4.art1.sent6"/>
+      <insert>
+        <new-content source="bc">
+          <sentence xml:id="nbc.divB.part3.sect2.subsect4.art1.sent7" number="7" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This sentence did not exist in the original -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-003" status="current">
+                <content>
+                  <!-- BBC-171 Issue 140: Note A-3.2.10.2.(1) and (2) -->
+                  <text>A fire alarm system shall be installed in <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="long"/>. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote321021and2" display-type="short">Note A-3.2.10.2.(1) and (2)</ref>.)</text>
+                </content>
+                <change-summary>Added new sentence requiring fire alarm systems in buildings designed per Subsection 3.2.10.</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 4: Replace Sentence 3.2.5.7.(2)                         -->
+    <!-- Add exceptions for encapsulated mass timber and Subsection 3.2.10 -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-004" sequence="1003"
+               description="Replace Sentence 3.2.5.7.(2) to add exceptions for encapsulated mass timber and buildings designed per Subsection 3.2.10.">
+      <target type="canonical-id" id="nbc.divB.part3.sect2.subsect5.art7.sent2"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <sentence xml:id="nbc.divB.part3.sect2.subsect5.art7.sent2" number="2" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will auto-populate from bc-building-code.xml -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-004" status="current">
+                <content>
+                  <text>Except for <ref type="term" target="bldng">buildings</ref> constructed of encapsulated mass timber construction in conformance with <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art48" display-type="long"/>, <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art57" display-type="long"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art93" display-type="long"/>, and except for <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="long"/>, <ref type="term" target="bldng">buildings</ref> that are <ref type="term" target="prnklrd">sprinklered</ref> throughout with a sprinkler system conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art12" display-type="long"/> or have a standpipe system conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art8" display-type="long"/> to <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art10" display-type="long"/> are deemed to comply with <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art7.sent1" display-type="short"/>.</text>
+                </content>
+                <change-summary>Replaced Sentence 3.2.5.7.(2) to add exceptions for encapsulated mass timber buildings and buildings designed per Subsection 3.2.10.</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 5: Add Subsection 3.2.10.                               -->
+    <!-- Requirements for Residential Buildings with a Single Exit         -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-005" sequence="1004"
+               description="Add Subsection 3.2.10. - Requirements for Residential Buildings with a Single Exit">
+      <target type="position" parent-id="nbc.divB.part3.sect2" position="after" reference-id="nbc.divB.part3.sect2.subsect9"/>
+      <insert>
+        <new-content source="bc">
+          <subsection xml:id="nbc.divB.part3.sect2.subsect10" number="10" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This subsection did not exist in the original -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-005" status="current">
+                <content>
+                  <title>Requirements for Residential Buildings with a Single Exit</title>
+                  <!-- BBC-167 Issue 187: Note A-3.2.10. and Note A-3 indicators -->
+                  <see-also xml:id="nbc.divB.part3.sect2.subsect10.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote3210" display-type="short">Note A-3.2.10.</ref>) (See also <ref type="internal" target="nbc.divB.part3.appendix.appnote1" display-type="short">Note A-3</ref>.)</see-also>
+                  
+                  <article xml:id="nbc.divB.part3.sect2.subsect10.art1" number="1">
+                    <title>Application</title>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1" number="1">
+                      <text>Except as provided in Sentences <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art1.sent2" display-type="short">(2)</ref> to <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art1.sent4" display-type="short">(4)</ref>, this Subsection applies to <ref type="term" target="bldng">buildings</ref> of only <ref type="term" target="rdntl-cc">residential occupancy</ref> that</text>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1.clause1" letter="a">
+                        <text>are not more than six <ref type="term" target="tr">storeys</ref> in <ref type="term" target="bldng-hg">building height</ref>,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1.clause2" letter="b">
+                        <text>have a height not more than <measurement units="metric">18 m</measurement> measured between the floor of the <ref type="term" target="frt-tr">first storey</ref> and the uppermost floor level, excluding any floor level within a rooftop <ref type="term" target="ncls">enclosure</ref> that is not considered as a <ref type="term" target="tr">storey</ref> in calculating <ref type="term" target="bldng-hg">building height</ref> in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect1.art1.sent1" display-type="long"/>,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1.clause3" letter="c">
+                        <text>contain not more than four <ref type="term" target="dwllng-n">dwelling units</ref> on each floor,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1.clause4" letter="d">
+                        <text>does not exceed an <ref type="term" target="ccpnt-ld">occupant load</ref> of <measurement units="metric">24 persons</measurement> per floor, and</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1.clause5" letter="e">
+                        <text>have a <ref type="term" target="trvl-dst">travel distance</ref> from</text>
+                        <subclause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1.clause5.subclause1" number="1">
+                          <text>any part of the <ref type="term" target="flr-r">floor area</ref> to an <ref type="term" target="xt">exit</ref> not more than <measurement units="metric">25 m</measurement>, and</text>
+                        </subclause>
+                        <subclause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent1.clause5.subclause2" number="2">
+                          <text>each <ref type="term" target="dwllng-n">dwelling unit</ref> to an <ref type="term" target="xt">exit</ref> of not more than <measurement units="metric">6 m</measurement>.</text>
+                        </subclause>
+                      </clause>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art1.sent2" number="2">
+                      <text>This Subsection does not apply to <ref type="term" target="flr-r">floor areas</ref> permitted by <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art1" display-type="long"/> to be served by one <ref type="term" target="xt">exit</ref>.</text>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art1.sent3" number="3">
+                      <text>This Subsection does not apply to detached houses, semi-detached houses, houses with a <ref type="term" target="bc-scnd-t">secondary suite</ref>, duplexes, triplexes, townhouses or row houses.</text>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art1.sent4" number="4">
+                      <text>
+                        <ref type="term" target="rdntl-cc">Residential</ref>
+                        <ref type="term" target="bldng">buildings</ref> with a single <ref type="term" target="xt">exit</ref> are not permitted for</text>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent4.clause1" letter="a">
+                        <text>hotels, motels, dormitories or lodging houses,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent4.clause2" letter="b">
+                        <text>
+                          <ref type="term" target="rdntl-cc">residential</ref> clubs, colleges or schools,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent4.clause3" letter="c">
+                        <text>monasteries,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent4.clause4" letter="d">
+                        <text>seniors' residences, or</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art1.sent4.clause5" letter="e">
+                        <text>care facilities accepted for residential use pursuant to provincial legislation.</text>
+                      </clause>
+                      <!-- BBC-167 Issue 188: Note A-3.2.10.1.(4) indicator -->
+                      <see-also xml:id="nbc.divB.part3.sect2.subsect10.art1.sent4.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote321014" display-type="short">Note A-3.2.10.1.(4)</ref>.)</see-also>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art1.sent5" number="5">
+                      <text>This Subsection, in accordance with the application of this Article and in conformance with the provisions of this Subsection and all other applicable provisions of this Code, may be used as an alternate to the requirements for a second <ref type="term" target="xt">exit</ref> in <ref type="internal" target="nbc.divB.part3.sect4.subsect2" display-type="long"/>.</text>
+                    </sentence>
+                  </article>
+                  
+                  <article xml:id="nbc.divB.part3.sect2.subsect10.art2" number="2">
+                    <title>Building Construction</title>
+                    <!-- BBC-167 Issues 189 to 191: Note A-3.2.10.2.(1) and (2); "Sentences 3.2.5.12.(2) to (4)"; NFPA 13 title once; Amendment 56 adds "and as required by Sentence (2)," -->
+                    <!-- Revision 6 (MO BA 2024 06, 56) is recorded here because the merge engine cannot target an element added by an earlier revision. -->
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art2.sent1" number="1" revised="yes">
+                      <revision-history>
+                        <original effective-date="2024-08-27">
+                          <text>Notwithstanding the permissions in Sentences <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art12.sent2" display-type="number">3.2.5.12.(2)</ref> to <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art12.sent4" display-type="number">(4)</ref>, a <ref type="term" target="bldng">building</ref> to which this Subsection applies shall be <ref type="term" target="prnklrd">sprinklered</ref> throughout with an automatic sprinkler system designed, constructed, installed and tested in conformance with NFPA 13, "Standard for the Installation of Sprinkler Systems." (See <ref type="internal" target="nbc.divB.part3.appendix.appnote321021and2" display-type="short">Note A-3.2.10.2.(1) and (2)</ref>.) (See Sentence <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art1.sent7" display-type="number">3.2.4.1.(7)</ref>.)</text>
+                        </original>
+                        <revision seq="1" type="amendment" effective-date="2025-06-16" id="bc-mo-2024-06-056" status="current">
+                          <content>
+                            <text>Notwithstanding the permissions in Sentences <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art12.sent2" display-type="number">3.2.5.12.(2)</ref> to <ref type="internal" target="nbc.divB.part3.sect2.subsect5.art12.sent4" display-type="number">(4)</ref>, and as required by Sentence <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2.sent2" display-type="short">(2)</ref>, a <ref type="term" target="bldng">building</ref> to which this Subsection applies shall be <ref type="term" target="prnklrd">sprinklered</ref> throughout with an automatic sprinkler system designed, constructed, installed and tested in conformance with NFPA 13, "Standard for the Installation of Sprinkler Systems." (See <ref type="internal" target="nbc.divB.part3.appendix.appnote321021and2" display-type="short">Note A-3.2.10.2.(1) and (2)</ref>.) (See Sentence <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art1.sent7" display-type="number">3.2.4.1.(7)</ref>.)</text>
+                          </content>
+                          <change-summary>Added "and as required by Sentence (2)," following the words "Notwithstanding the permissions in Sentences 3.2.5.12.(2) to (4),"</change-summary>
+                          <note>Ministerial Order BA 2024 06</note>
+                        </revision>
+                      </revision-history>
+                    </sentence>
+                    <!-- BBC-167 Issues 192 and 193: Note A-3.2.10.2.(1) and (2); Amendment 57 strikes out "in accordance with Sentence (1)" -->
+                    <!-- Revision 6 (MO BA 2024 06, 57) is recorded here because the merge engine cannot target an element added by an earlier revision. -->
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art2.sent2" number="2" revised="yes">
+                      <revision-history>
+                        <original effective-date="2024-08-27">
+                          <text>All balconies and decks shall be <ref type="term" target="prnklrd">sprinklered</ref> in accordance with Sentence <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2.sent1" display-type="short">(1)</ref>. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote321021and2" display-type="short">Note A-3.2.10.2.(1) and (2)</ref>.)</text>
+                        </original>
+                        <revision seq="1" type="amendment" effective-date="2025-06-16" id="bc-mo-2024-06-057" status="current">
+                          <content>
+                            <text>All balconies and decks shall be <ref type="term" target="prnklrd">sprinklered</ref>. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote321021and2" display-type="short">Note A-3.2.10.2.(1) and (2)</ref>.)</text>
+                          </content>
+                          <change-summary>Struck out "in accordance with Sentence (1)"</change-summary>
+                          <note>Ministerial Order BA 2024 06</note>
+                        </revision>
+                      </revision-history>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art2.sent3" number="3">
+                      <text>The <ref type="term" target="xt">exit</ref> facility shall be constructed either of <ref type="term" target="ncmbtbl">noncombustible</ref> construction or, notwithstanding the application of <ref type="internal" target="nbc.divB.part3.sect1.subsect13.art7" display-type="long"/>, with finishes that do not exceed the maximum <ref type="term" target="flm-prd-">flame-spread rating</ref> and maximum smoke developed classification for <ref type="term" target="xt">exit</ref> stairways in <ref type="internal" target="nbc.divB.part3.sect1.subsect13.art7.table1" display-type="long"/>, and shall</text>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art2.sent3.clause1" letter="a">
+                        <text>be separated from all other spaces in the <ref type="term" target="bldng">building</ref> by a <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> not less than <measurement units="metric">2 h</measurement>,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art2.sent3.clause2" letter="b">
+                        <text>be not less than <measurement units="metric">1 500 mm</measurement> wide,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art2.sent3.clause3" letter="c">
+                        <text>discharge directly to the exterior of the <ref type="term" target="bldng">building</ref> without passing through a lobby,</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art2.sent3.clause4" letter="d">
+                        <text>be designed to limit the probability of storage or the accumulation of material, and</text>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art2.sent3.clause5" letter="e">
+                        <text>have signs posted in conspicuous locations near each landing to indicate that storage is not permitted.</text>
+                      </clause>
+                      <!-- BBC-167 Issue 194: Note A-3.2.10.1.(3) indicator (as worded in MO BA 2024 03; the Note is A-3.2.10.2.(3)) -->
+                      <see-also xml:id="nbc.divB.part3.sect2.subsect10.art2.sent3.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote321023" display-type="short">Note A-3.2.10.1.(3)</ref>.)</see-also>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art2.sent4" number="4">
+                      <text>The discharge from the <ref type="term" target="xt">exit</ref> stair described in Clause <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2.sent3.clause3" display-type="medium">(3)(c)</ref> shall be located not less than <measurement units="metric">3 m</measurement> and not more than <measurement units="metric">15 m</measurement> from the closest portion of the access route required for fire department use, measured horizontally from the face of the <ref type="term" target="bldng">building</ref>. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote321024" display-type="short">Note A-3.2.10.2.(4)</ref>.)</text>
+                    </sentence>
+                  </article>
+                  
+                  <article xml:id="nbc.divB.part3.sect2.subsect10.art3" number="3">
+                    <title>Limits to Smoke Movement</title>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art3.sent1" number="1">
+                      <text>Except as permitted by <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent3" display-type="short"/> and notwithstanding the scope of <ref type="internal" target="nbc.divB.part3.sect2.subsect6" display-type="long"/>, a <ref type="term" target="bldng">building</ref> to which this Subsection applies that is greater than four <ref type="term" target="tr">storeys</ref> in <ref type="term" target="bldng-hg">building height</ref> shall be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect6.art2" display-type="long"/>.</text>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art3.sent2" number="2">
+                      <text>Fans required to limit smoke movement by <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent1" display-type="short"/> shall be provided with an emergency power supply capable of operating under full load for not less than <measurement units="metric">2 h</measurement> provided by an emergency generator. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art9" display-type="long"/>.)</text>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art3.sent3" number="3">
+                      <text>Pressurization of the stair shaft described in <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent1" display-type="short"/> is not required if each doorway from the <ref type="term" target="pblc-crr">public corridor</ref> serving the <ref type="term" target="xt">exit</ref> facility is protected with a vestibule on the <ref type="term" target="pblc-crr">public corridor</ref> side of the doorway</text>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art3.sent3.clause1" letter="a">
+                        <text>consisting of a <ref type="term" target="clr">closure</ref> in the <ref type="term" target="pblc-crr">public corridor</ref>
+                        </text>
+                        <subclause xml:id="nbc.divB.part3.sect2.subsect10.art3.sent3.clause1.subclause1" number="1">
+                          <text>equipped with electromagnetic hold-open devices that release upon activation of the fire alarm system, and</text>
+                        </subclause>
+                        <subclause xml:id="nbc.divB.part3.sect2.subsect10.art3.sent3.clause1.subclause2" number="2">
+                          <text>that has a <ref type="term" target="fr-prtct">fire-protection rating</ref> not less than a <measurement units="metric">45 min</measurement>, and</text>
+                        </subclause>
+                      </clause>
+                      <clause xml:id="nbc.divB.part3.sect2.subsect10.art3.sent3.clause2" letter="b">
+                        <text>that forms a space that is separated from the remainder of the <ref type="term" target="bldng">building</ref> by a <ref type="term" target="fr-prtn">fire separation</ref> with a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> not less than <measurement units="metric">45 min</measurement>
+                        </text>
+                        <subclause xml:id="nbc.divB.part3.sect2.subsect10.art3.sent3.clause2.subclause1" number="1">
+                          <text>that contains no <ref type="term" target="t">suite</ref> entry doors, and</text>
+                        </subclause>
+                        <subclause xml:id="nbc.divB.part3.sect2.subsect10.art3.sent3.clause2.subclause2" number="2">
+                          <text>with the distance from doorway to the <ref type="term" target="xt">exit</ref> facility and the <ref type="term" target="clr">closure</ref> not less than <measurement units="metric">1 800 mm</measurement> long and a width of the path between doorways not less than <measurement units="metric">1 500 mm</measurement>.</text>
+                        </subclause>
+                      </clause>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art3.sent4" number="4">
+                      <text>Elevator hoistways shall not be designed as a means of venting.</text>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art3.sent5" number="5">
+                      <text>The systems for control of smoke movement required by <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent1" display-type="short"/> shall be tested to ensure satisfactory operation. (See <ref type="internal" target="nbc.divB.part3.sect2.subsect6.art9.sent1" display-type="long"/> and <ref type="internal" target="nbc.divB.part3.appendix.appnote110" display-type="short">Note A-3.2.6.9.(1)</ref>.)</text>
+                    </sentence>
+                  </article>
+                  
+                  <article xml:id="nbc.divB.part3.sect2.subsect10.art4" number="4">
+                    <title>Doors in Public Corridors and Suite Entry Doors</title>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art4.sent1" number="1">
+                      <text>All doors along <ref type="term" target="pblc-crr">public corridors</ref> and all <ref type="term" target="t">suite</ref> entry doors shall be equipped with electromagnetic hold-open devices designed to release upon activation of the fire alarm system in accordance with <ref type="internal" target="nbc.divB.part3.sect1.subsect8.art14" display-type="long"/>.</text>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art4.sent2" number="2">
+                      <text>Hold-open devices on <ref type="term" target="t">suite</ref> entry doors shall not require a force applied to the door or release device of more than <measurement units="metric">22 N</measurement> to allow the occupant to manually release the door from the hold-open position to allow it to close.</text>
+                    </sentence>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect10.art4.sent3" number="3">
+                      <text>
+                        <ref type="term" target="t">Suite</ref> entry doors shall have a <ref type="term" target="fr-prtct">fire-protection rating</ref> of not less than <measurement units="metric">45 min</measurement>.</text>
+                      <!-- BBC-167 Issue 197: Note A-3.2.10.4.(3) indicator -->
+                      <see-also xml:id="nbc.divB.part3.sect2.subsect10.art4.sent3.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote321043" display-type="short">Note A-3.2.10.4.(3)</ref>.)</see-also>
+                    </sentence>
+                  </article>
+                  
+                </content>
+                <change-summary>Added new Subsection 3.2.10. - Requirements for Residential Buildings with a Single Exit</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </subsection>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 6: Replace Sentence 3.3.1.3.(12)                        -->
+    <!-- Add exception for buildings under Subsection 3.2.10               -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-006" sequence="1005"
+               description="Replace Sentence 3.3.1.3.(12) to add exception for buildings designed per Subsection 3.2.10.">
+      <target type="canonical-id" id="nbc.divB.part3.sect3.subsect1.art3.sent12"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <sentence xml:id="nbc.divB.part3.sect3.subsect1.art3.sent12" number="12" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will auto-populate from bc-building-code.xml -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-006" status="current">
+                <content>
+                  <text>Except for <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="long"/> and except as permitted by this Section and by <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art1.sent2" display-type="medium"/>, at the point where a doorway referred to in <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art3.sent11" display-type="short"/> opens onto a <ref type="term" target="pblc-crr">public corridor</ref> or exterior passageway, it shall be possible to go in opposite directions to each of 2 separate <ref type="term" target="xt">exits</ref>.</text>
+                </content>
+                <change-summary>Replaced Sentence 3.3.1.3.(12) to add exception for buildings designed per Subsection 3.2.10.</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 7: Replace Sentence 3.4.2.1.(1)                         -->
+    <!-- Add exception for buildings under Subsection 3.2.10               -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-007" sequence="1006"
+               description="Replace Sentence 3.4.2.1.(1) to add exception for buildings designed per Subsection 3.2.10.">
+      <target type="canonical-id" id="nbc.divB.part3.sect4.subsect2.art1.sent1"/>
+      <replace preserve-references="false">
+        <new-content source="bc">
+          <sentence xml:id="nbc.divB.part3.sect4.subsect2.art1.sent1" number="1" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- Merge engine will auto-populate from bc-building-code.xml -->
+              </original>
+              
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-007" status="current">
+                <content>
+                  <text>Except for <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="long"/> and except as permitted by <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art1.sent2" display-type="short"/> to <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art1.sent4" display-type="short"/>, every <ref type="term" target="flr-r">floor area</ref> intended for <ref type="term" target="ccpnc">occupancy</ref> shall be served by at least 2 <ref type="term" target="xt">exits</ref>.</text>
+                </content>
+                <change-summary>Replaced Sentence 3.4.2.1.(1) to add exception for buildings designed per Subsection 3.2.10.</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 8: Add rows to Table 3.9.1.1                           -->
+    <!-- Objectives for Subsection 3.2.10                                  -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-008" sequence="1007"
+               description="Add rows to Table 3.10.1.1 for Subsection 3.2.10 requirements">
+      <target type="position" parent-id="nbc.divB.part3.sect10.subsect1.art1.table1" position="last-child"/>
+      <insert>
+        <new-content source="bc">
+          <!-- 3.2.4.1 row (7) - Sentence reference -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow001" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This row did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry>
+                    <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art1.sent7" display-type="shortNum"/>
+                  </entry>
+                  <entry>[<ref type="functional-statement" target="fs11"/>-<ref type="sub-objective" target="nbc-obj-os1.5"/>] [<ref type="functional-statement" target="fs13"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.4.1.(7) objectives for single exit stair buildings</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.4.1 row (7) - OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow002" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This row did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs13"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added OP1.2 objective for Sentence 3.2.4.1.(7)</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          
+          <!-- 3.2.10.1 title row -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow003" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This row did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry>
+                    <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art1" display-type="title"/>
+                  </entry>
+                </content>
+                <change-summary>Added title row for Article 3.2.10.1 Application</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.1.(1) -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow004" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This row did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry>
+                    <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art1.sent1" display-type="shortNum"/>
+                  </entry>
+                  <entry>(e) [<ref type="functional-statement" target="fs10"/>-<ref type="sub-objective" target="nbc-obj-os3.7"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.1.(1) clause (e) objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          
+          <!-- 3.2.10.2 title row -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow005" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This row did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry>
+                    <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2" display-type="title"/>
+                  </entry>
+                </content>
+                <change-summary>Added title row for Article 3.2.10.2 Building Construction</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(1) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow006" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This row did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry>
+                    <ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2.sent1" display-type="shortNum"/>
+                  </entry>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs04"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.3"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(1) OS1.2, OS1.3 objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(1) OP objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow007" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This row did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs04"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>,<ref type="sub-objective" target="nbc-obj-op1.3"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(1) OP1.2, OP1.3 objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(2) OS objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow008" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2.sent2" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs03"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(2) OS1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(2) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow009" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs03"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(2) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(2) OP3.1 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow010" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs03"/>-<ref type="sub-objective" target="nbc-obj-op3.1"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(2) OP3.1 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) OS1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow011" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2.sent3" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs02"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) OS1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow012" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs02"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) clause (a) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow013" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>(a) [<ref type="functional-statement" target="fs05"/>-<ref type="sub-objective" target="nbc-obj-os1.5"/>] [<ref type="functional-statement" target="fs06"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>] [<ref type="functional-statement" target="fs03"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) clause (a) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) clause (a) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow014" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>(a) [<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs06"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) clause (a) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) clause (b) objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow015" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>(b) [<ref type="functional-statement" target="fs10"/>-<ref type="sub-objective" target="nbc-obj-os3.7"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) clause (b) OS3.7 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) clause (c) objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow016" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>(c) [<ref type="functional-statement" target="fs05"/>,<ref type="functional-statement" target="fs06"/>,<ref type="functional-statement" target="fs10"/>,<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) clause (c) OS1.5 objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) clause (d) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow017" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>(d) [<ref type="functional-statement" target="fs01"/>,<ref type="functional-statement" target="fs02"/>-<ref type="sub-objective" target="nbc-obj-os1.1"/>,<ref type="sub-objective" target="nbc-obj-os1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) clause (d) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(3) clause (d) OP objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow018" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>(d) [<ref type="functional-statement" target="fs01"/>,<ref type="functional-statement" target="fs02"/>-<ref type="sub-objective" target="nbc-obj-op1.1"/>,<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(3) clause (d) OP objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(4) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow019" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art2.sent4" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs06"/>-<ref type="sub-objective" target="nbc-obj-os1.1"/>] [<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(4) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.2.(4) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow020" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.2.(4) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          
+          <!-- 3.2.10.3 title row -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow021" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3" display-type="title"/></entry>
+                </content>
+                <change-summary>Added title row for Article 3.2.10.3 Limits to Smoke Movement</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(1) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow022" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent1" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs06"/>,<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>] [<ref type="functional-statement" target="fs05"/>-<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(1) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(1) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow023" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs06"/>,<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(1) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(2) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow024" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent2" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(2) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(2) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow025" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(2) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(3) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow026" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent3" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs06"/>,<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>] [<ref type="functional-statement" target="fs05"/>-<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(3) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(3) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow027" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs06"/>,<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(3) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(4) objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow028" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent4" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs03"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>] [<ref type="functional-statement" target="fs12"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(4) objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(5) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow029" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art3.sent5" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs82"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(5) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.3.(5) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow030" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs82"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.3.(5) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          
+          <!-- 3.2.10.4 title row -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow031" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art4" display-type="title"/></entry>
+                </content>
+                <change-summary>Added title row for Article 3.2.10.4 Doors in Public Corridors and Suite Entry Doors</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(1) OS objectives -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow032" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art4.sent1" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs05"/>,<ref type="functional-statement" target="fs06"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>,<ref type="sub-objective" target="nbc-obj-os1.5"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(1) OS objectives</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(1) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow033" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs02"/>,<ref type="functional-statement" target="fs03"/>,<ref type="functional-statement" target="fs05"/>,<ref type="functional-statement" target="fs06"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(1) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(1) OS1.4 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow034" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-os1.4"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(1) OS1.4 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(1) OP1.4 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow035" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op1.4"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(1) OP1.4 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(2) OS1.4 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow036" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art4.sent2" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-os1.4"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(2) OS1.4 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(2) OP1.4 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow037" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op1.4"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(2) OP1.4 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(3) OS1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow038" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect2.subsect10.art4.sent3" display-type="shortNum"/></entry>
+                  <entry>[<ref type="functional-statement" target="fs03"/>-<ref type="sub-objective" target="nbc-obj-os1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(3) OS1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+          <!-- 3.2.10.4.(3) OP1.2 objective -->
+          <row xml:id="nbc.divB.part3.sect10.subsect1.art1.table1.bcrow039" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08"><!-- This row did not exist in NBC 2020 --></original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-008" status="current">
+                <content>
+                  <entry/>
+                  <entry>[<ref type="functional-statement" target="fs03"/>-<ref type="sub-objective" target="nbc-obj-op1.2"/>]</entry>
+                </content>
+                <change-summary>Added Sentence 3.2.10.4.(3) OP1.2 objective</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </row>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 9: Insert Note A-3.2.10                                  -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-009" sequence="1008"
+               description="Insert Note A-3.2.10 - Fire Protection and Firefighting Assumptions for Residential Buildings with a Single Exit">
+      <target type="position" parent-id="nbc.divB.part3.appendix" position="after" reference-id="nbc.divB.part3.appendix.appnote123"/>
+      <insert>
+        <new-content source="bc">
+          <application-note xml:id="nbc.divB.part3.appendix.appnote3210" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This note did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-009" status="current">
+                <content>
+                  <number>3.2.10.</number>
+                  <title>Fire Protection and Firefighting Assumptions for Residential Buildings with a Single Exit.</title>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para1">The firefighting assumptions discussed in Note A-3 raise circumstances where additional firefighting capabilities and additional building protection measures may be required. The provisions in Subsection 3.2.10. for residential buildings with a single exit were developed with the expectation of a high level of capacity of the local fire department for fire prevention activities, fire suppression activities, the ability of the fire department to assist in egress of occupants in the event of an emergency, as well as a secure water supply for the function of the automatic sprinkler system and the manual fire suppression activities of a responding fire department.</paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para2"><emphasis style="bold">Fire Prevention</emphasis></paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para3">Maintenance of fire safety systems is essential for all buildings but becomes increasingly important when redundancies, such as a second and separate exit, are reduced or eliminated. The provisions for residential buildings with single exit stairs were developed with the expectation that fire officials routinely enforce the British Columbia Fire Code to ensure that the inspection intervals specified within are carried out, and that follow up inspections resulting from observed non-compliances occur at expedited intervals. Building owners and managers are required to be actively involved in carrying out the maintenance and upkeep of the building's fire safety systems. Residential buildings with a single exit should not be located in jurisdictions where a high level of fire prevention oversight cannot be maintained.</paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para4"><emphasis style="bold">Fire Suppression</emphasis></paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para5">The provisions for residential buildings with single exit stairs were developed with the expectation that a permanent, paid fire department is available to respond to a fire event twenty-four hours a day, every day. Firefighting personnel are expected to have a high level of training and the fire department is expected to be suitably equipped to provide fire suppression activities appropriate to the buildings and developments in their jurisdiction within tight response times. Residential buildings with a single exit should not be located in jurisdictions where a high level of fire suppression activities cannot be maintained.</paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para6"><emphasis style="bold">Egress and Safety of Occupants</emphasis></paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para7">The premise of egress in the British Columbia Building Code is that occupants of residential buildings receive early notification of a fire event, and occupants are able to respond unassisted in such an event. Early notification however does not guarantee occupant self-evacuation and when redundancies, such as a second and separate exit, are reduced or eliminated, occupant response options are likewise reduced. The provisions for residential buildings with single exit stairs were developed with the expectation that the local fire department has a service level that can coordinate and assist occupants with moving to a safe place in a fire event. Building owners and managers must be actively involved in fire safety planning in conjunction with the local fire department. Residential buildings with a single exit should not be located in jurisdictions where a service level that includes search and rescue by firefighting personnel cannot be maintained.</paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para8"><emphasis style="bold">Water Supply</emphasis></paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote3210.para9">The British Columbia Building Code requires an adequate water supply for firefighting be readily available and of sufficient volume and pressure to enable emergency response personnel to control fire growth so as to enable the safe evacuation of occupants and the conduct of search and rescue operations, prevent the fire from spreading to adjacent buildings, and provide a limited measure of property protection. As for any water-based fire protection systems or suppression activities, the water supply serving the building needs to be dependable over the life of the building through seasonal droughts and other eventualities. The provisions for residential buildings with single exit stairs were developed with the expectation of a highly dependable water supply would be available during construction and throughout the lifecycle of the building. Redundancies such as secondary or back up water supplies should to be considered to limit the probability that the water supply may become insufficient for an extended or even temporary period.</paragraph>
+                </content>
+                <change-summary>Added Note A-3.2.10 explaining fire protection and firefighting assumptions for residential buildings with single exit stairs</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </application-note>
+          
+          <application-note xml:id="nbc.divB.part3.appendix.appnote321014" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This note did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-009" status="current">
+                <content>
+                  <number>3.2.10.1.(4)</number>
+                  <title>Residential Buildings Not Permitted.</title>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321014.para1">The residential uses described in Sentence 3.2.10.1.(4) include short term as well as long term accommodations where Subsection 3.2.10. is not permitted to apply. For example, longer-term hotels and rooming houses sometimes referred to as single room occupancy hotels or single room accommodations with or without private bathrooms or kitchens are not permitted to apply Subsection 3.2.10.</paragraph>
+                </content>
+                <change-summary>Added Note A-3.2.10.1.(4) clarifying residential buildings not permitted under Subsection 3.2.10</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </application-note>
+          
+          <application-note xml:id="nbc.divB.part3.appendix.appnote321021and2" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This note did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-009" status="current">
+                <content>
+                  <number>3.2.10.2.(1) and (2)</number>
+                  <title>Automatic Sprinkler Systems.</title>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321021and2.para1">Automatic sprinkler systems serving a building to which Subsection 3.2.10. applies must be sprinklered in accordance with NFPA 13, "Standard for the Installation of Sprinkler Systems," regardless of the permissions for other buildings to follow the NFPA 13R, "Standard for the Installation of Sprinkler Systems in low-Rise Residential Occupancies," or the NFPA 13D, "Standard for the Installation of Sprinkler Systems in One- and Two-Family Dwellings and Manufactured Homes," standards. All balconies and decks regardless of depth must be sprinklered.</paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321021and2.para2">The requirement for sprinklers conforming to NFPA 13, "Standard for the Installation of Sprinkler Systems," means that a fire alarm system described in Subsection 3.2.4. is also required.</paragraph>
+                </content>
+                <change-summary>Added Note A-3.2.10.2.(1) and (2) regarding automatic sprinkler system requirements for buildings under Subsection 3.2.10</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </application-note>
+          
+          <application-note xml:id="nbc.divB.part3.appendix.appnote321023" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This note did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-009" status="current">
+                <content>
+                  <number>3.2.10.2.(3)</number>
+                  <title>Exit Facility.</title>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321023.para1">The single exit facility serving a building to which Subsection 3.2.10. applies shall either be of noncombustible construction or shall be finished as an exit stair serving an unsprinklered high building described in Subsection 3.2.6. Should a fire event occur, protection of the exit stairs must not solely rely on the automatic sprinkler system.</paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321023.para2">A 1 500 mm wide exit facility facilitates the movement and passing of people for regular use as well as in an emergency. The design of intermediate handrails, such as for widths exceeding 1 700 mm, should consider the movement of emergency personnel including their equipment on each side. The design of the exit facility must also consider misuse and proactively deter the storage or collection of materials so as not to obstruct passage and to minimize fuel load. For example, excess landing areas and alcoves in all exits (not limited to residential buildings with single exit stairs) must be carefully designed to deter any activities other than exiting and accessing floor areas as per Sentence 3.4.4.4.(6). Void spaces underneath stairs should be avoided. Landings must have signage to remind occupants that storage is not permitted in exit facilities.</paragraph>
+                </content>
+                <change-summary>Added Note A-3.2.10.2.(3) regarding exit facility design and construction requirements</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </application-note>
+          
+          <application-note xml:id="nbc.divB.part3.appendix.appnote321024" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This note did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-009" status="current">
+                <content>
+                  <number>3.2.10.2.(4)</number>
+                  <title>Exit Facility Discharge.</title>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321024.para1">Fire department access to buildings to which Subsection 3.2.10. applies must be provided to the principal entrance as well as to the access point most directly connected to the exit facility. As such, the exit facility discharge must be located to coordinate with the fire department access route described in Subsection 3.2.5.</paragraph>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321024.para2">Designers should consider locating the exit facility discharge in close proximity to the principal entrance for the benefit of coordinating multiple access points with the fire department access route but also to avoid unintended use of the exit facility for package delivery or other material drop-off. There should be clear distinction between the principal building entrance (likely connecting to a lobby and elevator) and the exit facility discharge so that activities such as deliveries can be intuitively completed in the safe and intended manner. Locating the exit facility discharge in close proximity to the principal building entrance also reduces the potential that an access point is located in an isolated location of the building which could increase building and occupant security concerns.</paragraph>
+                </content>
+                <change-summary>Added Note A-3.2.10.2.(4) regarding exit facility discharge location and coordination with fire department access</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </application-note>
+          
+          <application-note xml:id="nbc.divB.part3.appendix.appnote321043" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This note did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-009" status="current">
+                <content>
+                  <number>3.2.10.4.(3)</number>
+                  <title>Suite Entry Doors.</title>
+                  <paragraph xml:id="nbc.divB.part3.appendix.appnote321043.para1">Sentence 3.2.10.4.(3) supersedes the permission in Article 3.1.8.12. to reduce the fire-protection rating of closures. Suite entry doors with less than a 45 min fire-protection rating are not permitted in buildings to which Subsection 3.2.10. applies, nor would these doors be permitted any undercuts such as described in Article 9.32.3.10.</paragraph>
+                </content>
+                <change-summary>Added Note A-3.2.10.4.(3) regarding suite entry door fire-protection rating requirements</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </application-note>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 10: Add Sentence 9.1.1.1.(3)                            -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-010" sequence="1009"
+               description="Add Sentence 9.1.1.1.(3) - Part 9 does not apply to buildings designed under Subsection 3.2.10">
+      <target type="position" parent-id="nbc.divBV2.part9.sect1.subsect1.art1" position="last-child"/>
+      <insert>
+        <new-content source="bc">
+          <sentence xml:id="nbc.divBV2.part9.sect1.subsect1.art1.sent3" number="3" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This sentence did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-010" status="current">
+                <content>
+                  <text>Part 9 does not apply to <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with Subsection 3.2.10. (See <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent2" display-type="long" pretext="Sentence"/> of Division A.)</text>
+                </content>
+                <change-summary>Added Sentence 9.1.1.1.(3) to clarify Part 9 does not apply to buildings designed under Subsection 3.2.10</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 11: Add Sentence 9.10.1.3.(12)                          -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-011" sequence="1010"
+               description="Add Sentence 9.10.1.3.(12) - Part 9 does not apply to buildings designed under Subsection 3.2.10">
+      <target type="position" parent-id="nbc.divBV2.part9.sect10.subsect1.art3" position="last-child"/>
+      <insert>
+        <new-content source="bc">
+          <sentence xml:id="nbc.divBV2.part9.sect10.subsect1.art3.sent12" number="12" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                <!-- This sentence did not exist in NBC 2020 -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-011" status="current">
+                <content>
+                  <text>Part 9 does not apply to <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with Subsection 3.2.10. (See <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent2" display-type="long" pretext="Sentence"/> of Division A and <ref type="internal" target="nbc.divBV2.part9.sect1.subsect1.art1.sent3" display-type="long" pretext="Sentence"/> of Division B.)</text>
+                </content>
+                <change-summary>Added Sentence 9.10.1.3.(12) to clarify Part 9 does not apply to buildings designed under Subsection 3.2.10</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </insert>
+    </amendment>
+    
+    <!-- ================================================================== -->
+    <!-- Amendment 12: Repeal and substitute Sentence 2.2.7.1.(1)         -->
+    <!-- ================================================================== -->
+    <amendment id="bc-mo-2024-03-012" sequence="1011"
+               description="Repeal and substitute Sentence 2.2.7.1.(1) in Division C to include buildings under Subsection 3.2.10">
+      <target type="canonical-id" id="nbc.divC.part2.sect2.subsect7.art1.sent1"/>
+      <replace>
+        <new-content source="bc">
+          <sentence xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1" number="1" revised="yes">
+            <revision-history>
+              <original effective-date="2024-03-08">
+                    <!-- Merge engine will auto pouplate the contnet -->
+              </original>
+              <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-012" status="current">
+                <content>
+                  <text>The requirements of this Subsection apply to</text>
+                  <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause1" letter="a">
+                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part3" display-type="short">Part 3 of Division B</ref> which include <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="short"/> of Division B,</text>
+                  </clause>
+                  <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause2" letter="b">
+                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> that are designed with common egress systems for the occupants and require the use of <ref type="term" target="frwll">firewalls</ref> according to <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art4" display-type="short">Article 1.3.3.4.</ref> of Division A, and</text>
+                  </clause>
+                  <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3" letter="c">
+                    <text>the following, in respect of <ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> other than <ref type="term" target="bldng">buildings</ref> described in Clause (b),</text>
+                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause1" number="1">
+                      <text>structural components that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> (See <ref type="internal" target="nbc.divC.part2.appendix.appnote8" display-type="short"/>.),</text>
+                    </subclause>
+                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause2" number="2">
+                      <text>geotechnical conditions at <ref type="term" target="bldng">building</ref> sites that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref>,</text>
+                    </subclause>
+                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause3" number="3">
+                      <text>sprinkler systems designed to NFPA 13, "Installation of Sprinkler Systems", and</text>
+                    </subclause>
+                    <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause4" number="4">
+                      <text>standpipe and hose systems designed to NFPA 14, "Installation of Standpipe and Hose Systems".</text>
+                    </subclause>
+                  </clause>
+                </content>
+                <change-summary>Repealed and substituted Sentence 2.2.7.1.(1) to expand Division C scope to include buildings designed under Subsection 3.2.10 and clarify application to Part 9 buildings</change-summary>
+                <note>Ministerial Order BA 2024 03</note>
+              </revision>
+            </revision-history>
+          </sentence>
+        </new-content>
+      </replace>
+    </amendment>
+    
+  </amendments>
+</bc-overlay>
