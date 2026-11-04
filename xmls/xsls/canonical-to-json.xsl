@@ -2292,13 +2292,15 @@
     
     <xsl:template match="measurement" mode="rich-text-json">
         <!-- Add leading space if preceded by text without trailing space -->
-        <xsl:if test="preceding-sibling::node()[1][self::text() and not(matches(., '\s$'))]">
+        <!-- BUT: not after an opening bracket or quote, e.g. "(38 mm)" -->
+        <xsl:if test="preceding-sibling::node()[1][self::text() and not(matches(., '[\s(\[&#8220;&#8216;]$'))]">
             <xsl:text> </xsl:text>
         </xsl:if>
         <!-- Process child nodes to handle super/sub elements -->
         <xsl:apply-templates select="node()" mode="rich-text-json"/>
         <!-- Add trailing space if followed by text without leading space -->
-        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^\s'))]">
+        <!-- BUT: not before punctuation, e.g. "13 mm," or "13 mm." -->
+        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^[\s,.;:!?)\]&#8221;&#8217;]'))]">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>

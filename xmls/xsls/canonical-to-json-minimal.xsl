@@ -517,11 +517,12 @@
     <xsl:template match="super" mode="rich">^{<xsl:value-of select="."/>}</xsl:template>
     <xsl:template match="sub" mode="rich">_{<xsl:value-of select="."/>}</xsl:template>
     <xsl:template match="measurement" mode="rich">
-        <xsl:if test="preceding-sibling::node()[1][self::text() and not(matches(., '\s$'))]">
+        <!-- No space after an opening bracket or quote, or before punctuation: "(38 mm)", "13 mm," -->
+        <xsl:if test="preceding-sibling::node()[1][self::text() and not(matches(., '[\s(\[&#8220;&#8216;]$'))]">
             <xsl:text> </xsl:text>
         </xsl:if>
         <xsl:apply-templates select="node()" mode="rich"/>
-        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^\s'))]">
+        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^[\s,.;:!?)\]&#8221;&#8217;]'))]">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>
