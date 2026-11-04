@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-03T18:21:40.879+05:30",
+  "generated_timestamp" : "2026-11-04T14:16:20.34+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -84936,19 +84936,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "[REF:term:bldng:Buildings] and facilities required to be [REF:term:bc-cc-t-ccbl:accessible] in accordance with [REF:internal:nbc.divB.part3.sect8.subsect2:long] shall be designed in accordance with [REF:internal:nbc.divB.part3.sect8.subsect3:long]" },
-               
-               { "id" : "nbc.divB.part3.sect8.subsect1.art1.sent3",
-                "type" : "sentence",
-                "number" : 3,
-                "source" : "bc",
-                "text" : "[REF:term:ltrtn:Alterations] and additions to existing [REF:term:bldng:buildings] shall conform to [REF:internal:nbc.divB.part3.sect8.subsect4:long]" },
-               
-               { "id" : "nbc.divB.part3.sect8.subsect1.art1.sent4",
-                "type" : "sentence",
-                "number" : 4,
-                "source" : "bc",
-                "text" : "[REF:term:dwllng-n:Dwelling units] required to be [REF:term:bc-dptbl-dwllng-nt:adaptable dwelling units] shall be designed in accordance with [REF:internal:nbc.divB.part3.sect8.subsect5:long]" } ] } ] },
+                "text" : "[REF:term:bldng:Buildings] and facilities required to be [REF:term:bc-cc-t-ccbl:accessible] in accordance with [REF:internal:nbc.divB.part3.sect8.subsect2:long] shall be designed in accordance with [REF:internal:nbc.divB.part3.sect8.subsect3:long]" } ] } ] },
            
            { "id" : "nbc.divB.part3.sect8.subsect2",
             "type" : "subsection",
@@ -85573,7 +85561,7 @@
                 "type" : "sentence",
                 "number" : 15,
                 "source" : "bc",
-                "text" : "In [REF:term:bldng:buildings] containing Group A, Group B, Division 2 or Group E [REF:term:mjr-ccpn:major occupancies] where at least one of these [REF:term:mjr-ccpn:major occupancies] has an [REF:term:ccpnt-ld:occupant load] of more than 500, at least one universal washroom on the [REF:term:tr:storey] on which the main [REF:term:brrr-fr:accessible] entrance to the [REF:term:bldng:building] is located shall incorporate an [REF:term:brrr-fr:accessible] change space conforming to [REF:internal:nbc.divB.part3.sect8.subsect3:long] (See [REF:internal:nbc.divB.part3.appendix.appnote198:short] .)" },
+                "text" : "In [REF:term:bldng:buildings] containing Group A, Group B, Division 2 or Group E [REF:term:mjr-ccpn:major occupancies] where at least one of these [REF:term:mjr-ccpn:major occupancies] has an [REF:term:ccpnt-ld:occupant load] of more than 500, at least one universal washroom on the [REF:term:tr:storey] on which the main [REF:term:brrr-fr:accessible] entrance to the [REF:term:bldng:building] is located shall incorporate an [REF:term:brrr-fr:accessible] change space conforming to [REF:internal:nbc.divB.part3.sect8.subsect3:long] (See [REF:internal:nbc.divB.part3.appendix.appnote196:short] .)" },
                
                { "id" : "nbc.divB.part3.sect8.subsect2.art8.sent16",
                 "type" : "sentence",
@@ -85596,17 +85584,20 @@
                { "id" : "nbc.divB.part3.sect8.subsect2.art9.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "In each location where information, goods or services are provided to the public at service counters in [REF:term:bldng:buildings] of [REF:term:mbl-ccpn:assembly occupancy] , at least one of the service counters shall be equipped with(See [REF:internal:nbc.divB.part3.appendix.appnote197:short] .)",
+                "source" : "bc",
+                "text" : "In each location where information, goods or services are provided to the public at service counters in [REF:term:bldng:buildings] of [REF:term:mbl-ccpn:assembly occupancy] , at least one of the service counters shall be equipped with (See [REF:internal:nbc.divB.part3.appendix.appnote197:short] .)",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect2.art9.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "an assistive listening system or adaptive technology conforming to [REF:internal:nbc.divB.part3.sect8.subsect3:long] , and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect2.art9.sent2.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "an amplification system, where there is a barrier to communication, such as a glass screen." } ] } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect2.art10",
@@ -86183,28 +86174,33 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Exterior walks that form part of a [REF:term:brrr-fr:accessible] path of travel shall",
+                "source" : "bc",
+                "text" : "Exterior walks that form part of an [REF:term:brrr-fr:accessible] path of travel shall",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art3.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "have a slip-resistant, continuous and even surface," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art3.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "be not less than 1 600 mm wide ," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art3.sent1.clause3",
                   "type" : "clause",
                   "letter" : "c",
+                  "source" : "bc",
                   "text" : "have a level area conforming to [REF:internal:nbc.divB.part3.sect8.subsect3.art5.sent1.clause3:long] adjacent to an entrance doorway, and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art3.sent1.clause4",
                   "type" : "clause",
                   "letter" : "d",
-                  "text" : "be designed in accordance with [REF:external:csab651:Clause 8.2.1 of ] [REF:standard:csab651]" } ] } ] },
+                  "source" : "bc",
+                  "text" : "be designed in accordance with [REF:external:csab651:Clause 8.2.1 of ] [REF:standard:csab651:CSA B651, “Accessible design for the built environment.”]" } ] } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect3.art4",
               "type" : "article",
@@ -86247,59 +86243,70 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "A [REF:term:rmp:ramp] located in a [REF:term:brrr-fr:accessible] path of travel shall",
+                "source" : "bc",
+                "text" : "Except when designed as a curb ramp in accordance with Clause 3.8.3.4.(1)(b), a [REF:term:rmp:ramp] located in an [REF:term:brrr-fr:accessible] path of travel shall",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "have a clear width not less than 1 000 mm (see [REF:internal:nbc.divB.part3.appendix.appnote155:long] )," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "have a uniform slope along its length not more than 1 in 12 (see [REF:internal:nbc.divB.part3.appendix.appnote204:short] )," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause3",
                   "type" : "clause",
                   "letter" : "c",
+                  "source" : "bc",
                   "text" : "have a level area not less than 1 700 mm by 1 700 mm at the top and bottom and at intermediate levels of a [REF:term:rmp:ramp] leading to a door, so that on the latch side the level area extends not less than (see [REF:internal:nbc.divB.part3.appendix.appnote205:short] ),",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause3.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "600 mm beyond the edge of the door opening where the door opens towards the [REF:term:rmp:ramp] , or" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause3.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "300 mm beyond the edge of the door opening where the door opens away from the [REF:term:rmp:ramp] ," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause4",
                   "type" : "clause",
                   "letter" : "d",
+                  "source" : "bc",
                   "text" : "have a level area not less than 1 350 mm long and at least the same width as the [REF:term:rmp:ramp]",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause4.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "at intervals not more than 9 m along its length, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause4.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "where there is an abrupt change in the direction of the [REF:term:rmp:ramp] , and" } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause5",
                   "type" : "clause",
                   "letter" : "e",
+                  "source" : "bc",
                   "text" : "except as provided in  Sentences [REF:internal:nbc.divB.part3.sect8.subsect3.art5.sent2:short] and [REF:internal:nbc.divB.part3.sect8.subsect3.art5.sent3:short] , be equipped with handrails conforming to [REF:internal:nbc.divB.part3.sect4.subsect6.art5:long] , except that they shall be not less than 865 mm and not more than 965 mm high, and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause6",
                   "type" : "clause",
                   "letter" : "f",
+                  "source" : "bc",
                   "text" : "be equipped with [REF:term:guard:guards] conforming to [REF:internal:nbc.divB.part3.sect4.subsect6.art6:long]" } ] },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent2",
@@ -86389,18 +86396,21 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Door-operating devices shall",
+                "source" : "bc",
+                "text" : "Door-operating devices shall (See also Sentence 3.3.1.13.(4) regarding additional devices.) (See Note A-3.8.3.6.(4).)",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent4.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "comply with [REF:internal:nbc.divB.part3.sect8.subsect3.art8.sent1.clause2:long] , and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent4.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "be operable at a height between 900 mm and 1 100 mm above the floor. (See also regarding additional devices.)" } ],
+                  "source" : "bc",
+                  "text" : "be operable at a height between 900 mm and 1 100 mm above the floor." } ],
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent4.seealso",
@@ -86426,7 +86436,8 @@
                    { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent6.clause1.subclause1",
                     "type" : "subclause",
                     "number" : 1,
-                    "text" : "are located in a [REF:term:brrr-fr:accessible] path of travel," },
+                    "source" : "bc",
+                    "text" : "are located in an [REF:term:brrr-fr:accessible] path of travel," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent6.clause1.subclause2",
                     "type" : "subclause",
@@ -86482,22 +86493,26 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent8",
                 "type" : "sentence",
                 "number" : 8,
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent9:short] and except for a door with a power door operator complying with [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent6:short] , when unlatched, a door in a [REF:term:brrr-fr:accessible] path of travel shall open when the force applied to the handle, push plate or latch-releasing device is not more than",
+                "source" : "bc",
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent9:short] and except for a door with a power door operator complying with [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent6:short] , when unlatched, a door in an [REF:term:brrr-fr:accessible] path of travel shall open when the force applied to the handle, push plate or latch-releasing device is not more than",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent8.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "38 N in the case of an exterior swinging door," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent8.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "22 N in the case of an interior swinging door, or" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent8.clause3",
                   "type" : "clause",
                   "letter" : "c",
+                  "source" : "bc",
                   "text" : "22 N in the case of a sliding door." } ] },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent9",
@@ -86508,22 +86523,26 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent10",
                 "type" : "sentence",
                 "number" : 10,
-                "text" : "Except for a door at the entrance to a [REF:term:dwllng-n:dwelling unit] , a closer for an interior door in a [REF:term:brrr-fr:accessible] path of travel shall have a closing period of not less than 3 s measured from when the door is in an open position of 70° to the doorway, to when the door reaches a point 75 mm from the closed position, measured from the leading edge of the latch side of the door. (See [REF:internal:nbc.divB.part3.appendix.appnote212:short] .)" },
+                "source" : "bc",
+                "text" : "Except for a door at the entrance to a [REF:term:dwllng-n:dwelling unit] , a closer for an interior door in an [REF:term:brrr-fr:accessible] path of travel shall have a closing period of not less than 3 s measured from when the door is in an open position of 70° to the doorway, to when the door reaches a point 75 mm from the closed position, measured from the leading edge of the latch side of the door. (See [REF:internal:nbc.divB.part3.appendix.appnote212:short] .)" },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent11",
                 "type" : "sentence",
                 "number" : 11,
-                "text" : "Unless equipped with a power door operator complying with [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent6:short] , a swinging door in a [REF:term:brrr-fr:accessible] path of travel shall have a clear space on the latch side extending the height of the doorway and not less than",
+                "source" : "bc",
+                "text" : "Unless equipped with a power door operator complying with [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent6:short] , a swinging door in an [REF:term:brrr-fr:accessible] path of travel shall have a clear space on the latch side extending the height of the doorway and not less than (See Note A-3.8.3.6.(11).)",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent11.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "600 mm beyond the edge of the door opening if the door swings toward the approach side, and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent11.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "300 mm beyond the edge of the door opening if the door swings away from the approach side." } ],
                 "see_also" : 
                 [ 
@@ -86533,17 +86552,20 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent12",
                 "type" : "sentence",
                 "number" : 12,
-                "text" : "A vestibule located in a [REF:term:brrr-fr:accessible] path of travel shall be arranged to allow the movement of wheelchairs between doors and shall provide a distance between 2 doors in series of not less than 1 350 mm plus the width of any door that swings into the space in the path of travel from one door to another." },
+                "source" : "bc",
+                "text" : "A vestibule located in an [REF:term:brrr-fr:accessible] path of travel shall be arranged to allow the movement of wheelchairs between doors and shall provide a distance between 2 doors in series of not less than 1 350 mm plus the width of any door that swings into the space in the path of travel from one door to another." },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent13",
                 "type" : "sentence",
                 "number" : 13,
-                "text" : "Only the active leaf in a multiple-leaf door in a [REF:term:brrr-fr:accessible] path of travel need conform to the requirements of this Article." },
+                "source" : "bc",
+                "text" : "Only the active leaf in a multiple-leaf door in an [REF:term:brrr-fr:accessible] path of travel need conform to the requirements of this Article." },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent14",
                 "type" : "sentence",
                 "number" : 14,
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect8.subsect3.art5.sent1.clause3:long] and [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent16:short] , the clear floor space on the pull side of a swinging door in a [REF:term:brrr-fr:accessible] path of travel shall be level within a rectangular area of not less than 1 700 mm by 1 500 mm measured from the hinged side of the door. (See [REF:internal:nbc.divB.part3.appendix.appnote214:short] .)" },
+                "source" : "bc",
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect8.subsect3.art5.sent1.clause3:long] and [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent16:short] , the clear floor space on the pull side of a swinging door in an [REF:term:brrr-fr:accessible] path of travel shall be level within a rectangular area of not less than 1 700 mm by 1 500 mm measured from the hinged side of the door. (See [REF:internal:nbc.divB.part3.appendix.appnote214:short] .)" },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent15",
                 "type" : "sentence",
@@ -86573,7 +86595,8 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent17",
                 "type" : "sentence",
                 "number" : 17,
-                "text" : "Except for facilities for persons with cognitive disabilities such as dementia, doorways leading from a [REF:term:pblc-crr:public corridor] or a corridor used by the public that provide access to a public area or an [REF:term:xt:exit] shall be provided with a door or door frame that has a readily apparent visual contrast with adjacent wall surfaces. (See [REF:internal:nbc.divB.part3.appendix.appnote215:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote164:long] .)" } ] },
+                "source" : "bc",
+                "text" : "Except for facilities for persons with cognitive disabilities such as dementia, doorways leading from a [REF:term:pblc-crr:public corridor] or a corridor used by the public that provide access to a public area or an [REF:term:xt:exit] shall be provided with a door or door frame that has a readily apparent visual contrast with adjacent wall surfaces. (See [REF:internal:nbc.divB.part3.appendix.appnote215:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote164:long:Note A-3.4.6.11.(4)] .)" } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect3.art7",
               "type" : "article",
@@ -86695,7 +86718,7 @@
                   "type" : "clause",
                   "letter" : "c",
                   "source" : "bc",
-                  "text" : "where controls provide a feedback signal to the user, it shall be both audible and visible (see [REF:internal:nbc.divB.part3.appendix.appnote217:short] )." } ] },
+                  "text" : "where controls provide a feedback signal to the user, it shall be both audible and visible (see [REF:internal:nbc.divB.part3.appendix.appnote216:short] )." } ] },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art8.sent2",
                 "type" : "sentence",
@@ -86724,7 +86747,8 @@
                  { "id" : "nbc.divB.part3.sect8.subsect3.art9.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "have Braille and tactile characters in accordance with [REF:external:csab651:Clauses 4.5.6.2 and 4.5.6.3 of ] [REF:standard:csab651]" },
+                  "source" : "bc",
+                  "text" : "have Braille and tactile characters in accordance with [REF:external:csab651:Clauses 4.5.6.2 and 4.5.6.3 of ] [REF:standard:csab651:CSA B651, “Accessible design for the built environment,”]" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art9.sent2.clause2",
                   "type" : "clause",
@@ -86841,43 +86865,51 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Water-bottle filling stations required by [REF:internal:nbc.divB.part3.sect8.subsect2.art8.sent11:long] that are located in a [REF:term:tr:storey] where a [REF:term:brrr-fr:accessible] path of travel is required shall",
+                "source" : "bc",
+                "text" : "Water-bottle filling stations required by [REF:internal:nbc.divB.part3.sect8.subsect2.art8.sent11:long] that are located in a [REF:term:tr:storey] where an [REF:term:brrr-fr:accessible] path of travel is required shall (See Sentences 3.3.1.8.(2) and (3) on horizontal projections.)",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
+                  "source" : "bc",
                   "text" : "be located along the [REF:term:brrr-fr:accessible] path of travel," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2.clause2",
                   "type" : "clause",
                   "letter" : "b",
+                  "source" : "bc",
                   "text" : "have a clear floor space of 800 mm by 1 350 mm in front of them (see [REF:internal:nbc.divB.part3.appendix.appnote219:short] )," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2.clause3",
                   "type" : "clause",
                   "letter" : "c",
+                  "source" : "bc",
                   "text" : "where they have frontal access, provide a knee clearance in accordance with [REF:internal:nbc.divB.part3.sect8.subsect3.art16.sent1.clause5:long] ," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2.clause4",
                   "type" : "clause",
                   "letter" : "d",
+                  "source" : "bc",
                   "text" : "be operable at a height of not more than 1 200 mm above the floor (see [REF:internal:nbc.divB.part3.appendix.appnote219:short] ), and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2.clause5",
                   "type" : "clause",
                   "letter" : "e",
+                  "source" : "bc",
                   "text" : "be equipped with controls that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2.clause5.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "activate automatically, or" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art11.sent2.clause5.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "comply with [REF:internal:nbc.divB.part3.sect8.subsect3.art8.sent1:long] ." } ] } ],
                 "see_also" : 
                 [ 
@@ -86903,7 +86935,8 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause2",
                   "type" : "clause",
-                  "letter" : "i",
+                  "letter" : "b",
+                  "source" : "bc",
                   "text" : "have a clear lateral transfer space adjacent to the water closet that",
                   "see_also" : 
                   [ 
@@ -86914,11 +86947,13 @@
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause2.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "is at least 1 500 mm long, measured from the wall behind the water closet, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause2.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "is at least 900 mm wide, measured from the closest edge of the water closet seat," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause3",
@@ -86971,71 +87006,84 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause5",
                   "type" : "clause",
-                  "letter" : "c",
+                  "letter" : "e",
+                  "source" : "bc",
                   "text" : "have a water closet located so that the distance between the centre line of the fixture and the wall on one side is 460 mm to 480 mm ," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause6",
                   "type" : "clause",
-                  "letter" : "d",
+                  "letter" : "f",
+                  "source" : "bc",
                   "text" : "be equipped with an L-shaped grab bar that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause6.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "is mounted on the side wall closest to the water closet," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause6.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "has horizontal and vertical components not less than 760 mm long mounted with the horizontal component 750 mm to 850 mm above the floor and the vertical component 150 mm in front of the water closet (see [REF:internal:nbc.divB.part3.appendix.appnote223:short] ), and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause6.subclause3",
                     "type" : "subclause",
                     "number" : 3,
+                    "source" : "bc",
                     "text" : "complies with [REF:internal:nbc.divB.part3.sect7.subsect2.art7:long] ," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause7",
                   "type" : "clause",
-                  "letter" : "f",
+                  "letter" : "g",
+                  "source" : "bc",
                   "text" : "be equipped with either one grab bar at least 600 mm long and centred over the water closet, or two grab bars at least 300 mm long and located either side of the flush valve, that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause7.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "conform to [REF:internal:nbc.divB.part3.sect7.subsect2.art7:long] ," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause7.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "are mounted on the rear wall, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause7.subclause3",
                     "type" : "subclause",
                     "number" : 3,
+                    "source" : "bc",
                     "text" : "are mounted at the same height as the grab bar on the side wall or 100 mm above the top of the attached water tank, if applicable," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause8",
                   "type" : "clause",
-                  "letter" : "e",
+                  "letter" : "h",
+                  "source" : "bc",
                   "text" : "be equipped with a coat hook mounted not more than 1 200 mm above the floor on a side wall and projecting not more than 50 mm from the wall, and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause9",
                   "type" : "clause",
-                  "letter" : "g",
+                  "letter" : "i",
+                  "source" : "bc",
                   "text" : "be equipped with a toilet paper dispenser mounted on the side wall closest to the water closet such that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause9.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "the bottom of the dispenser is 600 mm to 800 mm above the floor, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art12.sent1.clause9.subclause2",
                     "type" : "subclause",
                     "number" : 2,
-                    "text" : "the closest edge of the dispenser is 300 mm from the front of the water closet." } ] } ] } ] },
+                    "source" : "bc",
+                    "text" : "the closest edge of the dispenser is not more than 300 mm from the front of the water closet." } ] } ] } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect3.art13",
               "type" : "article",
@@ -87053,7 +87101,8 @@
                  { "id" : "nbc.divB.part3.sect8.subsect3.art13.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "be served by a [REF:term:brrr-fr:accessible] path of travel," },
+                  "source" : "bc",
+                  "text" : "be served by an [REF:term:brrr-fr:accessible] path of travel," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art13.sent1.clause2",
                   "type" : "clause",
@@ -87083,13 +87132,15 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art13.sent1.clause5",
                   "type" : "clause",
-                  "letter" : "k",
+                  "letter" : "e",
+                  "source" : "bc",
                   "text" : "have a clear lateral transfer space adjacent to the water closet that conforms to [REF:internal:nbc.divB.part3.sect8.subsect3.art12.sent1.clause2:long] ," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art13.sent1.clause6",
                   "type" : "clause",
-                  "letter" : "e",
-                  "text" : "have grab bars conforming to  Clauses [REF:internal:nbc.divB.part3.sect8.subsect3.art12.sent1.clause6:long] and [REF:internal:nbc.divB.part3.sect8.subsect3.art12.sent1.clause7:short] ," },
+                  "letter" : "f",
+                  "source" : "bc",
+                  "text" : "have grab bars conforming to  Clauses [REF:internal:nbc.divB.part3.sect8.subsect3.art12.sent1.clause6:long] and [REF:internal:nbc.divB.part3.sect8.subsect3.art12.sent1.clause7:short:(g)] ," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art13.sent1.clause7",
                   "type" : "clause",
@@ -87243,7 +87294,8 @@
                    { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent1.clause2.subclause2",
                     "type" : "subclause",
                     "number" : 2,
-                    "text" : "provides a clear opening not less than 850 mm wide when it is open, measured in accordance with ," },
+                    "source" : "bc",
+                    "text" : "provides a clear opening not less than 850 mm wide when it is open, measured in accordance with Sentence 3.8.3.6.(2)," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent1.clause2.subclause3",
                     "type" : "subclause",
@@ -87299,7 +87351,8 @@
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause1",
                   "type" : "clause",
-                  "letter" : "e",
+                  "letter" : "a",
+                  "source" : "bc",
                   "text" : "be wall-mounted, with the rim located not more than 430 mm above the floor," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause2",
@@ -87310,49 +87363,58 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause3",
                   "type" : "clause",
-                  "letter" : "a",
+                  "letter" : "c",
+                  "source" : "bc",
                   "text" : "have a clear width of approach that is at least 800 mm wide by 1 350 mm long centred on the urinal and unobstructed by privacy screens," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause4",
                   "type" : "clause",
-                  "letter" : "b",
+                  "letter" : "d",
+                  "source" : "bc",
                   "text" : "have no step in front of it," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause5",
                   "type" : "clause",
-                  "letter" : "d",
+                  "letter" : "e",
+                  "source" : "bc",
                   "text" : "have a flush control that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause5.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "is automatic, or" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause5.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "complies with [REF:internal:nbc.divB.part3.sect8.subsect3.art8.sent1.clause2:long] and is located 900 mm to 1 100 mm above the floor, and" } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause6",
                   "type" : "clause",
-                  "letter" : "c",
+                  "letter" : "f",
+                  "source" : "bc",
                   "text" : "have a vertically mounted grab bar installed on each side that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause6.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "complies with [REF:internal:nbc.divB.part3.sect7.subsect2.art7:long] ," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause6.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "is not less than 600 mm long, with its centre line 1 000 mm above the floor, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art15.sent2.clause6.subclause3",
                     "type" : "subclause",
                     "number" : 3,
+                    "source" : "bc",
                     "text" : "is located not more than 380 mm from the centre line of the urinal." } ] } ] } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect3.art16",
@@ -87369,86 +87431,102 @@
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause1",
                   "type" : "clause",
-                  "letter" : "h",
+                  "letter" : "a",
+                  "source" : "bc",
                   "text" : "be equipped with faucets complying with [REF:internal:nbc.divB.part3.sect7.subsect2.art3.sent4:long] ," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause2",
                   "type" : "clause",
-                  "letter" : "a",
+                  "letter" : "b",
+                  "source" : "bc",
                   "text" : "be located so that the distance between the centre line of the lavatory and any side wall is not less than 460 mm ," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause3",
                   "type" : "clause",
-                  "letter" : "i",
+                  "letter" : "c",
+                  "source" : "bc",
                   "text" : "have a clear floor space in front of the lavatory that is at least",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause3.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "800 mm wide , centred on the lavatory, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause3.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "1 350 mm long , of which no more than 430 mm is beneath the lavatory," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause4",
                   "type" : "clause",
-                  "letter" : "b",
+                  "letter" : "d",
+                  "source" : "bc",
                   "text" : "have a rim height not more than 865 mm above the floor," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause5",
                   "type" : "clause",
-                  "letter" : "c",
+                  "letter" : "e",
+                  "source" : "bc",
                   "text" : "have a clearance beneath the lavatory not less than",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "800 mm wide , centred on the lavatory," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "735 mm high at the front edge," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause3",
                     "type" : "subclause",
                     "number" : 3,
+                    "source" : "bc",
                     "text" : "685 mm high at a point 200 mm back from the front edge, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause4",
                     "type" : "subclause",
                     "number" : 4,
+                    "source" : "bc",
                     "text" : "230 mm high over the distance from a point 280 mm to a point 430 mm back from the front edge," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause6",
                   "type" : "clause",
-                  "letter" : "d",
+                  "letter" : "f",
+                  "source" : "bc",
                   "text" : "have insulated water supply and drain pipes where these pipes are exposed (see [REF:internal:nbc.divB.part3.appendix.appnote227:short] )," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause7",
                   "type" : "clause",
-                  "letter" : "f",
+                  "letter" : "g",
+                  "source" : "bc",
                   "text" : "have a soap dispenser that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause7.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "is automatic, or" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause7.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "complies with [REF:internal:nbc.divB.part3.sect8.subsect3.art8.sent1.clause2:long] and is located not more than 1 100 mm above the floor, within 500 mm from the front of the lavatory (see [REF:internal:nbc.divB.part3.appendix.appnote228:short] ), and" } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent1.clause8",
                   "type" : "clause",
-                  "letter" : "g",
-                  "text" : "have a towel dispenser or other hand-drying equipment located close to the lavatory, not more than 1 200 mm above the floor in an area that is accessible to persons using wheelchairs." } ] },
+                  "letter" : "h",
+                  "source" : "bc",
+                  "text" : "have a towel dispenser or other hand-drying equipment located close to the lavatory, with operating controls not more than 1 200 mm above the floor in an area that is [REF:term:bc-cc-t-ccbl:accessible] to persons using wheelchairs." } ] },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent2",
                 "type" : "sentence",
@@ -87464,7 +87542,8 @@
                  { "id" : "nbc.divB.part3.sect8.subsect3.art16.sent2.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "fixed in an inclined position so as to be usable by a person in a wheelchair." } ] } ] },
+                  "source" : "bc",
+                  "text" : "fixed in an inclined position so as to be usable by a person using a wheelchair." } ] } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect3.art17",
               "type" : "article",
@@ -87490,17 +87569,20 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause3",
                   "type" : "clause",
-                  "letter" : "j",
+                  "letter" : "c",
+                  "source" : "bc",
                   "text" : "have no doors or curtains that obstruct the controls or the clear floor space at the entrance to the shower," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause4",
                   "type" : "clause",
-                  "letter" : "c",
+                  "letter" : "d",
+                  "source" : "bc",
                   "text" : "have a slip-resistant floor surface," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause5",
                   "type" : "clause",
-                  "letter" : "d",
+                  "letter" : "e",
+                  "source" : "bc",
                   "text" : "have a threshold not more than 13 mm higher than the finished floor, and where it is higher than 6 mm , beveled to a slope no steeper than 1 in 2," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause6",
@@ -87567,44 +87649,52 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause8",
                   "type" : "clause",
-                  "letter" : "g",
+                  "letter" : "h",
+                  "source" : "bc",
                   "text" : "have a pressure-equalizing or thermostatic-mixing valve and other controls that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause8.subclause1",
                     "type" : "subclause",
                     "number" : 1,
-                    "text" : "comply with [REF:internal:nbc.divB.part3.sect8.subsect3.art8.sent1.clause2:long] ," },
+                    "source" : "bc",
+                    "text" : "comply with [REF:internal:nbc.divB.part3.sect8.subsect3.art8.sent1.clause2:long] , and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause8.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "are mounted on the wall opposite the entrance to the shower at not more than 1 200 mm above the floor and within reach of the seat," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause9",
                   "type" : "clause",
-                  "letter" : "h",
+                  "letter" : "i",
+                  "source" : "bc",
                   "text" : "have a hand-held shower head with not less than 1 800 mm of flexible hose located so that it",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause9.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "can be reached from a seated position," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause9.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "can be used in a fixed position at a height of 1 200 mm and 2 030 mm , and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause9.subclause3",
                     "type" : "subclause",
                     "number" : 3,
+                    "source" : "bc",
                     "text" : "does not obstruct the use of the grab bars, and" } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent1.clause10",
                   "type" : "clause",
-                  "letter" : "i",
+                  "letter" : "j",
+                  "source" : "bc",
                   "text" : "have recessed soap holders that can be reached from the seated position." } ] },
                
                { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent2",
@@ -87616,7 +87706,8 @@
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "be located in a [REF:term:brrr-fr:accessible] path of travel," },
+                  "source" : "bc",
+                  "text" : "be located in an [REF:term:brrr-fr:accessible] path of travel," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent2.clause2",
                   "type" : "clause",
@@ -87667,7 +87758,8 @@
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent2.clause6",
                   "type" : "clause",
                   "letter" : "f",
-                  "text" : "have a clear transfer space adjacent to the long side of the bench that is 900 mm wide and as long as the bench (see [REF:internal:nbc.divB.part3.appendix.appnote231:short] ), and" },
+                  "source" : "bc",
+                  "text" : "have a clear transfer space adjacent to the long side of the bench that is 900 mm wide and as long as the bench (see [REF:internal:nbc.divB.part3.appendix.appnote231:short] )," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art17.sent2.clause7",
                   "type" : "clause",
@@ -87700,7 +87792,8 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause2",
                   "type" : "clause",
-                  "letter" : "d",
+                  "letter" : "b",
+                  "source" : "bc",
                   "text" : "be not less than 1 500 mm long," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause3",
@@ -87711,59 +87804,70 @@
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause4",
                   "type" : "clause",
-                  "letter" : "f",
+                  "letter" : "d",
+                  "source" : "bc",
                   "text" : "be capable of being accessed along its full length with no tracks mounted on its rim," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause5",
                   "type" : "clause",
-                  "letter" : "g",
-                  "text" : "have a pressure-equalizing or thermostatic mixing valve faucets and other controls that",
+                  "letter" : "e",
+                  "source" : "bc",
+                  "text" : "have a pressure-equalizing or thermostatic mixing valve and other controls that",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause5.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "conform to [REF:internal:nbc.divB.part3.sect8.subsect3.art8.sent1.clause2:long] , and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause5.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "are located on the centre line or between the centre line of the bathtub and the exterior edge of the bathtub rim, at a maximum height of 450 mm above the rim," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause6",
                   "type" : "clause",
-                  "letter" : "h",
+                  "letter" : "f",
+                  "source" : "bc",
                   "text" : "have three grab bars",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause1",
                     "type" : "subclause",
                     "number" : 1,
+                    "source" : "bc",
                     "text" : "that conform to [REF:internal:nbc.divB.part3.sect7.subsect2.art7.sent1:long] ," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause2",
                     "type" : "subclause",
                     "number" : 2,
+                    "source" : "bc",
                     "text" : "that are not less than 1 200 mm long," },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause3",
                     "type" : "subclause",
                     "number" : 3,
+                    "source" : "bc",
                     "text" : "two of which are located vertically at each end of the bathtub, set 80 mm to 120 mm in from the outside edge of the bathtub, with their lower end 180 mm to 280 mm above the bathtub rim, and" },
                    
                    { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause4",
                     "type" : "subclause",
                     "number" : 4,
+                    "source" : "bc",
                     "text" : "one of which is located horizontally along the length of the bathtub at 180 mm to 280 mm above the bathtub rim," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause7",
                   "type" : "clause",
-                  "letter" : "b",
+                  "letter" : "g",
+                  "source" : "bc",
                   "text" : "have a slip-resistant bottom surface, and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art18.sent1.clause8",
                   "type" : "clause",
-                  "letter" : "c",
+                  "letter" : "h",
+                  "source" : "bc",
                   "text" : "be equipped with a hand-held shower head with not less than 1 800 mm of flexible hose that can be used in a fixed position at a height of 1 200 mm and 2 030 mm ." } ] } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect3.art19",
@@ -87861,17 +87965,20 @@
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect3.art21.sent2.clause1",
                   "type" : "clause",
-                  "letter" : "c",
+                  "letter" : "a",
+                  "source" : "bc",
                   "text" : "be level," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art21.sent2.clause2",
                   "type" : "clause",
-                  "letter" : "a",
+                  "letter" : "b",
+                  "source" : "bc",
                   "text" : "be not less than 305 mm deep," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art21.sent2.clause3",
                   "type" : "clause",
-                  "letter" : "b",
+                  "letter" : "c",
+                  "source" : "bc",
                   "text" : "have, for each telephone provided, a clear space not less than 250 mm wide having no obstruction within 250 mm above the surface, and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art21.sent2.clause4",
@@ -87924,7 +88031,8 @@
                  { "id" : "nbc.divB.part3.sect8.subsect3.art22.sent1.clause4",
                   "type" : "clause",
                   "letter" : "d",
-                  "text" : "they shall be located adjoining a [REF:term:brrr-fr:accessible] path of travel without infringing on egress from any row of seating or any aisle requirements, and" },
+                  "source" : "bc",
+                  "text" : "they shall be located adjoining an [REF:term:brrr-fr:accessible] path of travel without infringing on egress from any row of seating or any aisle requirements, and" },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art22.sent1.clause5",
                   "type" : "clause",
@@ -692647,7 +692755,7 @@
    "total_parts" : 15,
    "total_sections" : 100,
    "total_articles" : 2020,
-   "total_sentences" : 5162,
+   "total_sentences" : 5160,
    "total_tables" : 357,
    "total_figures" : 326,
    "total_spectables" : 2,
