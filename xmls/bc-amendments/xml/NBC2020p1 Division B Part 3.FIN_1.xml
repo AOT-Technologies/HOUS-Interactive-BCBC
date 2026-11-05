@@ -5222,6 +5222,409 @@ separation</ref> requirements for floor assemblies stated in Articles <ref type=
         </amendment>
 
         <!-- ================================================================== -->
+        <!-- BBC-179 and BBC-180: Articles 3.1.8.14. to 3.1.9.1. and 3.1.11.7. -->
+        <!-- to 3.1.13.4. corrections (SME feedback; BBC-180 has no issue list, -->
+        <!-- so its fixes come from comparing those Articles with the source)   -->
+        <!-- ================================================================== -->
+
+        <!-- BBC-179 Issue 1: Sentence 3.1.8.14.(1) - "Sentences 3.1.8.10.(2) and 3.1.8.11.(3)" -->
+        <amendment id="bc-custom-31814-1" sequence="68.997701"
+                   description="Show full Sentence reference in Sentence 3.1.8.14.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect8.art14.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as provided in Sentences <ref type="internal" target="nbc.divB.part3.sect1.subsect8.art10.sent2" display-type="number">3.1.8.10.(2)</ref> and <ref type="internal" target="nbc.divB.part3.sect1.subsect8.art11.sent3" display-type="number">3.1.8.11.(3)</ref>,
+a hold-open device is permitted to be used on a <ref type="term" target="clr">closure </ref> in a required <ref type="term" target="fr-prtn">fire separation</ref>, other than on an <ref type="term" target="xt">exit</ref> stair door in a <ref type="term" target="bldng">building</ref> more than <measurement units="metric">3 <ref type="term" target="tr">storeys</ref>
+                           </measurement> in <ref type="term" target="bldng-hg">building height</ref> and on a
+door for a vestibule required by <ref type="internal"
+                                target="nbc.divB.part3.sect3.subsect5.art7"
+                                display-type="long"/>, provided
+the device is designed to release the <ref type="term" target="clr">closure</ref> in conformance with this Article.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 2: Sentence 3.1.8.14.(3) - "CAN/ULC-S524, "Standard for Installation of Fire Alarm Systems,"" (no "ULC" prefix or ":2019") -->
+        <amendment id="bc-custom-31814-3" sequence="68.997702"
+                   description="Show CAN/ULC-S524 as in source in Sentence 3.1.8.14.(3)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect8.art14.sent3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Where the <ref type="term" target="bldng">building</ref> is provided with
+a fire alarm system, a hold-open device permitted by <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect8.art14.sent1"
+                                display-type="short"/> shall release upon a signal from a <ref type="term" target="mk-dtctr">smoke detector</ref> connected to the fire alarm
+system and located as described in CAN/ULC-S524, "Standard for Installation of Fire Alarm Systems," where the hold-open device is used
+on</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 3: Sentence 3.1.8.14.(4) - "Clauses (3)(a) to (e)" -->
+        <amendment id="bc-custom-31814-4" sequence="68.997703"
+                   description="Show Clause range as in source in Sentence 3.1.8.14.(4)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect8.art14.sent4"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Where the <ref type="term" target="bldng">building</ref> is not provided
+with a fire  alarm system, a hold-open device permitted by <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect8.art14.sent1"
+                                display-type="short"/> shall release upon a signal from a <ref type="term" target="mk-lrm">smoke alarm</ref> located  on each side of the <ref type="term" target="fr-prtn">fire separation</ref> at ceiling level  within <measurement units="metric">1.5 m</measurement> horizontally of the <ref type="term" target="clr">closure</ref> opening in the <ref type="term" target="fr-prtn">fire separation</ref>, where
+the hold-open  device is used on <ref type="term" target="clr">closures</ref> described in Clauses <ref type="internal" target="nbc.divB.part3.sect1.subsect8.art14.sent3.clause1" display-type="medium">(3)(a)</ref> to <ref type="internal" target="nbc.divB.part3.sect1.subsect8.art14.sent3.clause5" display-type="short">(e)</ref>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 4: Sentence 3.1.8.16.(1) - "NFPA 80, "Standard for Fire Doors and Other Opening Protectives." (See also Article 3.3.2.17.)" (the source has a period, not a comma) -->
+        <amendment id="bc-custom-31816-1" sequence="68.997704"
+                   description="Show NFPA 80 with closing period as in source in Sentence 3.1.8.16.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect8.art16.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as permitted by <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect8.art18"
+                                display-type="long"
+                                pretext="Articles"/>
+                           <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect8.art19"
+                                display-type="long"
+                                pretext="and"/> for the
+separation of <ref type="term" target="xt">exits</ref>, an opening in a <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> not more than <measurement units="metric">1 h</measurement> is permitted
+to be protected with fixed wired glass assemblies or glass blocks
+installed in conformance with NFPA 80, "Standard for Fire Doors and Other Opening Protectives." (See also <ref type="internal"
+                                target="nbc.divB.part3.sect3.subsect2.art17"
+                                display-type="long"/>)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 6: Sentence 3.1.9.1.(1) - "Sentences (2) to (7)" -->
+        <amendment id="bc-custom-3191-1" sequence="68.997705"
+                   description="Remove repeated Sentence word in Sentence 3.1.9.1.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as provided in Sentences <ref type="internal" target="nbc.divB.part3.sect1.subsect9.art1.sent2" display-type="short">(2)</ref> to <ref type="internal" target="nbc.divB.part3.sect1.subsect9.art1.sent7" display-type="short">(7)</ref> and <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect9.art3"
+                                display-type="long"/>, penetrations of a <ref type="term" target="fr-prtn">fire separation</ref> or a membrane forming part
+of an assembly required to have a <ref type="term" target="fr-rtnc-">fire-resistance
+rating</ref> shall be</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 7: Clause 3.1.9.1.(1)(a) - "CAN/ULC-S115, "...Firestop Systems," has" -->
+        <amendment id="bc-custom-3191-1a" sequence="68.997706"
+                   description="Show CAN/ULC-S115 as in source in Clause 3.1.9.1.(1)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent1.clause1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>sealed by a <ref type="term" target="fr-tp">firestop</ref> that, when subjected
+to the fire test method in CAN/ULC-S115, "Standard Method of Fire Tests of Firestop Systems," has an F rating not less than the required <ref type="term" target="fr-prtct">fire-resistance rating</ref> of the <ref type="term" target="fr-prtn">fire separation</ref>, or</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 8: Sentence 3.1.9.1.(2) - "CAN/ULC-S115, "...Firestop Systems," has" -->
+        <amendment id="bc-custom-3191-2" sequence="68.997707"
+                   description="Show CAN/ULC-S115 as in source in Sentence 3.1.9.1.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as permitted
+in <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect9.art1.sent6"
+                                display-type="short"/>, penetrations of a <ref type="term" target="frwll">firewall</ref> or a horizontal <ref type="term" target="fr-prtn">fire separation</ref> that is required to have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> in conformance with <ref type="internal"
+                                target="nbc.divB.part3.sect2.subsect1.art2"
+                                display-type="long"/> shall be sealed at the penetration by a <ref type="term" target="fr-tp">firestop</ref> that, when subjected to the fire test
+method in CAN/ULC-S115, "Standard Method of Fire Tests of Firestop Systems," has an FT
+rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> for the <ref type="term" target="fr-prtn">fire separation</ref>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 9: Sentence 3.1.9.1.(3) - "CAN/ULC-S115, "...Firestop Systems," has" -->
+        <amendment id="bc-custom-3191-3" sequence="68.997708"
+                   description="Show CAN/ULC-S115 as in source in Sentence 3.1.9.1.(3)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as
+permitted in <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect9.art1.sent6"
+                                display-type="short"
+                                pretext="Sentences"/>
+                           <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect9.art1.sent7"
+                                display-type="short"
+                                pretext=" and"/>, penetrations of a <ref type="term" target="fr-prtn">fire separation</ref> in conformance
+with <ref type="internal"
+                                target="nbc.divB.part3.sect6.subsect4.art2.sent2"
+                                display-type="long"/> shall be sealed by a <ref type="term" target="fr-tp">firestop</ref> that, when subjected to the fire test
+method in CAN/ULC-S115, "Standard Method of Fire Tests of Firestop Systems," has an FT
+rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> for the <ref type="term" target="fr-prtn">fire separation</ref> of the assembly.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 12: Sentence 3.1.9.1.(6) - "CAN/ULC-S115, "...Firestop Systems," has" -->
+        <amendment id="bc-custom-3191-6" sequence="68.997709"
+                   description="Show CAN/ULC-S115 as in source in Sentence 3.1.9.1.(6)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent6"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Service equipment penetrations through a horizontal <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> as described in <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect9.art1.sent2"
+                                display-type="short"
+                                pretext="Sentences"/>
+                           <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect9.art1.sent3"
+                                display-type="short"
+                                pretext="and"/> that are contained within
+the cavity of a wall above and below the horizontal <ref type="term" target="fr-prtn">fire separation</ref> are permitted to be sealed
+at the penetration by a <ref type="term" target="fr-tp">firestop</ref> that,
+when subjected to the fire test method in CAN/ULC-S115, "Standard Method of Fire Tests of Firestop Systems," has an F rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> for the <ref type="term" target="fr-prtn">fire separation</ref>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 10: Sentence 3.1.9.1.(4) - "Sentences (1) to (3)"; "NFPA 13, "Standard for the Installation of Sprinkler Systems."" -->
+        <amendment id="bc-custom-3191-4" sequence="68.997710"
+                   description="Remove repeated Sentence word and add NFPA 13 period in Sentence 3.1.9.1.(4)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent4"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Sprinklers are permitted to penetrate a <ref type="term" target="fr-prtn">fire separation</ref> or a membrane forming part of an assembly
+required to have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> without having to meet the <ref type="term" target="fr-tp">firestop</ref> requirements
+of Sentences <ref type="internal" target="nbc.divB.part3.sect1.subsect9.art1.sent1" display-type="short">(1)</ref> to <ref type="internal" target="nbc.divB.part3.sect1.subsect9.art1.sent3" display-type="short">(3)</ref>, provided the annular
+space created by the penetration of a fire sprinkler is covered by
+a metal escutcheon plate in accordance with NFPA 13, "Standard for the Installation of Sprinkler Systems."</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 11: Sentence 3.1.9.1.(5) - "Sentences (1) to (3)"; "NFPA 80, "Standard for Fire Doors and Other Opening Protectives."" -->
+        <amendment id="bc-custom-3191-5" sequence="68.997711"
+                   description="Remove repeated Sentence word and add NFPA 80 period in Sentence 3.1.9.1.(5)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent5"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Unless specifically designed with a <ref type="term" target="fr-tp">firestop</ref>, <ref type="term" target="fr-dmpr">fire dampers</ref> are permitted to penetrate
+a <ref type="term" target="fr-prtn">fire separation</ref> or a membrane forming
+part of an assembly required to have a <ref type="term" target="fr-rtnc-">fire-resistance
+rating</ref> without having to meet the <ref type="term" target="fr-tp">firestop</ref> requirements of Sentences <ref type="internal" target="nbc.divB.part3.sect1.subsect9.art1.sent1" display-type="short">(1)</ref> to <ref type="internal" target="nbc.divB.part3.sect1.subsect9.art1.sent3" display-type="short">(3)</ref>, provided the <ref type="term" target="fr-dmpr">fire damper</ref> is installed
+in conformance with NFPA 80, "Standard for Fire Doors and Other Opening Protectives."</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-179 Issue 13: Sentence 3.1.9.1.(7) - "CAN/ULC-S115, "...Firestop Systems," has" -->
+        <amendment id="bc-custom-3191-7" sequence="68.997712"
+                   description="Show CAN/ULC-S115 as in source in Sentence 3.1.9.1.(7)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect9.art1.sent7"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Service equipment penetrations through a horizontal <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> as described in <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect9.art1.sent3"
+                                display-type="short"/> are permitted to be sealed at the penetration by a <ref type="term" target="fr-tp">firestop</ref> that, when subjected to the fire test
+method in CAN/ULC-S115, "Standard Method of Fire Tests of Firestop Systems," has an F
+rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> for the <ref type="term" target="fr-prtn">fire separation</ref>, provided the
+penetration </text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Sentence 3.1.11.7.(1) - "Sentences (2) to (5) and (8)"; "CAN/ULC-S101, "...Construction and Materials."" -->
+        <amendment id="bc-custom-31117-1" sequence="68.997713"
+                   description="Show Sentence references and CAN/ULC-S101 as in source in Sentence 3.1.11.7.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect11.art7.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as permitted by Sentences <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent2" display-type="short">(2)</ref> to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent5" display-type="short">(5)</ref> and <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent8" display-type="short">(8)</ref>, <ref type="term" target="fr-blk">fire blocks</ref> shall remain  in place
+and prevent the passage of flames for not less than <measurement units="metric">15 min</measurement> when subjected to the standard fire exposure in CAN/ULC-S101, "Standard Method of Fire Endurance Tests of Building Construction and Materials."</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Clause 3.1.11.7.(5)(a) - "ASTM D5456, "...Lumber Products," ..." -->
+        <amendment id="bc-custom-31117-5a" sequence="68.997714"
+                   description="Show ASTM D5456 title comma as in source in Clause 3.1.11.7.(5)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect11.art7.sent5.clause1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>solid lumber or a structural composite lumber product conforming
+to ASTM D5456, "Standard Specification for Evaluation of Structural Composite Lumber Products," not less than <measurement units="metric">38 mm</measurement> thick,</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Clause 3.1.11.7.(5)(c) - "ASTM D5456, "...Lumber Products," ..." -->
+        <amendment id="bc-custom-31117-5c" sequence="68.997715"
+                   description="Show ASTM D5456 title comma as in source in Clause 3.1.11.7.(5)(c)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect11.art7.sent5.clause3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>two thicknesses of lumber or a structural composite lumber product
+conforming to ASTM D5456, "Standard Specification for Evaluation of Structural Composite Lumber Products," each not less than <measurement units="metric">19 mm</measurement> thick with joints staggered, where the width or height
+of the concealed space requires more than one piece of lumber or structural
+composite lumber product not less than <measurement units="metric">38 mm</measurement> thick to
+block off the space.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Sentence 3.1.11.7.(6) - "Sentences (1) to (5)" -->
+        <amendment id="bc-custom-31117-6" sequence="68.997716"
+                   description="Remove repeated Sentence word in Sentence 3.1.11.7.(6)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect11.art7.sent6"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Openings through materials referred to in Sentences <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent1" display-type="short">(1)</ref> to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent5" display-type="short">(5)</ref> shall be protected to
+maintain the integrity of the construction.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Sentence 3.1.11.7.(7) - "Sentences (1) to (5)" -->
+        <amendment id="bc-custom-31117-7" sequence="68.997717"
+                   description="Remove repeated Sentence word in Sentence 3.1.11.7.(7)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect11.art7.sent7"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Where materials referred to in Sentences <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent1" display-type="short">(1)</ref> to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent5" display-type="short">(5)</ref> are penetrated by construction elements or by service
+equipment, a <ref type="term" target="fr-tp">firestop</ref> shall be used to
+seal the penetration. (See <ref type="internal"
+                                target="nbc.divB.part3.appendix.appnote44"
+                                display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Sentence 3.1.12.1.(1) - "CAN/ULC-S102, "...Building Materials and Assemblies."" -->
+        <amendment id="bc-custom-31121-1" sequence="68.997718"
+                   description="Show CAN/ULC-S102 as in source in Sentence 3.1.12.1.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect12.art1.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as required by <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect12.art1.sent2"
+                                display-type="short"/> and as permitted by <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect12.art1.sent3"
+                                display-type="short"/>, the <ref type="term" target="flm-prd-">flame-spread rating</ref> and smoke developed classification
+of a material, assembly, or structural member shall be determined
+on the basis of not less than three tests conducted in conformance
+with CAN/ULC-S102, "Standard Method of Test for Surface Burning Characteristics of Building Materials and Assemblies."</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Sentence 3.1.12.1.(2) - "CAN/ULC-S102.2, "...Materials and Assemblies," if" (no "ULC" prefix or ":2018") -->
+        <amendment id="bc-custom-31121-2" sequence="68.997719"
+                   description="Show CAN/ULC-S102.2 as in source in Sentence 3.1.12.1.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect12.art1.sent2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>The <ref type="term" target="flm-prd-"> flame-spread rating</ref> and smoke
+developed classification of a material or assembly shall be determined
+on the basis of not less than three tests conducted in conformance
+with CAN/ULC-S102.2, "Standard Method of Test for Surface Burning Characteristics of Flooring, Floor Coverings, and Miscellaneous Materials and Assemblies," if the material
+or assembly</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Sentence 3.1.13.1.(1) - "Section 2.3. of Division B of the British Columbia Fire Code." (was the National Fire Code of Canada 2020) -->
+        <amendment id="bc-custom-31131-1" sequence="68.997720"
+                   description="Refer to the British Columbia Fire Code in Sentence 3.1.13.1.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect13.art1.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as otherwise provided by this Subsection, interior finishes, furnishings and decorative materials shall conform to Section 2.3. of Division B of the British Columbia Fire Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Table 3.1.13.2. and its Notes heading without "(1)" -->
+        <amendment id="bc-custom-31132-t1" sequence="68.997721"
+                   description="Show Table 3.1.13.2. number without injected Sentence number">
+            <target type="position" parent-id="nbc.divB.part3.sect1.subsect13.art2.table1" position="first-child"/>
+            <insert>
+                <new-content source="bc">
+                    <number>Table 3.1.13.2.</number>
+                </new-content>
+            </insert>
+        </amendment>
+
+        <!-- BBC-180: Clause 3.1.13.4.(1)(a) - "CAN/ULC-S102.2, "...Materials and Assemblies,"" -->
+        <amendment id="bc-custom-31134-1a" sequence="68.997722"
+                   description="Show CAN/ULC-S102.2 as in source in Clause 3.1.13.4.(1)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect13.art4.sent1.clause1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>have a <ref type="term" target="flm-prd-">flame-spread rating</ref> not
+more than 250 and a smoke developed classification not more than 600
+when tested in conformance with CAN/ULC-S102.2, "Standard Method of Test for Surface Burning Characteristics of Flooring, Floor Coverings, and Miscellaneous Materials and Assemblies,"</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- BBC-180: Clause 3.1.13.4.(1)(b) - "CAN/ULC-S102.3, "Standard Method of Fire Test of Light Diffusers and Lenses,"" -->
+        <amendment id="bc-custom-31134-1b" sequence="68.997723"
+                   description="Show CAN/ULC-S102.3 as in source in Clause 3.1.13.4.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect13.art4.sent1.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>fall to the bottom of the test apparatus before igniting when
+tested in conformance with CAN/ULC-S102.3, "Standard Method of Fire Test of Light Diffusers and Lenses,"</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- ================================================================== -->
         <!-- Amendment 77: Update E001 symbol description                       -->
         <!-- Article 3.4.5.1.(2)(c)(i) - Exit sign symbol E001                  -->
         <!-- ================================================================== -->

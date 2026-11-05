@@ -757,7 +757,7 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
         
         <amendment id="bc-020" sequence="20" description="Insert new BC appnote: A-2.2.7.3.   Demonstration of the Coordinated Fire and Life Safety Sys">
             <target type="position" parent-id="nbc.divC.part2.appendix" position="last-child" />
-            <insert><new-content source="bc">
+            <insert><new-content source="bc"><!-- BBC-177 Issue 113: headings 2.0. to 3.2.5. bold, as in the source Word document -->
                     <application-note xml:id="nbc.divC.part2.appendix.appnote12">
                         <number>2.2.7.3.</number>
                         <title>Demonstration of the Coordinated Fire and Life Safety Systems.</title>
@@ -784,19 +784,19 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para21">The required list of items will depend on the simplicity or complexity of the Project. The following is a comprehensive list of items for Fire and Life Safety Systems for a complex project, which must be coordinated in order to demonstrate compliance:</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para22">Notes: It is the responsibility of the Coordinating Registered Professional (CRP) and Registered Professionals of Record (RPRs) to determine the best method of "How To" demonstrate to the Authority Having Jurisdiction (AHJ) that the Fire and Life Safety Systems have been coordinated for each project. That is, the method(s) used (i.e., charts, drawings, matrices, tables, etc.) for demonstration purposes should be project-specific and relate only to that project.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para23">It is not the intent of this Appendix material to dictate or produce "checklists" or other prescriptive methods for demonstrating compliance since this is best left to the professional discretion of the appropriate CRP/RPRs.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para24">2.0.   Design Phase — Building Permit Application Stage &amp; Final Construction Phase — Occupancy Permit Application Stage</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para25">2.1.   Fire Protection and Life Safety Systems</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para26">2.1.1.   Automatic Sprinkler Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para24"><emphasis style="bold">2.0.   Design Phase — Building Permit Application Stage &amp; Final Construction Phase — Occupancy Permit Application Stage</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para25"><emphasis style="bold">2.1.   Fire Protection and Life Safety Systems</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para26"><emphasis style="bold">2.1.1.   Automatic Sprinkler Systems</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para27">• design requirements to appropriate Standard</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para28">2.1.2.   Standpipe Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para28"><emphasis style="bold">2.1.2.   Standpipe Systems</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para29">• design requirements to appropriate Standard</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para30">• Class I/Class II</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para31">• locations</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para32">• coverage</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para33">• F.D. connections</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para34">2.1.3.   Fire Pump Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para34"><emphasis style="bold">2.1.3.   Fire Pump Systems</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para35">• design requirements to appropriate Standard</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para36">2.1.4.   Fire Alarm Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para36"><emphasis style="bold">2.1.4.   Fire Alarm Systems</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para37">• one/two stage system(s)</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para38">• no. of systems</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para39">• design requirements to appropriate Standard</paragraph>
@@ -811,22 +811,22 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para48">• manual pull stations</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para49">• signals to Fire Department via an acceptable central monitoring station</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para50">• activation of ancillary devices</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para51">2.1.6.   Emergency Telephone System</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para51"><emphasis style="bold">2.1.6.   Emergency Telephone System</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para52">• each exit stair</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para53">2.1.7.   Emergency Power</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para53"><emphasis style="bold">2.1.7.   Emergency Power</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para54">• design requirements to appropriate Standard</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para55">• supervisory provisions for fire alarm</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para56">• emergency electrical load</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para57">• emergency generator</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para58">2.1.8.   Emergency Lighting</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para58"><emphasis style="bold">2.1.8.   Emergency Lighting</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para59">• exits</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para60">• access to exits</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para61">• public corridors</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para62">• other floor areas</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para63">2.1.9.   Exit Signs</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para64">2.2.   Additional Requirements for High Buildings</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para65">2.2.1.   Interface Condition between Highrise and Lowrise Components (Measure 'N' Vestibules)</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para66">2.2.2.   Smoke Control — Measure A</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para63"><emphasis style="bold">2.1.9.   Exit Signs</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para64"><emphasis style="bold">2.2.   Additional Requirements for High Buildings</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para65"><emphasis style="bold">2.2.1.   Interface Condition between Highrise and Lowrise Components (Measure 'N' Vestibules)</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para66"><emphasis style="bold">2.2.2.   Smoke Control — Measure A</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para67">• design requirements to appropriate Standard</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para68">• venting above-grade stairs</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para69">• separation of above-grade and below-grade stairs</paragraph>
@@ -834,39 +834,39 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para71">• pressurization of below-grade stairs at bottom</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para72">• above-grade elevator shaft serving below-grade protected with a "protected" vestibule</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para73">• additional controls at CACF (annunciator panel shop drawings)</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para74">2.2.3.   Smoke Venting</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para75">2.2.4.   Fire Fighters' Elevators</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para74"><emphasis style="bold">2.2.3.   Smoke Venting</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para75"><emphasis style="bold">2.2.4.   Fire Fighters' Elevators</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para76">• fire fighting controls</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para77">• emergency recall</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para78">2.2.5.   Protection of Emergency Electrical Conductors</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para78"><emphasis style="bold">2.2.5.   Protection of Emergency Electrical Conductors</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para79">• highrise elevator</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para80">• emergency generator(s)</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para81">• fire pump(s)</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para82">• smoke control systems</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para83">• smoke venting systems</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para84">• fire alarm and emergency voice communication systems</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para85">2.2.6.   Emergency Voice Communications</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para85"><emphasis style="bold">2.2.6.   Emergency Voice Communications</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para86">• integrated with fire alarm system</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para87">• audible to appropriate Standard</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para88">• zoning of speakers</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para89">3.0.   Roles and Responsibilities for the Demonstration of the Coordinated Fire and Life Safety Systems</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para90">3.1.   Roles and Responsibilities for the Design, Commissioning and Functional Testing of Fire and Life Safety Systems</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para91">3.1.1.   Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para89"><emphasis style="bold">3.0.   Roles and Responsibilities for the Demonstration of the Coordinated Fire and Life Safety Systems</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para90"><emphasis style="bold">3.1.   Roles and Responsibilities for the Design, Commissioning and Functional Testing of Fire and Life Safety Systems</emphasis></paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para91"><emphasis style="bold">3.1.1.   Design Phase</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para92">RPRs will clearly indicate on their drawings and supporting documents the details of the fire and life safety systems for each applicable item of Section 2 for their particular discipline. RPRs will also coordinate the design of the components in their system with the designs of other RPRs on the project. RPRs are to indicate what functional testing, system verification, etc., must be performed by the Contractor or subtrades and establish the documentation to be provided.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para93">The CRP will develop the project-specific test protocol and procedures in consultation with the RPRs. The CRP will act as the facilitator for the coordination of the design of the fire and life safety systems among the various RPRs.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para94">3.1.2.   Construction Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para94"><emphasis style="bold">3.1.2.   Construction Phase</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para95">The Contractor will coordinate the activities of the subtrade contractors for the installation of the fire and life safety systems in accordance with the contract documents.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para96">RPRs will provide field reviews to ascertain that the construction of the fire and life safety systems substantially complies with their design.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para97">RPRs will review shop drawings of the fire and life safety systems to determine that they accurately reflect their design intent. They will also coordinate their reviews with those of the other RPRs on the project.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para98">The CRP will coordinate the shop drawing reviews and field reviews by the RPs with the objective that the entire fire and life safety system will correctly operate as an integrated system.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para99">3.1.3.   Occupancy Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para99"><emphasis style="bold">3.1.3.   Occupancy Phase</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para100">The Contractor will coordinate the subtrade contractors for the commissioning and functional testing of the fire and life safety systems. The Contractor will also collect all of the required Occupancy Permit submission documents from the various subtrade contractors and forward them to the CRP.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para101">The CRP will take the lead role in coordinating the activities of the RPRs required for the commissioning and functional testing of the fire and life safety systems. The CRP will distribute the test protocol and test procedures, as developed in the Design Stage, to the various parties involved in the process.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para102">RPRs will ascertain that the appropriate commissioning and functional testing of the fire and life safety systems of the components in their disciplines have been satisfactorily completed by the subtrade contractors. They will also determine that the appropriate Occupancy Permit submission documents have been submitted and filled in correctly.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para103">The CRP will be responsible for collecting all of the required Occupancy Permit submission documents, reviewing them for completeness and accuracy, and forwarding them to the AHJ in a complete package at least 24 hours prior to the Coordinated Final AHJ Review.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para104">3.2.   Sample Summary of Roles and Responsibilities for Demonstration of the Coordinated Fire and Life Safety Systems</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para104"><emphasis style="bold">3.2.   Sample Summary of Roles and Responsibilities for Demonstration of the Coordinated Fire and Life Safety Systems</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para105">The following is a sample summary (only) of the roles and responsibilities for a typical highrise building with underground parking. The precise roles and responsibilities for each project will vary depending on the complexity. The CRP will ascertain that the appropriate roles and responsibilities for each project are fulfilled by the RPRs.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para106">3.2.1.   Coordinating Registered Professional</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para106"><emphasis style="bold">3.2.1.   Coordinating Registered Professional</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para107">Design Phase</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para108">• Determine the appropriate RPRs required for the project and make arrangements with the owner for their services.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para109">• Clarify the roles and responsibilities of the various RPRs.</paragraph>
@@ -888,7 +888,7 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para125">• Record any deficiencies identified at the "Coordinated AHJ Final Review" and monitor RPRs' field review of the corrective actions by the subtrades.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para126">• Assist in finalizing the list of outstanding requirements which need to be met for the issuance of the Occupancy Permit.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para127">• Follow-up on minor deficiencies post-Occupancy.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para128">3.2.2.   Architectural Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para128"><emphasis style="bold">3.2.2.   Architectural Design Phase</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para129">• Establish the conceptual design for the fire and life safety systems in consultation with RPRs.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para130">• Determine equivalency reports required and coordinate the implementation on the drawings and supporting documents.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para131">• Clearly indicate on drawings and supporting documents:</paragraph>
@@ -917,7 +917,7 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para154">• Coordinate the signage with the fire alarm annunciator and the fire safety plans.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para155">• Review the architecturally-related Occupancy Permit submission documents provided by the Contractor and subtrades for completeness and accuracy.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para156">• Prepare and forward to the CRP the architectural Schedule C-B and other assurance letters required for the Occupancy Permit.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para157">3.2.3.   Mechanical/Plumbing Design Phase</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para157"><emphasis style="bold">3.2.3.   Mechanical/Plumbing Design Phase</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para158">• Coordinate mechanical/plumbing clearances and functional requirements with other RPRs.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para159">• Clearly indicate on drawings and supporting documents:</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para160">• Details of the mechanical/plumbing components of the fire and life safety systems.</paragraph>
@@ -940,7 +940,7 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para177">• Perform an active role in witnessing the functional testing of the mechanical/ plumbing components of the fire and life safety systems.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para178">• Review the mechanical/plumbing related occupancy permit submission documents provided by the Contractor and subtrades for completeness and accuracy.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para179">• Prepare and forward to the CRP the mechanical/plumbing Schedule C-B and other assurance letters and documentation required for the Occupancy Permit.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para180">3.2.4.   Fire Suppression</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para180"><emphasis style="bold">3.2.4.   Fire Suppression</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para181">The design of sprinkler systems can be accomplished by at least two possible scenarios:</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para182">Scenario 1</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para183">• The engineer of record undertakes the complete detailed design prior to the building permit application.</paragraph>
@@ -989,7 +989,7 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para226">• Perform an active role in witnessing the functional testing of the fire suppression components of the fire and life safety systems.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para227">• Review the fire suppression-related Occupancy Permit submission documents by the Contractor and subtrades for completeness and accuracy.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para228">• Prepare and forward to the Engineer of Record the fire suppression Schedule C-B and other assurance letters and documentation required for the Occupancy Permit.</paragraph>
-                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para229">3.2.5.   Electrical</paragraph>
+                        <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para229"><emphasis style="bold">3.2.5.   Electrical</emphasis></paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para230">Design Phase</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para231">• Coordinate with the CRP and RPRs the test protocol and procedures for functional testing of the fire and life safety systems.</paragraph>
                         <paragraph xml:id="nbc.divC.part2.appendix.appnote12.para232">• Details of the electrical components of the fire and life safety systems.</paragraph>

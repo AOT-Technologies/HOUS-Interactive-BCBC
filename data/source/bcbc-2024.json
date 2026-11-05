@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-04T22:03:15.7649002+05:30",
+  "generated_timestamp" : "2026-11-05T10:36:51.0625351+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -31462,7 +31462,8 @@
                { "id" : "nbc.divB.part3.sect1.subsect8.art14.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect8.art10.sent2:long] and [REF:internal:nbc.divB.part3.sect1.subsect8.art11.sent3:number] , a hold-open device is permitted to be used on a [REF:term:clr:closure ] in a required [REF:term:fr-prtn:fire separation] , other than on an [REF:term:xt:exit] stair door in a [REF:term:bldng:building] more than 3 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] and on a door for a vestibule required by [REF:internal:nbc.divB.part3.sect3.subsect5.art7:long] , provided the device is designed to release the [REF:term:clr:closure] in conformance with this Article." },
+                "source" : "bc",
+                "text" : "Except as provided in Sentences [REF:internal:nbc.divB.part3.sect1.subsect8.art10.sent2:number:3.1.8.10.(2)] and [REF:internal:nbc.divB.part3.sect1.subsect8.art11.sent3:number:3.1.8.11.(3)] , a hold-open device is permitted to be used on a [REF:term:clr:closure ] in a required [REF:term:fr-prtn:fire separation] , other than on an [REF:term:xt:exit] stair door in a [REF:term:bldng:building] more than 3 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] and on a door for a vestibule required by [REF:internal:nbc.divB.part3.sect3.subsect5.art7:long] , provided the device is designed to release the [REF:term:clr:closure] in conformance with this Article." },
                
                { "id" : "nbc.divB.part3.sect1.subsect8.art14.sent2",
                 "type" : "sentence",
@@ -31494,7 +31495,8 @@
                { "id" : "nbc.divB.part3.sect1.subsect8.art14.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Where the [REF:term:bldng:building] is provided with a fire alarm system, a hold-open device permitted by [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent1:short] shall release upon a signal from a [REF:term:mk-dtctr:smoke detector] connected to the fire alarm system and located as described in [REF:standard:ulcs524] where the hold-open device is used on",
+                "source" : "bc",
+                "text" : "Where the [REF:term:bldng:building] is provided with a fire alarm system, a hold-open device permitted by [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent1:short] shall release upon a signal from a [REF:term:mk-dtctr:smoke detector] connected to the fire alarm system and located as described in CAN\/ULC-S524, \"Standard for Installation of Fire Alarm Systems,\" where the hold-open device is used on",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect8.art14.sent3.clause1",
@@ -31530,7 +31532,8 @@
                { "id" : "nbc.divB.part3.sect1.subsect8.art14.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Where the [REF:term:bldng:building] is not provided with a fire alarm system, a hold-open device permitted by [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent1:short] shall release upon a signal from a [REF:term:mk-lrm:smoke alarm] located on each side of the [REF:term:fr-prtn:fire separation] at ceiling level within 1.5 m horizontally of the [REF:term:clr:closure] opening in the [REF:term:fr-prtn:fire separation] , where the hold-open device is used on [REF:term:clr:closures] described in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent3.clause1:medium] to [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent3.clause5:short] ." },
+                "source" : "bc",
+                "text" : "Where the [REF:term:bldng:building] is not provided with a fire alarm system, a hold-open device permitted by [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent1:short] shall release upon a signal from a [REF:term:mk-lrm:smoke alarm] located on each side of the [REF:term:fr-prtn:fire separation] at ceiling level within 1.5 m horizontally of the [REF:term:clr:closure] opening in the [REF:term:fr-prtn:fire separation] , where the hold-open device is used on [REF:term:clr:closures] described in Clauses [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent3.clause1:medium:(3)(a)] to [REF:internal:nbc.divB.part3.sect1.subsect8.art14.sent3.clause5:short:(e)] ." },
                
                { "id" : "nbc.divB.part3.sect1.subsect8.art14.sent5",
                 "type" : "sentence",
@@ -31562,7 +31565,8 @@
                { "id" : "nbc.divB.part3.sect1.subsect8.art16.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as permitted by  Articles [REF:internal:nbc.divB.part3.sect1.subsect8.art18:long] and [REF:internal:nbc.divB.part3.sect1.subsect8.art19:long] for the separation of [REF:term:xt:exits] , an opening in a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] not more than 1 h is permitted to be protected with fixed wired glass assemblies or glass blocks installed in conformance with [REF:standard:nfpa80] (See also [REF:internal:nbc.divB.part3.sect3.subsect2.art17:long] )" },
+                "source" : "bc",
+                "text" : "Except as permitted by  Articles [REF:internal:nbc.divB.part3.sect1.subsect8.art18:long] and [REF:internal:nbc.divB.part3.sect1.subsect8.art19:long] for the separation of [REF:term:xt:exits] , an opening in a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] not more than 1 h is permitted to be protected with fixed wired glass assemblies or glass blocks installed in conformance with NFPA 80, \"Standard for Fire Doors and Other Opening Protectives.\" (See also [REF:internal:nbc.divB.part3.sect3.subsect2.art17:long] )" },
                
                { "id" : "nbc.divB.part3.sect1.subsect8.art16.sent2",
                 "type" : "sentence",
@@ -32043,13 +32047,15 @@
                { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent2:short]  to [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent7:short] and [REF:internal:nbc.divB.part3.sect1.subsect9.art3:long] , penetrations of a [REF:term:fr-prtn:fire separation] or a membrane forming part of an assembly required to have a [REF:term:fr-rtnc-:fire-resistance rating] shall be",
+                "source" : "bc",
+                "text" : "Except as provided in Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent2:short:(2)] to [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent7:short:(7)] and [REF:internal:nbc.divB.part3.sect1.subsect9.art3:long] , penetrations of a [REF:term:fr-prtn:fire separation] or a membrane forming part of an assembly required to have a [REF:term:fr-rtnc-:fire-resistance rating] shall be",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "sealed by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in [REF:standard:ulcs115] has an F rating not less than the required [REF:term:fr-prtct:fire-resistance rating] of the [REF:term:fr-prtn:fire separation] , or" },
+                  "source" : "bc",
+                  "text" : "sealed by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in CAN\/ULC-S115, \"Standard Method of Fire Tests of Firestop Systems,\" has an F rating not less than the required [REF:term:fr-prtct:fire-resistance rating] of the [REF:term:fr-prtn:fire separation] , or" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent1.clause2",
                   "type" : "clause",
@@ -32063,32 +32069,38 @@
                { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Except as permitted in [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent6:short] , penetrations of a [REF:term:frwll:firewall] or a horizontal [REF:term:fr-prtn:fire separation] that is required to have a [REF:term:fr-rtnc-:fire-resistance rating] in conformance with [REF:internal:nbc.divB.part3.sect2.subsect1.art2:long] shall be sealed at the penetration by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in [REF:standard:ulcs115] has an FT rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] ." },
+                "source" : "bc",
+                "text" : "Except as permitted in [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent6:short] , penetrations of a [REF:term:frwll:firewall] or a horizontal [REF:term:fr-prtn:fire separation] that is required to have a [REF:term:fr-rtnc-:fire-resistance rating] in conformance with [REF:internal:nbc.divB.part3.sect2.subsect1.art2:long] shall be sealed at the penetration by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in CAN\/ULC-S115, \"Standard Method of Fire Tests of Firestop Systems,\" has an FT rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] ." },
                
                { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Except as permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent6:short]  and [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent7:short] , penetrations of a [REF:term:fr-prtn:fire separation] in conformance with [REF:internal:nbc.divB.part3.sect6.subsect4.art2.sent2:long] shall be sealed by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in [REF:standard:ulcs115] has an FT rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] of the assembly." },
+                "source" : "bc",
+                "text" : "Except as permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent6:short]  and [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent7:short] , penetrations of a [REF:term:fr-prtn:fire separation] in conformance with [REF:internal:nbc.divB.part3.sect6.subsect4.art2.sent2:long] shall be sealed by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in CAN\/ULC-S115, \"Standard Method of Fire Tests of Firestop Systems,\" has an FT rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] of the assembly." },
                
                { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Sprinklers are permitted to penetrate a [REF:term:fr-prtn:fire separation] or a membrane forming part of an assembly required to have a [REF:term:fr-rtnc-:fire-resistance rating] without having to meet the [REF:term:fr-tp:firestop] requirements of  Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent1:short] to [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short] , provided the annular space created by the penetration of a fire sprinkler is covered by a metal escutcheon plate in accordance with [REF:standard:nfpa13]" },
+                "source" : "bc",
+                "text" : "Sprinklers are permitted to penetrate a [REF:term:fr-prtn:fire separation] or a membrane forming part of an assembly required to have a [REF:term:fr-rtnc-:fire-resistance rating] without having to meet the [REF:term:fr-tp:firestop] requirements of Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent1:short:(1)] to [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short:(3)] , provided the annular space created by the penetration of a fire sprinkler is covered by a metal escutcheon plate in accordance with NFPA 13, \"Standard for the Installation of Sprinkler Systems.\"" },
                
                { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent5",
                 "type" : "sentence",
                 "number" : 5,
-                "text" : "Unless specifically designed with a [REF:term:fr-tp:firestop] , [REF:term:fr-dmpr:fire dampers] are permitted to penetrate a [REF:term:fr-prtn:fire separation] or a membrane forming part of an assembly required to have a [REF:term:fr-rtnc-:fire-resistance rating] without having to meet the [REF:term:fr-tp:firestop] requirements of  Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent1:short] to [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short] , provided the [REF:term:fr-dmpr:fire damper] is installed in conformance with [REF:standard:nfpa80]" },
+                "source" : "bc",
+                "text" : "Unless specifically designed with a [REF:term:fr-tp:firestop] , [REF:term:fr-dmpr:fire dampers] are permitted to penetrate a [REF:term:fr-prtn:fire separation] or a membrane forming part of an assembly required to have a [REF:term:fr-rtnc-:fire-resistance rating] without having to meet the [REF:term:fr-tp:firestop] requirements of Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent1:short:(1)] to [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short:(3)] , provided the [REF:term:fr-dmpr:fire damper] is installed in conformance with NFPA 80, \"Standard for Fire Doors and Other Opening Protectives.\"" },
                
                { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent6",
                 "type" : "sentence",
                 "number" : 6,
-                "text" : "Service equipment penetrations through a horizontal [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] as described in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent2:short] and [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short] that are contained within the cavity of a wall above and below the horizontal [REF:term:fr-prtn:fire separation] are permitted to be sealed at the penetration by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in [REF:standard:ulcs115] has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] ." },
+                "source" : "bc",
+                "text" : "Service equipment penetrations through a horizontal [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] as described in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent2:short] and [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short] that are contained within the cavity of a wall above and below the horizontal [REF:term:fr-prtn:fire separation] are permitted to be sealed at the penetration by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in CAN\/ULC-S115, \"Standard Method of Fire Tests of Firestop Systems,\" has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] ." },
                
                { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent7",
                 "type" : "sentence",
                 "number" : 7,
-                "text" : "Service equipment penetrations through a horizontal [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] as described in [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short] are permitted to be sealed at the penetration by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in [REF:standard:ulcs115] has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] , provided the penetration",
+                "source" : "bc",
+                "text" : "Service equipment penetrations through a horizontal [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] as described in [REF:internal:nbc.divB.part3.sect1.subsect9.art1.sent3:short] are permitted to be sealed at the penetration by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in CAN\/ULC-S115, \"Standard Method of Fire Tests of Firestop Systems,\" has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the [REF:term:fr-prtn:fire separation] , provided the penetration",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect9.art1.sent7.clause1",
@@ -32802,7 +32814,8 @@
                { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as permitted by  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent2:short] to [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent8:short] , [REF:term:fr-blk:fire blocks] shall remain in place and prevent the passage of flames for not less than 15 min when subjected to the standard fire exposure in [REF:standard:ulcs101]" },
+                "source" : "bc",
+                "text" : "Except as permitted by Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent2:short:(2)] to [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent5:short:(5)] and [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent8:short:(8)] , [REF:term:fr-blk:fire blocks] shall remain in place and prevent the passage of flames for not less than 15 min when subjected to the standard fire exposure in CAN\/ULC-S101, \"Standard Method of Fire Endurance Tests of Building Construction and Materials.\"" },
                
                { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent2",
                 "type" : "sentence",
@@ -32828,7 +32841,8 @@
                  { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent5.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "solid lumber or a structural composite lumber product conforming to [REF:standard:astmd5456] not less than 38 mm thick," },
+                  "source" : "bc",
+                  "text" : "solid lumber or a structural composite lumber product conforming to ASTM D5456, \"Standard Specification for Evaluation of Structural Composite Lumber Products,\" not less than 38 mm thick," },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent5.clause2",
                   "type" : "clause",
@@ -32838,17 +32852,20 @@
                  { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent5.clause3",
                   "type" : "clause",
                   "letter" : "c",
-                  "text" : "two thicknesses of lumber or a structural composite lumber product conforming to [REF:standard:astmd5456] each not less than 19 mm thick with joints staggered, where the width or height of the concealed space requires more than one piece of lumber or structural composite lumber product not less than 38 mm thick to block off the space." } ] },
+                  "source" : "bc",
+                  "text" : "two thicknesses of lumber or a structural composite lumber product conforming to ASTM D5456, \"Standard Specification for Evaluation of Structural Composite Lumber Products,\" each not less than 19 mm thick with joints staggered, where the width or height of the concealed space requires more than one piece of lumber or structural composite lumber product not less than 38 mm thick to block off the space." } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent6",
                 "type" : "sentence",
                 "number" : 6,
-                "text" : "Openings through materials referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent1:short] to [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent5:short] shall be protected to maintain the integrity of the construction." },
+                "source" : "bc",
+                "text" : "Openings through materials referred to in Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent1:short:(1)] to [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent5:short:(5)] shall be protected to maintain the integrity of the construction." },
                
                { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent7",
                 "type" : "sentence",
                 "number" : 7,
-                "text" : "Where materials referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent1:short] to [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent5:short] are penetrated by construction elements or by service equipment, a [REF:term:fr-tp:firestop] shall be used to seal the penetration. (See [REF:internal:nbc.divB.part3.appendix.appnote44:short] .)" },
+                "source" : "bc",
+                "text" : "Where materials referred to in Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent1:short:(1)] to [REF:internal:nbc.divB.part3.sect1.subsect11.art7.sent5:short:(5)] are penetrated by construction elements or by service equipment, a [REF:term:fr-tp:firestop] shall be used to seal the penetration. (See [REF:internal:nbc.divB.part3.appendix.appnote44:short] .)" },
                
                { "id" : "nbc.divB.part3.sect1.subsect11.art7.sent8",
                 "type" : "sentence",
@@ -32895,12 +32912,14 @@
                { "id" : "nbc.divB.part3.sect1.subsect12.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as required by [REF:internal:nbc.divB.part3.sect1.subsect12.art1.sent2:short] and as permitted by [REF:internal:nbc.divB.part3.sect1.subsect12.art1.sent3:short] , the [REF:term:flm-prd-:flame-spread rating] and smoke developed classification of a material, assembly, or structural member shall be determined on the basis of not less than three tests conducted in conformance with [REF:standard:ulcs102]" },
+                "source" : "bc",
+                "text" : "Except as required by [REF:internal:nbc.divB.part3.sect1.subsect12.art1.sent2:short] and as permitted by [REF:internal:nbc.divB.part3.sect1.subsect12.art1.sent3:short] , the [REF:term:flm-prd-:flame-spread rating] and smoke developed classification of a material, assembly, or structural member shall be determined on the basis of not less than three tests conducted in conformance with CAN\/ULC-S102, \"Standard Method of Test for Surface Burning Characteristics of Building Materials and Assemblies.\"" },
                
                { "id" : "nbc.divB.part3.sect1.subsect12.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "The [REF:term:flm-prd-:flame-spread rating] and smoke developed classification of a material or assembly shall be determined on the basis of not less than three tests conducted in conformance with [REF:standard:ulcs102.2] if the material or assembly",
+                "source" : "bc",
+                "text" : "The [REF:term:flm-prd-:flame-spread rating] and smoke developed classification of a material or assembly shall be determined on the basis of not less than three tests conducted in conformance with CAN\/ULC-S102.2, \"Standard Method of Test for Surface Burning Characteristics of Flooring, Floor Coverings, and Miscellaneous Materials and Assemblies,\" if the material or assembly",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect12.art1.sent2.clause1",
@@ -32938,7 +32957,8 @@
                { "id" : "nbc.divB.part3.sect1.subsect13.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as otherwise provided by this Subsection, interior finishes, furnishings and decorative materials shall conform to [REF:external:nfc:Section 2.3. of Division B of the ] [REF:standard:nrcc-nfc] ." },
+                "source" : "bc",
+                "text" : "Except as otherwise provided by this Subsection, interior finishes, furnishings and decorative materials shall conform to Section 2.3. of Division B of the British Columbia Fire Code." },
                
                { "id" : "nbc.divB.part3.sect1.subsect13.art1.sent2",
                 "type" : "sentence",
@@ -32984,6 +33004,7 @@
                
                { "id" : "nbc.divB.part3.sect1.subsect13.art2.table1",
                 "type" : "table",
+                "number" : "Table 3.1.13.2.",
                 "title" : "Flame-Spread Ratings",
                 "forming_part" : 
                 [ 
@@ -33250,12 +33271,14 @@
                  { "id" : "nbc.divB.part3.sect1.subsect13.art4.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "have a [REF:term:flm-prd-:flame-spread rating] not more than 250 and a smoke developed classification not more than 600 when tested in conformance with [REF:standard:ulcs102.2]" },
+                  "source" : "bc",
+                  "text" : "have a [REF:term:flm-prd-:flame-spread rating] not more than 250 and a smoke developed classification not more than 600 when tested in conformance with CAN\/ULC-S102.2, \"Standard Method of Test for Surface Burning Characteristics of Flooring, Floor Coverings, and Miscellaneous Materials and Assemblies,\"" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect13.art4.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "fall to the bottom of the test apparatus before igniting when tested in conformance with [REF:standard:ulcs102.3]" },
+                  "source" : "bc",
+                  "text" : "fall to the bottom of the test apparatus before igniting when tested in conformance with CAN\/ULC-S102.3, \"Standard Method of Fire Test of Light Diffusers and Lenses,\"" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect13.art4.sent1.clause3",
                   "type" : "clause",
@@ -281008,15 +281031,15 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para24",
-             "content" : "2.0. Design Phase — Building Permit Application Stage & Final Construction Phase — Occupancy Permit Application Stage" },
+             "content" : "<bold>2.0. Design Phase — Building Permit Application Stage & Final Construction Phase — Occupancy Permit Application Stage<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para25",
-             "content" : "2.1. Fire Protection and Life Safety Systems" },
+             "content" : "<bold>2.1. Fire Protection and Life Safety Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para26",
-             "content" : "2.1.1. Automatic Sprinkler Systems" },
+             "content" : "<bold>2.1.1. Automatic Sprinkler Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para27",
@@ -281024,7 +281047,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para28",
-             "content" : "2.1.2. Standpipe Systems" },
+             "content" : "<bold>2.1.2. Standpipe Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para29",
@@ -281048,7 +281071,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para34",
-             "content" : "2.1.3. Fire Pump Systems" },
+             "content" : "<bold>2.1.3. Fire Pump Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para35",
@@ -281056,7 +281079,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para36",
-             "content" : "2.1.4. Fire Alarm Systems" },
+             "content" : "<bold>2.1.4. Fire Alarm Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para37",
@@ -281116,7 +281139,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para51",
-             "content" : "2.1.6. Emergency Telephone System" },
+             "content" : "<bold>2.1.6. Emergency Telephone System<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para52",
@@ -281124,7 +281147,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para53",
-             "content" : "2.1.7. Emergency Power" },
+             "content" : "<bold>2.1.7. Emergency Power<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para54",
@@ -281144,7 +281167,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para58",
-             "content" : "2.1.8. Emergency Lighting" },
+             "content" : "<bold>2.1.8. Emergency Lighting<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para59",
@@ -281164,19 +281187,19 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para63",
-             "content" : "2.1.9. Exit Signs" },
+             "content" : "<bold>2.1.9. Exit Signs<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para64",
-             "content" : "2.2. Additional Requirements for High Buildings" },
+             "content" : "<bold>2.2. Additional Requirements for High Buildings<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para65",
-             "content" : "2.2.1. Interface Condition between Highrise and Lowrise Components (Measure 'N' Vestibules)" },
+             "content" : "<bold>2.2.1. Interface Condition between Highrise and Lowrise Components (Measure 'N' Vestibules)<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para66",
-             "content" : "2.2.2. Smoke Control — Measure A" },
+             "content" : "<bold>2.2.2. Smoke Control — Measure A<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para67",
@@ -281208,11 +281231,11 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para74",
-             "content" : "2.2.3. Smoke Venting" },
+             "content" : "<bold>2.2.3. Smoke Venting<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para75",
-             "content" : "2.2.4. Fire Fighters' Elevators" },
+             "content" : "<bold>2.2.4. Fire Fighters' Elevators<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para76",
@@ -281224,7 +281247,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para78",
-             "content" : "2.2.5. Protection of Emergency Electrical Conductors" },
+             "content" : "<bold>2.2.5. Protection of Emergency Electrical Conductors<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para79",
@@ -281252,7 +281275,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para85",
-             "content" : "2.2.6. Emergency Voice Communications" },
+             "content" : "<bold>2.2.6. Emergency Voice Communications<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para86",
@@ -281268,15 +281291,15 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para89",
-             "content" : "3.0. Roles and Responsibilities for the Demonstration of the Coordinated Fire and Life Safety Systems" },
+             "content" : "<bold>3.0. Roles and Responsibilities for the Demonstration of the Coordinated Fire and Life Safety Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para90",
-             "content" : "3.1. Roles and Responsibilities for the Design, Commissioning and Functional Testing of Fire and Life Safety Systems" },
+             "content" : "<bold>3.1. Roles and Responsibilities for the Design, Commissioning and Functional Testing of Fire and Life Safety Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para91",
-             "content" : "3.1.1. Design Phase" },
+             "content" : "<bold>3.1.1. Design Phase<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para92",
@@ -281288,7 +281311,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para94",
-             "content" : "3.1.2. Construction Phase" },
+             "content" : "<bold>3.1.2. Construction Phase<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para95",
@@ -281308,7 +281331,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para99",
-             "content" : "3.1.3. Occupancy Phase" },
+             "content" : "<bold>3.1.3. Occupancy Phase<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para100",
@@ -281328,7 +281351,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para104",
-             "content" : "3.2. Sample Summary of Roles and Responsibilities for Demonstration of the Coordinated Fire and Life Safety Systems" },
+             "content" : "<bold>3.2. Sample Summary of Roles and Responsibilities for Demonstration of the Coordinated Fire and Life Safety Systems<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para105",
@@ -281336,7 +281359,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para106",
-             "content" : "3.2.1. Coordinating Registered Professional" },
+             "content" : "<bold>3.2.1. Coordinating Registered Professional<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para107",
@@ -281424,7 +281447,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para128",
-             "content" : "3.2.2. Architectural Design Phase" },
+             "content" : "<bold>3.2.2. Architectural Design Phase<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para129",
@@ -281540,7 +281563,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para157",
-             "content" : "3.2.3. Mechanical\/Plumbing Design Phase" },
+             "content" : "<bold>3.2.3. Mechanical\/Plumbing Design Phase<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para158",
@@ -281632,7 +281655,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para180",
-             "content" : "3.2.4. Fire Suppression" },
+             "content" : "<bold>3.2.4. Fire Suppression<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para181",
@@ -281828,7 +281851,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para229",
-             "content" : "3.2.5. Electrical" },
+             "content" : "<bold>3.2.5. Electrical<\/bold>" },
             
             { "type" : "paragraph",
              "id" : "nbc.divC.part2.appendix.appnote12.para230",
