@@ -358,6 +358,7 @@
             <target type="position" parent-id="nbc.divB.appendixC.table2.row93" position="after"/>
             <insert>
                 <new-content source="bc">
+                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5874 Incorrect Content e9423dd657 -->
                     <row xml:id="nbc.divB.appendixC.table2.row93a">
                         <entry>Burnaby (General)</entry>
                         <entry align="center">137</entry>
@@ -375,7 +376,7 @@
                         <entry align="center">2.7</entry>
                         <entry align="center">0.4</entry>
                         <entry align="center">0.36</entry>
-                        <entry align="center">0.47</entry>
+                        <entry align="center">0,47</entry>
                     </row>
                 </new-content>
             </insert>
@@ -1914,6 +1915,934 @@ load to provide a design snow load on a roof.</item>
             </replace>
         </amendment>
 
+        <amendment id="bc-qa-6e5c79e816" sequence="486" description="Issue 11917 Punctuation at AppD.Tbl1#Row5.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row5">
+                                                     <entry>ASTM</entry>
+                                                     <entry standard-ref-number="C1396/C1396M">C1396/C1396M-17</entry>
+                                                     <entry standard-id="astmc1396m-17"
+                                                            standard-ref-id="d-astmc1396m"
+                                                            standard-ref-title="Standard Specification for Gypsum Board">Standard Specification for Gypsum Board</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect5.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1"
+                                                             display-type="number">-1.5.1. D-3.1.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-33b0582828" sequence="487" description="Issue 11919 Punctuation at AppD.Tbl1#Row7.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row7"
+                                                       rowsep="1">
+                                                     <entry>CCBFC</entry>
+                                                     <entry standard-ref-number="NRCC 30629">NRCC 30629</entry>
+                                                     <entry standard-id="nrcc30629"
+                                                            standard-ref-id="d-nrcc30629"
+                                                            standard-ref-title="Supplement to the National Building Code of Canada 1990">Supplement to the National Building Code of Canada 1990</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect7.subsect2"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect7.subsect3"
+                                                             display-type="number">-7.2. D-7.3</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-97c4e095a3" sequence="488" description="Issue 11921 Punctuation at AppD.Tbl1#Row12.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row12"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row12">
+                                                     <entry>CSA</entry>
+                                                     <entry standard-ref-number="A23.3">A23.3:19</entry>
+                                                     <entry standard-id="csaa23.3-19"
+                                                            standard-ref-id="d-csaa23.3"
+                                                            standard-ref-title="Design of concrete structures">Design of concrete structures</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect1.article5"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article6"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect8.article2"
+                                                             display-type="number">2.1.5. D-2.6.6. D-2.8.2</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-f288429cd1" sequence="489" description="Issue 11924 Punctuation at AppD.Tbl1#Row15.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row15"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row15">
+                                                     <entry>CSA</entry>
+                                                     <entry standard-ref-number="CAN/CSA A82.27-M">CAN/CSA A82.27-M91</entry>
+                                                     <entry standard-id="csaa82.27-m91"
+                                                            standard-ref-id="d-csaa82.27"
+                                                            standard-ref-title="Gypsum Board">Gypsum Board</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect5.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1"
+                                                             display-type="number">-1.5.1. D-3.1.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-dc4751572c" sequence="490" description="Issue 11926 Punctuation at AppD.Tbl1#Row16.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row16"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row16">
+                                                     <entry>CSA</entry>
+                                                     <entry standard-ref-number="A82.30-M">A82.30-M1980</entry>
+                                                     <entry standard-id="csaa82.30-m80"
+                                                            standard-ref-id="d-csaa82.30"
+                                                            standard-ref-title="Interior Furring, Lathing and Gypsum Plastering">Interior Furring, Lathing and Gypsum Plastering</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect7.article2"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article9"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect5.article1"
+                                                             display-type="number">1.7.2. D-2.3.9. D-2.5.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e4a04259ce" sequence="491" description="Issue 11929 Punctuation at AppD.Tbl1#Row18.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row18"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row18">
+                                                     <entry>CSA</entry>
+                                                     <entry standard-ref-number="O86">O86:19</entry>
+                                                     <entry standard-id="csao86-19"
+                                                            standard-ref-id="d-csao86"
+                                                            standard-ref-title="Engineering design in wood">Engineering design in wood</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect11.article3"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect11.article4"
+                                                             display-type="number">-2.11.3. D-2.11.4</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3a3d9be378" sequence="492" description="Issue 11931 Punctuation at AppD.Tbl1#Row21.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row21"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row21">
+                                                     <entry>CSA</entry>
+                                                     <entry standard-ref-number="O141">O141:05</entry>
+                                                     <entry standard-id="csao141-05"
+                                                            standard-ref-id="d-csao141"
+                                                            standard-ref-title="Softwood Lumber">Softwood Lumber</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article6"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect4.article1"
+                                                             display-type="number">-2.3.6. D-2.4.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c36acbe9e6" sequence="493" description="Issue 11933 Punctuation at AppD.Tbl1#Row28.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row28"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row28">
+                                                     <entry>ULC</entry>
+                                                     <entry standard-ref-number="CAN/ULC-S101">CAN/ULC-S101-14</entry>
+                                                     <entry standard-id="ulcs101-14"
+                                                            standard-ref-id="d-ulcs101"
+                                                            standard-ref-title="Standard Method of Fire Endurance Tests of Building Construction and Materials">Standard Method of Fire Endurance Tests of Building Construction and Materials</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect1.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect12.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article2"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect11.article1"
+                                                             display-type="number">.1.1. D-1.12.1. D-2.3.2. D-2.11.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8ef210ec0c" sequence="494" description="Issue 11937 Punctuation at AppD.Tbl1#Row29.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row29"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row29">
+                                                     <entry>ULC</entry>
+                                                     <entry standard-ref-number="CAN/ULC-S102">CAN/ULC-S102-10</entry>
+                                                     <entry standard-id="ulcs102-10"
+                                                            standard-ref-id="d-ulcs102"
+                                                            standard-ref-title="Standard Method of Test for Surface Burning Characteristics of Building Materials and Assemblies">Standard Method of Test for Surface Burning Characteristics of Building Materials and Assemblies</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect1.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect6.subsect1.article1"
+                                                             display-type="number">-1.1.1. D-6.1.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c4bdaaa579" sequence="495" description="Issue 11939 Punctuation at AppD.Tbl1#Row30.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row30"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row30">
+                                                     <entry>ULC</entry>
+                                                     <entry standard-ref-number="CAN/ULC-S102.2">CAN/ULC-S102.2:2018</entry>
+                                                     <entry standard-id="ulcs102.2-18"
+                                                            standard-ref-id="d-ulcs102.2"
+                                                            standard-ref-title="Standard Method of Test for Surface Burning Characteristics of Flooring, Floor Coverings, and Miscellaneous Materials and Assemblies">Standard Method of Test for Surface Burning Characteristics of Flooring, Floor Coverings, and Miscellaneous Materials and Assemblies</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect1.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1"
+                                                             display-type="number">-1.1.1. D-3.1.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-81b40ea557" sequence="496" description="Issue 11941 Punctuation at AppD.Tbl1#Row31.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row31"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row31">
+                                                     <entry>ULC</entry>
+                                                     <entry standard-ref-number="CAN/ULC-S112.2">CAN/ULC-S112.2-07</entry>
+                                                     <entry standard-id="ulcs1122-07"
+                                                            standard-ref-id="d-ulcs1122"
+                                                            standard-ref-title="Standard Method of Fire Test of Ceiling Firestop Flap Assemblies">Standard Method of Fire Test of Ceiling Firestop Flap Assemblies</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article10"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article11"
+                                                             display-type="number">-2.3.10. D-2.3.11</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-787cac4dcf" sequence="497" description="Issue 11943 Punctuation at AppD.Tbl1#Row32.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row32"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row32">
+                                                     <entry>ULC</entry>
+                                                     <entry standard-ref-number="CAN/ULC-S114">CAN/ULC-S114:2018</entry>
+                                                     <entry standard-id="ulcs114-18"
+                                                            standard-ref-id="d-ulcs114"
+                                                            standard-ref-title="Standard Method of Test for Determination of Non-Combustibility in Building Materials">Standard Method of Test for Determination of Non-Combustibility in Building Materials</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect1.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect4.subsect1.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect4.subsect2.article1"
+                                                             display-type="number">1.1.1. D-4.1.1. D-4.2.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-fb48175fb8" sequence="498" description="Issue 11946 Punctuation at AppD.Tbl1#Row33.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row33"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row33">
+                                                     <entry>ULC</entry>
+                                                     <entry standard-ref-number="CAN/ULC-S134">CAN/ULC-S134-13</entry>
+                                                     <entry standard-id="ulcs134-13"
+                                                            standard-ref-id="d-ulcs134"
+                                                            standard-ref-title="Standard Method of Fire Test of Exterior Wall Assemblies">Standard Method of Fire Test of Exterior Wall Assemblies</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect1.subsect1.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect6.subsect1.article1"
+                                                             display-type="number">-1.1.1. D-6.1.1</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-23ceb51d17" sequence="499" description="Issue 11948 Punctuation at AppD.Tbl1#Row34.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row34"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect1.subsect1.article2.table1.row34">
+                                                     <entry>ULC</entry>
+                                                     <entry standard-ref-number="CAN/ULC-S702.1">CAN/ULC-S702.1-14</entry>
+                                                     <entry standard-id="ulcs702.1-14"
+                                                            standard-ref-id="d-ulcs702"
+                                                            standard-ref-title="Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification">Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification</entry>
+                                                     <entry>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article5"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect6.subsect1.article1"
+                                                             display-type="number"/>
+                                                        <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect7.subsect4"
+                                                             display-type="number">3.4. D-2.3.5. D-2.6.1. D-6.1.1. D-7.4</ref>.
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-d51732cff1" sequence="500" description="Issue 5951 Standard Reference at AppD.Tbl14#Row2.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row2">
+                                                     <entry align="left" valign="top">Add to the fire-resistance rating
+                    of wood stud walls, sheathed with gypsum board or lath and plaster,
+                    if the spaces between the studs are filled with preformed insulation
+                    of rock or slag fibres conforming to <ref type="standard" target="d-ulcs702" standardId="d-ulcs702">CAN/ULC-S702.1, “Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification,”</ref> and with a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super>
+                                                        </measurement> of wall surface</entry>
+                                                     <entry align="center" valign="middle">15<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note1"
+                                                             vendor-target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note1"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-962725bf8d" sequence="501" description="Issue 5952 Standard Reference at AppD.Tbl14#Row3.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row3">
+                                                     <entry align="left" valign="top">Add to the fire-resistance rating
+                    of non-loadbearing wood stud walls, sheathed with gypsum board or
+                    lath and plaster, if the spaces between the studs are filled with
+                    preformed insulation of glass fibres conforming to <ref type="standard" target="d-ulcs702" standardId="d-ulcs702">CAN/ULC-S702.1, “Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification,”</ref> and having a mass per unit
+                    area of not less than <measurement units="metric">0.6 kg/m<super> 2</super>
+                                                        </measurement> of wall
+                    surface</entry>
+                                                     <entry align="center" valign="middle">5<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note2"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-ba7f35a100" sequence="502" description="Issue 5953 Standard Reference at AppD.Tbl14#Row4.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row4">
+                                                     <entry>Add to the fire-resistance rating of loadbearing wood stud
+                    walls sheathed with gypsum board if the spaces between the studs are
+                    filled with insulation of cellulose fibres conforming to <ref type="standard" target="d-ulcs703" standardId="d-ulcs703">CAN/ULC-S703, “Standard for Cellulose Fibre Insulation (CFI) for Buildings,”</ref> and having a density of not
+                    less than 50 kg/m<super>3</super>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">10</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b0ed71f07d" sequence="503" description="Issue 5954 Standard Reference at AppD.Tbl14#Row8.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row8">
+                                                     <entry>Add to the fire-resistance rating of floor assemblies if the
+                    spaces between the structural members are filled with preformed insulation
+                    of rock or slag fibres conforming to <ref type="standard" target="d-ulcs702" standardId="d-ulcs702">CAN/ULC-S702.1, “Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification,”</ref> and having a mass per unit area of not less than
+                    1.22 kg/m<super>2</super> of floor surface </entry>
+                                                     <entry align="center" valign="middle">5<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note2"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-84627a6569" sequence="504" description="Issue 5955 Standard Reference at AppD.Tbl14#Row9.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row9"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row9">
+                                                     <entry>Add to the fire-resistance rating of floor assemblies if the
+                    spaces between the structural members are filled with wet-blown cellulose
+                    fibres conforming to <ref type="standard" target="d-ulcs703" standardId="d-ulcs703">CAN/ULC-S703, “Standard for Cellulose Fibre Insulation (CFI) for Buildings,”</ref> and having a density of not less than 50 kg/m<super>3</super>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">5<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note2"
+                                                             vendor-target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note2"/>
+                                                        <ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note3"
+                                                             vendor-target="nbc.divB.appendixD.appsect2.subsect3.article4.table7.note3"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7942093032" sequence="505" description="Issue 11957 Punctuation at AppD.Tbl14#Row7.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row7">
+                                                     <entry align="left" valign="top">Add to the fire-resistance rating
+                    of plaster on <measurement units="metric">9.5 mm</measurement> thick gypsum lath ceilings <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table4"
+                                                             display-type="long">(Table D-2.3.4.-D)</ref> if supports for lath are <measurement units="metric">300 mm</measurement> o.c.</entry>
+                                                     <entry align="center" valign="middle">10</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c21c56fc41" sequence="506" description="Issue 11958 Punctuation at AppD.Tbl15#Row2.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article5.table1.row2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article5.table1.row2">
+                                                     <entry align="left" valign="middle" rowspan="3">Floor</entry>
+                                                     <entry align="left" valign="middle">Wood or open-web steel joists<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article5.table1.note1"
+                                                             vendor-target="nbc.divB.appendixD.appsect2.subsect3.article5.table1.note1"/> and metal-plate-connected
+                    wood trusses<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article5.table1.note1"/>
+                                                     </entry>
+                                                     <entry align="left" valign="top">
+                                                        <measurement units="metric">12.5 mm</measurement> plywood or<measurement units="metric">15.5 mm</measurement> oriented
+                    strandboard or<measurement units="metric">17 mm</measurement> T &amp;
+                    G softwood or<measurement units="metric">14 mm</measurement> phenolic-bonded
+                    Douglas Fir plywood (no finished flooring required)</entry>
+                                                     <entry align="left" valign="top" rowsep="1">Hardwood
+                    or softwood flooring on building paper Resilient
+                    flooring, parquet floor, felted synthetic fibre floor coverings, carpeting,
+                    or ceramic tile on <measurement units="metric">8 mm</measurement> thick panel-type underlay Ceramic tile on <measurement units="metric"> 30 mm</measurement> mortar bed</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8949e09521" sequence="507" description="Issue 5975 Incorrect Content at AppD.Tbl19#Row3.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect4.article3.table1.row3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect4.article3.table1.row3">
+                                                     <entry align="left" valign="top">Solid panels with <measurement units="metric"> 4 mm</measurement> plywood facings<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect4.article3.table1.note2"/> glued to <measurement units="metric">46  mm</measurement> solid wood core of glued, tongued and grooved construction
+                    for both sides and ends of core pieces with tongued and grooved rails
+                    in the core about <measurement units="metric">760 mm</measurement> apart</entry>
+                                                     <entry align="center" valign="top">54</entry>
+                                                     <entry align="center" valign="top">1 h</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3cd9aa58f9" sequence="508" description="Issue 5980 Incorrect Content at AppD.Tbl22#Row4.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row4">
+                                                     <entry align="left" valign="top">Gypsum-perlite or vermiculite
+                    plaster on 9.5 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect6.article1.table2.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-4a66684d9a" sequence="509" description="Issue 5981 Incorrect Content at AppD.Tbl22#Row5.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row5">
+                                                     <entry align="left" valign="top">Gypsum perlite or vermiculite
+                    plaster on 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect6.article1.table2.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">32</entry>
+                                                     <entry align="center" valign="top">50</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-fab4466e91" sequence="510" description="Issue 5982 Incorrect Content at AppD.Tbl22#Row6.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row6">
+                                                     <entry align="left" valign="top">Gypsum perlite or vermiculite
+                    plaster on double 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect6.article1.table2.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">32</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3f16756bd0" sequence="511" description="Issue 5988 Reference at AppD.Tbl25#Row2.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row2">
+                                                     <entry align="center" valign="top">See <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article1.figure1"
+                                                             display-type="long"/>- A
+                                                     </entry>
+                                                     <entry align="center" valign="top">0.51</entry>
+                                                     <entry align="center" valign="top">No. 8 sheet-metal screws <measurement units="metric">9.5 mm</measurement> long, <measurement units="metric">200 mm</measurement> o.c.</entry>
+                                                     <entry align="center" valign="top">
+                                                        <measurement units="metric">50 mm</measurement> mineral wool
+                    batts<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article1.table5.note3"
+                                                             vendor-target="nbc.divB.appendixD.appsect2.subsect6.article1.table5.note3"/>
+                                                     </entry>
+                                                     <entry align="center" valign="top">45 min</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-504759b7f0" sequence="512" description="Issue 5989 Reference at AppD.Tbl25#Row3.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row3">
+                                                     <entry align="center" valign="top">See <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article1.figure2"
+                                                             display-type="long"/>- B
+                                                     </entry>
+                                                     <entry align="center" valign="top">0.64</entry>
+                                                     <entry align="center" valign="top">Self-threading screws or No. 8
+                    sheet-metal screws, <measurement units="metric">600 mm</measurement> o.c.</entry>
+                                                     <entry align="center" valign="top">2 layers 12.7 mm gypsum board</entry>
+                                                     <entry align="center" valign="top">1.5 h</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-9294b833e8" sequence="513" description="Issue 5990 Reference at AppD.Tbl25#Row4.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row4">
+                                                     <entry align="center" valign="top">See <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article1.figure1"
+                                                             display-type="long"/>- A
+                                                     </entry>
+                                                     <entry align="center" valign="top">0.64</entry>
+                                                     <entry align="center" valign="top">No. 8 sheet-metal screws, <measurement units="metric">9.5 mm </measurement> long <measurement units="metric">200  mm</measurement> o.c.</entry>
+                                                     <entry align="center" valign="top">
+                                                        <measurement units="metric">75  mm</measurement> mineral wool
+                    batts,<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article1.table5.note3"/>
+                                                        <measurement units="metric">12.7  mm</measurement> gypsum
+                    board</entry>
+                                                     <entry align="center" valign="top">2 h</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-915fe981be" sequence="514" description="Issue 5991 Reference at AppD.Tbl25#Row5.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table5.row5">
+                                                     <entry align="center" valign="top">See <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect6.article1.figure2"
+                                                             display-type="long"/>- B
+                                                     </entry>
+                                                     <entry align="center" valign="top">0.76</entry>
+                                                     <entry align="center" valign="top">Crimped joint or No. 8 sheet-metal
+                    screws, <measurement units="metric"> 300 mm</measurement> o.c.</entry>
+                                                     <entry align="center" valign="top">2 layers <measurement units="metric">15.9 mm</measurement> gypsum
+                    board </entry>
+                                                     <entry align="center" valign="top">2 h</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-88a49af83f" sequence="515" description="Issue 5999 Incorrect Content at AppD.Tbl29#Row6.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row6">
+                                                     <entry align="left" valign="top">Gypsum-perlite or vermiculite
+                    plaster on 9.5 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6433d9e1b8" sequence="516" description="Issue 6000 Incorrect Content at AppD.Tbl29#Row7.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row7">
+                                                     <entry align="left" valign="top">Gypsum-perlite or gypsum-vermiculite
+                    on 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">39</entry>
+                                                     <entry align="center" valign="top">50</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-d823dd25a7" sequence="517" description="Issue 6001 Incorrect Content at AppD.Tbl29#Row8.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row8">
+                                                     <entry align="left" valign="top">Gypsum-perlite or vermiculite
+                    plaster on double 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">39</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6bfbb0f86f" sequence="518" description="Issue 6002 Incorrect Content at AppD.Tbl29#Row10.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row10"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row10">
+                                                     <entry align="left" valign="top">Gypsum-sand on metal
+                    lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note4"/> (plaster in contact with lower
+                    flange)</entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">39</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6dde03eb4f" sequence="519" description="Issue 6003 Incorrect Content at AppD.Tbl29#Row11.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row11"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row11">
+                                                     <entry align="left" valign="top">Gypsum-sand on metal
+                    lath with air gap between plaster and lower flange<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note4"/></entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6e8edd53d2" sequence="520" description="Issue 6045 Incorrect Content at AppD.Tbl33#Row7.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row7"
+                                                       rowsep="0">
+                                                     <entry align="center" valign="top" rowsep="1" colname="2">
+                                                        <ref type="standard" target="d-astmc1396m" standardId="d-astmc1396m">ASTM C1396/C1396M</ref>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7c4d47715a" sequence="521" description="Issue 6046 Incorrect Content at AppD.Tbl33#Row9.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row9"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row9">
+                                                     <entry align="left" valign="top" rowsep="0">Douglas Fir plywood<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note4"
+                                                             vendor-target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note4"/>
+                                                     </entry>
+                                                     <entry align="center" valign="top" rowsep="0">
+                                                        <ref type="standard" target="d-csao121" standardId="d-csao121">CSA O121</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="middle" colname="3" rowspan="3">11</entry>
+                                                     <entry align="center" valign="middle" colname="4" rowspan="3">150/100</entry>
+                                                     <entry align="center" valign="middle" colname="5" rowspan="3">150/300</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-32c053ca45" sequence="522" description="Issue 6047 Incorrect Content at AppD.Tbl33#Row10.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row10"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row10"
+                                                       rowsep="0">
+                                                     <entry align="left" valign="top">Poplar plywood<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note4"/>
+                                                     </entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="standard" target="d-csao153" standardId="d-csao153">CSA O153</ref>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-f5990030ab" sequence="523" description="Issue 6048 Incorrect Content at AppD.Tbl33#Row11.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row11"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row11">
+                                                     <entry align="left" valign="top">Plywood with Spruce face veneer<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note4"/>
+                                                     </entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="standard" target="d-csao151" standardId="d-csao151">CSA O151</ref>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3612dcc45b" sequence="524" description="Issue 6049 Incorrect Content at AppD.Tbl33#Row12.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row12"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row12">
+                                                     <entry align="left" valign="top">Douglas Fir plywood<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note4"/>
+                                                     </entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="standard" target="d-csao121" standardId="d-csao121">CSA O121</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="top">6</entry>
+                                                     <entry align="center" valign="top">150/100</entry>
+                                                     <entry align="center" valign="top">150/100</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-ef4c041046" sequence="525" description="Issue 6050 Incorrect Content at AppD.Tbl33#Row13.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row13"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row13">
+                                                     <entry align="left" valign="top">Fibreboard low density</entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="standard" target="d-ulcs706" standardId="d-ulcs706">CAN/ULC-S706.1</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="top">11</entry>
+                                                     <entry align="center" valign="top">X/100</entry>
+                                                     <entry align="center" valign="top">150/100</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b31871c48d" sequence="526" description="Issue 6051 Incorrect Content at AppD.Tbl33#Row14.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row14"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row14">
+                                                     <entry align="left" valign="top">Particleboard</entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="standard" target="d-ansia208.1" standardId="d-ansia208.1">ANSI A208.1</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="top">12.7</entry>
+                                                     <entry align="center" valign="top">150/300</entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note5"
+                                                             vendor-target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note5"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b6af95e622" sequence="527" description="Issue 6052 Incorrect Content at AppD.Tbl33#Row15.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row15"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table1.row15">
+                                                     <entry align="left" valign="top" rowsep="1" rowspan="2">Waferboard,
+                    OSB</entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="standard" target="d-csao437.0" standardId="d-csao437.0">CSA O437.0</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note5"/>
+                                                     </entry>
+                                                     <entry align="center" valign="top">
+                                                        <ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect3.subsect1.article1.table1.note5"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-caa8f3b91f" sequence="528" description="Issue 6057 Incorrect Content at AppD.Tbl34#Row4.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row4">
+                                                     <entry align="left" valign="top">Nylon carpet, pile weight
+                    not less than <measurement units="metric">610 g/m<super>2</super>
+                                                        </measurement> and not more than <measurement units="metric">800 g/m<super> 2</super>
+                                                        </measurement>, applied with or without felt underlay<ref type="table-note" target="nbc.divB.appendixD.appsect3.subsect1.article1.table2.note3"/></entry>
+                                                     <entry align="center" valign="middle">
+                                                        <ref type="standard" target="d-cgsb-4.129" standardId="d-cgsb-4.129">CAN/CGSB-4.129</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">300/500</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1153c2a8ba" sequence="529" description="Issue 6059 Incorrect Content at AppD.Tbl34#Row5.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row5">
+                                                     <entry align="left" valign="top">Nylon carpet, pile weight
+                    not less than <measurement units="metric">610 g/m<super>2</super>
+                                                        </measurement> and not more than <measurement units="metric">1355 g/m<super> 2</super>
+                                                        </measurement>, glued down to concrete</entry>
+                                                     <entry align="center" valign="middle">
+                                                        <ref type="standard" target="d-cgsb-4.129" standardId="d-cgsb-4.129">CAN/CGSB-4.129</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">300/500</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-22e0986c8b" sequence="530" description="Issue 6060 Incorrect Content at AppD.Tbl34#Row6.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row6">
+                                                     <entry align="left" valign="top">Wool/nylon blend carpet
+                    (woven) with not more than 20% nylon and pile weight not less than <measurement units="metric">1120 g/m<super> 2</super>
+                                                        </measurement>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">
+                                                        <ref type="standard" target="d-cgsb-4.129" standardId="d-cgsb-4.129">CAN/CGSB-4.129</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">300/500</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-17c2d3222b" sequence="531" description="Issue 6061 Incorrect Content at AppD.Tbl34#Row7.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row7">
+                                                     <entry align="left" valign="top">Nylon/wool blend carpet
+                    (woven) with not more than 50% wool, pile weight not less than <measurement units="metric">610 g/m<super>2</super>
+                                                        </measurement> and not more than <measurement units="metric">800 g/m<super>2</super>
+                                                        </measurement>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">
+                                                        <ref type="standard" target="d-cgsb-4.129" standardId="d-cgsb-4.129">CAN/CGSB-4.129</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">300/500</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e88ef15a5e" sequence="532" description="Issue 6062 Incorrect Content at AppD.Tbl34#Row8.Col2">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect3.subsect1.article1.table2.row8">
+                                                     <entry align="left" valign="top">Polypropylene carpet,
+                    pile weight not less than <measurement units="metric">500 g/m<super>2</super>
+                                                        </measurement> and
+                    not more than <measurement units="metric"> 1200 g/m<super>2</super>
+                                                        </measurement>, glued down to
+                    concrete</entry>
+                                                     <entry align="center" valign="middle">
+                                                        <ref type="standard" target="d-cgsb-4.129" standardId="d-cgsb-4.129">CAN/CGSB-4.129</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="middle">300/500</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
