@@ -519,9 +519,10 @@
                       <text>materials that conform to <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art1.sent2" display-type="long" pretext="Sentences"/>
                         <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art1.sent4" display-type="medium" pretext="to"/>, or</text>
                     </clause>
+                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:742 Reference a2ead2492a -->
                     <clause xml:id="nbc.divB.part3.sect1.subsect6.art4.sent2.clause5" letter="e">
                       <text>any combination of the materials listed in <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art4.sent2.clause1" display-type="short" pretext="Clauses"/>
-                        <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art4.sent2.clause4" display-type="short" pretext="to"/>.</text>
+                        <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art4.sent2.clause4" display-type="short" pretext="to">(d)</ref>.</text>
                     </clause>
                   </sentence>
                   
@@ -769,8 +770,10 @@
                       <text>a combination of <ref type="term" target="ncmbtbl">noncombustible</ref> cladding and the cladding described in <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent1" display-type="short" pretext="Sentence"/> and <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent2.clause1" display-type="short" pretext="Clauses"/> <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent2.clause3" display-type="short" pretext="to"/>.</text>
                     </clause>
                   </sentence>
+                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:747 Reference a72bd31dc3 -->
+                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:748 Incorrect Content 28554a8112 -->
                   <sentence xml:id="nbc.divB.part3.sect1.subsect6.art9.sent3" number="3">
-                    <text>The permitted area of <ref type="term" target="cmbtbl">combustible</ref> cladding in <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent2.clause1" display-type="medium"/> or <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent2.clause2" display-type="short"/> shall not exceed 5% of the cladding on each exterior wall of each <ref type="term" target="tr">storey</ref> where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the <ref type="term" target="bldng">building</ref> exceeds <measurement units="metric">10 min</measurement> in 10% or more of all fire department calls to the building. (See <ref type="internal" target="nbc.divB.part3.sect2.subsect3.art1.sent8" display-type="long"/>.)</text>
+                    <text>The permitted area of <ref type="term" target="cmbtbl">combustible</ref> cladding in <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent2.clause1" display-type="medium">Clause (2)(a)</ref> or <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent2.clause2" display-type="short">(b)</ref> shall not exceed 5% of the cladding on each exterior wall of each <ref type="term" target="tr">storey</ref> where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the <ref type="term" target="bldng">building</ref> exceeds <measurement units="metric">10 min</measurement> in 10% or more of all fire department calls to the <ref type="term" target="bldng">building</ref>. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote58" display-type="long">Note A-3.2.3.1.(8)</ref>.)</text>
                   </sentence>
                   <sentence xml:id="nbc.divB.part3.sect1.subsect6.art9.sent4" number="4">
                     <text>Except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent6" display-type="short" pretext="Sentences"/> <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9.sent8" display-type="short" pretext="and"/>, cladding on an exterior wall assembly of a <ref type="term" target="bldng">building</ref> or part of a <ref type="term" target="bldng">building</ref> permitted to be of <ref type="term" target="ncps-mt-nstr">encapsulated mass timber construction</ref> that is not more than 6 <ref type="term" target="tr">storeys</ref> in <ref type="term" target="bldng-hght">building height</ref> is permitted to consist of</text>
@@ -927,9 +930,10 @@
               <original effective-date="2024-03-08">
               </original>
               
+              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:765 Reference 6c8ffc1a52 -->
               <revision seq="1" type="amendment" effective-date="2024-04-05" id="bc-mo-2024-01-011" status="current">
                 <content>
-                  <text>Except as permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect7.art5.sent2" display-type="short"/> and by <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art20" display-type="long" pretext="Articles"/> <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art93" display-type="medium" pretext="to"/> for mixed types of construction, all loadbearing walls, columns and arches in the <ref type="term" target="tr">storey</ref> immediately below a floor or roof assembly required to have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> shall have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> not less than that required for the supported floor or roof assembly.</text>
+                  <text>Except as permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect7.art5.sent2" display-type="short"/> and by <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art20" display-type="long" pretext="Articles"/> <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art93" display-type="medium" pretext="to">3.2.2.92.</ref> for mixed types of construction, all <ref type="term" target="ldbrng">loadbearing</ref> walls, columns and arches in the <ref type="term" target="tr">storey</ref> immediately below a floor or roof assembly required to have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> shall have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> not less than that required for the supported floor or roof assembly.</text>
                 </content>
                 <change-summary>Changed reference from 3.2.2.92 to 3.2.2.93</change-summary>
                 <note>Ministerial Order BA 2024 01</note>
