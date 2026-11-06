@@ -1191,17 +1191,18 @@
               </original>
               <revision seq="1" type="amendment" effective-date="2024-08-27" id="bc-mo-2024-03-012" status="current">
                 <content>
+                  <!-- BBC-177 Issue 100: "of Division A/B" inside the link -->
                   <text>The requirements of this Subsection apply to</text>
                   <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause1" letter="a">
-                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part3" display-type="short">Part 3 of Division B</ref> which include <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="short"/> of Division B,</text>
+                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part3" display-type="short">Part 3 of Division B</ref> which include <ref type="term" target="bldng">buildings</ref> designed and constructed in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect10" display-type="short">Subsection 3.2.10. of Division B</ref>,</text>
                   </clause>
                   <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause2" letter="b">
-                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> that are designed with common egress systems for the occupants and require the use of <ref type="term" target="frwll">firewalls</ref> according to <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art4" display-type="short">Article 1.3.3.4.</ref> of Division A, and</text>
+                    <text><ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> that are designed with common egress systems for the occupants and require the use of <ref type="term" target="frwll">firewalls</ref> according to <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art4" display-type="short">Article 1.3.3.4. of Division A</ref>, and</text>
                   </clause>
                   <clause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3" letter="c">
                     <text>the following, in respect of <ref type="term" target="bldng">buildings</ref> within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> other than <ref type="term" target="bldng">buildings</ref> described in Clause (b),</text>
                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause1" number="1">
-                      <text>structural components that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> (See <ref type="internal" target="nbc.divC.part2.appendix.appnote8" display-type="short"/>.),</text>
+                      <text>structural components that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref> (See <ref type="internal" target="nbc.divC.part2.appendix.appnote8" display-type="short">Note A-2.2.7.1.(1)(c)(i)</ref>.),</text>
                     </subclause>
                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause2" number="2">
                       <text>geotechnical conditions at <ref type="term" target="bldng">building</ref> sites that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref>,</text>
