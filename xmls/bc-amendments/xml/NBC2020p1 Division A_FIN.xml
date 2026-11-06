@@ -1945,10 +1945,11 @@
                             <colspec colname="col2" colwidth="2*" />
                             <colspec colname="col3" colwidth="2.5*" />
                             <thead>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:18 Punctuation cc714a61c3 -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table2.rowh1"
                                     >
-                                    <entry>No</entry>
+                                    <entry>No.</entry>
                                     <entry
                                         >Code Requirement in Division B</entry>
                                     <entry
@@ -2317,8 +2318,11 @@
                                 xml:id="nbc.divA.part1.sect1.subsect2.art2.sent1"
                                 number="1"
                                 >
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10004 Punctuation ff559446ff -->
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10005 Punctuation 2d8c1a1bcd -->
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10006 Punctuation a8f7540b1b -->
                                 <text
-                                    >Unless a Book is specified, references to "the British Columbia Building Code," "the Code," "this Code" and the like shall be read as references to the Book in which they appear.</text>
+                                    >Unless a Book is specified, references to “the British Columbia Building Code,” “the Code,” “this Code” and the like shall be read as references to the Book in which they appear.</text>
                             </sentence>
                         </article>
                     </subsection>
@@ -2363,6 +2367,7 @@
                         xml:id="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
                         letter="b"
                         >
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11541 Punctuation e5a2e62b3a -->
                         <text>except as required by <ref
                                 type="internal"
                                 target="nbc.divA.part1.sect2.subsect1.art1.sent3"
@@ -2373,8 +2378,7 @@
                                 >authority having jurisdiction</ref> under <ref
                                 type="internal"
                                 target="nbc.divC.part2.sect3"
-                                display-type="long"
-                                />, that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see <ref
+                                display-type="long">Section 2.3 of Division C</ref>, that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see <ref
                                 type="internal"
                                 target="nbc.divA.part1.appendix.appnote4"
                                 display-type="short"
@@ -2532,8 +2536,9 @@
                                     xml:id="nbc.divA.part1.sect2.subsect3.art1.sent1.clause1"
                                     letter="a"
                                     >
+                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11542 Punctuation ae38549c76 -->
                                     <text
-                                        >possess a Canadian tradesperson's qualification certification as a plumber,</text>
+                                        >possess a Canadian tradesperson’s qualification certification as a plumber,</text>
                                 </clause>
                                 <clause
                                     xml:id="nbc.divA.part1.sect2.subsect3.art1.sent1.clause2"
@@ -3111,15 +3116,19 @@
                         >
                         <number>1.1.1.1.(3)</number>
                         <title>Factory-Constructed Buildings.</title>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10008 Punctuation a5b35b5420 -->
                         <paragraph
                             xml:id="nbc.divA.part1.appendix.appnote2.para1"
-                            >The British Columbia Building Code applies the same requirements to site-built and factory-constructed buildings. However, it can often be difficult to determine whether a factory-constructed building complies with the Code once it has been delivered to the construction site because many of the wall, roof and floor assemblies are closed in and so their components cannot be inspected. CSA A277, "Procedure for certification of prefabricated buildings, modules, and panels," was developed to address this problem with regard to residential, commercial and industrial buildings. This standard describes a procedure whereby an independent certification agency can review the quality control procedures of a factory and make periodic unannounced inspections of its products. The standard is not a building code, only a procedure for certifying compliance of factory-constructed components with a building code or other standard. If a factory-constructed building bears the label of an accredited certification agency indicating that compliance with the National Building Code has been certified using the CSA A277 procedure, the accepting authority will have some assurance that the concealed components do not require re-inspection on site.</paragraph>
+                            >The British Columbia Building Code applies the same requirements to site-built and factory-constructed buildings. However, it can often be difficult to determine whether a factory-constructed building complies with the Code once it has been delivered to the construction site because many of the wall, roof and floor assemblies are closed in and so their components cannot be inspected. CSA A277, “Procedure for certification of prefabricated buildings, modules, and panels,” was developed to address this problem with regard to residential, commercial and industrial buildings. This standard describes a procedure whereby an independent certification agency can review the quality control procedures of a factory and make periodic unannounced inspections of its products. The standard is not a building code, only a procedure for certifying compliance of factory-constructed components with a building code or other standard. If a factory-constructed building bears the label of an accredited certification agency indicating that compliance with the National Building Code has been certified using the CSA A277 procedure, the accepting authority will have some assurance that the concealed components do not require re-inspection on site.</paragraph>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10009 Punctuation bb31980ca2 -->
                         <paragraph
                             xml:id="nbc.divA.part1.appendix.appnote2.para2"
-                            >On the other hand, standards in the CSA Z240 MH Series, "Manufactured homes," do resemble a building code. Most of the individual standards in the series contain requirements regarding many issues also covered in this Code. Some of these Z240 MH Series provisions are performance requirements with no quantitative criteria, some simply reference the applicable British Columbia Building Code requirements, while others contain requirements that differ from those in the British Columbia Building Code. One of the individual standards in the Z240 MH Series deals with special requirements for manufactured homes related to the fact that these houses must be moved over roads, which is an issue the British Columbia Building Code does not address. Therefore, labeling that indicates that a factory-constructed house complies with the Z240 MH Series standards can NOT be taken as an indication that the house necessarily complies with the building code in effect for the location where the house will be sited.</paragraph>
+                            >On the other hand, standards in the CSA Z240 MH Series, “Manufactured homes,” do resemble a building code. Most of the individual standards in the series contain requirements regarding many issues also covered in this Code. Some of these Z240 MH Series provisions are performance requirements with no quantitative criteria, some simply reference the applicable British Columbia Building Code requirements, while others contain requirements that differ from those in the British Columbia Building Code. One of the individual standards in the Z240 MH Series deals with special requirements for manufactured homes related to the fact that these houses must be moved over roads, which is an issue the British Columbia Building Code does not address. Therefore, labeling that indicates that a factory-constructed house complies with the Z240 MH Series standards can NOT be taken as an indication that the house necessarily complies with the building code in effect for the location where the house will be sited.</paragraph>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10010 Punctuation e3468b5bb9 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10011 Punctuation 6a03722d86 -->
                         <paragraph
                             xml:id="nbc.divA.part1.appendix.appnote2.para3"
-                            >The British Columbia Building Code does reference CSA Z240.10.1, "Site preparation, foundation, and installation of buildings," which is not actually part of the CSA Z240 MH Series. This standard contains requirements for surface foundations where buildings—not just houses—comply with the deformation resistance test provided in CSA Z240.2.1, "Structural requirements for manufactured homes."</paragraph>
+                            >The British Columbia Building Code does reference CSA Z240.10.1, “Site preparation, foundation, and installation of buildings,” which is not actually part of the CSA Z240 MH Series. This standard contains requirements for surface foundations where buildings—not just houses— comply with the deformation resistance test provided in CSA Z240.2.1, “Structural requirements for manufactured homes.”</paragraph>
                     </application-note>
                 </new-content>
             </replace>
@@ -3151,12 +3160,14 @@
                         >
                         <number>1.1.1.1.(5)</number>
                         <title>Heritage Buildings.</title>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11278 Punctuation 0bb84f01fe -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11279 Punctuation 2f070bb042 -->
                         <paragraph
                             xml:id="nbc.divA.part1.appendix.appnote2a.para1"
-                            >Many local governments have identified conservation of selected heritage properties, or protection of the heritage character of certain areas, as being community planning objectives. The Province's planning objectives and growth strategy encourage and support local government in this effort. The key is to find ways to make restoration and rehabilitation of <ref
+                            >Many local governments have identified conservation of selected heritage properties, or protection of the heritage character of certain areas, as being community planning objectives. The Province’s planning objectives and growth strategy encourage and support local government in this effort. The key is to find ways to make restoration and rehabilitation of <ref
                                 type="term"
                                 target="bc-hrtg-bldng"
-                                >heritage buildings</ref> economically viable for the properties' owners.</paragraph>
+                                >heritage buildings</ref> economically viable for the properties’ owners.</paragraph>
                         <paragraph
                             xml:id="nbc.divA.part1.appendix.appnote2a.para2"
                             >It is generally recognized that the present British Columbia Building Code was primarily written for new construction and provides for a performance level that is significantly higher than what exists with many older <ref
@@ -3175,6 +3186,8 @@
                                 type="term"
                                 target="bldng"
                                 >building</ref> from possible destruction by fire.</paragraph>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8439 Punctuation b5a1eca0ff -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11280 Punctuation e791c873e7 -->
                         <paragraph
                             xml:id="nbc.divA.part1.appendix.appnote2a.para3"
                             >The Table of Alternative Compliance Methods for Heritage Buildings represents some of the ways that restoration and rehabilitation of <ref
@@ -3183,10 +3196,10 @@
                                 >heritage buildings</ref> can be facilitated without compromising the objectives of the Code. Only <ref
                                 type="term"
                                 target="bldng"
-                                >buildings</ref> which have been identified by the provincial or a local government are included in the definition of "<ref
+                                >buildings</ref> which have been identified by the provincial or a local government are included in the definition of “<ref
                                 type="term"
                                 target="bc-hrtg-bldng"
-                                >heritage building</ref>." For these <ref
+                                >heritage building</ref>.” For these <ref
                                 type="term"
                                 target="bldng"
                                 >buildings</ref>, conservation is also a public objective. Heritage <ref
@@ -3321,6 +3334,7 @@
                         >
                         <number>1.1.1.2.(1)</number>
                         <title>Application to Existing Buildings.</title>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:47 Incorrect Content 2c15dc5658 -->
                         <paragraph
                             xml:id="nbc.divA.part1.appendix.appnote1.para1"
                             >This Code is most often applied to existing or relocated <ref
@@ -3344,7 +3358,7 @@
                                 >buildings</ref>, unless specifically required by local regulations or bylaws. For example, although the British Columbia Fire Code could be interpreted to require the installation of fire alarm, standpipe and hose, and automatic sprinkler systems in an existing <ref
                                 type="term"
                                 target="bldng"
-                                >building</ref> for which there were no requirements at the time of construction, it is not intended that the British Columbia Fire Code be applied in this manner to these <ref
+                                >building</ref> for which there were no requirements at the time of construction, it is not intented that the British Columbia Fire Code be applied in this manner to these <ref
                                 type="term"
                                 target="bldng"
                                 >buildings</ref> unless the <ref
@@ -4474,7 +4488,8 @@
                         <sentence xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1" number="1" vendor-id="es007226">
                             <text>Part 9 of Division B applies to all <ref type="term" target="bldng">buildings</ref> described in <ref type="internal" target="nbc.divA.part1.sect1.subsect1.art1" display-type="long"/> of <measurement units="metric">3 <ref type="term" target="tr">storeys</ref></measurement> or less in <ref type="term" target="bldng-hg">building height</ref>, having a <ref type="term" target="bldng-r">building area</ref> not exceeding <measurement units="metric">600 m<super>2</super></measurement>, and used for <ref type="term" target="mjr-ccpn">major occupancies</ref> classified as</text>
                             <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause1" letter="a" vendor-id="es007226a">
-                                <text>reserved</text>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:21 Punctuation 58bb5165bc -->
+                                <text>reserved,</text>
                             </clause>
                             <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause2" letter="b" vendor-id="es007226b">
                                 <text>Group C, <ref type="term" target="rdntl-cc">residential occupancies</ref> (see <ref type="internal" target="nbc.divBV2.part9.appendix.appnote1" vendor-target="en000253" display-type="long"/>),</text>
@@ -5313,6 +5328,60 @@ building on a flat site.</paragraph>
         <!-- ================================================================== -->
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->
+        <amendment id="bc-qa-36dc9e284d" sequence="1012" description="Issue 6657 Reference at A.3.1.1.2.(1)">
+            <target type="canonical-id" id="nbc.divA.part3.sect1.subsect1.art2.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divA.part3.sect1.subsect1.art2.sent1"
+                                                   number="1"
+                                                   vendor-id="es007239">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6657 Reference 36dc9e284d -->
+                        <text>Except as provided in <ref type="internal"
+                                                    target="nbc.divA.part3.sect1.subsect1.art2.sent2"
+                                                    display-type="short"
+                                                    pretext="Sentences"/>
+                                               <ref type="internal"
+                                                    target="nbc.divA.part3.sect1.subsect1.art2.sent4"
+                                                    display-type="short"
+                                                    pretext="to">(4)</ref>, the functional statements described in this Part apply</text>
+                                            <clause xml:id="nbc.divA.part3.sect1.subsect1.art2.sent1.clause1"
+                                                    letter="a"
+                                                    vendor-id="es007239a">
+                                               <text>to all <ref type="term" target="bldng">buildings</ref> covered in this
+                    Code (see <ref type="internal"
+                                                       target="nbc.divA.part1.sect1.subsect1.art1"
+                                                       display-type="long"/>), and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divA.part3.sect1.subsect1.art2.sent1.clause2"
+                                                    letter="b"
+                                                    vendor-id="es007239b">
+                                               <text>only to the extent that they relate to compliance with this
+                    Code as required in <ref type="internal"
+                                                       target="nbc.divA.part1.sect2.subsect1.art1"
+                                                       display-type="long"/>
+                                               </text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-cce100660f" sequence="1480" description="Issue 83 Incorrect Content at A.3.1.1.2.(3)(a)">
+            <target type="canonical-id" id="nbc.divA.part3.sect1.subsect1.art2.sent3.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divA.part3.sect1.subsect1.art2.sent3.clause1"
+                                                    letter="a"
+                                                    vendor-id="es007241a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:83 Incorrect Content cce100660f -->
+                        <text>detached houses, semi-detached houses, houses with a <ref type="term" target="scnd-t">secondary suite</ref>, duplexes, triplexes, townhouses,
+                    row houses and boarding houses (see <ref type="internal"
+                                                       target="nbc.divA.part1.appendix.appnote7"
+                                                       display-type="long">Note A-1.4.1.2.(1)</ref>, Secondary
+                    Suite),</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 
 </bc-overlay>
