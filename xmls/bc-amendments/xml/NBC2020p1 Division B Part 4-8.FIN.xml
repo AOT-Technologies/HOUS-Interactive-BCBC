@@ -15,7 +15,18 @@
         <author>BC Building Code Team</author>
         <source-document>NBC2020p1 Division B Part 4-8.FIN.docx</source-document>
     </metadata>
-    
+
+    <!-- ================================================================== -->
+    <!-- GLOBAL TEXT REPLACEMENTS (BBC-329)                                 -->
+    <!-- The NBC source wraps every inline formula in <f>, which reaches    -->
+    <!-- the canonical MathML as a literal <mtext>[f]</mtext> marker shown  -->
+    <!-- on the website (e.g. "peak factor calculated as [f] ..."). The     -->
+    <!-- "[f]" string only occurs in those 51 mtext nodes, so blank it.     -->
+    <!-- ================================================================== -->
+    <text-replacements>
+        <replace from="[f]" to=""/>
+    </text-replacements>
+
     <amendments>
         
         <!-- ================================================================== -->
@@ -1051,6 +1062,171 @@
             </replace>
         </amendment>
         
+        <!-- ================================================================== -->
+        <!-- Amendment 044: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.8.(2) - Ce subscript and 0.28 superscript rendered   -->
+        <!-- below the line (NBC MathML attaches them to an empty base)        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-044" sequence="44"
+                   description="Rewrite Ce equation in Sentence 4.1.7.8.(2) as LaTeX so subscript and superscript attach to their base">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art8.sent2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2" number="2">
+                        <text>For <ref type="term" target="bldng">buildings</ref> in open terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause1" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>=</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>10</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.28</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>1.0</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
+                        <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote58" display-type="short"/>.)</see-also>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 045: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.8.(3) - Ce subscript and 0.50 superscript           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-045" sequence="45"
+                   description="Rewrite Ce equation in Sentence 4.1.7.8.(3) as LaTeX so subscript and superscript attach to their base">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art8.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3" number="3">
+                        <text>For <ref type="term" target="bldng">buildings</ref> in rough terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause2" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>=</mo><mn>0.5</mn><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>12.7</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.50</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>0.5</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
+                        <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote58" display-type="short"/>.)</see-also>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 046: Rewrite equations as LaTeX (BBC-329)                -->
+        <!-- Article 4.1.7.8.(4) - Cg/gp subscripts, injected "[f]"/"[a]"      -->
+        <!-- markers in inline formulas, extra space in "10 m ,"               -->
+        <!-- ================================================================== -->
+        <amendment id="bc-046" sequence="46"
+                   description="Rewrite Cg and related equations in Sentence 4.1.7.8.(4) as LaTeX; remove [f]/[a] markers and space before comma">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art8.sent4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4" number="4">
+                        <text>For the design of the main structural system, C<sub>g</sub> shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><mo>=</mo><mn>1</mn><mo>+</mo><msub><mi>g</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><mfrac><mi>&#x3C3;</mi><mi>&#x3BC;</mi></mfrac></mrow></math></equation>where<list type="variable"><item><variable>g<sub>p</sub></variable><description>= peak factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt><mo>+</mo><mfrac><mn>0.577</mn><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt></mfrac></mrow></math></equation>, and</description></item><item><variable>σ/μ</variable><description>= <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mi>K</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mpadded></mrow></msub></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>B</mi><mo>+</mo><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mi>&#x3B2;</mi></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>ν</variable><description>= average fluctuation rate calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><msqrt><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mrow><mi>s</mi><mi>F</mi><mo>+</mo><mi>&#x3B2;</mi><mi>B</mi></mrow></mfrac></msqrt></mrow></math></equation>,</description></item><item><variable>T</variable><description>= 3 600 s,</description></item><item><variable>K</variable><description>= 0.08 for open terrain and 0.10 for rough terrain,</description></item><item><variable>C<sub>eH</sub></variable><description>= exposure factor evaluated at reference height h = H,</description></item><item><variable>B</variable><description>= background turbulence factor, a function of w/H determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art8.figure1" display-type="long"/>,</description></item><item><variable>s</variable><description>= size reduction factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq5"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mi>&#x3C0;</mi><mn>3</mn></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>8</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><mi>H</mi></mrow><mrow><mn>3</mn><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mpadded></mrow></msub></mrow></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>10</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><mi>w</mi></mrow><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mpadded></mrow></msub></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow></mrow></math></equation>,</description></item><item><variable>F</variable><description>= gust energy ratio calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq6"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><msup><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mn>4</mn><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>3</mn></mrow></msup></mrow></mfrac></mrow></math></equation>, where x<sub>0</sub> = (1 220f<sub>nD</sub>/V<sub>H</sub>), and</description></item><item><variable>β</variable><description>= damping ratio, which shall be determined by a rational method, or may be taken to be 0.01 for steel structures, 0.02 for concrete structures, and 0.015 for composite structures,</description></item></list>where<list type="variable"><item><variable>f<sub>nD</sub></variable><description>= natural frequency of vibration of the <ref type="term" target="bldng">building</ref> in the along-wind direction, in Hz,</description></item><item><variable>H</variable><description>= height of the <ref type="term" target="bldng">building</ref>,</description></item><item><variable>w</variable><description>= effective width of windward face of the <ref type="term" target="bldng">building</ref> calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq7"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub><msub><mi>w</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub></mrow><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub></mrow></mfrac></mrow></math></equation>, where w<sub>i</sub> = width normal to wind direction at height h<sub>i</sub>, and</description></item><item><variable>V<sub>H</sub></variable><description>= mean wind speed at the top of the structure, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq8"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow><msqrt><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mpadded></mrow></msub></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq9"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow></mrow></math></equation></variable><description>= reference wind speed at a height of 10 m, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq10"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mrow><mn>2</mn><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi></mrow><mi>&#x3C1;</mi></mfrac></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>I<sub>W</sub></variable><description>= importance factor for wind load, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.table1" display-type="long"/>,</description></item><item><variable>q</variable><description>= reference velocity pressure, in Pa, and</description></item><item><variable>ρ</variable><description>= air density = 1.2929 kg/m<super>3</super>.</description></item></list></text>
+                        <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote59" display-type="short"/>.)</see-also>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 047: Remove extra space before comma (BBC-329)           -->
+        <!-- Notes to Figure 4.1.7.12.-A, Note (2) - "6 m ," -> "6 m,"          -->
+        <!-- (a <measurement> followed by punctuation gets a trailing space in  -->
+        <!-- the JSON, so the value is written as plain text)                   -->
+        <!-- ================================================================== -->
+        <amendment id="bc-047" sequence="47"
+                   description="Remove extra space between 6 m and comma in Note (2) to Figure 4.1.7.12.-A">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art12.figure1.note2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <note xml:id="nbc.divB.part4.sect1.subsect7.art12.figure1.note2">The reference height, h, is the mid-height of the roof or 6 m, whichever is greater.</note>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 048: Fix range reference (BBC-329)                       -->
+        <!-- Article 4.1.7.13.(1) - "Sentences (2) to Sentence (7)" ->          -->
+        <!-- "Sentences (2) to (7)"                                             -->
+        <!-- ================================================================== -->
+        <amendment id="bc-048" sequence="48"
+                   description="Fix range reference Sentences (2) to (7) in Sentence 4.1.7.13.(1)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent1" number="1">
+                        <text>Where solar panels are installed on a roof, the roof wind loads shall account for the wind loads on the solar panels, as determined in accordance with <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent2" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent7" display-type="number"/>, or shall be determined in the same way as for the roof without solar panels, whichever approach results in the most critical effect.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 052: Remove extra space before comma (BBC-329)           -->
+        <!-- Clauses 4.1.7.13.(5)(a) and (b) - "1.2 m ," -> "1.2 m,"            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-052" sequence="52"
+                   description="Remove extra space between 1.2 m and comma in Clause 4.1.7.13.(5)(a)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause1" letter="a">
+                        <text>where the distance to the next row of panels or the distance across a gap in the same row of panels exceeds 4h<sub>2</sub> or 1.2 m, whichever is greater, or</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-053" sequence="53"
+                   description="Remove extra space between 1.2 m and comma in Clause 4.1.7.13.(5)(b)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause2" letter="b">
+                        <text>where the distance to the roof edge exceeds 4h<sub>2</sub> or 1.2 m, whichever is greater, and exceeds 0.5h, where h is the reference height of the roof.</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 049: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.13.(2) - IW, Ce, Ct, Cg, Cp, γa subscripts and       -->
+        <!-- extra space in "6 mm ,"                                            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-049" sequence="49"
+                   description="Rewrite pressure equation in Sentence 4.1.7.13.(2) as LaTeX and remove space before comma">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent2" number="2">
+                        <text>For an array of solar panels where the panels are installed close and parallel to the roof surface with their upper surface not more than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps around the panels of not less than 6 mm, the net positive or negative pressure difference between the upper and lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013704q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mi>p</mi><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><mi>E</mi><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>a</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent2.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding,</description></item><item><variable>E</variable><description>= edge factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent4" display-type="short"/>, and</description></item><item><variable>γ<sub>a</sub></variable><description>= pressure equalization factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent3" display-type="short"/>.</description></item></list></text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 050: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.13.(6) - pnet, IW, Ce, Ct, (CgCp)net subscripts and  -->
+        <!-- extra space in "2 m ,", "0.6 m ,", "1.2 m ,"                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-050" sequence="50"
+                   description="Rewrite net pressure equation in Sentence 4.1.7.13.(6) as LaTeX and remove spaces before commas">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent6" number="6">
+                        <text>For an array of solar panels mounted on a roof with a slope, α, less than or equal to 7°, where the panels are tilted relative to the roof surface, have a chord length, L<sub>p</sub>, not greater than 2 m, and are installed such that the height of their lowest point above the roof surface, h<sub>1</sub>, is not greater than 0.6 m, the height of their highest point above the roof surface, h<sub>2</sub>, is not greater than 1.2 m, and their tilt angle relative to the roof surface, ω, is not greater than 35°, or where the panels are installed parallel to the roof surface with their upper surface greater than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps not less than <measurement units="metric">6 mm</measurement> between the panels, the net positive or negative pressure difference between the upper and the lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013708q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>p</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent6.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>net</sub></variable><description>= net gust pressure coefficient, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent7" display-type="short"/>.</description></item></list></text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 051: Rewrite equations as LaTeX (BBC-329)                -->
+        <!-- Article 4.1.7.13.(7) - (CgCp)net subscripts, missing space after   -->
+        <!-- "±", injected "[f]" markers, extra space before comma             -->
+        <!-- ================================================================== -->
+        <amendment id="bc-051" sequence="51"
+                   description="Rewrite net gust pressure coefficient equations in Sentence 4.1.7.13.(7) as LaTeX">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent7" number="7">
+                        <text>The net gust pressure coefficient, (C<sub>g</sub>C<sub>p</sub>)<sub>net</sub>, in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent6" display-type="short"/> shall be calculated as follows:<equation type="display" xml:id="es013709q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub><mo>=</mo><mo>&#xB1;</mo><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>c</mi></mrow></mpadded></mrow></msub><mi>E</mi><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable>γ<sub>p</sub></variable><description>= parapet factor, determined as the lesser of 1.2 and (0.9 + h<sub>pt</sub>/h),</description></item><item><variable>γ<sub>c</sub></variable><description>= chord factor, determined as the greater of (0.6 + 0.2L<sub>p</sub>) and 0.8,</description></item><item><variable>E</variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent2" display-type="short"/>, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>n</sub></variable><description>= normalized gust pressure coefficient, determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.figure2" display-type="long"/> based on ω and A<sub>N</sub>,</description></item></list>where<list type="variable"><item><variable>h<sub>pt</sub></variable><description>= height of the parapet above the roof surface, in m,</description></item><item><variable>h</variable><description>= reference height of the roof, in m,</description></item><item><variable>L<sub>p</sub></variable><description>= panel chord length, in m,</description></item><item><variable>ω</variable><description>= panel tilt angle relative to the roof surface, and</description></item><item><variable>A<sub>N</sub></variable><description>= normalized panel or array area, calculated as <equation type="inline" xml:id="es013709q3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>A</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>N</mi></mrow></mpadded></mrow></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mn>000</mn><mi>A</mi></mrow><mrow><mo data-mjx-texclass="OP" movablelimits="true">max</mo><mo stretchy="false">(</mo><msubsup><mi>L</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>b</mi></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mo>,</mo><mn>25</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow></math></equation></description></item></list>where<list type="variable"><item><variable>A</variable><description>= panel or array area over which the wind load is being calculated, in m<super>2</super>, and</description></item><item><variable>L<sub>b</sub></variable><description>= normalized <ref type="term" target="bldng">building</ref> length, in m, determined as the lesser of <equation type="inline" xml:id="es013709q4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mo stretchy="false">(</mo><mn>0.4</mn><msqrt><mi>h</mi><msub><mi>W</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>L</mi></mrow></mpadded></mrow></msub></msqrt><mo stretchy="false">)</mo></mrow></math></equation>, h and W<sub>S</sub>,</description></item></list>where<list type="variable"><item><variable>W<sub>L</sub></variable><description>= longest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m, and</description></item><item><variable>W<sub>S</sub></variable><description>= smallest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m.</description></item></list></text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->
