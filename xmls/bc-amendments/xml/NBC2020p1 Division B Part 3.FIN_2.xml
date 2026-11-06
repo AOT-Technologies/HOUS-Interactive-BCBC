@@ -99,7 +99,8 @@
                             <text>Except as required by <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art13" display-type="long"/>, washrooms located within a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> or a <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref> need not conform to the requirements of <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art8.sent1" display-type="short"/> or <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art8.sent2" display-type="short">(2)</ref>. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote194" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art8.sent4" number="4">
-                            <text>In a <ref type="term" target="bldng">building</ref> in which water closets are required in accordance with <ref type="internal" target="nbc.divB.part3.sect7.subsect2" display-type="long"/>, at least one universal washroom shall be provided in the entrance <ref type="term" target="tr">storey</ref>, unless</text>
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6739 Note Reference e721d53294 -->
+                            <text>In a <ref type="term" target="bldng">building</ref> in which water closets are required in accordance with <ref type="internal" target="nbc.divB.part3.sect7.subsect2" display-type="long"/>, at least one universal washroom shall be provided in the entrance <ref type="term" target="tr">storey</ref>, unless (See Note A-3.8.2.8.(1) to (4).)</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art8.sent4.clause1" letter="a">
                                 <text>an <ref type="term" target="brrr-fr">accessible</ref> path of travel is provided to a universal washroom elsewhere in the <ref type="term" target="bldng">building</ref>, or</text>
                             </clause>
@@ -133,14 +134,16 @@
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art8.sent13" number="13">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1145 Incorrect Content 269fb66b65 -->
-                            <text>At each location where a showering facility is provided for use by the general public or customers, or as part of a common-use area for employees, at least one universal dressing and shower room conforming to <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> shall be provided. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote195" display-type="short"/>.)</text>
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1145 Incorrect Content 269fb66b65 -->
+                            <text>At each location where a showering facility is provided for use by the general public or customers, or as part of a common-use area for employees, at least one universal dressing and shower room conforming to <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> shall be provided. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote195" display-type="short">Note A-3.8.2.8.(13)</ref>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art8.sent14" number="14">
                             <text>Where a bathtub is installed in a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> required to be <ref type="term" target="brrr-fr">accessible</ref>, it shall comply with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art8.sent15" number="15">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1146 Incorrect Content e6e1b43e89 -->
-                            <text>In <ref type="term" target="bldng">buildings</ref> containing Group A, Group B, Division 2 or Group E <ref type="term" target="mjr-ccpn">major occupancies</ref> where at least one of these <ref type="term" target="mjr-ccpn">major occupancies</ref> has an <ref type="term" target="ccpnt-ld">occupant load</ref> of more than 500, at least one universal washroom on the <ref type="term" target="tr">storey</ref> on which the main <ref type="term" target="brrr-fr">accessible</ref> entrance to the <ref type="term" target="bldng">building</ref> is located shall incorporate an <ref type="term" target="brrr-fr">accessible</ref> change space conforming to <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divB.part3.appendix.appnote196" display-type="short"/>.)</text>
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1146 Incorrect Content e6e1b43e89 -->
+                            <text>In <ref type="term" target="bldng">buildings</ref> containing Group A, Group B, Division 2 or Group E <ref type="term" target="mjr-ccpn">major occupancies</ref> where at least one of these <ref type="term" target="mjr-ccpn">major occupancies</ref> has an <ref type="term" target="ccpnt-ld">occupant load</ref> of more than 500, at least one universal washroom on the <ref type="term" target="tr">storey</ref> on which the main <ref type="term" target="brrr-fr">accessible</ref> entrance to the <ref type="term" target="bldng">building</ref> is located shall incorporate an <ref type="term" target="brrr-fr">accessible</ref> change space conforming to <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divB.part3.appendix.appnote196" display-type="short">Note A-3.8.2.8.(15)</ref>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art8.sent16" number="16">
                             <text>In <ref type="term" target="ccpnc">occupancies</ref> or parts of <ref type="term" target="ccpnc">occupancies</ref> designed to be <ref type="term" target="brrr-fr">accessible</ref> and used predominantly by children, in patient areas in <ref type="term" target="trtm-cc">treatment occupancies</ref>, and in resident areas in <ref type="term" target="ca-cc">care occupancies</ref>, it is permissible to design and locate plumbing fixtures and grab bars differently than described in <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="short"/> to accommodate the special needs of children, patients, residents, and <ref type="term" target="ca">care</ref> providers.</text>
@@ -230,7 +233,8 @@
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art10.sent4" number="4">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1148 Incorrect Content 31592bda5d -->
-                            <text>Directional signs shall provide visual information in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divB.part3.appendix.appnote198" display-type="short"/>.)</text>
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1148 Incorrect Content 31592bda5d -->
+                            <text>Directional signs shall provide visual information in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divB.part3.appendix.appnote196" display-type="short"/>.)</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -254,10 +258,12 @@
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1" number="1">
                             <text>At least one for every 20 or part thereof of sleeping rooms or bed spaces shall conform to <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="short"/> where provided in</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1.clause1" letter="a">
-                                <text>hotels and motels (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent1.clause7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent8" display-type="short"/>), and</text>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1150 Reference b9c06b4f91 -->
+                                <text>hotels and motels (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent1.clause7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent7" display-type="short">Sentences 3.2.4.20.(7)</ref> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent8" display-type="short">(8)</ref>), and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1.clause2" letter="b">
-                                <text>not including apartments and condominiums and the <ref type="term" target="bldng">buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="short"/>, other <ref type="term" target="bldng">buildings</ref> or parts of <ref type="term" target="bldng">buildings</ref> used for <ref type="term" target="rdntl-cc">residential major occupancies</ref> (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent17" display-type="short"/>).</text>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1151 Reference 79db004088 -->
+                                <text>not including apartments and condominiums and the <ref type="term" target="bldng">buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="short">3.8.2.1.(1)(a)</ref>, other <ref type="term" target="bldng">buildings</ref> or parts of <ref type="term" target="bldng">buildings</ref> used for <ref type="term" target="rdntl-cc">residential major occupancies</ref> (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent17" display-type="short"/>).</text>
                             </clause>
                         </sentence>
                     </article>
@@ -424,7 +430,8 @@
                             <text>Except as required elsewhere in this Part or as permitted by <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art2.sent2" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6" display-type="long"/> pertaining to doorways, the clear width of an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be not less than <measurement units="metric">1 000 mm</measurement>.</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent2" number="2">
-                            <text>The clear width of an <ref type="term" target="brrr-fr">accessible</ref> path of travel is permitted to be reduced to not less than <measurement units="metric">850 mm</measurement> for a length of not more than <measurement units="metric">600 mm</measurement>, provided the clear floor space at either end of the reduced-clear width section is level within a rectangular area</text>
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6743 Note Reference 445daa0cc4 -->
+                            <text>The clear width of an <ref type="term" target="brrr-fr">accessible</ref> path of travel is permitted to be reduced to not less than <measurement units="metric">850 mm</measurement> for a length of not more than <measurement units="metric">600 mm</measurement>, provided the clear floor space at either end of the reduced-clear width section is level within a rectangular area (See Note A-3.8.3.2.(2).)</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art2.sent2.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1158 Incorrect Content 38fd2e211b -->
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8666 Punctuation cefd0db024 -->
@@ -483,7 +490,9 @@
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent7" number="7">
-                            <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be equipped to provide illumination in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent1" display-type="medium"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent2" display-type="medium"/>. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent3" display-type="medium"/> and <ref type="internal" target="nbc.divBV2.part9.sect34.subsect2.art7" display-type="long"/>.)</text>
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1160 Incorrect Content 0d2e81f744 -->
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1161 Reference 67001d6dcf -->
+                            <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be equipped to provide illumination in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent1" display-type="medium">Sentences 3.2.7.1.(1)</ref> and <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent2" display-type="medium">(2)</ref>. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent3" display-type="medium">Sentences 3.2.7.1.(3)</ref> and <ref type="internal" target="nbc.divBV2.part9.sect34.subsect2.art7" display-type="long"/>.)</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -760,7 +769,8 @@
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art8.sent1.clause3" letter="c">
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1177 Incorrect Content 37deaaf15e -->
-                                <text>where controls provide a feedback signal to the user, it shall be both audible and visible (see <ref type="internal" target="nbc.divB.part3.appendix.appnote216" display-type="short"/>).</text>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1177 Incorrect Content 37deaaf15e -->
+                                <text>where controls provide a feedback signal to the user, it shall be both audible and visible (see <ref type="internal" target="nbc.divB.part3.appendix.appnote216" display-type="short">Note A-3.8.3.8.(1)(c)</ref>).</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art8.sent2" number="2">
@@ -1883,7 +1893,9 @@
             <modify>
                 <element-replace element="paragraph" position="1">
                     <new-content source="bc">
-                        <paragraph xml:id="nbc.divB.part3.appendix.appnote28.para1"> Although there is no explicit performance statement in the British Columbia Building Code that means of egress should be free of smoke, it is the intent that during the period when occupants are using a means of egress to evacuate from a floor area, the smoke contamination should not reach levels that would inhibit movement to the exit. This is particularly critical for persons with disabilities, who may not move at the same rate as other persons and who could be more susceptible to the effects of smoke contamination. <ref type="standard" target="nfpa80" standardId="nfpa80"/> requires that a fire door protecting a means of egress be designed to minimize the possibility of smoke passing through the opening.</paragraph>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8721 Punctuation aeb918da30 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8722 Punctuation ab856f88b3 -->
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote28.para1"> Although there is no explicit performance statement in the British Columbia Building Code that means of egress should be free of smoke, it is the intent that during the period when occupants are using a means of egress to evacuate from a floor area, the smoke contamination should not reach levels that would inhibit movement to the exit. This is particularly critical for persons with disabilities, who may not move at the same rate as other persons and who could be more susceptible to the effects of smoke contamination. <ref type="standard" target="nfpa80" standardId="nfpa80">NFPA 80, “Standard for Fire Doors and Other Opening Protectives,”</ref> requires that a fire door protecting a means of egress be designed to minimize the possibility of smoke passing through the opening.</paragraph>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2053,7 +2065,8 @@
             <modify>
                 <element-replace element="paragraph" position="2">
                     <new-content source="bc">
-                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para2">According to <ref type="standard" target="nfpa13" standardId="nfpa13"/> and <ref type="standard" target="nfpa13r" standardId="nfpa13r"/>, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly.</paragraph>
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1309 Incorrect Content cbe022cf7b -->
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para2">According to <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13</ref>  <ref type="standard" target="nfpa13r" standardId="nfpa13r">and 13R</ref>, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly.</paragraph>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2115,7 +2128,8 @@
             <modify>
                 <element-replace element="paragraph" position="1">
                     <new-content source="bc">
-                        <paragraph xml:id="nbc.divB.part3.appendix.appnote101.para1">Experience with high buildings has shown that the time required for complete evacuation can exceed that which is considered necessary for the safe egress of all occupants. Studies of the "chimney effect" and observations of smoke movement in actual fires have shown that fire compartmentation to contain a fire on any one storey will not usually prevent the movement of smoke through elevator, stair and other vertical shafts to the upper floors of a high building. Occupants of a high building in which an automatic sprinkler system is not installed, and particularly those on upper storeys, could be faced with severe smoke conditions from fires occurring in storeys below them before their own evacuation is possible. The requirements of <ref type="internal"
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8767 Punctuation d9f5f98f3a -->
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote101.para1">Experience with high buildings has shown that the time required for complete evacuation can exceed that which is considered necessary for the safe egress of all occupants. Studies of the “chimney effect” and observations of smoke movement in actual fires have shown that fire compartmentation to contain a fire on any one storey will not usually prevent the movement of smoke through elevator, stair and other vertical shafts to the upper floors of a high building. Occupants of a high building in which an automatic sprinkler system is not installed, and particularly those on upper storeys, could be faced with severe smoke conditions from fires occurring in storeys below them before their own evacuation is possible. The requirements of <ref type="internal"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 target="nbc.divB.part3.sect2.subsect6"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 display-type="long"/> are intended to maintain safe conditions for occupants of a high building who may have to remain in the building during a fire, and to assist the firefighters by providing efficient access to the fire floor. The Notes for <ref type="internal"
                                                                                                                                                                                                                                                                                      target="nbc.divB.part3.sect2.subsect6"
@@ -2267,9 +2281,12 @@
             <modify>
                 <element-replace element="paragraph" position="1">
                     <new-content source="bc">
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1345 Incorrect Content e41a4de59b -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8776 Punctuation 469b1c4659 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8777 Punctuation 8bc3dfdd62 -->
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote135.para1">The intention of <ref type="internal"
                                                                                                             target="nbc.divB.part3.sect3.subsect2.art1.sent2"
-                                                                                                            display-type="short"/> is to allow Code users the option of using <ref type="standard" target="nfpa101" standardId="nfpa101"/> to address the following issues: means of egress; egress routes within assembly occupancies; aisles and access serving seating not at tables; guards and railings; life safety evaluation; and smoke-protected assembly seating.  However, opting to use <ref type="standard" target="nfpa101" standardId="nfpa101"/> under this application entails adherence to all the provisions listed in <ref type="internal"
+                                                                                                            display-type="short"/> is to allow Code users the option of using <ref type="standard" target="nfpa101" standardId="nfpa101">NFPA 101, “Life Safety Code,”</ref> to address the following issues: means of egress; egress routes within assembly occupancies; aisles and access serving seating not at tables; guards and railings; life safety evaluation; and smoke-protected assembly seating.  However, opting to use <ref type="standard" target="nfpa101" standardId="nfpa101">NFPA 101</ref> under this application entails adherence to all the provisions listed in <ref type="internal"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                target="nbc.divB.part3.sect3.subsect2.art1.sent2"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                display-type="short"/>: it is not intended that Code users randomly select and apply a mix of provisions from both the British Columbia Building Code and the NFPA.</paragraph>
                     </new-content>
@@ -2327,9 +2344,11 @@
             <modify>
                 <element-replace element="paragraph" position="2">
                     <new-content source="bc">
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10534 Punctuation 0369dee335 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10535 Punctuation 59b8fc04af -->
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote144.para2">This Subsection does not deal with products or materials that are directly supplied to appliances, equipment or apparatus through piping, hose, ducts, etc. For example, the gas cylinders that are mounted on propane barbecues are not covered by <ref type="internal"
                                                                                                                                                                                                                                                                                                                                                target="nbc.divB.part3.sect3.subsect6"
-                                                                                                                                                                                                                                                                                                                                               display-type="long"/>; they are considered to be "in use" as opposed to "in storage" and are not intended to be regulated by the storage requirements stated in the British Columbia Fire Code.</paragraph>
+                                                                                                                                                                                                                                                                                                                                               display-type="long"/>; they are considered to be “in use” as opposed to “in storage” and are not intended to be regulated by the storage requirements stated in the British Columbia Fire Code.</paragraph>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2973,5 +2992,1895 @@ described in <ref type="internal"
         <!-- ================================================================== -->
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->    
+        <amendment id="bc-qa-6541d50750" sequence="845" description="Issue 1229 Standard Reference at B.A-3.1.5.14.(5)(d)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote17.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote17.para1">The standard fire exposure temperature in <ref type="standard" target="ulcs101" standardId="ulcs101">CAN/ULC-S101, “Standard Method of Fire Endurance Tests of Building Construction and Materials,”</ref> is the same as in <ref type="standard" target="ulcs124" standardId="ulcs124">CAN/ULC-S124, “Standard Method of Test for the Evaluation of Protective Coverings for Foamed Plastic.”</ref> A thermal barrier
+                    that, when tested in conformance with <ref type="standard" target="ulcs101" standardId="ulcs101">CAN/ULC-S101</ref>, does not exceed an average temperature
+                    rise of <measurement units="metric">140°C</measurement> on its unexposed face after a period of <measurement units="metric">10 min</measurement> satisfies this requirement. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1b3640f622" sequence="846" description="Issue 1258 Standard Reference at B.A-3.1.8.3.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote29.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote29.para2">Test methods for
+                    the evaluation of joint systems are described in <ref type="standard" target="ulcs115" standardId="ulcs115">CAN/ULC-S115, “Standard Method of Fire Tests of Firestop Systems,”</ref> which covers joint
+                    systems between adjacent fire-resistance-rated assemblies and between
+                    a fire-resistance-rated floor and a non-fire-resistance-rated exterior
+                    wall. <ref type="standard" target="astme2307" standardId="astme2307">ASTM E2307, “Standard Test Method for Determining Fire Resistance of Perimeter Fire Barriers Using Intermediate-Scale, Multi-storey Test Apparatus,”</ref> is a test method
+                    applicable to joint systems between a fire-resistance-rated floor
+                    and a non-fire-resistance-rated exterior wall. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-19429189dd" sequence="847" description="Issue 1259 Incorrect Content at B.A-3.1.11.5.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote42.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote42.para1">Combustible construction referred to in <ref type="internal"
+                                              target="nbc.divB.part3.sect1.subsect11.art5.sent1"
+                                              display-type="long"/> includes all types of construction that do not comply with the
+                    requirements for noncombustible construction or encapsulated mass timber construction. All the elements within the concealed space can be
+                    combustible, unless required to be of noncombustible materials (e.g.,
+                    certain categories of pipework and ducts), but the value of the flame-spread
+                    rating of the combustible materials determines the permitted extent
+                    of the concealed space between fire blocks. The materials to be considered
+                    include all construction materials regulated by this Code, including
+                    the framing and building services that are located in the concealed
+                    space. When designing fire blocking, consideration should be given
+                    to avoid restricting venting capabilities within concealed spaces.
+                    (See also <ref type="internal"
+                                              target="nbc.divB.part5.appendix.appnote32"
+                                              display-type="long">Note A-5.6.2.1.</ref>)</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e1e0527054" sequence="848" description="Issue 1282 Incorrect Content at B.A-3.2.3.1.(8)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote58.para3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote58.para3">The standard requires that the fire department establish a “performance
+                    objective” of not less than 90% for each response time objective.
+                    This reliability level is referred to in <ref type="standard" target="nfpa1710" standardId="nfpa1710">NFPA 1710</ref> as a “performance objective.”</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-78d68cbd00" sequence="849" description="Issue 1297 Standard Reference at B.A-3.2.4.18.(9) and (10)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote83.para3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote83.para3">Open circuits and Class A and Class B wiring circuits are terms
+                    defined in <ref type="standard" target="ulcs524" standardId="ulcs524">CAN/ULC-S524, “Standard for Installation of Fire Alarm Systems.”</ref>
+                                      </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-f2f01c15b8" sequence="850" description="Issue 1298 Standard Reference at B.A-3.2.4.19.(1)(g)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote84.para3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote84.para3">In addition, <ref type="standard" target="ulcs524" standardId="ulcs524">CAN/ULC-S524, “Standard for Installation of Fire Alarm Systems,”</ref> requires that high-intensity strobes be used in
+                    sleeping rooms.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6ecd173bdb" sequence="851" description="Issue 1300 Standard Reference at B.A-3.2.4.20.(10)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote87.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote87.para1">It is intended that the smoke detector in this
+                    application will function as per the requirements of a smoke alarm;
+                    specifically, it will be a localized alarm to that suite.  The advantage
+                    of this type of installation is that the detector would be monitored
+                    by the fire alarm panel, which would provide notification to supervisory
+                    personnel and be inspected as per <ref type="standard" target="ulcs524" standardId="ulcs524">CAN/ULC-S524, “Standard for Installation of Fire Alarm Systems.”</ref>
+                                      </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-668c483dc4" sequence="852" description="Issue 1301 Standard Reference at B.A-3.2.4.22.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote88.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote88.para2">The intelligibility of the message depends on the speech level,
+                    the background level, and the reverberation time of the space. <ref type="standard" target="iso7731" standardId="iso7731">ISO 7731, “Ergonomics – Danger signals for public and work areas – Auditory danger signals,”</ref> addresses audibility. The standard suggests that
+                    an A-weighted sound level at least <measurement units="metric">15 dBA</measurement> above the ambient
+                    is required for audibility, but allows for more precise calculations
+                    using octave or 1/3 octave band frequencies to tailor the alarm signal
+                    for particular ambient noise conditions. Design of the alarm system
+                    is limited to ensuring that all areas receive an adequately loud alarm
+                    signal.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-33249d12fb" sequence="853" description="Issue 1305 Incorrect Content at B.A-3.2.5.12.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote94.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote94.para1">In <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13, “Standard for the Installation of Sprinkler Systems,”</ref> reference is made
+                    to other NFPA standards that contain additional sprinkler design criteria.
+                    These criteria apply to industrial occupancies with high fire loads
+                    and industrial occupancies intended for the use, manufacture or storage
+                    of highly flammable materials. Therefore, while only <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13</ref> is called up directly
+                    by <ref type="internal"
+                                              target="nbc.divB.part3.sect2.subsect5.art12.sent1"
+                                              display-type="long"/>, the additional criteria in the other
+                    NFPA standards are included automatically.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-fb6d16323f" sequence="854" description="Issue 1306 Incorrect Content at B.A-3.2.5.12.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote94.para3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote94.para3">Other NFPA standards may require that certain occupancies be
+                    sprinklered in conformance with <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13</ref>, as in the case of some garages. These requirements
+                    do not supersede the requirements in the Code. An occupancy is required
+                    to be sprinklered only when this is specified in the Code, but when
+                    it is so required, it must be sprinklered in conformance with <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13</ref> and its referenced
+                    standards.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-af1d2f5801" sequence="855" description="Issue 1308 Incorrect Content at B.A-3.2.5.12.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote94.para4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote94.para4">Additionally, while Part 4 contains seismic force provisions
+                    that apply to the design of sprinklers, <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13</ref> contains other structural requirements
+                    for sprinklers that are also required to be met.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8ecbc75d5f" sequence="856" description="Issue 10507 Punctuation at B.A-3.2.5.12.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote95.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote95.para1">For the purpose of determining whether <ref type="standard" target="nfpa13r" standardId="nfpa13r">NFPA 13R, “Standard for the Installation of Sprinkler Systems in Low-Rise Residential Occupancies,”</ref> applies to a residential building constructed over a storage garage,
+                    it is not intended that a storage garage constructed as a separate
+                    building in accordance with <ref type="internal"
+                                              target="nbc.divB.part3.sect2.subsect1.art2"
+                                              display-type="long"/> be considered
+                    as a storey when determining the building height of the residential
+                    building. Similarly, this would not preclude the use of <ref type="standard" target="nfpa13d" standardId="nfpa13d">NFPA 13D, “Standard for the Installation of Sprinkler Systems in One- and Two-Family Dwellings and Manufactured Homes,”</ref> for any one- or two-family home constructed above
+                    such a storage garage.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-55634d2944" sequence="857" description="Issue 1312 Incorrect Content at B.A-3.2.5.13.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote99.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote99.para2">In <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13</ref>,
+                    a light hazard occupancy is one in which the quantity or combustibility
+                    of contents is low and fires with relatively low rates of heat release
+                    are expected. Typical buildings or parts of buildings include: churches;
+                    clubs; eaves and overhangs, if of combustible construction with no
+                    combustibles beneath; educational buildings; hospitals; institutional
+                    buildings; libraries, except very large stack rooms; museums; nursing
+                    or convalescent homes; offices, including data processing rooms; residential
+                    buildings; restaurant seating areas; theatres and auditoria, excluding
+                    stages and proscenia; and unused attics.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-0cb2a00592" sequence="858" description="Issue 1313 Incorrect Content at B.A-3.2.5.13.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote99.para3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote99.para3">Although <ref type="standard" target="nfpa13r" standardId="nfpa13r">NFPA 13R, “St</ref> and <ref type="standard" target="nfpa13d" standardId="nfpa13d">ard for the Installation of Sprinkler Systems in Low-Rise Residential Occupancies,” and NFPA 13D, “Standard for the Installation of Sprinkler Systems in One- and Two-Family Dwellings and Manufactured Homes,”</ref> as referenced by <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13</ref>, are concerned with specific types
+                    of residential occupancy, namely apartment buildings up to four storeys,
+                    one and two family dwellings, and mobile homes, for the purpose of
+                    acceptance of combustible sprinkler piping these occupancies are considered
+                    to be included in the category of residential buildings under light
+                    hazard occupancies.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-49ce10eaf0" sequence="859" description="Issue 8761 Punctuation at B.A-3.2.5.13.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote99.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote99.para1">The reference to light hazard occupancies is
+                    based on the descriptions of these occupancies given in <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13, “Standard for the Installation of Sprinkler Systems,”</ref> and is intended only for use in the
+                    design of sprinkler systems. These descriptions should not be confused
+                    with the occupancy classifications in the Code.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8fee8f9b4b" sequence="860" description="Issue 10529 Punctuation at B.A-3.2.8.2.(3)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote118.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote118.para1">In manufacturing operations involving the use of conveyor systems
+                    to transport material through fire separations, it may not be possible
+                    to use standard closure devices. <ref type="standard" target="nfpa80" standardId="nfpa80">NFPA 80, “Standard for Fire Doors and Other Opening Protectives,”</ref> includes appendix information concerning protection
+                    of openings through vertical fire separations. <ref type="standard" target="nfpa13" standardId="nfpa13">NFPA 13, “Standard for the Installation of Sprinkler Systems,”</ref> includes methods of protecting openings
+                    through floor assemblies, however, it is assumed by that standard
+                    that the remainder of the building would be sprinklered. Combinations
+                    of methods may be required to ensure that the level of safety inherent
+                    in the requirements of the Code is maintained.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-5eabcdc457" sequence="861" description="Issue 1335 Standard Reference at B.A-3.2.9.1.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote123.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote123.para1">Building owners should verify that
+                    fire protection and life safety systems and their components (i.e.
+                    fire alarm systems, sprinklers, standpipes, smoke control, ventilation,
+                    pressurization, door hold-open devices, elevator recalls, smoke and
+                    fire shutters and dampers, emergency power, emergency lighting, fire
+                    pumps, generators, etc.), including their interconnections with other
+                    building systems, are functioning according to the intent of their
+                    design. <ref type="standard" target="ulcs1001" standardId="ulcs1001">CAN/ULC-S1001, “Standard for Integrated Systems Testing of Fire Protection and Life Safety Systems,”</ref> provides
+                    the methodology for verifying and documenting that interconnections
+                    between building systems satisfy the intent of their design and that
+                    the systems function as intended by the Code.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-cc53fb71d3" sequence="862" description="Issue 1336 Incorrect Content at B.A-3.2.9.1.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote123.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote123.para2">
+                                         <ref type="external" target="ulcs1001">Clause 6.1.5 of </ref>
+                                         <ref type="standard" target="ulcs1001" standardId="ulcs1001">CAN/ULC-S1001</ref> allows the Integrated
+                    Testing Coordinator to accept documented evidence of any tests that
+                    have been performed on a system as part of its acceptance testing
+                    for the purpose of demonstrating compliance with the integrated testing
+                    requirements of that standard, so as to avoid duplication of work.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7996d97521" sequence="863" description="Issue 1341 Incorrect Content at B.A-3.3.1.2.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote126.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote126.para1">Cooking equipment manufactured for use in dwelling units and
+                    other residential suites is often installed in buildings used for
+                    assembly and care, treatment or detention purposes. It is not obvious
+                    from the Code requirements or those of <ref type="standard" target="nfpa96" standardId="nfpa96">NFPA 96, “Standard for Ventilation Control and Fire Protection of Commercial Cooking Operations,”</ref> whether a ventilation and grease removal system is required in
+                    all assembly and care, treatment or detention uses. If the equipment
+                    is to be used in a manner that will produce grease-laden vapours that
+                    are substantially more than would be produced in a normal household
+                    environment, then it would be appropriate to apply the requirements
+                    of <ref type="standard" target="nfpa96" standardId="nfpa96">NFPA 96</ref>. If the
+                    equipment is used primarily for reheating food prepared elsewhere
+                    or is used occasionally for demonstration or educational purposes,
+                    there would be no expectation of applying the requirements of <ref type="standard" target="nfpa96" standardId="nfpa96">NFPA 96</ref>. In all cases the circumstances
+                    should be reviewed with the authority having jurisdiction.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-2502e5254e" sequence="864" description="Issue 1344 Incorrect Content at B.A-3.3.1.8.(2) and (3)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote129.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote129.para2"> The sweep of a cane normally
+                    detects protruding building elements that are within <measurement units="metric">680 mm</measurement> of the floor. Any protruding element above this height would not
+                    normally be detected and can, therefore, create a hazard if it projects
+                    more than <measurement units="metric">100 mm</measurement> into the path of travel. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c444a82cf5" sequence="865" description="Issue 1355 Incorrect Content at B.A-3.4.6.5.(4)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote161.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote161.para1">The intent of <ref type="internal"
+                                              target="nbc.divB.part3.sect4.subsect6.art5.sent4"
+                                              display-type="long"/> is that handrails
+                    be installed in relation to the required exit width only, regardless
+                    of the actual width of the stair and ramp. The required handrails
+                    are provided along the assumed natural path of travel to, from, and within
+                    the building. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-df69a33ecd" sequence="866" description="Issue 1356 Reference at B.A-3.4.6.17.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote168.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote168.para1">The need for security in banks and in mercantile occupancies
+                    requires the ability to use positive locking devices on doors that
+                    may not readily be opened from inside the building. In a fully sprinklered
+                    building, the risk to persons inside the building is substantially
+                    reduced. The provisions of <ref type="internal"
+                                              target="nbc.divB.part3.sect4.subsect6.art17.sent2"
+                                              display-type="long"
+                                              pretext="Sentences"/>
+                                         <ref type="internal"
+                                              target="nbc.divB.part3.sect4.subsect6.art17.sent9"
+                                              display-type="short"
+                                              pretext="to">(9)</ref> assume that
+                    the area is illuminated and that a means of communication is available
+                    to any occupant during times that the doors are locked.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-bcfbe8c65f" sequence="867" description="Issue 1364 Incorrect Content at B.A-3.8.2.2">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote183.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote183.para1">An accessible
+                    route should exist from the sidewalk or roadway and parking area to
+                    an accessible building entrance. This route should be located so that people do not have to
+                    pass through dedicated smoking areas or behind parked cars.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-9c94c020e1" sequence="868" description="Issue 1365 Incorrect Content at B.A-3.8.2.2">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote183.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote183.para2">
+                                         <ref type="internal"
+                                              target="nbc.divB.part3.sect8.subsect2.art2"
+                                              display-type="long"/> applies to all entrances, including public and
+                    employee entrances, that provide access to an accessible storey.
+                    Doors that open onto exterior facilities that are only accessible
+                    from inside the building (e.g., hotel pools) are not considered entrances
+                    in the context of <ref type="internal"
+                                              target="nbc.divB.part3.sect8.subsect2.art2"
+                                              display-type="long"/> If an intercom system is provided, the system shall comply with the requirements for controls and should be useable by persons who communicate using visual language such as a video system.
+                                      </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c0f11a5429" sequence="869" description="Issue 1377 Incorrect Content at B.A-3.8.2.3">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote184.para2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote184.para2">The permission to waive an accessible path of travel for wheelchair
+                    access to certain specified areas of a building is not intended to
+                    waive accessibility requirements for persons whose physical disabilities
+                    do not require special provision for access to raised or sunken levels.
+                    Persons with vision impairments or who are deaf or hard of hearing that do not require the
+                    use of a wheelchair can be expected to move throughout a building.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-d9a0735a25" sequence="870" description="Issue 1379 Incorrect Content at B.A-3.8.2.3">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote184.para3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote184.para3">Seating booths and banquettes in restaurants and bars are considered
+                    furniture, which is beyond the scope of the Code. However, various
+                    types of seating should be considered to ensure the availability of
+                    accessible options.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-215185472d" sequence="871" description="Issue 1397 Incorrect Content at B.A-3.8.2.7.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote192.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote192.para1">It is not intended that all doors located in an  accessible path of travel be equipped with a power door operator,
+                    but rather those that are located within public areas of the building,
+                    such as public corridors or corridors used by the public. Doors of
+                    suites served by a public area do not need to be equipped with a power
+                    door operator. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e170c5aab6" sequence="872" description="Issue 1398 Incorrect Content at B.A-3.8.2.7.(3)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote193.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote193.para1">In selecting which doorway to equip with a power
+                    door operator as required by <ref type="internal"
+                                              target="nbc.divB.part3.sect8.subsect2.art7.sent3"
+                                              display-type="long"/>, consideration
+                    should be given to the location of accessible paths of travel, to
+                    the ease of access, and to minimizing congestion.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7c49551d96" sequence="873" description="Issue 1400 Incorrect Content at B.A-3.8.2.8.(13)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote195.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote195.para1">A universal dressing and shower room is an accessible
+                    space that contains a shower and a space for dressing for one person
+                    and their care attendant(s) and provides privacy, regardless of gender.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-261025109e" sequence="874" description="Issue 1401 Incorrect Content at B.A-3.8.2.10.(4)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote198.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote198.para1">This Code requires that directional signs be provided in a number of
+                    situations. Although they are only required to provide visual information,
+                    tactile directional signs should also be provided where practicable.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-ecf20b383c" sequence="875" description="Issue 1402 Incorrect Content at B.A-3.8.2.11.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote199.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote199.para1">It is not intended that all counters be accessible, but that
+                    sufficient accessible counter space be available. Examples of counters
+                    that should be accessible include check-in counters and those in
+                    financial institutions and reception areas as well as any counter
+                    at which processing and signing of documents takes place. The provision
+                    is not intended to apply to work surfaces in industrial occupancies.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-21fca821f6" sequence="876" description="Issue 1405 Incorrect Content at B.A-3.8.3.1.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote200.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote200.para1">Code users who opt to apply the provisions of <ref type="standard" target="csab651" standardId="csab651">CSA B651, “Accessible design for the built environment,”</ref> listed in <ref type="internal"
+                                              target="nbc.divB.part3.sect8.subsect3.art1.table1"
+                                              display-type="long"/> must do so without exception: they cannot randomly
+                    select and apply a mix of provisions from this Code and that standard.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7499c3af0c" sequence="877" description="Issue 1412 Incorrect Content at B.A-3.8.3.5.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote204.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote204.para1">Ramps
+                    with a slope of more than 1 in 16 can be very difficult for persons
+                    with certain physical disabilities with upper body mobility to manage. Even
+                    though they pose less of a problem for persons using motorized wheelchairs,
+                    these ramps can be unsafe to descend, especially in cold climates.
+                    Although <ref type="internal"
+                                              target="nbc.divB.part3.sect8.subsect3.art5"
+                                              display-type="long"
+                                              pretext="Article"/> permits slopes
+                    on ramps as great as 1 in 12 for distances of up to <measurement units="metric">9 m</measurement>, slopes of 1 in 20 are safer and less strenuous. When limited space
+                    is available, as may be the case during renovations, ramps with a
+                    slope of up to 1 in 12 should be restricted to lengths not exceeding <measurement units="metric">3 m</measurement> whenever possible. A strip contrasting in colour and texture
+                    should be used at the top and bottom of ramps to warn persons with
+                    low or no vision.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b3ab4db44b" sequence="1118" description="Issue 6740 Incorrect Content at B.3.8.2.9.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect2.art9.sent2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect2.art9.sent2"
+                                                   number="2"
+                                                   vendor-id="es014606">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6740 Incorrect Content b3ab4db44b -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6741 Note Reference ddd9af4767 -->
+                        <text>In each location where information, goods or services are provided
+                    to the public at service counters in <ref type="term" target="bldng">buildings</ref> of <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, at least one
+                    of the service counters shall be equipped with (See <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote197"
+                                                    display-type="short"/>.)</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect2.art9.sent2.clause1"
+                                                    letter="a"
+                                                    vendor-id="es014606a">
+                                               <text>an assistive listening system or adaptive technology conforming
+                    to <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3"
+                                                       display-type="long"/>, and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect2.art9.sent2.clause2"
+                                                    letter="b"
+                                                    vendor-id="es014606b">
+                                               <text>an amplification system, where there is a barrier to communication,
+                    such as a glass screen. </text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-bff18a3138" sequence="1120" description="Issue 6746 Incorrect Content at B.3.8.3.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art3.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art3.sent1"
+                                                   number="1"
+                                                   vendor-id="es001330">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6746 Incorrect Content bff18a3138 -->
+                        <text>Exterior walks that form part of an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art3.sent1.clause1"
+                                                    letter="a"
+                                                    vendor-id="es001330a">
+                                               <text>have a slip-resistant, continuous and even surface,</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art3.sent1.clause2"
+                                                    letter="b"
+                                                    vendor-id="es001330b">
+                                               <text>be not less than <measurement units="metric">1 600 mm wide</measurement>, </text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art3.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es001330c">
+                                               <text>have a level area conforming to <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art5.sent1.clause3"
+                                                       display-type="long"/> adjacent
+                    to an entrance doorway, and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art3.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es001330d">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10457 Punctuation 82b2c1e30f -->
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10458 Punctuation 721272993e -->
+                                               <text>be designed in
+                    accordance with <ref type="external" target="csab651">Clause 8.2.1 of </ref>
+                                                  <ref type="standard" target="csab651" standardId="csab651">CSA B651, “Accessible design for the built environment.”</ref>
+                                               </text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-08ced7120b" sequence="1121" description="Issue 6747 Incorrect Content at B.3.8.3.5.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art5.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1"
+                                                   number="1"
+                                                   vendor-id="es001344">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6747 Incorrect Content 08ced7120b -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6748 Incorrect Content 06edffe085 -->
+                        <text>Except when designed as a curb ramp in accordance with Clause 3.8.3.4.(1)(b), a <ref type="term" target="rmp">ramp</ref> located in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause1"
+                                                    letter="a"
+                                                    vendor-id="es001344a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1163 Incorrect Content 639519ecb1 -->
+                                               <text>have a clear width not less than <measurement units="metric">1 000 mm</measurement> (see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote155"
+                                                       display-type="long">Note A-3.4.3.4.</ref>),</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause2"
+                                                    letter="b"
+                                                    vendor-id="es001344b">
+                                               <text>have a uniform
+                    slope along its length not more than <measurement units="metric">1 in 12</measurement> (see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote204"
+                                                       display-type="short"/>),</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es001344c">
+                                               <text>have a level area not less than <measurement units="metric">1 700 mm by 1 700 mm</measurement> at
+                    the top and bottom and at intermediate levels of a <ref type="term" target="rmp">ramp</ref> leading to a door, so that on the latch side the level
+                    area extends not less than (see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote205"
+                                                       display-type="short"/>),</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause3.subclause1"
+                                                          number="1"
+                                                          vendor-id="es001344c1">
+                                                  <text>
+                                                     <measurement units="metric">600 mm</measurement> beyond the edge of the door opening where
+                    the door opens towards the <ref type="term" target="rmp">ramp</ref>, or</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause3.subclause2"
+                                                          number="2"
+                                                          vendor-id="es001344c2">
+                                                  <text>
+                                                     <measurement units="metric">300 mm</measurement> beyond the edge of the door opening where
+                    the door opens away from the <ref type="term" target="rmp">ramp</ref>,</text>
+                                               </subclause>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es001344d">
+                                               <text>have a level area not less than <measurement units="metric">1 350 mm long</measurement> and at least
+                    the same width as the <ref type="term" target="rmp">ramp</ref>
+                                               </text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause4.subclause1"
+                                                          number="1"
+                                                          vendor-id="es001344d1">
+                                                  <text>at intervals not more than <measurement units="metric">9 m</measurement> along its length,
+                    and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause4.subclause2"
+                                                          number="2"
+                                                          vendor-id="es001344d2">
+                                                  <text>where there is an abrupt change in the direction of the <ref type="term" target="rmp">ramp</ref>, and</text>
+                                               </subclause>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es001344e">
+                                               <text>except as provided in <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art5.sent2"
+                                                       display-type="short"
+                                                       pretext="Sentences"/>
+                                                  <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art5.sent3"
+                                                       display-type="short"
+                                                       pretext="and"/>, be equipped with handrails conforming to <ref type="internal"
+                                                       target="nbc.divB.part3.sect4.subsect6.art5"
+                                                       display-type="long"/>, except that they shall be not less than <measurement units="metric">865 mm</measurement> and not more than <measurement units="metric">965 mm</measurement> high, and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art5.sent1.clause6"
+                                                    letter="f"
+                                                    vendor-id="es001344f">
+                                               <text>be equipped with <ref type="term" target="guard">guards</ref> conforming
+                    to <ref type="internal"
+                                                       target="nbc.divB.part3.sect4.subsect6.art6"
+                                                       display-type="long"/>
+                                               </text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c37785ec33" sequence="1122" description="Issue 1164 Incorrect Content at B.3.8.3.5.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art5.sent2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art5.sent2"
+                                                   number="2"
+                                                   vendor-id="es000075">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1164 Incorrect Content c37785ec33 -->
+                        <text>Handrails installed in addition to required handrails need not
+                    comply with the height requirements stated in <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect3.art5.sent1.clause5"
+                                                    display-type="medium">Clause (1)(e)</ref>.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7f7b63e024" sequence="1123" description="Issue 1165 Reference at B.3.8.3.5.(3)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art5.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art5.sent3"
+                                                   number="3"
+                                                   vendor-id="es001345">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1165 Reference 7f7b63e024 -->
+                        <text>The requirement for handrails in <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect3.art5.sent1.clause5"
+                                                    display-type="medium">Clause (1)(e)</ref> need not apply to a <ref type="term" target="rmp">ramp</ref> serving
+                    as an aisle for fixed seating.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-ef89b2f300" sequence="1124" description="Issue 11656 Note Reference at B.3.8.3.6.(4)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent4"
+                                                   number="4"
+                                                   vendor-id="es001334">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11656 Note Reference ef89b2f300 -->
+                        <text>Door-operating devices shall (See also Sentence 3.3.1.13.(4) regarding additional devices.) (See Note A-3.8.3.6.(4).)</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent4.clause1"
+                                                    letter="a"
+                                                    vendor-id="es001334a">
+                                               <text>comply with <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art8.sent1.clause2"
+                                                       display-type="long"/>, and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent4.clause2"
+                                                    letter="b"
+                                                    vendor-id="es001334b">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1167 Incorrect Content 54560c5816 -->
+                                               <text>be operable at a height between <measurement units="metric">900 mm</measurement> and <measurement units="metric">1 100 mm</measurement> above the floor.</text>
+                                            </clause>
+                                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art6.sent4.seealso">(See <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote209"
+                                                    display-type="short"/>.)</see-also>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e43c3c1d21" sequence="1125" description="Issue 6752 Incorrect Content at B.3.8.3.6.(8)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent8"
+                                                   number="8"
+                                                   vendor-id="es001338">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6752 Incorrect Content e43c3c1d21 -->
+                        <text>Except as provided in <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect3.art6.sent9"
+                                                    display-type="short"/> and except for a door with a power door operator complying with <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect3.art6.sent6"
+                                                    display-type="short"/>, when unlatched, a door in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall open when
+                    the force applied to the handle, push plate or latch-releasing device
+                    is not more than</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent8.clause1"
+                                                    letter="a"
+                                                    vendor-id="es001338a">
+                                               <text>
+                                                  <measurement units="metric">38 N</measurement> in the case of an exterior swinging door, </text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent8.clause2"
+                                                    letter="b"
+                                                    vendor-id="es001338b">
+                                               <text>
+                                                  <measurement units="metric">22 N</measurement> in the case of an interior swinging door,
+                    or </text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent8.clause3"
+                                                    letter="c"
+                                                    vendor-id="es001338c">
+                                               <text>
+                                                  <measurement units="metric">22 N</measurement> in the case of a sliding door.</text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8bb3635abe" sequence="1126" description="Issue 1170 Incorrect Content at B.3.8.3.6.(10)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent10"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent10"
+                                                   number="10"
+                                                   vendor-id="es001340">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1170 Incorrect Content 8bb3635abe -->
+                        <text>Except for a door at the entrance to a <ref type="term" target="dwllng-n">dwelling unit</ref>, a closer for an interior door in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall have a closing
+                    period of not less than <measurement units="metric">3 s</measurement> measured from when the door
+                    is in an open position of <measurement units="metric">70°</measurement> to the doorway, to when
+                    the door reaches a point <measurement units="metric">75 mm</measurement> from the closed position,
+                    measured from the leading edge of the latch side of the door. (See <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote212"
+                                                    display-type="short"/>.)</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-92b87cafa5" sequence="1127" description="Issue 6753 Incorrect Content at B.3.8.3.6.(11)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent11"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent11"
+                                                   number="11"
+                                                   vendor-id="es007791">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6753 Incorrect Content 92b87cafa5 -->
+                        <text>Unless equipped with a power door operator complying with <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect3.art6.sent6"
+                                                    display-type="short"/>, a swinging door in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall have a clear
+                    space on the latch side extending the height of the doorway and not
+                    less than (See Note A-3.8.3.6.(11).)</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent11.clause1"
+                                                    letter="a"
+                                                    vendor-id="es007791a">
+                                               <text>
+                                                  <measurement units="metric">600 mm</measurement> beyond the edge of the door opening if the
+                    door swings toward the approach side, and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent11.clause2"
+                                                    letter="b"
+                                                    vendor-id="es007791b">
+                                               <text>
+                                                  <measurement units="metric">300 mm</measurement> beyond the edge of the door opening if the
+                    door swings away from the approach side.</text>
+                                            </clause>
+                                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art6.sent11.seealso">(See <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote213"
+                                                    display-type="short"/>.)</see-also>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-2c11a707ff" sequence="1128" description="Issue 1171 Incorrect Content at B.3.8.3.6.(12)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent12"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent12"
+                                                   number="12"
+                                                   vendor-id="es001342">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1171 Incorrect Content 2c11a707ff -->
+                        <text>A vestibule located in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be arranged to allow the movement of wheelchairs
+                    between doors and shall provide a distance between 2 doors in series
+                    of not less than <measurement units="metric">1 350 mm</measurement> plus the width of any door that swings
+                    into the space in the path of travel from one door to another.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-4384278c21" sequence="1129" description="Issue 1172 Incorrect Content at B.3.8.3.6.(13)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent13"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent13"
+                                                   number="13"
+                                                   vendor-id="es008866">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1172 Incorrect Content 4384278c21 -->
+                        <text>Only the active leaf in a multiple-leaf door in an <ref type="term" target="brrr-fr">accessible</ref> path of travel need conform to
+                    the requirements of this Article.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e0f29c4dbc" sequence="1130" description="Issue 1173 Incorrect Content at B.3.8.3.6.(14)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent14"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent14"
+                                                   number="14"
+                                                   vendor-id="es013685">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1173 Incorrect Content e0f29c4dbc -->
+                        <text>Except as provided in <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect3.art5.sent1.clause3"
+                                                    display-type="long"/> and <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect3.art6.sent16"
+                                                    display-type="short"/>, the clear floor space on the pull
+                    side of a swinging door in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be level within a rectangular area of not less
+                    than <measurement units="metric">1 700 mm</measurement> by <measurement units="metric">1 500 mm</measurement> measured from
+                    the hinged side of the door. (See <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote214"
+                                                    display-type="short"/>.)</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-af69960585" sequence="1131" description="Issue 1174 Incorrect Content at B.3.8.3.6.(17)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent17"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art6.sent17"
+                                                   number="17"
+                                                   vendor-id="es013686">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1174 Incorrect Content af69960585 -->
+                        <text>Except for facilities for persons with cognitive disabilities
+                    such as dementia, doorways leading from a <ref type="term" target="pblc-crr">public
+                    corridor</ref> or a corridor used by the public that provide access
+                    to a public area or an <ref type="term" target="xt">exit</ref> shall be provided
+                    with a door or door frame that has a readily apparent visual contrast
+                    with adjacent wall surfaces. (See <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote215"
+                                                    display-type="short"/>.) (See also <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote164"
+                                                    display-type="long">Note A-3.4.6.11.(4)</ref>.)</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-2d0ce4b1f8" sequence="1132" description="Issue 6756 Incorrect Content at B.3.8.3.11.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art11.sent2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2"
+                                                   number="2"
+                                                   vendor-id="es013897">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6756 Incorrect Content 2d0ce4b1f8 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11506 Reference 276a9a8824 -->
+                        <text>Water-bottle filling stations required by <ref type="internal"
+                                                    target="nbc.divB.part3.sect8.subsect2.art8.sent11"
+                                                    display-type="long"/> that are located in a <ref type="term" target="tr">storey</ref> where an <ref type="term" target="brrr-fr">accessible</ref> path of travel
+                    is required shall (See Sentences 3.3.1.8.(2) and (3) on horizontal projections.)</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.clause1"
+                                                    letter="a"
+                                                    vendor-id="es013897a">
+                                               <text>be located along the <ref type="term" target="brrr-fr">accessible</ref> path of travel,</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.clause2"
+                                                    letter="b"
+                                                    vendor-id="es013897b">
+                                               <text>have a clear floor space of <measurement units="metric">800 mm</measurement> by <measurement units="metric">1 350
+                    mm</measurement> in front of them (see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote219"
+                                                       display-type="short"/>),</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.clause3"
+                                                    letter="c"
+                                                    vendor-id="es013897c">
+                                               <text>where they have frontal access, provide a knee clearance in
+                    accordance with <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5"
+                                                       display-type="long"/>,</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.clause4"
+                                                    letter="d"
+                                                    vendor-id="es013897d">
+                                               <text>be operable at a height of not more than <measurement units="metric">1 200 mm</measurement> above the floor (see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote219"
+                                                       display-type="short"/>),
+                    and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.clause5"
+                                                    letter="e"
+                                                    vendor-id="es013897e">
+                                               <text>be equipped with controls that </text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.clause5.subclause1"
+                                                          number="1"
+                                                          vendor-id="es013897e1">
+                                                  <text>activate automatically, or</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.clause5.subclause2"
+                                                          number="2"
+                                                          vendor-id="es013897e2">
+                                                  <text>comply with <ref type="internal"
+                                                          target="nbc.divB.part3.sect8.subsect3.art8.sent1"
+                                                          display-type="long"/>.</text>
+                                               </subclause>
+                                            </clause>
+                                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art11.sent2.seealso">(See <ref type="internal"
+                                                    target="nbc.divB.part3.sect3.subsect1.art8.sent2"
+                                                    display-type="long"
+                                                    pretext="Sentences"/>
+                                               <ref type="internal"
+                                                    target="nbc.divB.part3.sect3.subsect1.art8.sent3"
+                                                    display-type="short"
+                                                    pretext=" and"/> on horizontal projections.)</see-also>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-d08fe97c80" sequence="1133" description="Issue 11659 Note Reference at B.3.8.3.22.(4)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art22.sent4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect3.art22.sent4"
+                                                   number="4"
+                                                   vendor-id="es014615">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11659 Note Reference d08fe97c80 -->
+                        <text>Storage spaces for mobility aids shall be provided in a location (See Notes A-3.8.3.22.(4) and A-3.8.2.3.(5) and (6) and 3.8.3.22.(1) and (4).)</text>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art22.sent4.clause1"
+                                                    letter="a"
+                                                    vendor-id="es014615a">
+                                               <text>that is on the same level as and in proximity to the adaptable
+                    seats required by <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect2.art3.sent5"
+                                                       display-type="long"/>,</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art22.sent4.clause2"
+                                                    letter="b"
+                                                    vendor-id="es014615b">
+                                               <text>that is within the room side of the <ref type="term" target="fr-prtn">fire
+                    separation</ref> required by <ref type="internal"
+                                                       target="nbc.divB.part3.sect3.subsect2.art2"
+                                                       display-type="long"/>, and</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part3.sect8.subsect3.art22.sent4.clause3"
+                                                    letter="c"
+                                                    vendor-id="es014615c">
+                                               <text>where they will not infringe on egress.</text>
+                                            </clause>
+                                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art22.sent4.seealso">(See <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote235"
+                                                    display-type="short"
+                                                    pretext="Notes"/>
+                                               <ref type="internal"
+                                                    target="nbc.divB.part3.appendix.appnote187"
+                                                    display-type="short"
+                                                    pretext=" and"/>.)</see-also>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-0b68d90352" sequence="1134" description="Issue 8713 Punctuation at B.A-3">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote1.div1.para6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote1.div1.para6">In the case of a building that is sprinklered throughout, the
+                    automatic sprinkler system should control the fire to an extent that
+                    radiation to neighbouring buildings should be minimal. Although there
+                    will be some radiation effect on a sprinklered building from a fire
+                    in a neighbouring building, the internal sprinkler system should control
+                    any fires that might be ignited in the building and thereby minimize
+                    the possibility of the fire spreading into the exposed building. <ref type="standard" target="nfpa80a" standardId="nfpa80a">NFPA 80A, “Recommended Practice for Protection of Buildings from Exterior Fire Exposures,”</ref> provides additional information on the possibility
+                    of fire spread at building exteriors.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-fff1815f97" sequence="1516" description="Issue 10470 Punctuation at B.3.8.3.9.(2)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art9.sent2.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art9.sent2.clause1"
+                                                    letter="a"
+                                                    vendor-id="es013895a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10470 Punctuation fff1815f97 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:10471 Punctuation 574ec8c92f -->
+                        <text>have Braille and tactile characters in accordance with <ref type="external" target="csab651">Clauses 4.5.6.2 and 4.5.6.3 of </ref>
+                                                  <ref type="standard" target="csab651" standardId="csab651">CSA B651, “Accessible design for the built environment,”</ref>
+                                               </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3e63ee5973" sequence="1517" description="Issue 6757 Incorrect Content at B.3.8.3.12.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause2"
+                                                    letter="b"
+                                                    vendor-id="es007794i">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6757 Incorrect Content 3e63ee5973 -->
+                        <text>have a clear lateral transfer space adjacent to the water closet
+                    that</text>
+                                               <see-also xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause2.seealso">(see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote220"
+                                                       display-type="short"/>)</see-also>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause2.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007794i1">
+                                                  <text>is at least <measurement units="metric">1 500 mm</measurement> long, measured from the wall
+                    behind the water closet, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause2.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007794i2">
+                                                  <text>is at least <measurement units="metric">900 mm</measurement> wide, measured from the closest
+                    edge of the water closet seat, </text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-4c2c656419" sequence="1518" description="Issue 1180 Incorrect Content at B.3.8.3.12.(1)(c)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es007794h">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1180 Incorrect Content 4c2c656419 -->
+                        <text>have a clear floor space of <measurement units="metric">1 700 mm</measurement> by <measurement units="metric">1 700 mm</measurement> in front of the accessible stall,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-686f600203" sequence="1519" description="Issue 1182 Incorrect Content at B.3.8.3.12.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es007794c">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1182 Incorrect Content 686f600203 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8708 Punctuation de85767874 -->
+                        <text>have a water closet located so that the distance between the
+                    centre line of the fixture and the wall on one side is <measurement units="metric">460 mm</measurement> to <measurement units="metric">480 mm</measurement>,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-aa54b95099" sequence="1520" description="Issue 6759 Incorrect Content at B.3.8.3.12.(1)(f)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause6"
+                                                    letter="f"
+                                                    vendor-id="es007794d">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6759 Incorrect Content aa54b95099 -->
+                        <text>be equipped with an L-shaped grab bar that</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause6.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007794d3">
+                                                  <text>is mounted on the side wall closest to the water closet,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause6.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007794d1">
+                                                  <text>has horizontal and vertical components not less than <measurement units="metric">760
+                    mm</measurement> long mounted with the horizontal component <measurement units="metric">750 mm</measurement> to <measurement units="metric">850 mm</measurement> above the floor and the vertical component <measurement units="metric">150 mm</measurement> in front of the water closet (see <ref type="internal"
+                                                          target="nbc.divB.part3.appendix.appnote223"
+                                                          display-type="short"/>), and </text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause6.subclause3"
+                                                          number="3"
+                                                          vendor-id="es007794d2">
+                                                  <text>complies with <ref type="internal"
+                                                          target="nbc.divB.part3.sect7.subsect2.art7"
+                                                          display-type="long"/>,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-0e1fdcd9a9" sequence="1521" description="Issue 6760 Incorrect Content at B.3.8.3.12.(1)(g)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause7"
+                                                    letter="g"
+                                                    vendor-id="es007794f">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6760 Incorrect Content 0e1fdcd9a9 -->
+                        <text>be equipped with either one grab bar at least <measurement units="metric">600 mm</measurement> long and centred over the water closet, or two grab bars at least <measurement units="metric">300 mm</measurement> long and located either side of the flush valve, that</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause7.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007794f1">
+                                                  <text>conform to <ref type="internal"
+                                                          target="nbc.divB.part3.sect7.subsect2.art7"
+                                                          display-type="long"/>,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause7.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007794f2">
+                                                  <text>are mounted on the rear wall, and </text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause7.subclause3"
+                                                          number="3"
+                                                          vendor-id="es007794f3">
+                                                  <text>are mounted at the same height as the grab bar on the side wall
+                    or <measurement units="metric">100 mm</measurement> above the top of the attached water tank, if
+                    applicable,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-669101509d" sequence="1522" description="Issue 1183 Incorrect Content at B.3.8.3.12.(1)(h)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause8"
+                                                    letter="h"
+                                                    vendor-id="es007794e">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1183 Incorrect Content 669101509d -->
+                        <text>be equipped with a coat hook mounted not more than <measurement units="metric">1 200
+                    mm</measurement> above the floor on a side wall and projecting not more than <measurement units="metric">50 mm</measurement> from the wall, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-df031ee207" sequence="1523" description="Issue 6761 Incorrect Content at B.3.8.3.12.(1)(i)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause9"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause9"
+                                                    letter="i"
+                                                    vendor-id="es007794g">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6761 Incorrect Content df031ee207 -->
+                        <text>be equipped with a toilet paper dispenser mounted on the side
+                    wall closest to the water closet such that</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause9.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007794g1">
+                                                  <text>the bottom of the dispenser is <measurement units="metric">600 mm</measurement> to <measurement units="metric">800 mm</measurement> above the floor, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause9.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007794g2">
+                                                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1184 Incorrect Content 7dc9d7246a -->
+                                                  <text>the closest edge of the dispenser is not more than <measurement units="metric">300 mm</measurement> from
+                    the front of the water closet.</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-05ff93e9ed" sequence="1524" description="Issue 1185 Incorrect Content at B.3.8.3.13.(1)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause1"
+                                                    letter="a"
+                                                    vendor-id="es007796a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1185 Incorrect Content 05ff93e9ed -->
+                        <text>be served by an <ref type="term" target="brrr-fr">accessible</ref> path
+                    of travel,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-53fddf2ee1" sequence="1525" description="Issue 1187 Incorrect Content at B.3.8.3.13.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es007796k">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1187 Incorrect Content 53fddf2ee1 -->
+                        <text>have a clear lateral transfer space adjacent to the water closet
+                    that conforms to <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art12.sent1.clause2"
+                                                       display-type="long"/>,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-da6772809c" sequence="1526" description="Issue 1188 Incorrect Content at B.3.8.3.13.(1)(f)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause6"
+                                                    letter="f"
+                                                    vendor-id="es007796e">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1188 Incorrect Content da6772809c -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1189 Reference ba8d21988f -->
+                        <text>have grab bars conforming to <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art12.sent1.clause6"
+                                                       display-type="long"
+                                                       pretext="Clauses"/>
+                                                  <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art12.sent1.clause7"
+                                                       display-type="short"
+                                                       pretext="and">(g)</ref>, </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-2e095cc09f" sequence="1527" description="Issue 1192 Incorrect Content at B.3.8.3.15.(2)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause1"
+                                                    letter="a"
+                                                    vendor-id="es001355e">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1192 Incorrect Content 2e095cc09f -->
+                        <text>be wall-mounted, with the rim located not more than <measurement units="metric">430 mm</measurement> above the floor,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3de3119cb9" sequence="1528" description="Issue 1193 Incorrect Content at B.3.8.3.15.(2)(c)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause3"
+                                                    letter="c"
+                                                    vendor-id="es001355a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1193 Incorrect Content 3de3119cb9 -->
+                        <text>have a clear width of approach that is at least <measurement units="metric">800 mm</measurement> wide by <measurement units="metric">1 350 mm</measurement> long centred on the urinal and unobstructed
+                    by privacy screens,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-da7e70ab63" sequence="1529" description="Issue 1194 Incorrect Content at B.3.8.3.15.(2)(d)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause4"
+                                                    letter="d"
+                                                    vendor-id="es001355b">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1194 Incorrect Content da7e70ab63 -->
+                        <text>have no step in front of it, </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-69b89e03f5" sequence="1530" description="Issue 6763 Incorrect Content at B.3.8.3.15.(2)(e)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause5"
+                                                    letter="e"
+                                                    vendor-id="es001355d">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6763 Incorrect Content 69b89e03f5 -->
+                        <text>have a flush control that</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause5.subclause1"
+                                                          number="1"
+                                                          vendor-id="es001355d1">
+                                                  <text>is automatic, or</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause5.subclause2"
+                                                          number="2"
+                                                          vendor-id="es001355d2">
+                                                  <text>complies with <ref type="internal"
+                                                          target="nbc.divB.part3.sect8.subsect3.art8.sent1.clause2"
+                                                          display-type="long"/> and is located <measurement units="metric">900 mm</measurement> to <measurement units="metric">1 100 mm</measurement> above the floor, and</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-bc5cf792bd" sequence="1531" description="Issue 6764 Incorrect Content at B.3.8.3.15.(2)(f)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause6"
+                                                    letter="f"
+                                                    vendor-id="es001355c">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6764 Incorrect Content bc5cf792bd -->
+                        <text>have a vertically mounted grab bar installed on each side that </text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause6.subclause1"
+                                                          number="1"
+                                                          vendor-id="es001355c1">
+                                                  <text>complies with <ref type="internal"
+                                                          target="nbc.divB.part3.sect7.subsect2.art7"
+                                                          display-type="long"/>,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause6.subclause2"
+                                                          number="2"
+                                                          vendor-id="es001355c2">
+                                                  <text>is not less than <measurement units="metric">600 mm</measurement> long, with its centre line <measurement units="metric">1 000 mm</measurement> above the floor, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent2.clause6.subclause3"
+                                                          number="3"
+                                                          vendor-id="es001355c3">
+                                                  <text>is located not more than 380 mm from the centre line of the
+                    urinal.</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b45d0759cf" sequence="1532" description="Issue 1195 Incorrect Content at B.3.8.3.16.(1)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause1"
+                                                    letter="a"
+                                                    vendor-id="es007795h">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1195 Incorrect Content b45d0759cf -->
+                        <text>be equipped with faucets complying with <ref type="internal"
+                                                       target="nbc.divB.part3.sect7.subsect2.art3.sent4"
+                                                       display-type="long"/>,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1bbd9cf448" sequence="1533" description="Issue 1196 Incorrect Content at B.3.8.3.16.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause2"
+                                                    letter="b"
+                                                    vendor-id="es007795a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1196 Incorrect Content 1bbd9cf448 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8710 Punctuation 38083e5210 -->
+                        <text>be located so that the distance between the centre line of the
+                    lavatory and any side wall is not less than <measurement units="metric">460 mm</measurement>,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-0cb672c5f3" sequence="1534" description="Issue 6766 Incorrect Content at B.3.8.3.16.(1)(c)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es007795i">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6766 Incorrect Content 0cb672c5f3 -->
+                        <text>have a clear floor space in front of the lavatory that is at
+                    least </text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause3.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007795i1">
+                                                  <text>
+                                                     <measurement units="metric">800 mm wide</measurement>, centred on the lavatory, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause3.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007795i2">
+                                                  <text>
+                                                     <measurement units="metric">1 350 mm long</measurement>, of which no more than <measurement units="metric">430
+                    mm</measurement> is beneath the lavatory,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-68d4979e67" sequence="1535" description="Issue 1197 Incorrect Content at B.3.8.3.16.(1)(d)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es007795b">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1197 Incorrect Content 68d4979e67 -->
+                        <text>have a rim height not more than <measurement units="metric">865 mm</measurement> above the
+                    floor, </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-316d832a2d" sequence="1536" description="Issue 6767 Incorrect Content at B.3.8.3.16.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es007795c">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6767 Incorrect Content 316d832a2d -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:12129 Note Reference 1e80be264e -->
+                        <text>have a clearance beneath the lavatory not less than</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007795c1">
+                                                  <text>
+                                                     <measurement units="metric">800 mm wide</measurement>, centred on the lavatory,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007795c2">
+                                                  <text>
+                                                     <measurement units="metric">735 mm high</measurement> at the front edge,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause3"
+                                                          number="3"
+                                                          vendor-id="es007795c3">
+                                                  <text>
+                                                     <measurement units="metric">685 mm high</measurement> at a point <measurement units="metric">200 mm</measurement> back
+                    from the front edge, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.subclause4"
+                                                          number="4"
+                                                          vendor-id="es007795c4">
+                                                  <text>
+                                                     <measurement units="metric">230 mm high</measurement> over the distance from a point <measurement units="metric">280 mm</measurement> to a point <measurement units="metric">430 mm</measurement> back from the front
+                    edge,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-62f4a93ca8" sequence="1537" description="Issue 1198 Incorrect Content at B.3.8.3.16.(1)(f)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause6"
+                                                    letter="f"
+                                                    vendor-id="es007795d">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1198 Incorrect Content 62f4a93ca8 -->
+                        <text>have insulated water supply and drain pipes where these pipes
+                    are exposed (see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote227"
+                                                       display-type="short"/>),</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-74c3856c97" sequence="1538" description="Issue 6768 Incorrect Content at B.3.8.3.16.(1)(g)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause7"
+                                                    letter="g"
+                                                    vendor-id="es007795f">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6768 Incorrect Content 74c3856c97 -->
+                        <text>have a soap dispenser that </text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause7.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007795f1">
+                                                  <text>is automatic, or</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause7.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007795f2">
+                                                  <text>complies with <ref type="internal"
+                                                          target="nbc.divB.part3.sect8.subsect3.art8.sent1.clause2"
+                                                          display-type="long"/> and is located not
+                    more than <measurement units="metric">1 100 mm</measurement> above the floor, within <measurement units="metric">500
+                    mm</measurement> from the front of the lavatory (see <ref type="internal"
+                                                          target="nbc.divB.part3.appendix.appnote228"
+                                                          display-type="short"/>), and</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1bc64f3163" sequence="1539" description="Issue 1199 Incorrect Content at B.3.8.3.16.(1)(h)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause8"
+                                                    letter="h"
+                                                    vendor-id="es007795g">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1199 Incorrect Content 1bc64f3163 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1200 Incorrect Content db886c1606 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7542 Formatting 0923a36db5 -->
+                        <text>have a towel dispenser or other hand-drying equipment located
+                    close to the lavatory, with operating controls not more than <measurement units="metric">1 200 mm</measurement> above the
+                    floor in an area that is <ref type="term" target="bc-cc-t-ccbl">accessible</ref> to persons using wheelchairs.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b35485e818" sequence="1540" description="Issue 1201 Incorrect Content at B.3.8.3.16.(2)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art16.sent2.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art16.sent2.clause2"
+                                                    letter="b"
+                                                    vendor-id="es001359b">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1201 Incorrect Content b35485e818 -->
+                        <text>fixed in an inclined position so as to be usable by a person
+                    using a wheelchair.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8e8fa88990" sequence="1541" description="Issue 1202 Incorrect Content at B.3.8.3.17.(1)(c)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es007797j">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1202 Incorrect Content 8e8fa88990 -->
+                        <text>have no doors or curtains that obstruct the controls or the
+                    clear floor space at the entrance to the shower,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-0acc51879a" sequence="1542" description="Issue 1203 Incorrect Content at B.3.8.3.17.(1)(d)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es007797c">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1203 Incorrect Content 0acc51879a -->
+                        <text>have a slip-resistant floor surface,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-059f31f93a" sequence="1543" description="Issue 1204 Incorrect Content at B.3.8.3.17.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es007797d">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1204 Incorrect Content 059f31f93a -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8711 Punctuation 30fb5c50aa -->
+                        <text>have a threshold not more than <measurement units="metric">13 mm</measurement> higher than
+                    the finished floor, and where it is higher than <measurement units="metric">6 mm</measurement>,
+                    beveled to a slope no steeper than 1 in 2,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-48201e9454" sequence="1544" description="Issue 6770 Incorrect Content at B.3.8.3.17.(1)(h)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause8"
+                                                    letter="h"
+                                                    vendor-id="es007797g">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6770 Incorrect Content 48201e9454 -->
+                        <text>have a pressure-equalizing or thermostatic-mixing valve and
+                    other controls that </text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause8.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007797g1">
+                                                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1205 Incorrect Content f57805d439 -->
+                                                  <text>comply with <ref type="internal"
+                                                          target="nbc.divB.part3.sect8.subsect3.art8.sent1.clause2"
+                                                          display-type="long"/>, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause8.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007797g2">
+                                                  <text>are mounted on the wall opposite the entrance to the shower
+                    at not more than <measurement units="metric">1 200 mm</measurement> above the floor and within
+                    reach of the seat,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-afe11f9338" sequence="1545" description="Issue 6771 Incorrect Content at B.3.8.3.17.(1)(i)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause9"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause9"
+                                                    letter="i"
+                                                    vendor-id="es007797h">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6771 Incorrect Content afe11f9338 -->
+                        <text>have a hand-held shower head with not less than <measurement units="metric">1 800
+                    mm</measurement> of flexible hose located so that it</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause9.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007797h3">
+                                                  <text>can be reached from a seated position,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause9.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007797h1">
+                                                  <text>can be used in a fixed position at a height of <measurement units="metric">1 200 mm</measurement> and <measurement units="metric">2 030 mm</measurement>, and </text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause9.subclause3"
+                                                          number="3"
+                                                          vendor-id="es007797h2">
+                                                  <text>does not obstruct the use of the grab bars, and</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-58279e0d3d" sequence="1546" description="Issue 1206 Incorrect Content at B.3.8.3.17.(1)(j)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause10"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent1.clause10"
+                                                    letter="j"
+                                                    vendor-id="es007797i">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1206 Incorrect Content 58279e0d3d -->
+                        <text>have recessed soap holders that can be reached from the seated
+                    position.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c43405cda5" sequence="1547" description="Issue 1207 Incorrect Content at B.3.8.3.17.(2)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent2.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent2.clause1"
+                                                    letter="a"
+                                                    vendor-id="es013898a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1207 Incorrect Content c43405cda5 -->
+                        <text>be located in an <ref type="term" target="brrr-fr">accessible</ref> path
+                    of travel, </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-ac1f265a58" sequence="1548" description="Issue 1208 Incorrect Content at B.3.8.3.17.(2)(f)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art17.sent2.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art17.sent2.clause6"
+                                                    letter="f"
+                                                    vendor-id="es013898f">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1208 Incorrect Content ac1f265a58 -->
+                        <text>have a clear transfer space adjacent to the long side of the
+                    bench that is <measurement units="metric">900 mm wide</measurement> and as long as the bench (see <ref type="internal"
+                                                       target="nbc.divB.part3.appendix.appnote231"
+                                                       display-type="short"/>),</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-9d16f066f8" sequence="1549" description="Issue 1209 Incorrect Content at B.3.8.3.18.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause2"
+                                                    letter="b"
+                                                    vendor-id="es007801d">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1209 Incorrect Content 9d16f066f8 -->
+                        <text>be not less than <measurement units="metric">1 500 mm</measurement> long,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-9d8b823ed2" sequence="1550" description="Issue 1211 Incorrect Content at B.3.8.3.18.(1)(d)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es007801f">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1211 Incorrect Content 9d8b823ed2 -->
+                        <text>be capable of being accessed along its full length with no tracks
+                    mounted on its rim,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-518d7c3949" sequence="1551" description="Issue 6772 Incorrect Content at B.3.8.3.18.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es007801g">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6772 Incorrect Content 518d7c3949 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6773 Incorrect Content 458ec4681b -->
+                        <text>have a pressure-equalizing or thermostatic mixing valve and other controls that </text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause5.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007801g1">
+                                                  <text>conform to <ref type="internal"
+                                                          target="nbc.divB.part3.sect8.subsect3.art8.sent1.clause2"
+                                                          display-type="long"/>, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause5.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007801g2">
+                                                  <text>are located on the centre line or between the centre line of
+                    the bathtub and the exterior edge of the bathtub rim, at a maximum
+                    height of <measurement units="metric">450 mm</measurement> above the rim,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-818ebdc660" sequence="1552" description="Issue 6774 Incorrect Content at B.3.8.3.18.(1)(f)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause6"
+                                                    letter="f"
+                                                    vendor-id="es007801h">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6774 Incorrect Content 818ebdc660 -->
+                        <text>have three grab bars</text>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007801h1">
+                                                  <text>that conform to <ref type="internal"
+                                                          target="nbc.divB.part3.sect7.subsect2.art7.sent1"
+                                                          display-type="long"/>,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007801h2">
+                                                  <text>that are not less than <measurement units="metric">1 200 mm</measurement> long,</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause3"
+                                                          number="3"
+                                                          vendor-id="es007801h3">
+                                                  <text>two of which are located vertically at each end of the bathtub,
+                    set <measurement units="metric">80 mm</measurement> to <measurement units="metric">120 mm</measurement> in from the outside
+                    edge of the bathtub, with their lower end <measurement units="metric">180 mm</measurement> to <measurement units="metric">280 mm</measurement> above the bathtub rim, and</text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause6.subclause4"
+                                                          number="4"
+                                                          vendor-id="es007801h4">
+                                                  <text>one of which is located horizontally along the length of the
+                    bathtub at <measurement units="metric">180 mm</measurement> to <measurement units="metric">280 mm</measurement> above the bathtub
+                    rim,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-db6eafbb48" sequence="1553" description="Issue 1212 Incorrect Content at B.3.8.3.18.(1)(g)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause7"
+                                                    letter="g"
+                                                    vendor-id="es007801b">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1212 Incorrect Content db6eafbb48 -->
+                        <text>have a slip-resistant bottom surface, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-ad2fa5e804" sequence="1554" description="Issue 1213 Incorrect Content at B.3.8.3.18.(1)(h)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art18.sent1.clause8"
+                                                    letter="h"
+                                                    vendor-id="es007801c">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1213 Incorrect Content ad2fa5e804 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8712 Punctuation 2c482f6b86 -->
+                        <text>be equipped with a hand-held shower head with not less than <measurement units="metric">1 800 mm</measurement> of flexible hose that can be used in a fixed position
+                    at a height of <measurement units="metric">1 200 mm</measurement> and <measurement units="metric">2 030 mm</measurement>. </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-162da40960" sequence="1555" description="Issue 1214 Incorrect Content at B.3.8.3.21.(2)(a)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art21.sent2.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art21.sent2.clause1"
+                                                    letter="a"
+                                                    vendor-id="es001365c">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1214 Incorrect Content 162da40960 -->
+                        <text>be level,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-296b3f4120" sequence="1556" description="Issue 1215 Incorrect Content at B.3.8.3.21.(2)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art21.sent2.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art21.sent2.clause2"
+                                                    letter="b"
+                                                    vendor-id="es001365a">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1215 Incorrect Content 296b3f4120 -->
+                        <text>be not less than <measurement units="metric">305 mm</measurement> deep,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-f72703243b" sequence="1557" description="Issue 1216 Incorrect Content at B.3.8.3.21.(2)(c)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art21.sent2.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art21.sent2.clause3"
+                                                    letter="c"
+                                                    vendor-id="es001365b">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1216 Incorrect Content f72703243b -->
+                        <text>have, for each telephone provided, a clear space not less than <measurement units="metric">250 mm</measurement> wide having no obstruction within <measurement units="metric">250 mm</measurement> above the surface, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-cc040f0eb8" sequence="1558" description="Issue 1217 Incorrect Content at B.3.8.3.22.(1)(d)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art22.sent1.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art22.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es001349d">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1217 Incorrect Content cc040f0eb8 -->
+                        <text>they shall be located adjoining an <ref type="term" target="brrr-fr">accessible</ref> path of travel without infringing on egress from any row of seating
+                    or any aisle requirements, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-20127a686a" sequence="1559" description="Issue 1218 Reference at B.3.8.3.22.(2)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art22.sent2.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect8.subsect3.art22.sent2.clause2"
+                                                    letter="b"
+                                                    vendor-id="es014613b">
+                                               <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1218 Reference 20127a686a -->
+                        <text>comply with <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art22.sent1.clause2"
+                                                       display-type="medium"
+                                                       pretext="Clauses">(1)(b)</ref>
+                                                  <ref type="internal"
+                                                       target="nbc.divB.part3.sect8.subsect3.art22.sent1.clause4"
+                                                       display-type="short"
+                                                       pretext=" and"/>.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-0de2ef12c3" sequence="1799" description="Issue 1168 Incorrect Content at B.3.8.3.6.(6)(a)(i)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent6.clause1.subclause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <subclause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent6.clause1.subclause1"
+                                                          number="1"
+                                                          vendor-id="es000073a1">
+                                                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1168 Incorrect Content 0de2ef12c3 -->
+                        <text>are located in an <ref type="term" target="brrr-fr">accessible</ref> path
+                    of travel,</text>
+                                               </subclause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-526f074e34" sequence="1800" description="Issue 1181 Incorrect Content at B.3.8.3.12.(1)(d)(iii)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause4.subclause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause4.subclause3"
+                                                          number="3"
+                                                          vendor-id="es007794b2">
+                                                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1181 Incorrect Content 526f074e34 -->
+                        <text>provides a clear opening not less than <measurement units="metric">850 mm</measurement> wide
+                    when it is open, measured in accordance with Sentence 3.8.3.6.(2),</text>
+                                               </subclause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-bed1a41f98" sequence="1801" description="Issue 1186 Incorrect Content at B.3.8.3.13.(1)(b)(ii)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause2.subclause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <subclause xml:id="nbc.divB.part3.sect8.subsect3.art13.sent1.clause2.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007796b2">
+                                                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1186 Incorrect Content bed1a41f98 -->
+                        <text>if it is an outward swinging door that is not self-closing,
+                    has a horizontal, D-shaped, visually contrasting door pull not less than <measurement units="metric">140 mm</measurement> long located on
+                    the inside so that its midpoint is not less than <measurement units="metric">200 mm</measurement> and not more than <measurement units="metric">300 mm</measurement> from the hinged side of the
+                    door and not less than <measurement units="metric">900 mm</measurement> and not more than <measurement units="metric">1 100 mm</measurement> above
+                    the floor (see <ref type="internal"
+                                                          target="nbc.divB.part3.appendix.appnote222"
+                                                          display-type="long">Note A-3.8.3.12.(1)(d)(vi)</ref>), </text>
+                                               </subclause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7b8ec8fb53" sequence="1802" description="Issue 1191 Reference at B.3.8.3.15.(1)(b)(ii)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent1.clause2.subclause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <subclause xml:id="nbc.divB.part3.sect8.subsect3.art15.sent1.clause2.subclause2"
+                                                          number="2"
+                                                          vendor-id="es014602b2">
+                                                  <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:1191 Reference 7b8ec8fb53 -->
+                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8709 Punctuation 0ff761dc47 -->
+                        <text>provides a clear opening not less than <measurement units="metric">850 mm</measurement> wide
+                    when it is open, measured in accordance with Sentence 3.8.3.6.(2),</text>
+                                               </subclause>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 </bc-overlay>

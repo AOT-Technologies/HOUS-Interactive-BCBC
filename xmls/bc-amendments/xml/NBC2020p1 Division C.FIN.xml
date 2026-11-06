@@ -254,7 +254,9 @@
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause2" letter="b">
-                                <text>a summary of the characteristics of the <ref type="term" target="bldng">building</ref> envelope, HVAC system and service water heating system reflecting the information provided in <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art2" display-type="medium">Article 2.2.8.2.</ref>, including energy sources for the <ref type="term" target="bldng">building</ref>’s systems, as applicable,</text>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6078 Formatting 48653da7f6 -->
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11501 Punctuation 0134389997 -->
+                                <text>a summary of the characteristics of the <ref type="term" target="bldng">building</ref> envelope, HVAC system and service water heating system reflecting the information provided in <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art2" display-type="medium">Article 2.2.8.2.</ref>, including energy sources for the <ref type="term" target="bldng">building</ref><emphasis style="italic">’s</emphasis> systems, as applicable,</text>
                             </clause>
                             <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent2.clause3" letter="c">
                                 <text>an energy performance data summary containing</text>
@@ -323,7 +325,9 @@
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause6" letter="f">
-                                <text>percent of the <ref type="term" target="bldng">building</ref>’s <ref type="term" target="cnd-sp">conditioned space</ref> served by space-cooling equipment.</text>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6079 Formatting 193ba8b646 -->
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11502 Punctuation 92df238196 -->
+                                <text>percent of the <ref type="term" target="bldng">building</ref><emphasis style="italic">’s</emphasis> <ref type="term" target="cnd-sp">conditioned space</ref> served by space-cooling equipment.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divC.part2.sect2.subsect8.art3.sent4" number="4">
@@ -384,7 +388,8 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2" number="2">
-                            <text>For buildings and <ref type="term" target="mjr-ccpn">major occupancies</ref> that are designed and constructed in compliance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="short">Subsection 10.2.3.</ref> and <ref type="internal" target="nbc.divB.part10.sect3" display-type="short">Section 10.3. of Division B</ref>, as applicable,  before an <ref type="term" target="bc-wnr">owner</ref> occupies or receives permission to occupy the <ref type="term" target="bldng">building</ref>, an energy report shall indicate:</text>
+                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7005 Formatting 5786e12576 -->
+                            <text>For <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> that are designed and constructed in compliance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="short">Subsection 10.2.3.</ref> and <ref type="internal" target="nbc.divB.part10.sect3" display-type="short">Section 10.3. of Division B</ref>, as applicable,  before an <ref type="term" target="bc-wnr">owner</ref> occupies or receives permission to occupy the <ref type="term" target="bldng">building</ref>, an energy report shall indicate:</text>
                             <clause xml:id="nbc.divC.part2.sect2.subsect9.art2.sent2.clause1" letter="a">
                                 <text>the total energy use intensity as defined by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent1" display-type="short">Sentence 10.2.3.2.(1) of Division B</ref>,</text>
                             </clause>
@@ -513,7 +518,8 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                                         <text>geotechnical conditions at <ref type="term" target="bldng">building</ref> sites that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref>,</text>
                                     </subclause>
                                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause3" number="3">
-                                        <text>sprinkler systems designed to NFPA 13, "Installation of Sprinkler Systems", and</text>
+                                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11275 Punctuation c9f3f47a3f -->
+                                        <text>sprinkler systems designed to NFPA 13, “Installation of Sprinkler Systems”, and</text>
                                     </subclause>
                                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause4" number="4">
                                         <text>standpipe and hose systems designed to NFPA 14, "Installation of Standpipe and Hose Systems".</text><!-- BBC-177 Issue 101: next Article title removed -->
@@ -560,7 +566,8 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                                     <text>place their professional seal or stamp on the plans submitted by them in support of the application for a <ref type="term" target="bldng">building</ref> permit, after ascertaining that they substantially comply with the British Columbia Building Code and other applicable enactments respecting safety,</text>
                                 </clause>
                                 <clause xml:id="nbc.divC.part2.sect2.subsect7.art3.sent3.clause2" letter="b">
-                                    <text>provide to the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> a letter in the form of Schedule C-B (see the end of Division C) after ascertaining that the components of the project for which the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> is responsible are constructed so as to substantially comply, in all material respects, with</text>
+                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7003 Incorrect Content 786541240d -->
+                                    <text>provide to the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> a letter in the form of Schedule C-B (see the end of Division C) after ascertaining that the components of the project for which the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref> is responsible are constructed so as to substantially comply, in all material respects, with</text>
                                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art3.sent3.clause2.subclause1" number="1">
                                         <text>the plans and supporting documents prepared by the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref>, and</text>
                                     </subclause>
@@ -573,9 +580,11 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                         <article xml:id="nbc.divC.part2.sect2.subsect7.art4" number="4">
                             <title>Termination</title>
                             <sentence xml:id="nbc.divC.part2.sect2.subsect7.art4.sent1" number="1">
-                                <text>An <ref type="term" target="bc-wnr">owner</ref> must not terminate the appointment of a <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> unless</text>
+                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7004 Incorrect Content 5a0ce69f36 -->
+                                <text>An <ref type="term" target="bc-wnr">owner</ref> must not terminate the appointment of a <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref> unless</text>
                                 <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent1.clause1" letter="a">
-                                    <text>the <ref type="term" target="bc-wnr">owner</ref> immediately replaces the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref>, or</text>
+                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6074 Incorrect Content 20a7c4befc -->
+                                    <text>the <ref type="term" target="bc-wnr">owner</ref> immediately replaces the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref>, or</text>
                                 </clause>
                                 <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent1.clause2" letter="b">
                                     <text>the <ref type="term" target="bc-wnr">owner</ref> has complied with Clause (1)(b) and Sentence (2) of <ref type="internal" target="nbc.divC.part2.sect2.subsect7.art2" display-type="short">Article 2.2.7.2.</ref> by delivering letters in the forms set out in Schedule A, B, C-A and C-B, as applicable, to the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>.</text>
@@ -587,13 +596,16 @@ Section 10.3.</title><article xml:id="nbc.divC.part2.sect2.subsect9.art1" number
                                     <text>if the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> ceases to be retained at any time before the completion of the project, both the <ref type="term" target="bc-wnr">owner</ref> and the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> shall notify the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>, and</text>
                                 </clause>
                                 <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent2.clause2" letter="b">
-                                    <text>if a <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> ceases to be retained at any time before the completion of the project, both the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> and the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref> shall notify the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>.</text>
+                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6075 Incorrect Content e2c5160054 -->
+                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6076 Incorrect Content 5631f3b3af -->
+                                    <text>if a <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref> ceases to be retained at any time before the completion of the project, both the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> and the <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref> shall notify the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>.</text>
                                 </clause>
                             </sentence>
                             <sentence xml:id="nbc.divC.part2.sect2.subsect7.art4.sent3" number="3">
                                 <text>Notification under Sentences (1) and (2) shall be made,</text>
                                 <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent3.clause1" letter="a">
-                                    <text>if possible, before the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professionals of record</ref>, as the case may be, ceases to be retained, or</text>
+                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6077 Incorrect Content 130aa35ca7 -->
+                                    <text>if possible, before the <ref type="term" target="bc-crdntng-rgstrd-prfsnl">coordinating registered professional</ref> or <ref type="term" target="bc-rgstrd-prfssnl-f-rcrd">registered professional of record</ref>, as the case may be, ceases to be retained, or</text>
                                 </clause>
                                 <clause xml:id="nbc.divC.part2.sect2.subsect7.art4.sent3.clause2" letter="b">
                                     <text>if advance notice is not possible, as soon as possible..</text>
