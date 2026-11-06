@@ -70,8 +70,9 @@
                   <title>Application of Part 9</title>
                   <sentence xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1" number="1" vendor-id="es007226">
                     <text>Except as provided in <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent2" display-type="short"/>, Part 9 of Division B applies to all <ref type="term" target="bldng">buildings</ref> described in <ref type="internal" target="nbc.divA.part1.sect1.subsect1.art1" display-type="long"/> of <measurement units="metric">3 <ref type="term" target="tr">storeys</ref></measurement> or less in <ref type="term" target="bldng-hg">building height</ref>, having a <ref type="term" target="bldng-r">building area</ref> not exceeding <measurement units="metric">600 m<super>2</super></measurement>, and used for <ref type="term" target="mjr-ccpn">major occupancies</ref> classified as</text>
+                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:21 Punctuation 58bb5165bc -->
                     <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause1" letter="a" vendor-id="es007226a">
-                      <text>reserved</text>
+                      <text>reserved,</text>
                     </clause>
                     <clause xml:id="nbc.divA.part1.sect3.subsect3.art3.sent1.clause2" letter="b" vendor-id="es007226b">
                       <text>Group C, <ref type="term" target="rdntl-cc">residential occupancies</ref> (see <ref type="internal" target="nbc.divBV2.part9.appendix.appnote1" vendor-target="en000253" display-type="long"/>),</text>
@@ -1207,8 +1208,9 @@
                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause2" number="2">
                       <text>geotechnical conditions at <ref type="term" target="bldng">building</ref> sites that are not within the scope of <ref type="internal" target="nbc.divB.part9" display-type="short">Part 9 of Division B</ref>,</text>
                     </subclause>
+                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11275 Punctuation c9f3f47a3f -->
                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause3" number="3">
-                      <text>sprinkler systems designed to NFPA 13, "Installation of Sprinkler Systems", and</text>
+                      <text>sprinkler systems designed to NFPA 13, “Installation of Sprinkler Systems”, and</text>
                     </subclause>
                     <subclause xml:id="nbc.divC.part2.sect2.subsect7.art1.sent1.clause3.subclause4" number="4">
                       <text>standpipe and hose systems designed to NFPA 14, "Installation of Standpipe and Hose Systems".</text>
