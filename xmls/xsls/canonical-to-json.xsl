@@ -2292,7 +2292,8 @@
         
         <!-- Add leading space if preceded by non-whitespace text OR another ref element -->
         <!-- BUT: Don't add leading space if this ref has pretext (pretext will provide the separation) -->
-        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$'))] or $prev-significant[self::ref])">
+        <!-- CLAUDE-AUTOFIX CL-006 CF-00255 | issue 9829 | No space between a hyphen or slash and a defined term, as in the PDF (part-storey, non-loadbearing). -->
+        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$')) and not(current()/@type = 'term' and matches(., '[\-/]$'))] or $prev-significant[self::ref])">
             <xsl:text> </xsl:text>
         </xsl:if>
         
