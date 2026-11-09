@@ -2366,6 +2366,7 @@
                 />
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00038 | issue 10053 | Label "Section 2.3 of Division C" on the reference (no period after 2.3) to match the PDF. -->
                     <clause
                         xml:id="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
                         letter="b"
@@ -2381,7 +2382,7 @@
                                 type="internal"
                                 target="nbc.divC.part2.sect3"
                                 display-type="long"
-                                />, that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see <ref
+                                >Section 2.3 of Division C</ref>, that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see <ref
                                 type="internal"
                                 target="nbc.divA.part1.appendix.appnote4"
                                 display-type="short"
