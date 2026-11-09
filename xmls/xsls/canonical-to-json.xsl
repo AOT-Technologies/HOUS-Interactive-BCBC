@@ -2241,6 +2241,42 @@
         <xsl:text>}</xsl:text>
     </xsl:template>
     
+    <!-- CLAUDE-AUTOFIX CL-001 | CF-00900 issue 8016 | Print standard references as the PDF does: curly quotes, comma or period inside the closing quote, and the style of the base XML. -->
+    <xsl:key name="standard-entry-by-ref-id" match="entry[@standard-ref-id]" use="@standard-ref-id"/>
+
+    <xsl:template match="ref[@type = 'standard'][@ref-style != 'abbr']" mode="rich-text-json" priority="2">
+        <xsl:variable name="entry" select="(key('standard-entry-by-ref-id', @target), key('standard-entry-by-ref-id', concat('d-', @target)), key('standard-entry-by-ref-id', replace(@target, '^d-', '')))[1]"/>
+        <xsl:variable name="row" select="$entry/parent::row"/>
+        <xsl:variable name="number" select="normalize-space($row/entry[@standard-ref-number][1]/@standard-ref-number)"/>
+        <xsl:variable name="agency" select="normalize-space($row/entry[1][not(@standard-ref-id) and not(@standard-ref-number)])"/>
+        <xsl:variable name="title" select="normalize-space($entry/@standard-ref-title)"/>
+        <xsl:variable name="punc" select="if (@ref-style = ('notitle', 'number') or @ref-punc = 'none') then '' else if (@ref-punc = 'period') then '.' else ','"/>
+        <xsl:variable name="full-number" select="normalize-space(concat($agency, ' ', $number))"/>
+        <xsl:variable name="text" select="
+            if (@ref-style = 'noagency') then concat($number, ', &#8220;', $title, $punc, '&#8221;')
+            else if (@ref-style = 'notitle') then $full-number
+            else if (@ref-style = 'number') then $number
+            else if (@ref-style = 'title') then concat('&#8220;', $title, $punc, '&#8221;')
+            else if (@ref-style = 'nqtitle') then concat($title, $punc)
+            else concat($full-number, ', &#8220;', $title, $punc, '&#8221;')"/>
+        <xsl:choose>
+            <xsl:when test="not($entry) or $number = '' or $title = ''">
+                <xsl:next-match/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:variable name="next-significant" select="following-sibling::node()[not(self::text() and normalize-space(.) = '')][1]"/>
+                <xsl:variable name="prev-significant" select="preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1]"/>
+                <xsl:if test="$prev-significant[self::text() and not(matches(., '[\s(\[&#8220;&#8216;]$'))] or $prev-significant[self::ref]">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+                <xsl:value-of select="$text"/>
+                <xsl:if test="$next-significant[self::text() and not(matches(., '^[\s,.;:)\]]'))] or $next-significant[self::ref]">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <xsl:template match="ref" mode="rich-text-json">
         <!-- Determine the next significant sibling (skipping whitespace-only text nodes) -->
         <xsl:variable name="next-significant" select="following-sibling::node()[not(self::text() and normalize-space(.) = '')][1]"/>

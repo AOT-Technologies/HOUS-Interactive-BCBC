@@ -1367,7 +1367,8 @@
   </xsl:template>
 
   <xsl:template match="ref.stand" mode="rich-text">
-    <ref type="standard" target="{@StandID}" standardId="{@StandID}">
+    <!-- CLAUDE-AUTOFIX CL-001 | CF-00900 issue 8016 | Keep the style and punctuation of standard references so the JSON can print them as the PDF does. -->
+    <ref type="standard" target="{@StandID}" standardId="{@StandID}" ref-style="{(@style, 'default')[1]}" ref-punc="{(@punc, 'default')[1]}">
       <xsl:apply-templates select="node()" mode="rich-text" />
     </ref>
   </xsl:template>
