@@ -77,7 +77,8 @@
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote9.para3"/>
             <replace preserve-references="false">
                 <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote9.para3">Design according to Part 4 or accepted good engineering practice, such as that described in the CWC, "Engineering Guide for Wood Frame Construction", requires engineering expertise. The CWC Guide contains alternative solutions and provides information on the applicability of the Part 9 prescriptive structural requirements to further assist designers and building officials to identify the appropriate design approach. The need for professional involvement in the structural design of a building, whether to Part 4 or Part 9 requirements or accepted good practice, is defined by provincial and territorial legislation.</paragraph>
+                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9772 Punctuation fb4eca0d10 -->
+                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote9.para3">Design according to Part 4 or accepted good engineering practice, such as that described in the CWC, “Engineering Guide for Wood Frame Construction”, requires engineering expertise. The CWC Guide contains alternative solutions and provides information on the applicability of the Part 9 prescriptive structural requirements to further assist designers and building officials to identify the appropriate design approach. The need for professional involvement in the structural design of a building, whether to Part 4 or Part 9 requirements or accepted good practice, is defined by provincial and territorial legislation.</paragraph>
                 </new-content>
             </replace>
         </amendment>
@@ -214,7 +215,8 @@
                         <number>9.7.</number>
                         <title>Windows, Doors and Skylights</title>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote20a.para1">This section applies only to windows, doors and skylights as defined in the scope of the standards referenced in <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art2" display-type="long"/>. Other glazed products, such as site-built windows, curtain walls or sloped glazing, are required to conform to Part 5.</paragraph>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote20a.para2">It is also permitted for fenestration products within the scope of the NAFS standard to conform to Part 5. This option is typically used for windows and doors that are impractical to subject to the testing requirements of NAFS due to their size or for custom configurations.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:4987 Punctuation 73c15c5f3d -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote20a.para2">It is also permitted for fenestration products within the scope of the NAFS standard to conform to Part 5. This option is typically used for windows and doors that are impractical to subject to the testing requirements of NAFS due to their size or for custom configurations</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -256,8 +258,11 @@
                 <new-content source="bc">
                     <note-division xml:id="nbc.divBV2.part9.appendix.appnote22.div0">
                         <title>General</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div0.para1">Doors between an unconditioned garage and a dwelling unit are considered to be in scope of the standard referenced in this Sentence. Although the standard refers to windows in "exterior building envelopes", a note to the definition of "building envelope" clarifies that for the purpose of application of the standard, in some cases a building envelope may consist of 2 separate walls (such as a wall between garage and dwelling unit as well as the exterior wall of the garage itself).</paragraph>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div0.para2">A door leading to the exterior from an unconditioned garage is also within scope of the referenced standard, as it is also part of the exterior building envelope. However, because the scope of the BC Building Code takes precedence, these doors are not required to conform to "NAFS". This Subsection of the Code does not apply to a door separating two unconditioned spaces.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9112 Punctuation 4c5007a157 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9113 Punctuation 1dc5653215 -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div0.para1">Doors between an unconditioned garage and a dwelling unit are considered to be in scope of the standard referenced in this Sentence. Although the standard refers to windows in “exterior building envelopes”, a note to the definition of “building envelope” clarifies that for the purpose of application of the standard, in some cases a building envelope may consist of 2 separate walls (such as a wall between garage and dwelling unit as well as the exterior wall of the garage itself).</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9114 Punctuation ced046800b -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div0.para2">A door leading to the exterior from an unconditioned garage is also within scope of the referenced standard, as it is also part of the exterior building envelope. However, because the scope of the BC Building Code takes precedence, these doors are not required to conform to “NAFS”. This Subsection of the Code does not apply to a door separating two unconditioned spaces.</paragraph>
                     </note-division>
                 </new-content>
             </insert>
@@ -1124,10 +1129,13 @@
                             <title>Identifying and Spacing Adjacent Non-Parallel Braced Wall Bands</title>
                             <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para1">Identifying the adjacent braced wall band and the spacing between braced wall bands is more complicated where the building plan is not orthogonal.</paragraph>
                             <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para2">Where the plan is triangular, all braced wall bands intersect with the subject braced wall band. The prescriptive requirements in Part 9 do not apply to these cases and the building must be designed according to Part 4 with respect to lateral load resistance.</paragraph>
-                            <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3">Where the braced wall bands are not parallel, the adjacent band is identified as follows using <ref type="internal" target="nbc.divBV2.part9.appendix.appnote131.figure2" display-type="long">Figure Table A-9.23.13.5.-B</ref> as an example:<list type="numbered">
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item1">Determine the mid-point of the centre line of the subject braced wall band (A);</item>
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item2">Project a perpendicular line from this mid-point (B);</item>
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item3">The first braced wall band encountered is the adjacent braced wall band (C);</item>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5209 Reference 3cd4c9f3d9 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5210 Reference 6000cf10bd -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5211 Reference 1474960750 -->
+                            <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3">Where the braced wall bands are not parallel, the adjacent band is identified as follows using <ref type="internal" target="nbc.divBV2.part9.appendix.appnote131.figure2" display-type="long">Figure Table A-9.23.13.5.-B</ref> as an example: 1.   <list type="numbered">
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item1">Determine the mid-point of the centre line of the subject braced wall band (A); 2.   </item>
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item2">Project a perpendicular line from this mid-point (B); 3.   </item>
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item3">The first braced wall band encountered is the adjacent braced wall band (C); 4.   </item>
                                     <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item4">Where the projected line encounters an intersection point between two braced wall bands, either wall band may be identified as the adjacent braced wall band (complex cases).</item>
                                 </list>
                             </paragraph>
@@ -1161,8 +1169,10 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote133a">
                         <number>9.23.13.5.(3) and (4)</number>
                         <title>Connection of Braced Wall Panels to Roof Framing</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133a.para1">Braced wall panels that are sheathed with gypsum board alone have a significantly lower lateral resistance than wood-sheathed braced wall panels. For gypsum-sheathed braced wall panels, the typical lateral bracing of trusses is usually adequate to transfer the lateral loads from the bottom chords to the top chords of the truss.</paragraph>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133a.para2">The connection of interior gypsum-sheathed braced wall panels to trusses also needs to accommodate vertical movement of the roof framing in order to facilitate "truss uplift" and to prevent the gypsum board from cracking.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5215 Incorrect Content fd9fa6ec9a -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133a.para1">Braced wall panels that are sheathed with gypsum board alone have a significantly lower lateral resistance than woodsheathed braced wall panels. For gypsum-sheathed braced wall panels, the typical lateral bracing of trusses is usually adequate to transfer the lateral loads from the bottom chords to the top chords of the truss.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9168 Punctuation 78bc075280 -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133a.para2">The connection of interior gypsum-sheathed braced wall panels to trusses also needs to accommodate vertical movement of the roof framing in order to facilitate “truss uplift” and to prevent the gypsum board from cracking.</paragraph>
                         <figure xml:id="nbc.divBV2.part9.appendix.appnote133a.figure1">
                             <title>Wood-sheathed braced wall panel to roof framing connection details (Sentence 9.23.13.5.(3)(a) and (b))</title>
                             <graphic src="bc-graphics/figure-a-9-23-13-5-3-and-4" alt="Wood-sheathed braced wall panel to roof framing connection details"/>
@@ -1187,7 +1197,10 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote133b">
                         <number>9.23.13.6.(1)</number>
                         <title>Materials in Braced Wall Panels</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133b.para1">Clause 9.23.13.6.(1)(a) describes wood-based exterior braced wall panels, which includes gypsum board on the interior, 'regularly attached' according to Subsection 9.29.5. This corresponds with framing types WSP-A, WSP-B, WSP-C, WSP-D, WSP-F and DWB, with GWB-O on the interior, as described in 9.23.3.5.(3). Clause 9.23.13.6.(1)(b) describes exterior braced wall panels sheathed with gypsum board only, typically applied to the interior side of the exterior walls, accommodating the option of no wood-based structural sheathing on the exterior side of the braced walls. This corresponds to framing types GWB-O, GWB-A, GWB-B, GWB-F, and GWB-H.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5216 Incorrect Content fcd544e249 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9995 Punctuation 4903f13a1a -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9996 Punctuation 8a558fea1c -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133b.para1">Clause 9.23.13.6.(1)(a) describes wood-based exterior braced wall panels, which includes gypsum board on the interior, ‘regularly attached’ according to Subsection 9.29.5. This corresponds with framing types WSP-A, WSP-B, WSP-C, WSP-D, WSP F and DWB, with GWB-O on the interior, as described in 9.23.3.5.(3). Clause 9.23.13.6.(1)(b) describes exterior braced wall panels sheathed with gypsum board only, typically applied to the interior side of the exterior walls, accommodating the option of no wood-based structural sheathing on the exterior side of the braced walls. This corresponds to framing types GWB-O, GWB-A, GWB-B, GWB-F, and GWB-H.</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -1230,7 +1243,9 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote134a">
                         <number>9.23.13.6.(5)</number>
                         <title>Mixed Braced Wall Panel Framing Types in Braced Wall Bands</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134a.para1">The primary reason for mixed braced wall panel framing types is to accommodate where an interior GWB-sheathed braced wall panel framing type aligns with an exterior WSP braced wall panel framing type, along the same braced wall panel as shown in the plan view below. This permission is restricted to GWB- and 'low strength' WSP-sheathed framing types A and B. Mixing high strength or very stiff walls with low strength or less stiff walls has not been sufficiently studied and therefore requires analysis based on engineering principles.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9997 Punctuation dbcecebf64 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9998 Punctuation 70bd5a2fc7 -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134a.para1">The primary reason for mixed braced wall panel framing types is to accommodate where an interior GWB-sheathed braced wall panel framing type aligns with an exterior WSP braced wall panel framing type, along the same braced wall panel as shown in the plan view below. This permission is restricted to GWB- and ‘low strength’ WSP-sheathed framing types A and B. Mixing high strength or very stiff walls with low strength or less stiff walls has not been sufficiently studied and therefore requires analysis based on engineering principles.</paragraph>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134a.para2">This appendix note provides examples of complying with the requirements of Sentence 9.23.13.6.(5) when mixed braced wall panels are present along a braced wall band. Example 1 is the reference case without mixed sheathing types. Compliance to requirements in Clause 9.23.13.6.(5)(a) is demonstrated in Example 2, for the same braced wall band in Example 1.</paragraph>
                         <note-division xml:id="nbc.divBV2.part9.appendix.appnote134a.div1">
                             <title>Example 1 — One sheathing type in all braced wall panels</title>
@@ -1506,8 +1521,13 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote134d">
                         <number>9.23.13.8.</number>
                         <title>Foundation Cripple Walls</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134d.para1">Cripple walls are also known as "pony walls" or "knee walls." In Section 9.23., the term "cripple walls" refers to short wood-frame stud walls extending from the top of the foundation wall to the underside of the lowest floor framing.</paragraph>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134d.para2">Studies have demonstrated that wood-frame foundation walls with low racking resistance, such as unbraced or insufficiently braced cripple walls, do not have adequate capacity to resist seismic loading. Such walls have led to the failure of buildings in earthquakes. Where cripple walls do not meet the conditions of Sentences 9.23.13.8.(2) to (4), they need to be considered as an additional storey, or designed in accordance with Part 4 to ensure that they resist both in-plane and out-of-plane forces. Information on cripple walls can be found in the Commentary entitled Design for Seismic Effects in the "Structural Commentaries (User's Guide — NBC 2020: Part 4 of Division B)."</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9779 Punctuation 9b62b0b83e -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9780 Punctuation fdb59114e2 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9781 Punctuation 5a11dae43e -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134d.para1">Cripple walls are also known as “pony walls” or “knee walls.” In Section 9.23., the term “cripple walls” refers to short wood-frame stud walls extending from the top of the foundation wall to the underside of the lowest floor framing.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9782 Punctuation ee1a2a3cba -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10052 Punctuation 935bb56dcb -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134d.para2">Studies have demonstrated that wood-frame foundation walls with low racking resistance, such as unbraced or insufficiently braced cripple walls, do not have adequate capacity to resist seismic loading. Such walls have led to the failure of buildings in earthquakes. Where cripple walls do not meet the conditions of Sentences 9.23.13.8.(2) to (4), they need to be considered as an additional storey, or designed in accordance with Part 4 to ensure that they resist both in-plane and out-of-plane forces. Information on cripple walls can be found in the Commentary entitled Design for Seismic Effects in the “Structural Commentaries (User’s Guide – NBC 2020: Part 4 of Division B).”</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -1904,8 +1924,9 @@
                                         <entry align="center">NAFFVA</entry>
                                         <entry align="center">Non-NAFFVA</entry>
                                     </row>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5280 Incorrect Content 0fe75ce2d5 -->
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.row3">
-                                        <entry align="center">9.32.4.1.(1) Applies</entry>
+                                        <entry align="center">9.32.4.1.(1)</entry>
                                         <entry align="center">No</entry>
                                         <entry align="center">Yes</entry>
                                         <entry align="center">No</entry>
@@ -2591,7 +2612,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote295e">
                         <number>9.36.6.3.(5)(b)</number>
                         <title>Percent Improvement</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295e.para1">The term "percent improvement" expresses the energy performance of the proposed house relative to the reference house in terms of the energy use of the house or building for space heating, hot water and ventilation.</paragraph>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9799 Punctuation 85c0ec316c -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295e.para1">The term “percent improvement” expresses the energy performance of the proposed house relative to the reference house in terms of the energy use of the house or building for space heating, hot water and ventilation.</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -2841,6 +2863,74 @@ storey.</item>
             </replace>
         </amendment>
 
+        <amendment id="bc-qa-4321f71b64" sequence="686" description="Issue 5234 Formatting at B.A-9.25.5.1.(1).Tbl1#Row1.Col2">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote152.table1.row1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.appendix.appnote152.table1.row1" rowsep="1">
+                                                  <entry align="center" valign="middle">Material</entry>
+                                                  <entry align="center" valign="middle">Air Leakage Characteristic,
+                    L/(s×m<super>2</super>) at 75 Pa (Air Permeance)</entry>
+                                                  <entry align="center" valign="middle">Water Vapour Permeance, (Dry Cup) ng/(Pa×s×m<super>2</super>)</entry>
+                                               </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6cbf4e5524" sequence="710" description="Issue 5125 Incorrect Content at B.A-9.17.2.2.(2)">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote98.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote98.para1">Because the Code does not provide prescriptive criteria to describe
+                    the minimum required lateral support, constructions are limited to
+                    those that have demonstrated effective performance over time and those
+                    that are designed according to Part 4. Verandas on early 20th century
+                    homes provide one example of constructions whose floor and roof are
+                    typically tied to the rest of the building to provide effective lateral
+                    support. Large decks set on tall columns, however, are likely to require
+                    additional lateral support even where they are connected to the building
+                    on one side.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7fbee11edc" sequence="711" description="Issue 5243 Incorrect Content at B.A-9.27.2.2">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote163.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote163.para1">Precursors to Part 9 and all editions of
+                    the Code containing a Part 9 applying to housing and small buildings
+                    included a performance-based provision requiring that cladding provide
+                    protection from the weather for inboard materials. Industry requested
+                    that Part 9 provide additional guidance to assist in determining the
+                    minimum levels of protection from precipitation to be provided by
+                    cladding assemblies. As with all requirements in the Code, the new
+                    requirements in <ref type="internal"
+                                              target="nbc.divBV2.part9.sect27.subsect2.art2"
+                                              display-type="long"/> describe the minimum cladding
+                    assembly configuration. Designers must still consider local accepted
+                    good practice, demonstrated performance and the specific conditions
+                    to which a particular wall will be exposed when designing or selecting
+                    a cladding assembly.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7b47ce4f06" sequence="741" description="Issue 10000 Punctuation at B.A-9.36.2.11">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote249.div1.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote249.div1.para1">In some cases, the energy-conserving impact of requirements
+                    cannot be easily quantified and allowing trade-offs would be unenforceable:
+                    this is the case, for instance, for airtightness requirements <ref type="internal"
+                                                 target="nbc.divBV2.part9.sect36.subsect2.art10"
+                                                 display-type="long">(Article 9.36.2.10.)</ref>. In other cases, no credit can be given for improving
+                    energy performance where the Code permits reduced performance: for
+                    example, the Code allows insulation to be reduced at the eaves under
+                    a sloped roof so no credit can be given for installing raised heel
+                    trusses to accommodate the full insulation value otherwise required
+                    by the Code; in other words, the increased RSI value that would be
+                    achieved with the raised truss cannot be traded.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>

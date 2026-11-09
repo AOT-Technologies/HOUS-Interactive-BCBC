@@ -811,6 +811,7 @@
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:142 Punctuation ceaee21c97 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -852,7 +853,7 @@
                       type="internal"
                       target="nbc.divBV2.part9.sect38"
                       pretext=","
-                      /> <ref
+                      />, <ref
                       type="internal"
                       target="nbc.divB.part10.sect4"
                       pretext=" and"
@@ -6187,6 +6188,8 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9762 Punctuation b3a2f6d75d -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9763 Punctuation 3458e4ca23 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -6196,7 +6199,7 @@ Spaces within Buildings
                 >
                 <content>
                   <text
-                    >For the purposes of this Section, the term "greenhouse gas intensity", expressed with the abbreviation "GHGI", shall mean the total greenhouse gas emissions, expressed as kgCO<sub
+                    >For the purposes of this Section, the term “greenhouse gas intensity”, expressed with the abbreviation “GHGI”, shall mean the total greenhouse gas emissions, expressed as kgCO<sub
                       >2</sub>e per square metre of floor area of <ref
                       type="term"
                       target="cnd-sp"
@@ -6238,6 +6241,7 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9764 Punctuation a518004a72 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -6246,8 +6250,8 @@ Spaces within Buildings
                 status="current"
                 >
                 <content>
-                  <text>For the purposes of this Section, the symbol "CO<sub
-                      >2</sub>e" shall mean carbon dioxide or carbon dioxide equivalent, with carbon dioxide equivalent meaning one or more greenhouse gases with a global warming potential equivalent to carbon dioxide.</text>
+                  <text>For the purposes of this Section, the symbol “CO<sub
+                      >2</sub>e” shall mean carbon dioxide or carbon dioxide equivalent, with carbon dioxide equivalent meaning one or more greenhouse gases with a global warming potential equivalent to carbon dioxide.</text>
                 </content>
                 <change-summary
                   >Struck out "CO2e" and substituted "CO₂e"</change-summary>
@@ -6282,6 +6286,8 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9766 Punctuation 44c13c0659 -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10049 Punctuation d617254f84 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -6291,11 +6297,11 @@ Spaces within Buildings
                 >
                 <content>
                   <text
-                    >For the purposes of this Section, the term "total greenhouse gases" shall mean the total greenhouse gas emissions, expressed as kgCO<sub
+                    >For the purposes of this Section, the term “total greenhouse gases” shall mean the total greenhouse gas emissions, expressed as kgCO<sub
                       >2</sub>e/year, associated with the energy used by the <ref
                       type="term"
                       target="bldng"
-                      >building's</ref> systems.</text>
+                      >building’s</ref> systems.</text>
                 </content>
                 <change-summary
                   >Struck out "kgCO2e" and substituted "kgCO₂e"</change-summary>
@@ -7235,8 +7241,9 @@ Spaces within Buildings
                           <entry align="center">NAFFVA</entry>
                           <entry align="center">Non-NAFFVA</entry>
                         </row>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5280 Incorrect Content 0fe75ce2d5 -->
                         <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.row3">
-                          <entry align="center">9.32.4.1.(1) Applies</entry>
+                          <entry align="center">9.32.4.1.(1)</entry>
                           <entry align="center">No</entry>
                           <entry align="center"/>
                           <entry align="center">Yes</entry>

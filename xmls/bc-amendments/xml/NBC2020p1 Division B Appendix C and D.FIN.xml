@@ -358,6 +358,7 @@
             <target type="position" parent-id="nbc.divB.appendixC.table2.row93" position="after"/>
             <insert>
                 <new-content source="bc">
+                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5544 Incorrect Content e9423dd657 -->
                     <row xml:id="nbc.divB.appendixC.table2.row93a">
                         <entry>Burnaby (General)</entry>
                         <entry align="center">137</entry>
@@ -375,7 +376,7 @@
                         <entry align="center">2.7</entry>
                         <entry align="center">0.4</entry>
                         <entry align="center">0.36</entry>
-                        <entry align="center">0.47</entry>
+                        <entry align="center">0,47</entry>
                     </row>
                 </new-content>
             </insert>
@@ -1914,6 +1915,204 @@ load to provide a design snow load on a roof.</item>
             </replace>
         </amendment>
 
+        <amendment id="bc-qa-7942093032" sequence="486" description="Issue 10343 Punctuation at AppD.Tbl14#Row7.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article4.table7.row7">
+                                                     <entry align="left" valign="top">Add to the fire-resistance rating
+                    of plaster on <measurement units="metric">9.5 mm</measurement> thick gypsum lath ceilings <ref type="internal"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article4.table4"
+                                                             display-type="long">(Table D-2.3.4.-D)</ref> if supports for lath are <measurement units="metric">300 mm</measurement> o.c.</entry>
+                                                     <entry align="center" valign="middle">10</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-c21c56fc41" sequence="487" description="Issue 10344 Punctuation at AppD.Tbl15#Row2.Col4">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect3.article5.table1.row2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect3.article5.table1.row2">
+                                                     <entry align="left" valign="middle" rowspan="3">Floor</entry>
+                                                     <entry align="left" valign="middle">Wood or open-web steel joists<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article5.table1.note1"
+                                                             vendor-target="nbc.divB.appendixD.appsect2.subsect3.article5.table1.note1"/> and metal-plate-connected
+                    wood trusses<ref type="table-note"
+                                                             target="nbc.divB.appendixD.appsect2.subsect3.article5.table1.note1"/>
+                                                     </entry>
+                                                     <entry align="left" valign="top">
+                                                        <measurement units="metric">12.5 mm</measurement> plywood or<measurement units="metric">15.5 mm</measurement> oriented
+                    strandboard or<measurement units="metric">17 mm</measurement> T &amp;
+                    G softwood or<measurement units="metric">14 mm</measurement> phenolic-bonded
+                    Douglas Fir plywood (no finished flooring required)</entry>
+                                                     <entry align="left" valign="top" rowsep="1">Hardwood
+                    or softwood flooring on building paper Resilient
+                    flooring, parquet floor, felted synthetic fibre floor coverings, carpeting,
+                    or ceramic tile on <measurement units="metric">8 mm</measurement> thick panel-type underlay Ceramic tile on <measurement units="metric"> 30 mm</measurement> mortar bed</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8949e09521" sequence="488" description="Issue 5645 Incorrect Content at AppD.Tbl19#Row3.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect4.article3.table1.row3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect4.article3.table1.row3">
+                                                     <entry align="left" valign="top">Solid panels with <measurement units="metric"> 4 mm</measurement> plywood facings<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect4.article3.table1.note2"/> glued to <measurement units="metric">46  mm</measurement> solid wood core of glued, tongued and grooved construction
+                    for both sides and ends of core pieces with tongued and grooved rails
+                    in the core about <measurement units="metric">760 mm</measurement> apart</entry>
+                                                     <entry align="center" valign="top">54</entry>
+                                                     <entry align="center" valign="top">1 h</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3cd9aa58f9" sequence="489" description="Issue 5650 Incorrect Content at AppD.Tbl22#Row4.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row4">
+                                                     <entry align="left" valign="top">Gypsum-perlite or vermiculite
+                    plaster on 9.5 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect6.article1.table2.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-4a66684d9a" sequence="490" description="Issue 5651 Incorrect Content at AppD.Tbl22#Row5.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row5">
+                                                     <entry align="left" valign="top">Gypsum perlite or vermiculite
+                    plaster on 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect6.article1.table2.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">32</entry>
+                                                     <entry align="center" valign="top">50</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-fab4466e91" sequence="491" description="Issue 5652 Incorrect Content at AppD.Tbl22#Row6.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect6.article1.table2.row6">
+                                                     <entry align="left" valign="top">Gypsum perlite or vermiculite
+                    plaster on double 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect6.article1.table2.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">32</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-88a49af83f" sequence="492" description="Issue 5669 Incorrect Content at AppD.Tbl29#Row6.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row6">
+                                                     <entry align="left" valign="top">Gypsum-perlite or vermiculite
+                    plaster on 9.5 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6433d9e1b8" sequence="493" description="Issue 5670 Incorrect Content at AppD.Tbl29#Row7.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row7">
+                                                     <entry align="left" valign="top">Gypsum-perlite or gypsum-vermiculite
+                    on 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">39</entry>
+                                                     <entry align="center" valign="top">50</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-d823dd25a7" sequence="494" description="Issue 5671 Incorrect Content at AppD.Tbl29#Row8.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row8">
+                                                     <entry align="left" valign="top">Gypsum-perlite or vermiculite
+                    plaster on double 12.7 mm gypsum lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note3"/></entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">13</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">39</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6bfbb0f86f" sequence="495" description="Issue 5672 Incorrect Content at AppD.Tbl29#Row10.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row10"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row10">
+                                                     <entry align="left" valign="top">Gypsum-sand on metal
+                    lath<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note4"/> (plaster in contact with lower
+                    flange)</entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">20</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">39</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6dde03eb4f" sequence="496" description="Issue 5673 Incorrect Content at AppD.Tbl29#Row11.Col1">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row11"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.appendixD.appsect2.subsect7.article1.table1.row11">
+                                                     <entry align="left" valign="top">Gypsum-sand on metal
+                    lath with air gap between plaster and lower flange<ref type="table-note" target="nbc.divB.appendixD.appsect2.subsect7.article1.table1.note4"/></entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">16</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">25</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                     <entry align="center" valign="top">—</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>

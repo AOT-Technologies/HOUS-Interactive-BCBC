@@ -507,7 +507,8 @@
                             <text>every principal entrance to the <ref type="term" target="bldng">building</ref>, and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art16.sent1.clause2" letter="b">
-                            <text>every required <ref type="term" target="xt">exit</ref>, and</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:754 Formatting 4637379e0a -->
+                            <text>every required <ref type="term" target="xt">exit</ref><emphasis style="italic">, and</emphasis></text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art16.sent1.clause3" letter="c">
                             <text>every other egress facility that has been designed and identified as an <ref type="term" target="xt">exit</ref> and has all the features of a required <ref type="term" target="xt">exit</ref>.</text>
@@ -628,7 +629,8 @@
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent5.clause2" letter="b">
                             <!-- BBC-172 Issue 152: CAN/ULC-S524 without edition date -->
-                            <text>be located in conformance with the installation requirements for visible signal devices in CAN/ULC-S524, "Standard for Installation of Fire Alarm Systems."</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9382 Punctuation cc8fac8f1d -->
+                            <text>be located in conformance with the installation requirements for visible signal devices in CAN/ULC-S524, “Standard for Installation of Fire Alarm Systems.”</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -695,7 +697,8 @@
                             </subclause>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause2" letter="b">
-                            <text>are permanently identified as "FIRE - Strobe Light Connection Only,"</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9383 Punctuation 745cb5d6af -->
+                            <text>are permanently identified as “FIRE – Strobe Light Connection Only,”</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause3" letter="c">
                             <text>are installed in the locations described in <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent4.clause5" display-type="medium"/>, and</text>
@@ -850,7 +853,8 @@
             <target type="canonical-id" id="nbc.divB.part3.sect2.subsect7.art1.sent1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
-                    <sentence xml:id="nbc.divB.part3.sect2.subsect7.art1.sent1" number="1">                        <text>An accessible path of travel required by <ref type="internal" target="nbc.divB.part3.sect8" display-type="long" pretext="Section"/>, an <ref type="term" target="xt">exit</ref>, a <ref type="term" target="pblc-crr">public corridor</ref>, or a corridor providing <ref type="term" target="cc-t-xt">access to exit</ref> for the public or serving patients' sleeping rooms or classrooms shall be equipped to provide illumination to an average level not less than <measurement units="metric">50 lx</measurement> at floor or tread level and at angles and intersections at changes of level where there are stairs or <ref type="term" target="rmp">ramps</ref>.</text>
+                    <sentence xml:id="nbc.divB.part3.sect2.subsect7.art1.sent1" number="1">                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:775 Formatting a9fc500d87 -->
+                    <text>An <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel required by <ref type="internal" target="nbc.divB.part3.sect8" display-type="long" pretext="Section"/>, an <ref type="term" target="xt">exit</ref>, a <ref type="term" target="pblc-crr">public corridor</ref>, or a corridor providing <ref type="term" target="cc-t-xt">access to exit</ref> for the public or serving patients' sleeping rooms or classrooms shall be equipped to provide illumination to an average level not less than <measurement units="metric">50 lx</measurement> at floor or tread level and at angles and intersections at changes of level where there are stairs or <ref type="term" target="rmp">ramps</ref>.</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -1079,7 +1083,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <clause xml:id="nbc.divB.part3.sect3.subsect1.art7.sent1.clause3" letter="c">
-                        <text>in the case of <ref type="term" target="rdntl-cc">residential occupancies</ref>, be provided with balconies conforming to <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7.sent4" display-type="short"/>, except on a <ref type="term" target="tr">storey</ref> containing an accessible entrance that complies with <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2" display-type="long"/>,</text>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:793 Formatting bda0eb02a6 -->
+                        <text>in the case of <ref type="term" target="rdntl-cc">residential occupancies</ref>, be provided with balconies conforming to <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7.sent4" display-type="short"/>, except on a <ref type="term" target="tr">storey</ref> containing an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> entrance that complies with <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2" display-type="long"/>,</text>
                     </clause>
                 </new-content>
             </replace>
@@ -1096,7 +1101,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <clause xml:id="nbc.divB.part3.sect3.subsect1.art7.sent1.clause4" letter="d">
-                        <text>have an accessible exterior <ref type="term" target="xt">exit</ref> at ground level, or</text>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:794 Formatting c6263306f3 -->
+                        <text>have an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> exterior <ref type="term" target="xt">exit</ref> at ground level, or</text>
                     </clause>
                 </new-content>
             </replace>
@@ -1137,7 +1143,8 @@
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect3.subsect1.art7.sent4" number="4">                        <text>A balcony required by <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7.sent1.clause3" display-type="medium"/> shall</text>
                         <clause xml:id="nbc.divB.part3.sect3.subsect1.art7.sent4.clause1" letter="a">
-                            <text>have direct access from the <ref type="term" target="t">suite</ref> or <ref type="term" target="flr-r">floor area</ref></text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:796 Formatting ca1e7473b0 -->
+                            <text>have direct <ref type="term" target="bc-cc-t-ccbl">access</ref> from the <ref type="term" target="t">suite</ref> or <ref type="term" target="flr-r">floor area</ref></text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect3.subsect1.art7.sent4.clause2" letter="b">
                             <text>be not less than <measurement units="metric">1 500 mm</measurement> deep from the outside face of the exterior wall to the inside edge of the balcony with a clear perpendicular dimension of not less than <measurement units="metric">1 700 mm</measurement>, and</text>
@@ -3311,7 +3318,8 @@
                             <text>the <ref type="term" target="bldng">building</ref> is <ref type="term" target="prnklrd">sprinklered</ref> throughout,</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect8.art2.sent5.clause3" letter="c">
-                            <text>closely spaced sprinklers and associated draft stops are installed around the openings in conformance with NFPA 13, "Standard for the Installation of Sprinkler Systems," and</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9413 Punctuation b52796c57f -->
+                            <text>closely spaced sprinklers and associated draft stops are installed around the openings in conformance with NFPA 13, “Standard for the Installation of Sprinkler Systems,” and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect8.art2.sent5.clause4" letter="d">
                             <text>the <ref type="term" target="ntrcnnct">interconnected floor space</ref> contains only Group A, Division 1, 2 or 3, Group D or Group E <ref type="term" target="mjr-ccpn">major occupancies</ref> (see <ref type="internal" target="nbc.divB.part3.appendix.appnote120" display-type="short">Note A-3.2.8.2.(6)(c)</ref>).</text>
@@ -4135,7 +4143,8 @@ for each zone is neither</text>
                            <subclause xml:id="nbc.divB.part3.sect2.subsect4.art8.sent2.clause2.subclause2"
                                       number="2"
                                       vendor-id="es000645b2">
-                              <text>more than the system area limits specified in NFPA 13, "Standard for the Installation of Sprinkler Systems,"
+                              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9375 Punctuation b8cb512310 -->
+                              <text>more than the system area limits specified in NFPA 13, “Standard for the Installation of Sprinkler Systems,”
                               </text>
                            </subclause>
                         </clause>
@@ -4153,7 +4162,8 @@ detectors</ref>,</text>
 <clause xml:id="nbc.divB.part3.sect2.subsect4.art8.sent2.clause5"
                                 letter="e"
                                 vendor-id="es000645h">
-                           <text>fire extinguishing system required by NFPA 96, "Standard for Ventilation Control and Fire Protection of Commercial Cooking Operations,"</text>
+                           <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9376 Punctuation 73852f7402 -->
+                           <text>fire extinguishing system required by NFPA 96, “Standard for Ventilation Control and Fire Protection of Commercial Cooking Operations,”</text>
                         </clause>
 <clause xml:id="nbc.divB.part3.sect2.subsect4.art8.sent2.clause6"
                                 letter="f"
@@ -5117,9 +5127,10 @@ rating </ref> required for the <ref type="term" target="fr-prtn">fire separation
 <clause xml:id="nbc.divB.part3.sect1.subsect9.art4.sent4.clause2"
                                 letter="b"
                                 vendor-id="es000306a">
+                           <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9357 Punctuation a1d018486f -->
                            <text>in <ref type="term" target="bldng">buildings</ref> more than 3 <ref type="term" target="tr">storeys</ref> in <ref type="term" target="bldng-hg">building height</ref>, the piping is
 sealed at the penetration by a <ref type="term" target="fr-tp">firestop</ref> that has an F rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance
-rating</ref> required for the <ref type="term" target="fr-prtn">fire separation</ref> when subjected to the fire test method in CAN/ULC-S115, "Standard Method of Fire Tests of Firestop Systems," with a pressure differential of <measurement units="metric">50 Pa</measurement> between the exposed and unexposed sides, with the higher pressure
+rating</ref> required for the <ref type="term" target="fr-prtn">fire separation</ref> when subjected to the fire test method in CAN/ULC-S115, “Standard Method of Fire Tests of Firestop Systems,” with a pressure differential of <measurement units="metric">50 Pa</measurement> between the exposed and unexposed sides, with the higher pressure
 on the exposed side, and</text>
                         </clause>
 <clause xml:id="nbc.divB.part3.sect1.subsect9.art4.sent4.clause3"
@@ -5713,10 +5724,13 @@ tested in conformance with CAN/ULC-S102.3, "Standard Method of Fire Test of Ligh
                     <sentence xml:id="nbc.divB.part3.sect4.subsect5.art1.sent3" number="3">
                         <text>Internally illuminated <ref type="term" target="xt">exit</ref> signs shall be continuously illuminated and </text>
                         <clause xml:id="nbc.divB.part3.sect4.subsect5.art1.sent3.clause1" letter="a">
-                            <text>where illumination of the sign is powered by an electrical circuit, be constructed in conformance with CSA C22.2 No. 141, "Emergency lighting equipment," or</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9425 Punctuation 885b81c113 -->
+                            <text>where illumination of the sign is powered by an electrical circuit, be constructed in conformance with CSA C22.2 No. 141, “Emergency lighting equipment,” or</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect4.subsect5.art1.sent3.clause2" letter="b">
-                            <text>where illumination of the sign is not powered by an electrical circuit, be constructed in conformance with CAN/ULC-S572, "Standard for Photoluminescent and Self-Luminous Exit Signs and Path Marking Systems." (See Note A-3.4.5.1.(3).)</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:824 Incorrect Content 57ce2441e8 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:8125 Punctuation d5cb2fa017 -->
+                            <text>where illumination of the sign is not powered by an electrical circuit, be constructed in conformance with CAN/ULC-S572, “Standard for Photoluminescent and Self-Luminous Exit Signs and Path Marking Systems.”</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -6456,5 +6470,147 @@ each 25 females.</find>
         <!-- ================================================================== -->
         <!-- Continuing on bc-part-3-amendments.xml -->
         
+        <amendment id="bc-qa-74d2ed287e" sequence="687" description="Issue 746 Incorrect Content at B.3.2.3.7.Tbl1#Row9.Col5">
+            <target type="canonical-id" id="nbc.divB.part3.sect2.subsect3.art7.table1.row9"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part3.sect2.subsect3.art7.table1.row9">
+                                                     <entry align="center" valign="middle" rowsep="0">&gt; 50 to &lt; 100</entry>
+                                                     <entry align="center" valign="middle" rowsep="0">1 h</entry>
+                                                     <entry align="center" valign="middle" rowsep="0">
+                                                        <ref type="term" target="cmbtbl-c">Combustible</ref>, <ref type="term" target="ncps-mt-nstr">Encapsulated mass timber</ref>, or <ref type="term" target="ncmbtbl-">Noncombustible</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="middle" rowsep="0">
+                                                        <ref type="term" target="cmbtbl-c">Combustible</ref> or <ref type="term" target="ncmbtbl-">Noncombustible</ref><ref type="table-note" target="nbc.divB.part3.sect2.subsect3.art7.table1.note3"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1b3b6eb815" sequence="688" description="Issue 10074 Punctuation at B.3.3.1.5.Tbl2#Row7.Col1">
+            <target type="canonical-id" id="nbc.divB.part3.sect3.subsect1.art5.table2.row7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part3.sect3.subsect1.art5.table2.row7">
+                                                     <entry valign="middle">Group B, Division 3 sleeping rooms
+                    not in <ref type="term" target="t">suites</ref>
+                                                     </entry>
+                                                     <entry align="center" valign="bottom">100</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e7e38aaa27" sequence="712" description="Issue 845 Missing Content at B.3.8.1.1.(3)">
+            <target type="position" parent-id="nbc.divB.part3.sect8.subsect1.art1" position="after" reference-id="nbc.divB.part3.sect8.subsect1.art1.sent2"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect1.art1.sent3" number="3">
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:845 Missing Content e7e38aaa27 -->
+                        <text><ref type="term" target="ltrtn">Alterations</ref> and additions to existing <ref type="term" target="bldng">buildings</ref> shall conform to <ref type="internal" target="nbc.divB.part3.sect8.subsect4" display-type="long"/></text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        <amendment id="bc-qa-380e50c321" sequence="713" description="Issue 846 Missing Content at B.3.8.1.1.(4)">
+            <target type="position" parent-id="nbc.divB.part3.sect8.subsect1.art1" position="after" reference-id="nbc.divB.part3.sect8.subsect1.art1.sent3"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part3.sect8.subsect1.art1.sent4" number="4">
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:846 Missing Content 380e50c321 -->
+                        <text><ref type="term" target="dwllng-n">Dwelling units</ref> required to be <ref type="term" target="bc-dptbl-dwllng-nt">adaptable dwelling units</ref> shall be designed in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect5" display-type="long"/></text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        <amendment id="bc-qa-287959397c" sequence="742" description="Issue 645 Incorrect Content at B.3.1.5.2.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause2"
+                                                    letter="b"
+                                                    vendor-id="es007610c">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:645 Incorrect Content 287959397c -->
+                        <text>self-adhesive tapes, mastics and caulking materials, including
+                    foamed plastic air sealants, applied to provide a seal between the
+                    major components of exterior wall construction, (see also <ref type="internal"
+                                                       target="nbc.divB.part3.sect6.subsect4.art3"
+                                                       display-type="long"/> for limits on the use of <ref type="term" target="cmbtbl">combustible</ref> materials in <ref type="term" target="plnm">plenum</ref> spaces),</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-0075f562bb" sequence="743" description="Issue 646 Incorrect Content at B.3.1.5.2.(1)(c)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es007610d">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:646 Incorrect Content 0075f562bb -->
+                        <text>
+                                                  <ref type="term" target="fr-tp">firestops</ref> and <ref type="term" target="fr-blk">fire blocks</ref> conforming to <ref type="internal"
+                                                       target="nbc.divB.part3.sect1.subsect9.art1.sent1"
+                                                       display-type="long"/> and <ref type="internal"
+                                                       target="nbc.divB.part3.sect1.subsect11.art7"
+                                                       display-type="long"/>,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-d6293fdf90" sequence="744" description="Issue 647 Incorrect Content at B.3.1.5.2.(1)(d)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es007610e">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:647 Incorrect Content d6293fdf90 -->
+                        <text>tubing for pneumatic controls provided it has an outside diameter
+                    of not more than <measurement units="metric">10 mm</measurement>,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-02721de082" sequence="745" description="Issue 648 Incorrect Content at B.3.1.5.2.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es007610f">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:648 Incorrect Content 02721de082 -->
+                        <text>adhesives, <ref type="term" target="vpr-brrr">vapour barriers</ref> and
+                    sheathing papers,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-801dbc34d4" sequence="746" description="Issue 649 Incorrect Content at B.3.1.5.2.(1)(f)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause6"
+                                                    letter="f"
+                                                    vendor-id="es007610g">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:649 Incorrect Content 801dbc34d4 -->
+                        <text>electrical outlet and junction boxes,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-14eb54efa1" sequence="747" description="Issue 650 Incorrect Content at B.3.1.5.2.(1)(g)">
+            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part3.sect1.subsect5.art2.sent1.clause7"
+                                                    letter="g"
+                                                    vendor-id="es007610j">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:650 Incorrect Content 14eb54efa1 -->
+                        <text>wood blocking intended
+                    for the attachment of window elements within exterior wall assemblies,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 </bc-overlay>

@@ -30,6 +30,7 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part1.sect1.subsect2.art1.sent1" number="1">
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:142 Punctuation ceaee21c97 -->
                         <text>For the purpose of compliance with this Code as required in 
                             <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" 
                                  display-type="medium"/>, the objectives and functional statements attributed to the acceptable solutions in Division B shall be the objectives and functional statements identified in 
@@ -40,7 +41,7 @@
                             <ref type="internal" target="nbc.divB.part6.sect10" pretext=","/>
                             <ref type="internal" target="nbc.divB.part7.sect2" pretext=","/>
                             <ref type="internal" target="nbc.divB.part8.sect3" pretext=","/>
-                            <ref type="internal" target="nbc.divBV2.part9.sect38" pretext=","/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect38" pretext=","/>,
                             <ref type="internal" target="nbc.divB.part10.sect4" pretext=" and" display-type="short"/>
                             (See <ref type="internal" target="nbc.divB.part1.appendix.appnote1" display-type="short"/>.)
                         </text>
