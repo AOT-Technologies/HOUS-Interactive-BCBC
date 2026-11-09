@@ -1651,6 +1651,7 @@
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row29"
                                     >
                                     <entry>29</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-00029 | issue 9308 | Removed the space before the comma after "Subsection 3.4.7." to match the PDF. -->
                                     <entry>
                                     <emphasis style="bold">
                                     Fire Escapes
@@ -1660,7 +1661,7 @@
                                             type="internal"
                                             target="nbc.divB.part3.sect4.subsect7"
                                             display-type="long"
-                                            />. , <ref
+                                            />., <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect2.art1.sent2"
                                             display-type="long"
