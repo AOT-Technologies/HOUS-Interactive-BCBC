@@ -77,7 +77,7 @@
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote9.para3"/>
             <replace preserve-references="false">
                 <new-content source="bc">
-                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11172 Punctuation fb4eca0d10 -->
+                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9772 Punctuation fb4eca0d10 -->
                     <paragraph xml:id="nbc.divBV2.part9.appendix.appnote9.para3">Design according to Part 4 or accepted good engineering practice, such as that described in the CWC, “Engineering Guide for Wood Frame Construction”, requires engineering expertise. The CWC Guide contains alternative solutions and provides information on the applicability of the Part 9 prescriptive structural requirements to further assist designers and building officials to identify the appropriate design approach. The need for professional involvement in the structural design of a building, whether to Part 4 or Part 9 requirements or accepted good practice, is defined by provincial and territorial legislation.</paragraph>
                 </new-content>
             </replace>
@@ -215,7 +215,7 @@
                         <number>9.7.</number>
                         <title>Windows, Doors and Skylights</title>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote20a.para1">This section applies only to windows, doors and skylights as defined in the scope of the standards referenced in <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art2" display-type="long"/>. Other glazed products, such as site-built windows, curtain walls or sloped glazing, are required to conform to Part 5.</paragraph>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5317 Punctuation 73c15c5f3d -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:4987 Punctuation 73c15c5f3d -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote20a.para2">It is also permitted for fenestration products within the scope of the NAFS standard to conform to Part 5. This option is typically used for windows and doors that are impractical to subject to the testing requirements of NAFS due to their size or for custom configurations</paragraph>
                     </application-note>
                 </new-content>
@@ -258,10 +258,10 @@
                 <new-content source="bc">
                     <note-division xml:id="nbc.divBV2.part9.appendix.appnote22.div0">
                         <title>General</title>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:9758 Punctuation 4c5007a157 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:9759 Punctuation 1dc5653215 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9112 Punctuation 4c5007a157 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9113 Punctuation 1dc5653215 -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div0.para1">Doors between an unconditioned garage and a dwelling unit are considered to be in scope of the standard referenced in this Sentence. Although the standard refers to windows in “exterior building envelopes”, a note to the definition of “building envelope” clarifies that for the purpose of application of the standard, in some cases a building envelope may consist of 2 separate walls (such as a wall between garage and dwelling unit as well as the exterior wall of the garage itself).</paragraph>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:9760 Punctuation ced046800b -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9114 Punctuation ced046800b -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div0.para2">A door leading to the exterior from an unconditioned garage is also within scope of the referenced standard, as it is also part of the exterior building envelope. However, because the scope of the BC Building Code takes precedence, these doors are not required to conform to “NAFS”. This Subsection of the Code does not apply to a door separating two unconditioned spaces.</paragraph>
                     </note-division>
                 </new-content>
@@ -1129,9 +1129,9 @@
                             <title>Identifying and Spacing Adjacent Non-Parallel Braced Wall Bands</title>
                             <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para1">Identifying the adjacent braced wall band and the spacing between braced wall bands is more complicated where the building plan is not orthogonal.</paragraph>
                             <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para2">Where the plan is triangular, all braced wall bands intersect with the subject braced wall band. The prescriptive requirements in Part 9 do not apply to these cases and the building must be designed according to Part 4 with respect to lateral load resistance.</paragraph>
-                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5539 Reference 3cd4c9f3d9 -->
-                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5540 Reference 6000cf10bd -->
-                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5541 Reference 1474960750 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5209 Reference 3cd4c9f3d9 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5210 Reference 6000cf10bd -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5211 Reference 1474960750 -->
                             <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3">Where the braced wall bands are not parallel, the adjacent band is identified as follows using <ref type="internal" target="nbc.divBV2.part9.appendix.appnote131.figure2" display-type="long">Figure Table A-9.23.13.5.-B</ref> as an example: 1.   <list type="numbered">
                                     <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item1">Determine the mid-point of the centre line of the subject braced wall band (A); 2.   </item>
                                     <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item2">Project a perpendicular line from this mid-point (B); 3.   </item>
@@ -1169,9 +1169,9 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote133a">
                         <number>9.23.13.5.(3) and (4)</number>
                         <title>Connection of Braced Wall Panels to Roof Framing</title>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5545 Incorrect Content fd9fa6ec9a -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5215 Incorrect Content fd9fa6ec9a -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133a.para1">Braced wall panels that are sheathed with gypsum board alone have a significantly lower lateral resistance than woodsheathed braced wall panels. For gypsum-sheathed braced wall panels, the typical lateral bracing of trusses is usually adequate to transfer the lateral loads from the bottom chords to the top chords of the truss.</paragraph>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:9831 Punctuation 78bc075280 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9168 Punctuation 78bc075280 -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133a.para2">The connection of interior gypsum-sheathed braced wall panels to trusses also needs to accommodate vertical movement of the roof framing in order to facilitate “truss uplift” and to prevent the gypsum board from cracking.</paragraph>
                         <figure xml:id="nbc.divBV2.part9.appendix.appnote133a.figure1">
                             <title>Wood-sheathed braced wall panel to roof framing connection details (Sentence 9.23.13.5.(3)(a) and (b))</title>
@@ -1197,9 +1197,9 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote133b">
                         <number>9.23.13.6.(1)</number>
                         <title>Materials in Braced Wall Panels</title>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5546 Incorrect Content fcd544e249 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11464 Punctuation 4903f13a1a -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11465 Punctuation 8a558fea1c -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5216 Incorrect Content fcd544e249 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9995 Punctuation 4903f13a1a -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9996 Punctuation 8a558fea1c -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote133b.para1">Clause 9.23.13.6.(1)(a) describes wood-based exterior braced wall panels, which includes gypsum board on the interior, ‘regularly attached’ according to Subsection 9.29.5. This corresponds with framing types WSP-A, WSP-B, WSP-C, WSP-D, WSP F and DWB, with GWB-O on the interior, as described in 9.23.3.5.(3). Clause 9.23.13.6.(1)(b) describes exterior braced wall panels sheathed with gypsum board only, typically applied to the interior side of the exterior walls, accommodating the option of no wood-based structural sheathing on the exterior side of the braced walls. This corresponds to framing types GWB-O, GWB-A, GWB-B, GWB-F, and GWB-H.</paragraph>
                     </application-note>
                 </new-content>
@@ -1218,8 +1218,7 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote134">
                         <number>9.23.13.6.(3)</number>
                         <title>Use of Gypsum Board to Provide Required Bracing</title>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5547 Incorrect Content 1de78331d7 -->
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134.para1">Braced wall panels constructed with gypsum board alone provide less resistance to lateral loads than panels constructed with OSB, waferboard, plywood or diagonal lumber board; <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6.sent3" display-type="short">Sentence 9.23.13.6.(3)</ref> limits the use of gypsum board to provide the required lateral resistance by requiring that walls in basements and crawl spaces be constructed with braced wall panels made of wood-based sheathing at braced wall band intervals of not more than <measurement units="metric">15 m</measurement> apart. See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote134.figure1" display-type="long">Figure A-9.23.13.6.(3)</ref>.</paragraph>
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134.para1">Braced wall panels constructed with gypsum board alone provide less resistance to lateral loads than panels constructed with OSB, waferboard, plywood or diagonal lumber board; <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6.sent3" display-type="short">Sentence 9.23.13.6.(3)</ref> limits the use of gypsum board to interior walls. <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6" display-type="short">Sentence (6)</ref> further limits its use to provide the required lateral resistance by requiring that walls in basements and crawl spaces be constructed with braced wall panels made of wood-based sheathing at braced wall band intervals of not more than <measurement units="metric">15 m</measurement> apart. See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote134.figure1" display-type="long">Figure A-9.23.13.6.(3)</ref>.</paragraph>
                         <figure xml:id="nbc.divBV2.part9.appendix.appnote134.figure1">
                             <title>Braced wall panels constructed of wood-based material</title>
                             <graphic src="graphics/eg/006/eg00686a" alt="Braced wall panels constructed of wood-based material"/>
@@ -1244,8 +1243,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote134a">
                         <number>9.23.13.6.(5)</number>
                         <title>Mixed Braced Wall Panel Framing Types in Braced Wall Bands</title>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11466 Punctuation dbcecebf64 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11467 Punctuation 70bd5a2fc7 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9997 Punctuation dbcecebf64 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9998 Punctuation 70bd5a2fc7 -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134a.para1">The primary reason for mixed braced wall panel framing types is to accommodate where an interior GWB-sheathed braced wall panel framing type aligns with an exterior WSP braced wall panel framing type, along the same braced wall panel as shown in the plan view below. This permission is restricted to GWB- and ‘low strength’ WSP-sheathed framing types A and B. Mixing high strength or very stiff walls with low strength or less stiff walls has not been sufficiently studied and therefore requires analysis based on engineering principles.</paragraph>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134a.para2">This appendix note provides examples of complying with the requirements of Sentence 9.23.13.6.(5) when mixed braced wall panels are present along a braced wall band. Example 1 is the reference case without mixed sheathing types. Compliance to requirements in Clause 9.23.13.6.(5)(a) is demonstrated in Example 2, for the same braced wall band in Example 1.</paragraph>
                         <note-division xml:id="nbc.divBV2.part9.appendix.appnote134a.div1">
@@ -1451,10 +1450,9 @@
                                 <colspec colname="col1" colwidth="1*"/>
                                 <colspec colname="col2" colwidth="1*"/>
                                 <thead>
-                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5551 Incorrect Content d4b2f51a95 -->
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote134c.table2.rowh1">
                                         <entry align="center">Reference Framing Type</entry>
-                                        <entry align="center">K<sub>Wframe</sub></entry>
+                                        <entry align="center">K<sub>Sframe</sub></entry>
                                     </row>
                                 </thead>
                                 <tbody>
@@ -1523,12 +1521,12 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote134d">
                         <number>9.23.13.8.</number>
                         <title>Foundation Cripple Walls</title>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11186 Punctuation 9b62b0b83e -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11187 Punctuation fdb59114e2 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11188 Punctuation 5a11dae43e -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9779 Punctuation 9b62b0b83e -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9780 Punctuation fdb59114e2 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9781 Punctuation 5a11dae43e -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134d.para1">Cripple walls are also known as “pony walls” or “knee walls.” In Section 9.23., the term “cripple walls” refers to short wood-frame stud walls extending from the top of the foundation wall to the underside of the lowest floor framing.</paragraph>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11189 Punctuation ee1a2a3cba -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11537 Punctuation 935bb56dcb -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9782 Punctuation ee1a2a3cba -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10052 Punctuation 935bb56dcb -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote134d.para2">Studies have demonstrated that wood-frame foundation walls with low racking resistance, such as unbraced or insufficiently braced cripple walls, do not have adequate capacity to resist seismic loading. Such walls have led to the failure of buildings in earthquakes. Where cripple walls do not meet the conditions of Sentences 9.23.13.8.(2) to (4), they need to be considered as an additional storey, or designed in accordance with Part 4 to ensure that they resist both in-plane and out-of-plane forces. Information on cripple walls can be found in the Commentary entitled Design for Seismic Effects in the “Structural Commentaries (User’s Guide – NBC 2020: Part 4 of Division B).”</paragraph>
                     </application-note>
                 </new-content>
@@ -1926,7 +1924,7 @@
                                         <entry align="center">NAFFVA</entry>
                                         <entry align="center">Non-NAFFVA</entry>
                                     </row>
-                                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5610 Incorrect Content 0fe75ce2d5 -->
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5280 Incorrect Content 0fe75ce2d5 -->
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.row3">
                                         <entry align="center">9.32.4.1.(1)</entry>
                                         <entry align="center">No</entry>
@@ -2614,7 +2612,7 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote295e">
                         <number>9.36.6.3.(5)(b)</number>
                         <title>Percent Improvement</title>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11213 Punctuation 85c0ec316c -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9799 Punctuation 85c0ec316c -->
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295e.para1">The term “percent improvement” expresses the energy performance of the proposed house relative to the reference house in terms of the energy use of the house or building for space heating, hot water and ventilation.</paragraph>
                     </application-note>
                 </new-content>
@@ -2865,7 +2863,7 @@ storey.</item>
             </replace>
         </amendment>
 
-        <amendment id="bc-qa-4321f71b64" sequence="726" description="Issue 5564 Formatting at B.A-9.25.5.1.(1).Tbl1#Row1.Col2">
+        <amendment id="bc-qa-4321f71b64" sequence="686" description="Issue 5234 Formatting at B.A-9.25.5.1.(1).Tbl1#Row1.Col2">
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote152.table1.row1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
@@ -2878,285 +2876,7 @@ storey.</item>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-f104ff940c" sequence="975" description="Issue 11535 Punctuation at B.A-9.4.1.1">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote9.para2"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote9.para2">Usually a combination of approaches is used. For example, even
-                    if the snow load calculation on a wood roof truss is based on <ref type="internal"
-                                              target="nbc.divBV2.part9.sect4.subsect2"
-                                              display-type="long"/>, the joints must be designed in accordance
-                    with Part 4. Wall framing may comply with the prescriptive requirements
-                    in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect23.subsect3"
-                                              display-type="long"
-                                              pretext="Subsections"/>, <ref type="internal"
-                                              target="nbc.divBV2.part9.sect23.subsect10"
-                                              display-type="number">9.23.10.</ref>, <ref type="internal"
-                                              target="nbc.divBV2.part9.sect23.subsect11"
-                                              display-type="number">9.23.11.</ref>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect23.subsect12"
-                                              display-type="long"
-                                              pretext="and"/>, while
-                    the floor framing may be engineered.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-1fa898668c" sequence="976" description="Issue 5309 Incorrect Content at B.A-9.4.2.4.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote12.para4"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote12.para4">Thus the attic or roof space is recognized as uninhabitable
-                    and loading can be based on actual dead load. In emergency situations
-                    or for the purpose of inspection, it is possible for a person to access
-                    the attic or roof space without over-stressing the truss or causing
-                    damaging deflections. Note A-9.4.2.5. Seismic Design Parameter. The seismic design parameter, Smax, is used as a trigger for the application of seismic design provisions in Part 9. It was derived by considering the upper limit on the minimum lateral earthquake force, V, as specified in Clause 4.1.8.11.(2)(c), and is taken as the larger of (2/3) S(0.2) and S(0.5), with S(0.2) and S(0.5) calculated in accordance with Sentence 4.1.8.4.(6). Note A-9.4.2.5.(1) Seismic Design Parameter for Site Class C. The seismic design parameter, Smax, for Site Class C is used as a trigger for the application of certain seismic design provisions in Part 9, where indicated. Note A-9.4.2.5.(2) Determination of Site Class. To benefit from a refined, and possibly less conservative, value of Smax, the Site Class can be determined on the basis of the ground profile at the site in accordance with Sentence 4.1.8.4.(3) Determination of the Site Class will require the involvement of a suitably qualified and experienced professional engineer.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-5870910c77" sequence="977" description="Issue 5324 Standard Reference at B.A-9.7.5.2.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote23.para4"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote23.para4">ULC Standards has produced <ref type="standard" target="ulcs332" standardId="ulcs332">ULC-S332, “Standard for Burglary Resisting Glazing Material,”</ref> which provides a test procedure to evaluate the
-                    resistance of glazing to attacks by thieves. While it is principally
-                    intended for plate glass show windows, it may be of value for residential
-                    purposes.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-bbb6b32381" sequence="978" description="Issue 5335 Incorrect Content at B.A-9.8.7.3.(2)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote37.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote37.para1">As noted in <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote35"
-                                              display-type="long">Note A-9.8.7.2.</ref>, the guidance and support
-                    provided by handrails is particularly important at the beginning and
-                    end of ramps and flights of stairs and at changes in direction. The
-                    extended handrail provides guidance and allows users to steady themselves
-                    upon entering or leaving a ramp or flight of stairs. Such extensions
-                    are particularly useful to visually impaired persons, and persons
-                    with physical disabilities or who are encumbered in their use of the
-                    stairs or ramp.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-3a99bcd3c0" sequence="979" description="Issue 5337 Incorrect Content at B.A-9.8.8.1">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote41.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote41.para1">The requirements
-                    relating to guards stated in Part 9 are based on the premise that,
-                    wherever there is a difference in elevation of <measurement units="metric">600 mm</measurement> or more between two floors, or between a floor or other surface
-                    to which access is provided for other than maintenance purposes and
-                    the next lower surface, the risk of injury in a fall from the higher
-                    surface is sufficient to warrant the installation of some kind of
-                    barrier to reduce the chances of such a fall. A wall along the edge
-                    of the higher surface will obviously prevent such a fall, provided
-                    the wall is sufficiently strong that a person cannot fall through
-                    it. Where there is no wall, a guard must be installed. Because guards
-                    clearly provide less protection than walls, additional requirements
-                    apply to guards to ensure that a minimum level of protection is provided.
-                    These relate to the characteristics described in <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote44"
-                                              display-type="long"
-                                              pretext="Notes">A-9.8.8.3.</ref>, <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote45"
-                                              display-type="number">A-9.8.8.5.(1) and (3)</ref>, <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote46"
-                                              display-type="number">A-9.8.8.5.(4)</ref> and <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote47"
-                                              display-type="number">A-9.8.8.6.(1)</ref>.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-dbf9c16ff0" sequence="980" description="Issue 5342 Incorrect Content at B.A-9.8.8.2">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote43.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote43.para1">Guards
-                    must be constructed so as to be strong enough to protect persons from
-                    falling under normal use. Many guards installed in dwelling units
-                    or on exterior stairs serving one or two dwelling units have demonstrated
-                    acceptable performance over time. The loading described in the first
-                    row of <ref type="internal"
-                                              target="nbc.divBV2.part9.sect8.subsect8.art2.table1"
-                                              display-type="long"/> is intended to be consistent with
-                    the performance provided by these guards. Examples of guard construction
-                    presented in the <ref type="standard"
-                                              target="ommah_bccv2sssb7"
-                                              standardId="ommah_bccv2sssb7">“2012 Building Code Compendium, Volume 2, Supplementary Standard SB-7, Guards for Housing and Small Buildings”</ref> meet the criteria set in the National Building Code
-                    for loads on guards, including the more stringent requirements of <ref type="internal"
-                                              target="nbc.divBV2.part9.sect8.subsect8.art2.sent1"
-                                              display-type="long"
-                                              pretext="Sentences"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect8.subsect8.art2.sent3"
-                                              display-type="short"
-                                              pretext="and"/>.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-1e0118ac77" sequence="981" description="Issue 5357 Reference at B.A-9.10.9.8.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote63.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote63.para1">Outlet boxes that exceed the area limits specified in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect10.subsect9.art8.sent2"
-                                              display-type="long"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect10.subsect9.art8.sent3"
-                                              display-type="short"
-                                              pretext="or">(3)</ref> do not need to be sealed at the penetration by a firestop in accordance
-                    with <ref type="internal"
-                                              target="nbc.divBV2.part9.sect10.subsect9.art8.sent1"
-                                              display-type="long"/> if they are installed in a recessed
-                    enclosure with a construction that maintains the continuity of the
-                    fire-resistance rating of the fire separation or membrane. Any penetrations
-                    of the enclosure by wiring or cables must comply with all applicable
-                    requirements.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-c570cdd230" sequence="982" description="Issue 5358 Incorrect Content at B.A-9.10.9.8.(3)(a)(i)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote64.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote64.para1">The fire block material separating the outlet box from the adjacent
-                    space within the assembly should span the framing members such that
-                    all four sides and the back of the outlet box are enclosed by a membrane
-                    or framing member conforming to <ref type="internal"
-                                              target="nbc.divBV2.part9.sect10.subsect16.art3"
-                                              display-type="long"/> Any penetrations
-                    of the enclosure by wiring or cables must comply with all applicable
-                    requirements. (See also <ref type="internal"
-                                              target="nbc.divB.part3.appendix.appnote44"
-                                              display-type="long">Note A-3.1.11.7.(7)</ref>.)</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-b36ac80f43" sequence="983" description="Issue 5359 Reference at B.A-9.10.9.18.(4)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote65.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote65.para1">The gas-tight barrier between
-                    a dwelling unit and an attached garage is intended to provide protection
-                    against the entry of carbon monoxide and gasoline fumes into the dwelling
-                    unit. Building assemblies incorporating an air barrier system will
-                    perform adequately with respect to gas tightness, provided all joints
-                    in the airtight material are sealed and reasonable care is exercised
-                    where the wall or ceiling is pierced by building services. Where a
-                    garage is open to the adjacent attic space above the dwelling unit
-                    it serves, a gas-tight barrier in the ceiling of the dwelling unit
-                    will also provide protection. Unit masonry walls forming the separation
-                    between a dwelling unit and an adjacent garage should be provided
-                    with two coats of sealer or plaster, or covered with gypsum board
-                    on the side of the wall exposed to the garage. All joints must be
-                    sealed to ensure continuity of the barrier. (See also <ref type="internal"
-                                              target="nbc.divBV2.part9.sect25.subsect3.art3.sent3"
-                                              display-type="long"
-                                              pretext="Sentences"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect25.subsect3.art3.sent8"
-                                              display-type="short"
-                                              pretext="to">(8)</ref>.)</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-e75ea111a6" sequence="984" description="Issue 5441 Note Reference at B.A-9.13.4">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote88.para5"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote88.para5">The principal method of resisting the ingress of all soil gases,
-                    a resistance which is required for all buildings (see <ref type="internal"
-                                              target="nbc.divBV2.part9.sect13.subsect4.art2.sent1"
-                                              display-type="long"/>), is to seal the interface between the soil and
-                    the occupied space, so far as is reasonably practicable. <ref type="internal"
-                                              target="nbc.divBV2.part9.sect18"
-                                              display-type="long"
-                                              pretext="Sections"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect25"
-                                              display-type="long"
-                                              pretext="and"/> contain requirements for air and soil gas barriers
-                    in assemblies in contact with ground, including those in crawl spaces.
-                    Providing control joints to reduce cracking of foundation walls and
-                    airtight covers for sump pits (see <ref type="internal"
-                                              target="nbc.divBV2.part9.sect14"
-                                              display-type="long"/>)
-                    are other measures that can help achieve this objective. The requirements
-                    provided in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect25.subsect3"
-                                              display-type="long"/> are explained in <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote145"
-                                              display-type="long"
-                                              pretext="Notes">A-9.25.3.4.</ref> and <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote146"
-                                              display-type="number"/>.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-1d6a11a1ca" sequence="985" description="Issue 11181 Punctuation at B.A-9.15.1.1.(1)(c) and 9.20.1.1.(1)(b)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote94.para2"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote94.para2">Flat wall insulating
-                    concrete forms do not fall within the scope of <ref type="standard" target="csas269.1" standardId="csas269.1">CSA S269.1, “Falsework and formwork,”</ref> which addresses temporary
-                    falsework for concrete structures.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-9fae761d7d" sequence="986" description="Issue 5445 Standard Reference at B.A-9.15.2.4.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote95.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote95.para1">Tabular data and figures in <ref type="standard" target="csas406" standardId="csas406">CSA S406, “Specification of permanent wood foundations for housing and small buildings,”</ref> are based upon the general principles
-                    provided in <ref type="standard" target="csao86" standardId="csao86">CSA O86, “Engineering design in wood,”</ref> with the following assumptions:</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-2d68bcff95" sequence="987" description="Issue 5449 Incorrect Content at B.A-9.15.3.4.(2)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote96.para2"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote96.para2">It has become common to use flat wood trusses or wood I-joists
-                    to span greater distances in floors of small buildings. Where these
-                    spans exceed <measurement units="metric"> 4.9 m</measurement>, minimum footing sizes may be based
-                    on the following method: (a)   <list type="alphabetic">
-                                            <item>Determine for each storey the span of joists that will be
-                    supported on a given footing. Sum these lengths (sum<sub>1</sub>). (b)   </item>
-                                            <item>Determine the product of the number of storeys times <measurement units="metric">4.9 m </measurement> (sum<sub>2</sub>). (c)   </item>
-                                            <item>Determine the ratio of sum<sub>1</sub> to sum<sub>2</sub>. (d)   </item>
-                                            <item>Multiply this ratio by the minimum footing sizes in <ref type="internal"
-                                                    target="nbc.divBV2.part9.sect15.subsect3.art4.table1"
-                                                    display-type="long"/> to get the required minimum footing size.</item>
-                                         </list>
-                                      </paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-d83b16f1c5" sequence="988" description="Issue 5450 Incorrect Content at B.A-9.15.3.4.(2)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote96.para3"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote96.para3">Example: A 2-storey house is built using
-                    wood I-joists spanning <measurement units="metric"> 6 m</measurement>. (a)   <list type="alphabetic">
-                                            <item>sum<sub>1</sub> = 6 + 6 = <measurement units="metric">12 m (b)   </measurement>
-                                            </item>
-                                            <item>sum<sub>2</sub> = 4.9 × 2 = <measurement units="metric">9.8 m (c)   </measurement>
-                                            </item>
-                                            <item>ratio sum<sub>1</sub>/sum<sub>2</sub> = 12/9.8 = 1.22 (d)   </item>
-                                            <item>required minimum footing size = <measurement units="metric">1.22 × 350 mm</measurement> (minimum footing size provided in <ref type="internal"
-                                                    target="nbc.divBV2.part9.sect15.subsect3.art4.table1"
-                                                    display-type="long"/>) = <measurement units="metric">427 mm</measurement>.</item>
-                                         </list>
-                                      </paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-6cbf4e5524" sequence="989" description="Issue 5455 Incorrect Content at B.A-9.17.2.2.(2)">
+        <amendment id="bc-qa-6cbf4e5524" sequence="710" description="Issue 5125 Incorrect Content at B.A-9.17.2.2.(2)">
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote98.para1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
@@ -3172,195 +2892,7 @@ storey.</item>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-80354b0406" sequence="990" description="Issue 5456 Standard Reference at B.A-9.17.3.4">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote99.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote99.para1">The permitted live floor loads of <measurement units="metric">2.4 kPa</measurement> and the spans
-                    described for steel beams, wood beams and floor joists are such that
-                    the load on columns could exceed <measurement units="metric">36 kN</measurement>, the maximum allowable
-                    load on columns prescribed in <ref type="standard" target="cgsb-7.2" standardId="cgsb-7.2">CAN/CGSB-7.2, “Adjustable Steel Columns.”</ref> In the context of Part 9, loads on
-                    columns are calculated from the supported area times the live load
-                    per unit area, using the supported length of joists and beams. The
-                    supported length is half of the joist spans on each side of the beam
-                    and half the beam span on each side of the column.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-31bad3cf5a" sequence="991" description="Issue 5457 Incorrect Content at B.A-9.21.4.5.(2)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote110.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote110.para1">Where a chimney is fastened to the house framing with metal
-                    anchors, in accordance with <ref type="standard" target="csaa370" standardId="csaa370">CAN/CSA-A370, “Connectors for masonry,”</ref> it is considered to have adequate lateral support.
-                    The portion of the chimney stack above the roof is considered as free
-                    standing and may require additional lateral support.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-777e75d918" sequence="992" description="Issue 11184 Punctuation at B.A-9.23.3.1.(3)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote116.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote116.para1">The requirement that wood screws conform to <ref type="standard" target="asmeb18.6.1" standardId="asmeb18.6.1">ASME B18.6.1, “Wood Screws (Inch Series),”</ref> is not intended to preclude the use of Robertson
-                    head screws. The requirement is intended to specify the mechanical
-                    properties of the fastener, not to restrict the means of driving the
-                    fastener.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-729b184783" sequence="993" description="Issue 5510 Incorrect Content at B.A-9.23.4.2">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote119.para2"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote119.para2">Where rafters or roof joists are intended for use in a locality
-                    having a higher specified roof snow load than shown in the tables,
-                    the maximum member spacing may be calculated as the product of the
-                    member spacing and specified snow load shown in the span tables divided
-                    by the specified snow load for the locality being considered. The
-                    following examples show how this principle can be applied: (a)   <list type="alphabetic">
-                                            <item>For a <measurement units="metric">3.5 kPa</measurement> specified snow load, use spans
-                    for <measurement units="metric">2.5 kPa</measurement> and <measurement units="metric">600 mm o.c.</measurement> spacing but
-                    space members <measurement units="metric">400 mm o.c. (b)   </measurement>
-                                            </item>
-                                            <item>For a <measurement units="metric">4.0 kPa</measurement> specified snow load, use spans
-                    for <measurement units="metric">2.0 kPa</measurement> and <measurement units="metric">600 mm o.c</measurement>. spacing but
-                    space members <measurement units="metric">300 mm o.c.</measurement>
-                                            </item>
-                                         </list>
-                                      </paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-de7ad184cd" sequence="994" description="Issue 5511 Reference at B.A-9.23.4.2">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote119.para6"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote119.para6">Supported joist length in <ref type="internal"
-                                              target="nbc.divBV2.part9.spectables2.table11"
-                                              display-type="long"
-                                              pretext="Span Tables">9.23.4.2.-H</ref>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.spectables2.table12"
-                                              display-type="long"
-                                              pretext=",">9.23.4.2.-I</ref>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.spectables2.table13"
-                                              display-type="long"
-                                              pretext="and">9.23.4.2.-J</ref> means half the sum of the joist spans
-                    on both sides of the beam. For supported joist lengths between those
-                    shown in the tables, straight line interpolation may be used in determining
-                    the maximum beam span.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-8383a3c3e7" sequence="995" description="Issue 5522 Reference at B.A-9.23.4.4">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote123.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote123.para1">Vibration-controlled
-                    spans given in <ref type="internal"
-                                              target="nbc.divBV2.part9.spectables2.table5"
-                                              display-type="long"
-                                              pretext="Span Table">9.23.4.2.-B</ref> for
-                    concrete topping are based on a partial composite action between the
-                    concrete, subflooring and joists. Normal weight concrete having a
-                    compressive strength of not less than <measurement units="metric">20 MPa</measurement>, placed
-                    directly on the subflooring, provides extra stiffness and results
-                    in increased capacity. The use of a bond breaker between the topping
-                    and the subflooring, or the use of lightweight concrete topping limits
-                    the composite effects.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-0040cce44a" sequence="996" description="Issue 5523 Reference at B.A-9.23.4.4">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote123.para2"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote123.para2">Where either a bond breaker or lightweight topping is used, <ref type="internal"
-                                              target="nbc.divBV2.part9.spectables2.table4"
-                                              display-type="long"
-                                              pretext="Span Table">9.23.4.2.-A</ref> may be used but the additional
-                    dead load imposed by the concrete must be considered. The addition
-                    of <measurement units="metric">51 mm</measurement> of concrete topping can impose an added load
-                    of <measurement units="metric">0.8 to 1.2 kPa</measurement>, depending on the density of the concrete.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-0aa5f85257" sequence="997" description="Issue 11190 Punctuation at B.A-9.23.15.2.(4)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote136.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote136.para1"> A method for determining water absorption is described in <ref type="standard" target="astmd1037" standardId="astmd1037">ASTM D1037, “Standard Test Methods for Evaluating Properties of Wood-Base Fiber and Particle Panel Materials.”</ref> The treatment to reduce water
-                    absorption may be considered to be acceptable if a <measurement units="metric">300 mm</measurement> × <measurement units="metric">300 mm</measurement> sample when treated on all sides and edges
-                    does not increase in weight by more than 6% when tested in the horizontal
-                    position.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-80754551ff" sequence="998" description="Issue 5553 Incorrect Content at B.A-9.25.1.1.(2)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote139.para4"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote139.para4">Further information can be found in <ref type="standard" target="bpn54" standardId="bpn54">“The difference between a vapour barrier and an air barrier,”</ref> by Quirouette, R. L., Building Performance
-                    Section, Division of Building Research, National Research Council
-                    Canada, BPN 54, July 1985.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-a9c711c78b" sequence="999" description="Issue 5555 Incorrect Content at B.A-9.25.2.3.(3)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote141.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote141.para1">For thermal insulation to be effective, it must not be short-circuited
-                    by convective airflow through or around the material. If low-density
-                    fibrous insulation is installed with an air space on both sides of
-                    the insulation, the temperature differential between the warm and
-                    cold sides will drive convective airflow around the insulation. If
-                    foamed plastic insulation is spot-adhered to a backing wall or adhered
-                    in a grid pattern to an air-permeable substrate, and is not sealed
-                    at the joints and around the perimeter, air spaces between the insulation
-                    and the substrate will interconnect with spaces behind the cladding.
-                    Any temperature or air pressure differential across the insulation
-                    will again lead to short circuiting of the insulation by airflow.
-                    Thermal insulation must therefore be installed in full and continuous
-                    contact with the air barrier or another continuous component with
-                    low air permeance. (See <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote152"
-                                              display-type="long">Note A-9.25.5.1.(1)</ref> for examples of
-                    low-air-permeance materials.)</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-0c2fcc706f" sequence="1000" description="Issue 5557 Incorrect Content at B.A-9.25.3.1.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote144.para8"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote144.para8">Further information can be found in <ref type="standard" target="cbd231" standardId="cbd231">CBD 231, “Moisture problems in houses”</ref> (Canadian Building Digest 231), by
-                    A.T. Hansen, which is available from NRC.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-6009cb25a0" sequence="1001" description="Issue 5569 Incorrect Content at B.A-9.26.4.1">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote158.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote158.para1">Drainage of water from decks and other platforms
-                    that effectively serve as roofs will be blocked by walls, and blocked
-                    or restricted by guards where significant lengths and heights of material
-                    are connected to the deck. Without proper flashing at such roof-wall
-                    junctions or roof-guard junctions, water will generally leak into
-                    the adjoining constructions and can penetrate into supporting constructions
-                    below. Exceptions include platforms where waterproof curbs of sufficient
-                    height are cast-in or where the deck and wall or guard are unit-formed.
-                    In these cases, the monolithic deck-wall or deck-guard junctions will
-                    minimize the likelihood of water ingress. (See also <ref type="internal"
-                                              target="nbc.divBV2.part9.appendix.appnote156"
-                                              display-type="long">Note A-9.26.1.1.(1)</ref>.)</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-7fbee11edc" sequence="1002" description="Issue 5573 Incorrect Content at B.A-9.27.2.2">
+        <amendment id="bc-qa-7fbee11edc" sequence="711" description="Issue 5243 Incorrect Content at B.A-9.27.2.2">
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote163.para1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
@@ -3381,362 +2913,7 @@ storey.</item>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-117b169815" sequence="1003" description="Issue 9842 Punctuation at B.A-9.27.5.4.(2)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote173.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote173.para1">For locations where the 1-in-50 hourly wind pressure is greater than <measurement units="metric">0.60 kPa</measurement>, the results of testing fasteners to <ref type="standard" target="astmd1761" standardId="astmd1761">ASTM D1761, “Standard Test Methods for Mechanical Fasteners in Wood and Wood-Based Materials,”</ref> must be obtained from
-                    a testing facility or from the insulating concrete form manufacturer
-                    to confirm their ultimate strengths for both direct withdrawal and
-                    lateral shear. In accordance with limit states design as described
-                    in <ref type="internal"
-                                              target="nbc.divB.part4.sect1.subsect3"
-                                              display-type="long"/>, the factored resistances of the
-                    fastener must be equal to or greater than the factored loads on the
-                    fastener at the spacing proposed by the designer. In order to align
-                    with the limit states design procedures used to develop <ref type="internal"
-                                              target="nbc.divBV2.part9.sect27.subsect5.art4.table2"
-                                              display-type="long"/>-B, the factored resistances must be calculated by
-                    applying a reduction factor of <measurement units="metric">Φ = 0.35</measurement> to the fastener's
-                    ultimate strengths, and the factored loads must lie within the area
-                    under the line of linear interaction in a diagram that plots the factored
-                    lateral shear resistance of the fastener against its factored direct
-                    withdrawal resistance.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-87f199c940" sequence="1004" description="Issue 11203 Punctuation at B.A-9.27.11.1.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote177.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote177.para1">The minimum thickness of <measurement units="metric">0.33 mm</measurement> stated in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect27.subsect11.art1.sent1"
-                                              display-type="long"/> refers to the total thickness of the materials,
-                    i.e., the combination of the minimum thickness of the base steel (<measurement units="metric">0.29 mm</measurement>) and the minimum coating thickness required by <ref type="standard" target="cssbi23m" standardId="cssbi23m">CSSBI 23M, “Standard for Residential Steel Cladding.”</ref> Note that the terms
-                    “siding” and “cladding” are often used interchangeably.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-75d3590b3e" sequence="1005" description="Issue 5643 Reference at B.A-9.36.1.2.(4)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote213.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote213.para1">The
-                    term “fenestration” is intentionally used in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art3"
-                                              display-type="long"
-                                              pretext="Articles"/> (prescriptive provisions) <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art11"
-                                              display-type="long"
-                                              pretext="and"/> (trade-off provisions), and in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect5"
-                                              display-type="long"/> (performance provisions) as opposed to the
-                    terms “window,” “door” and “skylight,” which are used in the prescriptive
-                    provisions in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2"
-                                              display-type="long"
-                                              pretext="Subsections"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect4"
-                                              display-type="long"
-                                              pretext="to">9.36.4.</ref> that address these
-                    components individually. The term “fenestration” is sometimes used
-                    in conjunction with the term “doors” depending on the context and
-                    the intent of the requirement.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-4d79d43f3a" sequence="1006" description="Issue 5683 Reference at B.A-9.36.2.5.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote226.para2"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote226.para2">The rest of <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art5"
-                                              display-type="long"/> contains exceptions
-                    to <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art5.sent1"
-                                              display-type="short"/>: <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art5.sent2"
-                                              display-type="short"
-                                              pretext="Sentences"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art5.sent9"
-                                              display-type="short"
-                                              pretext="to">(9)</ref> introduce relaxations
-                    for various construction details while <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art5.sent10"
-                                              display-type="short"/> allows a complete exemption to the requirements in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art5.sent1"
-                                              display-type="short"/> for three specific construction details.
-                    Balcony and canopy slabs are also exempt from the requirements in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art5.sent1"
-                                              display-type="short"/> because their presence is permitted
-                    to be disregarded when calculating the overall effective thermal resistance
-                    of walls they penetrate.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-023a0f7a20" sequence="1007" description="Issue 5718 Reference at B.A-Tables 9.36.2.8.-A and -B">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote238.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote238.para1">In cases where a single floor assembly is
-                    made up of several types of the floor assemblies listed in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art8.table1"
-                                              display-type="long"
-                                              pretext="Tables"/>-A
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art8.table2"
-                                              display-type="long"
-                                              pretext="and"/>-B, each portion of that floor must comply with its
-                    respective applicable RSI value. For example, in the case of a walkout
-                    basement, the portion of floor that is above the frost line— i.e. the
-                    walkout portion—should be insulated in accordance with the values
-                    listed in the applicable Table whereas the portion below the frost
-                    line can remain uninsulated.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-8d3ce2155f" sequence="1008" description="Issue 5723 Standard Reference at B.A-9.36.2.10.(5)(b)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote245.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote245.para1">One method of sealing air barrier
-                    materials at joints and junctions is to apply sheathing tape that
-                    has an acceptable air leakage characteristic, is compatible with the
-                    air barrier material and resistant to the mechanisms of deterioration
-                    to which the air barrier material will be exposed. Where an assembly
-                    tested to <ref type="standard" target="ulcs742" standardId="ulcs742">CAN/ULC-S742, “Standard for Air Barrier Assemblies – Specification,”</ref> includes
-                    sheathing tape as a component, the sheathing tape will have been tested
-                    for compatibility and resistance to deterioration and will be referenced
-                    in the manufacturer's literature as acceptable for use with that air
-                    barrier assembly.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-96151998e7" sequence="1009" description="Issue 5724 Reference at B.A-9.36.2.11">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote249.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote249.para1">The trade-off options presented in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art11.sent2"
-                                              display-type="long"
-                                              pretext="Sentences"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art11.sent4"
-                                              display-type="short"
-                                              pretext="to">(4)</ref> afford some degree of flexibility in the design and construction
-                    of energy-efficient features in houses and buildings as they allow
-                    a builder/designer to install one or more assemblies with a lower
-                    RSI value than that required in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art1"
-                                              display-type="long"
-                                              pretext="Articles"/>
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect2.art7"
-                                              display-type="long"
-                                              pretext="to">9.36.2.7.</ref> as long
-                    as the discrepancy in RSI value is made up by other assemblies and
-                    that the total area of the traded assemblies remains the same.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-447539974e" sequence="1010" description="Issue 5764 Standard Reference at B.A-9.36.3.9.(3)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote266.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote266.para1">HRVs are required to be tested in conformance
-                    with <ref type="standard" target="csac439" standardId="csac439">CAN/CSA-C439, “Standard laboratory methods of test for rating the performance of heat/energy-recovery ventilators,”</ref> under different
-                    conditions to obtain a rating:  to be rated for colder locations,
-                    HRVs must be tested at two different temperatures, as stated in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect3.art9.sent3.clause2"
-                                              display-type="long"/>, whereas their rating for locations in mild climates
-                    relies only on the 0°C test temperature, as stated in <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect3.art9.sent3.clause1"
-                                              display-type="long"/>.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-d3b384458b" sequence="1011" description="Issue 11211 Punctuation at B.A-9.36.5.15.(5)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote293.para2"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote293.para2">
-                                         <ref type="internal"
-                                              target="nbc.divBV2.part9.sect33.subsect5.art1"
-                                              display-type="long"/> references <ref type="standard" target="csaf280" standardId="csaf280">CSA F280, “Determining the required capacity of residential space heating and cooling appliances,”</ref> which contains a number of different
-                    methods for determining the capacity of heating appliances. The intent
-                    of <ref type="internal"
-                                              target="nbc.divBV2.part9.sect36.subsect5.art15.sent5"
-                                              display-type="long"/> is that the equipment be sized according
-                    to the methods for total heat output capacity and nominal cooling
-                    capacity without being oversized.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-c2452ace65" sequence="1471" description="Issue 5311 Incorrect Content at B.A-9.4.4.4.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote14.div5.para3"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote14.div5.para3">Where it is not known if the soil or backfill contains pyritic
-                    material in a deleterious concentration, a test is available to identify
-                    its presence and concentration.<list type="bibliography">
-                                               <header>References: (1) </header>
-                                               <item>Legget, R.F. and Crawford, C.B. Trees and Buildings. Canadian
-                    Building Digest 62, Division of Building Research, National Research
-                    Council Canada, Ottawa, 1965. (2) </item>
-                                               <item>Hamilton, J.J. Swelling and Shrinking Subsoils. Canadian
-                    Building Digest 84, Division of Building Research, National Research
-                    Council Canada, Ottawa, 1966. (3) </item>
-                                               <item>Hamilton, J.J. Foundations on Swelling and Shrinking Subsoils.
-                    Canadian Building Digest 184, Division of Building Research, National
-                    Research Council Canada, Ottawa, 1977. (4) </item>
-                                               <item>Penner, W., Eden, W.J., and Gratten-Bellew, P.E. Expansion
-                    of Pyritic Shales. Canadian Building Digest 152, Division of Building
-                    Research, National Research Council Canada, Ottawa, 1975. (5) </item>
-                                               <item>Swinton, M.C., Brown, W.C., and Chown, G.A. Controlling the
-                    Transfer of Heat, Air and Moisture through the Building Envelope.
-                    Small Buildings - Technology in Transition, Building Science Insight '90,
-                    Institute for Research in Construction, National Research Council
-                    Canada, Ottawa, 1990.</item>
-                                            </list>
-                                         </paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-2f1f0947d1" sequence="1472" description="Issue 5318 Standard Reference at B.A-9.7.4.2.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote22.div1.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div1.para1">In addition to referencing the Canadian Supplement, <ref type="standard" target="csaa440S1" standardId="csaa440S1">CSA A440S1, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440-17, North American Fenestration Standard/Specification for windows, doors, and skylights,”</ref> the Harmonized Standard, <ref type="standard" target="csa101a440" standardId="csa101a440">AAMA/WDMA/CSA 101/I.S.2/A440, “North American Fenestration Standard/Specification for windows, doors, and skylights,”</ref> contains some Canada-specific
-                    test criteria.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-909502f114" sequence="1473" description="Issue 5320 Standard Reference at B.A-9.7.4.2.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote22.div6.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div6.para1">The Harmonized Standard identifies three test procedures that
-                    can be used to determine the condensation resistance of windows and
-                    doors. Only the physical test procedure given in <ref type="standard" target="csaa440.2" standardId="csaa440.2">CSA A440.2, “Fenestration energy performance,”</ref> which is referenced
-                    in <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect7.subsect3.art3.table1"
-                                                 display-type="long"/>, can be used to establish Temperature
-                    Index (I) values. Computer simulation tools can also be used to estimate
-                    the relative condensation resistance of windows, but these methods
-                    employ different expressions of performance known as Condensation
-                    Resistance Factors (CR). I and CR values are not interchangeable.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-fcd35224e4" sequence="1474" description="Issue 5321 Standard Reference at B.A-9.7.4.2.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote22.div9.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote22.div9.para1">While the control of precipitation ingress is a performance
-                    requirement for exterior doors, side-hinged doors can comply with
-                    the referenced standard, <ref type="standard" target="csa101a440" standardId="csa101a440">AAMA/WDMA/CSA 101/I.S.2/A440, “North American Fenestration Standard/Specification for windows, doors, and skylights,”</ref> when tested at a pressure differential of 0 Pa
-                    (0.0 psf) or higher, but less than the minimum test pressure required
-                    for the indicated performance class and performance grade. Such doors
-                    are identified with a “Limited Water” (LW) rating on the product label.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-f60a639b28" sequence="1475" description="Issue 5390 Incorrect Content at B.A-9.11">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote79.div2.para5"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote79.div2.para5">To verify that the required acoustical performance is being
-                    achieved, a field test can be done at an early stage of construction. <ref type="standard" target="astme336" standardId="astme336">ASTM E336, “Standard Test Method for Measurement of Airborne Sound Attenuation between Rooms in Buildings,”</ref> gives a complete measurement.
-                    A simpler and less expensive method is presented in <ref type="standard" target="astme597" standardId="astme597">ASTM E597, “Practice for Determining a Single Number Rating of Airborne Sound Insulation for Use in Multi-Unit Building Specifications.”</ref> The rating derived from this test
-                    is usually within <measurement units="metric">2 points</measurement> of the STC obtained from <ref type="standard" target="astme336" standardId="astme336">ASTM E336</ref>. It is useful for
-                    verifying performance and finding problems during construction. Alterations
-                    can then be made prior to project completion.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-ad836eaf58" sequence="1476" description="Issue 5575 Incorrect Content at B.A-9.27.3.1">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote164.div3.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote164.div3.para1">It is recognized that many cladding assemblies with no space
-                    or with discontinuous space behind the cladding, and with the sheathing
-                    membrane material identified in <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect27.subsect3.art2"
-                                                 display-type="long"/>, have
-                    provided acceptable performance with a range of precipitation loads
-                    imposed on them. Vinyl and metal strip siding, and shake and shingle
-                    cladding, for example, are installed with discontinuous drained spaces,
-                    and have demonstrated acceptable performance in most conditions. Lapped
-                    wood and composite strip sidings, depending on their profiles, may
-                    or may not provide discontinuous spaces, and generally provide little
-                    drainage. Cladding assemblies with limited drainage capability that
-                    use a sheathing membrane meeting the minimum requirements are not
-                    recommended where they may be exposed to high precipitation loads
-                    or where the level of protection provided by the cladding is unknown
-                    or questionable. Local practice with demonstrated performance should
-                    be considered. (See also <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect27.subsect2.art2"
-                                                 display-type="long"/> and <ref type="internal"
-                                                 target="nbc.divBV2.part9.appendix.appnote163"
-                                                 display-type="long">Note A-9.27.2.2.</ref>)</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-3d95165caa" sequence="1477" description="Issue 5720 Standard Reference at B.A-9.36.2.9.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote242.div2.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote242.div2.para1">Air barrier assemblies are subjected to structural loading due
-                    to mechanical systems, wind pressure and stack effect. In addition,
-                    they may be affected by physical degradation resulting from thermal
-                    and structural movement. Both <ref type="standard" target="ulcs742" standardId="ulcs742">CAN/ULC-S742, “St</ref> and <ref type="standard" target="astme2357" standardId="astme2357">ard for Air Barrier Assemblies – Specification,” and ASTM E2357, “Standard Test Method for Determining Air Leakage Rate of Air Barrier Assemblies,”</ref> outline testing limits for such issues, which can compromise
-                    the performance of the air barrier assembly. Where local climatic
-                    data and building conditions exceed these limits, the maximum building
-                    height and sustained 1-in-50 hourly wind pressure values covered in <ref type="external" target="ulcs742">Table 1 of </ref>
-                                            <ref type="standard" target="ulcs742" standardId="ulcs742">CAN/ULC-S742</ref> are permitted to be extrapolated beyond
-                    the listed ranges to apply to any building height, in any location,
-                    provided the air barrier assembly in question has been tested to the
-                    specific building site and design parameters. However, air barrier
-                    assemblies tested to <ref type="standard" target="astme2357" standardId="astme2357">ASTM E2357</ref> are not subjected to temperature variations during
-                    testing, and there is no indication that testing data is permitted
-                    to be extrapolated beyond the <measurement units="metric">0.65 kPa</measurement> limit.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-34d53b2405" sequence="1478" description="Issue 5726 Reference at B.A-9.36.2.11">
-            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote249.div2.para1"/>
-            <replace preserve-references="true">
-                <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote249.div2.para1">For the purposes of <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect36.subsect2.art11"
-                                                 display-type="long"/>, the term “reference”
-                    (e.g. reference assembly) refers to a building element that complies
-                    with the prescriptive requirements of <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect36.subsect2.art1"
-                                                 display-type="long"
-                                                 pretext="Articles"/>
-                                            <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect36.subsect2.art7"
-                                                 display-type="long"
-                                                 pretext="to">9.36.2.7.</ref>, whereas
-                    the term “proposed” refers to a building element whose RSI value can
-                    be traded in accordance with <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect36.subsect2.art11.sent2"
-                                                 display-type="long"/>
-                                            <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect36.subsect2.art11.sent3"
-                                                 display-type="short"
-                                                 pretext=",">(3)</ref>
-                                            <ref type="internal"
-                                                 target="nbc.divBV2.part9.sect36.subsect2.art11.sent4"
-                                                 display-type="short"
-                                                 pretext="or">(4)</ref>, as applicable.</paragraph>
-                </new-content>
-            </replace>
-        </amendment>
-        <amendment id="bc-qa-7b47ce4f06" sequence="1479" description="Issue 11469 Punctuation at B.A-9.36.2.11">
+        <amendment id="bc-qa-7b47ce4f06" sequence="741" description="Issue 10000 Punctuation at B.A-9.36.2.11">
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote249.div1.para1"/>
             <replace preserve-references="true">
                 <new-content source="bc">

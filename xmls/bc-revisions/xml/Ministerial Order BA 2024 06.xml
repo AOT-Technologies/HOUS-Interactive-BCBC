@@ -811,7 +811,7 @@
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:142 Punctuation ceaee21c97 -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:142 Punctuation ceaee21c97 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -2908,7 +2908,6 @@
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:947 Reference 1885202975 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -2935,7 +2934,8 @@
                       /> to <ref
                       type="internal"
                       target="nbc.divB.part3.sect2.subsect5.art10"
-                      display-type="long">3.2.5.10.</ref> are deemed to comply with <ref
+                      display-type="long"
+                      /> are deemed to comply with <ref
                       type="internal"
                       target="nbc.divB.part3.sect2.subsect5.art7.sent1"
                       display-type="short"
@@ -3491,9 +3491,6 @@
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:2387 Incorrect Content 1aad107471 -->
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:9255 Punctuation ed67c1f811 -->
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:9256 Punctuation d094b58fcb -->
               <revision
                 seq="1"
                 type="amendment"
@@ -3505,10 +3502,11 @@
                   <text>A solid-fuel burning <ref
                       type="term"
                       target="blr"
-                      >boiler</ref> accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN/<ref
+                      >boiler</ref> accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of <ref
                       type="standard"
                       target="csab365"
-                      standardId="csab365">CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment</ref>.”</text>
+                      standardId="csab365"
+                      />.</text>
                 </content>
                 <change-summary
                   >Struck out "boiler" and substituted "boiler"</change-summary>
@@ -4254,7 +4252,6 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6873 Reference 81300b0d72 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -4273,7 +4270,8 @@ Spaces within Buildings
                       type="internal"
                       target="nbc.divBV2.part9.sect23.subsect6.art1.sent5"
                       display-type="short"
-                      pretext="to">(6)</ref>, anchorage shall be provided by</text>
+                      pretext="to"
+                      />, anchorage shall be provided by</text>
                   <clause
                     xml:id="nbc.divBV2.part9.sect23.subsect6.art1.sent2.clause1"
                     letter="a"
@@ -6190,8 +6188,8 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11162 Punctuation b3a2f6d75d -->
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11163 Punctuation 3458e4ca23 -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9762 Punctuation b3a2f6d75d -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9763 Punctuation 3458e4ca23 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -6243,7 +6241,7 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11164 Punctuation a518004a72 -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9764 Punctuation a518004a72 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -6288,8 +6286,8 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11166 Punctuation 44c13c0659 -->
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11534 Punctuation d617254f84 -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9766 Punctuation 44c13c0659 -->
+              <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10049 Punctuation d617254f84 -->
               <revision
                 seq="1"
                 type="amendment"
@@ -6778,10 +6776,9 @@ Spaces within Buildings
               <original effective-date="2024-03-08">
                 <!-- Merge engine will auto-populate from bc-building-code.xml -->
               </original>
-              <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:2556 Incorrect Content 1663889728 -->
               <revision seq="1" type="amendment" effective-date="2025-06-16" id="bc-mo-2024-06-132" status="current">
                 <content>
-                  <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect5.subsect5.art3" display-type="long" pretext="Articles"/> <ref type="internal" target="nbc.divBV2.part9.sect5.subsect5.art1.sent1" display-type="long" pretext=","/> <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art2" display-type="long" pretext=","/> <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art3" display-type="long" pretext=" and"/>, doorway openings within <ref type="term" target="dwllng-n">dwelling units</ref> and within houses with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces shall be designed to accommodate at least the door sizes given in <ref type="internal" target="nbc.divBV2.part9.sect5.subsect5.art1.table1" display-type="long"/> for swing-type and folding doors.</text>
+                  <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect5.subsect5.art1.sent1" display-type="short"/> and <ref type="internal" target="nbc.divBV2.part9.sect5.subsect5.art3" display-type="long" pretext="Articles"/> <ref type="internal" target="nbc.divBV2.part9.sect5.subsect5.art1.sent1" display-type="long" pretext=","/> <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art2" display-type="long" pretext=","/> <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art3" display-type="long" pretext=" and"/>, doorway openings within <ref type="term" target="dwllng-n">dwelling units</ref> and within houses with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces shall be designed to accommodate at least the door sizes given in <ref type="internal" target="nbc.divBV2.part9.sect5.subsect5.art1.table1" display-type="long"/> for swing-type and folding doors.</text>
                 </content>
                 <change-summary>Struck out "(2)" and substituted "(1)" in reference to Sentence</change-summary>
                 <note>Ministerial Order BA 2024 06</note>
@@ -6811,10 +6808,8 @@ Spaces within Buildings
                   <title>Standards</title>
                   <sentence xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1" number="1">
                     <text>Except as permitted by Sentence (2) and Article 9.7.4.3., windows, doors and skylights and their components shall conform to</text>
-                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:2577 Standard Reference 45220c10d3 -->
-                    <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:9362 Punctuation db21915e24 -->
                     <clause xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.clause1" letter="a">
-                      <text><ref type="standard" target="csa101a440">AAMA/WDMA/CSA 101/I.S.2/A440, “North American Fenestration Standard/Specification for windows, doors, and skylights”</ref> (Harmonized Standard), and</text>
+                      <text><ref type="standard" target="csa101a440"/> (Harmonized Standard), and</text>
                     </clause>
                     <clause xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.clause2" letter="b">
                       <text><ref type="standard" target="csaa440S1"/>,</text>
@@ -7223,28 +7218,21 @@ Spaces within Buildings
                           <entry align="center">Thermal Buoyancy Chimney<super>(2)</super></entry>
                           <entry align="center">Drafthood Boiler HWT<super>(4)</super></entry>
                         </row>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5604 Formatting 943eb3768d -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5605 Formatting d952470c1d -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5606 Formatting fc41b9f959 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5607 Incorrect Content d4926d8d20 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5608 Table 14c8bd866c -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7646 Formatting 1a1bc1b5d6 -->
                         <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.rowh3">
                           <entry align="center">Appliance Type</entry>
                           <entry align="center">Furnace Boiler HWT Fireplace</entry>
                           <entry align="center">HWT Fireplace Heater</entry>
-                          <entry align="center">Mid-Efficient F/A Furnace or Boiler<super>(5)</super></entry>
+                          <entry align="center">Mid-Efficient F/A Furnace or Boiler<super>(3)</super></entry>
                           <entry align="center"/>
                         </row>
                       </thead>
                       <tbody>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5609 Incorrect Content e0bd1fe435 -->
                         <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.row1">
                           <entry align="center">Special Conditions</entry>
                           <entry align="center"/>
                           <entry align="center"/>
                           <entry align="center"/>
-                          <entry align="center">Located in Air-Barriered Room<super>(1)</super></entry>
+                          <entry align="center">Located in Air-Barriered Room<super>(5)</super></entry>
                         </row>
                         <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.row2">
                           <entry align="center">Classification</entry>
@@ -7253,7 +7241,7 @@ Spaces within Buildings
                           <entry align="center">NAFFVA</entry>
                           <entry align="center">Non-NAFFVA</entry>
                         </row>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5610 Incorrect Content 0fe75ce2d5 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5280 Incorrect Content 0fe75ce2d5 -->
                         <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.row3">
                           <entry align="center">9.32.4.1.(1)</entry>
                           <entry align="center">No</entry>
@@ -7299,20 +7287,10 @@ Spaces within Buildings
                           <entry align="center">NAFFVA<super>(5)</super></entry>
                           <entry align="center">N/A</entry>
                         </row>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5620 Formatting 4fb7cab64b -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5621 Incorrect Content 590decbf2e -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5622 Incorrect Content 354d588eed -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5623 Formatting 34ff8bb4a0 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5624 Formatting 55a45e7725 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5625 Formatting 0ce6ebdce4 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5626 Formatting e501f6b886 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7649 Formatting 992230af9b -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7650 Formatting 85511a1654 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:7651 Formatting b4b62df6e0 -->
                         <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.rowh3">
                           <entry align="center">Appliance Type</entry>
-                          <entry align="center">Boiler HWT<super>(4)</super></entry>
-                          <entry align="center">F/A Furnace Boiler HWT<super>(3), <ref type="table-note" target="nbc.divBV2.part9.appendix.appnote199a.tableB.note4"/></super></entry>
+                          <entry align="center">Boiler HWT<super>(2)</super></entry>
+                          <entry align="center">F/A Furnace Boiler HWT<super>(2)(3)</super></entry>
                           <entry align="center">F/A Furnace Boiler HWT</entry>
                           <entry align="center">Boiler</entry>
                           <entry align="center">F/A Furnace Boiler HWT Fireplace Heat Stove</entry>
@@ -7320,12 +7298,9 @@ Spaces within Buildings
                         </row>
                       </thead>
                       <tbody>
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5627 Incorrect Content 3f577db8f3 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5628 Table 9abaadf097 -->
-                        <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:5629 Table fdf0ed9e91 -->
                         <row xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.row1">
                           <entry align="center">Special Conditions</entry>
-                          <entry align="center">Located in Air-Barriered Room<super>(1)</super></entry>
+                          <entry align="center">Located in Air-Barriered Room<super>(4)</super></entry>
                           <entry align="center"/>
                           <entry align="center">Located in Air-Barriered Room<super>(4)</super></entry>
                           <entry align="center"/>
