@@ -596,6 +596,72 @@ the effective thermal resistance of the wall assembly, RSI<sub>eff</sub>.</item>
             </replace>
         </amendment>
         
+        <amendment id="bc-qa-e0c42d0a83" sequence="972" description="Issue 3703 Incorrect Content at B.9.38.1.1.Tbl1#Row270.Col1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row270"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row270" rowsep="1">
+                                                     <entry colspan="2">
+                                                        <ref type="internal"
+                                                             target="nbc.divBV2.part9.sect7.subsect2.art1"
+                                                             display-type="title"/> Performance Expectations
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b88d5c5f69" sequence="973" description="Issue 4325 Incorrect Content at B.9.38.1.1.Tbl1#Row4345.Col2">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row4345"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row4345"
+                                                       rowsep="1">
+                                                     <entry colspan="2">(c)
+                                                        <ref type="internal"
+                                                             target="nbc.divBV2.part9.sect27.subsect3.art6"
+                                                             display-type="title"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8bfadbe4f2" sequence="974" description="Issue 4475 Incorrect Content at B.9.38.1.1.Tbl1#Row5202.Col2">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5202"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5202"
+                                                       rowsep="1">
+                                                     <entry rowspan="4">
+                                                        <ref type="internal"
+                                                             target="nbc.divBV2.part9.sect32.subsect1.art3.sent2"
+                                                             display-type="shortNum"/>
+                                                     </entry>
+                                                     <entry><ref type="functional-statement" target="fs81">[F40, F50, F52</ref>-<ref type="sub-objective" target="nbc-obj-os1.1"/>] [F51,F52,F62,F63-OH1.3]</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-44cffc0044" sequence="1470" description="Issue 3662 Incorrect Content at B.9.38.1.1.(1)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divBV2.part9.sect38.subsect1.art1.sent1"
+                                                   number="1"
+                                                   vendor-id="es008670">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:3662 Incorrect Content 44cffc0044 -->
+                        <text>For the purpose of compliance with this Code as required in <ref type="internal"
+                                                    target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
+                                                    display-type="long"/>, the objectives and functional statements
+                    attributed to the acceptable solutions in this Part shall be the objectives
+                    and functional statements listed in <ref type="internal"
+                                                    target="nbc.divBV2.part9.sect38.subsect1.art1.table1"
+                                                    display-type="long"/> (See <ref type="internal"
+                                                    target="nbc.divB.part1.appendix.appnote1"
+                                                    display-type="long">Note A-1.1.2.1.(1)</ref>.)</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
