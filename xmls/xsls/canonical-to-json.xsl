@@ -2277,6 +2277,13 @@
         </xsl:choose>
     </xsl:template>
 
+    <!-- CLAUDE-AUTOFIX CL-002 CF-02489 | issue 1305 | Title rows of the attribution tables are bold in the PDF: bold a spanning cell that holds only a title cross-reference. -->
+    <xsl:template match="row/entry[@colspan]/ref[@type = 'internal'][@display-type = 'title'][not(preceding-sibling::node()[self::* or self::text()[normalize-space()]] or following-sibling::node()[self::* or self::text()[normalize-space()]])]" mode="rich-text-json" priority="1">
+        <xsl:text>&lt;bold&gt;</xsl:text>
+        <xsl:next-match/>
+        <xsl:text>&lt;/bold&gt;</xsl:text>
+    </xsl:template>
+
     <xsl:template match="ref" mode="rich-text-json">
         <!-- Determine the next significant sibling (skipping whitespace-only text nodes) -->
         <xsl:variable name="next-significant" select="following-sibling::node()[not(self::text() and normalize-space(.) = '')][1]"/>
