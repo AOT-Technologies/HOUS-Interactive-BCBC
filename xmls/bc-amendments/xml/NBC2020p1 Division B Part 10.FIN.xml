@@ -81,7 +81,8 @@
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect2.art1.sent1" number="1">
                                         <text>Except as permitted in <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art2" display-type="long"/>, <ref type="term" target="bldng">buildings</ref> shall be designed and constructed to conform to</text>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect2.art1.sent1.clause1" letter="a">
-                                            <text>ANSI/ASHRAE/IES 90.1, "Energy Standard for Buildings Except Low-Rise Residential Buildings" (except Subsection 8.4.2.),</text>
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9800 Punctuation 3eb417b843 -->
+                                            <text>ANSI/ASHRAE/IES 90.1, “Energy Standard for Buildings Except Low-Rise Residential Buildings” (except Subsection 8.4.2.),</text>
                                         </clause>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect2.art1.sent1.clause2" letter="b">
                                             <text>the NECB, or</text>
@@ -193,7 +194,8 @@
                                         </clause>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art2.sent3" number="3">
-                                        <text>For the purpose of this Subsection, the term "Step" shall mean a Step referred to in Tables 10.2.3.3.-A to 10.2.3.3.-J.</text>
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9801 Punctuation c2ae992a18 -->
+                                        <text>For the purpose of this Subsection, the term “Step” shall mean a Step referred to in Tables 10.2.3.3.-A to 10.2.3.3.-J.</text>
                                     </sentence>
                                 </article>
                                 <article xml:id="nbc.divB.part10.sect2.subsect3.art3" number="3">
@@ -895,13 +897,16 @@
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1" number="1">
                                         <text>Except as required by <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art5.sent2" display-type="short"/>, <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> shall be tested for airtightness in accordance with</text>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1.clause1" letter="a">
-                                            <text>ASTM E 779, "Standard Test Method for Determining Air Leakage Rate by Fan Pressurization",</text>
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9802 Punctuation 785b0577f2 -->
+                                            <text>ASTM E 779, “Standard Test Method for Determining Air Leakage Rate by Fan Pressurization”,</text>
                                         </clause>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1.clause2" letter="b">
-                                            <text>USACE Version 3, "Air Leakage Test Protocol for Building Envelopes", or</text>
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9803 Punctuation 92e110d885 -->
+                                            <text>USACE Version 3, “Air Leakage Test Protocol for Building Envelopes”, or</text>
                                         </clause>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art5.sent1.clause3" letter="c">
-                                            <text>ASTM E 3158, "Standard Test Method for Measuring the Air Leakage Rate of a Large or Multizone Building."</text>
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9804 Punctuation 768e85414d -->
+                                            <text>ASTM E 3158, “Standard Test Method for Measuring the Air Leakage Rate of a Large or Multizone Building.”</text>
                                         </clause>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art5.sent2" number="2">
@@ -933,7 +938,9 @@
                                             </subclause>
                                         </clause>
                                         <clause xml:id="nbc.divB.part10.sect3.subsect1.art1.sent1.clause2" letter="b">
-                                            <text>are designed to Step 2, 3 or 4 in Tables 10.2.3.3.-G to 10.2.3.3.-J. (See also <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent3" display-type="long"/>.)</text>
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5519 Punctuation 7e09b27b51 -->
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10001 Punctuation c004b132e3 -->
+                                            <text>are designed to Step 2, 3 or 4 in Tables 10.2.3.3.-G to 10.2.3.3.-J. (See also <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent3" display-type="long"/>).</text>
                                         </clause>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect3.subsect1.art1.sent2" number="2">
@@ -943,19 +950,25 @@
                                 <article xml:id="nbc.divB.part10.sect3.subsect1.art2" number="2">
                                     <title>Definitions and Attributions</title>
                                     <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent1" number="1">
-                                        <text>For the purposes of this Section, the term "greenhouse gas", expressed with the abbreviation "GHG", shall have the same meaning as defined in the Climate Change Accountability Act.</text>
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9805 Punctuation 6a751240d8 -->
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9806 Punctuation 5dd80e9362 -->
+                                        <text>For the purposes of this Section, the term “greenhouse gas”, expressed with the abbreviation “GHG”, shall have the same meaning as defined in the Climate Change Accountability Act.</text>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent2" number="2">
-                                        <text>For the purposes of this Section, the term "greenhouse gas intensity", expressed with the abbreviation "GHGI", shall mean the total greenhouse gas emissions, expressed as kgCO<sub>2e</sub> per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> per year, associated with the energy used by the <ref type="term" target="bldng">building's</ref> systems.</text>
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9807 Punctuation 1682af2a7c -->
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9808 Punctuation b21e207b20 -->
+                                        <text>For the purposes of this Section, the term “greenhouse gas intensity”, expressed with the abbreviation “GHGI”, shall mean the total greenhouse gas emissions, expressed as kgCO<sub>2e</sub> per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> per year, associated with the energy used by the <ref type="term" target="bldng">building's</ref> systems.</text>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent3" number="3">
-                                        <text>For the purposes of this Section, the symbol "CO<sub>2e</sub>" shall mean carbon dioxide or carbon dioxide equivalent, with carbon dioxide equivalent meaning one or more greenhouse gases with a global warming potential equivalent to carbon dioxide.</text>
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9809 Punctuation dcd19a552b -->
+                                        <text>For the purposes of this Section, the symbol “CO<sub>2e</sub>” shall mean carbon dioxide or carbon dioxide equivalent, with carbon dioxide equivalent meaning one or more greenhouse gases with a global warming potential equivalent to carbon dioxide.</text>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent4" number="4">
                                         <text>For the purposes of this Section, the term "Emissions Level" shall mean an Emissions Level referred to in <ref type="internal" target="nbc.divB.part10.sect3.subsect1.art3.table1" display-type="long"/>.</text>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect3.subsect1.art2.sent5" number="5">
-                                        <text>For the purposes of this Section, the term "measure only" shall mean that the GHGI and the total greenhouse gases are calculated, as applicable, and the values reported in accordance with Subsection 2.2.8. of Division C.</text>
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9811 Punctuation 49ce275ab6 -->
+                                        <text>For the purposes of this Section, the term “measure only” shall mean that the GHGI and the total greenhouse gases are calculated, as applicable, and the values reported in accordance with Subsection 2.2.8. of Division C.</text>
                                     </sentence>
                                 </article>
                                 <article xml:id="nbc.divB.part10.sect3.subsect1.art3" number="3">

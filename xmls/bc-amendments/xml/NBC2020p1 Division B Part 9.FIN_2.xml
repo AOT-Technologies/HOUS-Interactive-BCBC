@@ -49,7 +49,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art2.sent9" number="9">
-                        <text>For the purposes of this Section, the term "log homes" shall mean homes with a type of construction whereby the exterior vertical opaque walls primarily consist of structural log members.</text>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9746 Punctuation 739769752d -->
+                        <text>For the purposes of this Section, the term “log homes” shall mean homes with a type of construction whereby the exterior vertical opaque walls primarily consist of structural log members.</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -139,7 +140,9 @@
                         </clause>
                     </sentence>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent8" number="8">
-                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent7" display-type="short"/>, Tables 9.37.2.6.-C, 9.37.2.7.-D, and 9.37.2.8.-C do not apply to log homes.</text>
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3014 Incorrect Content 431304d007 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3015 Incorrect Content d7d24266e9 -->
+                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent7" display-type="short"/>, Tables 9.36.2.6.-C, 9.36.2.7.-D, and 9.36.2.8.-C do not apply to log homes.</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -163,7 +166,8 @@
                             <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table2" display-type="long"/>, where the ventilation system includes heat-recovery equipment conforming to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art9" display-type="long"/>, or</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art6.sent1.clause3" letter="c">
-                            <text>Table 9.37.2.6.-C, where the ventilation or space conditioning system contain either:</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6571 Incorrect Content eee3ccddac -->
+                            <text>Table 9.36.2.6.-C, where the ventilation or space conditioning system contain either:</text>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect2.art6.sent1.clause3.subclause1" number="1">
                                 <text>a heat-recovery ventilator conforming to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art9" display-type="long"/>, or</text>
                             </subclause>
@@ -1065,10 +1069,16 @@
                             <text>Except as permitted by <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art3.sent7" display-type="short"/>, the annual energy consumption of the proposed house in comparison to the house energy target of the reference house shall demonstrate a percent improvement in accordance with Table 9.37.6.3.-G. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote274" vendor-target="en001765" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent3" number="3">
-                            <text>Except for Tables 9.37.2.6.-C, 9.37.2.7.-D, and 9.37.2.8.-C, in establishing the house energy target, <ref type="term" target="bldng">building</ref> components, systems and assemblies shall be accounted for in accordance with the prescriptive requirements of Subsections 9.37.2. to 9.37.4. for the climate zone under consideration.</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3197 Incorrect Content ec834ee8fc -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3198 Incorrect Content 84de878e54 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3199 Incorrect Content 18c1084fcd -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3200 Incorrect Content 1ed785b518 -->
+                            <text>Except for Tables 9.36.2.6.-C, 9.36.2.7.-D, and 9.36.2.8.-C, in establishing the house energy target, <ref type="term" target="bldng">building</ref> components, systems and assemblies shall be accounted for in accordance with the prescriptive requirements of Subsections 9.36.2. to 9.36.4. for the climate zone under consideration.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent4" number="4">
-                            <text>In establishing the annual energy consumption, <ref type="term" target="bldng">building</ref> components, systems and assemblies that are addressed in the scope of the prescriptive requirements of Subsections 9.37.2. to 9.37.4. shall be accounted for for the climate zone under consideration.</text>
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3201 Incorrect Content 0861a40d04 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3202 Incorrect Content 06f04e80ca -->
+                            <text>In establishing the annual energy consumption, <ref type="term" target="bldng">building</ref> components, systems and assemblies that are addressed in the scope of the prescriptive requirements of Subsections 9.36.2. to 9.36.4. shall be accounted for for the climate zone under consideration.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent5" number="5">
                             <text>Where the construction techniques or <ref type="term" target="bldng">building</ref> components, systems or assemblies used are more energy-efficient than those prescribed by the prescriptive requirements, the performance compliance calculations are permitted to take this increased performance level into account in the determination of the annual energy consumption, provided it can be quantified and is not dependent on occupant interaction.</text>
@@ -1293,7 +1303,8 @@
                                 </clause>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art2.sent4" number="4">
-                                <text>For the purpose of this Subsection, the term "Step" shall mean a Step referred to in Tables 9.36.6.3.-A to 9.36.6.3.-H.</text>
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9757 Punctuation 50b01f2f1c -->
+                                <text>For the purpose of this Subsection, the term “Step” shall mean a Step referred to in Tables 9.36.6.3.-A to 9.36.6.3.-H.</text>
                             </sentence>
                         </article>
                         <!-- Article 9.36.6.3 Compliance Requirements -->
@@ -1302,10 +1313,12 @@
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent1" number="1">
                                 <text><ref type="term" target="bldng">Buildings</ref> conforming to the requirements of any of Steps 3 to 5 shall be designed and constructed to conform to the applicable energy performance requirements in</text>
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent1.clause1" letter="a">
-                                    <text>Tables 9.36.6.3.-A to 9.36.6.3.-F and Table 9.36.6.3.-H,</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3224 Punctuation ce29ebe64f -->
+                                    <text>Tables 9.36.6.3.-A to 9.36.6.3.-F and Table 9.36.6.3.-H.,</text>
                                 </clause>
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent1.clause2" letter="b">
-                                    <text>Table 9.36.6.3.-G, or</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3225 Punctuation 99e6eecf76 -->
+                                    <text>Table 9.36.6.3.-G., or</text>
                                 </clause>
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent1.clause3" letter="c">
                                     <text>a combination thereof.</text>
@@ -1467,7 +1480,8 @@
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.row1"><entry>1</entry><entry>Reserved</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.row2"><entry>2</entry><entry>Reserved</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.row3"><entry>3</entry><entry>AL-1</entry><entry>The applicable mechanical energy use intensity requirements in Table 9.36.6.3.-H</entry><entry>Thermal energy demand intensity ≤ 90 kWh/(m²·year), or thermal energy demand intensity not exceeding the value calculated in accordance with Sentence (4)</entry></row>
-                                        <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.row4"><entry>4</entry><entry>AL-3</entry><entry>The applicable mechanical energy use intensity requirements in Table 9.36.6.3.-H</entry><entry>Thermal energy demand intensity ≤ 70 kWh/(m²·year), or thermal energy demand intensity not exceeding the value calculated in accordance with Sentence (4)</entry></row>
+                                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3292 Incorrect Content 5845c1af9f -->
+                                        <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.row4"><entry>4</entry><entry>AL-3</entry><entry>The applicable mechanical energy use intensity requirements in Table 9.36.6.3.-H</entry><entry>Thermal energy demand intensity ≤ 65 kWh/(m²•year), or thermal energy demand intensity not exceeding the value calculated in accordance with Sentence (4)</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.row5"><entry>5</entry><entry>AL-4</entry><entry>The applicable mechanical energy use intensity requirements in Table 9.36.6.3.-H</entry><entry>Thermal energy demand intensity ≤ 50 kWh/(m²·year), or thermal energy demand intensity not exceeding the value calculated in accordance with Sentence (4)</entry></row>
                                     </tbody>
                                 </tgroup>
@@ -1724,10 +1738,12 @@
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent5" number="5">
                                 <text>The energy performance of <ref type="term" target="bldng">buildings</ref> and houses, when calculated in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art5" display-type="long"/>, shall conform to the target energy performance based on the total volume of <ref type="term" target="cnd-sp">conditioned space</ref> within the <ref type="term" target="bldng">building</ref> or house for the energy performance metrics indicated in Table 9.36.6.3.-G such that</text>
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent5.clause1" letter="a">
-                                    <text>the target "percent heat loss reduction" is met or exceeded, and</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9758 Punctuation 5231c59805 -->
+                                    <text>the target “percent heat loss reduction” is met or exceeded, and</text>
                                 </clause>
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent5.clause2" letter="b">
-                                    <text>the target "percent improvement" is met or exceeded. (See Note A-9.36.6.3.(5)(b).)</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9759 Punctuation d4d4199bb1 -->
+                                    <text>the target “percent improvement” is met or exceeded. (See Note A-9.36.6.3.(5)(b).)</text>
                                 </clause>
                             </sentence>
                         </article>
@@ -2039,22 +2055,31 @@
                                     <text>(See Note A-9.36.6.2.(2)).</text>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent2" number="2">
-                                    <text>For the purposes of this Section, the term "greenhouse gas", expressed with the abbreviation "GHG", shall have the same meaning as defined in the Climate Change Accountability Act.</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9760 Punctuation 19c7608612 -->
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9761 Punctuation 5a27ad1df6 -->
+                                    <text>For the purposes of this Section, the term “greenhouse gas”, expressed with the abbreviation “GHG”, shall have the same meaning as defined in the Climate Change Accountability Act.</text>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent3" number="3">
-                                    <text>For the purposes of this Section, the term "greenhouse gas intensity", expressed with the abbreviation "GHGI", shall mean the total greenhouse gas emissions, expressed as kgCO<sub>2</sub>e per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> per year, associated with the energy used by the building's systems.</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9762 Punctuation b3a2f6d75d -->
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9763 Punctuation 3458e4ca23 -->
+                                    <text>For the purposes of this Section, the term “greenhouse gas intensity”, expressed with the abbreviation “GHGI”, shall mean the total greenhouse gas emissions, expressed as kgCO<sub>2</sub>e per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> per year, associated with the energy used by the building's systems.</text>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent4" number="4">
-                                    <text>For the purposes of this Section, the symbol "CO<sub>2</sub>e" shall mean carbon dioxide or carbon dioxide equivalent, with carbon dioxide equivalent meaning one or more greenhouse gases with a global warming potential equivalent to carbon dioxide.</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9764 Punctuation a518004a72 -->
+                                    <text>For the purposes of this Section, the symbol “CO<sub>2</sub>e” shall mean carbon dioxide or carbon dioxide equivalent, with carbon dioxide equivalent meaning one or more greenhouse gases with a global warming potential equivalent to carbon dioxide.</text>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent5" number="5">
-                                    <text>For the purposes of this Section, the term "Emissions Level" shall mean an Emissions Level referred to in Table 9.37.1.3.</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9765 Punctuation 38b570466d -->
+                                    <text>For the purposes of this Section, the term “Emissions Level” shall mean an Emissions Level referred to in Table 9.37.1.3.</text>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent6" number="6">
-                                    <text>For the purposes of this Section, the term "total greenhouse gases" shall mean the total greenhouse gas emissions, expressed as kgCO<sub>2</sub>e/year, associated with the energy used by the <ref type="term" target="bldng">building's</ref> systems.</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9766 Punctuation 44c13c0659 -->
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10049 Punctuation d617254f84 -->
+                                    <text>For the purposes of this Section, the term “total greenhouse gases” shall mean the total greenhouse gas emissions, expressed as kgCO<sub>2</sub>e/year, associated with the energy used by the <ref type="term" target="bldng">building’s</ref> systems.</text>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent7" number="7">
-                                    <text>For the purposes of this Section, the term "measure only" shall mean that the GHGI and the total greenhouse gases are calculated, as applicable, and the values reported in accordance with Subsection 2.2.8. of Division C.</text>
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9767 Punctuation 8493ce13ce -->
+                                    <text>For the purposes of this Section, the term “measure only” shall mean that the GHGI and the total greenhouse gases are calculated, as applicable, and the values reported in accordance with Subsection 2.2.8. of Division C.</text>
                                 </sentence>
                             </article>
                             
@@ -2271,6 +2296,95 @@
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->
         
+        <amendment id="bc-qa-5aff5f80e7" sequence="739" description="Issue 6578 Incorrect Content at B.9.36.2.10.(8)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8"
+                                                   number="8"
+                                                   vendor-id="es006921">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6578 Incorrect Content 5aff5f80e7 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6579 Incorrect Content 30911c81a2 -->
+                        <text>The joints between the <ref type="term" target="fndtn">foundation</ref> wall and the sill plate, between the sill plate and <ref type="term" target="rm-jst">rim joist</ref>, between the <ref type="term" target="rm-jst">rim joist</ref> and the subfloor material, and between the subfloor material and the bottom plate of the wall above shall be constructed
+                    airtight by </text>
+                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause1"
+                                                    letter="a"
+                                                    vendor-id="es006921a">
+                                               <text>where the component is designed to provide a seal against air
+                    leakage, by sealing the component to the air barrier material (see <ref type="internal"
+                                                       target="nbc.divBV2.part9.appendix.appnote246"
+                                                       display-type="short"/>), or</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause2"
+                                                    letter="b"
+                                                    vendor-id="es006921b">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3096 Incorrect Content b9b8c4f7c0 -->
+                                               <text>covering the structural components with an air barrier material
+                    and sealing it to the adjacent air barrier material.</text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-6354ee7806" sequence="740" description="Issue 6580 Incorrect Content at B.9.36.2.10.(11)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent11"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11"
+                                                   number="11"
+                                                   vendor-id="es006924">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6580 Incorrect Content 6354ee7806 -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6581 Incorrect Content 698e3d282a -->
+                        <text>Interior walls that meet exterior walls or ceilings whose plane of airtightness is on the interior of the <ref type="term" target="bldng">building</ref> envelope and knee walls that separate <ref type="term" target="cnd-sp">conditioned space</ref> from unconditioned space shall be constructed airtight by</text>
+                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause1"
+                                                    letter="a"
+                                                    vendor-id="es006924a">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3103 Incorrect Content 125aa7275b -->
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3104 Incorrect Content ebde05e7df -->
+                                               <text>sealing all junctions between the structural components,</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause2"
+                                                    letter="b"
+                                                    vendor-id="es006924b">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3105 Incorrect Content e65a0f9f9e -->
+                                               <text>covering the structural components with an air barrier material
+                    and sealing it to the adjacent air barrier material, or</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause3" letter="c">
+                                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3106 Missing Content e96cf989a7 -->
+                                                <text>maintaining the continuity of the <ref type="term" target="r-brrr">air barrier system</ref> above or through the interior wall or below or through the knee wall, as applicable.</text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-4fce8c02cf" sequence="830" description="Issue 3115 Incorrect Content at B.9.36.2.10.(16)(a)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"
+                                                    letter="a"
+                                                    vendor-id="es006929a">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3115 Incorrect Content 4fce8c02cf -->
+                        <text>sealing all junctions between the structural components, or</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8842c18b2e" sequence="831" description="Issue 3116 Incorrect Content at B.9.36.2.10.(16)(b)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"
+                                                    letter="b"
+                                                    vendor-id="es006929b">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3116 Incorrect Content 8842c18b2e -->
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3117 Incorrect Content 3b35855202 -->
+                        <text>covering the structural components with an air barrier material and sealing it to the adjacent air barrier material.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
