@@ -34,7 +34,8 @@
                 <new-content source="bc">
                     <!-- Row 1: Article title row for 9.36.6.3 Compliance Requirements -->
                     <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925a">
-                        <entry>
+                        <!-- CLAUDE-AUTOFIX CF-07283 | issue 4388 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
                             <ref type="internal"
                                  target="nbc.divBV2.part9.sect36.subsect6.art3"
                                  display-type="title"/>
@@ -51,7 +52,8 @@
                     </row>
                     <!-- Row 3: Article title row for 9.36.6.5 Energy Performance Improvement Compliance Calculations -->
                     <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925c">
-                        <entry>
+                        <!-- CLAUDE-AUTOFIX CF-07284 | issue 4389 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
                             <ref type="internal"
                                  target="nbc.divBV2.part9.sect36.subsect6.art5"
                                  display-type="title"/>
@@ -122,7 +124,8 @@
                     </row>
                     <!-- Row 1: Article title row for 9.36.7.3 Determination of Airtightness -->
                     <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925k">
-                        <entry>
+                        <!-- CLAUDE-AUTOFIX CF-07283 | issue 4388 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
                             <ref type="internal"
                                  target="nbc.divBV2.part9.sect36.subsect7.art3"
                                  display-type="title"/>
@@ -139,7 +142,8 @@
                     </row>
                     <!-- Row 1: Article title row for 9.36.7.4 Determination of Airtightness Level -->
                     <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925m">
-                        <entry>
+                        <!-- CLAUDE-AUTOFIX CF-07283 | issue 4388 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
                             <ref type="internal"
                                  target="nbc.divBV2.part9.sect36.subsect7.art4"
                                  display-type="title"/>
