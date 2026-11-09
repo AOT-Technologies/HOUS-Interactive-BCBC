@@ -1616,7 +1616,8 @@
                         <xsl:when test="self::graphic">
                             <fn:map>
                                 <fn:string key="type">figure</fn:string>
-                                <xsl:if test="@alt">
+                                <!-- CLAUDE-AUTOFIX CL-007 CF-07500 | issue 4844 | The Part 9 span tables print no title above their drawings in the PDF: keep the description as alt text only. -->
+                                <xsl:if test="@alt and not(ancestor::table[starts-with(@xml:id, 'nbc.divBV2.part9.spectables1.')])">
                                     <fn:string key="title"><xsl:value-of select="@alt"/></fn:string>
                                 </xsl:if>
                                 <fn:map key="graphic">
