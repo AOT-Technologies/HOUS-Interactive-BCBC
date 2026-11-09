@@ -2308,7 +2308,9 @@
         </xsl:if>
         
         <!-- CLAUDE-AUTOFIX CL-008 CF-00314 | issue 6323 | Second reference of a range such as Sentences (2) to (4) prints no word, as in the PDF. -->
-        <xsl:variable name="is-range-end" as="xs:boolean" select="@type = 'internal' and @display-type = ('short', 'long') and not(@display-type = 'long' and contains(@target, '.sent')) and ((@pretext = 'to' and exists($prev-significant[self::ref[@type = 'internal'][@pretext = ('Sentences', 'Articles', 'Subsections', 'Sections', 'Clauses', 'Subclauses')]])) or (not(@pretext) and exists($prev-significant[self::text()][normalize-space(.) = 'to']/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]/preceding-sibling::node()[1][self::text()][matches(., '(Sentences|Articles|Subsections|Sections|Clauses|Subclauses)\s*$')])))"/>
+        <xsl:variable name="is-range-end" as="xs:boolean" select="@type = 'internal' and @display-type = ('short', 'long') and not(@display-type = 'long' and contains(@target, '.sent')) and not(contains(@target, '.clause')) and ((@pretext = 'to' and exists($prev-significant[self::ref[@type = 'internal'][@pretext = ('Sentences', 'Articles', 'Subsections', 'Sections', 'Clauses', 'Subclauses')]])) or (not(@pretext) and exists($prev-significant[self::text()][normalize-space(.) = 'to']/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]/preceding-sibling::node()[1][self::text()][matches(., '(Sentences|Articles|Subsections|Sections|Clauses|Subclauses)\s*$')])))"/>
+        <!-- CLAUDE-AUTOFIX CL-008 CF-09846 | issue 5078 | Article and Subsection range ends keep their final period, as in the PDF. -->
+        <xsl:variable name="range-end-label" select="if ($is-range-end and not(contains(@target, '.sent')) and normalize-space(.) = '') then string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.') else ''"/>
         <xsl:text>[REF:</xsl:text>
         <xsl:value-of select="@type"/>
         <xsl:text>:</xsl:text>
@@ -2316,6 +2318,11 @@
         <xsl:if test="@display-type">
             <xsl:text>:</xsl:text>
             <xsl:value-of select="if ($is-range-end) then (if (@display-type = 'short') then 'shortNum' else 'number') else @display-type"/>
+        </xsl:if>
+        <xsl:if test="$range-end-label != ''">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="$range-end-label"/>
+            <xsl:text>.</xsl:text>
         </xsl:if>
         <!-- Include display text if present, preserving trailing space -->
         <xsl:variable name="has-trailing-space" select="matches(., '\s$')"/>
