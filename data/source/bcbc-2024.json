@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T01:19:44.527+05:30",
+  "generated_timestamp" : "2026-11-11T01:28:13.908+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -139629,7 +139629,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Vertical Stiffness Irregularity<\/bold>For concrete and masonry shear walls, vertical stiffness irregularity shall be considered to exist where the lateral stiffness of the SFRS in any [REF:term:tr:storey] is less than 70% of the stiffness in an adjacent [REF:term:tr:storey] , or less than 80% of the average stiffness in the three [REF:term:tr:storeys] above or below. For all other types of SFRS, vertical stiffness irregularity shall be considered to exist where the inter[REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter[REF:term:tr:storey] height, h_{s}, of any [REF:term:tr:storey] is greater than 130% of that of an adjacent [REF:term:tr:storey] ." } ],
+                       "value" : "<bold>Vertical Stiffness Irregularity<\/bold>\nFor concrete and masonry shear walls, vertical stiffness irregularity shall be considered to exist where the lateral stiffness of the SFRS in any [REF:term:tr:storey] is less than 70% of the stiffness in an adjacent [REF:term:tr:storey] , or less than 80% of the average stiffness in the three [REF:term:tr:storeys] above or below. For all other types of SFRS, vertical stiffness irregularity shall be considered to exist where the inter[REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter[REF:term:tr:storey] height, h_{s}, of any [REF:term:tr:storey] is greater than 130% of that of an adjacent [REF:term:tr:storey] ." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139650,7 +139650,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Weight (mass) Irregularity<\/bold>Weight irregularity shall be considered to exist where the weight, W_{i}, of any [REF:term:tr:storey] is more than 150% of the weight of an adjacent [REF:term:tr:storey] . A roof that is lighter than the floor below need not be considered." } ],
+                       "value" : "<bold>Weight (mass) Irregularity<\/bold>\nWeight irregularity shall be considered to exist where the weight, W_{i}, of any [REF:term:tr:storey] is more than 150% of the weight of an adjacent [REF:term:tr:storey] . A roof that is lighter than the floor below need not be considered." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139671,7 +139671,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Vertical Geometric Irregularity<\/bold>Vertical geometric irregularity shall be considered to exist where the horizontal dimension of the SFRS in any [REF:term:tr:storey] is more than 130% of that in an adjacent [REF:term:tr:storey] ." } ],
+                       "value" : "<bold>Vertical Geometric Irregularity<\/bold>\nVertical geometric irregularity shall be considered to exist where the horizontal dimension of the SFRS in any [REF:term:tr:storey] is more than 130% of that in an adjacent [REF:term:tr:storey] ." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139692,7 +139692,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>In-Plane Discontinuity in Vertical Lateral-Force-Resisting Element<\/bold>Except for braced frames and moment-resisting frames, an in-plane discontinuity shall be considered to exist where there is an offset of a lateral-force-resisting element of the SFRS or a reduction in lateral stiffness of the resisting element in the [REF:term:tr:storey] below." } ],
+                       "value" : "<bold>In-Plane Discontinuity in Vertical Lateral-Force-Resisting Element<\/bold>\nExcept for braced frames and moment-resisting frames, an in-plane discontinuity shall be considered to exist where there is an offset of a lateral-force-resisting element of the SFRS or a reduction in lateral stiffness of the resisting element in the [REF:term:tr:storey] below." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139713,7 +139713,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Out-of-Plane Offsets<\/bold>Discontinuities in a lateral force path, such as out-of-plane offsets of the vertical elements of the SFRS." } ],
+                       "value" : "<bold>Out-of-Plane Offsets<\/bold>\nDiscontinuities in a lateral force path, such as out-of-plane offsets of the vertical elements of the SFRS." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139734,7 +139734,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Discontinuity in Capacity – Weak Storey<\/bold>A weak [REF:term:tr:storey] is one in which the [REF:term:tr:storey] shear strength is less than that in the [REF:term:tr:storey] above. The [REF:term:tr:storey] shear strength is the total strength of all seismic-resisting elements of the SFRS sharing the [REF:term:tr:storey] shear for the direction under consideration." } ],
+                       "value" : "<bold>Discontinuity in Capacity – Weak Storey<\/bold>\nA weak [REF:term:tr:storey] is one in which the [REF:term:tr:storey] shear strength is less than that in the [REF:term:tr:storey] above. The [REF:term:tr:storey] shear strength is the total strength of all seismic-resisting elements of the SFRS sharing the [REF:term:tr:storey] shear for the direction under consideration." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139755,7 +139755,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Torsional Sensitivity (to be considered when diaphragms are not flexible)<\/bold>Torsional sensitivity shall be considered to exist when the ratio B calculated according to [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent10:long] exceeds 1.7." } ],
+                       "value" : "<bold>Torsional Sensitivity (to be considered when diaphragms are not flexible)<\/bold>\nTorsional sensitivity shall be considered to exist when the ratio B calculated according to [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent10:long] exceeds 1.7." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139776,7 +139776,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Non-orthogonal Systems<\/bold>A non-orthogonal system irregularity shall be considered to exist when the SFRS is not oriented along a set of orthogonal axes." } ],
+                       "value" : "<bold>Non-orthogonal Systems<\/bold>\nA non-orthogonal system irregularity shall be considered to exist when the SFRS is not oriented along a set of orthogonal axes." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -139797,7 +139797,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Gravity-Induced Lateral Demand Irregularity<\/bold>Gravity-induced lateral demand irregularity on the SFRS shall be considered to exist where the ratio α calculated in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art10.sent7:long] exceeds 0.1 for an SFRS with self-centering characteristics and 0.03 for other systems." } ],
+                       "value" : "<bold>Gravity-Induced Lateral Demand Irregularity<\/bold>\nGravity-induced lateral demand irregularity on the SFRS shall be considered to exist where the ratio α calculated in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art10.sent7:long] exceeds 0.1 for an SFRS with self-centering characteristics and 0.03 for other systems." } ],
                      "align" : "left",
                      "valign" : "middle" },
                     
@@ -139820,7 +139820,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Sloped Column Irregularity<\/bold>Sloped column irregularity shall be considered to exist where a vertical member that is inclined more than 2° from the vertical supports a portion of the weight of the [REF:term:bldng:building] in axial compression." } ],
+                       "value" : "<bold>Sloped Column Irregularity<\/bold>\nSloped column irregularity shall be considered to exist where a vertical member that is inclined more than 2° from the vertical supports a portion of the weight of the [REF:term:bldng:building] in axial compression." } ],
                      "align" : "left",
                      "valign" : "middle" },
                     
