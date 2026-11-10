@@ -286,7 +286,8 @@
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1152 Incorrect Content 19a6b8b360 -->
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8664 Punctuation c32145a938 -->
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8665 Punctuation 349034775b -->
-                                <text>for each <ref type="term" target="brrr-fr">accessible</ref> application listed independent of other <ref type="term" target="brrr-fr">accessible</ref> applications, the applicable provisions of <ref type="standard" target="csab651">CSA B651</ref>, “Accessible design for the built environment,” listed in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-01499 | issue 8146 | The title is already typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                <text>for each <ref type="term" target="brrr-fr">accessible</ref> application listed independent of other <ref type="term" target="brrr-fr">accessible</ref> applications, the applicable provisions of <ref type="standard" target="csab651" ref-style="notitle">CSA B651</ref>, “Accessible design for the built environment,” listed in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/>.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art1.sent2" number="2">
