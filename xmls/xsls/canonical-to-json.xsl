@@ -2467,6 +2467,18 @@
                 <xsl:value-of select="if (@display-type = 'long') then concat(if ($tf-kind = 'table') then 'Table ' else 'Figure ', $tf-number) else $tf-number"/>
             </xsl:if>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-027 CF-09419 | issue 5561 | References to an Appendix Sentence print as in the PDF: Sentence (5), or Sentence D-1.6.1.(5) in long form, without the extra period. -->
+        <xsl:if test="@type = 'internal' and @display-type = ('short', 'long') and normalize-space(.) = '' and not($is-range-end) and matches(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+)?(\.article\d+)?\.para\d+$')">
+            <xsl:variable name="ap-same" select="'^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+)?(\.article\d+)?\.para\d+$'"/>
+            <xsl:variable name="ap-bare" as="xs:boolean" select="exists($prev-significant[self::text()][matches(., 'Sentences?\s*$')]) or normalize-space(@pretext) = ('Sentence', 'Sentences') or exists($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, $ap-same)]]) or (normalize-space(@pretext) = ('and', 'or', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, $ap-same)]]))"/>
+            <xsl:variable name="ap-para" select="replace(@target, '^.*\.para(\d+)$', '$1')"/>
+            <xsl:variable name="ap-number" select="concat(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix([A-Z])\..*$', '$1'), '-', string-join(for $t in tokenize(replace(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.', ''), '\.para\d+$', ''), '\.') return replace($t, '^\D+', ''), '.'), '.(', $ap-para, ')')"/>
+            <xsl:text>:</xsl:text>
+            <xsl:if test="not($ap-bare)">
+                <xsl:text>Sentence </xsl:text>
+            </xsl:if>
+            <xsl:value-of select="if (@display-type = 'short') then concat('(', $ap-para, ')') else $ap-number"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-014 CF-09365 | issue 10304 | Appendix D references print as in the PDF: Article and Subsection numbers end with a period, a Section reference does not. -->
         <xsl:if test="@type = 'internal' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+(\.article\d+)?)?$') and not($next-significant[self::text() and matches(., '^\s*\.')])">
             <xsl:variable name="appx-number" select="concat(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix([A-Z])\..*$', '$1'), '-', string-join(for $t in tokenize(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.', ''), '\.') return replace($t, '^\D+', ''), '.'))"/>
