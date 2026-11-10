@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-10T17:06:50.787+05:30",
+  "generated_timestamp" : "2026-11-10T17:22:40.067+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -8752,7 +8752,7 @@
                   [ 
                    { "type" : "original",
                     "effective_date" : "2024-03-08",
-                    "text" : "detached houses, semi-detached houses, houses with a [REF:term:scnd-t:secondary suite] , duplexes, triplexes, townhouses, row houses and boarding houses (see [REF:internal:nbc.divA.part1.appendix.appnote7:long] , Secondary Suite)," },
+                    "text" : "detached houses, semi-detached houses, houses with a [REF:term:scnd-t:secondary suite] , duplexes, triplexes, townhouses, row houses and boarding houses (see [REF:internal:nbc.divA.part1.appendix.appnote7:long:Note A-1.4.1.2.(1)] , Secondary Suite)," },
                    
                    { "type" : "revision",
                     "revision_type" : "amendment",
@@ -27482,7 +27482,7 @@
               "type" : "article",
               "number" : 1,
               "title" : "Noncombustible Materials",
-              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote5:long] .)",
+              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote5:long:Note A-3.1.4.1.(1)] .)",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect1.subsect5.art1.sent1",
@@ -27847,7 +27847,7 @@
                    { "id" : "nbc.divB.part3.sect1.subsect5.art6.sent1.clause2.subclause2",
                     "type" : "subclause",
                     "number" : 2,
-                    "text" : "is protected by masonry or concrete cladding not less than 25 mm thick (see [REF:internal:nbc.divB.part3.appendix.appnote14:long] )." } ] } ] },
+                    "text" : "is protected by masonry or concrete cladding not less than 25 mm thick (see [REF:internal:nbc.divB.part3.appendix.appnote14:long:Note A-3.1.5.5.(1)(b)] )." } ] } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect5.art6.sent2",
                 "type" : "sentence",
@@ -28097,7 +28097,7 @@
               "type" : "article",
               "number" : 14,
               "title" : "Combustible Insulation",
-              "see_also" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote6:long] and [REF:internal:nbc.divB.part3.appendix.appnote7:long] .)",
+              "see_also" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote6:long:A-3.1.4.2.] and [REF:internal:nbc.divB.part3.appendix.appnote7:long:A-3.1.4.2.(1)] .)",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect1.subsect5.art14.sent1",
@@ -28234,7 +28234,7 @@
               "type" : "article",
               "number" : 15,
               "title" : "Foamed Plastic Insulation",
-              "see_also" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote6:long] and [REF:internal:nbc.divB.part3.appendix.appnote7:long] .)",
+              "see_also" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote6:long:A-3.1.4.2.] and [REF:internal:nbc.divB.part3.appendix.appnote7:long:A-3.1.4.2.(1)] .)",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect1.subsect5.art15.sent1",
@@ -28297,7 +28297,7 @@
                  { "id" : "nbc.divB.part3.sect1.subsect5.art15.sent3.clause4",
                   "type" : "clause",
                   "letter" : "d",
-                  "text" : "any thermal barrier that, when tested in conformance with CAN\/ULC-S101, “Standard Method of Fire Endurance Tests of Building Construction and Materials,” does not develop an average temperature rise more than 140°C or a maximum temperature rise more than 180°C at any point on its unexposed face within 10 min (see [REF:internal:nbc.divB.part3.appendix.appnote17:long] ) (see also [REF:internal:nbc.divB.part3.sect2.subsect3.art7:long] )." } ] },
+                  "text" : "any thermal barrier that, when tested in conformance with CAN\/ULC-S101, “Standard Method of Fire Endurance Tests of Building Construction and Materials,” does not develop an average temperature rise more than 140°C or a maximum temperature rise more than 180°C at any point on its unexposed face within 10 min (see [REF:internal:nbc.divB.part3.appendix.appnote17:long:Note A-3.1.5.14.(5)(d)] ) (see also [REF:internal:nbc.divB.part3.sect2.subsect3.art7:long] )." } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect5.art15.sent4",
                 "type" : "sentence",
@@ -28560,7 +28560,7 @@
                    { "id" : "nbc.divB.part3.sect1.subsect5.art21.sent1.clause2.subclause1",
                     "type" : "subclause",
                     "number" : 1,
-                    "text" : "totally enclosed [REF:term:ncmbtbl:noncombustible] raceways (see [REF:internal:nbc.divB.part3.appendix.appnote10:long] )," },
+                    "text" : "totally enclosed [REF:term:ncmbtbl:noncombustible] raceways (see [REF:internal:nbc.divB.part3.appendix.appnote10:long:Note A-3.1.4.3.(1)(b)(i)] )," },
                    
                    { "id" : "nbc.divB.part3.sect1.subsect5.art21.sent1.clause2.subclause2",
                     "type" : "subclause",
@@ -30108,7 +30108,7 @@
                  { "id" : "nbc.divB.part3.sect1.subsect6.art9.sent3",
                   "type" : "sentence",
                   "number" : 3,
-                  "text" : "The permitted area of [REF:term:cmbtbl:combustible] cladding in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] shall not exceed 5% of the cladding on each exterior wall of each [REF:term:tr:storey] where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the [REF:term:bldng:building] exceeds 10 min in 10% or more of all fire department calls to the [REF:term:bldng:building] . (See [REF:internal:nbc.divB.part3.appendix.appnote58:long] .)" },
+                  "text" : "The permitted area of [REF:term:cmbtbl:combustible] cladding in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] shall not exceed 5% of the cladding on each exterior wall of each [REF:term:tr:storey] where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the [REF:term:bldng:building] exceeds 10 min in 10% or more of all fire department calls to the [REF:term:bldng:building] . (See [REF:internal:nbc.divB.part3.appendix.appnote58:long:Note A-3.2.3.1.(8)] .)" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art9.sent4",
                   "type" : "sentence",
@@ -30519,12 +30519,12 @@
                 "number" : 3,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent8:medium] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long] .)",
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent8:medium] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long:Note A-3.1.11.3.(3)] .)",
                 "revisions" : 
                 [ 
                  { "type" : "original",
                   "effective_date" : "2024-03-08",
-                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long] .)" },
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long:Note A-3.1.11.3.(3)] .)" },
                  
                  { "type" : "revision",
                   "revision_type" : "amendment",
@@ -30532,7 +30532,7 @@
                   "sequence" : 1,
                   "effective_date" : "2024-04-05",
                   "status" : "current",
-                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent8:medium] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long] .)",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent8:medium] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long:Note A-3.1.11.3.(3)] .)",
                   "change_summary" : "Added references to Sentences 3.1.6.4.(7) and (8)",
                   "note" : "Ministerial Order BA 2024 01" } ] },
                
@@ -30604,7 +30604,7 @@
                { "id" : "nbc.divB.part3.sect1.subsect6.art17.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "The minimum dimensions stated in [REF:internal:nbc.divB.part3.sect1.subsect6.art3.table1:long] need not apply at cutouts in vertical or horizontal structural mass timber elements where outlet boxes are installed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect9.art3:long] (See also [REF:internal:nbc.divB.part3.appendix.appnote37:long] .)" },
+                "text" : "The minimum dimensions stated in [REF:internal:nbc.divB.part3.sect1.subsect6.art3.table1:long] need not apply at cutouts in vertical or horizontal structural mass timber elements where outlet boxes are installed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect9.art3:long] (See also [REF:internal:nbc.divB.part3.appendix.appnote37:long:Note A-3.1.9.2.(1)] .)" },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art17.sent2",
                 "type" : "sentence",
@@ -31028,12 +31028,12 @@
                { "id" : "nbc.divB.part3.sect1.subsect8.art5.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except where [REF:term:fr-dmpr:fire dampers] , window assemblies and glass block are used as [REF:term:clr:closures] , [REF:term:clr:closures] of the same [REF:term:fr-prtct:fire-protection rating] installed on opposite sides of the same opening are deemed to have a [REF:term:fr-prtct:fire-protection rating] equal to the sum of the [REF:term:fr-prtct:fire-protection ratings] of the [REF:term:clr:closures] . (See [REF:internal:nbc.divB.part3.appendix.appnote28:long] .)" },
+                "text" : "Except where [REF:term:fr-dmpr:fire dampers] , window assemblies and glass block are used as [REF:term:clr:closures] , [REF:term:clr:closures] of the same [REF:term:fr-prtct:fire-protection rating] installed on opposite sides of the same opening are deemed to have a [REF:term:fr-prtct:fire-protection rating] equal to the sum of the [REF:term:fr-prtct:fire-protection ratings] of the [REF:term:clr:closures] . (See [REF:internal:nbc.divB.part3.appendix.appnote28:long:Note A-3.1.8.1.(2)] .)" },
                
                { "id" : "nbc.divB.part3.sect1.subsect8.art5.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Except as otherwise specified in this Part, every door, [REF:term:fr-dmpr:fire damper] , window assembly or glass block used as a [REF:term:clr:closure] in a required [REF:term:fr-prtn:fire separation] shall be installed in conformance with NFPA 80, “Standard for Fire Doors and Other Opening Protectives.” (See [REF:internal:nbc.divB.part3.appendix.appnote28:long] .)" },
+                "text" : "Except as otherwise specified in this Part, every door, [REF:term:fr-dmpr:fire damper] , window assembly or glass block used as a [REF:term:clr:closure] in a required [REF:term:fr-prtn:fire separation] shall be installed in conformance with NFPA 80, “Standard for Fire Doors and Other Opening Protectives.” (See [REF:internal:nbc.divB.part3.appendix.appnote28:long:Note A-3.1.8.1.(2)] .)" },
                
                { "id" : "nbc.divB.part3.sect1.subsect8.art5.sent3",
                 "type" : "sentence",
@@ -31372,7 +31372,7 @@
                { "id" : "nbc.divB.part3.sect1.subsect8.art11.sent5",
                 "type" : "sentence",
                 "number" : 5,
-                "text" : "A tightly fitted access door shall be installed for each smoke damper and combination smoke\/[REF:term:fr-dmpr:fire damper] to provide access for their inspection and the resetting of the release device. (See [REF:internal:nbc.divB.part3.appendix.appnote32:long] .)" } ] },
+                "text" : "A tightly fitted access door shall be installed for each smoke damper and combination smoke\/[REF:term:fr-dmpr:fire damper] to provide access for their inspection and the resetting of the release device. (See [REF:internal:nbc.divB.part3.appendix.appnote32:long:Note A-3.1.8.10.(5)] .)" } ] },
              
              { "id" : "nbc.divB.part3.sect1.subsect8.art12",
               "type" : "article",
@@ -69609,7 +69609,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect3.art13.sent1.seealso",
-                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote62:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote62:long:Note A-3.2.3.14.(1)] .)" } ] },
                
                { "id" : "nbc.divB.part3.sect2.subsect3.art13.sent2",
                 "type" : "sentence",
@@ -71574,7 +71574,7 @@
             "type" : "subsection",
             "number" : 5,
             "title" : "Provisions for Firefighting",
-            "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote1:long] .)",
+            "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote1:long:Note A-3] .)",
             "articles" : 
             [ 
              { "id" : "nbc.divB.part3.sect2.subsect5.art1",
@@ -82472,13 +82472,13 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "The design, construction, installation and [REF:term:ltrtn:alteration] of every elevator, escalator and dumbwaiter shall conform to the Safety Standards Act and pursuant regulations. (See [REF:internal:nbc.divB.part3.appendix.appnote169:long] .)" },
+                "text" : "The design, construction, installation and [REF:term:ltrtn:alteration] of every elevator, escalator and dumbwaiter shall conform to the Safety Standards Act and pursuant regulations. (See [REF:internal:nbc.divB.part3.appendix.appnote169:long:Note A-3.5.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part3.sect5.subsect2.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "Before being placed in service, every elevator, escalator or dumbwaiter installation, including safety and control devices, shall be inspected and tested in accordance with the Safety Standards Act and pursuant regulations. (See [REF:internal:nbc.divB.part3.appendix.appnote169:long] .)" },
+                "text" : "Before being placed in service, every elevator, escalator or dumbwaiter installation, including safety and control devices, shall be inspected and tested in accordance with the Safety Standards Act and pursuant regulations. (See [REF:internal:nbc.divB.part3.appendix.appnote169:long:Note A-3.5.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part3.sect5.subsect2.art1.sent3",
                 "type" : "sentence",
@@ -85754,7 +85754,7 @@
                { "id" : "nbc.divB.part3.sect8.subsect2.art11.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Where a service counter is provided, at least one section of it shall comply with [REF:internal:nbc.divB.part3.sect8.subsect3:long] (See [REF:internal:nbc.divB.part3.appendix.appnote199:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote184:long] )" } ] },
+                "text" : "Where a service counter is provided, at least one section of it shall comply with [REF:internal:nbc.divB.part3.sect8.subsect3:long] (See [REF:internal:nbc.divB.part3.appendix.appnote199:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote184:long:Note A-3.8.2.3.] )" } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect2.art12",
               "type" : "article",
@@ -86290,7 +86290,7 @@
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "have a clear width not less than 1 000 mm (see [REF:internal:nbc.divB.part3.appendix.appnote155:long] )," },
+                  "text" : "have a clear width not less than 1 000 mm (see [REF:internal:nbc.divB.part3.appendix.appnote155:long:Note A-3.4.3.4.] )," },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art5.sent1.clause2",
                   "type" : "clause",
@@ -86620,7 +86620,7 @@
                { "id" : "nbc.divB.part3.sect8.subsect3.art6.sent17",
                 "type" : "sentence",
                 "number" : 17,
-                "text" : "Except for facilities for persons with cognitive disabilities such as dementia, doorways leading from a [REF:term:pblc-crr:public corridor] or a corridor used by the public that provide access to a public area or an [REF:term:xt:exit] shall be provided with a door or door frame that has a readily apparent visual contrast with adjacent wall surfaces. (See [REF:internal:nbc.divB.part3.appendix.appnote215:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote164:long] .)" } ] },
+                "text" : "Except for facilities for persons with cognitive disabilities such as dementia, doorways leading from a [REF:term:pblc-crr:public corridor] or a corridor used by the public that provide access to a public area or an [REF:term:xt:exit] shall be provided with a door or door frame that has a readily apparent visual contrast with adjacent wall surfaces. (See [REF:internal:nbc.divB.part3.appendix.appnote215:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote164:long:Note A-3.4.6.11.(4)] .)" } ] },
              
              { "id" : "nbc.divB.part3.sect8.subsect3.art7",
               "type" : "article",
@@ -87134,7 +87134,7 @@
                    { "id" : "nbc.divB.part3.sect8.subsect3.art13.sent1.clause2.subclause2",
                     "type" : "subclause",
                     "number" : 2,
-                    "text" : "if it is an outward swinging door that is not self-closing, has a horizontal, D-shaped, visually contrasting door pull not less than 140 mm long located on the inside so that its midpoint is not less than 200 mm and not more than 300 mm from the hinged side of the door and not less than 900 mm and not more than 1 100 mm above the floor (see [REF:internal:nbc.divB.part3.appendix.appnote222:long] )," } ] },
+                    "text" : "if it is an outward swinging door that is not self-closing, has a horizontal, D-shaped, visually contrasting door pull not less than 140 mm long located on the inside so that its midpoint is not less than 200 mm and not more than 300 mm from the hinged side of the door and not less than 900 mm and not more than 1 100 mm above the floor (see [REF:internal:nbc.divB.part3.appendix.appnote222:long:Note A-3.8.3.12.(1)(d)(vi)] )," } ] },
                  
                  { "id" : "nbc.divB.part3.sect8.subsect3.art13.sent1.clause3",
                   "type" : "clause",
@@ -89231,7 +89231,7 @@
                { "id" : "nbc.divB.part3.sect9.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part3.sect9.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long] .)" },
+                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part3.sect9.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long:Note A-1.1.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part3.sect9.subsect1.art1.table1",
                 "type" : "table",
@@ -120376,7 +120376,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote42.para1",
-             "content" : "Combustible construction referred to in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent1:long] includes all types of construction that do not comply with the requirements for noncombustible construction or encapsulated mass timber construction. All the elements within the concealed space can be combustible, unless required to be of noncombustible materials (e.g., certain categories of pipework and ducts), but the value of the flame-spread rating of the combustible materials determines the permitted extent of the concealed space between fire blocks. The materials to be considered include all construction materials regulated by this Code, including the framing and building services that are located in the concealed space. When designing fire blocking, consideration should be given to avoid restricting venting capabilities within concealed spaces. (See also [REF:internal:nbc.divB.part5.appendix.appnote32:long] )" } ] },
+             "content" : "Combustible construction referred to in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent1:long] includes all types of construction that do not comply with the requirements for noncombustible construction or encapsulated mass timber construction. All the elements within the concealed space can be combustible, unless required to be of noncombustible materials (e.g., certain categories of pipework and ducts), but the value of the flame-spread rating of the combustible materials determines the permitted extent of the concealed space between fire blocks. The materials to be considered include all construction materials regulated by this Code, including the framing and building services that are located in the concealed space. When designing fire blocking, consideration should be given to avoid restricting venting capabilities within concealed spaces. (See also [REF:internal:nbc.divB.part5.appendix.appnote32:long:Note A-5.6.2.1.] )" } ] },
           
           { "id" : "nbc.divB.part3.appendix.appnote43",
            "type" : "application_note",
@@ -120388,7 +120388,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote43.para1",
-             "content" : "To reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long] for roof venting.)" },
+             "content" : "To reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long:Note A-3.1.11.5.(1)] for roof venting.)" },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote43.para2",
@@ -120402,7 +120402,7 @@
              "paragraphs" : 
              [ 
               { "id" : "nbc.divB.part3.appendix.appnote43.para1",
-               "content" : "To reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long] for roof venting.)" },
+               "content" : "To reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long:Note A-3.1.11.5.(1)] for roof venting.)" },
               
               { "id" : "nbc.divB.part3.appendix.appnote43.para2",
                "content" : "A 5- or 6-storey building constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art51:long] and buildings constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:long:3.2.2.57.]  or [REF:internal:nbc.divB.part3.sect2.subsect2.art60:long] are required to be sprinklered in accordance with NFPA 13, “Standard for the Installation of Sprinkler Systems” (see [REF:internal:nbc.divB.part3.sect2.subsect5.art12:long] ). NFPA 13 generally requires sprinklering of any concealed spaces of combustible construction or where large amounts of combustibles are present. However, NFPA 13 allows combustible concealed spaces not to be sprinklered in certain cases, including where concealed spaces are filled almost entirely with noncombustible insulation, where spaces contain only materials with a low flame-spread rating, and where limited access or the size of the space makes it impractical to install sprinklers. For certain types of construction in combustible concealed spaces that are not sprinklered, NFPA 13 mandates fire blocking beyond the minimum specified in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long] ." } ] },
@@ -120418,7 +120418,7 @@
              "paragraphs" : 
              [ 
               { "id" : "nbc.divB.part3.appendix.appnote43.para1",
-               "content" : "To reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long] for roof venting.)" },
+               "content" : "To reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long:Note A-3.1.11.5.(1)] for roof venting.)" },
               
               { "id" : "nbc.divB.part3.appendix.appnote43.para2",
                "content" : "A 5- or 6-storey building constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art51:long] and buildings constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:long:3.2.2.57.] , [REF:internal:nbc.divB.part3.sect2.subsect2.art60:long:3.2.2.60.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] are required to be sprinklered in accordance with NFPA 13, “Standard for the Installation of Sprinkler Systems” (see [REF:internal:nbc.divB.part3.sect2.subsect5.art12:long] ). NFPA 13, “Standard for the Installation of Sprinkler Systems,” generally requires sprinklering of any concealed spaces of combustible construction or combustible contents in buildings equipped throughout with an automatic sprinkler system." } ],
@@ -135199,7 +135199,7 @@
               "type" : "article",
               "number" : 2,
               "title" : "Classification of Buildings",
-              "see_also" : "(See [REF:internal:nbc.divB.part4.appendix.appnote52:long] )",
+              "see_also" : "(See [REF:internal:nbc.divB.part4.appendix.appnote52:long:Note A-4.1.7.2.(2)] )",
               "content" : 
               [ 
                { "id" : "nbc.divB.part4.sect1.subsect7.art2.sent1",
@@ -138662,7 +138662,7 @@
                 [ 
                  { "id" : "nbc.divB.part4.sect1.subsect8.art4.table2.note1",
                   "vendor_id" : "et001034-1",
-                  "content" : "See [REF:internal:nbc.divB.part4.appendix.appnote69:long] ." },
+                  "content" : "See [REF:internal:nbc.divB.part4.appendix.appnote69:long:Note A-4.1.8.4.(2) and (3)] ." },
                  
                  { "id" : "nbc.divB.part4.sect1.subsect8.art4.table2.note2",
                   "vendor_id" : "et001034-2",
@@ -145293,7 +145293,7 @@
                { "id" : "nbc.divB.part4.sect1.subsect8.art11.sent12",
                 "type" : "sentence",
                 "number" : 12,
-                "text" : "Where the fundamental lateral period, T_{a}, is determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4:medium] and the [REF:term:bldng:building] is constructed with more than 4 [REF:term:tr:storeys] of continuous wood construction and has a timber SFRS consisting of shear walls with wood-based panels or of braced or moment-resisting frames as defined in [REF:internal:nbc.divB.part4.sect1.subsect8.art9.table1:long] , the specified lateral earthquake force, V, as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent2:short] shall be multiplied by 1.2 but need not exceed the value determined by using [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent2.clause3:medium] . (See [REF:internal:nbc.divB.part4.appendix.appnote78:long] .)" } ] },
+                "text" : "Where the fundamental lateral period, T_{a}, is determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4:medium] and the [REF:term:bldng:building] is constructed with more than 4 [REF:term:tr:storeys] of continuous wood construction and has a timber SFRS consisting of shear walls with wood-based panels or of braced or moment-resisting frames as defined in [REF:internal:nbc.divB.part4.sect1.subsect8.art9.table1:long] , the specified lateral earthquake force, V, as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent2:short] shall be multiplied by 1.2 but need not exceed the value determined by using [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent2.clause3:medium] . (See [REF:internal:nbc.divB.part4.appendix.appnote78:long:Note A-4.1.8.10.(5) and (6)] .)" } ] },
              
              { "id" : "nbc.divB.part4.sect1.subsect8.art12",
               "type" : "article",
@@ -145389,7 +145389,7 @@
                { "id" : "nbc.divB.part4.sect1.subsect8.art12.sent12",
                 "type" : "sentence",
                 "number" : 12,
-                "text" : "For [REF:term:bldng:buildings] constructed with more than 4 [REF:term:tr:storeys] of continuous wood construction, having a timber SFRS consisting of shear walls with wood-based panels or braced or moment-resisting frames as defined in [REF:internal:nbc.divB.part4.sect1.subsect8.art9.table1:long] , and whose fundamental lateral period, T_{a}, is determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4:long] , V_{d} shall be taken as the larger of V_{d}, as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art12.sent7:short] , and 100% of V, as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art11:long] (See [REF:internal:nbc.divB.part4.appendix.appnote78:long] .)" } ] },
+                "text" : "For [REF:term:bldng:buildings] constructed with more than 4 [REF:term:tr:storeys] of continuous wood construction, having a timber SFRS consisting of shear walls with wood-based panels or braced or moment-resisting frames as defined in [REF:internal:nbc.divB.part4.sect1.subsect8.art9.table1:long] , and whose fundamental lateral period, T_{a}, is determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4:long] , V_{d} shall be taken as the larger of V_{d}, as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art12.sent7:short] , and 100% of V, as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art11:long] (See [REF:internal:nbc.divB.part4.appendix.appnote78:long:Note A-4.1.8.10.(5) and (6)] .)" } ] },
              
              { "id" : "nbc.divB.part4.sect1.subsect8.art13",
               "type" : "article",
@@ -148797,7 +148797,7 @@
                { "id" : "nbc.divB.part4.sect5.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part4.sect5.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long] .)" },
+                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part4.sect5.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long:Note A-1.1.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part4.sect5.subsect1.art1.table1",
                 "type" : "table",
@@ -162179,7 +162179,7 @@
         "type" : "part",
         "number" : 5,
         "title" : "Environmental Separation",
-        "see_also" : "(See  Note [REF:internal:nbc.divB.part5.appendix.appnote1:long] )",
+        "see_also" : "(See  Note [REF:internal:nbc.divB.part5.appendix.appnote1:long:Note A-5] )",
         "sections" : 
         [ 
          { "id" : "nbc.divB.part5.sect1",
@@ -162268,7 +162268,7 @@
                  { "id" : "nbc.divB.part5.sect1.subsect2.art1.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "[REF:term:bldng:building] materials, components and assemblies separating environmentally dissimilar interior spaces (see [REF:internal:nbc.divB.part5.appendix.appnote37:long] ), and" },
+                  "text" : "[REF:term:bldng:building] materials, components and assemblies separating environmentally dissimilar interior spaces (see [REF:internal:nbc.divB.part5.appendix.appnote37:long:Note A-5.8.] ), and" },
                  
                  { "id" : "nbc.divB.part5.sect1.subsect2.art1.sent1.clause3",
                   "type" : "clause",
@@ -162426,7 +162426,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divB.part5.sect1.subsect4.art1.sent6.seealso",
-                  "content" : "(See [REF:internal:nbc.divB.part4.sect1.subsect3.art5:long] , [REF:internal:nbc.divB.part4.sect1.subsect3.art3.sent2:long] and [REF:internal:nbc.divB.part4.sect1.subsect8:long] for information on different types of structural movements.) (See [REF:internal:nbc.divB.part5.appendix.appnote4:long] )" } ] } ] },
+                  "content" : "(See [REF:internal:nbc.divB.part4.sect1.subsect3.art5:long] , [REF:internal:nbc.divB.part4.sect1.subsect3.art3.sent2:long] and [REF:internal:nbc.divB.part4.sect1.subsect8:long] for information on different types of structural movements.) (See [REF:internal:nbc.divB.part5.appendix.appnote4:long:Note A-5.1.4.1.] )" } ] } ] },
              
              { "id" : "nbc.divB.part5.sect1.subsect4.art2",
               "type" : "article",
@@ -163790,12 +163790,12 @@
                  { "id" : "nbc.divB.part5.sect8.subsect1.art4.sent5.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "for a separating wall or floor assembly that behaves like a homogeneous panel and connected flanking assemblies that behave like a homogeneous panel, the index shall be determined in accordance with the detailed method for structure-borne transmission presented in ISO 15712-1, “Building Acoustics - Estimation of Acoustic Performance of Buildings From the Performance of Elements - Part 1: Airborne Sound Insulation Between Rooms” (see [REF:internal:nbc.divB.part5.appendix.appnote40:long] )," },
+                  "text" : "for a separating wall or floor assembly that behaves like a homogeneous panel and connected flanking assemblies that behave like a homogeneous panel, the index shall be determined in accordance with the detailed method for structure-borne transmission presented in ISO 15712-1, “Building Acoustics - Estimation of Acoustic Performance of Buildings From the Performance of Elements - Part 1: Airborne Sound Insulation Between Rooms” (see [REF:internal:nbc.divB.part5.appendix.appnote40:long:Note A-5.8.1.4.(4)(b)] )," },
                  
                  { "id" : "nbc.divB.part5.sect8.subsect1.art4.sent5.clause3",
                   "type" : "clause",
                   "letter" : "c",
-                  "text" : "for a mixture of assemblies with lightweight wood or steel framing and assemblies that behave like a homogeneous panel, the index shall be determined in accordance with [REF:internal:nbc.divB.part5.sect8.subsect1.art4.sent5.clause1:short] or [REF:internal:nbc.divB.part5.sect8.subsect1.art4.sent5.clause2:short:(b)] (see [REF:internal:nbc.divB.part5.appendix.appnote40:long] )." } ] },
+                  "text" : "for a mixture of assemblies with lightweight wood or steel framing and assemblies that behave like a homogeneous panel, the index shall be determined in accordance with [REF:internal:nbc.divB.part5.sect8.subsect1.art4.sent5.clause1:short] or [REF:internal:nbc.divB.part5.sect8.subsect1.art4.sent5.clause2:short:(b)] (see [REF:internal:nbc.divB.part5.appendix.appnote40:long:Note A-5.8.1.4.(4)(b)] )." } ] },
                
                { "id" : "nbc.divB.part5.sect8.subsect1.art4.sent6",
                 "type" : "sentence",
@@ -163811,7 +163811,7 @@
               "type" : "article",
               "number" : 5,
               "title" : "Simplified Method for Calculating ASTC",
-              "see_also" : "(See [REF:internal:nbc.divB.part5.appendix.appnote39:long] )",
+              "see_also" : "(See [REF:internal:nbc.divB.part5.appendix.appnote39:long:Note A-5.8.1.4.] )",
               "content" : 
               [ 
                { "id" : "nbc.divB.part5.sect8.subsect1.art5.sent1",
@@ -163859,7 +163859,7 @@
                  { "id" : "nbc.divB.part5.sect8.subsect1.art5.sent5.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "for a separating wall or floor assembly that behaves like a homogeneous panel and connected flanking assemblies that behave like a homogeneous panel, the index shall be determined in accordance with the simplified method for structure-borne transmission presented in ISO 15712-1, “Building Acoustics - Estimation of Acoustic Performance of Buildings From the Performance of Elements - Part 1: Airborne Sound Insulation Between Rooms” (see [REF:internal:nbc.divB.part5.appendix.appnote40:long] )." } ] },
+                  "text" : "for a separating wall or floor assembly that behaves like a homogeneous panel and connected flanking assemblies that behave like a homogeneous panel, the index shall be determined in accordance with the simplified method for structure-borne transmission presented in ISO 15712-1, “Building Acoustics - Estimation of Acoustic Performance of Buildings From the Performance of Elements - Part 1: Airborne Sound Insulation Between Rooms” (see [REF:internal:nbc.divB.part5.appendix.appnote40:long:Note A-5.8.1.4.(4)(b)] )." } ] },
                
                { "id" : "nbc.divB.part5.sect8.subsect1.art5.sent6",
                 "type" : "sentence",
@@ -165916,7 +165916,7 @@
                { "id" : "nbc.divB.part5.sect9.subsect2.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Windows, doors and skylights shall meet the heat transfer performance requirements stated in [REF:internal:nbc.divB.part5.sect3:long] (See [REF:internal:nbc.divB.part5.appendix.appnote16:long] )" },
+                "text" : "Windows, doors and skylights shall meet the heat transfer performance requirements stated in [REF:internal:nbc.divB.part5.sect3:long] (See [REF:internal:nbc.divB.part5.appendix.appnote16:long:Note A-5.3.1.2.] )" },
                
                { "id" : "nbc.divB.part5.sect9.subsect2.art4.sent2",
                 "type" : "sentence",
@@ -166220,7 +166220,7 @@
                { "id" : "nbc.divB.part5.sect10.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part5.sect10.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long] .)" },
+                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part5.sect10.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long:Note A-1.1.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part5.sect10.subsect1.art1.table1",
                 "type" : "table",
@@ -168641,7 +168641,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote1.para1",
-             "content" : "The requirements provided in [REF:internal:nbc.divB.part5:long:Part 5] pertain to the separation of environmentally dissimilar spaces. Most obvious is the need to separate indoor conditioned spaces from unconditioned spaces, the outdoors or the ground. There are also cases where separation is needed between interior spaces which are intended to provide different environments. (See also  Notes [REF:internal:nbc.divB.part5.appendix.appnote2:long] and [REF:internal:nbc.divB.part5.appendix.appnote3:long] .)" } ] },
+             "content" : "The requirements provided in [REF:internal:nbc.divB.part5:long:Part 5] pertain to the separation of environmentally dissimilar spaces. Most obvious is the need to separate indoor conditioned spaces from unconditioned spaces, the outdoors or the ground. There are also cases where separation is needed between interior spaces which are intended to provide different environments. (See also  Notes [REF:internal:nbc.divB.part5.appendix.appnote2:long:A-5.1.1.1.(1)] and [REF:internal:nbc.divB.part5.appendix.appnote3:long:A-5.1.2.1.(1)] .)" } ] },
           
           { "id" : "nbc.divB.part5.appendix.appnote2",
            "type" : "application_note",
@@ -168748,7 +168748,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote6.para1",
-             "content" : "As discussed in [REF:internal:nbc.divB.part5.appendix.appnote4:long] , a range of structural loads and effects can be imposed on materials, components and assemblies in environmental separators and assemblies exposed to the exterior. In many instances, compliance with [REF:internal:nbc.divB.part5.sect1.subsect4.art1.sent1:long] for structural loads must be determined based on the loads and calculation methods described in Part 4 as specified in [REF:internal:nbc.divB.part5.sect1.subsect4.art1.sent3:long] and the referenced [REF:internal:nbc.divB.part5.sect2.subsect2:long] , e.g. for cladding. In practice, compliance for some materials, components or assemblies of environmental separators and assemblies exposed to the exterior is determined by relying on provisions governing the use of alternative solutions (such as [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] )." },
+             "content" : "As discussed in [REF:internal:nbc.divB.part5.appendix.appnote4:long:Note A-5.1.4.1.] , a range of structural loads and effects can be imposed on materials, components and assemblies in environmental separators and assemblies exposed to the exterior. In many instances, compliance with [REF:internal:nbc.divB.part5.sect1.subsect4.art1.sent1:long] for structural loads must be determined based on the loads and calculation methods described in Part 4 as specified in [REF:internal:nbc.divB.part5.sect1.subsect4.art1.sent3:long] and the referenced [REF:internal:nbc.divB.part5.sect2.subsect2:long] , e.g. for cladding. In practice, compliance for some materials, components or assemblies of environmental separators and assemblies exposed to the exterior is determined by relying on provisions governing the use of alternative solutions (such as [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] )." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote6.para2",
@@ -169313,7 +169313,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote27.para2",
-             "content" : "In Canada, relatively few buildings that are subject to temperature and vapour pressure differences would be constructed or operated in such a manner that the control of vapour diffusion would not need to be addressed in their design. Assemblies enclosing certain industrial spaces, as described in [REF:internal:nbc.divB.part5.appendix.appnote23:long] for example, may be exempt." },
+             "content" : "In Canada, relatively few buildings that are subject to temperature and vapour pressure differences would be constructed or operated in such a manner that the control of vapour diffusion would not need to be addressed in their design. Assemblies enclosing certain industrial spaces, as described in [REF:internal:nbc.divB.part5.appendix.appnote23:long:Note A-5.4.1.1.(7)] for example, may be exempt." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote27.para3",
@@ -170702,7 +170702,7 @@
               "type" : "article",
               "number" : 8,
               "title" : "Makeup Air",
-              "see_also" : "(See [REF:internal:nbc.divB.part6.appendix.appnote1:long] )",
+              "see_also" : "(See [REF:internal:nbc.divB.part6.appendix.appnote1:long:Note A-6.2.1.1.] )",
               "content" : 
               [ 
                { "id" : "nbc.divB.part6.sect3.subsect2.art8.sent1",
@@ -171814,7 +171814,7 @@
               "type" : "article",
               "number" : 1,
               "title" : "Insulation and Coverings",
-              "see_also" : "(See [REF:internal:nbc.divB.part6.appendix.appnote11:long] )",
+              "see_also" : "(See [REF:internal:nbc.divB.part6.appendix.appnote11:long:Note A-6.3.2.5.] )",
               "content" : 
               [ 
                { "id" : "nbc.divB.part6.sect5.subsect1.art1.sent1",
@@ -172032,7 +172032,7 @@
                { "id" : "nbc.divB.part6.sect7.subsect1.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "The exposed surface temperature of a steam or hot water radiator shall not exceed 70°C unless precautions are taken to prevent human contact. (See [REF:internal:nbc.divB.part6.appendix.appnote21:long] .)" } ] },
+                "text" : "The exposed surface temperature of a steam or hot water radiator shall not exceed 70°C unless precautions are taken to prevent human contact. (See [REF:internal:nbc.divB.part6.appendix.appnote21:long:Note A-6.5.1.1.(3)] .)" } ] },
              
              { "id" : "nbc.divB.part6.sect7.subsect1.art4",
               "type" : "article",
@@ -172579,7 +172579,7 @@
                { "id" : "nbc.divB.part6.sect10.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part6.sect10.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long] .)" },
+                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part6.sect10.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long:Note A-1.1.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part6.sect10.subsect1.art1.table1",
                 "type" : "table",
@@ -176568,7 +176568,7 @@
                { "id" : "nbc.divB.part7.sect2.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part7.sect2.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long] .)" },
+                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part7.sect2.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long:Note A-1.1.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part7.sect2.subsect1.art1.table1",
                 "type" : "table",
@@ -177292,7 +177292,7 @@
                { "id" : "nbc.divB.part8.sect3.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part8.sect3.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long] .)" },
+                "text" : "For the purpose of compliance with this Code as required in [REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:long] , the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in [REF:internal:nbc.divB.part8.sect3.subsect1.art1.table1:long] (See [REF:internal:nbc.divB.part1.appendix.appnote1:long:Note A-1.1.2.1.(1)] .)" },
                
                { "id" : "nbc.divB.part8.sect3.subsect1.art1.table1",
                 "type" : "table",
@@ -206453,7 +206453,7 @@
                 [ 
                  { "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.table2.note1",
                   "vendor_id" : "et000275-1",
-                  "content" : "See  Figures [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure1:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure2:medium] and [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure4:medium] in [REF:internal:nbc.divBV2.part9.appendix.appnote57:long] for the attachment of single and double layers of gypsum board to resilient metal channels." },
+                  "content" : "See  Figures [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure1:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure2:medium] and [REF:internal:nbc.divBV2.part9.appendix.appnote57.figure4:medium] in [REF:internal:nbc.divBV2.part9.appendix.appnote57:long:Note A-9.10.3.1.] for the attachment of single and double layers of gypsum board to resilient metal channels." },
                  
                  { "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.table2.note2",
                   "vendor_id" : "et000275-3",
@@ -274577,7 +274577,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect7.subsect5.art2.sent7.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote25:long] )" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote25:long:Note A-9.7.5.2.(6)] )" } ] },
                
                { "id" : "nbc.divBV2.part9.sect7.subsect5.art2.sent8",
                 "type" : "sentence",
@@ -274783,7 +274783,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "The clear height over stairs shall be measured vertically, over the clear width of the stair, from a straight line tangent to the tread and landing nosings to the lowest point above. (See [REF:internal:nbc.divB.part3.appendix.appnote155:long] and Note A-9.5.3.1.)" },
+                "text" : "The clear height over stairs shall be measured vertically, over the clear width of the stair, from a straight line tangent to the tread and landing nosings to the lowest point above. (See [REF:internal:nbc.divB.part3.appendix.appnote155:long:Note A-3.4.3.4.] and Note A-9.5.3.1.)" },
                
                { "id" : "nbc.divBV2.part9.sect8.subsect2.art2.sent2",
                 "type" : "sentence",
@@ -274813,7 +274813,7 @@
               "type" : "article",
               "number" : 1,
               "title" : "Permitted Configurations",
-              "see_also" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote28:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote29:long] )",
+              "see_also" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote28:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote29:long:A-9.8.4.] )",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect8.subsect3.art1.sent1",
@@ -275062,7 +275062,7 @@
               "type" : "article",
               "number" : 2,
               "title" : "Dimensions for Rectangular Treads",
-              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote29:long] )",
+              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote29:long:Note A-9.8.4.] )",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect8.subsect4.art2.sent1",
@@ -275220,7 +275220,7 @@
               "type" : "article",
               "number" : 3,
               "title" : "Dimensions of Tapered Treads",
-              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote29:long] )",
+              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote29:long:Note A-9.8.4.] )",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect8.subsect4.art3.sent1",
@@ -275358,7 +275358,7 @@
               "type" : "article",
               "number" : 8,
               "title" : "Tread Nosings",
-              "see_also" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote32:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote29:long] )",
+              "see_also" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote32:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote29:long:A-9.8.4.] )",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect8.subsect4.art8.sent1",
@@ -275628,7 +275628,7 @@
               "type" : "article",
               "number" : 3,
               "title" : "Dimensions of Landings",
-              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote160:long] ) (See also  Articles [REF:internal:nbc.divBV2.part9.sect9.subsect6.art1:long]  and [REF:internal:nbc.divBV2.part9.sect9.subsect6.art6:long] regarding landings in [REF:term:xt:exits] .)",
+              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote160:long:Note A-3.4.6.4.] ) (See also  Articles [REF:internal:nbc.divBV2.part9.sect9.subsect6.art1:long]  and [REF:internal:nbc.divBV2.part9.sect9.subsect6.art6:long] regarding landings in [REF:term:xt:exits] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect8.subsect6.art3.sent1",
@@ -276036,7 +276036,7 @@
                { "id" : "nbc.divBV2.part9.sect8.subsect7.art2.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Except for stairs or [REF:term:rmp:ramps] serving a single [REF:term:dwllng-n:dwelling unit] or a house with a [REF:term:scnd-t:secondary suite] including their common spaces, at least one required handrail shall be continuous throughout the length of the stair or [REF:term:rmp:ramp] , including at the landing except where interrupted by doorways. (See [REF:internal:nbc.divB.part3.appendix.appnote162:long] .)" },
+                "text" : "Except for stairs or [REF:term:rmp:ramps] serving a single [REF:term:dwllng-n:dwelling unit] or a house with a [REF:term:scnd-t:secondary suite] including their common spaces, at least one required handrail shall be continuous throughout the length of the stair or [REF:term:rmp:ramp] , including at the landing except where interrupted by doorways. (See [REF:internal:nbc.divB.part3.appendix.appnote162:long:Note A-3.4.6.5.(11)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect8.subsect7.art2.sent3",
                 "type" : "sentence",
@@ -276269,7 +276269,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect8.subsect8.art1.sent5.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote42:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote42:long:Note A-9.8.8.1.(4)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect8.subsect8.art1.sent6",
                 "type" : "sentence",
@@ -276560,7 +276560,7 @@
                { "id" : "nbc.divBV2.part9.sect8.subsect8.art4.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Vehicle guardrails shall be designed and constructed to withstand the loading values stipulated in [REF:internal:nbc.divB.part4.sect1.subsect5.art15.sent1:long] . (See [REF:internal:nbc.divB.part4.appendix.appnote32:long] .)" } ] },
+                "text" : "Vehicle guardrails shall be designed and constructed to withstand the loading values stipulated in [REF:internal:nbc.divB.part4.sect1.subsect5.art15.sent1:long] . (See [REF:internal:nbc.divB.part4.appendix.appnote32:long:Note A-4.1.5.14. and 4.1.5.15.(1)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect8.subsect8.art5",
               "type" : "article",
@@ -277165,7 +277165,7 @@
               "type" : "article",
               "number" : 3,
               "title" : "Wired Glass or Glass Block",
-              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote34:long] .)",
+              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote34:long:Note A-3.1.8.19.(1)] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect9.subsect4.art3.sent1",
@@ -277351,7 +277351,7 @@
                { "id" : "nbc.divBV2.part9.sect9.subsect5.art3.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "The horizontal projection of an obstruction referred to in [REF:internal:nbc.divBV2.part9.sect9.subsect5.art3.sent1:short] is permitted to exceed 100 mm where the obstruction extends to less than 680 mm above the floor. (See [REF:internal:nbc.divB.part3.appendix.appnote129:long] .)" } ] },
+                "text" : "The horizontal projection of an obstruction referred to in [REF:internal:nbc.divBV2.part9.sect9.subsect5.art3.sent1:short] is permitted to exceed 100 mm where the obstruction extends to less than 680 mm above the floor. (See [REF:internal:nbc.divB.part3.appendix.appnote129:long:Note A-3.3.1.8.(2) and (3)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect9.subsect5.art4",
               "type" : "article",
@@ -277636,7 +277636,7 @@
                { "id" : "nbc.divBV2.part9.sect9.subsect6.art4.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Movable [REF:term:prttn:partitions] used to separate a [REF:term:pblc-crr:public corridor] from an adjacent [REF:term:bn-nd-pr:business and personal services occupancy] or a [REF:term:mrcntl-c:mercantile occupancy] need not conform to [REF:internal:nbc.divBV2.part9.sect9.subsect6.art4.sent1:short] , provided the partitions are not located in the only [REF:term:mn-f-gr:means of egress] . (See [REF:internal:nbc.divB.part3.appendix.appnote130:long] .)" },
+                "text" : "Movable [REF:term:prttn:partitions] used to separate a [REF:term:pblc-crr:public corridor] from an adjacent [REF:term:bn-nd-pr:business and personal services occupancy] or a [REF:term:mrcntl-c:mercantile occupancy] need not conform to [REF:internal:nbc.divBV2.part9.sect9.subsect6.art4.sent1:short] , provided the partitions are not located in the only [REF:term:mn-f-gr:means of egress] . (See [REF:internal:nbc.divB.part3.appendix.appnote130:long:Note A-3.3.1.12.(3)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect9.subsect6.art4.sent5",
                 "type" : "sentence",
@@ -277751,7 +277751,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "Except for doors serving a single [REF:term:dwllng-n:dwelling unit] or a house with a [REF:term:bc-scnd-t:secondary suite] including their common spaces, and doors to accessory [REF:term:bldng:buildings] and to garages serving a single [REF:term:dwllng-n:dwelling unit] , door release hardware on doors in a [REF:term:mn-f-gr:means of egress] shall be operable with one hand and the door shall be openable with not more than one releasing operation. (See also [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent4:long] and [REF:internal:nbc.divB.part3.appendix.appnote131:long] .)" },
+                "text" : "Except for doors serving a single [REF:term:dwllng-n:dwelling unit] or a house with a [REF:term:bc-scnd-t:secondary suite] including their common spaces, and doors to accessory [REF:term:bldng:buildings] and to garages serving a single [REF:term:dwllng-n:dwelling unit] , door release hardware on doors in a [REF:term:mn-f-gr:means of egress] shall be operable with one hand and the door shall be openable with not more than one releasing operation. (See also [REF:internal:nbc.divB.part3.sect8.subsect3.art6.sent4:long] and [REF:internal:nbc.divB.part3.appendix.appnote131:long:Note A-3.3.1.13.(4)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect9.subsect6.art7.sent3",
                 "type" : "sentence",
@@ -277761,7 +277761,7 @@
                { "id" : "nbc.divBV2.part9.sect9.subsect6.art7.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Except for hotels and motels, a door opening onto a [REF:term:pblc-crr:public corridor] that provides [REF:term:cc-t-xt:access to exit] from [REF:term:t:suites] shall be designed not to lock automatically if it is equipped with an automatic self-closing device. (See [REF:internal:nbc.divB.part3.appendix.appnote143:long] .)" } ] },
+                "text" : "Except for hotels and motels, a door opening onto a [REF:term:pblc-crr:public corridor] that provides [REF:term:cc-t-xt:access to exit] from [REF:term:t:suites] shall be designed not to lock automatically if it is equipped with an automatic self-closing device. (See [REF:internal:nbc.divB.part3.appendix.appnote143:long:Note A-3.3.4.5.(1)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect9.subsect6.art8",
               "type" : "article",
@@ -278179,7 +278179,7 @@
                { "id" : "nbc.divBV2.part9.sect9.subsect8.art5.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Where the lobby referred to in [REF:internal:nbc.divBV2.part9.sect9.subsect8.art5.sent1:short] and adjacent [REF:term:ccpnc:occupancies] that are permitted to open into the lobby are [REF:term:prnklrd:sprinklered] , the [REF:term:fr-prtn:fire separation] between such [REF:term:ccpnc:occupancies] and the lobby need not have a [REF:term:fr-rtnc-:fire-resistance rating] . (See [REF:internal:nbc.divB.part3.appendix.appnote156:long] .)" },
+                "text" : "Where the lobby referred to in [REF:internal:nbc.divBV2.part9.sect9.subsect8.art5.sent1:short] and adjacent [REF:term:ccpnc:occupancies] that are permitted to open into the lobby are [REF:term:prnklrd:sprinklered] , the [REF:term:fr-prtn:fire separation] between such [REF:term:ccpnc:occupancies] and the lobby need not have a [REF:term:fr-rtnc-:fire-resistance rating] . (See [REF:internal:nbc.divB.part3.appendix.appnote156:long:Note A-3.4.4.2.(2)(e)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect9.subsect8.art5.sent5",
                 "type" : "sentence",
@@ -278620,7 +278620,7 @@
                  { "id" : "nbc.divBV2.part9.sect9.subsect11.art3.sent2.clause3",
                   "type" : "clause",
                   "letter" : "c",
-                  "text" : "conform to ISO 7010, “Graphical symbols – Safety colours and safety signs – Registered safety signs,” for the following symbols (see [REF:internal:nbc.divB.part3.appendix.appnote157:long] ):",
+                  "text" : "conform to ISO 7010, “Graphical symbols – Safety colours and safety signs – Registered safety signs,” for the following symbols (see [REF:internal:nbc.divB.part3.appendix.appnote157:long:Note A-3.4.5.1.(2)(c)] ):",
                   "subclauses" : 
                   [ 
                    { "id" : "nbc.divBV2.part9.sect9.subsect11.art3.sent2.clause3.subclause1",
@@ -278662,7 +278662,7 @@
                { "id" : "nbc.divBV2.part9.sect9.subsect11.art3.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Externally illuminated [REF:term:xt:exit] signs shall be continuously illuminated and be constructed in conformance with CAN\/ULC-S572, “Standard for Photoluminescent and Self-Luminous Exit Signs and Path Marking Systems.” (See [REF:internal:nbc.divB.part3.appendix.appnote158:long] .)" },
+                "text" : "Externally illuminated [REF:term:xt:exit] signs shall be continuously illuminated and be constructed in conformance with CAN\/ULC-S572, “Standard for Photoluminescent and Self-Luminous Exit Signs and Path Marking Systems.” (See [REF:internal:nbc.divB.part3.appendix.appnote158:long:Note A-3.4.5.1.(4)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect9.subsect11.art3.sent5",
                 "type" : "sentence",
@@ -278891,7 +278891,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Where life safety and fire protection systems and systems with fire protection and life safety functions are integrated with each other, they shall be tested as a whole in accordance with CAN\/ULC-S1001, “Standard for Integrated Systems Testing of Fire Protection and Life Safety Systems,” to verify that they have been properly integrated. (See [REF:internal:nbc.divB.part3.appendix.appnote123:long] .)" } ] },
+                "text" : "Where life safety and fire protection systems and systems with fire protection and life safety functions are integrated with each other, they shall be tested as a whole in accordance with CAN\/ULC-S1001, “Standard for Integrated Systems Testing of Fire Protection and Life Safety Systems,” to verify that they have been properly integrated. (See [REF:internal:nbc.divB.part3.appendix.appnote123:long:Note A-3.2.9.1.(1)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect1.art3",
               "type" : "article",
@@ -278917,7 +278917,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art3.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Where rooms or spaces are intended for the storage, manufacture or use of hazardous or explosive material, such rooms or spaces shall conform to [REF:internal:nbc.divB.part3:long:Part 3] . (See [REF:internal:nbc.divB.part3.appendix.appnote125:long] .)" },
+                "text" : "Where rooms or spaces are intended for the storage, manufacture or use of hazardous or explosive material, such rooms or spaces shall conform to [REF:internal:nbc.divB.part3:long:Part 3] . (See [REF:internal:nbc.divB.part3.appendix.appnote125:long:Note A-3.3.1.2.(1)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art3.sent5",
                 "type" : "sentence",
@@ -279017,7 +279017,7 @@
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect2.art1.table1.note1",
                   "vendor_id" : "et000172-1",
-                  "content" : "See [REF:internal:nbc.divB.part3.appendix.appnote3:long] ." } ],
+                  "content" : "See [REF:internal:nbc.divB.part3.appendix.appnote3:long:Note A-3.1.2.1.(1)] ." } ],
                 "structure" : 
                 { "columns" : 3,
                  "colsep" : "1",
@@ -279515,7 +279515,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect4.art1.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the aggregate area of [REF:term:mzznn:mezzanines] that are not superimposed does not exceed 40% of the open area of the room in which they are located (see [REF:internal:nbc.divB.part3.appendix.appnote48:long] ), and" },
+                  "text" : "the aggregate area of [REF:term:mzznn:mezzanines] that are not superimposed does not exceed 40% of the open area of the room in which they are located (see [REF:internal:nbc.divB.part3.appendix.appnote48:long:Note A-3.2.1.1.(3)(a)] ), and" },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect4.art1.sent2.clause2",
                   "type" : "clause",
@@ -280139,7 +280139,7 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2.sent6:short] , the continuity of a [REF:term:fr-prtn:fire separation] where it abuts another [REF:term:fr-prtn:fire separation] , a floor, a ceiling, or a roof shall be maintained by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in CAN\/ULC-S115, “Standard Method of Fire Tests of Firestop Systems,” has an FT rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the abutting [REF:term:fr-prtn:fire separation] . (See [REF:internal:nbc.divBV2.part9.appendix.appnote60:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote29:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2.sent6:short] , the continuity of a [REF:term:fr-prtn:fire separation] where it abuts another [REF:term:fr-prtn:fire separation] , a floor, a ceiling, or a roof shall be maintained by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in CAN\/ULC-S115, “Standard Method of Fire Tests of Firestop Systems,” has an FT rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] for the abutting [REF:term:fr-prtn:fire separation] . (See [REF:internal:nbc.divBV2.part9.appendix.appnote60:short] .) (See also [REF:internal:nbc.divB.part3.appendix.appnote29:long:Note A-3.1.8.3.(2)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art2.sent4",
                 "type" : "sentence",
@@ -280155,7 +280155,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art2.sent6",
                 "type" : "sentence",
                 "number" : 6,
-                "text" : "Joints between ceilings and walls, between floors and walls, and between walls at corners need not comply with  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2.sent3:short]  to [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2.sent5:shortNum] where such joints consist of gypsum board that is attached to framing members and arranged so as to restrict the passage of flame and smoke through the joints. (See [REF:internal:nbc.divB.part3.appendix.appnote30:long] .)" } ] },
+                "text" : "Joints between ceilings and walls, between floors and walls, and between walls at corners need not comply with  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2.sent3:short]  to [REF:internal:nbc.divBV2.part9.sect10.subsect9.art2.sent5:shortNum] where such joints consist of gypsum board that is attached to framing members and arranged so as to restrict the passage of flame and smoke through the joints. (See [REF:internal:nbc.divB.part3.appendix.appnote30:long:Note A-3.1.8.3.(5)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect9.art3",
               "type" : "article",
@@ -280228,7 +280228,7 @@
               "type" : "article",
               "number" : 6,
               "title" : "General Requirements for Penetrations of Fire Separations",
-              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote35:long] )",
+              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote35:long:Note A-3.1.9.] )",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art6.sent1",
@@ -280265,7 +280265,7 @@
               "type" : "article",
               "number" : 7,
               "title" : "Piping Penetrations",
-              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote35:long] )",
+              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote35:long:Note A-3.1.9.] )",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art7.sent1",
@@ -280492,7 +280492,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect9.art9.sent5.seealso",
-                  "content" : "(See also [REF:internal:nbc.divB.part3.appendix.appnote37:long] .)" } ] },
+                  "content" : "(See also [REF:internal:nbc.divB.part3.appendix.appnote37:long:Note A-3.1.9.2.(1)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art9.sent6",
                 "type" : "sentence",
@@ -280606,7 +280606,7 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art16.sent4:short] , [REF:term:dwllng-n:dwelling units] that contain 2 or more [REF:term:tr:storeys] including [REF:term:bmnt:basements] as well as houses with a [REF:term:bc-scnd-t:secondary suite] including their common spaces shall be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 1 h. (See [REF:internal:nbc.divB.part3.appendix.appnote142:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art16.sent4:short] , [REF:term:dwllng-n:dwelling units] that contain 2 or more [REF:term:tr:storeys] including [REF:term:bmnt:basements] as well as houses with a [REF:term:bc-scnd-t:secondary suite] including their common spaces shall be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 1 h. (See [REF:internal:nbc.divB.part3.appendix.appnote142:long:Note A-3.3.4.4.(1)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art16.sent4",
                 "type" : "sentence",
@@ -280829,7 +280829,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art19.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art19.sent5:short] , where a [REF:term:bldng:building] containing a [REF:term:rpr-grg:repair garage ] also contains a [REF:term:dwllng-n:dwelling unit] , an [REF:term:r-brrr:air barrier system] conforming to [REF:internal:nbc.divBV2.part9.sect25.subsect3:long] shall be installed between the [REF:term:dwllng-n:dwelling unit] and the [REF:term:t:suite] containing the garage to provide an effective barrier to gas and exhaust fumes. (See [REF:internal:nbc.divBV2.part9.appendix.appnote65:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art19.sent5:short] , where a [REF:term:bldng:building] containing a [REF:term:rpr-grg:repair garage ] also contains a [REF:term:dwllng-n:dwelling unit] , an [REF:term:r-brrr:air barrier system] conforming to [REF:internal:nbc.divBV2.part9.sect25.subsect3:long] shall be installed between the [REF:term:dwllng-n:dwelling unit] and the [REF:term:t:suite] containing the garage to provide an effective barrier to gas and exhaust fumes. (See [REF:internal:nbc.divBV2.part9.appendix.appnote65:long:Note A-9.10.9.18.(4)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art19.sent5",
                 "type" : "sentence",
@@ -281025,7 +281025,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect11.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect11.art2:long] , a [REF:term:prt-wll:party wall] on a property line shall be constructed as a [REF:term:frwll:firewall] . (See [REF:internal:nbc.divB.part3.appendix.appnote59:long] .)" } ] },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect11.art2:long] , a [REF:term:prt-wll:party wall] on a property line shall be constructed as a [REF:term:frwll:firewall] . (See [REF:internal:nbc.divB.part3.appendix.appnote59:long:Note A-3.2.3.4.(1)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect11.art2",
               "type" : "article",
@@ -281765,7 +281765,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art2.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "For the purpose of using [REF:internal:nbc.divBV2.part9.sect10.subsect14.art4.table1:long:Table 9.10.14.4.-A] to determine the maximum aggregate area of [REF:term:nprtctd-:unprotected openings] in an irregularly shaped or skewed exterior wall, the location of the [REF:term:xpng-bld:exposing building face] shall be taken as a vertical plane located so that there are no [REF:term:nprtctd-:unprotected openings] between the vertical plane and the line to which the [REF:term:lmtng-dt:limiting distance] is measured. (See [REF:internal:nbc.divB.part3.appendix.appnote57:long] .)" },
+                "text" : "For the purpose of using [REF:internal:nbc.divBV2.part9.sect10.subsect14.art4.table1:long:Table 9.10.14.4.-A] to determine the maximum aggregate area of [REF:term:nprtctd-:unprotected openings] in an irregularly shaped or skewed exterior wall, the location of the [REF:term:xpng-bld:exposing building face] shall be taken as a vertical plane located so that there are no [REF:term:nprtctd-:unprotected openings] between the vertical plane and the line to which the [REF:term:lmtng-dt:limiting distance] is measured. (See [REF:internal:nbc.divB.part3.appendix.appnote57:long:Note A-3.2.3.1.(4)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art2.sent3",
                 "type" : "sentence",
@@ -281781,7 +281781,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect14.art2.sent3.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "the value for the maximum area of [REF:term:nprtctd-:unprotected openings] (see second column of [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5.table1:long:Table 9.10.14.5.-A] ) shall be determined using the [REF:term:lmtng-dt:limiting distance] measured from the location described in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art2.sent3.clause1:short] . (See [REF:internal:nbc.divB.part3.appendix.appnote57:long] .)" } ] },
+                  "text" : "the value for the maximum area of [REF:term:nprtctd-:unprotected openings] (see second column of [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5.table1:long:Table 9.10.14.5.-A] ) shall be determined using the [REF:term:lmtng-dt:limiting distance] measured from the location described in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art2.sent3.clause1:short] . (See [REF:internal:nbc.divB.part3.appendix.appnote57:long:Note A-3.2.3.1.(4)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art2.sent4",
                 "type" : "sentence",
@@ -281813,7 +281813,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect14.art3.sent1.seealso",
-                  "content" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote56:long] and [REF:internal:nbc.divB.part3.appendix.appnote58:long] .)" } ] } ] },
+                  "content" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote56:long:A-3.2.3.] and [REF:internal:nbc.divB.part3.appendix.appnote58:long:A-3.2.3.1.(8)] .)" } ] } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect14.art4",
               "type" : "article",
@@ -284012,12 +284012,12 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art5.sent9",
                 "type" : "sentence",
                 "number" : 9,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5.sent11:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of not more than 0.45 m, projecting roof soffits shall not be constructed above the [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divB.part3.appendix.appnote60:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5.sent11:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of not more than 0.45 m, projecting roof soffits shall not be constructed above the [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divB.part3.appendix.appnote60:long:Note A-3.2.3.6.(2)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art5.sent10",
                 "type" : "sentence",
                 "number" : 10,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5.sent11:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of more than 0.45 m, the face of roof soffits shall not project to less than 0.45 m from the property line. (See [REF:internal:nbc.divB.part3.appendix.appnote60:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5.sent11:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of more than 0.45 m, the face of roof soffits shall not project to less than 0.45 m from the property line. (See [REF:internal:nbc.divB.part3.appendix.appnote60:long:Note A-3.2.3.6.(2)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art5.sent11",
                 "type" : "sentence",
@@ -284073,7 +284073,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect14.art5.sent12.seealso",
-                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote60:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote60:long:Note A-3.2.3.6.(2)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art5.sent13",
                 "type" : "sentence",
@@ -284176,22 +284176,22 @@
                    { "id" : "nbc.divBV2.part9.sect10.subsect15.art2.sent1.clause2.subclause3",
                     "type" : "subclause",
                     "number" : 3,
-                    "text" : "except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect15.art2.sent2:short] , where [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.table1:long] is used to determine the maximum aggregate area of glazed openings, the area of any number of individual portions of the [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divBV2.part9.appendix.appnote74:long] .)" } ] } ] },
+                    "text" : "except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect15.art2.sent2:short] , where [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.table1:long] is used to determine the maximum aggregate area of glazed openings, the area of any number of individual portions of the [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divBV2.part9.appendix.appnote74:long:Note A-9.10.15.4.(2)] .)" } ] } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art2.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Where the [REF:term:xpng-bld:exposing building face] of any section of an exterior wall enclosing a single room or space, or combination room and space, has a [REF:term:lmtng-dt:limiting distance] of 2 m or less, that section of the [REF:term:xpng-bld:exposing building face] serving the room or space shall not be divided into portions for the purpose of calculating area of [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent5:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote74:long] .)" },
+                "text" : "Where the [REF:term:xpng-bld:exposing building face] of any section of an exterior wall enclosing a single room or space, or combination room and space, has a [REF:term:lmtng-dt:limiting distance] of 2 m or less, that section of the [REF:term:xpng-bld:exposing building face] serving the room or space shall not be divided into portions for the purpose of calculating area of [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent5:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote74:long:Note A-9.10.15.4.(2)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art2.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "For the purpose of using [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.table1:long] to determine the maximum aggregate area of glazed openings in an irregularly shaped or skewed exterior wall, the location of the [REF:term:xpng-bld:exposing building face] shall be taken as a vertical plane located so that there are no glazed openings between the vertical plane and the line to which the [REF:term:lmtng-dt:limiting distance] is measured. (See [REF:internal:nbc.divB.part3.appendix.appnote57:long] .)" },
+                "text" : "For the purpose of using [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.table1:long] to determine the maximum aggregate area of glazed openings in an irregularly shaped or skewed exterior wall, the location of the [REF:term:xpng-bld:exposing building face] shall be taken as a vertical plane located so that there are no glazed openings between the vertical plane and the line to which the [REF:term:lmtng-dt:limiting distance] is measured. (See [REF:internal:nbc.divB.part3.appendix.appnote57:long:Note A-3.2.3.1.(4)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art2.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "In determining the required cladding-sheathing assembly and [REF:term:fr-rtnc-:fire-resistance rating] for an irregularly shaped or skewed exterior wall, the location of the [REF:term:xpng-bld:exposing building face] shall be taken as a vertical plane located so that no portion of the actual [REF:term:xpng-bld:exposing building face] is between the vertical plane and the line to which the [REF:term:lmtng-dt:limiting distance] is measured. (See [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5:long] and [REF:internal:nbc.divB.part3.appendix.appnote57:long] .)" },
+                "text" : "In determining the required cladding-sheathing assembly and [REF:term:fr-rtnc-:fire-resistance rating] for an irregularly shaped or skewed exterior wall, the location of the [REF:term:xpng-bld:exposing building face] shall be taken as a vertical plane located so that no portion of the actual [REF:term:xpng-bld:exposing building face] is between the vertical plane and the line to which the [REF:term:lmtng-dt:limiting distance] is measured. (See [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5:long] and [REF:internal:nbc.divB.part3.appendix.appnote57:long:Note A-3.2.3.1.(4)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art2.sent5",
                 "type" : "sentence",
@@ -284223,7 +284223,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art3.sent1.seealso",
-                  "content" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote56:long] and [REF:internal:nbc.divB.part3.appendix.appnote58:long] .)" } ] } ] },
+                  "content" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote56:long:A-3.2.3.] and [REF:internal:nbc.divB.part3.appendix.appnote58:long:A-3.2.3.1.(8)] .)" } ] } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect15.art4",
               "type" : "article",
@@ -285032,7 +285032,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "for any number of separate portions of the [REF:term:xpng-bld:exposing building face] (see [REF:internal:nbc.divBV2.part9.sect10.subsect15.art2.sent1.clause2.subclause3:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent2:long] , and [REF:internal:nbc.divBV2.part9.appendix.appnote74:long] )." } ],
+                  "text" : "for any number of separate portions of the [REF:term:xpng-bld:exposing building face] (see [REF:internal:nbc.divBV2.part9.sect10.subsect15.art2.sent1.clause2.subclause3:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect15.art4.sent2:long] , and [REF:internal:nbc.divBV2.part9.appendix.appnote74:long:Note A-9.10.15.4.(2)] )." } ],
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent1.seealso",
@@ -285047,7 +285047,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the cladding shall be metal or [REF:term:ncmbtbl:noncombustible] cladding installed in accordance with [REF:internal:nbc.divBV2.part9.sect20:long] , [REF:internal:nbc.divBV2.part9.sect27:long:9.27.] or [REF:internal:nbc.divBV2.part9.sect28:long:9.28.] (see [REF:internal:nbc.divBV2.part9.appendix.appnote69:long] )," },
+                  "text" : "the cladding shall be metal or [REF:term:ncmbtbl:noncombustible] cladding installed in accordance with [REF:internal:nbc.divBV2.part9.sect20:long] , [REF:internal:nbc.divBV2.part9.sect27:long:9.27.] or [REF:internal:nbc.divBV2.part9.sect28:long:9.28.] (see [REF:internal:nbc.divBV2.part9.appendix.appnote69:long:Note A-9.10.14.5.(1)] )," },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent2.clause2",
                   "type" : "clause",
@@ -285089,7 +285089,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent3.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the cladding shall be metal or [REF:term:ncmbtbl:noncombustible] cladding installed in accordance with [REF:internal:nbc.divBV2.part9.sect20:long] , [REF:internal:nbc.divBV2.part9.sect27.subsect11:long] or [REF:internal:nbc.divBV2.part9.sect28:long] (see [REF:internal:nbc.divBV2.part9.appendix.appnote69:long] )," },
+                  "text" : "the cladding shall be metal or [REF:term:ncmbtbl:noncombustible] cladding installed in accordance with [REF:internal:nbc.divBV2.part9.sect20:long] , [REF:internal:nbc.divBV2.part9.sect27.subsect11:long] or [REF:internal:nbc.divBV2.part9.sect28:long] (see [REF:internal:nbc.divBV2.part9.appendix.appnote69:long:Note A-9.10.14.5.(1)] )," },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent3.clause2",
                   "type" : "clause",
@@ -285214,7 +285214,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent6.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote70:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote70:long:Note A-9.10.14.5.(7)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent7",
                 "type" : "sentence",
@@ -285265,17 +285265,17 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent7.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote71:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote71:long:Note A-9.10.14.5.(8)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent8",
                 "type" : "sentence",
                 "number" : 8,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent10:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of not more than 0.45 m, projecting roof soffits shall not be constructed above the [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divB.part3.appendix.appnote60:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent10:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of not more than 0.45 m, projecting roof soffits shall not be constructed above the [REF:term:xpng-bld:exposing building face] . (See [REF:internal:nbc.divB.part3.appendix.appnote60:long:Note A-3.2.3.6.(2)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent9",
                 "type" : "sentence",
                 "number" : 9,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent10:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of more than 0.45 m, the face of roof soffits shall not project to less than 0.45 m from the property line. (See [REF:internal:nbc.divB.part3.appendix.appnote60:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect15.art5.sent10:short] , where the [REF:term:xpng-bld:exposing building face] has a [REF:term:lmtng-dt:limiting distance] of more than 0.45 m, the face of roof soffits shall not project to less than 0.45 m from the property line. (See [REF:internal:nbc.divB.part3.appendix.appnote60:long:Note A-3.2.3.6.(2)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent10",
                 "type" : "sentence",
@@ -285331,7 +285331,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent11.seealso",
-                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote60:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote60:long:Note A-3.2.3.6.(2)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect15.art5.sent12",
                 "type" : "sentence",
@@ -285550,7 +285550,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect16.art3.sent3.seealso",
-                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote45:long] .)" } ] } ] },
+                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote45:long:Note A-3.1.11.7.(8)] .)" } ] } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect16.art4",
               "type" : "article",
@@ -285561,7 +285561,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect16.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Where [REF:term:fr-blk:fire blocks] are pierced by pipes, ducts or other elements, the effectiveness of the [REF:term:fr-blk:fire blocks] shall be maintained around such elements. (See also [REF:internal:nbc.divB.part3.appendix.appnote44:long] .)" } ] } ] },
+                "text" : "Where [REF:term:fr-blk:fire blocks] are pierced by pipes, ducts or other elements, the effectiveness of the [REF:term:fr-blk:fire blocks] shall be maintained around such elements. (See also [REF:internal:nbc.divB.part3.appendix.appnote44:long:Note A-3.1.11.7.(7)] .)" } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect10.subsect17",
             "type" : "subsection",
@@ -285687,7 +285687,7 @@
               "type" : "article",
               "number" : 10,
               "title" : "Protection of Foamed Plastics",
-              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote6:long] )",
+              "see_also" : "(See [REF:internal:nbc.divB.part3.appendix.appnote6:long:Note A-3.1.4.2.] )",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect10.subsect17.art10.sent1",
@@ -285729,7 +285729,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect17.art10.sent1.seealso",
-                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote8:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote8:long:Note A-3.1.4.2.(1)(c)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect17.art10.sent2",
                 "type" : "sentence",
@@ -286008,7 +286008,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect18.art4.sent2.clause4",
                   "type" : "clause",
                   "letter" : "d",
-                  "text" : "rooms in which hazardous substances are to be used or stored (see [REF:internal:nbc.divB.part3.appendix.appnote125:long] )," },
+                  "text" : "rooms in which hazardous substances are to be used or stored (see [REF:internal:nbc.divB.part3.appendix.appnote125:long:Note A-3.3.1.2.(1)] )," },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect18.art4.sent2.clause5",
                   "type" : "clause",
@@ -286122,7 +286122,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect19.art2.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "meet the temporal patterns of [REF:term:lrm-gnl:alarm signals] (see [REF:internal:nbc.divB.part3.appendix.appnote77:long] ), or" },
+                  "text" : "meet the temporal patterns of [REF:term:lrm-gnl:alarm signals] (see [REF:internal:nbc.divB.part3.appendix.appnote77:long:Note A-3.2.4.18.(2)] ), or" },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect19.art2.sent1.clause2",
                   "type" : "clause",
@@ -286191,7 +286191,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect19.art4.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "be installed with permanent connections to an electrical circuit (see [REF:internal:nbc.divB.part3.appendix.appnote86:long] )," },
+                  "text" : "be installed with permanent connections to an electrical circuit (see [REF:internal:nbc.divB.part3.appendix.appnote86:long:Note A-3.2.4.20.(9)(a)] )," },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect19.art4.sent1.clause2",
                   "type" : "clause",
@@ -286217,7 +286217,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect19.art4.sent3.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "are capable of independently sounding audible signals with a sound pressure level between 75 dBA and 110 dBA within the individual [REF:term:t:suites] (see also [REF:internal:nbc.divB.part3.appendix.appnote79:long] )," },
+                  "text" : "are capable of independently sounding audible signals with a sound pressure level between 75 dBA and 110 dBA within the individual [REF:term:t:suites] (see also [REF:internal:nbc.divB.part3.appendix.appnote79:long:Note A-3.2.4.18.(4)] )," },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect19.art4.sent3.clause2",
                   "type" : "clause",
@@ -286231,7 +286231,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect19.art4.sent3.seealso",
-                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote87:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divB.part3.appendix.appnote87:long:Note A-3.2.4.20.(10)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect19.art4.sent4",
                 "type" : "sentence",
@@ -286412,7 +286412,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect20.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Access for fire department equipment shall be provided to each [REF:term:bldng:building] by means of a [REF:term:trt:street] , private roadway or yard. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote77:short] and [REF:internal:nbc.divB.part3.appendix.appnote90:long] .)" },
+                "text" : "Access for fire department equipment shall be provided to each [REF:term:bldng:building] by means of a [REF:term:trt:street] , private roadway or yard. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote77:short] and [REF:internal:nbc.divB.part3.appendix.appnote90:long:A-3.2.5.6.(1)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect20.art3.sent2",
                 "type" : "sentence",
@@ -286680,7 +286680,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect11.subsect1.art1.sent1.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote82:long] )" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote82:long:Note A-9.11.1.4.] )" } ] },
                
                { "id" : "nbc.divBV2.part9.sect11.subsect1.art1.sent2",
                 "type" : "sentence",
@@ -287560,7 +287560,7 @@
                { "id" : "nbc.divBV2.part9.sect12.subsect3.art3.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect12.subsect3.art3.sent3:short] , backfill shall not contain pyritic material or material that is susceptible to ice lensing in concentrations that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies. (See [REF:internal:nbc.divBV2.part9.appendix.appnote14:long] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect12.subsect3.art3.sent3:short] , backfill shall not contain pyritic material or material that is susceptible to ice lensing in concentrations that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies. (See [REF:internal:nbc.divBV2.part9.appendix.appnote14:long:Note A-9.4.4.4.(1)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect12.subsect3.art3.sent3",
                 "type" : "sentence",
@@ -287585,7 +287585,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect12.subsect3.art3.sent3.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote14:long] .)" } ] } ] } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote14:long:Note A-9.4.4.4.(1)] .)" } ] } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect12.subsect4",
             "type" : "subsection",
@@ -288527,7 +288527,7 @@
                  { "id" : "nbc.divBV2.part9.sect14.subsect2.art1.sent2.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "any pyritic material in the crushed [REF:term:rck:rock] shall be limited to a concentration that will not damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies (see [REF:internal:nbc.divBV2.part9.sect12.subsect3.art3.sent2:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long] )." } ] } ] } ] },
+                  "text" : "any pyritic material in the crushed [REF:term:rck:rock] shall be limited to a concentration that will not damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies (see [REF:internal:nbc.divBV2.part9.sect12.subsect3.art3.sent2:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long:Note A-9.4.4.4.(1)] )." } ] } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect14.subsect3",
             "type" : "subsection",
@@ -288645,7 +288645,7 @@
                  { "id" : "nbc.divBV2.part9.sect14.subsect4.art1.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "no pyritic material in a concentration that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies (see [REF:internal:nbc.divBV2.part9.appendix.appnote14:long] )." } ] } ] },
+                  "text" : "no pyritic material in a concentration that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies (see [REF:internal:nbc.divBV2.part9.appendix.appnote14:long:Note A-9.4.4.4.(1)] )." } ] } ] },
              
              { "id" : "nbc.divBV2.part9.sect14.subsect4.art2",
               "type" : "article",
@@ -289070,7 +289070,7 @@
                { "id" : "nbc.divBV2.part9.sect15.subsect3.art2.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Granular [REF:term:fll:fill] shall not contain pyritic material in a concentration that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies. (See also [REF:internal:nbc.divBV2.part9.sect4.subsect4.art4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long] .)" } ] },
+                "text" : "Granular [REF:term:fll:fill] shall not contain pyritic material in a concentration that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies. (See also [REF:internal:nbc.divBV2.part9.sect4.subsect4.art4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long:Note A-9.4.4.4.(1)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect15.subsect3.art3",
               "type" : "article",
@@ -292072,7 +292072,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect16.subsect2.art1.sent2:short] , not less than 100 mm of coarse clean granular material containing not more than 10% of material that will pass a 4 mm sieve shall be placed beneath floors-on-ground. (See Note A-9.16.2.1.(1) and see also [REF:internal:nbc.divBV2.part9.sect13.subsect4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote88:long] )" },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect16.subsect2.art1.sent2:short] , not less than 100 mm of coarse clean granular material containing not more than 10% of material that will pass a 4 mm sieve shall be placed beneath floors-on-ground. (See Note A-9.16.2.1.(1) and see also [REF:internal:nbc.divBV2.part9.sect13.subsect4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote88:long:Note A-9.13.4.] )" },
                
                { "id" : "nbc.divBV2.part9.sect16.subsect2.art1.sent2",
                 "type" : "sentence",
@@ -292099,12 +292099,12 @@
                { "id" : "nbc.divBV2.part9.sect16.subsect2.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Material that is susceptible to changes in volume due to variations in moisture content or chemical-microbiological oxidation shall not be used as [REF:term:fll:fill] beneath floors-on-ground in a concentration that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies. (See also [REF:internal:nbc.divBV2.part9.sect4.subsect4.art4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long] .)" },
+                "text" : "Material that is susceptible to changes in volume due to variations in moisture content or chemical-microbiological oxidation shall not be used as [REF:term:fll:fill] beneath floors-on-ground in a concentration that will damage the [REF:term:bldng:building] to a degree that would adversely affect its stability or the performance of assemblies. (See also [REF:internal:nbc.divBV2.part9.sect4.subsect4.art4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long:Note A-9.4.4.4.(1)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect16.subsect2.art2.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Material that is susceptible to changes in volume due to freezing shall not be used as [REF:term:fll:fill] beneath floors-on-ground that will be subjected to freezing temperatures. (See also [REF:internal:nbc.divBV2.part9.sect4.subsect4.art4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long] .)" },
+                "text" : "Material that is susceptible to changes in volume due to freezing shall not be used as [REF:term:fll:fill] beneath floors-on-ground that will be subjected to freezing temperatures. (See also [REF:internal:nbc.divBV2.part9.sect4.subsect4.art4:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote14:long:Note A-9.4.4.4.(1)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect16.subsect2.art2.sent3",
                 "type" : "sentence",
@@ -292841,7 +292841,7 @@
                { "id" : "nbc.divBV2.part9.sect18.subsect6.art2.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "The perimeter of the ground cover required in [REF:internal:nbc.divBV2.part9.sect18.subsect6.art2.sent1:short] shall be sealed to the [REF:term:fndtn:foundation] wall. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote88:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote145:long] ,  and [REF:internal:nbc.divBV2.part9.appendix.appnote146:long] .)" },
+                "text" : "The perimeter of the ground cover required in [REF:internal:nbc.divBV2.part9.sect18.subsect6.art2.sent1:short] shall be sealed to the [REF:term:fndtn:foundation] wall. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote88:long:A-9.13.4.] , [REF:internal:nbc.divBV2.part9.appendix.appnote145:long:A-9.25.3.4. and 9.25.3.6.] ,  and [REF:internal:nbc.divBV2.part9.appendix.appnote146:long:A-9.25.3.6.(2) and (3)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect18.subsect6.art2.sent4",
                 "type" : "sentence",
@@ -303399,7 +303399,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect23.subsect4.art5.sent1.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote119:long] )" } ] } ] } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote119:long:Note A-9.23.4.2.] )" } ] } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect23.subsect5",
             "type" : "subsection",
@@ -304670,7 +304670,7 @@
               "type" : "article",
               "number" : 4,
               "title" : "Strapping, Bridging, Furring and Ceilings in Span Tables 9.23.4.2.-A and -B",
-              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote120:long] .)",
+              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote120:long:Note A-9.23.4.2.(2)] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect23.subsect9.art4.sent1",
@@ -331855,7 +331855,7 @@
                { "id" : "nbc.divBV2.part9.sect25.subsect2.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "All walls, ceilings and floors separating heated space from unheated space, the exterior air or the exterior [REF:term:l:soil] shall be provided with sufficient thermal insulation to prevent moisture condensation on their room side during the winter and to ensure comfortable conditions for the occupants. (See [REF:internal:nbc.divBV2.part9.appendix.appnote1:long] .)" } ] },
+                "text" : "All walls, ceilings and floors separating heated space from unheated space, the exterior air or the exterior [REF:term:l:soil] shall be provided with sufficient thermal insulation to prevent moisture condensation on their room side during the winter and to ensure comfortable conditions for the occupants. (See [REF:internal:nbc.divBV2.part9.appendix.appnote1:long:Note A-9.1.1.1.(1)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect25.subsect2.art2",
               "type" : "article",
@@ -331948,7 +331948,7 @@
                { "id" : "nbc.divBV2.part9.sect25.subsect2.art3.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Insulation shall be installed over the full height of [REF:term:fndtn-nt:foundation] walls enclosing a [REF:term:bmnt:basement] or heated crawl space. (See also [REF:internal:nbc.divBV2.part9.appendix.appnote229:long] .)" },
+                "text" : "Insulation shall be installed over the full height of [REF:term:fndtn-nt:foundation] walls enclosing a [REF:term:bmnt:basement] or heated crawl space. (See also [REF:internal:nbc.divBV2.part9.appendix.appnote229:long:Note A-9.36.2.5.(5)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect25.subsect2.art3.sent5",
                 "type" : "sentence",
@@ -332125,7 +332125,7 @@
               "type" : "article",
               "number" : 2,
               "title" : "Air Barrier System Properties",
-              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote152:long] .)",
+              "see_also" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote152:long:Note A-9.25.5.1.(1)] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect25.subsect3.art2.sent1",
@@ -332389,12 +332389,12 @@
                { "id" : "nbc.divBV2.part9.sect25.subsect4.art3.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Where different products are used for the [REF:term:vpr-brrr:vapour barrier] and the insulation, the [REF:term:vpr-brrr:vapour barrier] shall be installed sufficiently close to the warm side of the insulation to prevent condensation at design conditions. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote150:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote152:long] .)" },
+                "text" : "Where different products are used for the [REF:term:vpr-brrr:vapour barrier] and the insulation, the [REF:term:vpr-brrr:vapour barrier] shall be installed sufficiently close to the warm side of the insulation to prevent condensation at design conditions. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote150:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote152:long:A-9.25.5.1.(1)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect25.subsect4.art3.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Where the same product is used for the [REF:term:vpr-brrr:vapour barrier] and the insulation, the product shall be installed sufficiently close to the warm side of the assembly to prevent condensation at design conditions. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote150:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote152:number] and [REF:internal:nbc.divBV2.part9.appendix.appnote155:number] )" } ] } ] },
+                "text" : "Where the same product is used for the [REF:term:vpr-brrr:vapour barrier] and the insulation, the product shall be installed sufficiently close to the warm side of the assembly to prevent condensation at design conditions. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote150:long:A-9.25.4.3.(2)] , [REF:internal:nbc.divBV2.part9.appendix.appnote152:number:A-9.25.5.1.(1)] and [REF:internal:nbc.divBV2.part9.appendix.appnote155:number:A-9.25.5.2.] )" } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect25.subsect5",
             "type" : "subsection",
@@ -333221,7 +333221,7 @@
                { "id" : "nbc.divBV2.part9.sect26.subsect2.art4.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Staples used with wood shingles shall be not less than 29 mm long, 1.6 mm diam or thickness, with not less than a 9.5 mm crown and shall be stainless steel or aluminum. (See [REF:internal:nbc.divBV2.part9.appendix.appnote157:long] .)" } ] } ] },
+                "text" : "Staples used with wood shingles shall be not less than 29 mm long, 1.6 mm diam or thickness, with not less than a 9.5 mm crown and shall be stainless steel or aluminum. (See [REF:internal:nbc.divBV2.part9.appendix.appnote157:long:Note A-9.26.2.3.(4)] .)" } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect26.subsect3",
             "type" : "subsection",
@@ -333268,7 +333268,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect26.subsect3.art1.sent4.seealso",
-                  "content" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote156:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote158:number] and [REF:internal:nbc.divBV2.part9.appendix.appnote170:number] .)" } ] },
+                  "content" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote156:long:A-9.26.1.1.(1)] , [REF:internal:nbc.divBV2.part9.appendix.appnote158:number:A-9.26.4.1.] and [REF:internal:nbc.divBV2.part9.appendix.appnote170:number:A-9.27.3.8.(4)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect26.subsect3.art1.sent5",
                 "type" : "sentence",
@@ -333279,7 +333279,7 @@
                  { "id" : "nbc.divBV2.part9.sect26.subsect3.art1.sent5.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "after expected shrinkage of the [REF:term:bldng:building] frame, where these surfaces are supported by exterior walls and exterior columns (see [REF:internal:nbc.divBV2.part9.appendix.appnote170:long] ), and" },
+                  "text" : "after expected shrinkage of the [REF:term:bldng:building] frame, where these surfaces are supported by exterior walls and exterior columns (see [REF:internal:nbc.divBV2.part9.appendix.appnote170:long:Note A-9.27.3.8.(4)] ), and" },
                  
                  { "id" : "nbc.divBV2.part9.sect26.subsect3.art1.sent5.clause2",
                   "type" : "clause",
@@ -333853,7 +333853,7 @@
               "type" : "article",
               "number" : 1,
               "title" : "Required Flashing at Intersections",
-              "see_also" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote158:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote156:number] .)",
+              "see_also" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote158:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote156:number:A-9.26.1.1.(1)] .)",
               "content" : 
               [ 
                { "id" : "nbc.divBV2.part9.sect26.subsect4.art1.sent1",
@@ -336258,7 +336258,7 @@
                { "id" : "nbc.divBV2.part9.sect27.subsect4.art2.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Backer rod shall conform to ASTM C1330, “Standard Specification for Cylindrical Sealant Backing for Use with Cold Liquid-Applied Sealants.” (See [REF:internal:nbc.divBV2.part9.appendix.appnote172:long] .)" } ] } ] },
+                "text" : "Backer rod shall conform to ASTM C1330, “Standard Specification for Cylindrical Sealant Backing for Use with Cold Liquid-Applied Sealants.” (See [REF:internal:nbc.divBV2.part9.appendix.appnote172:long:Note A-9.27.4.2.(1)] .)" } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect27.subsect5",
             "type" : "subsection",
@@ -344757,7 +344757,7 @@
                 "type" : "sentence",
                 "number" : 2,
                 "source" : "bc",
-                "text" : "Where the [REF:term:bldng:building] is in a location where the seismic design parameter, S_{max}, for Site Class C is greater than 0.37, heating and air-conditioning equipment with fuel or power connections shall be secured to the structure to resist overturning and displacement. (See [REF:internal:nbc.divBV2.part9.appendix.appnote184:long] .)" } ] },
+                "text" : "Where the [REF:term:bldng:building] is in a location where the seismic design parameter, S_{max}, for Site Class C is greater than 0.37, heating and air-conditioning equipment with fuel or power connections shall be secured to the structure to resist overturning and displacement. (See [REF:internal:nbc.divBV2.part9.appendix.appnote184:long:Note A-9.31.6.2.(3)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect33.subsect4.art8",
               "type" : "article",
@@ -346533,7 +346533,7 @@
                    { "id" : "nbc.divBV2.part9.sect34.subsect1.art5.sent1.clause2.subclause1",
                     "type" : "subclause",
                     "number" : 1,
-                    "text" : "totally enclosed [REF:term:ncmbtbl:noncombustible] raceways (see [REF:internal:nbc.divB.part3.appendix.appnote10:long] )," },
+                    "text" : "totally enclosed [REF:term:ncmbtbl:noncombustible] raceways (see [REF:internal:nbc.divB.part3.appendix.appnote10:long:Note A-3.1.4.3.(1)(b)(i)] )," },
                    
                    { "id" : "nbc.divBV2.part9.sect34.subsect1.art5.sent1.clause2.subclause2",
                     "type" : "subclause",
@@ -347171,7 +347171,7 @@
                { "id" : "nbc.divBV2.part9.sect36.subsect1.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "For the purpose of this Section, the term “common space” shall mean all spaces required to be [REF:term:cnd-sp:conditioned spaces] in accordance with the requirements of the Code that are not within a [REF:term:t:suite] but shall not include crawl spaces and [REF:term:vrtcl-rv:vertical service spaces] . (See [REF:internal:nbc.divBV2.part9.appendix.appnote216:long] .)" },
+                "text" : "For the purpose of this Section, the term “common space” shall mean all spaces required to be [REF:term:cnd-sp:conditioned spaces] in accordance with the requirements of the Code that are not within a [REF:term:t:suite] but shall not include crawl spaces and [REF:term:vrtcl-rv:vertical service spaces] . (See [REF:internal:nbc.divBV2.part9.appendix.appnote216:long:Note A-9.36.1.3.(3)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect1.art2.sent2",
                 "type" : "sentence",
@@ -351705,7 +351705,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect2.art10.sent1.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote152:long] for air leakage characteristics and water vapour permeance values for a number of common materials.)" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote152:long:Note A-9.25.5.1.(1)] for air leakage characteristics and water vapour permeance values for a number of common materials.)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect2.art10.sent2",
                 "type" : "sentence",
@@ -351725,12 +351725,12 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect2.art10.sent2.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote245:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote245:long:Note A-9.36.2.10.(5)(b)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect2.art10.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Where the [REF:term:r-brrr:air barrier system] consists of rigid panel-type material, all joints shall be sealed. (See [REF:internal:nbc.divBV2.part9.appendix.appnote245:long] .)" },
+                "text" : "Where the [REF:term:r-brrr:air barrier system] consists of rigid panel-type material, all joints shall be sealed. (See [REF:internal:nbc.divBV2.part9.appendix.appnote245:long:Note A-9.36.2.10.(5)(b)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect2.art10.sent4",
                 "type" : "sentence",
@@ -352025,7 +352025,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect2.art11.sent4.seealso",
-                  "content" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote253:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote251:long] .)" } ] },
+                  "content" : "(See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote253:short] and [REF:internal:nbc.divBV2.part9.appendix.appnote251:long:A-9.36.2.11.(2) and (3)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect2.art11.sent5",
                 "type" : "sentence",
@@ -352184,7 +352184,7 @@
                { "id" : "nbc.divBV2.part9.sect36.subsect3.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Piping for heating and cooling systems shall be designed and installed in accordance with [REF:internal:nbc.divBV2.part9.sect33.subsect8:long] (See [REF:internal:nbc.divBV2.part9.appendix.appnote245:long] .)" },
+                "text" : "Piping for heating and cooling systems shall be designed and installed in accordance with [REF:internal:nbc.divBV2.part9.sect33.subsect8:long] (See [REF:internal:nbc.divBV2.part9.appendix.appnote245:long:Note A-9.36.2.10.(5)(b)] .)" },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect3.art4.sent2",
                 "type" : "sentence",
@@ -352398,7 +352398,7 @@
                { "id" : "nbc.divBV2.part9.sect36.subsect3.art9.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "The requirements of [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:short] shall be met using a principal ventilation rate not less than that required in [REF:internal:nbc.divBV2.part9.sect32:long] (See [REF:internal:nbc.divBV2.part9.appendix.appnote266:long] .)" } ] },
+                "text" : "The requirements of [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:short] shall be met using a principal ventilation rate not less than that required in [REF:internal:nbc.divBV2.part9.sect32:long] (See [REF:internal:nbc.divBV2.part9.appendix.appnote266:long:Note A-9.36.3.9.(3)] .)" } ] },
              
              { "id" : "nbc.divBV2.part9.sect36.subsect3.art10",
               "type" : "article",
@@ -356339,7 +356339,7 @@
                  { "id" : "nbc.divBV2.part9.sect36.subsect5.art6.sent4.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "[REF:term:l:soil] conditions (see [REF:internal:nbc.divB.part1.appendix.appnote2:long] ), and" },
+                  "text" : "[REF:term:l:soil] conditions (see [REF:internal:nbc.divB.part1.appendix.appnote2:long:Note A-1.1.3.1.(2)] ), and" },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect5.art6.sent4.clause3",
                   "type" : "clause",
@@ -357687,7 +357687,7 @@
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect5.art13.sent1.seealso",
-                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote286:long] .)" } ] },
+                  "content" : "(See [REF:internal:nbc.divBV2.part9.appendix.appnote286:long:Note A-9.36.5.9.(1)] .)" } ] },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect5.art13.sent2",
                 "type" : "sentence",
@@ -434094,7 +434094,7 @@
             [ 
              { "id" : "nbc.divBV2.part9.spectables1.table1.note1",
               "vendor_id" : "et000261-0",
-              "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote57:long]" },
+              "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote57:long:Note A-9.10.3.1.]" },
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note10",
               "vendor_id" : "et000261-18",
@@ -434145,7 +434145,7 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note2",
               "vendor_id" : "et000261-1",
-              "content" : "[REF:term:fr-rtnc-:Fire-resistance ratings] and [REF:term:stc:STC] ratings of wood-frame construction were evaluated only for constructions with solid-sawn 38 mm × 89 mm lumber. However, the [REF:term:fr-rtnc-:fire-resistance ratings] and [REF:term:stc:STC] ratings provided for 38 mm × 89 mm wood-frame construction may be applied to wood-frame constructions with solid-sawn 38 mm × 140 mm lumber; in some cases the ratings may be conservative. Where 38 mm × 140 mm framing is used and absorptive material is called for, the absorptive material must be 140 mm thick. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] of Appendix D for the significance of [REF:term:fr-rtnc-:fire-resistance ratings] .) The [REF:term:stc:STC] ratings may also be applied to fingerjoined lumber. The [REF:term:fr-rtnc-:fire-resistance ratings] are applicable to constructions using fingerjoined lumber that has been manufactured with a heat-resistant adhesive (HRA) in accordance with NLGA special product standard SPS-1, “Fingerjoined Structural Lumber,” or SPS-3, “Fingerjoined “Vertical Stud Use Only” Lumber.” (See also [REF:internal:nbc.divBV2.part9.appendix.appnote125:long] .)" },
+              "content" : "[REF:term:fr-rtnc-:Fire-resistance ratings] and [REF:term:stc:STC] ratings of wood-frame construction were evaluated only for constructions with solid-sawn 38 mm × 89 mm lumber. However, the [REF:term:fr-rtnc-:fire-resistance ratings] and [REF:term:stc:STC] ratings provided for 38 mm × 89 mm wood-frame construction may be applied to wood-frame constructions with solid-sawn 38 mm × 140 mm lumber; in some cases the ratings may be conservative. Where 38 mm × 140 mm framing is used and absorptive material is called for, the absorptive material must be 140 mm thick. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] of Appendix D for the significance of [REF:term:fr-rtnc-:fire-resistance ratings] .) The [REF:term:stc:STC] ratings may also be applied to fingerjoined lumber. The [REF:term:fr-rtnc-:fire-resistance ratings] are applicable to constructions using fingerjoined lumber that has been manufactured with a heat-resistant adhesive (HRA) in accordance with NLGA special product standard SPS-1, “Fingerjoined Structural Lumber,” or SPS-3, “Fingerjoined “Vertical Stud Use Only” Lumber.” (See also [REF:internal:nbc.divBV2.part9.appendix.appnote125:long:Note A-9.23.10.4.(1)] .)" },
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note20",
               "vendor_id" : "et000261-13",
@@ -447950,7 +447950,7 @@
             [ 
              { "id" : "nbc.divBV2.part9.spectables1.table2.note1",
               "vendor_id" : "et000456-0",
-              "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote57:long]" },
+              "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote57:long:Note A-9.10.3.1.]" },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note10",
               "vendor_id" : "et000456-9",
@@ -534623,7 +534623,7 @@
                 
                 { "content" : "tapered treads, which are found in curved flights (the term tapered tread also includes winders); and" },
                 
-                { "content" : "winders are described in [REF:internal:nbc.divBV2.part9.appendix.appnote30:long]" } ] } ] },
+                { "content" : "winders are described in [REF:internal:nbc.divBV2.part9.appendix.appnote30:long:Note A-9.8.4.6.]" } ] } ] },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote29.para2",
@@ -534755,7 +534755,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote37.para1",
-             "content" : "As noted in [REF:internal:nbc.divBV2.part9.appendix.appnote35:long] , the guidance and support provided by handrails is particularly important at the beginning and end of ramps and flights of stairs and at changes in direction. The extended handrail provides guidance and allows users to steady themselves upon entering or leaving a ramp or flight of stairs. Such extensions are particularly useful to visually impaired persons, and persons with physical disabilities or who are encumbered in their use of the stairs or ramp." } ] },
+             "content" : "As noted in [REF:internal:nbc.divBV2.part9.appendix.appnote35:long:Note A-9.8.7.2.] , the guidance and support provided by handrails is particularly important at the beginning and end of ramps and flights of stairs and at changes in direction. The extended handrail provides guidance and allows users to steady themselves upon entering or leaving a ramp or flight of stairs. Such extensions are particularly useful to visually impaired persons, and persons with physical disabilities or who are encumbered in their use of the stairs or ramp." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote38",
            "type" : "application_note",
@@ -534810,7 +534810,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote41.para1",
-             "content" : "The requirements relating to guards stated in Part 9 are based on the premise that, wherever there is a difference in elevation of 600 mm or more between two floors, or between a floor or other surface to which access is provided for other than maintenance purposes and the next lower surface, the risk of injury in a fall from the higher surface is sufficient to warrant the installation of some kind of barrier to reduce the chances of such a fall. A wall along the edge of the higher surface will obviously prevent such a fall, provided the wall is sufficiently strong that a person cannot fall through it. Where there is no wall, a guard must be installed. Because guards clearly provide less protection than walls, additional requirements apply to guards to ensure that a minimum level of protection is provided. These relate to the characteristics described in  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote44:long] , [REF:internal:nbc.divBV2.part9.appendix.appnote45:number] , [REF:internal:nbc.divBV2.part9.appendix.appnote46:number] and [REF:internal:nbc.divBV2.part9.appendix.appnote47:number] ." },
+             "content" : "The requirements relating to guards stated in Part 9 are based on the premise that, wherever there is a difference in elevation of 600 mm or more between two floors, or between a floor or other surface to which access is provided for other than maintenance purposes and the next lower surface, the risk of injury in a fall from the higher surface is sufficient to warrant the installation of some kind of barrier to reduce the chances of such a fall. A wall along the edge of the higher surface will obviously prevent such a fall, provided the wall is sufficiently strong that a person cannot fall through it. Where there is no wall, a guard must be installed. Because guards clearly provide less protection than walls, additional requirements apply to guards to ensure that a minimum level of protection is provided. These relate to the characteristics described in  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote44:long:A-9.8.8.3.] , [REF:internal:nbc.divBV2.part9.appendix.appnote45:number:A-9.8.8.5.(1) and (3)] , [REF:internal:nbc.divBV2.part9.appendix.appnote46:number:A-9.8.8.5.(4)] and [REF:internal:nbc.divBV2.part9.appendix.appnote47:number:A-9.8.8.6.(1)] ." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote41.para2",
@@ -535262,7 +535262,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote64.para1",
-             "content" : "The fire block material separating the outlet box from the adjacent space within the assembly should span the framing members such that all four sides and the back of the outlet box are enclosed by a membrane or framing member conforming to [REF:internal:nbc.divBV2.part9.sect10.subsect16.art3:long] Any penetrations of the enclosure by wiring or cables must comply with all applicable requirements. (See also [REF:internal:nbc.divB.part3.appendix.appnote44:long] .)" } ] },
+             "content" : "The fire block material separating the outlet box from the adjacent space within the assembly should span the framing members such that all four sides and the back of the outlet box are enclosed by a membrane or framing member conforming to [REF:internal:nbc.divBV2.part9.sect10.subsect16.art3:long] Any penetrations of the enclosure by wiring or cables must comply with all applicable requirements. (See also [REF:internal:nbc.divB.part3.appendix.appnote44:long:Note A-3.1.11.7.(7)] .)" } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote65",
            "type" : "application_note",
@@ -537532,11 +537532,11 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote88.para5",
-             "content" : "The principal method of resisting the ingress of all soil gases, a resistance which is required for all buildings (see [REF:internal:nbc.divBV2.part9.sect13.subsect4.art2.sent1:long] ), is to seal the interface between the soil and the occupied space, so far as is reasonably practicable.  Sections [REF:internal:nbc.divBV2.part9.sect18:long] and [REF:internal:nbc.divBV2.part9.sect25:long:9.25.] contain requirements for air and soil gas barriers in assemblies in contact with ground, including those in crawl spaces. Providing control joints to reduce cracking of foundation walls and airtight covers for sump pits (see [REF:internal:nbc.divBV2.part9.sect14:long] ) are other measures that can help achieve this objective. The requirements provided in [REF:internal:nbc.divBV2.part9.sect25.subsect3:long] are explained in  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote145:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote146:number] ." },
+             "content" : "The principal method of resisting the ingress of all soil gases, a resistance which is required for all buildings (see [REF:internal:nbc.divBV2.part9.sect13.subsect4.art2.sent1:long] ), is to seal the interface between the soil and the occupied space, so far as is reasonably practicable.  Sections [REF:internal:nbc.divBV2.part9.sect18:long] and [REF:internal:nbc.divBV2.part9.sect25:long:9.25.] contain requirements for air and soil gas barriers in assemblies in contact with ground, including those in crawl spaces. Providing control joints to reduce cracking of foundation walls and airtight covers for sump pits (see [REF:internal:nbc.divBV2.part9.sect14:long] ) are other measures that can help achieve this objective. The requirements provided in [REF:internal:nbc.divBV2.part9.sect25.subsect3:long] are explained in  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote145:long:A-9.25.3.4. and 9.25.3.6.] and [REF:internal:nbc.divBV2.part9.appendix.appnote146:number:A-9.25.3.6.(2) and (3)] ." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote88.para6",
-             "content" : "The principal method of excluding radon is to ensure that the pressure difference across the ground\/space interface is positive (i.e., towards the outside) so that the inward flow of radon through any remaining leaks will be minimized. The requirements provided in [REF:internal:nbc.divBV2.part9.sect13.subsect4.art3:long] are explained in [REF:internal:nbc.divBV2.part9.appendix.appnote90:long]" } ] },
+             "content" : "The principal method of excluding radon is to ensure that the pressure difference across the ground\/space interface is positive (i.e., towards the outside) so that the inward flow of radon through any remaining leaks will be minimized. The requirements provided in [REF:internal:nbc.divBV2.part9.sect13.subsect4.art3:long] are explained in [REF:internal:nbc.divBV2.part9.appendix.appnote90:long:Note A-9.13.4.3.]" } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote89",
            "type" : "application_note",
@@ -542173,7 +542173,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote141.para1",
-             "content" : "For thermal insulation to be effective, it must not be short-circuited by convective airflow through or around the material. If low-density fibrous insulation is installed with an air space on both sides of the insulation, the temperature differential between the warm and cold sides will drive convective airflow around the insulation. If foamed plastic insulation is spot-adhered to a backing wall or adhered in a grid pattern to an air-permeable substrate, and is not sealed at the joints and around the perimeter, air spaces between the insulation and the substrate will interconnect with spaces behind the cladding. Any temperature or air pressure differential across the insulation will again lead to short circuiting of the insulation by airflow. Thermal insulation must therefore be installed in full and continuous contact with the air barrier or another continuous component with low air permeance. (See [REF:internal:nbc.divBV2.part9.appendix.appnote152:long] for examples of low-air-permeance materials.)" } ] },
+             "content" : "For thermal insulation to be effective, it must not be short-circuited by convective airflow through or around the material. If low-density fibrous insulation is installed with an air space on both sides of the insulation, the temperature differential between the warm and cold sides will drive convective airflow around the insulation. If foamed plastic insulation is spot-adhered to a backing wall or adhered in a grid pattern to an air-permeable substrate, and is not sealed at the joints and around the perimeter, air spaces between the insulation and the substrate will interconnect with spaces behind the cladding. Any temperature or air pressure differential across the insulation will again lead to short circuiting of the insulation by airflow. Thermal insulation must therefore be installed in full and continuous contact with the air barrier or another continuous component with low air permeance. (See [REF:internal:nbc.divBV2.part9.appendix.appnote152:long:Note A-9.25.5.1.(1)] for examples of low-air-permeance materials.)" } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote142",
            "type" : "application_note",
@@ -542230,7 +542230,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote144.para5",
-             "content" : "Generally the location in a building assembly of the airtight element of the air barrier system is not critical; it can restrict air leakage whether it is located near the outer surface of the assembly, near the inner surface or at some intermediate location. However, if a material chosen to act as an airtight element in the air barrier system also has the characteristics of a vapour barrier (i.e., low permeability to water vapour), its location must be chosen more carefully in order to avoid moisture problems. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote152:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote150:long] .)" },
+             "content" : "Generally the location in a building assembly of the airtight element of the air barrier system is not critical; it can restrict air leakage whether it is located near the outer surface of the assembly, near the inner surface or at some intermediate location. However, if a material chosen to act as an airtight element in the air barrier system also has the characteristics of a vapour barrier (i.e., low permeability to water vapour), its location must be chosen more carefully in order to avoid moisture problems. (See  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote152:long:A-9.25.5.1.(1)] and [REF:internal:nbc.divBV2.part9.appendix.appnote150:long:A-9.25.4.3.(2)] .)" },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote144.para6",
@@ -544468,7 +544468,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote158.para1",
-             "content" : "Drainage of water from decks and other platforms that effectively serve as roofs will be blocked by walls, and blocked or restricted by guards where significant lengths and heights of material are connected to the deck. Without proper flashing at such roof-wall junctions or roof-guard junctions, water will generally leak into the adjoining constructions and can penetrate into supporting constructions below. Exceptions include platforms where waterproof curbs of sufficient height are cast-in or where the deck and wall or guard are unit-formed. In these cases, the monolithic deck-wall or deck-guard junctions will minimize the likelihood of water ingress. (See also [REF:internal:nbc.divBV2.part9.appendix.appnote156:long] .)" } ] },
+             "content" : "Drainage of water from decks and other platforms that effectively serve as roofs will be blocked by walls, and blocked or restricted by guards where significant lengths and heights of material are connected to the deck. Without proper flashing at such roof-wall junctions or roof-guard junctions, water will generally leak into the adjoining constructions and can penetrate into supporting constructions below. Exceptions include platforms where waterproof curbs of sufficient height are cast-in or where the deck and wall or guard are unit-formed. In these cases, the monolithic deck-wall or deck-guard junctions will minimize the likelihood of water ingress. (See also [REF:internal:nbc.divBV2.part9.appendix.appnote156:long:Note A-9.26.1.1.(1)] .)" } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote159",
            "type" : "application_note",
@@ -544517,7 +544517,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote161.para5",
-             "content" : "Like concealed barrier assemblies, rainscreen assemblies include both a first and second plane of protection. The first plane comprises the cladding, which is designed and constructed to handle virtually all of the precipitation load. The second plane of protection is designed and constructed to handle only very small quantities of incidental water; composition of the second plane is described in [REF:internal:nbc.divBV2.part9.appendix.appnote164:long] In these assemblies, the air barrier system, which plays a role in controlling precipitation ingress due to air pressure difference, is protected from the elements. (See [REF:internal:nbc.divBV2.part9.appendix.appnote161.figure1:long] )" },
+             "content" : "Like concealed barrier assemblies, rainscreen assemblies include both a first and second plane of protection. The first plane comprises the cladding, which is designed and constructed to handle virtually all of the precipitation load. The second plane of protection is designed and constructed to handle only very small quantities of incidental water; composition of the second plane is described in [REF:internal:nbc.divBV2.part9.appendix.appnote164:long:Note A-9.27.3.1.] In these assemblies, the air barrier system, which plays a role in controlling precipitation ingress due to air pressure difference, is protected from the elements. (See [REF:internal:nbc.divBV2.part9.appendix.appnote161.figure1:long] )" },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote161.para6",
@@ -544650,7 +544650,7 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote164.div3.para1",
-               "content" : "It is recognized that many cladding assemblies with no space or with discontinuous space behind the cladding, and with the sheathing membrane material identified in [REF:internal:nbc.divBV2.part9.sect27.subsect3.art2:long] , have provided acceptable performance with a range of precipitation loads imposed on them. Vinyl and metal strip siding, and shake and shingle cladding, for example, are installed with discontinuous drained spaces, and have demonstrated acceptable performance in most conditions. Lapped wood and composite strip sidings, depending on their profiles, may or may not provide discontinuous spaces, and generally provide little drainage. Cladding assemblies with limited drainage capability that use a sheathing membrane meeting the minimum requirements are not recommended where they may be exposed to high precipitation loads or where the level of protection provided by the cladding is unknown or questionable. Local practice with demonstrated performance should be considered. (See also [REF:internal:nbc.divBV2.part9.sect27.subsect2.art2:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote163:long] )" } ] } ] },
+               "content" : "It is recognized that many cladding assemblies with no space or with discontinuous space behind the cladding, and with the sheathing membrane material identified in [REF:internal:nbc.divBV2.part9.sect27.subsect3.art2:long] , have provided acceptable performance with a range of precipitation loads imposed on them. Vinyl and metal strip siding, and shake and shingle cladding, for example, are installed with discontinuous drained spaces, and have demonstrated acceptable performance in most conditions. Lapped wood and composite strip sidings, depending on their profiles, may or may not provide discontinuous spaces, and generally provide little drainage. Cladding assemblies with limited drainage capability that use a sheathing membrane meeting the minimum requirements are not recommended where they may be exposed to high precipitation loads or where the level of protection provided by the cladding is unknown or questionable. Local practice with demonstrated performance should be considered. (See also [REF:internal:nbc.divBV2.part9.sect27.subsect2.art2:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote163:long:Note A-9.27.2.2.] )" } ] } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote165",
            "type" : "application_note",
@@ -545474,7 +545474,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote197.para3",
-             "content" : "Supplemental exhaust fans, which in most instances are located in kitchens and bathrooms, are required to be coupled to supply fans of similar capacity. The make-up air is necessary so that operation of the supplementary exhaust fan(s) will not depressurize the house [see [REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent2:long] ]. See also [REF:internal:nbc.divBV2.part9.appendix.appnote198:long]" } ] },
+             "content" : "Supplemental exhaust fans, which in most instances are located in kitchens and bathrooms, are required to be coupled to supply fans of similar capacity. The make-up air is necessary so that operation of the supplementary exhaust fan(s) will not depressurize the house [see [REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent2:long] ]. See also [REF:internal:nbc.divBV2.part9.appendix.appnote198:long:Note A-9.32.3.8.]" } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote198",
            "type" : "application_note",
@@ -545564,7 +545564,7 @@
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote198.div3.para4",
-               "content" : "See also [REF:internal:nbc.divBV2.part9.appendix.appnote199:long]" } ] },
+               "content" : "See also [REF:internal:nbc.divBV2.part9.appendix.appnote199:long:Note A-9.32.4.2.]" } ] },
             
             { "id" : "nbc.divBV2.part9.appendix.appnote198.figure1",
              "type" : "figure",
@@ -546280,7 +546280,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote206.para1",
-             "content" : "It is a common practice to introduce outdoor air to the house by means of an outdoor air duct connected to the return air plenum of a forced air furnace. This is an effective method and is a component of one method of satisfying the mechanical ventilation requirements of  Subsection [REF:internal:nbc.divBV2.part9.sect32.subsect3:long] However, some caution is required. If the proportion of cold outside to warm return air is too high, the resulting mixed air temperature could lead to excessive condensation in the furnace heat exchanger and possible premature failure of the heat exchanger. CAN\/CSA-F326-M, “Residential Mechanical Ventilation Systems,” requires that this mixed air temperature not be below 15.5°C when the outdoor temperature is at the January 2.5% value. It is also important that the outdoor air and the return air mix thoroughly before reaching the heat exchanger. [REF:internal:nbc.divBV2.part9.appendix.appnote187:long] provides some guidance on this." } ] },
+             "content" : "It is a common practice to introduce outdoor air to the house by means of an outdoor air duct connected to the return air plenum of a forced air furnace. This is an effective method and is a component of one method of satisfying the mechanical ventilation requirements of  Subsection [REF:internal:nbc.divBV2.part9.sect32.subsect3:long] However, some caution is required. If the proportion of cold outside to warm return air is too high, the resulting mixed air temperature could lead to excessive condensation in the furnace heat exchanger and possible premature failure of the heat exchanger. CAN\/CSA-F326-M, “Residential Mechanical Ventilation Systems,” requires that this mixed air temperature not be below 15.5°C when the outdoor temperature is at the January 2.5% value. It is also important that the outdoor air and the return air mix thoroughly before reaching the heat exchanger. [REF:internal:nbc.divBV2.part9.appendix.appnote187:long:Note A-9.32.3.] provides some guidance on this." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote207",
            "type" : "application_note",
@@ -546899,7 +546899,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote223.para3",
-             "content" : "The following paragraphs provide the calculations to determine the effective thermal resistance values for certain assemblies and the thermal characteristics of common building materials. The Tables in  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote232:long] and [REF:internal:nbc.divBV2.part9.appendix.appnote237:long] confirm the compliance of common building assemblies." },
+             "content" : "The following paragraphs provide the calculations to determine the effective thermal resistance values for certain assemblies and the thermal characteristics of common building materials. The Tables in  Notes [REF:internal:nbc.divBV2.part9.appendix.appnote232:long:A-9.36.2.6.(1)] and [REF:internal:nbc.divBV2.part9.appendix.appnote237:long:A-9.36.2.8.(1)] confirm the compliance of common building assemblies." },
             
             { "id" : "nbc.divBV2.part9.appendix.appnote223.div1",
              "type" : "note_division",
@@ -557843,7 +557843,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote226.para1",
-             "content" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art5.sent1:long] is intended to apply to building components such as partitions, chimneys, fireplaces, and columns and beams that are embedded along exterior walls, but not to stud framing and ends of joists. Studs and joists in frame construction are not considered to break the continuity of the insulation because the method for calculating the effective thermal resistance of such assemblies, which is described in [REF:internal:nbc.divBV2.part9.appendix.appnote223:long] , takes their presence into consideration." },
+             "content" : "[REF:internal:nbc.divBV2.part9.sect36.subsect2.art5.sent1:long] is intended to apply to building components such as partitions, chimneys, fireplaces, and columns and beams that are embedded along exterior walls, but not to stud framing and ends of joists. Studs and joists in frame construction are not considered to break the continuity of the insulation because the method for calculating the effective thermal resistance of such assemblies, which is described in [REF:internal:nbc.divBV2.part9.appendix.appnote223:long:Note A-9.36.2.4.(1)] , takes their presence into consideration." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote226.para2",
@@ -559190,7 +559190,7 @@
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote232.div2.para5",
-               "content" : "Select the applicable stud\/joist size and spacing and the RSI\/R-value of the insulation to obtain the resultant effective RSI value for that frame configuration. If the RSI\/R-value of the insulation product to be installed falls between two RSI\/R-values listed in the Table, the lower value must be used. Once the effective RSI value of the framing\/cavity portion is known, add up the nominal RSI values of all other materials in the assembly (see [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3:long] ) to obtain the total effective RSI value for the entire assembly. See the calculation examples in [REF:internal:nbc.divBV2.part9.appendix.appnote223:long] for further guidance." },
+               "content" : "Select the applicable stud\/joist size and spacing and the RSI\/R-value of the insulation to obtain the resultant effective RSI value for that frame configuration. If the RSI\/R-value of the insulation product to be installed falls between two RSI\/R-values listed in the Table, the lower value must be used. Once the effective RSI value of the framing\/cavity portion is known, add up the nominal RSI values of all other materials in the assembly (see [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3:long] ) to obtain the total effective RSI value for the entire assembly. See the calculation examples in [REF:internal:nbc.divBV2.part9.appendix.appnote223:long:Note A-9.36.2.4.(1)] for further guidance." },
               
               { "id" : "nbc.divBV2.part9.appendix.appnote232.div2.table2",
                "type" : "table",
@@ -561146,7 +561146,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote237.para4",
-             "content" : "Select the applicable stud\/joist size and spacing and the RSI\/R-value of the insulation to obtain the resultant effective RSI value for that frame configuration. If the RSI\/R-value of the insulation product to be installed falls between two RSI\/R-values listed in the Table, the lower value must be used. Once the effective RSI value of the framing\/cavity portion is known, add up the nominal RSI values of all other materials in the assembly (see [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3:long] ) to obtain the total effective RSI value of the entire assembly. See the calculation examples in [REF:internal:nbc.divBV2.part9.appendix.appnote223:long] for further guidance." },
+             "content" : "Select the applicable stud\/joist size and spacing and the RSI\/R-value of the insulation to obtain the resultant effective RSI value for that frame configuration. If the RSI\/R-value of the insulation product to be installed falls between two RSI\/R-values listed in the Table, the lower value must be used. Once the effective RSI value of the framing\/cavity portion is known, add up the nominal RSI values of all other materials in the assembly (see [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3:long] ) to obtain the total effective RSI value of the entire assembly. See the calculation examples in [REF:internal:nbc.divBV2.part9.appendix.appnote223:long:Note A-9.36.2.4.(1)] for further guidance." },
             
             { "id" : "nbc.divBV2.part9.appendix.appnote237.table1",
              "type" : "table",
@@ -567982,7 +567982,7 @@
               
               { "id" : "nbc.divBV2.part9.appendix.appnote257.table1.note2",
                "vendor_id" : "et001361-2",
-               "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote212:long] for the formula to convert metric RSI values to imperial R values." } ],
+               "content" : "See [REF:internal:nbc.divBV2.part9.appendix.appnote212:long:Note A-9.36.1.2.(3)] for the formula to convert metric RSI values to imperial R values." } ],
              "structure" : 
              { "columns" : 9,
               "column_specs" : 
@@ -619629,7 +619629,7 @@
    { "location_id" : "nbc.divA.part3.sect1.subsect1.art2.sent3.clause1",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "detached houses, semi-detached houses, houses with a [REF:term:scnd-t:secondary suite] , duplexes, triplexes, townhouses, row houses and boarding houses (see [REF:internal:nbc.divA.part1.appendix.appnote7:long] , Secondary Suite)," },
+    "content" : "detached houses, semi-detached houses, houses with a [REF:term:scnd-t:secondary suite] , duplexes, triplexes, townhouses, row houses and boarding houses (see [REF:internal:nbc.divA.part1.appendix.appnote7:long:Note A-1.4.1.2.(1)] , Secondary Suite)," },
    
    { "location_id" : "nbc.divA.part3.sect1.subsect1.art2.sent3.clause1",
     "type" : "revision",
@@ -620301,7 +620301,7 @@
    { "location_id" : "nbc.divB.part3.sect1.subsect6.art9",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Exterior CladdingExcept as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2:short] , [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short:(3)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent6:short:(6)] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be [REF:term:ncmbtbl:noncombustible] . (See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent5:shortNum] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] is permitted to consist of[REF:term:cmbtbl:combustible] cladding thatis not contiguous over more than 4 [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,is not more than 1.2 m in width,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction,is separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding by a horizontal distance of not less than 1.2 m,[REF:term:cmbtbl:combustible] cladding thatis not contiguous across adjacent [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m,[REF:term:cmbtbl:combustible] cladding representing up to 100% of the cladding on exterior walls of the first [REF:term:tr:storey] , provided all portions of the cladding can be directly accessed and are located not more than 15 m from a [REF:term:trt:street] or access route conforming to [REF:internal:nbc.divB.part3.sect2.subsect5.art6:long] , measured horizontally from the face of the [REF:term:bldng:building] ,except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent4:short] , a wall assembly that satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5.sent1.clause2:long] , ora combination of [REF:term:cmbtbl:noncombustible] cladding and the cladding described in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:shortNum] .(See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)The permitted area of [REF:term:cmbtbl:combustible] cladding in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] shall not exceed 5% of the cladding on each exterior wall of each [REF:term:tr:storey] where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the [REF:term:bldng:building] exceeds 10 min in 10% or more of all fire department calls to the [REF:term:bldng:building] . (See [REF:internal:nbc.divB.part3.appendix.appnote58:long] .)An exterior wall assembly constructed in conformance with [REF:internal:nbc.divB.appendixD.appsect6:long:Section D-6] of Appendix D is deemed to satisfy the criteria of [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium] .Except as provided in [REF:internal:nbc.divB.part3.sect2.subsect3.art10:long] , where the [REF:term:lmtng-dt:limiting distance] in [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table4:long:Table 3.2.3.1.-D] or [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table5:long:Table 3.2.3.1.-E] permits an area of [REF:term:nprtctd-:unprotected openings] of not more than 10% of the [REF:term:xpng-bld:exposing building face] , the construction requirements of [REF:internal:nbc.divB.part3.sect2.subsect3.art7.table1:long] shall be met.A wall assembly conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium] that includes [REF:term:cmbtbl:combustible] cladding made of [REF:term:fr-rtrdn:fire-retardant-treated wood] shall be tested for fire exposure after the cladding has been subjected to the accelerated weathering test specified in ASTM D2898, “Standard Practice for Accelerated Weathering of Fire-Retardant-Treated Wood for Fire Testing.”Where [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] on an exterior wall of a [REF:term:fr-cmprt:fire compartment] is exposed to [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] on an exterior wall of the same [REF:term:fr-cmprt:fire compartment] or of another [REF:term:fr-cmprt:fire compartment] , and the planes of the two walls are parallel or at an angle less than 135° measured from the exterior of the [REF:term:bldng:building] , the different portions of [REF:term:cmbtbl:combustible] cladding shallbe separated by a horizontal distance of not less than 3 m, andnot be contiguous over more than 2 [REF:term:tr:storeys]." },
+    "content" : "Exterior CladdingExcept as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2:short] , [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short:(3)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent6:short:(6)] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be [REF:term:ncmbtbl:noncombustible] . (See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent5:shortNum] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] is permitted to consist of[REF:term:cmbtbl:combustible] cladding thatis not contiguous over more than 4 [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,is not more than 1.2 m in width,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction,is separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding by a horizontal distance of not less than 1.2 m,[REF:term:cmbtbl:combustible] cladding thatis not contiguous across adjacent [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m,[REF:term:cmbtbl:combustible] cladding representing up to 100% of the cladding on exterior walls of the first [REF:term:tr:storey] , provided all portions of the cladding can be directly accessed and are located not more than 15 m from a [REF:term:trt:street] or access route conforming to [REF:internal:nbc.divB.part3.sect2.subsect5.art6:long] , measured horizontally from the face of the [REF:term:bldng:building] ,except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent4:short] , a wall assembly that satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5.sent1.clause2:long] , ora combination of [REF:term:cmbtbl:noncombustible] cladding and the cladding described in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:shortNum] .(See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)The permitted area of [REF:term:cmbtbl:combustible] cladding in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] shall not exceed 5% of the cladding on each exterior wall of each [REF:term:tr:storey] where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the [REF:term:bldng:building] exceeds 10 min in 10% or more of all fire department calls to the [REF:term:bldng:building] . (See [REF:internal:nbc.divB.part3.appendix.appnote58:long:Note A-3.2.3.1.(8)] .)An exterior wall assembly constructed in conformance with [REF:internal:nbc.divB.appendixD.appsect6:long:Section D-6] of Appendix D is deemed to satisfy the criteria of [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium] .Except as provided in [REF:internal:nbc.divB.part3.sect2.subsect3.art10:long] , where the [REF:term:lmtng-dt:limiting distance] in [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table4:long:Table 3.2.3.1.-D] or [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table5:long:Table 3.2.3.1.-E] permits an area of [REF:term:nprtctd-:unprotected openings] of not more than 10% of the [REF:term:xpng-bld:exposing building face] , the construction requirements of [REF:internal:nbc.divB.part3.sect2.subsect3.art7.table1:long] shall be met.A wall assembly conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium] that includes [REF:term:cmbtbl:combustible] cladding made of [REF:term:fr-rtrdn:fire-retardant-treated wood] shall be tested for fire exposure after the cladding has been subjected to the accelerated weathering test specified in ASTM D2898, “Standard Practice for Accelerated Weathering of Fire-Retardant-Treated Wood for Fire Testing.”Where [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] on an exterior wall of a [REF:term:fr-cmprt:fire compartment] is exposed to [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short] on an exterior wall of the same [REF:term:fr-cmprt:fire compartment] or of another [REF:term:fr-cmprt:fire compartment] , and the planes of the two walls are parallel or at an angle less than 135° measured from the exterior of the [REF:term:bldng:building] , the different portions of [REF:term:cmbtbl:combustible] cladding shallbe separated by a horizontal distance of not less than 3 m, andnot be contiguous over more than 2 [REF:term:tr:storeys]." },
    
    { "location_id" : "nbc.divB.part3.sect1.subsect6.art9",
     "type" : "revision",
@@ -620349,7 +620349,7 @@
    { "location_id" : "nbc.divB.part3.sect1.subsect6.art14.sent3",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long] .)" },
+    "content" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long:Note A-3.1.11.3.(3)] .)" },
    
    { "location_id" : "nbc.divB.part3.sect1.subsect6.art14.sent3",
     "type" : "revision",
@@ -620358,7 +620358,7 @@
     "sequence" : 1,
     "effective_date" : "2024-04-05",
     "status" : "current",
-    "content" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent8:medium] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long] .)",
+    "content" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art14.sent4:short]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:medium] , [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:medium]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent8:medium] , [REF:term:cmbtbl:combustible] interior ceiling finishes, other than foamed plastics, that are not more than 25 mm thick are permitted in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided they have a [REF:term:flm-prd-:flame-spread rating] not more than 25 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, except that not more than 10% of the ceiling area within each [REF:term:fr-cmprt:fire compartment] is permitted to have a [REF:term:flm-prd-:flame-spread rating] not more than 150. (See [REF:internal:nbc.divB.part3.appendix.appnote41:long:Note A-3.1.11.3.(3)] .)",
     "change_summary" : "Added references to Sentences 3.1.6.4.(7) and (8)",
     "note" : "Ministerial Order BA 2024 01" },
    
@@ -621272,7 +621272,7 @@
    { "location_id" : "nbc.divB.part3.appendix.appnote43",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "3.1.11.5.(3) and (4)Fire Blocks in Concealed SpacesTo reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long] for roof venting.)A 5- or 6-storey building constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art51:long] and buildings constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:long:3.2.2.57.]  or [REF:internal:nbc.divB.part3.sect2.subsect2.art60:long] are required to be sprinklered in accordance with NFPA 13, “Standard for the Installation of Sprinkler Systems” (see [REF:internal:nbc.divB.part3.sect2.subsect5.art12:long] ). NFPA 13 generally requires sprinklering of any concealed spaces of combustible construction or where large amounts of combustibles are present. However, NFPA 13 allows combustible concealed spaces not to be sprinklered in certain cases, including where concealed spaces are filled almost entirely with noncombustible insulation, where spaces contain only materials with a low flame-spread rating, and where limited access or the size of the space makes it impractical to install sprinklers. For certain types of construction in combustible concealed spaces that are not sprinklered, NFPA 13 mandates fire blocking beyond the minimum specified in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long] ." },
+    "content" : "3.1.11.5.(3) and (4)Fire Blocks in Concealed SpacesTo reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long:Note A-3.1.11.5.(1)] for roof venting.)A 5- or 6-storey building constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art51:long] and buildings constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:long:3.2.2.57.]  or [REF:internal:nbc.divB.part3.sect2.subsect2.art60:long] are required to be sprinklered in accordance with NFPA 13, “Standard for the Installation of Sprinkler Systems” (see [REF:internal:nbc.divB.part3.sect2.subsect5.art12:long] ). NFPA 13 generally requires sprinklering of any concealed spaces of combustible construction or where large amounts of combustibles are present. However, NFPA 13 allows combustible concealed spaces not to be sprinklered in certain cases, including where concealed spaces are filled almost entirely with noncombustible insulation, where spaces contain only materials with a low flame-spread rating, and where limited access or the size of the space makes it impractical to install sprinklers. For certain types of construction in combustible concealed spaces that are not sprinklered, NFPA 13 mandates fire blocking beyond the minimum specified in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long] ." },
    
    { "location_id" : "nbc.divB.part3.appendix.appnote43",
     "type" : "revision",
@@ -621281,7 +621281,7 @@
     "sequence" : 1,
     "effective_date" : "2024-04-05",
     "status" : "current",
-    "content" : "3.1.11.5.(3) and (4)Fire Blocks in Concealed SpacesTo reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long] for roof venting.)A 5- or 6-storey building constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art51:long] and buildings constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:long:3.2.2.57.] , [REF:internal:nbc.divB.part3.sect2.subsect2.art60:long:3.2.2.60.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] are required to be sprinklered in accordance with NFPA 13, “Standard for the Installation of Sprinkler Systems” (see [REF:internal:nbc.divB.part3.sect2.subsect5.art12:long] ). NFPA 13, “Standard for the Installation of Sprinkler Systems,” generally requires sprinklering of any concealed spaces of combustible construction or combustible contents in buildings equipped throughout with an automatic sprinkler system.",
+    "content" : "3.1.11.5.(3) and (4)Fire Blocks in Concealed SpacesTo reduce the risk of fire spread in combustible concealed spaces within the types of buildings referred to in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent3:long]  and [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent4:short] , fire blocking is required regardless of whether the horizontal concealed space is protected by sprinklers or not, unless the space is filled with noncombustible insulation so that any air gap at the top of the insulation is very small. (See also [REF:internal:nbc.divB.part3.appendix.appnote42:long:Note A-3.1.11.5.(1)] for roof venting.)A 5- or 6-storey building constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art51:long] and buildings constructed in accordance with [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:long:3.2.2.57.] , [REF:internal:nbc.divB.part3.sect2.subsect2.art60:long:3.2.2.60.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] are required to be sprinklered in accordance with NFPA 13, “Standard for the Installation of Sprinkler Systems” (see [REF:internal:nbc.divB.part3.sect2.subsect5.art12:long] ). NFPA 13, “Standard for the Installation of Sprinkler Systems,” generally requires sprinklering of any concealed spaces of combustible construction or combustible contents in buildings equipped throughout with an automatic sprinkler system.",
     "change_summary" : "Added reference to Article 3.2.2.93 (changed \"or 3.2.2.60.\" to \", 3.2.2.60. or 3.2.2.93.\")",
     "note" : "Ministerial Order BA 2024 01" },
    
@@ -621441,7 +621441,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "(See  Note [REF:internal:nbc.divB.part5.appendix.appnote1:long] )",
+    "content" : "(See  Note [REF:internal:nbc.divB.part5.appendix.appnote1:long:Note A-5] )",
     "change_summary" : "Changed see-also reference to display as \"(See Note A-5.)\"",
     "note" : "Ministerial Order BA 2024 06" },
    
