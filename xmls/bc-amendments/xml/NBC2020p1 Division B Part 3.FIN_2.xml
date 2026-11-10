@@ -903,7 +903,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause4.subclause6" number="6">
-                        <text>where the door swings outward, is provided with a horizontal, D-shaped, visually contrasting door pull not less than <measurement units="metric">140 mm</measurement> long located on the inside such that its midpoint is <measurement units="metric">200 mm</measurement> to <measurement units="metric">300 mm</measurement> from the hinged side of the door and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1 100 mm</measurement> above the floor (see <ref type="internal" target="nbc.divB.part3.appendix.appnote222" display-type="short"/>), and</text>
+                        <!-- CLAUDE-AUTOFIX CF-01542 | issue 10078 | The PDF prints 1100 mm (no space) here, so the number is typed without the space to match it. -->
+                        <text>where the door swings outward, is provided with a horizontal, D-shaped, visually contrasting door pull not less than <measurement units="metric">140 mm</measurement> long located on the inside such that its midpoint is <measurement units="metric">200 mm</measurement> to <measurement units="metric">300 mm</measurement> from the hinged side of the door and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1100 mm</measurement> above the floor (see <ref type="internal" target="nbc.divB.part3.appendix.appnote222" display-type="short"/>), and</text>
                     </subclause>
                 </new-content>
             </replace>
@@ -919,9 +920,10 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-01542 CF-01543 | issue 10079 | The PDF prints 1100 mm (no space) here, so the number is typed without the space to match it. -->
                         <text>is provided with a horizontal, D-shaped, visually contrasting
                             door pull not less than <measurement units="metric">140 mm</measurement> long located on the outside
-                            such that its midpoint is <measurement units="metric">120 mm</measurement> to <measurement units="metric">220 mm</measurement> from the latch side and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1 100 mm</measurement> above the floor, </text>
+                            such that its midpoint is <measurement units="metric">120 mm</measurement> to <measurement units="metric">220 mm</measurement> from the latch side and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1100 mm</measurement> above the floor, </text>
                     </new-content>
                 </element-replace>
             </modify>
