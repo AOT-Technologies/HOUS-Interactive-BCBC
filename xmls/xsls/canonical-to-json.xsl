@@ -2359,6 +2359,12 @@
             <xsl:text>:A-</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-015 CF-01285 | issue 9842 | Article, Subsection and Section numbers keep their final period, as in the PDF (3.2.2.49.). -->
+        <xsl:if test="@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')])">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
+            <xsl:text>.</xsl:text>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-014 CF-09365 | issue 10304 | Appendix D references print as in the PDF: Article and Subsection numbers end with a period, a Section reference does not. -->
         <xsl:if test="@type = 'internal' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+(\.article\d+)?)?$') and not($next-significant[self::text() and matches(., '^\s*\.')])">
             <xsl:variable name="appx-number" select="concat(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix([A-Z])\..*$', '$1'), '-', string-join(for $t in tokenize(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.', ''), '\.') return replace($t, '^\D+', ''), '.'))"/>
