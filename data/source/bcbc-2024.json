@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-10T21:30:54.411+05:30",
+  "generated_timestamp" : "2026-11-10T22:34:02.073+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -121723,7 +121723,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Leakage Area, % [REF:table-note:nbc.divB.part3.appendix.appnote107.table1.note3]" } ],
+                    "value" : "Leakage Area, % [REF:internal:nbc.divB.part3.appendix.appnote107.table1.note3:short]" } ],
                   "align" : "center",
                   "valign" : "middle",
                   "rowspan" : 2 },
@@ -125859,7 +125859,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Leakage Area as % of Closure Area [REF:table-note:nbc.divB.part3.appendix.appnote107.table3.note1]  [REF:table-note:nbc.divB.part3.appendix.appnote107.table3.note2]" } ],
+                    "value" : "Leakage Area as % of Closure Area [REF:internal:nbc.divB.part3.appendix.appnote107.table3.note1:short]  [REF:internal:nbc.divB.part3.appendix.appnote107.table3.note2:short]" } ],
                   "align" : "center",
                   "valign" : "middle" } ] } ],
               "body_rows" : 
@@ -125960,7 +125960,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Area of Closure [REF:table-note:nbc.divB.part3.appendix.appnote107.table4.note1] , m^{2}" } ],
+                    "value" : "Area of Closure [REF:internal:nbc.divB.part3.appendix.appnote107.table4.note1:short] , m^{2}" } ],
                   "align" : "center",
                   "valign" : "middle" },
                  
@@ -126086,7 +126086,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "2.5 [REF:table-note:nbc.divB.part3.appendix.appnote107.table4.note2]" } ],
+                    "value" : "2.5 [REF:internal:nbc.divB.part3.appendix.appnote107.table4.note2:short]" } ],
                   "align" : "char",
                   "valign" : "middle" },
                  
@@ -160798,7 +160798,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "C_{s}[REF:table-note:nbc.divB.part4.appendix.appnote42.table1.note1]" } ],
+                    "value" : "C_{s}[REF:internal:nbc.divB.part4.appendix.appnote42.table1.note1:short]" } ],
                   "valign" : "middle",
                   "rowspan" : 2 },
                  
@@ -160843,7 +160843,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "[REF:table-note:nbc.divB.part4.appendix.appnote42.table1.note2]" } ] },
+                    "value" : "[REF:internal:nbc.divB.part4.appendix.appnote42.table1.note2:short]" } ] },
                  
                  { "content" : 
                   [ 
@@ -160868,7 +160868,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "II [REF:table-note:nbc.divB.part4.appendix.appnote42.table1.note3]" } ],
+                    "value" : "II [REF:internal:nbc.divB.part4.appendix.appnote42.table1.note3:short]" } ],
                   "rowspan" : 2 },
                  
                  { "content" : 
@@ -536014,7 +536014,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Options for Design and Construction of Junctions and Flanking Surfaces [REF:table-note:nbc.divBV2.part9.appendix.appnote82.table1.note1] to Address Horizontal Sound Transmission Paths" } ],
+                    "value" : "Options for Design and Construction of Junctions and Flanking Surfaces [REF:internal:nbc.divBV2.part9.appendix.appnote82.table1.note1:short] to Address Horizontal Sound Transmission Paths" } ],
                   "align" : "center",
                   "valign" : "middle",
                   "colsep" : "0",
@@ -536691,7 +536691,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Options for Design and Construction of Junctions and Flanking Surfaces [REF:table-note:nbc.divBV2.part9.appendix.appnote82.table3.note1] to Address Vertical Sound Transmission Paths" } ],
+                    "value" : "Options for Design and Construction of Junctions and Flanking Surfaces [REF:internal:nbc.divBV2.part9.appendix.appnote82.table3.note1:short] to Address Vertical Sound Transmission Paths" } ],
                   "align" : "center",
                   "valign" : "middle",
                   "colsep" : "0",
@@ -538147,7 +538147,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Nail Diameter, mm [REF:table-note:nbc.divBV2.part9.appendix.appnote118.table1.note1]" } ],
+                      "value" : "Nail Diameter, mm [REF:internal:nbc.divBV2.part9.appendix.appnote118.table1.note1:short]" } ],
                     "align" : "center",
                     "valign" : "middle",
                     "colsep" : "1" },
@@ -538349,7 +538349,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Minimum Sheathing Element[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note1] and maximum stud spacing" } ],
+                    "value" : "Minimum Sheathing Element[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note1:short] and maximum stud spacing" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -538367,19 +538367,19 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Minimum Number[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note2] or Maximum Spacing of Fasteners [REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note2:short] at Panel Edges to Framing" } ],
+                    "value" : "Minimum Number[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note2:short] or Maximum Spacing of Fasteners [REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note2:short] at Panel Edges to Framing" } ],
                   "align" : "center" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "K_{Wframe}[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note3]" } ],
+                    "value" : "K_{Wframe}[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "K_{Sframe}[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note4]" } ],
+                    "value" : "K_{Sframe}[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note4:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -538460,13 +538460,13 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "2.48 mm diameter ring thread with 20 mm penetration into support framing[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note5]" } ],
+                    "value" : "2.48 mm diameter ring thread with 20 mm penetration into support framing[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note5:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.45 mm shank diameter Type W with 20 mm penetration into support framing[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note6]" } ],
+                    "value" : "3.45 mm shank diameter Type W with 20 mm penetration into support framing[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note6:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -538490,7 +538490,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "0.61[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note7]" } ],
+                    "value" : "0.61[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note7:short]" } ],
                   "align" : "center" } ] },
                
                { "id" : "nbc.divBV2.part9.appendix.appnote118a.table1.row2",
@@ -538570,7 +538570,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.45 mm shank diameter Type W with 20 mm penetration into support framing[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note6a]" } ],
+                    "value" : "3.45 mm shank diameter Type W with 20 mm penetration into support framing[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note6a:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -538610,7 +538610,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "12.5 mm gypsum for 400 mm stud spacing or 12.5 mm gypsum for 600 mm stud spacing, blocked[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note9]" } ],
+                    "value" : "12.5 mm gypsum for 400 mm stud spacing or 12.5 mm gypsum for 600 mm stud spacing, blocked[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note9:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -538720,13 +538720,13 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "2.84 mm x 51 mm[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note10]" } ],
+                    "value" : "2.84 mm x 51 mm[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note10:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "NP[REF:table-note:nbc.divBV2.part9.appendix.appnote118a.table1.note11]" } ],
+                    "value" : "NP[REF:internal:nbc.divBV2.part9.appendix.appnote118a.table1.note11:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -539193,7 +539193,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "With Strapping [REF:table-note:nbc.divBV2.part9.appendix.appnote120.table1.note1]" } ],
+                    "value" : "With Strapping [REF:internal:nbc.divBV2.part9.appendix.appnote120.table1.note1:short]" } ],
                   "valign" : "middle",
                   "colspan" : 3 },
                  
@@ -539551,7 +539551,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Joists with Concrete Topping [REF:table-note:nbc.divBV2.part9.appendix.appnote120.table2.note2]" } ],
+                    "value" : "Joists with Concrete Topping [REF:internal:nbc.divBV2.part9.appendix.appnote120.table2.note2:short]" } ],
                   "valign" : "middle",
                   "colspan" : 3 } ] },
                
@@ -539911,7 +539911,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Floors with nailed [REF:table-note:nbc.divBV2.part9.appendix.appnote120.table3.note1] subfloor" } ],
+                    "value" : "Floors with nailed [REF:internal:nbc.divBV2.part9.appendix.appnote120.table3.note1:short] subfloor" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -539928,7 +539928,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Floor with nailed and field-glued [REF:table-note:nbc.divBV2.part9.appendix.appnote120.table3.note2] subfloor, vibration-controlled span greater than 3 m" } ],
+                    "value" : "Floor with nailed and field-glued [REF:internal:nbc.divBV2.part9.appendix.appnote120.table3.note2:short] subfloor, vibration-controlled span greater than 3 m" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -539945,7 +539945,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Floor with nailed and field-glued [REF:table-note:nbc.divBV2.part9.appendix.appnote120.table3.note2] subfloor, vibration-controlled span 3 m or less" } ],
+                    "value" : "Floor with nailed and field-glued [REF:internal:nbc.divBV2.part9.appendix.appnote120.table3.note2:short] subfloor, vibration-controlled span 3 m or less" } ],
                   "align" : "left",
                   "valign" : "middle" },
                  
@@ -541477,7 +541477,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "C_{walls}[REF:table-note:nbc.divBV2.part9.appendix.appnote134c.table1.note2]" } ],
+                    "value" : "C_{walls}[REF:internal:nbc.divBV2.part9.appendix.appnote134c.table1.note2:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -542952,7 +542952,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "96 [REF:table-note:nbc.divBV2.part9.appendix.appnote152.table1.note2]" } ],
+                    "value" : "96 [REF:internal:nbc.divBV2.part9.appendix.appnote152.table1.note2:short]" } ],
                   "align" : "center",
                   "valign" : "middle",
                   "rowsep" : "1" } ] },
@@ -544809,7 +544809,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Equilibrium MC, % [REF:table-note:nbc.divBV2.part9.appendix.appnote170.div2.table1.note1]" } ],
+                      "value" : "Equilibrium MC, % [REF:internal:nbc.divBV2.part9.appendix.appnote170.div2.table1.note1:short]" } ],
                     "align" : "center" } ] } ],
                 "body_rows" : 
                 [ 
@@ -548190,7 +548190,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "advanced wood-frame with double top plate [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div2.table1.note2]" } ],
+                      "value" : "advanced wood-frame with double top plate [REF:internal:nbc.divBV2.part9.appendix.appnote223.div2.table1.note2:short]" } ],
                     "rowsep" : "1" },
                    
                    { "content" : 
@@ -550108,7 +550108,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "<bold>Air Cavities<\/bold>[REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note2]  [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note3]" } ],
+                      "value" : "<bold>Air Cavities<\/bold>[REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note2:short]  [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note3:short]" } ],
                     "align" : "center" },
                    
                    { "content" : 
@@ -550136,7 +550136,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Ceiling (heat flow up) faced with non-reflective material [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note4]" } ],
+                      "value" : "Ceiling (heat flow up) faced with non-reflective material [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note4:short]" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "1",
@@ -550254,7 +550254,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Floors (heat flow down) faced with non-reflective material [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note4]" } ],
+                      "value" : "Floors (heat flow down) faced with non-reflective material [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note4:short]" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "1",
@@ -550372,7 +550372,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Walls (heat flow horizontal) faced with non-reflective material [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note4]" } ],
+                      "value" : "Walls (heat flow horizontal) faced with non-reflective material [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note4:short]" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "1",
@@ -551392,7 +551392,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "<bold>Roofing Materials<\/bold>[REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note5]" } ],
+                      "value" : "<bold>Roofing Materials<\/bold>[REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note5:short]" } ],
                     "align" : "center" },
                    
                    { "content" : 
@@ -552343,7 +552343,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "<bold>Insulation Materials<\/bold>[REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note6]" } ],
+                      "value" : "<bold>Insulation Materials<\/bold>[REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note6:short]" } ],
                     "align" : "center" },
                    
                    { "content" : 
@@ -552479,7 +552479,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "R19 [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note7] (R20 compressed)" } ],
+                      "value" : "R19 [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note7:short] (R20 compressed)" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "0" },
@@ -552800,7 +552800,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "<bold>Insulation Materials<\/bold>[REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note6] (continued)" } ],
+                      "value" : "<bold>Insulation Materials<\/bold>[REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note6:short] (continued)" } ],
                     "align" : "center",
                     "valign" : "middle" },
                    
@@ -553120,7 +553120,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Expanded polystyrene (CAN\/ULC-S701.1) [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note8]" } ],
+                      "value" : "Expanded polystyrene (CAN\/ULC-S701.1) [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note8:short]" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "0" },
@@ -554330,7 +554330,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Hardwood [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note9]  [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note10]" } ],
+                      "value" : "Hardwood [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note9:short]  [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note10:short]" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "0" },
@@ -554507,7 +554507,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Softwood [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note9]  [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note10]" } ],
+                      "value" : "Softwood [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note9:short]  [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note10:short]" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "0" },
@@ -554972,7 +554972,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Wood, structural framing, spruce-pine-fir [REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note11]" } ],
+                      "value" : "Wood, structural framing, spruce-pine-fir [REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note11:short]" } ],
                     "align" : "left",
                     "valign" : "middle",
                     "rowsep" : "1" },
@@ -556981,7 +556981,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "<bold>Interior Finish Materials<\/bold>[REF:table-note:nbc.divBV2.part9.appendix.appnote223.div3.table3.note12]" } ],
+                      "value" : "<bold>Interior Finish Materials<\/bold>[REF:internal:nbc.divBV2.part9.appendix.appnote223.div3.table3.note12:short]" } ],
                     "align" : "center" },
                    
                    { "content" : 
@@ -558153,7 +558153,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Minimum Nominal Thermal Resistance, [REF:table-note:nbc.divBV2.part9.appendix.appnote232.div2.table1.note1] in (m²×K)\/W, to be Made up by Insulation, Sheathing [REF:table-note:nbc.divBV2.part9.appendix.appnote232.div2.table1.note2] or Other Materials and Air Film Coefficients" } ],
+                      "value" : "Minimum Nominal Thermal Resistance, [REF:internal:nbc.divBV2.part9.appendix.appnote232.div2.table1.note1:short] in (m²×K)\/W, to be Made up by Insulation, Sheathing [REF:internal:nbc.divBV2.part9.appendix.appnote232.div2.table1.note2:short] or Other Materials and Air Film Coefficients" } ],
                     "colspan" : 4 } ] } ],
                 "body_rows" : 
                 [ 
@@ -558171,7 +558171,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "3.34 (R19) [REF:table-note:nbc.divBV2.part9.appendix.appnote232.div2.table1.note3]" } ],
+                      "value" : "3.34 (R19) [REF:internal:nbc.divBV2.part9.appendix.appnote232.div2.table1.note3:short]" } ],
                     "rowspan" : 2 },
                    
                    { "content" : 
@@ -558187,7 +558187,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "0.42 [REF:table-note:nbc.divBV2.part9.appendix.appnote232.div2.table1.note4]" } ] },
+                      "value" : "0.42 [REF:internal:nbc.divBV2.part9.appendix.appnote232.div2.table1.note4:short]" } ] },
                    
                    { "content" : 
                     [ 
@@ -558369,7 +558369,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "3.34 (R19) [REF:table-note:nbc.divBV2.part9.appendix.appnote232.div2.table1.note3]" } ],
+                      "value" : "3.34 (R19) [REF:internal:nbc.divBV2.part9.appendix.appnote232.div2.table1.note3:short]" } ],
                     "rowspan" : 3 },
                    
                    { "content" : 
@@ -558875,7 +558875,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Insulating concrete form (ICF), 150 mm thick [REF:table-note:nbc.divBV2.part9.appendix.appnote232.div2.table1.note5]" } ],
+                      "value" : "Insulating concrete form (ICF), 150 mm thick [REF:internal:nbc.divBV2.part9.appendix.appnote232.div2.table1.note5:short]" } ],
                     "rowspan" : 2 },
                    
                    { "content" : 
@@ -559352,7 +559352,7 @@
                    { "content" : 
                     [ 
                      { "type" : "text",
-                      "value" : "Effective Thermal Resistance of Framing\/Cavity Portion, [REF:table-note:nbc.divBV2.part9.appendix.appnote232.div2.table2.note1] (m²×K)\/W" } ],
+                      "value" : "Effective Thermal Resistance of Framing\/Cavity Portion, [REF:internal:nbc.divBV2.part9.appendix.appnote232.div2.table2.note1:short] (m²×K)\/W" } ],
                     "align" : "center",
                     "colsep" : "0",
                     "colspan" : 8 } ] } ],
@@ -561310,7 +561310,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Minimum Nominal Thermal Resistance, [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note1] in (m²×K)\/W, to be Made up by Insulation, Sheathing [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note2] or Other Materials and Air Film Coefficients" } ],
+                    "value" : "Minimum Nominal Thermal Resistance, [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note1:short] in (m²×K)\/W, to be Made up by Insulation, Sheathing [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note2:short] or Other Materials and Air Film Coefficients" } ],
                   "align" : "center",
                   "colspan" : 4 } ] } ],
               "body_rows" : 
@@ -561479,7 +561479,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.34 (R19) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.34 (R19) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -561669,7 +561669,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.52 (R20) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.52 (R20) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -561860,7 +561860,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.34 (R19) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.34 (R19) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -562050,7 +562050,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.52 (R20) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.52 (R20) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -562241,7 +562241,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.34 (R19) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.34 (R19) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -562472,7 +562472,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Insulating concrete form (ICF): [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note4]150 mm concrete" } ],
+                    "value" : "Insulating concrete form (ICF): [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note4:short]150 mm concrete" } ],
                   "rowspan" : 2 },
                  
                  { "content" : 
@@ -562492,7 +562492,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.52 (R20) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.52 (R20) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -562588,7 +562588,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.34 (R19) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.34 (R19) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -562795,7 +562795,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "3.34 (R19) [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table1.note3]" } ],
+                    "value" : "3.34 (R19) [REF:internal:nbc.divBV2.part9.appendix.appnote237.table1.note3:short]" } ],
                   "align" : "center" },
                  
                  { "content" : 
@@ -563128,7 +563128,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Effective Thermal Resistance of Framing\/Cavity Portion, [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table2.note1] (m²×K)\/W" } ],
+                    "value" : "Effective Thermal Resistance of Framing\/Cavity Portion, [REF:internal:nbc.divBV2.part9.appendix.appnote237.table2.note1:short] (m²×K)\/W" } ],
                   "align" : "center",
                   "colsep" : "0",
                   "colspan" : 6 } ] } ],
@@ -564580,7 +564580,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "Effective Thermal Resistance of Framing\/Cavity Portion, [REF:table-note:nbc.divBV2.part9.appendix.appnote237.table3.note1] (m²×K)\/W" } ],
+                    "value" : "Effective Thermal Resistance of Framing\/Cavity Portion, [REF:internal:nbc.divBV2.part9.appendix.appnote237.table3.note1:short] (m²×K)\/W" } ],
                   "align" : "center",
                   "valign" : "middle",
                   "colsep" : "0",
@@ -568022,7 +568022,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "RSI Required for Exterior Walls, [REF:table-note:nbc.divBV2.part9.appendix.appnote257.table1.note1] (m^{2}×K)\/W" } ],
+                    "value" : "RSI Required for Exterior Walls, [REF:internal:nbc.divBV2.part9.appendix.appnote257.table1.note1:short] (m^{2}×K)\/W" } ],
                   "align" : "center",
                   "valign" : "middle",
                   "rowspan" : 3 },
@@ -568030,7 +568030,7 @@
                  { "content" : 
                   [ 
                    { "type" : "text",
-                    "value" : "RSI [REF:table-note:nbc.divBV2.part9.appendix.appnote257.table1.note2] on Underside of 127 mm Deep Duct, (m^{2}×K)\/W" } ],
+                    "value" : "RSI [REF:internal:nbc.divBV2.part9.appendix.appnote257.table1.note2:short] on Underside of 127 mm Deep Duct, (m^{2}×K)\/W" } ],
                   "align" : "center",
                   "valign" : "middle",
                   "rowspan" : 3 },
@@ -622792,7 +622792,7 @@
    { "location_id" : "nbc.divBV2.part9.appendix.appnote118.table1",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Alternative Nail Diameters and SpacingElementNail Diameter, mm [REF:table-note:nbc.divBV2.part9.appendix.appnote118.table1.note1]Maximum Spacing of Nails Along Edges of Wall Sheathing, mm o.c.Plywood, OSB or waferboard2.19–2.52752.53–2.821002.83–3.09125> 3.09150" },
+    "content" : "Alternative Nail Diameters and SpacingElementNail Diameter, mm [REF:internal:nbc.divBV2.part9.appendix.appnote118.table1.note1:short]Maximum Spacing of Nails Along Edges of Wall Sheathing, mm o.c.Plywood, OSB or waferboard2.19–2.52752.53–2.821002.83–3.09125> 3.09150" },
    
    { "location_id" : "nbc.divBV2.part9.appendix.appnote118.table1",
     "type" : "revision",
