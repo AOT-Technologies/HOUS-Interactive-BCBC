@@ -1316,6 +1316,13 @@
     <xsl:value-of select="replace(., '\\s+', ' ')" />
   </xsl:template>
 
+  <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | A line break in the NBC base (<?Pub _newline?>) between two words becomes a space, so the words are not glued together as they are not in the PDF. -->
+  <xsl:template match="processing-instruction('Pub')[normalize-space(.) = '_newline']" mode="rich-text entry-content">
+    <xsl:if test="matches(string(preceding-sibling::node()[1][self::text()]), '[^\s\-]$') and not(matches(string(preceding-sibling::node()[1][self::text()]), '\S/$')) and matches(string(following-sibling::node()[1][self::text()]), '^\S')">
+      <xsl:text> </xsl:text>
+    </xsl:if>
+  </xsl:template>
+
   <xsl:template match="emphasis" mode="rich-text">
     <emphasis style="{@style}"><xsl:apply-templates
                 select="node()"

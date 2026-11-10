@@ -214,12 +214,13 @@
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.rowh2">
                                     <entry></entry>
-                                    <entry>Zone 4&lt; 3000</entry>
-                                    <entry>Zone 53000 to 3999</entry>
-                                    <entry>Zone 64000 to 4999</entry>
-                                    <entry>Zone 7A5000 to 5999</entry>
-                                    <entry>Zone 7B6000 to 6999</entry>
-                                    <entry>Zone 8≥ 7000</entry>
+                                    <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | Space between the climate zone and its degree-days, as in the PDF (Zone 7A / 5000 to 5999). -->
+                                    <entry>Zone 4 &lt; 3000</entry>
+                                    <entry>Zone 5 3000 to 3999</entry>
+                                    <entry>Zone 6 4000 to 4999</entry>
+                                    <entry>Zone 7A 5000 to 5999</entry>
+                                    <entry>Zone 7B 6000 to 6999</entry>
+                                    <entry>Zone 8 ≥ 7000</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.rowh3">
                                     <entry></entry>
@@ -327,12 +328,13 @@
                                         <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn2">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.rowh2">
-                                        <entry>Zone 4&lt; 3000</entry>
-                                        <entry>Zone 53000 to 3999</entry>
-                                        <entry>Zone 64000 to 4999</entry>
-                                        <entry>Zone 7A5000 to 5999</entry>
-                                        <entry>Zone 7B6000 to 6999</entry>
-                                        <entry>Zone 8≥ 7000</entry>
+                                        <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | Space between the climate zone and its degree-days, as in the PDF (Zone 7A / 5000 to 5999). -->
+                                        <entry>Zone 4 &lt; 3000</entry>
+                                        <entry>Zone 5 3000 to 3999</entry>
+                                        <entry>Zone 6 4000 to 4999</entry>
+                                        <entry>Zone 7A 5000 to 5999</entry>
+                                        <entry>Zone 7B 6000 to 6999</entry>
+                                        <entry>Zone 8 ≥ 7000</entry>
                                     </row>
                                 </thead>
                                 <tbody>
@@ -373,12 +375,13 @@
                                         <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.fn1">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.rowh2">
-                                        <entry>Zone 4&lt; 3000</entry>
-                                        <entry>Zone 53000 to 3999</entry>
-                                        <entry>Zone 64000 to 4999</entry>
-                                        <entry>Zone 7A5000 to 5999</entry>
-                                        <entry>Zone 7B6000 to 6999</entry>
-                                        <entry>Zone 8≥ 7000</entry>
+                                        <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | Space between the climate zone and its degree-days, as in the PDF (Zone 7A / 5000 to 5999). -->
+                                        <entry>Zone 4 &lt; 3000</entry>
+                                        <entry>Zone 5 3000 to 3999</entry>
+                                        <entry>Zone 6 4000 to 4999</entry>
+                                        <entry>Zone 7A 5000 to 5999</entry>
+                                        <entry>Zone 7B 6000 to 6999</entry>
+                                        <entry>Zone 8 ≥ 7000</entry>
                                     </row>
                                 </thead>
                                 <tbody>
@@ -633,12 +636,13 @@
                                         <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.fn2">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.rowh2">
-                                        <entry>Zone 4&lt; 3000</entry>
-                                        <entry>Zone 53000 to 3999</entry>
-                                        <entry>Zone 64000 to 4999</entry>
-                                        <entry>Zone 7A5000 to 5999</entry>
-                                        <entry>Zone 7B6000 to 6999</entry>
-                                        <entry>Zone 8≥ 7000</entry>
+                                        <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | Space between the climate zone and its degree-days, as in the PDF (Zone 7A / 5000 to 5999). -->
+                                        <entry>Zone 4 &lt; 3000</entry>
+                                        <entry>Zone 5 3000 to 3999</entry>
+                                        <entry>Zone 6 4000 to 4999</entry>
+                                        <entry>Zone 7A 5000 to 5999</entry>
+                                        <entry>Zone 7B 6000 to 6999</entry>
+                                        <entry>Zone 8 ≥ 7000</entry>
                                     </row>
                                 </thead>
                                 <tbody>
@@ -746,12 +750,13 @@
                                     <entry align="center">Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<super>(2)</super> in Celsius Degree-Days</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.row2">
-                                    <entry align="center">Zone 4&lt; 3000</entry>
-                                    <entry align="center">Zone 53000 to 3999</entry>
-                                    <entry align="center">Zone 64000 to 4999</entry>
-                                    <entry align="center">Zone 7A5000 to 5999</entry>
-                                    <entry align="center">Zone 7B6000 to 6999</entry>
-                                    <entry align="center">Zone 8≥ 7000</entry>
+                                    <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | Space between the climate zone and its degree-days, as in the PDF (Zone 7A / 5000 to 5999). -->
+                                    <entry align="center">Zone 4 &lt; 3000</entry>
+                                    <entry align="center">Zone 5 3000 to 3999</entry>
+                                    <entry align="center">Zone 6 4000 to 4999</entry>
+                                    <entry align="center">Zone 7A 5000 to 5999</entry>
+                                    <entry align="center">Zone 7B 6000 to 6999</entry>
+                                    <entry align="center">Zone 8 ≥ 7000</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.row3">
                                     <entry align="center">Minimum Effective Thermal Resistance (RSI), (m<super>2</super>×K)/W</entry>
