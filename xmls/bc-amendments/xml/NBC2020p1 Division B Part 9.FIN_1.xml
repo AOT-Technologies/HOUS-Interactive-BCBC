@@ -16528,12 +16528,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                                    number="3"
                                                    vendor-id="es003038">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2882 Incorrect Content e83232b7f4 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>Wall sheathing is permitted to be used in lieu of one layer
                     of sheathing membrane required in <ref type="internal"
                                                     target="nbc.divBV2.part9.sect27.subsect3.art5.sent1"
                                                     display-type="short"/>, and its thickness need not conform to <ref type="internal"
                                                     target="nbc.divBV2.part9.sect23.subsect17.art2.table1"
-                                                    display-type="long"/>.-A.</text>
+                                                    display-type="long"/>.</text>
                                          </sentence>
                 </new-content>
             </replace>

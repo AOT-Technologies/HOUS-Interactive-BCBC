@@ -2370,6 +2370,21 @@
             <xsl:value-of select="string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
             <xsl:text>.</xsl:text>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Table and Figure references carry the table/figure number as in the PDF (Table 4.1.3.2.-A). -->
+        <xsl:if test="@type = 'internal' and @display-type = ('long', 'number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+\.subsect\d+\.art\d+\.(table|figure)\d+$') and id(@target)">
+            <xsl:variable name="tf-kind" select="replace(@target, '^.*\.(table|figure)\d+$', '$1')"/>
+            <xsl:variable name="tf-art-id" select="replace(@target, '\.(table|figure)\d+$', '')"/>
+            <xsl:variable name="tf-sibs" select="id($tf-art-id)/*[local-name() = $tf-kind][matches(@xml:id, '\.(table|figure)\d+$')]"/>
+            <xsl:variable name="tf-self" select="id(@target)"/>
+            <xsl:if test="count($tf-sibs) gt 1 and $tf-sibs[. is $tf-self]">
+                <xsl:variable name="tf-pos" select="count($tf-self/preceding-sibling::*[local-name() = $tf-kind][matches(@xml:id, '\.(table|figure)\d+$')]) + 1"/>
+                <xsl:variable name="tf-art-number" select="string-join($tf-self/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
+                <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | BC deleted Table 9.23.11.4.-B and kept the NBC letters, so the second table of that Article is -C in the PDF. -->
+                <xsl:variable name="tf-number" select="if (@target = 'nbc.divBV2.part9.sect23.subsect11.art4.table2') then '9.23.11.4.-C' else concat($tf-art-number, '.-', codepoints-to-string(64 + $tf-pos))"/>
+                <xsl:text>:</xsl:text>
+                <xsl:value-of select="if (@display-type = 'long') then concat(if ($tf-kind = 'table') then 'Table ' else 'Figure ', $tf-number) else $tf-number"/>
+            </xsl:if>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-014 CF-09365 | issue 10304 | Appendix D references print as in the PDF: Article and Subsection numbers end with a period, a Section reference does not. -->
         <xsl:if test="@type = 'internal' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+(\.article\d+)?)?$') and not($next-significant[self::text() and matches(., '^\s*\.')])">
             <xsl:variable name="appx-number" select="concat(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix([A-Z])\..*$', '$1'), '-', string-join(for $t in tokenize(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.', ''), '\.') return replace($t, '^\D+', ''), '.'))"/>
