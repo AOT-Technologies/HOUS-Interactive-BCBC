@@ -2398,6 +2398,11 @@
             <xsl:text>A-</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-030 CF-04502 | issue 10165 | Short-format Note references in a list after "Notes" print just "A-9.15.1.1.", as in the PDF (no "Note" before each one). -->
+        <xsl:if test="@type = 'internal' and @display-type = 'short' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.appnote[^.]+$') and not(ancestor::entry) and id(@target)/number and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1) and (normalize-space(@pretext) = 'Notes' or exists($prev-significant[self::text()][matches(., 'Notes\s*$')]) or (normalize-space(@pretext) = ('and', 'or', ',', 'to') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.appnote[^.]+$')]])) or exists($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or', 'to')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.appnote[^.]+$')]]))">
+            <xsl:text>:A-</xsl:text>
+            <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-024 CF-07869 | issue 5009 | References to a figure or table inside a Note print its PDF number (Figure A-9.8.8.1., Table A-9.25.5.1.(1), Figure A-9.8.4.-B). -->
         <xsl:if test="@type = 'internal' and normalize-space(.) = '' and $range-end-label = '' and not(@display-type = 'number' and ancestor::entry and id(@target)/number) and matches(@target, '\.appnote[^.]+(\.div\d+)*\.(figure|table)\d+$') and id(replace(@target, '(\.div\d+)*\.(figure|table)\d+$', ''))/number and id(@target) and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
             <xsl:variable name="nf-kind" select="replace(@target, '^.*\.(figure|table)\d+$', '$1')"/>
