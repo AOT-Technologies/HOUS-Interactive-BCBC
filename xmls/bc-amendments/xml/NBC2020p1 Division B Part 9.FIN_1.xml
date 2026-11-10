@@ -1708,7 +1708,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Doorways serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces need
+                        <!-- CLAUDE-AUTOFIX CF-04129 | issue 2276 | Comma after common spaces, as in the PDF. -->
+                        <text>Doorways serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, need
                             not comply with <ref type="internal"
                                                  target="nbc.divBV2.part9.sect9.subsect6.art3.sent2"
                                                  display-type="short"/>. (See also <ref type="internal"
