@@ -2366,6 +2366,16 @@
             <xsl:text>:A-</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-023 CF-07867 | issue 5007 | Note references in running text print as in the PDF: "Note A-9.10.3.1." without its title, and just "A-9.8.8.5.(1) and (3)" in a list after "Notes". -->
+        <xsl:if test="@type = 'internal' and @display-type = ('long', 'number') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.appnote[^.]+$') and not(ancestor::entry) and id(@target)/number and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
+            <xsl:variable name="note-in-list" as="xs:boolean" select="exists($prev-significant[self::text()][matches(., 'Notes\s*$')]) or normalize-space(@pretext) = 'Notes' or exists($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.appnote[^.]+$')]]) or (normalize-space(@pretext) = ('and', 'or', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.appnote[^.]+$')]]))"/>
+            <xsl:text>:</xsl:text>
+            <xsl:if test="not($note-in-list) and @display-type = 'long'">
+                <xsl:text>Note </xsl:text>
+            </xsl:if>
+            <xsl:text>A-</xsl:text>
+            <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-021 CF-00384 | issue 153 | Sentence and Clause references in number format inside a table cell print the full number, as in the PDF (4.3.6.1.(1)); in running text the PDF keeps the short form. -->
         <xsl:if test="@type = 'internal' and @display-type = 'number' and ancestor::entry and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+\.subsect\d+\.art\d+\.sent\d+(\.clause\d+)?$') and id(@target)">
             <xsl:variable name="num-sent" select="id(@target)/ancestor-or-self::sentence[1]"/>
