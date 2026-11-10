@@ -2238,6 +2238,12 @@
         <xsl:text>&#10;</xsl:text>
     </xsl:template>
     
+    <!-- CLAUDE-AUTOFIX CL-033 CF-02294 | issue 10097 | A bold title at the start of a table cell, joined straight to the text, goes on its own line, as in the PDF (Table 4.1.8.6.). -->
+    <xsl:template match="entry/emphasis[@style = 'bold'][not(preceding-sibling::node()[self::* or self::text()[normalize-space()]])][following-sibling::node()[1][self::text()][matches(., '^\S')]]" mode="rich-text-json" priority="1">
+        <xsl:next-match/>
+        <xsl:text>&#10;</xsl:text>
+    </xsl:template>
+
     <xsl:template match="emphasis" mode="rich-text-json">
         <xsl:text>&lt;</xsl:text>
         <xsl:value-of select="@style"/>
