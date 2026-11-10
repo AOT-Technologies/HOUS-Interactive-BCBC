@@ -2343,7 +2343,8 @@
         <!-- BUT: Don't add leading space if this ref has pretext (pretext will provide the separation) -->
         <!-- CLAUDE-AUTOFIX CL-006 CF-00255 | issue 9829 | No space between a hyphen or slash and a defined term, as in the PDF (part-storey, non-loadbearing). -->
         <!-- CLAUDE-AUTOFIX CL-031 CF-02248 | issue 9912 | No space between "inter" and the defined term storey, as in the PDF (interstorey). -->
-        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$')) and not(current()/@type = 'term' and matches(., '[\-/]$|(^|\W)inter$'))] or $prev-significant[self::ref])">
+        <!-- CLAUDE-AUTOFIX CL-032 CF-07755 | issue 9983 | No space after an opening bracket before a reference without pretext, as in the PDF ((Subsection 9.29.2.)); external links keep it, as the PDF prints ( https://...). -->
+        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$')) and not(current()/@type = 'term' and matches(., '[\-/]$|(^|\W)inter$')) and not(matches(., '\($') and current()/@type != 'external')] or $prev-significant[self::ref])">
             <xsl:text> </xsl:text>
         </xsl:if>
         
