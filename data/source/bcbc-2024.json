@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T00:17:53.448+05:30",
+  "generated_timestamp" : "2026-11-11T01:08:45.733+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -23788,7 +23788,7 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "A permanent sign, with lettering not less than 50 mm high with a 12 mm stroke, indicating the lesser of the [REF:term:ccpnt-ld:occupant load] for the [REF:term:t:suite] or 30 persons, shall be posted in a conspicuous location near the [REF:term:t:suite] 's principal entrance." } ] },
+                "text" : "A permanent sign, with lettering not less than 50 mm high with a 12 mm stroke, indicating the lesser of the [REF:term:ccpnt-ld:occupant load] for the [REF:term:t:suite] or 30 persons, shall be posted in a conspicuous location near the [REF:term:t:suite]'s principal entrance." } ] },
              
              { "id" : "nbc.divB.part3.sect1.subsect2.art8",
               "type" : "article",
@@ -137758,12 +137758,12 @@
                  { "id" : "nbc.divB.part4.sect1.subsect7.art14.sent3.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "C_{g} = 2.5 and C_{p} = ±0.72, where the [REF:term:bldng:building] 's height is greater than 20 m or greater than its minimum effective width, and" },
+                  "text" : "C_{g} = 2.5 and C_{p} = ±0.72, where the [REF:term:bldng:building]'s height is greater than 20 m or greater than its minimum effective width, and" },
                  
                  { "id" : "nbc.divB.part4.sect1.subsect7.art14.sent3.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "C_{g}C_{p} = 80% of the values for zones w and r provided in [REF:internal:nbc.divB.part4.sect1.subsect7.art6:long] , where the [REF:term:bldng:building] 's height is less than or equal to 20 m and no greater than its minimum effective width." } ] } ] } ] },
+                  "text" : "C_{g}C_{p} = 80% of the values for zones w and r provided in [REF:internal:nbc.divB.part4.sect1.subsect7.art6:long] , where the [REF:term:bldng:building]'s height is less than or equal to 20 m and no greater than its minimum effective width." } ] } ] } ] },
            
            { "id" : "nbc.divB.part4.sect1.subsect8",
             "type" : "subsection",
@@ -137997,7 +137997,7 @@
                { "id" : "nbc.divB.part4.sect1.subsect8.art1.sent11",
                 "type" : "sentence",
                 "number" : 11,
-                "text" : "The deflections referred to in [REF:internal:nbc.divB.part4.sect1.subsect8.art1.sent10:short] shall be used to calculate the largest inter [REF:term:tr:storey] deflection, which shall not exceedwhere h_{s} is the inter [REF:term:tr:storey] height as defined in [REF:internal:nbc.divB.part4.sect1.subsect8.art2:long]",
+                "text" : "The deflections referred to in [REF:internal:nbc.divB.part4.sect1.subsect8.art1.sent10:short] shall be used to calculate the largest inter[REF:term:tr:storey] deflection, which shall not exceedwhere h_{s} is the inter[REF:term:tr:storey] height as defined in [REF:internal:nbc.divB.part4.sect1.subsect8.art2:long]",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part4.sect1.subsect8.art1.sent11.clause1",
@@ -138146,7 +138146,7 @@
                     "description" : "= height, in m, above the base (i = 0) to level i, n, or x respectively, where the base of the structure is the level at which horizontal earthquake motions are considered to be imparted to the structure," },
                    
                    { "symbol" : "h_{s}",
-                    "description" : "= inter [REF:term:tr:storey] height (h_{i} − h_{i−1})," },
+                    "description" : "= inter[REF:term:tr:storey] height (h_{i} − h_{i−1})," },
                    
                    { "symbol" : "I_{E}",
                     "description" : "= earthquake importance factor of the structure, as described in [REF:internal:nbc.divB.part4.sect1.subsect8.art5.sent1:long] ," },
@@ -139629,7 +139629,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Vertical Stiffness Irregularity<\/bold>For concrete and masonry shear walls, vertical stiffness irregularity shall be considered to exist where the lateral stiffness of the SFRS in any [REF:term:tr:storey] is less than 70% of the stiffness in an adjacent [REF:term:tr:storey] , or less than 80% of the average stiffness in the three [REF:term:tr:storeys] above or below. For all other types of SFRS, vertical stiffness irregularity shall be considered to exist where the inter [REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter [REF:term:tr:storey] height, h_{s}, of any [REF:term:tr:storey] is greater than 130% of that of an adjacent [REF:term:tr:storey] ." } ],
+                       "value" : "<bold>Vertical Stiffness Irregularity<\/bold>For concrete and masonry shear walls, vertical stiffness irregularity shall be considered to exist where the lateral stiffness of the SFRS in any [REF:term:tr:storey] is less than 70% of the stiffness in an adjacent [REF:term:tr:storey] , or less than 80% of the average stiffness in the three [REF:term:tr:storeys] above or below. For all other types of SFRS, vertical stiffness irregularity shall be considered to exist where the inter[REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter[REF:term:tr:storey] height, h_{s}, of any [REF:term:tr:storey] is greater than 130% of that of an adjacent [REF:term:tr:storey] ." } ],
                      "align" : "left" },
                     
                     { "content" : 
@@ -143260,7 +143260,7 @@
                  { "id" : "nbc.divB.part4.sect1.subsect8.art10.sent2.clause5",
                   "type" : "clause",
                   "letter" : "e",
-                  "text" : "where they are constructed with other types of SFRS, have no [REF:term:tr:storey] for which the inter [REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter [REF:term:tr:storey] height, h_{s}, is greater than that of the [REF:term:tr:storey] above it." } ] },
+                  "text" : "where they are constructed with other types of SFRS, have no [REF:term:tr:storey] for which the inter[REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter[REF:term:tr:storey] height, h_{s}, is greater than that of the [REF:term:tr:storey] above it." } ] },
                
                { "id" : "nbc.divB.part4.sect1.subsect8.art10.sent3",
                 "type" : "sentence",
@@ -143302,7 +143302,7 @@
                  { "id" : "nbc.divB.part4.sect1.subsect8.art10.sent3.clause5",
                   "type" : "clause",
                   "letter" : "e",
-                  "text" : "where they are constructed with other types of SFRS, have no [REF:term:tr:storey] for which the inter [REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter [REF:term:tr:storey] height, h_{s}, is greater than that of the [REF:term:tr:storey] above it." } ] },
+                  "text" : "where they are constructed with other types of SFRS, have no [REF:term:tr:storey] for which the inter[REF:term:tr:storey] deflection under lateral earthquake forces divided by the inter[REF:term:tr:storey] height, h_{s}, is greater than that of the [REF:term:tr:storey] above it." } ] },
                
                { "id" : "nbc.divB.part4.sect1.subsect8.art10.sent4",
                 "type" : "sentence",
@@ -143375,7 +143375,7 @@
                  { "id" : "nbc.divB.part4.sect1.subsect8.art10.sent9.clause4",
                   "type" : "clause",
                   "letter" : "d",
-                  "text" : "the largest inter [REF:term:tr:storey] deflection at any level of the [REF:term:bldng:building] as determined from the analysis shall not be greater than 60% of the appropriate limit stated in [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent3:long] , and" },
+                  "text" : "the largest inter[REF:term:tr:storey] deflection at any level of the [REF:term:bldng:building] as determined from the analysis shall not be greater than 60% of the appropriate limit stated in [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent3:long] , and" },
                  
                  { "id" : "nbc.divB.part4.sect1.subsect8.art10.sent9.clause5",
                   "type" : "clause",
@@ -145410,7 +145410,7 @@
                { "id" : "nbc.divB.part4.sect1.subsect8.art13.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Based on the lateral deflections calculated in  Sentences [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent2:short] , [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent5:short:(5)] and [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent6:short:(6)] , the largest inter [REF:term:tr:storey] deflection at any level shall be limited to 0.01h_{s} for [REF:term:pt-dtr-b:post-disaster buildings] , 0.02h_{s} for High Importance Category [REF:term:bldng:buildings] , and 0.025h_{s} for all other [REF:term:bldng:buildings] ." },
+                "text" : "Based on the lateral deflections calculated in  Sentences [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent2:short] , [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent5:short:(5)] and [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent6:short:(6)] , the largest inter[REF:term:tr:storey] deflection at any level shall be limited to 0.01h_{s} for [REF:term:pt-dtr-b:post-disaster buildings] , 0.02h_{s} for High Importance Category [REF:term:bldng:buildings] , and 0.025h_{s} for all other [REF:term:bldng:buildings] ." },
                
                { "id" : "nbc.divB.part4.sect1.subsect8.art13.sent4",
                 "type" : "sentence",
@@ -147492,7 +147492,7 @@
                { "id" : "nbc.divB.part4.sect1.subsect8.art22.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "The largest inter [REF:term:tr:storey] deflection at any level of the structure as determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art22.sent1:short] shall conform to the limits stated in [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent3:long] ." },
+                "text" : "The largest inter[REF:term:tr:storey] deflection at any level of the structure as determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art22.sent1:short] shall conform to the limits stated in [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent3:long] ." },
                
                { "id" : "nbc.divB.part4.sect1.subsect8.art22.sent3",
                 "type" : "sentence",
@@ -147601,7 +147601,7 @@
                  { "id" : "nbc.divB.part4.sect1.subsect8.art23.sent2.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "the largest inter [REF:term:tr:storey] deflection at any level of the [REF:term:bldng:building] , as determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent2:long] using I_{E} = 1.0 and R_{d}R_{o} = 1.0, shall not exceed 0.005h_{s}, and" },
+                  "text" : "the largest inter[REF:term:tr:storey] deflection at any level of the [REF:term:bldng:building] , as determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent2:long] using I_{E} = 1.0 and R_{d}R_{o} = 1.0, shall not exceed 0.005h_{s}, and" },
                  
                  { "id" : "nbc.divB.part4.sect1.subsect8.art23.sent2.clause3",
                   "type" : "clause",
@@ -147622,7 +147622,7 @@
                  { "id" : "nbc.divB.part4.sect1.subsect8.art23.sent3.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "the largest inter [REF:term:tr:storey] deflection at any level of the [REF:term:bldng:building] , as determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent2:long] using I_{E} = 1.0 and R_{d}R_{o} = 1.0, shall not exceed 0.005h_{s}, and" },
+                  "text" : "the largest inter[REF:term:tr:storey] deflection at any level of the [REF:term:bldng:building] , as determined in accordance with [REF:internal:nbc.divB.part4.sect1.subsect8.art13.sent2:long] using I_{E} = 1.0 and R_{d}R_{o} = 1.0, shall not exceed 0.005h_{s}, and" },
                  
                  { "id" : "nbc.divB.part4.sect1.subsect8.art23.sent3.clause3",
                   "type" : "clause",
@@ -170686,17 +170686,17 @@
                  { "id" : "nbc.divB.part6.sect3.subsect2.art7.sent3.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the [REF:term:trg-grg:storage garage] 's exhaust system runs continuously," },
+                  "text" : "the [REF:term:trg-grg:storage garage]'s exhaust system runs continuously," },
                  
                  { "id" : "nbc.divB.part6.sect3.subsect2.art7.sent3.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "the capacity of the [REF:term:trg-grg:storage garage] 's exhaust system is equal to or exceeds the volume of the exhaust entering the garage, and" },
+                  "text" : "the capacity of the [REF:term:trg-grg:storage garage]'s exhaust system is equal to or exceeds the volume of the exhaust entering the garage, and" },
                  
                  { "id" : "nbc.divB.part6.sect3.subsect2.art7.sent3.clause3",
                   "type" : "clause",
                   "letter" : "c",
-                  "text" : "a leakage rate 1 smoke\/[REF:term:fr-dmpr:fire damper] rated in accordance with CAN\/ULC-S112.1, “Standard for Leakage Rated Dampers for Use in Smoke Control Systems,” is provided near the duct outlet location in the [REF:term:trg-grg:storage garage] to prevent air from the [REF:term:trg-grg:storage garage] from entering the exhaust ductwork system in the event the [REF:term:bldng:building] 's exhaust fan is shut down." } ] } ] },
+                  "text" : "a leakage rate 1 smoke\/[REF:term:fr-dmpr:fire damper] rated in accordance with CAN\/ULC-S112.1, “Standard for Leakage Rated Dampers for Use in Smoke Control Systems,” is provided near the duct outlet location in the [REF:term:trg-grg:storage garage] to prevent air from the [REF:term:trg-grg:storage garage] from entering the exhaust ductwork system in the event the [REF:term:bldng:building]'s exhaust fan is shut down." } ] } ] },
              
              { "id" : "nbc.divB.part6.sect3.subsect2.art8",
               "type" : "article",
@@ -171300,7 +171300,7 @@
                { "id" : "nbc.divB.part6.sect3.subsect2.art15.sent10",
                 "type" : "sentence",
                 "number" : 10,
-                "text" : "Drains, overflows and blow-downs shall be connected to the [REF:term:bldng:building] 's drainage system in accordance with [REF:external:npc:Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code]  [REF:standard:nrcc-npc] ." },
+                "text" : "Drains, overflows and blow-downs shall be connected to the [REF:term:bldng:building]'s drainage system in accordance with [REF:external:npc:Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code]  [REF:standard:nrcc-npc] ." },
                
                { "id" : "nbc.divB.part6.sect3.subsect2.art15.sent11",
                 "type" : "sentence",
@@ -217764,7 +217764,7 @@
                   "type" : "clause",
                   "letter" : "f",
                   "source" : "bc",
-                  "text" : "percent of the [REF:term:bldng:building] ’s [REF:term:cnd-sp:conditioned space] served by space-cooling equipment." } ] },
+                  "text" : "percent of the [REF:term:bldng:building]’s [REF:term:cnd-sp:conditioned space] served by space-cooling equipment." } ] },
                
                { "id" : "nbc.divC.part2.sect2.subsect8.art3.sent4",
                 "type" : "sentence",
@@ -269842,7 +269842,7 @@
                { "id" : "nbc.divBV2.part9.sect4.subsect4.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Where a [REF:term:fndtn:foundation] is located in an area where [REF:term:l:soil] movement caused by changes in [REF:term:l:soil] moisture content, freezing, or chemical-microbiological oxidation is known to occur to the extent that it will damage a [REF:term:bldng:building] , measures shall be taken to preclude such movement or to reduce its effects on the [REF:term:bldng:building] so that the [REF:term:bldng:building] 's stability and the performance of assemblies will not be adversely affected. (See [REF:internal:nbc.divBV2.part9.appendix.appnote14:short] .)" },
+                "text" : "Where a [REF:term:fndtn:foundation] is located in an area where [REF:term:l:soil] movement caused by changes in [REF:term:l:soil] moisture content, freezing, or chemical-microbiological oxidation is known to occur to the extent that it will damage a [REF:term:bldng:building] , measures shall be taken to preclude such movement or to reduce its effects on the [REF:term:bldng:building] so that the [REF:term:bldng:building]'s stability and the performance of assemblies will not be adversely affected. (See [REF:internal:nbc.divBV2.part9.appendix.appnote14:short] .)" },
                
                { "id" : "nbc.divBV2.part9.sect4.subsect4.art4.sent2",
                 "type" : "sentence",
@@ -281760,7 +281760,7 @@
                    { "id" : "nbc.divBV2.part9.sect10.subsect14.art2.sent1.clause2.subclause2",
                     "type" : "subclause",
                     "number" : 2,
-                    "text" : "the area for each [REF:term:fr-cmprt:fire compartment] , where a [REF:term:bldng:building] is divided into [REF:term:fr-cmprt:fire compartment] s by [REF:term:fr-prtn:fire separations] with [REF:term:fr-rtnc-:fire-resistance ratings] not less than 45 min." } ] } ] },
+                    "text" : "the area for each [REF:term:fr-cmprt:fire compartment] , where a [REF:term:bldng:building] is divided into [REF:term:fr-cmprt:fire compartment]s by [REF:term:fr-prtn:fire separations] with [REF:term:fr-rtnc-:fire-resistance ratings] not less than 45 min." } ] } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art2.sent2",
                 "type" : "sentence",
@@ -283254,7 +283254,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art4.sent10",
                 "type" : "sentence",
                 "number" : 10,
-                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art4.sent11:short] , for garages or accessory [REF:term:bldng:building] s that serve a single [REF:term:dwllng-n:dwelling unit] only and are detached from any [REF:term:bldng:building] , the maximum aggregate area of glazed openings shall comply with the requirements for [REF:term:nprtctd-:unprotected openings] ." },
+                "text" : "Except as provided in [REF:internal:nbc.divBV2.part9.sect10.subsect14.art4.sent11:short] , for garages or accessory [REF:term:bldng:building]s that serve a single [REF:term:dwllng-n:dwelling unit] only and are detached from any [REF:term:bldng:building] , the maximum aggregate area of glazed openings shall comply with the requirements for [REF:term:nprtctd-:unprotected openings] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect14.art4.sent11",
                 "type" : "sentence",
@@ -288522,7 +288522,7 @@
                  { "id" : "nbc.divBV2.part9.sect14.subsect2.art1.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the insulation or backfill shall extend to the footing level to facilitate the drainage of ground water to the [REF:term:fndtn:foundation] 's drainage system (see [REF:internal:nbc.divBV2.part9.appendix.appnote92:short] ), and" },
+                  "text" : "the insulation or backfill shall extend to the footing level to facilitate the drainage of ground water to the [REF:term:fndtn:foundation]'s drainage system (see [REF:internal:nbc.divBV2.part9.appendix.appnote92:short] ), and" },
                  
                  { "id" : "nbc.divBV2.part9.sect14.subsect2.art1.sent2.clause2",
                   "type" : "clause",
@@ -344355,7 +344355,7 @@
                   "type" : "clause",
                   "letter" : "c",
                   "source" : "bc",
-                  "text" : "have no disconnect switch between the overcurrent device and the CO alarm, where the CO alarm is powered by the [REF:term:dwllng-n:dwelling unit] 's electrical system, and" },
+                  "text" : "have no disconnect switch between the overcurrent device and the CO alarm, where the CO alarm is powered by the [REF:term:dwllng-n:dwelling unit]'s electrical system, and" },
                  
                  { "id" : "nbc.divBV2.part9.sect32.subsect4.art2.sent2.clause4",
                   "type" : "clause",
