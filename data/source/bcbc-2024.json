@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-10T08:46:46.923+05:30",
+  "generated_timestamp" : "2026-11-10T09:01:27.643+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -425067,7 +425067,7 @@
                       { "type" : "text",
                        "value" : "[ [REF:functional-statement:fs71] - [REF:sub-objective:nbc-obj-oh2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5195",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aa",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425078,7 +425078,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect1.art2:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5196",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ab",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425086,14 +425086,15 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect1.art2.sent1:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect1.art2.sent1:shortNum]" } ],
+                     "rowspan" : 2 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5197",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ac",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425101,14 +425102,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect1.art2.sent2:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5198",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ad",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425119,7 +425115,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect1.art3:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5199",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ae",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425128,14 +425124,34 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect1.art3.sent1:shortNum]" } ],
-                     "rowspan" : 3 },
+                     "rowspan" : 5 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs44] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs50] , [REF:functional-statement:fs44] , [REF:functional-statement:fs40] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5200",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194af",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ag",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ah",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425145,7 +425161,7 @@
                       { "type" : "text",
                        "value" : "[ [REF:functional-statement:fs01] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5201",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ai",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425155,7 +425171,7 @@
                       { "type" : "text",
                        "value" : "[ [REF:functional-statement:fs01] - [REF:sub-objective:nbc-obj-op1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5202",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aj",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425163,45 +425179,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect1.art3.sent2:shortNum]" } ],
-                     "rowspan" : 4 },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect1.art3.sent2:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:functional-statement:fs81:[F40, F50, F52] - [REF:sub-objective:nbc-obj-os1.1] ] [F51,F52,F62,F63-OH1.3]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5203",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5204",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5205",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5206",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ak",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425210,14 +425195,34 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect1.art3.sent3:shortNum]" } ],
-                     "rowspan" : 3 },
+                     "rowspan" : 5 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs44] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs44] , [REF:functional-statement:fs50] , [REF:functional-statement:fs40] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5207",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194al",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194am",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194an",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425227,7 +425232,7 @@
                       { "type" : "text",
                        "value" : "[ [REF:functional-statement:fs01] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5208",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ao",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425237,7 +425242,7 @@
                       { "type" : "text",
                        "value" : "[ [REF:functional-statement:fs01] - [REF:sub-objective:nbc-obj-op1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5209",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ap",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425248,7 +425253,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect2.art1:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5210",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aq",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425256,14 +425261,51 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art1.sent1:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art1.sent1:shortNum]" } ],
+                     "rowspan" : 2 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5211",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ar",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194as",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art1.sent2:shortNum]" } ],
+                     "rowspan" : 2 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194at",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194au",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425274,7 +425316,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect2.art2:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5212",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194av",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425282,14 +425324,25 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art2.sent1:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art2.sent1:shortNum]" } ],
+                     "rowspan" : 2 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5213",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aw",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ax",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425305,7 +425358,7 @@
                       { "type" : "text",
                        "value" : "[ [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-oh2.5] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5214",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ay",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425313,9 +425366,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs61] , [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs61] , [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5215",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194az",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425323,9 +425376,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs61] , [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
+                       "value" : "Reserved" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5216",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ba",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425341,7 +425394,7 @@
                       { "type" : "text",
                        "value" : "[ [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-oh2.5] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5217",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bb",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425349,65 +425402,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs80] , [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ,]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5218",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect2.art3:title]<\/bold>" } ],
-                     "colspan" : 2 } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5219",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art3.sent1:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5220",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art3.sent3:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5221",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect2.art3.sent4:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5222",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bc",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425418,7 +425415,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5223",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bd",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425432,9 +425429,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5224",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194be",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425442,35 +425439,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5225",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent2:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent2.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent2.clause2:shortNum] [ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent2.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent2.clause2:shortNum] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent2.clause3:shortNum] [ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5226",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent2.clause3:shortNum] [ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5227",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bf",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425481,7 +425452,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art2:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5228",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bg",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425495,9 +425466,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5229",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bh",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425505,9 +425476,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs52] , [REF:functional-statement:fs51] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5230",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bi",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425520,9 +425491,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5231",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bj",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425536,9 +425507,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5232",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bk",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425546,65 +425517,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5233",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent4:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5234",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs53] , [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5235",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent5:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5236",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent6:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs63] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5237",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bl",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425615,7 +425530,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5238",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bm",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425623,14 +425538,15 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1:shortNum]" } ],
+                     "rowspan" : 4 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1:shortNum] [ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5239",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bn",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425638,14 +425554,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent2:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause2:shortNum] [ [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5240",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bo",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425653,14 +425564,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent4:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs80] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause2:shortNum] [ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5241",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bp",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425668,89 +425574,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent5:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause2:shortNum] [ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5242",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent6:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5243",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent7:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5244",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent8:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5245",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent9:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5246",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art3.sent10:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5247",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bq",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425761,7 +425587,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5248",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194br",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425775,9 +425601,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs50] , [REF:functional-statement:fs51] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5249",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bs",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425785,9 +425611,71 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "Reserved" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5250",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bt",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent3:shortNum]" } ],
+                     "rowspan" : 2 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bu",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Reserved" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bv",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "(4)" } ],
+                     "rowspan" : 3 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bw",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Reserved" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bx",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Reserved" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194by",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425801,9 +425689,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5251",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bz",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425811,9 +425699,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent5.clause1:shortNum] [ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent5.clause2:shortNum] [ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "Reserved" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5252",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ca",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425822,50 +425710,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent6:shortNum]" } ],
-                     "rowspan" : 3 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5253",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5254",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5255",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent7:shortNum]" } ],
                      "rowspan" : 2 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5256",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cb",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -425873,137 +425725,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "Reserved" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5257",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent8:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent8.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent8.clause2:shortNum] [ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent8.clause3:shortNum] [ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5258",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent8.clause3:shortNum] [ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5259",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent9:shortNum]" } ],
-                     "rowspan" : 3 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent9.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent9.clause2:shortNum] [ [REF:functional-statement:fs43] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent9.clause3:shortNum] [ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5260",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent9.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent9.clause2:shortNum] [ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5261",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent9.clause3:shortNum] [ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5262",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent10:shortNum]" } ],
-                     "rowspan" : 3 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5263",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5264",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5265",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent11:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5266",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art4.sent12:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5267",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cc",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426014,7 +425738,33 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5268",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cd",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent1:shortNum]" } ],
+                     "rowspan" : 2 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ce",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cf",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426023,14 +425773,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent2:shortNum]" } ],
-                     "rowspan" : 2 },
+                     "rowspan" : 3 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5269",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cg",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426038,9 +425788,19 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5270",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ch",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Reserved" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ci",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426049,14 +425809,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3:shortNum]" } ],
-                     "rowspan" : 3 },
+                     "rowspan" : 4 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause1:shortNum] [ [REF:functional-statement:fs43] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause2:shortNum] [ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause1:shortNum] [ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ] [ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5271",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cj",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426064,9 +425824,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause1:shortNum] [ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause1:shortNum] [ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5272",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ck",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426074,9 +425834,19 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause2:shortNum] [ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause2:shortNum] [ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5273",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cl",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause2:shortNum] [ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cm",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426085,14 +425855,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent4:shortNum]" } ],
-                     "rowspan" : 2 },
+                     "rowspan" : 3 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5274",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cn",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426100,9 +425870,19 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5275",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194co",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Reserved" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cp",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426116,9 +425896,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs56] - [REF:sub-objective:nbc-obj-oh3.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5276",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cq",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426126,9 +425906,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
+                       "value" : "Reserved" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5277",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cr",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426136,150 +425916,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "Reserved" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5278",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent6:shortNum]" } ],
-                     "rowspan" : 3 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5279",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5280",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5281",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent7:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5282",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent8:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs51] , [REF:functional-statement:fs54] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5283",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent9:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs54] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5284",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent10:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5285",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent12:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5286",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent13:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs51] , [REF:functional-statement:fs54] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5287",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art5.sent14:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5288",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cs",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426290,7 +425929,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art6:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5289",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ct",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426304,9 +425943,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5290",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cu",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426314,9 +425953,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5291",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cv",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426324,14 +425963,15 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art6.sent2:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art6.sent2:shortNum]" } ],
+                     "rowspan" : 2 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5292",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cw",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426339,14 +425979,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art6.sent3:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5293",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cx",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426357,7 +425992,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art7:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5294",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cy",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426370,9 +426005,24 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5295",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cz",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art7.sent2:shortNum]" } ] },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194da",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426385,9 +426035,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5296",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194db",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426400,9 +426050,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5297",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dc",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426415,54 +426065,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5298",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art7.sent6:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5299",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art7.sent7:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5300",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art7.sent8:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5301",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dd",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426473,7 +426078,43 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5302",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194de",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent1:shortNum]" } ],
+                     "rowspan" : 3 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194df",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dg",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dh",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426482,14 +426123,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent2:shortNum]" } ],
-                     "rowspan" : 3 },
+                     "rowspan" : 2 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs62] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5303",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194di",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426497,19 +426138,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent2.clause1:shortNum] [ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs62] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5304",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent2.clause2:shortNum] [ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5305",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dj",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426518,14 +426149,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent3:shortNum]" } ],
-                     "rowspan" : 2 },
+                     "rowspan" : 4 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5306",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dk",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426533,9 +426164,29 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs62] , [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5307",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dl",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Table 9.32.3.8.(3), Note (1) [ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dm",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Table 9.32.3.8.(3), Note (1) [ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dn",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426544,14 +426195,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent4:shortNum]" } ],
-                     "rowspan" : 2 },
+                     "rowspan" : 3 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs51] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5308",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194do",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426559,9 +426210,19 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5309",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dp",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "Reserved" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dq",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426570,14 +426231,40 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent5:shortNum]" } ],
+                     "rowspan" : 2 },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs51] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dr",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ds",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent6:shortNum]" } ],
                      "rowspan" : 3 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent6.clause1:shortNum] [ [REF:functional-statement:fs01] , [REF:functional-statement:fs02] - [REF:sub-objective:nbc-obj-os1.1] , [REF:sub-objective:nbc-obj-os1.2] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5310",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dt",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426585,9 +426272,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent6.clause1:shortNum] [ [REF:functional-statement:fs80] , [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5311",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194du",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426595,9 +426282,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs80] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent6.clause2:shortNum] [ [REF:functional-statement:fs40] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5312",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dv",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426606,14 +426293,14 @@
                      [ 
                       { "type" : "text",
                        "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent7:shortNum]" } ],
-                     "rowspan" : 2 },
+                     "rowspan" : 3 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs50] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5313",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dw",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426621,9 +426308,34 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5314",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dx",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dy",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art8.sent8:shortNum]" } ] },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dz",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426634,7 +426346,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5315",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ea",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426642,14 +426354,15 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent2:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent1:shortNum]" } ],
+                     "rowspan" : 2 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent2.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent2.clause2:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent2.clause4:shortNum] [ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent2.clause3:shortNum] [ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-oh2.5] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5316",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eb",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426657,74 +426370,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent3:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs61] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5317",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent4:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5318",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent5:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5319",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent6:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5320",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art9.sent7:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs11] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5321",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ec",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426735,7 +426383,7 @@
                        "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5322",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ed",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426749,9 +426397,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5323",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ee",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426759,9 +426407,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
+                       "value" : "Reserved" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5324",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ef",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426769,133 +426417,10 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent2:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5325",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent3:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5326",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5327",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent4:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5328",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent5:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5329",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent6:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5330",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5331",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent7:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ] [ [REF:functional-statement:fs51] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5332",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5333",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11:title]<\/bold>" } ],
+                       "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect4.art1:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5334",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eg",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -426903,272 +426428,15 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent1:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5335",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent2:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs52] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5336",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs52] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5337",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent3:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5338",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs63] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5339",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent4:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5340",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent5:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs41] , [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5341",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs01] , [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5342",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent6:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent6.clause1:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent6.clause2:shortNum] , [REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent6.clause3:shortNum] [ [REF:functional-statement:fs02] , [REF:functional-statement:fs03] - [REF:sub-objective:nbc-obj-os1.1] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent6.clause1:shortNum] [ [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-os1.1] ] [REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent6.clause3:shortNum] [ [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5343",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent7:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs41] , [REF:functional-statement:fs53] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5344",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent8:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs41] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5345",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5346",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent9:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5347",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5348",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art11.sent12:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5349",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5350",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art12:title]<\/bold>" } ],
-                     "colspan" : 2 } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5351",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art12.sent2:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5352",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art12.sent3:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5353",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art12.sent4:shortNum]" } ],
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art1.sent1:shortNum]" } ],
                      "rowspan" : 3 },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] , [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                       "value" : "(a) [ [REF:functional-statement:fs40] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5354",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eh",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427176,9 +426444,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
+                       "value" : "(b) [ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5355",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ei",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427186,9 +426454,9 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "(b) [ [REF:functional-statement:fs43] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5356",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ej",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427196,14 +426464,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art12.sent5:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art1.sent2:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs62] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5357",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ek",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427211,14 +426479,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art12.sent6:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art1.sent3:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5358",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194el",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427226,10 +426494,25 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13:title]<\/bold>" } ],
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art1.sent4:shortNum]" } ] },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "[ [REF:functional-statement:fs51] - [REF:sub-objective:nbc-obj-oh1.2] ]" } ] } ] },
+                  
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194em",
+                   "type" : "body_row",
+                   "rowsep" : "1",
+                   "cells" : 
+                   [ 
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "<bold>[REF:internal:nbc.divBV2.part9.sect32.subsect4.art2:title]<\/bold>" } ],
                      "colspan" : 2 } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5359",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194en",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427237,15 +426520,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent1:shortNum]" } ],
-                     "rowspan" : 2 },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art2.sent2:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs11] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5360",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eo",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427253,25 +426535,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs44] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5361",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent2:shortNum]" } ],
-                     "rowspan" : 2 },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art2.sent3:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs11] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5362",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ep",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427279,25 +426550,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5363",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent3:shortNum]" } ],
-                     "rowspan" : 2 },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art2.sent4:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs11] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5364",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eq",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427305,25 +426565,14 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5365",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent4:shortNum]" } ],
-                     "rowspan" : 2 },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art2.sent5:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs11] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
                   
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5366",
+                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194er",
                    "type" : "body_row",
                    "rowsep" : "1",
                    "cells" : 
@@ -427331,292 +426580,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5367",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent5:shortNum]" } ],
-                     "rowspan" : 2 },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect4.art2.sent6:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5368",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5369",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent6:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5370",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs62] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-op2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5371",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent7:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] , [REF:functional-statement:fs52] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5372",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs44] , [REF:functional-statement:fs50] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5373",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent8:shortNum]" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5374",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent9:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs61] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5375",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs61] - [REF:sub-objective:nbc-obj-os2.3] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5376",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent10:shortNum]" } ],
-                     "rowspan" : 3 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5377",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs01] , [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5378",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-oh2.5] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5379",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent11:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs42] , [REF:functional-statement:fs63] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5380",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs01] , [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5381",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent12:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5382",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs01] , [REF:functional-statement:fs42] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5383",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent13:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5384",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs53] , [REF:functional-statement:fs82] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5385",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent14:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs53] , [REF:functional-statement:fs81] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5386",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs43] , [REF:functional-statement:fs53] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5387",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art13.sent15:shortNum]" } ],
-                     "rowspan" : 2 },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs42] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-oh2.5] ]" } ] } ] },
-                  
-                  { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5388",
-                   "type" : "body_row",
-                   "rowsep" : "1",
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs01] , [REF:functional-statement:fs42] , [REF:functional-statement:fs80] - [REF:sub-objective:nbc-obj-os1.1] ]" } ] } ] },
+                       "value" : "[ [REF:functional-statement:fs11] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
                   
                   { "id" : "nbc.divBV2.part9.sect38.subsect1.art1.table1.row5389",
                    "type" : "body_row",
