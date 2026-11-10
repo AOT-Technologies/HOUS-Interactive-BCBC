@@ -643,7 +643,8 @@
                             <text>except as provided in <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent3" display-type="short"/>, be constructed of <ref type="term" target="ncmbtbl">noncombustible</ref> materials compatible with and chemically resistant to the <ref type="term" target="dngr-gd">dangerous goods</ref> vapours and particles being exhausted, and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1.clause2" letter="b">
-                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust duct</ref> system.</text>
+                            <!-- CLAUDE-AUTOFIX CF-03750 | issue 9962 | The PDF reads exhaust ducts (the defined term plus s), not exhaust duct system. -->
+                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust duct</ref>s.</text>
                         </clause>
                     </sentence>
                 </new-content>
