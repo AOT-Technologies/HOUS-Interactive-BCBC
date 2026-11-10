@@ -4531,7 +4531,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>in a <ref type="term" target="bldng">building</ref> clad with masonry veneer, the average dead weight of the masonry veneer shall not exceed <measurement units="metric">1.9 kPa</measurement>, and</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art2.sent3.clause4" letter="d">
-                                <text>in a <ref type="term" target="bldng">building</ref> clad with stone veneer, the average dead weight of the stone veneer shall not exceed <measurement units="metric">3.2 kPa</measurement>. (See Note A-9.23.13.2.(3).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04841 | issue 10218 | The PDF prints kPa.(See with no space after the period. -->
+                                <text>in a <ref type="term" target="bldng">building</ref> clad with stone veneer, the average dead weight of the stone veneer shall not exceed <measurement units="metric">3.2 kPa</measurement>.(See Note A-9.23.13.2.(3).)</text>
                             </clause>
                         </sentence>
                     </article>
