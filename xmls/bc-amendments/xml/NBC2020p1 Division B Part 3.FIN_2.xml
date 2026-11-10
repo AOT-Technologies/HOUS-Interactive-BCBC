@@ -704,7 +704,8 @@
                                     <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1176 Incorrect Content bb2987f83a -->
                                     <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8669 Punctuation b848388a9d -->
                                     <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8670 Punctuation 2eba09e8f2 -->
-                                    <text><ref type="standard" target="csab355">CSA B355</ref>, “Platform lifts and stair lifts for barrier-free access,”</text>
+                                    <!-- CLAUDE-AUTOFIX CF-01530 | issue 8148 | The title is already typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                    <text><ref type="standard" target="csab355" ref-style="notitle">CSA B355</ref>, “Platform lifts and stair lifts for barrier-free access,”</text>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art7.sent1.clause2" letter="b">
