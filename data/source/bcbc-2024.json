@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-10T12:17:48.877+05:30",
+  "generated_timestamp" : "2026-11-10T12:36:34.054+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -20898,7 +20898,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part1.sect1.subsect2.art1:number]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part1.sect1.subsect2.art1:number:1.1.2.1.]" } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.bc-row-3",
                    "type" : "body_row",
@@ -27488,7 +27488,7 @@
                { "id" : "nbc.divB.part3.sect1.subsect5.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as permitted by  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:short] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:shortNum] and  Articles [REF:internal:nbc.divB.part3.sect1.subsect5.art2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art24:number:3.1.5.24.] , [REF:internal:nbc.divB.part3.sect1.subsect13.art4:number] and [REF:internal:nbc.divB.part3.sect2.subsect2.art16:number] , a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required to be of [REF:term:ncmbtbl-:noncombustible construction] shall be constructed with [REF:term:ncmbtbl:noncombustible] materials. (See also [REF:internal:nbc.divB.part3.sect1.subsect13:long] for the requirements regarding the [REF:term:flm-prd-:flame-spread rating] of interior finishes.)" },
+                "text" : "Except as permitted by  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:short] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:shortNum] and  Articles [REF:internal:nbc.divB.part3.sect1.subsect5.art2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art24:number:3.1.5.24.] , [REF:internal:nbc.divB.part3.sect1.subsect13.art4:number:3.1.13.4.] and [REF:internal:nbc.divB.part3.sect2.subsect2.art16:number:3.2.2.16.] , a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required to be of [REF:term:ncmbtbl-:noncombustible construction] shall be constructed with [REF:term:ncmbtbl:noncombustible] materials. (See also [REF:internal:nbc.divB.part3.sect1.subsect13:long] for the requirements regarding the [REF:term:flm-prd-:flame-spread rating] of interior finishes.)" },
                
                { "id" : "nbc.divB.part3.sect1.subsect5.art1.sent2",
                 "type" : "sentence",
@@ -28972,7 +28972,7 @@
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "is not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] , or" },
+                  "text" : "is not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , or" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause2",
                   "type" : "clause",
@@ -29021,7 +29021,7 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent3.clause1",
@@ -29040,7 +29040,7 @@
                 "type" : "sentence",
                 "number" : 4,
                 "source" : "bc",
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause1",
@@ -29078,7 +29078,7 @@
                 "type" : "sentence",
                 "number" : 6,
                 "source" : "bc",
-                "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
+                "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6.clause1",
@@ -29097,7 +29097,7 @@
                 "type" : "sentence",
                 "number" : 7,
                 "source" : "bc",
-                "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause1",
@@ -29294,7 +29294,7 @@
                     "type" : "clause",
                     "letter" : "a",
                     "source" : "bc",
-                    "text" : "is not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] , or" },
+                    "text" : "is not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , or" },
                    
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause2",
                     "type" : "clause",
@@ -29343,7 +29343,7 @@
                   "type" : "sentence",
                   "number" : 3,
                   "source" : "bc",
-                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent3.clause1",
@@ -29362,7 +29362,7 @@
                   "type" : "sentence",
                   "number" : 4,
                   "source" : "bc",
-                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause1",
@@ -29400,7 +29400,7 @@
                   "type" : "sentence",
                   "number" : 6,
                   "source" : "bc",
-                  "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
+                  "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6.clause1",
@@ -29419,7 +29419,7 @@
                   "type" : "sentence",
                   "number" : 7,
                   "source" : "bc",
-                  "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause1",
@@ -32741,7 +32741,7 @@
                 "number" : 4,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "Except for crawl spaces conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art6.sent1:long] and except as provided in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent5:short] , in [REF:term:bldng:buildings] or parts thereof conforming to  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number] , horizontal concealed spaces within a floor assembly or roof assembly of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be separated by construction conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] into compartments that are",
+                "text" : "Except for crawl spaces conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art6.sent1:long] and except as provided in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent5:short] , in [REF:term:bldng:buildings] or parts thereof conforming to  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number:3.2.2.93.] , horizontal concealed spaces within a floor assembly or roof assembly of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be separated by construction conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] into compartments that are",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect11.art5.sent4.clause1",
@@ -32778,7 +32778,7 @@
                   "sequence" : 1,
                   "effective_date" : "2024-04-05",
                   "status" : "current",
-                  "text" : "Except for crawl spaces conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art6.sent1:long] and except as provided in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent5:short] , in [REF:term:bldng:buildings] or parts thereof conforming to  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number] , horizontal concealed spaces within a floor assembly or roof assembly of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be separated by construction conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] into compartments that are",
+                  "text" : "Except for crawl spaces conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art6.sent1:long] and except as provided in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent5:short] , in [REF:term:bldng:buildings] or parts thereof conforming to  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number:3.2.2.93.] , horizontal concealed spaces within a floor assembly or roof assembly of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be separated by construction conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] into compartments that are",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect11.art5.sent4.clause1",
@@ -71449,7 +71449,7 @@
                  { "id" : "nbc.divB.part3.sect2.subsect4.art21.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "is capable of sounding audible signals in accordance with  Articles [REF:internal:nbc.divBV2.part9.sect10.subsect19.art2:long] and [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5:number] ," },
+                  "text" : "is capable of sounding audible signals in accordance with  Articles [REF:internal:nbc.divBV2.part9.sect10.subsect19.art2:long] and [REF:internal:nbc.divBV2.part9.sect10.subsect19.art5:number:9.10.19.5.] ," },
                  
                  { "id" : "nbc.divB.part3.sect2.subsect4.art21.sent1.clause2",
                   "type" : "clause",
@@ -72246,7 +72246,7 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "is not more than 4 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] and conforms to [REF:internal:nbc.divB.part3.sect2.subsect2.art47:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art49:number] , [REF:internal:nbc.divB.part3.sect2.subsect2.art51:medium] , [REF:internal:nbc.divB.part3.sect2.subsect2.art52:number] or  or [REF:internal:nbc.divB.part3.sect2.subsect2.art55:number] , or" },
+                    "text" : "is not more than 4 [REF:term:tr:storeys] in [REF:term:bldng-hg:building height] and conforms to [REF:internal:nbc.divB.part3.sect2.subsect2.art47:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art49:number:3.2.2.49.] , [REF:internal:nbc.divB.part3.sect2.subsect2.art51:medium] , [REF:internal:nbc.divB.part3.sect2.subsect2.art52:number:3.2.2.52.] or  or [REF:internal:nbc.divB.part3.sect2.subsect2.art55:number:3.2.2.55.] , or" },
                    
                    { "id" : "nbc.divB.part3.sect2.subsect5.art12.sent2.clause1.subclause2",
                     "type" : "subclause",
@@ -72973,7 +72973,7 @@
                    { "id" : "nbc.divB.part3.sect2.subsect6.art7.sent2.clause9.subclause1",
                     "type" : "subclause",
                     "number" : 1,
-                    "text" : "actuate auxiliary equipment identified in  Articles [REF:internal:nbc.divB.part3.sect2.subsect6.art2:long] , [REF:internal:nbc.divB.part3.sect2.subsect6.art3:number] and [REF:internal:nbc.divB.part3.sect2.subsect6.art6:number] , or" },
+                    "text" : "actuate auxiliary equipment identified in  Articles [REF:internal:nbc.divB.part3.sect2.subsect6.art2:long] , [REF:internal:nbc.divB.part3.sect2.subsect6.art3:number:3.2.6.3.] and [REF:internal:nbc.divB.part3.sect2.subsect6.art6:number:3.2.6.6.] , or" },
                    
                    { "id" : "nbc.divB.part3.sect2.subsect6.art7.sent2.clause9.subclause2",
                     "type" : "subclause",
@@ -75963,7 +75963,7 @@
                { "id" : "nbc.divB.part3.sect3.subsect1.art18.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect3.subsect1.art18.sent3:short] and [REF:internal:nbc.divB.part3.sect3.subsect2.art9.sent4:long] and  Articles [REF:internal:nbc.divB.part3.sect3.subsect4.art7:long] and [REF:internal:nbc.divB.part3.sect3.subsect5.art10:number] , openings through [REF:term:guard:guards] shall be of a size that prevents the passage of a spherical object whose diameter is more than 100 mm." },
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect3.subsect1.art18.sent3:short] and [REF:internal:nbc.divB.part3.sect3.subsect2.art9.sent4:long] and  Articles [REF:internal:nbc.divB.part3.sect3.subsect4.art7:long] and [REF:internal:nbc.divB.part3.sect3.subsect5.art10:number:3.3.5.10.] , openings through [REF:term:guard:guards] shall be of a size that prevents the passage of a spherical object whose diameter is more than 100 mm." },
                
                { "id" : "nbc.divB.part3.sect3.subsect1.art18.sent3",
                 "type" : "sentence",
@@ -88231,7 +88231,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect8.subsect4.art1.sent2:short] , [REF:term:cc:access] as described in  Articles [REF:internal:nbc.divB.part3.sect8.subsect4.art2:medium]  to [REF:internal:nbc.divB.part3.sect8.subsect4.art8:number] shall be provided",
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect8.subsect4.art1.sent2:short] , [REF:term:cc:access] as described in  Articles [REF:internal:nbc.divB.part3.sect8.subsect4.art2:medium]  to [REF:internal:nbc.divB.part3.sect8.subsect4.art8:number:3.8.4.8.] shall be provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect8.subsect4.art1.sent1.clause1",
@@ -119914,7 +119914,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote19.para1",
-             "content" : "The permission to use encapsulated mass timber construction and other combustible materials stated in  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art2:long] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art9:shortNum]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art10:short] does not waive the requirements regarding types of construction and cladding stated in [REF:internal:nbc.divB.part3.sect2.subsect3.art7:long]" } ] },
+             "content" : "The permission to use encapsulated mass timber construction and other combustible materials stated in  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art2:long] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3:shortNum:3.1.6.3.] , [REF:internal:nbc.divB.part3.sect1.subsect6.art9:shortNum:3.1.6.9.]  and [REF:internal:nbc.divB.part3.sect1.subsect6.art10:short] does not waive the requirements regarding types of construction and cladding stated in [REF:internal:nbc.divB.part3.sect2.subsect3.art7:long]" } ] },
           
           { "id" : "nbc.divB.part3.appendix.appnote20",
            "type" : "application_note",
@@ -128705,7 +128705,7 @@
                { "id" : "nbc.divB.part4.sect1.subsect2.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Minimum specified values of the loads described in [REF:internal:nbc.divB.part4.sect1.subsect2.art1.sent1:short] , as set forth in  Subsections [REF:internal:nbc.divB.part4.sect1.subsect4:long] to [REF:internal:nbc.divB.part4.sect1.subsect8:number] , shall be increased to account for dynamic effects where applicable." },
+                "text" : "Minimum specified values of the loads described in [REF:internal:nbc.divB.part4.sect1.subsect2.art1.sent1:short] , as set forth in  Subsections [REF:internal:nbc.divB.part4.sect1.subsect4:long] to [REF:internal:nbc.divB.part4.sect1.subsect8:number:4.1.8.] , shall be increased to account for dynamic effects where applicable." },
                
                { "id" : "nbc.divB.part4.sect1.subsect2.art1.sent3",
                 "type" : "sentence",
@@ -133462,7 +133462,7 @@
                  { "id" : "nbc.divB.part4.sect1.subsect6.art2.sent8.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "increased non-uniform snow loads due to snow drifting onto a roof that is at a level lower than other parts of the same [REF:term:bldng:building] or at a level lower than another [REF:term:bldng:building] within 5 m of it horizontally, as prescribed in  Articles [REF:internal:nbc.divB.part4.sect1.subsect6.art5:long] , [REF:internal:nbc.divB.part4.sect1.subsect6.art6:number] and [REF:internal:nbc.divB.part4.sect1.subsect6.art8:short] ," },
+                  "text" : "increased non-uniform snow loads due to snow drifting onto a roof that is at a level lower than other parts of the same [REF:term:bldng:building] or at a level lower than another [REF:term:bldng:building] within 5 m of it horizontally, as prescribed in  Articles [REF:internal:nbc.divB.part4.sect1.subsect6.art5:long] , [REF:internal:nbc.divB.part4.sect1.subsect6.art6:number:4.1.6.6.] and [REF:internal:nbc.divB.part4.sect1.subsect6.art8:short] ," },
                  
                  { "id" : "nbc.divB.part4.sect1.subsect6.art2.sent8.clause2",
                   "type" : "clause",
@@ -143340,7 +143340,7 @@
                     "description" : "= gravity-induced lateral demand on the SFRS at the critical level of the yielding system, and" },
                    
                    { "symbol" : "Q_{y}",
-                    "description" : "= the resistance of the yielding mechanism required to resist the earthquake loads, which need not be taken as less than R_{o} multiplied by the specified lateral earthquake force as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art11:long] or [REF:internal:nbc.divB.part4.sect1.subsect8.art12:number] , as appropriate." } ] } ],
+                    "description" : "= the resistance of the yielding mechanism required to resist the earthquake loads, which need not be taken as less than R_{o} multiplied by the specified lateral earthquake force as determined in [REF:internal:nbc.divB.part4.sect1.subsect8.art11:long] or [REF:internal:nbc.divB.part4.sect1.subsect8.art12:number:4.1.8.12.] , as appropriate." } ] } ],
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divB.part4.sect1.subsect8.art10.sent7.seealso",
@@ -147872,7 +147872,7 @@
                { "id" : "nbc.divB.part4.sect2.subsect3.art7.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Steel used in [REF:term:fndtn:foundations] or in support of [REF:term:l:soil] or [REF:term:rck:rock] shall conform with the appropriate requirements of [REF:internal:nbc.divB.part4.sect3.subsect3:long] or [REF:internal:nbc.divB.part4.sect3.subsect4:number] , unless otherwise specified in this Section." } ] },
+                "text" : "Steel used in [REF:term:fndtn:foundations] or in support of [REF:term:l:soil] or [REF:term:rck:rock] shall conform with the appropriate requirements of [REF:internal:nbc.divB.part4.sect3.subsect3:long] or [REF:internal:nbc.divB.part4.sect3.subsect4:number:4.3.4.] , unless otherwise specified in this Section." } ] },
              
              { "id" : "nbc.divB.part4.sect2.subsect3.art8",
               "type" : "article",
@@ -148223,7 +148223,7 @@
                { "id" : "nbc.divB.part4.sect2.subsect5.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "The sides of an [REF:term:xcvtn:excavation] in [REF:term:l:soil] or [REF:term:rck:rock ] shall be supported by a retaining structure conforming with the requirements of  Articles [REF:internal:nbc.divB.part4.sect2.subsect5.art1:long] and [REF:internal:nbc.divB.part4.sect2.subsect5.art2:number] , except as permitted in [REF:internal:nbc.divB.part4.sect2.subsect5.art4:long]" } ] },
+                "text" : "The sides of an [REF:term:xcvtn:excavation] in [REF:term:l:soil] or [REF:term:rck:rock ] shall be supported by a retaining structure conforming with the requirements of  Articles [REF:internal:nbc.divB.part4.sect2.subsect5.art1:long] and [REF:internal:nbc.divB.part4.sect2.subsect5.art2:number:4.2.5.2.] , except as permitted in [REF:internal:nbc.divB.part4.sect2.subsect5.art4:long]" } ] },
              
              { "id" : "nbc.divB.part4.sect2.subsect5.art4",
               "type" : "article",
@@ -148431,7 +148431,7 @@
                  { "id" : "nbc.divB.part4.sect2.subsect7.art2.sent3.clause5",
                   "type" : "clause",
                   "letter" : "e",
-                  "text" : "the appropriate structural requirements in [REF:internal:nbc.divB.part4.sect1:long] and  Subsections [REF:internal:nbc.divB.part4.sect3.subsect1:long] , [REF:internal:nbc.divB.part4.sect3.subsect3:number] and [REF:internal:nbc.divB.part4.sect3.subsect4:number]" } ] },
+                  "text" : "the appropriate structural requirements in [REF:internal:nbc.divB.part4.sect1:long] and  Subsections [REF:internal:nbc.divB.part4.sect3.subsect1:long] , [REF:internal:nbc.divB.part4.sect3.subsect3:number:4.3.3.] and [REF:internal:nbc.divB.part4.sect3.subsect4:number:4.3.4.]" } ] },
                
                { "id" : "nbc.divB.part4.sect2.subsect7.art2.sent4",
                 "type" : "sentence",
@@ -170159,7 +170159,7 @@
                 "number" : 1,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
+                "text" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number:6.3.1.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part6.sect2.subsect1.art5.sent1.clause1",
@@ -170201,7 +170201,7 @@
                 [ 
                  { "type" : "original",
                   "effective_date" : "2024-03-08",
-                  "text" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to the Safety Standards Act and pursuant regulations." },
+                  "text" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number:6.3.1.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to the Safety Standards Act and pursuant regulations." },
                  
                  { "type" : "revision",
                   "revision_type" : "amendment",
@@ -170209,7 +170209,7 @@
                   "sequence" : 1,
                   "effective_date" : "2024-05-24",
                   "status" : "current",
-                  "text" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
+                  "text" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number:6.3.1.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part6.sect2.subsect1.art5.sent1.clause1",
@@ -170407,7 +170407,7 @@
                 [ 
                  { "type" : "original",
                   "effective_date" : "2024-03-08",
-                  "text" : "For suites in [REF:term:bldng:buildings] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long] or [REF:internal:nbc.divB.part10.sect2.subsect3:number] , the outdoor air required by [REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent2:short] shall be supplied directly to each suite by mechanical ventilation through ducting." },
+                  "text" : "For suites in [REF:term:bldng:buildings] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long] or [REF:internal:nbc.divB.part10.sect2.subsect3:number:10.2.3.] , the outdoor air required by [REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent2:short] shall be supplied directly to each suite by mechanical ventilation through ducting." },
                  
                  { "type" : "revision",
                   "revision_type" : "amendment",
@@ -304756,7 +304756,7 @@
                  { "id" : "nbc.divBV2.part9.sect23.subsect9.art4.sent5.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "a panel-type ceiling finish complying with [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] , [REF:internal:nbc.divBV2.part9.sect29.subsect6:number] , [REF:internal:nbc.divBV2.part9.sect29.subsect7:number] , [REF:internal:nbc.divBV2.part9.sect29.subsect8:number] , or [REF:internal:nbc.divBV2.part9.sect29.subsect9:number] is attached directly to the joists." } ] },
+                  "text" : "a panel-type ceiling finish complying with [REF:internal:nbc.divBV2.part9.sect29.subsect5:long] , [REF:internal:nbc.divBV2.part9.sect29.subsect6:number:9.29.6.] , [REF:internal:nbc.divBV2.part9.sect29.subsect7:number:9.29.7.] , [REF:internal:nbc.divBV2.part9.sect29.subsect8:number:9.29.8.] , or [REF:internal:nbc.divBV2.part9.sect29.subsect9:number:9.29.9.] is attached directly to the joists." } ] },
                
                { "id" : "nbc.divBV2.part9.sect23.subsect9.art4.sent6",
                 "type" : "sentence",
@@ -338497,7 +338497,7 @@
                { "id" : "nbc.divBV2.part9.sect28.subsect1.art5.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Flashing and caulking used with stucco shall conform to  Subsections [REF:internal:nbc.divBV2.part9.sect27.subsect3:long] and [REF:internal:nbc.divBV2.part9.sect27.subsect4:number] , except that if aluminum flashing is used, it shall be separated from the stucco by an impervious membrane or coating. (See [REF:internal:nbc.divBV2.part9.sect7.subsect6.art2:long] for caulking around window frames.)" } ] } ] },
+                "text" : "Flashing and caulking used with stucco shall conform to  Subsections [REF:internal:nbc.divBV2.part9.sect27.subsect3:long] and [REF:internal:nbc.divBV2.part9.sect27.subsect4:number:9.27.4.] , except that if aluminum flashing is used, it shall be separated from the stucco by an impervious membrane or coating. (See [REF:internal:nbc.divBV2.part9.sect7.subsect6.art2:long] for caulking around window frames.)" } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect28.subsect2",
             "type" : "subsection",
@@ -339395,7 +339395,7 @@
                { "id" : "nbc.divBV2.part9.sect29.subsect1.art1.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "A wall or ceiling finish shall also conform to the appropriate requirements in  Sections [REF:internal:nbc.divBV2.part9.sect10:long] and [REF:internal:nbc.divBV2.part9.sect11:number] , in addition to the requirements in this Section." } ] } ] },
+                "text" : "A wall or ceiling finish shall also conform to the appropriate requirements in  Sections [REF:internal:nbc.divBV2.part9.sect10:long] and [REF:internal:nbc.divBV2.part9.sect11:number:9.11.] , in addition to the requirements in this Section." } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect29.subsect2",
             "type" : "subsection",
@@ -344811,7 +344811,7 @@
                 "number" : 1,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "Except as provided in  Articles [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3:long] and [REF:internal:nbc.divBV2.part9.sect33.subsect5.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
+                "text" : "Except as provided in  Articles [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3:long] and [REF:internal:nbc.divBV2.part9.sect33.subsect5.art4:number:9.33.5.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause1",
@@ -344886,7 +344886,7 @@
                   "sequence" : 1,
                   "effective_date" : "2024-05-24",
                   "status" : "current",
-                  "text" : "Except as provided in  Articles [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3:long] and [REF:internal:nbc.divBV2.part9.sect33.subsect5.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
+                  "text" : "Except as provided in  Articles [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3:long] and [REF:internal:nbc.divBV2.part9.sect33.subsect5.art4:number:9.33.5.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause1",
@@ -433924,7 +433924,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect7.art4:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect7.art4:shortNum:9.36.7.4.]" } ] },
                     
                     { "content" : 
                      [ 
@@ -433938,7 +433938,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect7.art4:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect7.art4:shortNum:9.36.7.4.]" } ] },
                     
                     { "content" : 
                      [ 
@@ -433952,7 +433952,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect7.art4:shortNum]" } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect7.art4:shortNum:9.36.7.4.]" } ] },
                     
                     { "content" : 
                      [ 
@@ -533983,7 +533983,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote9.para2",
-             "content" : "Usually a combination of approaches is used. For example, even if the snow load calculation on a wood roof truss is based on [REF:internal:nbc.divBV2.part9.sect4.subsect2:long] , the joints must be designed in accordance with Part 4. Wall framing may comply with the prescriptive requirements in  Subsections [REF:internal:nbc.divBV2.part9.sect23.subsect3:long] , [REF:internal:nbc.divBV2.part9.sect23.subsect10:number] , [REF:internal:nbc.divBV2.part9.sect23.subsect11:number] and [REF:internal:nbc.divBV2.part9.sect23.subsect12:long] , while the floor framing may be engineered." },
+             "content" : "Usually a combination of approaches is used. For example, even if the snow load calculation on a wood roof truss is based on [REF:internal:nbc.divBV2.part9.sect4.subsect2:long] , the joints must be designed in accordance with Part 4. Wall framing may comply with the prescriptive requirements in  Subsections [REF:internal:nbc.divBV2.part9.sect23.subsect3:long] , [REF:internal:nbc.divBV2.part9.sect23.subsect10:number:9.23.10.] , [REF:internal:nbc.divBV2.part9.sect23.subsect11:number:9.23.11.] and [REF:internal:nbc.divBV2.part9.sect23.subsect12:long] , while the floor framing may be engineered." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote9.para3",
@@ -540229,7 +540229,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote127.para1",
-             "content" : "[REF:internal:nbc.divBV2.part9.sect23.subsect13:long] along with Articles [REF:internal:nbc.divBV2.part9.sect4.subsect2.art5:number:9.4.2.5.] , [REF:internal:nbc.divBV2.part9.sect23.subsect3.art4:number] , [REF:internal:nbc.divBV2.part9.sect23.subsect3.art5:number] , [REF:internal:nbc.divBV2.part9.sect23.subsect6.art1:number] , [REF:internal:nbc.divBV2.part9.sect23.subsect9.art8:number] , 9.23.11.4., [REF:internal:nbc.divBV2.part9.sect23.subsect15.art5:number] , [REF:internal:nbc.divBV2.part9.sect29.subsect5.art8:number] , [REF:internal:nbc.divBV2.part9.sect29.subsect5.art9:number] , [REF:internal:nbc.divBV2.part9.sect29.subsect6.art3:number] and [REF:internal:nbc.divBV2.part9.sect29.subsect9.art3:number] contain design and bracing provisions that address the resistance of light wood-frame structures and non-structural components to wind and earthquake loads." },
+             "content" : "[REF:internal:nbc.divBV2.part9.sect23.subsect13:long] along with Articles [REF:internal:nbc.divBV2.part9.sect4.subsect2.art5:number:9.4.2.5.] , [REF:internal:nbc.divBV2.part9.sect23.subsect3.art4:number:9.23.3.4.] , [REF:internal:nbc.divBV2.part9.sect23.subsect3.art5:number:9.23.3.5.] , [REF:internal:nbc.divBV2.part9.sect23.subsect6.art1:number:9.23.6.1.] , [REF:internal:nbc.divBV2.part9.sect23.subsect9.art8:number:9.23.9.8.] , 9.23.11.4., [REF:internal:nbc.divBV2.part9.sect23.subsect15.art5:number:9.23.15.5.] , [REF:internal:nbc.divBV2.part9.sect29.subsect5.art8:number:9.29.5.8.] , [REF:internal:nbc.divBV2.part9.sect29.subsect5.art9:number:9.29.5.9.] , [REF:internal:nbc.divBV2.part9.sect29.subsect6.art3:number:9.29.6.3.] and [REF:internal:nbc.divBV2.part9.sect29.subsect9.art3:number:9.29.9.3.] contain design and bracing provisions that address the resistance of light wood-frame structures and non-structural components to wind and earthquake loads." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote127.para2",
@@ -546764,7 +546764,7 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote216.div1.para1",
-               "content" : "For the purpose of [REF:internal:nbc.divBV2.part9.sect37.subsect1.art3:long] and [REF:internal:nbc.divBV2.part9.sect37.subsect1.art3:number] , the term \"houses\" includes detached houses, semi-detached houses, duplexes, triplexes, townhouses, row houses and boarding houses." } ] },
+               "content" : "For the purpose of [REF:internal:nbc.divBV2.part9.sect37.subsect1.art3:long] and [REF:internal:nbc.divBV2.part9.sect37.subsect1.art3:number:9.37.1.3.] , the term \"houses\" includes detached houses, semi-detached houses, duplexes, triplexes, townhouses, row houses and boarding houses." } ] },
             
             { "id" : "nbc.divBV2.part9.appendix.appnote216.div2",
              "type" : "note_division",
@@ -561123,7 +561123,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote236.para1",
-             "content" : "Site-built windows are often installed in custom-built homes or in unique configurations for which manufactured units are not available. [REF:internal:nbc.divBV2.part9.sect7.subsect4.art1:long] requires windows, doors and skylights to conform to either the standards referenced in [REF:internal:nbc.divBV2.part9.sect7.subsect4.art2:long] or to Part 5. Regardless of the compliance path chosen, the requirements of  Section [REF:internal:nbc.divBV2.part9.sect7:long] and [REF:internal:nbc.divBV2.part9.sect37:number] must also be met. Windows, doors and skylights and other glazed products that comply with Part 5 and are installed in a Part 9 building may use the site-built provisions of [REF:internal:nbc.divBV2.part9.sect37.subsect2.art7.sent3:long] rather than complying with the requirements in [REF:internal:nbc.divBV2.part9.sect37.subsect2.art7.sent1:long] ." } ] },
+             "content" : "Site-built windows are often installed in custom-built homes or in unique configurations for which manufactured units are not available. [REF:internal:nbc.divBV2.part9.sect7.subsect4.art1:long] requires windows, doors and skylights to conform to either the standards referenced in [REF:internal:nbc.divBV2.part9.sect7.subsect4.art2:long] or to Part 5. Regardless of the compliance path chosen, the requirements of  Section [REF:internal:nbc.divBV2.part9.sect7:long] and [REF:internal:nbc.divBV2.part9.sect37:number:9.37.] must also be met. Windows, doors and skylights and other glazed products that comply with Part 5 and are installed in a Part 9 building may use the site-built provisions of [REF:internal:nbc.divBV2.part9.sect37.subsect2.art7.sent3:long] rather than complying with the requirements in [REF:internal:nbc.divBV2.part9.sect37.subsect2.art7.sent1:long] ." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote237",
            "type" : "application_note",
@@ -620278,7 +620278,7 @@
     "sequence" : 1,
     "effective_date" : "2024-04-05",
     "status" : "current",
-    "content" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:long] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] thatis not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] , orconforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art11.sent1:long] , the material or assembly of materials referred to in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] shall consist ofgypsum board,gypsum concrete,[REF:term:ncmbtbl:noncombustible] materials,materials that conform to  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:medium] , orany combination of the materials listed in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause4:short:(d)] .Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedtheir aggregate exposed surface area does not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in which they are located, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedall portions of the exposed surfacesface the same direction, orare separated by a horizontal distance of not less than 4.5 m, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote24:short] and [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed10% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150, or25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedthe aggregate surface area of any exposed mass timber beams, columns and arches does not exceed 20% of the total wall area of the perimeter of the [REF:term:t:suite] in which they are located,all surfaces of mass timber walls areprotected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , ormass timber walls that are not otherwise permitted to be exposed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] are protected by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 80 min, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Structural mass timber elements in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have an [REF:term:ncps-rtng:encapsulation rating] of 0 min need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedmass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected from adjacent spaces with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, andconcealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:short] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min.",
+    "content" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:long] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] thatis not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , orconforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art11.sent1:long] , the material or assembly of materials referred to in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] shall consist ofgypsum board,gypsum concrete,[REF:term:ncmbtbl:noncombustible] materials,materials that conform to  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:medium] , orany combination of the materials listed in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause4:short:(d)] .Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedtheir aggregate exposed surface area does not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in which they are located, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedall portions of the exposed surfacesface the same direction, orare separated by a horizontal distance of not less than 4.5 m, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote24:short] and [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed10% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150, or25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedthe aggregate surface area of any exposed mass timber beams, columns and arches does not exceed 20% of the total wall area of the perimeter of the [REF:term:t:suite] in which they are located,all surfaces of mass timber walls areprotected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , ormass timber walls that are not otherwise permitted to be exposed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] are protected by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 80 min, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)Structural mass timber elements in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have an [REF:term:ncps-rtng:encapsulation rating] of 0 min need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedmass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected from adjacent spaces with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, andconcealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short] .)In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:short] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min.",
     "change_summary" : "Repealed and substituted Article 3.1.6.4 Encapsulation of Mass Timber Elements",
     "note" : "Ministerial Order BA 2024 01" },
    
@@ -620406,7 +620406,7 @@
     "sequence" : 1,
     "effective_date" : "2024-04-05",
     "status" : "current",
-    "content" : "Except for crawl spaces conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art6.sent1:long] and except as provided in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent5:short] , in [REF:term:bldng:buildings] or parts thereof conforming to  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number] , horizontal concealed spaces within a floor assembly or roof assembly of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be separated by construction conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] into compartments that arenot more than 600 m^{2} in area with no dimension more than 60 m, if the exposed construction materials within the space have a [REF:term:flm-prd-:flame-spread rating] not more than 25, andnot more than 300 m^{2} in area with no dimension more than 20 m, if the exposed construction materials within the space have a [REF:term:flm-prd-:flame-spread rating] more than 25. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote32:short] and [REF:internal:nbc.divB.part3.appendix.appnote33:short] .)",
+    "content" : "Except for crawl spaces conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art6.sent1:long] and except as provided in [REF:internal:nbc.divB.part3.sect1.subsect11.art5.sent5:short] , in [REF:term:bldng:buildings] or parts thereof conforming to  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number:3.2.2.93.] , horizontal concealed spaces within a floor assembly or roof assembly of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be separated by construction conforming to [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] into compartments that arenot more than 600 m^{2} in area with no dimension more than 60 m, if the exposed construction materials within the space have a [REF:term:flm-prd-:flame-spread rating] not more than 25, andnot more than 300 m^{2} in area with no dimension more than 20 m, if the exposed construction materials within the space have a [REF:term:flm-prd-:flame-spread rating] more than 25. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote32:short] and [REF:internal:nbc.divB.part3.appendix.appnote33:short] .)",
     "change_summary" : "Added reference to Article 3.2.2.93",
     "note" : "Ministerial Order BA 2024 01" },
    
@@ -621448,7 +621448,7 @@
    { "location_id" : "nbc.divB.part6.sect2.subsect1.art5.sent1",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to the Safety Standards Act and pursuant regulations." },
+    "content" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number:6.3.1.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to the Safety Standards Act and pursuant regulations." },
    
    { "location_id" : "nbc.divB.part6.sect2.subsect1.art5.sent1",
     "type" : "revision",
@@ -621457,7 +621457,7 @@
     "sequence" : 1,
     "effective_date" : "2024-05-24",
     "status" : "current",
-    "content" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform tothe Safety Standards Act and pursuant regulations,reserved,[REF:standard:csab139] , \"Installation code for oil-burning equipment,\"reserved,[REF:standard:csab365] , \"Installation Code for Solid-Fuel-Burning Appliances and Equipment,\" ora combination thereof.",
+    "content" : "Except as provided in  Articles [REF:internal:nbc.divB.part6.sect9.subsect4.art2:long] and [REF:internal:nbc.divB.part6.sect3.subsect1.art4:number:6.3.1.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform tothe Safety Standards Act and pursuant regulations,reserved,[REF:standard:csab139] , \"Installation code for oil-burning equipment,\"reserved,[REF:standard:csab365] , \"Installation Code for Solid-Fuel-Burning Appliances and Equipment,\" ora combination thereof.",
     "change_summary" : "Repealed and substituted Sentence 6.2.1.5.(1) with new clauses (a) through (f) for installation standards",
     "note" : "Ministerial Order BA 2024 02" },
    
@@ -621480,7 +621480,7 @@
    { "location_id" : "nbc.divB.part6.sect3.subsect1.art1.sent5",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "For suites in [REF:term:bldng:buildings] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long] or [REF:internal:nbc.divB.part10.sect2.subsect3:number] , the outdoor air required by [REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent2:short] shall be supplied directly to each suite by mechanical ventilation through ducting." },
+    "content" : "For suites in [REF:term:bldng:buildings] conforming to [REF:internal:nbc.divBV2.part9.sect36.subsect6:long] or [REF:internal:nbc.divB.part10.sect2.subsect3:number:10.2.3.] , the outdoor air required by [REF:internal:nbc.divB.part6.sect3.subsect1.art1.sent2:short] shall be supplied directly to each suite by mechanical ventilation through ducting." },
    
    { "location_id" : "nbc.divB.part6.sect3.subsect1.art1.sent5",
     "type" : "revision",
@@ -622337,7 +622337,7 @@
     "sequence" : 1,
     "effective_date" : "2024-05-24",
     "status" : "current",
-    "content" : "Except as provided in  Articles [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3:long] and [REF:internal:nbc.divBV2.part9.sect33.subsect5.art4:number] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform tothe Safety Standards Act and pursuant regulations,reserved,[REF:standard:csab139] , \"Installation code for oil-burning equipment,\"reserved,reserved,[REF:standard:csac448series] , \"Design and installation of earth energy systems,\" ora combination thereof. (See also  Sentence [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3.sent1:long] .)",
+    "content" : "Except as provided in  Articles [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3:long] and [REF:internal:nbc.divBV2.part9.sect33.subsect5.art4:number:9.33.5.4.] , the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform tothe Safety Standards Act and pursuant regulations,reserved,[REF:standard:csab139] , \"Installation code for oil-burning equipment,\"reserved,reserved,[REF:standard:csac448series] , \"Design and installation of earth energy systems,\" ora combination thereof. (See also  Sentence [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3.sent1:long] .)",
     "change_summary" : "Repealed and substituted Sentence 9.33.5.2.(1) with new clauses (a) through (g) for installation standards",
     "note" : "Ministerial Order BA 2024 02" },
    
