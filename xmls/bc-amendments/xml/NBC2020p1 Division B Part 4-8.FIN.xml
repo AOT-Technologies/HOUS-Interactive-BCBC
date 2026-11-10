@@ -197,7 +197,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part5.sect9.subsect2.art2.sent4" number="4">
-                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long"/> may be used instead of the loads and procedures set out in the standard. (See Note 5.8.2.2.(4).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-03431 | issue 9956 | The PDF prints Section 5.2 without a final period here, so the reference carries its own label. -->
+                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long">Section 5.2</ref> may be used instead of the loads and procedures set out in the standard. (See Note 5.8.2.2.(4).)</text>
                     </sentence>
                 </new-content>
             </insert>
