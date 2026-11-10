@@ -1606,6 +1606,13 @@
                             </fn:map>
                         </xsl:when>
                         <!-- Table note marker -->
+                        <!-- CLAUDE-AUTOFIX CL-026 CF-01777 | issue 1017 | Note markers in tables inside an appendix Note are written as short note references, so they show as (3) as in the PDF. -->
+                        <xsl:when test="self::note[@xml:id][contains(@xml:id, '.appnote')]">
+                            <fn:map>
+                                <fn:string key="type">text</fn:string>
+                                <fn:string key="value"> [REF:internal:<xsl:value-of select="@xml:id"/>:short] </fn:string>
+                            </fn:map>
+                        </xsl:when>
                         <xsl:when test="self::note[@xml:id]">
                             <fn:map>
                                 <fn:string key="type">text</fn:string>
@@ -1652,6 +1659,12 @@
                 <xsl:variable name="text-content">
                     <xsl:for-each select="$entry/node()">
                         <xsl:choose>
+                            <!-- CLAUDE-AUTOFIX CL-026 CF-01777 | issue 1017 | Note markers in tables inside an appendix Note are written as short note references, so they show as (3) as in the PDF. -->
+                            <xsl:when test="self::note[@xml:id][contains(@xml:id, '.appnote')]">
+                                <xsl:text>[REF:internal:</xsl:text>
+                                <xsl:value-of select="@xml:id"/>
+                                <xsl:text>:short]</xsl:text>
+                            </xsl:when>
                             <xsl:when test="self::note[@xml:id]">
                                 <xsl:text>[REF:table-note:</xsl:text>
                                 <xsl:value-of select="@xml:id"/>
@@ -2349,9 +2362,14 @@
         <!-- CLAUDE-AUTOFIX CL-008 CF-09846 | issue 5078 | Article and Subsection range ends keep their final period, as in the PDF. -->
         <xsl:variable name="range-end-label" select="if ($is-range-end and not(contains(@target, '.sent')) and normalize-space(.) = '') then string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.') else ''"/>
         <xsl:text>[REF:</xsl:text>
-        <xsl:value-of select="@type"/>
+        <!-- CLAUDE-AUTOFIX CL-026 CF-01777 | issue 1017 | A table-note reference to a note in a table inside an appendix Note is written as a short internal note reference, so it shows as (3) as in the PDF. -->
+        <xsl:variable name="appnote-table-note" as="xs:boolean" select="@type = 'table-note' and contains(@target, '.appnote') and not(@display-type) and normalize-space(.) = ''"/>
+        <xsl:value-of select="if ($appnote-table-note) then 'internal' else @type"/>
         <xsl:text>:</xsl:text>
         <xsl:value-of select="@target"/>
+        <xsl:if test="$appnote-table-note">
+            <xsl:text>:short</xsl:text>
+        </xsl:if>
         <xsl:if test="@display-type">
             <xsl:text>:</xsl:text>
             <xsl:value-of select="if ($is-range-end) then (if (@display-type = 'short') then 'shortNum' else 'number') else @display-type"/>
