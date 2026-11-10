@@ -2364,6 +2364,16 @@
             <xsl:text>:A-</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-021 CF-00384 | issue 153 | Sentence and Clause references in number format inside a table cell print the full number, as in the PDF (4.3.6.1.(1)); in running text the PDF keeps the short form. -->
+        <xsl:if test="@type = 'internal' and @display-type = 'number' and ancestor::entry and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+\.subsect\d+\.art\d+\.sent\d+(\.clause\d+)?$') and id(@target)">
+            <xsl:variable name="num-sent" select="id(@target)/ancestor-or-self::sentence[1]"/>
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="string-join(id(@target)/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
+            <xsl:value-of select="concat('.(', $num-sent/@number, ')')"/>
+            <xsl:if test="contains(@target, '.clause')">
+                <xsl:value-of select="concat('(', id(@target)/@letter, ')')"/>
+            </xsl:if>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-015 CF-01285 | issue 9842 | Article, Subsection and Section numbers keep their final period, as in the PDF (3.2.2.49.). -->
         <xsl:if test="@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')])">
             <xsl:text>:</xsl:text>
