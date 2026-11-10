@@ -2297,7 +2297,8 @@
                                       refs="es000911">
                         <number>3.3.2.18.</number>
                         <title>Daycare Facilities for Children under 30 Months</title>
-                        <paragraph>These daycare facilities are subject to additional requirements to address the unique profile of the occupants. The Community Care and Assisted Living Act and pursuant regulations establish care programs and prescribes the ages for children in those various programs. The Code's requirements for daycare facilities for children under 30 months is intended to coordinate with those care programs, which inform the intended use and applicable Code requirements, but the Code does not regulate the actual ages of children in those care programs or in the facility (See Note A-3.1.2.8.)</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-01823 | issue 10083 | Curly apostrophe in Code’s, as in the PDF. -->
+                        <paragraph>These daycare facilities are subject to additional requirements to address the unique profile of the occupants. The Community Care and Assisted Living Act and pursuant regulations establish care programs and prescribes the ages for children in those various programs. The Code’s requirements for daycare facilities for children under 30 months is intended to coordinate with those care programs, which inform the intended use and applicable Code requirements, but the Code does not regulate the actual ages of children in those care programs or in the facility (See Note A-3.1.2.8.)</paragraph>
                     </application-note>
                 </new-content>
             </insert>
