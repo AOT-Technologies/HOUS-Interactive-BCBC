@@ -852,7 +852,8 @@
                     <application-note xml:id="nbc.divB.part6.appendix.appnote1a">
                         <number>6.2.1.2.(1)</number>
                         <title>Outdoor Design Conditions</title>
-                        <paragraph>In the past, the practice of ventilating buildings with outdoor air assumed that the outdoor air was of better quality than the indoor air. It has become evident that the outdoor air in some areas of Canada may not be of an acceptable quality for ventilating buildings unless certain particles and gases are first removed or reduced. In order to manage the air quality of a building's indoor environment, thus reducing the potential for adverse effects on occupants' health, the quality of outdoor air for building ventilation purposes must be addressed.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-03858 CF-03859 | issue 10134 | Curly apostrophes in building’s and occupants’, as in the PDF. -->
+                        <paragraph>In the past, the practice of ventilating buildings with outdoor air assumed that the outdoor air was of better quality than the indoor air. It has become evident that the outdoor air in some areas of Canada may not be of an acceptable quality for ventilating buildings unless certain particles and gases are first removed or reduced. In order to manage the air quality of a building’s indoor environment, thus reducing the potential for adverse effects on occupants’ health, the quality of outdoor air for building ventilation purposes must be addressed.</paragraph>
                     </application-note>
                 </new-content>
             </insert>
