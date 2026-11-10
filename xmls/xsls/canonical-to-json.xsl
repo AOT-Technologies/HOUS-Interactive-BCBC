@@ -2202,7 +2202,12 @@
     
     <xsl:template match="text()" mode="rich-text-json">
         <!-- Normalize whitespace but preserve word boundaries -->
-        <xsl:variable name="normalized" select="normalize-space(.)"/>
+        <!-- CLAUDE-AUTOFIX CL-017 CF-01112 | issue 9346 | Straight double quotes in the text print as curly quotes, as in the PDF. -->
+        <xsl:variable name="q-open" select="replace(., '([\s(\[&#8212;&#8211;])&quot;', '$1&#8220;')"/>
+        <xsl:variable name="q-first" select="if (starts-with($q-open, '&quot;') and not(preceding-sibling::node())) then concat('&#8220;', substring($q-open, 2)) else $q-open"/>
+        <!-- CLAUDE-AUTOFIX CL-017 CF-01112 | issue 9346 | The PDF prints straight quotes in Division C appendix note appnote12 (Letters of Assurance guidance), Table 9.23.13.7 note (3) and Division A Table 1.1.1.1 row 4, so those keep them (approved by user 2026-11-10). -->
+        <xsl:variable name="keep-straight" as="xs:boolean" select="matches(string((ancestor::*[@xml:id])[last()]/@xml:id), '^(nbc\.divC\.part2\.appendix\.appnote12|nbc\.divBV2\.part9\.sect23\.subsect13\.art7\.table4\.note4|nbc\.divA\.part1\.sect1\.subsect1\.art1\.table1\.row4)(\.|$)')"/>
+        <xsl:variable name="normalized" select="if ($keep-straight) then normalize-space(.) else normalize-space(replace($q-first, '&quot;', '&#8221;'))"/>
         <xsl:if test="$normalized != ''">
             <!-- Add leading space if original text started with whitespace and we're not first -->
             <xsl:if test="preceding-sibling::node() and matches(., '^\s')">
