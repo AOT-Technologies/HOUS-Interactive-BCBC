@@ -1641,9 +1641,11 @@
                         </xsl:when>
                         <!-- Text node or other elements - collect as text -->
                         <xsl:when test="self::text()[normalize-space()] or self::*[not(self::figure or self::graphic or self::note or self::list)]">
-                            <xsl:variable name="text-content">
+                            <xsl:variable name="text-content-raw">
                                 <xsl:apply-templates select="." mode="rich-text-json"/>
                             </xsl:variable>
+                            <!-- CLAUDE-AUTOFIX CL-034 CF-04985 | issue 8938 | In a table cell with figures, a defined term followed by a comma or other closing punctuation gets no trailing space, as in the PDF (braced wall band, partially clad). -->
+                            <xsl:variable name="text-content" select="if (self::ref and following-sibling::node()[1][self::text()][matches(., '^[,.;:)]')]) then replace($text-content-raw, '\s+$', '') else $text-content-raw"/>
                             <xsl:if test="normalize-space($text-content)">
                                 <fn:map>
                                     <fn:string key="type">text</fn:string>
