@@ -2370,6 +2370,22 @@
             <xsl:value-of select="string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
             <xsl:text>.</xsl:text>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-020 CF-01130 | issue 6337 | A reference joined to the previous one of the same kind by its pretext (or / and) prints only its number, as in the PDF (Article 3.2.2.51. or 3.2.2.60.). -->
+        <xsl:variable name="list-prev-ref" select="$prev-significant[self::ref[@type = 'internal']]"/>
+        <xsl:variable name="list-level" select="replace(@target, '^.*\.([a-z]+)\d+$', '$1')"/>
+        <xsl:if test="@type = 'internal' and @display-type = ('long', 'short') and normalize-space(.) = '' and @pretext = ('or', 'and', ',', ', or', ', and') and not($is-range-end) and $list-prev-ref and $list-prev-ref/@display-type = @display-type and replace($list-prev-ref/@target, '^.*\.([a-z]+)\d+$', '$1') = $list-level and $list-level = ('art', 'subsect', 'sect', 'sent', 'clause') and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1) and substring($list-prev-ref/@target, 8, 1) = substring(@target, 8, 1) and id(@target)">
+            <xsl:variable name="list-art" select="string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
+            <xsl:variable name="list-label" select="
+                if ($list-level = ('art', 'subsect', 'sect') and @display-type = 'long') then concat($list-art, '.')
+                else if ($list-level = 'sent' and @display-type = 'long') then concat($list-art, '.(', id(@target)/@number, ')')
+                else if ($list-level = 'sent' and @display-type = 'short') then concat('(', id(@target)/@number, ')')
+                else if ($list-level = 'clause' and @display-type = 'short' and id(@target)/@letter) then concat('(', id(@target)/@letter, ')')
+                else ''"/>
+            <xsl:if test="$list-label != ''">
+                <xsl:text>:</xsl:text>
+                <xsl:value-of select="$list-label"/>
+            </xsl:if>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-019 CF-01368 | issue 802 | A Part reference inside the same Division prints as "Part 6", without "of Division B", as in the PDF. -->
         <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+$') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
             <xsl:text>:Part </xsl:text>
