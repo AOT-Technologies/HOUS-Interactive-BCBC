@@ -5691,53 +5691,6 @@ tested in conformance with CAN/ULC-S102.3, "Standard Method of Fire Test of Ligh
         </amendment>
 
         <!-- ================================================================== -->
-        <!-- BBC-182: Article 3.1.11.5. corrections (SME feedback). Sentence    -->
-        <!-- 3.1.11.5.(3) is fixed in its existing amendment bc-qa-e8c01f5382;  -->
-        <!-- Sentence 3.1.11.5.(4) and Table 3.1.3.1. (BBC-181) are fixed in   -->
-        <!-- Ministerial Order BA 2024 01.xml                                   -->
-        <!-- ================================================================== -->
-
-        <!-- BBC-182 Issue 12: Sentence 3.1.11.5.(5) - "Fire blocks" is not a defined-term link here -->
-        <amendment id="bc-custom-31115-5" sequence="68.997801"
-                   description="Show Fire blocks without the defined-term link in Sentence 3.1.11.5.(5)">
-            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect11.art5.sent5"/>
-            <modify>
-                <element-replace element="text">
-                    <new-content source="bc">
-                        <text>Fire blocks conforming to <ref type="internal"
-                                target="nbc.divB.part3.sect1.subsect11.art5.sent3"
-                                display-type="short"
-                                pretext="Sentences"/>
-                           <ref type="internal"
-                                target="nbc.divB.part3.sect1.subsect11.art5.sent4"
-                                display-type="short"
-                                pretext="and"/> are not required where the horizontal
-concealed space within the floor or roof assembly is entirely filled
-with <ref type="term" target="ncmbtbl">noncombustible</ref> insulation such that
-any air gap between the top of the insulation and the floor or roof
-deck does not exceed <measurement units="metric">50 mm</measurement>.</text>
-                    </new-content>
-                </element-replace>
-            </modify>
-        </amendment>
-
-        <!-- BBC-182 (extra): Clause 3.1.11.5.(1)(a) - "flame-spread rating not more than 25" (was "ratingnot") -->
-        <amendment id="bc-custom-31115-1a" sequence="68.997802"
-                   description="Restore the space after flame-spread rating in Clause 3.1.11.5.(1)(a)">
-            <target type="canonical-id" id="nbc.divB.part3.sect1.subsect11.art5.sent1.clause1"/>
-            <modify>
-                <element-replace element="text">
-                    <new-content source="bc">
-                        <text>not more than <measurement units="metric">600 m<super>2</super>
-                              </measurement> in area with
-no dimension more than <measurement units="metric">60 m</measurement> if the exposed construction
-materials within the space have a <ref type="term" target="flm-prd-">flame-spread rating</ref> not more than 25, and</text>
-                    </new-content>
-                </element-replace>
-            </modify>
-        </amendment>
-
-        <!-- ================================================================== -->
         <!-- Amendment 77: Update E001 symbol description                       -->
         <!-- Article 3.4.5.1.(2)(c)(i) - Exit sign symbol E001                  -->
         <!-- ================================================================== -->
@@ -7845,16 +7798,21 @@ each 25 females.</find>
                     <sentence xml:id="nbc.divB.part3.sect1.subsect11.art5.sent3"
                                                    number="3"
                                                    vendor-id="es005955">
-                                            <!-- BBC-182 Issue 7: "Article 3.2.2.51. or 3.2.2.60."; Note line kept only as the see-also below (no duplicate in the text) -->
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6676 Reference e8c01f5382 -->
                         <text>Except as provided in <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect11.art5.sent5"
-                                                    display-type="short"/>, in <ref type="term" target="bldng">buildings</ref> or parts thereof conforming to Article <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="number">3.2.2.51.</ref> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art60" display-type="number">3.2.2.60.</ref>, horizontal
+                                                    display-type="short"/>, in <ref type="term" target="bldng">buildings</ref> or parts thereof conforming to <ref type="internal"
+                                                    target="nbc.divB.part3.sect2.subsect2.art51"
+                                                    display-type="long"/>
+                                               <ref type="internal"
+                                                    target="nbc.divB.part3.sect2.subsect2.art60"
+                                                    display-type="long"
+                                                    pretext="or">3.2.2.60.</ref>, horizontal
                     concealed spaces within a floor assembly or roof assembly of <ref type="term" target="cmbtbl-c">combustible construction</ref> shall be separated
                     by construction conforming to <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect11.art7"
                                                     display-type="long"/> into compartments
-                    that are</text>
+                    that are (See Note A-3.1.11.5.(3) and (4).) </text>
                                             <clause xml:id="nbc.divB.part3.sect1.subsect11.art5.sent3.clause1"
                                                     letter="a"
                                                     vendor-id="es005955a">
