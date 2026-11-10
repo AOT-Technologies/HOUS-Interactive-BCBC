@@ -2245,23 +2245,30 @@
     <!-- CLAUDE-AUTOFIX CL-001 | CF-00900 issue 8016 | Print standard references as the PDF does: curly quotes, comma or period inside the closing quote, and the style of the base XML. -->
     <xsl:key name="standard-entry-by-ref-id" match="entry[@standard-ref-id]" use="@standard-ref-id"/>
 
-    <xsl:template match="ref[@type = 'standard'][@ref-style != 'abbr']" mode="rich-text-json" priority="2">
+    <!-- CLAUDE-AUTOFIX CL-013 CF-00914 | issue 8022 | Standard references from the BC amendments (no ref-style) print as in the PDF: curly quotes, punctuation inside, agency only when not already in the number. -->
+    <xsl:template match="ref[@type = 'standard'][not(@ref-style = 'abbr')]" mode="rich-text-json" priority="2">
         <xsl:variable name="entry" select="(key('standard-entry-by-ref-id', @target), key('standard-entry-by-ref-id', concat('d-', @target)), key('standard-entry-by-ref-id', replace(@target, '^d-', '')))[1]"/>
         <xsl:variable name="row" select="$entry/parent::row"/>
         <xsl:variable name="number" select="normalize-space($row/entry[@standard-ref-number][1]/@standard-ref-number)"/>
         <xsl:variable name="agency" select="normalize-space($row/entry[1][not(@standard-ref-id) and not(@standard-ref-number)])"/>
         <xsl:variable name="title" select="normalize-space($entry/@standard-ref-title)"/>
-        <xsl:variable name="punc" select="if (@ref-style = ('notitle', 'number') or @ref-punc = 'none') then '' else if (@ref-punc = 'period') then '.' else ','"/>
+        <xsl:variable name="bare" as="xs:boolean" select="not(@ref-style) and normalize-space(.) = '' and not(matches($number, '^NRCC-|Edition'))"/>
+        <xsl:variable name="next-node" select="following-sibling::node()[not(self::text() and normalize-space(.) = '')][1]"/>
+        <xsl:variable name="next-text" select="string($next-node[self::text()])"/>
+        <xsl:variable name="title-written" as="xs:boolean" select="$bare and matches($next-text, '^\s*,\s*[&#8220;&quot;]')"/>
+        <xsl:variable name="bare-punc" select="if (not($next-node)) then (if (parent::entry or parent::title or parent::caption) then '' else if (parent::text/parent::*[self::clause or self::subclause][following-sibling::clause or following-sibling::subclause]) then ',' else '.') else if (matches($next-text, '^\s*(\.|\(See\s)')) then '.' else if (matches($next-text, '^\s*[;:()\]]')) then '' else ','"/>
+        <xsl:variable name="punc" select="if ($bare and not(@ref-punc)) then $bare-punc else if (@ref-style = ('notitle', 'number') or @ref-punc = 'none') then '' else if (@ref-punc = 'period') then '.' else ','"/>
         <xsl:variable name="full-number" select="normalize-space(concat($agency, ' ', $number))"/>
         <xsl:variable name="text" select="
-            if (@ref-style = 'noagency') then concat($number, ', &#8220;', $title, $punc, '&#8221;')
+            if ($bare) then concat(if ($agency != '' and not(contains($number, $agency))) then concat($agency, ' ') else '', $number, ', &#8220;', $title, $punc, '&#8221;')
+            else if (@ref-style = 'noagency') then concat($number, ', &#8220;', $title, $punc, '&#8221;')
             else if (@ref-style = 'notitle') then $full-number
             else if (@ref-style = 'number') then $number
             else if (@ref-style = 'title') then concat('&#8220;', $title, $punc, '&#8221;')
             else if (@ref-style = 'nqtitle') then concat($title, $punc)
             else concat($full-number, ', &#8220;', $title, $punc, '&#8221;')"/>
         <xsl:choose>
-            <xsl:when test="not($entry) or $number = '' or $title = ''">
+            <xsl:when test="not($entry) or $number = '' or $title = '' or $title-written or (not(@ref-style) and not($bare))">
                 <xsl:next-match/>
             </xsl:when>
             <xsl:otherwise>
@@ -2273,6 +2280,29 @@
                 <xsl:value-of select="$text"/>
                 <xsl:if test="$next-significant[self::text() and not(matches(., '^[\s,.;:)\]]'))] or $next-significant[self::ref]">
                     <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <!-- CLAUDE-AUTOFIX CL-013 CF-00914 | issue 8022 | The comma or period after a BC amendment standard reference now sits inside its closing quote, so drop it from the following text. -->
+    <xsl:template match="text()[matches(., '^\s*[,.]')][preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'standard'][not(@ref-style)][not(@ref-punc)][normalize-space(.) = '']]]" mode="rich-text-json" priority="2">
+        <xsl:variable name="ref" select="preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1]"/>
+        <xsl:variable name="entry" select="(key('standard-entry-by-ref-id', $ref/@target), key('standard-entry-by-ref-id', concat('d-', $ref/@target)), key('standard-entry-by-ref-id', replace($ref/@target, '^d-', '')))[1]"/>
+        <xsl:choose>
+            <xsl:when test="not($entry) or normalize-space($entry/parent::row/entry[@standard-ref-number][1]/@standard-ref-number) = '' or matches(normalize-space($entry/parent::row/entry[@standard-ref-number][1]/@standard-ref-number), '^NRCC-|Edition') or normalize-space($entry/@standard-ref-title) = '' or matches(., '^\s*,\s*[&#8220;&quot;]')">
+                <xsl:next-match/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:variable name="rest" select="replace(., '^\s*[,.]', '')"/>
+                <xsl:if test="normalize-space($rest) != ''">
+                    <xsl:if test="matches($rest, '^\s')">
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
+                    <xsl:value-of select="normalize-space($rest)"/>
+                    <xsl:if test="following-sibling::node() and matches(., '\s$')">
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
                 </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
