@@ -2370,6 +2370,11 @@
             <xsl:value-of select="string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
             <xsl:text>.</xsl:text>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-019 CF-01368 | issue 802 | A Part reference inside the same Division prints as "Part 6", without "of Division B", as in the PDF. -->
+        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+$') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
+            <xsl:text>:Part </xsl:text>
+            <xsl:value-of select="replace(@target, '^.*\.part', '')"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Table and Figure references carry the table/figure number as in the PDF (Table 4.1.3.2.-A). -->
         <xsl:if test="@type = 'internal' and @display-type = ('long', 'number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+\.subsect\d+\.art\d+\.(table|figure)\d+$') and id(@target)">
             <xsl:variable name="tf-kind" select="replace(@target, '^.*\.(table|figure)\d+$', '$1')"/>
