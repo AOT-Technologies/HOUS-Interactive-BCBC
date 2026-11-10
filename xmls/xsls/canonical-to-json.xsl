@@ -2342,7 +2342,8 @@
         <!-- Add leading space if preceded by non-whitespace text OR another ref element -->
         <!-- BUT: Don't add leading space if this ref has pretext (pretext will provide the separation) -->
         <!-- CLAUDE-AUTOFIX CL-006 CF-00255 | issue 9829 | No space between a hyphen or slash and a defined term, as in the PDF (part-storey, non-loadbearing). -->
-        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$')) and not(current()/@type = 'term' and matches(., '[\-/]$'))] or $prev-significant[self::ref])">
+        <!-- CLAUDE-AUTOFIX CL-031 CF-02248 | issue 9912 | No space between "inter" and the defined term storey, as in the PDF (interstorey). -->
+        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$')) and not(current()/@type = 'term' and matches(., '[\-/]$|(^|\W)inter$'))] or $prev-significant[self::ref])">
             <xsl:text> </xsl:text>
         </xsl:if>
         
@@ -2524,7 +2525,8 @@
         
         <!-- Add trailing space if followed by non-whitespace text OR another ref WITHOUT pretext -->
         <!-- BUT: Don't add trailing space if the ref content already had a trailing space -->
-        <xsl:if test="not($has-trailing-space) and ($next-significant[self::text() and not(matches(., '^\s'))] or $next-significant[self::ref and not(@pretext)])">
+        <!-- CLAUDE-AUTOFIX CL-031 CF-02248 | issue 9912 | No space between a defined term and a following 's or plural s, as in the PDF (building's, fire compartments). -->
+        <xsl:if test="not($has-trailing-space) and ($next-significant[self::text() and not(matches(., '^\s')) and not(current()/@type = 'term' and matches(., '^([''’]s|s)(\W|$)'))] or $next-significant[self::ref and not(@pretext)])">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>
