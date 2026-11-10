@@ -2359,6 +2359,21 @@
             <xsl:text>:A-</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-014 CF-09365 | issue 10304 | Appendix D references print as in the PDF: Article and Subsection numbers end with a period, a Section reference does not. -->
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+(\.article\d+)?)?$') and not($next-significant[self::text() and matches(., '^\s*\.')])">
+            <xsl:variable name="appx-number" select="concat(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix([A-Z])\..*$', '$1'), '-', string-join(for $t in tokenize(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.', ''), '\.') return replace($t, '^\D+', ''), '.'))"/>
+            <xsl:choose>
+                <xsl:when test="(@display-type = ('number', 'shortNum') or $is-range-end) and contains(@target, '.subsect')">
+                    <xsl:text>:</xsl:text>
+                    <xsl:value-of select="$appx-number"/>
+                    <xsl:text>.</xsl:text>
+                </xsl:when>
+                <xsl:when test="@display-type = 'long' and not($is-range-end) and not(contains(@target, '.subsect'))">
+                    <xsl:text>:Section </xsl:text>
+                    <xsl:value-of select="$appx-number"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:if>
         <!-- Include display text if present, preserving trailing space -->
         <xsl:variable name="has-trailing-space" select="matches(., '\s$')"/>
         <xsl:if test="normalize-space(.) != ''">
