@@ -2356,6 +2356,10 @@
             <xsl:text>:</xsl:text>
             <xsl:value-of select="if ($is-range-end) then (if (@display-type = 'short') then 'shortNum' else 'number') else @display-type"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-025 CF-08103 | issue 5145 | A table-note reference without a display type is written as a short note marker, so it shows as (8) as in the PDF. -->
+        <xsl:if test="not(@display-type) and @type = 'internal' and normalize-space(.) = '' and matches(@target, '\.table\d+\.note\d+$')">
+            <xsl:text>:short</xsl:text>
+        </xsl:if>
         <xsl:if test="$range-end-label != ''">
             <xsl:text>:</xsl:text>
             <xsl:value-of select="$range-end-label"/>
