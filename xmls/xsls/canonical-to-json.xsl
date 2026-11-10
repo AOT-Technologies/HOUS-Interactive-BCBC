@@ -2458,14 +2458,25 @@
             <xsl:variable name="tf-art-id" select="replace(@target, '\.(table|figure)\d+$', '')"/>
             <xsl:variable name="tf-sibs" select="id($tf-art-id)/*[local-name() = $tf-kind][matches(@xml:id, '\.(table|figure)\d+$')]"/>
             <xsl:variable name="tf-self" select="id(@target)"/>
+            <!-- CLAUDE-AUTOFIX CL-029 CF-03052 | issue 1593 | A table listed after another table reference (… or / and / to / , …) prints only its number, as in the PDF (Table 9.10.3.1.-A or 9.10.3.1.-B). -->
+            <xsl:variable name="tf-in-list" as="xs:boolean" select="$tf-kind = 'table' and @display-type = 'long' and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])))"/>
             <xsl:if test="count($tf-sibs) gt 1 and $tf-sibs[. is $tf-self]">
                 <xsl:variable name="tf-pos" select="count($tf-self/preceding-sibling::*[local-name() = $tf-kind][matches(@xml:id, '\.(table|figure)\d+$')]) + 1"/>
                 <xsl:variable name="tf-art-number" select="string-join($tf-self/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
                 <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | BC deleted Table 9.23.11.4.-B and kept the NBC letters, so the second table of that Article is -C in the PDF. -->
                 <xsl:variable name="tf-number" select="if (@target = 'nbc.divBV2.part9.sect23.subsect11.art4.table2') then '9.23.11.4.-C' else concat($tf-art-number, '.-', codepoints-to-string(64 + $tf-pos))"/>
                 <xsl:text>:</xsl:text>
-                <xsl:value-of select="if (@display-type = 'long') then concat(if ($tf-kind = 'table') then 'Table ' else 'Figure ', $tf-number) else $tf-number"/>
+                <xsl:value-of select="if (@display-type = 'long' and not($tf-in-list)) then concat(if ($tf-kind = 'table') then 'Table ' else 'Figure ', $tf-number) else $tf-number"/>
             </xsl:if>
+            <xsl:if test="count($tf-sibs) le 1 and $tf-in-list">
+                <xsl:text>:</xsl:text>
+                <xsl:value-of select="concat(string-join($tf-self/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+            </xsl:if>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-029 CF-03052 | issue 1593 | A span table listed after another table reference (… or / and / to / , …) prints only its number, as in the PDF (Table 9.10.3.1.-A or 9.10.3.1.-B). -->
+        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.spectables\d+\.table\d+$') and normalize-space(id(@target)/number[1]) != '' and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])))">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-027 CF-09419 | issue 5561 | References to an Appendix Sentence print as in the PDF: Sentence (5), or Sentence D-1.6.1.(5) in long form, without the extra period. -->
         <xsl:if test="@type = 'internal' and @display-type = ('short', 'long') and normalize-space(.) = '' and not($is-range-end) and matches(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+)?(\.article\d+)?\.para\d+$')">
