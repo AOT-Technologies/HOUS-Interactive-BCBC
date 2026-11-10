@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-10T14:16:14.238+05:30",
+  "generated_timestamp" : "2026-11-10T14:42:39.903+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -76144,7 +76144,7 @@
                { "id" : "nbc.divB.part3.sect3.subsect1.art21.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect3.subsect1.art21.sent2:short] , an exhaust ventilation system designed in conformance with the appropriate requirements of [REF:internal:nbc.divB.part6:long] shall be provided in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] in which dust, fumes, gases, vapour or other impurities or contaminants have the potential to create a fire or explosion hazard. (See also [REF:internal:nbc.divB.part4.sect2.subsect4.art13:long] )" },
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect3.subsect1.art21.sent2:short] , an exhaust ventilation system designed in conformance with the appropriate requirements of [REF:internal:nbc.divB.part6:long:Part 6] shall be provided in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] in which dust, fumes, gases, vapour or other impurities or contaminants have the potential to create a fire or explosion hazard. (See also [REF:internal:nbc.divB.part4.sect2.subsect4.art13:long] )" },
                
                { "id" : "nbc.divB.part3.sect3.subsect1.art21.sent2",
                 "type" : "sentence",
@@ -119330,7 +119330,7 @@
               
               { "type" : "paragraph",
                "id" : "nbc.divB.part3.appendix.appnote1.div1.para3",
-               "content" : "Although it is reasonable to consider that some level of municipal firefighting capability was assumed in developing the fire safety provisions in [REF:internal:nbc.divB.part3:long] , this was not done on a consistent or defined basis. The requirements in the Code, while developed in the light of commonly prevailing municipal fire protection levels, do not attempt to relate the size of building to the level of municipal protection. The responsibility for controlling the maximum size of building to be permitted in a municipality in relation to local firefighting capability rests with the municipality. If a proposed building is too large, either in terms of floor area or building height, to receive reasonable protection from the municipal fire department, fire protection requirements in addition to those prescribed in this Code, may be necessary to compensate for this deficiency. Automatic sprinkler protection may be one option to be considered." },
+               "content" : "Although it is reasonable to consider that some level of municipal firefighting capability was assumed in developing the fire safety provisions in [REF:internal:nbc.divB.part3:long:Part 3] , this was not done on a consistent or defined basis. The requirements in the Code, while developed in the light of commonly prevailing municipal fire protection levels, do not attempt to relate the size of building to the level of municipal protection. The responsibility for controlling the maximum size of building to be permitted in a municipality in relation to local firefighting capability rests with the municipality. If a proposed building is too large, either in terms of floor area or building height, to receive reasonable protection from the municipal fire department, fire protection requirements in addition to those prescribed in this Code, may be necessary to compensate for this deficiency. Automatic sprinkler protection may be one option to be considered." },
               
               { "type" : "paragraph",
                "id" : "nbc.divB.part3.appendix.appnote1.div1.para4",
@@ -162022,7 +162022,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part4.appendix.appnote118.para1",
-             "content" : "It is important that innovative approaches to foundation design be carried out by a person especially qualified in the specific method applied and that the design provide a level of safety and performance at least equivalent to that provided for or implicit in the design carried out by the methods referred to in [REF:internal:nbc.divB.part4:long] . Provision must be made for monitoring the subsequent performance of such structures so that the long-term sufficiency of the design can be evaluated." } ] },
+             "content" : "It is important that innovative approaches to foundation design be carried out by a person especially qualified in the specific method applied and that the design provide a level of safety and performance at least equivalent to that provided for or implicit in the design carried out by the methods referred to in [REF:internal:nbc.divB.part4:long:Part 4] . Provision must be made for monitoring the subsequent performance of such structures so that the long-term sufficiency of the design can be evaluated." } ] },
           
           { "id" : "nbc.divB.part4.appendix.appnote119",
            "type" : "application_note",
@@ -168641,7 +168641,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote1.para1",
-             "content" : "The requirements provided in [REF:internal:nbc.divB.part5:long] pertain to the separation of environmentally dissimilar spaces. Most obvious is the need to separate indoor conditioned spaces from unconditioned spaces, the outdoors or the ground. There are also cases where separation is needed between interior spaces which are intended to provide different environments. (See also  Notes [REF:internal:nbc.divB.part5.appendix.appnote2:long] and [REF:internal:nbc.divB.part5.appendix.appnote3:long] .)" } ] },
+             "content" : "The requirements provided in [REF:internal:nbc.divB.part5:long:Part 5] pertain to the separation of environmentally dissimilar spaces. Most obvious is the need to separate indoor conditioned spaces from unconditioned spaces, the outdoors or the ground. There are also cases where separation is needed between interior spaces which are intended to provide different environments. (See also  Notes [REF:internal:nbc.divB.part5.appendix.appnote2:long] and [REF:internal:nbc.divB.part5.appendix.appnote3:long] .)" } ] },
           
           { "id" : "nbc.divB.part5.appendix.appnote2",
            "type" : "application_note",
@@ -168652,7 +168652,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote2.para1",
-             "content" : "[REF:internal:nbc.divB.part5:long] provides explicit requirements related to the transfer of heat, air, moisture and sound in various forms. Control of the ingress of radon and other soil gases is addressed by the requirements related to air leakage." } ] },
+             "content" : "[REF:internal:nbc.divB.part5:long:Part 5] provides explicit requirements related to the transfer of heat, air, moisture and sound in various forms. Control of the ingress of radon and other soil gases is addressed by the requirements related to air leakage." } ] },
           
           { "id" : "nbc.divB.part5.appendix.appnote3",
            "type" : "application_note",
@@ -168663,11 +168663,11 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote3.para1",
-             "content" : "[REF:internal:nbc.divA.part1.sect3.subsect3:long] specifies that [REF:internal:nbc.divB.part5:long] applies to all buildings except those within the scope of [REF:internal:nbc.divB.part2:long] , [REF:internal:nbc.divBV2.part9:long] or the National Farm Building Code of Canada 1995. Because of their intended use, many buildings need only provide a limited degree of separation from the outdoor environment, the ground, or between interior spaces. The provisions in [REF:internal:nbc.divB.part5:long] are written to allow exemptions for these buildings." },
+             "content" : "[REF:internal:nbc.divA.part1.sect3.subsect3:long] specifies that [REF:internal:nbc.divB.part5:long:Part 5] applies to all buildings except those within the scope of [REF:internal:nbc.divB.part2:long:Part 2] , [REF:internal:nbc.divBV2.part9:long:Part 9] or the National Farm Building Code of Canada 1995. Because of their intended use, many buildings need only provide a limited degree of separation from the outdoor environment, the ground, or between interior spaces. The provisions in [REF:internal:nbc.divB.part5:long:Part 5] are written to allow exemptions for these buildings." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote3.para2",
-             "content" : "[REF:internal:nbc.divB.part5:long] applies to building elements that separate dissimilar environments and to site conditions that may affect environmental loading on the building envelope." },
+             "content" : "[REF:internal:nbc.divB.part5:long:Part 5] applies to building elements that separate dissimilar environments and to site conditions that may affect environmental loading on the building envelope." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote3.para3",
@@ -168687,7 +168687,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote3.para4",
-             "content" : "[REF:internal:nbc.divB.part5:long] applies not only to building elements that separate indoor space from outdoor space, but also to those elements that separate indoor space from the ground and that separate adjacent indoor spaces having significantly different environments." },
+             "content" : "[REF:internal:nbc.divB.part5:long:Part 5] applies not only to building elements that separate indoor space from outdoor space, but also to those elements that separate indoor space from the ground and that separate adjacent indoor spaces having significantly different environments." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote3.para5",
@@ -168695,7 +168695,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote3.para6",
-             "content" : "Some building elements are exposed to exterior environmental loads but do not separate dissimilar environments. Solid guards on exterior walkways are one example. Such constructions are subject to the application of [REF:internal:nbc.divB.part5:long] ." } ] },
+             "content" : "Some building elements are exposed to exterior environmental loads but do not separate dissimilar environments. Solid guards on exterior walkways are one example. Such constructions are subject to the application of [REF:internal:nbc.divB.part5:long:Part 5] ." } ] },
           
           { "id" : "nbc.divB.part5.appendix.appnote4",
            "type" : "application_note",
@@ -168938,7 +168938,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote14.para1",
-             "content" : "In addressing issues related to health and safety, [REF:internal:nbc.divB.part5.sect3:long] calls up levels of thermal resistance needed to minimize condensation on or within environmental separators, and to ensure thermal conditions appropriate for the building use. Energy regulations, where they exist, specify levels of thermal resistance required for energy efficiency or call up energy performance levels, which relate to levels of thermal resistance. Where [REF:internal:nbc.divB.part5:long] calls for levels of thermal resistance higher than those required by the energy regulations, the requirements of [REF:internal:nbc.divB.part5:long] take precedence." } ] },
+             "content" : "In addressing issues related to health and safety, [REF:internal:nbc.divB.part5.sect3:long] calls up levels of thermal resistance needed to minimize condensation on or within environmental separators, and to ensure thermal conditions appropriate for the building use. Energy regulations, where they exist, specify levels of thermal resistance required for energy efficiency or call up energy performance levels, which relate to levels of thermal resistance. Where [REF:internal:nbc.divB.part5:long:Part 5] calls for levels of thermal resistance higher than those required by the energy regulations, the requirements of [REF:internal:nbc.divB.part5:long:Part 5] take precedence." } ] },
           
           { "id" : "nbc.divB.part5.appendix.appnote15",
            "type" : "application_note",
@@ -168972,7 +168972,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote16.para1",
-             "content" : "Total prevention of condensation is generally unnecessary and its achievement is rarely a certainty at design conditions. [REF:internal:nbc.divB.part5:long] , therefore, requires that condensation be minimized. The occurrence of condensation should be sufficiently rare, or the quantities accumulated should be sufficiently small and dry rapidly enough, to avoid material deterioration and the growth of mould and fungi." },
+             "content" : "Total prevention of condensation is generally unnecessary and its achievement is rarely a certainty at design conditions. [REF:internal:nbc.divB.part5:long:Part 5] , therefore, requires that condensation be minimized. The occurrence of condensation should be sufficiently rare, or the quantities accumulated should be sufficiently small and dry rapidly enough, to avoid material deterioration and the growth of mould and fungi." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote16.para2",
@@ -168980,7 +168980,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote16.para3",
-             "content" : "The scope of AAMA\/WDMA\/CSA 101\/I.S.2\/A440, which is referenced in [REF:internal:nbc.divB.part5.sect9.subsect2:long] , includes skylights and tubular daylighting devices (TDD). Where skylights and TDDs pass through unconditioned space, their wells and shafts may become the environmental separator and would therefore have to comply with the requirements of [REF:internal:nbc.divB.part5:long] ." } ] },
+             "content" : "The scope of AAMA\/WDMA\/CSA 101\/I.S.2\/A440, which is referenced in [REF:internal:nbc.divB.part5.sect9.subsect2:long] , includes skylights and tubular daylighting devices (TDD). Where skylights and TDDs pass through unconditioned space, their wells and shafts may become the environmental separator and would therefore have to comply with the requirements of [REF:internal:nbc.divB.part5:long:Part 5] ." } ] },
           
           { "id" : "nbc.divB.part5.appendix.appnote17",
            "type" : "application_note",
@@ -169602,7 +169602,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote41.para1",
-             "content" : "It is important to note that [REF:internal:nbc.divB.part5.sect9.subsect1.art1.sent1:long] is stated in such a way that the selection of materials and components is not limited to those traditionally recognized as serving particular functions or those for which a standard is identified in [REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long] This approach permits more flexibility than is provided by similar requirements in [REF:internal:nbc.divBV2.part9:long] . As long as the selected material meets the performance requirements stated elsewhere in [REF:internal:nbc.divB.part5:long] , the material may be used to serve the required function." },
+             "content" : "It is important to note that [REF:internal:nbc.divB.part5.sect9.subsect1.art1.sent1:long] is stated in such a way that the selection of materials and components is not limited to those traditionally recognized as serving particular functions or those for which a standard is identified in [REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long] This approach permits more flexibility than is provided by similar requirements in [REF:internal:nbc.divBV2.part9:long:Part 9] . As long as the selected material meets the performance requirements stated elsewhere in [REF:internal:nbc.divB.part5:long:Part 5] , the material may be used to serve the required function." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote41.para2",
@@ -171491,7 +171491,7 @@
                { "id" : "nbc.divB.part6.sect3.subsect3.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Rectangular [REF:term:mnr-r-cn:masonry or concrete chimneys] not more than 12 m in height shall conform to [REF:internal:nbc.divBV2.part9:long] if they serve",
+                "text" : "Rectangular [REF:term:mnr-r-cn:masonry or concrete chimneys] not more than 12 m in height shall conform to [REF:internal:nbc.divBV2.part9:long:Part 9] if they serve",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part6.sect3.subsect3.art2.sent1.clause1",
@@ -175996,7 +175996,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part6.appendix.appnote4.para4",
-             "content" : "On the other hand, earthquakes occur far less frequently and it would not be surprising to have a non-critical mechanical system fail as a result of an earthquake. However, even in this situation, the failure must occur in a manner that does not create a hazard to building occupants. For example, heavy mechanical equipment should be properly anchored so that it does not topple on building occupants during an earthquake. The design of the anchors should take into account accelerations consistent with the seismic data given in [REF:internal:nbc.divB.appendixC:long] for the location of the building. [REF:internal:nbc.divB.part4:long] provides guidance on the calculation of the loads such equipment would exert on the building structure during an earthquake; these same loads can be used in designing the anchors." },
+             "content" : "On the other hand, earthquakes occur far less frequently and it would not be surprising to have a non-critical mechanical system fail as a result of an earthquake. However, even in this situation, the failure must occur in a manner that does not create a hazard to building occupants. For example, heavy mechanical equipment should be properly anchored so that it does not topple on building occupants during an earthquake. The design of the anchors should take into account accelerations consistent with the seismic data given in [REF:internal:nbc.divB.appendixC:long] for the location of the building. [REF:internal:nbc.divB.part4:long:Part 4] provides guidance on the calculation of the loads such equipment would exert on the building structure during an earthquake; these same loads can be used in designing the anchors." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part6.appendix.appnote4.para5",
@@ -176040,11 +176040,11 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part6.appendix.appnote6.para1",
-             "content" : "The cross-reference to [REF:internal:nbc.divB.part5:long] pertains to unconditioned and unoccupied crawl spaces, and attic or roof spaces, which are effectively within the building envelope. That is, unconditioned and unoccupied attic or roof spaces are located between the roof deck and roofing above, and the insulation, air barrier system and vapour barrier below. Unconditioned and unoccupied crawl spaces are located between the ground cover below and the insulation, air barrier system and vapour barrier above. Venting of these spaces has implications for the performance of the building envelope rather than having direct effects on indoor conditions. The ventilation of conditioned or occupied crawl spaces and attic or roof spaces must comply with [REF:internal:nbc.divB.part6:long] ." },
+             "content" : "The cross-reference to [REF:internal:nbc.divB.part5:long:Part 5] pertains to unconditioned and unoccupied crawl spaces, and attic or roof spaces, which are effectively within the building envelope. That is, unconditioned and unoccupied attic or roof spaces are located between the roof deck and roofing above, and the insulation, air barrier system and vapour barrier below. Unconditioned and unoccupied crawl spaces are located between the ground cover below and the insulation, air barrier system and vapour barrier above. Venting of these spaces has implications for the performance of the building envelope rather than having direct effects on indoor conditions. The ventilation of conditioned or occupied crawl spaces and attic or roof spaces must comply with [REF:internal:nbc.divB.part6:long:Part 6] ." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part6.appendix.appnote6.para2",
-             "content" : "The requirements in [REF:internal:nbc.divB.part5:long] are stated in terms of loads that must be resisted rather than in terms of building elements. Thus, the Code user will not find explicit references in [REF:internal:nbc.divB.part5:long] to crawl spaces, or attic or roof spaces. [REF:internal:nbc.divB.part5:long] makes reference to the need for venting environmental separators, i.e., the dissipation of heat or moisture." },
+             "content" : "The requirements in [REF:internal:nbc.divB.part5:long:Part 5] are stated in terms of loads that must be resisted rather than in terms of building elements. Thus, the Code user will not find explicit references in [REF:internal:nbc.divB.part5:long:Part 5] to crawl spaces, or attic or roof spaces. [REF:internal:nbc.divB.part5:long:Part 5] makes reference to the need for venting environmental separators, i.e., the dissipation of heat or moisture." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part6.appendix.appnote6.para3",
@@ -278902,22 +278902,22 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Tents, [REF:term:r-pprtd-:air-supported structures] , transformer vaults, [REF:term:wlkw:walkways] , elevators and escalators shall conform to [REF:internal:nbc.divB.part3:long] ." },
+                "text" : "Tents, [REF:term:r-pprtd-:air-supported structures] , transformer vaults, [REF:term:wlkw:walkways] , elevators and escalators shall conform to [REF:internal:nbc.divB.part3:long:Part 3] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art3.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Where rooms or spaces are intended for an [REF:term:mbl-ccpn:assembly occupancy] , such rooms or spaces shall conform to [REF:internal:nbc.divB.part3:long] ." },
+                "text" : "Where rooms or spaces are intended for an [REF:term:mbl-ccpn:assembly occupancy] , such rooms or spaces shall conform to [REF:internal:nbc.divB.part3:long:Part 3] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art3.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "[REF:term:bmnt:Basements] containing more than 1 [REF:term:tr:storey] or exceeding 600 m^{2} in area shall conform to [REF:internal:nbc.divB.part3:long] ." },
+                "text" : "[REF:term:bmnt:Basements] containing more than 1 [REF:term:tr:storey] or exceeding 600 m^{2} in area shall conform to [REF:internal:nbc.divB.part3:long:Part 3] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art3.sent4",
                 "type" : "sentence",
                 "number" : 4,
-                "text" : "Where rooms or spaces are intended for the storage, manufacture or use of hazardous or explosive material, such rooms or spaces shall conform to [REF:internal:nbc.divB.part3:long] . (See [REF:internal:nbc.divB.part3.appendix.appnote125:long] .)" },
+                "text" : "Where rooms or spaces are intended for the storage, manufacture or use of hazardous or explosive material, such rooms or spaces shall conform to [REF:internal:nbc.divB.part3:long:Part 3] . (See [REF:internal:nbc.divB.part3.appendix.appnote125:long] .)" },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect1.art3.sent5",
                 "type" : "sentence",
@@ -279439,7 +279439,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect3.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Where a [REF:term:flm-prd-:flame-spread rating] is required in this Section for an element of a [REF:term:bldng:building] , such rating shall be determined in accordance with the test methods described in [REF:internal:nbc.divB.part3:long] , or in accordance with [REF:internal:nbc.divB.appendixD:long] ." },
+                "text" : "Where a [REF:term:flm-prd-:flame-spread rating] is required in this Section for an element of a [REF:term:bldng:building] , such rating shall be determined in accordance with the test methods described in [REF:internal:nbc.divB.part3:long:Part 3] , or in accordance with [REF:internal:nbc.divB.appendixD:long] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect3.art2.sent2",
                 "type" : "sentence",
@@ -279460,7 +279460,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect3.art3.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Exterior walls shall be rated for exposure to fire from inside the [REF:term:bldng:building] , except that such walls need not comply with the temperature rise limitations required by the standard tests referred to in [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1:long] if such walls have a [REF:term:lmtng-dt:limiting distance] of not less than 1.2 m, and due allowance is made for the effects of heat radiation in accordance with the requirements in [REF:internal:nbc.divB.part3:long] ." },
+                "text" : "Exterior walls shall be rated for exposure to fire from inside the [REF:term:bldng:building] , except that such walls need not comply with the temperature rise limitations required by the standard tests referred to in [REF:internal:nbc.divBV2.part9.sect10.subsect3.art1:long] if such walls have a [REF:term:lmtng-dt:limiting distance] of not less than 1.2 m, and due allowance is made for the effects of heat radiation in accordance with the requirements in [REF:internal:nbc.divB.part3:long:Part 3] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect3.art3.sent3",
                 "type" : "sentence",
@@ -281080,7 +281080,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect11.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Where [REF:term:frwll:firewalls] are used, the requirements in [REF:internal:nbc.divB.part3:long] shall apply." } ] } ] },
+                "text" : "Where [REF:term:frwll:firewalls] are used, the requirements in [REF:internal:nbc.divB.part3:long:Part 3] shall apply." } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect10.subsect12",
             "type" : "subsection",
@@ -288909,7 +288909,7 @@
                { "id" : "nbc.divBV2.part9.sect15.subsect1.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "[REF:term:bldng:Buildings ] erected on permafrost shall have [REF:term:fndtn:foundations] designed by a [REF:term:dgnr:designer] competent in this field in accordance with the appropriate requirements of [REF:internal:nbc.divB.part4:long] ." } ] },
+                "text" : "[REF:term:bldng:Buildings ] erected on permafrost shall have [REF:term:fndtn:foundations] designed by a [REF:term:dgnr:designer] competent in this field in accordance with the appropriate requirements of [REF:internal:nbc.divB.part4:long:Part 4] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect15.subsect1.art3",
               "type" : "article",
@@ -292021,7 +292021,7 @@
                { "id" : "nbc.divBV2.part9.sect16.subsect1.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Floors-on-ground that support loads from the superstructure shall be designed in conformance with [REF:internal:nbc.divB.part4:long] ." } ] },
+                "text" : "Floors-on-ground that support loads from the superstructure shall be designed in conformance with [REF:internal:nbc.divB.part4:long:Part 4] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect16.subsect1.art3",
               "type" : "article",
@@ -292312,7 +292312,7 @@
                { "id" : "nbc.divBV2.part9.sect17.subsect1.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Columns for applications other than as described in [REF:internal:nbc.divBV2.part9.sect17.subsect1.art1.sent1:short] shall be designed in accordance with [REF:internal:nbc.divB.part4:long] ." } ] } ] },
+                "text" : "Columns for applications other than as described in [REF:internal:nbc.divBV2.part9.sect17.subsect1.art1.sent1:short] shall be designed in accordance with [REF:internal:nbc.divB.part4:long:Part 4] ." } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect17.subsect2",
             "type" : "subsection",
@@ -294424,7 +294424,7 @@
                { "id" : "nbc.divBV2.part9.sect20.subsect5.art2.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Steel angle lintels supporting masonry other than veneer, masonry and reinforced concrete lintels, and masonry arches shall be designed in accordance with [REF:internal:nbc.divB.part4:long] to support the imposed load." },
+                "text" : "Steel angle lintels supporting masonry other than veneer, masonry and reinforced concrete lintels, and masonry arches shall be designed in accordance with [REF:internal:nbc.divB.part4:long:Part 4] to support the imposed load." },
                
                { "id" : "nbc.divBV2.part9.sect20.subsect5.art2.sent4",
                 "type" : "sentence",
@@ -330911,7 +330911,7 @@
                { "id" : "nbc.divBV2.part9.sect24.subsect1.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Where [REF:term:ldbrng:loadbearing] steel studs are used, they shall be designed in conformance with [REF:internal:nbc.divB.part4:long] ." } ] },
+                "text" : "Where [REF:term:ldbrng:loadbearing] steel studs are used, they shall be designed in conformance with [REF:internal:nbc.divB.part4:long:Part 4] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect24.subsect1.art2",
               "type" : "article",
@@ -345072,7 +345072,7 @@
                { "id" : "nbc.divBV2.part9.sect33.subsect6.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Air duct distribution systems in which the rated heat input exceeds 120 kW shall conform to [REF:internal:nbc.divB.part6:long] and [REF:internal:nbc.divB.part3.sect6.subsect5:long]" } ] },
+                "text" : "Air duct distribution systems in which the rated heat input exceeds 120 kW shall conform to [REF:internal:nbc.divB.part6:long:Part 6] and [REF:internal:nbc.divB.part3.sect6.subsect5:long]" } ] },
              
              { "id" : "nbc.divBV2.part9.sect33.subsect6.art2",
               "type" : "article",
@@ -523031,7 +523031,7 @@
              
              { "id" : "nbc.divBV2.part9.spectables2.table14.note6",
               "vendor_id" : "et000244-4",
-              "content" : "Provide a minimum bearing length of 89 mm. (Alternatively, the bearing length may be designed in accordance with [REF:internal:nbc.divB.part4:long] .)" },
+              "content" : "Provide a minimum bearing length of 89 mm. (Alternatively, the bearing length may be designed in accordance with [REF:internal:nbc.divB.part4:long:Part 4] .)" },
              
              { "id" : "nbc.divBV2.part9.spectables2.table14.note7",
               "vendor_id" : "et000244-5",
@@ -534972,7 +534972,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote49.para1",
-             "content" : "[REF:internal:nbc.divBV2.part9.sect9.subsect8:long] requires that some floor areas have more than one exit. The intent is to ensure that, if one exit is made untenable or inaccessible by a fire, or its exterior door is blocked by an exterior incident, one or more other exits will be available to permit the occupants to escape. However, if the exits are close together, all exits might be made untenable or inaccessible by the same fire. [REF:internal:nbc.divBV2.part9.sect9.subsect8.art4.sent1:long] therefore requires at least two of the exits to be located remotely from each other. This is not a problem in many buildings falling under Part 9. For instance, apartment buildings usually have exits located at either end of long corridors. However, in other types of buildings (e.g. dormitory and college residence buildings) this is often difficult to accomplish and problems arise in interpreting the meaning of the word “remote.” [REF:internal:nbc.divB.part3.sect4.subsect2.art3:long] is more specific, generally requiring the distance between exits to be one half the diagonal dimension of the floor area or at least 9 m. However, it is felt that such criteria would be too restrictive to impose on the design of all the smaller buildings which come under Part 9. Nevertheless, the exits should be placed as far apart as possible and the [REF:internal:nbc.divB.part3:long] criteria should be used as a target. Designs in which the exits are so close together that they will obviously both become contaminated in the event of a fire are not acceptable." } ] },
+             "content" : "[REF:internal:nbc.divBV2.part9.sect9.subsect8:long] requires that some floor areas have more than one exit. The intent is to ensure that, if one exit is made untenable or inaccessible by a fire, or its exterior door is blocked by an exterior incident, one or more other exits will be available to permit the occupants to escape. However, if the exits are close together, all exits might be made untenable or inaccessible by the same fire. [REF:internal:nbc.divBV2.part9.sect9.subsect8.art4.sent1:long] therefore requires at least two of the exits to be located remotely from each other. This is not a problem in many buildings falling under Part 9. For instance, apartment buildings usually have exits located at either end of long corridors. However, in other types of buildings (e.g. dormitory and college residence buildings) this is often difficult to accomplish and problems arise in interpreting the meaning of the word “remote.” [REF:internal:nbc.divB.part3.sect4.subsect2.art3:long] is more specific, generally requiring the distance between exits to be one half the diagonal dimension of the floor area or at least 9 m. However, it is felt that such criteria would be too restrictive to impose on the design of all the smaller buildings which come under Part 9. Nevertheless, the exits should be placed as far apart as possible and the [REF:internal:nbc.divB.part3:long:Part 3] criteria should be used as a target. Designs in which the exits are so close together that they will obviously both become contaminated in the event of a fire are not acceptable." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote50",
            "type" : "application_note",
@@ -535073,7 +535073,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote54.para1",
-             "content" : "[REF:internal:nbc.divB.part6:long] refers to NFPA 96, “Standard for Ventilation Control and Fire Protection of Commercial Cooking Operations,” which in turn references “Commercial Cooking Equipment.” However, the deciding factor as to whether or not NFPA 96 applies is the potential for production of grease-laden vapours and smoke, rather than the type of equipment used. While NFPA 96 does not apply to domestic equipment for normal residential family use, it should apply to domestic equipment used in commercial, industrial, institutional and similar cooking applications where the potential for the production of smoke and grease-laden vapours exceeds that for normal residential family use." } ] },
+             "content" : "[REF:internal:nbc.divB.part6:long:Part 6] refers to NFPA 96, “Standard for Ventilation Control and Fire Protection of Commercial Cooking Operations,” which in turn references “Commercial Cooking Equipment.” However, the deciding factor as to whether or not NFPA 96 applies is the potential for production of grease-laden vapours and smoke, rather than the type of equipment used. While NFPA 96 does not apply to domestic equipment for normal residential family use, it should apply to domestic equipment used in commercial, industrial, institutional and similar cooking applications where the potential for the production of smoke and grease-laden vapours exceeds that for normal residential family use." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote57",
            "type" : "application_note",
@@ -535232,7 +535232,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote62.para2",
-             "content" : "For buildings regulated by [REF:internal:nbc.divB.part3:long] , firestop materials used to seal openings around building services, such as pipes, ducts and electrical outlet boxes, must meet a minimum level of performance demonstrated by standard test criteria." },
+             "content" : "For buildings regulated by [REF:internal:nbc.divB.part3:long:Part 3] , firestop materials used to seal openings around building services, such as pipes, ducts and electrical outlet boxes, must meet a minimum level of performance demonstrated by standard test criteria." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote62.para3",
@@ -544773,7 +544773,7 @@
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote170.div2.para2",
-               "content" : "For [REF:internal:nbc.divBV2.part9:long] wood-frame constructions, expected wood shrinkage can be determined based on the average equilibrium moisture content (MC) of wood, within the building envelope assembly, in various regions of the country (see [REF:internal:nbc.divBV2.part9.appendix.appnote170.div2.table1:long] )." },
+               "content" : "For [REF:internal:nbc.divBV2.part9:long:Part 9] wood-frame constructions, expected wood shrinkage can be determined based on the average equilibrium moisture content (MC) of wood, within the building envelope assembly, in various regions of the country (see [REF:internal:nbc.divBV2.part9.appendix.appnote170.div2.table1:long] )." },
               
               { "id" : "nbc.divBV2.part9.appendix.appnote170.div2.table1",
                "type" : "table",
