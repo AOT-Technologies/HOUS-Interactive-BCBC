@@ -2707,7 +2707,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Except as permitted by Sentence (5), the area of an <ref type="term" target="xpng-bld">exposing building face</ref> shall be</text>
+                        <!-- CLAUDE-AUTOFIX CF-04321 | issue 6474 | No comma after Sentence (5), as in the PDF. -->
+                        <text>Except as permitted by Sentence (5) the area of an <ref type="term" target="xpng-bld">exposing building face</ref> shall be</text>
                     </new-content>
                 </element-replace>
             </modify>
