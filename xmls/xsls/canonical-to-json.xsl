@@ -2376,6 +2376,23 @@
             <xsl:text>A-</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-024 CF-07869 | issue 5009 | References to a figure or table inside a Note print its PDF number (Figure A-9.8.8.1., Table A-9.25.5.1.(1), Figure A-9.8.4.-B). -->
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and $range-end-label = '' and not(@display-type = 'number' and ancestor::entry and id(@target)/number) and matches(@target, '\.appnote[^.]+(\.div\d+)*\.(figure|table)\d+$') and id(replace(@target, '(\.div\d+)*\.(figure|table)\d+$', ''))/number and id(@target) and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
+            <xsl:variable name="nf-kind" select="replace(@target, '^.*\.(figure|table)\d+$', '$1')"/>
+            <xsl:variable name="nf-note-id" select="replace(@target, '(\.div\d+)*\.(figure|table)\d+$', '')"/>
+            <xsl:variable name="nf-self" select="id(@target)"/>
+            <xsl:variable name="nf-all" select="id($nf-note-id)//*[local-name() = $nf-kind][@xml:id][matches(@xml:id, '\.(figure|table)\d+$')][not(matches(@xml:id, '\.example\d+\.'))]"/>
+            <xsl:variable name="nf-index" select="(for $p in 1 to count($nf-all) return if ($nf-all[$p] is $nf-self) then $p else ())[1]"/>
+            <xsl:variable name="nf-count" select="count($nf-all)"/>
+            <xsl:variable name="nf-number" select="concat('A-', normalize-space(id($nf-note-id)/number[1]), if ($nf-count gt 1 and exists($nf-index)) then concat('-', codepoints-to-string(64 + $nf-index)) else '')"/>
+            <xsl:variable name="nf-same" select="concat('\.appnote[^.]+(\.div\d+)*\.', $nf-kind, '\d+$')"/>
+            <xsl:variable name="nf-in-list" as="xs:boolean" select="exists($prev-significant[self::text()][matches(., '(Figures|Tables)\s*$')]) or normalize-space(@pretext) = ('Figures', 'Tables') or (normalize-space(@pretext) = ('and', 'or', ',', 'to') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, $nf-same)]])) or exists($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or', 'to')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, $nf-same)]])"/>
+            <xsl:text>:</xsl:text>
+            <xsl:if test="not($nf-in-list)">
+                <xsl:value-of select="if ($nf-kind = 'figure') then 'Figure ' else 'Table '"/>
+            </xsl:if>
+            <xsl:value-of select="$nf-number"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-021 CF-00384 | issue 153 | Sentence and Clause references in number format inside a table cell print the full number, as in the PDF (4.3.6.1.(1)); in running text the PDF keeps the short form. -->
         <xsl:if test="@type = 'internal' and @display-type = 'number' and ancestor::entry and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+\.subsect\d+\.art\d+\.sent\d+(\.clause\d+)?$') and id(@target)">
             <xsl:variable name="num-sent" select="id(@target)/ancestor-or-self::sentence[1]"/>
