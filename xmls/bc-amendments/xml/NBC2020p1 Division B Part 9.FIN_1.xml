@@ -6095,7 +6095,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- 3-storey building (SMALLEST values) -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.row37">
-                                    <entry rowspan="18">0.4 &lt; S<sub>max</sub> ≤ 0.6</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-04927 | issue 10219 | The PDF prints 0.4< Smax with no space between 0.4 and <. -->
+                                    <entry rowspan="18">0.4&lt; S<sub>max</sub> ≤ 0.6</entry>
                                     <entry rowspan="6">
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.row37.figure07">
                                             <graphic src="bc-graphics/gg00556a" alt="Three storey building configuration"/>
