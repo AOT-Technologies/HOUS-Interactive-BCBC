@@ -904,9 +904,10 @@
                     name="clause-id"
                     select="concat($sentence-id, '.clause', position())"
                 />
+        <!-- CLAUDE-AUTOFIX CF-09877 | issue 1043 | Clause letter from the clause's position, as printed in the PDF, not from the last character of the NBC id. -->
         <clause
                     xml:id="{$clause-id}"
-                    letter="{substring(@id, string-length(@id))}"
+                    letter="{substring('abcdefghijklmnopqrstuvwxyz', position(), 1)}"
                 >
           <xsl:if test="@id"><xsl:attribute
                             name="vendor-id"
