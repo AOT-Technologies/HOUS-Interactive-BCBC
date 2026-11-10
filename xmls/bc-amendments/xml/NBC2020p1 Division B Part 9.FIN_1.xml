@@ -796,7 +796,8 @@ incorporate a thermal break.</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>a bolt throw not less than <measurement units="metric">25mm</measurement> long, protected
+                        <!-- CLAUDE-AUTOFIX CF-04083 | issue 9963 | Space between 25 and mm, as in the PDF. -->
+                        <text>a bolt throw not less than <measurement units="metric">25 mm</measurement> long, protected
                             with a solid or hardened free-turning ring or beveled cylinder housing. (See Article 9.9.6.7.)</text>
                     </new-content>
                 </element-replace>
