@@ -2324,6 +2324,11 @@
             <xsl:value-of select="$range-end-label"/>
             <xsl:text>.</xsl:text>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-010 CF-00376 | issue 145 | Table references to a Note print only its number, as in the PDF. -->
+        <xsl:if test="@type = 'internal' and @display-type = 'number' and normalize-space(.) = '' and contains(@target, '.appnote') and ancestor::entry and id(@target)/number">
+            <xsl:text>:A-</xsl:text>
+            <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
+        </xsl:if>
         <!-- Include display text if present, preserving trailing space -->
         <xsl:variable name="has-trailing-space" select="matches(., '\s$')"/>
         <xsl:if test="normalize-space(.) != ''">
