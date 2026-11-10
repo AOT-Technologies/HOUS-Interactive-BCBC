@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-10T22:34:02.073+05:30",
+  "generated_timestamp" : "2026-11-10T22:41:41.877+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6423,7 +6423,7 @@
                    
                    { "id" : "fr-rtnc-",
                     "term" : "Fire-resistance rating",
-                    "definition" : "means the time in minutes or hours that a material or assembly of materials will withstand the passage of flame and the transmission of heat when exposed to fire under specified conditions of test and performance criteria, or as determined by extension or interpretation of information derived therefrom as prescribed in this Code. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] in Appendix D of Division B.)" },
+                    "definition" : "means the time in minutes or hours that a material or assembly of materials will withstand the passage of flame and the transmission of heat when exposed to fire under specified conditions of test and performance criteria, or as determined by extension or interpretation of information derived therefrom as prescribed in this Code. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long:D-1.2.1.(2)] in Appendix D of Division B.)" },
                    
                    { "id" : "fr-rtrdn",
                     "term" : "Fire-retardant-treated wood",
@@ -203302,7 +203302,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect4.article1.para1",
-                "content" : "1) For purposes of this Appendix, concretes are described as Types S, N, L, L_{ 1}, L_{2}, L40S, L_{1}20S or L_{2}20S as described in  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect4.article1.para2:short] to [REF:internal:nbc.divB.appendixD.appsect1.subsect4.article1.para8:shortNum] ." },
+                "content" : "1) For purposes of this Appendix, concretes are described as Types S, N, L, L_{ 1}, L_{2}, L40S, L_{1}20S or L_{2}20S as described in  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect4.article1.para2:short:(2)] to [REF:internal:nbc.divB.appendixD.appsect1.subsect4.article1.para8:shortNum] ." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect4.article1.para2",
@@ -203404,7 +203404,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect6.article1.para1",
-                "content" : "1) The thickness of solid-unit masonry and concrete described in this Appendix shall be the thickness of solid material in the unit or component thickness. For units that contain cores or voids, the Tables refer to the equivalent thickness determined in conformance with  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para2:short] to [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para10:shortNum] ." },
+                "content" : "1) The thickness of solid-unit masonry and concrete described in this Appendix shall be the thickness of solid material in the unit or component thickness. For units that contain cores or voids, the Tables refer to the equivalent thickness determined in conformance with  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para2:short:(2)] to [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para10:shortNum] ." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect6.article1.para2",
@@ -203412,7 +203412,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect6.article1.para3",
-                "content" : "3) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para5:short] , the equivalent thickness of a hollow masonry unit shall be calculated as equal to the actual overall thickness of a unit in millimetres multiplied by a factor equal to the net volume of the unit and divided by its gross volume." },
+                "content" : "3) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para5:short:(5)] , the equivalent thickness of a hollow masonry unit shall be calculated as equal to the actual overall thickness of a unit in millimetres multiplied by a factor equal to the net volume of the unit and divided by its gross volume." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect6.article1.para4",
@@ -203436,7 +203436,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect6.article1.para9",
-                "content" : "9) Except as permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para10:short] , the equivalent thickness of concrete panels with ribbed or undulating surfaces shall be[LIST:bulleted]where[LIST:variable]",
+                "content" : "9) Except as permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para10:short:(10)] , the equivalent thickness of concrete panels with ribbed or undulating surfaces shall be[LIST:bulleted]where[LIST:variable]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -203462,7 +203462,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect6.article1.para10",
-                "content" : "10) Where the total thickness of a panel described in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para9:short] , exceeds 2 t, only that portion of the panel which is less than 2 t from the non-ribbed surface shall be considered for the purpose of the calculations in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para9:short] ." } ] } ] },
+                "content" : "10) Where the total thickness of a panel described in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para9:short:(9)] , exceeds 2 t, only that portion of the panel which is less than 2 t from the non-ribbed surface shall be considered for the purpose of the calculations in  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect6.article1.para9:short:(9)] ." } ] } ] },
            
            { "id" : "nbc.divB.appendixD.appsect1.subsect7",
             "type" : "appendix_subsection",
@@ -203476,7 +203476,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect7.article1.para1",
-                "content" : "1) Except as provided in  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:short] to [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:shortNum] , the contribution of a plaster or gypsum board finish to the fire resistance of a masonry or concrete wall, floor or roof assembly shall be determined by multiplying the actual thickness of the finish by the factor shown in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.table1:long] , depending on the type of masonry or concrete to which it is applied. This corrected thickness shall then be included in the equivalent thickness as described in  Subsection [REF:internal:nbc.divB.appendixD.appsect1.subsect6:short]" },
+                "content" : "1) Except as provided in  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:short:(2)] to [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:shortNum] , the contribution of a plaster or gypsum board finish to the fire resistance of a masonry or concrete wall, floor or roof assembly shall be determined by multiplying the actual thickness of the finish by the factor shown in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.table1:long] , depending on the type of masonry or concrete to which it is applied. This corrected thickness shall then be included in the equivalent thickness as described in  Subsection [REF:internal:nbc.divB.appendixD.appsect1.subsect6:short]" },
                
                { "id" : "nbc.divB.appendixD.appsect1.subsect7.article1.table1",
                 "type" : "table",
@@ -203692,7 +203692,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect7.article1.para4",
-                "content" : "4) The contribution to fire resistance of a plaster or gypsum board finish applied to the non-fire-exposed side of a monolithic concrete or unit masonry wall shall be determined in conformance with  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:short] , but shall not exceed 0.5 times the contribution of the concrete or masonry wall." },
+                "content" : "4) The contribution to fire resistance of a plaster or gypsum board finish applied to the non-fire-exposed side of a monolithic concrete or unit masonry wall shall be determined in conformance with  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:short:(1)] , but shall not exceed 0.5 times the contribution of the concrete or masonry wall." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect7.article1.para5",
@@ -203755,21 +203755,21 @@
                   [ 
                    { "content" : "The minimum equivalent thickness of Type S monolithic concrete needed to give a 3 h fire-resistance rating = 158 mm ( [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article1.table1:long] )." },
                    
-                   { "content" : "Since the gypsum-sand plaster finish is applied on metal lath, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long] does not apply. Therefore, the contribution to the equivalent thickness of the wall of 20 mm gypsum-sand plaster on each face of the concrete is 20 × 1.25 = 25 mm (see  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:long] to [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:shortNum] )." },
+                   { "content" : "Since the gypsum-sand plaster finish is applied on metal lath, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long:Sentence D-1.7.1.(5)] does not apply. Therefore, the contribution to the equivalent thickness of the wall of 20 mm gypsum-sand plaster on each face of the concrete is 20 × 1.25 = 25 mm (see  Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:long:D-1.7.1.(1)] to [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:shortNum] )." },
                    
                    { "content" : "The total contribution of the plaster finishes is 2 × 25 = 50 mm." },
                    
                    { "content" : "The minimum equivalent thickness of concrete required is 158 mm - 50 mm = 108 mm." },
                    
-                   { "content" : "From [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article1.table1:long] , the 108 mm equivalent thickness of monolithic concrete gives a contribution of less than 1.5 h. This is less than half the rating of the assembly so that the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long] are not met. Thus the equivalent thickness of monolithic concrete must be increased to 112 mm to give 1.5 h contribution." },
+                   { "content" : "From [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article1.table1:long] , the 108 mm equivalent thickness of monolithic concrete gives a contribution of less than 1.5 h. This is less than half the rating of the assembly so that the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long:Sentence D-1.7.1.(2)] are not met. Thus the equivalent thickness of monolithic concrete must be increased to 112 mm to give 1.5 h contribution." },
                    
                    { "content" : "The total equivalent thickness of the plaster finishes can then be reduced to 158 mm - 112 mm = 46 mm." },
                    
-                   { "content" : "The total actual thickness of the plaster finishes required is therefore 46 mm ÷ 1.25 = 37 mm ( Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:long] to [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:shortNum] ) or 18.5 mm on each face." },
+                   { "content" : "The total actual thickness of the plaster finishes required is therefore 46 mm ÷ 1.25 = 37 mm ( Sentences [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:long:D-1.7.1.(1)] to [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:shortNum] ) or 18.5 mm on each face." },
                    
-                   { "content" : "Since the thickness of the plaster finish on each face exceeds 16 mm, metal lath is still required ( [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para4:long] )." },
+                   { "content" : "Since the thickness of the plaster finish on each face exceeds 16 mm, metal lath is still required ( [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para4:long:Sentence D-1.7.2.(4)] )." },
                    
-                   { "content" : "Since this wall is symmetrical with plaster on both faces, the contribution to fire resistance of the plaster finish on either face is limited to one-quarter of the wall rating by virtue of [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long] . Under these circumstances, the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:long] are automatically met." } ] } ] },
+                   { "content" : "Since this wall is symmetrical with plaster on both faces, the contribution to fire resistance of the plaster finish on either face is limited to one-quarter of the wall rating by virtue of [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long:Sentence D-1.7.1.(2)] . Under these circumstances, the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:long:Sentence D-1.7.1.(4)] are automatically met." } ] } ] },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect7.article4.example2",
@@ -203783,7 +203783,7 @@
                  { "type" : "bulleted",
                   "items" : 
                   [ 
-                   { "content" : "Since gypsum board is used, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long] applies. The 12.7 mm gypsum board finish on the fire-exposed side is, therefore, assigned 25 min by using [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] ." },
+                   { "content" : "Since gypsum board is used, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long:Sentence D-1.7.1.(5)] applies. The 12.7 mm gypsum board finish on the fire-exposed side is, therefore, assigned 25 min by using [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] ." },
                    
                    { "content" : "The fire resistance required of the balance of the assembly is 120 min - 25 min = 95 min." },
                    
@@ -203799,7 +203799,7 @@
                 "list_type" : "bulleted",
                 "items" : 
                 [ 
-                 { "content" : "Since gypsum board is used, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long] applies. The 12.7 mm gypsum board finish on the fire-exposed side is, therefore, assigned 25 min by using [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] ." },
+                 { "content" : "Since gypsum board is used, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long:Sentence D-1.7.1.(5)] applies. The 12.7 mm gypsum board finish on the fire-exposed side is, therefore, assigned 25 min by using [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] ." },
                  
                  { "content" : "The fire resistance required of the balance of the assembly is 120 min - 25 min = 95 min." },
                  
@@ -203813,7 +203813,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect7.article4.para2",
-                "content" : "As this is more than 1 h, the conditions of [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long] are met and the rating of 2 h is justified." },
+                "content" : "As this is more than 1 h, the conditions of [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long:Sentence D-1.7.1.(2)] are met and the rating of 2 h is justified." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect1.subsect7.article4.example3",
@@ -203829,13 +203829,13 @@
                   [ 
                    { "content" : "According to [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article1.table1:long] , the minimum equivalent thickness for Type L_{2}20S concrete masonry units needed to achieve a 2 h rating is 94 mm." },
                    
-                   { "content" : "Since gypsum board is not used on the fire-exposed side, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long] does not apply. The contribution to the equivalent thickness of the wall by the 15.9 mm Type X gypsum board finish applied on the non-fire-exposed side is 15.9 × 1 ≈ 16 mm (see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:long] and [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.table1:long] )." },
+                   { "content" : "Since gypsum board is not used on the fire-exposed side, [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para5:long:Sentence D-1.7.1.(5)] does not apply. The contribution to the equivalent thickness of the wall by the 15.9 mm Type X gypsum board finish applied on the non-fire-exposed side is 15.9 × 1 ≈ 16 mm (see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para1:long:Sentence D-1.7.1.(1)] and [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.table1:long] )." },
                    
                    { "content" : "Therefore, the equivalent thickness required of the concrete masonry unit is 94 - 16 = 78 mm." },
                    
-                   { "content" : "The contribution to fire resistance of a 78 mm L_{ 2}20S concrete hollow masonry unit is 85 min. The contribution of the Type X gypsum board finish is 120 - 85 = 35 min, which does not exceed half the 85 min contribution of the masonry unit or 42.5 min, so that the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:long] are met." },
+                   { "content" : "The contribution to fire resistance of a 78 mm L_{ 2}20S concrete hollow masonry unit is 85 min. The contribution of the Type X gypsum board finish is 120 - 85 = 35 min, which does not exceed half the 85 min contribution of the masonry unit or 42.5 min, so that the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para4:long:Sentence D-1.7.1.(4)] are met." },
                    
-                   { "content" : "The rating of the wall (120 min) is less than twice the contribution of the masonry unit (170 min) so that the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long] are also met." } ] } ] } ] } ] },
+                   { "content" : "The rating of the wall (120 min) is less than twice the contribution of the masonry unit (170 min) so that the conditions in [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article1.para2:long:Sentence D-1.7.1.(2)] are also met." } ] } ] } ] } ] },
            
            { "id" : "nbc.divB.appendixD.appsect1.subsect8",
             "type" : "appendix_subsection",
@@ -204795,7 +204795,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect1.article2.para1",
-                "content" : "1) Ratings obtained as described in [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article1:short] apply to either loadbearing or non-loadbearing walls, except for walls described in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article2.para2:short] to [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article2.para6:shortNum] ." },
+                "content" : "1) Ratings obtained as described in [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article1:short] apply to either loadbearing or non-loadbearing walls, except for walls described in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article2.para2:short:(2)] to [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article2.para6:shortNum] ." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect1.article2.para2",
@@ -204842,11 +204842,11 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect1.article5.para1",
-                "content" : "1) Except as permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article5.para2:short] , portions of loadbearing reinforced concrete walls, which do not form a complete fire separation and thus may be exposed to fire on both sides simultaneously, shall have minimum dimensions and minimum cover to steel reinforcement in conformance with  Articles [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2:long] to [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article5:number:D-2.8.5.]" },
+                "content" : "1) Except as permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article5.para2:short:(2)] , portions of loadbearing reinforced concrete walls, which do not form a complete fire separation and thus may be exposed to fire on both sides simultaneously, shall have minimum dimensions and minimum cover to steel reinforcement in conformance with  Articles [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2:long] to [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article5:number:D-2.8.5.]" },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect1.article5.para2",
-                "content" : "2) A concrete wall exposed to fire from both sides as described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article5.para1:short] has a fire-resistance rating of 2 h if the following conditions are met:[LIST:bulleted]",
+                "content" : "2) A concrete wall exposed to fire from both sides as described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect1.article5.para1:short:(1)] has a fire-resistance rating of 2 h if the following conditions are met:[LIST:bulleted]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -205481,7 +205481,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect2.article3.para2",
-                "content" : "2) If the base course described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article3.para1:short] is covered by a top layer of material other than Type S, N, L40S or L concrete, the top course thickness may be converted to an equivalent concrete thickness by multiplying the actual thickness by the appropriate factor listed in [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article3.table1:long] This equivalent concrete thickness may be added to the thickness of the base course and the fire-resistance rating calculated using [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article1.table1:long] ." },
+                "content" : "2) If the base course described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article3.para1:short:(1)] is covered by a top layer of material other than Type S, N, L40S or L concrete, the top course thickness may be converted to an equivalent concrete thickness by multiplying the actual thickness by the appropriate factor listed in [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article3.table1:long] This equivalent concrete thickness may be added to the thickness of the base course and the fire-resistance rating calculated using [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article1.table1:long] ." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect2.article3.para3",
@@ -206157,7 +206157,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect2.article4.para2",
-                "content" : "2) Plaster finish on the underside of concrete floors or roofs may be used in lieu of concrete cover referred to in [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article1.para2:long] under the conditions and using the methods described in [REF:internal:nbc.divB.appendixD.appsect1.subsect7:long]" } ] },
+                "content" : "2) Plaster finish on the underside of concrete floors or roofs may be used in lieu of concrete cover referred to in [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article1.para2:long:Sentence D-2.2.1.(2)] under the conditions and using the methods described in [REF:internal:nbc.divB.appendixD.appsect1.subsect7:long]" } ] },
              
              { "id" : "nbc.divB.appendixD.appsect2.subsect2.article5",
               "type" : "appendix_article",
@@ -206170,11 +206170,11 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect2.article5.para2",
-                "content" : "2) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article5.para3:short] , in post-tensioned prestressed concrete slabs, the concrete cover to the tendon at the anchor shall be not less than 15 mm greater than the minimum cover required by  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article5.para1:short] . The minimum concrete cover to the anchorage bearing plate and to the end of the tendon, if it projects beyond the bearing plate, shall be 20 mm." },
+                "content" : "2) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article5.para3:short:(3)] , in post-tensioned prestressed concrete slabs, the concrete cover to the tendon at the anchor shall be not less than 15 mm greater than the minimum cover required by  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article5.para1:short:(1)] . The minimum concrete cover to the anchorage bearing plate and to the end of the tendon, if it projects beyond the bearing plate, shall be 20 mm." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect2.article5.para3",
-                "content" : "3) The requirements of  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article5.para2:short] do not apply to those portions of slabs not likely to be exposed to fire, such as the ends and tops." } ] },
+                "content" : "3) The requirements of  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect2.article5.para2:short:(2)] do not apply to those portions of slabs not likely to be exposed to fire, such as the ends and tops." } ] },
              
              { "id" : "nbc.divB.appendixD.appsect2.subsect2.article6",
               "type" : "appendix_article",
@@ -206224,7 +206224,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article3.para2",
-                "content" : "2) The assigned times in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para2:long] to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para4:shortNum] are not intended to be construed as the fire-resistance ratings of the individual components of an assembly, nor are they intended to be construed as times that are applicable or acceptable for use beyond the method and systems described in this Subsection. These assigned times are the individual contributions of each component to the overall fire-resistance rating of an assembly, which is permitted to be derived using the component additive method described in this Subsection." },
+                "content" : "2) The assigned times in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para2:long:D-2.3.4.(2)] to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para4:shortNum] are not intended to be construed as the fire-resistance ratings of the individual components of an assembly, nor are they intended to be construed as times that are applicable or acceptable for use beyond the method and systems described in this Subsection. These assigned times are the individual contributions of each component to the overall fire-resistance rating of an assembly, which is permitted to be derived using the component additive method described in this Subsection." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article3.para3",
@@ -206237,11 +206237,11 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.para1",
-                "content" : "1) In the component additive method, the fire-resistance rating of a framed assembly is calculated by adding the time assigned in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para2:short] for the membrane on the fire-exposed side to the time assigned in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para3:short] for the framing members and then adding any time assigned in [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para4:short] for additional protective measures, such as the inclusion of insulation or of reinforcement for a membrane. For loadbearing walls where resilient metal channels are installed with a single layer of gypsum board membrane in accordance with [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] , the fire-resistance rating determined using this method of calculation must be reduced by 10 min." },
+                "content" : "1) In the component additive method, the fire-resistance rating of a framed assembly is calculated by adding the time assigned in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para2:short:(2)] for the membrane on the fire-exposed side to the time assigned in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para3:short:(3)] for the framing members and then adding any time assigned in [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para4:short:Sentence (4)] for additional protective measures, such as the inclusion of insulation or of reinforcement for a membrane. For loadbearing walls where resilient metal channels are installed with a single layer of gypsum board membrane in accordance with [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] , the fire-resistance rating determined using this method of calculation must be reduced by 10 min." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.para2",
-                "content" : "2) The times to be used in the component additive method that have been assigned to membranes on the fire-exposed side of the assembly, which are partly based on their ability to remain in place during fire tests, are listed in  Tables [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table4:medium] . (This is not to be confused with the fire-resistance rating of the membrane, which also takes into account the rise in temperature on the unexposed side of the membrane. [See [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article3.para2:long] .])" },
+                "content" : "2) The times to be used in the component additive method that have been assigned to membranes on the fire-exposed side of the assembly, which are partly based on their ability to remain in place during fire tests, are listed in  Tables [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table4:medium] . (This is not to be confused with the fire-resistance rating of the membrane, which also takes into account the rise in temperature on the unexposed side of the membrane. [See [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article3.para2:long:Sentence D-2.3.3.(2)] .])" },
                
                { "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.table1",
                 "type" : "table",
@@ -206804,7 +206804,7 @@
                 [ 
                  { "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.table4.note1",
                   "vendor_id" : "et000287-2",
-                  "content" : "For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long] ." },
+                  "content" : "For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long:Sentence D-1.7.2.(2)] ." },
                  
                  { "id" : "nbc.divB.appendixD.appsect2.subsect3.article4.table4.note2",
                   "vendor_id" : "et000287-3",
@@ -207906,13 +207906,13 @@
                  { "type" : "bulleted",
                   "items" : 
                   [ 
-                   { "content" : "wood trusses in conformance with  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para2:long] by way of steel furring channels spaced not more than 400 mm o.c., and the channels are secured to each bottom truss member with a double strand of 1.2 mm galvanized steel wire, or" },
+                   { "content" : "wood trusses in conformance with  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para2:long:D-2.3.9.(2)] by way of steel furring channels spaced not more than 400 mm o.c., and the channels are secured to each bottom truss member with a double strand of 1.2 mm galvanized steel wire, or" },
                    
-                   { "content" : "wood joists by way of resilient metal or steel furring channels spaced not more than 400 mm o.c. in conformance with  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para2:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para3:short] , and" } ] } ] },
+                   { "content" : "wood joists by way of resilient metal or steel furring channels spaced not more than 400 mm o.c. in conformance with  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para2:long:D-2.3.9.(2)] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para3:short:(3)] , and" } ] } ] },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article5.para5",
-                "content" : "5) Except as required in [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article5.para4:long] , resilient metal or steel furring channels may be used to attach a gypsum board ceiling membrane to a floor assembly using wood joists, metal-plate-connected wood trusses and open-web steel joists, or to a roof assembly. The channels must be made of galvanized steel not less than 0.5 mm thick spaced not more than 600 mm o.c. perpendicular to the framing members, with an overlap of not less than 100 mm at splices and a minimum end clearance between the channels and walls of 15 mm." } ] },
+                "content" : "5) Except as required in [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article5.para4:long:Sentence D-2.3.5.(4)] , resilient metal or steel furring channels may be used to attach a gypsum board ceiling membrane to a floor assembly using wood joists, metal-plate-connected wood trusses and open-web steel joists, or to a roof assembly. The channels must be made of galvanized steel not less than 0.5 mm thick spaced not more than 600 mm o.c. perpendicular to the framing members, with an overlap of not less than 100 mm at splices and a minimum end clearance between the channels and walls of 15 mm." } ] },
              
              { "id" : "nbc.divB.appendixD.appsect2.subsect3.article6",
               "type" : "appendix_article",
@@ -208002,7 +208002,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article9.para1",
-                "content" : "1) Except as provided in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para2:short] to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para5:shortNum] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table2:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article5.para5:long] , the application of lath and plaster finish shall conform to CSA A82.30-M, “Interior Furring, Lathing and Gypsum Plastering,” and of gypsum board finish shall conform to ASTM C840, “Standard Specification for Application and Finishing of Gypsum Board.”" },
+                "content" : "1) Except as provided in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para2:short:(2)] to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para5:shortNum] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table2:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article5.para5:long:Sentence D-2.3.5.(5)] , the application of lath and plaster finish shall conform to CSA A82.30-M, “Interior Furring, Lathing and Gypsum Plastering,” and of gypsum board finish shall conform to ASTM C840, “Standard Specification for Application and Finishing of Gypsum Board.”" },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article9.para2",
@@ -208010,7 +208010,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article9.para3",
-                "content" : "3) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para4:short] , where a membrane referred to in [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table2:medium] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table3:medium] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table4:long] or [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article12.table1:long] is applied to wood framing or furring, minimum fastener penetrations into wood members shall conform to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.table1:long] for the time assigned to the membrane." },
+                "content" : "3) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.para4:short:(4)] , where a membrane referred to in [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table2:medium] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table3:medium] , [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table4:long] or [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article12.table1:long] is applied to wood framing or furring, minimum fastener penetrations into wood members shall conform to [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article9.table1:long] for the time assigned to the membrane." },
                
                { "id" : "nbc.divB.appendixD.appsect2.subsect3.article9.table1",
                 "type" : "table",
@@ -208318,7 +208318,7 @@
                   [ 
                    { "content" : "the assembly is not required to have a fire-resistance rating in excess of 1 h," },
                    
-                   { "content" : "the area of any openings does not exceed 930 cm^{2} (see  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article10.para2:short] )," },
+                   { "content" : "the area of any openings does not exceed 930 cm^{2} (see  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article10.para2:short:(2)] )," },
                    
                    { "content" : "the aggregate area of openings does not exceed 1% of the ceiling area of the fire compartment," },
                    
@@ -208336,7 +208336,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article10.para2",
-                "content" : "2) Where an individual opening permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article10.para1:short] exceeds 130 cm^{2} in area, it shall be protected by[LIST:bulleted]",
+                "content" : "2) Where an individual opening permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article10.para1:short:(1)] exceeds 130 cm^{2} in area, it shall be protected by[LIST:bulleted]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -208366,7 +208366,7 @@
                  { "type" : "bulleted",
                   "items" : 
                   [ 
-                   { "content" : "the area of any opening does not exceed 930 cm^{2} (see  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article11.para2:short] )," },
+                   { "content" : "the area of any opening does not exceed 930 cm^{2} (see  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article11.para2:short:(2)] )," },
                    
                    { "content" : "the aggregate area of openings does not exceed 2% of the ceiling area of the fire compartment," },
                    
@@ -208382,7 +208382,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect3.article11.para2",
-                "content" : "2) Where an individual opening permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article11.para1:short] exceeds 130 cm^{2} in area, it shall be protected by[LIST:bulleted]",
+                "content" : "2) Where an individual opening permitted in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article11.para1:short:(1)] exceeds 130 cm^{2} in area, it shall be protected by[LIST:bulleted]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -209079,7 +209079,7 @@
                  
                  { "id" : "nbc.divB.appendixD.appsect2.subsect5.article1.table1.note2",
                   "vendor_id" : "et000295-2",
-                  "content" : "For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long] ." },
+                  "content" : "For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long:Sentence D-1.7.2.(2)] ." },
                  
                  { "id" : "nbc.divB.appendixD.appsect2.subsect5.article1.table1.note3",
                   "vendor_id" : "et000295-3",
@@ -209199,7 +209199,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Portland cement-sandFor mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long] . or Portland cement-lime-sand" } ],
+                       "value" : "Portland cement-sandFor mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long:Sentence D-1.7.2.(2)] . or Portland cement-lime-sand" } ],
                      "align" : "left",
                      "valign" : "top" },
                     
@@ -210165,7 +210165,7 @@
                  
                  { "id" : "nbc.divB.appendixD.appsect2.subsect6.article1.table2.note5",
                   "vendor_id" : "et000297-5",
-                  "content" : "For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long] ." } ],
+                  "content" : "For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long:Sentence D-1.7.2.(2)] ." } ],
                 "structure" : 
                 { "columns" : 8,
                  "colsep" : "1",
@@ -210522,7 +210522,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Portland cement-sand plaster on metal lathExpanded metal lath 1.36 kg\/m^{ 2} fastened to 9.5 mm by 19 mm steel channels held in vertical position around column by 1.19 mm diam wire ties.For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long] ." } ],
+                       "value" : "Portland cement-sand plaster on metal lathExpanded metal lath 1.36 kg\/m^{ 2} fastened to 9.5 mm by 19 mm steel channels held in vertical position around column by 1.19 mm diam wire ties.For mixture of Portland cement-sand plaster, see [REF:internal:nbc.divB.appendixD.appsect1.subsect7.article2.para2:long:Sentence D-1.7.2.(2)] ." } ],
                      "align" : "left",
                      "valign" : "top" },
                     
@@ -212208,7 +212208,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect6.article5.para1",
-                "content" : "1) Where Type X gypsum board is used to protect a steel column without an outside sheet-steel membrane, the method of gypsum board attachment to the column shall be as shown in [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article4.figure2:long] and shall meet the construction details described in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article5.para2:short] to [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article5.para7:shortNum] ." },
+                "content" : "1) Where Type X gypsum board is used to protect a steel column without an outside sheet-steel membrane, the method of gypsum board attachment to the column shall be as shown in [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article4.figure2:long] and shall meet the construction details described in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article5.para2:short:(2)] to [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article5.para7:shortNum] ." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect6.article5.para2",
@@ -212253,7 +212253,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect6.article6.para1",
-                "content" : "1) A fire-resistance rating, R, is permitted to be assigned to concentrically loaded hollow steel columns that are filled with plain concrete, steel-fibre reinforced concrete or bar-reinforced concrete, that are fabricated and erected within the tolerances stipulated in CSA S16, “Design of steel structures,” and that comply with  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para2:short] and [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para3:short] , provided:[EQ:display:eg02533a]where[LIST:variable]but shall not exceed[LIST:alphabetic]where[LIST:variable]where[LIST:variable]subject to the validity limits stated in [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.table2:long] .",
+                "content" : "1) A fire-resistance rating, R, is permitted to be assigned to concentrically loaded hollow steel columns that are filled with plain concrete, steel-fibre reinforced concrete or bar-reinforced concrete, that are fabricated and erected within the tolerances stipulated in CSA S16, “Design of steel structures,” and that comply with  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para2:short:(2)] and [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.para3:short:(3)] , provided:[EQ:display:eg02533a]where[LIST:variable]but shall not exceed[LIST:alphabetic]where[LIST:variable]where[LIST:variable]subject to the validity limits stated in [REF:internal:nbc.divB.appendixD.appsect2.subsect6.article6.table2:long] .",
                 "equations" : 
                 [ 
                  { "id" : "eg02533a",
@@ -213909,7 +213909,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect8.article2.para2",
-                "content" : "2) The diameter of a round column shall be not less than 1.2 times the value t determined in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2.para1:short] for a rectangular column." },
+                "content" : "2) The diameter of a round column shall be not less than 1.2 times the value t determined in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2.para1:short:(1)] for a rectangular column." },
                
                { "id" : "nbc.divB.appendixD.appsect2.subsect8.article2.table1",
                 "type" : "table",
@@ -214131,7 +214131,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect8.article3.para3",
-                "content" : "3) Where the concrete cover over vertical steel required in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article3.para2:short] exceeds 62.5 mm, wire mesh reinforcement with 1.57 mm diameter wire and 100 mm openings shall be incorporated midway in the concrete cover to retain the concrete in position." } ] },
+                "content" : "3) Where the concrete cover over vertical steel required in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article3.para2:short:(2)] exceeds 62.5 mm, wire mesh reinforcement with 1.57 mm diameter wire and 100 mm openings shall be incorporated midway in the concrete cover to retain the concrete in position." } ] },
              
              { "id" : "nbc.divB.appendixD.appsect2.subsect8.article4",
               "type" : "appendix_article",
@@ -214140,7 +214140,7 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect8.article4.para1",
-                "content" : "The structural design standards may require minimum column dimensions or concrete cover over vertical steel reinforcement differing from those obtained in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2.para1:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2.para2:number] . Where a difference occurs, the greater dimension shall govern." } ] },
+                "content" : "The structural design standards may require minimum column dimensions or concrete cover over vertical steel reinforcement differing from those obtained in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2.para1:long:D-2.8.2.(1)] and [REF:internal:nbc.divB.appendixD.appsect2.subsect8.article2.para2:number] . Where a difference occurs, the greater dimension shall govern." } ] },
              
              { "id" : "nbc.divB.appendixD.appsect2.subsect8.article5",
               "type" : "appendix_article",
@@ -214828,11 +214828,11 @@
               [ 
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect10.article5.para1",
-                "content" : "1) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect10.article5.para2:short] , in unbonded post-tensioned prestressed concrete beams, the concrete cover to the tendon at the anchor shall be not less than 15 mm greater than the minimum required away from the anchor. The concrete cover to the anchorage bearing plate and to the end of the tendon, if it projects beyond the bearing plate, shall be not less than 25 mm." },
+                "content" : "1) Except as provided in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect10.article5.para2:short:(2)] , in unbonded post-tensioned prestressed concrete beams, the concrete cover to the tendon at the anchor shall be not less than 15 mm greater than the minimum required away from the anchor. The concrete cover to the anchorage bearing plate and to the end of the tendon, if it projects beyond the bearing plate, shall be not less than 25 mm." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect10.article5.para2",
-                "content" : "2) The requirements in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect10.article5.para1:short] do not apply to those portions of beams not likely to be exposed to fire (such as the ends and the tops of flanges of beams immediately below slabs)." } ] } ] },
+                "content" : "2) The requirements in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect10.article5.para1:short:(1)] do not apply to those portions of beams not likely to be exposed to fire (such as the ends and the tops of flanges of beams immediately below slabs)." } ] } ] },
            
            { "id" : "nbc.divB.appendixD.appsect2.subsect11",
             "type" : "appendix_subsection",
@@ -214850,11 +214850,11 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article1.para2",
-                "content" : "2) Loadbearing mass timber members, such as beams and columns, subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short] are assigned a fire-resistance rating that relates to the time at which the applied load is no longer sustained." },
+                "content" : "2) Loadbearing mass timber members, such as beams and columns, subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short:(1)] are assigned a fire-resistance rating that relates to the time at which the applied load is no longer sustained." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article1.para3",
-                "content" : "3) Mass timber wall, floor and roof assemblies subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short] are assigned a fire-resistance rating that relates to the lesser of the times at which[LIST:bulleted]",
+                "content" : "3) Mass timber wall, floor and roof assemblies subjected to the conditions described in  Sentence [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article1.para1:short:(1)] are assigned a fire-resistance rating that relates to the lesser of the times at which[LIST:bulleted]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -214934,7 +214934,7 @@
                   "content" : "In the case of beams, use bending moment in place of load." },
                  
                  { "id" : "nbc.divB.appendixD.appsect2.subsect11.article3.figure1.note2",
-                  "content" : "See [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article3.para2:short] ." } ] },
+                  "content" : "See [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article3.para2:short:Sentence (2)] ." } ] },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article3.para2",
@@ -214958,11 +214958,11 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article4.para2",
-                "content" : "2) Except as provided in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para3:short] to [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para6:shortNum] , the fire-resistance rating of mass timber wall, floor and roof assemblies, including those constructed of cross-laminated timber, is permitted to be determined using the calculation method described in Annex B, Fire resistance of large cross-section wood elements, of CSA O86, “Engineering design in wood.”" },
+                "content" : "2) Except as provided in  Sentences [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para3:short:(3)] to [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para6:shortNum] , the fire-resistance rating of mass timber wall, floor and roof assemblies, including those constructed of cross-laminated timber, is permitted to be determined using the calculation method described in Annex B, Fire resistance of large cross-section wood elements, of CSA O86, “Engineering design in wood.”" },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article4.para3",
-                "content" : "3) Except as provided in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para4:short] , the assemblies described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para2:short] shall be protected to maintain the integrity and thermal insulation properties of the assembly for the time period corresponding to the calculated fire-resistance rating as follows:[LIST:bulleted]",
+                "content" : "3) Except as provided in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para4:short:Sentence (4)] , the assemblies described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para2:short:Sentence (2)] shall be protected to maintain the integrity and thermal insulation properties of the assembly for the time period corresponding to the calculated fire-resistance rating as follows:[LIST:bulleted]",
                 "lists" : 
                 [ 
                  { "type" : "bulleted",
@@ -215005,7 +215005,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article4.para4",
-                "content" : "4) For wall, floor and roof assemblies constructed of cross-laminated timber, the joints between cross-laminated timber panels in the assembly need not be protected in accordance with [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para3:short] , provided the joints are either lapped or splined to maintain the integrity and thermal insulation properties of the assembly for the time period corresponding to the calculated fire-resistance rating. (See [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.figure1:long] .)" },
+                "content" : "4) For wall, floor and roof assemblies constructed of cross-laminated timber, the joints between cross-laminated timber panels in the assembly need not be protected in accordance with [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para3:short:Sentence (3)] , provided the joints are either lapped or splined to maintain the integrity and thermal insulation properties of the assembly for the time period corresponding to the calculated fire-resistance rating. (See [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.figure1:long] .)" },
                
                { "id" : "nbc.divB.appendixD.appsect2.subsect11.article4.figure1",
                 "type" : "figure",
@@ -215028,7 +215028,7 @@
                   [ 
                    { "content" : "the interior (fire-exposed) side of the assembly is protected in accordance with [REF:external:csao86:Clause B.8 of ] CSA O86, “Engineering design in wood,” and" },
                    
-                   { "content" : "except where the assembly is constructed of cross-laminated timber panels with lapped or splined joints as described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para4:short] , the exterior (unexposed) side of the assembly is protected in accordance with  Clause [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para3:short] (d)." } ] } ] } ] } ] } ] },
+                   { "content" : "except where the assembly is constructed of cross-laminated timber panels with lapped or splined joints as described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para4:short:Sentence (4)] , the exterior (unexposed) side of the assembly is protected in accordance with  Clause [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para3:short:Sentence (3)] (d)." } ] } ] } ] } ] } ] },
          
          { "id" : "nbc.divB.appendixD.appsect3",
           "type" : "appendix_section",
@@ -215062,7 +215062,7 @@
                 [ 
                  { "id" : "nbc.divB.appendixD.appsect3.subsect1.article1.table1.note1",
                   "vendor_id" : "et000306-1",
-                  "content" : "See [REF:internal:nbc.divB.appendixD.appsect1.subsect1.article1.para5:long] for standards used to assign flame-spread ratings and smoke developed classifications." },
+                  "content" : "See [REF:internal:nbc.divB.appendixD.appsect1.subsect1.article1.para5:long:Sentence D-1.1.1.(5)] for standards used to assign flame-spread ratings and smoke developed classifications." },
                  
                  { "id" : "nbc.divB.appendixD.appsect3.subsect1.article1.table1.note2",
                   "vendor_id" : "et000306-2",
@@ -215964,7 +215964,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect4.subsect1.article1.para2",
-                "content" : "2) The test to which reference is made in  Sentence [REF:internal:nbc.divB.appendixD.appsect4.subsect1.article1.para1:short] is severe, and it may be assumed that any building material containing even a small proportion of combustibles will itself be classified as combustible. The specimen, 38 mm by 51 mm, is exposed to a temperature of 750°C in a small furnace. The essential criteria for noncombustibility are that the specimen does not flame or contribute to temperature rise." } ] } ] },
+                "content" : "2) The test to which reference is made in  Sentence [REF:internal:nbc.divB.appendixD.appsect4.subsect1.article1.para1:short:(1)] is severe, and it may be assumed that any building material containing even a small proportion of combustibles will itself be classified as combustible. The specimen, 38 mm by 51 mm, is exposed to a temperature of 750°C in a small furnace. The essential criteria for noncombustibility are that the specimen does not flame or contribute to temperature rise." } ] } ] },
            
            { "id" : "nbc.divB.appendixD.appsect4.subsect2",
             "type" : "appendix_subsection",
@@ -216522,13 +216522,13 @@
                { "type" : "bulleted",
                 "items" : 
                 [ 
-                 { "content" : "Since gypsum board is used ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para2:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] ) time assigned to 12.7 mm Type X gypsum board membrane on the fire-exposed side of the partition = 25 min" },
+                 { "content" : "Since gypsum board is used ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para2:long:Sentence D-2.3.4.(2)] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table1:long] ) time assigned to 12.7 mm Type X gypsum board membrane on the fire-exposed side of the partition = 25 min" },
                  
-                 { "content" : "Time assigned to wood framing members at 400 mm o.c. ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para3:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table5:long] ) = 20 min" },
+                 { "content" : "Time assigned to wood framing members at 400 mm o.c. ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para3:long:Sentence D-2.3.4.(3)] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table5:long] ) = 20 min" },
                  
-                 { "content" : "Time assigned to insulation, if the spaces between the studs are filled with preformed insulation of rock or slag fibres conforming to CAN\/ULC-S702.1, “Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification,” ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para4:long] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table7:long] ) = 15 min" },
+                 { "content" : "Time assigned to insulation, if the spaces between the studs are filled with preformed insulation of rock or slag fibres conforming to CAN\/ULC-S702.1, “Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification,” ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.para4:long:Sentence D-2.3.4.(4)] and [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article4.table7:long] ) = 15 min" },
                  
-                 { "content" : "Time assigned to the membrane on the non-fire-exposed side ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article5.para1:long] ) = 0 min Fire-resistance rating = 25 + 20 + 15 = 60 min" } ] } ] } ],
+                 { "content" : "Time assigned to the membrane on the non-fire-exposed side ( [REF:internal:nbc.divB.appendixD.appsect2.subsect3.article5.para1:long:Sentence D-2.3.5.(1)] ) = 0 min Fire-resistance rating = 25 + 20 + 15 = 60 min" } ] } ] } ],
             "articles" : 
             [  ] } ] } ] } ] },
      
@@ -434145,7 +434145,7 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note2",
               "vendor_id" : "et000261-1",
-              "content" : "[REF:term:fr-rtnc-:Fire-resistance ratings] and [REF:term:stc:STC] ratings of wood-frame construction were evaluated only for constructions with solid-sawn 38 mm × 89 mm lumber. However, the [REF:term:fr-rtnc-:fire-resistance ratings] and [REF:term:stc:STC] ratings provided for 38 mm × 89 mm wood-frame construction may be applied to wood-frame constructions with solid-sawn 38 mm × 140 mm lumber; in some cases the ratings may be conservative. Where 38 mm × 140 mm framing is used and absorptive material is called for, the absorptive material must be 140 mm thick. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] of Appendix D for the significance of [REF:term:fr-rtnc-:fire-resistance ratings] .) The [REF:term:stc:STC] ratings may also be applied to fingerjoined lumber. The [REF:term:fr-rtnc-:fire-resistance ratings] are applicable to constructions using fingerjoined lumber that has been manufactured with a heat-resistant adhesive (HRA) in accordance with NLGA special product standard SPS-1, “Fingerjoined Structural Lumber,” or SPS-3, “Fingerjoined “Vertical Stud Use Only” Lumber.” (See also [REF:internal:nbc.divBV2.part9.appendix.appnote125:long:Note A-9.23.10.4.(1)] .)" },
+              "content" : "[REF:term:fr-rtnc-:Fire-resistance ratings] and [REF:term:stc:STC] ratings of wood-frame construction were evaluated only for constructions with solid-sawn 38 mm × 89 mm lumber. However, the [REF:term:fr-rtnc-:fire-resistance ratings] and [REF:term:stc:STC] ratings provided for 38 mm × 89 mm wood-frame construction may be applied to wood-frame constructions with solid-sawn 38 mm × 140 mm lumber; in some cases the ratings may be conservative. Where 38 mm × 140 mm framing is used and absorptive material is called for, the absorptive material must be 140 mm thick. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long:D-1.2.1.(2)] of Appendix D for the significance of [REF:term:fr-rtnc-:fire-resistance ratings] .) The [REF:term:stc:STC] ratings may also be applied to fingerjoined lumber. The [REF:term:fr-rtnc-:fire-resistance ratings] are applicable to constructions using fingerjoined lumber that has been manufactured with a heat-resistant adhesive (HRA) in accordance with NLGA special product standard SPS-1, “Fingerjoined Structural Lumber,” or SPS-3, “Fingerjoined “Vertical Stud Use Only” Lumber.” (See also [REF:internal:nbc.divBV2.part9.appendix.appnote125:long:Note A-9.23.10.4.(1)] .)" },
              
              { "id" : "nbc.divBV2.part9.spectables1.table1.note20",
               "vendor_id" : "et000261-13",
@@ -448125,7 +448125,7 @@
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note8",
               "vendor_id" : "et000456-7",
-              "content" : "See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] of Appendix D for the significance of [REF:term:fr-rtnc-:fire-resistance ratings] ." },
+              "content" : "See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long:D-1.2.1.(2)] of Appendix D for the significance of [REF:term:fr-rtnc-:fire-resistance ratings] ." },
              
              { "id" : "nbc.divBV2.part9.spectables1.table2.note9",
               "vendor_id" : "et000456-8",
@@ -623143,7 +623143,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "fr-rtnc-" : 
    { "term" : "Fire-resistance rating",
-    "definition" : "means the time in minutes or hours that a material or assembly of materials will withstand the passage of flame and the transmission of heat when exposed to fire under specified conditions of test and performance criteria, or as determined by extension or interpretation of information derived therefrom as prescribed in this Code. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long] in Appendix D of Division B.)",
+    "definition" : "means the time in minutes or hours that a material or assembly of materials will withstand the passage of flame and the transmission of heat when exposed to fire under specified conditions of test and performance criteria, or as determined by extension or interpretation of information derived therefrom as prescribed in this Code. (See  Sentence [REF:internal:nbc.divB.appendixD.appsect1.subsect2.article1.para2:long:D-1.2.1.(2)] in Appendix D of Division B.)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "fr-rtrdn" : 
    { "term" : "Fire-retardant-treated wood",
