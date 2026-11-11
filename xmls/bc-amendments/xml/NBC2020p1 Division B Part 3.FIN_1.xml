@@ -7329,15 +7329,16 @@ each 25 females.</find>
                                                    vendor-id="es013852">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:750 Reference f5b674341f -->
                         <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:751 Reference 695cbefd59 -->
+                        <!-- CLAUDE-AUTOFIX CF-10409 | issue 323 | The Table letters are printed once, by the references themselves (Table 3.2.3.1.-D or 3.2.3.1.-E), as in the PDF. -->
                         <text>Except as provided in <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art10"
                                                     display-type="long"/>, where the <ref type="term" target="lmtng-dt">limiting distance</ref> in <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art1.table4"
-                                                    display-type="long"/>-D
+                                                    display-type="long"/>
                                                <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art1.table5"
                                                     display-type="long"
-                                                    pretext="or"/>-E permits an area of <ref type="term" target="nprtctd-">unprotected openings</ref> of not more than 10%
+                                                    pretext="or">3.2.3.1.-E</ref> permits an area of <ref type="term" target="nprtctd-">unprotected openings</ref> of not more than 10%
                     of the <ref type="term" target="xpng-bld">exposing building face</ref>, the construction
                     requirements of <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art7.table1"
