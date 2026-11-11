@@ -2457,7 +2457,8 @@
             if (normalize-space($ref) != '') then normalize-space($ref)
             else if ($typed or $word = '') then bcf:full-number($t)
             else concat($word, ' ', bcf:full-number($t))"/>
-        <xsl:sequence select="concat($base, ' of Division ', $div)"/>
+        <!-- CLAUDE-AUTOFIX CL-050 CF-10463 | issue 3730 | A period typed between the reference and "of Division X" is kept when the number does not already end in one, as in the PDF (Sentence 10.2.3.4.(3). of Division B). -->
+        <xsl:sequence select="concat($base, if (matches(string($ref/following-sibling::node()[1][self::text()]), '^\s*\.') and not(ends-with($base, '.'))) then '.' else '', ' of Division ', $div)"/>
     </xsl:function>
 
     <xsl:template match="ref" mode="rich-text-json">
