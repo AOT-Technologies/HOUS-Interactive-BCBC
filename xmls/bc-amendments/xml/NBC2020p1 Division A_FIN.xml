@@ -2717,6 +2717,7 @@
                 />
             <insert>
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CL-054 CF-10474 | issue 3022 | Defined terms in these definitions are term links (italic), as in the PDF. -->
                     <item xml:id="bc-fld-rvw">
                         <term>Field review</term>
                         <definition>means a review of the work<list
@@ -2733,7 +2734,7 @@
                                         type="term"
                                         target="bldng"
                                         >building</ref> site</item>
-                            </list>that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.</definition>
+                            </list>that a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref> in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref>.</definition>
                     </item>
                 </new-content>
             </insert>
@@ -2838,10 +2839,11 @@
             <target type="canonical-id" id="pt-dtr-b" />
             <replace preserve-references="false">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CL-054 CF-10474 | issue 3022 | Defined terms in these definitions are term links (italic), as in the PDF. -->
                     <item xml:id="pt-dtr-b">
                         <term>Post-disaster building</term>
                         <definition
-                            >means a building that the authority having jurisdiction has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes buildings meeting these criteria but not limited to<list
+                            >means a <ref type="term" target="bldng">building</ref> that the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes <ref type="term" target="bldng">buildings</ref> meeting these criteria but not limited to<list
                                 type="bulleted"
                                 >
                                 <item
@@ -2858,9 +2860,9 @@
                                 <item>water and sewage pumping stations,</item>
                                 <item>sewage treatment facilities,</item>
                                 <item
-                                    >buildings having critical national defence functions, and</item>
+                                    ><ref type="term" target="bldng">buildings</ref> having critical national defence functions, and</item>
                                 <item
-                                    >buildings of the following types, unless exempted from this designation by the authority having jurisdiction:<list
+                                    ><ref type="term" target="bldng">buildings</ref> of the following types, unless exempted from this designation by the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>:<list
                                         type="bulleted"
                                         >
                                         <item
