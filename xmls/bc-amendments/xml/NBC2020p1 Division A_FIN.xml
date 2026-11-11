@@ -5330,6 +5330,19 @@ building on a flat site.</paragraph>
         <!-- ================================================================== -->
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CF-00042 | issue 24 | Care occupancy is defined as in the PDF, without the NBC words "other than a home-type care occupancy". -->
+        <amendment id="bc-custom-1412-ca-cc" sequence="200"
+                   description="Care occupancy definition as in the BC Building Code (no home-type care occupancy exception)">
+            <target type="canonical-id" id="ca-cc"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="ca-cc">
+                        <term>Care occupancy</term>
+                        <definition>(Group B, Division 3) means the <ref type="term" target="ccpnc">occupancy</ref> or use of a <ref type="term" target="bldng">building</ref> or part thereof where <ref type="term" target="ca">care</ref> is provided to residents. (See <ref type="internal" target="nbc.divA.part1.appendix.appnote7.div4" display-type="short"/>.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 
 </bc-overlay>
