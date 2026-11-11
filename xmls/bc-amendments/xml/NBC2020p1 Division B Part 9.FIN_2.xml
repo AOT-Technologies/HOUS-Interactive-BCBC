@@ -840,7 +840,8 @@
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note3"><super>(2)</super> See <ref type="internal" target="nbc.divB.part1.sect1.subsect3.art1" display-type="long"/>.</note>
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note4"><super>(3)</super> Does not apply to below-grade floors over heated crawl spaces.</note>
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note5"><super>(4)</super> Unheated floors shall be insulated to the effective thermal resistance required in Table 9.36.2.8.-C under their full bottom surface including exterior edges.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note6"><super>(5)</super> Typically applies to floors-on-ground in full-height <ref type="term" target="bmnt">basements</ref>.</note>
+                            <!-- CLAUDE-AUTOFIX CF-06124 | issue 10457 | The PDF prints this note without a final period. -->
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note6"><super>(5)</super> Typically applies to floors-on-ground in full-height <ref type="term" target="bmnt">basements</ref></note>
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note7"><super>(6)</super> Refers to undisturbed frost line before house is constructed.</note>
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note8"><super>(7)</super> See <ref type="internal" target="nbc.divBV2.part9.sect25.subsect2.art3.sent5" display-type="long"/> for requirement on placement of insulation. The design of slabs-on-grade with an integral footing is addressed in Part 4 (see <ref type="internal" target="nbc.divBV2.part9.sect16.subsect1.art2" display-type="long"/>).</note>
                         </table-notes>
@@ -1619,7 +1620,8 @@
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.rowh1">
                                             <entry>Heating Degree-Days of Building Location<super>(1)</super>, in Celsius Degree-Days</entry>
-                                            <entry>Amount of the Building's Conditioned Space Served by Space-Cooling Equipment</entry>
+                                            <!-- CLAUDE-AUTOFIX CF-06124 | issue 9980 | Curly apostrophe in Building’s, as in the PDF. -->
+                                            <entry>Amount of the Building’s Conditioned Space Served by Space-Cooling Equipment</entry>
                                             <entry>Step</entry>
                                             <entry>Floor Area of Conditioned Space (m²)</entry>
                                         </row>
@@ -1699,7 +1701,8 @@
                                     </tbody>
                                 </tgroup>
                                 <table-notes>
-                                    <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.note1"><text>See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C.</text></note>
+                                    <!-- CLAUDE-AUTOFIX CF-06124 | issue 10471 | The PDF prints this note without a final period. -->
+                                    <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.note1"><text>See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C</text></note>
                                 </table-notes>
                             </table>
                             
