@@ -5343,6 +5343,19 @@ building on a flat site.</paragraph>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00046 | issue 28 | Farm building is defined as in the PDF (BC wording), not with the NBC "contains an agricultural occupancy". -->
+        <amendment id="bc-custom-1412-frm-bldn" sequence="201"
+                   description="Farm building definition as in the BC Building Code">
+            <target type="canonical-id" id="frm-bldn"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="frm-bldn">
+                        <term>Farm building</term>
+                        <definition>means a <ref type="term" target="bldng">building</ref> or part thereof that does not contain a <ref type="term" target="rdntl-cc">residential occupancy</ref> and that is associated with and located on land devoted to the practice of farming, and used essentially for the housing of equipment or livestock, or production, storage or processing of agricultural and horticultural produce or feeds. (See <ref type="internal" target="nbc.divA.part1.appendix.appnote7.div7" display-type="short"/>.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 
 </bc-overlay>
