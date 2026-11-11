@@ -9485,7 +9485,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.60 kPa</measurement>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent1.clause3" letter="c">
-                                <text>the specified roof snow load, as calculated in accordance with <ref type="internal" target="nbc.divBV2.part9.sect4.subsect2.art2" display-type="long"/>, is not greater than <measurement units="metric">2 kPa</measurement>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-05107 | issue 10227 | The PDF prints these article numbers without the final period (and without repeating the word Articles), so the references carry their own labels. -->
+                                <text>the specified roof snow load, as calculated in accordance with <ref type="internal" target="nbc.divBV2.part9.sect4.subsect2.art2" display-type="long">Article 9.4.2.2</ref>, is not greater than <measurement units="metric">2 kPa</measurement>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent1.clause4" letter="d">
                                 <text>the plan dimensions of the <ref type="term" target="bldng">building</ref> are each not greater than <measurement units="metric">21.2 m</measurement>,</text>
@@ -9903,7 +9904,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>Wall portions clad with masonry veneer that are located both perpendicular to a <ref type="term" target="br-wl-bnd">braced wall band</ref> and within a <ref type="term" target="br-wl-bnd">braced wall band</ref> are permitted to be considered as normal-weight construction.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent5" number="5">
-                            <text>Bracing to resist lateral loads shall be designed and constructed in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4" display-type="long" pretext="Articles"/> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8" display-type="long" pretext="Articles"/> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10" display-type="long"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-05107 | issue 9968 | The PDF prints these article numbers without the final period (and without repeating the word Articles), so the references carry their own labels. -->
+                            <text>Bracing to resist lateral loads shall be designed and constructed in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4" display-type="long">Articles 9.23.13.4</ref> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6" display-type="long">9.23.13.6</ref> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8" display-type="long">9.23.13.8</ref> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10" display-type="long">9.23.13.10</ref>.</text>
                         </sentence>
                     </article>
                 </new-content>
