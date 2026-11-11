@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T17:07:34.41+05:30",
+  "generated_timestamp" : "2026-11-11T17:14:50.178+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -85188,7 +85188,13 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "[REF:term:ltrtn:Alterations] and additions to existing [REF:term:bldng:buildings] shall conform to [REF:internal:nbc.divB.part3.sect8.subsect4:long]" } ] } ] },
+                "text" : "[REF:term:ltrtn:Alterations] and additions to existing [REF:term:bldng:buildings] shall conform to [REF:internal:nbc.divB.part3.sect8.subsect4:long]" },
+               
+               { "id" : "nbc.divB.part3.sect8.subsect1.art1.sent4",
+                "type" : "sentence",
+                "number" : 4,
+                "source" : "bc",
+                "text" : "[REF:term:dwllng-n:Dwelling units] required to be [REF:term:bc-dptbl-dwllng-nt:adaptable dwelling units] shall be designed in accordance with [REF:internal:nbc.divB.part3.sect8.subsect5:long]" } ] } ] },
            
            { "id" : "nbc.divB.part3.sect8.subsect2",
             "type" : "subsection",
@@ -628827,7 +628833,7 @@
    "total_parts" : 15,
    "total_sections" : 100,
    "total_articles" : 2020,
-   "total_sentences" : 5163,
+   "total_sentences" : 5164,
    "total_tables" : 356,
    "total_figures" : 326,
    "total_spectables" : 2,
