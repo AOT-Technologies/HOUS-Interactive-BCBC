@@ -6772,6 +6772,7 @@ each 25 females.</find>
                                                    number="2"
                                                    vendor-id="es016384">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:716 Reference 7b7299b9ab -->
+                        <!-- CLAUDE-AUTOFIX CF-10405 | issue 314 | The Table letters are printed once, by the reference itself (Tables 3.2.3.1.-B to 3.2.3.1.-E), as in the PDF. -->
                         <text>Except as permitted by <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art10"
                                                     display-type="long"
@@ -6783,11 +6784,11 @@ each 25 females.</find>
                     the <ref type="term" target="lmtng-dt">limiting distance</ref> in <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art1.table2"
                                                     display-type="long"
-                                                    pretext="Tables"/>-B
+                                                    pretext="Tables"/>
                                                <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art1.table5"
                                                     display-type="short"
-                                                    pretext="to">3.2.3.1.</ref>-E permits an area of <ref type="term" target="nprtctd-">unprotected openings</ref> of not more than <measurement units="metric">10%</measurement> of the <ref type="term" target="xpng-bld">exposing building face</ref>, the construction requirements of <ref type="internal"
+                                                    pretext="to">3.2.3.1.-E</ref> permits an area of <ref type="term" target="nprtctd-">unprotected openings</ref> of not more than <measurement units="metric">10%</measurement> of the <ref type="term" target="xpng-bld">exposing building face</ref>, the construction requirements of <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art7.table1"
                                                     display-type="long"/> shall
                     be met.</text>
