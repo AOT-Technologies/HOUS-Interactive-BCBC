@@ -8861,12 +8861,13 @@ each 25 females.</find>
                                                    number="2"
                                                    vendor-id="es000910">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6717 Reference 3b5e910e7c -->
+                        <!-- CLAUDE-AUTOFIX CF-10415 | issue 2560 | The See-Note text belongs only at the end of the sentence (the See-also), as in the PDF; the typed duplicate after "provided" is removed. -->
                         <text>For fixed seats with backs and with folding tablet arms, the
                     value of <measurement units="metric">400 mm</measurement> required by <ref type="internal"
                                                     target="nbc.divB.part3.sect3.subsect2.art4.sent1.clause3"
                                                     display-type="medium">Clause (1)(c)</ref> shall be measured when the tablet arms are in the
                     use position, but is permitted to be measured in the stored position
-                    provided (See Note A-3.3.2.4.(2).)</text>
+                    provided</text>
                                             <clause xml:id="nbc.divB.part3.sect3.subsect2.art4.sent2.clause1"
                                                     letter="a"
                                                     vendor-id="es000910a">
