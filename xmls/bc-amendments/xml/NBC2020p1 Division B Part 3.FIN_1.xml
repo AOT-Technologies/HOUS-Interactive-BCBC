@@ -5650,7 +5650,8 @@ tested in conformance with CAN/ULC-S102.3, "Standard Method of Fire Test of Ligh
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Fire blocks conforming to <ref type="internal"
+                        <!-- CLAUDE-AUTOFIX CF-10413 | issue 339 | "Fire blocks" is italic in the PDF; it keeps no defined-term link (BBC-182) but is set in italic. -->
+                        <text><emphasis style="italic">Fire blocks</emphasis> conforming to <ref type="internal"
                                 target="nbc.divB.part3.sect1.subsect11.art5.sent3"
                                 display-type="short"
                                 pretext="Sentences"/>
