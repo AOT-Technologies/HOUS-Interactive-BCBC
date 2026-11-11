@@ -2658,9 +2658,12 @@
         <xsl:variable name="range-label" select="bcf:range-label(.)"/>
         <!-- CLAUDE-AUTOFIX merge-develop | BBC-310 x CL-015 | The range label is not written again when our range-end label (CL-008/CL-022) or the CL-015 number label is already written, so the reference keeps one label (develop merge 2026-11-11). -->
         <!-- CLAUDE-AUTOFIX CL-041 CF-10451 | issue 2621 | No range label where our range-end rule (CL-008/CL-022) already handles the range, so the plural Sentences and the list after it stay as in the PDF. -->
+        <!-- CLAUDE-AUTOFIX CL-049 CF-10452 | issue 1117 | The first reference of a range with no word typed before it is labelled Sentences, as in the PDF (Sentences (1) to (3), Sentences 3.2.7.1.(4) to (7)). -->
+        <xsl:variable name="range-start-label" select="if (@type = 'internal' and normalize-space(.) = '' and not(@pretext) and @display-type = ('short', 'long') and matches(@target, '\.sent\d+$') and not(matches(string(preceding-sibling::node()[1][self::text()]), '(Sentences?|Clauses?)\s*$')) and exists($next-significant[self::text()][matches(., '^\s*(to|through)\s*$')]/following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.sent\d+$')]]) and exists(bcf:full-number(id(@target)))) then concat('Sentences ', if (@display-type = 'short' and replace(@target, '\.sent\d+$', '') = string(ancestor::*[self::article][1]/@xml:id)) then concat('(', replace(@target, '^.*\.sent(\d+)$', '$1'), ')') else bcf:full-number(id(@target))) else ''"/>
         <xsl:variable name="label" select="
             if (exists($div-suffix)) then bcf:division-label(., $div-suffix)
             else if (exists($range-label) and $range-end-label = '' and not($is-range-end) and not(@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')]))) then $range-label
+            else if ($range-start-label != '') then $range-start-label
             else normalize-space(.)"/>
         <xsl:if test="$label != ''">
             <xsl:text>:</xsl:text>
