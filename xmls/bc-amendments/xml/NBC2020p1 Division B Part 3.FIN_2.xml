@@ -286,7 +286,8 @@
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1152 Incorrect Content 19a6b8b360 -->
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8664 Punctuation c32145a938 -->
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8665 Punctuation 349034775b -->
-                                <text>for each <ref type="term" target="brrr-fr">accessible</ref> application listed independent of other <ref type="term" target="brrr-fr">accessible</ref> applications, the applicable provisions of <ref type="standard" target="csab651">CSA B651</ref>, “Accessible design for the built environment,” listed in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-01499 | issue 8146 | The title is already typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                <text>for each <ref type="term" target="brrr-fr">accessible</ref> application listed independent of other <ref type="term" target="brrr-fr">accessible</ref> applications, the applicable provisions of <ref type="standard" target="csab651" ref-style="notitle">CSA B651</ref>, “Accessible design for the built environment,” listed in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/>.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art1.sent2" number="2">
@@ -703,7 +704,8 @@
                                     <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1176 Incorrect Content bb2987f83a -->
                                     <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8669 Punctuation b848388a9d -->
                                     <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8670 Punctuation 2eba09e8f2 -->
-                                    <text><ref type="standard" target="csab355">CSA B355</ref>, “Platform lifts and stair lifts for barrier-free access,”</text>
+                                    <!-- CLAUDE-AUTOFIX CF-01530 | issue 8148 | The title is already typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                    <text><ref type="standard" target="csab355" ref-style="notitle">CSA B355</ref>, “Platform lifts and stair lifts for barrier-free access,”</text>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art7.sent1.clause2" letter="b">
@@ -901,7 +903,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <subclause xml:id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause4.subclause6" number="6">
-                        <text>where the door swings outward, is provided with a horizontal, D-shaped, visually contrasting door pull not less than <measurement units="metric">140 mm</measurement> long located on the inside such that its midpoint is <measurement units="metric">200 mm</measurement> to <measurement units="metric">300 mm</measurement> from the hinged side of the door and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1 100 mm</measurement> above the floor (see <ref type="internal" target="nbc.divB.part3.appendix.appnote222" display-type="short"/>), and</text>
+                        <!-- CLAUDE-AUTOFIX CF-01542 | issue 10078 | The PDF prints 1100 mm (no space) here, so the number is typed without the space to match it. -->
+                        <text>where the door swings outward, is provided with a horizontal, D-shaped, visually contrasting door pull not less than <measurement units="metric">140 mm</measurement> long located on the inside such that its midpoint is <measurement units="metric">200 mm</measurement> to <measurement units="metric">300 mm</measurement> from the hinged side of the door and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1100 mm</measurement> above the floor (see <ref type="internal" target="nbc.divB.part3.appendix.appnote222" display-type="short"/>), and</text>
                     </subclause>
                 </new-content>
             </replace>
@@ -917,9 +920,10 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-01542 CF-01543 | issue 10079 | The PDF prints 1100 mm (no space) here, so the number is typed without the space to match it. -->
                         <text>is provided with a horizontal, D-shaped, visually contrasting
                             door pull not less than <measurement units="metric">140 mm</measurement> long located on the outside
-                            such that its midpoint is <measurement units="metric">120 mm</measurement> to <measurement units="metric">220 mm</measurement> from the latch side and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1 100 mm</measurement> above the floor, </text>
+                            such that its midpoint is <measurement units="metric">120 mm</measurement> to <measurement units="metric">220 mm</measurement> from the latch side and <measurement units="metric">900 mm</measurement> to <measurement units="metric">1100 mm</measurement> above the floor, </text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2293,7 +2297,8 @@
                                       refs="es000911">
                         <number>3.3.2.18.</number>
                         <title>Daycare Facilities for Children under 30 Months</title>
-                        <paragraph>These daycare facilities are subject to additional requirements to address the unique profile of the occupants. The Community Care and Assisted Living Act and pursuant regulations establish care programs and prescribes the ages for children in those various programs. The Code's requirements for daycare facilities for children under 30 months is intended to coordinate with those care programs, which inform the intended use and applicable Code requirements, but the Code does not regulate the actual ages of children in those care programs or in the facility (See Note A-3.1.2.8.)</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-01823 | issue 10083 | Curly apostrophe in Code’s, as in the PDF. -->
+                        <paragraph>These daycare facilities are subject to additional requirements to address the unique profile of the occupants. The Community Care and Assisted Living Act and pursuant regulations establish care programs and prescribes the ages for children in those various programs. The Code’s requirements for daycare facilities for children under 30 months is intended to coordinate with those care programs, which inform the intended use and applicable Code requirements, but the Code does not regulate the actual ages of children in those care programs or in the facility (See Note A-3.1.2.8.)</paragraph>
                     </application-note>
                 </new-content>
             </insert>
