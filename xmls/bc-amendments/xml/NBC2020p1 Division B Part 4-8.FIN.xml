@@ -644,7 +644,8 @@
                         </clause>
                         <clause xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1.clause2" letter="b">
                             <!-- CLAUDE-AUTOFIX CF-03750 | issue 9962 | The PDF reads exhaust ducts (the defined term plus s), not exhaust duct system. -->
-                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust duct</ref>s.</text>
+                            <!-- CLAUDE-AUTOFIX CF-10389 | issue 5303 | The PDF shows the whole word exhaust ducts as the defined term (italic), so the term reference carries the plural s. -->
+                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust ducts</ref>.</text>
                         </clause>
                     </sentence>
                 </new-content>
