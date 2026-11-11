@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T17:32:31.373+05:30",
+  "generated_timestamp" : "2026-11-11T17:36:27.372+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6387,7 +6387,7 @@
                    
                    { "id" : "frm-bldn",
                     "term" : "Farm building",
-                    "definition" : "means a [REF:term:bldng:building ] or part thereof that contains an [REF:term:grc-ccp:agricultural occupancy] . (See [REF:internal:nbc.divA.part1.appendix.appnote7.div7:short] .)" },
+                    "definition" : "means a [REF:term:bldng:building] or part thereof that does not contain a [REF:term:rdntl-cc:residential occupancy] and that is associated with and located on land devoted to the practice of farming, and used essentially for the housing of equipment or livestock, or production, storage or processing of agricultural and horticultural produce or feeds. (See [REF:internal:nbc.divA.part1.appendix.appnote7.div7:short] .)" },
                    
                    { "id" : "bc-fld-rvw",
                     "term" : "Field review",
@@ -623323,7 +623323,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "frm-bldn" : 
    { "term" : "Farm building",
-    "definition" : "means a [REF:term:bldng:building ] or part thereof that contains an [REF:term:grc-ccp:agricultural occupancy] . (See [REF:internal:nbc.divA.part1.appendix.appnote7.div7:short] .)",
+    "definition" : "means a [REF:term:bldng:building] or part thereof that does not contain a [REF:term:rdntl-cc:residential occupancy] and that is associated with and located on land devoted to the practice of farming, and used essentially for the housing of equipment or livestock, or production, storage or processing of agricultural and horticultural produce or feeds. (See [REF:internal:nbc.divA.part1.appendix.appnote7.div7:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-fld-rvw" : 
    { "term" : "Field review",
