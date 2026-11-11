@@ -2562,6 +2562,14 @@
                 <xsl:value-of select="concat('(', id(@target)/@letter, ')')"/>
             </xsl:if>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-042 CF-10418 | issue 521 | A long reference to a Subclause prints its full number, as in the PDF (Subclauses 3.8.2.3.(2)(g)(ii); Subclause 3.1.5.5.(1)(b)(i)), not just (ii) of Division B. -->
+        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.subclause\d+$') and exists(bcf:full-number(id(@target)))">
+            <xsl:text>:</xsl:text>
+            <xsl:if test="not(matches(bcf:text-before(.), 'Subclauses?\s*$'))">
+                <xsl:text>Subclause </xsl:text>
+            </xsl:if>
+            <xsl:value-of select="bcf:full-number(id(@target))"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-015 CF-01285 | issue 9842 | Article, Subsection and Section numbers keep their final period, as in the PDF (3.2.2.49.). -->
         <xsl:if test="@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')])">
             <xsl:text>:</xsl:text>
