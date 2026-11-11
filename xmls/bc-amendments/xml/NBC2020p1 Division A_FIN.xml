@@ -5387,6 +5387,19 @@ building on a flat site.</paragraph>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00056 | issue 38 | The Run definition names Figure A-9.8.4.-B, as in the PDF; the website labelled the cross-division figure reference with the Note number. -->
+        <amendment id="bc-custom-1412-run" sequence="204"
+                   description="Run definition: reference text Figure A-9.8.4.-B as in the BC Building Code">
+            <target type="canonical-id" id="run"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="run">
+                        <term>Run</term>
+                        <definition>means the horizontal distance between two adjacent tread nosings on a stair. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote29.figure2" display-type="long">Figure A-9.8.4.-B</ref> in <ref type="internal" target="nbc.divBV2.part9.appendix.appnote29" display-type="long">Note A-9.8.4.</ref> of Division B.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 
 </bc-overlay>
