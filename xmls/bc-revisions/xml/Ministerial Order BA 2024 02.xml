@@ -71,13 +71,15 @@
                     <text>reserved,</text>
                   </clause>
                   <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause3" letter="c">
-                    <text><ref type="standard" target="csab139" standardId="csab139"/>, "Installation code for oil-burning equipment,"</text>
+                    <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                    <text><ref type="standard" target="csab139" standardId="csab139" ref-style="notitle"/>, "Installation code for oil-burning equipment,"</text>
                   </clause>
                   <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause4" letter="d">
                     <text>reserved,</text>
                   </clause>
                   <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause5" letter="e">
-                    <text><ref type="standard" target="csab365" standardId="csab365"/>, "Installation Code for Solid-Fuel-Burning Appliances and Equipment," or</text>
+                    <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                    <text><ref type="standard" target="csab365" standardId="csab365" ref-style="notitle"/>, "Installation Code for Solid-Fuel-Burning Appliances and Equipment," or</text>
                   </clause>
                   <clause xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1.clause6" letter="f">
                     <text>a combination thereof.</text>
@@ -116,7 +118,8 @@
                     <text>reserved,</text>
                   </clause>
                   <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause3" letter="c">
-                    <text><ref type="standard" target="csab139" standardId="csab139"/>, "Installation code for oil-burning equipment,"</text>
+                    <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                    <text><ref type="standard" target="csab139" standardId="csab139" ref-style="notitle"/>, "Installation code for oil-burning equipment,"</text>
                   </clause>
                   <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause4" letter="d">
                     <text>reserved,</text>
@@ -125,7 +128,8 @@
                     <text>reserved,</text>
                   </clause>
                   <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause6" letter="f">
-                    <text><ref type="standard" target="csac448series" standardId="csac448series"/>, "Design and installation of earth energy systems," or</text>
+                    <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                    <text><ref type="standard" target="csac448series" standardId="csac448series" ref-style="notitle"/>, "Design and installation of earth energy systems," or</text>
                   </clause>
                   <clause xml:id="nbc.divBV2.part9.sect33.subsect5.art2.sent1.clause7" letter="g">
                     <text>a combination thereof.
