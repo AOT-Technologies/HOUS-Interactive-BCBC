@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T17:36:27.372+05:30",
+  "generated_timestamp" : "2026-11-11T17:45:16.353+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6315,7 +6315,7 @@
                    
                    { "id" : "dngr-gd",
                     "term" : "Dangerous goods",
-                    "definition" : "means products, materials or substances that are [LIST:bulleted](See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)" },
+                    "definition" : "means products, materials or substances that are \n• regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n• classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)" },
                    
                    { "id" : "dd-ld",
                     "term" : "Dead load",
@@ -6391,7 +6391,7 @@
                    
                    { "id" : "bc-fld-rvw",
                     "term" : "Field review",
-                    "definition" : "means a review of the work[LIST:bulleted]that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional." },
+                    "definition" : "means a review of the work\n• at a [REF:term:bldng:building] site, and\n• where applicable, at locations where [REF:term:bldng:building] components are fabricated for use at the [REF:term:bldng:building] site\nthat a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional." },
                    
                    { "id" : "fll",
                     "term" : "Fill",
@@ -6671,7 +6671,7 @@
                    
                    { "id" : "pt-dtr-b",
                     "term" : "Post-disaster building",
-                    "definition" : "means a building that the authority having jurisdiction has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes buildings meeting these criteria but not limited to[LIST:bulleted](See Note A-1.4.1.2.(1).)" },
+                    "definition" : "means a building that the authority having jurisdiction has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes buildings meeting these criteria but not limited to\n• hospitals, emergency treatment facilities and blood banks,\n• telephone exchanges,\n• power generating stations and electrical substations,\n• control centres for natural gas distribution,\n• control centres for air, land and marine transportation,\n• water treatment facilities,\n• water storage facilities,\n• water and sewage pumping stations,\n• sewage treatment facilities,\n• buildings having critical national defence functions, and\n• buildings of the following types, unless exempted from this designation by the authority having jurisdiction:\n• emergency response facilities,\n• fire, rescue and police stations and housing for vehicles, aircraft or boats used for such purposes, and\n• communications facilities, including radio and television stations.\n\n(See Note A-1.4.1.2.(1).)" },
                    
                    { "id" : "prvt-wg-",
                     "term" : "Private sewage disposal system",
@@ -6699,7 +6699,7 @@
                    
                    { "id" : "bc-rgstrd-prfssnl",
                     "term" : "Registered professional",
-                    "definition" : "means[LIST:bulleted]" },
+                    "definition" : "means\n• a person who is registered as an Architect with the Architectural Institute of British Columbia under the Professional Governance Act, or\n• a person who is registered as a professional engineer or professional licensee engineering with the Association of Professional Engineers and Geoscientists of the Province of British Columbia under the Professional Governance Act.\n" },
                    
                    { "id" : "bc-rgstrd-prfssnl-f-rcrd",
                     "term" : "Registered professional of record",
@@ -6735,7 +6735,7 @@
                    
                    { "id" : "bc-scnd-t",
                     "term" : "Secondary suite",
-                    "definition" : "means a self-contained [REF:term:dwllng-n:dwelling unit] located within a [REF:term:bldng:building] or portion of a [REF:term:bldng:building][LIST:bulleted] (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] .)" },
+                    "definition" : "means a self-contained [REF:term:dwllng-n:dwelling unit] located within a [REF:term:bldng:building] or portion of a [REF:term:bldng:building]\n• completely separated from other parts of the [REF:term:bldng:building] by a vertical [REF:term:fr-prtn:fire separation] that has a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 1 h and extends from ground or lowermost assembly continuously through or adjacent to all [REF:term:tr:storeys] and spaces including [REF:term:rvc-pc:service spaces] of the separated portions,\n• of only [REF:term:rdntl-cc:residential occupancy] that contains only one other [REF:term:dwllng-n:dwelling unit] and common spaces, and\n• where both [REF:term:dwllng-n:dwelling units] constitute a single real estate entity.\n (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] .)" },
                    
                    { "id" : "rvc-rm",
                     "term" : "Service room",
@@ -6917,7 +6917,7 @@
                    
                    { "content" : "buildings having critical national defence functions, and" },
                    
-                   { "content" : "buildings of the following types, unless exempted from this designation by the authority having jurisdiction:[LIST:bulleted]" } ] },
+                   { "content" : "buildings of the following types, unless exempted from this designation by the authority having jurisdiction:\n• emergency response facilities,\n• fire, rescue and police stations and housing for vehicles, aircraft or boats used for such purposes, and\n• communications facilities, including radio and television stations.\n" } ] },
                  
                  { "type" : "bulleted",
                   "items" : 
@@ -619765,7 +619765,7 @@
    { "location_id" : "bc-fld-rvw",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Field reviewmeans a review of the work[LIST:bulleted]that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional." },
+    "content" : "Field reviewmeans a review of the work\n• at a [REF:term:bldng:building] site, and\n• where applicable, at locations where [REF:term:bldng:building] components are fabricated for use at the [REF:term:bldng:building] site\nthat a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional." },
    
    { "location_id" : "bc-fld-rvw",
     "type" : "revision",
@@ -619774,7 +619774,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "Field reviewmeans a review of the work[LIST:bulleted]that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.",
+    "content" : "Field reviewmeans a review of the work\n• at a [REF:term:bldng:building] site, and\n• where applicable, at locations where [REF:term:bldng:building] components are fabricated for use at the [REF:term:bldng:building] site\nthat a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.",
     "change_summary" : "Amended definition of Field review by striking out \"thier\" and substituting \"their\"",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -623251,7 +623251,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "dngr-gd" : 
    { "term" : "Dangerous goods",
-    "definition" : "means products, materials or substances that are [LIST:bulleted](See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)",
+    "definition" : "means products, materials or substances that are \n• regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n• classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "dd-ld" : 
    { "term" : "Dead load",
@@ -623327,7 +623327,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-fld-rvw" : 
    { "term" : "Field review",
-    "definition" : "means a review of the work[LIST:bulleted]that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.",
+    "definition" : "means a review of the work\n• at a [REF:term:bldng:building] site, and\n• where applicable, at locations where [REF:term:bldng:building] components are fabricated for use at the [REF:term:bldng:building] site\nthat a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "fll" : 
    { "term" : "Fill",
@@ -623607,7 +623607,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "pt-dtr-b" : 
    { "term" : "Post-disaster building",
-    "definition" : "means a building that the authority having jurisdiction has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes buildings meeting these criteria but not limited to[LIST:bulleted](See Note A-1.4.1.2.(1).)",
+    "definition" : "means a building that the authority having jurisdiction has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes buildings meeting these criteria but not limited to\n• hospitals, emergency treatment facilities and blood banks,\n• telephone exchanges,\n• power generating stations and electrical substations,\n• control centres for natural gas distribution,\n• control centres for air, land and marine transportation,\n• water treatment facilities,\n• water storage facilities,\n• water and sewage pumping stations,\n• sewage treatment facilities,\n• buildings having critical national defence functions, and\n• buildings of the following types, unless exempted from this designation by the authority having jurisdiction:\n• emergency response facilities,\n• fire, rescue and police stations and housing for vehicles, aircraft or boats used for such purposes, and\n• communications facilities, including radio and television stations.\n\n(See Note A-1.4.1.2.(1).)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "prvt-wg-" : 
    { "term" : "Private sewage disposal system",
@@ -623635,7 +623635,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-rgstrd-prfssnl" : 
    { "term" : "Registered professional",
-    "definition" : "means[LIST:bulleted]",
+    "definition" : "means\n• a person who is registered as an Architect with the Architectural Institute of British Columbia under the Professional Governance Act, or\n• a person who is registered as a professional engineer or professional licensee engineering with the Association of Professional Engineers and Geoscientists of the Province of British Columbia under the Professional Governance Act.\n",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-rgstrd-prfssnl-f-rcrd" : 
    { "term" : "Registered professional of record",
@@ -623671,7 +623671,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-scnd-t" : 
    { "term" : "Secondary suite",
-    "definition" : "means a self-contained [REF:term:dwllng-n:dwelling unit] located within a [REF:term:bldng:building] or portion of a [REF:term:bldng:building][LIST:bulleted] (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] .)",
+    "definition" : "means a self-contained [REF:term:dwllng-n:dwelling unit] located within a [REF:term:bldng:building] or portion of a [REF:term:bldng:building]\n• completely separated from other parts of the [REF:term:bldng:building] by a vertical [REF:term:fr-prtn:fire separation] that has a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 1 h and extends from ground or lowermost assembly continuously through or adjacent to all [REF:term:tr:storeys] and spaces including [REF:term:rvc-pc:service spaces] of the separated portions,\n• of only [REF:term:rdntl-cc:residential occupancy] that contains only one other [REF:term:dwllng-n:dwelling unit] and common spaces, and\n• where both [REF:term:dwllng-n:dwelling units] constitute a single real estate entity.\n (See [REF:internal:nbc.divA.part1.appendix.appnote7.div16:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "rvc-rm" : 
    { "term" : "Service room",
