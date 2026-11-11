@@ -3289,8 +3289,9 @@
                             xml:id="nbc.divA.part1.appendix.appnote2b.figure1"
                             vendor-id="en000009b-fig1"
                             >
+                            <!-- CLAUDE-AUTOFIX CL-065 CF-00279 | issue 10055 | The title does not repeat the table/figure number - the website prints the number on its own line, as the PDF does (also CF-00260). -->
                             <title
-                                >Figure A-1.1.1.1.(6) Application of Alternative Compliance Methods in <ref
+                                >Application of Alternative Compliance Methods in <ref
                                     type="internal"
                                     target="nbc.divA.part1.sect1.subsect1.art1.table2"
                                     display-type="long"
@@ -3622,8 +3623,9 @@
                     <table xml:id="nbc.divA.part1.appendix.appnote7.div5.table1"
                            vendor-id="et000071"
                         >
+                        <!-- CLAUDE-AUTOFIX CL-065 CF-00279 | issue 10055 | The title does not repeat the table/figure number - the website prints the number on its own line, as the PDF does (also CF-00260). -->
                         <title
-                            >Table A-1.4.1.2.(1) TDGR, WHMIS and British Columbia Building Code Class Descriptors for Dangerous Goods</title>
+                            >TDGR, WHMIS and British Columbia Building Code Class Descriptors for Dangerous Goods</title>
                         <tgroup cols="4">
                             <colspec colname="col1" colwidth="60*" />
                             <colspec colname="col2" colwidth="180*" />
