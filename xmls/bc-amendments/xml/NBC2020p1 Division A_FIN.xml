@@ -5356,6 +5356,19 @@ building on a flat site.</paragraph>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00045 | issue 27 | The two kinds of Dangerous goods are lettered (a) and (b), as in the PDF (the NBC list was bulleted). -->
+        <amendment id="bc-custom-1412-dngr-gd" sequence="202"
+                   description="Dangerous goods definition: items lettered (a) and (b) as in the BC Building Code">
+            <target type="canonical-id" id="dngr-gd"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="dngr-gd">
+                        <term>Dangerous goods</term>
+                        <definition>means products, materials or substances that are <list type="alphabetic"><item>regulated by <ref type="standard" target="tc_sor95" standardId="tc_sor95" ref-style="full" ref-punc="none"/> (see <ref type="external" target="nfc">Table 3.2.7.1. of Division B of the </ref> <ref type="standard" target="nrcc-nfc" standardId="nrcc-nfc" ref-style="abbr" ref-punc="none"/>), or</item><item>classified as controlled products under <ref type="standard" target="hc_sor15-17" standardId="hc_sor15-17" ref-style="full" ref-punc="none"/> (see <ref type="external" target="nfc">Note A-Table 3.2.7.1. of Division B of the </ref> <ref type="standard" target="nrcc-nfc" standardId="nrcc-nfc" ref-style="abbr" ref-punc="none"/>).</item></list>(See <ref type="internal" target="nbc.divA.part1.appendix.appnote7.div5" display-type="short"/>.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 
 </bc-overlay>
