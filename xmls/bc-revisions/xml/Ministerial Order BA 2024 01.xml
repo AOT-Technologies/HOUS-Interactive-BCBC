@@ -192,12 +192,408 @@
       <replace preserve-references="false">
         <new-content source="bc">
           <table xml:id="nbc.divB.part3.sect1.subsect3.art1.table1" vendor-id="et000115" revised="yes">
+            <!-- BBC-181: table number without the injected Sentence number "(1)" (all dates) -->
+            <number>Table 3.1.3.1.</number>
+            <!-- BBC-181: Forming Part line at table level so the website shows it for every date (it reads only the table-level line) -->
+            <forming-part>
+              <ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.sent1" display-type="long"/>
+            </forming-part>
             <revision-history>
               <original effective-date="2024-03-08">
-                
+                <!-- BBC-181: original Table 3.1.3.1. written out in full (an empty original loses the Forming Part line and Notes to Table 3.1.3.1.); Notes (3) and (4): "3.2.2.51." / "3.2.2.60." with period and "2 h fire-resistance" with space -->
+                <title>Major Occupancy Fire Separations</title>
+                        <forming-part>
+                           <ref type="internal"
+                                target="nbc.divB.part3.sect1.subsect3.art1.sent1"
+                                display-type="long"/>
+                        </forming-part>
+                        <tgroup cols="14" colsep="1" rowsep="0">
+                           <colspec colname="1" colwidth="63*"/>
+                           <colspec colname="2" colwidth="27*"/>
+                           <colspec colname="3" colwidth="27*"/>
+                           <colspec colname="4" colwidth="27*"/>
+                           <colspec colname="5" colwidth="27*"/>
+                           <colspec colname="6" colwidth="27*"/>
+                           <colspec colname="7" colwidth="27*"/>
+                           <colspec colname="8" colwidth="27.00*"/>
+                           <colspec colname="9" colwidth="27*"/>
+                           <colspec colname="10" colwidth="27*"/>
+                           <colspec colname="11" colwidth="27*"/>
+                           <colspec colname="12" colwidth="27*"/>
+                           <colspec colname="13" colwidth="27*"/>
+                           <colspec colname="14" colwidth="27*"/>
+                           <thead>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row1" rowsep="1">
+                                 <entry align="center" valign="middle" colname="1" rowspan="3">
+                                    <ref type="term" target="mjr-ccpn">Major Occupancy</ref>
+                                 </entry>
+                                 <entry align="center" valign="middle" colspan="13">Minimum <ref type="term" target="fr-rtnc-">Fire-Resistance Rating</ref> of <ref type="term" target="fr-prtn">Fire Separation</ref>, h</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row2" rowsep="1">
+                                 <entry align="center" valign="middle" colspan="13">Adjoining <ref type="term" target="mjr-ccpn">Major Occupancy</ref>
+                                 </entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row3" rowsep="1">
+                                 <entry align="center" valign="middle">A-1</entry>
+                                 <entry align="center" valign="middle">A-2</entry>
+                                 <entry align="center" valign="middle">A-3</entry>
+                                 <entry align="center" valign="middle">A-4</entry>
+                                 <entry align="center" valign="middle">B-1</entry>
+                                 <entry align="center" valign="middle">B-2</entry>
+                                 <entry align="center" valign="middle">B-3</entry>
+                                 <entry align="center" valign="middle">C</entry>
+                                 <entry align="center" valign="middle">D</entry>
+                                 <entry align="center" valign="middle">E</entry>
+                                 <entry align="center" valign="middle">F-1</entry>
+                                 <entry align="center" valign="middle">F-2</entry>
+                                 <entry align="center" valign="middle">F-3</entry>
+                              </row>
+                           </thead>
+                           <tbody>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row4">
+                                 <entry align="center" valign="middle">A-1</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row5">
+                                 <entry align="center" valign="middle">A-2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note3"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note3"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">1<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note4"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note4"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle"/>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row6">
+                                 <entry align="center" valign="middle">A-3</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row7">
+                                 <entry align="center" valign="middle">A-4</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row8">
+                                 <entry align="center" valign="middle">B-1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row9">
+                                 <entry align="center" valign="middle">B-2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row10">
+                                 <entry align="center" valign="middle">B-3</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row11">
+                                 <entry align="center" valign="middle">C</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note3"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note5"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note5"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">2<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note6"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note6"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">1<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note7"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note7"/>
+                                 </entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row12">
+                                 <entry align="center" valign="middle">D</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note4"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">—<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note8"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note8"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">3</entry>
+                                 <entry align="center" valign="middle">—<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note8"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">—<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note8"/>
+                                 </entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row13">
+                                 <entry align="center" valign="middle">E</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note5"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">—<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note8"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">3</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row14">
+                                 <entry align="center" valign="middle">F-1</entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">3</entry>
+                                 <entry align="center" valign="middle">3</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row15">
+                                 <entry align="center" valign="middle">F-2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note6"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">—<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note8"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                              </row>
+                              <row xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.row16">
+                                 <entry align="center" valign="middle">F-3</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">1</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">1<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note7"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">—<ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note8"/>
+                                 </entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">2</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                                 <entry align="center" valign="middle">—</entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                        <table-notes>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note1"
+                                 vendor-id="et000115-1">
+                              <ref type="internal" target="nbc.divB.part3.sect3" display-type="long"/> contains requirements for
+ the separation of <ref type="term" target="ccpnc"> occupancies</ref> and tenancies
+ that are in addition to the requirements for the separation of <ref type="term" target="mjr-ccpn">major occupancies.</ref>
+                           </note>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note2"
+                                 vendor-id="et000115-2">See <ref type="internal"
+                                   target="nbc.divB.part3.sect1.subsect3.art2.sent1"
+                                   display-type="long"
+                                   pretext="Sentence"/>.</note>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note3"
+                                 vendor-id="et000115-5">Where the <ref type="term" target="bldng">building</ref> or part thereof is constructed
+in accordance with <ref type="internal"
+                                   target="nbc.divB.part3.sect2.subsect2.art48"
+                                   display-type="long"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="number">3.2.2.51.</ref>, a <ref type="term" target="fr-prtn">fire separation</ref> with
+a 2 h <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> is required between the Group C and Group A, Division 2 <ref type="term" target="mjr-ccpn">major occupancies</ref>.</note>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note4"
+                                 vendor-id="et000115-6">Where the <ref type="term" target="bldng">building</ref> or part thereof is constructed
+in accordance with <ref type="internal"
+                                   target="nbc.divB.part3.sect2.subsect2.art57"
+                                   display-type="long"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art60" display-type="number">3.2.2.60.</ref>, a <ref type="term" target="fr-prtn">fire separation</ref> with
+a 2 h <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> is required between the Group D and Group A, Division 2 <ref type="term" target="mjr-ccpn">major occupancies</ref>.</note>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note5"
+                                 vendor-id="et000115-3">See <ref type="internal"
+                                   target="nbc.divB.part3.sect1.subsect3.art1.sent2"
+                                   display-type="long"
+                                   pretext="Sentence"/>.</note>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note6"
+                                 vendor-id="et000115-4">See <ref type="internal"
+                                   target="nbc.divB.part3.sect1.subsect3.art2.sent2"
+                                   display-type="long"
+                                   pretext="Sentence"/>.</note>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note7"
+                                 vendor-id="et000115-9">Where the <ref type="term" target="bldng">building</ref> or part thereof is constructed in accordance with <ref type="internal"
+                                   target="nbc.divB.part3.sect2.subsect2.art48"
+                                   display-type="long"/>, a<ref type="term" target="fr-prtn"> fire separation</ref> with a 2 h <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> is
+required between the Group C <ref type="term" target="mjr-ccpn">major occupancy</ref> and a <ref type="term" target="trg-grg">storage garage</ref>.</note>
+                           <note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note8"
+                                 vendor-id="et000115-8">Where the <ref type="term" target="bldng">building</ref> or part thereof is constructed in accordance with <ref type="internal"
+                                   target="nbc.divB.part3.sect2.subsect2.art57"
+                                   display-type="long"/>, a <ref type="term" target="fr-prtn">fire separation</ref> with a 1 h <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> is
+required between the Group D and Group E or Group F, Division 2 or
+3 <ref type="term" target="mjr-ccpn">major occupancies</ref>.</note>
+                        </table-notes>
               </original>
               <revision seq="1" type="amendment" effective-date="2024-04-05" id="bc-mo-2024-01-005" status="current">
                 <content>
+                  <!-- BBC-181: Note markers as table-note references; Notes (5) and (6) end with a period -->
                   <title>Major Occupancy Fire Separations</title>
                  
                   <forming-part>
@@ -257,7 +653,7 @@
                         <entry align="center">1</entry>
                         <entry align="center">1</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
                         <entry align="center">2</entry>
                         <entry align="center">1</entry>
                       </row>
@@ -289,7 +685,7 @@
                         <entry align="center">1</entry>
                         <entry align="center">1</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
                         <entry align="center">2</entry>
                         <entry align="center">1</entry>
                       </row>
@@ -305,7 +701,7 @@
                         <entry align="center">1</entry>
                         <entry align="center">1</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
                         <entry align="center">2</entry>
                         <entry align="center">1</entry>
                       </row>
@@ -321,7 +717,7 @@
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
                       </row>
@@ -337,7 +733,7 @@
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
                       </row>
@@ -353,14 +749,14 @@
                         <entry align="center">1</entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
                       </row>
                       <row>
                         <entry align="center">C</entry>
                         <entry align="center">1</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note3"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note3"/></entry>
                         <entry align="center">1</entry>
                         <entry align="center">1</entry>
                         <entry align="center">2</entry>
@@ -368,15 +764,15 @@
                         <entry align="center">1</entry>
                         <entry align="center">-</entry>
                         <entry align="center">1</entry>
-                        <entry align="center">2<note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note5">See <ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.sent2" display-type="long" pretext="Sentence"/></note></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center">2<note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note6">See <ref type="internal" target="nbc.divB.part3.sect1.subsect3.art2.sent2" display-type="long" pretext="Sentence"/></note></entry>
+                        <entry align="center">2<note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note5">See <ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.sent2" display-type="long" pretext="Sentence"/>.</note></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center">2<note xml:id="nbc.divB.part3.sect1.subsect3.art1.table1.note6">See <ref type="internal" target="nbc.divB.part3.sect1.subsect3.art2.sent2" display-type="long" pretext="Sentence"/>.</note></entry>
                         <entry align="center">1</entry>
                       </row>
                       <row>
                         <entry align="center">D</entry>
                         <entry align="center">1</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note4"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note4"/></entry>
                         <entry align="center">1</entry>
                         <entry align="center">1</entry>
                         <entry align="center">2</entry>
@@ -398,7 +794,7 @@
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note5"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note5"/></entry>
                         <entry align="center">-</entry>
                         <entry align="center">-</entry>
                         <entry align="center">3</entry>
@@ -407,14 +803,14 @@
                       </row>
                       <row>
                         <entry align="center">F-1</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/></entry>
                         <entry align="center">3</entry>
                         <entry align="center">3</entry>
                         <entry align="center">-</entry>
@@ -430,7 +826,7 @@
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
                         <entry align="center">2</entry>
-                        <entry align="center"><ref type="internal" target="nbc.divB.part3.sect1.subsect3.art1.table1.note6"/></entry>
+                        <entry align="center"><ref type="table-note" target="nbc.divB.part3.sect1.subsect3.art1.table1.note6"/></entry>
                         <entry align="center">-</entry>
                         <entry align="center">-</entry>
                         <entry align="center">2</entry>
@@ -955,17 +1351,14 @@
           <sentence xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4" number="4" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <!-- BBC-182 Issues 9 and 10: original written out in full (an empty original loses the Note A-3.1.11.5.(3) and (4) line); "Article 3.2.2.48. or 3.2.2.57." -->
+                <text>Except for crawl spaces conforming to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art6.sent1" display-type="long">Sentence 3.1.11.6.(1)</ref> and except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art5.sent5" display-type="short">Sentence (5)</ref>, in <ref type="term" target="bldng">buildings</ref> or parts thereof conforming to Article <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art48" display-type="number">3.2.2.48.</ref> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art57" display-type="number">3.2.2.57.</ref>, horizontal concealed spaces within a floor assembly or roof assembly of <ref type="term" target="ncps-mt-nstr">encapsulated mass timber construction</ref> shall be separated by construction conforming to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7" display-type="long">Article 3.1.11.7.</ref> into compartments that are</text><clause xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.clause1" letter="a"><text>not more than <measurement units="metric">600 m<super>2</super></measurement> in area with no dimension more than <measurement units="metric">60 m</measurement>, if the exposed construction materials within the space have a <ref type="term" target="flm-prd-">flame-spread rating</ref> not more than 25, and</text></clause><clause xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.clause2" letter="b"><text>not more than <measurement units="metric">300 m<super>2</super></measurement> in area with no dimension more than <measurement units="metric">20 m</measurement>, if the exposed construction materials within the space have a <ref type="term" target="flm-prd-">flame-spread rating</ref> more than 25.</text></clause><see-also xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote43" display-type="short">Note A-3.1.11.5.(3) and (4)</ref>.)</see-also>
               </original>
               
               <revision seq="1" type="amendment" effective-date="2024-04-05" id="bc-mo-2024-01-012" status="current">
                 <content>
-                  <text>Except for crawl spaces conforming to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art6.sent1" display-type="long"/> and except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art5.sent5" display-type="short"/>, in <ref type="term" target="bldng">buildings</ref> or parts thereof conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art48" display-type="long" pretext="Article"/>, <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art57" display-type="number"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art93" display-type="number"/>, horizontal concealed spaces within a floor assembly or roof assembly of <ref type="term" target="ncps-mt-nstr">encapsulated mass timber construction</ref> shall be separated by construction conforming to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7" display-type="long"/> into compartments that are</text>
-                  <clause xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.clause1" letter="a">
-                    <text>not more than <measurement units="metric">600 m<super>2</super></measurement> in area with no dimension more than <measurement units="metric">60 m</measurement>, if the exposed construction materials within the space have a <ref type="term" target="flm-prd-">flame-spread rating</ref> not more than 25, and</text>
-                  </clause>
-                  <clause xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.clause2" letter="b">
-                    <text>not more than <measurement units="metric">300 m<super>2</super></measurement> in area with no dimension more than <measurement units="metric">20 m</measurement>, if the exposed construction materials within the space have a <ref type="term" target="flm-prd-">flame-spread rating</ref> more than 25. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote32" display-type="short" pretext="Notes"/> <ref type="internal" target="nbc.divB.part3.appendix.appnote33" display-type="short" pretext="and"/>.)</text>
-                  </clause>
+                  <!-- BBC-182 Issues 10 and 11: "Article 3.2.2.48., 3.2.2.57. or 3.2.2.93."; Note A-3.1.11.5.(3) and (4) (not A-3.1.8.10.(5) and A-3.1.8.18.(1)) -->
+                  <text>Except for crawl spaces conforming to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art6.sent1" display-type="long">Sentence 3.1.11.6.(1)</ref> and except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art5.sent5" display-type="short">Sentence (5)</ref>, in <ref type="term" target="bldng">buildings</ref> or parts thereof conforming to Article <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art48" display-type="number">3.2.2.48.</ref>, <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art57" display-type="number">3.2.2.57.</ref> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art93" display-type="number">3.2.2.93.</ref>, horizontal concealed spaces within a floor assembly or roof assembly of <ref type="term" target="ncps-mt-nstr">encapsulated mass timber construction</ref> shall be separated by construction conforming to <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7" display-type="long">Article 3.1.11.7.</ref> into compartments that are</text><clause xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.clause1" letter="a"><text>not more than <measurement units="metric">600 m<super>2</super></measurement> in area with no dimension more than <measurement units="metric">60 m</measurement>, if the exposed construction materials within the space have a <ref type="term" target="flm-prd-">flame-spread rating</ref> not more than 25, and</text></clause><clause xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.clause2" letter="b"><text>not more than <measurement units="metric">300 m<super>2</super></measurement> in area with no dimension more than <measurement units="metric">20 m</measurement>, if the exposed construction materials within the space have a <ref type="term" target="flm-prd-">flame-spread rating</ref> more than 25.</text></clause><see-also xml:id="nbc.divB.part3.sect1.subsect11.art5.sent4.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote43" display-type="short">Note A-3.1.11.5.(3) and (4)</ref>.)</see-also>
                 </content>
                 <change-summary>Added reference to Article 3.2.2.93</change-summary>
                 <note>Ministerial Order BA 2024 01</note>
