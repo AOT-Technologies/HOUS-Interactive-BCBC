@@ -2744,6 +2744,16 @@
         <xsl:text>]</xsl:text>
     </xsl:template>
     
+    <!-- CLAUDE-AUTOFIX CL-054 CF-00045 | issue 27 | A list inside a definition is written out item by item (• or (a), (b) …), as in the PDF, instead of an empty [LIST] placeholder. -->
+    <xsl:template match="definition//list" mode="rich-text-json" priority="3">
+        <xsl:for-each select="item">
+            <xsl:text>&#10;</xsl:text>
+            <xsl:value-of select="if (../@type = 'alphabetic') then concat('(', codepoints-to-string(96 + position()), ') ') else if (../@type = 'roman') then concat('(', ('i','ii','iii','iv','v','vi','vii','viii','ix','x')[position()], ') ') else if (../@type = 'numbered') then concat(position(), '. ') else '&#8226; '"/>
+            <xsl:apply-templates select="node()" mode="rich-text-json"/>
+        </xsl:for-each>
+        <xsl:text>&#10;</xsl:text>
+    </xsl:template>
+
     <!-- Skip all list types in rich-text-json mode - they're extracted as structured data -->
     <xsl:template match="list" mode="rich-text-json" priority="2">
         <xsl:text>[LIST:</xsl:text>
