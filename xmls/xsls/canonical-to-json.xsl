@@ -2276,6 +2276,19 @@
     <!-- CLAUDE-AUTOFIX CL-001 | CF-00900 issue 8016 | Print standard references as the PDF does: curly quotes, comma or period inside the closing quote, and the style of the base XML. -->
     <xsl:key name="standard-entry-by-ref-id" match="entry[@standard-ref-id]" use="@standard-ref-id"/>
 
+    <!-- CLAUDE-AUTOFIX CL-055 CF-00045 | issue 27 | A standard reference in abbreviated style prints its abbreviation, as in the PDF (the NFC, the NECB, the NPC, the NBC 2015). -->
+    <xsl:template match="ref[@type = 'standard'][@ref-style = 'abbr']" mode="rich-text-json" priority="3">
+        <xsl:variable name="abbr" select="if (@target = 'nrcc-nfc') then 'NFC' else if (@target = 'nrcc-necb') then 'NECB' else if (@target = 'nrcc-npc') then 'NPC' else if (@target = 'nrcc56190') then 'NBC 2015' else ''"/>
+        <xsl:choose>
+            <xsl:when test="$abbr != ''">
+                <xsl:variable name="prev" select="preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1]"/>
+                <xsl:if test="$prev[self::ref] or $prev[self::text() and not(matches(., '[\s(&#8220;]$'))]"><xsl:text> </xsl:text></xsl:if>
+                <xsl:value-of select="$abbr"/>
+            </xsl:when>
+            <xsl:otherwise><xsl:next-match/></xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <!-- CLAUDE-AUTOFIX CL-013 CF-00914 | issue 8022 | Standard references from the BC amendments (no ref-style) print as in the PDF: curly quotes, punctuation inside, agency only when not already in the number. -->
     <xsl:template match="ref[@type = 'standard'][not(@ref-style = 'abbr')]" mode="rich-text-json" priority="2">
         <xsl:variable name="entry" select="(key('standard-entry-by-ref-id', @target), key('standard-entry-by-ref-id', concat('d-', @target)), key('standard-entry-by-ref-id', replace(@target, '^d-', '')))[1]"/>
