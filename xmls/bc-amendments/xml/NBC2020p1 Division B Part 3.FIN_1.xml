@@ -174,7 +174,8 @@
                 <new-content source="bc">
                     <article xml:id="nbc.divB.part3.sect1.subsect4.art8" number="8">
                         <title>Exterior Cladding</title>
-                        <sentence xml:id="nbc.divB.part3.sect1.subsect4.art8.sent1" number="1">                            <text>Except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect4.art8.sent2" display-type="short"/>, cladding on an exterior wall assembly of a <ref type="term" target="bldng">building</ref> or part of a <ref type="term" target="bldng">building</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="long"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art60" display-type="long"/> shall consist of</text>
+                        <!-- CLAUDE-AUTOFIX CF-00911 | issue 6325 | The second Article of "Article 3.2.2.51. or 3.2.2.60." is a number reference, so the word is printed once, as in the PDF. -->
+                        <sentence xml:id="nbc.divB.part3.sect1.subsect4.art8.sent1" number="1">                            <text>Except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect4.art8.sent2" display-type="short"/>, cladding on an exterior wall assembly of a <ref type="term" target="bldng">building</ref> or part of a <ref type="term" target="bldng">building</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="long"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art60" display-type="number"/> shall consist of</text>
                             <clause xml:id="nbc.divB.part3.sect1.subsect4.art8.sent1.clause1" letter="a">
                                 <text><ref type="term" target="ncmbtbl">noncombustible</ref> cladding, or</text>
                             </clause>
