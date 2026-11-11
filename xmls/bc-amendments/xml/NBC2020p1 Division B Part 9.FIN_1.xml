@@ -7714,7 +7714,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Heavy construction - Storey supporting roof only -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row2">
-                                    <entry rowspan="18">Heavy construction: apply factor corresponding to Lwl separately to each <ref type="term" target="tr">storey</ref>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10220 | The PDF prints this text without the usual space (Heavy construction:apply factor), so it is typed the same way. -->
+                                    <entry rowspan="18">Heavy construction:apply factor corresponding to Lwl separately to each <ref type="term" target="tr">storey</ref>
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row2.figure25">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-row1" alt="Building depth diagram showing 3.1 to 18.3 m"/>
@@ -7799,19 +7800,23 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <entry colspan="2">1.97</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row15">
-                                    <entry>Lwl = 6.1 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10221 | The PDF prints this text without the usual space (Lwl =6.1 m), so it is typed the same way. -->
+                                    <entry>Lwl =6.1 m</entry>
                                     <entry colspan="2">1.76</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row16">
-                                    <entry>Lwl = 9.1 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10222 | The PDF prints this text without the usual space (Lwl =9.1 m), so it is typed the same way. -->
+                                    <entry>Lwl =9.1 m</entry>
                                     <entry colspan="2">1.67</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row17">
-                                    <entry>Lwl = 12.2 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10223 | The PDF prints this text without the usual space (Lwl =12.2 m), so it is typed the same way. -->
+                                    <entry>Lwl =12.2 m</entry>
                                     <entry colspan="2">1.61</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row18">
-                                    <entry>Lwl = 15.2 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10224 | The PDF prints this text without the usual space (Lwl =15.2 m), so it is typed the same way. -->
+                                    <entry>Lwl =15.2 m</entry>
                                     <entry colspan="2">1.58</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row19">
