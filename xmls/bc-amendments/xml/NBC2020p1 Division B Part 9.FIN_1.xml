@@ -12834,11 +12834,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-05700 | issue 2998 | Final period after pursuant regulations, as in the PDF. -->
                         <text>Electrical installations, including the service capacity of
                             the installation and the number and distribution of circuits and receptacles,
                             shall meet the requirements of the appropriate provincial, territorial
                             or municipal legislation or, in the absence of such legislation, shall
-                            conform to the Safety Standards Act and pursuant regulations
+                            conform to the Safety Standards Act and pursuant regulations.
                         </text>
                     </new-content>
                 </element-replace>
