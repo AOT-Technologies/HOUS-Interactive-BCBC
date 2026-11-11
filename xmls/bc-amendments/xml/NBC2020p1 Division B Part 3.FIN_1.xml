@@ -7093,6 +7093,7 @@ each 25 females.</find>
                                                    number="4"
                                                    vendor-id="es013841">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11549 Note Reference cead84235d -->
+                        <!-- CLAUDE-AUTOFIX CF-10407 | issue 2546 | The See-Notes text belongs only at the end of the sentence (the See-also), as in the PDF; the typed duplicate after "provided" is removed. -->
                         <text>Except as provided in <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect6.art4.sent5"
                                                     display-type="short"
@@ -7102,7 +7103,7 @@ each 25 females.</find>
                                                     display-type="short"
                                                     pretext="and"/>, the exposed surfaces of mass timber walls within a <ref type="term" target="t">suite</ref> need not be protected in accordance with <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect6.art4.sent1"
-                                                    display-type="short"/>, provided (See Notes A-3.1.6.4.(4) and A-3.1.6.4.(3) to (6).)</text>
+                                                    display-type="short"/>, provided</text>
                                             <clause xml:id="nbc.divB.part3.sect1.subsect6.art4.sent4.clause1"
                                                     letter="a"
                                                     vendor-id="es013841a">
