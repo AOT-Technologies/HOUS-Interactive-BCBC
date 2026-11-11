@@ -2284,7 +2284,8 @@
         <xsl:variable name="title-written" as="xs:boolean" select="$bare and matches($next-text, '^\s*,\s*[&#8220;&quot;]')"/>
         <xsl:variable name="bare-punc" select="if (not($next-node)) then (if (parent::entry or parent::title or parent::caption) then '' else if (parent::text/parent::*[self::clause or self::subclause][following-sibling::clause or following-sibling::subclause]) then ',' else '.') else if (matches($next-text, '^\s*(\.|\(See\s)')) then '.' else if (matches($next-text, '^\s*[;:()\]]')) then '' else ','"/>
         <xsl:variable name="punc" select="if ($bare and not(@ref-punc)) then $bare-punc else if (@ref-style = ('notitle', 'number') or @ref-punc = 'none') then '' else if (@ref-punc = 'period') then '.' else ','"/>
-        <xsl:variable name="full-number" select="normalize-space(concat($agency, ' ', $number))"/>
+        <!-- CLAUDE-AUTOFIX CL-039 CF-10141 | issue 3760 | A standard printed as agency plus number leaves out the agency when the number already contains it, as in the PDF (CAN/CSA A82.27-M, not CSA CAN/CSA A82.27-M). -->
+        <xsl:variable name="full-number" select="normalize-space(concat(if ($agency != '' and not(contains($number, $agency))) then concat($agency, ' ') else '', $number))"/>
         <xsl:variable name="text" select="
             if ($bare) then concat(if ($agency != '' and not(contains($number, $agency))) then concat($agency, ' ') else '', $number, ', &#8220;', $title, $punc, '&#8221;')
             else if (@ref-style = 'noagency') then concat($number, ', &#8220;', $title, $punc, '&#8221;')
