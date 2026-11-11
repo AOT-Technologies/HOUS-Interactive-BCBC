@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T17:48:07.489+05:30",
+  "generated_timestamp" : "2026-11-11T17:52:45.08+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6315,7 +6315,7 @@
                    
                    { "id" : "dngr-gd",
                     "term" : "Dangerous goods",
-                    "definition" : "means products, materials or substances that are \n(a) regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n(b) classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)" },
+                    "definition" : "means products, materials or substances that are \n(a) regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] NFC), or\n(b) classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] NFC).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)" },
                    
                    { "id" : "dd-ld",
                     "term" : "Dead load",
@@ -6876,9 +6876,9 @@
                  { "type" : "alphabetic",
                   "items" : 
                   [ 
-                   { "content" : "regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or" },
+                   { "content" : "regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] NFC), or" },
                    
-                   { "content" : "classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] )." } ] },
+                   { "content" : "classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] NFC)." } ] },
                  
                  { "type" : "bulleted",
                   "items" : 
@@ -126393,7 +126393,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote113.para1",
-             "content" : "The times indicated in this Sentence are the durations for which emergency power must be available for a building under fire emergency conditions. Additional fuel for generators or additional battery capacity is required to handle normal testing of the equipment, as indicated in the [REF:standard:nrcc-nfc] . If the operation of emergency generators or batteries is intended for other than fire emergency conditions, such as power failures, fuel supplies or battery capacity must be increased to compensate for that use." } ] },
+             "content" : "The times indicated in this Sentence are the durations for which emergency power must be available for a building under fire emergency conditions. Additional fuel for generators or additional battery capacity is required to handle normal testing of the equipment, as indicated in the NFC. If the operation of emergency generators or batteries is intended for other than fire emergency conditions, such as power failures, fuel supplies or battery capacity must be increased to compensate for that use." } ] },
           
           { "id" : "nbc.divB.part3.appendix.appnote114",
            "type" : "application_note",
@@ -126801,7 +126801,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote124.para3",
-             "content" : "Since this Code regulates new construction, alterations and changes of occupancy, the construction of kiosks and similar structures in public corridors must take into consideration all the requirements that apply to the remainder of the building, including structural fire protection, construction type, finish materials, egress widths and sprinkler installations. Special activities of an occasional nature that were not contemplated in the original design of a public corridor and that represent only a temporary change in occupancy are regulated by the [REF:standard:nrcc-nfc] . These regulations include maintaining egress paths clear of obstructions, controlling combustible contents and providing measures to ensure quick response for firefighting." } ] },
+             "content" : "Since this Code regulates new construction, alterations and changes of occupancy, the construction of kiosks and similar structures in public corridors must take into consideration all the requirements that apply to the remainder of the building, including structural fire protection, construction type, finish materials, egress widths and sprinkler installations. Special activities of an occasional nature that were not contemplated in the original design of a public corridor and that represent only a temporary change in occupancy are regulated by the NFC. These regulations include maintaining egress paths clear of obstructions, controlling combustible contents and providing measures to ensure quick response for firefighting." } ] },
           
           { "id" : "nbc.divB.part3.appendix.appnote125",
            "type" : "application_note",
@@ -128665,7 +128665,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote238.para1",
-             "content" : "Refer to [REF:external:nfc:Subsection 4.2.12. of Division B of the ] [REF:standard:nrcc-nfc] for requirements regarding the storage of flammable and combustible liquids in individual self-service storage units." } ] },
+             "content" : "Refer to [REF:external:nfc:Subsection 4.2.12. of Division B of the ] NFC for requirements regarding the storage of flammable and combustible liquids in individual self-service storage units." } ] },
           
           { "id" : "nbc.divB.part3.appendix.appnote239",
            "type" : "application_note",
@@ -161618,7 +161618,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part4.appendix.appnote70.para1",
-             "content" : "The V_{s30} ranges in [REF:internal:nbc.divB.part4.sect1.subsect8.art4.table2:long:Table 4.1.8.4.-B] are retained from the [REF:standard:nrcc56190] . Where required for the application of a standard referenced in [REF:internal:nbc.divB.part4.sect1.subsect8:long] , the Site Class for a particular site designation X_{v} can be determined from [REF:internal:nbc.divB.part4.sect1.subsect8.art4.table2:long:Table 4.1.8.4.-B] on the basis of the value of V_{s30}. Further information on Site Class can be found in the Commentary entitled Design for Seismic Effects in the “Structural Commentaries (User's Guide – NBC 2020: Part 4 of Division B).”" } ] },
+             "content" : "The V_{s30} ranges in [REF:internal:nbc.divB.part4.sect1.subsect8.art4.table2:long:Table 4.1.8.4.-B] are retained from the NBC 2015. Where required for the application of a standard referenced in [REF:internal:nbc.divB.part4.sect1.subsect8:long] , the Site Class for a particular site designation X_{v} can be determined from [REF:internal:nbc.divB.part4.sect1.subsect8.art4.table2:long:Table 4.1.8.4.-B] on the basis of the value of V_{s30}. Further information on Site Class can be found in the Commentary entitled Design for Seismic Effects in the “Structural Commentaries (User's Guide – NBC 2020: Part 4 of Division B).”" } ] },
           
           { "id" : "nbc.divB.part4.appendix.appnote71",
            "type" : "application_note",
@@ -169292,7 +169292,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote19.para2",
-             "content" : "The requirements for air barrier systems in Part 5 address all of these issues, except the loss of airborne heat energy, which is an energy performance issue and, as such, is addressed in the [REF:standard:nrcc-necb] . Failure to manage the issues addressed in Part 5 can lead to serious health or safety hazards." },
+             "content" : "The requirements for air barrier systems in Part 5 address all of these issues, except the loss of airborne heat energy, which is an energy performance issue and, as such, is addressed in the NECB. Failure to manage the issues addressed in Part 5 can lead to serious health or safety hazards." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote19.para3",
@@ -171521,7 +171521,7 @@
                { "id" : "nbc.divB.part6.sect3.subsect2.art15.sent10",
                 "type" : "sentence",
                 "number" : 10,
-                "text" : "Drains, overflows and blow-downs shall be connected to the [REF:term:bldng:building]'s drainage system in accordance with [REF:external:npc:Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code]  [REF:standard:nrcc-npc] ." },
+                "text" : "Drains, overflows and blow-downs shall be connected to the [REF:term:bldng:building]'s drainage system in accordance with [REF:external:npc:Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code]  NPC." },
                
                { "id" : "nbc.divB.part6.sect3.subsect2.art15.sent11",
                 "type" : "sentence",
@@ -182324,7 +182324,7 @@
            
            { "type" : "paragraph",
             "id" : "nbc.divB.appendixC.div11.para2",
-            "content" : "In Canada, it has been customary to use the 15-minute rainfall that will probably be exceeded on an average of once in 10 years. The concentration time for small roofs is much less than 15 minutes and hence the design intensity will be exceeded more frequently than once in 10 years. The safety factors in the [REF:standard:nrcc-npc] will probably reduce the frequency to a reasonable value and, in addition, the occasional failure of a roof drainage system will not be particularly serious in most cases." },
+            "content" : "In Canada, it has been customary to use the 15-minute rainfall that will probably be exceeded on an average of once in 10 years. The concentration time for small roofs is much less than 15 minutes and hence the design intensity will be exceeded more frequently than once in 10 years. The safety factors in the NPC will probably reduce the frequency to a reasonable value and, in addition, the occasional failure of a roof drainage system will not be particularly serious in most cases." },
            
            { "type" : "paragraph",
             "id" : "nbc.divB.appendixC.div11.para3",
@@ -197733,11 +197733,11 @@
            
            { "type" : "paragraph",
             "id" : "nbc.divB.appendixC.div19.para5",
-            "content" : "In addition, the method of determining seismic hazard values for different site designations has changed. For the [REF:standard:nrcc56190] , the seismic hazard values were calculated for reference Site Class C, and the values for other site designations were determined by applying a site coefficient to the calculated values. For the NBC 2020, the seismic hazard values for each site designation were calculated directly." },
+            "content" : "In addition, the method of determining seismic hazard values for different site designations has changed. For the NBC 2015, the seismic hazard values were calculated for reference Site Class C, and the values for other site designations were determined by applying a site coefficient to the calculated values. For the NBC 2020, the seismic hazard values for each site designation were calculated directly." },
            
            { "type" : "paragraph",
             "id" : "nbc.divB.appendixC.div19.para6",
-            "content" : "For almost all locations, the revised GMMs are the most significant reason for changes in the seismic hazard values from the [REF:standard:nrcc56190] . In general, the estimated seismic hazard has increased across Canada." },
+            "content" : "For almost all locations, the revised GMMs are the most significant reason for changes in the seismic hazard values from the NBC 2015. In general, the estimated seismic hazard has increased across Canada." },
            
            { "type" : "paragraph",
             "id" : "nbc.divB.appendixC.div19.para7",
@@ -286650,7 +286650,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect20.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Portable extinguishers shall be installed in all [REF:term:bldng:buildings] , except within [REF:term:dwllng-n:dwelling units] , in conformance with the appropriate provincial or territorial regulations or municipal bylaws or, in the absence of such regulations or bylaws, the [REF:standard:nrcc-nfc] ." } ] },
+                "text" : "Portable extinguishers shall be installed in all [REF:term:bldng:buildings] , except within [REF:term:dwllng-n:dwelling units] , in conformance with the appropriate provincial or territorial regulations or municipal bylaws or, in the absence of such regulations or bylaws, the NFC." } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect20.art5",
               "type" : "article",
@@ -286760,7 +286760,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect21.art8.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Each construction camp [REF:term:bldng:building] shall be provided with portable fire extinguishers in conformance with the appropriate provincial or territorial regulations or municipal bylaws or, in the absence of such regulations or bylaws, in conformance with the [REF:standard:nrcc-nfc] ." } ] },
+                "text" : "Each construction camp [REF:term:bldng:building] shall be provided with portable fire extinguishers in conformance with the appropriate provincial or territorial regulations or municipal bylaws or, in the absence of such regulations or bylaws, in conformance with the NFC." } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect21.art9",
               "type" : "article",
@@ -342177,7 +342177,7 @@
                 [ 
                  { "type" : "original",
                   "effective_date" : "2024-03-08",
-                  "text" : "[REF:term:rvc-wtr-:Service water heaters] shall conform to appropriate provincial or territorial requirements or, in the absence of such requirements, to the [REF:standard:nrcc-npc] ." },
+                  "text" : "[REF:term:rvc-wtr-:Service water heaters] shall conform to appropriate provincial or territorial requirements or, in the absence of such requirements, to the NPC." },
                  
                  { "type" : "revision",
                   "revision_type" : "amendment",
@@ -347556,7 +347556,7 @@
                { "id" : "nbc.divBV2.part9.sect36.subsect1.art3.sent5",
                 "type" : "sentence",
                 "number" : 5,
-                "text" : "[REF:term:bldng:Buildings] containing non-[REF:term:rdntl-cc:residential occupancies] whose combined total [REF:term:flr-r:floor area] exceeds 300 m^{2} or [REF:term:mdm-hzrd:medium-hazard industrial occupancies] shall comply with the [REF:standard:nrcc-necb] ." },
+                "text" : "[REF:term:bldng:Buildings] containing non-[REF:term:rdntl-cc:residential occupancies] whose combined total [REF:term:flr-r:floor area] exceeds 300 m^{2} or [REF:term:mdm-hzrd:medium-hazard industrial occupancies] shall comply with the NECB." },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect1.art3.sent6",
                 "type" : "sentence",
@@ -352294,7 +352294,7 @@
                { "id" : "nbc.divBV2.part9.sect36.subsect3.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Where HVAC systems, equipment or techniques other than those described in this Subsection are used, the [REF:term:bldng:building] shall be designed and constructed in accordance with the energy efficiency requirements of the [REF:standard:nrcc-necb] ." } ] },
+                "text" : "Where HVAC systems, equipment or techniques other than those described in this Subsection are used, the [REF:term:bldng:building] shall be designed and constructed in accordance with the energy efficiency requirements of the NECB." } ] },
              
              { "id" : "nbc.divBV2.part9.sect36.subsect3.art2",
               "type" : "article",
@@ -352894,7 +352894,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the ] [REF:standard:nrcc-necb]" } ],
+                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the ] NECB" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 2 } ] },
@@ -352918,7 +352918,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "See Tables 5.2.12.1.-A to -P of Division B of the [REF:standard:nrcc-necb]" } ],
+                       "value" : "See Tables 5.2.12.1.-A to -P of Division B of the NECB" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 2 } ] },
@@ -353010,7 +353010,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the]  [REF:standard:nrcc-necb]" } ],
+                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the]  NECB" } ],
                      "align" : "center",
                      "colspan" : 2 } ] },
                   
@@ -353277,7 +353277,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the]  [REF:standard:nrcc-necb]" } ],
+                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the]  NECB" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "colspan" : 2 } ] },
@@ -353369,7 +353369,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the ] [REF:standard:nrcc-necb]" } ],
+                       "value" : "See [REF:external:necb:Tables 5.2.12.1.-A to -P of Division B of the ] NECB" } ],
                      "align" : "center",
                      "valign" : "middle",
                      "rowspan" : 2,
@@ -354490,7 +354490,7 @@
                { "id" : "nbc.divBV2.part9.sect36.subsect3.art11.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Service water heating systems that use solar thermal technology shall be installed in accordance with the [REF:standard:nrcc-npc] ." },
+                "text" : "Service water heating systems that use solar thermal technology shall be installed in accordance with the NPC." },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect3.art11.sent3",
                 "type" : "sentence",
@@ -354517,7 +354517,7 @@
                { "id" : "nbc.divBV2.part9.sect36.subsect4.art1.sent2",
                 "type" : "sentence",
                 "number" : 2,
-                "text" : "Where service water heating equipment or techniques other than those described in this Subsection are used, the [REF:term:bldng:building] shall be designed and constructed in accordance with the energy efficiency requirements of the [REF:standard:nrcc-necb] ." } ] },
+                "text" : "Where service water heating equipment or techniques other than those described in this Subsection are used, the [REF:term:bldng:building] shall be designed and constructed in accordance with the energy efficiency requirements of the NECB." } ] },
              
              { "id" : "nbc.divBV2.part9.sect36.subsect4.art2",
               "type" : "article",
@@ -547107,7 +547107,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote223.para1",
-             "content" : "The general theory of heat transfer is based on the concept of the thermal transmittance through an element over a given surface area under the temperature difference across the element (see [REF:internal:nbc.divBV2.part9.sect36.subsect1.art2.sent2:long] ). As such, the [REF:standard:nrcc-necb] requires all building envelope assemblies and components to comply with the maximum U-values (overall thermal transmittance) stated therein. However, the requirements in [REF:internal:nbc.divBV2.part9.sect36.subsect2:long] are stated in RSI values (effective thermal resistance values), which are the reciprocal of U-values." },
+             "content" : "The general theory of heat transfer is based on the concept of the thermal transmittance through an element over a given surface area under the temperature difference across the element (see [REF:internal:nbc.divBV2.part9.sect36.subsect1.art2.sent2:long] ). As such, the NECB requires all building envelope assemblies and components to comply with the maximum U-values (overall thermal transmittance) stated therein. However, the requirements in [REF:internal:nbc.divBV2.part9.sect36.subsect2:long] are stated in RSI values (effective thermal resistance values), which are the reciprocal of U-values." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote223.para2",
@@ -568951,7 +568951,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote267.para1",
-             "content" : "The minimum performance values stated in [REF:internal:nbc.divBV2.part9.sect36.subsect3.art10.table1:long] were developed based on values and technologies found in the Model National Energy Code of Canada for Houses 1997, the [REF:standard:nrcc-necb] , federal, provincial and territorial energy efficiency regulations as well as in applicable standards on equipment typically installed in housing and small buildings." },
+             "content" : "The minimum performance values stated in [REF:internal:nbc.divBV2.part9.sect36.subsect3.art10.table1:long] were developed based on values and technologies found in the Model National Energy Code of Canada for Houses 1997, the NECB, federal, provincial and territorial energy efficiency regulations as well as in applicable standards on equipment typically installed in housing and small buildings." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote267.para2",
@@ -568977,7 +568977,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote269.para1",
-             "content" : "The minimum performance values stated in [REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long] were developed based on values and technologies found in the Model National Energy Code of Canada for Houses 1997, the [REF:standard:nrcc-necb] , federal, provincial and territorial energy efficiency regulations as well as in applicable standards on equipment typically installed in housing and small buildings." },
+             "content" : "The minimum performance values stated in [REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long] were developed based on values and technologies found in the Model National Energy Code of Canada for Houses 1997, the NECB, federal, provincial and territorial energy efficiency regulations as well as in applicable standards on equipment typically installed in housing and small buildings." },
             
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote269.para2",
@@ -569014,7 +569014,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote272.para1",
-             "content" : "Although the word “house” is used in the terms “proposed house” and “reference house,” it is intended to include other types of residential buildings addressed by [REF:internal:nbc.divBV2.part9.sect36.subsect5:long] The terms “proposed building” and “reference building” used in the [REF:standard:nrcc-necb] apply to other types of buildings." } ] },
+             "content" : "Although the word “house” is used in the terms “proposed house” and “reference house,” it is intended to include other types of residential buildings addressed by [REF:internal:nbc.divBV2.part9.sect36.subsect5:long] The terms “proposed building” and “reference building” used in the NECB apply to other types of buildings." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote274",
            "type" : "application_note",
@@ -622496,7 +622496,7 @@
    { "location_id" : "nbc.divBV2.part9.sect31.subsect6.art2.sent1",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "[REF:term:rvc-wtr-:Service water heaters] shall conform to appropriate provincial or territorial requirements or, in the absence of such requirements, to the [REF:standard:nrcc-npc] ." },
+    "content" : "[REF:term:rvc-wtr-:Service water heaters] shall conform to appropriate provincial or territorial requirements or, in the absence of such requirements, to the NPC." },
    
    { "location_id" : "nbc.divBV2.part9.sect31.subsect6.art2.sent1",
     "type" : "revision",
@@ -623251,7 +623251,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "dngr-gd" : 
    { "term" : "Dangerous goods",
-    "definition" : "means products, materials or substances that are \n(a) regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n(b) classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)",
+    "definition" : "means products, materials or substances that are \n(a) regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] NFC), or\n(b) classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] NFC).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "dd-ld" : 
    { "term" : "Dead load",
