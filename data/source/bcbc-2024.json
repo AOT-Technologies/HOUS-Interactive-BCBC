@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T08:39:55.011+05:30",
+  "generated_timestamp" : "2026-11-11T08:44:13.51+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -351069,7 +351069,7 @@
                   "content" : "^{(4)} Unheated floors shall be insulated to the effective thermal resistance required in Table 9.36.2.8.-C under their full bottom surface including exterior edges." },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect2.art8.table3.note6",
-                  "content" : "^{(5)} Typically applies to floors-on-ground in full-height [REF:term:bmnt:basements] ." },
+                  "content" : "^{(5)} Typically applies to floors-on-ground in full-height [REF:term:bmnt:basements]" },
                  
                  { "id" : "nbc.divBV2.part9.sect36.subsect2.art8.table3.note7",
                   "content" : "^{(6)} Refers to undisturbed frost line before house is constructed." },
@@ -360370,7 +360370,7 @@
                 "table_notes" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect36.subsect6.art3.tableH.note1",
-                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C." } ],
+                  "content" : "See Sentence 1.1.3.1.(1) and Table C-2 in Appendix C" } ],
                 "structure" : 
                 { "columns" : 9,
                  "column_specs" : 
@@ -360415,7 +360415,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Amount of the Building's Conditioned Space Served by Space-Cooling Equipment" } ] },
+                       "value" : "Amount of the Building’s Conditioned Space Served by Space-Cooling Equipment" } ] },
                     
                     { "content" : 
                      [ 
