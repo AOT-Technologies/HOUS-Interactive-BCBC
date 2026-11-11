@@ -18428,6 +18428,18 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CL-055 CF-10488 | issue 1135 | 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code, as in the PDF, not the NBC's NPC. -->
+        <amendment id="bc-custom-9-36-3-11" sequence="2138"
+                   description="Sentence 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect3.art11.sent2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Service water heating systems that use solar thermal technology shall be installed in accordance with the Book II (Plumbing Systems) of this Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>
