@@ -88,6 +88,16 @@ li .structuredList--symbol .structuredList__row--variable {
   display: contents;
 }
 
+/* CLAUDE-AUTOFIX CL-057 CF-00798 | issue 559 | Organizations are plain lines, as in the PDF. */
+.structuredList__organization-row {
+  margin: 0 0 0.75rem;
+  text-indent: 1.5rem;
+}
+
+.structuredList__organization-abbreviation {
+  margin-right: 0.5rem;
+}
+
 .structuredList--organization {
   overflow-x: auto;
 }

@@ -74,33 +74,22 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
     case 'organization':
       return (
         <div className="structuredList structuredList--organization">
-          <table className="structuredList__table">
-            <caption className="structuredList__caption">Organizations</caption>
-            <thead>
-              <tr>
-                <th scope="col">Abbreviation</th>
-                <th scope="col">Organization</th>
-                <th scope="col">Website</th>
-              </tr>
-            </thead>
-            <tbody>
-              {list.items.map((item, index) => (
-                <tr key={item.id || `${list.type}-${index}`}>
-                  <td>{item.abbreviation}</td>
-                  <td>{item.fullName}</td>
-                  <td>
-                    {item.website ? (
-                      <a href={item.website} target="_blank" rel="noopener noreferrer">
-                        {item.website}
-                      </a>
-                    ) : (
-                      '-'
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {/* CLAUDE-AUTOFIX CL-057 CF-00798 | issue 559 | The PDF prints each organization as one plain line: "ABBR  Full name ( www.example.org)", with no table, caption or column headings. */}
+          {list.items.map((item, index) => (
+            <p key={item.id || `${list.type}-${index}`} className="structuredList__organization-row">
+              <span className="structuredList__organization-abbreviation">{item.abbreviation}</span>
+              {item.fullName ? ` ${item.fullName}` : ''}
+              {item.website ? (
+                <>
+                  {' ( '}
+                  <a href={item.website} target="_blank" rel="noopener noreferrer">
+                    {item.website.replace(/^https?:\/\//i, '')}
+                  </a>
+                  {')'}
+                </>
+              ) : null}
+            </p>
+          ))}
         </div>
       );
     case 'bibliography':
