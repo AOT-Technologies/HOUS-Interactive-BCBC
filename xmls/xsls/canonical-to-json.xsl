@@ -2493,7 +2493,8 @@
             </xsl:if>
         </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-029 CF-03052 | issue 1593 | A span table listed after another table reference (… or / and / to / , …) prints only its number, as in the PDF (Table 9.10.3.1.-A or 9.10.3.1.-B). -->
-        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.spectables\d+\.table\d+$') and normalize-space(id(@target)/number[1]) != '' and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])))">
+        <!-- CLAUDE-AUTOFIX CL-040 CF-04737 | issue 2568 | A span table reference with the lead words Span Table prints only its number, as in the PDF (Span Table 9.23.4.2.-A). -->
+        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.spectables\d+\.table\d+$') and normalize-space(id(@target)/number[1]) != '' and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])) or normalize-space(@pretext) = ('Span Table', 'Span Tables'))">
             <xsl:text>:</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
