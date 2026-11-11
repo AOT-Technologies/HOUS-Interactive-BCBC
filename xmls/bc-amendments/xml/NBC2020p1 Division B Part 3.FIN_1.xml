@@ -7552,6 +7552,7 @@ each 25 females.</find>
                                                    number="1"
                                                    vendor-id="es000257">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11552 Reference 0f8facb664 -->
+                        <!-- CLAUDE-AUTOFIX CF-10410 | issue 2548 | The See-Articles text belongs only at the end of the sentence (the See-also), as in the PDF; the typed duplicate after "in accordance with" is removed. -->
                         <text>Except as permitted by <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect8.art4.sent2"
                                                     display-type="short"
@@ -7559,7 +7560,7 @@ each 25 females.</find>
                                                <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect8.art16.sent1"
                                                     display-type="long"
-                                                    pretext="and"/>, the <ref type="term" target="fr-prtct">fire-protection rating</ref> of a <ref type="term" target="clr">closure</ref> shall be determined in accordance with (See Articles 3.1.8.17. to 3.1.8.19. for additional requirements for <ref type="term" target="clr">closures</ref>.)</text>
+                                                    pretext="and"/>, the <ref type="term" target="fr-prtct">fire-protection rating</ref> of a <ref type="term" target="clr">closure</ref> shall be determined in accordance with</text>
                                             <clause xml:id="nbc.divB.part3.sect1.subsect8.art4.sent1.clause1"
                                                     letter="a"
                                                     vendor-id="es000257a">
