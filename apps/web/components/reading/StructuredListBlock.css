@@ -35,6 +35,12 @@
   margin: 0;
 }
 
+/* CLAUDE-AUTOFIX CL-004 CF-00062 | issue 6961 | Defined terms are italic, not bold, in the PDF. */
+.structuredList--definition .structuredList__term {
+  font-weight: var(--typography-font-weights-regular);
+  font-style: italic;
+}
+
 .structuredList__description {
   margin: 0.25rem 0 0;
 }
