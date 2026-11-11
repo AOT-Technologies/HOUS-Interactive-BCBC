@@ -7157,6 +7157,7 @@ each 25 females.</find>
                                                    number="2"
                                                    vendor-id="es013849">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:6667 Reference 4118dc0883 -->
+                        <!-- CLAUDE-AUTOFIX CF-10408 | issue 2547 | The See-Note text belongs only at the end of the sentence (the See-also), as in the PDF; the typed duplicate after "consist of" is removed. -->
                         <text>Except as provided in <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect6.art9.sent3"
                                                     display-type="short"
@@ -7165,7 +7166,7 @@ each 25 females.</find>
                                                     target="nbc.divB.part3.sect1.subsect6.art9.sent5"
                                                     display-type="short"
                                                     pretext="to">(5)</ref>, cladding on an exterior wall assembly of a <ref type="term" target="bldng">building</ref> or part of a <ref type="term" target="bldng">building</ref> permitted to be of <ref type="term" target="ncps-mt-nstr">encapsulated mass
-                    timber construction</ref> is permitted to consist of (See Note A-3.1.6.9.(1) and (2).) </text>
+                    timber construction</ref> is permitted to consist of</text>
                                             <clause xml:id="nbc.divB.part3.sect1.subsect6.art9.sent2.clause1"
                                                     letter="a"
                                                     vendor-id="es013849a">
