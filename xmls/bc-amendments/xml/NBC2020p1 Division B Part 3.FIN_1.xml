@@ -9302,7 +9302,8 @@ each 25 females.</find>
                 </new-content>
             </insert>
         </amendment>
-        <amendment id="bc-qa-380e50c321" sequence="713" description="Issue 846 Missing Content at B.3.8.1.1.(4)">
+        <!-- CLAUDE-AUTOFIX CF-10416 | issue 411 | Sentence (4) is inserted after Sentence (3), so its sequence must follow 1116 (Sentence (3) moved there in c6d1e37); it is shown again, as in the PDF. -->
+        <amendment id="bc-qa-380e50c321" sequence="1117" description="Issue 846 Missing Content at B.3.8.1.1.(4)">
             <target type="position" parent-id="nbc.divB.part3.sect8.subsect1.art1" position="after" reference-id="nbc.divB.part3.sect8.subsect1.art1.sent3"/>
             <insert>
                 <new-content source="bc">
