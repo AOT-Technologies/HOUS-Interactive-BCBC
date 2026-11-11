@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T17:52:45.08+05:30",
+  "generated_timestamp" : "2026-11-11T19:05:33.303+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6591,7 +6591,7 @@
                    
                    { "id" : "mjr-ccpn",
                     "term" : "Major occupancy",
-                    "definition" : "means the principal [REF:term:ccpnc:occupancy] for which a [REF:term:bldng:building] or part thereof is used or intended to be used, and shall be deemed to include the subsidiary [REF:term:ccpnc:occupancies] that are an integral part of the principal [REF:term:ccpnc:occupancy] . The [REF:term:mjr-ccpn:major occupancy] classifications used in this Code are as follows:" },
+                    "definition" : "means the principal [REF:term:ccpnc:occupancy] for which a [REF:term:bldng:building] or part thereof is used or intended to be used, and shall be deemed to include the subsidiary [REF:term:ccpnc:occupancies] that are an integral part of the principal [REF:term:ccpnc:occupancy] . The [REF:term:mjr-ccpn:major occupancy] classifications used in this Code are as follows:\nA1 – Assembly occupancies intended for the production and viewing of the performing arts\nA2 – Assembly occupancies not elsewhere classified in Group A\nA3 – Assembly occupancies of the arena type\nA4 – Assembly occupancies in which the occupants are gathered in the open air\nB1 – Detention occupancies in which persons are under restraint or are incapable of self-preservation because of security measures not under their control\nB2 – Treatment occupancies\nB3 – Care occupancies\nC – Residential occupancies\nD – Business and personal services occupancies\nE – Mercantile occupancies\nF1 – High-hazard industrial occupancies\nF2 – Medium-hazard industrial occupancies\nF3 – Low-hazard industrial occupancies" },
                    
                    { "id" : "mnr-r-cn",
                     "term" : "Masonry or concrete chimney",
@@ -623527,7 +623527,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "mjr-ccpn" : 
    { "term" : "Major occupancy",
-    "definition" : "means the principal [REF:term:ccpnc:occupancy] for which a [REF:term:bldng:building] or part thereof is used or intended to be used, and shall be deemed to include the subsidiary [REF:term:ccpnc:occupancies] that are an integral part of the principal [REF:term:ccpnc:occupancy] . The [REF:term:mjr-ccpn:major occupancy] classifications used in this Code are as follows:",
+    "definition" : "means the principal [REF:term:ccpnc:occupancy] for which a [REF:term:bldng:building] or part thereof is used or intended to be used, and shall be deemed to include the subsidiary [REF:term:ccpnc:occupancies] that are an integral part of the principal [REF:term:ccpnc:occupancy] . The [REF:term:mjr-ccpn:major occupancy] classifications used in this Code are as follows:\nA1 – Assembly occupancies intended for the production and viewing of the performing arts\nA2 – Assembly occupancies not elsewhere classified in Group A\nA3 – Assembly occupancies of the arena type\nA4 – Assembly occupancies in which the occupants are gathered in the open air\nB1 – Detention occupancies in which persons are under restraint or are incapable of self-preservation because of security measures not under their control\nB2 – Treatment occupancies\nB3 – Care occupancies\nC – Residential occupancies\nD – Business and personal services occupancies\nE – Mercantile occupancies\nF1 – High-hazard industrial occupancies\nF2 – Medium-hazard industrial occupancies\nF3 – Low-hazard industrial occupancies",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "mnr-r-cn" : 
    { "term" : "Masonry or concrete chimney",
