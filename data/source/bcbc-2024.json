@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T20:22:46.569+05:30",
+  "generated_timestamp" : "2026-11-11T20:35:59.551+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -29825,7 +29825,7 @@
                    { "id" : "nbc.divB.part3.sect1.subsect6.art7.sent1.clause2.subclause5",
                     "type" : "subclause",
                     "number" : 5,
-                    "text" : "except as permitted by [REF:internal:nbc.divB.part3.sect1.subsect6.art7.sent1.clause2.subclause4:short] , the roof space does not contain any [REF:term:bldng:building] services." } ] } ] },
+                    "text" : "except as permitted by [REF:internal:nbc.divB.part3.sect1.subsect6.art7.sent1.clause2.subclause4:short:Subclause (b)(iv)] , the roof space does not contain any [REF:term:bldng:building] services." } ] } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art7.sent2",
                 "type" : "sentence",
@@ -135275,7 +135275,7 @@
                    { "id" : "nbc.divB.part4.sect1.subsect6.art16.sent5.clause2.subclause3",
                     "type" : "subclause",
                     "number" : 3,
-                    "text" : "S for all roof areas shall be taken as the sum of S on the panels, as derived from [REF:internal:nbc.divB.part4.sect1.subsect6.art16.sent5.clause1.subclause1:short] and shifted by a distance of w_{p} downslope onto the roof, where w_{p} is the panel width along the roof slope, and S on the roof areas, as derived from  Subclauses [REF:internal:nbc.divB.part4.sect1.subsect6.art16.sent5.clause1.subclause2:short] to [REF:internal:nbc.divB.part4.sect1.subsect6.art16.sent5.clause1.subclause4:short:(iv)]" } ] } ] },
+                    "text" : "S for all roof areas shall be taken as the sum of S on the panels, as derived from [REF:internal:nbc.divB.part4.sect1.subsect6.art16.sent5.clause1.subclause1:short:Subclause (a)(i)] and shifted by a distance of w_{p} downslope onto the roof, where w_{p} is the panel width along the roof slope, and S on the roof areas, as derived from  Subclauses [REF:internal:nbc.divB.part4.sect1.subsect6.art16.sent5.clause1.subclause2:short:(a)(ii)] to [REF:internal:nbc.divB.part4.sect1.subsect6.art16.sent5.clause1.subclause4:short:(a)(iv)]" } ] } ] },
                
                { "id" : "nbc.divB.part4.sect1.subsect6.art16.sent6",
                 "type" : "sentence",
@@ -143753,7 +143753,7 @@
                    { "id" : "nbc.divB.part4.sect1.subsect8.art11.sent3.clause4.subclause5",
                     "type" : "subclause",
                     "number" : 5,
-                    "text" : "for the purpose of calculating the deflections, the period without the upper limit specified in  Subclauses [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4.subclause1:short] to [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4.subclause4:short:(iv)] may be used, except that, for walls, coupled walls and wall-frame systems, T_{a} shall not exceed 4.0 s, and for moment-resisting frames, braced frames, and other systems, T_{a} shall not exceed 2.0 s." } ] } ],
+                    "text" : "for the purpose of calculating the deflections, the period without the upper limit specified in  Subclauses [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4.subclause1:short:(d)(i)] to [REF:internal:nbc.divB.part4.sect1.subsect8.art11.sent3.clause4.subclause4:short:(d)(iv)] may be used, except that, for walls, coupled walls and wall-frame systems, T_{a} shall not exceed 4.0 s, and for moment-resisting frames, braced frames, and other systems, T_{a} shall not exceed 2.0 s." } ] } ],
                 "see_also" : 
                 [ 
                  { "id" : "nbc.divB.part4.sect1.subsect8.art11.sent3.seealso",
@@ -280601,7 +280601,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect9.art8.sent3.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "the outlet boxes do not exceed an aggregate area of 0.016 m^{2} in any individual enclosure as described in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art8.sent3.clause1.subclause1:short] or any individual insulated space as described in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art8.sent3.clause1.subclause2:short] ." } ] },
+                  "text" : "the outlet boxes do not exceed an aggregate area of 0.016 m^{2} in any individual enclosure as described in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art8.sent3.clause1.subclause1:short:Subclause (a)(i)] or any individual insulated space as described in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art8.sent3.clause1.subclause2:short:Subclause (a)(ii)] ." } ] },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art8.sent4",
                 "type" : "sentence",
@@ -336375,7 +336375,7 @@
                    { "id" : "nbc.divBV2.part9.sect27.subsect3.art8.sent4.clause3.subclause2",
                     "type" : "subclause",
                     "number" : 2,
-                    "text" : "at the height defined in [REF:internal:nbc.divBV2.part9.sect27.subsect3.art8.sent4.clause3.subclause1:short] , extending to the face of the adjacent cladding," } ] },
+                    "text" : "at the height defined in [REF:internal:nbc.divBV2.part9.sect27.subsect3.art8.sent4.clause3.subclause1:short:Subclause (c)(i)] , extending to the face of the adjacent cladding," } ] },
                  
                  { "id" : "nbc.divBV2.part9.sect27.subsect3.art8.sent4.clause4",
                   "type" : "clause",
