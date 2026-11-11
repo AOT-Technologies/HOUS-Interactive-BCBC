@@ -66,7 +66,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1" number="1">
-                        <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent6" display-type="short"/>, <ref type="term" target="bldng">buildings</ref> shall comply with</text>
+                        <!-- CLAUDE-AUTOFIX CF-10454 | issue 2669 | The range ends at Sentence (8), as in the PDF (Sentences (2) to (8)); it pointed at Sentence (6). -->
+                        <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent8" display-type="short"/>, <ref type="term" target="bldng">buildings</ref> shall comply with</text>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1.clause1" letter="a">
                             <text>the prescriptive or trade-off requirements in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/> to <ref type="internal" target="nbc.divBV2.part9.sect38.subsect4" display-type="long"/>,</text>
                         </clause>
