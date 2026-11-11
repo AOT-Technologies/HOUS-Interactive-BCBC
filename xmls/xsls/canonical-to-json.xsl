@@ -3,7 +3,8 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
-                exclude-result-prefixes="xs fn">
+                xmlns:bcf="urn:bcbc:json-functions"
+                exclude-result-prefixes="xs fn bcf">
     
     <!-- ================================================================== -->
     <!-- CANONICAL NBC TO JSON TRANSFORM                                    -->
@@ -2216,21 +2217,25 @@
     </xsl:template>
     
     <xsl:template match="text()" mode="rich-text-json">
+        <!-- BBC-311: drop an "of Division X" that the preceding reference took into its link -->
+        <xsl:variable name="txt" select="
+            if (preceding-sibling::node()[1][self::ref][exists(bcf:div-suffix(.))])
+            then replace(., '^\s*\.?\s*of Division [A-C]', '') else string(.)"/>
         <!-- Normalize whitespace but preserve word boundaries -->
-        <!-- CLAUDE-AUTOFIX CL-017 CF-01112 | issue 9346 | Straight double quotes in the text print as curly quotes, as in the PDF. -->
-        <xsl:variable name="q-open" select="replace(., '([\s(\[&#8212;&#8211;])&quot;', '$1&#8220;')"/>
+        <!-- CLAUDE-AUTOFIX CL-017 CF-01112 | issue 9346 | Straight double quotes in the text print as curly quotes, as in the PDF (merged with develop: works on $txt, BBC-311). -->
+        <xsl:variable name="q-open" select="replace($txt, '([\s(\[&#8212;&#8211;])&quot;', '$1&#8220;')"/>
         <xsl:variable name="q-first" select="if (starts-with($q-open, '&quot;') and not(preceding-sibling::node())) then concat('&#8220;', substring($q-open, 2)) else $q-open"/>
         <!-- CLAUDE-AUTOFIX CL-017 CF-01112 | issue 9346 | The PDF prints straight quotes in Division C appendix note appnote12 (Letters of Assurance guidance), Table 9.23.13.7 note (3) and Division A Table 1.1.1.1 row 4, so those keep them (approved by user 2026-11-10). -->
         <xsl:variable name="keep-straight" as="xs:boolean" select="matches(string((ancestor::*[@xml:id])[last()]/@xml:id), '^(nbc\.divC\.part2\.appendix\.appnote12|nbc\.divBV2\.part9\.sect23\.subsect13\.art7\.table4\.note4|nbc\.divA\.part1\.sect1\.subsect1\.art1\.table1\.row4)(\.|$)')"/>
-        <xsl:variable name="normalized" select="if ($keep-straight) then normalize-space(.) else normalize-space(replace($q-first, '&quot;', '&#8221;'))"/>
+        <xsl:variable name="normalized" select="if ($keep-straight) then normalize-space($txt) else normalize-space(replace($q-first, '&quot;', '&#8221;'))"/>
         <xsl:if test="$normalized != ''">
             <!-- Add leading space if original text started with whitespace and we're not first -->
-            <xsl:if test="preceding-sibling::node() and matches(., '^\s')">
+            <xsl:if test="preceding-sibling::node() and matches($txt, '^\s')">
                 <xsl:text> </xsl:text>
             </xsl:if>
             <xsl:value-of select="$normalized"/>
             <!-- Add trailing space if original text ended with whitespace and we're not last -->
-            <xsl:if test="following-sibling::node() and matches(., '\s$')">
+            <xsl:if test="following-sibling::node() and matches($txt, '\s$')">
                 <xsl:text> </xsl:text>
             </xsl:if>
         </xsl:if>
@@ -2341,6 +2346,118 @@
         <xsl:next-match/>
         <xsl:text>&lt;/bold&gt;</xsl:text>
     </xsl:template>
+    <!-- ================================================================== -->
+    <!-- BBC-310 / BBC-311: reference label helpers                          -->
+    <!--  - BBC-310: second reference of a range ("Sentences (2) to (7)")    -->
+    <!--    gets its short label baked in, so the site does not repeat the   -->
+    <!--    type word ("to Sentence (7)").                                  -->
+    <!--  - BBC-311: a plain-text "of Division X" right after a reference   -->
+    <!--    is moved inside the link label.                                 -->
+    <!-- ================================================================== -->
+    <xsl:key name="bcf-by-id" match="*[@xml:id]" use="string(@xml:id)"/>
+
+    <xsl:function name="bcf:target" as="element()?">
+        <xsl:param name="ref" as="element()"/>
+        <xsl:sequence select="if ($ref/@target and root($ref) instance of document-node())
+                              then key('bcf-by-id', string($ref/@target), root($ref))[1] else ()"/>
+    </xsl:function>
+
+    <!-- Full number of a code element, e.g. 3.2.1.4. / 1.3.3.3.(2) / 2.2.7.2.(1)(a)(iv).
+         Empty for appendix / spec-table content and anything without a complete number. -->
+    <xsl:function name="bcf:full-number" as="xs:string?">
+        <xsl:param name="e" as="element()?"/>
+        <xsl:variable name="pt" select="string($e/ancestor-or-self::part[1]/@number)"/>
+        <xsl:variable name="sc" select="string($e/ancestor-or-self::section[1]/@number)"/>
+        <xsl:variable name="ss" select="string($e/ancestor-or-self::subsection[1]/@number)"/>
+        <xsl:variable name="ar" select="string($e/ancestor-or-self::article[1]/@number)"/>
+        <xsl:variable name="art" select="if ($pt != '' and $sc != '' and $ss != '' and $ar != '') then concat($pt, '.', $sc, '.', $ss, '.', $ar, '.') else ''"/>
+        <xsl:variable name="snt" select="$e/ancestor-or-self::sentence[1]"/>
+        <xsl:variable name="sent" select="if ($art != '' and $snt/@number) then concat($art, '(', $snt/@number, ')') else ''"/>
+        <xsl:variable name="cl" select="$e/ancestor-or-self::clause[1]"/>
+        <xsl:variable name="clause" select="if ($sent != '' and $cl/@letter) then concat($sent, '(', $cl/@letter, ')') else ''"/>
+        <xsl:variable name="n" select="local-name($e)"/>
+        <xsl:variable name="r" select="
+            if (empty($e) or matches(string($e/@xml:id), 'appendix|spectables')) then ''
+            else if ($n = 'part') then $pt
+            else if ($n = 'section' and $pt != '' and $sc != '') then concat($pt, '.', $sc, '.')
+            else if ($n = 'subsection' and $pt != '' and $sc != '' and $ss != '') then concat($pt, '.', $sc, '.', $ss, '.')
+            else if ($n = 'article') then $art
+            else if ($n = 'sentence') then $sent
+            else if ($n = 'clause') then $clause
+            else if ($n = 'subclause' and $clause != '' and $e/@number castable as xs:integer)
+                then concat($clause, '(', format-integer(xs:integer($e/@number), 'i'), ')')
+            else ''"/>
+        <xsl:sequence select="if ($r != '') then $r else ()"/>
+    </xsl:function>
+
+    <!-- Type word for a code element -->
+    <xsl:function name="bcf:type-word" as="xs:string">
+        <xsl:param name="e" as="element()?"/>
+        <xsl:variable name="n" select="local-name($e)"/>
+        <xsl:sequence select="
+            if ($n = 'part') then 'Part' else if ($n = 'section') then 'Section'
+            else if ($n = 'subsection') then 'Subsection' else if ($n = 'article') then 'Article'
+            else if ($n = 'sentence') then 'Sentence' else if ($n = 'clause') then 'Clause'
+            else if ($n = 'subclause') then 'Subclause' else ''"/>
+    </xsl:function>
+
+    <!-- Text that sits immediately before a reference (its pretext, or the preceding text node) -->
+    <xsl:function name="bcf:text-before" as="xs:string">
+        <xsl:param name="ref" as="element()"/>
+        <xsl:sequence select="if ($ref/@pretext) then string($ref/@pretext)
+                              else string($ref/preceding-sibling::node()[1][self::text()])"/>
+    </xsl:function>
+
+    <!-- BBC-310: short label for the second reference of a range "X to Y" / "X through Y" -->
+    <xsl:function name="bcf:range-label" as="xs:string?">
+        <xsl:param name="ref" as="element()"/>
+        <xsl:variable name="prev-ref" select="$ref/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref]
+                                              | $ref/preceding-sibling::*[1][self::ref][not($ref/preceding-sibling::node()[1][self::text() and normalize-space(.) != ''])]"/>
+        <xsl:variable name="before" select="bcf:text-before($ref)"/>
+        <xsl:variable name="between" select="string($ref/preceding-sibling::node()[1][self::text()])"/>
+        <xsl:variable name="is-range" select="$ref/@type = 'internal' and normalize-space($ref) = ''
+            and exists($ref/preceding-sibling::*[1][self::ref])
+            and (
+                (not($ref/@pretext) and matches($between, '^\s*(to|through)\s*$'))
+                or ($ref/@pretext and matches(string($ref/@pretext), '^\s*(to|through)\s*$') and normalize-space($between) = '')
+            )"/>
+        <xsl:variable name="t" select="if ($is-range) then bcf:target($ref) else ()"/>
+        <xsl:variable name="n" select="local-name($t)"/>
+        <xsl:variable name="full" select="bcf:full-number($t)"/>
+        <xsl:sequence select="
+            if (empty($full)) then ()
+            else if ($n = 'sentence') then concat('(', $t/@number, ')')
+            else if ($n = 'clause') then concat('(', $t/@letter, ')')
+            else if ($n = 'subclause') then replace($full, '^.*(\([^)]+\))$', '$1')
+            else if ($n = ('article', 'subsection', 'section')) then $full
+            else ()"/>
+    </xsl:function>
+
+    <!-- BBC-311: Division letter when the reference is directly followed by "of Division X"
+         and a link label can be built for it -->
+    <xsl:function name="bcf:div-suffix" as="xs:string?">
+        <xsl:param name="ref" as="element()"/>
+        <xsl:variable name="next" select="$ref/following-sibling::node()[1][self::text()]"/>
+        <xsl:variable name="ok" select="$ref/@type = 'internal' and exists($next)
+            and matches(string($next), '^\s*\.?\s*of Division [A-C]([^A-Za-z].*)?$', 's')
+            and not(contains(string($ref), 'of Division'))
+            and (normalize-space($ref) != '' or exists(bcf:full-number(bcf:target($ref))))"/>
+        <xsl:sequence select="if ($ok) then replace(string($next), '^\s*\.?\s*of Division ([A-C])([^A-Za-z].*)?$', '$1', 's') else ()"/>
+    </xsl:function>
+
+    <!-- BBC-311: full link label for a reference whose "of Division X" is moved into the link -->
+    <xsl:function name="bcf:division-label" as="xs:string">
+        <xsl:param name="ref" as="element()"/>
+        <xsl:param name="div" as="xs:string"/>
+        <xsl:variable name="t" select="bcf:target($ref)"/>
+        <xsl:variable name="word" select="bcf:type-word($t)"/>
+        <xsl:variable name="typed" select="$word != '' and matches(bcf:text-before($ref), concat('(^|\W)', $word, 's?\s*$'))"/>
+        <xsl:variable name="base" select="
+            if (normalize-space($ref) != '') then normalize-space($ref)
+            else if ($typed or $word = '') then bcf:full-number($t)
+            else concat($word, ' ', bcf:full-number($t))"/>
+        <xsl:sequence select="concat($base, ' of Division ', $div)"/>
+    </xsl:function>
 
     <xsl:template match="ref" mode="rich-text-json">
         <!-- Determine the next significant sibling (skipping whitespace-only text nodes) -->
@@ -2527,9 +2644,17 @@
         </xsl:if>
         <!-- Include display text if present, preserving trailing space -->
         <xsl:variable name="has-trailing-space" select="matches(., '\s$')"/>
-        <xsl:if test="normalize-space(.) != ''">
+        <!-- BBC-311: trailing "of Division X" moved into the label; BBC-310: range label -->
+        <xsl:variable name="div-suffix" select="bcf:div-suffix(.)"/>
+        <xsl:variable name="range-label" select="bcf:range-label(.)"/>
+        <!-- CLAUDE-AUTOFIX merge-develop | BBC-310 x CL-015 | The range label is not written again when our range-end label (CL-008/CL-022) or the CL-015 number label is already written, so the reference keeps one label (develop merge 2026-11-11). -->
+        <xsl:variable name="label" select="
+            if (exists($div-suffix)) then bcf:division-label(., $div-suffix)
+            else if (exists($range-label) and $range-end-label = '' and not(@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')]))) then $range-label
+            else normalize-space(.)"/>
+        <xsl:if test="$label != ''">
             <xsl:text>:</xsl:text>
-            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:value-of select="$label"/>
             <!-- Preserve trailing space if original text had one -->
             <xsl:if test="$has-trailing-space">
                 <xsl:text> </xsl:text>
@@ -2762,18 +2887,18 @@
         <xsl:apply-templates select="*" mode="mathml-to-latex"/>
     </xsl:template>
     
-    <!-- Numbers (in no namespace due to xmlns="") -->
-    <xsl:template match="*[local-name()='mn' and namespace-uri()='']" mode="mathml-to-latex">
+    <!-- Numbers (BBC-319: MathML children may be in the MathML namespace or in no namespace) -->
+    <xsl:template match="*[local-name()='mn']" mode="mathml-to-latex">
         <xsl:value-of select="."/>
     </xsl:template>
     
     <!-- Identifiers/variables (in no namespace) -->
-    <xsl:template match="*[local-name()='mi' and namespace-uri()='']" mode="mathml-to-latex">
+    <xsl:template match="*[local-name()='mi']" mode="mathml-to-latex">
         <xsl:value-of select="."/>
     </xsl:template>
     
     <!-- Operators (in no namespace) -->
-    <xsl:template match="*[local-name()='mo' and namespace-uri()='']" mode="mathml-to-latex">
+    <xsl:template match="*[local-name()='mo']" mode="mathml-to-latex">
         <xsl:choose>
             <xsl:when test=". = '∑'">\\sum</xsl:when>
             <xsl:when test=". = '∫'">\\int</xsl:when>
@@ -2787,14 +2912,14 @@
     </xsl:template>
     
     <!-- Text (in no namespace) -->
-    <xsl:template match="*[local-name()='mtext' and namespace-uri()='']" mode="mathml-to-latex">
+    <xsl:template match="*[local-name()='mtext']" mode="mathml-to-latex">
         <xsl:text>\text{</xsl:text>
         <xsl:value-of select="."/>
         <xsl:text>}</xsl:text>
     </xsl:template>
     
     <!-- Fractions (in no namespace) -->
-    <xsl:template match="*[local-name()='mfrac' and namespace-uri()='']" mode="mathml-to-latex">
+    <xsl:template match="*[local-name()='mfrac']" mode="mathml-to-latex">
         <xsl:text>\frac{</xsl:text>
         <xsl:apply-templates select="*[1]" mode="mathml-to-latex"/>
         <xsl:text>}{</xsl:text>
@@ -2844,6 +2969,29 @@
         <xsl:text>}</xsl:text>
     </xsl:template>
     
+    <!-- BBC-319: summation with limits (munderover) -> \sum_{i=1}^{n} -->
+    <xsl:template match="*[local-name()='munderover']" mode="mathml-to-latex">
+        <xsl:apply-templates select="*[1]" mode="mathml-to-latex"/>
+        <xsl:text>_{</xsl:text>
+        <xsl:apply-templates select="*[2]" mode="mathml-to-latex"/>
+        <xsl:text>}^{</xsl:text>
+        <xsl:apply-templates select="*[3]" mode="mathml-to-latex"/>
+        <xsl:text>}</xsl:text>
+    </xsl:template>
+
+    <!-- BBC-318: accent (mover), e.g. N with a bar -> \bar{N} -->
+    <xsl:template match="*[local-name()='mover']" mode="mathml-to-latex">
+        <xsl:variable name="acc" select="normalize-space(*[2])"/>
+        <xsl:choose>
+            <xsl:when test="$acc = ('&#xAF;', '&#x304;', '&#x305;', '&#x203E;')"><xsl:text>\bar{</xsl:text></xsl:when>
+            <xsl:when test="$acc = '^'"><xsl:text>\hat{</xsl:text></xsl:when>
+            <xsl:when test="$acc = '~'"><xsl:text>\tilde{</xsl:text></xsl:when>
+            <xsl:otherwise><xsl:text>\overset{</xsl:text><xsl:value-of select="$acc"/><xsl:text>}{</xsl:text></xsl:otherwise>
+        </xsl:choose>
+        <xsl:apply-templates select="*[1]" mode="mathml-to-latex"/>
+        <xsl:text>}</xsl:text>
+    </xsl:template>
+
     <!-- Row (grouping) -->
     <xsl:template match="*:mrow | mrow | *[local-name()='mrow']" mode="mathml-to-latex">
         <xsl:apply-templates select="*" mode="mathml-to-latex"/>
@@ -2860,8 +3008,8 @@
     <!-- MATHML TO PLAIN TEXT CONVERSION                                    -->
     <!-- ================================================================== -->
     
-    <!-- Match MathML elements with or without namespace -->
-    <xsl:template match="*[namespace-uri()='http://www.w3.org/1998/Math/MathML'] | math | *[local-name()='math']" mode="mathml-to-plaintext">
+    <!-- Match MathML elements with or without namespace (fallback: lower priority than the specific templates below, BBC-319) -->
+    <xsl:template match="*[namespace-uri()='http://www.w3.org/1998/Math/MathML'] | math | *[local-name()='math']" mode="mathml-to-plaintext" priority="-1">
         <xsl:apply-templates select="*" mode="mathml-to-plaintext"/>
     </xsl:template>
     
@@ -2895,6 +3043,29 @@
         <xsl:apply-templates select="*[2]" mode="mathml-to-plaintext"/>
     </xsl:template>
     
+    <!-- BBC-318/319: summation limits, sub+superscript and accent in plain text -->
+    <xsl:template match="*[local-name()='munderover']" mode="mathml-to-plaintext">
+        <xsl:apply-templates select="*[1]" mode="mathml-to-plaintext"/>
+        <xsl:text>_(</xsl:text>
+        <xsl:apply-templates select="*[2]" mode="mathml-to-plaintext"/>
+        <xsl:text>)^(</xsl:text>
+        <xsl:apply-templates select="*[3]" mode="mathml-to-plaintext"/>
+        <xsl:text>)</xsl:text>
+    </xsl:template>
+
+    <xsl:template match="*[local-name()='msubsup']" mode="mathml-to-plaintext">
+        <xsl:apply-templates select="*[1]" mode="mathml-to-plaintext"/>
+        <xsl:text>_</xsl:text>
+        <xsl:apply-templates select="*[2]" mode="mathml-to-plaintext"/>
+        <xsl:text>^</xsl:text>
+        <xsl:apply-templates select="*[3]" mode="mathml-to-plaintext"/>
+    </xsl:template>
+
+    <xsl:template match="*[local-name()='mover']" mode="mathml-to-plaintext">
+        <xsl:apply-templates select="*[1]" mode="mathml-to-plaintext"/>
+        <xsl:if test="normalize-space(*[2]) = ('&#xAF;', '&#x304;', '&#x305;', '&#x203E;')"><xsl:text>&#x304;</xsl:text></xsl:if>
+    </xsl:template>
+
     <xsl:template match="*:mrow | mrow | *[local-name()='mrow']" mode="mathml-to-plaintext">
         <xsl:apply-templates select="*" mode="mathml-to-plaintext"/>
     </xsl:template>
