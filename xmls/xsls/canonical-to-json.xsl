@@ -2770,6 +2770,25 @@
         <xsl:text>&#10;</xsl:text>
     </xsl:template>
 
+    <!-- CLAUDE-AUTOFIX CL-066 CF-00860 | issue 862 | A list inside a figure note is written out line by line, as in the PDF (AHJ = ..., NPARC = ...), instead of an empty [LIST] placeholder. -->
+    <xsl:template match="figure/note//list" mode="rich-text-json" priority="3">
+        <xsl:for-each select="item">
+            <xsl:text>&#10;</xsl:text>
+            <xsl:choose>
+                <xsl:when test="../@type = 'variable'">
+                    <xsl:apply-templates select="variable/node()" mode="rich-text-json"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:variable name="desc"><xsl:apply-templates select="description/node()" mode="rich-text-json"/></xsl:variable>
+                    <xsl:value-of select="replace(string($desc), '(\S)= ', '$1&#10;= ')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="node()" mode="rich-text-json"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+        <xsl:if test="following-sibling::node()[normalize-space(.) != '']"><xsl:text>&#10;</xsl:text></xsl:if>
+    </xsl:template>
+
     <!-- Skip all list types in rich-text-json mode - they're extracted as structured data -->
     <xsl:template match="list" mode="rich-text-json" priority="2">
         <xsl:text>[LIST:</xsl:text>
