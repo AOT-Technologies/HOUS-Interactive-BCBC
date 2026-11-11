@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T17:19:58.26+05:30",
+  "generated_timestamp" : "2026-11-11T17:32:31.373+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6255,7 +6255,7 @@
                    
                    { "id" : "ca-cc",
                     "term" : "Care occupancy",
-                    "definition" : "(Group B, Division 3) means the [REF:term:ccpnc:occupancy] or use of a [REF:term:bldng:building] or part thereof, other than a [REF:term:hm-tp-ccpnc:home-type care occupancy] , where [REF:term:ca:care] is provided to residents. (See [REF:internal:nbc.divA.part1.appendix.appnote7.div4:short] .)" },
+                    "definition" : "(Group B, Division 3) means the [REF:term:ccpnc:occupancy] or use of a [REF:term:bldng:building] or part thereof where [REF:term:ca:care] is provided to residents. (See [REF:internal:nbc.divA.part1.appendix.appnote7.div4:short] .)" },
                    
                    { "id" : "cvt-wll",
                     "term" : "Cavity wall",
@@ -623191,7 +623191,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "ca-cc" : 
    { "term" : "Care occupancy",
-    "definition" : "(Group B, Division 3) means the [REF:term:ccpnc:occupancy] or use of a [REF:term:bldng:building] or part thereof, other than a [REF:term:hm-tp-ccpnc:home-type care occupancy] , where [REF:term:ca:care] is provided to residents. (See [REF:internal:nbc.divA.part1.appendix.appnote7.div4:short] .)",
+    "definition" : "(Group B, Division 3) means the [REF:term:ccpnc:occupancy] or use of a [REF:term:bldng:building] or part thereof where [REF:term:ca:care] is provided to residents. (See [REF:internal:nbc.divA.part1.appendix.appnote7.div4:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "cvt-wll" : 
    { "term" : "Cavity wall",
