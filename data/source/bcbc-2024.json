@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-11T17:45:16.353+05:30",
+  "generated_timestamp" : "2026-11-11T17:48:07.489+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -6315,7 +6315,7 @@
                    
                    { "id" : "dngr-gd",
                     "term" : "Dangerous goods",
-                    "definition" : "means products, materials or substances that are \n• regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n• classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)" },
+                    "definition" : "means products, materials or substances that are \n(a) regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n(b) classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)" },
                    
                    { "id" : "dd-ld",
                     "term" : "Dead load",
@@ -6873,7 +6873,7 @@
                     "term" : "Walkway",
                     "definition" : "means a covered or roofed pedestrian thoroughfare used to connect 2 or more [REF:term:bldng:buildings] ." } ] },
                  
-                 { "type" : "bulleted",
+                 { "type" : "alphabetic",
                   "items" : 
                   [ 
                    { "content" : "regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or" },
@@ -623251,7 +623251,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "dngr-gd" : 
    { "term" : "Dangerous goods",
-    "definition" : "means products, materials or substances that are \n• regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n• classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)",
+    "definition" : "means products, materials or substances that are \n(a) regulated by TC SOR\/2001-286, “Transportation of Dangerous Goods Regulations (TDGR)” (see [REF:external:nfc:Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ), or\n(b) classified as controlled products under HC SOR\/2015-17, “Hazardous Products Regulations” (see [REF:external:nfc:Note A-Table 3.2.7.1. of Division B of the ] [REF:standard:nrcc-nfc] ).\n(See [REF:internal:nbc.divA.part1.appendix.appnote7.div5:short] .)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "dd-ld" : 
    { "term" : "Dead load",
