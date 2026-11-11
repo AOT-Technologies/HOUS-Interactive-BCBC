@@ -9519,10 +9519,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent2" number="2">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.sent3" display-type="short"/>, the minimum total length of all <ref type="term" target="br-wl-pnl">braced wall panels</ref> in each direction shall be determined in accordance with</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent2.clause1" letter="a">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table1" display-type="long"/> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.5 kPa</measurement>, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table1" display-type="long">Table 9.23.13.11-A</ref> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.5 kPa</measurement>, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent2.clause2" letter="b">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table2" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table2" display-type="long">Table 9.23.13.11-B</ref>.</text>
                             </clause>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1">
@@ -9715,10 +9717,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent3" number="3">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.sent4" display-type="short"/>, the minimum total length of all <ref type="term" target="br-wl-pnl">braced wall panels</ref> in each <ref type="term" target="br-wl-bnd">braced wall band</ref> in the direction perpendicular to a single <ref type="term" target="bldng">building</ref> face partially clad with masonry veneer shall be determined in accordance with</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent3.clause1" letter="a">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table3" display-type="long"/> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.50 kPa</measurement>, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table3" display-type="long">Table 9.23.13.11-C</ref> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.50 kPa</measurement>, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent3.clause2" letter="b">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table4" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table4" display-type="long">Table 9.23.13.11-D</ref></text>
                             </clause>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3">
