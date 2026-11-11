@@ -2421,12 +2421,13 @@
                 (not($ref/@pretext) and matches($between, '^\s*(to|through)\s*$'))
                 or ($ref/@pretext and matches(string($ref/@pretext), '^\s*(to|through)\s*$') and normalize-space($between) = '')
             )"/>
-        <xsl:variable name="t" select="if ($is-range) then bcf:target($ref) else ()"/>
+        <!-- CLAUDE-AUTOFIX CL-041 CF-10451 | issue 2621 | Range label only when both ends are the same kind (Clause ... to Article is not a range), and a sentence is numbered from its id, as in the PDF (Sentences (3) to (6)). -->
+        <xsl:variable name="t" select="if ($is-range and local-name(bcf:target($ref/preceding-sibling::*[1][self::ref])) = local-name(bcf:target($ref))) then bcf:target($ref) else ()"/>
         <xsl:variable name="n" select="local-name($t)"/>
         <xsl:variable name="full" select="bcf:full-number($t)"/>
         <xsl:sequence select="
             if (empty($full)) then ()
-            else if ($n = 'sentence') then concat('(', $t/@number, ')')
+            else if ($n = 'sentence') then concat('(', replace(string($ref/@target), '^.*\.sent(\d+).*$', '$1'), ')')
             else if ($n = 'clause') then concat('(', $t/@letter, ')')
             else if ($n = 'subclause') then replace($full, '^.*(\([^)]+\))$', '$1')
             else if ($n = ('article', 'subsection', 'section')) then $full
@@ -2648,9 +2649,10 @@
         <xsl:variable name="div-suffix" select="bcf:div-suffix(.)"/>
         <xsl:variable name="range-label" select="bcf:range-label(.)"/>
         <!-- CLAUDE-AUTOFIX merge-develop | BBC-310 x CL-015 | The range label is not written again when our range-end label (CL-008/CL-022) or the CL-015 number label is already written, so the reference keeps one label (develop merge 2026-11-11). -->
+        <!-- CLAUDE-AUTOFIX CL-041 CF-10451 | issue 2621 | No range label where our range-end rule (CL-008/CL-022) already handles the range, so the plural Sentences and the list after it stay as in the PDF. -->
         <xsl:variable name="label" select="
             if (exists($div-suffix)) then bcf:division-label(., $div-suffix)
-            else if (exists($range-label) and $range-end-label = '' and not(@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')]))) then $range-label
+            else if (exists($range-label) and $range-end-label = '' and not($is-range-end) and not(@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')]))) then $range-label
             else normalize-space(.)"/>
         <xsl:if test="$label != ''">
             <xsl:text>:</xsl:text>
