@@ -7042,6 +7042,7 @@ each 25 females.</find>
                                                    vendor-id="es013838">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:740 Reference bd2615ab41 -->
                         <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:8500 Punctuation c3c22df8d8 -->
+                        <!-- CLAUDE-AUTOFIX CF-10406 | issue 320 | The number 3.1.6.3.(4) is the reference's own text, so it prints with no space and links as a whole, as in the PDF. -->
                         <text>Except as provided in <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect6.art4.sent3"
                                                     display-type="short"
@@ -7049,9 +7050,9 @@ each 25 females.</find>
                                                <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect6.art4.sent6"
                                                     display-type="short"
-                                                    pretext="to">(6)</ref>, 3.1.6.3.<ref type="internal"
+                                                    pretext="to">(6)</ref>, <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect6.art3.sent4"
-                                                    display-type="number"/>
+                                                    display-type="number">3.1.6.3.(4)</ref>
                                                <ref type="internal"
                                                     target="nbc.divB.part3.sect1.subsect6.art16.sent2"
                                                     display-type="long"
