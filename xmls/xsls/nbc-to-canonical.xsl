@@ -1469,17 +1469,17 @@
   <!-- ================================================================== -->
 
   <!-- Fraction display (fd) - wrapper for fractions -->
-  <xsl:template match="fd" mode="mathml">
+  <xsl:template match="fd" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:apply-templates select="node()" mode="mathml" />
   </xsl:template>
 
   <!-- Fraction line (fl) - numerator or denominator -->
-  <xsl:template match="fl" mode="mathml">
+  <xsl:template match="fl" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:apply-templates select="node()" mode="mathml" />
   </xsl:template>
 
   <!-- Fraction (fr) with numerator (nu) and denominator (de) -->
-  <xsl:template match="fr" mode="mathml">
+  <xsl:template match="fr" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mfrac>
       <xsl:apply-templates select="nu" mode="mathml" />
       <xsl:apply-templates select="de" mode="mathml" />
@@ -1487,86 +1487,181 @@
   </xsl:template>
 
   <!-- Numerator -->
-  <xsl:template match="nu" mode="mathml">
+  <xsl:template match="nu" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mrow>
       <xsl:apply-templates select="node()" mode="mathml" />
     </mrow>
   </xsl:template>
 
   <!-- Denominator -->
-  <xsl:template match="de" mode="mathml">
+  <xsl:template match="de" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mrow>
       <xsl:apply-templates select="node()" mode="mathml" />
     </mrow>
   </xsl:template>
 
   <!-- Roman (normal) text -->
-  <xsl:template match="rm" mode="mathml">
+  <xsl:template match="rm" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:apply-templates select="node()" mode="mathml" />
   </xsl:template>
 
   <!-- Italic text -->
-  <xsl:template match="it" mode="mathml">
+  <xsl:template match="it" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mi>
       <xsl:apply-templates select="node()" mode="mathml" />
     </mi>
   </xsl:template>
 
   <!-- Bold text -->
-  <xsl:template match="bf" mode="mathml">
+  <xsl:template match="bf" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mi mathvariant="bold">
       <xsl:apply-templates select="node()" mode="mathml" />
     </mi>
   </xsl:template>
 
-  <!-- Superscript -->
-  <xsl:template match="sup" mode="mathml">
-    <msup>
-      <mrow />
-      <mrow>
-        <xsl:apply-templates select="node()" mode="mathml" />
-      </mrow>
-    </msup>
+  <!-- BBC-319: Superscript (sup) / subscript (inf) attached to their base.
+       The base is the character just before the script (last letter, or trailing number),
+       or the element just before it (Greek letter g, fence fen, accent a, it, bf, rad).
+       A sup directly followed by an inf (or the reverse) becomes one msubsup.
+       Previously the base was an empty mrow, so MathJax drew the script detached from the letter. -->
+  <xsl:function name="bc:script-role" as="xs:string">
+    <xsl:param name="s" as="element()" />
+    <xsl:variable name="p" select="$s/preceding-sibling::node()[1]" />
+    <xsl:sequence select="
+      if ($p[self::sup or self::inf] and local-name($p) != local-name($s) and bc:script-role($p) != 'second') then 'second'
+      else if ($p[self::text()] and matches(string($p), '[\p{L}0-9.]$')) then 'text'
+      else if ($p[self::g or self::fen or self::it or self::bf or self::a or self::rad]) then 'elem'
+      else 'none'" />
+  </xsl:function>
+
+  <!-- Base text taken from the end of the preceding text: trailing number, else last letter -->
+  <xsl:function name="bc:base-text" as="xs:string">
+    <xsl:param name="t" as="xs:string" />
+    <xsl:sequence select="
+      if (matches($t, '[0-9][0-9.]*$')) then replace($t, '^.*?([0-9][0-9.]*)$', '$1', 's')
+      else replace($t, '^.*(\p{L})$', '$1', 's')" />
+  </xsl:function>
+
+  <xsl:template match="sup | inf" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
+    <xsl:variable name="role" select="bc:script-role(.)" />
+    <xsl:if test="$role != 'second'">
+      <xsl:variable name="p" select="preceding-sibling::node()[1]" />
+      <xsl:variable name="pair" select="following-sibling::node()[1][(self::sup or self::inf) and local-name() != local-name(current())]" />
+      <xsl:variable name="sub" select="if (self::inf) then . else $pair" />
+      <xsl:variable name="sup" select="if (self::sup) then . else $pair" />
+      <xsl:variable name="base">
+        <xsl:choose>
+          <xsl:when test="$role = 'text'">
+            <xsl:call-template name="math-text">
+              <xsl:with-param name="raw" select="bc:base-text(string($p))" />
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:when test="$role = 'elem'">
+            <xsl:apply-templates select="$p" mode="mathml">
+              <xsl:with-param name="as-base" select="true()" />
+            </xsl:apply-templates>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:choose>
+        <xsl:when test="exists($pair)">
+          <msubsup>
+            <mrow><xsl:copy-of select="$base" /></mrow>
+            <mrow><xsl:apply-templates select="$sub/node()" mode="mathml" /></mrow>
+            <mrow><xsl:apply-templates select="$sup/node()" mode="mathml" /></mrow>
+          </msubsup>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:element name="{if (self::inf) then 'msub' else 'msup'}" namespace="http://www.w3.org/1998/Math/MathML">
+            <mrow><xsl:copy-of select="$base" /></mrow>
+            <mrow><xsl:apply-templates select="node()" mode="mathml" /></mrow>
+          </xsl:element>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
   </xsl:template>
 
-  <!-- Subscript (inf in Arbortext) -->
-  <xsl:template match="inf" mode="mathml">
-    <msub>
-      <mrow />
-      <mrow>
-        <xsl:apply-templates select="node()" mode="mathml" />
-      </mrow>
-    </msub>
+  <!-- BBC-319: an element used as a script base is written by the script template, not here -->
+  <xsl:template match="*[self::g or self::fen or self::it or self::bf or self::a or self::rad][following-sibling::node()[1][self::sup or self::inf]]" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML" priority="10">
+    <xsl:param name="as-base" select="false()" />
+    <xsl:if test="$as-base">
+      <xsl:next-match />
+    </xsl:if>
   </xsl:template>
+
+  <!-- BBC-318: <f> is the inline-formula wrapper; output its content only (was shown as "[f]") -->
+  <xsl:template match="f" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
+    <xsl:apply-templates select="node()" mode="mathml" />
+  </xsl:template>
+
+  <!-- BBC-318: <a> accent group, e.g. <a><ac>N</ac><ac>&#x304;</ac></a> = N with a bar (was shown as "[a]") -->
+  <xsl:template match="a" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
+    <xsl:choose>
+      <xsl:when test="count(ac) = 2">
+        <mover accent="true">
+          <mrow><xsl:apply-templates select="ac[1]/node()" mode="mathml" /></mrow>
+          <mo><xsl:value-of select="bc:accent-char(normalize-space(ac[2]))" /></mo>
+        </mover>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="node()" mode="mathml" />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Combining accent mark to its spacing form for <mo> -->
+  <xsl:function name="bc:accent-char" as="xs:string">
+    <xsl:param name="c" as="xs:string" />
+    <xsl:sequence select="
+      if ($c = ('&#x304;', '&#x305;', '&#xAF;')) then '&#xAF;'
+      else if ($c = '&#x302;') then '^'
+      else if ($c = '&#x303;') then '~'
+      else if ($c = '&#x307;') then '&#x2D9;'
+      else if ($c = '&#x308;') then '&#xA8;'
+      else if ($c = '&#x20D7;') then '&#x2192;'
+      else $c" />
+  </xsl:function>
 
   <!-- Radical (square root) -->
-  <xsl:template match="rad" mode="mathml">
+  <xsl:template match="rad" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <msqrt>
       <xsl:apply-templates select="rcd" mode="mathml" />
     </msqrt>
   </xsl:template>
 
   <!-- Radicand (content under radical) -->
-  <xsl:template match="rcd" mode="mathml">
+  <xsl:template match="rcd" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mrow>
       <xsl:apply-templates select="node()" mode="mathml" />
     </mrow>
   </xsl:template>
 
   <!-- Summation -->
-  <xsl:template match="sum" mode="mathml">
-    <mo>∑</mo>
-    <xsl:apply-templates select="node()" mode="mathml" />
+  <!-- BBC-319: limits (ll/ul) attached to the summation sign (were detached empty-base scripts) -->
+  <xsl:template match="sum" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
+    <xsl:choose>
+      <xsl:when test="ll and ul">
+        <munderover>
+          <mo>∑</mo>
+          <mrow><xsl:apply-templates select="ll/node()" mode="mathml" /></mrow>
+          <mrow><xsl:apply-templates select="ul/node()" mode="mathml" /></mrow>
+        </munderover>
+      </xsl:when>
+      <xsl:otherwise>
+        <mo>∑</mo>
+        <xsl:apply-templates select="node()" mode="mathml" />
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- Integral -->
-  <xsl:template match="int" mode="mathml">
+  <xsl:template match="int" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mo>∫</mo>
     <xsl:apply-templates select="node()" mode="mathml" />
   </xsl:template>
 
   <!-- Lower limit -->
-  <xsl:template match="ll" mode="mathml">
+  <xsl:template match="ll" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <msub>
       <mrow />
       <mrow>
@@ -1576,7 +1671,7 @@
   </xsl:template>
 
   <!-- Upper limit -->
-  <xsl:template match="ul" mode="mathml">
+  <xsl:template match="ul" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <msup>
       <mrow />
       <mrow>
@@ -1587,7 +1682,7 @@
 
   <!-- Grouping (g) - Greek letter mapping -->
   <!-- In Arbortext, <g> maps Latin letters to Greek equivalents -->
-  <xsl:template match="g" mode="mathml">
+  <xsl:template match="g" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:variable name="letter" select="normalize-space(.)" />
     <mi>
       <xsl:choose>
@@ -1627,7 +1722,7 @@
   </xsl:template>
 
   <!-- Fence (fen) - parentheses, brackets, etc. -->
-  <xsl:template match="fen" mode="mathml">
+  <xsl:template match="fen" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <!-- Opening fence -->
     <xsl:if test="@lp">
       <mo>
@@ -1647,17 +1742,17 @@
   </xsl:template>
 
   <!-- Left parenthesis -->
-  <xsl:template match="rp[@type='lp']" mode="mathml">
+  <xsl:template match="rp[@type='lp']" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mo>(</mo>
   </xsl:template>
 
   <!-- Right parenthesis -->
-  <xsl:template match="rp[@type='rp']" mode="mathml">
+  <xsl:template match="rp[@type='rp']" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mo>)</mo>
   </xsl:template>
 
   <!-- Generic rp (parenthesis) - handles closing fences -->
-  <xsl:template match="rp" mode="mathml">
+  <xsl:template match="rp" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mo>
       <xsl:choose>
         <xsl:when test="@post='par'">)</xsl:when>
@@ -1673,17 +1768,17 @@
   </xsl:template>
 
   <!-- Horizontal space -->
-  <xsl:template match="hsp" mode="mathml">
+  <xsl:template match="hsp" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mspace width="0.5em" />
   </xsl:template>
 
   <!-- Vertical mark (vmk, vmkr) - typically for absolute value or norms -->
-  <xsl:template match="vmk | vmkr" mode="mathml">
+  <xsl:template match="vmk | vmkr" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mo>|</mo>
   </xsl:template>
 
   <!-- Accent (ac) -->
-  <xsl:template match="ac" mode="mathml">
+  <xsl:template match="ac" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mover>
       <mrow>
         <xsl:apply-templates select="node()" mode="mathml" />
@@ -1693,15 +1788,27 @@
   </xsl:template>
 
   <!-- Reference (rf) - typically for equation references -->
-  <xsl:template match="rf" mode="mathml">
+  <xsl:template match="rf" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
     <mtext>
       <xsl:apply-templates select="node()" mode="mathml" />
     </mtext>
   </xsl:template>
 
   <!-- Text nodes in MathML - wrap in appropriate elements -->
-  <xsl:template match="text()" mode="mathml">
-    <xsl:variable name="text" select="normalize-space(.)" />
+  <!-- BBC-319: when a sup/inf follows, its base character is written by the script template -->
+  <xsl:template match="text()" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
+    <xsl:variable name="next" select="following-sibling::node()[1]" />
+    <xsl:variable name="t" select="string(.)" />
+    <xsl:call-template name="math-text">
+      <xsl:with-param name="raw" select="
+        if ($next[self::sup or self::inf] and bc:script-role($next) = 'text')
+        then substring($t, 1, string-length($t) - string-length(bc:base-text($t))) else $t" />
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template name="math-text" xmlns="http://www.w3.org/1998/Math/MathML">
+    <xsl:param name="raw" as="xs:string" />
+    <xsl:variable name="text" select="normalize-space($raw)" />
     <xsl:if test="$text != ''">
       <xsl:choose>
         <!-- Operators -->
@@ -1744,9 +1851,10 @@
     </xsl:if>
   </xsl:template>
 
-  <!-- Default: pass through unknown equation elements -->
-  <xsl:template match="*" mode="mathml">
-    <mtext>[<xsl:value-of select="local-name()" />]</mtext>
+  <!-- Default: unknown equation elements - keep their content, drop the tag.
+       BBC-318: previously printed the tag name as text ("[f]", "[a]"); now logged in the build output. -->
+  <xsl:template match="*" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
+    <xsl:message>[nbc-to-canonical] No MathML template for &lt;<xsl:value-of select="local-name()" />&gt; - content kept, tag dropped</xsl:message>
     <xsl:apply-templates select="node()" mode="mathml" />
   </xsl:template>
 
