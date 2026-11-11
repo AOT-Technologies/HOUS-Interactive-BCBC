@@ -4093,5 +4093,24 @@ described in <ref type="internal"
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CL-055 CF-10482 | issue 457 | Notes A-3.3. and A-3.9.3.1.(1) name the British Columbia Fire Code, as in the PDF, not the NBC's NFC (also CF-10483). -->
+        <amendment id="bc-custom-a-3-3-para3" sequence="833"
+                   description="Note A-3.3. refers to the British Columbia Fire Code">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote124.para3"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote124.para3">Since this Code regulates new construction, alterations and changes of occupancy, the construction of kiosks and similar structures in public corridors must take into consideration all the requirements that apply to the remainder of the building, including structural fire protection, construction type, finish materials, egress widths and sprinkler installations. Special activities of an occasional nature that were not contemplated in the original design of a public corridor and that represent only a temporary change in occupancy are regulated by the British Columbia Fire Code. These regulations include maintaining egress paths clear of obstructions, controlling combustible contents and providing measures to ensure quick response for firefighting.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-a-3-9-3-1" sequence="834"
+                   description="Note A-3.9.3.1.(1) refers to the British Columbia Fire Code">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote238.para1"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote238.para1">Refer to <ref type="external" target="nfc">Subsection 4.2.12. of Division B of the </ref> British Columbia Fire Code for requirements regarding the storage of flammable and combustible liquids in individual self-service storage units.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 </bc-overlay>
