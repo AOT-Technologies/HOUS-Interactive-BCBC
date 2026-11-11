@@ -51,6 +51,12 @@
   text-align: center;
 }
 
+/* CLAUDE-AUTOFIX CL-005 CF-10515 | issue 3687 | The 2 Division A tables 1.1.1.1.(5) and (6) print the caption "Forming part of ..." in plain type in the PDF. */
+.table-block[id="nbc.divA.part1.sect1.subsect1.art1.table1"] .table-block__forming-part,
+.table-block[id="nbc.divA.part1.sect1.subsect1.art1.table2"] .table-block__forming-part {
+  font-weight: var(--typography-font-weights-regular, 400);
+}
+
 /* CLAUDE-AUTOFIX CL-005 CF-00877 | issue 7286 | These 7 tables print the "Forming Part of" line in plain type in the PDF (Tables 3.4.3.2.-B, 3.5.3.1., 9.36.6.3.-C to -G), so they stay plain. */
 .table-block[id="nbc.divB.part3.sect4.subsect3.art2.table2"] .table-block__forming-part,
 .table-block[id="nbc.divB.part3.sect5.subsect3.art1.table1"] .table-block__forming-part,
