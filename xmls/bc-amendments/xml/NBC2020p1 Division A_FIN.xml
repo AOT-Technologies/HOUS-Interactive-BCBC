@@ -5369,6 +5369,19 @@ building on a flat site.</paragraph>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00052 | issue 34 | The major occupancy classifications A1 to F3 are listed after "are as follows:", one per line, as in the PDF. -->
+        <amendment id="bc-custom-1412-mjr-ccpn" sequence="203"
+                   description="Major occupancy definition with its list of classifications A1 to F3 as in the BC Building Code">
+            <target type="canonical-id" id="mjr-ccpn"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="mjr-ccpn">
+                        <term>Major occupancy</term>
+                        <definition>means the principal <ref type="term" target="ccpnc">occupancy</ref> for which a <ref type="term" target="bldng">building</ref> or part thereof is used or intended to be used, and shall be deemed to include the subsidiary <ref type="term" target="ccpnc">occupancies</ref> that are an integral part of the principal <ref type="term" target="ccpnc">occupancy</ref>. The <ref type="term" target="mjr-ccpn">major occupancy</ref> classifications used in this Code are as follows:<lb/>A1 – Assembly occupancies intended for the production and viewing of the performing arts<lb/>A2 – Assembly occupancies not elsewhere classified in Group A<lb/>A3 – Assembly occupancies of the arena type<lb/>A4 – Assembly occupancies in which the occupants are gathered in the open air<lb/>B1 – Detention occupancies in which persons are under restraint or are incapable of self-preservation because of security measures not under their control<lb/>B2 – Treatment occupancies<lb/>B3 – Care occupancies<lb/>C – Residential occupancies<lb/>D – Business and personal services occupancies<lb/>E – Mercantile occupancies<lb/>F1 – High-hazard industrial occupancies<lb/>F2 – Medium-hazard industrial occupancies<lb/>F3 – Low-hazard industrial occupancies</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 
 </bc-overlay>
