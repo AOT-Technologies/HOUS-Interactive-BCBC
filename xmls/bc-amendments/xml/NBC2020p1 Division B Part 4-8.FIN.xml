@@ -208,7 +208,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part5.sect9.subsect2.art2.sent4" number="4">
-                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long"/> may be used instead of the loads and procedures set out in the standard. (See Note 5.8.2.2.(4).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-03431 | issue 9956 | The PDF prints Section 5.2 without a final period here, so the reference carries its own label. -->
+                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long">Section 5.2</ref> may be used instead of the loads and procedures set out in the standard. (See Note 5.8.2.2.(4).)</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -653,7 +654,9 @@
                             <text>except as provided in <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent3" display-type="short"/>, be constructed of <ref type="term" target="ncmbtbl">noncombustible</ref> materials compatible with and chemically resistant to the <ref type="term" target="dngr-gd">dangerous goods</ref> vapours and particles being exhausted, and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1.clause2" letter="b">
-                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust duct</ref> system.</text>
+                            <!-- CLAUDE-AUTOFIX CF-03750 | issue 9962 | The PDF reads exhaust ducts (the defined term plus s), not exhaust duct system. -->
+                            <!-- CLAUDE-AUTOFIX CF-10389 | issue 5303 | The PDF shows the whole word exhaust ducts as the defined term (italic), so the term reference carries the plural s. -->
+                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust ducts</ref>.</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -861,7 +864,8 @@
                     <application-note xml:id="nbc.divB.part6.appendix.appnote1a">
                         <number>6.2.1.2.(1)</number>
                         <title>Outdoor Design Conditions</title>
-                        <paragraph>In the past, the practice of ventilating buildings with outdoor air assumed that the outdoor air was of better quality than the indoor air. It has become evident that the outdoor air in some areas of Canada may not be of an acceptable quality for ventilating buildings unless certain particles and gases are first removed or reduced. In order to manage the air quality of a building's indoor environment, thus reducing the potential for adverse effects on occupants' health, the quality of outdoor air for building ventilation purposes must be addressed.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-03858 CF-03859 | issue 10134 | Curly apostrophes in building’s and occupants’, as in the PDF. -->
+                        <paragraph>In the past, the practice of ventilating buildings with outdoor air assumed that the outdoor air was of better quality than the indoor air. It has become evident that the outdoor air in some areas of Canada may not be of an acceptable quality for ventilating buildings unless certain particles and gases are first removed or reduced. In order to manage the air quality of a building’s indoor environment, thus reducing the potential for adverse effects on occupants’ health, the quality of outdoor air for building ventilation purposes must be addressed.</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -1215,11 +1219,12 @@
                                                    number="9"
                                                    vendor-id="es016009">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1145 Incorrect Content e749dff102 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>A principal-load factor of 1.5 shall be applied to the weight
                     of saturated <ref type="term" target="l">soil</ref> used in load combination
                     case 1 of <ref type="internal"
                                                     target="nbc.divB.part4.sect1.subsect3.art2.table1"
-                                                    display-type="long"/>.-A.</text>
+                                                    display-type="long"/>.</text>
                                          </sentence>
                 </new-content>
             </replace>
@@ -1232,10 +1237,11 @@
                                                    number="3"
                                                    vendor-id="es014442">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1195 Incorrect Content 240a549eb7 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>For the design of individual walls and wall cladding, the values
                     of C<sub>g</sub>C<sub>p</sub> are provided in <ref type="internal"
                                                     target="nbc.divB.part4.sect1.subsect7.art6.figure2"
-                                                    display-type="long"/>.-B.</text>
+                                                    display-type="long"/>.</text>
                                          </sentence>
                 </new-content>
             </replace>
@@ -1248,10 +1254,11 @@
                                                    number="4"
                                                    vendor-id="es014443">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1196 Incorrect Content b8e1bc04b3 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>For the design of roofs with a slope less than or equal to 7°,
                     the values of C<sub>g</sub>C<sub>p</sub> are provided in <ref type="internal"
                                                     target="nbc.divB.part4.sect1.subsect7.art6.figure3"
-                                                    display-type="long"/>.-C.</text>
+                                                    display-type="long"/>.</text>
                                          </sentence>
                 </new-content>
             </replace>
@@ -1264,10 +1271,11 @@
                                                    number="5"
                                                    vendor-id="es014444">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1197 Incorrect Content 27fd52b06e -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>For the design of flat roofs with steps in elevation, the values
                     of C<sub>g</sub>C<sub>p</sub> are provided in <ref type="internal"
                                                     target="nbc.divB.part4.sect1.subsect7.art6.figure4"
-                                                    display-type="long"/>.-D.</text>
+                                                    display-type="long"/>.</text>
                                          </sentence>
                 </new-content>
             </replace>
@@ -1280,11 +1288,12 @@
                                                    number="6"
                                                    vendor-id="es014445">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1198 Incorrect Content 7c9ee12602 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>For the design of gabled or hipped, single-ridge roofs with
                     a slope greater than 7°, the values of C<sub>g</sub>C<sub>p</sub> are
                     provided in <ref type="internal"
                                                     target="nbc.divB.part4.sect1.subsect7.art6.figure5"
-                                                    display-type="long"/>.-E.</text>
+                                                    display-type="long"/>.</text>
                                          </sentence>
                 </new-content>
             </replace>
@@ -1489,10 +1498,11 @@
                                                     letter="b"
                                                     vendor-id="es007811b">
                                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1136 Incorrect Content 8f085249a8 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>for load cases with crane loads, the load combinations listed
                     in <ref type="internal"
                                                        target="nbc.divB.part4.sect1.subsect3.art2.table2"
-                                                       display-type="long"/>.-B.</text>
+                                                       display-type="long"/>.</text>
                                             </clause>
                 </new-content>
             </replace>

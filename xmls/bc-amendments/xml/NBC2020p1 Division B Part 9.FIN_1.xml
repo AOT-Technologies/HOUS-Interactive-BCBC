@@ -796,7 +796,8 @@ incorporate a thermal break.</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>a bolt throw not less than <measurement units="metric">25mm</measurement> long, protected
+                        <!-- CLAUDE-AUTOFIX CF-04083 | issue 9963 | Space between 25 and mm, as in the PDF. -->
+                        <text>a bolt throw not less than <measurement units="metric">25 mm</measurement> long, protected
                             with a solid or hardened free-turning ring or beveled cylinder housing. (See Article 9.9.6.7.)</text>
                     </new-content>
                 </element-replace>
@@ -1707,7 +1708,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Doorways serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces need
+                        <!-- CLAUDE-AUTOFIX CF-04129 | issue 2276 | Comma after common spaces, as in the PDF. -->
+                        <text>Doorways serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, need
                             not comply with <ref type="internal"
                                                  target="nbc.divBV2.part9.sect9.subsect6.art3.sent2"
                                                  display-type="short"/>. (See also <ref type="internal"
@@ -2223,19 +2225,23 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <clause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2" letter="b">
                             <text>joist spaces filled with</text>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2.subclause1" number="1">
-                                <text>preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702"/>, "Mineral Fibre Thermal Insulation for Buildings," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of floor surface, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                <text>preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702" ref-style="notitle"/>, "Mineral Fibre Thermal Insulation for Buildings," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of floor surface, or</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2.subclause2" number="2">
-                                <text>wet-blown cellulose fibres conforming to <ref type="standard" target="ulcs703"/>, "Cellulose Fibre Insulation for Buildings," having a density of not less than <measurement units="metric">50 kg/m<super>3</super></measurement> to a minimum depth of <measurement units="metric">90 mm</measurement> on the underside of the subfloor and the sides of the structural members,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                <text>wet-blown cellulose fibres conforming to <ref type="standard" target="ulcs703" ref-style="notitle"/>, "Cellulose Fibre Insulation for Buildings," having a density of not less than <measurement units="metric">50 kg/m<super>3</super></measurement> to a minimum depth of <measurement units="metric">90 mm</measurement> on the underside of the subfloor and the sides of the structural members,</text>
                             </subclause>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause3" letter="c">
                             <text>stud spaces of</text>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause3.subclause1" number="1">
-                                <text><ref type="term" target="ldbrng">non-loadbearing</ref> assemblies filled with preformed insulation of glass fibres conforming to <ref type="standard" target="ulcs702.1"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">0.6 kg/m<super>2</super></measurement> of wall surface, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                <text><ref type="term" target="ldbrng">non-loadbearing</ref> assemblies filled with preformed insulation of glass fibres conforming to <ref type="standard" target="ulcs702.1" ref-style="notitle"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">0.6 kg/m<super>2</super></measurement> of wall surface, and</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause3.subclause2" number="2">
-                                <text><ref type="term" target="ldbrng">loadbearing</ref> assemblies filled with preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702.1"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of wall surface, or filled with insulation of cellulose fibres conforming to <ref type="standard" target="ulcs703"/>, "Standard for Cellulose Fibre Insulation (CFI) for Buildings," having a density of not less than <measurement units="metric">50 kg/m<super>3</super></measurement>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                <text><ref type="term" target="ldbrng">loadbearing</ref> assemblies filled with preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702.1" ref-style="notitle"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of wall surface, or filled with insulation of cellulose fibres conforming to <ref type="standard" target="ulcs703" ref-style="notitle"/>, "Standard for Cellulose Fibre Insulation (CFI) for Buildings," having a density of not less than <measurement units="metric">50 kg/m<super>3</super></measurement>,</text>
                             </subclause>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause4" letter="d">
@@ -2705,7 +2711,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Except as permitted by Sentence (5), the area of an <ref type="term" target="xpng-bld">exposing building face</ref> shall be</text>
+                        <!-- CLAUDE-AUTOFIX CF-04321 | issue 6474 | No comma after Sentence (5), as in the PDF. -->
+                        <text>Except as permitted by Sentence (5) the area of an <ref type="term" target="xpng-bld">exposing building face</ref> shall be</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -3212,8 +3219,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                         <text>hot-dipped, zinc-coated galvanized steel with a coating weight
-                            not less than Z550 conforming to <ref type="standard" target="astma653m" standardId="astma653m"/>, "Standard Specification for Steel Sheet, Zinc-Coated (Galvanized) or Zinc-Iron Alloy-Coated (Galvannealed) by the Hot-Dip Process,"
+                            not less than Z550 conforming to <ref type="standard" target="astma653m" standardId="astma653m" ref-style="notitle"/>, "Standard Specification for Steel Sheet, Zinc-Coated (Galvanized) or Zinc-Iron Alloy-Coated (Galvannealed) by the Hot-Dip Process,"
                         </text>
                     </new-content>
                 </element-replace>
@@ -3230,7 +3238,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>galvanized steel coated with zinc in accordance with <ref type="standard" target="astma153m" standardId="astma153m"/>, "Standard Specification for Zinc Coating (Hot-Dip) on Iron and Steel Hardware," or </text>
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                        <text>galvanized steel coated with zinc in accordance with <ref type="standard" target="astma153m" standardId="astma153m" ref-style="notitle"/>, "Standard Specification for Zinc Coating (Hot-Dip) on Iron and Steel Hardware," or </text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -3248,10 +3257,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                     <sentence xml:id="nbc.divBV2.part9.sect23.subsect3.art1.sent1" number="1">
                         <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.sent2" display-type="short"/> and unless otherwise indicated, nails specified in this Section shall be common steel wire nails or common spiral nails conforming to</text>
                         <clause xml:id="nbc.divBV2.part9.sect23.subsect3.art1.sent1.clause1" letter="a">
-                            <text><ref type="standard" target="astmf1667"/>, "Standard Specification for Driven Fasteners: Nails, Spikes, and Staples," or</text>
+                            <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                            <text><ref type="standard" target="astmf1667" ref-style="notitle"/>, "Standard Specification for Driven Fasteners: Nails, Spikes, and Staples," or</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect23.subsect3.art1.sent1.clause2" letter="b">
-                            <text><ref type="standard" target="csab111"/>, "Wire Nails, Spikes and Staples."</text>
+                            <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                            <text><ref type="standard" target="csab111" ref-style="notitle"/>, "Wire Nails, Spikes and Staples."</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -3996,11 +4007,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                         <text>Beams described in <ref type="internal"
                                                           target="nbc.divBV2.part9.sect23.subsect4.art3.sent1"
                                                           display-type="short"/> shall
                             at least meet the requirements for <measurement units="metric">Grade 350 W</measurement> steel
-                            contained in <ref type="standard" target="csag40.21" standardId="csag40.21"/>, "Structural quality steel."
+                            contained in <ref type="standard" target="csag40.21" standardId="csag40.21" ref-style="notitle"/>, "Structural quality steel."
                         </text>
                     </new-content>
                 </element-replace>
@@ -4528,7 +4540,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>in a <ref type="term" target="bldng">building</ref> clad with masonry veneer, the average dead weight of the masonry veneer shall not exceed <measurement units="metric">1.9 kPa</measurement>, and</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art2.sent3.clause4" letter="d">
-                                <text>in a <ref type="term" target="bldng">building</ref> clad with stone veneer, the average dead weight of the stone veneer shall not exceed <measurement units="metric">3.2 kPa</measurement>. (See Note A-9.23.13.2.(3).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04841 | issue 10218 | The PDF prints kPa.(See with no space after the period. -->
+                                <text>in a <ref type="term" target="bldng">building</ref> clad with stone veneer, the average dead weight of the stone veneer shall not exceed <measurement units="metric">3.2 kPa</measurement>.(See Note A-9.23.13.2.(3).)</text>
                             </clause>
                         </sentence>
                     </article>
@@ -5630,7 +5643,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.row5">
                                     <entry>15.2</entry>
                                     <entry>0.24</entry>
-                                    <entry>181</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-04912 | issue 2668 | Decimal point restored: 1.81, as in the PDF. -->
+                                    <entry>1.81</entry>
                                     <entry>1.05</entry>
                                     <entry>0.78</entry>
                                     <entry>0.64</entry>
@@ -6090,7 +6104,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- 3-storey building (SMALLEST values) -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.row37">
-                                    <entry rowspan="18">0.4 &lt; S<sub>max</sub> ≤ 0.6</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-04927 | issue 10219 | The PDF prints 0.4< Smax with no space between 0.4 and <. -->
+                                    <entry rowspan="18">0.4&lt; S<sub>max</sub> ≤ 0.6</entry>
                                     <entry rowspan="6">
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.row37.figure07">
                                             <graphic src="bc-graphics/gg00556a" alt="Three storey building configuration"/>
@@ -7708,7 +7723,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Heavy construction - Storey supporting roof only -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row2">
-                                    <entry rowspan="18">Heavy construction: apply factor corresponding to Lwl separately to each <ref type="term" target="tr">storey</ref>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10220 | The PDF prints this text without the usual space (Heavy construction:apply factor), so it is typed the same way. -->
+                                    <entry rowspan="18">Heavy construction:apply factor corresponding to Lwl separately to each <ref type="term" target="tr">storey</ref>
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row2.figure25">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-row1" alt="Building depth diagram showing 3.1 to 18.3 m"/>
@@ -7793,19 +7809,23 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <entry colspan="2">1.97</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row15">
-                                    <entry>Lwl = 6.1 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10221 | The PDF prints this text without the usual space (Lwl =6.1 m), so it is typed the same way. -->
+                                    <entry>Lwl =6.1 m</entry>
                                     <entry colspan="2">1.76</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row16">
-                                    <entry>Lwl = 9.1 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10222 | The PDF prints this text without the usual space (Lwl =9.1 m), so it is typed the same way. -->
+                                    <entry>Lwl =9.1 m</entry>
                                     <entry colspan="2">1.67</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row17">
-                                    <entry>Lwl = 12.2 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10223 | The PDF prints this text without the usual space (Lwl =12.2 m), so it is typed the same way. -->
+                                    <entry>Lwl =12.2 m</entry>
                                     <entry colspan="2">1.61</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row18">
-                                    <entry>Lwl = 15.2 m</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-05001 | issue 10224 | The PDF prints this text without the usual space (Lwl =15.2 m), so it is typed the same way. -->
+                                    <entry>Lwl =15.2 m</entry>
                                     <entry colspan="2">1.58</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row19">
@@ -8075,7 +8095,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Masonry veneer cladding perpendicular - 2-storey height, partially clad - Storey supporting roof and 1 floor -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row57">
-                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2- <ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face( or two <ref type="term" target="bldng">building</ref> faces))
+                                    <!-- CLAUDE-AUTOFIX CF-04948 CF-04952 | issues 2692 and 2696 | One closing bracket too many removed after building faces, as in the PDF. -->
+                                    <!-- CLAUDE-AUTOFIX CF-04997 CF-04999 | issues 9964 and 9966 | No space between 1- or 2- and storey, as in the PDF (1-storey height, 2-storey height). -->
+                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2-<ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face( or two <ref type="term" target="bldng">building</ref> faces)
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row57.figure37">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-row4" alt="Building depth diagram for 2-storey masonry veneer"/>
@@ -8159,7 +8181,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Masonry veneer cladding perpendicular - 1-storey height, partially clad - Storey supporting roof and 1 floor -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row69">
-                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 1- <ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face (or two <ref type="term" target="bldng">building</ref> faces))
+                                    <!-- CLAUDE-AUTOFIX CF-04948 CF-04952 | issues 2692 and 2696 | One closing bracket too many removed after building faces, as in the PDF. -->
+                                    <!-- CLAUDE-AUTOFIX CF-04997 CF-04999 | issues 9964 and 9966 | No space between 1- or 2- and storey, as in the PDF (1-storey height, 2-storey height). -->
+                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 1-<ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face (or two <ref type="term" target="bldng">building</ref> faces)
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row69.figure40">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-row5" alt="Building depth diagram for 1-storey masonry veneer"/>
@@ -8243,7 +8267,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Masonry veneer cladding perpendicular - 2-storey height, fully clad - Supporting roof + 1 floor -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row81">
-                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2- <ref type="term" target="tr">storey</ref> height, fully clad:
+                                    <!-- CLAUDE-AUTOFIX CF-04997 CF-04999 | issues 9964 and 9966 | No space between 1- or 2- and storey, as in the PDF (1-storey height, 2-storey height). -->
+                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2-<ref type="term" target="tr">storey</ref> height, fully clad:
                                         Apply factor corresponding to <ref type="term" target="bldng">building</ref> depth Lwl in the direction of the <ref type="term" target="br-wl-bnd">braced wall band</ref> for one or two <ref type="term" target="bldng">building</ref> face(s)
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row81.figure43">
@@ -8328,7 +8353,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Masonry veneer cladding perpendicular - 1-storey height, fully clad - Supporting roof + 1 floor -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row93">
-                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 1- <ref type="term" target="tr">storey</ref> height, fully clad:
+                                    <!-- CLAUDE-AUTOFIX CF-04997 CF-04999 | issues 9964 and 9966 | No space between 1- or 2- and storey, as in the PDF (1-storey height, 2-storey height). -->
+                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 1-<ref type="term" target="tr">storey</ref> height, fully clad:
                                         Apply factor corresponding to <ref type="term" target="bldng">building</ref> depth Lwl in the direction of the <ref type="term" target="br-wl-bnd">braced wall band</ref> for one or two <ref type="term" target="bldng">building</ref> face(s)
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row93.figure46">
@@ -9468,7 +9494,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.60 kPa</measurement>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent1.clause3" letter="c">
-                                <text>the specified roof snow load, as calculated in accordance with <ref type="internal" target="nbc.divBV2.part9.sect4.subsect2.art2" display-type="long"/>, is not greater than <measurement units="metric">2 kPa</measurement>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-05107 | issue 10227 | The PDF prints these article numbers without the final period (and without repeating the word Articles), so the references carry their own labels. -->
+                                <text>the specified roof snow load, as calculated in accordance with <ref type="internal" target="nbc.divBV2.part9.sect4.subsect2.art2" display-type="long">Article 9.4.2.2</ref>, is not greater than <measurement units="metric">2 kPa</measurement>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent1.clause4" letter="d">
                                 <text>the plan dimensions of the <ref type="term" target="bldng">building</ref> are each not greater than <measurement units="metric">21.2 m</measurement>,</text>
@@ -9492,10 +9519,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent2" number="2">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.sent3" display-type="short"/>, the minimum total length of all <ref type="term" target="br-wl-pnl">braced wall panels</ref> in each direction shall be determined in accordance with</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent2.clause1" letter="a">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table1" display-type="long"/> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.5 kPa</measurement>, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table1" display-type="long">Table 9.23.13.11-A</ref> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.5 kPa</measurement>, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent2.clause2" letter="b">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table2" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table2" display-type="long">Table 9.23.13.11-B</ref>.</text>
                             </clause>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1">
@@ -9688,10 +9717,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent3" number="3">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.sent4" display-type="short"/>, the minimum total length of all <ref type="term" target="br-wl-pnl">braced wall panels</ref> in each <ref type="term" target="br-wl-bnd">braced wall band</ref> in the direction perpendicular to a single <ref type="term" target="bldng">building</ref> face partially clad with masonry veneer shall be determined in accordance with</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent3.clause1" letter="a">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table3" display-type="long"/> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.50 kPa</measurement>, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table3" display-type="long">Table 9.23.13.11-C</ref> where the seismic design parameter, S<sub>max</sub>, is not greater than 0.3 and the 1-in-50-year hourly wind pressure (HWP) is not greater than <measurement units="metric">0.50 kPa</measurement>, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent3.clause2" letter="b">
-                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table4" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10158 | issues 4070 3917 4071 3918 1154 | The PDF prints Table 9.23.13.11-X without a period before the letter (and no final period after -D), so the reference carries its own label. -->
+                                <text><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art11.table4" display-type="long">Table 9.23.13.11-D</ref></text>
                             </clause>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3">
@@ -9886,7 +9917,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>Wall portions clad with masonry veneer that are located both perpendicular to a <ref type="term" target="br-wl-bnd">braced wall band</ref> and within a <ref type="term" target="br-wl-bnd">braced wall band</ref> are permitted to be considered as normal-weight construction.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art11.sent5" number="5">
-                            <text>Bracing to resist lateral loads shall be designed and constructed in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4" display-type="long" pretext="Articles"/> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8" display-type="long" pretext="Articles"/> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10" display-type="long"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-05107 | issue 9968 | The PDF prints these article numbers without the final period (and without repeating the word Articles), so the references carry their own labels. -->
+                            <text>Bracing to resist lateral loads shall be designed and constructed in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4" display-type="long">Articles 9.23.13.4</ref> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6" display-type="long">9.23.13.6</ref> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8" display-type="long">9.23.13.8</ref> to <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10" display-type="long">9.23.13.10</ref>.</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -11340,7 +11372,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art1.sent1" number="1">
                             <text>Every <ref type="term" target="dwllng-n">dwelling unit</ref> that is supplied with electrical power shall be provided by a mechanical ventilation system that conforms to</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art1.sent1.clause1" letter="a">
-                                <text><ref type="standard" target="csaf326"/>, "Residential Mechanical Ventilation Systems,"</text>
+                                <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                                <text><ref type="standard" target="csaf326" ref-style="notitle"/>, "Residential Mechanical Ventilation Systems,"</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art1.sent1.clause2" letter="b">
                                 <text>this Subsection, or</text>
@@ -12598,8 +12631,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                         <text>Tape used for sealing duct joints in air ducts, <ref type="term" target="plnm">plenums</ref> and other parts of air duct systems shall meet the
-                            flame-resistance requirements for fabric in <ref type="standard" target="ulcs109" standardId="ulcs109"/>, "Standard Method for Flame Tests of Flame-Resistant Fabrics and Films."
+                            flame-resistance requirements for fabric in <ref type="standard" target="ulcs109" standardId="ulcs109" ref-style="notitle"/>, "Standard Method for Flame Tests of Flame-Resistant Fabrics and Films."
                         </text>
                     </new-content>
                 </element-replace>
@@ -12616,6 +12650,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                         <text>
                             <ref type="term" target="cmbtbl">Combustible </ref> coverings, linings
                             and foamed plastic insulation described in <ref type="internal"
@@ -12630,7 +12665,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                  target="nbc.divBV2.part9.sect33.subsect6.art4.sent6"
                                  display-type="short"
                                  pretext="and"/> shall not flame, glow, smoulder or smoke when tested in accordance
-                            with the method of test in <ref type="standard" target="astmc411" standardId="astmc411"/>, "Standard Specification for Hot-Surface Performance of High-Temperature Thermal Insulation," at the
+                            with the method of test in <ref type="standard" target="astmc411" standardId="astmc411" ref-style="notitle"/>, "Standard Specification for Hot-Surface Performance of High-Temperature Thermal Insulation," at the
                             maximum temperature to which they are to be exposed in service.</text>
                     </new-content>
                 </element-replace>
@@ -12647,7 +12682,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>The design of fittings for ducts shall conform to <ref type="standard" target="smacna006" standardId="smacna006"/>, "HVAC Duct Construction Standards -- Metal and Flexible," except that metal thicknesses
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The PDF prints an en dash in the SMACNA title (Standards – Metal and Flexible). -->
+                        <text>The design of fittings for ducts shall conform to <ref type="standard" target="smacna006" standardId="smacna006" ref-style="notitle"/>, "HVAC Duct Construction Standards – Metal and Flexible," except that metal thicknesses
                             shall conform to <ref type="internal"
                                                   target="nbc.divBV2.part9.sect33.subsect6.art5.table1"
                                                   display-type="long"/>
@@ -12761,8 +12798,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                         <text>shall not flame, glow, smoulder or smoke when tested in accordance
-                            with <ref type="standard" target="astmc411" standardId="astmc411"/>, "Standard Specification for Hot-Surface Performance of High-Temperature Thermal Insulation," at the maximum temperature to
+                            with <ref type="standard" target="astmc411" standardId="astmc411" ref-style="notitle"/>, "Standard Specification for Hot-Surface Performance of High-Temperature Thermal Insulation," at the maximum temperature to
                             which such insulation or covering is to be exposed in service.</text>
                     </new-content>
                 </element-replace>
@@ -12796,10 +12834,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                         <text>
                             <ref type="term" target="fctr-blt">Factory-built chimneys</ref> serving
                             solid-fuel-burning <ref type="term" target="pplnc">appliances</ref>, and their
-                            installation, shall conform to <ref type="standard" target="ulcs629" standardId="ulcs629"/>, "Standard for 650°C Factory-Built Chimneys." (See Note A-9.33.10.2.(1).)</text>
+                            installation, shall conform to <ref type="standard" target="ulcs629" standardId="ulcs629" ref-style="notitle"/>, "Standard for 650°C Factory-Built Chimneys." (See Note A-9.33.10.2.(1).)</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -12815,11 +12854,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-05700 | issue 2998 | Final period after pursuant regulations, as in the PDF. -->
                         <text>Electrical installations, including the service capacity of
                             the installation and the number and distribution of circuits and receptacles,
                             shall meet the requirements of the appropriate provincial, territorial
                             or municipal legislation or, in the absence of such legislation, shall
-                            conform to the Safety Standards Act and pursuant regulations
+                            conform to the Safety Standards Act and pursuant regulations.
                         </text>
                     </new-content>
                 </element-replace>
@@ -16528,12 +16568,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                                    number="3"
                                                    vendor-id="es003038">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2882 Incorrect Content e83232b7f4 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
                         <text>Wall sheathing is permitted to be used in lieu of one layer
                     of sheathing membrane required in <ref type="internal"
                                                     target="nbc.divBV2.part9.sect27.subsect3.art5.sent1"
                                                     display-type="short"/>, and its thickness need not conform to <ref type="internal"
                                                     target="nbc.divBV2.part9.sect23.subsect17.art2.table1"
-                                                    display-type="long"/>.-A.</text>
+                                                    display-type="long"/>.</text>
                                          </sentence>
                 </new-content>
             </replace>
@@ -16863,6 +16904,1507 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 </new-content>
             </insert>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07305 | issue 4395 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2060" sequence="2060" description="Restore note marks in Part 9 Span Table 1 row 4">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row4">
+                        <entry align="left" valign="top" rowsep="0">• Single
+Row</entry>
+                        <entry align="center" valign="middle" colname="2">W1a</entry>
+                        <entry align="left" valign="top" rowsep="1">W1 with•
+89 mm thick absorptive material<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 15.9 mm Type
+X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h </entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">36</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07307 | issue 4399 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2061" sequence="2061" description="Restore note marks in Part 9 Span Table 1 row 6">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row6">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W1c</entry>
+                        <entry align="left" valign="top" rowsep="1">W1 with•
+89 mm thick absorptive material<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 12.7 mm regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">30 min</entry>
+                        <entry align="center" valign="middle" colname="5">30 min[45 min<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note8" />]</entry>
+                        <entry align="center" valign="middle" colname="6">32</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07310 | issue 4413 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2062" sequence="2062" description="Restore note marks in Part 9 Span Table 1 row 16">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row16"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row16">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">W3</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 38 mm ×
+89 mm studs spaced 400 mm or 600 mm o.c. • 89 mm thick absorptive material<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• resilient metal channels on one side spaced 400 mm
+or 600 mm o.c. • 1 layer of gypsum board
+on each side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00034a" alt="Wood Studs W3" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07312 | issue 4418 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2063" sequence="2063" description="Restore note marks in Part 9 Span Table 1 row 20">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row20"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row20">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">W4</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 38 mm ×
+89 mm studs spaced 400 mm or 600 mm o.c.• 89 mm thick absorptive material<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• resilient metal channels on one side spaced 400 mm
+or 600 mm o.c. • 2 layers of gypsum board
+on resilient metal channel side• 1 layer
+of gypsum board on other side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00035a" alt="Wood Studs W4" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07314 | issue 4428 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2064" sequence="2064" description="Restore note marks in Part 9 Span Table 1 row 25">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row25"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row25">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">W5</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 38 mm ×
+89 mm studs spaced 400 mm or 600 mm o.c.• 89 mm thick absorptive material<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• resilient metal channels on one side spaced 400 mm
+or 600 mm o.c. • 1 layer of gypsum board
+on resilient metal channel side• 2 layers
+of gypsum board on other side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00036a" alt="Wood Studs W5" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07317 | issue 4437 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2065" sequence="2065" description="Restore note marks in Part 9 Span Table 1 row 32">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row32"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row32">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W6b</entry>
+                        <entry align="left" valign="top" rowsep="1">W6 with•
+studs spaced 400 mm or 600 mm o.c. with blocking at mid-height<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note10"/>
+• 89 mm thick rock or slag fibre insulation<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note11"/> • resilient metal channels spaced 400 mm or 600 mm o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">2 h</entry>
+                        <entry align="center" valign="middle" colname="5">2 h</entry>
+                        <entry align="center" valign="middle" colname="6">–</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07320 | issue 4440 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2066" sequence="2066" description="Restore note marks in Part 9 Span Table 1 row 33">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row33"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row33">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W6c</entry>
+                        <entry align="left" valign="top" rowsep="1">W6 with•
+studs spaced 400 mm o.c. with blocking at mid-height<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note10"/>• 89 mm thick dry-blown cellulose fibre insulation<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note12"/> • resilient metal channels spaced 400 mm o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">2 h</entry>
+                        <entry align="center" valign="middle" colname="5">2 h</entry>
+                        <entry align="center" valign="middle" colname="6">–</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07323 | issue 4455 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2067" sequence="2067" description="Restore note marks in Part 9 Span Table 1 row 41">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row41"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row41">
+                        <entry align="left" valign="top" rowsep="0">• Wood Studs • Two Rows Staggered on
+38 mm × 140 mm Plate</entry>
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">W7</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• two rows
+38 mm × 89 mm studs each spaced 400 mm or 600 mm o.c. staggered on
+common 38 mm × 140 mm plate• 89 mm thick
+absorptive material on one side or 65 mm thick on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 1 layer of gypsum board on each
+side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00038a" alt="Wood Studs W7" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07325 | issue 4461 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2068" sequence="2068" description="Restore note marks in Part 9 Span Table 1 row 44">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row44"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row44">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W7c</entry>
+                        <entry align="left" valign="top">W7 with• 12.7 mm regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">30
+min</entry>
+                        <entry align="center" valign="middle" colname="5">30 min[45 min<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note8"/>]</entry>
+                        <entry align="center" valign="middle" colname="6">42</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07327 | issue 4463 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2069" sequence="2069" description="Restore note marks in Part 9 Span Table 1 row 45">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row45"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row45">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">W8</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• Two rows
+38 mm × 89 mm studs each spaced 400 mm or 600 mm o.c. staggered on
+common 38 mm × 140 mm plate• 89 mm thick
+absorptive material on one side or 65 mm thick on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 2 layers of gypsum
+board on one side• 1 layer of gypsum board
+on other side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00039a" alt="Wood Studs W8" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07336 | issue 4492 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2070" sequence="2070" description="Restore note marks in Part 9 Span Table 1 row 65">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row65"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row65">
+                        <entry align="left" valign="top" rowsep="0">• <ref type="term" target="ldbrng">Loadbearing</ref> or Non-<ref type="term" target="ldbrng">Loadbearing</ref>
+                           </entry>
+                        <entry align="center" valign="middle" colname="2">W13a</entry>
+                        <entry align="left" valign="top" rowsep="1">W13 with • 89 mm thick absorptive material on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">57</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07338 | issue 4494 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2071" sequence="2071" description="Restore note marks in Part 9 Span Table 1 row 66">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row66"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row66">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W13b</entry>
+                        <entry align="left" valign="top" rowsep="1">W13 with • 89 mm thick absorptive material on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min[1 h<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note8" />]</entry>
+                        <entry align="center" valign="middle" colname="5">45 min[1 h<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note8" />]</entry>
+                        <entry align="center" valign="middle" colname="6">57</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07340 | issue 4496 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2072" sequence="2072" description="Restore note marks in Part 9 Span Table 1 row 67">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row67"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row67">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W13c</entry>
+                        <entry align="left" valign="top" rowsep="1">W13 with • 89 mm thick absorptive material on one side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">54</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07342 | issue 4498 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2073" sequence="2073" description="Restore note marks in Part 9 Span Table 1 row 68">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row68"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row68">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W13d</entry>
+                        <entry align="left" valign="top" rowsep="1">W13 with•
+89 mm thick absorptive material on one side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min</entry>
+                        <entry align="center" valign="middle" colname="5">45 min</entry>
+                        <entry align="center" valign="middle" colname="6">53</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07345 | issue 4503 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2074" sequence="2074" description="Restore note marks in Part 9 Span Table 1 row 72">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row72"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row72">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" colname="2">W14a</entry>
+                        <entry align="left" rowsep="1">W14 with• 89 mm thick
+absorptive material on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 15.9 mm Type X gypsum
+board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h</entry>
+                        <entry align="center" valign="middle" colname="5">1 h[1.5 h<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note8" />]</entry>
+                        <entry align="center" valign="middle" colname="6">61</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07347 | issue 4505 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2075" sequence="2075" description="Restore note marks in Part 9 Span Table 1 row 73">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row73"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row73">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W14b</entry>
+                        <entry align="left" valign="top" rowsep="1">W14 with•
+89 mm thick absorptive material on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 12.7 mm
+Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">61</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07349 | issue 4507 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2076" sequence="2076" description="Restore note marks in Part 9 Span Table 1 row 74">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row74"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row74">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W14c</entry>
+                        <entry align="left" valign="top" rowsep="1">W14 with•
+89 mm thick absorptive material on one side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">57</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07351 | issue 4509 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2077" sequence="2077" description="Restore note marks in Part 9 Span Table 1 row 75">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row75"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row75">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W14d</entry>
+                        <entry align="left" valign="top" rowsep="1">W14 with • 89 mm thick absorptive material on one side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">57</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07354 | issue 4514 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2078" sequence="2078" description="Restore note marks in Part 9 Span Table 1 row 79">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row79"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row79">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W15a</entry>
+                        <entry align="left" valign="top" rowsep="1">W15 with•
+89 mm thick absorptive material on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 15.9 mm
+Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="5">2 h</entry>
+                        <entry align="center" valign="middle" colname="6">66</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07356 | issue 4516 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2079" sequence="2079" description="Restore note marks in Part 9 Span Table 1 row 80">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row80"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row80">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W15b</entry>
+                        <entry align="left" valign="top" rowsep="1">W15 with•
+89 mm thick absorptive material on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 12.7 mm
+Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h</entry>
+                        <entry align="center" valign="middle" colname="5">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="6">65</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07358 | issue 4518 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2080" sequence="2080" description="Restore note marks in Part 9 Span Table 1 row 81">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row81"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row81">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W15c</entry>
+                        <entry align="left" valign="top" rowsep="1">W15 with•
+89 mm thick absorptive material on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 12.7 mm
+regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">61</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07360 | issue 4520 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2081" sequence="2081" description="Restore note marks in Part 9 Span Table 1 row 82">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row82"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row82">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W15d</entry>
+                        <entry align="left" valign="top" rowsep="1">W15 with•
+89 mm thick absorptive material on one side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="5">2 h</entry>
+                        <entry align="center" valign="middle" colname="6">62</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07362 | issue 4522 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2082" sequence="2082" description="Restore note marks in Part 9 Span Table 1 row 83">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row83"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row83">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W15e</entry>
+                        <entry align="left" valign="top" rowsep="1">W15 with• 89 mm thick absorptive material on one side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h</entry>
+                        <entry align="center" valign="middle" colname="5">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="6">60</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07364 | issue 4524 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2083" sequence="2083" description="Restore note marks in Part 9 Span Table 1 row 84">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row84"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row84">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">W15f</entry>
+                        <entry align="left" valign="top" rowsep="1">W15 with • 89 mm thick absorptive material on one side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/>• 12.7 mm regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">57</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07367 | issue 4530 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2084" sequence="2084" description="Restore note marks in Part 9 Span Table 1 row 89">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row89"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row89">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">W16a</entry>
+                        <entry>W16 with• 89 mm thick absorptive material on each
+side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle">1.5 h</entry>
+                        <entry align="center" valign="middle">2 h</entry>
+                        <entry align="center" valign="middle">66</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07369 | issue 4532 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2085" sequence="2085" description="Restore note marks in Part 9 Span Table 1 row 90">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row90"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row90">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">W16b</entry>
+                        <entry>W16 with• studs spaced 400 mm o.c. with blocking
+at mid-height<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note10"/>• 89 mm thick rock or slag fibre insulation on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note11"/>• resilient metal
+channels on one side spaced<measurement units="metric"> 400 mm</measurement> o.c. • 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note14"/></entry>
+                        <entry align="center" valign="middle">2 h</entry>
+                        <entry align="center" valign="middle">2 h</entry>
+                        <entry align="center" valign="middle">–</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07372 | issue 4535 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2086" sequence="2086" description="Restore note marks in Part 9 Span Table 1 row 91">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row91"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row91">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">W16c</entry>
+                        <entry>W16 with• 89 mm thick absorptive material on each
+side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">1.5 h</entry>
+                        <entry align="center" valign="middle">65</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07374 | issue 4537 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2087" sequence="2087" description="Restore note marks in Part 9 Span Table 1 row 92">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row92"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row92">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">W16d</entry>
+                        <entry>W16 with• 89 mm thick absorptive material on one
+side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle">1.5 h</entry>
+                        <entry align="center" valign="middle">2 h</entry>
+                        <entry align="center" valign="middle">62</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07376 | issue 4539 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2088" sequence="2088" description="Restore note marks in Part 9 Span Table 1 row 93">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row93"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row93">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">W16e</entry>
+                        <entry>W16 with• 89 mm thick absorptive material on one
+side only<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note13"/> • 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/></entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">1.5 h</entry>
+                        <entry align="center" valign="middle">60</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07378 | issue 4543 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2089" sequence="2089" description="Restore note marks in Part 9 Span Table 1 row 96">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row96"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row96">
+                        <entry align="left" valign="top" rowsep="0">• Exterior • Wood Studs • Single Row• <ref type="term" target="ldbrng">Loadbearing</ref> or Non-<ref type="term" target="ldbrng">Loadbearing</ref>
+                           </entry>
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">EW1</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• wood studs• rock
+or slag fibre insulation<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note11"/> • 1 layer of gypsum board on inside• exterior
+sheathing and cladding</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00099a" alt="Exterior Wood Studs EW1" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07380 | issue 4545 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2090" sequence="2090" description="Restore note marks in Part 9 Span Table 1 row 97">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row97"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row97">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">EW1a</entry>
+                        <entry align="left" valign="top" rowsep="1">EW1 with• 38 mm x 89 mm studs spaced 400 mm or
+600 mm o.c.• 15.9 mm Type
+X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>
+ 
+
+• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/>
+ and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle" colname="4">1 h</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07383 | issue 4548 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2091" sequence="2091" description="Restore note marks in Part 9 Span Table 1 row 98">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row98"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row98">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">EW1b</entry>
+                        <entry align="left" valign="top" rowsep="1">EW1 with• 38 mm x 89 mm studs spaced 400 mm
+or 600 mm o.c.• 15.9 mm Type X gypsum
+board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior
+gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min </entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07386 | issue 4551 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2092" sequence="2092" description="Restore note marks in Part 9 Span Table 1 row 99">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row99"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row99">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">EW1c</entry>
+                        <entry align="left" valign="top" rowsep="1">EW1 with • 38 mm x 89 mm studs
+spaced 400 mm or 600 mm o.c.• 12.7 mm Type X gypsum
+board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or plywood
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle" colname="4">45 min</entry>
+                        <entry align="center" valign="middle" colname="5">1 h</entry>
+                        <entry align="center" valign="middle" colname="6">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07389 | issue 4554 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2093" sequence="2093" description="Restore note marks in Part 9 Span Table 1 row 100">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row100"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row100">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW1d</entry>
+                        <entry>EW1 with • 38 mm x 89 mm studs spaced 400 mm or
+600 mm o.c.•
+12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07392 | issue 4557 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2094" sequence="2094" description="Restore note marks in Part 9 Span Table 1 row 101">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row101"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row101">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW1e</entry>
+                        <entry>EW1
+with • 38 mm
+x 140 mm studs spaced 400 mm o.c.• 15.9 mm Type X gypsum
+board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior wood sheathing, exterior gypsum sheathing,
+or insulated exterior sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note20"/>
+• masonry
+veneer cladding not less
+than 89 mm thick</entry>
+                        <entry align="center" valign="middle">45
+min</entry>
+                        <entry align="center" valign="middle">45
+min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07394 | issue 4559 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2095" sequence="2095" description="Restore note marks in Part 9 Span Table 1 row 102">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row102"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row102">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">
+                              <emphasis style="bold">EW2</emphasis>
+                           </entry>
+                        <entry>• wood studs • glass fibre insulation<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note21"/>• 1 layer of gypsum board on inside• exterior sheathing and cladding</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00099a" alt="Exterior Wood Studs EW2" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07396 | issue 4561 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2096" sequence="2096" description="Restore note marks in Part 9 Span Table 1 row 103">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row103"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row103">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2a</entry>
+                        <entry>EW2 with • 38 mm × 89 mm studs spaced 400 mm o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note22"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or
+exterior gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note23"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07399 | issue 4564 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2097" sequence="2097" description="Restore note marks in Part 9 Span Table 1 row 104">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row104"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row104">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2b</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced 400 mm or
+600 mm o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or
+plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07402 | issue 4567 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2098" sequence="2098" description="Restore note marks in Part 9 Span Table 1 row 105">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row105"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row105">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2c</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced at 400 mm
+o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07404 | issue 4569 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2099" sequence="2099" description="Restore note marks in Part 9 Span Table 1 row 106">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row106"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row106">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2d</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07406 | issue 4571 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2100" sequence="2100" description="Restore note marks in Part 9 Span Table 1 row 107">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row107"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row107">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2e</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced 400 mm or
+600 mm o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07408 | issue 4573 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2101" sequence="2101" description="Restore note marks in Part 9 Span Table 1 row 108">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row108"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row108">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2f</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced at 400 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or
+plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07410 | issue 4575 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2102" sequence="2102" description="Restore note marks in Part 9 Span Table 1 row 109">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row109"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row109">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2g</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or
+plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07412 | issue 4577 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2103" sequence="2103" description="Restore note marks in Part 9 Span Table 1 row 110">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row110"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row110">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2h</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced 400 mm or
+600 mm o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior gypsum
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07414 | issue 4579 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2104" sequence="2104" description="Restore note marks in Part 9 Span Table 1 row 111">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row111"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row111">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2i</entry>
+                        <entry>EW2 with • 38 mm x 89 mm studs spaced at 400 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07416 | issue 4581 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2105" sequence="2105" description="Restore note marks in Part 9 Span Table 1 row 112">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row112"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row112">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW2j</entry>
+                        <entry>EW2
+with • 38 mm x 140 mm studs spaced at 400 mm o.c.• 15.9 mm Type X gypsum
+board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior wood sheathing,
+exterior gypsum sheathing or insulated exterior sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note20"/>• masonry
+veneer cladding not less
+than 89 mm thick</entry>
+                        <entry align="center" valign="middle">45
+min</entry>
+                        <entry align="center" valign="middle">45
+min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07418 | issue 4583 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2106" sequence="2106" description="Restore note marks in Part 9 Span Table 1 row 113">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row113"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row113">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">
+                              <emphasis style="bold">EW3</emphasis>
+                           </entry>
+                        <entry>• wood studs• dry-blown
+cellulose fibre insulation<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note12"/>• 1 layer of gypsum board on inside• exterior sheathing and cladding</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00099a" alt="Wood Studs EW3" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07420 | issue 4585 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2107" sequence="2107" description="Restore note marks in Part 9 Span Table 1 row 114">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row114"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row114">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3a</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 400 mm
+o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or
+plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07423 | issue 4588 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2108" sequence="2108" description="Restore note marks in Part 9 Span Table 1 row 115">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row115"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row115">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3b</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or
+plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07425 | issue 4590 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2109" sequence="2109" description="Restore note marks in Part 9 Span Table 1 row 116">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row116"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row116">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3c</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior gypsum
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07427 | issue 4592 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2110" sequence="2110" description="Restore note marks in Part 9 Span Table 1 row 117">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row117"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row117">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3d</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 400 mm
+o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and
+cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07430 | issue 4595 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2111" sequence="2111" description="Restore note marks in Part 9 Span Table 1 row 118">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row118"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row118">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3e</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07432 | issue 4597 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2112" sequence="2112" description="Restore note marks in Part 9 Span Table 1 row 119">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row119"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row119">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3f</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 400 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or
+plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07435 | issue 4600 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2113" sequence="2113" description="Restore note marks in Part 9 Span Table 1 row 120">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row120"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row120">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3g</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior OSB or
+plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">1 h</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07437 | issue 4602 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2114" sequence="2114" description="Restore note marks in Part 9 Span Table 1 row 121">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row121"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row121">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3h</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior gypsum
+sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07439 | issue 4604 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2115" sequence="2115" description="Restore note marks in Part 9 Span Table 1 row 122">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row122"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row122">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3i</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 400 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> or exterior gypsum sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note18"/> and
+cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07442 | issue 4607 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2116" sequence="2116" description="Restore note marks in Part 9 Span Table 1 row 123">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row123"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row123">
+                        <entry rowsep="0" />
+                        <entry align="center" valign="middle">EW3j</entry>
+                        <entry>EW3 with • 38 mm x 89 mm studs spaced at 600 mm
+o.c.• 12.7 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/>• exterior OSB or plywood sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note17"/> and cladding<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note19"/></entry>
+                        <entry align="center" valign="middle">–</entry>
+                        <entry align="center" valign="middle">45 min</entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07444 | issue 4609 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2117" sequence="2117" description="Restore note marks in Part 9 Span Table 1 row 124">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row124"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row124">
+                        <entry />
+                        <entry align="center" valign="middle">EW3k</entry>
+                        <entry>EW3
+with • 38 mm x 140 mm studs spaced at 400 mm o.c.• 15.9 mm Type X gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note15"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note16"/>• exterior wood sheathing, exterior gypsum sheathing
+or insulated exterior sheathing<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note20"/>• masonry veneer cladding not less than 89 mm thick</entry>
+                        <entry align="center" valign="middle">45
+min</entry>
+                        <entry align="center" valign="middle">45
+min </entry>
+                        <entry align="center" valign="middle">n/a</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07463 | issue 4788 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2118" sequence="2118" description="Restore note marks in Part 9 Span Table 1 row 250">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row250"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row250">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">B3</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 140 mm
+or 190 mm concrete block• resilient metal
+channels on one side spaced at 400 mm or 600 mm o.c.• absorptive material filling resilient metal channel
+space<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/> • 1
+layer gypsum board on each side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00003a" alt="Hollow Concrete Block B3" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07465 | issue 4791 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2119" sequence="2119" description="Restore note marks in Part 9 Span Table 1 row 252">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row252"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row252">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B3b</entry>
+                        <entry align="left" valign="top" rowsep="1">B3 with•
+140 mm concrete block• 12.7 mm regular
+gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="5">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="6">48</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07466 | issue 4794 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2120" sequence="2120" description="Restore note marks in Part 9 Span Table 1 row 255">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row255"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row255">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B3e</entry>
+                        <entry align="left" valign="top">B3 with• 190 mm concrete block • 12.7 mm regular
+gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">2
+h</entry>
+                        <entry align="center" valign="middle" colname="5">2
+h</entry>
+                        <entry align="center" valign="middle" colname="6">51</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07468 | issue 4798 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2121" sequence="2121" description="Restore note marks in Part 9 Span Table 1 row 258">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row258"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row258">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B4b</entry>
+                        <entry align="left" valign="top" rowsep="1">B4 with•
+140 mm concrete block• 12.7 mm regular
+gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="5">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="6">42</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07469 | issue 4801 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2122" sequence="2122" description="Restore note marks in Part 9 Span Table 1 row 261">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row261"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row261">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B4e</entry>
+                        <entry align="left" valign="top">B4 with•190 mm concrete block•12.7 mm regular
+gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">2
+h</entry>
+                        <entry align="center" valign="middle" colname="5">2
+h</entry>
+                        <entry align="center" valign="middle" colname="6">45</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07471 | issue 4805 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2123" sequence="2123" description="Restore note marks in Part 9 Span Table 1 row 265">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row265"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row265">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B5c</entry>
+                        <entry align="left" valign="top">B5
+with• 12.7 mm regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">2
+h</entry>
+                        <entry align="center" valign="middle" colname="5">2
+h</entry>
+                        <entry align="center" valign="middle" colname="6">51</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07472 | issue 4806 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2124" sequence="2124" description="Restore note marks in Part 9 Span Table 1 row 266">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row266"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row266">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">B6</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 140 mm
+or 190 mm concrete block• 38 mm × 38 mm
+horizontal or vertical wood strapping on each side spaced at 600 mm
+o.c. • absorptive material filling strapping
+space on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 1 layer gypsum board on each side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00006a" alt="Hollow Concrete Block B6" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07474 | issue 4809 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2125" sequence="2125" description="Restore note marks in Part 9 Span Table 1 row 268">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row268"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row268">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B6b</entry>
+                        <entry align="left" valign="top" rowsep="1">B6 with•
+140 mm concrete block• 12.7 mm regular
+gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="5">1.5 h</entry>
+                        <entry align="center" valign="middle" colname="6"> 56</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07475 | issue 4812 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2126" sequence="2126" description="Restore note marks in Part 9 Span Table 1 row 271">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row271"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row271">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B6e</entry>
+                        <entry align="left" valign="top">B6 with• 190 mm concrete block• 12.7 regular
+gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">2
+h</entry>
+                        <entry align="center" valign="middle" colname="5">2
+h</entry>
+                        <entry align="center" valign="middle" colname="6"> 57</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07476 | issue 4813 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2127" sequence="2127" description="Restore note marks in Part 9 Span Table 1 row 272">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row272"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row272">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">B7</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 190 mm
+concrete block• 65 mm steel studs each
+side spaced at <measurement units="metric"> 600 mm o.c.</measurement>• absorptive material filling stud space on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 1 layer gypsum board
+on each side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00007a" alt="Hollow Concrete Block B7" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07478 | issue 4817 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2128" sequence="2128" description="Restore note marks in Part 9 Span Table 1 row 275">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row275"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row275">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B7c</entry>
+                        <entry align="left" valign="top">B7 with• 12.7 mm regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">2
+h</entry>
+                        <entry align="center" valign="middle" colname="5">2
+h</entry>
+                        <entry align="center" valign="middle" colname="6">69</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07479 | issue 4818 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2129" sequence="2129" description="Restore note marks in Part 9 Span Table 1 row 276">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row276"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row276">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">B8</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 190 mm
+concrete block• 38 mm × 64 mm wood studs
+on each side spaced at 600 mm o.c.• absorptive
+material filling stud space on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 1 layer gypsum board on each side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00008a" alt="Hollow Concrete Block B8" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07481 | issue 4822 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2130" sequence="2130" description="Restore note marks in Part 9 Span Table 1 row 279">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row279"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row279">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">B8c</entry>
+                        <entry align="left" valign="top">B8 with• 12.7 mm regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" colname="4">2
+h</entry>
+                        <entry align="center" valign="middle" colname="5">2
+h</entry>
+                        <entry align="center" valign="middle" colname="6">69</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07482 | issue 4823 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2131" sequence="2131" description="Restore note marks in Part 9 Span Table 1 row 280">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row280"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row280">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">B9</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 190 mm
+concrete block• 50 mm metal Z-bars on each
+side spaced at 600 mm o.c. (or 38 mm × 38 mm horizontal or vertical
+wood strapping plus resilient metal channels)• absorptive material filling Z-bar space on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/> • 1 layer gypsum board
+on each side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00009a" alt="Hollow Concrete Block B9" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07484 | issue 4827 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2132" sequence="2132" description="Restore note marks in Part 9 Span Table 1 row 283">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row283"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row283">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" rowsep="0" colname="2">B9c</entry>
+                        <entry align="left" valign="top" rowsep="0">B9
+with• 12.7 mm regular gypsum board<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note7"/><ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note9"/></entry>
+                        <entry align="center" valign="middle" rowsep="0" colname="4">2
+h</entry>
+                        <entry align="center" valign="middle" rowsep="0" colname="5">2
+h</entry>
+                        <entry align="center" valign="middle" rowsep="0" colname="6">63</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07485 | issue 4828 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2133" sequence="2133" description="Restore note marks in Part 9 Span Table 1 row 284">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row284"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row284">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">B10</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• 190 mm
+concrete block• resilient metal channels
+on one side spaced at 600 mm o.c.• absorptive
+material filling resilient metal channel space<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/>• 2 layers gypsum board
+on one side only</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00010a" alt="Hollow Concrete Block B10" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07331 | issue 4482 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2134" sequence="2134" description="Restore note marks in Part 9 Span Table 1 row 58">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row58"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row58">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">W11</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• two rows
+38 mm × 89 mm studs each spaced 400 mm or 600 mm o.c. staggered on
+common 38 mm × 140 mm plate• 89 mm thick
+absorptive material on one side or 65 mm thick on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/> • resilient metal
+channels on one side spaced 400 mm or 600 mm o.c.• 2 layers of gypsum board on resilient channel side• 1 layer of gypsum board on other side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00042a" alt="Wood Studs W11" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CL-009 CF-07333 | issue 4487 | Note marks in this cell restored as in the PDF. -->
+        <amendment id="bc-2135" sequence="2135" description="Restore note marks in Part 9 Span Table 1 row 61">
+            <target type="canonical-id" id="nbc.divBV2.part9.spectables1.table1.row61"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.spectables1.table1.row61">
+                        <entry align="left" valign="top" rowsep="0" />
+                        <entry align="center" valign="middle" colname="2">
+                              <emphasis style="bold">W12</emphasis>
+                           </entry>
+                        <entry align="left" valign="top" rowsep="1">• two rows
+38 mm × 89 mm studs each spaced 400 mm or 600 mm o.c. staggered on
+common 38 mm × 140 mm plate• 89 mm thick
+absorptive material on one side or 65 mm thick on each side<ref type="table-note" target="nbc.divBV2.part9.spectables1.table1.note6"/> • resilient metal
+channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board on resilient metal channel side• 2 layers of gypsum board on other side</entry>
+                        <entry align="center" valign="middle" colspan="3">
+                              <graphic src="graphics/gg/000/gg00043a" alt="Wood Studs W12" />
+                           </entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+
     </amendments>
     
 </bc-overlay>

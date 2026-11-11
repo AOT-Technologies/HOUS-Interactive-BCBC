@@ -923,6 +923,7 @@
                                             type="term"
                                             target="nncmbtbl-cnstrctn"
                                             >noncombustible construction</ref>.</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-00026 | issue 9305 | Curly quotes around "Installation of Sprinkler Systems." to match the PDF. -->
                                     <entry><ref type="term" target="xpng-bld">Exposing building face</ref> is not required to have a <ref
                                             type="term"
                                             target="fr-rtnc-"
@@ -938,9 +939,10 @@
                                             >exposing building face</ref> is not required to be of <ref
                                             type="term"
                                             target="nncmbtbl-cnstrctn"
-                                            >noncombustible construction</ref> if it is protected by an exterior sprinkler system conforming to NFPA 13, "Installation of Sprinkler Systems."</entry>
+                                            >noncombustible construction</ref> if it is protected by an exterior sprinkler system conforming to NFPA 13, “Installation of Sprinkler Systems.”</entry>
                                 </row>
                                 
+                                <!-- CLAUDE-AUTOFIX CF-00027 | issue 9306 | Curly quotes in col 2 and col 3 and "CAN/ULC-S107" without space, to match the PDF. -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row12"
                                     >
@@ -955,9 +957,9 @@
                                             target="nbc.divB.part3.sect1.subsect15.art2.sent1"
                                             display-type="long"
                                             /><lb/>
-                                        Class A, B or C roof covering in conformance with CAN/ ULC-S107, "Fire Tests of Roof Coverings" required.</entry>
+                                        Class A, B or C roof covering in conformance with CAN/ULC-S107, “Fire Tests of Roof Coverings” required.</entry>
                                     <entry
-                                        >For existing roofs not covered by a Class A, B or C roofing a manually operated deluge system in accordance with NFPA 13, "Installation of Sprinkler Systems" is permitted.</entry>
+                                        >For existing roofs not covered by a Class A, B or C roofing a manually operated deluge system in accordance with NFPA 13, “Installation of Sprinkler Systems” is permitted.</entry>
                                 </row>
                                 
                                 <row
@@ -1649,6 +1651,7 @@
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row29"
                                     >
                                     <entry>29</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-00029 | issue 9308 | Removed the space before the comma after "Subsection 3.4.7." to match the PDF. -->
                                     <entry>
                                     <emphasis style="bold">
                                     Fire Escapes
@@ -1658,7 +1661,7 @@
                                             type="internal"
                                             target="nbc.divB.part3.sect4.subsect7"
                                             display-type="long"
-                                            />. , <ref
+                                            />., <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect2.art1.sent2"
                                             display-type="long"
@@ -2363,6 +2366,7 @@
                 />
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00038 | issue 10053 | Label "Section 2.3 of Division C" on the reference (no period after 2.3) to match the PDF. -->
                     <clause
                         xml:id="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
                         letter="b"
@@ -2378,7 +2382,7 @@
                                 type="internal"
                                 target="nbc.divC.part2.sect3"
                                 display-type="long"
-                                />, that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see <ref
+                                >Section 2.3 of Division C</ref>, that will achieve at least the minimum level of performance required by Division B in the areas defined by the objectives and functional statements attributed to the applicable acceptable solutions (see <ref
                                 type="internal"
                                 target="nbc.divA.part1.appendix.appnote4"
                                 display-type="short"
