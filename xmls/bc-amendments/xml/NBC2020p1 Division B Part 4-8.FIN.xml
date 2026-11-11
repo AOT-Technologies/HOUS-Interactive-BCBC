@@ -547,22 +547,16 @@
         <!-- Amendment 028: Replace NPC reference with BC code reference        -->
         <!-- Article 6.3.2.15.(10) - Evaporative Heat Rejection Systems        -->
         <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CL-055 CF-10484 | issue 666 | The whole text is replaced so the NPC reference is really removed, as in the PDF (the find-replace for it never matched: the reference has ref-style and ref-punc). -->
         <amendment id="bc-028" sequence="28"
                    description="Replace National Plumbing Code reference with BC code reference in Article 6.3.2.15.(10)">
             <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art15.sent10"/>
             <modify>
-                <text-change xpath-within-target="text()">
-                    <find-replace>
-                        <find>Clause 2.4.2.1.(1)(e) of Division B of the </find>
-                        <replace>Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code</replace>
-                    </find-replace>
-                </text-change>
-                <text-change xpath-within-target="text()">
-                    <find-replace>
-                        <find><ref type="standard" target="nrcc-npc" standardId="nrcc-npc"/>. </find>
-                        <replace>. </replace>
-                    </find-replace>
-                </text-change>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Drains, overflows and blow-downs shall be connected to the <ref type="term" target="bldng">building</ref>'s drainage system in accordance with <ref type="external" target="npc">Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code</ref>. </text>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
