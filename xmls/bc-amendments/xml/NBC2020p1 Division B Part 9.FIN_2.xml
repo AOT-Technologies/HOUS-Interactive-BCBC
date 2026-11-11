@@ -2396,6 +2396,18 @@
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10467 | issue 735 | The range end of Subclauses 3.4.2.5.(1)(d)(i) to (d)(iv) prints (d)(iv), as in the PDF. -->
+        <amendment id="bc-custom-99-8-1-3" sequence="2331"
+                   description="Show the range end (d)(iv) in Sentence 9.9.8.1.(3)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect9.subsect8.art1.sent3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Where a <ref type="term" target="pblc-crr">public corridor</ref> is not less than <measurement units="metric">9 m</measurement> wide and conforms to <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art5.sent1.clause4.subclause1" display-type="long" pretext="Subclauses"/> <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art5.sent1.clause4.subclause4" display-type="short" pretext="to">(d)(iv)</ref>, the travel distance may be determined in accordance with those Subclauses.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>
