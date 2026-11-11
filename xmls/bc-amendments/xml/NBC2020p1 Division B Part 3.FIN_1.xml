@@ -7988,6 +7988,7 @@ each 25 females.</find>
                                                    number="1"
                                                    vendor-id="es000591">
                                             <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:11611 Note Reference 9b55a5c2a1 -->
+                        <!-- CLAUDE-AUTOFIX CF-10414 | issue 2550 | The See-Note text belongs only at the end of the sentence (the See-also), as in the PDF; the typed duplicate after "horizontally and" is removed. -->
                         <text>Except as required by <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art13.sent3"
                                                     display-type="short"/> and as permitted by <ref type="internal"
@@ -8002,7 +8003,7 @@ each 25 females.</find>
                     the requirements of <ref type="internal"
                                                     target="nbc.divB.part3.sect2.subsect3.art13.sent4"
                                                     display-type="short"/> where
-                    the opening in the exterior wall of the <ref type="term" target="bldng">building </ref> is within <measurement units="metric">3 m</measurement> horizontally and (See Note A-3.2.3.14.(1).)</text>
+                    the opening in the exterior wall of the <ref type="term" target="bldng">building </ref> is within <measurement units="metric">3 m</measurement> horizontally and</text>
                                             <clause xml:id="nbc.divB.part3.sect2.subsect3.art13.sent1.clause1"
                                                     letter="a"
                                                     vendor-id="es000591a">
