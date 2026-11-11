@@ -36,12 +36,16 @@
 
 .objectivesList__key {
     font: var(--typography-bold-body);
+    /* CLAUDE-AUTOFIX CL-064 CF-00283 | issue 56 | The PDF prints the objective keys and titles (OS Safety, OS1 Fire Safety ...) in plain type. */
+    font-weight: var(--typography-font-weights-regular);
     color: var(--typography-color-primary);
     white-space: nowrap;
 }
 
 .objectivesList__title {
     font: var(--typography-bold-h5);
+    /* CLAUDE-AUTOFIX CL-064 CF-00283 | issue 56 | The PDF prints the objective keys and titles (OS Safety, OS1 Fire Safety ...) in plain type. */
+    font-weight: var(--typography-font-weights-regular);
     color: var(--typography-color-primary);
     font-size: 16px;
 }
@@ -78,6 +82,8 @@
 
 .objectivesList__subTerm .objectivesList__title {
     font: var(--typography-bold-body);
+    /* CLAUDE-AUTOFIX CL-064 CF-00283 | issue 56 | The PDF prints the objective keys and titles (OS Safety, OS1 Fire Safety ...) in plain type. */
+    font-weight: var(--typography-font-weights-regular);
 }
 
 /* Responsive adjustments */
