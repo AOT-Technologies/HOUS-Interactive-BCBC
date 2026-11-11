@@ -2438,11 +2438,12 @@
         <xsl:variable name="t" select="if ($is-range and local-name(bcf:target($ref/preceding-sibling::*[1][self::ref])) = local-name(bcf:target($ref))) then bcf:target($ref) else ()"/>
         <xsl:variable name="n" select="local-name($t)"/>
         <xsl:variable name="full" select="bcf:full-number($t)"/>
+        <!-- CLAUDE-AUTOFIX CL-059 CF-09869 | issue 3018 | A short reference to a Subclause prints its Clause letter too, as in the PDF ((a)(ii) to (a)(iv), (d)(i)). -->
         <xsl:sequence select="
             if (empty($full)) then ()
             else if ($n = 'sentence') then concat('(', replace(string($ref/@target), '^.*\.sent(\d+).*$', '$1'), ')')
             else if ($n = 'clause') then concat('(', $t/@letter, ')')
-            else if ($n = 'subclause') then replace($full, '^.*(\([^)]+\))$', '$1')
+            else if ($n = 'subclause') then (if ($ref/preceding-sibling::*[1][self::ref]/@display-type = 'short') then replace($full, '^.*(\([a-z]+\)\([^)]+\))$', '$1') else replace($full, '^.*(\([^)]+\))$', '$1'))
             else if ($n = ('article', 'subsection', 'section')) then $full
             else ()"/>
     </xsl:function>
@@ -2676,11 +2677,13 @@
         <xsl:variable name="range-start-label" select="if (@type = 'internal' and normalize-space(.) = '' and not(@pretext) and @display-type = ('short', 'long') and matches(@target, '\.sent\d+$') and not(matches(string(preceding-sibling::node()[1][self::text()]), '(Sentences?|Clauses?)\s*$')) and exists($next-significant[self::text()][matches(., '^\s*(to|through)\s*$')]/following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.sent\d+$')]]) and exists(bcf:full-number(id(@target)))) then concat('Sentences ', if (@display-type = 'short' and replace(@target, '\.sent\d+$', '') = string(ancestor::*[self::article][1]/@xml:id)) then concat('(', replace(@target, '^.*\.sent(\d+)$', '$1'), ')') else bcf:full-number(id(@target))) else ''"/>
         <!-- CLAUDE-AUTOFIX CL-051 CF-10417 | issue 471 | A Sentence listed after a "Sentences X to Y" range carries the plural, so it prints only its number when it is itself a range or follows a comma, as in the PDF (Sentences 9.10.14.5.(5) to (7) and 9.10.15.5.(5) to (7)). -->
         <xsl:variable name="list-after-range-label" select="if (@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and matches(@target, '\.sent\d+$') and normalize-space(@pretext) = (',', 'and') and exists($prev-significant[self::ref[@type = 'internal'][normalize-space(@pretext) = 'to']]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][normalize-space(@pretext) = 'Sentences']]) and (normalize-space(@pretext) = ',' or exists($next-significant[self::ref[@type = 'internal'][normalize-space(@pretext) = 'to']])) and exists(bcf:full-number(id(@target)))) then bcf:full-number(id(@target)) else ''"/>
+        <!-- CLAUDE-AUTOFIX CL-059 CF-09869 | issue 3018 | A short reference to a Subclause prints its Clause letter too, as in the PDF ((a)(ii) to (a)(iv), (d)(i)). -->
         <xsl:variable name="label" select="
             if (exists($div-suffix)) then bcf:division-label(., $div-suffix)
             else if (exists($range-label) and $range-end-label = '' and not($is-range-end) and not(@type = 'internal' and @display-type = ('number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+(\.subsect\d+(\.art\d+)?)?$') and id(@target) and not($next-significant[self::text() and matches(., '^\s*\.')]))) then $range-label
             else if ($range-start-label != '') then $range-start-label
             else if ($list-after-range-label != '') then $list-after-range-label
+            else if (@type = 'internal' and @display-type = 'short' and normalize-space(.) = '' and not(ancestor::entry) and not($is-range-end) and matches(@target, '\.clause\d+\.subclause\d+$') and exists(bcf:full-number(id(@target)))) then concat(if (@pretext or matches(bcf:text-before(.), 'Subclauses?\s*$')) then '' else 'Subclause ', replace(bcf:full-number(id(@target)), '^.*(\([a-z]+\)\([^)]+\))$', '$1'))
             else normalize-space(.)"/>
         <xsl:if test="$label != ''">
             <xsl:text>:</xsl:text>
