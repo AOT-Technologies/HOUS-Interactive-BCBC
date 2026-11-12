@@ -1072,7 +1072,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>persons with disabilities can be accommodated in each zone, and</text>
+                        <!-- CLAUDE-AUTOFIX CF-01351 | issue 792 | Linked the defined term "persons with disabilities" (italic in the PDF). -->
+                        <text><ref type="term" target="bc-prsn-wth-dsblts">persons with disabilities</ref> can be accommodated in each zone, and</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1157,7 +1158,8 @@
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect3.subsect1.art7.sent4.clause3" letter="c">
                             <!-- CLAUDE-AUTOFIX CF-01342 | issue 788 | Unit typo "m m²" corrected to "m²", as in the PDF. -->
-                            <text>provide not less than <measurement units="metric">2 m²</measurement> of balcony space for each accessible sleeping room or bed space.</text>
+                            <!-- CLAUDE-AUTOFIX CF-01356 | issue 7153 | Linked the defined term "accessible" (italic in the PDF). -->
+                            <text>provide not less than <measurement units="metric">2 m²</measurement> of balcony space for each <ref type="term" target="bc-cc-t-ccbl">accessible</ref> sleeping room or bed space.</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -1178,7 +1180,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect3.subsect1.art7.sent5" number="5">
-                        <text>The <ref type="term" target="flr-r">floor area</ref> on either side of a horizontal <ref type="term" target="xt">exit</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art10" display-type="long"/> is permitted to be considered as a zone in applying the requirements of <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7.sent1.clause2" display-type="medium"/>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-01358 | issue 7154 | Term link now covers the defined term "horizontal exit" (italic in the PDF). -->
+                        <text>The <ref type="term" target="flr-r">floor area</ref> on either side of a <ref type="term" target="hrzntl-x">horizontal exit</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art10" display-type="long"/> is permitted to be considered as a zone in applying the requirements of <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7.sent1.clause2" display-type="medium"/>.</text>
                     </sentence>
                 </new-content>
             </insert>
