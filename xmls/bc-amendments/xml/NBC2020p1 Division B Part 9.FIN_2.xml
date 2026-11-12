@@ -1697,7 +1697,8 @@
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row39"><entry>4</entry><entry>170</entry><entry>153</entry><entry>123</entry><entry>103</entry><entry>93</entry><entry>90</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row40"><entry>5</entry><entry>140</entry><entry>123</entry><entry>98</entry><entry>80</entry><entry>73</entry><entry>70</entry></row>
                                         <!-- HDD ≥ 7000, ≤50% cooling -->
-                                        <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row41"><entry>7000 or more</entry><entry>Not more than 50%</entry><entry>2</entry><entry>Reserved</entry></row>
+                                        <!-- CLAUDE-AUTOFIX CF-06121 | issue 3251 | Row heading reads "More than 6999" as in the PDF. -->
+                                        <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row41"><entry>More than 6999</entry><entry>Not more than 50%</entry><entry>2</entry><entry>Reserved</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row42"><entry>3</entry><entry>200</entry><entry>180</entry><entry>155</entry><entry>143</entry><entry>133</entry><entry>130</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row43"><entry>4</entry><entry>150</entry><entry>140</entry><entry>120</entry><entry>108</entry><entry>100</entry><entry>100</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row44"><entry>5</entry><entry>115</entry><entry>105</entry><entry>90</entry><entry>80</entry><entry>75</entry><entry>75</entry></row>
