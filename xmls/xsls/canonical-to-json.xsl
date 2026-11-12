@@ -2644,6 +2644,21 @@
             <xsl:text>:</xsl:text>
             <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-09482 | issue 5600 | A reference to an Appendix D table or figure prints its PDF label: the letter (-A, -B ...) only when its Article has more than one table (or figure), as in the PDF (Table D-2.1.1., Tables D-2.3.4.-A); without the word after another such reference in a list or as the end of a range. -->
+        <xsl:variable name="appd-art" select="replace(@target, '\.(table|figure)\d+$', '')"/>
+        <xsl:variable name="appd-kind" select="replace(@target, '^.*\.(table|figure)\d+$', '$1')"/>
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and @display-type = ('long', 'medium') and matches(@target, '^nbc\.div[A-Z]\.appendixD\.appsect\d+(\.subsect\d+)?(\.article\d+)?\.(table|figure)\d+$') and id(@target)">
+            <xsl:variable name="appd-count" select="count(id($appd-art)//*[local-name() = $appd-kind][starts-with(@xml:id, concat($appd-art, '.', $appd-kind))][matches(substring-after(@xml:id, concat($appd-art, '.', $appd-kind)), '^\d+$')])"/>
+            <xsl:variable name="appd-no" select="xs:integer(replace(@target, '^.*\.(table|figure)(\d+)$', '$2'))"/>
+            <xsl:text>:</xsl:text>
+            <xsl:if test="not($is-range-end) and not($clause-list-prev and matches($clause-list-prev/@target, '\.appendixD\..*\.(table|figure)\d+$'))">
+                <xsl:value-of select="if ($appd-kind = 'table') then 'Table ' else 'Figure '"/>
+            </xsl:if>
+            <xsl:value-of select="concat('D-', string-join(for $t in tokenize(replace($appd-art, '^.*\.appendixD\.', ''), '\.') return replace($t, '^[a-z]+', ''), '.'), '.')"/>
+            <xsl:if test="$appd-count gt 1">
+                <xsl:value-of select="concat('-', codepoints-to-string(64 + $appd-no))"/>
+            </xsl:if>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-019 CF-01368 | issue 802 | A Part reference inside the same Division prints as "Part 6", without "of Division B", as in the PDF. -->
         <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+$') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
             <xsl:text>:Part </xsl:text>
