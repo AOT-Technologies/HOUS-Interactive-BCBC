@@ -1351,8 +1351,9 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04110 | issue 2264 | Linked the defined term "secondary suite" (italic in the PDF). -->
                         <text>
-                            <measurement units="metric">900 mm</measurement> for stairs or <ref type="term" target="rmp">ramps</ref> serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a secondary suite including their common spaces, and</text>
+                            <measurement units="metric">900 mm</measurement> for stairs or <ref type="term" target="rmp">ramps</ref> serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, and</text>
                     </new-content>
                 </element-replace>
             </modify>
