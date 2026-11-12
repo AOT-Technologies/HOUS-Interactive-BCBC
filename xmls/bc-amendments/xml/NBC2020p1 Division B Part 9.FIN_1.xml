@@ -16530,9 +16530,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6525 Note Reference 2b28be4469 -->
                         <text>Where an exterior insulation finish system is installed as cladding
                     on wood-frame, masonry, cold-formed steel stud, above-ground flat insulating concrete form or cast-in-place concrete walls exposed to precipitation, the cladding
-                    assembly shall comply with (See <ref type="internal"
-                                                    target="nbc.divBV2.part9.appendix.appnote160"
-                                                    display-type="short"/>.)</text>
+                    assembly shall comply with</text>
                                             <clause xml:id="nbc.divBV2.part9.sect27.subsect1.art1.sent5.clause1"
                                                     letter="a"
                                                     vendor-id="es000044a">
@@ -16559,6 +16557,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                                     vendor-id="es000044b">
                                                <text>Part 5.</text>
                                             </clause>
+                                             <!-- CLAUDE-AUTOFIX CF-01491 | issue 6362 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                                             <see-also xml:id="nbc.divBV2.part9.sect27.subsect1.art1.sent5.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote160" display-type="short"/>.)</see-also>
                                          </sentence>
                 </new-content>
             </replace>
