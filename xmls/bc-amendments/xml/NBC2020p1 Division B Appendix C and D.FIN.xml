@@ -492,14 +492,13 @@
                             <colspec colname="col6" colwidth="13*"/>
                             <colspec colname="col7" colwidth="13*"/>
                             <thead>
+                                <!-- CLAUDE-AUTOFIX CF-09337 | issue 7995 | The first two header cells of Table C-3 span both header rows, as in the PDF; removed the two empty cells that showed as an extra blank cell under 'Smax for Unknown Site Class'. -->
                                 <row xml:id="nbc.divB.appendixC.table3.row1">
-                                    <entry align="center">Province and Location</entry>
-                                    <entry align="center">S<sub>max</sub> for Unknown Site Class</entry>
+                                    <entry align="center" rowspan="2">Province and Location</entry>
+                                    <entry align="center" rowspan="2">S<sub>max</sub> for Unknown Site Class</entry>
                                     <entry align="center" colspan="5">S<sub>max</sub> According to Site Class</entry>
                                 </row>
                                 <row xml:id="nbc.divB.appendixC.table3.row2">
-                                    <entry/>
-                                    <entry/>
                                     <entry align="center">A</entry>
                                     <entry align="center">B</entry>
                                     <entry align="center">C</entry>
