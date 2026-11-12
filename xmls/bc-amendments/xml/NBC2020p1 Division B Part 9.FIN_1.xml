@@ -10944,8 +10944,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect29.subsect6.art1.sent1" number="1">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.sent2" display-type="short" pretext="Sentences"/><ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.sent3" display-type="short" pretext="and"/>, the minimum thickness of plywood interior finish shall conform to <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.table1" display-type="long"/></text>
                         </sentence>
+                        <!-- CLAUDE-AUTOFIX CF-05520 | issue 10436 | Restored the Forming Part line and table note (1) of Table 9.29.6.1. that the BC replacement Article dropped, as in the PDF. -->
                         <table xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1" vendor-id="et000216">
                             <title>Thickness of Plywood Interior Finish</title>
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1" display-type="long" pretext="Articles"/>
+                                <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art2" display-type="long" pretext=" and"/>
+                            </forming-part>
                             <tgroup cols="3">
                                 <colspec colname="1" colwidth="101*"/>
                                 <colspec colname="2" colwidth="118*"/>
@@ -10953,7 +10958,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <thead>
                                     <row xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1.rowh1">
                                         <entry align="center">Maximum Spacing of Supports, mm o.c.</entry>
-                                        <entry align="center">Minimum Thickness, mm</entry>
+                                        <entry align="center">Minimum Thickness, mm<ref type="table-note" target="nbc.divBV2.part9.sect29.subsect6.art1.table1.note1"/></entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1.rowh2">
                                         <entry align="center">On Supports with no Horizontal Blocking</entry>
@@ -10973,6 +10978,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     </row>
                                 </tbody>
                             </tgroup>
+                            <table-notes>
+                                <note xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1.note1">
+                                    <text>Thickness limits shall apply to the net effective thickness (NET) of grooved, striated, textured and/or embossed panels and to the actual thickness of flat panels.</text>
+                                </note>
+                            </table-notes>
                         </table>
                         <sentence xml:id="nbc.divBV2.part9.sect29.subsect6.art1.sent2" number="2">
                             <text>A manufacturing tolerance of <measurement units="metric">−0.4 mm</measurement> may be applied to the thicknesses listed in <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.table1" display-type="long"/></text>
