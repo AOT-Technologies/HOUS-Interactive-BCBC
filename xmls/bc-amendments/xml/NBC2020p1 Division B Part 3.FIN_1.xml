@@ -688,7 +688,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7" number="7">
-                        <text>Each adaptable <ref type="term" target="dwllng-n">dwelling unit</ref> shall be provided with special outlet boxes and cover plates that</text>
+                        <!-- CLAUDE-AUTOFIX CF-01256 | issue 6344 | Term link now covers "adaptable dwelling unit" (italic in the PDF). -->
+                        <text>Each <ref type="term" target="bc-dptbl-dwllng-nt">adaptable dwelling unit</ref> shall be provided with special outlet boxes and cover plates that</text>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause1" letter="a">
                             <text>are designed, located and wired specifically to allow strobe lights to operate in conformance with</text>
                             <subclause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause1.subclause1" number="1">
@@ -706,7 +707,8 @@
                             <text>are installed in the locations described in <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent4.clause5" display-type="medium"/>, and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause4" letter="d">
-                            <text>for the purposes of providing power to the strobe lights that may be connected to the outlet boxes, are assumed that the total special outlets for at least 20 percent of the adaptable <ref type="term" target="dwllng-n">dwelling units</ref> in the <ref type="term" target="bldng">building</ref> are in use.</text>
+                            <!-- CLAUDE-AUTOFIX CF-01258 | issue 759 | Term link now covers "adaptable dwelling units" (italic in the PDF). -->
+                            <text>for the purposes of providing power to the strobe lights that may be connected to the outlet boxes, are assumed that the total special outlets for at least 20 percent of the <ref type="term" target="bc-dptbl-dwllng-nt">adaptable dwelling units</ref> in the <ref type="term" target="bldng">building</ref> are in use.</text>
                         </clause>
                     </sentence>
                 </new-content>
