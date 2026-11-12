@@ -366,8 +366,9 @@
             <target type="canonical-id" id="nbc.divB.part5.appendix.appnote43"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-03670 | issue 7389 | The PDF numbers this Note A-5.9.2.1.(3) (it sits between A-Table 5.9.1.1. and A-5.9.2.2.); the old Part 5 Section 8 number 5.8.2.1.(3) is not in the PDF. -->
                     <application-note xml:id="nbc.divB.part5.appendix.appnote43" vendor-id="en001183" refs="es007991">
-                        <number>5.8.2.1.(3)</number>
+                        <number>5.9.2.1.(3)</number>
                         <title>Airtightness and Watertightness of Windows, Doors, Skylights, Other Fenestration Assemblies and their Components Required to have a Fire-Protection Rating</title>
                         <paragraph>The airtightness and watertightness requirements are waived for these products when used in such an application, in recognition of the fact that the availability of assemblies that meet both the requirements of the applicable standards and the requirements for fire resistance may be limited. However, control of air and water leakage should not be ignored: measures should be taken to attempt to comply with applicable requirements.</paragraph>
                     </application-note>
