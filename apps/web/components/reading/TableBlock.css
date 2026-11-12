@@ -184,6 +184,24 @@
   font-weight: var(--typography-font-weights-regular, 400);
 }
 
+/* CLAUDE-AUTOFIX CL-063 CF-06144 | issue 967 | In these 14 tables the whole header row is plain in the PDF (ArialNarrow regular, checked with the PDF fonts): Tables 10.2.3.3. (1 to 10) and 9.36.6.3.-C to -F. */
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table1"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table2"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table3"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table4"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table5"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table6"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table7"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table8"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table9"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect2.subsect3.art3.table10"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableC"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableD"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableE"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableF"] .table-block__header-cell {
+  font-weight: var(--typography-font-weights-regular, 400);
+}
+
 .table-block__wrapper {
   display: block;
   width: 100%;
