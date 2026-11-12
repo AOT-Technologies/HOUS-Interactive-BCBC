@@ -1771,7 +1771,8 @@
                             <title>Energy Modelling</title>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art4.sent1" number="1">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
-                                <text>Energy modeling shall be performed using a computer program that employs calculation methods that have been tested in accordance with <ref type="standard" target="ansiashrae140" ref-style="notitle"/>, "Evaluation of Building Energy Analysis Computer Programs" with variations in the computer program from the range recommended therein reported in accordance with Division C.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10185 | issue 1464 | Standard reference uses the known id ashrae140, so it prints "ANSI/ASHRAE 140" as in the PDF, not the raw id. -->
+                                <text>Energy modeling shall be performed using a computer program that employs calculation methods that have been tested in accordance with <ref type="standard" target="ashrae140" standardId="ashrae140" ref-style="notitle"/>, "Evaluation of Building Energy Analysis Computer Programs" with variations in the computer program from the range recommended therein reported in accordance with Division C.</text>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art4.sent2" number="2">
                                 <text>Energy modeling shall conform to</text>
