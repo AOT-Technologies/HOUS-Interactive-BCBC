@@ -1078,7 +1078,8 @@
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent2" number="2">
                             <!-- CLAUDE-AUTOFIX CF-05731 | issue 6564 | Table numbers typed as 9.37.x (the BC 9.37 is Greenhouse Gas Emissions) are 9.36.x, as in the PDF. -->
-                            <text>Except as permitted by <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art3.sent7" display-type="short"/>, the annual energy consumption of the proposed house in comparison to the house energy target of the reference house shall demonstrate a percent improvement in accordance with Table 9.36.6.3.-G. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote274" vendor-target="en001765" display-type="short"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-06041 | issue 3203 | Note reference points to A-9.36.5.3.(2) (appnote275 = vendor en001765, as its vendor-target says), as in the PDF. -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art3.sent7" display-type="short"/>, the annual energy consumption of the proposed house in comparison to the house energy target of the reference house shall demonstrate a percent improvement in accordance with Table 9.36.6.3.-G. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote275" vendor-target="en001765" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent3" number="3">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3197 Incorrect Content ec834ee8fc -->
@@ -1099,7 +1100,8 @@
                             <text>Both the proposed and reference houses shall be modeled using the same climatic data, <ref type="term" target="l">soil</ref> conditions, operating schedules in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art4" display-type="long"/> and temperature set-points.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent7" number="7">
-                            <text>For log homes, the annual energy consumption of the proposed house shall not exceed the house energy target of the reference house. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote274" vendor-target="en001765" display-type="short"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-06041 | issue 3203 | Note reference points to A-9.36.5.3.(2) (appnote275 = vendor en001765, as its vendor-target says), as in the PDF. -->
+                            <text>For log homes, the annual energy consumption of the proposed house shall not exceed the house energy target of the reference house. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote275" vendor-target="en001765" display-type="short"/>.)</text>
                         </sentence>
                     </article>
                 </new-content>
