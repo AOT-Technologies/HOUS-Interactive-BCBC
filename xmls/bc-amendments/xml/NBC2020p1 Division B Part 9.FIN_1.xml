@@ -11291,7 +11291,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent2" number="2">
-                            <text>A self-contained heating-season ventilation system serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces shall comply with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote194" vendor-target="en001526" display-type="short"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-05567 | issue 2921 | Note reference points to A-9.32.1.2.(2) (appnote185 = vendor en001526, as its vendor-target says), as in the PDF. -->
+                            <text>A self-contained heating-season ventilation system serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces shall comply with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote185" vendor-target="en001526" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent3" number="3">
                             <text>In houses that contain a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, heating-season ventilation need not be provided for</text>
