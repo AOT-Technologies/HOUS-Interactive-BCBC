@@ -12392,11 +12392,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
         <!-- Amendment 243: Remove linear interpolation sentence               -->
         <!-- Article 9.32.3.4 - Remove sentence 4 about linear interpolation  -->
         <!-- ================================================================== -->
-        <amendment id="bc-243" sequence="243"
+        <!-- CLAUDE-AUTOFIX CF-05587 | issue 2932 | Disabled bc-243: it deleted Sentence 9.32.3.4.(4) (heat-recovery ventilator) of the BC replacement Article from bc-235, which the PDF shows; the NBC linear-interpolation Sentence it aimed at is already gone with the replacement. -->
+        <!-- <amendment id="bc-243" sequence="243"
                    description="Remove sentence about linear interpolation from Article 9.32.3.4">
             <target type="canonical-id" id="nbc.divBV2.part9.sect32.subsect3.art4.sent4"/>
             <delete/>
-        </amendment>
+        </amendment> -->
         
         <!-- ================================================================== -->
         <!-- Amendment 244: Remove Table 9.32.3.4.1                           -->
