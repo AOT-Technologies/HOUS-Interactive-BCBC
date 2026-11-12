@@ -556,6 +556,13 @@
                         <replace>accessible</replace>
                     </find-replace>
                 </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01516 | issue 6373 | "a" before the new term "accessible" becomes "an", as in the PDF (an accessible path of travel). -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace regex="true">
+                        <find>(located in) a(\s+)$</find>
+                        <replace>$1 an$2</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
@@ -585,6 +592,13 @@
                     <find-replace>
                         <find>barrier-free</find>
                         <replace>accessible</replace>
+                    </find-replace>
+                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01516 | issue 6373 | "a" before the new term "accessible" becomes "an", as in the PDF (an accessible path of travel). -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace regex="true">
+                        <find>(swinging door in|sliding door in) a(\s+)$</find>
+                        <replace>$1 an$2</replace>
                     </find-replace>
                 </text-change>
             </modify>
@@ -892,6 +906,13 @@
                     <find-replace>
                         <find>barrier-free</find>
                         <replace>accessible</replace>
+                    </find-replace>
+                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01516 | issue 6373 | "a" before the new term "accessible" becomes "an", as in the PDF (an accessible path of travel). -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace regex="true">
+                        <find>(where) a(\s+)$</find>
+                        <replace>$1 an$2</replace>
                     </find-replace>
                 </text-change>
             </modify>
