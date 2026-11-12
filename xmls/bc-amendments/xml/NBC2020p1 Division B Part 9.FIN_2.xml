@@ -686,10 +686,13 @@
         <!-- ================================================================== -->
         <amendment id="bc-283" sequence="283"
                    description="Add clause c) referencing Table 9.36.2.8.-C for heat pump and HRV systems in Article 9.36.2.8.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art8.sent1"/>
-            <modify>
-                <element-change xpath-within-target=".">
-                    <add-child position="after" reference-element="clause[@letter='b']">
+            <!-- CLAUDE-AUTOFIX CF-05835 | issue 3058 | The merge engine has no element-change/add-child, so Clause (c) was never added; the same clause is now inserted after Clause (b), as in the PDF. -->
+            <target type="position"
+                    parent-id="nbc.divBV2.part9.sect36.subsect2.art8.sent1"
+                    position="after"
+                    reference-id="nbc.divBV2.part9.sect36.subsect2.art8.sent1.clause2"/>
+            <insert>
+                <new-content source="bc">
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art8.sent1.clause3"
                                 letter="c">
                             <text>
@@ -709,8 +712,18 @@
                                                                                display-type="long"/>.</text>
                             </subclause>
                         </clause>
-                    </add-child>
-                </element-change>
+                </new-content>
+            </insert>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05835 | issue 3058 | Clause (b) ends with ", or" now that Clause (c) follows, as in the PDF. -->
+        <amendment id="bc-autofix-cf05835-b" sequence="283.2" description="Clause 9.36.2.8.(1)(b) ends with ', or' before the new Clause (c)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art8.sent1.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.table2" display-type="long"/>, where the ventilation system includes heat-recovery equipment conforming to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art9" display-type="long"/>, or</text>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
