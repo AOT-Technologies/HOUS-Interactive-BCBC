@@ -2623,8 +2623,9 @@
             </xsl:if>
         </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-068 CF-01052 | issue 690 | A short Sentence reference listed after a Sentence of the same Article (", ", "and", "or" as plain text, or a pretext the CL-020 rule does not handle such as pretext=" and" after a long Sentence) prints only (N), as in the PDF (Sentences 3.1.6.4.(1) and (2)). -->
-        <xsl:variable name="sent-list-prev" select="if (@pretext) then (if (normalize-space(@pretext) = ('and', 'or', ',', ', and', ', or') and not(@pretext = normalize-space(@pretext) and $list-prev-ref/@display-type = @display-type)) then $list-prev-ref else ()) else $prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
-        <xsl:if test="@type = 'internal' and @display-type = 'short' and normalize-space(.) = '' and not($is-range-end) and matches(@target, '\.art\d+\.sent\d+$') and $sent-list-prev and matches($sent-list-prev/@target, '\.art\d+\.sent\d+$') and replace($sent-list-prev/@target, '\.sent\d+$', '') = replace(@target, '\.sent\d+$', '') and id(@target)/@number">
+        <!-- CLAUDE-AUTOFIX CL-068 CF-05625 | issue 6536 | The same rule also covers a medium Sentence reference (Sentence 9.32.3.4.(2) or (3)), as in the PDF. -->
+        <xsl:variable name="sent-list-prev" select="if (@pretext) then (if (normalize-space(@pretext) = ('and', 'or', ',', ', and', ', or') and not(@pretext = normalize-space(@pretext) and $list-prev-ref/@display-type = @display-type and @display-type = ('long', 'short'))) then $list-prev-ref else ()) else $prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <xsl:if test="@type = 'internal' and @display-type = ('short', 'medium') and normalize-space(.) = '' and not($is-range-end) and matches(@target, '\.art\d+\.sent\d+$') and $sent-list-prev and matches($sent-list-prev/@target, '\.art\d+\.sent\d+$') and replace($sent-list-prev/@target, '\.sent\d+$', '') = replace(@target, '\.sent\d+$', '') and id(@target)/@number">
             <xsl:text>:(</xsl:text>
             <xsl:value-of select="id(@target)/@number"/>
             <xsl:text>)</xsl:text>
