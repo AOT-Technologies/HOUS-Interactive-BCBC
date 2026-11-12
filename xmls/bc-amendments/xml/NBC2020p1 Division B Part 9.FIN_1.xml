@@ -12221,7 +12221,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent3" number="3">
-                            <text>Where a room in a residential occupancy contains a solid-fuel-burning <ref type="term" target="pplnc">appliance</ref>, a CO alarm conforming to <ref type="standard" target="csa6.19"/> shall be</text>
+                            <!-- CLAUDE-AUTOFIX CF-05632 | issue 6539 | Restored defined-term italic on "residential occupancy" to match the PDF. -->
+                            <text>Where a room in a <ref type="term" target="rdntl-cc">residential occupancy</ref> contains a solid-fuel-burning <ref type="term" target="pplnc">appliance</ref>, a CO alarm conforming to <ref type="standard" target="csa6.19"/> shall be</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent3.clause1" letter="a">
                                 <text>installed as recommended by the manufacturer where these instructions specifically mention solid-fuel-burning <ref type="term" target="pplnc">appliances</ref>, or</text>
                             </clause>
@@ -12261,7 +12262,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>Where CO alarms are installed in a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, the CO alarms shall be interconnected so that the actuation of any one CO alarm causes all CO alarms within the house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces to sound.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent8" number="8">
-                            <text>CO alarms installed in a business and personal services occupancy, or a mercantile occupancy as required by this Article shall conform to</text>
+                            <!-- CLAUDE-AUTOFIX CF-05633 | issue 6541 | Restored defined-term italic on "business and personal services occupancy" and "mercantile occupancy" to match the PDF (also CF-05634). -->
+                            <text>CO alarms installed in a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref> as required by this Article shall conform to</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent8.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9740 Punctuation 242ea75239 -->
                                 <text>CAN/CSA-6.19, “Residential carbon monoxide alarming devices,” notwithstanding the scope of that standard,</text>
@@ -12278,7 +12280,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         
                         
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent9" number="9">
-                            <text>Where a fuel-burning appliance serves a business and personal services occupancy, or mercantile occupancy, a CO alarm shall be,</text>
+                            <!-- CLAUDE-AUTOFIX CF-05635 | issue 6543 | Restored defined-term italic on "appliance", "business and personal services occupancy", "mercantile occupancy" to match the PDF (also CF-05636, CF-05637). -->
+                            <text>Where a fuel-burning <ref type="term" target="pplnc">appliance</ref> serves a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or <ref type="term" target="mrcntl-c">mercantile occupancy</ref>, a CO alarm shall be,</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent9.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2963 Formatting 30b3fd01b9 -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2964 Formatting 208b2f1d9a -->
@@ -12296,7 +12299,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent10" number="10">
-                            <text>For each suite of business and personal services occupancy or mercantile occupancy that shares a wall or floor/ceiling assembly with either a storage garage, or a service room containing a fuel-burning appliance, or that is adjacent to an attic or crawl space to which either a storage garage, or a service room containing a fuel-burning appliance is also adjacent, a CO alarm shall be installed</text>
+                            <!-- CLAUDE-AUTOFIX CF-05638 | issue 6546 | Restored defined-term italic on suite, occupancies, storage garage, service room, appliance to match the PDF (also CF-05639 to CF-05646). -->
+                            <text>For each <ref type="term" target="t">suite</ref> of <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref> or <ref type="term" target="mrcntl-c">mercantile occupancy</ref> that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref>, or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or that is adjacent to an attic or crawl space to which either a <ref type="term" target="trg-grg">storage garage</ref>, or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref> is also adjacent, a CO alarm shall be installed</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent10.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2970 Formatting 8a35804d6b -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2971 Formatting aaf6d5f5df -->
