@@ -1587,6 +1587,7 @@
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row27"
                                     >
                                     <entry>27</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-00019 | issue 14 | Second Sentence of each pair printed as the number only (3.4.5.1.(4), 9.9.11.3.(4)) to match the PDF. -->
                                     <entry>
                                     <emphasis style="bold">
                                     Illumination of <ref type="term" target="xt">Exit</ref> Signs
@@ -1599,7 +1600,7 @@
                                             /> and <ref
                                             type="internal"
                                             target="nbc.divB.part3.sect4.subsect5.art1.sent4"
-                                            display-type="long"
+                                            display-type="number"
                                             /> , <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect11.art3.sent3"
@@ -1607,7 +1608,7 @@
                                             /> and <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect11.art3.sent4"
-                                            display-type="long"
+                                            display-type="number"
                                             /><lb/>
                                         <ref type="term" target="xt">Exit</ref> signs are required to be illuminated continuously while the <ref
                                             type="term"
