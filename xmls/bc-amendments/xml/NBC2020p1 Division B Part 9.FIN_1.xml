@@ -3855,12 +3855,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <colspec colname="3" colwidth="80*"/>
                                 <colspec colname="4" colwidth="80*"/>
                                 <colspec colname="5" colwidth="120*"/>
+                                <!-- CLAUDE-AUTOFIX CF-04724 | issue 2559 | Header cells span as in the PDF; the GWB nail and screw cells span the five GWB rows, NP spans WSP-A to WSP-E, and WSP-C and WSP-D get their missing 3.25 mm x 63 mm nail cell, as in the PDF. -->
                                 <thead>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.rowh1">
-                                        <entry align="center">Reference framing type<super>(1)</super></entry>
-                                        <entry align="center">Minimum Sheathing Element<super>(2)</super> and Maximum Stud Spacing</entry>
-                                        <entry align="center">Minimum Specifications for Fasteners</entry>
-                                        <entry align="center">Minimum Number or Maximum Spacing of Fasteners<super>(3)(4)</super> along Panel Edges Fastened to Framing</entry>
+                                        <entry align="center" rowspan="2">Reference framing type<super>(1)</super></entry>
+                                        <entry align="center" rowspan="2">Minimum Sheathing Element<super>(2)</super> and Maximum Stud Spacing</entry>
+                                        <entry align="center" colspan="2">Minimum Specifications for Fasteners</entry>
+                                        <entry align="center" rowspan="2">Minimum Number or Maximum Spacing of Fasteners<super>(3)(4)</super> along Panel Edges Fastened to Framing</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.rowh2">
                                         <entry align="center">Common, Spiral or Ring Thread Nails</entry>
@@ -3872,8 +3873,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row1">
                                         <entry align="center">GWB-O (interior side of WSP and DWB framing types)</entry>
                                         <entry align="left">12.5 mm gypsum board for 600 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<super>(5)</super></entry>
-                                        <entry align="center">3.45 mm shank diamter, Type W, with 20 mm penetration into support framing<super>(6)</super></entry>
+                                        <entry align="center" rowspan="5">2.48 mm diameter ring thread with 20 mm penetration into support framing<super>(5)</super></entry>
+                                        <entry align="center" rowspan="5">3.45 mm shank diamter, Type W, with 20 mm penetration into support framing<super>(6)</super></entry>
                                         <entry align="center">200 mm o.c. for nails or 300 mm o.c. for screws</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row2">
@@ -3900,31 +3901,31 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">WSP-A</entry>
                                         <entry align="left">9.5 mm plywood, OSB or waferboard for 400 mm stud spacing</entry>
                                         <entry align="center">2.84 mm x 51 mm<super>(8)</super></entry>
-                                        <entry align="center">NP<super>(9)</super></entry>
+                                        <entry align="center" rowspan="5">NP<super>(9)</super></entry>
                                         <entry align="center">150 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row7">
                                         <entry align="center">WSP-B</entry>
                                         <entry align="left">11 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
                                         <entry align="center">3.25 mm x 63 mm<super>(8)</super></entry>
-                                        <entry align="center">NP<super>(9)</super></entry>
                                         <entry align="center">150 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row8">
                                         <entry align="center">WSP-C</entry>
                                         <entry align="left">11 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
+                                        <entry align="center">3.25 mm x 63 mm<super>(8)</super></entry>
                                         <entry align="center">100 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row9">
                                         <entry align="center">WSP-D</entry>
                                         <entry align="left">11 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
+                                        <entry align="center">3.25 mm x 63 mm<super>(8)</super></entry>
                                         <entry align="center">75 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row10">
                                         <entry align="center">WSP-E</entry>
                                         <entry align="left">15.5 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
                                         <entry align="center">3.66 mm x 76 mm<super>(8)</super></entry>
-                                        <entry align="center">NP<super>(9)</super></entry>
                                         <entry align="center">75 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row11">
