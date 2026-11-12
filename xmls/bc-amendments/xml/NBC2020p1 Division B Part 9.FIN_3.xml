@@ -736,34 +736,28 @@
                                 <colspec colname="col6" colwidth="*"/>
                                 <colspec colname="col7" colwidth="*"/>
                                 <colspec colname="col8" colwidth="*"/>
+                                <!-- CLAUDE-AUTOFIX CF-08089 | issue 5131 | Header cells span two rows and Minimum Specification of Fasteners spans its two sub-columns once; the GWB fastener cells span the GWB-O to GWB-D rows once, as in the PDF. -->
                                 <thead>
                                     <row>
-                                        <entry align="center">Reference Framing Type</entry>
-                                        <entry align="center">Minimum Sheathing Element<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note1">Plywood, OSB, waferboard and board lumber may be installed vertically or horizontally and shall conform to the material standards specified in Subsection 9.23.17. Gypsum sheathing shall meet the requirements of gypsum board in Subsection 9.29.5.</note> and maximum stud spacing</entry>
-                                        <entry align="center">Minimum Specification of Fasteners, mm</entry>
-                                        <entry align="center">Minimum Specification of Fasteners, mm</entry>
-                                        <entry align="center">Minimum Number<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note2">For plywood, OSB or waferboard panel sheathing, the maximum fastener spacing along intermediate supports shall be 300 mm o.c. For gypsum sheathing, the maximum spacing along intermediate supports shall conform to Sentence 9.29.5.8.(4) for nails and Sentence 9.29.5.9.(4) for screws.</note> or Maximum Spacing of Fasteners<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note2"/> at Panel Edges to Framing</entry>
-                                        <entry align="center">K<sub>Wframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note3">See A-9.23.13.7.(3).</note></entry>
-                                        <entry align="center">K<sub>Sframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note4">See A-9.23.13.7.(4).</note></entry>
-                                        <entry align="center">Factored shear resistance, kN/m</entry>
+                                        <entry align="center" rowspan="2">Reference Framing Type</entry>
+                                        <entry align="center" rowspan="2">Minimum Sheathing Element<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note1">Plywood, OSB, waferboard and board lumber may be installed vertically or horizontally and shall conform to the material standards specified in Subsection 9.23.17. Gypsum sheathing shall meet the requirements of gypsum board in Subsection 9.29.5.</note> and maximum stud spacing</entry>
+                                        <entry align="center" colspan="2">Minimum Specification of Fasteners, mm</entry>
+                                        <entry align="center" rowspan="2">Minimum Number<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note2">For plywood, OSB or waferboard panel sheathing, the maximum fastener spacing along intermediate supports shall be 300 mm o.c. For gypsum sheathing, the maximum spacing along intermediate supports shall conform to Sentence 9.29.5.8.(4) for nails and Sentence 9.29.5.9.(4) for screws.</note> or Maximum Spacing of Fasteners<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note2"/> at Panel Edges to Framing</entry>
+                                        <entry align="center" rowspan="2">K<sub>Wframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note3">See A-9.23.13.7.(3).</note></entry>
+                                        <entry align="center" rowspan="2">K<sub>Sframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note4">See A-9.23.13.7.(4).</note></entry>
+                                        <entry align="center" rowspan="2">Factored shear resistance, kN/m</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.rowh2">
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
                                         <entry align="center">Common, Spiral or Ring Thread</entry>
                                         <entry align="center">Screws</entry>
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
                                     </row>
                                 </thead>
                                 <tbody>
                                     <row>
                                         <entry align="center">GWB-O (interior side of WSP framing types)</entry>
                                         <entry align="center">12.5 mm gypsum for 600 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note5">Nails for GWB framing types shall meet the requirements of Article 9.29.5.6.</note></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note6">Screws for GWB framing types shall meet the requirements of Article 9.29.5.7.</note></entry>
+                                        <entry align="center" rowspan="5">2.48 mm diameter ring thread with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note5">Nails for GWB framing types shall meet the requirements of Article 9.29.5.6.</note></entry>
+                                        <entry align="center" rowspan="5">3.45 mm shank diameter Type W with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note6">Screws for GWB framing types shall meet the requirements of Article 9.29.5.7.</note></entry>
                                         <entry align="center">200 mm o.c. for nail 300 mm o.c. for screw</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">n/a</entry>
@@ -772,8 +766,6 @@
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.row2">
                                         <entry align="center">GWB-A</entry>
                                         <entry align="center">12.5 mm gypsum for 600 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note6"/></entry>
                                         <entry align="center">200 mm o.c. for nail 300 mm o.c. for screw</entry>
                                         <entry align="center">2.85</entry>
                                         <entry align="center">4.28</entry>
@@ -782,8 +774,6 @@
                                     <row>
                                         <entry align="center">GWB-B</entry>
                                         <entry align="center">12.5 mm gypsum for 400 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note6a">Screws for GWB framing types shall meet the requirements of Article 9.29.5.7.</note></entry>
                                         <entry align="center">150 mm o.c. Or 200 mm o.c. for blocked</entry>
                                         <entry align="center">1.65</entry>
                                         <entry align="center">2.148</entry>
@@ -792,8 +782,6 @@
                                     <row>
                                         <entry align="center">GWB-C</entry>
                                         <entry align="center">12.5 mm gypsum for 400 mm stud spacing or 12.5 mm gypsum for 600 mm stud spacing, blocked<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note9">Where blocking is required, horizontal panel sheathing joints shall occur over and be fastened to blocking of not less than 38 mm x 89 mm lumber oriented either edgewise or flatwise.</note></entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note6"/></entry>
                                         <entry align="center">150 mm o.c. or 200 mm o.c. for blocked</entry>
                                         <entry align="center">1.23</entry>
                                         <entry align="center">1.84</entry>
@@ -802,8 +790,6 @@
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.row5">
                                         <entry align="center">GWB-D</entry>
                                         <entry align="center">12.5 mm gypsum for 400 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note6"/></entry>
                                         <entry align="center">100 mm o.c.</entry>
                                         <entry align="center">1.00</entry>
                                         <entry align="center">1.50</entry>
