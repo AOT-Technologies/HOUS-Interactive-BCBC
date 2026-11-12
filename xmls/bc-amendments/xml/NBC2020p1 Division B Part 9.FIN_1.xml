@@ -18491,6 +18491,24 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-04248 | issue 2356 | Added BC Article 9.10.9.22. Multiple Tenant Self Storage Warehouses, which the PDF shows after 9.10.9.21. -->
+        <amendment id="bc-custom-9-10-9-22" sequence="2343"
+                   description="Add Article 9.10.9.22. Multiple Tenant Self Storage Warehouses">
+            <target type="position"
+                    parent-id="nbc.divBV2.part9.sect10.subsect9"
+                    position="after"
+                    reference-id="nbc.divBV2.part9.sect10.subsect9.art21"/>
+            <insert>
+                <new-content source="bc">
+                    <article xml:id="nbc.divBV2.part9.sect10.subsect9.art22" number="22">
+                        <title>Multiple Tenant Self Storage Warehouses</title>
+                        <sentence xml:id="nbc.divBV2.part9.sect10.subsect9.art22.sent1" number="1">
+                            <text>Multiple tenant self storage warehouses shall comply with <ref type="internal" target="nbc.divB.part3.sect3.subsect5.art9" display-type="long"/>.</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </insert>
+        </amendment>
     </amendments>
     
 </bc-overlay>
