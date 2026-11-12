@@ -263,7 +263,8 @@
         <!-- Amendment 013: Add sentence about fire-protection rating          -->
         <!-- Article 5.8.3.1 - General                                         -->
         <!-- ================================================================== -->
-        <amendment id="bc-013" sequence="13"
+        <!-- CLAUDE-AUTOFIX CF-03135 | issue 7385 | Disabled bc-013: it added a second Sentence 5.9.3.1.(2) (with the wrong id part5.sect8...) next to the one from bc-qa-68c9562179, so the website showed Sentence (2) twice; the PDF has it once. -->
+        <!-- <amendment id="bc-013" sequence="13"
                    description="Add sentence (2) about fire-protection rating in Article 5.8.3.1">
             <target type="position" 
                     parent-id="nbc.divB.part5.sect9.subsect3.art1"
@@ -275,7 +276,7 @@
                     </sentence>
                 </new-content>
             </insert>
-        </amendment>
+        </amendment> -->
         
         <!-- ================================================================== -->
         <!-- Amendment 014: Replace NBC with code in appendix note             -->
@@ -1364,7 +1365,8 @@
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part5.sect9.subsect3.art1.sent2" number="2">
                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1927 Missing Content 68c9562179 -->
-                        <text>Other fenestration assemblies and their components that are required to have a <emphasis style="italic">fire-</emphasis> <emphasis style="italic">protection rating</emphasis> need not conform to the requirements of this Subsection. (See Note A-5.9.2.1.(3).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-03135 | issue 7385 | Defined term 'fire-protection rating' as an italic term link and the See-Note as a link to Note A-5.9.2.1.(3) (taken from the disabled duplicate bc-013), as in the PDF. -->
+                        <text>Other fenestration assemblies and their components that are required to have a <ref type="term" target="fr-prtn">fire-protection rating</ref> need not conform to the requirements of this Subsection. (See <ref type="internal" target="nbc.divB.part5.appendix.appnote43" display-type="short"/>.)</text>
                     </sentence>
                 </new-content>
             </insert>
