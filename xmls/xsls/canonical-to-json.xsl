@@ -2646,6 +2646,12 @@
             <xsl:text>:</xsl:text>
             <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-10139 | issue 896 | The last Article, Subsection or Section of a list whose "or" / "and" pretext follows a separate comma also prints only its number, as in the PDF (9.27.9., or 9.27.10.). -->
+        <xsl:variable name="cl-comma-prev" select="$prev-significant[self::text()][normalize-space(.) = ',']/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and @display-type = ('long', 'short', 'medium') and normalize-space(@pretext) = ('or', 'and') and not($is-range-end) and $range-end-label = '' and $cl-comma-prev and $list-level = ('art', 'subsect', 'sect') and replace($cl-comma-prev/@target, '^.*\.([a-z]+)\d+$', '$1') = $list-level and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1) and substring($cl-comma-prev/@target, 8, 1) = substring(@target, 8, 1) and id(@target)">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-068 CF-04478 | issue 2464 | Two Article, Subsection or Section references joined by plain "and" / "or" (no pretext) print as in the PDF: "Articles 5.4.1.1. and 6.2.1.1." (plural first, bare second) and "Article X or Y". -->
         <xsl:variable name="pl-level" select="replace(@target, '^.*\.([a-z]+)\d+$', '$1')"/>
         <xsl:variable name="pl-prev" select="$prev-significant[self::text()][normalize-space(.) = ('and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][@display-type = 'long'][normalize-space(.) = '']]"/>
