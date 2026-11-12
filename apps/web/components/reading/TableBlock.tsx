@@ -667,9 +667,130 @@ const formatFormingPartLabel = (reference: ParsedInternalReference): string | nu
   return null;
 };
 
+// CLAUDE-AUTOFIX CL-028 CF-00876 | issue 2562 | The PDF writes the "Forming Part of" caption with a plural pretext ("Sentences X and Y"), no comma before the last "and", and no repeated article number.
+type FormingPartItem = {
+  kind: 'Article' | 'Sentence' | 'Clause' | 'Subclause';
+  article: string;
+  tail: string;
+};
+
+const toFormingPartItem = (target: string): FormingPartItem | null => {
+  const reference = parseInternalReference(target);
+  if (
+    reference.appendixLetter ||
+    !reference.part ||
+    !reference.section ||
+    !reference.subsection ||
+    !reference.article
+  ) {
+    return null;
+  }
+  const article = `${reference.part}.${reference.section}.${reference.subsection}.${reference.article}`;
+  const sentencePart = reference.sentence ? `(${reference.sentence})` : '';
+  if (reference.subclause) {
+    const clausePart = reference.clause ? `(${toAlphabetOrdinal(Number(reference.clause))})` : '';
+    return {
+      kind: 'Subclause',
+      article,
+      tail: `${sentencePart}${clausePart}(${toRoman(Number(reference.subclause))})`,
+    };
+  }
+  if (reference.clause) {
+    return {
+      kind: 'Clause',
+      article,
+      tail: `${sentencePart}(${toAlphabetOrdinal(Number(reference.clause))})`,
+    };
+  }
+  if (reference.sentence) {
+    return { kind: 'Sentence', article, tail: sentencePart };
+  }
+  return { kind: 'Article', article, tail: '' };
+};
+
+const joinWithAnd = (parts: string[]): string =>
+  parts.length === 1 ? parts[0] : `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}`;
+
+const formatFormingPartItems = (items: FormingPartItem[]): string => {
+  const runs: Array<{ kind: FormingPartItem['kind']; items: FormingPartItem[] }> = [];
+  for (const item of items) {
+    const lastRun = runs[runs.length - 1];
+    if (lastRun && lastRun.kind === item.kind) {
+      lastRun.items.push(item);
+    } else {
+      runs.push({ kind: item.kind, items: [item] });
+    }
+  }
+
+  const texts = runs.map((run) => {
+    const pretext = run.items.length > 1 ? `${run.kind}s` : run.kind;
+    if (run.kind === 'Article') {
+      return `${pretext} ${joinWithAnd(run.items.map((item) => `${item.article}.`))}`;
+    }
+    const groups: Array<{ article: string; tails: string[] }> = [];
+    for (const item of run.items) {
+      const lastGroup = groups[groups.length - 1];
+      if (lastGroup && lastGroup.article === item.article) {
+        lastGroup.tails.push(item.tail);
+      } else {
+        groups.push({ article: item.article, tails: [item.tail] });
+      }
+    }
+    const groupTexts = groups.map((group) =>
+      joinWithAnd([`${group.article}.${group.tails[0]}`, ...group.tails.slice(1)])
+    );
+    const hasGroupWithSeveralItems = groups.some((group) => group.tails.length > 1);
+    const body =
+      groupTexts.length === 1
+        ? groupTexts[0]
+        : hasGroupWithSeveralItems
+          ? groupTexts.join(' and ')
+          : joinWithAnd(groupTexts);
+    return `${pretext} ${body}`;
+  });
+
+  return texts.reduce((text, next, index) =>
+    index === 0 ? next : `${text}${texts[index - 1].includes(' and ') ? ', and ' : ' and '}${next}`
+  );
+};
+
+// CLAUDE-AUTOFIX CL-028 CF-10563 | issue 2566 | The PDF prints the caption as "Forming part of ..." with a lowercase "part" in these 13 tables (checked over the whole PDF); every other table has "Forming Part of ...".
+const LOWERCASE_FORMING_PART_TABLE_IDS = new Set<string>([
+  'nbc.divA.part1.sect1.subsect1.art1.table1',
+  'nbc.divA.part1.sect1.subsect1.art1.table2',
+  'nbc.divB.part10.sect2.subsect3.art3.table1',
+  'nbc.divB.part10.sect2.subsect3.art3.table2',
+  'nbc.divB.part10.sect2.subsect3.art3.table3',
+  'nbc.divB.part10.sect2.subsect3.art3.table4',
+  'nbc.divB.part10.sect2.subsect3.art3.table5',
+  'nbc.divB.part10.sect2.subsect3.art3.table6',
+  'nbc.divB.part10.sect2.subsect3.art3.table7',
+  'nbc.divB.part10.sect2.subsect3.art3.table8',
+  'nbc.divB.part10.sect2.subsect3.art3.table9',
+  'nbc.divB.part10.sect2.subsect3.art3.table10',
+  'nbc.divBV2.part9.sect32.subsect3.art8.table1',
+]);
+
 const formatFormingPartText = (formingPart: FormingPartReference[] | undefined): string | null => {
   if (!formingPart || formingPart.length === 0) {
     return null;
+  }
+
+  // CLAUDE-AUTOFIX CL-028 CF-00876 | issue 2562 | Use the PDF wording when every entry is an article, sentence, clause or subclause; anything else keeps the old wording below.
+  const pdfStyleItems: FormingPartItem[] = [];
+  let allPdfStyle = true;
+  for (const entry of formingPart) {
+    if (entry?.type === 'internal' && typeof entry.target === 'string') {
+      const item = toFormingPartItem(entry.target);
+      if (item) {
+        pdfStyleItems.push(item);
+      } else {
+        allPdfStyle = false;
+      }
+    }
+  }
+  if (allPdfStyle && pdfStyleItems.length > 0) {
+    return `Forming Part of ${formatFormingPartItems(pdfStyleItems)}`;
   }
 
   const labels = formingPart
@@ -1419,7 +1540,10 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const tableNumber = tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
-  const formingPartText = formatFormingPartText(formingPartEntries);
+  const formattedFormingPartText = formatFormingPartText(formingPartEntries);
+  const formingPartText = LOWERCASE_FORMING_PART_TABLE_IDS.has(rawTable.id)
+    ? formattedFormingPartText?.replace(/^Forming Part/, 'Forming part') ?? null
+    : formattedFormingPartText;
 
   const structure = activeRevision?.structure ?? rawTable.structure;
   const hasDirectRows = Array.isArray(table.rows) && table.rows.length > 0;
