@@ -3230,7 +3230,14 @@
     <xsl:template match="emphasis | super | sub | ref | measurement" mode="text-only">
         <xsl:apply-templates select="text()" mode="text-only"/>
     </xsl:template>
-    
+
+    <!-- CLAUDE-AUTOFIX CL-068 CF-08304 | issue 5257 | An empty long Sentence or Clause reference inside a title written as plain text prints its number, as in the PDF (Performance Approach [Clause 9.32.3.1.(1)(a)]), instead of disappearing. -->
+    <xsl:template match="title//ref[@type = 'internal'][@display-type = 'long'][normalize-space(.) = ''][matches(@target, '\.art\d+\.sent\d+(\.clause\d+)?$')][id(@target)]" mode="text-only" priority="2">
+        <xsl:variable name="tt" select="id(@target)"/>
+        <xsl:variable name="ts" select="$tt/ancestor-or-self::sentence[1]"/>
+        <xsl:value-of select="concat(if (contains(@target, '.clause')) then 'Clause ' else 'Sentence ', string-join($ts/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.(', $ts/@number, ')', if (contains(@target, '.clause')) then concat('(', $tt/@letter, ')') else '')"/>
+    </xsl:template>
+
     <!-- ================================================================== -->
     <!-- CROSS-REFERENCE INDEX BUILDING                                     -->
     <!-- ================================================================== -->
