@@ -2681,7 +2681,8 @@
             <xsl:variable name="appd-count" select="count(id($appd-art)//*[local-name() = $appd-kind][starts-with(@xml:id, concat($appd-art, '.', $appd-kind))][matches(substring-after(@xml:id, concat($appd-art, '.', $appd-kind)), '^\d+$')])"/>
             <xsl:variable name="appd-no" select="xs:integer(replace(@target, '^.*\.(table|figure)(\d+)$', '$2'))"/>
             <xsl:text>:</xsl:text>
-            <xsl:if test="not($is-range-end) and not($clause-list-prev and matches($clause-list-prev/@target, '\.appendixD\..*\.(table|figure)\d+$'))">
+            <!-- CLAUDE-AUTOFIX CL-068 CF-09625 | issue 5663 | The end of an Appendix D range (Tables D-2.6.1.-A to D-2.6.1.-D) also prints without the word, as in the PDF. -->
+            <xsl:if test="not($is-range-end) and not($clause-list-prev and matches($clause-list-prev/@target, '\.appendixD\..*\.(table|figure)\d+$')) and not(exists($prev-significant[self::text()][normalize-space(.) = 'to']/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.appendixD\..*\.(table|figure)\d+$')]]) or (normalize-space(@pretext) = 'to' and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.appendixD\..*\.(table|figure)\d+$')]])))">
                 <xsl:value-of select="if ($appd-kind = 'table') then 'Table ' else 'Figure '"/>
             </xsl:if>
             <xsl:value-of select="concat('D-', string-join(for $t in tokenize(replace($appd-art, '^.*\.appendixD\.', ''), '\.') return replace($t, '^[a-z]+', ''), '.'), '.')"/>
