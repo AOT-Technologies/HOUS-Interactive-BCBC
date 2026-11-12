@@ -249,9 +249,11 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({
       )}
       {figureNotes.length > 0 && (
         <div className="figure-block__notes">
+          {/* CLAUDE-AUTOFIX CL-066 CF-00859 | issue 620 | The PDF prints "Notes to Figure X:" as a heading and plain "(n)" before each note. */}
+          <p className="figure-block__notes-title">{`${figureNotes.length === 1 ? 'Note' : 'Notes'} to ${figureLabel}:`}</p>
           {figureNotes.map((note) => (
             <p key={note.id} className="figure-block__note">
-              <strong>{`Note (${getFigureNoteNumber(note.id)}): `}</strong>
+              {`(${getFigureNoteNumber(note.id)}) `}
               {parseTextWithMarkers(note.content, [], interactive, [], [], renderContext)}
             </p>
           ))}

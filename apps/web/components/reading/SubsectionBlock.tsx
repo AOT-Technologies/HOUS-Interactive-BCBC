@@ -2,6 +2,7 @@ import React from 'react';
 import type { Subsection } from '@bc-building-code/bcbc-parser';
 import { ArticleBlock } from './ArticleBlock';
 import { formatNumberedTitle } from '../../lib/title-formatting';
+import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './SubsectionBlock.css';
 
 export interface SubsectionBlockProps {
@@ -32,11 +33,19 @@ export const SubsectionBlock: React.FC<SubsectionBlockProps> = ({
     titleText = '';
   }
 
+  // CLAUDE-AUTOFIX CL-067 CF-00874 | issue 2900 | The PDF prints "(See Note ...)" after the subsection title; the JSON has it as see_also.
+  const seeAlsoText = (subsection as Subsection & { see_also?: string }).see_also?.trim();
+
   return (
     <div className="subsectionBlock">
       <h3 className="subsectionHeading">
         {formatNumberedTitle(fullSubsectionNumber, titleText)}
       </h3>
+      {seeAlsoText ? (
+        <p className="articleSeeAlso">
+          {parseTextWithMarkers(seeAlsoText, [], interactive, [], [], { kind: 'article', referenceId: subsection.id })}
+        </p>
+      ) : null}
       <div className="articles">
         {subsection.articles.map((article) => (
           <ArticleBlock 

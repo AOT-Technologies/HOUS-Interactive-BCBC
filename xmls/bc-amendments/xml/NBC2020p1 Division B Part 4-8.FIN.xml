@@ -1,0 +1,1757 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-part3-amendments-2023" 
+            version="1.0" 
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020 - PART 4-8   First File    -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Part 4-8</title>
+        <description>British Columbia-specific amendments for Part 4-8 (Structural Design)</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Part 4-8.FIN.docx</source-document>
+    </metadata>
+
+    <!-- ================================================================== -->
+    <!-- GLOBAL TEXT REPLACEMENTS (BBC-329)                                 -->
+    <!-- The NBC source wraps every inline formula in <f>, which reaches    -->
+    <!-- the canonical MathML as a literal <mtext>[f]</mtext> marker shown  -->
+    <!-- on the website (e.g. "peak factor calculated as [f] ..."). The     -->
+    <!-- "[f]" string only occurs in those 51 mtext nodes, so blank it.     -->
+    <!-- ================================================================== -->
+    <text-replacements>
+        <replace from="[f]" to=""/>
+    </text-replacements>
+
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 001: Replace ASME A17.1 reference with Safety Standards Act -->
+        <!-- Article 4.1.5.11 Table 4.1.5.11 - Elevator impact loads           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-001" sequence="1"
+                   description="Replace ASME A17.1 reference with Safety Standards Act in Table 4.1.5.11">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect5.art11.table1"/>
+            <modify>
+                <element-replace element="row" position="4">
+                    <new-content source="bc">
+                        <row xml:id="nbc.divB.part4.sect1.subsect5.art11.table1.row4">
+                            <entry align="left">Operation of elevators</entry>
+                            <entry align="center">
+                                <note xml:id="nbc.divB.part4.sect1.subsect5.art11.table1.note1"
+                                      vendor-id="et000160-1">See the Safety Standards Act and pursuant regulations.</note>
+                            </entry>
+                        </row>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 002: Replace ASME A17.1 reference with Safety Standards Act -->
+        <!-- Article 4.1.8.18 Table 4.1.8.18 - Elevators and escalators       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-002" sequence="2"
+                   description="Replace ASME A17.1 reference with Safety Standards Act in Table 4.1.8.18">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.table1"/>
+            <modify>
+                <element-replace element="row" position="30">
+                    <new-content source="bc">
+                        <row xml:id="nbc.divB.part4.sect1.subsect8.art18.table1.row30">
+                            <entry>22</entry>
+                            <entry>Elevators and escalators<note xml:id="nbc.divB.part4.sect1.subsect8.art18.table1.note3"
+                                                                     vendor-id="et001041-3">See also the Safety Standards Act and pursuant regulations.</note>
+                            </entry>
+                            <entry/>
+                            <entry/>
+                            <entry/>
+                        </row>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 003: Add CSA A344.2 reference for steel pallet racks    -->
+        <!-- Article 4.1.8.18.(13) - Steel pallet storage racks design        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-003" sequence="3"
+                   description="Add CSA A344.2 reference for steel pallet storage racks in Article 4.1.8.18.(13)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.sent13"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Free-standing steel pallet storage racks are permitted to be designed according to CSA A344.2, "Standard for design and construction of steel storage racks," and to resist earthquake effects using rational analysis, provided design achieves the minimum performance level required by <ref type="internal"
+                                                                                                                                                                                                                                                                                                                                  target="nbc.divB.part4.sect1.subsect8"
+                                                                                                                                                                                                                                                                                                                                  display-type="long"/> (See <ref type="internal"
+                                                            target="nbc.divB.part4.appendix.appnote107"
+                                                            display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 004: Replace NPC/NBC reference with BC Building Code    -->
+        <!-- Appendix Note A-4.1.6.4.(3) - Flow Control Drains               -->
+        <!-- ================================================================== -->
+        <amendment id="bc-004" sequence="4"
+                   description="Replace NPC and NBC reference with BC Building Code in Note A-4.1.6.4.(3)">
+            <target type="canonical-id" id="nbc.divB.part4.appendix.appnote39"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph">
+                    <find-replace>
+                        <find>The designer must ensure that the building complies with both the NPC and the NBC.</find>
+                        <replace>The designer must ensure that the building complies with the BC Building Code Book I and Book II: Plumbing Systems</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 005: Replace NBC with British Columbia Building Code    -->
+        <!-- Article 5.1.5.1 - Requirements in Other Parts of the Code        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-005" sequence="5"
+                   description="Replace NBC with British Columbia Building Code in Article 5.1.5.1">
+            <target type="canonical-id" id="nbc.divB.part5.sect1.subsect5.art1.sent1"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>NBC</find>
+                        <replace>British Columbia Building Code</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 006: Replace NPC reference with BC Book II reference    -->
+        <!-- Article 5.6.2.2.(2) - Drainage requirements                      -->
+        <!-- ================================================================== -->
+        <amendment id="bc-006" sequence="6"
+                   description="Replace NPC reference with BC Book II reference in Article 5.6.2.2.(2)">
+            <target type="canonical-id" id="nbc.divB.part5.sect6.subsect2.art2.sent2"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect6.subsect2.art2.sent2" number="2" vendor-id="es001645">
+                        <text>Where precipitation can accumulate on sloped or horizontal assemblies,
+                            provision shall be made for drainage conforming with Article 2.4.10.4. of Division B of Book II (Plumbing Systems) of this Code.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 007: Replace wired glass text with fire-protection rating -->
+        <!-- Article 5.8.2.1.(3) - General                                    -->
+        <!-- ================================================================== -->
+        <amendment id="bc-007" sequence="7"
+                   description="Replace wired glass assembly text with fire-protection rating in Article 5.8.2.1.(3)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art1.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art1.sent3" number="3">
+                        <text>Windows, doors and skylights, including their components, that are required to have a <ref type="term" target="fr-prtn">fire-protection rating</ref> need not conform to the requirements of this Subsection. (See <ref type="internal" target="nbc.divB.part5.appendix.appnote43" display-type="short"/>.)</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 008: Add exception and components text to sentence      -->
+        <!-- Article 5.8.2.2.(1) - Applicable Standards                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-008" sequence="8"
+                   description="Add exception and components text to sentence in Article 5.8.2.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent5" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art3.sent1" display-type="long"/>, windows, doors, skylights, including their components, shall conform to the requirements
+                            in</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 009: Add exception text to clause (b)                   -->
+        <!-- Article 5.8.2.2.(1)(b) - Applicable Standards                    -->
+        <!-- ================================================================== -->
+        <amendment id="bc-009" sequence="9"
+                   description="Add exception text to clause (b) in Article 5.8.2.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent4" display-type="short"/>, <ref type="standard" target="csaa440S1" standardId="csaa440S1"/></text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 010: Add new sentence (4) about loads and procedures    -->
+        <!-- Article 5.8.2.2 - Applicable Standards                           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-010" sequence="10"
+                   description="Add new sentence (4) about loads and procedures in Article 5.8.2.2">
+            <target type="position" 
+                    parent-id="nbc.divB.part5.sect9.subsect2.art2"
+                    position="after"
+                    reference-id="nbc.divB.part5.sect9.subsect2.art2.sent3"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art2.sent4" number="4">
+                        <!-- CLAUDE-AUTOFIX CF-03431 | issue 9956 | The PDF prints Section 5.2 without a final period here, so the reference carries its own label. -->
+                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long">Section 5.2</ref> may be used instead of the loads and procedures set out in the standard. (See Note 5.8.2.2.(4).)</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 011: Add new sentence (5) about Limited Water doors    -->
+        <!-- Article 5.8.2.2 - Applicable Standards                           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-011" sequence="11"
+                   description="Add new sentence (5) about Limited Water doors in Article 5.8.2.2">
+            <target type="position" 
+                    parent-id="nbc.divB.part5.sect9.subsect2.art2"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5" number="5">
+                        <text>A door designated as a "Limited Water" door in accordance with the standard referenced in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause1" display-type="medium"/> shall not be used unless the door</text>
+                        <clause xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5.clause1" letter="a">
+                            <text>separates a <ref type="term" target="dwllng-n">dwelling unit</ref> from an unconditioned <ref type="term" target="trg-grg">storage garage</ref> or a carport,</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5.clause2" letter="b">
+                            <text>is designed with a clear width, a clear and level space, a door-opening device and a door closer in conformance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> (see <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6" display-type="long"/>.), or</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part5.sect9.subsect2.art2.sent5.clause3" letter="c">
+                            <text>meets the criteria in <ref type="internal" target="nbc.divBV2.part9.sect27.subsect3.art8.sent3" display-type="short"/> such that flashing would not be required.</text>
+                        </clause>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 012: Simplify sentence structure for non-conforming products -->
+        <!-- Article 5.8.2.3.(1) - Structural and Environmental Loads         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-012" sequence="12"
+                   description="Simplify sentence structure for non-conforming products in Article 5.8.2.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art3.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect2.art3.sent1" number="1">
+                        <text>Windows, doors, skylights and their components that do not conform to <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2" display-type="long"/> shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4.art1" display-type="long"/>, <ref type="internal" target="nbc.divB.part5.sect4" display-type="long"/> and <ref type="internal" target="nbc.divB.part5.sect6" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote44" display-type="short"/>.)</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 013: Add sentence about fire-protection rating          -->
+        <!-- Article 5.8.3.1 - General                                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-013" sequence="13"
+                   description="Add sentence (2) about fire-protection rating in Article 5.8.3.1">
+            <target type="position" 
+                    parent-id="nbc.divB.part5.sect9.subsect3.art1"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect8.subsect3.art1.sent2" number="2">
+                        <text>Other fenestration assemblies and their components that are required to have a <ref type="term" target="fr-prtn">fire-protection rating</ref> need not conform to the requirements of this Subsection. (See <ref type="internal" target="nbc.divB.part5.appendix.appnote43" display-type="short"/>.)</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 014: Replace NBC with code in appendix note             -->
+        <!-- Appendix Note A-5.1.4.1.(2) - Multiple Functions                 -->
+        <!-- ================================================================== -->
+        <amendment id="bc-014" sequence="14"
+                   description="Replace NBC with code in Note A-5.1.4.1.(2)">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote5"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph[3]">
+                    <find-replace>
+                        <find>may impact compliance with other Parts of the NBC:</find>
+                        <replace>may impact compliance with other Parts of the code:</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 015: Replace NBC with British Columbia Building Code    -->
+        <!-- Appendix Note A-5.1.4.2 - Deterioration                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-015" sequence="15"
+                   description="Replace NBC with British Columbia Building Code in Note A-5.1.4.2">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote8"/>
+            <modify>
+                <element-replace element="paragraph" position="6">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote8.para6">It is also noted that <ref type="standard" target="csas478" standardId="csas478"/> contains requirements
+                            for actions beyond the scope of the British Columbia Building Code, which may not be the responsibility
+                            of the designer, builder or authority having jurisdiction. These include
+                            requirements relating to quality assurance, inspection, maintenance,
+                            minimum design service lives and potential impacts of climate change,
+                            which are not addressed in the Code. The reference herein to <ref type="standard" target="csas478" standardId="csas478"/> is not intended to
+                            imply that the designer, builder or authority having jurisdiction
+                            adopt, apply or enforce any of these requirements.</paragraph>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 016: Replace NBC with code in appendix note              -->
+        <!-- Appendix Note A-5.2.2.2.(4) - Membrane Roofing Systems            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-016" sequence="16"
+                   description="Replace NBC with code in Note A-5.2.2.2.(4)">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote13"/>
+            <modify>
+                <element-replace element="paragraph" position="4">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote13.para4">The wind uplift resistance obtained from the test method in <ref type="standard" target="csaa123.21" standardId="csaa123.21"/> is limited to configurations
+                            with specific fastener or adhesive patterns. To extrapolate the test
+                            data to non-tested configurations, refer to <ref type="standard" target="spriwd1" standardId="spriwd1"/> for a rational calculation procedure. However,
+                            in using this extrapolation procedure, wind loads should be calculated
+                            in accordance with the code. NRC's guide for wind design referenced
+                            above provides further guidance and examples of wind load calculations.</paragraph>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 017: Replace national reference with BC provincial       -->
+        <!-- Appendix Note A-5.3.1.2.(1) - Thermal Insulation                  -->
+        <!-- ================================================================== -->
+        <amendment id="bc-017" sequence="17"
+                   description="Replace national reference with BC provincial reference in Note A-5.3.1.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote17"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph[4]">
+                    <find-replace>
+                        <find>For most of the country, however, exterior design temperatures are much lower; for example, -20°C in Toronto and Charlottetown, and -50°C in Dawson.</find>
+                        <replace>In other areas of the Province, however, exterior design temperatures are much lower.</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 018: Replace application note with broader scope         -->
+        <!-- Appendix Note A-5.8.2.1.(3) - Airtightness and Watertightness     -->
+        <!-- ================================================================== -->
+        <amendment id="bc-018" sequence="18"
+                   description="Replace Note A-5.8.2.1.(3) with broader scope covering all fenestration assemblies">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote43"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part5.appendix.appnote43" vendor-id="en001183" refs="es007991">
+                        <number>5.8.2.1.(3)</number>
+                        <title>Airtightness and Watertightness of Windows, Doors, Skylights, Other Fenestration Assemblies and their Components Required to have a Fire-Protection Rating</title>
+                        <paragraph>The airtightness and watertightness requirements are waived for these products when used in such an application, in recognition of the fact that the availability of assemblies that meet both the requirements of the applicable standards and the requirements for fire resistance may be limited. However, control of air and water leakage should not be ignored: measures should be taken to attempt to comply with applicable requirements.</paragraph>
+                    </application-note>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 019: Add two ASTM standards to list                      -->
+        <!-- Appendix Note A-5.8.3 - Testing Standards                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-019" sequence="19"
+                   description="Add ASTM E 331 and E 547 standards to Note A-5.8.3">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote47"/>
+            <modify>
+                <element-change xpath-within-target=".//paragraph/list">
+                    <add-child>
+                        <item>
+                            <ref type="standard" target="astme331" standardId="astme331"/>
+                        </item>
+                        <item>
+                            <ref type="standard" target="astme547" standardId="astme547"/>
+                        </item>
+                    </add-child>
+                </element-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 020: Add sentence about indoor design temperatures       -->
+        <!-- Article 6.2.1.1 - Good Engineering Practice                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-020" sequence="20"
+                   description="Add sentence (2) about indoor design temperatures for residential buildings in Article 6.2.1.1">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect2.subsect1.art1"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art1.sent2" number="2">
+                        <text>Indoor design temperatures for residential <ref type="term" target="bldng">buildings</ref> shall be those established in <ref type="internal" target="nbc.divBV2.part9.sect33.subsect3.art1" display-type="long"/>.</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 021: Replace sentence 2 with Reserved                    -->
+        <!-- Article 6.2.1.2 - Outdoor Design Conditions                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-021" sequence="21"
+                   description="Replace sentence (2) with Reserved in Article 6.2.1.2">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art2.sent2"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art2.sent2" number="2">
+                        <text>Reserved</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 022: Replace sentence 3 with Reserved                    -->
+        <!-- Article 6.2.1.2 - Outdoor Design Conditions                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-022" sequence="22"
+                   description="Replace sentence (3) with Reserved in Article 6.2.1.2">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art2.sent3"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art2.sent3" number="3">
+                        <text>Reserved</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 023: Replace sentence 1 with BC Safety Standards Act     -->
+        <!-- Article 6.2.1.5 - Installation Standards                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-023" sequence="23"
+                   description="Replace sentence (1) with BC Safety Standards Act reference in Article 6.2.1.5">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art5.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art5.sent1" number="1">
+                        <text>Except as provided in <ref type="internal" target="nbc.divB.part6.sect9.subsect4.art2" display-type="long" pretext="Articles"/> and <ref type="internal" target="nbc.divB.part6.sect3.subsect1.art4" display-type="number"/>, the installation of heating and air-conditioning equipment, including mechanical refrigeration equipment, and including provisions for mounting, clearances and air supply, shall conform to the Safety Standards Act and pursuant regulations.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 024: Add sentence about solid-fuel burning boilers      -->
+        <!-- Article 6.2.1.5 - Installation Standards                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-024" sequence="24"
+                   description="Add sentence (2) about solid-fuel burning boilers in Article 6.2.1.5">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect2.subsect1.art5"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect2.subsect1.art5.sent2" number="2">
+                        <text>A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of <ref type="standard" target="csab365" standardId="csab365"/>.</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 025: Add sentence about suite ventilation                -->
+        <!-- Article 6.3.1.1 - Required Ventilation                            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-025" sequence="25"
+                   description="Add sentence (5) about suite ventilation in Article 6.3.1.1">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect3.subsect1.art1"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect3.subsect1.art1.sent5" number="5">
+                        <text>For suites in <ref type="term" target="bldng">buildings</ref> conforming to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/> or <ref type="internal" target="nbc.divB.part10.sect2.subsect3" display-type="number"/>, the outdoor air required by <ref type="internal" target="nbc.divB.part6.sect3.subsect1.art1.sent2" display-type="short"/> shall be supplied directly to each suite by mechanical ventilation through ducting.</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 026: REMOVED - Article 6.3.2.14 already exists in NBC   -->
+        <!-- Article 6.3.2.14 (Cleaning Devices) is present in canonical NBC   -->
+        <!-- No need to insert a Reserved placeholder                          -->
+        <!-- ================================================================== -->
+        <!-- REMOVED: Duplicate article insertion
+             <amendment id="bc-026" sequence="26"
+             description="Insert Reserved Article 6.3.2.14 after Article 6.3.2.13">
+             <target type="position"
+             parent-id="nbc.divB.part6.sect3.subsect2"
+             position="after"
+             reference-id="nbc.divB.part6.sect3.subsect2.art13"/>
+             <insert>
+             <new-content source="bc">
+             <article xml:id="nbc.divB.part6.sect3.subsect2.art14" number="14">
+             <title>Reserved</title>
+             <sentence xml:id="nbc.divB.part6.sect3.subsect2.art14.sent1" number="1">
+             <text>Reserved</text>
+             </sentence>
+             </article>
+             </new-content>
+             </insert>
+             </amendment>
+        -->
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 027: Replace NPC reference with BC code reference        -->
+        <!-- Article 6.3.2.15.(8) - Evaporative Heat Rejection Systems         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-027" sequence="27"
+                   description="Replace National Plumbing Code reference with BC code reference in Article 6.3.2.15.(8)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art15.sent8"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Make-up water connections shall be equipped with backflow prevention
+                            devices that conform to Article 2.6.2.1. of Division B of Book II, (Plumbing Systems), of this code. (See <ref type="internal"
+                                                                                                                                           target="nbc.divB.part6.appendix.appnote17"
+                                                                                                                                           display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 028: Replace NPC reference with BC code reference        -->
+        <!-- Article 6.3.2.15.(10) - Evaporative Heat Rejection Systems        -->
+        <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CL-055 CF-10484 | issue 666 | The whole text is replaced so the NPC reference is really removed, as in the PDF (the find-replace for it never matched: the reference has ref-style and ref-punc). -->
+        <amendment id="bc-028" sequence="28"
+                   description="Replace National Plumbing Code reference with BC code reference in Article 6.3.2.15.(10)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art15.sent10"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Drains, overflows and blow-downs shall be connected to the <ref type="term" target="bldng">building</ref>'s drainage system in accordance with <ref type="external" target="npc">Clause 2.4.2.1.(1)(e) of Division B of Book II, (Plumbing Systems), of this code</ref>. </text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 029: Replace NPC reference with BC code reference        -->
+        <!-- Article 6.3.2.16.(6) - Evaporative Air Coolers                    -->
+        <!-- ================================================================== -->
+        <amendment id="bc-029" sequence="29"
+                   description="Replace National Plumbing Code reference with BC code reference in Article 6.3.2.16.(6)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art16.sent6"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Make-up water connections shall be equipped with backflow prevention
+                            devices that conform to Article 2.6.2.1. of Division B of Book II, (Plumbing Systems), of this code. (See <ref type="internal"
+                                                                                                                                           target="nbc.divB.part6.appendix.appnote19"
+                                                                                                                                           display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 030: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.3.4.2.(3) - General Ventilation                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-030" sequence="30"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.3.4.2.(3)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect4.art2.sent3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>A ventilation system required by this Subsection shall be maintained
+                            in conformance with Article 5.5.4.1. of Division B of the British Columbia Fire Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 031: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.3.4.3.(1) - Enclosure Exhaust Ventilation              -->
+        <!-- ================================================================== -->
+        <amendment id="bc-031" sequence="31"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.3.4.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect4.art3.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1" number="1">
+                        <text>The ventilation system for a power-ventilated enclosure required by Sentence 5.5.4.2.(1) of Division B of the British Columbia Fire Code shall</text>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause1" letter="a">
+                            <text>conform to <ref type="standard" target="nfpa91" standardId="nfpa91"/></text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause2" letter="b">
+                            <text>provide continuous exhaust ventilation at an air velocity sufficient to prevent the accumulation of <ref type="term" target="cmbtbl">combustible</ref> or reactive deposits in the power-ventilated enclosure and its <ref type="term" target="xht-dct">exhaust duct</ref> system,</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause3" letter="c">
+                            <text>confine <ref type="term" target="dngr-gd">dangerous goods</ref> vapours and particles to the area where they are generated and exhaust them to the outdoors,</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause4" letter="d">
+                            <text>not return the exhausted air to the <ref type="term" target="bldng">building</ref>, and</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause5" letter="e">
+                            <text>be provided with well identified control switches that are</text>
+                            <subclause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause5.subclause1" number="1">
+                                <text>located outside of the power-ventilated enclosure, and</text>
+                            </subclause>
+                            <subclause xml:id="nbc.divB.part6.sect3.subsect4.art3.sent1.clause5.subclause2" number="2">
+                                <text>readily accessible in case of an emergency.</text>
+                            </subclause>
+                        </clause>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 032: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.3.4.4.(1) - Enclosure Construction                      -->
+        <!-- ================================================================== -->
+        <amendment id="bc-032" sequence="32"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.3.4.4.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect4.art4.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1" number="1">
+                        <text>The power-ventilated enclosure required by Sentence 5.5.4.2.(1) of Division B of the British Columbia Fire Code and its <ref type="term" target="xht-dct">exhaust duct</ref> system shall</text>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1.clause1" letter="a">
+                            <text>except as provided in <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part6.sect3.subsect4.art4.sent3" display-type="short"/>, be constructed of <ref type="term" target="ncmbtbl">noncombustible</ref> materials compatible with and chemically resistant to the <ref type="term" target="dngr-gd">dangerous goods</ref> vapours and particles being exhausted, and</text>
+                        </clause>
+                        <clause xml:id="nbc.divB.part6.sect3.subsect4.art4.sent1.clause2" letter="b">
+                            <!-- CLAUDE-AUTOFIX CF-03750 | issue 9962 | The PDF reads exhaust ducts (the defined term plus s), not exhaust duct system. -->
+                            <!-- CLAUDE-AUTOFIX CF-10389 | issue 5303 | The PDF shows the whole word exhaust ducts as the defined term (italic), so the term reference carries the plural s. -->
+                            <text>be provided with access doors to permit inspection and maintenance of the fan assembly and <ref type="term" target="xht-dct">exhaust ducts</ref>.</text>
+                        </clause>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 033: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 6.9.1.2.(1) - Hazardous Gases, Dusts or Liquids          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-033" sequence="33"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 6.9.1.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect9.subsect1.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as provided in <ref type="internal"
+                                                             target="nbc.divB.part6.sect3.subsect4"
+                                                             display-type="long"
+                                                             pretext="Subsection"/>, systems serving spaces that contain hazardous
+                            gases, dusts or liquids shall be designed, constructed and installed
+                            to conform to the requirements of the applicable provincial or territorial
+                            regulations or municipal bylaws or, in the absence of such regulations
+                            or bylaws, to good engineering practice such as that described in
+                            the publications of the National Fire Protection Association and in
+                            the British Columbia Fire Code. (See <ref type="internal"
+                                                                      target="nbc.divB.part6.appendix.appnote22"
+                                                                      display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        
+        <!-- Article 6.9.3.1 - Carbon Monoxide Alarms                          -->
+        <!-- ================================================================== -->
+        <amendment id="bc-034" sequence="34"
+                   description="Replace Article 6.9.3.1 with BC version expanding scope and requirements">
+            <target type="canonical-id" id="nbc.divB.part6.sect9.subsect3.art1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divB.part6.sect9.subsect3.art1" number="1">
+                        <title>Carbon Monoxide Alarms</title>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent1" number="1">
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6430 Formatting 021fc44649 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6431 Formatting 7e6d050661 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6432 Formatting aab33dd0c0 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6433 Formatting 5dbf758bd8 -->
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6434 Formatting 31488f52bd -->
+                            <text>This Article applies to every <ref type="term" target="bldng">building</ref> that contains an <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, a <ref type="term" target="ca-cc">care occupancy</ref> with individual <ref type="term" target="t">suites</ref> or containing sleeping rooms or bed spaces not within a <ref type="term" target="t">suite</ref>, a <ref type="term" target="rdntl-cc">residential occupancy</ref>, a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref>, and that</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent1.clause1" letter="a">
+                                <text>is served by or contains a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent1.clause2" letter="b">
+                                <text>contains a <ref type="term" target="trg-grg">storage garage</ref>.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2" number="2">
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6435 Formatting ded2568ca5 -->
+                            <text>Carbon monoxide (CO) alarms installed in a <ref type="term" target="rdntl-cc">residential occupancy</ref> or a <ref type="term" target="ca-cc">care occupancy</ref> as required by this Article shall</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause1" letter="a">
+                                <text>conform to <ref type="standard" target="csa6.19" standardId="csa6.19"/>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause2" letter="b">
+                                <text>be equipped with an integral alarm that satisfies the audibility requirements of <ref type="standard" target="csa6.19" standardId="csa6.19"/>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause3" letter="c">
+                                <text>have no disconnect switch between the overcurrent device and the CO alarm, where the CO alarm is powered by the electrical system serving the <ref type="term" target="t">suite</ref> (see <ref type="internal" target="nbc.divB.part6.appendix.appnote23" display-type="short"/>), and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent2.clause4" letter="d">
+                                <text>be installed as recommended by the manufacturer.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent3" number="3">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning <ref type="term" target="pplnc">appliance</ref> is installed in a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> or in a <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref>, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent3.clause1" letter="a">
+                                <text>inside each sleeping room or bed space, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent3.clause2" letter="b">
+                                <text>outside each sleeping room or bed space, within <measurement units="metric">5 m</measurement> of each door serving a sleeping room or bed space, measured following corridors and doorways.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent4" number="4">
+                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6436 Formatting dffce7e9e0 -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning <ref type="term" target="pplnc">appliance</ref> serves a <ref type="term" target="rdntl-cc">residential occupancy</ref> or a <ref type="term" target="ca-cc">care occupancy</ref> and is installed in a <ref type="term" target="rvc-rm">service room</ref> that is not in a <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> nor in a <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref>, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent4.clause1" letter="a">
+                                <text>either inside each sleeping room or bed space, or if outside, within <measurement units="metric">5 m</measurement> of each door serving a sleeping room or bed space, measured following corridors and doorways, in every <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> or <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref> that shares a wall or floor/ceiling assembly with the <ref type="term" target="rvc-rm">service room</ref>, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent4.clause2" letter="b">
+                                <text>in the <ref type="term" target="rvc-rm">service room</ref>.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent5" number="5">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each <ref type="term" target="t">suite</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> or <ref type="term" target="t">suite</ref> of <ref type="term" target="ca-cc">care occupancy</ref> that shares a wall or floor/ceiling assembly with a <ref type="term" target="trg-grg">storage garage</ref> or that is adjacent to an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> is also adjacent, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent5.clause1" letter="a">
+                                <text>inside each sleeping room or bed space, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent5.clause2" letter="b">
+                                <text>outside each sleeping room or bed space, within <measurement units="metric">5 m</measurement> of each bedroom door serving a sleeping room or bed space, measured following corridors and doorways.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6" number="6">
+                            <text>CO alarms installed in an assembly occupancy, a business and personal services occupancy, or a mercantile occupancy as required by this Article shall conform to</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause1" letter="a">
+                                <text><ref type="standard" target="csa6.19" standardId="csa6.19"/>, notwithstanding the scope of that standard,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause2" letter="b">
+                                <text><ref type="standard" target="ul2034" standardId="ul2034"/>, notwithstanding the scope of that standard, or</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause3" letter="c">
+                                <text>good engineering practice.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7" number="7">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning appliance serves an assembly occupancy, business and personal services occupancy, or mercantile occupancy, a CO alarm shall be,</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1" letter="a">
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6439 Formatting 8a4190c429 -->
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6440 Formatting 4606cbbdc8 -->
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6441 Formatting 02d68969f3 -->
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6442 Formatting 413b461dc9 -->
+                                <text>where the fuel-burning <ref type="term" target="pplnc">appliance</ref> is part of a system that could circulate or distribute CO to a <ref type="term" target="t">suite</ref> of <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref> or <ref type="term" target="mrcntl-c">mercantile occupancy</ref>, installed</text>
+                                <subclause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1.subclause1" number="1">
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2076 Formatting 10c10e7102 -->
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2077 Formatting 154c92f756 -->
+                                    <text>on each <ref type="term" target="tr">storey</ref> of each <ref type="term" target="t">suite</ref> that may be exposed, and</text>
+                                </subclause>
+                                <subclause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1.subclause2" number="2">
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2078 Formatting 0e921d48d0 -->
+                                    <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2079 Formatting 3481c71947 -->
+                                    <text>in a <ref type="term" target="t">suite</ref> containing an <emphasis style="italic">assembly major occupancy</emphasis>, each classroom and dedicated gathering room or space, and</text>
+                                </subclause>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause2" letter="b">
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2080 Formatting cc49eafa77 -->
+                                <text>installed in the room or space in which the fuel-burning <ref type="term" target="pplnc">appliance</ref> is located.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8" number="8">
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each suite of assembly occupancy, business and personal services occupancy, or mercantile occupancy that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance, or that is adjacent to either an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance is also adjacent, a CO alarm shall be installed</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause1" letter="a">
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2081 Formatting db82de1f25 -->
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2082 Formatting 75ca91b68d -->
+                                <text>on each <ref type="term" target="tr">storey</ref> of the adjacent <ref type="term" target="t">suite</ref>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause2" letter="b">
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2083 Formatting 01f8ce2ce6 -->
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2084 Formatting 5ed4fb1f3d -->
+                                <text>where the adjacent <ref type="term" target="t">suite</ref> contains an <emphasis style="italic">assembly major occupancy</emphasis>, each classroom and dedicated room or space, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause3" letter="c">
+                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2085 Formatting 7c6c12fc5b -->
+                                <text>in each <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref>.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9" number="9">
+                            <text>CO detectors are permitted to be installed in lieu of CO alarms required by this Article provided the CO detectors</text>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause1" letter="a">
+                                <text>sound audible signals within the location they serve, as described in <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent3" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent5" display-type="number"/>, <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent7" display-type="number"/> and <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent8" display-type="number"/>,</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause2" letter="b">
+                                <text>are installed in conformance with <ref type="standard" target="ulcs524" standardId="ulcs524"/>, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause3" letter="c">
+                                <text>form part of the fire alarm system.</text>
+                            </clause>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 035: Add row for sentence (5) in attribution table      -->
+        <!-- Table 6.10.1.1 - Article 6.3.1.1.(5)                              -->
+        <!-- ================================================================== -->
+        <amendment id="bc-035" sequence="35"
+                   description="Add row for Article 6.3.1.1.(5) in Table 6.10.1.1">
+            <target type="position"
+                    parent-id="nbc.divB.part6.sect10.subsect1.art1.table1.row38"
+                    position="after"
+                />
+            <insert>
+                <new-content source="bc">
+                    <row>
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part6.sect3.subsect1.art1.sent5" display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 036: Add new application note A-6.2.1.2.(1)             -->
+        <!-- Outdoor Design Conditions                                         -->
+        <!-- ================================================================== -->
+        <amendment id="bc-036" sequence="36"
+                   description="Add new application note A-6.2.1.2.(1) about outdoor design conditions">
+            <target type="position"
+                    parent-id="nbc.divB.part6.appendix"
+                    position="after"
+                    reference-id="nbc.divB.part6.appendix.appnote1"/>
+            <insert>
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote1a">
+                        <number>6.2.1.2.(1)</number>
+                        <title>Outdoor Design Conditions</title>
+                        <!-- CLAUDE-AUTOFIX CF-03858 CF-03859 | issue 10134 | Curly apostrophes in building’s and occupants’, as in the PDF. -->
+                        <paragraph>In the past, the practice of ventilating buildings with outdoor air assumed that the outdoor air was of better quality than the indoor air. It has become evident that the outdoor air in some areas of Canada may not be of an acceptable quality for ventilating buildings unless certain particles and gases are first removed or reduced. In order to manage the air quality of a building’s indoor environment, thus reducing the potential for adverse effects on occupants’ health, the quality of outdoor air for building ventilation purposes must be addressed.</paragraph>
+                    </application-note>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 037: Replace NBC with BC Building Code                  -->
+        <!-- Application Note A-6.2.1.4 - Structural Movement                  -->
+        <!-- ================================================================== -->
+        <amendment id="bc-037" sequence="37"
+                   description="Replace NBC with British Columbia Building Code in Note A-6.2.1.4">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote4"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph[2]">
+                    <find-replace>
+                        <find>The prime concern of the NBC is the safety of people in and around the building</find>
+                        <replace>The prime concern of the British Columbia Building Code is the safety of people in and around the building</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 038: Add new application note A-6.3.1.1.(5)             -->
+        <!-- Ventilation Air Supplied to Suites                                -->
+        <!-- ================================================================== -->
+        <amendment id="bc-038" sequence="38"
+                   description="Add new application note A-6.3.1.1.(5) about ventilation air supplied to suites">
+            <target type="position"
+                    parent-id="nbc.divB.part6.appendix"
+                    position="after"
+                    reference-id="nbc.divB.part6.appendix.appnote5"/>
+            <insert>
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote5a">
+                        <number>6.3.1.1.(5)</number>
+                        <title>Ventilation Air Supplied to Suites</title>
+                        <paragraph>The indirect supply of required outdoor ventilation air to normally occupied spaces through corridor pressurization or other indirect systems is not permitted.</paragraph>
+                    </application-note>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 039: Replace text in application note                   -->
+        <!-- Application Note A-6.9.3.1.(2)(c) - Carbon Monoxide Alarms        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-039" sequence="39"
+                   description="Replace mechanically fastened with installed as recommended by manufacturer in Note A-6.9.3.1.(2)(c)">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote23"/>
+            <modify>
+                <text-change xpath-within-target=".//paragraph">
+                    <find-replace>
+                        <find>Battery-powered carbon monoxide alarms are acceptable provided that they are mechanically fastened in place.</find>
+                        <replace>Battery-powered carbon monoxide alarms are acceptable provided that they are installed as recommended by the manufacturer.</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 040: Add three new application notes for CO alarms      -->
+        <!-- Application Notes A-6.9.3.1.(6), (7), and (8)                     -->
+        <!-- ================================================================== -->
+        <amendment id="bc-040" sequence="40"
+                   description="Add three new application notes A-6.9.3.1.(6), (7), and (8) for carbon monoxide alarms">
+            <target type="position"
+                    parent-id="nbc.divB.part6.appendix"
+                    position="after"
+                    reference-id="nbc.divB.part6.appendix.appnote23"/>
+            <insert>
+                <new-content source="bc">
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote23a">
+                        <number>6.9.3.1.(6)</number>
+                        <title>Carbon Monoxide Devices</title>
+                        <paragraph>Although the scope of <ref type="standard" target="csa6.19" standardId="csa6.19"/> and <ref type="standard" target="ul2034" standardId="ul2034"/> is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications.</paragraph>
+                    </application-note>
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote23b">
+                        <number>6.9.3.1.(7)</number>
+                        <title>Spaces Served by a Fuel-Burning Appliance</title>
+                        <paragraph>Where a fuel-burning appliance such as a furnace circulates or distributes air to a space there is the potential for leakage of combustion products into the duct system which could then circulate combustion products including carbon monoxide (CO) to that space, so a CO alarm is required to protect occupants of that space. Fuel-burning appliances such as a boiler do not have the same potential of the system circulating or distributing CO to the spaces served via the piping system. In both examples of a fuel-burning furnace and a fuel-burning boiler, a CO alarm is required in the service room containing the appliances.</paragraph>
+                    </application-note>
+                    <application-note xml:id="nbc.divB.part6.appendix.appnote23c">
+                        <number>6.9.3.1.(8)</number>
+                        <title>Adjacent Suites</title>
+                        <paragraph>Suites that share a common attic or crawl space with a storage garage or service room, as well as suites that share a common wall or floor/ceiling assembly with a storage garage or service room are considered adjacent for the application of <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent8" display-type="short"/>.</paragraph>
+                    </application-note>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 041: Replace entire article with BC version             -->
+        <!-- Article 7.1.2.1 - Conformance                                     -->
+        <!-- ================================================================== -->
+        <amendment id="bc-041" sequence="41"
+                   description="Replace Article 7.1.2.1 with BC version referencing BC Building Code Book II">
+            <target type="canonical-id" id="nbc.divB.part7.sect1.subsect2.art1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <article xml:id="nbc.divB.part7.sect1.subsect2.art1" number="1">
+                        <title>Conformance</title>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent1" number="1">
+                            <text>Every <ref type="term" target="plmbng-t">plumbing system</ref> shall be designed and installed in conformance with the British Columbia Building Code Book II (Plumbing Systems), that being the National Plumbing Code of Canada.</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent2" number="2">
+                            <text>References to the following documents in the British Columbia Building Code Book II (Plumbing Systems) shall be replaced as follows:</text>
+                            <clause xml:id="nbc.divB.part7.sect1.subsect2.art1.sent2.clause1" letter="a">
+                                <text>references to the National Building Code of Canada and the National Energy Code of Canada for Buildings shall be replaced with the British Columbia Building Code, and</text>
+                            </clause>
+                            <clause xml:id="nbc.divB.part7.sect1.subsect2.art1.sent2.clause2" letter="b">
+                                <text>references to the National Fire Code of Canada shall be replaced with the British Columbia Fire Code.</text>
+                            </clause>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent3" number="3">
+                            <text>Compliance with the British Columbia Building Code Book II (Plumbing Systems) may be achieved using alternative solutions as described in Clause 1.2.1.1.(1)(b) of Division A of this Code, using the objectives and functional statements attributed to the applicable acceptable solutions in Division B of the British Columbia Building Code Book II (Plumbing Systems).</text>
+                        </sentence>
+                        <sentence xml:id="nbc.divB.part7.sect1.subsect2.art1.sent4" number="4">
+                            <text>Notwithstanding <ref type="internal" target="nbc.divB.part7.sect1.subsect2.art1.sent1" display-type="short"/>, a water closet with a dual flush cycle of <measurement units="metric">6.0 L</measurement> and <measurement units="metric">4.1 L</measurement> or less is deemed to comply with Sentence 2.6.1.6.(3) and Table 2.6.2.6. of Division B of the British Columbia Building Code Book II (Plumbing Systems).</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 042: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 8.1.1.1.(3) - Scope                                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-042" sequence="42"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 8.1.1.1.(3)">
+            <target type="canonical-id" id="nbc.divB.part8.sect1.subsect1.art1.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part8.sect1.subsect1.art1.sent3" number="3">
+                        <text>Fire safety at construction and demolition sites shall conform to Section 5.6. of Division B of the British Columbia Fire Code.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 043: Replace NFC reference with BC Fire Code             -->
+        <!-- Article 8.1.1.3.(1) - Demolition Procedures                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-043" sequence="43"
+                   description="Replace National Fire Code reference with BC Fire Code in Article 8.1.1.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part8.sect1.subsect1.art3.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part8.sect1.subsect1.art3.sent1" number="1">
+                        <text>Measures shall be taken during demolition to protect the public in conformance with Section 5.6. of Division B of the British Columbia Fire Code.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- Amendment 044: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.8.(2) - Ce subscript and 0.28 superscript rendered   -->
+        <!-- below the line (NBC MathML attaches them to an empty base)        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-044" sequence="44"
+                   description="Rewrite Ce equation in Sentence 4.1.7.8.(2) as LaTeX so subscript and superscript attach to their base">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art8.sent2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2" number="2">
+                        <text>For <ref type="term" target="bldng">buildings</ref> in open terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause1" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>=</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>10</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.28</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>1.0</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
+                        <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote58" display-type="short"/>.)</see-also>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 045: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.8.(3) - Ce subscript and 0.50 superscript           -->
+        <!-- ================================================================== -->
+        <amendment id="bc-045" sequence="45"
+                   description="Rewrite Ce equation in Sentence 4.1.7.8.(3) as LaTeX so subscript and superscript attach to their base">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art8.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3" number="3">
+                        <text>For <ref type="term" target="bldng">buildings</ref> in rough terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause2" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>=</mo><mn>0.5</mn><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>12.7</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.50</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>0.5</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
+                        <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote58" display-type="short"/>.)</see-also>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 046: Rewrite equations as LaTeX (BBC-329)                -->
+        <!-- Article 4.1.7.8.(4) - Cg/gp subscripts, injected "[f]"/"[a]"      -->
+        <!-- markers in inline formulas, extra space in "10 m ,"               -->
+        <!-- ================================================================== -->
+        <amendment id="bc-046" sequence="46"
+                   description="Rewrite Cg and related equations in Sentence 4.1.7.8.(4) as LaTeX; remove [f]/[a] markers and space before comma">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art8.sent4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4" number="4">
+                        <text>For the design of the main structural system, C<sub>g</sub> shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><mo>=</mo><mn>1</mn><mo>+</mo><msub><mi>g</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><mfrac><mi>&#x3C3;</mi><mi>&#x3BC;</mi></mfrac></mrow></math></equation>where<list type="variable"><item><variable>g<sub>p</sub></variable><description>= peak factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt><mo>+</mo><mfrac><mn>0.577</mn><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt></mfrac></mrow></math></equation>, and</description></item><item><variable>σ/μ</variable><description>= <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mi>K</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mpadded></mrow></msub></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>B</mi><mo>+</mo><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mi>&#x3B2;</mi></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>ν</variable><description>= average fluctuation rate calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><msqrt><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mrow><mi>s</mi><mi>F</mi><mo>+</mo><mi>&#x3B2;</mi><mi>B</mi></mrow></mfrac></msqrt></mrow></math></equation>,</description></item><item><variable>T</variable><description>= 3 600 s,</description></item><item><variable>K</variable><description>= 0.08 for open terrain and 0.10 for rough terrain,</description></item><item><variable>C<sub>eH</sub></variable><description>= exposure factor evaluated at reference height h = H,</description></item><item><variable>B</variable><description>= background turbulence factor, a function of w/H determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art8.figure1" display-type="long"/>,</description></item><item><variable>s</variable><description>= size reduction factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq5"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mi>&#x3C0;</mi><mn>3</mn></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>8</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><mi>H</mi></mrow><mrow><mn>3</mn><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mpadded></mrow></msub></mrow></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>10</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><mi>w</mi></mrow><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mpadded></mrow></msub></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow></mrow></math></equation>,</description></item><item><variable>F</variable><description>= gust energy ratio calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq6"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><msup><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mn>4</mn><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>3</mn></mrow></msup></mrow></mfrac></mrow></math></equation>, where x<sub>0</sub> = (1 220f<sub>nD</sub>/V<sub>H</sub>), and</description></item><item><variable>β</variable><description>= damping ratio, which shall be determined by a rational method, or may be taken to be 0.01 for steel structures, 0.02 for concrete structures, and 0.015 for composite structures,</description></item></list>where<list type="variable"><item><variable>f<sub>nD</sub></variable><description>= natural frequency of vibration of the <ref type="term" target="bldng">building</ref> in the along-wind direction, in Hz,</description></item><item><variable>H</variable><description>= height of the <ref type="term" target="bldng">building</ref>,</description></item><item><variable>w</variable><description>= effective width of windward face of the <ref type="term" target="bldng">building</ref> calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq7"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub><msub><mi>w</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub></mrow><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub></mrow></mfrac></mrow></math></equation>, where w<sub>i</sub> = width normal to wind direction at height h<sub>i</sub>, and</description></item><item><variable>V<sub>H</sub></variable><description>= mean wind speed at the top of the structure, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq8"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow><msqrt><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mpadded></mrow></msub></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq9"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow></mrow></math></equation></variable><description>= reference wind speed at a height of 10 m, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq10"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mrow><mn>2</mn><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi></mrow><mi>&#x3C1;</mi></mfrac></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>I<sub>W</sub></variable><description>= importance factor for wind load, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.table1" display-type="long"/>,</description></item><item><variable>q</variable><description>= reference velocity pressure, in Pa, and</description></item><item><variable>ρ</variable><description>= air density = 1.2929 kg/m<super>3</super>.</description></item></list></text>
+                        <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote59" display-type="short"/>.)</see-also>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 047: Remove extra space before comma (BBC-329)           -->
+        <!-- Notes to Figure 4.1.7.12.-A, Note (2) - "6 m ," -> "6 m,"          -->
+        <!-- (a <measurement> followed by punctuation gets a trailing space in  -->
+        <!-- the JSON, so the value is written as plain text)                   -->
+        <!-- ================================================================== -->
+        <amendment id="bc-047" sequence="47"
+                   description="Remove extra space between 6 m and comma in Note (2) to Figure 4.1.7.12.-A">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art12.figure1.note2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <note xml:id="nbc.divB.part4.sect1.subsect7.art12.figure1.note2">The reference height, h, is the mid-height of the roof or 6 m, whichever is greater.</note>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 048: Fix range reference (BBC-329)                       -->
+        <!-- Article 4.1.7.13.(1) - "Sentences (2) to Sentence (7)" ->          -->
+        <!-- "Sentences (2) to (7)"                                             -->
+        <!-- ================================================================== -->
+        <amendment id="bc-048" sequence="48"
+                   description="Fix range reference Sentences (2) to (7) in Sentence 4.1.7.13.(1)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent1" number="1">
+                        <text>Where solar panels are installed on a roof, the roof wind loads shall account for the wind loads on the solar panels, as determined in accordance with <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent2" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent7" display-type="number"/>, or shall be determined in the same way as for the roof without solar panels, whichever approach results in the most critical effect.</text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 052: Remove extra space before comma (BBC-329)           -->
+        <!-- Clauses 4.1.7.13.(5)(a) and (b) - "1.2 m ," -> "1.2 m,"            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-052" sequence="52"
+                   description="Remove extra space between 1.2 m and comma in Clause 4.1.7.13.(5)(a)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause1" letter="a">
+                        <text>where the distance to the next row of panels or the distance across a gap in the same row of panels exceeds 4h<sub>2</sub> or 1.2 m, whichever is greater, or</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-053" sequence="53"
+                   description="Remove extra space between 1.2 m and comma in Clause 4.1.7.13.(5)(b)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect7.art13.sent5.clause2" letter="b">
+                        <text>where the distance to the roof edge exceeds 4h<sub>2</sub> or 1.2 m, whichever is greater, and exceeds 0.5h, where h is the reference height of the roof.</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 049: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.13.(2) - IW, Ce, Ct, Cg, Cp, γa subscripts and       -->
+        <!-- extra space in "6 mm ,"                                            -->
+        <!-- ================================================================== -->
+        <amendment id="bc-049" sequence="49"
+                   description="Rewrite pressure equation in Sentence 4.1.7.13.(2) as LaTeX and remove space before comma">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent2" number="2">
+                        <text>For an array of solar panels where the panels are installed close and parallel to the roof surface with their upper surface not more than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps around the panels of not less than 6 mm, the net positive or negative pressure difference between the upper and lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013704q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mi>p</mi><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><mi>E</mi><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>a</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent2.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding,</description></item><item><variable>E</variable><description>= edge factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent4" display-type="short"/>, and</description></item><item><variable>γ<sub>a</sub></variable><description>= pressure equalization factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent3" display-type="short"/>.</description></item></list></text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 050: Rewrite equation as LaTeX (BBC-329)                 -->
+        <!-- Article 4.1.7.13.(6) - pnet, IW, Ce, Ct, (CgCp)net subscripts and  -->
+        <!-- extra space in "2 m ,", "0.6 m ,", "1.2 m ,"                       -->
+        <!-- ================================================================== -->
+        <amendment id="bc-050" sequence="50"
+                   description="Rewrite net pressure equation in Sentence 4.1.7.13.(6) as LaTeX and remove spaces before commas">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent6" number="6">
+                        <text>For an array of solar panels mounted on a roof with a slope, α, less than or equal to 7°, where the panels are tilted relative to the roof surface, have a chord length, L<sub>p</sub>, not greater than 2 m, and are installed such that the height of their lowest point above the roof surface, h<sub>1</sub>, is not greater than 0.6 m, the height of their highest point above the roof surface, h<sub>2</sub>, is not greater than 1.2 m, and their tilt angle relative to the roof surface, ω, is not greater than 35°, or where the panels are installed parallel to the roof surface with their upper surface greater than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps not less than <measurement units="metric">6 mm</measurement> between the panels, the net positive or negative pressure difference between the upper and the lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013708q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>p</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent6.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>net</sub></variable><description>= net gust pressure coefficient, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent7" display-type="short"/>.</description></item></list></text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 051: Rewrite equations as LaTeX (BBC-329)                -->
+        <!-- Article 4.1.7.13.(7) - (CgCp)net subscripts, missing space after   -->
+        <!-- "±", injected "[f]" markers, extra space before comma             -->
+        <!-- ================================================================== -->
+        <amendment id="bc-051" sequence="51"
+                   description="Rewrite net gust pressure coefficient equations in Sentence 4.1.7.13.(7) as LaTeX">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art13.sent7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent7" number="7">
+                        <text>The net gust pressure coefficient, (C<sub>g</sub>C<sub>p</sub>)<sub>net</sub>, in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent6" display-type="short"/> shall be calculated as follows:<equation type="display" xml:id="es013709q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub><mo>=</mo><mo>&#xB1;</mo><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>c</mi></mrow></mpadded></mrow></msub><mi>E</mi><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable>γ<sub>p</sub></variable><description>= parapet factor, determined as the lesser of 1.2 and (0.9 + h<sub>pt</sub>/h),</description></item><item><variable>γ<sub>c</sub></variable><description>= chord factor, determined as the greater of (0.6 + 0.2L<sub>p</sub>) and 0.8,</description></item><item><variable>E</variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent2" display-type="short"/>, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>n</sub></variable><description>= normalized gust pressure coefficient, determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.figure2" display-type="long"/> based on ω and A<sub>N</sub>,</description></item></list>where<list type="variable"><item><variable>h<sub>pt</sub></variable><description>= height of the parapet above the roof surface, in m,</description></item><item><variable>h</variable><description>= reference height of the roof, in m,</description></item><item><variable>L<sub>p</sub></variable><description>= panel chord length, in m,</description></item><item><variable>ω</variable><description>= panel tilt angle relative to the roof surface, and</description></item><item><variable>A<sub>N</sub></variable><description>= normalized panel or array area, calculated as <equation type="inline" xml:id="es013709q3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>A</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>N</mi></mrow></mpadded></mrow></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mn>000</mn><mi>A</mi></mrow><mrow><mo data-mjx-texclass="OP" movablelimits="true">max</mo><mo stretchy="false">(</mo><msubsup><mi>L</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>b</mi></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mo>,</mo><mn>25</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow></math></equation></description></item></list>where<list type="variable"><item><variable>A</variable><description>= panel or array area over which the wind load is being calculated, in m<super>2</super>, and</description></item><item><variable>L<sub>b</sub></variable><description>= normalized <ref type="term" target="bldng">building</ref> length, in m, determined as the lesser of <equation type="inline" xml:id="es013709q4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mo stretchy="false">(</mo><mn>0.4</mn><msqrt><mi>h</mi><msub><mi>W</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>L</mi></mrow></mpadded></mrow></msub></msqrt><mo stretchy="false">)</mo></mrow></math></equation>, h and W<sub>S</sub>,</description></item></list>where<list type="variable"><item><variable>W<sub>L</sub></variable><description>= longest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m, and</description></item><item><variable>W<sub>S</sub></variable><description>= smallest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m.</description></item></list></text>
+                    </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- END OF AMENDMENTS                                                  -->
+        <!-- ================================================================== -->
+        <amendment id="bc-qa-0daab08625" sequence="698" description="Issue 2019 Incorrect Content at B.A-5.5.1.1">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote27.para3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part5.appendix.appnote27.para3">For residential spaces, and most other spaces that are conditioned
+                    for human occupancy, a means of vapour diffusion control is generally
+                    agreed to be necessary, even in milder climates of the province.
+                    The questions in those cases pertain to the degree of control needed.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b05a3e4bdc" sequence="699" description="Issue 2157 Incorrect Content at B.A-6.3.1.3.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote7.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part6.appendix.appnote7.para1">Car dealership showrooms are not considered as storage
+                    garages.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e749dff102" sequence="721" description="Issue 1145 Incorrect Content at B.4.1.3.2.(9)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art2.sent9"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect3.art2.sent9"
+                                                   number="9"
+                                                   vendor-id="es016009">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1145 Incorrect Content e749dff102 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
+                        <text>A principal-load factor of 1.5 shall be applied to the weight
+                    of saturated <ref type="term" target="l">soil</ref> used in load combination
+                    case 1 of <ref type="internal"
+                                                    target="nbc.divB.part4.sect1.subsect3.art2.table1"
+                                                    display-type="long"/>.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-240a549eb7" sequence="722" description="Issue 1195 Incorrect Content at B.4.1.7.6.(3)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art6.sent3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art6.sent3"
+                                                   number="3"
+                                                   vendor-id="es014442">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1195 Incorrect Content 240a549eb7 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
+                        <text>For the design of individual walls and wall cladding, the values
+                    of C<sub>g</sub>C<sub>p</sub> are provided in <ref type="internal"
+                                                    target="nbc.divB.part4.sect1.subsect7.art6.figure2"
+                                                    display-type="long"/>.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b8e1bc04b3" sequence="723" description="Issue 1196 Incorrect Content at B.4.1.7.6.(4)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art6.sent4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art6.sent4"
+                                                   number="4"
+                                                   vendor-id="es014443">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1196 Incorrect Content b8e1bc04b3 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
+                        <text>For the design of roofs with a slope less than or equal to 7°,
+                    the values of C<sub>g</sub>C<sub>p</sub> are provided in <ref type="internal"
+                                                    target="nbc.divB.part4.sect1.subsect7.art6.figure3"
+                                                    display-type="long"/>.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-27fd52b06e" sequence="724" description="Issue 1197 Incorrect Content at B.4.1.7.6.(5)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art6.sent5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art6.sent5"
+                                                   number="5"
+                                                   vendor-id="es014444">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1197 Incorrect Content 27fd52b06e -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
+                        <text>For the design of flat roofs with steps in elevation, the values
+                    of C<sub>g</sub>C<sub>p</sub> are provided in <ref type="internal"
+                                                    target="nbc.divB.part4.sect1.subsect7.art6.figure4"
+                                                    display-type="long"/>.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7c9ee12602" sequence="725" description="Issue 1198 Incorrect Content at B.4.1.7.6.(6)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art6.sent6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect7.art6.sent6"
+                                                   number="6"
+                                                   vendor-id="es014445">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1198 Incorrect Content 7c9ee12602 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
+                        <text>For the design of gabled or hipped, single-ridge roofs with
+                    a slope greater than 7°, the values of C<sub>g</sub>C<sub>p</sub> are
+                    provided in <ref type="internal"
+                                                    target="nbc.divB.part4.sect1.subsect7.art6.figure5"
+                                                    display-type="long"/>.</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e58c2f7aa6" sequence="726" description="Issue 6410 Incorrect Content at B.4.1.8.11.(4)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art11.sent4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect1.subsect8.art11.sent4"
+                                                   number="4"
+                                                   vendor-id="es014479">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6410 Incorrect Content e58c2f7aa6 -->
+                        <text>For single-<ref type="term" target="tr">storey</ref>
+                                               <ref type="term" target="bldng">buildings</ref> with steel deck or wood roof diaphragms, the fundamental
+                    lateral period, T<sub>a</sub>, in the direction under consideration
+                    is permitted to be taken as</text>
+                                            <clause xml:id="nbc.divB.part4.sect1.subsect8.art11.sent4.clause1"
+                                                    letter="a"
+                                                    vendor-id="es014479a">
+                                               <text>
+                                                  <measurement units="metric">0.05(h<sub>n</sub>)<super>3/4</super> + 0.004L</measurement> for
+                    shear walls,</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part4.sect1.subsect8.art11.sent4.clause2"
+                                                    letter="b"
+                                                    vendor-id="es014479b">
+                                               <text>
+                                                  <measurement units="metric">0.035h<sub>n</sub> + 0.004L</measurement> for steel moment frames
+                    and steel braced frames, or</text>
+                                            </clause>
+                                            <clause xml:id="nbc.divB.part4.sect1.subsect8.art11.sent4.clause3"
+                                                    letter="c"
+                                                    vendor-id="es014479c">
+                                               <text>the value obtained from methods of mechanics using a structural
+                    model that complies with the requirements of <ref type="internal"
+                                                       target="nbc.divB.part4.sect1.subsect8.art3.sent8"
+                                                       display-type="long"/>, except that T<sub>a</sub> shall not be greater than 1.5 times
+                    the value determined in <ref type="internal"
+                                                       target="nbc.divB.part4.sect1.subsect8.art11.sent4.clause1"
+                                                       display-type="short"/>
+                                                  <ref type="internal"
+                                                       target="nbc.divB.part4.sect1.subsect8.art11.sent4.clause2"
+                                                       display-type="short"
+                                                       pretext="or"/>, as applicable,</text>
+                                            </clause>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1cb8ed0f2c" sequence="727" description="Issue 10123 Punctuation at B.4.2.5.4.(1)">
+            <target type="canonical-id" id="nbc.divB.part4.sect2.subsect5.art4.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part4.sect2.subsect5.art4.sent1"
+                                                   number="1"
+                                                   vendor-id="es001553">
+                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10123 Punctuation 1cb8ed0f2c -->
+                        <text>The sides of an <ref type="term" target="xcvtn"> excavation</ref> in <ref type="term" target="l">soil</ref> or <ref type="term" target="rck">rock </ref> may be unsupported
+                    where a design is prepared in conformance with the requirements of <ref type="internal"
+                                                    target="nbc.divB.part4.sect2.subsect5.art1"
+                                                    display-type="long"
+                                                    pretext="Articles"/> and <ref type="internal"
+                                                    target="nbc.divB.part4.sect2.subsect5.art2"
+                                                    display-type="number"/>.
+                                            </text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-68c9562179" sequence="728" description="Issue 1927 Missing Content at B.5.9.3.1.(2)">
+            <target type="position" parent-id="nbc.divB.part5.sect9.subsect3.art1" position="after" reference-id="nbc.divB.part5.sect9.subsect3.art1.sent1"/>
+            <insert>
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divB.part5.sect9.subsect3.art1.sent2" number="2">
+                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1927 Missing Content 68c9562179 -->
+                        <text>Other fenestration assemblies and their components that are required to have a <emphasis style="italic">fire-</emphasis> <emphasis style="italic">protection rating</emphasis> need not conform to the requirements of this Subsection. (See Note A-5.9.2.1.(3).)</text>
+                    </sentence>
+                </new-content>
+            </insert>
+        </amendment>
+        <amendment id="bc-qa-fe03c8333c" sequence="790" description="Issue 1128 Incorrect Content at B.4.1.3.1.(1)(g)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause7"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause7"
+                                                    letter="g"
+                                                    vendor-id="es007809j">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1128 Incorrect Content fe03c8333c -->
+                        <text>companion-load factor means a factor that, when applied to a
+                    companion load in the load combination, gives the probable magnitude
+                    of a companion load acting simultaneously with the factored principal
+                    load,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-f91b878b8a" sequence="791" description="Issue 1129 Incorrect Content at B.4.1.3.1.(1)(h)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause8"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause8"
+                                                    letter="h"
+                                                    vendor-id="es007809k">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1129 Incorrect Content f91b878b8a -->
+                        <text>importance factor, I, means a factor applied in <ref type="internal"
+                                                       target="nbc.divB.part4.sect1.subsect6"
+                                                       display-type="long"
+                                                       pretext="Subsections"/>
+                                                  <ref type="internal"
+                                                       target="nbc.divB.part4.sect1.subsect7"
+                                                       display-type="long"
+                                                       pretext=","/>
+                                                  <ref type="internal"
+                                                       target="nbc.divB.part4.sect1.subsect8"
+                                                       display-type="long"
+                                                       pretext="and"/> to obtain the specified load and take into account the consequences
+                    of failure as related to the limit state and the use and <ref type="term" target="ccpnc">occupancy</ref> of the <ref type="term" target="bldng">building</ref>,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-e4b57d98b5" sequence="792" description="Issue 1130 Incorrect Content at B.4.1.3.1.(1)(i)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause9"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause9"
+                                                    letter="i"
+                                                    vendor-id="es007809l">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1130 Incorrect Content e4b57d98b5 -->
+                        <text>factored load means the product of a specified load and its
+                    principal-load factor or companion-load factor,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-337a74aed0" sequence="793" description="Issue 1131 Incorrect Content at B.4.1.3.1.(1)(j)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause10"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause10"
+                                                    letter="j"
+                                                    vendor-id="es007809m">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1131 Incorrect Content 337a74aed0 -->
+                        <text>effects refers to forces, moments, deformations or vibrations
+                    that occur in the structure,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-4282ca4f3f" sequence="794" description="Issue 1132 Incorrect Content at B.4.1.3.1.(1)(k)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause11"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause11"
+                                                    letter="k"
+                                                    vendor-id="es007809g">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1132 Incorrect Content 4282ca4f3f -->
+                        <text>nominal resistance, R, of a member, connection or structure,
+                    is based on the geometry and on the specified properties of the structural
+                    materials,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-310b49a4fd" sequence="795" description="Issue 1133 Incorrect Content at B.4.1.3.1.(1)(l)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause12"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause12"
+                                                    letter="l"
+                                                    vendor-id="es007809h">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1133 Incorrect Content 310b49a4fd -->
+                        <text>resistance factor, φ, means a factor applied to a specified
+                    material property or to the resistance of a member, connection or
+                    structure, and that, for the limit state under consideration, takes
+                    into account the variability of dimensions and material properties,
+                    workmanship, type of failure and uncertainty in the prediction of
+                    resistance, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-bd24680931" sequence="796" description="Issue 1134 Incorrect Content at B.4.1.3.1.(1)(m)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause13"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art1.sent1.clause13"
+                                                    letter="m"
+                                                    vendor-id="es007809i">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1134 Incorrect Content bd24680931 -->
+                        <text>factored resistance, φR, means the product of nominal resistance
+                    and the applicable resistance factor.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8f085249a8" sequence="797" description="Issue 1136 Incorrect Content at B.4.1.3.2.(2)(b)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect3.art2.sent2.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect3.art2.sent2.clause2"
+                                                    letter="b"
+                                                    vendor-id="es007811b">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1136 Incorrect Content 8f085249a8 -->
+                        <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Removed the hand-typed table/figure suffix after the reference; the reference now carries the number itself, as in the PDF. -->
+                        <text>for load cases with crane loads, the load combinations listed
+                    in <ref type="internal"
+                                                       target="nbc.divB.part4.sect1.subsect3.art2.table2"
+                                                       display-type="long"/>.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-a5a262be3a" sequence="798" description="Issue 10092 Punctuation at B.4.1.7.5.(2)(a)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art5.sent2.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect7.art5.sent2.clause1"
+                                                    letter="a"
+                                                    vendor-id="es014436a">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10092 Punctuation a5a262be3a -->
+                        <text>on the windward face,<list type="variable">
+                                                     <item>
+                                                        <variable>C<sub>p</sub>
+                                                        </variable>
+                                                        <description>= 0.6 for H/D &lt; 0.25 = 0.27(H/D + 2) for 0.25 ≤ H/D &lt; 1.0, and = 0.8 for H/D ≥ 1.0,</description>
+                                                     </item>
+                                                  </list>
+                                               </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-53664e3d7c" sequence="799" description="Issue 10093 Punctuation at B.4.1.7.5.(2)(b)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art5.sent2.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect7.art5.sent2.clause2"
+                                                    letter="b"
+                                                    vendor-id="es014436b">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10093 Punctuation 53664e3d7c -->
+                        <text>on the leeward face,<list type="variable">
+                                                     <item>
+                                                        <variable>C<sub>p</sub>
+                                                        </variable>
+                                                        <description>= –0.3 for H/D &lt; 0.25, = –0.27(H/D + 0.88) for 0.25 ≤ H/D &lt; 1.0, and = –0.5 for H/D ≥ 1.0, and</description>
+                                                     </item>
+                                                  </list>
+                                               </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-460e56f3ad" sequence="800" description="Issue 10094 Punctuation at B.4.1.7.5.(3)(b)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect7.art5.sent3.clause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect7.art5.sent3.clause2"
+                                                    letter="b"
+                                                    vendor-id="es014437b">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10094 Punctuation 460e56f3ad -->
+                        <text>for H/D &lt; 1.0,<list type="variable">
+                                                     <item>
+                                                        <variable>C<sub>p</sub>
+                                                        </variable>
+                                                        <description>= –1.0 for x ≤ H, and = –0.5 for x &gt; H.</description>
+                                                     </item>
+                                                  </list>
+                                               </text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-ff7d9ea05b" sequence="801" description="Issue 6412 Incorrect Content at B.4.1.8.18.(7)(d)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.sent7.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect8.art18.sent7.clause4"
+                                                    letter="d"
+                                                    vendor-id="es007958h">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6412 Incorrect Content ff7d9ea05b -->
+                        <text>post-installed mechanical, drop-in and adhesive anchors in concrete
+                    shall be pre-qualified for seismic applications by cyclic load testing
+                    in accordance with</text>
+                                               <subclause xml:id="nbc.divB.part4.sect1.subsect8.art18.sent7.clause4.subclause1"
+                                                          number="1"
+                                                          vendor-id="es007958h1">
+                                                  <text>
+                                                     <ref type="standard" target="csaa23.3" standardId="csaa23.3"/> and </text>
+                                               </subclause>
+                                               <subclause xml:id="nbc.divB.part4.sect1.subsect8.art18.sent7.clause4.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007958h2">
+                                                  <text>
+                                                     <ref type="standard" target="aci355.2" standardId="aci355.2"/> or <ref type="standard" target="aci355.4" standardId="aci355.4"/> as applicable,</text>
+                                               </subclause>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-69bc06d3ec" sequence="802" description="Issue 1277 Incorrect Content at B.4.1.8.19.(1)(a)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause1"
+                                                    letter="a"
+                                                    vendor-id="es014493d">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1277 Incorrect Content 69bc06d3ec -->
+                        <text>“seismic isolation” is an alternative seismic design concept
+                    that consists of installing an isolation system with low horizontal
+                    stiffness, thereby substantially increasing the fundamental period
+                    of the structure;</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-d36d606d21" sequence="803" description="Issue 1278 Incorrect Content at B.4.1.8.19.(1)(c)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es014493e">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1278 Incorrect Content d36d606d21 -->
+                        <text>“seismically isolated structure” includes the upper portion
+                    of the structure above the isolation system, the isolation system,
+                    and the portion of the structure below the isolation system;</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-2555c47bf7" sequence="804" description="Issue 1279 Incorrect Content at B.4.1.8.19.(1)(d)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es014493c">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1279 Incorrect Content 2555c47bf7 -->
+                        <text>“isolator unit” is a structural element of the isolation system
+                    that permits large lateral deformations under lateral earthquake forces
+                    and is characterized by vertical-load-carrying capability combined
+                    with increased horizontal flexibility and high vertical stiffness,
+                    energy dissipation (hysteretic or viscous), self-centering capability,
+                    and lateral restraint (sufficient elastic stiffness) under non-seismic
+                    service lateral loads;</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1e79e9142c" sequence="805" description="Issue 1280 Incorrect Content at B.4.1.8.19.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part4.sect1.subsect8.art19.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es014493a">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1280 Incorrect Content 1e79e9142c -->
+                        <text>“isolation interface” is the boundary between the isolated upper
+                    portion of the structure above the isolation system and the lower
+                    portion of the structure below the isolation system; and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-55753209ad" sequence="806" description="Issue 1581 Incorrect Content at B.5.2.2.1.(2)(d)">
+            <target type="canonical-id" id="nbc.divB.part5.sect2.subsect2.art1.sent2.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part5.sect2.subsect2.art1.sent2.clause4"
+                                                    letter="d"
+                                                    vendor-id="es007995c">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1581 Incorrect Content 55753209ad -->
+                        <text>
+                                                  <ref type="term" target="lv-ld">live loads</ref> due to use and <ref type="term" target="ccpnc">occupancy</ref>, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-605d800b6f" sequence="807" description="Issue 1582 Incorrect Content at B.5.2.2.1.(2)(e)">
+            <target type="canonical-id" id="nbc.divB.part5.sect2.subsect2.art1.sent2.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part5.sect2.subsect2.art1.sent2.clause5"
+                                                    letter="e"
+                                                    vendor-id="es007995d">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1582 Incorrect Content 605d800b6f -->
+                        <text>loads due to thermal or moisture-related expansion and contraction,
+                    deflection, deformation, creep, shrinkage, settlement, and differential
+                    movement.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-2d9ba03f20" sequence="808" description="Issue 1586 Incorrect Content at B.5.4.1.1.(1)(e)">
+            <target type="canonical-id" id="nbc.divB.part5.sect4.subsect1.art1.sent1.clause5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part5.sect4.subsect1.art1.sent1.clause5"
+                                                    letter="e"
+                                                    vendor-id="es008003f">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1586 Incorrect Content 2d9ba03f20 -->
+                        <text>minimize the ingress of airborne radon and other <ref type="term" target="l">soil</ref> gases from the ground with an aim to controlling the indoor concentrations
+                    of these gases to an acceptable level, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-3fcae52d26" sequence="809" description="Issue 1587 Incorrect Content at B.5.4.1.1.(1)(f)">
+            <target type="canonical-id" id="nbc.divB.part5.sect4.subsect1.art1.sent1.clause6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part5.sect4.subsect1.art1.sent1.clause6"
+                                                    letter="f"
+                                                    vendor-id="es008003e">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1587 Incorrect Content 3fcae52d26 -->
+                        <text>not compromise the operation of <ref type="term" target="bldng">building</ref> services.</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-1adf916bbc" sequence="810" description="Issue 2171 Incorrect Content at B.8.2.4.3.(1)(c)">
+            <target type="canonical-id" id="nbc.divB.part8.sect2.subsect4.art3.sent1.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part8.sect2.subsect4.art3.sent1.clause3"
+                                                    letter="c"
+                                                    vendor-id="es001880c">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2171 Incorrect Content 1adf916bbc -->
+                        <text>red on one side with black corner areas so that the red area
+                    is a regular 8-sided figure, and with the word “STOP” in
+                    clearly distinguishable white letters not less than <measurement units="metric">150 mm</measurement> high located centrally on the sign,</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-63c1ae7ce8" sequence="811" description="Issue 2172 Incorrect Content at B.8.2.4.3.(1)(d)">
+            <target type="canonical-id" id="nbc.divB.part8.sect2.subsect4.art3.sent1.clause4"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part8.sect2.subsect4.art3.sent1.clause4"
+                                                    letter="d"
+                                                    vendor-id="es001880d">
+                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2172 Incorrect Content 63c1ae7ce8 -->
+                        <text>yellow on the other side with the word “SLOW”
+                    in clearly distinguishable black letters not less than <measurement units="metric">150 mm</measurement> high located centrally on the sign, or symbols recognized by the
+                    International Traffic Code, and</text>
+                                            </clause>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-7a26617dc8" sequence="833" description="Issue 1243 Incorrect Content at B.4.1.8.11.(11)(a)(ii)">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art11.sent11.clause1.subclause2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <subclause xml:id="nbc.divB.part4.sect1.subsect8.art11.sent11.clause1.subclause2"
+                                                          number="2"
+                                                          vendor-id="es007920a2">
+                                                  <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1243 Incorrect Content 7a26617dc8 -->
+                        <text>T<sub>x</sub> = F<sub>x</sub>(e<sub>x</sub> − 0.10D<sub>nx</sub>) where Fx is determined in accordance with Sentence (7) and where each element of the <ref type="term" target="bldng">building</ref> is designed for the most severe effect of the above load cases, or</text>
+                                               </subclause>
+                </new-content>
+            </replace>
+        </amendment>
+    </amendments>
+    
+</bc-overlay>
