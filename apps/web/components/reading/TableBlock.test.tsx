@@ -689,6 +689,29 @@ describe('TableBlock', () => {
     expect(screen.getByText(expected)).toBeInTheDocument();
   });
 
+  // CLAUDE-AUTOFIX CL-028 CF-10563 | issue 2566 | A few tables print "Forming part of" with a lowercase "part" in the PDF.
+  it.each([
+    ['nbc.divB.part10.sect2.subsect3.art3.table4', 'Forming part of Sentences 10.2.3.3.(1) and (2)'],
+    ['nbc.divB.part3.sect1.subsect2.art1.table1', 'Forming Part of Sentences 10.2.3.3.(1) and (2)'],
+  ])('writes the forming part caption of %s with the PDF letter case', (id, expected) => {
+    const table = {
+      id,
+      type: 'table',
+      number: '10.2.3.3.',
+      title: 'Title',
+      headers: [['Header']],
+      rows: [{ cells: [{ content: 'Data' }] }],
+      formingPart: [
+        { type: 'internal', target: 'nbc.divB.part10.sect2.subsect3.art3.sent1', display_type: 'long' },
+        { type: 'internal', target: 'nbc.divB.part10.sect2.subsect3.art3.sent2', display_type: 'long' },
+      ],
+    } as unknown as Table;
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText(expected)).toBeInTheDocument();
+  });
+
   it('renders Appendix D table numbering from appendix-style ids when number is omitted', () => {
     const table: Table = {
       id: 'nbc.divB.appendixD.appsect1.subsect1.article2.table1',
