@@ -1890,6 +1890,12 @@
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote28.para1"> Although there is no explicit performance statement in the British Columbia Building Code that means of egress should be free of smoke, it is the intent that during the period when occupants are using a means of egress to evacuate from a floor area, the smoke contamination should not reach levels that would inhibit movement to the exit. This is particularly critical for persons with disabilities, who may not move at the same rate as other persons and who could be more susceptible to the effects of smoke contamination. <ref type="standard" target="nfpa80" standardId="nfpa80"/> requires that a fire door protecting a means of egress be designed to minimize the possibility of smoke passing through the opening.</paragraph>
                     </new-content>
                 </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-158: the merge engine applies only the first modify amendment per target, so bc-158 was dropped. -->
+<element-replace element="paragraph" position="4">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote28.para4">Similar concern has to be considered for other closure devices that are permitted to remain open on fusible links, and their location should be restricted in accordance with <ref type="standard" target="nfpa80" standardId="nfpa80" ref-style="notitle" ref-punc="none"/> and the British Columbia Building Code, except where their installation in another location will not allow the products of combustion to spread into means of egress.</paragraph>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -2060,6 +2066,12 @@
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para2">According to <ref type="standard" target="nfpa13" standardId="nfpa13"/> and <ref type="standard" target="nfpa13r" standardId="nfpa13r"/>, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly.</paragraph>
                     </new-content>
                 </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-166: the merge engine applies only the first modify amendment per target, so bc-166 was dropped. -->
+<element-replace element="paragraph" position="3">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para3">Moreover, <ref type="standard" target="nfpa13d" standardId="nfpa13d"/> also allows the omission of sprinklers in such rooms and closets under certain circumstances, provided the building is sprinklered in conformance with this standard. In this case, the British Columbia Building Code concurs with the provisions of the <ref type="standard" target="nfpa13d" standardId="nfpa13d" ref-style="notitle" ref-punc="none"/> standard.</paragraph>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -2128,6 +2140,20 @@
                                                                                                                                display-type="long"/> The knowledge requirements are well within the capabilities of a competent designer. The designer should appreciate, however, that successful application requires a clear understanding of the principles that govern smoke movement. <ref type="internal"
                                                                                                                                                                                                                                                                                               target="nbc.divB.part3.sect2.subsect6"
                                                                                                                                                                                                                                                                                               display-type="long"/> contains only those items that relate to the design and construction of a building; operation of the facilities and recommended actions to be taken by the building <ref type="term" target="bc-wnr">owner</ref>, occupant and fire department are covered by the British Columbia Fire Code.</paragraph>
+                    </new-content>
+                </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-169: the merge engine applies only the first modify amendment per target, so bc-169 was dropped. -->
+<element-replace element="paragraph" position="4">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote101.para4">It is assumed that in the event of fire, occupants of the floor on which the fire occurs will leave by exit stairs immediately following the sounding of a fire alarm, and that occupants of the floor immediately above the floor on which the fire occurs will be advised to leave by the first fire department officer on the scene or other person assigned this responsibility. Occupants of all other floors may remain on their floors unless otherwise directed. It is also assumed that the owner of the building has complied with the Emergency Planning Section of the British Columbia Fire Code by preparing a comprehensive fire safety plan to safeguard the building occupants and that the building supervisory staff are familiar with the requirements of <ref type="internal"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         target="nbc.divB.part3.sect2.subsect6"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         display-type="long"/> and with their responsibilities under the fire safety plan.</paragraph>
+                    </new-content>
+                </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-170: the merge engine applies only the first modify amendment per target, so bc-170 was dropped. -->
+<element-replace element="paragraph" position="5">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote101.para5">The British Columbia Building Code requires that a check be made of the smoke control and mechanical venting systems. Testing will indicate deficiencies caused by inexact estimates of the leakage characteristics or of air supply requirements and, in all but the most extreme cases, will provide an opportunity for appropriate adjustments before the system is put into service.</paragraph>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2219,6 +2245,17 @@
                 <element-replace element="paragraph" position="1">
                     <new-content source="bc">
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote127.para1">These measures are intended to provide temporary refuge for persons with disabilities. It is acknowledged, however, that the measures cannot provide absolute safety for all occupants in the fire area. It may, therefore, be necessary to develop special arrangements in the fire safety plan to evacuate persons with disabilities from these areas. Details for a suitable plan are contained in the British Columbia Fire Code.</paragraph>
+                    </new-content>
+                </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-174: the merge engine applies only the first modify amendment per target, so bc-174 was dropped. -->
+<element-replace element="paragraph" position="3">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote127.para3">If an estimate is to be made of the number of persons with disabilities in a floor area who can be accommodated in each zone in <ref type="internal"
+                                                                                                                                                                                                                           target="nbc.divB.part3.sect3.subsect1.art7.sent1.clause2"
+                                                                                                                                                                                                                           display-type="long"
+                                                                                                                                                                                                                           pretext="Clause"/>, this estimate may be based on <ref type="internal"
+                                                                                   target="nbc.divB.part3.sect8.subsect2.art3.table1"
+                                                                                   display-type="long"/>, which is used to determine the minimum number of spaces to be provided for persons using wheelchairs in fixed seating areas. If more precise information is available, it should be used for sizing the zones.</paragraph>
                     </new-content>
                 </element-replace>
             </modify>
