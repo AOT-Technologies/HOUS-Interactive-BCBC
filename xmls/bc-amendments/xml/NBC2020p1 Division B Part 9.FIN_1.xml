@@ -143,9 +143,10 @@
             <target type="canonical-id" id="nbc.divBV2.part9.sect5.subsect2.art2"/>
             <modify>
                 <text-change xpath-within-target=".//title">
+                    <!-- CLAUDE-AUTOFIX CF-04005 | issue 6938 | Title reads "with an Accessible Path of Travel" as in the PDF (the article "a" before the new word is changed too). -->
                     <find-replace>
-                        <find>Barrier-Free Path of Travel</find>
-                        <replace>Accessible Path of Travel</replace>
+                        <find>a Barrier-Free Path of Travel</find>
+                        <replace>an Accessible Path of Travel</replace>
                     </find-replace>
                 </text-change>
             </modify>
