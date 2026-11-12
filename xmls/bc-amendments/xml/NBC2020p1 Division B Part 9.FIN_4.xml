@@ -1,0 +1,1771 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bc-overlay id="bc-part9-amendments-2023" 
+            version="1.0" 
+            nbc-target-version="2020"
+            effective-date="2023-12-15">
+    
+    <!-- ================================================================== -->
+    <!-- BC BUILDING CODE AMENDMENTS TO NBC 2020 - PART 9 (4)                  -->
+    <!-- ================================================================== -->
+    
+    <metadata>
+        <title>BC Building Code Amendments to NBC 2020 - Part 9</title>
+        <description>British Columbia-specific amendments for Part 9 (Housing and Small Buildings)</description>
+        <authority>Province of British Columbia</authority>
+        <author>BC Building Code Team</author>
+        <source-document>NBC2020p1 Division B Part 9.FIN_backup.docx</source-document>
+    </metadata>
+    
+    <amendments>
+        
+        <!-- ================================================================== -->
+        <!-- SECTION 9.38 - ENERGY EFFICIENCY - TABLE 9.38.1.1 AMENDMENTS       -->
+        <!-- ================================================================== -->
+        
+        <!-- bc-444: Insert 9.36.6.3 "Compliance Requirements" rows into Table 9.38.1.1 -->
+        <!-- BC adds new article 9.36.6.3 "Compliance Requirements" which doesn't exist in NBC -->
+        <!-- This inserts rows for new subsection 6 content into Table 9.38.1.1 -->
+        <!-- Note: Table is in sect38 (was sect37 before text-replacement) -->
+        <amendment id="bc-444" sequence="444" description="Insert 9.36.6.3 Compliance Requirements rows into Table 9.38.1.1">
+            <target type="position" 
+                    parent-id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925"
+                    position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <!-- Row 1: Article title row for 9.36.6.3 Compliance Requirements -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925a">
+                        <!-- CLAUDE-AUTOFIX CF-07283 | issue 4388 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art3"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 2: Sentence (5) with functional statements [F90,F91,F92,F93,F95,F96,F98,F99,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925b">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art3.sent5"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs96"/>,<ref type="functional-statement" target="fs98"/>,<ref type="functional-statement" target="fs99"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 3: Article title row for 9.36.6.5 Energy Performance Improvement Compliance Calculations -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925c">
+                        <!-- CLAUDE-AUTOFIX CF-07284 | issue 4389 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 4: Sentence (2) with [F95-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925d">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent2"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs95"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 5: Sentence (3) with [F90,F91,F92,F93,F95,F96,F98,F99,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925e">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent3"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs96"/>,<ref type="functional-statement" target="fs98"/>,<ref type="functional-statement" target="fs99"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 6: Sentence (5) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925f">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent5"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 7: Sentence (6) with [F99-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925g">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent6"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs99"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 8: Sentence (7) with [F99-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925h">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent7"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs99"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 7: Sentence (8) with [F90,F91,F92,F93,F95,F96,F98,F99,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925i">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent8"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs96"/>,<ref type="functional-statement" target="fs98"/>,<ref type="functional-statement" target="fs99"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 8: Sentence (9) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925j">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect6.art5.sent9"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 1: Article title row for 9.36.7.3 Determination of Airtightness -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925k">
+                        <!-- CLAUDE-AUTOFIX CF-07283 | issue 4388 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art3"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 2: Sentence (1) with [F90-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925l">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art3.sent1"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 1: Article title row for 9.36.7.4 Determination of Airtightness Level -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925m">
+                        <!-- CLAUDE-AUTOFIX CF-07283 | issue 4388 | Title row spans both columns as in the PDF, which also applies the bold. -->
+                        <entry colspan="2">
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="title"/>
+                        </entry>
+                    </row>
+                    <!-- Row 2: Sentence (1) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925n">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4.sent1"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 3: Sentence (2) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925o">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 4: Sentence (3) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925p">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                    <!-- Row 5: Sentence (4) with [F90,F91,F92,F93,F95,F100-OE1.1] -->
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5925q">
+                        <entry>
+                            <ref type="internal"
+                                 target="nbc.divBV2.part9.sect36.subsect7.art4"
+                                 display-type="shortNum"/>
+                        </entry>
+                        <entry>[<ref type="functional-statement" target="fs90"/>,<ref type="functional-statement" target="fs91"/>,<ref type="functional-statement" target="fs92"/>,<ref type="functional-statement" target="fs93"/>,<ref type="functional-statement" target="fs95"/>,<ref type="functional-statement" target="fs100"/>-<ref type="sub-objective" target="nbc-obj-oe1.1"/>]</entry>
+                    </row>
+                </new-content>
+            </insert>
+        </amendment>
+        
+        <!-- ================================================================== -->
+        <!-- DELETE NBC ROWS FROM END OF TABLE 9.36.1.1                         -->
+        <!-- BC table ends at 9.36.7.4 sentence (4) - NBC continues with        -->
+        <!-- additional rows for Section 9.37 that don't exist in BC            -->
+        <!-- Delete rows 5933 through 5968 (36 rows total)                      -->
+        <!-- ================================================================== -->
+        
+        <amendment id="bc-448" sequence="448" description="Delete NBC row 5933 from Table 9.36.1.1 (9.37.7.2 title)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5933"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-449" sequence="449" description="Delete NBC row 5934 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5934"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-450" sequence="450" description="Delete NBC row 5935 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5935"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-451" sequence="451" description="Delete NBC row 5936 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5936"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-452" sequence="452" description="Delete NBC row 5937 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5937"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-453" sequence="453" description="Delete NBC row 5938 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5938"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-454" sequence="454" description="Delete NBC row 5939 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5939"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-455" sequence="455" description="Delete NBC row 5940 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5940"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-456" sequence="456" description="Delete NBC row 5941 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5941"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-457" sequence="457" description="Delete NBC row 5942 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5942"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-458" sequence="458" description="Delete NBC row 5943 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5943"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-459" sequence="459" description="Delete NBC row 5944 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5944"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-460" sequence="460" description="Delete NBC row 5945 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5945"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-461" sequence="461" description="Delete NBC row 5946 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5946"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-462" sequence="462" description="Delete NBC row 5947 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5947"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-463" sequence="463" description="Delete NBC row 5948 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5948"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-464" sequence="464" description="Delete NBC row 5949 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5949"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-465" sequence="465" description="Delete NBC row 5950 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5950"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-466" sequence="466" description="Delete NBC row 5951 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5951"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-467" sequence="467" description="Delete NBC row 5952 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5952"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-468" sequence="468" description="Delete NBC row 5953 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5953"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-469" sequence="469" description="Delete NBC row 5954 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5954"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-470" sequence="470" description="Delete NBC row 5955 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5955"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-471" sequence="471" description="Delete NBC row 5956 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5956"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-472" sequence="472" description="Delete NBC row 5957 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5957"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-473" sequence="473" description="Delete NBC row 5958 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5958"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-474" sequence="474" description="Delete NBC row 5959 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5959"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-475" sequence="475" description="Delete NBC row 5960 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5960"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-476" sequence="476" description="Delete NBC row 5961 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5961"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-477" sequence="477" description="Delete NBC row 5962 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5962"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-478" sequence="478" description="Delete NBC row 5963 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5963"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-479" sequence="479" description="Delete NBC row 5964 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5964"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-480" sequence="480" description="Delete NBC row 5965 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5965"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-481" sequence="481" description="Delete NBC row 5966 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5966"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-482" sequence="482" description="Delete NBC row 5967 from Table 9.36.1.1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5967"/>
+            <delete/>
+        </amendment>
+        
+        <amendment id="bc-483" sequence="483" description="Delete NBC row 5968 from Table 9.36.1.1 (last row)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5968"/>
+            <delete/>
+        </amendment>
+
+        <!-- ================================================================== -->
+        <!-- Amendment 484: Change list type in A-9.36.2.4.(1) note procedure -->
+        <!-- Effective thermal resistance wood framing - numbered steps        -->
+        <!-- ================================================================== -->
+        <amendment id="bc-484" sequence="484" description="Change Application Note A-9.36.2.4.(1) procedure list from bulleted to numbered">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote223.div2.para1"/>
+            <replace preserve-references="true">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote223.div2.para1">To calculate the effective thermal resistance of a building
+envelope assembly containing wood framing, RSI<sub>eff</sub>, add
+up the results of the following calculations:<list type="alphabetic">
+                                <item>calculate the effective thermal resistance of all layers
+with continuous materials using the isothermal-planes method, and</item>
+                                <item>calculate the effective thermal resistance of the framing
+portion, RSI<sub>parallel</sub>, using the following equation, which
+is taken from the “parallel-path flow method” described in the <ref type="standard" target="ashr-hb-fun" standardId="ashr-hb-fun"/>:</item>
+                            </list>
+                            <equation type="display" html-src="graphics/eg/026/eg02626a">
+                                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi xmlns="">RSI</mi>
+                                    <msub xmlns="">
+                                        <mrow/>
+                                        <mrow>
+                                            <mi>parallel</mi>
+                                        </mrow>
+                                    </msub>
+                                    <mo xmlns="">=</mo>
+                                    <mfrac xmlns="">
+                                        <mrow>
+                                            <mn>100</mn>
+                                        </mrow>
+                                        <mrow>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mtext>%</mtext>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>area</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>of</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>framing</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi>RSI</mi>
+                                                    <msub>
+                                                        <mrow/>
+                                                        <mrow>
+                                                            <mi>F</mi>
+                                                        </mrow>
+                                                    </msub>
+                                                </mrow>
+                                            </mfrac>
+                                            <mo>+</mo>
+                                            <mfrac>
+                                                <mrow>
+                                                    <mtext>%</mtext>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>area</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>of</mi>
+                                                    <mspace width="0.5em"/>
+                                                    <mi>cavity</mi>
+                                                </mrow>
+                                                <mrow>
+                                                    <mi>RSI</mi>
+                                                    <msub>
+                                                        <mrow/>
+                                                        <mrow>
+                                                            <mi>C</mi>
+                                                        </mrow>
+                                                    </msub>
+                                                </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                    </mfrac>
+                                </math>
+                            </equation>where<list type="variable">
+                                <item>
+                                    <variable>RSI<sub>F</sub>
+                                    </variable>
+                                    <description>= thermal resistance of the framing member obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div3.table3"
+                                                display-type="long"/>,</description>
+                                </item>
+                                <item>
+                                    <variable>RSI<sub>C</sub>
+                                    </variable>
+                                    <description>= thermal resistance of the cavity (usually filled with insulation)
+obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div3.table3"
+                                                display-type="long"/>,</description>
+                                </item>
+                                <item>
+                                    <variable>% area of framing</variable>
+                                    <description>= value between 0 and 100 obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div2.table1"
+                                                display-type="long"/> or by calculation, and</description>
+                                </item>
+                                <item>
+                                    <variable>% area of cavity</variable>
+                                    <description>= value between 0 and 100 obtained from <ref type="internal"
+                                                target="nbc.divBV2.part9.appendix.appnote223.div2.table1"
+                                                display-type="long"/> or by calculation.</description>
+                                </item>
+                            </list>
+                        </paragraph>
+                    </new-content>
+            </replace>
+        </amendment>
+
+        <amendment id="bc-485" sequence="485" description="Change Application Note A-9.36.2.4.(1) example procedure list from bulleted to numbered">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote223.div2.example1.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote223.div2.example1.para1">
+                        <list type="numbered">
+                           <item>Determine the thermal resistance of each continuous material
+layer incorporated in the assembly using <ref type="internal"
+                                   target="nbc.divBV2.part9.appendix.appnote223.div3.table3"
+                                   display-type="long"/>.</item>
+                           <item>Calculate the thermal resistance of a section of framing
+and adjacent cavity portion, RSI<sub>parallel</sub>, using the parallel-path
+flow method as follows:<list type="roman">
+                                 <item>along a line that goes through the framing, which is designated
+RSI<sub>F</sub>, and</item>
+                                 <item>along a line that goes through the cavity (usually filled
+with insulation), which is designated RSI<sub>C</sub>. </item>
+                              </list>Look up the % area of framing and cavity for a typical <measurement units="metric">38 × 140 mm</measurement> wood-frame wall assembly with studs <measurement units="metric">400
+mm</measurement> o.c. using <ref type="internal"
+                                   target="nbc.divBV2.part9.appendix.appnote223.div2.table1"
+                                   display-type="long"/>:<list type="none">
+                                 <item>% area of framing = 23%, and </item>
+                                 <item>% area of cavity = 77%</item>
+                              </list>Then, combine the sums of RSI<sub>F</sub> and RSI<sub>C</sub> in proportion to the relative areas of framing
+and insulation to calculate the value of RSI<sub>parallel</sub> (thermal
+resistance of the framing portion): <equation type="display" html-src="graphics/eg/026/eg02630a">
+                                 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                    <mi xmlns="">RSI</mi>
+                                    <msub xmlns="">
+                                       <mrow/>
+                                       <mrow>
+                                          <mi>parallel</mi>
+                                       </mrow>
+                                    </msub>
+                                    <mo xmlns="">=</mo>
+                                    <mfrac xmlns="">
+                                       <mrow>
+                                          <mn>100</mn>
+                                       </mrow>
+                                       <mrow>
+                                          <mo>(</mo>
+                                          <mfrac>
+                                             <mrow>
+                                                <mn>23</mn>
+                                             </mrow>
+                                             <mrow>
+                                                <mn>1.19</mn>
+                                             </mrow>
+                                          </mfrac>
+                                          <mo>)</mo>
+                                          <mo>+</mo>
+                                          <mo>(</mo>
+                                          <mfrac>
+                                             <mrow>
+                                                <mn>77</mn>
+                                             </mrow>
+                                             <mrow>
+                                                <mn>3.34</mn>
+                                             </mrow>
+                                          </mfrac>
+                                          <mo>)</mo>
+                                       </mrow>
+                                    </mfrac>
+                                    <mo xmlns="">=</mo>
+                                    <mn xmlns="">2.36</mn>
+                                    <mo xmlns="">(</mo>
+                                    <mi xmlns="">m</mi>
+                                    <msup xmlns="">
+                                       <mrow/>
+                                       <mrow>
+                                          <mn>2</mn>
+                                       </mrow>
+                                    </msup>
+                                    <mo xmlns="">×</mo>
+                                    <mi xmlns="">K</mi>
+                                    <mo xmlns="">)</mo>
+                                    <mo xmlns="">/</mo>
+                                    <mi xmlns="">W</mi>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mspace xmlns="" width="0.5em"/>
+                                    <mo xmlns="">(</mo>
+                                    <mi xmlns="">U</mi>
+                                    <mtext xmlns="">–</mtext>
+                                    <mi xmlns="">value</mi>
+                                    <mo xmlns="">=</mo>
+                                    <mn xmlns="">0.42</mn>
+                                    <mi xmlns="">W</mi>
+                                    <mo xmlns="">/</mo>
+                                    <mo xmlns="">(</mo>
+                                    <mi xmlns="">m</mi>
+                                    <msup xmlns="">
+                                       <mrow/>
+                                       <mrow>
+                                          <mn>2</mn>
+                                       </mrow>
+                                    </msup>
+                                    <mo xmlns="">×</mo>
+                                    <mi xmlns="">K</mi>
+                                    <mo xmlns="">)</mo>
+                                    <mo xmlns="">)</mo>
+                                 </math>
+                              </equation>
+                           </item>
+                           <item>Add up the values obtained in steps 1 and 2 to determine
+the effective thermal resistance of the wall assembly, RSI<sub>eff</sub>.</item>
+                        </list>
+                     </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        
+        <amendment id="bc-qa-e0c42d0a83" sequence="972" description="Issue 3703 Incorrect Content at B.9.38.1.1.Tbl1#Row270.Col1">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row270"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row270" rowsep="1">
+                                                     <entry colspan="2">
+                                                        <ref type="internal"
+                                                             target="nbc.divBV2.part9.sect7.subsect2.art1"
+                                                             display-type="title"/> Performance Expectations
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-b88d5c5f69" sequence="973" description="Issue 4325 Incorrect Content at B.9.38.1.1.Tbl1#Row4345.Col2">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row4345"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row4345"
+                                                       rowsep="1">
+                                                     <entry colspan="2">(c)
+                                                        <ref type="internal"
+                                                             target="nbc.divBV2.part9.sect27.subsect3.art6"
+                                                             display-type="title"/>
+                                                     </entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-8bfadbe4f2" sequence="974" description="Issue 4475 Incorrect Content at B.9.38.1.1.Tbl1#Row5202.Col2">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5202"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5202"
+                                                       rowsep="1">
+                                                     <entry rowspan="4">
+                                                        <ref type="internal"
+                                                             target="nbc.divBV2.part9.sect32.subsect1.art3.sent2"
+                                                             display-type="shortNum"/>
+                                                     </entry>
+                                                     <entry><ref type="functional-statement" target="fs81">[F40, F50, F52</ref>-<ref type="sub-objective" target="nbc-obj-os1.1"/>] [F51,F52,F62,F63-OH1.3]</entry>
+                                                  </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-qa-44cffc0044" sequence="1470" description="Issue 3662 Incorrect Content at B.9.38.1.1.(1)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.sent1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <sentence xml:id="nbc.divBV2.part9.sect38.subsect1.art1.sent1"
+                                                   number="1"
+                                                   vendor-id="es008670">
+                                            <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:3662 Incorrect Content 44cffc0044 -->
+                        <text>For the purpose of compliance with this Code as required in <ref type="internal"
+                                                    target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
+                                                    display-type="long"/>, the objectives and functional statements
+                    attributed to the acceptable solutions in this Part shall be the objectives
+                    and functional statements listed in <ref type="internal"
+                                                    target="nbc.divBV2.part9.sect38.subsect1.art1.table1"
+                                                    display-type="long"/> (See <ref type="internal"
+                                                    target="nbc.divB.part1.appendix.appnote1"
+                                                    display-type="long">Note A-1.1.2.1.(1)</ref>.)</text>
+                                         </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5195: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2136" sequence="2136" description="Delete NBC 9.32 row 5195 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5195"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5196: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2137" sequence="2137" description="Delete NBC 9.32 row 5196 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5196"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5197: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2138" sequence="2138" description="Delete NBC 9.32 row 5197 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5197"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5198: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2139" sequence="2139" description="Delete NBC 9.32 row 5198 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5198"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5199: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2140" sequence="2140" description="Delete NBC 9.32 row 5199 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5199"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5200: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2141" sequence="2141" description="Delete NBC 9.32 row 5200 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5200"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5201: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2142" sequence="2142" description="Delete NBC 9.32 row 5201 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5201"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5202: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2143" sequence="2143" description="Delete NBC 9.32 row 5202 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5202"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5203: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2144" sequence="2144" description="Delete NBC 9.32 row 5203 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5203"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5204: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2145" sequence="2145" description="Delete NBC 9.32 row 5204 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5204"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5205: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2146" sequence="2146" description="Delete NBC 9.32 row 5205 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5205"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5206: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2147" sequence="2147" description="Delete NBC 9.32 row 5206 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5206"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5207: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2148" sequence="2148" description="Delete NBC 9.32 row 5207 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5207"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5208: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2149" sequence="2149" description="Delete NBC 9.32 row 5208 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5208"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5209: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2150" sequence="2150" description="Delete NBC 9.32 row 5209 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5209"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5210: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2151" sequence="2151" description="Delete NBC 9.32 row 5210 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5210"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5211: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2152" sequence="2152" description="Delete NBC 9.32 row 5211 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5211"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5212: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2153" sequence="2153" description="Delete NBC 9.32 row 5212 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5212"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5213: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2154" sequence="2154" description="Delete NBC 9.32 row 5213 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5213"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5214: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2155" sequence="2155" description="Delete NBC 9.32 row 5214 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5214"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5215: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2156" sequence="2156" description="Delete NBC 9.32 row 5215 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5215"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5216: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2157" sequence="2157" description="Delete NBC 9.32 row 5216 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5216"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5217: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2158" sequence="2158" description="Delete NBC 9.32 row 5217 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5217"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5218: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2159" sequence="2159" description="Delete NBC 9.32 row 5218 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5218"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5219: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2160" sequence="2160" description="Delete NBC 9.32 row 5219 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5219"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5220: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2161" sequence="2161" description="Delete NBC 9.32 row 5220 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5220"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5221: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2162" sequence="2162" description="Delete NBC 9.32 row 5221 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5221"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5222: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2163" sequence="2163" description="Delete NBC 9.32 row 5222 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5222"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5223: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2164" sequence="2164" description="Delete NBC 9.32 row 5223 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5223"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5224: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2165" sequence="2165" description="Delete NBC 9.32 row 5224 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5224"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5225: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2166" sequence="2166" description="Delete NBC 9.32 row 5225 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5225"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5226: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2167" sequence="2167" description="Delete NBC 9.32 row 5226 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5226"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5227: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2168" sequence="2168" description="Delete NBC 9.32 row 5227 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5227"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5228: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2169" sequence="2169" description="Delete NBC 9.32 row 5228 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5228"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5229: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2170" sequence="2170" description="Delete NBC 9.32 row 5229 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5229"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5230: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2171" sequence="2171" description="Delete NBC 9.32 row 5230 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5230"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5231: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2172" sequence="2172" description="Delete NBC 9.32 row 5231 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5231"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5232: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2173" sequence="2173" description="Delete NBC 9.32 row 5232 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5232"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5233: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2174" sequence="2174" description="Delete NBC 9.32 row 5233 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5233"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5234: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2175" sequence="2175" description="Delete NBC 9.32 row 5234 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5234"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5235: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2176" sequence="2176" description="Delete NBC 9.32 row 5235 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5235"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5236: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2177" sequence="2177" description="Delete NBC 9.32 row 5236 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5236"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5237: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2178" sequence="2178" description="Delete NBC 9.32 row 5237 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5237"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5238: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2179" sequence="2179" description="Delete NBC 9.32 row 5238 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5238"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5239: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2180" sequence="2180" description="Delete NBC 9.32 row 5239 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5239"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5240: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2181" sequence="2181" description="Delete NBC 9.32 row 5240 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5240"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5241: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2182" sequence="2182" description="Delete NBC 9.32 row 5241 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5241"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5242: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2183" sequence="2183" description="Delete NBC 9.32 row 5242 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5242"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5243: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2184" sequence="2184" description="Delete NBC 9.32 row 5243 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5243"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5244: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2185" sequence="2185" description="Delete NBC 9.32 row 5244 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5244"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5245: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2186" sequence="2186" description="Delete NBC 9.32 row 5245 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5245"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5246: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2187" sequence="2187" description="Delete NBC 9.32 row 5246 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5246"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5247: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2188" sequence="2188" description="Delete NBC 9.32 row 5247 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5247"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5248: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2189" sequence="2189" description="Delete NBC 9.32 row 5248 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5248"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5249: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2190" sequence="2190" description="Delete NBC 9.32 row 5249 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5249"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5250: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2191" sequence="2191" description="Delete NBC 9.32 row 5250 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5250"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5251: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2192" sequence="2192" description="Delete NBC 9.32 row 5251 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5251"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5252: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2193" sequence="2193" description="Delete NBC 9.32 row 5252 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5252"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5253: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2194" sequence="2194" description="Delete NBC 9.32 row 5253 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5253"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5254: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2195" sequence="2195" description="Delete NBC 9.32 row 5254 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5254"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5255: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2196" sequence="2196" description="Delete NBC 9.32 row 5255 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5255"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5256: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2197" sequence="2197" description="Delete NBC 9.32 row 5256 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5256"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5257: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2198" sequence="2198" description="Delete NBC 9.32 row 5257 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5257"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5258: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2199" sequence="2199" description="Delete NBC 9.32 row 5258 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5258"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5259: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2200" sequence="2200" description="Delete NBC 9.32 row 5259 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5259"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5260: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2201" sequence="2201" description="Delete NBC 9.32 row 5260 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5260"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5261: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2202" sequence="2202" description="Delete NBC 9.32 row 5261 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5261"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5262: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2203" sequence="2203" description="Delete NBC 9.32 row 5262 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5262"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5263: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2204" sequence="2204" description="Delete NBC 9.32 row 5263 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5263"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5264: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2205" sequence="2205" description="Delete NBC 9.32 row 5264 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5264"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5265: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2206" sequence="2206" description="Delete NBC 9.32 row 5265 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5265"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5266: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2207" sequence="2207" description="Delete NBC 9.32 row 5266 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5266"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5267: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2208" sequence="2208" description="Delete NBC 9.32 row 5267 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5267"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5268: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2209" sequence="2209" description="Delete NBC 9.32 row 5268 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5268"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5269: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2210" sequence="2210" description="Delete NBC 9.32 row 5269 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5269"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5270: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2211" sequence="2211" description="Delete NBC 9.32 row 5270 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5270"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5271: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2212" sequence="2212" description="Delete NBC 9.32 row 5271 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5271"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5272: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2213" sequence="2213" description="Delete NBC 9.32 row 5272 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5272"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5273: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2214" sequence="2214" description="Delete NBC 9.32 row 5273 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5273"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5274: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2215" sequence="2215" description="Delete NBC 9.32 row 5274 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5274"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5275: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2216" sequence="2216" description="Delete NBC 9.32 row 5275 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5275"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5276: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2217" sequence="2217" description="Delete NBC 9.32 row 5276 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5276"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5277: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2218" sequence="2218" description="Delete NBC 9.32 row 5277 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5277"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5278: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2219" sequence="2219" description="Delete NBC 9.32 row 5278 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5278"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5279: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2220" sequence="2220" description="Delete NBC 9.32 row 5279 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5279"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5280: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2221" sequence="2221" description="Delete NBC 9.32 row 5280 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5280"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5281: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2222" sequence="2222" description="Delete NBC 9.32 row 5281 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5281"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5282: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2223" sequence="2223" description="Delete NBC 9.32 row 5282 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5282"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5283: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2224" sequence="2224" description="Delete NBC 9.32 row 5283 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5283"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5284: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2225" sequence="2225" description="Delete NBC 9.32 row 5284 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5284"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5285: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2226" sequence="2226" description="Delete NBC 9.32 row 5285 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5285"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5286: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2227" sequence="2227" description="Delete NBC 9.32 row 5286 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5286"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5287: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2228" sequence="2228" description="Delete NBC 9.32 row 5287 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5287"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5288: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2229" sequence="2229" description="Delete NBC 9.32 row 5288 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5288"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5289: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2230" sequence="2230" description="Delete NBC 9.32 row 5289 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5289"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5290: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2231" sequence="2231" description="Delete NBC 9.32 row 5290 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5290"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5291: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2232" sequence="2232" description="Delete NBC 9.32 row 5291 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5291"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5292: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2233" sequence="2233" description="Delete NBC 9.32 row 5292 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5292"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5293: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2234" sequence="2234" description="Delete NBC 9.32 row 5293 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5293"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5294: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2235" sequence="2235" description="Delete NBC 9.32 row 5294 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5294"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5295: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2236" sequence="2236" description="Delete NBC 9.32 row 5295 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5295"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5296: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2237" sequence="2237" description="Delete NBC 9.32 row 5296 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5296"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5297: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2238" sequence="2238" description="Delete NBC 9.32 row 5297 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5297"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5298: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2239" sequence="2239" description="Delete NBC 9.32 row 5298 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5298"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5299: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2240" sequence="2240" description="Delete NBC 9.32 row 5299 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5299"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5300: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2241" sequence="2241" description="Delete NBC 9.32 row 5300 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5300"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5301: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2242" sequence="2242" description="Delete NBC 9.32 row 5301 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5301"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5302: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2243" sequence="2243" description="Delete NBC 9.32 row 5302 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5302"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5303: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2244" sequence="2244" description="Delete NBC 9.32 row 5303 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5303"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5304: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2245" sequence="2245" description="Delete NBC 9.32 row 5304 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5304"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5305: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2246" sequence="2246" description="Delete NBC 9.32 row 5305 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5305"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5306: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2247" sequence="2247" description="Delete NBC 9.32 row 5306 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5306"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5307: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2248" sequence="2248" description="Delete NBC 9.32 row 5307 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5307"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5308: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2249" sequence="2249" description="Delete NBC 9.32 row 5308 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5308"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5309: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2250" sequence="2250" description="Delete NBC 9.32 row 5309 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5309"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5310: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2251" sequence="2251" description="Delete NBC 9.32 row 5310 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5310"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5311: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2252" sequence="2252" description="Delete NBC 9.32 row 5311 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5311"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5312: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2253" sequence="2253" description="Delete NBC 9.32 row 5312 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5312"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5313: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2254" sequence="2254" description="Delete NBC 9.32 row 5313 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5313"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5314: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2255" sequence="2255" description="Delete NBC 9.32 row 5314 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5314"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5315: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2256" sequence="2256" description="Delete NBC 9.32 row 5315 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5315"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5316: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2257" sequence="2257" description="Delete NBC 9.32 row 5316 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5316"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5317: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2258" sequence="2258" description="Delete NBC 9.32 row 5317 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5317"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5318: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2259" sequence="2259" description="Delete NBC 9.32 row 5318 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5318"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5319: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2260" sequence="2260" description="Delete NBC 9.32 row 5319 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5319"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5320: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2261" sequence="2261" description="Delete NBC 9.32 row 5320 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5320"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5321: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2262" sequence="2262" description="Delete NBC 9.32 row 5321 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5321"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5322: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2263" sequence="2263" description="Delete NBC 9.32 row 5322 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5322"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5323: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2264" sequence="2264" description="Delete NBC 9.32 row 5323 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5323"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5324: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2265" sequence="2265" description="Delete NBC 9.32 row 5324 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5324"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5325: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2266" sequence="2266" description="Delete NBC 9.32 row 5325 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5325"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5326: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2267" sequence="2267" description="Delete NBC 9.32 row 5326 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5326"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5327: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2268" sequence="2268" description="Delete NBC 9.32 row 5327 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5327"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5328: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2269" sequence="2269" description="Delete NBC 9.32 row 5328 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5328"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5329: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2270" sequence="2270" description="Delete NBC 9.32 row 5329 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5329"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5330: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2271" sequence="2271" description="Delete NBC 9.32 row 5330 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5330"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5331: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2272" sequence="2272" description="Delete NBC 9.32 row 5331 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5331"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5332: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2273" sequence="2273" description="Delete NBC 9.32 row 5332 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5332"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5333: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2274" sequence="2274" description="Delete NBC 9.32 row 5333 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5333"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5334: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2275" sequence="2275" description="Delete NBC 9.32 row 5334 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5334"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5335: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2276" sequence="2276" description="Delete NBC 9.32 row 5335 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5335"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5336: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2277" sequence="2277" description="Delete NBC 9.32 row 5336 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5336"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5337: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2278" sequence="2278" description="Delete NBC 9.32 row 5337 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5337"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5338: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2279" sequence="2279" description="Delete NBC 9.32 row 5338 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5338"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5339: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2280" sequence="2280" description="Delete NBC 9.32 row 5339 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5339"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5340: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2281" sequence="2281" description="Delete NBC 9.32 row 5340 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5340"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5341: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2282" sequence="2282" description="Delete NBC 9.32 row 5341 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5341"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5342: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2283" sequence="2283" description="Delete NBC 9.32 row 5342 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5342"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5343: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2284" sequence="2284" description="Delete NBC 9.32 row 5343 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5343"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5344: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2285" sequence="2285" description="Delete NBC 9.32 row 5344 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5344"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5345: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2286" sequence="2286" description="Delete NBC 9.32 row 5345 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5345"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5346: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2287" sequence="2287" description="Delete NBC 9.32 row 5346 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5346"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5347: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2288" sequence="2288" description="Delete NBC 9.32 row 5347 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5347"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5348: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2289" sequence="2289" description="Delete NBC 9.32 row 5348 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5348"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5349: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2290" sequence="2290" description="Delete NBC 9.32 row 5349 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5349"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5350: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2291" sequence="2291" description="Delete NBC 9.32 row 5350 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5350"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5351: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2292" sequence="2292" description="Delete NBC 9.32 row 5351 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5351"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5352: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2293" sequence="2293" description="Delete NBC 9.32 row 5352 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5352"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5353: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2294" sequence="2294" description="Delete NBC 9.32 row 5353 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5353"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5354: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2295" sequence="2295" description="Delete NBC 9.32 row 5354 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5354"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5355: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2296" sequence="2296" description="Delete NBC 9.32 row 5355 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5355"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5356: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2297" sequence="2297" description="Delete NBC 9.32 row 5356 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5356"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5357: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2298" sequence="2298" description="Delete NBC 9.32 row 5357 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5357"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5358: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2299" sequence="2299" description="Delete NBC 9.32 row 5358 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5358"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5359: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2300" sequence="2300" description="Delete NBC 9.32 row 5359 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5359"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5360: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2301" sequence="2301" description="Delete NBC 9.32 row 5360 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5360"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5361: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2302" sequence="2302" description="Delete NBC 9.32 row 5361 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5361"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5362: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2303" sequence="2303" description="Delete NBC 9.32 row 5362 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5362"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5363: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2304" sequence="2304" description="Delete NBC 9.32 row 5363 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5363"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5364: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2305" sequence="2305" description="Delete NBC 9.32 row 5364 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5364"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5365: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2306" sequence="2306" description="Delete NBC 9.32 row 5365 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5365"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5366: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2307" sequence="2307" description="Delete NBC 9.32 row 5366 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5366"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5367: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2308" sequence="2308" description="Delete NBC 9.32 row 5367 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5367"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5368: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2309" sequence="2309" description="Delete NBC 9.32 row 5368 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5368"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5369: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2310" sequence="2310" description="Delete NBC 9.32 row 5369 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5369"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5370: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2311" sequence="2311" description="Delete NBC 9.32 row 5370 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5370"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5371: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2312" sequence="2312" description="Delete NBC 9.32 row 5371 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5371"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5372: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2313" sequence="2313" description="Delete NBC 9.32 row 5372 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5372"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5373: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2314" sequence="2314" description="Delete NBC 9.32 row 5373 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5373"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5374: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2315" sequence="2315" description="Delete NBC 9.32 row 5374 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5374"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5375: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2316" sequence="2316" description="Delete NBC 9.32 row 5375 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5375"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5376: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2317" sequence="2317" description="Delete NBC 9.32 row 5376 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5376"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5377: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2318" sequence="2318" description="Delete NBC 9.32 row 5377 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5377"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5378: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2319" sequence="2319" description="Delete NBC 9.32 row 5378 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5378"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5379: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2320" sequence="2320" description="Delete NBC 9.32 row 5379 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5379"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5380: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2321" sequence="2321" description="Delete NBC 9.32 row 5380 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5380"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5381: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2322" sequence="2322" description="Delete NBC 9.32 row 5381 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5381"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5382: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2323" sequence="2323" description="Delete NBC 9.32 row 5382 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5382"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5383: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2324" sequence="2324" description="Delete NBC 9.32 row 5383 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5383"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5384: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2325" sequence="2325" description="Delete NBC 9.32 row 5384 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5384"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5385: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2326" sequence="2326" description="Delete NBC 9.32 row 5385 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5385"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5386: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2327" sequence="2327" description="Delete NBC 9.32 row 5386 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5386"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5387: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2328" sequence="2328" description="Delete NBC 9.32 row 5387 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5387"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Delete NBC row 5388: the BC 9.32 rows of Table 9.38.1.1 are rewritten from the PDF (pages 1226-1229). -->
+        <amendment id="bc-2329" sequence="2329" description="Delete NBC 9.32 row 5388 from Table 9.38.1.1 (CF-07095)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5388"/>
+            <delete/>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-07095 | issue 4200 | Insert the BC 9.32 rows of Table 9.38.1.1 exactly as in the PDF, including the Reserved rows. -->
+        <amendment id="bc-2330" sequence="2330" description="Insert BC 9.32 rows into Table 9.38.1.1 as in the PDF (CF-07095)">
+            <target type="position" parent-id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194" position="after"/>
+            <insert>
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aa" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art2" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ab" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art2.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ac" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ad" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art3" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ae" rowsep="1"><entry rowspan="5"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art3.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs44"/>,<ref type="functional-statement" target="fs40"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194af" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ag" rowsep="1"><entry>[<ref type="functional-statement" target="fs44"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ah" rowsep="1"><entry>[<ref type="functional-statement" target="fs01"/>-<ref type="sub-objective" target="nbc-obj-os1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ai" rowsep="1"><entry>[<ref type="functional-statement" target="fs01"/>-<ref type="sub-objective" target="nbc-obj-op1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aj" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art3.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-os1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ak" rowsep="1"><entry rowspan="5"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art3.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs44"/>,<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs40"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194al" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194am" rowsep="1"><entry>[<ref type="functional-statement" target="fs44"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194an" rowsep="1"><entry>[<ref type="functional-statement" target="fs01"/>-<ref type="sub-objective" target="nbc-obj-os1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ao" rowsep="1"><entry>[<ref type="functional-statement" target="fs01"/>-<ref type="sub-objective" target="nbc-obj-op1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ap" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art1" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aq" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art1.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ar" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194as" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art1.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194at" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194au" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art2" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194av" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art2.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194aw" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ax" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art2.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs42"/>-<ref type="sub-objective" target="nbc-obj-oh2.5"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ay" rowsep="1"><entry>[<ref type="functional-statement" target="fs61"/>,<ref type="functional-statement" target="fs42"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194az" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ba" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art2.sent4" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-oh2.5"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bb" rowsep="1"><entry>[<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>,]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bc" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art1" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bd" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art1.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>] [<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194be" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bf" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art2" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bg" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art2.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.2"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bh" rowsep="1"><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bi" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art2.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs82"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.2"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bj" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art2.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs82"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.2"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bk" rowsep="1"><entry>[<ref type="functional-statement" target="fs82"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bl" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bm" rowsep="1"><entry rowspan="4"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1" display-type="shortNum"/></entry><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1" display-type="shortNum"/> [<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bn" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1" display-type="shortNum"/>,<ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause2" display-type="shortNum"/> [<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bo" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1" display-type="shortNum"/>,<ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause2" display-type="shortNum"/> [<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bp" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause1" display-type="shortNum"/>,<ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art3.sent1.clause2" display-type="shortNum"/> [<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bq" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194br" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bs" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bt" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bu" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bv" rowsep="1"><entry rowspan="3">(4)</entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bw" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bx" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194by" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent5" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194bz" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ca" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent6" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cb" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cc" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cd" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>] [<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ce" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cf" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.2"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cg" rowsep="1"><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ch" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ci" rowsep="1"><entry rowspan="4"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent3" display-type="shortNum"/></entry><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause1" display-type="shortNum"/> [<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>] [<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cj" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause1" display-type="shortNum"/> [<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ck" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause2" display-type="shortNum"/> [<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.2"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cl" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent3.clause2" display-type="shortNum"/> [<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cm" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent4" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.2"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cn" rowsep="1"><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194co" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cp" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art5.sent5" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs56"/>-<ref type="sub-objective" target="nbc-obj-oh3.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cq" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cr" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cs" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art6" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ct" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art6.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cu" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cv" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art6.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.2"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cw" rowsep="1"><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cx" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art7" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cy" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art7.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194cz" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art7.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194da" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art7.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194db" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art7.sent4" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dc" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art7.sent5" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dd" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194de" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194df" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dg" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dh" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs62"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194di" rowsep="1"><entry>[<ref type="functional-statement" target="fs62"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dj" rowsep="1"><entry rowspan="4"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs41"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dk" rowsep="1"><entry>[<ref type="functional-statement" target="fs52"/>,<ref type="functional-statement" target="fs62"/>,<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dl" rowsep="1"><entry>Table 9.32.3.8.(3), Note (1) [<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>,<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dm" rowsep="1"><entry>Table 9.32.3.8.(3), Note (1) [<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dn" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent4" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194do" rowsep="1"><entry>[<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dp" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dq" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent5" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs51"/>,<ref type="functional-statement" target="fs63"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dr" rowsep="1"><entry>[<ref type="functional-statement" target="fs63"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ds" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent6" display-type="shortNum"/></entry><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent6.clause1" display-type="shortNum"/> [<ref type="functional-statement" target="fs01"/>,<ref type="functional-statement" target="fs02"/>-<ref type="sub-objective" target="nbc-obj-os1.1"/>,<ref type="sub-objective" target="nbc-obj-os1.2"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dt" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent6.clause1" display-type="shortNum"/> [<ref type="functional-statement" target="fs80"/>,<ref type="functional-statement" target="fs82"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194du" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent6.clause2" display-type="shortNum"/> [<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs80"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dv" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent7" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dw" rowsep="1"><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dx" rowsep="1"><entry>[<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dy" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art8.sent8" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194dz" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art9" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ea" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art9.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs42"/>-<ref type="sub-objective" target="nbc-obj-oh2.5"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eb" rowsep="1"><entry>[<ref type="functional-statement" target="fs61"/>,<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-op2.3"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ec" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ed" rowsep="1"><entry rowspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent1" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>] [<ref type="functional-statement" target="fs52"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ee" rowsep="1"><entry>Reserved</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ef" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eg" rowsep="1"><entry rowspan="3"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1.sent1" display-type="shortNum"/></entry><entry>(a) [<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eh" rowsep="1"><entry>(b) [<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs53"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ei" rowsep="1"><entry>(b) [<ref type="functional-statement" target="fs43"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ej" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs53"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ek" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs40"/>,<ref type="functional-statement" target="fs50"/>,<ref type="functional-statement" target="fs53"/>,<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-oh1.1"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194el" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1.sent4" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs51"/>-<ref type="sub-objective" target="nbc-obj-oh1.2"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194em" rowsep="1"><entry colspan="2"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art2" display-type="title"/></entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194en" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art2.sent2" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs11"/>,<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eo" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art2.sent3" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs11"/>,<ref type="functional-statement" target="fs81"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194ep" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art2.sent4" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs11"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194eq" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art2.sent5" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs11"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                    <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row5194er" rowsep="1"><entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art2.sent6" display-type="shortNum"/></entry><entry>[<ref type="functional-statement" target="fs11"/>-<ref type="sub-objective" target="nbc-obj-os3.4"/>]</entry></row>
+                </new-content>
+            </insert>
+        </amendment>
+    </amendments>
+    
+</bc-overlay>

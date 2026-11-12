@@ -35,6 +35,12 @@
   margin: 0;
 }
 
+/* CLAUDE-AUTOFIX CL-004 CF-00062 | issue 6961 | Defined terms are italic, not bold, in the PDF. */
+.structuredList--definition .structuredList__term {
+  font-weight: var(--typography-font-weights-regular);
+  font-style: italic;
+}
+
 .structuredList__description {
   margin: 0.25rem 0 0;
 }
@@ -80,6 +86,16 @@ li .structuredList--symbol {
 li .structuredList--variable .structuredList__row--variable,
 li .structuredList--symbol .structuredList__row--variable {
   display: contents;
+}
+
+/* CLAUDE-AUTOFIX CL-057 CF-00798 | issue 559 | Organizations are plain lines, as in the PDF. */
+.structuredList__organization-row {
+  margin: 0 0 0.75rem;
+  text-indent: 1.5rem;
+}
+
+.structuredList__organization-abbreviation {
+  margin-right: 0.5rem;
 }
 
 .structuredList--organization {
