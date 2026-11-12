@@ -106,7 +106,8 @@
                                 <text>the number of persons in the <ref type="term" target="t">suite</ref> does not exceed 30, and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect1.subsect2.art7.sent1.clause2" letter="b">
-                                <text>except as permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7.sent2" display-type="short"/>, the <ref type="term" target="t">suite</ref> is separated from the remainder of the <ref type="term" target="bldng">building</ref> by a <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> of not less than <measurement units="metric">1 h</measurement>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-00881 | issue 630 | Unit printed "1 hr" as in the PDF. -->
+                                <text>except as permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7.sent2" display-type="short"/>, the <ref type="term" target="t">suite</ref> is separated from the remainder of the <ref type="term" target="bldng">building</ref> by a <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> of not less than <measurement units="metric">1 hr</measurement>.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art7.sent2" number="2">
