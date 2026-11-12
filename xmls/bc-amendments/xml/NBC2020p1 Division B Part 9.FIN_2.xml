@@ -2352,92 +2352,260 @@
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->
         
-        <amendment id="bc-qa-5aff5f80e7" sequence="739" description="Issue 6578 Incorrect Content at B.9.36.2.10.(8)">
+        <!-- CLAUDE-AUTOFIX CF-05910 | issue 3093 | BC deletes NBC Sentence 9.36.2.10.(7) (bc-291), so NBC Sentences (8) to (18) are Sentences (7) to (17) in the PDF: each is restored to its NBC text with its PDF number; the four earlier QA replacements of (8), (11) and (16)(a)/(b), which had put the next Sentence's text in place, are removed. -->
+        <amendment id="bc-custom-9-36-2-10-s8" sequence="2332"
+                   description="Restore NBC Sentence 9.36.2.10.(8) as Sentence (7), renumbered after the deletion of Sentence (7)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent8"/>
             <replace preserve-references="true">
-                <new-content source="bc">
+                <new-content>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8"
-                                                   number="8"
-                                                   vendor-id="es006921">
-                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6578 Incorrect Content 5aff5f80e7 -->
-                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6579 Incorrect Content 30911c81a2 -->
-                        <text>The joints between the <ref type="term" target="fndtn">foundation</ref> wall and the sill plate, between the sill plate and <ref type="term" target="rm-jst">rim joist</ref>, between the <ref type="term" target="rm-jst">rim joist</ref> and the subfloor material, and between the subfloor material and the bottom plate of the wall above shall be constructed
-                    airtight by </text>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause1"
-                                                    letter="a"
-                                                    vendor-id="es006921a">
-                                               <text>where the component is designed to provide a seal against air
-                    leakage, by sealing the component to the air barrier material (see <ref type="internal"
-                                                       target="nbc.divBV2.part9.appendix.appnote246"
-                                                       display-type="short"/>), or</text>
-                                            </clause>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause2"
-                                                    letter="b"
-                                                    vendor-id="es006921b">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3096 Incorrect Content b9b8c4f7c0 -->
-                                               <text>covering the structural components with an air barrier material
-                    and sealing it to the adjacent air barrier material.</text>
-                                            </clause>
-                                         </sentence>
+                               number="7"
+                               vendor-id="es006921">
+                        <text>Penetrations by electrical wiring, outlets, switches or recessed
+light fixtures through the plane of airtightness shall be constructed
+airtight </text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause1"
+                                letter="a"
+                                vendor-id="es006921a">
+                           <text>where the component is designed to provide a seal against air
+leakage, by sealing the component to the air barrier material (see <ref type="internal"
+                                   target="nbc.divBV2.part9.appendix.appnote246"
+                                   display-type="short"/>), or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause2"
+                                letter="b"
+                                vendor-id="es006921b">
+                           <text>where the component is not designed to provide a seal against
+air leakage, by covering the component with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-6354ee7806" sequence="740" description="Issue 6580 Incorrect Content at B.9.36.2.10.(11)">
+        <amendment id="bc-custom-9-36-2-10-s9" sequence="2333"
+                   description="Restore NBC Sentence 9.36.2.10.(9) as Sentence (8), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent9"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent9"
+                               number="8"
+                               vendor-id="es006922">
+                        <text>The joints between the <ref type="term" target="fndtn">foundation</ref> wall and the sill plate, between the sill plate and <ref type="term" target="rm-jst">rim joist</ref>, between the <ref type="term" target="rm-jst">rim joist</ref> and the subfloor material, and between the subfloor
+material and the bottom plate of the wall above shall be constructed
+airtight by</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent9.clause1"
+                                letter="a"
+                                vendor-id="es006922a">
+                           <text>sealing all joints and junctions between the structural components,
+or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent9.clause2"
+                                letter="b"
+                                vendor-id="es006922b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s10" sequence="2334"
+                   description="Restore NBC Sentence 9.36.2.10.(10) as Sentence (9), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent10"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent10"
+                               number="9"
+                               vendor-id="es006923">
+                        <text>The interfaces between windows, doors and skylights and wall/ceiling
+assemblies shall be constructed airtight by sealing all joints and
+junctions between the air barrier material in the wall and the window,
+door or skylight frame. (See <ref type="internal"
+                                target="nbc.divBV2.part9.appendix.appnote247"
+                                display-type="short"/>.) (See also <ref type="internal"
+                                target="nbc.divBV2.part9.sect7.subsect6"
+                                display-type="long"/>)</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s11" sequence="2335"
+                   description="Restore NBC Sentence 9.36.2.10.(11) as Sentence (10), renumbered after the deletion of Sentence (7)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent11"/>
             <replace preserve-references="true">
-                <new-content source="bc">
+                <new-content>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11"
-                                                   number="11"
-                                                   vendor-id="es006924">
-                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6580 Incorrect Content 6354ee7806 -->
-                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6581 Incorrect Content 698e3d282a -->
-                        <text>Interior walls that meet exterior walls or ceilings whose plane of airtightness is on the interior of the <ref type="term" target="bldng">building</ref> envelope and knee walls that separate <ref type="term" target="cnd-sp">conditioned space</ref> from unconditioned space shall be constructed airtight by</text>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause1"
-                                                    letter="a"
-                                                    vendor-id="es006924a">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3103 Incorrect Content 125aa7275b -->
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3104 Incorrect Content ebde05e7df -->
-                                               <text>sealing all junctions between the structural components,</text>
-                                            </clause>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause2"
-                                                    letter="b"
-                                                    vendor-id="es006924b">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3105 Incorrect Content e65a0f9f9e -->
-                                               <text>covering the structural components with an air barrier material
-                    and sealing it to the adjacent air barrier material, or</text>
-                                            </clause>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause3" letter="c">
-                                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3106 Missing Content e96cf989a7 -->
-                                                <text>maintaining the continuity of the <ref type="term" target="r-brrr">air barrier system</ref> above or through the interior wall or below or through the knee wall, as applicable.</text>
-                                            </clause>
-                                         </sentence>
+                               number="10"
+                               vendor-id="es006924">
+                        <text>Cantilevered floors and floors over unheated spaces or over
+the exterior shall be constructed airtight by one of the following
+methods or a combination thereof:</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause1"
+                                letter="a"
+                                vendor-id="es006924a">
+                           <text>sealing all joints and junctions between the structural components,
+or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause2"
+                                letter="b"
+                                vendor-id="es006924b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-4fce8c02cf" sequence="830" description="Issue 3115 Incorrect Content at B.9.36.2.10.(16)(a)">
-            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"/>
+        <amendment id="bc-custom-9-36-2-10-s12" sequence="2336"
+                   description="Restore NBC Sentence 9.36.2.10.(12) as Sentence (11), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent12"/>
             <replace preserve-references="true">
-                <new-content source="bc">
-                    <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"
-                                                    letter="a"
-                                                    vendor-id="es006929a">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3115 Incorrect Content 4fce8c02cf -->
-                        <text>sealing all junctions between the structural components, or</text>
-                                            </clause>
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12"
+                               number="11"
+                               vendor-id="es006925">
+                        <text>Interior walls that meet exterior walls or ceilings whose plane
+of airtightness is on the interior of the <ref type="term" target="bldng">building</ref> envelope and knee walls that separate <ref type="term" target="cnd-sp">conditioned
+space</ref> from unconditioned space shall be constructed airtight
+by</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12.clause1"
+                                letter="a"
+                                vendor-id="es006925a">
+                           <text>sealing all junctions between the structural components,</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12.clause2"
+                                letter="b"
+                                vendor-id="es006925b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material, or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12.clause3"
+                                letter="c"
+                                vendor-id="es006925c">
+                           <text>maintaining the continuity of the <ref type="term" target="r-brrr">air barrier
+system</ref> above or through the interior wall or below or through
+the knee wall, as applicable.</text>
+                        </clause>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-8842c18b2e" sequence="831" description="Issue 3116 Incorrect Content at B.9.36.2.10.(16)(b)">
-            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"/>
+        <amendment id="bc-custom-9-36-2-10-s13" sequence="2337"
+                   description="Restore NBC Sentence 9.36.2.10.(13) as Sentence (12), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent13"/>
             <replace preserve-references="true">
-                <new-content source="bc">
-                    <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"
-                                                    letter="b"
-                                                    vendor-id="es006929b">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3116 Incorrect Content 8842c18b2e -->
-                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3117 Incorrect Content 3b35855202 -->
-                        <text>covering the structural components with an air barrier material and sealing it to the adjacent air barrier material.</text>
-                                            </clause>
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent13"
+                               number="12"
+                               vendor-id="es006926">
+                        <text>Steel-lined <ref type="term" target="chmn">chimneys</ref> that penetrate
+the <ref type="term" target="bldng">building</ref> envelope shall be constructed
+airtight by blocking the void between required clearances for metal <ref type="term" target="chmn">chimneys</ref> and surrounding construction with sheet
+metal and sealant capable of withstanding high temperatures. </text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s14" sequence="2338"
+                   description="Restore NBC Sentence 9.36.2.10.(14) as Sentence (13), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent14"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent14"
+                               number="13"
+                               vendor-id="es006927">
+                        <text>
+                           <ref type="term" target="mnr-r-cn">Masonry or concrete chimneys</ref> that
+penetrate the <ref type="term" target="bldng">building</ref> envelope shall be
+constructed airtight by mechanically fastening a metal flange or steel
+stud that extends not less than <measurement units="metric">75 mm</measurement> out from the <ref type="term" target="chmn">chimney</ref> and sealing the air barrier material to
+it with a sealant capable of withstanding high temperatures.</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s15" sequence="2339"
+                   description="Restore NBC Sentence 9.36.2.10.(15) as Sentence (14), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent15"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent15"
+                               number="14"
+                               vendor-id="es006928">
+                        <text>Ducts that penetrate the <ref type="term" target="bldng">building</ref> envelope shall be constructed airtight by sealing the penetration
+through the <ref type="term" target="bldng">building</ref> envelope. (See <ref type="internal"
+                                target="nbc.divBV2.part9.appendix.appnote248"
+                                display-type="short"/>.)</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s16" sequence="2340"
+                   description="Restore NBC Sentence 9.36.2.10.(16) as Sentence (15), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16"
+                               number="15"
+                               vendor-id="es006929">
+                        <text>Plumbing vent stack pipes that penetrate the <ref type="term" target="bldng">building</ref> envelope shall be constructed airtight by </text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"
+                                letter="a"
+                                vendor-id="es006929a">
+                           <text>sealing the air barrier material to the vent stack pipe with
+a compatible sealant or sheathing tape, or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"
+                                letter="b"
+                                vendor-id="es006929b">
+                           <text>installing a rubber gasket or prefabricated roof flashing at
+the penetration of the plane of airtightness then sealing it and mechanically
+fastening it to the top plate.</text>
+                        </clause>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s17" sequence="2341"
+                   description="Restore NBC Sentence 9.36.2.10.(17) as Sentence (16), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent17"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent17"
+                               number="16"
+                               vendor-id="es006930">
+                        <text>Where a <ref type="term" target="prt-wll">party wall</ref> meets the plane
+of airtightness, that junction shall be constructed airtight by sealing
+any voids within the <ref type="term" target="prt-wll">party wall</ref> at the
+perimeter to the adjacent air barrier material and by</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent17.clause1"
+                                letter="a"
+                                vendor-id="es006930a">
+                           <text>sealing all junctions between the structural components, or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent17.clause2"
+                                letter="b"
+                                vendor-id="es006930b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s18" sequence="2342"
+                   description="Restore NBC Sentence 9.36.2.10.(18) as Sentence (17), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent18"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent18"
+                               number="17"
+                               vendor-id="es006931">
+                        <text>Where the concrete in a flat insulating concrete form wall acts
+as the air barrier, the continuity of the plane of airtightness shall
+be maintained between the concrete and adjacent air barrier materials.</text>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
