@@ -3681,11 +3681,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <colspec colname="4" colwidth="60*"/>
                                 <colspec colname="5" colwidth="60*"/>
                                 <colspec colname="6" colwidth="100*"/>
+                                <!-- CLAUDE-AUTOFIX CF-04714 | issue 2551 | Element and Minimum Number header cells span two rows, Minimum Length of Fasteners spans the four fastener columns, and the 150 mm o.c. cell spans the five sheathing rows once, as in the PDF. -->
                                 <thead>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.rowh1">
-                                        <entry align="center">Element</entry>
-                                        <entry align="center">Minimum Length of Fasteners, mm</entry>
-                                        <entry align="center">Minimum Number or Maximum Spacing of Fasteners<super>(1)</super></entry>
+                                        <entry align="center" rowspan="2">Element</entry>
+                                        <entry align="center" colspan="4">Minimum Length of Fasteners, mm</entry>
+                                        <entry align="center" rowspan="2">Minimum Number or Maximum Spacing of Fasteners<super>(1)</super></entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.rowh2">
                                         <entry align="center">Common or Spiral Nails</entry>
@@ -3717,7 +3718,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">44</entry>
                                         <entry align="center">28</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
+                                        <entry align="center" rowspan="5">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row4">
                                         <entry align="left">Gypsum sheathing up to 13 mm thick</entry>
@@ -3725,7 +3726,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">44</entry>
                                         <entry align="center">n/a</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row5">
                                         <entry align="left">Plywood, OSB or waferboard up to 10 mm thick</entry>
@@ -3733,7 +3733,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">45</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">38</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row6">
                                         <entry align="left">Plywood, OSB or waferboard over 10 mm and up to 20 mm thick</entry>
@@ -3741,7 +3740,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">45</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">51</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row7">
                                         <entry align="left">Plywood, OSB or waferboard over 20 mm and up to 25 mm thick</entry>
@@ -3749,7 +3747,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">51</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">n/a</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                 </tbody>
                             </tgroup>
