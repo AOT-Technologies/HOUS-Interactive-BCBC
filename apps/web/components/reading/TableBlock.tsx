@@ -754,6 +754,23 @@ const formatFormingPartItems = (items: FormingPartItem[]): string => {
   );
 };
 
+// CLAUDE-AUTOFIX CL-028 CF-10563 | issue 2566 | The PDF prints the caption as "Forming part of ..." with a lowercase "part" in these 13 tables (checked over the whole PDF); every other table has "Forming Part of ...".
+const LOWERCASE_FORMING_PART_TABLE_IDS = new Set<string>([
+  'nbc.divA.part1.sect1.subsect1.art1.table1',
+  'nbc.divA.part1.sect1.subsect1.art1.table2',
+  'nbc.divB.part10.sect2.subsect3.art3.table1',
+  'nbc.divB.part10.sect2.subsect3.art3.table2',
+  'nbc.divB.part10.sect2.subsect3.art3.table3',
+  'nbc.divB.part10.sect2.subsect3.art3.table4',
+  'nbc.divB.part10.sect2.subsect3.art3.table5',
+  'nbc.divB.part10.sect2.subsect3.art3.table6',
+  'nbc.divB.part10.sect2.subsect3.art3.table7',
+  'nbc.divB.part10.sect2.subsect3.art3.table8',
+  'nbc.divB.part10.sect2.subsect3.art3.table9',
+  'nbc.divB.part10.sect2.subsect3.art3.table10',
+  'nbc.divBV2.part9.sect32.subsect3.art8.table1',
+]);
+
 const formatFormingPartText = (formingPart: FormingPartReference[] | undefined): string | null => {
   if (!formingPart || formingPart.length === 0) {
     return null;
@@ -1523,7 +1540,10 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const tableNumber = tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
-  const formingPartText = formatFormingPartText(formingPartEntries);
+  const formattedFormingPartText = formatFormingPartText(formingPartEntries);
+  const formingPartText = LOWERCASE_FORMING_PART_TABLE_IDS.has(rawTable.id)
+    ? formattedFormingPartText?.replace(/^Forming Part/, 'Forming part') ?? null
+    : formattedFormingPartText;
 
   const structure = activeRevision?.structure ?? rawTable.structure;
   const hasDirectRows = Array.isArray(table.rows) && table.rows.length > 0;
