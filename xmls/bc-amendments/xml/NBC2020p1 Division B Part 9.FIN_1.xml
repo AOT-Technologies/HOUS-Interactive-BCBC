@@ -4921,18 +4921,20 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <colspec colname="col10" colwidth="8*"/>
                             <colspec colname="col11" colwidth="8*"/>
                             <colspec colname="col12" colwidth="8*"/>
+                            <!-- CLAUDE-AUTOFIX CF-04858 | issue 2625 | HWP and Storey header cells span the three header rows and the missing DWB header cell is added, as in the PDF. -->
                             <thead>
                                 <row>
-                                    <entry colspan="12" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Wind, L<subscript>uw</subscript>, m <super>(1)</super></entry>
+                                    <entry rowspan="3" align="center">HWP</entry>
+                                    <entry rowspan="3" align="center"><ref type="term" target="tr">Storey</ref></entry>
+                                    <entry colspan="10" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Wind, L<subscript>uw</subscript>, m <super>(1)</super></entry>
                                 </row>
                                 <row>
-                                    <entry rowspan="2" align="center">HWP</entry>
-                                    <entry rowspan="2" align="center"><ref type="term" target="tr">Storey</ref></entry>
-                                    <entry rowspan="2" align="center">Diagonal- Lumber-Sheathed Framing Type (with gypsum board on opposite side) <super>(2)</super></entry>
+                                    <entry align="center">Diagonal- Lumber-Sheathed Framing Type (with gypsum board on opposite side) <super>(2)</super></entry>
                                     <entry colspan="4" align="center">Gypsum-Sheathed Framing Type (with gypsum board on only one side) <super>(2)</super> <super>(3)</super></entry>
                                     <entry colspan="5" align="center">Wood-sheathed Framing Type ( with gypsum board on opposite side) <super>(2)</super></entry>
                                 </row>
                                 <row>
+                                    <entry align="center">DWB</entry>
                                     <entry align="center">GWB-A</entry>
                                     <entry align="center">GWB-B</entry>
                                     <entry align="center">GWB-C</entry>
