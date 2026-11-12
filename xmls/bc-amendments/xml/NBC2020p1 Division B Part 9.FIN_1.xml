@@ -10734,8 +10734,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <target type="canonical-id" id="nbc.divBV2.part9.sect28.subsect4.art3.table1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-05484 | issue 10435 | Restored the Forming Part line, the row spans and table note (1) (See Note A-Table 9.28.4.3.) that the BC replacement of Table 9.28.4.3. dropped, as in the PDF. -->
                     <table xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1" vendor-id="et000211">
+                        <number>Table 9.28.4.3.</number>
                         <title>Stucco Lath</title>
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect28.subsect4.art3.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="tbody1" colwidth="65*"/>
                             <colspec colname="tbody2" colwidth="93*"/>
@@ -10753,8 +10758,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </thead>
                             <tbody>
                                 <row xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1.row1">
-                                    <entry>Vertical surfaces</entry>
-                                    <entry>Welded or woven wire</entry>
+                                    <entry rowspan="4">Vertical surfaces</entry>
+                                    <entry rowspan="3">Welded or woven wire</entry>
                                     <entry>1.15</entry>
                                     <entry><measurement units="metric">25 mm</measurement></entry>
                                     <entry>—</entry>
@@ -10776,7 +10781,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <entry>0.98</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1.row5">
-                                    <entry>Horizontal surfaces<ref type="internal" target="nbc.divBV2.part9.appendix.appnote190" vendor-target="en000350" display-type="short"/></entry>
+                                    <entry rowspan="2">Horizontal surfaces<ref type="table-note" target="nbc.divBV2.part9.sect28.subsect4.art3.table1.note1"/></entry>
                                     <entry><measurement units="metric">9.5 mm</measurement> rib lath</entry>
                                     <entry>—</entry>
                                     <entry>—</entry>
@@ -10790,6 +10795,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                             </tbody>
                         </tgroup>
+                        <table-notes>
+                            <note xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1.note1">
+                                <text>See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote181" display-type="short"/></text>
+                            </note>
+                        </table-notes>
                     </table>
                 </new-content>
             </replace>
