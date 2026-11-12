@@ -2942,6 +2942,18 @@ storey.</item>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09998 | issue 2672 | Note A-9.32.3.1.(1), Prescriptive Approach: "included in the British Columbia Building Code" instead of "the NBC", as in the PDF. -->
+        <amendment id="bc-autofix-cf09998" sequence="742" description="Replace NBC with British Columbia Building Code in Note A-9.32.3.1.(1) Prescriptive Approach">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote188.div2.para1"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>included in the NBC</find>
+                        <replace>included in the British Columbia Building Code</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>
