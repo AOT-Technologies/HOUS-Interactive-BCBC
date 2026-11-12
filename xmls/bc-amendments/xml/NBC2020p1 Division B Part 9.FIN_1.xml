@@ -9687,6 +9687,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>1.67</entry>
                                         <entry>1.51</entry>
                                     </row>
+                                    <!-- CLAUDE-AUTOFIX CF-05145 | issue 2768 | Restored the missing WSP-C value 3.76 in the two-storey row, as in the PDF. -->
                                     <row>
                                         <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure16"><title>Two storey building configuration</title><graphic src="bc-graphics/gg00556a" alt="Two storey building configuration"/></figure></entry>
                                         <entry>4.66</entry>
@@ -9696,6 +9697,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>8.18 (4.09)</entry>
                                         <entry>8.18</entry>
                                         <entry>4.34</entry>
+                                        <entry>3.76</entry>
                                         <entry>3.44</entry>
                                         <entry>3.11</entry>
                                     </row>
