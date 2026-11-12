@@ -506,9 +506,10 @@
                                  <entry standard-id="ahri1060-13"
                                         standard-ref-id="ahri1060"
                                         standard-ref-title="Performance Rating of Air-to-Air Exchangers for Energy Recovery Ventilation Equipment">Performance Rating of Air-to-Air Exchangers for Energy Recovery Ventilation Equipment</entry>
+                                 <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
                                  <entry>
                                     <ref type="internal"
-                                         target="nbc.divBV2.part9.sect37.subsect3.art8.sent4"
+                                         target="nbc.divBV2.part9.sect36.subsect3.art8.sent4"
                                          display-type="number">9.36.3.8.(4)</ref>
                                  </entry>
                               </row>
@@ -1358,9 +1359,10 @@
                                  <entry standard-id="astmc518-17"
                                         standard-ref-id="astmc518"
                                         standard-ref-title="Standard Test Method for Steady-State Thermal Transmission Properties by Means of the Heat Flow Meter Apparatus">Standard Test Method for Steady-State Thermal Transmission Properties by Means of the Heat Flow Meter Apparatus</entry>
+                                 <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
                                  <entry>
                                     <ref type="internal"
-                                         target="nbc.divBV2.part9.sect37.subsect2.art2.sent1"
+                                         target="nbc.divBV2.part9.sect36.subsect2.art2.sent1"
                                          display-type="number">9.36.2.2.(1)</ref>
                                  </entry>
                               </row>

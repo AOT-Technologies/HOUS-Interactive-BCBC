@@ -118,7 +118,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6" number="6">
-                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect38.subsect1.art3.sent2" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect38.subsect1.art3.sent3" display-type="medium"/>, and except for the purpose of modeling the reference <ref type="term" target="bldng">building</ref> for compliance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long" pretext="Subsections"/> and <ref type="internal" target="nbc.divBV2.part9.sect38.subsect6" display-type="long"/>, Tables 9.37.2.6.-C, 9.37.2.7.-D, and 9.37.2.8.-C apply only to</text>
+                        <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent3" display-type="medium"/>, and except for the purpose of modeling the reference <ref type="term" target="bldng">building</ref> for compliance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long" pretext="Subsections"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>, Tables 9.37.2.6.-C, 9.37.2.7.-D, and 9.37.2.8.-C apply only to</text>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6.clause1" letter="a">
                             <text>houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, and</text>
                         </clause>
@@ -129,13 +130,15 @@
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7" number="7">
                         <text>Log homes shall conform to the requirements of</text>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7.clause1" letter="a">
-                            <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/> to <ref type="internal" target="nbc.divBV2.part9.sect38.subsect4" display-type="long"/>,</text>
+                            <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                            <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/> to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect4" display-type="long"/>,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7.clause2" letter="b">
                             <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/>, or</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7.clause3" letter="c">
-                            <text><ref type="internal" target="nbc.divBV2.part9.sect38.subsect6" display-type="long"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                            <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>.</text>
                         </clause>
                     </sentence>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent8" number="8">
@@ -1149,7 +1152,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect5.art14.sent2.clause4" letter="d">
                             <text>an airtightness of</text>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect5.art14.sent2.clause4.subclause1" number="1">
-                                <text>3.0 air changes per hour at <measurement units="metric">50 Pa</measurement> pressure differential for attached zones, where the airtightness used for the proposed house is determined in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7.art3.sent1" display-type="long"/> using the unguarded method, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>3.0 air changes per hour at <measurement units="metric">50 Pa</measurement> pressure differential for attached zones, where the airtightness used for the proposed house is determined in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art3.sent1" display-type="long"/> using the unguarded method, and</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect5.art14.sent2.clause4.subclause2" number="2">
                                 <text>2.5 air changes per hour at <measurement units="metric">50 Pa</measurement> pressure differential otherwise, and</text>
@@ -1245,7 +1249,8 @@
                                 <text>Where a <ref type="term" target="bldng">building</ref> contains more than one <ref type="term" target="dwllng-n">dwelling unit</ref>, the requirements of this Subsection shall apply to the energy performance of the <ref type="term" target="bldng">building</ref> and not to individual <ref type="term" target="dwllng-n">dwelling units</ref>.</text>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art1.sent2" number="2">
-                                <text>This Subsection is concerned with determining compliance with one of the energy performance Steps through modeling the energy performance of components, systems and assemblies that are installed in <ref type="term" target="bldng">buildings</ref> and houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, described in <ref type="internal" target="nbc.divBV2.part9.sect38.subsect1.art3.sent3" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>This Subsection is concerned with determining compliance with one of the energy performance Steps through modeling the energy performance of components, systems and assemblies that are installed in <ref type="term" target="bldng">buildings</ref> and houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent3" display-type="long"/>.</text>
                             </sentence>
                         </article>
                         <article xml:id="nbc.divBV2.part9.sect36.subsect6.art2" number="2">
@@ -1713,7 +1718,8 @@
                                     <text>energy performance shall be calculated in conformance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art4" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art5" display-type="long"/>, and</text>
                                 </clause>
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent2.clause2" letter="b">
-                                    <text>airtightness shall be tested in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7" display-type="long"/>.</text>
+                                    <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                    <text>airtightness shall be tested in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7" display-type="long"/>.</text>
                                 </clause>
                             </sentence>
                             
@@ -1773,7 +1779,8 @@
                                 </clause>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art4.sent3" number="3">
-                                <text>For <ref type="term" target="bldng">buildings</ref> conforming to the requirements of any of Steps 3 to 5, energy modeling shall account for the air leakage rate derived in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7" display-type="long"/>. (See Note A-9.36.6.4.(3).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>For <ref type="term" target="bldng">buildings</ref> conforming to the requirements of any of Steps 3 to 5, energy modeling shall account for the air leakage rate derived in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7" display-type="long"/>. (See Note A-9.36.6.4.(3).)</text>
                             </sentence>
                         </article>
                         
@@ -1828,7 +1835,8 @@
                                 <text>Reserved.</text>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent9" number="9">
-                                <text>The airtightness value used in the energy model for the proposed house shall be a design airtightness, until the airtightness has been measured in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7.art3.sent1" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>The airtightness value used in the energy model for the proposed house shall be a design airtightness, until the airtightness has been measured in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art3.sent1" display-type="long"/>.</text>
                             </sentence>
                         </article>
                     </subsection>
@@ -1850,7 +1858,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect7.art1.sent1.clause1" letter="a">
                             <text>determining the airtightness of <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="dwllng-n">dwelling units</ref> and parts thereof</text>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect7.art1.sent1.clause1.subclause1" number="1">
-                                <text>for use in the energy model calculations described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect38.subsect6" display-type="long"/>, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>for use in the energy model calculations described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>, and</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect7.art1.sent1.clause1.subclause2" number="2">
                                 <text>for use in determining the Airtightness Level.</text>
