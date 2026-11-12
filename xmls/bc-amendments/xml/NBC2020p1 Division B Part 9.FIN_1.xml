@@ -11146,8 +11146,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <target type="canonical-id" id="nbc.divBV2.part9.sect30.subsect3.art3.table1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-05558 | issue 10438 | Restored the Forming Part line and table note (1) (See Article 9.30.3.4.) that the BC replacement of Table 9.30.3.3. dropped; the 38 mm cell shows the note mark (1) instead of the Article reference, as in the PDF. -->
                     <table xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1" vendor-id="et000218">
+                        <number>Table 9.30.3.3.</number>
                         <title>Nailing of Wood Strip Flooring</title>
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art3.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="110*"/>
                             <colspec colname="tbody2" colwidth="139*"/>
@@ -11162,7 +11167,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <tbody>
                                 <row xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1.row1">
                                     <entry>7.9</entry>
-                                    <entry>38<ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art4" display-type="long"/></entry>
+                                    <entry>38<ref type="table-note" target="nbc.divBV2.part9.sect30.subsect3.art3.table1.note1"/></entry>
                                     <entry>200</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1.row2">
@@ -11192,6 +11197,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                             </tbody>
                         </tgroup>
+                        <table-notes>
+                            <note xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1.note1">
+                                <text>See <ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art4" display-type="long"/></text>
+                            </note>
+                        </table-notes>
                     </table>
                 </new-content>
             </replace>
