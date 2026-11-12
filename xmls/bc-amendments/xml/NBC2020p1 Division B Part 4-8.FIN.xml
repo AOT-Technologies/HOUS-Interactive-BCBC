@@ -749,7 +749,8 @@
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6" number="6">
-                            <text>CO alarms installed in an assembly occupancy, a business and personal services occupancy, or a mercantile occupancy as required by this Article shall conform to</text>
+                            <!-- CLAUDE-AUTOFIX CF-03767 | issue 7274 | Restored defined-term italic on the three occupancies to match the PDF (also CF-03768, CF-03769). -->
+                            <text>CO alarms installed in an <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref> as required by this Article shall conform to</text>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause1" letter="a">
                                 <text><ref type="standard" target="csa6.19" standardId="csa6.19"/>, notwithstanding the scope of that standard,</text>
                             </clause>
@@ -761,7 +762,8 @@
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7" number="7">
-                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning appliance serves an assembly occupancy, business and personal services occupancy, or mercantile occupancy, a CO alarm shall be,</text>
+                            <!-- CLAUDE-AUTOFIX CF-03775 | issue 7277 | Restored defined-term italic on appliance and the three occupancies to match the PDF (also CF-03776, CF-03777). -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning <ref type="term" target="pplnc">appliance</ref> serves an <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or <ref type="term" target="mrcntl-c">mercantile occupancy</ref>, a CO alarm shall be,</text>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6439 Formatting 8a4190c429 -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6440 Formatting 4606cbbdc8 -->
@@ -785,7 +787,8 @@
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8" number="8">
-                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each suite of assembly occupancy, business and personal services occupancy, or mercantile occupancy that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance, or that is adjacent to either an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance is also adjacent, a CO alarm shall be installed</text>
+                            <!-- CLAUDE-AUTOFIX CF-03779 | issue 7280 | Restored defined-term italic on suite, occupancies and appliance to match the PDF (also CF-03780 to CF-03783). -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each <ref type="term" target="t">suite</ref> of <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or <ref type="term" target="mrcntl-c">mercantile occupancy</ref> that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or that is adjacent to either an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref> is also adjacent, a CO alarm shall be installed</text>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2081 Formatting db82de1f25 -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2082 Formatting 75ca91b68d -->
