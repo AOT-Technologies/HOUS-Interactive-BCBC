@@ -6312,7 +6312,8 @@ each 25 females.</find>
                    description="Change article title in Article 3.8.2.3">
             <target type="canonical-id" id="nbc.divB.part3.sect8.subsect2.art3"/>
             <modify>
-                <element-replace element-name="title">
+                <!-- CLAUDE-AUTOFIX CF-01482 | issue 6925 | The merge engine matches element-replace on @element; with element-name the title change never applied. Title now reads "Areas Requiring Access" as in the PDF. -->
+                <element-replace element="title">
                     <new-content source="bc">
                         <title>Areas Requiring Access</title>
                     </new-content>
