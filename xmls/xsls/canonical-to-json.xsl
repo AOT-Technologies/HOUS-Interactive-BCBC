@@ -2641,6 +2641,11 @@
             </xsl:if>
             <xsl:value-of select="concat('(', id(@target)/ancestor::sentence[1]/@number, ')(', id(@target)/@letter, ')')"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-02362 | issue 1261 | A number-only Sentence reference listed after a Sentence of another Article prints its full number, as in the PDF (Sentences 4.1.8.10.(8) and 4.1.8.16.(1)), not just (1). -->
+        <xsl:if test="@type = 'internal' and @display-type = 'number' and normalize-space(.) = '' and not(ancestor::entry) and not($is-range-end) and $range-end-label = '' and matches(@target, '\.art\d+\.sent\d+$') and $clause-list-prev and matches($clause-list-prev/@target, '\.art\d+\.sent\d+$') and replace($clause-list-prev/@target, '\.sent\d+$', '') != replace(@target, '\.sent\d+$', '') and id(@target)/@number">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(string-join(id(@target)/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.(', id(@target)/@number, ')')"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-068 CF-05817 | issue 3049 | A short Clause reference (or a medium one into another Article) listed after a Clause of the same Sentence prints only its letter, as in the PDF (Clause 9.36.2.7.(9)(a) or (b); Clauses 3.8.3.12.(1)(f) and (g)). -->
         <xsl:if test="@type = 'internal' and normalize-space(.) = '' and (@display-type = 'short' or (@display-type = 'medium' and replace(@target, '\.sent\d+\.clause\d+$', '') != $ctx-art)) and not($is-range-end) and $range-end-label = '' and matches(@target, '\.art\d+\.sent\d+\.clause\d+$') and $clause-list-prev and matches($clause-list-prev/@target, '\.sent\d+\.clause\d+$') and replace($clause-list-prev/@target, '\.clause\d+$', '') = replace(@target, '\.clause\d+$', '') and not(@pretext = normalize-space(@pretext) and $list-prev-ref/@display-type = @display-type and @display-type = ('long', 'short')) and not((normalize-space(@pretext) = ',' or (not(@pretext) and normalize-space(string($prev-significant[self::text()])) = ',')) and not($next-significant[self::ref] or $next-significant[self::text()][matches(., '^\s*(,|and(\s|$)|or(\s|$)|to(\s|$))')])) and id(@target)/@letter">
             <xsl:text>:(</xsl:text>
