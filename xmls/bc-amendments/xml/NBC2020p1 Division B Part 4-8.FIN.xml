@@ -383,16 +383,12 @@
                    description="Add ASTM E 331 and E 547 standards to Note A-5.8.3">
             <target type="canonical-id" id="nbc.divB.part5.appendix.appnote47"/>
             <modify>
-                <element-change xpath-within-target=".//paragraph/list">
-                    <add-child>
-                        <item>
-                            <ref type="standard" target="astme331" standardId="astme331"/>
-                        </item>
-                        <item>
-                            <ref type="standard" target="astme547" standardId="astme547"/>
-                        </item>
-                    </add-child>
-                </element-change>
+                <!-- CLAUDE-AUTOFIX CF-09894 | issue 1155 | The merge engine has no element-change/add-child, so the two ASTM items were never added; the paragraph is now replaced (NBC text unchanged) with ASTM E 331 and E 547 added at the end of the list, as in the PDF. -->
+                <element-replace element="paragraph">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote47.para1"><ref type="internal" target="nbc.divB.part5.sect9.subsect3" display-type="long"/> references ASTM test methods. The following AAMA standards can also be used to evaluate the performance characteristics of other fenestration assemblies:<list type="bulleted"><item><ref type="standard" target="aama501" standardId="aama501" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.1" standardId="aama501.1" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.2" standardId="aama501.2" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.4" standardId="aama501.4" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.5" standardId="aama501.5" ref-style="default" ref-punc="comma"/> and</item><item><ref type="standard" target="aama501.6" standardId="aama501.6" ref-style="default" ref-punc="period"/></item><item>ASTM E 331, “Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Uniform Static Air Pressure Difference.”</item><item>ASTM E 547, “Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Cyclic Static Air Pressure Difference.”</item></list></paragraph>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
