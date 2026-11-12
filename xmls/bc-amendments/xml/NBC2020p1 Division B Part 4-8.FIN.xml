@@ -83,9 +83,10 @@
                    description="Add CSA A344.2 reference for steel pallet storage racks in Article 4.1.8.18.(13)">
             <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.sent13"/>
             <modify>
+                <!-- CLAUDE-AUTOFIX CF-02385 | issue 1273 | Restored "the" in "Standard for the design" and "provided the design", as in the PDF. -->
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Free-standing steel pallet storage racks are permitted to be designed according to CSA A344.2, "Standard for design and construction of steel storage racks," and to resist earthquake effects using rational analysis, provided design achieves the minimum performance level required by <ref type="internal"
+                        <text>Free-standing steel pallet storage racks are permitted to be designed according to CSA A344.2, "Standard for the design and construction of steel storage racks," and to resist earthquake effects using rational analysis, provided the design achieves the minimum performance level required by <ref type="internal"
                                                                                                                                                                                                                                                                                                                                   target="nbc.divB.part4.sect1.subsect8"
                                                                                                                                                                                                                                                                                                                                   display-type="long"/> (See <ref type="internal"
                                                             target="nbc.divB.part4.appendix.appnote107"
