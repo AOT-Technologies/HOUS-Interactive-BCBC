@@ -9796,9 +9796,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>1.39</entry>
                                         <entry>1.26</entry>
                                     </row>
+                                    <!-- CLAUDE-AUTOFIX CF-05166 | issue 2786 | Removed the duplicated DWB value 3.89 that shifted the two-storey masonry veneer row one column right; the PDF has 3.89 once. -->
                                     <row>
                                         <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure8"><graphic src="bc-graphics/gg00555a" alt="Two storey building with masonry veneer configuration"/></figure></entry>
-                                        <entry>3.89</entry>                     <entry>3.89</entry>
+                                        <entry>3.89</entry>
                                         <entry>19.45 (9.73)</entry>
                                         <entry>11.30 (5.65)</entry>
                                         <entry>8.38 (4.19)</entry>
