@@ -4230,16 +4230,16 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <colspec colname="col3" colwidth="1*"/>
                                 <colspec colname="col4" colwidth="1*"/>
                                 <colspec colname="col5" colwidth="1*"/>
+                                <!-- CLAUDE-AUTOFIX CF-04794 | issue 2596 | Header cells span rows/columns explicitly (no empty filler cell) so the third header row shows as in the PDF. -->
                                 <thead>
                                     <row>
-                                        <entry align="center" rowspan="2">S<sub>max</sub><ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note1"/></entry>
-                                        <entry align="center">Minimum Number of Nails on Each Side of Doubled Top Plate Splice for <ref type="term" target="br-wl-bnd">Braced Wall Band</ref> Spacing of <measurement units="metric">10.6 m</measurement><note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note2">(2)</note></entry>
+                                        <entry align="center" rowspan="3">S<sub>max</sub><ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note1"/></entry>
+                                        <entry align="center" colspan="4">Minimum Number of Nails on Each Side of Doubled Top Plate Splice for <ref type="term" target="br-wl-bnd">Braced Wall Band</ref> Spacing of <measurement units="metric">10.6 m</measurement><note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note2">(2)</note></entry>
                                     </row>
                                     <row>
-                                        <entry align="center">Weight of Construction or Cladding Type<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note3">(3)</note></entry>
+                                        <entry align="center" colspan="4">Weight of Construction or Cladding Type<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note3">(3)</note></entry>
                                     </row>
                                     <row>
-                                        <entry align="center"></entry>
                                         <entry align="center">Normal-Weight Construction</entry>
                                         <entry align="center">Heavyweight Construction<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4">(4)</note></entry>
                                         <entry align="center">Masonry Veneer (on one or more <ref type="term" target="bldng">building</ref> faces)<ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4"/><note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note5">(5)</note></entry>
