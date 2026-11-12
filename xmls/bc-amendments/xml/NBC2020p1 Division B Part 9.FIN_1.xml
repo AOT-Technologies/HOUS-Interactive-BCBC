@@ -5537,7 +5537,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7.sent4"/>
                         </forming-part>
                         
-                        <tgroup cols="12">
+                        <!-- CLAUDE-AUTOFIX CF-04901 | issue 2657 | Table has 13 columns as in the PDF (was 12, which shifted the header rows and dropped the Diagonal-Lumber-Sheathed and WSP-E header cells). -->
+                        <tgroup cols="13">
                             <colspec colname="col1" colwidth="8.00*"/>
                             <colspec colname="col2" colwidth="8.00*"/>
                             <colspec colname="col3" colwidth="8.00*"/>
@@ -5550,21 +5551,19 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <colspec colname="col10" colwidth="8.00*"/>
                             <colspec colname="col11" colwidth="8.00*"/>
                             <colspec colname="col12" colwidth="8.00*"/>
+                            <colspec colname="col13" colwidth="8.00*"/>
                             
                             <thead>
                                 <!-- Header Row 1: Main column groupings -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.rowh1">
-                                    <entry align="center">S<sub>max</sub></entry>
-                                    <entry align="center"><ref type="term" target="tr">Storey</ref></entry>
-                                    <entry align="center"><ref type="term" target="bldng">Building</ref> Plan Dimension Parallel to <ref type="term" target="br-wl-bnd">Braced Wall Band</ref>, L<sub>wl</sub>, m</entry>
-                                    <entry colspan="9" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Seismic Forces, L<sub>us</sub>, m<super>(1)(2)</super></entry>
+                                    <entry rowspan="3" align="center">S<sub>max</sub></entry>
+                                    <entry rowspan="3" align="center"><ref type="term" target="tr">Storey</ref></entry>
+                                    <entry rowspan="3" align="center"><ref type="term" target="bldng">Building</ref> Plan Dimension Parallel to <ref type="term" target="br-wl-bnd">Braced Wall Band</ref>, L<sub>wl</sub>, m</entry>
+                                    <entry colspan="10" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Seismic Forces, L<sub>us</sub>, m<super>(1)(2)</super></entry>
                                 </row>
                                 
                                 <!-- Header Row 2: Framing type groupings -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.rowh2">
-                                    <entry></entry>
-                                    <entry></entry>
-                                    <entry></entry>
                                     <entry align="center">Diagonal-Lumber-Sheathed Framing Type (with gypsum board on opposite side)<super>(3)</super></entry>
                                     <entry colspan="4" align="center">Gypsum-Sheathed Framing Type (with gypsum board on only one side)<super>(3)(4)</super></entry>
                                     <entry colspan="5" align="center">Wood-Sheathed Framing Type (with gypsum board on opposite side)<super>(3)</super></entry>
@@ -5572,9 +5571,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Header Row 3: Column headers -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.rowh3">
-                                    <entry></entry>
-                                    <entry></entry>
-                                    <entry></entry>
                                     <entry align="center">DWB</entry>
                                     <entry align="center">GWB-A</entry>
                                     <entry align="center">GWB-B</entry>
