@@ -2674,6 +2674,14 @@
             <xsl:text>:</xsl:text>
             <xsl:value-of select="concat(if ($pl-level = 'art') then 'Articles ' else if ($pl-level = 'subsect') then 'Subsections ' else 'Sections ', string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-07918 | issue 5034 | In an appendix Note, a standalone long reference to a Sentence, Article, Subsection or Section of another Division prints "of Division X", as in the PDF (Sentence 1.4.1.2.(1) of Division A). -->
+        <xsl:variable name="xd-ctx" select="string((ancestor::*[@xml:id])[last()]/@xml:id)"/>
+        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and not(@pretext) and not(ancestor::entry) and contains($xd-ctx, '.appendix.appnote') and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.sect\d+(\.subsect\d+(\.art\d+(\.sent\d+)?)?)?$') and substring(@target, 8, 1) != substring($xd-ctx, 8, 1) and not($prev-significant[self::ref]) and not($next-significant[self::ref]) and not($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', 'to', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]) and not($next-significant[self::text()][normalize-space(.) = (',', 'and', 'or', 'to', ', and', ', or')]/following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]) and not(following-sibling::node()[1][self::text()][matches(., '^\s*\.?\s*of Division')]) and id(@target)">
+            <xsl:variable name="xd-t" select="id(@target)"/>
+            <xsl:variable name="xd-art" select="string-join(($xd-t/ancestor-or-self::*[self::part or self::section or self::subsection or self::article])/@number, '.')"/>
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(if (contains(@target, '.sent')) then 'Sentence ' else if (contains(@target, '.art')) then 'Article ' else if (contains(@target, '.subsect')) then 'Subsection ' else 'Section ', $xd-art, '.', if (contains(@target, '.sent')) then concat('(', $xd-t/@number, ')') else '', ' of Division ', substring(@target, 8, 1))"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-068 CF-09482 | issue 5600 | A reference to an Appendix D table or figure prints its PDF label: the letter (-A, -B ...) only when its Article has more than one table (or figure), as in the PDF (Table D-2.1.1., Tables D-2.3.4.-A); without the word after another such reference in a list or as the end of a range. -->
         <xsl:variable name="appd-art" select="replace(@target, '\.(table|figure)\d+$', '')"/>
         <xsl:variable name="appd-kind" select="replace(@target, '^.*\.(table|figure)\d+$', '$1')"/>
