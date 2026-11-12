@@ -647,13 +647,14 @@
         <!-- Amendment 374: Modify A-9.13.4.3.(2)(b) and (3)(b)(i)               -->
         <!-- Change note number to (2)(b) and (3)(b), add through-footing text  -->
         <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CF-08053 | issue 5114 | The merge engine turns a non-regex find into a regex (only spaces are escaped), so the brackets in '(2)(b) and (3)(b)(i)' never matched; an escaped regex renumbers the Note (and its Figure) to A-9.13.4.3.(2)(b) and (3)(b) as in the PDF. -->
         <amendment id="bc-374" sequence="374"
                    description="Modify A-9.13.4.3.(2)(b) and (3)(b)(i) - change number and add through-footing pipe text">
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote91"/>
             <modify>
                 <text-change xpath-within-target=".//number">
-                    <find-replace>
-                        <find>9.13.4.3.(2)(b) and (3)(b)(i)</find>
+                    <find-replace regex="true">
+                        <find>9\.13\.4\.3\.\(2\)\(b\) and \(3\)\(b\)\(i\)</find>
                         <replace>9.13.4.3.(2)(b) and (3)(b)</replace>
                     </find-replace>
                 </text-change>
