@@ -278,6 +278,9 @@
 .table-block[id="nbc.divBV2.part9.sect32.subsect3.art8.table1"] thead > tr:nth-child(3) > .table-block__header-cell:nth-child(5),
 .table-block[id="nbc.divBV2.part9.sect32.subsect3.art8.table1"] thead > tr:nth-child(3) > .table-block__header-cell:nth-child(6),
 .table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] thead > tr:nth-child(1) > .table-block__header-cell:nth-child(2),
+/* CLAUDE-AUTOFIX CL-063 CF-06098 | issue 3233 | Step numbers 3 and 4 are plain in the PDF (ArialNarrow regular); they are cells 1-2 of header row 2 because Total Volume and Energy Performance Metrics span down from row 1. */
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] thead > tr:nth-child(2) > .table-block__header-cell:nth-child(1),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] thead > tr:nth-child(2) > .table-block__header-cell:nth-child(2),
 .table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] thead > tr:nth-child(2) > .table-block__header-cell:nth-child(3),
 .table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableH"] thead > tr:nth-child(1) > .table-block__header-cell:nth-child(3) {
   font-weight: var(--typography-font-weights-regular, 400);
