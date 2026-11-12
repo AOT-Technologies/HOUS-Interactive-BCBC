@@ -989,11 +989,13 @@
                                 <text>on the <ref type="term" target="tr">storey</ref> immediately below the roof.</text>
                             </clause>
                         </sentence>
-                        <sentence xml:id="nbc.divB.part3.sect3.subsect1.art3.sent9" number="9">                            <text>A rooftop enclosure which is more than <measurement units="metric">200 m m²</measurement> in area shall be provided with at least 2 <ref type="term" target="mn-f-gr">means of egress</ref>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-01342 | issue 788 | Unit typo "m m²" corrected to "m²", as in the PDF. -->
+                        <sentence xml:id="nbc.divB.part3.sect3.subsect1.art3.sent9" number="9">                            <text>A rooftop enclosure which is more than <measurement units="metric">200 m²</measurement> in area shall be provided with at least 2 <ref type="term" target="mn-f-gr">means of egress</ref>.</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect3.subsect1.art3.sent10" number="10">                            <text>Two points of egress shall be provided for a <ref type="term" target="rvc-pc">service space</ref> referred to in <ref type="internal" target="nbc.divB.part3.sect2.subsect1.art1.sent8" display-type="long"/> if</text>
                             <clause xml:id="nbc.divB.part3.sect3.subsect1.art3.sent10.clause1" letter="a">
-                                <text>the area is more than <measurement units="metric">200 m m²</measurement>, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-01342 | issue 788 | Unit typo "m m²" corrected to "m²", as in the PDF. -->
+                                <text>the area is more than <measurement units="metric">200 m²</measurement>, or</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect3.subsect1.art3.sent10.clause2" letter="b">
                                 <text>the travel distance measured from any point in the <ref type="term" target="rvc-pc">service space</ref> to a point of egress is more than <measurement units="metric">25 m</measurement>.</text>
@@ -1151,7 +1153,8 @@
                             <text>be not less than <measurement units="metric">1 500 mm</measurement> deep from the outside face of the exterior wall to the inside edge of the balcony with a clear perpendicular dimension of not less than <measurement units="metric">1 700 mm</measurement>, and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect3.subsect1.art7.sent4.clause3" letter="c">
-                            <text>provide not less than <measurement units="metric">2 m m²</measurement> of balcony space for each accessible sleeping room or bed space.</text>
+                            <!-- CLAUDE-AUTOFIX CF-01342 | issue 788 | Unit typo "m m²" corrected to "m²", as in the PDF. -->
+                            <text>provide not less than <measurement units="metric">2 m²</measurement> of balcony space for each accessible sleeping room or bed space.</text>
                         </clause>
                     </sentence>
                 </new-content>
