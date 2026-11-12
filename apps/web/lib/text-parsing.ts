@@ -327,7 +327,8 @@ function toRenderableEquation(
 
 function getNoteLabel(noteId: string): string {
   const normalized = noteId.trim();
-  const match = normalized.match(/(?:title)?note(\d+)$/i);
+  // CLAUDE-AUTOFIX CF-05801 | issue 9972 | Inline header notes with ids ending fnN (Tables 9.36.2.7.-A/-B/-D) are labelled (N) as in the PDF, not (fnN).
+  const match = normalized.match(/(?:(?:title)?note|fn)(\d+)$/i);
   if (match) {
     return `(${match[1]})`;
   }
