@@ -4645,7 +4645,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                     <article xml:id="nbc.divBV2.part9.sect23.subsect13.art5" number="5">
                         <title>Braced Wall Panels in Braced Wall Bands</title>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent1" number="1">
-                            <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art5.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10.sent2" display-type="medium" pretext="9.23.13.10.(2) to (4)"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7" display-type="long"/>, <ref type="term" target="br-wl-pnl">braced wall panels</ref> shall</text>
+                            <!-- CLAUDE-AUTOFIX CF-04845 | issue 6508 | The words "9.23.13.10.(2) to (4)" are the reference text, not its pretext, so the website no longer adds "Sentence 9.23.13.10.(2)" after them; as in the PDF. -->
+                            <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art5.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10.sent2" display-type="medium">9.23.13.10.(2) to (4)</ref> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7" display-type="long"/>, <ref type="term" target="br-wl-pnl">braced wall panels</ref> shall</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent1.clause1" letter="a">
                                 <text>be located within <ref type="term" target="br-wl-bnd">braced wall bands</ref>,</text>
                             </clause>
