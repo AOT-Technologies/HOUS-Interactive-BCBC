@@ -3143,9 +3143,7 @@ described in <ref type="internal"
                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6363 Note Reference ddd9af4767 -->
                         <text>In each location where information, goods or services are provided
                     to the public at service counters in <ref type="term" target="bldng">buildings</ref> of <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, at least one
-                    of the service counters shall be equipped with (See <ref type="internal"
-                                                    target="nbc.divB.part3.appendix.appnote197"
-                                                    display-type="short"/>.)</text>
+                    of the service counters shall be equipped with</text>
                                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art9.sent2.clause1"
                                                     letter="a"
                                                     vendor-id="es014606a">
@@ -3160,6 +3158,8 @@ described in <ref type="internal"
                                                <text>an amplification system, where there is a barrier to communication,
                     such as a glass screen. </text>
                                             </clause>
+                                             <!-- CLAUDE-AUTOFIX CF-01491 | issue 6362 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                                             <see-also xml:id="nbc.divB.part3.sect8.subsect2.art9.sent2.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote197" display-type="short"/>.)</see-also>
                                          </sentence>
                 </new-content>
             </replace>
