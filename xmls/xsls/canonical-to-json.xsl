@@ -1614,6 +1614,13 @@
                                 <fn:string key="value"> [REF:internal:<xsl:value-of select="@xml:id"/>:short] </fn:string>
                             </fn:map>
                         </xsl:when>
+                        <!-- CLAUDE-AUTOFIX CL-036 CF-05801 | issue 9972 | Inline header notes with ids ending fnN (Tables 9.36.2.7.-A/-B/-D) are written as short note references labelled (N), so they show as (1) as in the PDF, not (fn1). -->
+                        <xsl:when test="self::note[@xml:id][matches(@xml:id, '\.fn\d+$')]">
+                            <fn:map>
+                                <fn:string key="type">text</fn:string>
+                                <fn:string key="value"> [REF:internal:<xsl:value-of select="@xml:id"/>:short:(<xsl:value-of select="replace(@xml:id, '^.*\.fn', '')"/>)] </fn:string>
+                            </fn:map>
+                        </xsl:when>
                         <xsl:when test="self::note[@xml:id]">
                             <fn:map>
                                 <fn:string key="type">text</fn:string>
@@ -1667,6 +1674,14 @@
                                 <xsl:text>[REF:internal:</xsl:text>
                                 <xsl:value-of select="@xml:id"/>
                                 <xsl:text>:short]</xsl:text>
+                            </xsl:when>
+                            <!-- CLAUDE-AUTOFIX CL-036 CF-05801 | issue 9972 | Inline header notes with ids ending fnN (Tables 9.36.2.7.-A/-B/-D) are written as short note references labelled (N), so they show as (1) as in the PDF, not (fn1). -->
+                            <xsl:when test="self::note[@xml:id][matches(@xml:id, '\.fn\d+$')]">
+                                <xsl:text>[REF:internal:</xsl:text>
+                                <xsl:value-of select="@xml:id"/>
+                                <xsl:text>:short:(</xsl:text>
+                                <xsl:value-of select="replace(@xml:id, '^.*\.fn', '')"/>
+                                <xsl:text>)]</xsl:text>
                             </xsl:when>
                             <xsl:when test="self::note[@xml:id]">
                                 <xsl:text>[REF:table-note:</xsl:text>
