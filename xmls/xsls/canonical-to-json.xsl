@@ -2646,6 +2646,22 @@
             <xsl:text>:</xsl:text>
             <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-04478 | issue 2464 | Two Article, Subsection or Section references joined by plain "and" / "or" (no pretext) print as in the PDF: "Articles 5.4.1.1. and 6.2.1.1." (plural first, bare second) and "Article X or Y". -->
+        <xsl:variable name="pl-level" select="replace(@target, '^.*\.([a-z]+)\d+$', '$1')"/>
+        <xsl:variable name="pl-prev" select="$prev-significant[self::text()][normalize-space(.) = ('and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][@display-type = 'long'][normalize-space(.) = '']]"/>
+        <xsl:variable name="pl-next" select="$next-significant[self::text()][normalize-space(.) = 'and']/following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][@display-type = 'long'][not(@pretext)][normalize-space(.) = '']]"/>
+        <xsl:variable name="pl-ok" as="xs:boolean" select="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and not($is-range-end) and $range-end-label = '' and $pl-level = ('art', 'subsect', 'sect') and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1) and exists(id(@target))"/>
+        <xsl:variable name="pl-head" select="if ($pl-prev) then $pl-prev else ."/>
+        <xsl:variable name="pl-head-before" select="$pl-head/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::text()][matches(normalize-space(.), ',$')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <xsl:variable name="pl-mixed-list" as="xs:boolean" select="exists($pl-head-before) and replace($pl-head-before/@target, '^.*\.([a-z]+)\d+$', '$1') != $pl-level"/>
+        <xsl:if test="$pl-ok and not($pl-mixed-list) and not(@pretext) and $pl-prev and replace($pl-prev/@target, '^.*\.([a-z]+)\d+$', '$1') = $pl-level and substring($pl-prev/@target, 8, 1) = substring(@target, 8, 1)">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+        </xsl:if>
+        <xsl:if test="$pl-ok and not($pl-mixed-list) and not(@pretext) and not($pl-prev) and $pl-next and exists(id($pl-next/@target)) and replace($pl-next/@target, '^.*\.([a-z]+)\d+$', '$1') = $pl-level and substring($pl-next/@target, 8, 1) = substring(@target, 8, 1)">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(if ($pl-level = 'art') then 'Articles ' else if ($pl-level = 'subsect') then 'Subsections ' else 'Sections ', string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-068 CF-09482 | issue 5600 | A reference to an Appendix D table or figure prints its PDF label: the letter (-A, -B ...) only when its Article has more than one table (or figure), as in the PDF (Table D-2.1.1., Tables D-2.3.4.-A); without the word after another such reference in a list or as the end of a range. -->
         <xsl:variable name="appd-art" select="replace(@target, '\.(table|figure)\d+$', '')"/>
         <xsl:variable name="appd-kind" select="replace(@target, '^.*\.(table|figure)\d+$', '$1')"/>
