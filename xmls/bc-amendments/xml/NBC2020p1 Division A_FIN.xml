@@ -2717,6 +2717,7 @@
                 />
             <insert>
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CL-054 CF-10474 | issue 3022 | Defined terms in these definitions are term links (italic), as in the PDF. -->
                     <item xml:id="bc-fld-rvw">
                         <term>Field review</term>
                         <definition>means a review of the work<list
@@ -2733,7 +2734,7 @@
                                         type="term"
                                         target="bldng"
                                         >building</ref> site</item>
-                            </list>that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.</definition>
+                            </list>that a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref> in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref>.</definition>
                     </item>
                 </new-content>
             </insert>
@@ -2838,10 +2839,11 @@
             <target type="canonical-id" id="pt-dtr-b" />
             <replace preserve-references="false">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CL-054 CF-10474 | issue 3022 | Defined terms in these definitions are term links (italic), as in the PDF. -->
                     <item xml:id="pt-dtr-b">
                         <term>Post-disaster building</term>
                         <definition
-                            >means a building that the authority having jurisdiction has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes buildings meeting these criteria but not limited to<list
+                            >means a <ref type="term" target="bldng">building</ref> that the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref> has determined is necessary for the provision of essential services to the general public in the event of a disaster and includes <ref type="term" target="bldng">buildings</ref> meeting these criteria but not limited to<list
                                 type="bulleted"
                                 >
                                 <item
@@ -2858,9 +2860,9 @@
                                 <item>water and sewage pumping stations,</item>
                                 <item>sewage treatment facilities,</item>
                                 <item
-                                    >buildings having critical national defence functions, and</item>
+                                    ><ref type="term" target="bldng">buildings</ref> having critical national defence functions, and</item>
                                 <item
-                                    >buildings of the following types, unless exempted from this designation by the authority having jurisdiction:<list
+                                    ><ref type="term" target="bldng">buildings</ref> of the following types, unless exempted from this designation by the <ref type="term" target="bc-thrt-hvn">authority having jurisdiction</ref>:<list
                                         type="bulleted"
                                         >
                                         <item
@@ -3287,8 +3289,9 @@
                             xml:id="nbc.divA.part1.appendix.appnote2b.figure1"
                             vendor-id="en000009b-fig1"
                             >
+                            <!-- CLAUDE-AUTOFIX CL-065 CF-00279 | issue 10055 | The title does not repeat the table/figure number - the website prints the number on its own line, as the PDF does (also CF-00260). -->
                             <title
-                                >Figure A-1.1.1.1.(6) Application of Alternative Compliance Methods in <ref
+                                >Application of Alternative Compliance Methods in <ref
                                     type="internal"
                                     target="nbc.divA.part1.sect1.subsect1.art1.table2"
                                     display-type="long"
@@ -3620,8 +3623,9 @@
                     <table xml:id="nbc.divA.part1.appendix.appnote7.div5.table1"
                            vendor-id="et000071"
                         >
+                        <!-- CLAUDE-AUTOFIX CL-065 CF-00279 | issue 10055 | The title does not repeat the table/figure number - the website prints the number on its own line, as the PDF does (also CF-00260). -->
                         <title
-                            >Table A-1.4.1.2.(1) TDGR, WHMIS and British Columbia Building Code Class Descriptors for Dangerous Goods</title>
+                            >TDGR, WHMIS and British Columbia Building Code Class Descriptors for Dangerous Goods</title>
                         <tgroup cols="4">
                             <colspec colname="col1" colwidth="60*" />
                             <colspec colname="col2" colwidth="180*" />
@@ -5330,6 +5334,72 @@ building on a flat site.</paragraph>
         <!-- ================================================================== -->
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CF-00042 | issue 24 | Care occupancy is defined as in the PDF, without the NBC words "other than a home-type care occupancy". -->
+        <amendment id="bc-custom-1412-ca-cc" sequence="200"
+                   description="Care occupancy definition as in the BC Building Code (no home-type care occupancy exception)">
+            <target type="canonical-id" id="ca-cc"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="ca-cc">
+                        <term>Care occupancy</term>
+                        <definition>(Group B, Division 3) means the <ref type="term" target="ccpnc">occupancy</ref> or use of a <ref type="term" target="bldng">building</ref> or part thereof where <ref type="term" target="ca">care</ref> is provided to residents. (See <ref type="internal" target="nbc.divA.part1.appendix.appnote7.div4" display-type="short"/>.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00046 | issue 28 | Farm building is defined as in the PDF (BC wording), not with the NBC "contains an agricultural occupancy". -->
+        <amendment id="bc-custom-1412-frm-bldn" sequence="201"
+                   description="Farm building definition as in the BC Building Code">
+            <target type="canonical-id" id="frm-bldn"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="frm-bldn">
+                        <term>Farm building</term>
+                        <definition>means a <ref type="term" target="bldng">building</ref> or part thereof that does not contain a <ref type="term" target="rdntl-cc">residential occupancy</ref> and that is associated with and located on land devoted to the practice of farming, and used essentially for the housing of equipment or livestock, or production, storage or processing of agricultural and horticultural produce or feeds. (See <ref type="internal" target="nbc.divA.part1.appendix.appnote7.div7" display-type="short"/>.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00045 | issue 27 | The two kinds of Dangerous goods are lettered (a) and (b), as in the PDF (the NBC list was bulleted). -->
+        <amendment id="bc-custom-1412-dngr-gd" sequence="202"
+                   description="Dangerous goods definition: items lettered (a) and (b) as in the BC Building Code">
+            <target type="canonical-id" id="dngr-gd"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="dngr-gd">
+                        <term>Dangerous goods</term>
+                        <definition>means products, materials or substances that are <list type="alphabetic"><item>regulated by <ref type="standard" target="tc_sor95" standardId="tc_sor95" ref-style="full" ref-punc="none"/> (see <ref type="external" target="nfc">Table 3.2.7.1. of Division B of the </ref> <ref type="standard" target="nrcc-nfc" standardId="nrcc-nfc" ref-style="abbr" ref-punc="none"/>), or</item><item>classified as controlled products under <ref type="standard" target="hc_sor15-17" standardId="hc_sor15-17" ref-style="full" ref-punc="none"/> (see <ref type="external" target="nfc">Note A-Table 3.2.7.1. of Division B of the </ref> <ref type="standard" target="nrcc-nfc" standardId="nrcc-nfc" ref-style="abbr" ref-punc="none"/>).</item></list>(See <ref type="internal" target="nbc.divA.part1.appendix.appnote7.div5" display-type="short"/>.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00052 | issue 34 | The major occupancy classifications A1 to F3 are listed after "are as follows:", one per line, as in the PDF. -->
+        <!-- CLAUDE-AUTOFIX CL-058 CF-10489 | issue 1 | The occupancy names in the major occupancy list are term links (italic), as in the PDF. -->
+        <amendment id="bc-custom-1412-mjr-ccpn" sequence="203"
+                   description="Major occupancy definition with its list of classifications A1 to F3 as in the BC Building Code">
+            <target type="canonical-id" id="mjr-ccpn"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="mjr-ccpn">
+                        <term>Major occupancy</term>
+                        <definition>means the principal <ref type="term" target="ccpnc">occupancy</ref> for which a <ref type="term" target="bldng">building</ref> or part thereof is used or intended to be used, and shall be deemed to include the subsidiary <ref type="term" target="ccpnc">occupancies</ref> that are an integral part of the principal <ref type="term" target="ccpnc">occupancy</ref>. The <ref type="term" target="mjr-ccpn">major occupancy</ref> classifications used in this Code are as follows:<lb/>A1 – <ref type="term" target="mbl-ccpn">Assembly occupancies</ref> intended for the production and viewing of the performing arts<lb/>A2 – <ref type="term" target="mbl-ccpn">Assembly occupancies</ref> not elsewhere classified in Group A<lb/>A3 – <ref type="term" target="mbl-ccpn">Assembly occupancies</ref> of the arena type<lb/>A4 – <ref type="term" target="mbl-ccpn">Assembly occupancies</ref> in which the occupants are gathered in the open air<lb/>B1 – <ref type="term" target="dtnt-cc">Detention occupancies</ref> in which persons are under restraint or are incapable of self-preservation because of security measures not under their control<lb/>B2 – <ref type="term" target="trtm-cc">Treatment occupancies</ref><lb/>B3 – <ref type="term" target="ca-cc">Care occupancies</ref><lb/>C – <ref type="term" target="rdntl-cc">Residential occupancies</ref><lb/>D – <ref type="term" target="bn-nd-pr">Business and personal services occupancies</ref><lb/>E – <ref type="term" target="mrcntl-c">Mercantile occupancies</ref><lb/>F1 – <ref type="term" target="hgh-hzrd">High-hazard industrial occupancies</ref><lb/>F2 – <ref type="term" target="mdm-hzrd">Medium-hazard industrial occupancies</ref><lb/>F3 – <ref type="term" target="lw-hzrd-">Low-hazard industrial occupancies</ref></definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-00056 | issue 38 | The Run definition names Figure A-9.8.4.-B, as in the PDF; the website labelled the cross-division figure reference with the Note number. -->
+        <amendment id="bc-custom-1412-run" sequence="204"
+                   description="Run definition: reference text Figure A-9.8.4.-B as in the BC Building Code">
+            <target type="canonical-id" id="run"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <item xml:id="run">
+                        <term>Run</term>
+                        <definition>means the horizontal distance between two adjacent tread nosings on a stair. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote29.figure2" display-type="long">Figure A-9.8.4.-B</ref> in <ref type="internal" target="nbc.divBV2.part9.appendix.appnote29" display-type="long">Note A-9.8.4.</ref> of Division B.)</definition>
+                    </item>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 
 </bc-overlay>

@@ -518,6 +518,7 @@
       <target type="canonical-id" id="bc-fld-rvw" />
       <replace preserve-references="false">
         <new-content source="bc">
+          <!-- CLAUDE-AUTOFIX CL-054 CF-10474 | issue 3022 | Defined terms in these definitions are term links (italic), as in the PDF. -->
           <item xml:id="bc-fld-rvw" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
@@ -544,7 +545,7 @@
                           type="term"
                           target="bldng"
                           >building</ref> site</item>
-                    </list>that a registered professional in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a registered professional.</definition>
+                    </list>that a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref> in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref>.</definition>
                 </content>
                 <change-summary
                   >Amended definition of Field review by striking out "thier" and substituting "their"</change-summary>

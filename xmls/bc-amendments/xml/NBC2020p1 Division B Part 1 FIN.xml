@@ -1373,6 +1373,7 @@
             <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row60"/>
             <replace>
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00379 | issue 148 | The reference points to Table 5.9.1.1. (the standards table), as in the PDF, not Table 5.10.1.1. (objectives) (also CF-00380). -->
                     <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row60">
                                  <entry>ASTM</entry>
                                  <entry standard-ref-number="C700">C700-18</entry>
@@ -1381,7 +1382,7 @@
                                         standard-ref-title="Standard Specification for Vitrified Clay Pipe, Extra Strength, Standard Strength, and Perforated">Standard Specification for Vitrified Clay Pipe, Extra Strength, Standard Strength, and Perforated</entry>
                                  <entry>
                                     <ref type="internal"
-                                         target="nbc.divB.part5.sect10.subsect1.art1.table1"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
                                          display-type="long"/>
                                     <lb/>
                                     <ref type="internal"
@@ -1398,6 +1399,7 @@
             <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row61"/>
             <replace>
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00379 | issue 148 | The reference points to Table 5.9.1.1. (the standards table), as in the PDF, not Table 5.10.1.1. (objectives) (also CF-00380). -->
                     <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row61">
                                  <entry>ASTM</entry>
                                  <entry standard-ref-number="C726">C726-17</entry>
@@ -1406,7 +1408,7 @@
                                         standard-ref-title="Standard Specification for Mineral Wool Roof Insulation Board">Standard Specification for Mineral Wool Roof Insulation Board</entry>
                                  <entry>
                                     <ref type="internal"
-                                         target="nbc.divB.part5.sect10.subsect1.art1.table1"
+                                         target="nbc.divB.part5.sect9.subsect1.art1.table1"
                                          display-type="long"/>
                                     <lb/>
                                     <ref type="internal"
