@@ -1257,7 +1257,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>This Subsection applies to pedestrian <ref type="term" target="rmp">ramps</ref>, except <ref type="term" target="rmp">ramps</ref> in an accessible path of travel.</text>
+                        <!-- CLAUDE-AUTOFIX CF-04105 | issue 2260 | Linked the defined term "accessible" (italic in the PDF). -->
+                        <text>This Subsection applies to pedestrian <ref type="term" target="rmp">ramps</ref>, except <ref type="term" target="rmp">ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1273,8 +1274,9 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04106 | issue 2261 | Linked the defined term "accessible" (italic in the PDF). -->
                         <text>
-                            <ref type="term" target="rmp">Ramps</ref> in an accessible path of travel shall conform to the requirements in <ref type="internal"
+                            <ref type="term" target="rmp">Ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel shall conform to the requirements in <ref type="internal"
                                                                                                                                                 target="nbc.divB.part3.sect8.subsect3.art5"
                                                                                                                                                 display-type="long"/>
                         </text>
@@ -1294,7 +1296,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>This Subsection applies to landings, except landings for <ref type="term" target="rmp">ramps</ref> in an accessible path of travel.</text>
+                        <!-- CLAUDE-AUTOFIX CF-04107 | issue 2262 | Linked the defined term "accessible" (italic in the PDF). -->
+                        <text>This Subsection applies to landings, except landings for <ref type="term" target="rmp">ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1310,7 +1313,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Landings for <ref type="term" target="rmp">ramps</ref> in an accessible path of travel shall conform to
+                        <!-- CLAUDE-AUTOFIX CF-04108 | issue 2263 | Linked the defined term "accessible" (italic in the PDF). -->
+                        <text>Landings for <ref type="term" target="rmp">ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel shall conform to
                             the requirements in <ref type="internal"
                                                      target="nbc.divB.part3.sect8.subsect3.art5"
                                                      display-type="long"/>
@@ -1797,6 +1801,7 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04134 | issue 2280 | Linked the defined term "accessible" (italic in the PDF). -->
                         <text>Every <ref type="term" target="xt">exit</ref> door, except doors serving
                             a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with
                             a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, shall be designed and
@@ -1804,7 +1809,7 @@ shall turn through an angle of</find>
                             the direction of <ref type="term" target="xt">exit</ref> travel under a force
                             of not more than 90 N applied to the door release hardware. (See <ref type="internal"
                                                                                                   target="nbc.divB.part3.sect8.subsect3.art6.sent8"
-                                                                                                  display-type="long"/> for door opening forces in an accessible path of travel.)</text>
+                                                                                                  display-type="long"/> for door opening forces in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel.)</text>
                     </new-content>
                 </element-replace>
             </modify>
