@@ -217,11 +217,13 @@
                    description="Replace Canada with British Columbia in Table C-2 title">
             <target type="canonical-id" id="nbc.divB.appendixC.table2"/>
             <modify>
-                <element-change xpath-within-target=".">
-                    <replace-child element-name="title">
-                        <title>Climatic Design Data for Selected Locations in British Columbia</title>
-                    </replace-child>
-                </element-change>
+                <!-- CLAUDE-AUTOFIX CF-08742 | issue 10044 | The merge engine has no element-change/replace-child, so the title change never applied; same change as a text-change: "in British Columbia", as in the PDF. -->
+                <text-change xpath-within-target=".//title">
+                    <find-replace>
+                        <find>Climatic Design Data for Selected Locations in Canada</find>
+                        <replace>Climatic Design Data for Selected Locations in British Columbia</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
