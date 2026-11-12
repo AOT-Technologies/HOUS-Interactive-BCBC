@@ -2159,7 +2159,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                     <article xml:id="nbc.divBV2.part9.sect10.subsect2.art5" number="5">
                         <title>Group A, Division 2, Low Occupant Load</title>
                         <sentence xml:id="nbc.divBV2.part9.sect10.subsect2.art5.sent1" number="1">
-                            <text>This Part may apply to a Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref> that is permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7" display-type="long"/> to be classified as a Group D, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, provided the <ref type="term" target="bldng">building</ref> in which the <ref type="term" target="mbl-ccpn">assembly occupancy</ref> is located complies with <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent1" display-type="long"/>. (See Note A-3.1.2.7.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04181 | issue 2309 | Added "of Division A" after the reference to Sentence 1.3.3.3.(1), as in the PDF. -->
+                            <text>This Part may apply to a Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref> that is permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7" display-type="long"/> to be classified as a Group D, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, provided the <ref type="term" target="bldng">building</ref> in which the <ref type="term" target="mbl-ccpn">assembly occupancy</ref> is located complies with <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent1" display-type="long"/> of Division A. (See Note A-3.1.2.7.)</text>
                         </sentence>
                     </article>
                 </new-content>
