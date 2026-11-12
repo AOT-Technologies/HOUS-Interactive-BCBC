@@ -119,7 +119,8 @@
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6" number="6">
                         <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
-                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent3" display-type="medium"/>, and except for the purpose of modeling the reference <ref type="term" target="bldng">building</ref> for compliance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long" pretext="Subsections"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>, Tables 9.37.2.6.-C, 9.37.2.7.-D, and 9.37.2.8.-C apply only to</text>
+                        <!-- CLAUDE-AUTOFIX CF-05731 | issue 6564 | Table numbers typed as 9.37.x (the BC 9.37 is Greenhouse Gas Emissions) are 9.36.x, as in the PDF. -->
+                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent3" display-type="medium"/>, and except for the purpose of modeling the reference <ref type="term" target="bldng">building</ref> for compliance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long" pretext="Subsections"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>, Tables 9.36.2.6.-C, 9.36.2.7.-D, and 9.36.2.8.-C apply only to</text>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6.clause1" letter="a">
                             <text>houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, and</text>
                         </clause>
@@ -279,7 +280,8 @@
                         </tgroup>
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art6.appnote1">
-                                <text>Notes to Table 9.37.2.6.-C:</text>
+                                <!-- CLAUDE-AUTOFIX CF-05731 | issue 6564 | Table numbers typed as 9.37.x (the BC 9.37 is Greenhouse Gas Emissions) are 9.36.x, as in the PDF. -->
+                                <text>Notes to Table 9.36.2.6.-C:</text>
                                 <text>(1) See <ref type="internal" target="nbc.divBV2.part9.sect1.subsect1.art3.sent1" display-type="long"/>.</text>
                                 <text>(2) Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.sent3" display-type="short"/>, ceilings below attics shall not have a reduction in effective thermal resistance</text>
                                 <text>(3) For the purposes of this table, a roof deck shall mean a horizontal portion of a roof intended for <ref type="term" target="ccpnc">occupancy</ref>.</text>
@@ -1075,7 +1077,8 @@
                             <see-also xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent1.seealso1">(See <ref type="internal" target="en001475" vendor-target="en001475" display-type="short"/>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent2" number="2">
-                            <text>Except as permitted by <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art3.sent7" display-type="short"/>, the annual energy consumption of the proposed house in comparison to the house energy target of the reference house shall demonstrate a percent improvement in accordance with Table 9.37.6.3.-G. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote274" vendor-target="en001765" display-type="short"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-05731 | issue 6564 | Table numbers typed as 9.37.x (the BC 9.37 is Greenhouse Gas Emissions) are 9.36.x, as in the PDF. -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art3.sent7" display-type="short"/>, the annual energy consumption of the proposed house in comparison to the house energy target of the reference house shall demonstrate a percent improvement in accordance with Table 9.36.6.3.-G. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote274" vendor-target="en001765" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent3" number="3">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3197 Incorrect Content ec834ee8fc -->
