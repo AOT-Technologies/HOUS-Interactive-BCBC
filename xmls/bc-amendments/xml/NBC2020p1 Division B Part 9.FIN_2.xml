@@ -1735,11 +1735,12 @@
                             <!-- Sentence 9.36.6.3.(4) -->
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent4" number="4">
                                 <text>For <ref type="term" target="bldng">buildings</ref> conforming to the requirements of any of Steps 3 to 5, thermal energy demand intensity requirements may be calculated using the applicable following formula</text>
-                                <text>for <ref type="term" target="bldng">buildings</ref> located where degree-days below 18°C value is less than 3000</text>
+                                <!-- CLAUDE-AUTOFIX CF-06185 | issue 3303 | "located where the degree-days" (three lines of 9.36.6.3.(4)) as in the PDF. -->
+                                <text>for <ref type="term" target="bldng">buildings</ref> located where the degree-days below 18°C value is less than 3000</text>
                                 <text>TEDI<sub>adjusted</sub> = TEDI<sub>step</sub> + (TEDI<sub>higher</sub> - TEDI<sub>step</sub>)(HDD<sub>actual</sub> - HDD<sub>lowest</sub>)/500</text>
-                                <text>for <ref type="term" target="bldng">buildings</ref> located where degree-days below 18°C value is 3000 to 6999</text>
+                                <text>for <ref type="term" target="bldng">buildings</ref> located where the degree-days below 18°C value is 3000 to 6999</text>
                                 <text>TEDI<sub>adjusted</sub> = TEDI<sub>step</sub> + (TEDI<sub>higher</sub> - TEDI<sub>step</sub>)(HDD<sub>actual</sub> - HDD<sub>lowest</sub>)/1000</text>
-                                <text>for <ref type="term" target="bldng">buildings</ref> located where degree-days below 18°C value is 7000 or greater</text>
+                                <text>for <ref type="term" target="bldng">buildings</ref> located where the degree-days below 18°C value is 7000 or greater</text>
                                 <text>TEDI<sub>adjusted</sub> = TEDI<sub>step</sub> + (TEDI<sub>step</sub> - TEDI<sub>lower</sub>)(HDD<sub>actual</sub> - HDD<sub>lowest</sub>)/1000</text>
                                 <text>where<list type="variable">
                                     <item><variable>TEDI<sub>adjusted</sub></variable><description>= thermal energy demand intensity requirement adjusted by heating degree-days,</description></item>
