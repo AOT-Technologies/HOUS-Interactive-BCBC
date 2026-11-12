@@ -2629,6 +2629,16 @@
             <xsl:value-of select="id(@target)/@number"/>
             <xsl:text>)</xsl:text>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-01388 | issue 808 | A medium reference to a Clause in the same Article prints "Clause (1)(b)" (or only "(1)(b)" when it follows another Clause of that Article in a list), as in the PDF. -->
+        <xsl:variable name="ctx-art" select="replace(string((ancestor::*[@xml:id][matches(@xml:id, '\.art\d+')])[last()]/@xml:id), '^(.*?\.art\d+).*$', '$1')"/>
+        <xsl:variable name="clause-list-prev" select="if (@pretext) then (if (normalize-space(@pretext) = ('and', 'or', ',', ', and', ', or')) then $list-prev-ref else ()) else $prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <xsl:if test="@type = 'internal' and @display-type = 'medium' and normalize-space(.) = '' and not($is-range-end) and $ctx-art != '' and matches(@target, '\.art\d+\.sent\d+\.clause\d+$') and replace(@target, '\.sent\d+\.clause\d+$', '') = $ctx-art and id(@target)/@letter">
+            <xsl:text>:</xsl:text>
+            <xsl:if test="not($clause-list-prev and matches($clause-list-prev/@target, '\.clause\d+$') and replace($clause-list-prev/@target, '\.sent\d+\.clause\d+$', '') = $ctx-art)">
+                <xsl:text>Clause </xsl:text>
+            </xsl:if>
+            <xsl:value-of select="concat('(', id(@target)/ancestor::sentence[1]/@number, ')(', id(@target)/@letter, ')')"/>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-019 CF-01368 | issue 802 | A Part reference inside the same Division prints as "Part 6", without "of Division B", as in the PDF. -->
         <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+$') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
             <xsl:text>:Part </xsl:text>
