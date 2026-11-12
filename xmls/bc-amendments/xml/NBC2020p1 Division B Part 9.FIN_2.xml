@@ -1209,7 +1209,14 @@
                 <text-change xpath-within-target="text()">
                     <find-replace>
                         <find>for houses containing one or </find>
-                        <replace>for houses containing 1 or 2 </replace>
+                        <replace>for houses containing 1 or </replace>
+                    </find-replace>
+                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-06071 | issue 6590 | The NBC "two" sits inside the measurement element, so it is changed there to "2" (no longer "1 or 2 two"), as in the PDF. -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace>
+                        <find>two </find>
+                        <replace>2 </replace>
                     </find-replace>
                 </text-change>
             </modify>
