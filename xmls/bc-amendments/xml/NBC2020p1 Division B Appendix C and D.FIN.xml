@@ -1692,6 +1692,7 @@ be applied to the calculated fire-resistance rating where<list type="bulleted">
                            <item>the interior (fire-exposed) side of the assembly is protected
 in accordance with <ref type="external" target="csao86">Clause B.8 of </ref>
                               <ref type="standard" target="d-csao86" standardId="d-csao86"/>, and</item>
+                           <!-- CLAUDE-AUTOFIX CF-10377 | issue 2003 | "(3)(d)" is the reference text, so it prints "Clause (3)(d)" without a space, as in the PDF. -->
                            <item>except where the assembly is constructed of cross-laminated
 timber panels with lapped or splined joints as described in <ref type="internal"
                                    target="nbc.divB.appendixD.appsect2.subsect11.article4.para4"
@@ -1699,7 +1700,7 @@ timber panels with lapped or splined joints as described in <ref type="internal"
 the assembly is protected in accordance with <ref type="internal"
                                    target="nbc.divB.appendixD.appsect2.subsect11.article4.para3"
                                    display-type="short"
-                                   pretext="Clause"/>(d).</item>
+                                   pretext="Clause">(3)(d)</ref>.</item>
                         </list>
                     </paragraph>
                 </new-content>
