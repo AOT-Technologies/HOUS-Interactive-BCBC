@@ -18405,6 +18405,41 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
             </replace>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CL-055 CF-10485 | issue 748 | 9.10.20.4.(1) and 9.10.21.8.(1) end with "the British Columbia Fire Code", as in the PDF, not the NBC's NFC (also CF-10486). -->
+        <amendment id="bc-custom-9-10-20-4" sequence="2136"
+                   description="Sentence 9.10.20.4.(1) refers to the British Columbia Fire Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect10.subsect20.art4.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Portable extinguishers shall be installed in all <ref type="term" target="bldng">buildings</ref>, except within <ref type="term" target="dwllng-n">dwelling units</ref>, in conformance with the appropriate provincial or territorial regulations or municipal bylaws or, in the absence of such regulations or bylaws, the British Columbia Fire Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <amendment id="bc-custom-9-10-21-8" sequence="2137"
+                   description="Sentence 9.10.21.8.(1) refers to the British Columbia Fire Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect10.subsect21.art8.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Each construction camp <ref type="term" target="bldng">building</ref> shall be provided with portable fire extinguishers in conformance with the appropriate provincial or territorial regulations or municipal bylaws or, in the absence of such regulations or bylaws, in conformance with the British Columbia Fire Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CL-055 CF-10488 | issue 1135 | 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code, as in the PDF, not the NBC's NPC. -->
+        <amendment id="bc-custom-9-36-3-11" sequence="2138"
+                   description="Sentence 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect3.art11.sent2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Service water heating systems that use solar thermal technology shall be installed in accordance with the Book II (Plumbing Systems) of this Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>

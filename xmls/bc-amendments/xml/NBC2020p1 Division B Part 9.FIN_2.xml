@@ -66,21 +66,20 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1" number="1">
-                        <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent6" display-type="short"/>, <ref type="term" target="bldng">buildings</ref> shall comply with</text>
+                        <!-- CLAUDE-AUTOFIX CF-10454 | issue 2669 | The range ends at Sentence (8), as in the PDF (Sentences (2) to (8)); it pointed at Sentence (6). -->
+                        <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent8" display-type="short"/>, <ref type="term" target="bldng">buildings</ref> shall comply with</text>
+                        <!-- CLAUDE-AUTOFIX CL-052 CF-05720 | issue 3007 | Clauses (a) to (d) of 9.36.1.3.(1) as in the PDF: 9.36.2. to 9.36.4., 9.36.5., the NECB clause and Subsection 9.36.6. (CF-05721, CF-05722). -->
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1.clause1" letter="a">
-                            <text>the prescriptive or trade-off requirements in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/> to <ref type="internal" target="nbc.divBV2.part9.sect38.subsect4" display-type="long"/>,</text>
+                            <text>the prescriptive or trade-off requirements in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/> <ref type="internal" target="nbc.divBV2.part9.sect36.subsect4" display-type="long" pretext="to"/>,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1.clause2" letter="b">
                             <text>the performance requirements in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/>,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1.clause3" letter="c">
-                            <text>the tiered performance requirements in <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7" display-type="long"/>,</text>
+                            <text>notwithstanding Article 1.1.1.1. of Division A of the NECB, the NECB, or,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1.clause4" letter="d">
-                            <text>the tiered prescriptive requirements in <ref type="internal" target="nbc.divBV2.part9.sect38.subsect8" display-type="long"/>, or</text>
-                        </clause>
-                        <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent1.clause5" letter="e">
-                            <text>the <ref type="standard" target="nrcc-necb"/>.</text>
+                            <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>.</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -2394,6 +2393,18 @@
                                             </clause>
                 </new-content>
             </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10467 | issue 735 | The range end of Subclauses 3.4.2.5.(1)(d)(i) to (d)(iv) prints (d)(iv), as in the PDF. -->
+        <amendment id="bc-custom-99-8-1-3" sequence="2331"
+                   description="Show the range end (d)(iv) in Sentence 9.9.8.1.(3)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect9.subsect8.art1.sent3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Where a <ref type="term" target="pblc-crr">public corridor</ref> is not less than <measurement units="metric">9 m</measurement> wide and conforms to <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art5.sent1.clause4.subclause1" display-type="long" pretext="Subclauses"/> <ref type="internal" target="nbc.divB.part3.sect4.subsect2.art5.sent1.clause4.subclause4" display-type="short" pretext="to">(d)(iv)</ref>, the travel distance may be determined in accordance with those Subclauses.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
         </amendment>
     </amendments>
     

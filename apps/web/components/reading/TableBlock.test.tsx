@@ -661,6 +661,57 @@ describe('TableBlock', () => {
     expect(screen.getByText('Forming Part of Sentence 1.3.1.2.(1)')).toBeInTheDocument();
   });
 
+  // CLAUDE-AUTOFIX CL-028 CF-00876 | issue 2562 | Caption wording as the PDF prints it.
+  it.each([
+    [['art1.sent1', 'art2.sent1'], 'Forming Part of Sentences 3.1.2.1.(1) and 3.1.2.2.(1)'],
+    [['art1.sent3', 'art1.sent4'], 'Forming Part of Sentences 3.1.2.1.(3) and (4)'],
+    [['art1', 'art2'], 'Forming Part of Articles 3.1.2.1. and 3.1.2.2.'],
+    [['art1.sent2', 'art3.sent1', 'art8.sent1'], 'Forming Part of Sentences 3.1.2.1.(2), 3.1.2.3.(1) and 3.1.2.8.(1)'],
+    [['art1', 'art2', 'art4.sent2'], 'Forming Part of Articles 3.1.2.1. and 3.1.2.2., and Sentence 3.1.2.4.(2)'],
+    [['art1.sent1.clause2.subclause3'], 'Forming Part of Subclause 3.1.2.1.(1)(b)(iii)'],
+  ])('writes the forming part caption like the PDF for %j', (targets, expected) => {
+    const table = {
+      id: 'nbc.divB.part3.sect1.subsect2.art9.table1',
+      type: 'table',
+      number: '3.1.2.9.',
+      title: 'Title',
+      headers: [['Header']],
+      rows: [{ cells: [{ content: 'Data' }] }],
+      formingPart: targets.map((target) => ({
+        type: 'internal',
+        target: `nbc.divB.part3.sect1.subsect2.${target}`,
+        display_type: 'long',
+      })),
+    } as unknown as Table;
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText(expected)).toBeInTheDocument();
+  });
+
+  // CLAUDE-AUTOFIX CL-028 CF-10563 | issue 2566 | A few tables print "Forming part of" with a lowercase "part" in the PDF.
+  it.each([
+    ['nbc.divB.part10.sect2.subsect3.art3.table4', 'Forming part of Sentences 10.2.3.3.(1) and (2)'],
+    ['nbc.divB.part3.sect1.subsect2.art1.table1', 'Forming Part of Sentences 10.2.3.3.(1) and (2)'],
+  ])('writes the forming part caption of %s with the PDF letter case', (id, expected) => {
+    const table = {
+      id,
+      type: 'table',
+      number: '10.2.3.3.',
+      title: 'Title',
+      headers: [['Header']],
+      rows: [{ cells: [{ content: 'Data' }] }],
+      formingPart: [
+        { type: 'internal', target: 'nbc.divB.part10.sect2.subsect3.art3.sent1', display_type: 'long' },
+        { type: 'internal', target: 'nbc.divB.part10.sect2.subsect3.art3.sent2', display_type: 'long' },
+      ],
+    } as unknown as Table;
+
+    render(<TableBlock table={table} />);
+
+    expect(screen.getByText(expected)).toBeInTheDocument();
+  });
+
   it('renders Appendix D table numbering from appendix-style ids when number is omitted', () => {
     const table: Table = {
       id: 'nbc.divB.appendixD.appsect1.subsect1.article2.table1',
