@@ -1372,12 +1372,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableA.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1405,12 +1406,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableB.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1438,12 +1440,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableC.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1471,12 +1474,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableD.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1504,12 +1508,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1538,12 +1543,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableF.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1574,9 +1580,10 @@
                                     <colspec colname="col3" colwidth="1*"/>
                                     <colspec colname="col4" colwidth="1*"/>
                                     <colspec colname="col5" colwidth="1*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.rowh1">
-                                            <entry>Total Volume of Conditioned Space Within the Building or House</entry>
+                                            <entry>Total Volume of <ref type="term" target="cnd-sp">Conditioned Space</ref> Within the <ref type="term" target="bldng">Building</ref> or House</entry>
                                             <entry>Energy Performance Metrics</entry>
                                             <entry>Step</entry>
                                         </row>
@@ -1647,13 +1654,14 @@
                                     <colspec colname="col7" colwidth="0.8*"/>
                                     <colspec colname="col8" colwidth="0.8*"/>
                                     <colspec colname="col9" colwidth="0.8*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.rowh1">
-                                            <entry>Heating Degree-Days of Building Location<super>(1)</super>, in Celsius Degree-Days</entry>
+                                            <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location<super>(1)</super>, in Celsius Degree-Days</entry>
                                             <!-- CLAUDE-AUTOFIX CF-06124 | issue 9980 | Curly apostrophe in Building’s, as in the PDF. -->
-                                            <entry>Amount of the Building’s Conditioned Space Served by Space-Cooling Equipment</entry>
+                                            <entry>Amount of the <ref type="term" target="bldng">Building</ref>’s Conditioned Space Served by Space-Cooling Equipment</entry>
                                             <entry>Step</entry>
-                                            <entry>Floor Area of Conditioned Space (m²)</entry>
+                                            <entry>Floor Area of <ref type="term" target="cnd-sp">Conditioned Space</ref> (m²)</entry>
                                         </row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.rowh2">
                                             <entry>≤ 50</entry>
