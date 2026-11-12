@@ -439,7 +439,7 @@
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3" number="3">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6721 Note Reference f3718b595e -->
-                            <text>Interior and exterior walking surfaces that are within an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall (See Note A-3.8.3.2.(3).)</text>
+                            <text>Interior and exterior walking surfaces that are within an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3.clause1" letter="a">
                                 <text>have no opening that will permit the passage of a sphere more than <measurement units="metric">13 mm</measurement> in diameter,</text>
                             </clause>
@@ -461,6 +461,8 @@
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3.clause7" letter="g">
                                 <text>be designed as a ramp complying with this Section where the path of travel has a slope steeper than 1 in 20.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01506 | issue 6367 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3.seealso">(See Note A-3.8.3.2.(3).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent4" number="4">
                             <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel is permitted to include <ref type="term" target="rmp">ramps</ref>, passenger elevators or other platform-equipped passenger-elevating devices to overcome a difference in level.</text>
@@ -470,7 +472,7 @@
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent6" number="6">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6722 Note Reference 8ca6c7b156 -->
-                            <text>Where a section of an <ref type="term" target="brrr-fr">accessible</ref> path of travel is less than <measurement units="metric">1 500 mm</measurement> wide for a distance of more than <measurement units="metric">12 m</measurement>, it shall end in a clear floor space that is (See Note A-3.8.3.2.(6).)</text>
+                            <text>Where a section of an <ref type="term" target="brrr-fr">accessible</ref> path of travel is less than <measurement units="metric">1 500 mm</measurement> wide for a distance of more than <measurement units="metric">12 m</measurement>, it shall end in a clear floor space that is</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art2.sent6.clause1" letter="a">
                                 <text>not less than <measurement units="metric">1 700 mm</measurement> in diameter,</text>
                             </clause>
@@ -482,6 +484,8 @@
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:10408 Punctuation 298f10261c -->
                                 <text>T-shaped with overall dimensions measuring <measurement units="metric">1 700 mm</measurement> wide by <measurement units="metric">1 500 mm</measurement> long, where the two arms of the “T” are not less than <measurement units="metric">1 000 mm</measurement> wide and extend not less than <measurement units="metric">300 mm</measurement> from each side of the base of the “T” and the base is not less than <measurement units="metric">1 000 mm</measurement> wide and extends not less than <measurement units="metric">500 mm</measurement> from each arm.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01506 | issue 6367 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art2.sent6.seealso">(See Note A-3.8.3.2.(6).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent7" number="7">
                             <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be equipped to provide illumination in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent1" display-type="medium"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent2" display-type="medium"/>. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent3" display-type="medium"/> and <ref type="internal" target="nbc.divBV2.part9.sect34.subsect2.art7" display-type="long"/>.)</text>
