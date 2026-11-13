@@ -10312,6 +10312,42 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05225 | issue 2809 | Clause 9.23.16.5.(2)(b) reads "1-in-50-year hourly wind pressure (HWP) ... less than 1.2 kPa" as in the PDF. -->
+        <amendment id="bc-custom-1113-92316-2b" sequence="203"
+                   description="Clause wording of Article 9.23.16.5 as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect23.subsect16.art5.sent2.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>the 1-in-50-year hourly wind pressure (HWP) is equal to or greater than <measurement units="metric">0.80 kPa</measurement> but less than <measurement units="metric">1.2 kPa</measurement>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05225 | issue 2809 | Clause 9.23.16.5.(3)(a) uses the seismic design parameter Smax for Site Class C, greater than 0.8, as in the PDF. -->
+        <amendment id="bc-custom-1113-92316-3a" sequence="203"
+                   description="Clause wording of Article 9.23.16.5 as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect23.subsect16.art5.sent3.clause1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>the seismic design parameter, S<sub>max</sub>, for Site Class C is greater than 0.8, or</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05225 | issue 2809 | Clause 9.23.16.5.(3)(b) reads "1-in-50-year hourly wind pressure (HWP) ... 1.2 kPa" as in the PDF. -->
+        <amendment id="bc-custom-1113-92316-3b" sequence="203"
+                   description="Clause wording of Article 9.23.16.5 as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect23.subsect16.art5.sent3.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>the 1-in-50-year hourly wind pressure (HWP) is equal to or greater than <measurement units="metric">1.2 kPa</measurement>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
         
         <!-- ================================================================== -->
         <!-- Amendment 204:    -->
