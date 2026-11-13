@@ -551,8 +551,9 @@
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote73.para1"/>
             <modify>
                 <text-change xpath-within-target=".//item[2]">
-                    <find-replace>
-                        <find>(doubles)</find>
+                    <!-- CLAUDE-AUTOFIX CF-07930 | issue 5040 | The merge engine treats a plain find as a regex, so "(doubles)" matched only "doubles" and the website printed "((side by side))"; an escaped regex gives "(side by side)" as in the PDF. -->
+                    <find-replace regex="true">
+                        <find>\(doubles\)</find>
                         <replace>(side by side)</replace>
                     </find-replace>
                 </text-change>
