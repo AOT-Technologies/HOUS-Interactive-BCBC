@@ -1643,7 +1643,8 @@
                                     </tbody>
                                 </tgroup>
                                 <table-notes>
-                                    <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note1"><text>When a "house" is a dwelling unit forming part of a multi-unit building, as per Sentence 9.36.6.1.(1), requirements of Subsection 9.36.6. apply to entire building.</text></note>
+                                    <!-- CLAUDE-AUTOFIX CF-06108 | issue 10469 | Note (1) to Table 9.36.6.3.-G reads "..., the requirements of Subsection 9.36.6. apply to the entire building.", with dwelling unit and building as defined terms, as in the PDF (also CF-06107). -->
+                                    <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note1"><text>When a "house" is a <ref type="term" target="dwllng-n">dwelling unit</ref> forming part of a multi-unit <ref type="term" target="bldng">building</ref>, as per Sentence 9.36.6.1.(1), the requirements of Subsection 9.36.6. apply to the entire <ref type="term" target="bldng">building</ref>.</text></note>
                                     <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note2"><text>See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art4.table1" display-type="long"/>.</text></note>
                                     <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note3"><text>See Sentence 9.36.6.5.(6)</text></note>
                                     <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note4"><text>See Sentence 9.36.6.5.(7)</text></note>
