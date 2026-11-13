@@ -1798,6 +1798,45 @@
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03791 | issue 2091 | Table 6.10.1.1 shows RESERVED for the Reserved Sentence 6.2.1.2.(2), as in the PDF. -->
+        <amendment id="bc-custom-6-10-1-1-row9" sequence="835"
+                   description="Table 6.10.1.1: Sentence 6.2.1.2.(2) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row9"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row9" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect2.subsect1.art2.sent2" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03791 | issue 2091 | Table 6.10.1.1 shows RESERVED for the Reserved Sentence 6.2.1.2.(3), as in the PDF. -->
+        <amendment id="bc-custom-6-10-1-1-row10" sequence="836"
+                   description="Table 6.10.1.1: Sentence 6.2.1.2.(3) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row10"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row10" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect2.subsect1.art2.sent3" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03791 | issue 2091 | The PDF has only an empty row after 6.2.1.2.(3) RESERVED, no [F44-OS3.4] attribution. -->
+        <amendment id="bc-custom-6-10-1-1-row11" sequence="837"
+                   description="Table 6.10.1.1: empty row after Sentence 6.2.1.2.(3)">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row11"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row11" rowsep="1">
+                        <entry/>
+                        <entry/>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
