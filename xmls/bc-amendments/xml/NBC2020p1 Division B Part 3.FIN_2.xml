@@ -4443,5 +4443,15 @@ solvents or cleaners</item>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01836 | issue 1037 | Note A-3.4.5.1.(4) says "In addition to being continuously illuminated as required by Sentence 3.4.5.1.(4), these types of signs ...", as in the PDF. -->
+        <amendment id="bc-custom-a-3-4-5-1-4" sequence="2353"
+                   description="Note A-3.4.5.1.(4): photoluminescent signs must also be continuously illuminated">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote158.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote158.para1">An external lighting source is required to properly charge photoluminescent signs. In addition to being continuously illuminated as required by <ref type="internal" target="nbc.divB.part3.sect4.subsect5.art1.sent4" display-type="long"/>, these types of signs must be lit in conformance with the charging requirements indicated on the exit signs in accordance with <ref type="standard" target="ulcs572" standardId="ulcs572" ref-style="noagency" ref-punc="period"/></paragraph>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 </bc-overlay>
