@@ -252,11 +252,24 @@
             <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art3.sent1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-03433 | issue 1924 | References Subsection 5.1.4. and Note A-5.9.2.3.(1) as in the PDF (was Article 5.1.4.1. and Note A-5.9.2.2.). -->
                     <sentence xml:id="nbc.divB.part5.sect9.subsect2.art3.sent1" number="1">
-                        <text>Windows, doors, skylights and their components that do not conform to <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2" display-type="long"/> shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4.art1" display-type="long"/>, <ref type="internal" target="nbc.divB.part5.sect4" display-type="long"/> and <ref type="internal" target="nbc.divB.part5.sect6" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote44" display-type="short"/>.)</text>
+                        <text>Windows, doors, skylights and their components that do not conform to <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2" display-type="long"/> shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4" display-type="long"/>, <ref type="internal" target="nbc.divB.part5.sect4" display-type="long"/> and <ref type="internal" target="nbc.divB.part5.sect6" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote45" display-type="short"/>.)</text>
                     </sentence>
                 </new-content>
             </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03437 | issue 1928 | Sentence 5.9.3.2.(1) refers to Subsection 5.1.4. as in the PDF (NBC: Article 5.1.4.1.). -->
+        <amendment id="bc-custom-1113-5932" sequence="12"
+                   description="Sentence 5.9.3.2.(1) refers to Subsection 5.1.4. as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect3.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Other fenestration assemblies and their components shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote49" display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
         </amendment>
         
         <!-- ================================================================== -->
