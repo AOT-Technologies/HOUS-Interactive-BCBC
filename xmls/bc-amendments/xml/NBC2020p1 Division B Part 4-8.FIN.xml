@@ -190,7 +190,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent4" display-type="short"/>, <ref type="standard" target="csaa440S1" standardId="csaa440S1"/></text>
+                        <!-- CLAUDE-AUTOFIX CF-03424 | issue 1919 | The title of CSA A440S1 reads '...A440, North American...' here, as in the PDF; the standards table title has 'A440-17'. -->
+                        <text>except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent4" display-type="short"/>, <ref type="standard" target="csaa440S1" standardId="csaa440S1" ref-style="notitle"/>, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440, North American Fenestration Standard/Specification for windows, doors, and skylights.”</text>
                     </new-content>
                 </element-replace>
             </modify>
