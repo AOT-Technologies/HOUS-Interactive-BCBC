@@ -1010,6 +1010,7 @@
                    description="Change standard from CAN/ULC-S742 to ASTM E2357 and remove Type A4 designation in Article 9.37.2.9.(1)(c)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art9.sent1.clause3"/>
             <modify>
+                <!-- CLAUDE-AUTOFIX CF-05892 | issue 6577 | Unit written L/(s×m2) with the multiplication sign, as in the PDF. -->
                 <element-replace element="text">
                     <new-content source="bc">
                         <text>a continuous <ref type="term" target="r-brrr">air barrier system</ref> in
@@ -1022,7 +1023,7 @@
                                  display-type="short"
                                  pretext="to"/> and <ref type="internal"
                                                     target="nbc.divBV2.part9.sect25.subsect3"
-                                                    display-type="long"/> and a <ref type="term" target="bldng">building</ref> assembly having an air leakage rate not greater than <measurement units="metric">0.20 L/(s·m<super>2</super>)</measurement> when tested in accordance with <ref type="standard" target="astme2357" standardId="astme2357"/> where</text>
+                                                    display-type="long"/> and a <ref type="term" target="bldng">building</ref> assembly having an air leakage rate not greater than <measurement units="metric">0.20 L/(s×m<super>2</super>)</measurement> when tested in accordance with <ref type="standard" target="astme2357" standardId="astme2357"/> where</text>
                     </new-content>
                 </element-replace>
             </modify>
