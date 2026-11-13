@@ -224,6 +224,13 @@
                         <replace>Climatic Design Data for Selected Locations in British Columbia</replace>
                     </find-replace>
                 </text-change>
+                <!-- CLAUDE-AUTOFIX CF-08738 | issue 5541 | The first header cell of Table C-2 reads 'Location', as in the PDF, not 'Province and Location'. -->
+                <text-change xpath-within-target=".//entry">
+                    <find-replace>
+                        <find>Province and Location</find>
+                        <replace>Location</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
