@@ -222,6 +222,8 @@
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art3.sent3" number="3">
                                         <text><ref type="term" target="bldng">Buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> designed and constructed to conform to Step 4 of Tables 10.2.3.3.-G to 10.2.3.3.-H or to Step 3 in Tables 10.2.3.3.-I and 10.2.3.3.-J, and to the Passive House Planning Package, version 9 or newer, are deemed to comply with this Subsection provided the energy model according to which the <ref type="term" target="bldng">building</ref> or the <ref type="term" target="mjr-ccpn">major occupancy</ref> of the <ref type="term" target="bldng">building</ref> is designed and constructed is prepared by a Certified Passive House Designer, or Certified Passive House Consultant, who is approved by the Passive House Institute.</text>
+                                        <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | Added the see-also reference that the PDF prints on its own line after Sentence 10.2.3.3.(3). -->
+                                        <see-also xml:id="nbc.divB.part10.sect2.subsect3.art3.sent3.seealso">(See also <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent2" display-type="long"/>.)</see-also>
                                     </sentence>
                                     
                                     <!-- Tables 10.2.3.3.-A through 10.2.3.3.-J -->
@@ -1080,7 +1082,8 @@
                                 <article xml:id="nbc.divB.part10.sect4.subsect1.art1" number="1">
                                     <title>Attributions to Acceptable Solutions</title>
                                     <sentence xml:id="nbc.divB.part10.sect4.subsect1.art1.sent1" number="1">
-                                        <text>For the purpose of compliance with this Code as required in <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="medium"/> of Division A, the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in <ref type="internal" target="nbc.divB.part10.sect4.subsect1.art1.table1" display-type="long"/>.</text>
+                                        <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | Added the note reference that the PDF prints at the end of Sentence 10.4.1.1.(1). -->
+                                        <text>For the purpose of compliance with this Code as required in <ref type="internal" target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2" display-type="medium"/> of Division A, the objectives and functional statements attributed to the acceptable solutions in this Part shall be the objectives and functional statements listed in <ref type="internal" target="nbc.divB.part10.sect4.subsect1.art1.table1" display-type="long"/>. (See Note A-1.1.2.1.(1).)</text>
                                     </sentence>
                                     <table xml:id="nbc.divB.part10.sect4.subsect1.art1.table1">
                                         <title>Objectives and Functional Statements Attributed to the Acceptable Solutions in Part 10</title>

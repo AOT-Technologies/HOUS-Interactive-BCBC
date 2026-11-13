@@ -4447,8 +4447,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>clad with stone veneer.</text>
                             </subclause>
                         </clause>
+                        <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | The PDF prints this reference as "(see Sentence 9.23.13.2.(3))." (lower-case see, period after the parenthesis). -->
                         <see-also xml:id="nbc.divBV2.part9.sect23.subsect11.art4.sent7.seealso1">
-                            (See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art2.sent3" display-type="short"/>.)
+                            (see <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art2.sent3" display-type="short"/>).
                         </see-also>
                     </sentence>
                 </new-content>
