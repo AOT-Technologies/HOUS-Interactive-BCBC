@@ -99,6 +99,8 @@
                 <new-content source="bc">
                     <article xml:id="nbc.divB.part3.sect1.subsect2.art7" number="7">
                         <title>Group A, Division 2, Low Occupant Load</title>
+                        <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-3.1.2.7.)" under the Article heading; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect1.subsect2.art7.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote.a3.1.2.7" display-type="short">Note A-3.1.2.7.</ref>)</see-also>
                         
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art7.sent1" number="1">
                             <text>A <ref type="term" target="t">suite</ref> of Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, except a child or infant daycare facility, is permitted to be classified as a Group D, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref> provided</text>
@@ -136,6 +138,8 @@
                 <new-content source="bc">
                     <article xml:id="nbc.divB.part3.sect1.subsect2.art8" number="8">
                         <title>Daycare Facilities for Children</title>
+                        <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-3.1.2.8.)" under the Article heading; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect1.subsect2.art8.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote.a3.1.2.8" display-type="short">Note A-3.1.2.8.</ref>)</see-also>
                         
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art8.sent1" number="1">
                             <text>A daycare facility for children shall be classified as a Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref>. (See also <ref type="internal" target="nbc.divB.part3.sect3.subsect2.art17" display-type="long"/>.)</text>
@@ -6500,6 +6504,8 @@ each 25 females.</find>
                 <new-content source="bc">
                     <article xml:id="nbc.divB.part3.sect8.subsect2.art5" number="5">
                         <title>Paths of Travel to Building Entrances and Exterior Passenger-Loading Zones</title>
+                        <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-3.8.2.5.)" under the Article heading; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect8.subsect2.art5.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote189" display-type="short">Note A-3.8.2.5.</ref>)</see-also>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art5.sent1" number="1">
                             <text>A direct exterior <ref type="term" target="brrr-fr">accessible</ref> path of travel that complies with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> shall be provided between an <ref type="term" target="brrr-fr">accessible</ref> entrance referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2" display-type="long"/> and </text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art5.sent1.clause1" letter="a">
