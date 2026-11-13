@@ -4066,8 +4066,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect6.art1.sent3.clause1" letter="a">
                                 <text>there are not less than two anchor bolts per <ref type="term" target="br-wl-pnl">braced wall panel</ref>, located at opposite ends of the <ref type="term" target="br-wl-pnl">braced wall panel</ref> within <measurement units="metric">0.5 m</measurement> of the <ref type="term" target="fndtn">foundation</ref> end or within <measurement units="metric">0.3 m</measurement> of the end of the <ref type="term" target="br-wl-pnl">braced wall panel</ref>, and</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-04745 | issue 2572 | The See-Note of Clause 9.23.6.1.(3)(b) points at Note A-9.23.6.1.(3) as in the PDF (was A-9.23.4.4.). -->
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect6.art1.sent3.clause2" letter="b">
-                                <text>anchor bolts spaced in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect6.art1.table1" display-type="long"/>. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote123" vendor-target="en000324" display-type="short"/>.)</text>
+                                <text>anchor bolts spaced in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect6.art1.table1" display-type="long"/>. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote123a" display-type="short"/>.)</text>
                             </clause>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect6.art1.table1">
