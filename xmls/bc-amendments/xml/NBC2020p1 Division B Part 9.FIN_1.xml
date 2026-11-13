@@ -1120,6 +1120,13 @@ incorporate a thermal break.</find>
                         <replace>garages that serve houses described in Clause a) or b).</replace>
                     </find-replace>
                 </text-change>
+                <!-- CLAUDE-AUTOFIX CF-04093 | issue 10037 | Table title reads 'Tapered Treads (Including Winders)' as in the PDF. -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace>
+                        <find>Tapered Treads and Winders</find>
+                        <replace>Tapered Treads (Including Winders)</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
