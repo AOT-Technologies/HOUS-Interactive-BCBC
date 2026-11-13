@@ -4188,6 +4188,7 @@
                 <new-content source="bc">
                     <sub-objective xml:id="nbc.objective.OE2" key="OE2">
                         <title>Greenhouse Gases</title>
+                        <!-- CLAUDE-AUTOFIX CF-00306 | issue 9833 | Curly apostrophe in building’s, as in the PDF (objective OE2 / OE2.1). -->
                         <definition
                             >An objective of this Code is to limit the probability that, as a result of design and construction of the <ref
                                 type="term"
@@ -4195,7 +4196,7 @@
                                 >building</ref>, including the <ref
                                 type="term"
                                 target="bldng"
-                                >building's</ref> systems, and the energy consumed in the operation of those systems, the production of greenhouse gases will be excessive. The risks of excessive greenhouse gas emissions addressed in this Code are those caused by-
+                                >building’s</ref> systems, and the energy consumed in the operation of those systems, the production of greenhouse gases will be excessive. The risks of excessive greenhouse gas emissions addressed in this Code are those caused by-
                         <lb/>
                         OE2.1– excessive emissions as a result of the design and construction of the <ref type="term" target="bldng">building</ref>, including the <ref type="term" target="bldng">building’s</ref> systems, and the energy consumed in the operation of those systems
                         </definition>
@@ -4203,8 +4204,9 @@
                             xml:id="nbc.objective.OE2.1"
                             key="OE2.1"
                             >
+                            <!-- CLAUDE-AUTOFIX CF-00306 | issue 9833 | Curly apostrophe in building’s, as in the PDF (objective OE2 / OE2.1). -->
                             <title
-                                >excessive emissions as a result of the design and construction of the building, including the building's systems, and the energy consumed in the operation of those systems</title>
+                                >excessive emissions as a result of the design and construction of the building, including the building’s systems, and the energy consumed in the operation of those systems</title>
                         </sub-sub-objective>
                     </sub-objective>
                 </new-content>
