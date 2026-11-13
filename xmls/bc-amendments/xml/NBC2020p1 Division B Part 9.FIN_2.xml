@@ -382,9 +382,10 @@
                                 <colspec colname="c6" colwidth="1*"/>
                                 <colspec colname="c7" colwidth="1*"/>
                                 <thead>
+                                    <!-- CLAUDE-AUTOFIX CF-05810 | issue 3048 | Component spans the three header rows and the degree-day heading spans the six zones, as in the PDF. -->
                                     <row>
-                                        <entry>Component</entry>
-                                        <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.fn1">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
+                                        <entry rowspan="3">Component</entry>
+                                        <entry colspan="6">Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.fn1">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.rowh2">
                                         <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | Space between the climate zone and its degree-days, as in the PDF (Zone 7A / 5000 to 5999). -->
@@ -394,6 +395,10 @@
                                         <entry>Zone 7A 5000 to 5999</entry>
                                         <entry>Zone 7B 6000 to 6999</entry>
                                         <entry>Zone 8 ≥ 7000</entry>
+                                    </row>
+                                    <!-- CLAUDE-AUTOFIX CF-05810 | issue 3048 | The PDF has a third header row "Maximum Overall Thermal Transmittance, W/(m2xK)" over the six zones. -->
+                                    <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.rowh3">
+                                        <entry colspan="6">Maximum Overall Thermal Transmittance, W/(m<super>2</super>×K)</entry>
                                     </row>
                                 </thead>
                                 <tbody>
