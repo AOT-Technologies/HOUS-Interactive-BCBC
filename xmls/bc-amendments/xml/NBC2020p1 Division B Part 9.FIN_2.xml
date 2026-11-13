@@ -178,7 +178,8 @@
                                 <text>a heat pump in conformance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art10" display-type="long"/>.</text>
                             </subclause>
                         </clause>
-                        <text> (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote232" vendor-target="en001785" display-type="short"/>.)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect36.subsect2.art6.sent1.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote232" vendor-target="en001785" display-type="short"/>.)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -1142,7 +1143,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect5.art6.sent2.clause3" letter="c">
                             <text>doors, windows and skylights.</text>
                         </clause>
-                        <text> (See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long"/>.)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect36.subsect5.art6.sent2.seealso">(See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long"/>.)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -1316,7 +1318,8 @@
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art2.sent2.clause3" letter="c">
                                     <text>except for common spaces in the house with the <ref type="term" target="bc-scnd-t">secondary suite</ref>, do not share common spaces intended for <ref type="term" target="ccpnc">occupancy</ref> with other <ref type="term" target="dwllng-n">dwelling units</ref> or houses.</text>
                                 </clause>
-                                <text> (See Note A-9.36.6.2.(2).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect36.subsect6.art2.sent2.seealso">(See Note A-9.36.6.2.(2).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art2.sent3" number="3">
                                 <text>For the purpose of this Subsection, the term "thermal energy demand intensity" shall mean a metric of the annual heating required by the <ref type="term" target="bldng">building</ref> for space conditioning and for conditioning of ventilation air, estimated by using an energy model in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art4" display-type="long"/>, normalized per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> and expressed in kWh/(m<super>2</super>·year), taking into account all of the following:</text>
@@ -1832,7 +1835,8 @@
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent1.clause2" letter="b">
                                     <text>the annual gross space heat loss of the proposed and reference houses calculated in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art5.sent5" display-type="short"/>.</text>
                                 </clause>
-                                <text>(See Note A-9.36.6.5.(1).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent1.seealso">(See Note A-9.36.6.5.(1).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent2" number="2">
                                 <text>Reserved.</text>
@@ -1860,7 +1864,8 @@
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent5.clause3" letter="c">
                                     <text>mechanical ventilation.</text>
                                 </clause>
-                                <text>(See Note A-9.36.6.5.(5).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent5.seealso">(See Note A-9.36.6.5.(5).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent6" number="6">
                                 <text>The percent heat loss reduction shall be calculated by subtracting the annual gross space heat loss of the proposed house from the annual gross space heat loss of the reference house and dividing the result by the annual gross space heat loss of the reference house.</text>

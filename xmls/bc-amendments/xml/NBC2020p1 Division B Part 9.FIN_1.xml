@@ -322,7 +322,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect6.subsect1.art1.sent1.clause5" letter="e">
                             <text>glazed panels and partitions.</text>
                         </clause>
-                        <text> (See Note A-9.6.1.1.(1).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect6.subsect1.art1.sent1.seealso">(See Note A-9.6.1.1.(1).)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -682,7 +683,8 @@ incorporate a thermal break.</find>
                                 <clause xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.clause2" letter="b">
                                     <text><ref type="standard" target="csaa440S1"/>,</text>
                                 </clause>
-                                <text> (See Note A-9.7.4.2.(1).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.seealso">(See Note A-9.7.4.2.(1).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent2" number="2">
                                 <text>A door designated as a "Limited Water" door in accordance with the standard referenced in Clause (1)(a) shall not be used unless the door</text>
@@ -2439,7 +2441,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <clause xml:id="nbc.divBV2.part9.sect10.subsect9.art3.sent2.clause2" letter="b">
                             <text>have a self-closing device.</text>
                         </clause>
-                        <text> (See <ref type="internal" target="nbc.divBV2.part9.sect10.subsect13" display-type="long"/> and Note A-9.10.9.3.(2).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect10.subsect9.art3.sent2.seealso">(See <ref type="internal" target="nbc.divBV2.part9.sect10.subsect13" display-type="long"/> and Note A-9.10.9.3.(2).)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -4757,7 +4760,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text><measurement units="metric">15 m</measurement> from adjacent <ref type="term" target="br-wl-bnd">braced wall bands</ref> constructed with <ref type="term" target="br-wl-pnl">braced wall panels</ref>.</text>
                                 </subclause>
                             </clause>
-                            <text>(See Note A-9.23.13.5.(2).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent2.seealso">(See Note A-9.23.13.5.(2).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent3" number="3">
                             <text>Interior or exterior wood-sheathed <ref type="term" target="br-wl-pnl">braced wall panels</ref>, other than panels of WSP-A framing in the uppermost storey shall</text>
@@ -4776,7 +4780,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text>rafters, joists or trusses by using methods of lateral load transfer designed in accordance with good engineering practice.</text>
                                 </subclause>
                             </clause>
-                            <text>(See Note A-9.23.13.5.(3) and (4).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent3.seealso">(See Note A-9.23.13.5.(3) and (4).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent4" number="4">
                             <text>The top plates of braced wall panels described in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art5.sent3" display-type="short"/> shall be fastened in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.table1" display-type="long"/>.</text>
@@ -4836,7 +4841,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art6.sent5.clause2" letter="b">
                                 <text>the lengths of the <ref type="term" target="br-wl-pnl">braced wall panels</ref> of mixed framing types are based on accepted engineering principles.</text>
                             </clause>
-                            <text>(See Note A-9.23.13.6.(5).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art6.sent5.seealso">(See Note A-9.23.13.6.(5).)</see-also>
                         </sentence>
                     </article>
                 </new-content>
