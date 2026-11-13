@@ -2312,7 +2312,8 @@
     <!-- CLAUDE-AUTOFIX CL-013 CF-00914 | issue 8022 | Standard references from the BC amendments (no ref-style) print as in the PDF: curly quotes, punctuation inside, agency only when not already in the number. -->
     <xsl:template match="ref[@type = 'standard'][not(@ref-style = 'abbr')]" mode="rich-text-json" priority="2">
         <xsl:variable name="entry" select="(key('standard-entry-by-ref-id', @target), key('standard-entry-by-ref-id', concat('d-', @target)), key('standard-entry-by-ref-id', replace(@target, '^d-', '')))[1]"/>
-        <xsl:variable name="row" select="$entry/parent::row"/>
+        <!-- CLAUDE-AUTOFIX CF-03674 | issue 2050 | A standard whose Table 1.3.1.2. row was revised (row inside revision-history) still finds its number and agency, so it prints as in the PDF (“Industrial Ventilation: ... for Design,”). -->
+        <xsl:variable name="row" select="$entry/parent::*[self::row or self::original or self::content]"/>
         <xsl:variable name="number" select="normalize-space($row/entry[@standard-ref-number][1]/@standard-ref-number)"/>
         <xsl:variable name="agency" select="normalize-space($row/entry[1][not(@standard-ref-id) and not(@standard-ref-number)])"/>
         <xsl:variable name="title" select="normalize-space($entry/@standard-ref-title)"/>
