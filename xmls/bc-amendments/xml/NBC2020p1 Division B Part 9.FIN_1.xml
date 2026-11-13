@@ -4282,7 +4282,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     </row>
                                     <row>
                                         <entry align="center">Normal-Weight Construction</entry>
-                                        <entry align="center">Heavyweight Construction<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4">(4)</note></entry>
+                                        <!-- CLAUDE-AUTOFIX CF-10676 | issue 2624 | Header cell reads 'Heavyweight construction' (lower-case c), as in the PDF. -->
+                                        <entry align="center">Heavyweight construction<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4">(4)</note></entry>
                                         <entry align="center">Masonry Veneer (on one or more <ref type="term" target="bldng">building</ref> faces)<ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4"/><note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note5">(5)</note></entry>
                                         <entry align="center">Stone Veneer (on one or more <ref type="term" target="bldng">building</ref> faces)<ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4"/><ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note5"/></entry>
                                     </row>
