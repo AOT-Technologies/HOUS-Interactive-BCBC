@@ -4206,5 +4206,15 @@ described in <ref type="internal"
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01848 | issue 1045 | Note A-3.5.2.1.(1) refers to the Safety Standards Act and pursuant regulations, as in the PDF, not to ASME A17.1/CSA B44. -->
+        <amendment id="bc-custom-a-3-5-2-1-1" sequence="2350"
+                   description="Note A-3.5.2.1.(1) refers to the Safety Standards Act and pursuant regulations">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote169.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote169.para1">The reference to the Safety Standards Act and pursuant regulations in this Sentence implies conformance with all requirements of the pursuant regulations for elevator cars, hoistways, pits and machine rooms, including restrictions on other services in these areas and detailed design criteria.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 </bc-overlay>
