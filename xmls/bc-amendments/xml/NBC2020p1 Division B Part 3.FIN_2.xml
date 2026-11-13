@@ -4182,5 +4182,17 @@ described in <ref type="internal"
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01541 | issue 872 | Subclause 3.8.3.12.(1)(d)(iii) ends with 'measured in accordance with Sentence 3.8.3.6.(2),', as in the PDF. -->
+        <amendment id="bc-custom-3-8-3-12-1-d-iii" sequence="2347"
+                   description="Subclause 3.8.3.12.(1)(d)(iii): clear opening measured in accordance with Sentence 3.8.3.6.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause4.subclause3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>provides a clear opening not less than <measurement units="metric">850 mm</measurement> wide when it is open, measured in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6.sent2" display-type="long"/>,</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
 </bc-overlay>
