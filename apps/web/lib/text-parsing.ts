@@ -776,6 +776,12 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
 
     if (figure) {
       const figureNumber = baseNumber || appendixLetter || '';
+      // CLAUDE-AUTOFIX CL-088 CF-10660 | issue 1721 | The 2nd+ figure of an appendix Article keeps its letter (Figure D-2.6.1.-B), as in the PDF.
+      const figureIndex = Number(figure);
+      if (article && figureIndex > 1) {
+        const figureSuffix = `-${String.fromCharCode(64 + figureIndex)}`;
+        return isShortNumeric ? `${figureNumber}.${figureSuffix}` : `Figure ${figureNumber}.${figureSuffix}`;
+      }
       return isShortNumeric ? figureNumber : `Figure ${figureNumber}.`;
     }
 
