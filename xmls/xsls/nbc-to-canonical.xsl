@@ -1413,6 +1413,10 @@
   <!-- Change tracking: IGNORE markers (no redline in canonical) -->
   <xsl:template match="change-begin | change-end" mode="rich-text" />
 
+  <!-- CLAUDE-AUTOFIX CF-07979 | issue 5064 | A table note written, or referred to, inside a list or paragraph of a table cell becomes a table-note mark, instead of its text printed inline or the mark being dropped, as in the PDF. -->
+  <xsl:template match="note[@id][ancestor::entry][not(ancestor::note)]" mode="rich-text"><ref type="table-note" target="{@id}" /></xsl:template>
+  <xsl:template match="ref.note[ancestor::entry][not(ancestor::note)]" mode="rich-text"><ref type="table-note" target="{@refid}" /></xsl:template>
+
   <!-- ================================================================== -->
   <!-- MATHEMATICAL EQUATIONS - MathML Conversion                         -->
   <!-- ================================================================== -->
