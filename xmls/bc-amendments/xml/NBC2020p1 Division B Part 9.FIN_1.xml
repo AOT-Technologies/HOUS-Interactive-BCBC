@@ -82,6 +82,8 @@
                 <new-content source="bc">
                     <article xml:id="nbc.divBV2.part9.sect4.subsect2.art5" number="5">
                         <title>Seismic Design Parameter</title>
+                        <!-- CLAUDE-AUTOFIX CF-03997 | issue 6937 | The PDF prints "(See Note A-9.4.2.5.)" after the Article title; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect4.subsect2.art5.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote12a" display-type="short"/>)</see-also>
                         <sentence xml:id="nbc.divBV2.part9.sect4.subsect2.art5.sent1" number="1">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2212 Incorrect Content 220c6ec79c -->
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2213 Incorrect Content f5f410541f -->
@@ -11623,6 +11625,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <article xml:id="nbc.divBV2.part9.sect32.subsect3.art4" number="4">
                         <title>Ventilation System Supply Air</title>
+                        <!-- CLAUDE-AUTOFIX CF-05583 | issue 6949 | The PDF prints "(See Note A-9.32.3.4.)" after the Article title; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect32.subsect3.art4.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote193a" display-type="short"/>)</see-also>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent1" number="1">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent6" display-type="short"/>, a principal ventilation system shall mechanically provide supply air in accordance with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2" display-type="short"/>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent3" display-type="short"/>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent4" display-type="short"/> or <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent5" display-type="short"/>.</text>
                         </sentence>
