@@ -4228,5 +4228,220 @@ described in <ref type="internal"
                 </new-content>
             </insert>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01565 | issue 912 | Note A-3.1.2.1.(1) lists "Daycare Facilities for Children" under Group A, Division 2, after "Dance halls", as in the PDF (rest of the paragraph unchanged from the NBC). -->
+        <amendment id="bc-custom-a-3-1-2-1-1-daycare" sequence="2352"
+                   description="Note A-3.1.2.1.(1): add Daycare Facilities for Children to the Group A, Division 2 examples">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote3.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote3.para1">The following are examples of the major occupancy classifications
+described in <ref type="internal"
+                            target="nbc.divB.part3.sect1.subsect2.art1.table1"
+                            display-type="long"/>:<list type="bulleted">
+                          <item>
+                             <emphasis style="bold">Group A, Division 1</emphasis>
+                             <list type="bulleted">
+                                <item>Motion picture theatres</item>
+                                <item>Opera houses</item>
+                                <item>Television studios admitting a viewing audience</item>
+                                <item>Theatres, including experimental theatres</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group A, Division 2</emphasis>
+                             <list type="bulleted">
+                                <item>Art galleries</item>
+                                <item>Auditoria</item>
+                                <item>Bowling alleys</item>
+                                <item>Churches and similar places of worship</item>
+                                <item>Clubs, nonresidential</item>
+                                <item>Community halls</item>
+                                <item>Courtrooms</item>
+                                <item>Dance halls</item>
+                                <item>Daycare Facilities for Children</item>
+                                <item>Exhibition halls (other than classified in Group E)</item>
+                                <item>Gymnasia</item>
+                                <item>Lecture halls</item>
+                                <item>Libraries</item>
+                                <item>Licensed beverage establishments</item>
+                                <item>Museums</item>
+                                <item>Passenger stations and depots</item>
+                                <item>Recreational piers</item>
+                                <item>Restaurants</item>
+                                <item>Schools and colleges, nonresidential</item>
+                                <item>Undertaking premises</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group A, Division 3</emphasis>
+                             <list type="bulleted">
+                                <item>Arenas</item>
+                                <item>Indoor swimming pools, with or without spectator seating</item>
+                                <item>Rinks</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group A, Division 4</emphasis>
+                             <list type="bulleted">
+                                <item>Amusement park structures (not elsewhere classified)</item>
+                                <item>Bleachers</item>
+                                <item>Grandstands</item>
+                                <item>Reviewing stands</item>
+                                <item>Stadia</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group B, Division 1</emphasis>
+                             <list type="bulleted">
+                                <item>Jails</item>
+                                <item>Penitentiaries</item>
+                                <item>Police stations with detention quarters</item>
+                                <item>Prisons</item>
+                                <item>Psychiatric hospitals with detention quarters</item>
+                                <item>Reformatories with detention quarters</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group B, Division 2</emphasis>
+                             <list type="bulleted">
+                                <item>Care facilities with treatment</item>
+                                <item>Convalescent /recovery/rehabilitation centres with treatment</item>
+                                <item>Hospices with treatment</item>
+                                <item>Hospitals</item>
+                                <item>Infirmaries</item>
+                                <item>Nursing homes with treatment</item>
+                                <item>Psychiatric hospitals without detention quarters</item>
+                                <item>Respite centres with treatment</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group B, Division 3</emphasis>
+                             <list type="bulleted">
+                                <item>Assisted/supportive living facilities</item>
+                                <item>Care facilities without treatment</item>
+                                <item>Children's custodial homes</item>
+                                <item>Convalescent/recovery/rehabilitation centres without treatment</item>
+                                <item>Group homes</item>
+                                <item>Hospices without treatment</item>
+                                <item>Nursing homes without treatment</item>
+                                <item>Reformatories without detention quarters</item>
+                                <item>Respite centres without treatment</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group C</emphasis>
+                             <list type="bulleted">
+                                <item>Apartments</item>
+                                <item>Boarding houses</item>
+                                <item>Clubs, residential</item>
+                                <item>Colleges, residential</item>
+                                <item>Convents</item>
+                                <item>Dormitories</item>
+                                <item>Hotels</item>
+                                <item>Houses</item>
+                                <item>Lodging houses</item>
+                                <item>Monasteries</item>
+                                <item>Motels</item>
+                                <item>Schools, residential</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group D</emphasis>
+                             <list type="bulleted">
+                                <item>Banks</item>
+                                <item>Barber and hairdressing shops</item>
+                                <item>Beauty parlours</item>
+                                <item>Dental offices</item>
+                                <item>Dry cleaning establishments, self-service, not using flammable
+or explosive solvents or cleaners</item>
+                                <item>Laundries, self-service</item>
+                                <item>Medical offices</item>
+                                <item>Offices</item>
+                                <item>Police stations without detention quarters</item>
+                                <item>Radio stations</item>
+                                <item>Small tool and appliance rental and service establishments</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group E</emphasis>
+                             <list type="bulleted">
+                                <item>Department stores</item>
+                                <item>Exhibition halls</item>
+                                <item>Markets</item>
+                                <item>Shops</item>
+                                <item>Stores</item>
+                                <item>Supermarkets</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group F, Division 1</emphasis>
+                             <list type="bulleted">
+                                <item>Bulk plants for flammable liquids</item>
+                                <item>Bulk storage warehouses for hazardous substances</item>
+                                <item>Cereal mills</item>
+                                <item>Chemical manufacturing or processing plants</item>
+                                <item>Distilleries</item>
+                                <item>Dry cleaning plants</item>
+                                <item>Feed mills</item>
+                                <item>Flour mills</item>
+                                <item>Grain elevators</item>
+                                <item>Lacquer factories</item>
+                                <item>Mattress factories</item>
+                                <item>Paint, varnish and pyroxylin product factories</item>
+                                <item>Rubber processing plants</item>
+                                <item>Spray painting operations</item>
+                                <item>Waste paper processing plants</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group F, Division 2</emphasis>
+                             <list type="bulleted">
+                                <item>Aircraft hangars</item>
+                                <item>Box factories</item>
+                                <item>Candy plants</item>
+                                <item>Cold storage plants</item>
+                                <item>Dry cleaning establishments not using flammable or explosive
+solvents or cleaners</item>
+                                <item>Electrical substations</item>
+                                <item>Factories</item>
+                                <item>Freight depots</item>
+                                <item>Helicopter landing areas on roofs</item>
+                                <item>Laboratories</item>
+                                <item>Laundries, except self-service</item>
+                                <item>Mattress factories</item>
+                                <item>Planing mills</item>
+                                <item>Printing plants</item>
+                                <item>Repair garages</item>
+                                <item>Salesrooms</item>
+                                <item>Service stations</item>
+                                <item>Storage rooms</item>
+                                <item>Television studios not admitting a viewing audience</item>
+                                <item>Warehouses</item>
+                                <item>Wholesale rooms</item>
+                                <item>Woodworking factories</item>
+                                <item>Workshops</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group F, Division 3</emphasis>
+                             <list type="bulleted">
+                                <item>Creameries</item>
+                                <item>Factories</item>
+                                <item>Laboratories</item>
+                                <item>Light-aircraft hangars (storage only)</item>
+                                <item>Power plants</item>
+                                <item>Salesrooms</item>
+                                <item>Sample display rooms</item>
+                                <item>Storage garages, including open air parking garages</item>
+                                <item>Storage rooms</item>
+                                <item>Warehouses</item>
+                                <item>Workshops</item>
+                             </list>
+                          </item>
+                       </list>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
 </bc-overlay>
