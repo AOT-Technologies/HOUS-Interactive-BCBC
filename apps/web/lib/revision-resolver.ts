@@ -55,6 +55,18 @@ function getApplicableRevision(
   return sorted.find((rev) => (rev.effective_date || '') <= effectiveDate) || sorted[sorted.length - 1];
 }
 
+// CLAUDE-AUTOFIX CL-085 CF-00039 | issue 1815 | A Sentence whose revision in force is an empty "original" (added by a later Ministerial Order) is not shown at that date, as in the PDF.
+function isAddedByLaterRevision(node: ContentNode, effectiveDate?: string): boolean {
+  if (!effectiveDate || !Array.isArray(node.revisions) || node.revisions.length < 2) return false;
+  const revision = getApplicableRevision(node.revisions, effectiveDate);
+  if (!revision || revision.type !== 'original' || revision.deleted) return false;
+  const metaKeys = new Set(['type', 'effective_date', 'revision_id', 'revision_type', 'sequence', 'status', 'change_summary', 'note']);
+  return Object.entries(revision).every(
+    ([key, value]) =>
+      metaKeys.has(key) || value === '' || value == null || (Array.isArray(value) && value.length === 0)
+  );
+}
+
 function hasEquationPlaceholder(text: unknown): boolean {
   return typeof text === 'string' && /\[EQ:(?:display|inline)(?::[^\]]*)?\]/i.test(text);
 }
@@ -231,6 +243,8 @@ function resolveClause(node: ContentNode, effectiveDate?: string): ContentNode |
 }
 
 function resolveSentence(node: ContentNode, effectiveDate?: string): ContentNode | null {
+  // CLAUDE-AUTOFIX CL-085 CF-00039 | issue 1815 | Not yet in force at this date (empty original revision).
+  if (isAddedByLaterRevision(node, effectiveDate)) return null;
   const resolved = applyRevision(node, effectiveDate);
   if (!resolved) return null;
   const includeEquationContent = !hasEquationPlaceholder(resolved.text);
