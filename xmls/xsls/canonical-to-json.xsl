@@ -2829,6 +2829,10 @@
         <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^[\s,.;:!?)\]&#8221;&#8217;]')) and not(matches(., '^s(\W|$)')) and not(starts-with(., '/')) and not(matches(string(current()), 'kP\s*$') and matches(., '^a(\W|$)')) and not(matches(string(current()), '\d\.$') and matches(., '^\d'))]">
             <xsl:text> </xsl:text>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CF-05714 | issue 10243 | A space between a measurement ending in a superscript/subscript and a defined term after it (55 m2 floor area), as in the PDF. -->
+        <xsl:if test="node()[normalize-space(.) != ''][last()][self::super or self::sub] and following-sibling::node()[1][self::text() and normalize-space(.) = '']/following-sibling::node()[1][self::ref[@type = 'term'][not(@pretext)]]">
+            <xsl:text> </xsl:text>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="equation" mode="rich-text-json">
