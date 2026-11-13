@@ -18566,6 +18566,18 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
                 </new-content>
             </insert>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05571 | issue 2924 | Clause 9.32.1.3.(3)(c) refers to Article 9.32.4.1. (make-up air), as in the PDF; BC replaced NBC Article 9.32.3.8. with Air Ducts. -->
+        <amendment id="bc-custom-9-32-1-3-3c" sequence="2344"
+                   description="Clause 9.32.1.3.(3)(c) refers to Article 9.32.4.1.">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect32.subsect1.art3.sent3.clause3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>where required by <ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1" display-type="long"/>, be provided with make-up air.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>
