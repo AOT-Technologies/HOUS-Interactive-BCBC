@@ -2343,7 +2343,8 @@
                     <xsl:text> </xsl:text>
                 </xsl:if>
                 <xsl:value-of select="$text"/>
-                <xsl:if test="$next-significant[self::text() and not(matches(., '^[\s,.;:)\]]'))] or $next-significant[self::ref]">
+                <!-- CLAUDE-AUTOFIX CF-05998 | issue 10272 | No space between a standard reference and a dash or closing quote typed right after it (S716.1—including), as in the PDF. -->
+                <xsl:if test="$next-significant[self::text() and not(matches(., '^([\s,.;:)\]&#8212;&#8221;]|-\w)'))] or $next-significant[self::ref]">
                     <xsl:text> </xsl:text>
                 </xsl:if>
             </xsl:otherwise>
@@ -2804,7 +2805,8 @@
         <!-- Add trailing space if followed by non-whitespace text OR another ref WITHOUT pretext -->
         <!-- BUT: Don't add trailing space if the ref content already had a trailing space -->
         <!-- CLAUDE-AUTOFIX CL-031 CF-02248 | issue 9912 | No space between a defined term and a following 's or plural s, as in the PDF (building's, fire compartments). -->
-        <xsl:if test="not($has-trailing-space) and ($next-significant[self::text() and not(matches(., '^\s')) and not(current()/@type = 'term' and matches(., '^([''’]s|s)(\W|$)'))] or $next-significant[self::ref and not(@pretext)])">
+        <!-- CLAUDE-AUTOFIX CF-05998 | issue 10272 | No space between a reference and a dash or closing quote typed right after it (boiler-based, soil- and rock-retaining, dead load—0.9D, space”), as in the PDF. -->
+        <xsl:if test="not($has-trailing-space) and ($next-significant[self::text() and not(matches(., '^\s')) and not(matches(., '^(&#8212;|&#8221;|-\w|-\s+(and|or)\s)')) and not(current()/@type = 'term' and matches(., '^([''’]s|s)(\W|$)'))] or $next-significant[self::ref and not(@pretext)])">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>
