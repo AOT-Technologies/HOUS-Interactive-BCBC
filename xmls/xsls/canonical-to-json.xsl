@@ -3284,6 +3284,14 @@
         <xsl:value-of select="concat(if (contains(@target, '.clause')) then 'Clause ' else 'Sentence ', string-join($ts/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.(', $ts/@number, ')', if (contains(@target, '.clause')) then concat('(', $tt/@letter, ')') else '')"/>
     </xsl:template>
 
+    <!-- CLAUDE-AUTOFIX CF-08302 | issue 5255 | An empty long Subsection reference inside a title written as plain text prints "Subsection 9.32.3.", as in the PDF (Application of Subsection 9.32.3. and Ventilation ...), instead of disappearing. -->
+    <xsl:template match="title//ref[@type = 'internal'][@display-type = 'long'][normalize-space(.) = ''][matches(@target, '\.sect\d+\.subsect\d+$')][id(@target)]" mode="text-only" priority="2">
+        <xsl:variable name="tt" select="id(@target)"/>
+        <xsl:if test="preceding-sibling::node()[1][self::text()][normalize-space(.) != '']"><xsl:text> </xsl:text></xsl:if>
+        <xsl:value-of select="concat('Subsection ', string-join($tt/ancestor-or-self::*[self::part or self::section or self::subsection]/@number, '.'), '.')"/>
+        <xsl:if test="following-sibling::node()[1][self::text()][matches(., '^\s*[A-Za-z]')]"><xsl:text> </xsl:text></xsl:if>
+    </xsl:template>
+
     <!-- ================================================================== -->
     <!-- CROSS-REFERENCE INDEX BUILDING                                     -->
     <!-- ================================================================== -->
