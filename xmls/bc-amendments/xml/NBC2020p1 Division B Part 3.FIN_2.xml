@@ -436,6 +436,8 @@
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8667 Punctuation f127c87add -->
                                 <text>whose dimension perpendicular to each end of the reduced-clear width section is not less than <measurement units="metric">1 500 mm</measurement>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-3.8.3.2.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art2.sent2.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote201" display-type="short">Note A-3.8.3.2.(2)</ref>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3" number="3">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6721 Note Reference f3718b595e -->
@@ -621,6 +623,8 @@
                         <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent2.clause2" letter="b">
                             <text>for sliding doors, when measured from the edge of the door, in the open position, to the outside of the stop on the door frame.</text>
                         </clause>
+                        <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-3.8.3.6.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect8.subsect3.art6.sent2.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote207" display-type="short">Note A-3.8.3.6.(2)</ref>.)</see-also>
                     </sentence>
                 </new-content>
             </replace>
