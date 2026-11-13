@@ -413,6 +413,23 @@
 .table-block[id="nbc.divB.appendixD.appsect2.subsect6.article1.table2"] :is(.table-block__number, .table-block__title) {
   font-weight: var(--typography-font-weights-regular, 400);
 }
+/* CLAUDE-AUTOFIX CL-063 CF-10691 | issue 2637 | These 13 header cells (Tables 10.3.1.3., 9.32.3.5., 9.32.3.8., 9.36.6.3.-A, -B and -G) are not bold in the PDF: their words are plain and the defined terms in them italic only; each cell was matched by its text in the live page. */
+.table-block[id="nbc.divB.part10.sect3.subsect1.art3.table1"] thead > tr:nth-child(2) > :nth-child(1),
+.table-block[id="nbc.divB.part10.sect3.subsect1.art3.table1"] thead > tr:nth-child(2) > :nth-child(2),
+.table-block[id="nbc.divB.part10.sect3.subsect1.art3.table1"] thead > tr:nth-child(3) > :nth-child(2),
+.table-block[id="nbc.divB.part10.sect3.subsect1.art3.table1"] thead > tr:nth-child(3) > :nth-child(4),
+.table-block[id="nbc.divBV2.part9.sect32.subsect3.art5.table1"] thead > tr:nth-child(1) > :nth-child(1),
+.table-block[id="nbc.divBV2.part9.sect32.subsect3.art8.table1"] thead > tr:nth-child(2) > :nth-child(1),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableA"] thead > tr:nth-child(1) > :nth-child(2),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableA"] thead > tr:nth-child(1) > :nth-child(3),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableA"] thead > tr:nth-child(1) > :nth-child(4),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableB"] thead > tr:nth-child(1) > :nth-child(2),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableB"] thead > tr:nth-child(1) > :nth-child(3),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableB"] thead > tr:nth-child(1) > :nth-child(4),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] thead > tr:nth-child(1) > :nth-child(1) {
+  font-weight: var(--typography-font-weights-regular, 400);
+}
+
 .table-block__wrapper {
   display: block;
   width: 100%;
