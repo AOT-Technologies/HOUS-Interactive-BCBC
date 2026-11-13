@@ -1542,7 +1542,10 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const tableNumber = tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
-  const formattedFormingPartText = formatFormingPartText(formingPartEntries);
+  // CLAUDE-AUTOFIX CL-083 CF-08737 | issue 1457 | The PDF prints no "Forming Part of ..." line under any Appendix C or D table (checked PDF pp. 1560-1640), so none is shown there.
+  const formattedFormingPartText = /^nbc\.divB\.appendix[CD]\./.test(rawTable.id ?? '')
+    ? null
+    : formatFormingPartText(formingPartEntries);
   const formingPartText = LOWERCASE_FORMING_PART_TABLE_IDS.has(rawTable.id)
     ? formattedFormingPartText?.replace(/^Forming Part/, 'Forming part') ?? null
     : formattedFormingPartText;
