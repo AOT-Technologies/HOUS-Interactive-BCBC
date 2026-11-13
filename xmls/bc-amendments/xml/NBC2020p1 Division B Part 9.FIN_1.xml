@@ -8202,13 +8202,14 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                                 
                                 <!-- Masonry veneer cladding perpendicular - 2-storey height, partially clad - Storey supporting roof and 2 floors -->
+                                <!-- CLAUDE-AUTOFIX CF-04950 | issue 2694 | This row label reads 'Storey supporting roof and 2 floors', as in the PDF (p.905), not 'Supporting roof + 2 floors'. -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row63">
                                     <entry rowspan="6">
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row63.figure39">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 2-storey masonry veneer"/>
                                         </figure>
                                         
-                                        Supporting roof + 2 floors
+                                        <ref type="term" target="tr">Storey</ref> supporting roof and 2 floors
                                     </entry>
                                     <entry>≤ 3.1 m</entry>
                                     <entry>1.15</entry>
