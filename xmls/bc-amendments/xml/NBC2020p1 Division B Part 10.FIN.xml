@@ -97,6 +97,8 @@
                                 </article>
                                 <article xml:id="nbc.divB.part10.sect2.subsect2.art2" number="2">
                                     <title>Application to Existing Buildings</title>
+                                    <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-10.2.2.2.)" under the Article heading; the BC Article had no see-also. -->
+                                    <see-also xml:id="nbc.divB.part10.sect2.subsect2.art2.seealso">(See <ref type="internal" target="nbc.divB.part10.appendix.appnote2" display-type="short">Note A-10.2.2.2.</ref>)</see-also>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect2.art2.sent1" number="1">
                                         <text>Where a <ref type="term" target="bldng">building</ref> or <ref type="term" target="mjr-ccpn">major occupancy</ref> designed and constructed to conform to any version of ANSI/ASHRAE/IES 90.1, "Energy Standard for Buildings Except Low-Rise Residential Buildings" is altered, rehabilitated, or renovated, or there is a change in <ref type="term" target="ccpnc">occupancy</ref>, the energy performance of the <ref type="term" target="ltrtn">alteration</ref>, rehabilitation, renovation, or change in <ref type="term" target="ccpnc">occupancy</ref> shall comply with <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause1" display-type="medium"/> or <ref type="internal" target="nbc.divB.part10.sect2.subsect2.art1.sent1.clause3" display-type="short"/>.</text>
                                     </sentence>
@@ -139,6 +141,8 @@
                                 </article>
                                 <article xml:id="nbc.divB.part10.sect2.subsect3.art2" number="2">
                                     <title>Definitions</title>
+                                    <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-9.36.6.2.)" under the Article heading; the BC Article had no see-also. -->
+                                    <see-also xml:id="nbc.divB.part10.sect2.subsect3.art2.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote295a" display-type="short">Note A-9.36.6.2.</ref>)</see-also>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1" number="1">
                                         <text>For the purpose of this Subsection, the term "total energy use intensity" shall mean a metric of the energy used over a year by the <ref type="term" target="bldng">building</ref>, estimated by using an energy model in accordance with <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art4" display-type="long"/>, normalized per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> and expressed in kWh/(m<super>2</super>·year), for all of the following combined:</text>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause1" letter="a">
@@ -873,6 +877,8 @@
                                 </article>
                                 <article xml:id="nbc.divB.part10.sect2.subsect3.art4" number="4">
                                     <title>Energy Modelling</title>
+                                    <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-10.2.3.4.)" under the Article heading; the BC Article had no see-also. -->
+                                    <see-also xml:id="nbc.divB.part10.sect2.subsect3.art4.seealso">(See <ref type="internal" target="nbc.divB.part10.appendix.appnote5" display-type="short">Note A-10.2.3.4.</ref>)</see-also>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art4.sent1" number="1">
                                         <text>Except as required by Sentence (2), for <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> conforming to the requirements of any of Steps 2 to 4, energy modelling shall conform to</text>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art4.sent1.clause1" letter="a">
