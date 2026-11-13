@@ -2823,7 +2823,8 @@
         <!-- Add trailing space if followed by text without leading space -->
         <!-- BUT: not before punctuation, e.g. "13 mm," or "13 mm." -->
         <!-- CLAUDE-AUTOFIX CF-09433 | issue 10341 | No space between a measurement and a plural s typed after it, as in the PDF (3 parts). -->
-        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^[\s,.;:!?)\]&#8221;&#8217;]')) and not(matches(., '^s(\W|$)'))]">
+        <!-- CLAUDE-AUTOFIX CF-06052 | issue 10275 | No space between a measurement and a unit part typed right after it (97 L/day/house, 4.8 kPa), as in the PDF. -->
+        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^[\s,.;:!?)\]&#8221;&#8217;]')) and not(matches(., '^s(\W|$)')) and not(starts-with(., '/')) and not(matches(string(current()), 'kP\s*$') and matches(., '^a(\W|$)'))]">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>
