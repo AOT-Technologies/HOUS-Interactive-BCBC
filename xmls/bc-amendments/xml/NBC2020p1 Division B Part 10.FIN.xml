@@ -163,8 +163,9 @@
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause6" letter="f">
                                             <text>pumps,</text>
                                         </clause>
+                                        <!-- CLAUDE-AUTOFIX CF-08623 | issue 5471 | Clause 10.2.3.2.(1)(g) refers to A-9.36.6.2.(1)(f) in Appendix A, as in the PDF. -->
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause7" letter="g">
-                                            <text>auxiliary HVAC equipment,</text>
+                                            <text>auxiliary HVAC equipment (see A-9.36.6.2.(1)(f) in Appendix A),</text>
                                         </clause>
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent1.clause8" letter="h">
                                             <text>receptacle loads and miscellaneous equipment,</text>
