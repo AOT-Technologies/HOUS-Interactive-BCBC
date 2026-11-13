@@ -840,6 +840,14 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
 
   if (subclause) {
     const number = toRoman(asNumber(subclause) ?? Number.NaN);
+    // CLAUDE-AUTOFIX CL-091 CF-06891 | issue 561 | An unlabelled Subclause ref keeps its Clause (and, in "medium" format, its Sentence): "(b)(ii)", "Subclause (1)(b)(ii)", as in the PDF.
+    const clauseLetter = clause ? toAlphabetOrdinal(asNumber(clause) ?? Number.NaN) : '';
+    if (format === 'shortNum' && clauseLetter) {
+      return `(${clauseLetter})(${number})`;
+    }
+    if (format === 'medium' && sentence && clauseLetter) {
+      return `Subclause (${sentence})(${clauseLetter})(${number})`;
+    }
     return isShortNumeric ? `(${number})` : withDivisionSuffix(`Subclause (${number})`);
   }
 
