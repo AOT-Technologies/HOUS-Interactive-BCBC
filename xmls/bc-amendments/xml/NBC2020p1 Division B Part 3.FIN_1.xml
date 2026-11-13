@@ -9422,5 +9422,17 @@ each 25 females.</find>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10090 | issue 394 | Sentence 3.2.5.6.(2) refers to "an access route required by Sentence 3.2.2.10.(1)", as in the PDF. -->
+        <amendment id="bc-custom-3-2-5-6-2" sequence="748"
+                   description="Sentence 3.2.5.6.(2) refers to an access route required by Sentence 3.2.2.10.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect2.subsect5.art6.sent2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>For <ref type="term" target="bldng">buildings</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="long"/> <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art60" display-type="long" pretext="or"/>, no portion of an access route required by <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art10.sent1" display-type="long"/> shall be more than 20 m below the uppermost floor level.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
 </bc-overlay>
