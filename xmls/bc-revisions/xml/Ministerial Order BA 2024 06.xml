@@ -5321,7 +5321,8 @@ Spaces within Buildings
                   </tgroup>
                   <table-notes>
                     <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.note1">
-                      <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="short"/> for a description of framing types and fastening requirements.</text>
+                      <!-- CLAUDE-AUTOFIX CF-05170 | issue 10425 | Table note prints "See Sentence 9.23.3.5.(3)" (full number) as in the PDF, not "See Sentence (3)". -->
+                      <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/> for a description of framing types and fastening requirements.</text>
                     </note>
                     <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.note2">
                       <text>NP = not permitted. Values within round brackets are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</text>
@@ -5458,7 +5459,8 @@ Spaces within Buildings
                   </tgroup>
                   <table-notes>
                     <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.note1">
-                      <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="short"/> for a description of framing types and fastening requirements.</text>
+                      <!-- CLAUDE-AUTOFIX CF-05170 | issue 10425 | Table note prints "See Sentence 9.23.3.5.(3)" (full number) as in the PDF, not "See Sentence (3)". -->
+                      <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/> for a description of framing types and fastening requirements.</text>
                     </note>
                     <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.note2">
                       <text>NP = not permitted. Values within round brackets are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</text>
