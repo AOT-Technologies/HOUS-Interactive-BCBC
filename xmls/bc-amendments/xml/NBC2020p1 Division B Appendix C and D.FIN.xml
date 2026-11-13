@@ -5649,6 +5649,16 @@ load to provide a design snow load on a roof.</item>
             <delete/>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CF-10376 | issue 1990 | D-2.8.4. refers to 'Sentences D-2.8.2.(1) and D-2.8.2.(2)', as in the PDF, instead of '... and (2)'. -->
+        <amendment id="bc-custom-d-2-8-4" sequence="2060"
+                   description="D-2.8.4.: Sentences D-2.8.2.(1) and D-2.8.2.(2)">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect8.article4.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect8.article4.para1">The structural design standards may require minimum column dimensions or concrete cover over vertical steel reinforcement differing from those obtained in <ref type="internal" target="nbc.divB.appendixD.appsect2.subsect8.article2.para1" display-type="long" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.appendixD.appsect2.subsect8.article2.para2" display-type="number">D-2.8.2.(2)</ref>. Where a difference occurs, the greater dimension shall govern. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
