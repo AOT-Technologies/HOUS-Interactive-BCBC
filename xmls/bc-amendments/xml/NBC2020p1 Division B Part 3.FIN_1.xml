@@ -6242,7 +6242,8 @@ each 25 females.</find>
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art1.sent2" number="2">
-                        <text><ref type="term" target="bldng">Buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="long"/> shall comply with <ref type="internal" target="nbc.divB.part3.sect8.subsect5.art1.sent2" display-type="long"/>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-01481 | issue 847 | Sentence 3.8.2.1.(2) prints "Clause (1)(a)" as in the PDF, not "Clause 3.8.2.1.(1)(a)". -->
+                        <text><ref type="term" target="bldng">Buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="medium"/> shall comply with <ref type="internal" target="nbc.divB.part3.sect8.subsect5.art1.sent2" display-type="long"/>.</text>
                     </sentence>
                 </new-content>
             </insert>
