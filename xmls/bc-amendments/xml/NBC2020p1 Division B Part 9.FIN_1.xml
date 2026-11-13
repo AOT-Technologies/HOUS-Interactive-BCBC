@@ -2418,6 +2418,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
         <!-- Amendment 107: Remove smoke-tight barrier reference               -->
         <!-- Article 9.10.9.2.(3) - Continuous Barrier                         -->
         <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CF-10226 | issue 777 | Sentence 9.10.9.2.(3) ends with one See-Note, (See Note A-3.1.8.3.(2).), as in the PDF; removed the reference to the missing Note A-9.10.9.2.(3) shown as Note B-9. -->
         <amendment id="bc-107" sequence="107"
                    description="Remove 'or smoke-tight barrier' reference from Article 9.10.9.2.(3)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect10.subsect9.art2.sent3"/>
@@ -2430,8 +2431,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     display-type="short"/>, the continuity of a <ref type="term" target="fr-prtn">fire separation</ref> where it abuts another <ref type="term" target="fr-prtn">fire separation</ref>, a floor,
                             a ceiling, or a roof shall be maintained by a <ref type="term" target="fr-tp">firestop</ref> that, when subjected to the fire test method in <ref type="standard" target="ulcs115" standardId="ulcs115"/> has an FT rating
                             not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> for the abutting <ref type="term" target="fr-prtn">fire separation</ref>. (See <ref type="internal"
-                                                                                                                                                                                                  target="nbc.divBV2.part9.appendix.appnote60"
-                                                                                                                                                                                                  display-type="short"/>.) (See also <ref type="internal"
                                                                     target="nbc.divB.part3.appendix.appnote29"
                                                                     display-type="long"/>.)</text>
                     </new-content>
