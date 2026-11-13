@@ -2823,12 +2823,14 @@
     <xsl:template match="equation" mode="rich-text-json">
         <!-- Insert placeholder in text that matches the pattern [EQ:type:id] -->
         <!-- Use same ID fallback logic as equation-json template -->
+        <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
         <xsl:variable name="equation-id" as="xs:string"
                       select="
                         if (@xml:id) then string(@xml:id)
                         else if (@image) then string(@image)
                         else if (@html-src) then replace(tokenize(string(@html-src), '/')[last()], '\.html', '')
                         else if (@image-src) then replace(tokenize(string(@image-src), '/')[last()], '\.eps', '')
+                        else if (text) then concat(string(ancestor::*[@xml:id][1]/@xml:id), '.eq', 1 + count(preceding-sibling::equation))
                         else ''"/>
         <xsl:text>[EQ:</xsl:text>
         <xsl:value-of select="@type"/>
@@ -2995,14 +2997,25 @@
     <!-- EQUATION PROCESSING FOR JSON                                       -->
     <!-- ================================================================== -->
     
+    <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
+    <xsl:template match="text()" mode="eqtext-latex">
+        <xsl:variable name="t" select="replace(replace(., '\s+', ' '), '([{}%$#&amp;_])', '\\$1')"/>
+        <xsl:if test="$t != ''"><xsl:value-of select="concat('\text{', $t, '}')"/></xsl:if>
+    </xsl:template>
+    <xsl:template match="super" mode="eqtext-latex"><xsl:value-of select="concat('^{', normalize-space(.), '}')"/></xsl:template>
+    <xsl:template match="sub" mode="eqtext-latex"><xsl:value-of select="concat('_{', normalize-space(.), '}')"/></xsl:template>
+    <xsl:template match="*" mode="eqtext-latex"><xsl:apply-templates select="node()" mode="eqtext-latex"/></xsl:template>
+    
     <!-- Convert equation element to JSON object with multiple formats -->
     <xsl:template match="equation" mode="equation-json">
+        <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
         <xsl:variable name="equation-id" as="xs:string"
                       select="
                         if (@xml:id) then string(@xml:id)
                         else if (@image) then string(@image)
                         else if (@html-src) then replace(tokenize(string(@html-src), '/')[last()], '\.html$', '')
                         else if (@image-src) then replace(tokenize(string(@image-src), '/')[last()], '\.eps$', '')
+                        else if (text) then concat(string(ancestor::*[@xml:id][1]/@xml:id), '.eq', 1 + count(preceding-sibling::equation))
                         else ''"/>
         <fn:map>
             <fn:string key="id"><xsl:value-of select="$equation-id"/></fn:string>
@@ -3024,6 +3037,11 @@
                 <xsl:when test="latex">
                     <fn:string key="latex"><xsl:value-of select="latex"/></fn:string>
                     <fn:string key="plainText"><xsl:value-of select="latex"/></fn:string>
+                </xsl:when>
+                <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
+                <xsl:when test="text and not(@xml:id)">
+                    <fn:string key="latex"><xsl:apply-templates select="text/node()" mode="eqtext-latex"/></fn:string>
+                    <fn:string key="plainText"><xsl:apply-templates select="text" mode="rich-text-json"/></fn:string>
                 </xsl:when>
                 <!-- Plain text equation (from eqtxt) -->
                 <xsl:when test="text">
