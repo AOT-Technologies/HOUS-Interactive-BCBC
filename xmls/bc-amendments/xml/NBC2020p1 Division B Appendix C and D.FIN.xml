@@ -481,7 +481,8 @@
                     <!-- Structure: 7 columns (Province/Location, Smax for Unknown Site Class, Site Class A, B, C, D, E) -->
                     <!-- Content to be added from table screenshots provided by user -->
                     <table xml:id="nbc.divB.appendixC.table3" vendor-id="et000076">
-                        <title>Seismic Design Parameter, S<sub>max</sub>, for Selected Locations in Canada <ref type="internal" target="nbc.divB.appendixC" display-type="long"/></title>
+                        <!-- CLAUDE-AUTOFIX CF-09338 | issue 10301 | The Table C-3 title ends with "for Selected Locations in Canada", as in the PDF; the reference to Appendix C showed as a raw [REF:...] token. -->
+                        <title>Seismic Design Parameter, S<sub>max</sub>, for Selected Locations in Canada</title>
                         
                         <tgroup cols="7">
                             <colspec colname="col1" colwidth="20*"/>
