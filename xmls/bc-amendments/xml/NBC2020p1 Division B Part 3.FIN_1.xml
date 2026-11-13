@@ -187,6 +187,8 @@
                             <clause xml:id="nbc.divB.part3.sect1.subsect4.art8.sent1.clause2" letter="b">
                                 <text>except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect4.art8.sent4" display-type="short"/>, a wall assembly that satisfies the criteria of <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art5.sent1.clause2" display-type="long"/>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-00912 | issue 6326 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divB.part3.sect1.subsect4.art8.sent1.seealso">(See Note A-3.1.4.8.(1).) (See also Notes A-3.1.5.5.(1)(b)(i) and A-3.1.5.5.(1)(b)(ii).)</see-also>
                         </sentence>
                         
                         <sentence xml:id="nbc.divB.part3.sect1.subsect4.art8.sent2" number="2">
