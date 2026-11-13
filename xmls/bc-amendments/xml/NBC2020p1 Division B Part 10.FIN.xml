@@ -196,6 +196,8 @@
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.clause6" letter="f">
                                             <text>heat recovery from exhaust ventilation.</text>
                                         </clause>
+                                        <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-10.2.3.2.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                                        <see-also xml:id="nbc.divB.part10.sect2.subsect3.art2.sent2.seealso">(See <ref type="internal" target="nbc.divB.part10.appendix.appnote3" display-type="short">Note A-10.2.3.2.(2)</ref>.)</see-also>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art2.sent3" number="3">
                                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9801 Punctuation c2ae992a18 -->
@@ -215,6 +217,8 @@
                                         <clause xml:id="nbc.divB.part10.sect2.subsect3.art3.sent2.clause2" letter="b">
                                             <text>airtightness shall be tested in accordance with Article 10.2.3.5.</text>
                                         </clause>
+                                        <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-10.2.3.3.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                                        <see-also xml:id="nbc.divB.part10.sect2.subsect3.art3.sent2.seealso">(See <ref type="internal" target="nbc.divB.part10.appendix.appnote4" display-type="short">Note A-10.2.3.3.(2)</ref>.)</see-also>
                                     </sentence>
                                     <sentence xml:id="nbc.divB.part10.sect2.subsect3.art3.sent3" number="3">
                                         <text><ref type="term" target="bldng">Buildings</ref> and <ref type="term" target="mjr-ccpn">major occupancies</ref> designed and constructed to conform to Step 4 of Tables 10.2.3.3.-G to 10.2.3.3.-H or to Step 3 in Tables 10.2.3.3.-I and 10.2.3.3.-J, and to the Passive House Planning Package, version 9 or newer, are deemed to comply with this Subsection provided the energy model according to which the <ref type="term" target="bldng">building</ref> or the <ref type="term" target="mjr-ccpn">major occupancy</ref> of the <ref type="term" target="bldng">building</ref> is designed and constructed is prepared by a Certified Passive House Designer, or Certified Passive House Consultant, who is approved by the Passive House Institute.</text>
