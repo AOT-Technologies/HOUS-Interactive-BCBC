@@ -18609,6 +18609,18 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-04128 | issue 2274 | Sentence 9.9.6.1.(4) reads 'Doors serving a single dwelling unit need not comply with Sentences (2) and (3).', as in the PDF. -->
+        <amendment id="bc-custom-9-9-6-1-4" sequence="2346"
+                   description="Sentence 9.9.6.1.(4): doors serving a single dwelling unit">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect9.subsect6.art1.sent4"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Doors serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> need not comply with <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art1.sent2" display-type="short" pretext="Sentences"/> <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art1.sent3" display-type="short" pretext="and"/>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>
