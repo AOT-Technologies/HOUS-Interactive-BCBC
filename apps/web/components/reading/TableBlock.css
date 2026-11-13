@@ -397,6 +397,22 @@
   font-weight: var(--typography-font-weights-regular, 400);
 }
 
+/* CLAUDE-AUTOFIX CL-064 CF-05368 | issue 10433 | In these 13 tables the PDF prints the table number and title in plain type (ArialMT, checked with the PDF fonts): Tables 9.8.4.2., 9.10.13.1., 9.10.14.4.-B, 9.23.16.7.-B, 9.26.3.1., 9.29.6.1., 9.36.6.3.-B, -D to -G, A-9.11.1.4.-D and D-2.6.1.-B. */
+.table-block[id="nbc.divBV2.part9.sect8.subsect4.art2.table1"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect10.subsect13.art1.table1"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect10.subsect14.art4.table2"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect23.subsect16.art7.table2"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect26.subsect3.art1.table1"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect29.subsect6.art1.table1"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableB"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableD"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableE"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableF"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divBV2.part9.appendix.appnote82.table4"] :is(.table-block__number, .table-block__title),
+.table-block[id="nbc.divB.appendixD.appsect2.subsect6.article1.table2"] :is(.table-block__number, .table-block__title) {
+  font-weight: var(--typography-font-weights-regular, 400);
+}
 .table-block__wrapper {
   display: block;
   width: 100%;
