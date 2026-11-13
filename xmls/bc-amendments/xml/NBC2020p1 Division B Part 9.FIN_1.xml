@@ -8654,7 +8654,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     </entry>
                                     <entry>≤ 3.1 m</entry>
                                     <entry>1.44</entry>
-                                    <entry>2.95</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-04964 | issue 2708 | Stone veneer partially clad, supporting roof only, building depth <= 3.1 m: 1.94 as in the PDF (was 2.95). -->
+                                    <entry>1.94</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row126">
                                     <entry>6.1 m</entry>
