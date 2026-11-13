@@ -9376,7 +9376,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3" number="3">
                             <text>Where the seismic design parameter, S<sub>max</sub>, is greater than 0.60, <ref type="term" target="fndtn">foundation</ref> cripple walls need not comply with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent1" display-type="short"/>, provided they</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.clause1" letter="a">
-                                <text>comply with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause3" display-type="long" pretext="Clauses"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause4" display-type="short" pretext="and"/>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-05100 | issue 2729 | Clause 9.23.13.8.(3)(a) prints "Clauses (2)(c) and (d)" as in the PDF, not "Clauses 9.23.13.8.(2)(c)". -->
+                                <text>comply with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause3" display-type="long" pretext="Clauses">(2)(c)</ref> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause4" display-type="short" pretext="and"/>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.clause2" letter="b">
                                 <text>are not more than <measurement units="metric">350 mm</measurement> in height, and</text>
