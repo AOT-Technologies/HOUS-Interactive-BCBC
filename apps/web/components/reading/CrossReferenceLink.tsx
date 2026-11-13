@@ -183,7 +183,9 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
         : matchedNote.title && matchedNote.title.trim()
           ? `${noteLabel} ${matchedNote.title.trim()}`
           : noteLabel;
-      const nextText = format === 'long' ? longLabel : noteLabel;
+      // CLAUDE-AUTOFIX CL-087 CF-10062 | issue 116 | A "number" Note ref, or one whose "Note" word the text already gives ("See Notes ..."), shows only the number A-x.x.x.x., as in the PDF.
+      const omitNoteWord = format === 'number' || !/^Note\b/i.test(displayText.trim());
+      const nextText = omitNoteWord ? prefixedNumber : format === 'long' ? longLabel : noteLabel;
 
       if (active) {
         setAppnoteDisplayText(nextText);
@@ -194,7 +196,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     return () => {
       active = false;
     };
-  }, [currentDivision, effectiveDate, fetchAppendix, format, parsedReference, referenceId, shouldResolveAppnoteDisplayText, version]);
+  }, [currentDivision, displayText, effectiveDate, fetchAppendix, format, parsedReference, referenceId, shouldResolveAppnoteDisplayText, version]);
 
   useEffect(() => {
     let active = true;
