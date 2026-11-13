@@ -1838,6 +1838,19 @@
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03541 | issue 2002 | Note A-5.4.1.1.: "required in certain regions to reduce the radon concentration", as in the PDF (without "of Canada"). -->
+        <amendment id="bc-custom-a-5-4-1-1-para3" sequence="2349"
+                   description="Note A-5.4.1.1.: 'other measures may be required in certain regions to reduce the radon concentration'">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote20.para3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace regex="true">
+                        <find>certain regions\s+of Canada\s+to reduce</find>
+                        <replace>certain regions to reduce</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>
