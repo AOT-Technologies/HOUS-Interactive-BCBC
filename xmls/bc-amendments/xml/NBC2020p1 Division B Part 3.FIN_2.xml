@@ -4194,5 +4194,17 @@ described in <ref type="internal"
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01515 | issue 6372 | Sentence 3.8.3.5.(1) starts 'Except when designed as a curb ramp in accordance with Clause 3.8.3.4.(1)(b), a ramp', as in the PDF. -->
+        <amendment id="bc-custom-3-8-3-5-1" sequence="2348"
+                   description="Sentence 3.8.3.5.(1): exception for curb ramps designed in accordance with Clause 3.8.3.4.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art5.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except when designed as a curb ramp in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art4.sent1.clause2" display-type="long"/>, a <ref type="term" target="rmp">ramp</ref> located in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
 </bc-overlay>
