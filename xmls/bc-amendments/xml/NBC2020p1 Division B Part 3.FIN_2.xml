@@ -2240,7 +2240,8 @@
         <!-- Amendment 172: Add new Application Note A-3.3.1.3                 -->
         <!-- Means of Egress Serving Podiums and Terraces - BC specific note  -->
         <!-- ================================================================== -->
-        <amendment id="bc-172" sequence="162"
+        <!-- CLAUDE-AUTOFIX CF-10099 | issue 3717 | Disabled bc-172: it added a second Note A-3.3.1.3 (appnote.a3.3.1.3) next to the BC Note appnote3313 from bc-custom-33130-note (the one Article 3.3.1.3. links to), so the website showed the Note twice; the PDF has it once. -->
+        <!-- <amendment id="bc-172" sequence="162"
                    description="Add new Application Note A-3.3.1.3 for Means of Egress Serving Podiums and Terraces">
             <target type="position" 
                     parent-id="nbc.divB.part3.appendix"
@@ -2256,7 +2257,7 @@
                     </application-note>
                 </new-content>
             </insert>
-        </amendment>
+        </amendment> -->
         
         <!-- ================================================================== -->
         <!-- Amendment 173: Update Fire Code reference to BC Fire Code         -->
