@@ -11676,7 +11676,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text>each floor level without a bedroom, and</text>
                                 </subclause>
                                 <subclause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent4.clause1.subclause3" number="3">
-                                    <text>each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium"/>, and</text>
+                                    <!-- CLAUDE-AUTOFIX CF-10684 | issue 2631 | The reference prints 'Subclause (2)(a)(iii)', as in the PDF, not 'Subclause (iii)'. -->
+                                    <text>each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium">Subclause (2)(a)(iii)</ref>, and</text>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent4.clause2" letter="b">
@@ -11704,7 +11705,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent5.clause3" letter="c">
-                                <text>deliver air to each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10684 | issue 2631 | The reference prints 'Subclause (2)(a)(iii)', as in the PDF, not 'Subclause (iii)'. -->
+                                <text>deliver air to each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium">Subclause (2)(a)(iii)</ref>.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent6" number="6">
