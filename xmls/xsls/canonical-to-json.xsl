@@ -2266,6 +2266,11 @@
         <xsl:text>&#10;</xsl:text>
     </xsl:template>
 
+    <!-- CLAUDE-AUTOFIX CF-10725 | issue 2664 | Upright (roman) emphasis prints as plain text; the website showed the raw roman tag (two cells of Table A-9.36.2.4.(1)). -->
+    <xsl:template match="emphasis[@style = 'roman']" mode="rich-text-json" priority="2">
+        <xsl:apply-templates select="node()" mode="rich-text-json"/>
+    </xsl:template>
+
     <xsl:template match="emphasis" mode="rich-text-json">
         <xsl:text>&lt;</xsl:text>
         <xsl:value-of select="@style"/>
