@@ -1539,7 +1539,12 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     return true;
   });
   const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
-  const tableNumber = tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
+  // CLAUDE-AUTOFIX CL-089 CF-08525 | issue 737 | Untitled worked-example tables in appendix Notes have no "Table A-..." caption in the PDF, so none is invented.
+  const isUntitledExampleTable =
+    /\.example\d+\.table\d+$/i.test(rawTable.id ?? '') && !(typeof resolvedTitle === 'string' && resolvedTitle.trim());
+  const tableNumber = isUntitledExampleTable
+    ? null
+    : tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
   // CLAUDE-AUTOFIX CL-083 CF-08737 | issue 1457 | The PDF prints no "Forming Part of ..." line under any Appendix C or D table (checked PDF pp. 1560-1640), so none is shown there.
