@@ -878,7 +878,7 @@
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art10.sent2" number="2">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6731 Reference 706ddc78b1 -->
-                            <text>Where drinking fountains referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art10.sent1" display-type="short"/> are located in a <ref type="term" target="tr">storey</ref> where an <ref type="term" target="brrr-fr">accessible</ref> path of travel is required, they shall (See Sentences 3.3.1.8.(2) and (3) on horizontal projections.)</text>
+                            <text>Where drinking fountains referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art10.sent1" display-type="short"/> are located in a <ref type="term" target="tr">storey</ref> where an <ref type="term" target="brrr-fr">accessible</ref> path of travel is required, they shall</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art10.sent2.clause1" letter="a">
                                 <text>be located along the <ref type="term" target="brrr-fr">accessible</ref> path of travel,</text>
                             </clause>
@@ -897,6 +897,8 @@
                                     <text>directs water flow in a trajectory that is nearly parallel to the front of the unit, at a height not less than <measurement units="metric">100 mm</measurement>.</text>
                                 </subclause>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01537 | issue 6380 | The PDF prints this see-also after the last Clause, not at the end of the Sentence text. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art10.sent2.seealso">(See Sentences 3.3.1.8.(2) and (3) on horizontal projections.)</see-also>
                         </sentence>
                     </article>
                 </new-content>
@@ -3754,6 +3756,8 @@ described in <ref type="internal"
                                                      <measurement units="metric">230 mm high</measurement> over the distance from a point <measurement units="metric">280 mm</measurement> to a point <measurement units="metric">430 mm</measurement> back from the front
                     edge,</text>
                                                </subclause>
+                                               <!-- CLAUDE-AUTOFIX CF-01550 | issue 10505 | The PDF prints "(see Note A-3.8.3.16.(1)(e))" after the last Subclause of Clause (e). -->
+                                               <see-also xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.seealso">(see <ref type="internal" target="nbc.divB.part3.appendix.appnote226" display-type="short"/>)</see-also>
                                             </clause>
                 </new-content>
             </replace>
