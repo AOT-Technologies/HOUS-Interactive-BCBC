@@ -331,7 +331,8 @@
                                 <thead>
                                     <row>
                                         <entry>Components</entry>
-                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn1">See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table1.appnote1" display-type="long"/>.</note></entry>
+                                        <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Note reference points at Note A-Table 9.36.2.7.-A (appnote235), printed as its number as in the PDF; the old target did not exist. -->
+                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn1">See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote235" display-type="long">Note A-Table 9.36.2.7.-A</ref>.</note></entry>
                                         <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn2">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.rowh2">
@@ -640,7 +641,8 @@
                                 <thead>
                                     <row>
                                         <entry>Components</entry>
-                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.fn1">See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table1.appnote1" display-type="long"/>.</note></entry>
+                                        <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Note reference points at Note A-Table 9.36.2.7.-A (appnote235), printed as its number as in the PDF; the old target did not exist. -->
+                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.fn1">See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote235" display-type="long">Note A-Table 9.36.2.7.-A</ref>.</note></entry>
                                         <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.fn2">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.rowh2">
@@ -667,8 +669,9 @@
                                 </tbody>
                             </tgroup>
                             <table-notes>
+                                <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Note reference points at Note A-Table 9.36.2.7.-A (appnote235), printed as its number as in the PDF; the old target did not exist. -->
                                 <note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.note1">
-                                    See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table1.appnote1" display-type="long"/>.
+                                    See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote235" display-type="long"/>.
                                 </note>
                                 <note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.note2">
                                     See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.
