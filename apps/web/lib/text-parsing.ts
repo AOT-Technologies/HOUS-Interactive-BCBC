@@ -676,11 +676,21 @@ function getCrossReferenceDisplayText(
     renderContext?.kind !== 'table'
       ? renderContext?.referenceId.match(/\.div([A-Za-z])/i)?.[1]?.toUpperCase()
       : undefined;
-  const fallback = formatInternalReference(
+  let fallback = formatInternalReference(
     referenceId,
     shouldExpandShortArticleRef ? 'medium' : format,
     currentDivision
   );
+  // CLAUDE-AUTOFIX CL-086 CF-10034 | issue 77 | In a table cell an unlabelled Sentence "number" ref shows its full number (9.32.3.9.(2), not "(2)") and the 2nd+ table of an article keeps its letter (Table 9.32.3.10.-B), as in the PDF.
+  if (renderContext?.kind === 'table' && parsedReference?.kind === 'section') {
+    if (format === 'number' && parsedReference.sentence && !parsedReference.clause) {
+      fallback = formatInternalReference(referenceId, 'medium').replace(/^Sentence /, '');
+    }
+    const tableIndex = Number(referenceId.match(/\.table(\d+)$/i)?.[1] ?? 0);
+    if (tableIndex > 1 && /\.$/.test(fallback)) {
+      fallback = `${fallback}-${String.fromCharCode(64 + tableIndex)}`;
+    }
+  }
   const qualifierMatch = fallback.startsWith('Note ')
     ? remaining.match(/^(\s*\([^)]+\))/)
     : null;
