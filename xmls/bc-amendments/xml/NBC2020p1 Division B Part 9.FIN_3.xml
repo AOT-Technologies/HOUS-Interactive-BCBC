@@ -2282,7 +2282,8 @@
                                     <entry align="center">NBC <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="number"/> (Performance)</entry>
                                     <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
                                     <entry align="center"><ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/> (Energy Step Code)</entry>
-                                    <entry align="center"><ref type="standard" target="nrcc-necb" standardId="nrcc-necb"/></entry>
+                                    <!-- CLAUDE-AUTOFIX CF-08397 | issue 5318 | The NECB column header of Table A-9.36.1.3. prints 'NECB', as in the PDF, not the full standard title. -->
+                                    <entry align="center"><ref type="standard" target="nrcc-necb" standardId="nrcc-necb" ref-style="abbr"/></entry>
                                 </row>
                             </thead>
                             <tbody>
@@ -2445,7 +2446,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote295b">
                         <number>9.36.6.2.(1)(f)</number>
                         <title>Auxiliary HVAC Equipment</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295b.para1">This category of equipment generally includes cooling tower fans, humidifiers and other devices that do not directly fall under one of the other categories listed in Sentence 8.4.2.2.(1) of the <ref type="standard" target="nrcc-necb" standardId="nrcc-necb"/>.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-08599 | issue 5459 | Note A-9.36.6.2.(1)(f) ends 'of the NECB' without a final period, as in the PDF, not with the full standard title. -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295b.para1">This category of equipment generally includes cooling tower fans, humidifiers and other devices that do not directly fall under one of the other categories listed in Sentence 8.4.2.2.(1) of the <ref type="standard" target="nrcc-necb" standardId="nrcc-necb" ref-style="abbr"/></paragraph>
                     </application-note>
                 </new-content>
             </insert>
