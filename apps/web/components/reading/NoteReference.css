@@ -15,7 +15,8 @@
   color: var(--typography-color-link, #1a5a96);
   text-decoration: none;
   cursor: pointer;
-  font-weight: var(--typography-font-weights-bold, 700);
+  /* CLAUDE-AUTOFIX CF-10334 | issue 1734 | Note marks take the weight of the text around them (plain in body cells, bold in bold header cells), as in the PDF. */
+  font-weight: inherit;
   transition: color 0.2s ease;
 }
 
