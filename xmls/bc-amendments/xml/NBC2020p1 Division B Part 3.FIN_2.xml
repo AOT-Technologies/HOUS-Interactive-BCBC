@@ -1096,12 +1096,12 @@
                    description="Add reference to measurement method for door clear opening in Article 3.8.3.15.(1)(b)(ii)">
             <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent1.clause2.subclause2"/>
             <modify>
-                <text-change xpath-within-target="text()">
-                    <find-replace>
-                        <find>when it is open,</find>
-                        <replace>when it is open, measured in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6.sent2" display-type="medium"/>,</replace>
-                    </find-replace>
-                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01548 | issue 882 | Whole text replaced so the reference 'Sentence 3.8.3.6.(2)' survives the merge, as in the PDF. -->
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>provides a clear opening not less than <measurement units="metric">850 mm</measurement> wide when it is open, measured in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6.sent2" display-type="long"/>,</text>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
