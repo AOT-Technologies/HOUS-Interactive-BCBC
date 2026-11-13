@@ -29,7 +29,8 @@
             <replace preserve-references="false">
                 <new-content source="bc">
                     <part xml:id="nbc.divB.part2" number="2">
-                        <title>RESERVED</title>
+                        <!-- CLAUDE-AUTOFIX CF-00871 | issue 6907 | Part 2 title reads "Reserved" as in the PDF (was "RESERVED"). -->
+                        <title>Reserved</title>
                         <section xml:id="nbc.divB.part2.sect1" number="1">
                             <title>RESERVED</title>
                             <subsection xml:id="nbc.divB.part2.sect1.subsect1" number="1">
