@@ -771,6 +771,13 @@ const LOWERCASE_FORMING_PART_TABLE_IDS = new Set<string>([
   'nbc.divBV2.part9.sect32.subsect3.art8.table1',
 ]);
 
+// CLAUDE-AUTOFIX CL-090 CF-01778 | issue 1392 | Appendix Note tables that print no "Forming Part of ..." line in the PDF (pp. 733-734).
+const NO_FORMING_PART_TABLE_IDS = new Set<string>([
+  'nbc.divBV2.part9.appendix.appnote134b.table1',
+  'nbc.divBV2.part9.appendix.appnote134c.table1',
+  'nbc.divBV2.part9.appendix.appnote134c.table2',
+]);
+
 const formatFormingPartText = (formingPart: FormingPartReference[] | undefined): string | null => {
   if (!formingPart || formingPart.length === 0) {
     return null;
@@ -1548,9 +1555,20 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
   // CLAUDE-AUTOFIX CL-083 CF-08737 | issue 1457 | The PDF prints no "Forming Part of ..." line under any Appendix C or D table (checked PDF pp. 1560-1640), so none is shown there.
-  const formattedFormingPartText = /^nbc\.divB\.appendix[CD]\./.test(rawTable.id ?? '')
+  // CLAUDE-AUTOFIX CL-090 CF-01778 | issue 1392 | A table forming part of an appendix Note reads "Forming Part of Note A-3.2.6.6.(1)" (note number, not "Article 3."); Tables A-9.23.13.7.(3) and (4)-A/-B have no such line in the PDF.
+  const appnoteFormingPartNumber =
+    formingPartEntries?.length === 1 &&
+    /\.appendix\.appnote[A-Za-z0-9]+$/.test(formingPartEntries[0]?.target ?? '') &&
+    typeof rawTable.number === 'string' &&
+    /^A-/.test(rawTable.number)
+      ? rawTable.number.replace(/([.)])-[A-Z]\.?$/, '$1')
+      : null;
+  const formattedFormingPartText = /^nbc\.divB\.appendix[CD]\./.test(rawTable.id ?? '') ||
+    NO_FORMING_PART_TABLE_IDS.has(rawTable.id ?? '')
     ? null
-    : formatFormingPartText(formingPartEntries);
+    : appnoteFormingPartNumber
+      ? `Forming Part of Note ${appnoteFormingPartNumber}`
+      : formatFormingPartText(formingPartEntries);
   const formingPartText = LOWERCASE_FORMING_PART_TABLE_IDS.has(rawTable.id)
     ? formattedFormingPartText?.replace(/^Forming Part/, 'Forming part') ?? null
     : formattedFormingPartText;
