@@ -278,7 +278,8 @@
                         <title>Design Standards</title>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art1.sent1" number="1">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6719 Note Reference 8f494ae968 -->
-                            <text><ref type="term" target="bldng">Buildings</ref> or parts thereof and facilities that are required to be <ref type="term" target="brrr-fr">accessible</ref> shall be designed in accordance with (See Note A-3.8.3.1.(1).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | The note reference is moved from the Sentence text to a see-also after the Clauses, where the PDF prints it. -->
+                            <text><ref type="term" target="bldng">Buildings</ref> or parts thereof and facilities that are required to be <ref type="term" target="brrr-fr">accessible</ref> shall be designed in accordance with</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art1.sent1.clause1" letter="a">
                                 <text>this Subsection, or</text>
                             </clause>
@@ -289,6 +290,8 @@
                                 <!-- CLAUDE-AUTOFIX CF-01499 | issue 8146 | The title is already typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                                 <text>for each <ref type="term" target="brrr-fr">accessible</ref> application listed independent of other <ref type="term" target="brrr-fr">accessible</ref> applications, the applicable provisions of <ref type="standard" target="csab651" ref-style="notitle">CSA B651</ref>, “Accessible design for the built environment,” listed in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | Note reference after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art1.sent1.seealso">(See Note A-3.8.3.1.(1).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art1.sent2" number="2">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1153 Incorrect Content 254e7550d4 -->
