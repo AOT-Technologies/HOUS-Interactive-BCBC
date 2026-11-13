@@ -8764,6 +8764,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                                 
                                 <!-- Stone veneer cladding perpendicular - 1-storey height with openings - Supporting roof + 2 floors -->
+                                <!-- CLAUDE-AUTOFIX CF-04968 | issue 2713 | Restored the PDF values of the Supporting roof + 2 floors rows (1.12/1.25 to 1.02/1.05) for 1-storey stone veneer with openings in Table 9.23.13.7.-D; they repeated the 2-storey values. -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row149">
                                     <entry rowspan="6">
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row149.figure59">
@@ -8773,33 +8774,33 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         Supporting roof + 2 floors
                                     </entry>
                                     <entry>≤ 3.1 m</entry>
-                                    <entry>1.36</entry>
-                                    <entry>1.76</entry>
+                                    <entry>1.12</entry>
+                                    <entry>1.25</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row150">
                                     <entry>6.1 m</entry>
-                                    <entry>1.21</entry>
-                                    <entry>1.45</entry>
+                                    <entry>1.07</entry>
+                                    <entry>1.15</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row151">
                                     <entry>9.1 m</entry>
-                                    <entry>1.14</entry>
-                                    <entry>1.32</entry>
+                                    <entry>1.05</entry>
+                                    <entry>1.11</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row152">
                                     <entry>12.2 m</entry>
-                                    <entry>1.11</entry>
-                                    <entry>1.24</entry>
+                                    <entry>1.04</entry>
+                                    <entry>1.08</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row153">
                                     <entry>15.2 m</entry>
-                                    <entry>1.09</entry>
-                                    <entry>1.20</entry>
+                                    <entry>1.03</entry>
+                                    <entry>1.07</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row154">
                                     <entry>≥ 18.3 m</entry>
-                                    <entry>1.07</entry>
-                                    <entry>1.16</entry>
+                                    <entry>1.02</entry>
+                                    <entry>1.05</entry>
                                 </row>
                                 
                                 <!-- Stone veneer cladding perpendicular - 2-storey height with openings - Supporting roof + 1 floor -->
