@@ -429,6 +429,20 @@
             </replace>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-07884 | issue 6151 | Figure A-9.8.8.6.(1)-D shows the drawing EG00167B as in the PDF (the base graphic eg00179a does not exist, so the site showed a broken image). -->
+        <amendment id="bc-custom-6151-fig" sequence="358"
+                   description="Replace graphic of Figure A-9.8.8.6.(1)-D with EG00167B as in the BC PDF">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote47.figure4"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <figure xml:id="nbc.divBV2.part9.appendix.appnote47.figure4">
+                        <title>Example of guard protrusions with a slope greater than 2 in 1</title>
+                        <graphic src="graphics/eg/001/eg00167b" alt="Example of guard protrusions with a slope greater than 2 in 1"/>
+                    </figure>
+                </new-content>
+            </replace>
+        </amendment>
+        
         <!-- ================================================================== -->
         <!-- Amendment 359: Modify A-9.8.7.1.(2) Wider Stairs than Required     -->
         <!-- BC adds "within" to path of travel text                            -->
