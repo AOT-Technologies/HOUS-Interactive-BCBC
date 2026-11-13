@@ -253,7 +253,8 @@ function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: 
       if (sameType) {
         // Verify the prior ref is in a list context (comma/or/and separated)
         // Line breaks (from <lb/>) separate refs visually; they are not list separators.
-        const trailingAfterLastRef = /\[REF:[^\]]+\][^\S\n]*(?:,\s*)?(?:(?:and|or)\s*)?$/i;
+        // CLAUDE-AUTOFIX CL-084 CF-10036 | issue 79 | Only a real separator ("," / and / or) makes a list; refs separated by whitespace alone (table-cell line breaks) keep their "Table" word, as in the PDF.
+        const trailingAfterLastRef = /\[REF:[^\]]+\][^\S\n]*(?:,\s*(?:(?:and|or)\s*)?|(?:and|or)\s*)$/i;
         if (trailingAfterLastRef.test(precedingText)) {
           return displayText.slice(displayMatch[0].length);
         }
