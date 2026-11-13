@@ -7252,13 +7252,14 @@ Spaces within Buildings
                         </row>
                       </tbody>
                     </tgroup>
+                    <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                     <table-notes>
                       <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note1">Notes to Table A-9.32.4.1.(1)A:</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note2"><super>(1)</super> Any power vented appliance with pressurized vent (1 pipe) or sealed combustion (2 pipe) or direct vent appliance (fireplace, heater or HWT) are non-NAFFVA.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note3"><super>(2)</super> Thermal buoyancy chimneys must be within the heated envelope of the house to provide acceptable venting performance.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note4"><super>(3)</super> This category applies only to (a) mid-efficient forced air furnaces equipped with induced draft fans and exhaust proving switch, and (b) boilers equipped with induced draft fans and exhaust proving switch.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note5"><super>(4)</super> Mid-efficient (draft induced) appliances are considered NAFFVA with the exception of a boiler or HWT located in an air-barriered room.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note6"><super>(5)</super> Mechanical room must be air-barriered from remainder of house with no access from within house. Room must be lined with panel products with sealed joints and all pipe and wire penetrations sealed. Effectively, the room must be finished before equipment is installed and holes drilled for pipes and wires. This option is not available for forced air furnaces as it is not possible to effectively seal the ducts.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note2">Any power vented appliance with pressurized vent (1 pipe) or sealed combustion (2 pipe) or direct vent appliance (fireplace, heater or HWT) are non-NAFFVA.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note3">Thermal buoyancy chimneys must be within the heated envelope of the house to provide acceptable venting performance.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note4">This category applies only to (a) mid-efficient forced air furnaces equipped with induced draft fans and exhaust proving switch, and (b) boilers equipped with induced draft fans and exhaust proving switch.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note5">Mid-efficient (draft induced) appliances are considered NAFFVA with the exception of a boiler or HWT located in an air-barriered room.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableA.note6">Mechanical room must be air-barriered from remainder of house with no access from within house. Room must be lined with panel products with sealed joints and all pipe and wire penetrations sealed. Effectively, the room must be finished before equipment is installed and holes drilled for pipes and wires. This option is not available for forced air furnaces as it is not possible to effectively seal the ducts.</note>
                     </table-notes>
                   </table>
                   
@@ -7328,13 +7329,14 @@ Spaces within Buildings
                         </row>
                       </tbody>
                     </tgroup>
+                    <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                     <table-notes>
                       <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note1">Notes to Table A-9.32.4.1.(1)B:</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note2"><super>(1)</super> Thermal buoyancy chimneys must be within the heated envelope of the house to provide acceptable venting performance.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note3"><super>(2)</super> Sealed combustion kits can be added to oil-fired appliances but they switch to interior combustion air if intake is blocked and rely on barometrically dampered thermal buoyancy chimneys so they are considered NAFFVA.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note4"><super>(3)</super> Oil-fired HWT, boilers and furnaces equipped with blocked vent switches.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note5"><super>(4)</super> Mechanical room must be air-barriered from remainder of house with no access from within house. Room must be lined with panel products with sealed joints and all pipe and wire penetrations sealed. Effectively, the room must be finished before equipment is installed and holes drilled for pipes and wires. This option is not available for forced air furnaces as it is not possible to effectively seal the ducts.</note>
-                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note6"><super>(5)</super> Wood-burning appliances certified for use in mobile homes and installed to mobile home installation standards are considered non-NAFFVA and Sentence 9.32.4.1.(1) does not apply to them.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note2">Thermal buoyancy chimneys must be within the heated envelope of the house to provide acceptable venting performance.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note3">Sealed combustion kits can be added to oil-fired appliances but they switch to interior combustion air if intake is blocked and rely on barometrically dampered thermal buoyancy chimneys so they are considered NAFFVA.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note4">Oil-fired HWT, boilers and furnaces equipped with blocked vent switches.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note5">Mechanical room must be air-barriered from remainder of house with no access from within house. Room must be lined with panel products with sealed joints and all pipe and wire penetrations sealed. Effectively, the room must be finished before equipment is installed and holes drilled for pipes and wires. This option is not available for forced air furnaces as it is not possible to effectively seal the ducts.</note>
+                      <note xml:id="nbc.divBV2.part9.appendix.appnote199a.tableB.note6">Wood-burning appliances certified for use in mobile homes and installed to mobile home installation standards are considered non-NAFFVA and Sentence 9.32.4.1.(1) does not apply to them.</note>
                     </table-notes>
                   </table>
                 </content>

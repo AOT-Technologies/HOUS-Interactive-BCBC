@@ -854,16 +854,17 @@
                                 </row>
                             </tbody>
                         </tgroup>
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note1">Notes to Table 9.36.2.8.-C:</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note2"><super>(1)</super> See Note A-Tables 9.36.2.8.-A and -B.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note3"><super>(2)</super> See <ref type="internal" target="nbc.divB.part1.sect1.subsect3.art1" display-type="long"/>.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note4"><super>(3)</super> Does not apply to below-grade floors over heated crawl spaces.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note5"><super>(4)</super> Unheated floors shall be insulated to the effective thermal resistance required in Table 9.36.2.8.-C under their full bottom surface including exterior edges.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note2">See Note A-Tables 9.36.2.8.-A and -B.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note3">See <ref type="internal" target="nbc.divB.part1.sect1.subsect3.art1" display-type="long"/>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note4">Does not apply to below-grade floors over heated crawl spaces.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note5">Unheated floors shall be insulated to the effective thermal resistance required in Table 9.36.2.8.-C under their full bottom surface including exterior edges.</note>
                             <!-- CLAUDE-AUTOFIX CF-06124 | issue 10457 | The PDF prints this note without a final period. -->
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note6"><super>(5)</super> Typically applies to floors-on-ground in full-height <ref type="term" target="bmnt">basements</ref></note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note7"><super>(6)</super> Refers to undisturbed frost line before house is constructed.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note8"><super>(7)</super> See <ref type="internal" target="nbc.divBV2.part9.sect25.subsect2.art3.sent5" display-type="long"/> for requirement on placement of insulation. The design of slabs-on-grade with an integral footing is addressed in Part 4 (see <ref type="internal" target="nbc.divBV2.part9.sect16.subsect1.art2" display-type="long"/>).</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note6">Typically applies to floors-on-ground in full-height <ref type="term" target="bmnt">basements</ref></note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note7">Refers to undisturbed frost line before house is constructed.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note8">See <ref type="internal" target="nbc.divBV2.part9.sect25.subsect2.art3.sent5" display-type="long"/> for requirement on placement of insulation. The design of slabs-on-grade with an integral footing is addressed in Part 4 (see <ref type="internal" target="nbc.divBV2.part9.sect16.subsect1.art2" display-type="long"/>).</note>
                         </table-notes>
                     </table>
                 </new-content>
