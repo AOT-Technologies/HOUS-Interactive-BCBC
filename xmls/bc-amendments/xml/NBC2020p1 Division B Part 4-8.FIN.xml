@@ -1851,6 +1851,26 @@
                 </text-change>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09868 | issue 5347 | Note (1) to Table 4.1.5.11. reads "See the Safety Standards Act and pursuant regulations.", as in the PDF (bc-001 replaces the row, but the note text lives in the table-notes). -->
+        <amendment id="bc-custom-t4-1-5-11-n1" sequence="2354"
+                   description="Note (1) to Table 4.1.5.11.: Safety Standards Act instead of ASME A17.1/CSA B44">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect5.art11.table1.note1"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <note xml:id="nbc.divB.part4.sect1.subsect5.art11.table1.note1" vendor-id="et000160-1">See the Safety Standards Act and pursuant regulations.</note>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09868 | issue 5347 | Note (3) to Table 4.1.8.18. reads "See also the Safety Standards Act and pursuant regulations.", as in the PDF (also CF-09873). -->
+        <amendment id="bc-custom-t4-1-8-18-n3" sequence="2355"
+                   description="Note (3) to Table 4.1.8.18.: Safety Standards Act instead of ASME A17.1/CSA B44">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.table1.note3"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <note xml:id="nbc.divB.part4.sect1.subsect8.art18.table1.note3" vendor-id="et001041-3">See also the Safety Standards Act and pursuant regulations.</note>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
