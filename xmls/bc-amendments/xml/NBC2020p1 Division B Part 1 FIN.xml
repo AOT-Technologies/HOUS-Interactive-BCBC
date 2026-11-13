@@ -2765,5 +2765,16 @@
             </replace>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CF-10517 | issue 295 | Note (6) to Figure A-1.1.3.1.(4) reads as in the PDF ("Refer to the procedure set out in the section entitled ...Seismic Hazard for Part 9... in Appendix C."). -->
+        <amendment id="bc-p1-110" sequence="110"
+                   description="Note (6) to Figure A-1.1.3.1.(4): refer to the Seismic Hazard for Part 9 procedure in Appendix C">
+            <target type="canonical-id" id="nbc.divB.part1.appendix.appnote4.figure1.note6"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <note xml:id="nbc.divB.part1.appendix.appnote4.figure1.note6">Refer to the procedure set out in the section entitled “Seismic Hazard for Part 9” in Appendix C.</note>
+                </new-content>
+            </replace>
+        </amendment>
+
     </amendments>
 </bc-overlay>
