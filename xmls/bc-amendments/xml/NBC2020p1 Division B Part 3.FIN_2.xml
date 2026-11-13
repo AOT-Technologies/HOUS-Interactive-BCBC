@@ -4216,5 +4216,17 @@ described in <ref type="internal"
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01849 | issue 1046 | Note A-3.5.4.1.(1) ends with the paragraph on limited-use/limited-application (LULA) elevators, as in the PDF. -->
+        <amendment id="bc-custom-a-3-5-4-1-1-para2" sequence="2351"
+                   description="Add paragraph on LULA elevators to Note A-3.5.4.1.(1)">
+            <target type="position"
+                    parent-id="nbc.divB.part3.appendix.appnote170"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote170.para2">Limited-use/limited-application (LULA) elevators are limited in size, capacity, speed and rise and are not expected to meet the minimum elevator car dimensions stated in Sentence (1).</paragraph>
+                </new-content>
+            </insert>
+        </amendment>
     </amendments>
 </bc-overlay>
