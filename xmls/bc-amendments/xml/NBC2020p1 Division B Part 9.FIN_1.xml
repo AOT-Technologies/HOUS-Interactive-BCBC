@@ -9384,6 +9384,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.clause3" letter="c">
                                 <text>are not more than <measurement units="metric">5 m</measurement> length,</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-05099 | issue 6516 | The PDF prints "(See Note A-9.23.13.8.(3).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote134f" display-type="short">Note A-9.23.13.8.(3)</ref>.)</see-also>
                         </sentence>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.appnote1">
                             <text>(See Note A-9.23.13.8.(3).)</text>
