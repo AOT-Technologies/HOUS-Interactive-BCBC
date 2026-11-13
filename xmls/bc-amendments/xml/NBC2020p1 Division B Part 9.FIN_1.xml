@@ -5276,11 +5276,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                             </tbody>
                         </tgroup>
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note1">Notes to Table 9.23.13.7.-A:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note2"><super>(1)</super> Unadjusted minimum total braced wall panel lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<subscript>w</subscript>.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note3"><super>(2)</super> See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note4"><super>(3)</super> See Sentence (6) for braced wall panels with gypsum board installed on both sides.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note2">Unadjusted minimum total braced wall panel lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<subscript>w</subscript>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note3">See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note4">See Sentence (6) for braced wall panels with gypsum board installed on both sides.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -5478,13 +5479,14 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tbody>
                         </tgroup>
                         
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note1">Notes to Table 9.23.13.7.-B:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note2"><super>(1)</super> K<sub>exp</sub> is determined based on the terrain. Rough terrain is suburban, urban, or wooded terrain extending upwind from the <ref type="term" target="bldng">building</ref> uninterrupted for at least 1 km. Open terrain is level terrain with only scattered trees, <ref type="term" target="bldng">buildings</ref> or other obstructions, open water or shorelines.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note3"><super>(2)</super> For K<sub>roof</sub> linear interpolation between roof eave-to-ridge heights is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note4"><super>(3)</super> K<sub>Wspacing</sub> Linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note5"><super>(4)</super> An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of K<sub>Wspacing</sub>. See Sentence (5).</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note6"><super>(5)</super> A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note2">K<sub>exp</sub> is determined based on the terrain. Rough terrain is suburban, urban, or wooded terrain extending upwind from the <ref type="term" target="bldng">building</ref> uninterrupted for at least 1 km. Open terrain is level terrain with only scattered trees, <ref type="term" target="bldng">buildings</ref> or other obstructions, open water or shorelines.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note3">For K<sub>roof</sub> linear interpolation between roof eave-to-ridge heights is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note4">K<sub>Wspacing</sub> Linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note5">An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of K<sub>Wspacing</sub>. See Sentence (5).</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note6">A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -7675,12 +7677,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tbody>
                         </tgroup>
                         
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note1">Notes to Table 9.23.13.7.-C:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note2"><super>(1)</super> Unadjusted minimum total <ref type="term" target="br-wl-pnl">braced wall panel</ref> lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<sub>s</sub>.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note3"><super>(2)</super> DR = design required, using the procedure outlined in Note A-9.23.13.7.(4) or according to Part 4, for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with typical sheathing. L<sub>us</sub> values within round brackets, to which the reduction set out in Sentence (6) has been applied, are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note4"><super>(3)</super> See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note5"><super>(4)</super> See Sentence (6) for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note2">Unadjusted minimum total <ref type="term" target="br-wl-pnl">braced wall panel</ref> lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<sub>s</sub>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note3">DR = design required, using the procedure outlined in Note A-9.23.13.7.(4) or according to Part 4, for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with typical sheathing. L<sub>us</sub> values within round brackets, to which the reduction set out in Sentence (6) has been applied, are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note4">See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note5">See Sentence (6) for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -9231,15 +9234,16 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tbody>
                         </tgroup>
                         
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note1">Notes to Table 9.23.13.7.-D:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note2"><super>(1)</super> See Sentence 9.23.13.2.(3).</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note3"><super>(2)</super> For K<sub>weight</sub>, linear interpolation between Lwl values and between fully clad and partially clad veneer conditions is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note4"><super>(3)</super> "Fully clad" means that there are no openings, and "partially clad" means 50% or less coverage of an elevation.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note5"><super>(4)</super> For K<sub>snow</sub>, linear interpolation between roof snow loads is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note6"><super>(5)</super> For K<sub>spacing</sub>, linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacings is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note7"><super>(6)</super> An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of KSspacing. See Sentence 9.23.13.2.(3).</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note8"><super>(7)</super> A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note2">See Sentence 9.23.13.2.(3).</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note3">For K<sub>weight</sub>, linear interpolation between Lwl values and between fully clad and partially clad veneer conditions is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note4">"Fully clad" means that there are no openings, and "partially clad" means 50% or less coverage of an elevation.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note5">For K<sub>snow</sub>, linear interpolation between roof snow loads is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note6">For K<sub>spacing</sub>, linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacings is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note7">An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of KSspacing. See Sentence 9.23.13.2.(3).</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note8">A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
                         </table-notes>
                     </table>
                 </new-content>
