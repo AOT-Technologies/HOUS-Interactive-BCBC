@@ -2113,9 +2113,8 @@
                                     <clause xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1.clause3" letter="c">
                                         <text>except for common spaces in the house with the <ref type="term" target="bc-scnd-t">secondary suite</ref>, do not share common spaces intended for occupancy with other <ref type="term" target="dwllng-n">dwelling units</ref> or houses.</text>
                                     </clause>
-                                </sentence>
-                                <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent9" number="9">
-                                    <text>(See Note A-9.36.6.2.(2)).</text>
+                                    <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | The note reference of Sentence 9.37.1.2.(1) is a see-also after its Clauses, as in the PDF, not a separate Sentence 9). -->
+                                    <see-also xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1.seealso">(See Note A-9.36.6.2.(2)).</see-also>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent2" number="2">
                                     <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9760 Punctuation 19c7608612 -->

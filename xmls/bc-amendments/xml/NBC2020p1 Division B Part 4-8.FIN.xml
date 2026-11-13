@@ -1786,6 +1786,18 @@
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | Added the note reference that the PDF prints at the end of Sentence 6.2.1.2.(1). -->
+        <amendment id="bc-custom-6-2-1-2-1" sequence="834"
+                   description="Add note reference to Sentence 6.2.1.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>The outdoor conditions to be used in designing heating, ventilating and air-conditioning systems shall be determined in conformance with <ref type="internal" target="nbc.divB.part1.sect1.subsect3" display-type="long" pretext="Subsection"/> (See <ref type="internal" target="nbc.divB.part6.appendix.appnote1a" display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
     </amendments>
     
 </bc-overlay>
