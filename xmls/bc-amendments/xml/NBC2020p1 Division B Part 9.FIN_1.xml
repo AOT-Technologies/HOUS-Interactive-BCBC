@@ -11545,7 +11545,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                     <article xml:id="nbc.divBV2.part9.sect32.subsect3.art2" number="2">
                         <title>Design and Installation</title>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art2.sent1" number="1">
-                            <text>Aspects of mechanical ventilation systems not specifically described in this Subsection shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the <ref type="standard" target="hraisar-g1"/> the HRAI Residential Mechanical Ventilation Manual, the Hydronics Institute Manuals and the SMACNA Manuals.</text>
+                            <!-- CLAUDE-AUTOFIX CF-05581 | issue 2928 | Reads 'the HRAI Digest,' as in the PDF; the standard reference printed '2017 Edition, "HRAI Digest"' from the standards map. -->
+                            <text>Aspects of mechanical ventilation systems not specifically described in this Subsection shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the HRAI Digest, the HRAI Residential Mechanical Ventilation Manual, the Hydronics Institute Manuals and the SMACNA Manuals.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art2.sent2" number="2">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10240 Punctuation 109a82472f -->
@@ -12630,7 +12631,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect33.subsect4.art1.sent1" number="1">
-                        <text>Aspects of heating and air-conditioning systems not specifically addressed in this Subsection, including ducting, and mechanical heating and refrigeration equipment, shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the <ref type="standard" target="hraisar-g1"/> the CHC Handbook on Hydronic Heating Systems, the Hydronics Institute Manuals, the SMACNA Manuals and the TECA Quality First Manuals. (See also <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> for the design of systems that also provide ventilation.)</text>
+                        <!-- CLAUDE-AUTOFIX CF-05647 | issue 2975 | Reads 'the HRAI Digest,' as in the PDF; the standard reference printed '2017 Edition, "HRAI Digest"' from the standards map. -->
+                        <text>Aspects of heating and air-conditioning systems not specifically addressed in this Subsection, including ducting, and mechanical heating and refrigeration equipment, shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the HRAI Digest, the CHC Handbook on Hydronic Heating Systems, the Hydronics Institute Manuals, the SMACNA Manuals and the TECA Quality First Manuals. (See also <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> for the design of systems that also provide ventilation.)</text>
                     </sentence>
                 </new-content>
             </replace>
