@@ -867,6 +867,18 @@
             </insert>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-03913 CF-03914 | issue 7400 | BC repealed Sentences 6.2.1.2.(2) and (3) (both "Reserved" in the PDF) and replaced their guidance by BC Note A-6.2.1.2.(1) (bc-036); the PDF has no Notes A-6.2.1.2.(2) or (3), and nothing refers to them, so the two NBC Notes are deleted. -->
+        <amendment id="bc-autofix-6212-2" sequence="36.1"
+                   description="Delete NBC Note A-6.2.1.2.(2) (Sentence 6.2.1.2.(2) is Reserved in the BC code)">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote2"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-autofix-6212-3" sequence="36.2"
+                   description="Delete NBC Note A-6.2.1.2.(3) (Sentence 6.2.1.2.(3) is Reserved in the BC code)">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote3"/>
+            <delete/>
+        </amendment>
+        
         <!-- ================================================================== -->
         <!-- Amendment 037: Replace NBC with BC Building Code                  -->
         <!-- Application Note A-6.2.1.4 - Structural Movement                  -->
