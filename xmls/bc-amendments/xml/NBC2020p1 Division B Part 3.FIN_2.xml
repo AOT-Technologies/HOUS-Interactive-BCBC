@@ -106,6 +106,8 @@
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art8.sent4.clause2" letter="b">
                                 <text>the water closets required by <ref type="internal" target="nbc.divB.part3.sect7.subsect2" display-type="long"/> are for <ref type="term" target="dwllng-n">dwelling units</ref> only.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01490 | issue 6361 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect2.art8.sent4.seealso">(See Note A-3.8.2.8.(1) to (4).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art8.sent5" number="5">
                             <text>At least one water-closet stall or enclosure in a washroom required to be <ref type="term" target="brrr-fr">accessible</ref> shall comply with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
