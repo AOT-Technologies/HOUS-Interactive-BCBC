@@ -1472,6 +1472,8 @@ export function parseTextWithMarkers(
               format: marker.format as InternalRefFormat,
               interactive,
               preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
+              // CLAUDE-AUTOFIX CF-04057 | issue 10373 | Tell the link when the text already supplies the closing period, so a resolved Note label does not add a second one.
+              followedByPeriod: /^\s*\./.test(sanitizedText.slice(marker.end + crossRefDisplay.consumed)),
               currentDivision:
                 renderContext?.kind !== 'table'
                   ? renderContext?.referenceId.match(/\.div([A-Za-z])/i)?.[1]?.toUpperCase()

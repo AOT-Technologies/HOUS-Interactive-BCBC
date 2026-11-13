@@ -19,6 +19,8 @@ interface CrossReferenceLinkProps {
   interactive?: boolean;
   preserveDisplayText?: boolean;
   currentDivision?: string;
+  // CLAUDE-AUTOFIX CF-04057 | issue 10373 | True when the source text puts a period right after the reference ("(See Note A-9.4.1.1.)").
+  followedByPeriod?: boolean;
 }
 
 type ApplicationNoteMeta = {
@@ -46,6 +48,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   interactive = true,
   preserveDisplayText = false,
   currentDivision,
+  followedByPeriod = false,
 }) => {
   const { openReference, navigateReference } = useCrossReferenceContext();
   const searchParams = useSearchParams();
@@ -292,7 +295,8 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   const effectiveDisplayText = standardsDisplayText
     || spectableDisplayText
     || (appnoteDisplayText
-      ? `${appnoteDisplayText}${trailingClauseQualifier ? ` ${trailingClauseQualifier}` : ''}`
+      // CLAUDE-AUTOFIX CF-04057 | issue 10373 | A resolved Note label ending with a period drops it when the text supplies the period, so the page does not show "Note A-9.4.1.1..", as in the PDF.
+      ? `${followedByPeriod && !trailingClauseQualifier && appnoteDisplayText.endsWith('.') ? appnoteDisplayText.slice(0, -1) : appnoteDisplayText}${trailingClauseQualifier ? ` ${trailingClauseQualifier}` : ''}`
       : resolvedDisplayText);
 
   if (!interactive || isNonLinkExternalReference) {
