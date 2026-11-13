@@ -821,7 +821,9 @@ const getTableNumberDisplay = (tableNumber: string): string => {
     return normalized.endsWith('.') || normalized.endsWith(')') ? normalized : `${normalized}.`;
   }
 
+  // CLAUDE-AUTOFIX CF-08042 | issue 5106 | A number that already ends with a period (e.g. from Note A-Table 9.11.1.4. or A-9.23.13.) gets no second period, as in the PDF.
   const omitTrailingDot =
+    normalized.endsWith('.') ||
     normalized.endsWith(')') ||
     /^[A-Za-z]-\d+$/i.test(normalized) ||
     /\.-[A-Z]$/i.test(normalized); // letter suffix e.g. 3.2.3.1.-A
