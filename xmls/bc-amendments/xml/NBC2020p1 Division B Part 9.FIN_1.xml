@@ -4029,6 +4029,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text>clad at full height with stone veneer.</text>
                                 </subclause>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-04728 | issue 6492 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect3.art5.sent4.seealso">(See Sentence 9.23.13.2.(3).)</see-also>
                         </sentence>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art5.appnote14">
                             <text>(See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art2.sent3" display-type="medium"/>.)</text>
@@ -11443,6 +11445,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent3.clause3" letter="c">
                                 <text>ancillary spaces that are not within a <ref type="term" target="dwllng-n">dwelling unit</ref>, except as provided in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art2.sent4" display-type="short"/>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-05568 | issue 6530 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent3.seealso">(See Note A-9.32.1.2.(2).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent4" number="4">
                             <text>Where ancillary spaces described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art2.sent3.clause3" display-type="medium"/> contain exhaust devices, these spaces shall be provided with make-up air in accordance with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1" display-type="long"/></text>
