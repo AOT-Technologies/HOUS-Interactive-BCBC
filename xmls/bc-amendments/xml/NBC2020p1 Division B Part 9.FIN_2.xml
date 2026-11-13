@@ -2642,6 +2642,19 @@ be maintained between the concrete and adjacent air barrier materials.</text>
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Same cause (Note ref without text prints the Note title): Example 1 of Note A-9.23.4.2.(2): 'vibration limit per Note A-9.23.4.2.(2)' prints the Note number only, as in the PDF, not the Note title. -->
+        <amendment id="bc-custom-a-9-23-4-2-ex1-row5" sequence="2348"
+                   description="Note A-9.23.4.2.(2) Example 1 assumptions: vibration limit per Note A-9.23.4.2.(2)">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote123.example1.table1.row5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.appendix.appnote123.example1.table1.row5">
+                        <entry valign="top">- vibration limit</entry>
+                        <entry align="left" valign="top">per <ref type="internal" target="nbc.divBV2.part9.appendix.appnote120" display-type="long">Note A-9.23.4.2.(2)</ref></entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
