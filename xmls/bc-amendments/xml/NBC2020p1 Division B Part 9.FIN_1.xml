@@ -9283,7 +9283,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note3">For K<sub>weight</sub>, linear interpolation between Lwl values and between fully clad and partially clad veneer conditions is permitted.</note>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note4">"Fully clad" means that there are no openings, and "partially clad" means 50% or less coverage of an elevation.</note>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note5">For K<sub>snow</sub>, linear interpolation between roof snow loads is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note6">For K<sub>spacing</sub>, linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacings is permitted.</note>
+                            <!-- CLAUDE-AUTOFIX CF-10682 | issue 2669 | Note (5) of Table 9.23.13.7.-D names K Sspacing, as in the PDF. -->
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note6">For K<sub>Sspacing</sub>, linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacings is permitted.</note>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note7">An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of KSspacing. See Sentence 9.23.13.2.(3).</note>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note8">A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
                         </table-notes>
