@@ -367,17 +367,46 @@
         <!-- ================================================================== -->
         <amendment id="bc-018" sequence="18"
                    description="Add new Sentence 9.6.1.3.(3) on glass area for doors">
-            <target type="position" 
-                    parent-id="nbc.divBV2.part9.sect6.subsect1.art3"
-                    position="after"
-                    reference-id="nbc.divBV2.part9.sect6.subsect1.art3.sent2"/>
-            <insert>
+            <!-- CLAUDE-AUTOFIX CF-04052 | issue 2238 | BC Sentence 9.6.1.3.(3) replaces the NBC Sentence (3); inserted after (2) it was shown next to the NBC text as a second Sentence (3). -->
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.sent3"/>
+            <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect6.subsect1.art3.sent3" number="3">
                         <text>Individual panes of glass conforming to Table 9.6.1.3. that are used in doors need not comply with Sentence (1).</text>
                     </sentence>
                 </new-content>
-            </insert>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-04052 | issue 2238 | Tables 9.6.1.3.-A to -F form part of NBC Sentence 9.6.1.3.(2), which is Reserved in BC; the PDF prints only Table 9.6.1.3. (Glass Area for Doors). -->
+        <amendment id="bc-018-t1" sequence="18.1"
+                   description="Delete NBC Table 9.6.1.3. table1 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table1"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t2" sequence="18.2"
+                   description="Delete NBC Table 9.6.1.3. table2 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table2"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t3" sequence="18.3"
+                   description="Delete NBC Table 9.6.1.3. table3 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table3"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t4" sequence="18.4"
+                   description="Delete NBC Table 9.6.1.3. table4 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table4"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t5" sequence="18.5"
+                   description="Delete NBC Table 9.6.1.3. table5 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table5"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t6" sequence="18.6"
+                   description="Delete NBC Table 9.6.1.3. table6 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table6"/>
+            <delete/>
         </amendment>
         
         <!-- ================================================================== -->
