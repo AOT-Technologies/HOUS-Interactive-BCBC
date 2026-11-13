@@ -2109,7 +2109,8 @@
                             <article xml:id="nbc.divBV2.part9.sect37.subsect1.art2" number="2">
                                 <title>Definitions and Abbreviations</title>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1" number="1">
-                                    <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect37new.subsect1.art1.sent2" display-type="short"/>, for the purposes of this Section, the term "house" shall mean all houses, with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, that</text>
+                                    <!-- CLAUDE-AUTOFIX CF-06212 | issue 6600 | The reference prints 'Sentence 9.37.1.1.(2)', as in the PDF, not 'Sentence (2)' (it is another Article). -->
+                                    <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect37new.subsect1.art1.sent2" display-type="medium">Sentence 9.37.1.1.(2)</ref>, for the purposes of this Section, the term "house" shall mean all houses, with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, that</text>
                                     <clause xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1.clause1" letter="a">
                                         <text>have HVAC systems that serve only the house, only the <ref type="term" target="bc-scnd-t">secondary suite</ref>, or both the house and the <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces,</text>
                                     </clause>
