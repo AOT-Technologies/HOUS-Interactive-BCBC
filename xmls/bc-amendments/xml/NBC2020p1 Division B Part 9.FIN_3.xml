@@ -2971,6 +2971,30 @@ storey.</item>
                 </text-change>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-08461 | issue 6248 | Figure A-9.36.2.5.(5)-A caption cites Sentence 9.36.2.5.(5), as in the PDF (the base text had 9.38.2.5.(5)). -->
+        <amendment id="bc-autofix-cf08461-fig1" sequence="743" description="Correct Sentence reference 9.36.2.5.(5) in caption of Figure A-9.36.2.5.(5)-A">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote229.figure1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <figure xml:id="nbc.divBV2.part9.appendix.appnote229.figure1" vendor-id="en001746f1">
+                        <title>Application of Sentence 9.36.2.5.(5) to a cast-in-place concrete foundation wall</title>
+                        <graphic src="graphics/eg/007/eg00771a" alt="Application of Sentence 9.36.2.5.(5) to a cast-in-place concrete foundation wall"/>
+                    </figure>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-08462 | issue 6249 | Figure A-9.36.2.5.(5)-B caption cites Sentence 9.36.2.5.(5), as in the PDF (the base text had 9.38.2.5.(5)). -->
+        <amendment id="bc-autofix-cf08461-fig2" sequence="744" description="Correct Sentence reference 9.36.2.5.(5) in caption of Figure A-9.36.2.5.(5)-B">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote229.figure2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <figure xml:id="nbc.divBV2.part9.appendix.appnote229.figure2" vendor-id="en001746f2">
+                        <title>Application of Sentence 9.36.2.5.(5) to a hollow-core masonry foundation wall</title>
+                        <graphic src="graphics/eg/007/eg00772a" alt="Application of Sentence 9.36.2.5.(5) to a hollow-core masonry foundation wall"/>
+                    </figure>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
