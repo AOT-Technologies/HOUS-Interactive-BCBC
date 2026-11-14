@@ -4329,43 +4329,44 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     </row>
                                 </thead>
                                 <tbody>
+                                    <!-- CLAUDE-AUTOFIX CF-04799 | issue 367 | In this and the next 5 body rows Smax is bold, as in the PDF. -->
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row1">
-                                        <entry align="center">S<sub>max</sub> ≤ 0.60</entry>
+                                        <entry align="center"><emphasis style="bold">S<sub>max</sub></emphasis> ≤ 0.60</entry>
                                         <entry align="center">4</entry>
                                         <entry align="center">7</entry>
                                         <entry align="center">8</entry>
                                         <entry align="center">10</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row2">
-                                        <entry align="center">0.6 &lt; S<sub>max</sub> ≤ 0.8</entry>
+                                        <entry align="center">0.6 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 0.8</entry>
                                         <entry align="center">6</entry>
                                         <entry align="center">8</entry>
                                         <entry align="center">9</entry>
                                         <entry align="center">12</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row3">
-                                        <entry align="center">0.8 &lt; S<sub>max</sub> ≤ 1.2</entry>
+                                        <entry align="center">0.8 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 1.2</entry>
                                         <entry align="center">9</entry>
                                         <entry align="center">12</entry>
                                         <entry align="center">14</entry>
                                         <entry align="center">19</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row4">
-                                        <entry align="center">1.2 &lt; S<sub>max</sub> ≤ 1.6</entry>
+                                        <entry align="center">1.2 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 1.6</entry>
                                         <entry align="center">12</entry>
                                         <entry align="center">16</entry>
                                         <entry align="center">19</entry>
                                         <entry align="center">25</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row5">
-                                        <entry align="center">1.6 &lt; S<sub>max</sub> ≤ 2.0</entry>
+                                        <entry align="center">1.6 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 2.0</entry>
                                         <entry align="center">14</entry>
                                         <entry align="center">20</entry>
                                         <entry align="center">23</entry>
                                         <entry align="center">31</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row6">
-                                        <entry align="center">2.0 &lt; S<sub>max</sub> ≤ 2.6</entry>
+                                        <entry align="center">2.0 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 2.6</entry>
                                         <entry align="center">19</entry>
                                         <entry align="center">25</entry>
                                         <entry align="center">30</entry>
