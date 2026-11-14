@@ -60,7 +60,19 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
     resolvedMathml.trim().length > 0 &&
     !isMalformedMathml(resolvedMathml);
 
-  const showLatex = !hasMathml && latexForRender.trim().length > 0;
+  // CLAUDE-AUTOFIX CL-093 CF-09340 | issue 1281 | A word equation given only as plain text ("Ss = smooth normalized SL + bZ") is printed as text, as in the PDF, not typeset as maths (which ran the words together in italic).
+  const plainWordEquation =
+    !hasMathml &&
+    !repairedLatex &&
+    Boolean(equation.plainText) &&
+    latexForRender === equation.plainText &&
+    !latexForRender.includes('\\') &&
+    /[a-z]{2,} [a-z]{2,}/.test(latexForRender)
+      ? latexForRender.split(/(_\{[^}]*\})/).map((part, index) =>
+        part.startsWith('_{') ? <sub key={index}>{part.slice(2, -1)}</sub> : part
+      )
+      : null;
+  const showLatex = !hasMathml && !plainWordEquation && latexForRender.trim().length > 0;
   const shouldShowDescription =
     variant === 'standalone' &&
     equation.description &&
@@ -104,6 +116,8 @@ export const EquationBlock: React.FC<EquationBlockProps> = ({
           aria-label={equation.plainText || equation.description || `Equation ${equation.id}`}
         >
         </MathJax>
+      ) : plainWordEquation ? (
+        <span className="equation-block__plain-text">{plainWordEquation}</span>
       ) : showLatex ? (
         <MathJax
           renderMode="pre"
