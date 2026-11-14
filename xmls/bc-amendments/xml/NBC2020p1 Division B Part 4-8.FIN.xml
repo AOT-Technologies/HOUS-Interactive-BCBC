@@ -513,6 +513,19 @@
             </insert>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 314 | Clause 6.3.2.9.(2)(a) reads "reserved", as in the PDF (it referred to the Reserved Sentences 6.2.1.2.(2) and (3)). -->
+        <amendment id="bc-autofix-6329-2a" sequence="25.1"
+                   description="Replace Clause 6.3.2.9.(2)(a) with reserved">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art9.sent2.clause1"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part6.sect3.subsect2.art9.sent2.clause1" letter="a">
+                        <text>reserved</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 026: REMOVED - Article 6.3.2.14 already exists in NBC   -->
         <!-- Article 6.3.2.14 (Cleaning Devices) is present in canonical NBC   -->
@@ -1842,6 +1855,45 @@
             <replace preserve-references="false">
                 <new-content source="bc">
                     <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row11" rowsep="1">
+                        <entry/>
+                        <entry/>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 317 | Table 6.10.1.1 shows RESERVED for Sentence 6.3.2.14.(1), as in the PDF. -->
+        <amendment id="bc-autofix-6-10-1-1-row128" sequence="837.1"
+                   description="Table 6.10.1.1: Sentence 6.3.2.14.(1) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row128"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row128" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect3.subsect2.art14.sent1" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 318 | Table 6.10.1.1 shows RESERVED for Sentence 6.3.2.14.(2), as in the PDF. -->
+        <amendment id="bc-autofix-6-10-1-1-row129" sequence="837.2"
+                   description="Table 6.10.1.1: Sentence 6.3.2.14.(2) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row129"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row129" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect3.subsect2.art14.sent2" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 318 | The PDF has only an empty row after 6.3.2.14.(2) RESERVED, no [F44-OS3.4] attribution. -->
+        <amendment id="bc-autofix-6-10-1-1-row130" sequence="837.3"
+                   description="Table 6.10.1.1: empty row after Sentence 6.3.2.14.(2)">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row130"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row130" rowsep="1">
                         <entry/>
                         <entry/>
                     </row>
