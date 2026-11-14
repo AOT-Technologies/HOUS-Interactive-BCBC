@@ -1632,7 +1632,8 @@
                             <fn:map>
                                 <fn:string key="type">figure</fn:string>
                                 <!-- CLAUDE-AUTOFIX CL-007 CF-07500 | issue 4844 | The Part 9 span tables print no title above their drawings in the PDF: keep the description as alt text only. -->
-                                <xsl:if test="@alt and not(ancestor::table[starts-with(@xml:id, 'nbc.divBV2.part9.spectables1.')])">
+                                <!-- CLAUDE-AUTOFIX CF-09739 | issue 784 | The drawings in the Design column of Table D-6.1.1. print no "EXTW-n" caption in the PDF: keep the description as alt text only. -->
+                                <xsl:if test="@alt and not(ancestor::table[starts-with(@xml:id, 'nbc.divBV2.part9.spectables1.') or @xml:id = 'nbc.divB.appendixD.appsect6.subsect1.article1.table1'])">
                                     <fn:string key="title"><xsl:value-of select="@alt"/></fn:string>
                                 </xsl:if>
                                 <fn:map key="graphic">
