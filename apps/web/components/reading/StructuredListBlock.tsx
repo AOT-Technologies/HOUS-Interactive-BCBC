@@ -24,6 +24,8 @@ const TEXT_LABELS: Array<[string, string]> = [
   ['Determine for each storey the span', '(a)'],
   ['sum_{1} = 6 + 6 = 12 m', '(a)'],
   ['For a 3.5 kPa specified snow load', '(a)'],
+  // CLAUDE-AUTOFIX CL-097 CF-02954 | issue 1551 | The design-review list of Note A-4.1.8.19.(2) is labelled (a) to (e), as in the PDF (p. 629).
+  ['site-specific spectra,', '(a)'],
   // "A.", "B.": Note A-9.36.2.4.(1); "a)", "b)": Article D-2.6.6.; "(i)", "(ii)": Note A-9.36.2.4.(1) example.
   ['calculate the effective thermal resistance', 'A.'],
   ['1.0 [EQ:inline:eg02535a]', 'a)'],
