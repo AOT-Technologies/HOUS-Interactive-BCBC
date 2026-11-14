@@ -253,7 +253,8 @@ function avoidDuplicateLeadingReferenceType(precedingText: string, displayText: 
       if (sameType) {
         // Verify the prior ref is in a list context (comma/or/and separated)
         // Line breaks (from <lb/>) separate refs visually; they are not list separators.
-        const trailingAfterLastRef = /\[REF:[^\]]+\][^\S\n]*(?:,\s*)?(?:(?:and|or)\s*)?$/i;
+        // CLAUDE-AUTOFIX CL-084 CF-10036 | issue 79 | Only a real separator ("," / and / or) makes a list; refs separated by whitespace alone (table-cell line breaks) keep their "Table" word, as in the PDF.
+        const trailingAfterLastRef = /\[REF:[^\]]+\][^\S\n]*(?:,\s*(?:(?:and|or)\s*)?|(?:and|or)\s*)$/i;
         if (trailingAfterLastRef.test(precedingText)) {
           return displayText.slice(displayMatch[0].length);
         }
@@ -675,11 +676,21 @@ function getCrossReferenceDisplayText(
     renderContext?.kind !== 'table'
       ? renderContext?.referenceId.match(/\.div([A-Za-z])/i)?.[1]?.toUpperCase()
       : undefined;
-  const fallback = formatInternalReference(
+  let fallback = formatInternalReference(
     referenceId,
     shouldExpandShortArticleRef ? 'medium' : format,
     currentDivision
   );
+  // CLAUDE-AUTOFIX CL-086 CF-10034 | issue 77 | In a table cell an unlabelled Sentence "number" ref shows its full number (9.32.3.9.(2), not "(2)") and the 2nd+ table of an article keeps its letter (Table 9.32.3.10.-B), as in the PDF.
+  if (renderContext?.kind === 'table' && parsedReference?.kind === 'section') {
+    if (format === 'number' && parsedReference.sentence && !parsedReference.clause) {
+      fallback = formatInternalReference(referenceId, 'medium').replace(/^Sentence /, '');
+    }
+    const tableIndex = Number(referenceId.match(/\.table(\d+)$/i)?.[1] ?? 0);
+    if (tableIndex > 1 && /\.$/.test(fallback)) {
+      fallback = `${fallback}-${String.fromCharCode(64 + tableIndex)}`;
+    }
+  }
   const qualifierMatch = fallback.startsWith('Note ')
     ? remaining.match(/^(\s*\([^)]+\))/)
     : null;
@@ -765,6 +776,12 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
 
     if (figure) {
       const figureNumber = baseNumber || appendixLetter || '';
+      // CLAUDE-AUTOFIX CL-088 CF-10660 | issue 1721 | The 2nd+ figure of an appendix Article keeps its letter (Figure D-2.6.1.-B), as in the PDF.
+      const figureIndex = Number(figure);
+      if (article && figureIndex > 1) {
+        const figureSuffix = `-${String.fromCharCode(64 + figureIndex)}`;
+        return isShortNumeric ? `${figureNumber}.${figureSuffix}` : `Figure ${figureNumber}.${figureSuffix}`;
+      }
       return isShortNumeric ? figureNumber : `Figure ${figureNumber}.`;
     }
 
@@ -823,6 +840,14 @@ function formatInternalReference(referenceId: string, format?: InternalRefFormat
 
   if (subclause) {
     const number = toRoman(asNumber(subclause) ?? Number.NaN);
+    // CLAUDE-AUTOFIX CL-091 CF-06891 | issue 561 | An unlabelled Subclause ref keeps its Clause (and, in "medium" format, its Sentence): "(b)(ii)", "Subclause (1)(b)(ii)", as in the PDF.
+    const clauseLetter = clause ? toAlphabetOrdinal(asNumber(clause) ?? Number.NaN) : '';
+    if (format === 'shortNum' && clauseLetter) {
+      return `(${clauseLetter})(${number})`;
+    }
+    if (format === 'medium' && sentence && clauseLetter) {
+      return `Subclause (${sentence})(${clauseLetter})(${number})`;
+    }
     return isShortNumeric ? `(${number})` : withDivisionSuffix(`Subclause (${number})`);
   }
 
@@ -1300,7 +1325,8 @@ export function parseTextWithMarkers(
   // Use non-greedy match to capture everything between [[ and ]],
   // while also supporting spaced forms like:
   // [ [REF:functional-statement:fs03] - [REF:sub-objective:nbc-obj-os1.2] ]
-  const doubleBracketRegex = /\[\s*\[([\s\S]*?)\]\s*\]/g;
+  // CLAUDE-AUTOFIX CL-095 CF-10189 | issue 571 | A stray comma before the closing bracket ("... nbc-obj-op2.3] ,]", Table 9.38.1.1.) no longer leaves the raw [REF:...] markers on the page.
+  const doubleBracketRegex = /\[\s*\[([\s\S]*?)\]\s*,?\s*\]/g;
 
   while ((match = doubleBracketRegex.exec(sanitizedText)) !== null) {
     const content = match[1];
@@ -1472,6 +1498,8 @@ export function parseTextWithMarkers(
               format: marker.format as InternalRefFormat,
               interactive,
               preserveDisplayText: Boolean(marker.crossRefLabel || spectableTableNoteLabel),
+              // CLAUDE-AUTOFIX CF-04057 | issue 10373 | Tell the link when the text already supplies the closing period, so a resolved Note label does not add a second one.
+              followedByPeriod: /^\s*\./.test(sanitizedText.slice(marker.end + crossRefDisplay.consumed)),
               currentDivision:
                 renderContext?.kind !== 'table'
                   ? renderContext?.referenceId.match(/\.div([A-Za-z])/i)?.[1]?.toUpperCase()

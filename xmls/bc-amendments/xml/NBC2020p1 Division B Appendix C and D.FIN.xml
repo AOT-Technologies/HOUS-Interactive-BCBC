@@ -217,11 +217,20 @@
                    description="Replace Canada with British Columbia in Table C-2 title">
             <target type="canonical-id" id="nbc.divB.appendixC.table2"/>
             <modify>
-                <element-change xpath-within-target=".">
-                    <replace-child element-name="title">
-                        <title>Climatic Design Data for Selected Locations in British Columbia</title>
-                    </replace-child>
-                </element-change>
+                <!-- CLAUDE-AUTOFIX CF-08742 | issue 10044 | The merge engine has no element-change/replace-child, so the title change never applied; same change as a text-change: "in British Columbia", as in the PDF. -->
+                <text-change xpath-within-target=".//title">
+                    <find-replace>
+                        <find>Climatic Design Data for Selected Locations in Canada</find>
+                        <replace>Climatic Design Data for Selected Locations in British Columbia</replace>
+                    </find-replace>
+                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-08738 | issue 5541 | The first header cell of Table C-2 reads 'Location', as in the PDF, not 'Province and Location'. -->
+                <text-change xpath-within-target=".//entry">
+                    <find-replace>
+                        <find>Province and Location</find>
+                        <replace>Location</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
@@ -479,7 +488,8 @@
                     <!-- Structure: 7 columns (Province/Location, Smax for Unknown Site Class, Site Class A, B, C, D, E) -->
                     <!-- Content to be added from table screenshots provided by user -->
                     <table xml:id="nbc.divB.appendixC.table3" vendor-id="et000076">
-                        <title>Seismic Design Parameter, S<sub>max</sub>, for Selected Locations in Canada <ref type="internal" target="nbc.divB.appendixC" display-type="long"/></title>
+                        <!-- CLAUDE-AUTOFIX CF-09338 | issue 10301 | The Table C-3 title ends with "for Selected Locations in Canada", as in the PDF; the reference to Appendix C showed as a raw [REF:...] token. -->
+                        <title>Seismic Design Parameter, S<sub>max</sub>, for Selected Locations in Canada</title>
                         
                         <tgroup cols="7">
                             <colspec colname="col1" colwidth="20*"/>
@@ -490,14 +500,13 @@
                             <colspec colname="col6" colwidth="13*"/>
                             <colspec colname="col7" colwidth="13*"/>
                             <thead>
+                                <!-- CLAUDE-AUTOFIX CF-09337 | issue 7995 | The first two header cells of Table C-3 span both header rows, as in the PDF; removed the two empty cells that showed as an extra blank cell under 'Smax for Unknown Site Class'. -->
                                 <row xml:id="nbc.divB.appendixC.table3.row1">
-                                    <entry align="center">Province and Location</entry>
-                                    <entry align="center">S<sub>max</sub> for Unknown Site Class</entry>
+                                    <entry align="center" rowspan="2">Province and Location</entry>
+                                    <entry align="center" rowspan="2">S<sub>max</sub> for Unknown Site Class</entry>
                                     <entry align="center" colspan="5">S<sub>max</sub> According to Site Class</entry>
                                 </row>
                                 <row xml:id="nbc.divB.appendixC.table3.row2">
-                                    <entry/>
-                                    <entry/>
                                     <entry align="center">A</entry>
                                     <entry align="center">B</entry>
                                     <entry align="center">C</entry>
@@ -1612,10 +1621,11 @@ or</item>
                                  <item>gypsum-concrete topping not less than <measurement units="metric">25 mm thick</measurement>,</item>
                               </list>
                            </item>
+                           <!-- CLAUDE-AUTOFIX CF-10098 | issue 779 | The second CSA O86 prints without its title, as in the PDF. -->
                            <item>for plank decking designed in accordance with <ref type="external" target="csa086">Clause B.10 of</ref>
                               <ref type="standard" target="d-csao86" standardId="d-csao86"/> by applying at least one of the layers
 described in <ref type="external" target="csa086">Clause B.10.4 of </ref>
-                              <ref type="standard" target="d-csao86" standardId="d-csao86"/> to the unexposed
+                              CSA O86 to the unexposed
 surface of the assembly,</item>
                            <item>for interior wall assemblies, by applying at least one of
 the following layers to at least one side of the assembly, with the
@@ -1666,13 +1676,14 @@ calculated fire-resistance rating. (See <ref type="internal"
             <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para5"/>
             <replace preserve-references="true">
                 <new-content>
+                    <!-- CLAUDE-AUTOFIX CF-10098 | issue 781 | The second CSA O86 prints without its title, as in the PDF. -->
                     <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para5"
                                vendor-id="en001102.5">5) For interior wall assemblies, the additional
 times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
                         <ref type="standard" target="d-csao86" standardId="d-csao86"/> shall only
 be applied to the calculated fire-resistance rating where both sides
 of the assembly are protected in accordance with <ref type="external" target="csao86">Clause B.8 of </ref>
-                        <ref type="standard" target="d-csao86" standardId="d-csao86"/>. Where the level of protection differs
+                        CSA O86. Where the level of protection differs
 on the two sides, the additional time corresponding to the lesser
 level of protection shall be applied.</paragraph>
                 </new-content>
@@ -1684,6 +1695,7 @@ level of protection shall be applied.</paragraph>
             <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para6"/>
             <replace preserve-references="true">
                 <new-content>
+                    <!-- CLAUDE-AUTOFIX CF-10098 | issue 782 | The second CSA O86 prints without its title, as in the PDF. -->
                     <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para6"
                                vendor-id="en001102.6">6) For exterior wall assemblies, the additional
 times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
@@ -1691,7 +1703,8 @@ times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
 be applied to the calculated fire-resistance rating where<list type="bulleted">
                            <item>the interior (fire-exposed) side of the assembly is protected
 in accordance with <ref type="external" target="csao86">Clause B.8 of </ref>
-                              <ref type="standard" target="d-csao86" standardId="d-csao86"/>, and</item>
+                              CSA O86, and</item>
+                           <!-- CLAUDE-AUTOFIX CF-10377 | issue 2003 | "(3)(d)" is the reference text, so it prints "Clause (3)(d)" without a space, as in the PDF. -->
                            <item>except where the assembly is constructed of cross-laminated
 timber panels with lapped or splined joints as described in <ref type="internal"
                                    target="nbc.divB.appendixD.appsect2.subsect11.article4.para4"
@@ -1699,7 +1712,7 @@ timber panels with lapped or splined joints as described in <ref type="internal"
 the assembly is protected in accordance with <ref type="internal"
                                    target="nbc.divB.appendixD.appsect2.subsect11.article4.para3"
                                    display-type="short"
-                                   pretext="Clause"/>(d).</item>
+                                   pretext="Clause">(3)(d)</ref>.</item>
                         </list>
                     </paragraph>
                 </new-content>
@@ -5647,6 +5660,16 @@ load to provide a design snow load on a roof.</item>
             <delete/>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CF-10376 | issue 1990 | D-2.8.4. refers to 'Sentences D-2.8.2.(1) and D-2.8.2.(2)', as in the PDF, instead of '... and (2)'. -->
+        <amendment id="bc-custom-d-2-8-4" sequence="2060"
+                   description="D-2.8.4.: Sentences D-2.8.2.(1) and D-2.8.2.(2)">
+            <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect8.article4.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect8.article4.para1">The structural design standards may require minimum column dimensions or concrete cover over vertical steel reinforcement differing from those obtained in <ref type="internal" target="nbc.divB.appendixD.appsect2.subsect8.article2.para1" display-type="long" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.appendixD.appsect2.subsect8.article2.para2" display-type="number">D-2.8.2.(2)</ref>. Where a difference occurs, the greater dimension shall govern. </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
     </amendments>
     
 </bc-overlay>
