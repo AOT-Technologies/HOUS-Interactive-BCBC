@@ -1640,11 +1640,12 @@
                                             display-type="long"
                                             />.<lb/>
                                         Stair risers shall not be closer than 300 mm from an <ref type="term" target="xt">exit</ref> door.</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-00021 | issue 14 | "Except as permitted in Sentences 3.4.6.11.(3) or 9.6.6.(2)", as in the PDF. -->
                                     <entry
-                                        >Except as permitted in <ref
+                                        >Except as permitted in Sentences <ref
                                             type="internal"
                                             target="nbc.divB.part3.sect4.subsect6.art11.sent3"
-                                            display-type="long"
+                                            display-type="number"
                                             /> or <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect6.art2"
