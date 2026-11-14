@@ -13132,10 +13132,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
         <!-- ================================================================== -->
         <amendment id="bc-269" sequence="269"
                    description="Add new sentence (4) regarding illumination for rooms and spaces used by the public in Article 9.34.2.7">
+            <!-- CLAUDE-AUTOFIX CF-05711 | issue 1510 | Sentence (4) is inserted after Table 9.34.2.7., which the PDF prints after Sentence (3). -->
             <target type="position" 
                     parent-id="nbc.divBV2.part9.sect34.subsect2.art7"
                     position="after"
-                    reference-id="nbc.divBV2.part9.sect34.subsect2.art7.sent3"/>
+                    reference-id="nbc.divBV2.part9.sect34.subsect2.art7.table1"/>
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect34.subsect2.art7.sent4" number="4">
