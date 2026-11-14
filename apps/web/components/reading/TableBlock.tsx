@@ -138,11 +138,9 @@ const renderFormattedText = (
     // Legacy placeholders used in some table content
     .replace(/<>/g, '<italic>')
     .replace(/<\/>/g, '</italic>')
-    // Normalize dash markers used in tables and common mojibake variants.
-    .replace(/â€”/g, '-')
-    .replace(/â€“/g, '-')
-    .replace(/—/g, '-')
-    .replace(/–/g, '-');
+    // CLAUDE-AUTOFIX CL-099 CF-04628 | issue 6746 | Keep the PDF's em/en dashes in table cells (only repair mojibake to the right dash).
+    .replace(/â€”/g, '—')
+    .replace(/â€“/g, '–');
 
   const tokenRegex = /(<italic>[\s\S]*?<\/italic>|<bold>[\s\S]*?<\/bold>|\^\{[\s\S]*?\}|_\{[\s\S]*?\})/gi;
   const nodes: React.ReactNode[] = [];

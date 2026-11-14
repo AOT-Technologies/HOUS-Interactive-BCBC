@@ -777,7 +777,8 @@ describe('TableBlock', () => {
     expect(screen.getByText('Data')).toBeInTheDocument();
   });
 
-  it('normalizes em dash table values to hyphen', () => {
+  // CLAUDE-AUTOFIX CL-099 CF-04628 | issue 6746 | Table cells keep the PDF's em dash (PDF Table 3.1.3.1. prints '—', not '-').
+  it('keeps em dash table values as printed in the PDF', () => {
     const table: Table = {
       id: 'test-table-dash',
       type: 'table',
@@ -793,7 +794,7 @@ describe('TableBlock', () => {
 
     render(<TableBlock table={table} />);
 
-    expect(screen.getByText('-')).toBeInTheDocument();
+    expect(screen.getByText('—')).toBeInTheDocument();
   });
 
   it('applies explicit colspan in raw table structure', () => {
