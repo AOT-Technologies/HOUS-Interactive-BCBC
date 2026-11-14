@@ -8055,8 +8055,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row39">
                                     <entry rowspan="18">Masonry veneer cladding perpendicular to <ref type="term" target="br-wl-bnd">braced wall band</ref>, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face (or two <ref type="term" target="bldng">building</ref> faces)
                                         
+                                        <!-- CLAUDE-AUTOFIX CF-05065 | issue 1002 | Shows the two building-depth diagrams EG02964A1/EG02965A1, as in the PDF (p.905), not the storey icon GG00556A. -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row39.figure33">
-                                            <graphic src="bc-graphics/gg00556a" alt="Building depth diagram for masonry veneer partially clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-row3" alt="Building depth diagram for masonry veneer partially clad"/>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
@@ -8798,8 +8799,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05065 | issue 1022 | Shows drawing GG00558A1 (2 storeys, lower storey clad, Lwl marks), as in the PDF (p.908). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row143.figure58">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof-and_2floor_only" alt="Two storey building - 1-storey stone veneer with openings"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 1-storey stone veneer with openings"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
