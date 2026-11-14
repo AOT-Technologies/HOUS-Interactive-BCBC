@@ -527,7 +527,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote61">
                         <number>9.10.9.3.(2)</number>
                         <title>Openings in Fire Separations with a 15 min Fire-Resistance Rating to be Protected with Closures</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote61.para1">Doors described in <ref type="internal" target="nbc.divBV2.part9.sect10.subsect9.art3.sent2" display-type="long"/> are deemed to provide a minimum <measurement units="metric">20 min</measurement> fire-protection rating, which is considered an acceptable level of protection against the spread of fire in a house with a secondary suite. They are not required to be marked to identify conformance to <ref type="standard" target="ulcs113" standardId="ulcs113">CAN/ULC-S113</ref>, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," as is the case for solid-core doors installed in fire separations.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 642 | CAN/ULC-S113 is printed once, as in the PDF (the website expanded the reference and repeated the title). -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote61.para1">Doors described in <ref type="internal" target="nbc.divBV2.part9.sect10.subsect9.art3.sent2" display-type="long"/> are deemed to provide a minimum <measurement units="metric">20 min</measurement> fire-protection rating, which is considered an acceptable level of protection against the spread of fire in a house with a secondary suite. They are not required to be marked to identify conformance to CAN/ULC-S113, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," as is the case for solid-core doors installed in fire separations.</paragraph>
                     </application-note>
                 </new-content>
             </replace>
@@ -545,7 +546,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote68">
                         <number>9.10.13.2.(1)</number>
                         <title>Wood Doors in Fire Separations</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote68.para1"><ref type="standard" target="ulcs113" standardId="ulcs113">CAN/ULC-S113</ref>, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," provides construction details to enable manufacturers to build wood core doors that will provide a <measurement units="metric">20 min</measurement> fire-protection rating without the need for testing. The standard requires each door to be marked with<list type="numbered">
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 643 | CAN/ULC-S113 is printed once, as in the PDF (the website expanded the reference and repeated the title). -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote68.para1">CAN/ULC-S113, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," provides construction details to enable manufacturers to build wood core doors that will provide a <measurement units="metric">20 min</measurement> fire-protection rating without the need for testing. The standard requires each door to be marked with<list type="numbered">
                                 <item>the manufacturer's or vendor's name or identifying symbol,</item>
                                 <item>the words "Fire Door," and</item>
                                 <item>a reference to the fire-protection rating of <measurement units="metric">20 min</measurement>.</item>
