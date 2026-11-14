@@ -8204,7 +8204,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row57">
                                     <!-- CLAUDE-AUTOFIX CF-04948 CF-04952 | issues 2692 and 2696 | One closing bracket too many removed after building faces, as in the PDF. -->
                                     <!-- CLAUDE-AUTOFIX CF-04997 CF-04999 | issues 9964 and 9966 | No space between 1- or 2- and storey, as in the PDF (1-storey height, 2-storey height). -->
-                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2-<ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face( or two <ref type="term" target="bldng">building</ref> faces)
+                                    <!-- CLAUDE-AUTOFIX CF-10395 | issue 1713 | Space moved before the bracket: "building face (or two building faces)", as in the PDF. -->
+                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2-<ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face (or two <ref type="term" target="bldng">building</ref> faces)
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row57.figure37">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-row4" alt="Building depth diagram for 2-storey masonry veneer"/>
