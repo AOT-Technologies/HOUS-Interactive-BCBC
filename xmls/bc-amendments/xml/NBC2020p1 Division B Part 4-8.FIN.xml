@@ -136,6 +136,19 @@ system components.</item>
                 </new-content>
             </replace>
         </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10640 | issue 364 | Table 4.1.6.10., Case I, Cw column reads 'As stated in 4.1.6.2.(3) and (4)' without the word Sentence, as in the PDF. -->
+        <amendment id="bc-autofix-t41610-case1" sequence="4.6"
+                   description="Table 4.1.6.10.: Case I Cw cell reads 'As stated in 4.1.6.2.(3) and (4)' as in the PDF">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect6.art10.table1.row4"/>
+            <modify>
+                <element-replace element="entry" position="3">
+                    <new-content source="bc">
+                        <entry>As stated <ref type="internal" target="nbc.divB.part4.sect1.subsect6.art2.sent3" display-type="number" pretext="in"/> <ref type="internal" target="nbc.divB.part4.sect1.subsect6.art2.sent4" display-type="short" pretext="and"/></entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
         
         <!-- ================================================================== -->
         <!-- Amendment 005: Replace NBC with British Columbia Building Code    -->
