@@ -348,7 +348,8 @@
                                 </thead>
                                 <tbody>
                                     <row>
-                                        <entry>Fenestration<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn3">Except skylights and glass block assemblies.</note> and doors</entry>
+                                        <!-- CLAUDE-AUTOFIX CF-05808 | issue 1808 | Note (3) reads "Except skylights (see Sentence (2)) and glass block assemblies (see Sentence (4))." as in the PDF. -->
+                                        <entry>Fenestration<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn3">Except skylights (see Sentence (2)) and glass block assemblies (see Sentence (4)).</note> and doors</entry>
                                         <entry>Max. U-value, W/(m<super>2</super>×K)</entry>
                                         <entry>1.84</entry>
                                         <entry>1.84</entry>
