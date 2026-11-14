@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T10:31:44.879+05:30",
+  "generated_timestamp" : "2026-11-14T10:35:23.9+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -127253,7 +127253,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote135.para1",
-             "content" : "The intention of [REF:internal:nbc.divB.part3.sect3.subsect2.art1.sent2:short] is to allow Code users the option of using NFPA 101, “Life Safety Code,” to address the following issues: means of egress; egress routes within assembly occupancies; aisles and access serving seating not at tables; guards and railings; life safety evaluation; and smoke-protected assembly seating. However, opting to use NFPA 101, “Life Safety Code,” under this application entails adherence to all the provisions listed in [REF:internal:nbc.divB.part3.sect3.subsect2.art1.sent2:short] : it is not intended that Code users randomly select and apply a mix of provisions from both the British Columbia Building Code and the NFPA." } ] },
+             "content" : "The intention of [REF:internal:nbc.divB.part3.sect3.subsect2.art1.sent2:short] is to allow Code users the option of using NFPA 101, “Life Safety Code,” to address the following issues: means of egress; egress routes within assembly occupancies; aisles and access serving seating not at tables; guards and railings; life safety evaluation; and smoke-protected assembly seating. However, opting to use NFPA 101 under this application entails adherence to all the provisions listed in [REF:internal:nbc.divB.part3.sect3.subsect2.art1.sent2:short] : it is not intended that Code users randomly select and apply a mix of provisions from both the British Columbia Building Code and the NFPA." } ] },
           
           { "id" : "nbc.divB.part3.appendix.appnote136",
            "type" : "application_note",
@@ -169350,7 +169350,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote8.para6",
-             "content" : "It is also noted that CSA S478, “Durability in buildings,” contains requirements for actions beyond the scope of the British Columbia Building Code, which may not be the responsibility of the designer, builder or authority having jurisdiction. These include requirements relating to quality assurance, inspection, maintenance, minimum design service lives and potential impacts of climate change, which are not addressed in the Code. The reference herein to CSA S478, “Durability in buildings,” is not intended to imply that the designer, builder or authority having jurisdiction adopt, apply or enforce any of these requirements." },
+             "content" : "It is also noted that CSA S478 contains requirements for actions beyond the scope of the British Columbia Building Code, which may not be the responsibility of the designer, builder or authority having jurisdiction. These include requirements relating to quality assurance, inspection, maintenance, minimum design service lives and potential impacts of climate change, which are not addressed in the Code. The reference herein to CSA S478 is not intended to imply that the designer, builder or authority having jurisdiction adopt, apply or enforce any of these requirements." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part5.appendix.appnote8.para7",
@@ -173048,7 +173048,7 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "are installed in conformance with CAN\/ULC-S524, “Standard for Installation of Fire Alarm Systems,” and" },
+                  "text" : "are installed in conformance with CAN\/ULC-S524, “Installation of Fire Alarm Systems,” and" },
                  
                  { "id" : "nbc.divB.part6.sect9.subsect3.art1.sent9.clause3",
                   "type" : "clause",
@@ -215486,7 +215486,7 @@
                   [ 
                    { "content" : "except as provided in Clause (b), for floor and roof assemblies, by applying at least one of the following layers to the unexposed surface of the assembly:[LIST:bulleted]" },
                    
-                   { "content" : "for plank decking designed in accordance with [REF:external:csa086:Clause B.10 of]  CSA O86, “Engineering design in wood,” by applying at least one of the layers described in [REF:external:csa086:Clause B.10.4 of ] CSA O86, “Engineering design in wood,” to the unexposed surface of the assembly," },
+                   { "content" : "for plank decking designed in accordance with [REF:external:csa086:Clause B.10 of]  CSA O86, “Engineering design in wood,” by applying at least one of the layers described in [REF:external:csa086:Clause B.10.4 of ] CSA O86 to the unexposed surface of the assembly," },
                    
                    { "content" : "for interior wall assemblies, by applying at least one of the following layers to at least one side of the assembly, with the joints in the layer staggered relative to those in the assembly:[LIST:bulleted]" },
                    
@@ -215532,7 +215532,7 @@
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article4.para5",
-                "content" : "5) For interior wall assemblies, the additional times assigned in [REF:external:csao86:Clause B.8.1 of ] CSA O86, “Engineering design in wood,” shall only be applied to the calculated fire-resistance rating where both sides of the assembly are protected in accordance with [REF:external:csao86:Clause B.8 of ] CSA O86, “Engineering design in wood.” Where the level of protection differs on the two sides, the additional time corresponding to the lesser level of protection shall be applied." },
+                "content" : "5) For interior wall assemblies, the additional times assigned in [REF:external:csao86:Clause B.8.1 of ] CSA O86, “Engineering design in wood,” shall only be applied to the calculated fire-resistance rating where both sides of the assembly are protected in accordance with [REF:external:csao86:Clause B.8 of ] CSA O86. Where the level of protection differs on the two sides, the additional time corresponding to the lesser level of protection shall be applied." },
                
                { "type" : "paragraph",
                 "id" : "nbc.divB.appendixD.appsect2.subsect11.article4.para6",
@@ -215542,7 +215542,7 @@
                  { "type" : "bulleted",
                   "items" : 
                   [ 
-                   { "content" : "the interior (fire-exposed) side of the assembly is protected in accordance with [REF:external:csao86:Clause B.8 of ] CSA O86, “Engineering design in wood,” and" },
+                   { "content" : "the interior (fire-exposed) side of the assembly is protected in accordance with [REF:external:csao86:Clause B.8 of ] CSA O86, and" },
                    
                    { "content" : "except where the assembly is constructed of cross-laminated timber panels with lapped or splined joints as described in [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para4:short:Sentence (4)] , the exterior (unexposed) side of the assembly is protected in accordance with  Clause [REF:internal:nbc.divB.appendixD.appsect2.subsect11.article4.para3:short:(3)(d)] ." } ] } ] } ] } ] } ] },
          
@@ -340031,7 +340031,7 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "CSA B139 Series, “Installation code for oil-burning equipment,” Series," },
+                  "text" : "CSA B139 Series, “Installation code for oil-burning equipment,”" },
                  
                  { "id" : "nbc.divBV2.part9.sect31.subsect6.art2.sent2.clause3",
                   "type" : "clause",
