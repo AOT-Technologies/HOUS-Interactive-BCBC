@@ -2475,6 +2475,13 @@
             </insert>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-01969 | issue 1569 | Note A-3.7.2.2.(1) deleted: the BC 2024 PDF has no such Note and Sentence 3.7.2.2.(1) no longer refers to it (bc-custom-3722-1). -->
+        <amendment id="bc-custom-a3722-1" sequence="180.5"
+                   description="Delete Application Note A-3.7.2.2.(1) (not in BCBC 2024)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote180"/>
+            <delete/>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 183: Update Application Note A-3.4.5.1.(4)              -->
         <!-- Externally Illuminated Signs - add continuous illumination ref    -->
