@@ -665,15 +665,13 @@
         <!-- ================================================================== -->
         <amendment id="bc-120" sequence="109"
                    description="Add reference to Sentence 3.3.1.13.(4) regarding additional devices in Article 3.8.3.6.(4)">
-            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent4"/>
-            <modify>
-                <text-change xpath-within-target="text()">
-                    <find-replace>
-                        <find>above the floor.</find>
-                        <replace>above the floor. (See also <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art13.sent4" display-type="medium"/> regarding additional devices.)</replace>
-                    </find-replace>
-                </text-change>
-            </modify>
+            <!-- CLAUDE-AUTOFIX CF-01523 | issue 1723 | The find "above the floor." never matched (the text is in Clause b)); the see-also now sits after the Clauses, before the Note reference, as in the PDF. -->
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent4.seealso"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <see-also xml:id="nbc.divB.part3.sect8.subsect3.art6.sent4.seealso">(See also <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art13.sent4" display-type="long"/> regarding additional devices.) (See <ref type="internal" target="nbc.divB.part3.appendix.appnote209" display-type="short"/>.)</see-also>
+                </new-content>
+            </replace>
         </amendment>
         
         <!-- ================================================================== -->
