@@ -12420,7 +12420,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <title>Carbon Monoxide Alarms</title>
                         <see-also xml:id="nbc.divBV2.part9.sect32.subsect4.art2.seealso1">(See Note A-9.32.4.2.)</see-also>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent1" number="1">
-                            <text>This Article applies to every <ref type="term" target="bldng">building</ref> that contains a <ref type="term" target="rdntl-cc">residential occupancy</ref>, a business and personal services occupancy, or a mercantile occupancy and that</text>
+                            <!-- CLAUDE-AUTOFIX CF-00006 | issue 1375 | Business and personal services occupancy and mercantile occupancy are defined terms (italic), as in the PDF. -->
+                            <text>This Article applies to every <ref type="term" target="bldng">building</ref> that contains a <ref type="term" target="rdntl-cc">residential occupancy</ref>, a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref> and that</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent1.clause1" letter="a">
                                 <text>is served by or contains a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or</text>
                             </clause>
