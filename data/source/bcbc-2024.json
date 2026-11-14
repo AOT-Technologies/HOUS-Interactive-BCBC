@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T11:13:58.449+05:30",
+  "generated_timestamp" : "2026-11-14T11:16:29.1+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -538805,20 +538805,20 @@
               
               { "type" : "paragraph",
                "id" : "nbc.divBV2.part9.appendix.appnote131.div1.para3",
-               "content" : "Where the braced wall bands are not parallel, the adjacent band is identified as follows using [REF:internal:nbc.divBV2.part9.appendix.appnote131.figure2:long:Figure Table A-9.23.13.5.-B] as an example: 1. [LIST:numbered]",
+               "content" : "Where the braced wall bands are not parallel, the adjacent band is identified as follows using [REF:internal:nbc.divBV2.part9.appendix.appnote131.figure2:long:Figure Table A-9.23.13.5.-B] as an example: [LIST:numbered]",
                "lists" : 
                [ 
                 { "type" : "numbered",
                  "items" : 
                  [ 
                   { "id" : "nbc.divBV2.part9.appendix.appnote131.div1.para3.item1",
-                   "content" : "Determine the mid-point of the centre line of the subject braced wall band (A); 2." },
+                   "content" : "Determine the mid-point of the centre line of the subject braced wall band (A);" },
                   
                   { "id" : "nbc.divBV2.part9.appendix.appnote131.div1.para3.item2",
-                   "content" : "Project a perpendicular line from this mid-point (B); 3." },
+                   "content" : "Project a perpendicular line from this mid-point (B);" },
                   
                   { "id" : "nbc.divBV2.part9.appendix.appnote131.div1.para3.item3",
-                   "content" : "The first braced wall band encountered is the adjacent braced wall band (C); 4." },
+                   "content" : "The first braced wall band encountered is the adjacent braced wall band (C);" },
                   
                   { "id" : "nbc.divBV2.part9.appendix.appnote131.div1.para3.item4",
                    "content" : "Where the projected line encounters an intersection point between two braced wall bands, either wall band may be identified as the adjacent braced wall band (complex cases)." } ] } ] },
