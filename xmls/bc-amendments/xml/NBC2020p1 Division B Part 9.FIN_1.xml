@@ -11722,7 +11722,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause2" letter="b">
-                                <text>draw supply air from an outdoor inlet that is connected to the cabinet containing the furnace air circulating fan required by <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="medium"/> by ducting that measures, from that cabinet to the point at which the ducting intersects the return air plenum,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10647 | issue 1373 | Printed "Clause (d)" (same Sentence), as in the PDF. -->
+                                <text>draw supply air from an outdoor inlet that is connected to the cabinet containing the furnace air circulating fan required by <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="short"/> by ducting that measures, from that cabinet to the point at which the ducting intersects the return air plenum,</text>
                                 <subclause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause2.subclause1" number="1">
                                     <text>between 3 m and 4.5 m in length, or</text>
                                 </subclause>
@@ -11746,7 +11747,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent3" number="3">
                             <text>Where the principal ventilation system is a ducted forced-air heating system used in combination with a heat-recovery ventilator,</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent3.clause1" letter="a">
-                                <text>the ducted forced-air heating system shall conform to <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1" display-type="medium"/>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause3" display-type="medium"/> and <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="medium"/>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10647 | issue 468 | Printed "Clauses (2)(a), (c) and (d)", as in the PDF. -->
+                                <text>the ducted forced-air heating system shall conform to <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1" display-type="medium" pretext="Clauses">(2)(a)</ref>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause3" display-type="short"/> and <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="short"/>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent3.clause2" letter="b">
                                 <text>the heat-recovery ventilator shall draw supply air from an outdoor inlet into the return air plenum of the ducted forced-air heating system, and</text>
