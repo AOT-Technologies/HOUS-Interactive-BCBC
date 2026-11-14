@@ -599,6 +599,67 @@
             </modify>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CF-10024 | issue 56 | The NPC row lists only 7.1.2.1.(1), as in the PDF. -->
+        <amendment id="bc-autofix-t1312-row-1" sequence="13.21"
+                   description="Table 1.3.1.2.: Code References of NRCC-CONST-56436E (NPC 2020) as in the BC PDF">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row130"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part7.sect1.subsect2.art1.sent1" display-type="number">7.1.2.1.(1)</ref>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10024 | issue 57 | The NFC row lists only 7.1.2.1.(2), as in the PDF. -->
+        <amendment id="bc-autofix-t1312-row-2" sequence="13.22"
+                   description="Table 1.3.1.2.: Code References of NRCC-CONST-56437E (NFC 2020) as in the BC PDF">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row131"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part7.sect1.subsect2.art1.sent2" display-type="number">7.1.2.1.(2)</ref>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10024 | issue 57 | The PDF has no "National Fire Code of Canada 2020 (continued)" row: its NBC references are not in the BC list. -->
+        <amendment id="bc-autofix-t1312-row-3" sequence="13.23"
+                   description="Table 1.3.1.2.: delete the NFC (continued) row">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row132"/>
+            <delete/>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10024 | issue 87 | The A440 row lists 9.7.4.3.(1) and (2) instead of Table 9.7.3.3., 9.7.4.1.(1) and 9.7.4.2.(1), as in the PDF. -->
+        <amendment id="bc-autofix-t1312-row-4" sequence="13.24"
+                   description="Table 1.3.1.2.: Code References of AAMA/WDMA/CSA 101/I.S.2/A440-17 as in the BC PDF">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row201"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1" display-type="number">5.9.2.2.(1)</ref>
+                            <ref type="internal" target="nbc.divB.part5.appendix.appnote16" display-type="number">A-5.3.1.2.</ref>
+                            <ref type="internal" target="nbc.divB.part5.appendix.appnote45" display-type="number">A-5.9.2.3.(1)</ref>
+                            <ref type="internal" target="nbc.divB.part5.appendix.appnote48" display-type="number">A-5.9.3.1.(1)</ref>
+                            <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art3.sent1" display-type="number">9.7.4.3.(1)</ref>
+                            <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art3.sent2" display-type="number">9.7.4.3.(2)</ref>
+                            <ref type="internal" target="nbc.divBV2.part9.sect7.subsect5.art1.sent1" display-type="number">9.7.5.1.(1)</ref>
+                            <ref type="internal" target="nbc.divBV2.part9.sect7.subsect5.art3.sent1" display-type="number">9.7.5.3.(1)</ref>
+                            <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art9.sent3" display-type="number">9.36.2.9.(3)</ref>
+                            <ref type="internal" target="nbc.divBV2.part9.appendix.appnote22" display-type="number">A-9.7.4.2.(1)</ref>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 12: Ensure visible Code Reference text for AAMA rows     -->
         <!-- ================================================================== -->
