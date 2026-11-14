@@ -740,17 +740,23 @@ const formatFormingPartItems = (items: FormingPartItem[]): string => {
       joinWithAnd([`${group.article}.${group.tails[0]}`, ...group.tails.slice(1)])
     );
     const hasGroupWithSeveralItems = groups.some((group) => group.tails.length > 1);
+    // CLAUDE-AUTOFIX CL-092 CF-10562 | issue 1451 | With 3 or more numbers the PDF separates them with commas and puts "and" (", and" after a group that has its own "and") only before the last one.
     const body =
       groupTexts.length === 1
         ? groupTexts[0]
-        : hasGroupWithSeveralItems
-          ? groupTexts.join(' and ')
-          : joinWithAnd(groupTexts);
+        : groupTexts.length >= 3
+          ? `${groupTexts.slice(0, -1).join(', ')}${groupTexts[groupTexts.length - 2].includes(' and ') ? ', and ' : ' and '}${groupTexts[groupTexts.length - 1]}`
+          : hasGroupWithSeveralItems
+            ? groupTexts.join(' and ')
+            : joinWithAnd(groupTexts);
     return `${pretext} ${body}`;
   });
 
+  // CLAUDE-AUTOFIX CL-092 CF-10540 | issue 1398 | Runs (Sentences ..., Clause ..., Article ...) are separated by commas; "and" comes only before the last run, as in the PDF.
   return texts.reduce((text, next, index) =>
-    index === 0 ? next : `${text}${texts[index - 1].includes(' and ') ? ', and ' : ' and '}${next}`
+    index === 0
+      ? next
+      : `${text}${index < texts.length - 1 ? ', ' : texts[index - 1].includes(' and ') ? ', and ' : ' and '}${next}`
   );
 };
 
