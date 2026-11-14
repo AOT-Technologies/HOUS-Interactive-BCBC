@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T10:07:54.011+05:30",
+  "generated_timestamp" : "2026-11-14T10:13:57.75+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -121896,7 +121896,7 @@
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote96.para2",
-             "content" : "According to NFPA 13, “Standard for the Installation of Sprinkler Systems,” and NFPA 13R, “Standard for the Installation of Sprinkler Systems in Low-Rise Residential Occupancies,” some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly." },
+             "content" : "According to NFPA 13 and 13R, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly." },
             
             { "type" : "paragraph",
              "id" : "nbc.divB.part3.appendix.appnote96.para3",
@@ -170765,12 +170765,12 @@
                 "number" : 2,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "A solid-fuel burning [REF:term:blr:boiler] accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CSA B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”",
+                "text" : "A solid-fuel burning [REF:term:blr:boiler] accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN\/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”",
                 "revisions" : 
                 [ 
                  { "type" : "original",
                   "effective_date" : "2024-03-08",
-                  "text" : "A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CSA B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”" },
+                  "text" : "A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN\/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”" },
                  
                  { "type" : "revision",
                   "revision_type" : "amendment",
@@ -170778,7 +170778,7 @@
                   "sequence" : 1,
                   "effective_date" : "2025-06-16",
                   "status" : "current",
-                  "text" : "A solid-fuel burning [REF:term:blr:boiler] accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CSA B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”",
+                  "text" : "A solid-fuel burning [REF:term:blr:boiler] accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN\/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”",
                   "change_summary" : "Struck out \"boiler\" and substituted \"boiler\"",
                   "note" : "Ministerial Order BA 2024 06" } ] } ] },
              
@@ -172941,7 +172941,7 @@
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "CSA 6.19, “Residential carbon monoxide alarming devices,” notwithstanding the scope of that standard," },
+                  "text" : "CAN\/CSA-6.19, “Residential Carbon Monoxide Alarming Devices,” notwithstanding the scope of that standard," },
                  
                  { "id" : "nbc.divB.part6.sect9.subsect3.art1.sent6.clause2",
                   "type" : "clause",
@@ -176868,7 +176868,7 @@
            "content" : 
            [ 
             { "type" : "paragraph",
-             "content" : "Although the scope of CSA 6.19, “Residential carbon monoxide alarming devices,” and [REF:standard:ul2034:UL 2034] , “Standard for Single and Multiple Station Carbon Monoxide Alarms,” is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications." } ] },
+             "content" : "Although the scope of CAN\/CSA-6.19, “Residential Carbon Monoxide Alarming Devices,” and [REF:standard:ul2034:UL 2034] , “Standard for Single and Multiple Station Carbon Monoxide Alarms,” is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications." } ] },
           
           { "id" : "nbc.divB.part6.appendix.appnote23b",
            "type" : "application_note",
@@ -343097,7 +343097,7 @@
                 [ 
                  { "type" : "original",
                   "effective_date" : "2024-03-08",
-                  "text" : "For the purposes of [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3.sent1:short] , solid-fuel-burning boiler [REF:term:pplnc:appliances] that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of CSA B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.” (See also Subclause 9.33.5.2.(1)(a)(ii).)" },
+                  "text" : "For the purposes of [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3.sent1:short] , solid-fuel-burning boiler [REF:term:pplnc:appliances] that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of CAN\/CSA-B365 “Installation Code for Solid-Fuel-Burning Appliances and Equipment.” (See also Subclause 9.33.5.2.(1)(a)(ii).)" },
                  
                  { "type" : "revision",
                   "revision_type" : "amendment",
@@ -533368,7 +533368,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote61.para1",
-             "content" : "Doors described in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art3.sent2:long] are deemed to provide a minimum 20 min fire-protection rating, which is considered an acceptable level of protection against the spread of fire in a house with a secondary suite. They are not required to be marked to identify conformance to [REF:standard:ulcs113:CAN\/ULC-S113] , “Standard Specification for Wood Core Doors Meeting the Performance Required by CAN\/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies,” as is the case for solid-core doors installed in fire separations." } ] },
+             "content" : "Doors described in [REF:internal:nbc.divBV2.part9.sect10.subsect9.art3.sent2:long] are deemed to provide a minimum 20 min fire-protection rating, which is considered an acceptable level of protection against the spread of fire in a house with a secondary suite. They are not required to be marked to identify conformance to CAN\/ULC-S113, “Standard Specification for Wood Core Doors Meeting the Performance Required by CAN\/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies,” as is the case for solid-core doors installed in fire separations." } ] },
           
           { "id" : "nbc.divBV2.part9.appendix.appnote62",
            "type" : "application_note",
@@ -533460,7 +533460,7 @@
            [ 
             { "type" : "paragraph",
              "id" : "nbc.divBV2.part9.appendix.appnote68.para1",
-             "content" : "[REF:standard:ulcs113:CAN\/ULC-S113] , “Standard Specification for Wood Core Doors Meeting the Performance Required by CAN\/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies,” provides construction details to enable manufacturers to build wood core doors that will provide a 20 min fire-protection rating without the need for testing. The standard requires each door to be marked with[LIST:numbered]",
+             "content" : "CAN\/ULC-S113, “Standard Specification for Wood Core Doors Meeting the Performance Required by CAN\/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies,” provides construction details to enable manufacturers to build wood core doors that will provide a 20 min fire-protection rating without the need for testing. The standard requires each door to be marked with[LIST:numbered]",
              "lists" : 
              [ 
               { "type" : "numbered",
@@ -619549,7 +619549,7 @@
    { "location_id" : "nbc.divB.part6.sect2.subsect1.art5.sent2",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CSA B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”" },
+    "content" : "A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN\/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”" },
    
    { "location_id" : "nbc.divB.part6.sect2.subsect1.art5.sent2",
     "type" : "revision",
@@ -619558,7 +619558,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "A solid-fuel burning [REF:term:blr:boiler] accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CSA B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”",
+    "content" : "A solid-fuel burning [REF:term:blr:boiler] accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN\/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”",
     "change_summary" : "Struck out \"boiler\" and substituted \"boiler\"",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -620429,7 +620429,7 @@
    { "location_id" : "nbc.divBV2.part9.sect33.subsect5.art3.sent2",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "For the purposes of [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3.sent1:short] , solid-fuel-burning boiler [REF:term:pplnc:appliances] that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of CSA B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.” (See also Subclause 9.33.5.2.(1)(a)(ii).)" },
+    "content" : "For the purposes of [REF:internal:nbc.divBV2.part9.sect33.subsect5.art3.sent1:short] , solid-fuel-burning boiler [REF:term:pplnc:appliances] that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of CAN\/CSA-B365 “Installation Code for Solid-Fuel-Burning Appliances and Equipment.” (See also Subclause 9.33.5.2.(1)(a)(ii).)" },
    
    { "location_id" : "nbc.divBV2.part9.sect33.subsect5.art3.sent2",
     "type" : "revision",
