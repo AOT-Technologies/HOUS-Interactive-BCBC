@@ -1325,7 +1325,8 @@ export function parseTextWithMarkers(
   // Use non-greedy match to capture everything between [[ and ]],
   // while also supporting spaced forms like:
   // [ [REF:functional-statement:fs03] - [REF:sub-objective:nbc-obj-os1.2] ]
-  const doubleBracketRegex = /\[\s*\[([\s\S]*?)\]\s*\]/g;
+  // CLAUDE-AUTOFIX CL-095 CF-10189 | issue 571 | A stray comma before the closing bracket ("... nbc-obj-op2.3] ,]", Table 9.38.1.1.) no longer leaves the raw [REF:...] markers on the page.
+  const doubleBracketRegex = /\[\s*\[([\s\S]*?)\]\s*,?\s*\]/g;
 
   while ((match = doubleBracketRegex.exec(sanitizedText)) !== null) {
     const content = match[1];
