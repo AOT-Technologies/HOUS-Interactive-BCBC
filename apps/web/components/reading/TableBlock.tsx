@@ -1553,8 +1553,9 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   });
   const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
   // CLAUDE-AUTOFIX CL-089 CF-08525 | issue 737 | Untitled worked-example tables in appendix Notes have no "Table A-..." caption in the PDF, so none is invented.
+  // CLAUDE-AUTOFIX CL-098 CF-10784 | issue 551 | An untitled table placed directly in a Note (A-9.23.13.) has no "Table A-..." caption in the PDF either.
   const isUntitledExampleTable =
-    /\.example\d+\.table\d+$/i.test(rawTable.id ?? '') && !(typeof resolvedTitle === 'string' && resolvedTitle.trim());
+    /\.(?:example\d+|appnote\d+)\.table\d+$/i.test(rawTable.id ?? '') && !(typeof resolvedTitle === 'string' && resolvedTitle.trim());
   const tableNumber = isUntitledExampleTable
     ? null
     : tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
