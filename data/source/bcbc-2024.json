@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T09:59:38.67+05:30",
+  "generated_timestamp" : "2026-11-14T10:03:06.454+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -171250,7 +171250,8 @@
                  { "id" : "nbc.divB.part6.sect3.subsect2.art9.sent2.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the quality of the air entering the [REF:term:bldng:building] complies with  Sentences [REF:internal:nbc.divB.part6.sect2.subsect1.art2.sent2:long] and [REF:internal:nbc.divB.part6.sect2.subsect1.art2.sent3:short:(3)] , and" },
+                  "source" : "bc",
+                  "text" : "reserved" },
                  
                  { "id" : "nbc.divB.part6.sect3.subsect2.art9.sent2.clause2",
                   "type" : "clause",
@@ -174801,7 +174802,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "RESERVED" } ] } ] },
                   
                   { "id" : "nbc.divB.part6.sect10.subsect1.art1.table1.row129",
                    "type" : "body_row",
@@ -174811,13 +174812,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:shortNum]" } ],
-                     "rowspan" : 2 },
+                       "value" : "[REF:internal:nbc.divB.part6.sect3.subsect2.art14.sent2:shortNum]" } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs40] , [REF:functional-statement:fs43] , [REF:functional-statement:fs44] , [REF:functional-statement:fs50] - [REF:sub-objective:nbc-obj-oh1.1] ]" } ] } ] },
+                       "value" : "RESERVED" } ] } ] },
                   
                   { "id" : "nbc.divB.part6.sect10.subsect1.art1.table1.row130",
                    "type" : "body_row",
@@ -174827,7 +174827,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[ [REF:functional-statement:fs44] - [REF:sub-objective:nbc-obj-os3.4] ]" } ] } ] },
+                       "value" : "" } ] },
+                    
+                    { "content" : 
+                     [ 
+                      { "type" : "text",
+                       "value" : "" } ] } ] },
                   
                   { "id" : "nbc.divB.part6.sect10.subsect1.art1.table1.row131",
                    "type" : "body_row",
