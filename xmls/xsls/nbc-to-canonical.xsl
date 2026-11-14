@@ -1413,6 +1413,10 @@
   <!-- Change tracking: IGNORE markers (no redline in canonical) -->
   <xsl:template match="change-begin | change-end" mode="rich-text" />
 
+  <!-- CLAUDE-AUTOFIX CF-07979 | issue 5064 | A table note written, or referred to, inside a list or paragraph of a table cell becomes a table-note mark, instead of its text printed inline or the mark being dropped, as in the PDF. -->
+  <xsl:template match="note[@id][ancestor::entry][not(ancestor::note)]" mode="rich-text"><ref type="table-note" target="{@id}" /></xsl:template>
+  <xsl:template match="ref.note[ancestor::entry][not(ancestor::note)]" mode="rich-text"><ref type="table-note" target="{@refid}" /></xsl:template>
+
   <!-- ================================================================== -->
   <!-- MATHEMATICAL EQUATIONS - MathML Conversion                         -->
   <!-- ================================================================== -->
@@ -1730,6 +1734,10 @@
           <xsl:when test="@lp='par'">(</xsl:when>
           <xsl:when test="@lp='bra'">[</xsl:when>
           <xsl:when test="@lp='brc'">{</xsl:when>
+          <!-- CLAUDE-AUTOFIX CF-02024 | issue 846 | The NBC XML names its fences sqb, cub and vb: they open with [, { and |, as in the PDF (they fell back to a round bracket). -->
+          <xsl:when test="@lp='sqb'">[</xsl:when>
+          <xsl:when test="@lp='cub'">{</xsl:when>
+          <xsl:when test="@lp='vb'">|</xsl:when>
           <xsl:otherwise>(</xsl:otherwise>
         </xsl:choose>
       </mo>
@@ -1758,6 +1766,10 @@
         <xsl:when test="@post='par'">)</xsl:when>
         <xsl:when test="@post='bra'">]</xsl:when>
         <xsl:when test="@post='brc'">}</xsl:when>
+        <!-- CLAUDE-AUTOFIX CF-02024 | issue 846 | Closing fences sqb, cub and vb print ], } and |, as in the PDF. -->
+        <xsl:when test="@post='sqb'">]</xsl:when>
+        <xsl:when test="@post='cub'">}</xsl:when>
+        <xsl:when test="@post='vb'">|</xsl:when>
         <xsl:when test="@type='lp'">(</xsl:when>
         <xsl:when test="@type='rp'">)</xsl:when>
         <xsl:otherwise>
@@ -1773,8 +1785,8 @@
   </xsl:template>
 
   <!-- Vertical mark (vmk, vmkr) - typically for absolute value or norms -->
+  <!-- CLAUDE-AUTOFIX CF-10419 | issue 847 | vmk/vmkr are alignment marks between equation lines (id/rid), not printed bars: they print nothing, as in the PDF. -->
   <xsl:template match="vmk | vmkr" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
-    <mo>|</mo>
   </xsl:template>
 
   <!-- Accent (ac) -->
@@ -1808,7 +1820,8 @@
 
   <xsl:template name="math-text" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:param name="raw" as="xs:string" />
-    <xsl:variable name="text" select="normalize-space($raw)" />
+    <!-- CLAUDE-AUTOFIX CF-02042 | issue 850 | The NBC XML writes some brackets as private-use characters U+F8D2 and U+F8D7, which show as blanks: they are ( and ), as in the PDF (4.1.6.5. and 4.1.6.10. equations). -->
+    <xsl:variable name="text" select="normalize-space(translate($raw, '&#xF8D2;&#xF8D7;', '()'))" />
     <xsl:if test="$text != ''">
       <xsl:choose>
         <!-- Operators -->
@@ -2046,7 +2059,8 @@
     <!-- Process the title as emphasized text in a paragraph -->
     <xsl:if test="title and normalize-space(title)">
       <paragraph xml:id="{$example-id}">
-        <emphasis style="bold"><xsl:apply-templates select="title/node()" mode="rich-text" /></emphasis>
+        <!-- CLAUDE-AUTOFIX CF-08519 | issue 731 | An example title that starts with a dash ("– Trading RSI values ...") gets its number, "Example 1 – ...", as in the PDF. -->
+        <emphasis style="bold"><xsl:if test="starts-with(normalize-space(string(title)), '&#8211;')"><xsl:value-of select="concat('Example ', count(preceding::example intersect ancestor::*[number][1]//example) + 1, ' ')" /></xsl:if><xsl:apply-templates select="title/node()" mode="rich-text" /></emphasis>
       </paragraph>
     </xsl:if>
     <!-- Process the para elements inside example with unique parent-id -->

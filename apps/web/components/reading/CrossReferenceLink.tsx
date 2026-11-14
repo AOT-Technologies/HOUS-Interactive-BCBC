@@ -19,6 +19,8 @@ interface CrossReferenceLinkProps {
   interactive?: boolean;
   preserveDisplayText?: boolean;
   currentDivision?: string;
+  // CLAUDE-AUTOFIX CF-04057 | issue 10373 | True when the source text puts a period right after the reference ("(See Note A-9.4.1.1.)").
+  followedByPeriod?: boolean;
 }
 
 type ApplicationNoteMeta = {
@@ -46,6 +48,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   interactive = true,
   preserveDisplayText = false,
   currentDivision,
+  followedByPeriod = false,
 }) => {
   const { openReference, navigateReference } = useCrossReferenceContext();
   const searchParams = useSearchParams();
@@ -180,7 +183,9 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
         : matchedNote.title && matchedNote.title.trim()
           ? `${noteLabel} ${matchedNote.title.trim()}`
           : noteLabel;
-      const nextText = format === 'long' ? longLabel : noteLabel;
+      // CLAUDE-AUTOFIX CL-087 CF-10062 | issue 116 | A "number" Note ref, or one whose "Note" word the text already gives ("See Notes ..."), shows only the number A-x.x.x.x., as in the PDF.
+      const omitNoteWord = format === 'number' || !/^Note\b/i.test(displayText.trim());
+      const nextText = omitNoteWord ? prefixedNumber : format === 'long' ? longLabel : noteLabel;
 
       if (active) {
         setAppnoteDisplayText(nextText);
@@ -191,7 +196,7 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
     return () => {
       active = false;
     };
-  }, [currentDivision, effectiveDate, fetchAppendix, format, parsedReference, referenceId, shouldResolveAppnoteDisplayText, version]);
+  }, [currentDivision, displayText, effectiveDate, fetchAppendix, format, parsedReference, referenceId, shouldResolveAppnoteDisplayText, version]);
 
   useEffect(() => {
     let active = true;
@@ -292,7 +297,8 @@ export const CrossReferenceLink: React.FC<CrossReferenceLinkProps> = ({
   const effectiveDisplayText = standardsDisplayText
     || spectableDisplayText
     || (appnoteDisplayText
-      ? `${appnoteDisplayText}${trailingClauseQualifier ? ` ${trailingClauseQualifier}` : ''}`
+      // CLAUDE-AUTOFIX CF-04057 | issue 10373 | A resolved Note label ending with a period drops it when the text supplies the period, so the page does not show "Note A-9.4.1.1..", as in the PDF.
+      ? `${followedByPeriod && !trailingClauseQualifier && appnoteDisplayText.endsWith('.') ? appnoteDisplayText.slice(0, -1) : appnoteDisplayText}${trailingClauseQualifier ? ` ${trailingClauseQualifier}` : ''}`
       : resolvedDisplayText);
 
   if (!interactive || isNonLinkExternalReference) {

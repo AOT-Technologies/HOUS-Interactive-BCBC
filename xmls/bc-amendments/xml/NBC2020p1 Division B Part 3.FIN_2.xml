@@ -106,6 +106,8 @@
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art8.sent4.clause2" letter="b">
                                 <text>the water closets required by <ref type="internal" target="nbc.divB.part3.sect7.subsect2" display-type="long"/> are for <ref type="term" target="dwllng-n">dwelling units</ref> only.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01490 | issue 6361 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect2.art8.sent4.seealso">(See Note A-3.8.2.8.(1) to (4).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art8.sent5" number="5">
                             <text>At least one water-closet stall or enclosure in a washroom required to be <ref type="term" target="brrr-fr">accessible</ref> shall comply with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/></text>
@@ -254,7 +256,8 @@
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1" number="1">
                             <text>At least one for every 20 or part thereof of sleeping rooms or bed spaces shall conform to <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="short"/> where provided in</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1.clause1" letter="a">
-                                <text>hotels and motels (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent1.clause7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent8" display-type="short"/>), and</text>
+                                <!-- CLAUDE-AUTOFIX CF-10637 | issue 173 | Plural label "Sentences 3.2.4.20.(7) and (8)", as in the PDF. -->
+                                <text>hotels and motels (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent1.clause7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent7" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent8" display-type="short"/>), and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1.clause2" letter="b">
                                 <text>not including apartments and condominiums and the <ref type="term" target="bldng">buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="short"/>, other <ref type="term" target="bldng">buildings</ref> or parts of <ref type="term" target="bldng">buildings</ref> used for <ref type="term" target="rdntl-cc">residential major occupancies</ref> (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent17" display-type="short"/>).</text>
@@ -278,7 +281,8 @@
                         <title>Design Standards</title>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art1.sent1" number="1">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6719 Note Reference 8f494ae968 -->
-                            <text><ref type="term" target="bldng">Buildings</ref> or parts thereof and facilities that are required to be <ref type="term" target="brrr-fr">accessible</ref> shall be designed in accordance with (See Note A-3.8.3.1.(1).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | The note reference is moved from the Sentence text to a see-also after the Clauses, where the PDF prints it. -->
+                            <text><ref type="term" target="bldng">Buildings</ref> or parts thereof and facilities that are required to be <ref type="term" target="brrr-fr">accessible</ref> shall be designed in accordance with</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art1.sent1.clause1" letter="a">
                                 <text>this Subsection, or</text>
                             </clause>
@@ -289,6 +293,8 @@
                                 <!-- CLAUDE-AUTOFIX CF-01499 | issue 8146 | The title is already typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
                                 <text>for each <ref type="term" target="brrr-fr">accessible</ref> application listed independent of other <ref type="term" target="brrr-fr">accessible</ref> applications, the applicable provisions of <ref type="standard" target="csab651" ref-style="notitle">CSA B651</ref>, “Accessible design for the built environment,” listed in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | Note reference after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art1.sent1.seealso">(See Note A-3.8.3.1.(1).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art1.sent2" number="2">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:1153 Incorrect Content 254e7550d4 -->
@@ -436,10 +442,12 @@
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:8667 Punctuation f127c87add -->
                                 <text>whose dimension perpendicular to each end of the reduced-clear width section is not less than <measurement units="metric">1 500 mm</measurement>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-3.8.3.2.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art2.sent2.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote201" display-type="short">Note A-3.8.3.2.(2)</ref>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3" number="3">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6721 Note Reference f3718b595e -->
-                            <text>Interior and exterior walking surfaces that are within an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall (See Note A-3.8.3.2.(3).)</text>
+                            <text>Interior and exterior walking surfaces that are within an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3.clause1" letter="a">
                                 <text>have no opening that will permit the passage of a sphere more than <measurement units="metric">13 mm</measurement> in diameter,</text>
                             </clause>
@@ -461,6 +469,8 @@
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3.clause7" letter="g">
                                 <text>be designed as a ramp complying with this Section where the path of travel has a slope steeper than 1 in 20.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01506 | issue 6367 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art2.sent3.seealso">(See Note A-3.8.3.2.(3).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent4" number="4">
                             <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel is permitted to include <ref type="term" target="rmp">ramps</ref>, passenger elevators or other platform-equipped passenger-elevating devices to overcome a difference in level.</text>
@@ -470,7 +480,7 @@
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent6" number="6">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6722 Note Reference 8ca6c7b156 -->
-                            <text>Where a section of an <ref type="term" target="brrr-fr">accessible</ref> path of travel is less than <measurement units="metric">1 500 mm</measurement> wide for a distance of more than <measurement units="metric">12 m</measurement>, it shall end in a clear floor space that is (See Note A-3.8.3.2.(6).)</text>
+                            <text>Where a section of an <ref type="term" target="brrr-fr">accessible</ref> path of travel is less than <measurement units="metric">1 500 mm</measurement> wide for a distance of more than <measurement units="metric">12 m</measurement>, it shall end in a clear floor space that is</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art2.sent6.clause1" letter="a">
                                 <text>not less than <measurement units="metric">1 700 mm</measurement> in diameter,</text>
                             </clause>
@@ -482,9 +492,12 @@
                                 <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:10408 Punctuation 298f10261c -->
                                 <text>T-shaped with overall dimensions measuring <measurement units="metric">1 700 mm</measurement> wide by <measurement units="metric">1 500 mm</measurement> long, where the two arms of the “T” are not less than <measurement units="metric">1 000 mm</measurement> wide and extend not less than <measurement units="metric">300 mm</measurement> from each side of the base of the “T” and the base is not less than <measurement units="metric">1 000 mm</measurement> wide and extends not less than <measurement units="metric">500 mm</measurement> from each arm.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01506 | issue 6367 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art2.sent6.seealso">(See Note A-3.8.3.2.(6).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent7" number="7">
-                            <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be equipped to provide illumination in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent1" display-type="medium"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent2" display-type="medium"/>. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent3" display-type="medium"/> and <ref type="internal" target="nbc.divBV2.part9.sect34.subsect2.art7" display-type="long"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-10638 | issue 176 | Plural label "Sentences 3.2.7.1.(1) and (2)" and "(See also Sentences 3.2.7.1.(3) ...)", as in the PDF. -->
+                            <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be equipped to provide illumination in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent1" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent2" display-type="medium"/>. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent3" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect34.subsect2.art7" display-type="long"/>.)</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -552,6 +565,13 @@
                         <replace>accessible</replace>
                     </find-replace>
                 </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01516 | issue 6373 | "a" before the new term "accessible" becomes "an", as in the PDF (an accessible path of travel). -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace regex="true">
+                        <find>(located in) a(\s+)$</find>
+                        <replace>$1 an$2</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
@@ -583,6 +603,13 @@
                         <replace>accessible</replace>
                     </find-replace>
                 </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01516 | issue 6373 | "a" before the new term "accessible" becomes "an", as in the PDF (an accessible path of travel). -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace regex="true">
+                        <find>(swinging door in|sliding door in) a(\s+)$</find>
+                        <replace>$1 an$2</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
@@ -603,6 +630,8 @@
                         <clause xml:id="nbc.divB.part3.sect8.subsect3.art6.sent2.clause2" letter="b">
                             <text>for sliding doors, when measured from the edge of the door, in the open position, to the outside of the stop on the door frame.</text>
                         </clause>
+                        <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-3.8.3.6.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect8.subsect3.art6.sent2.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote207" display-type="short">Note A-3.8.3.6.(2)</ref>.)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -636,15 +665,13 @@
         <!-- ================================================================== -->
         <amendment id="bc-120" sequence="109"
                    description="Add reference to Sentence 3.3.1.13.(4) regarding additional devices in Article 3.8.3.6.(4)">
-            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent4"/>
-            <modify>
-                <text-change xpath-within-target="text()">
-                    <find-replace>
-                        <find>above the floor.</find>
-                        <replace>above the floor. (See also <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art13.sent4" display-type="medium"/> regarding additional devices.)</replace>
-                    </find-replace>
-                </text-change>
-            </modify>
+            <!-- CLAUDE-AUTOFIX CF-01523 | issue 1723 | The find "above the floor." never matched (the text is in Clause b)); the see-also now sits after the Clauses, before the Note reference, as in the PDF. -->
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art6.sent4.seealso"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <see-also xml:id="nbc.divB.part3.sect8.subsect3.art6.sent4.seealso">(See also <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art13.sent4" display-type="long"/> regarding additional devices.) (See <ref type="internal" target="nbc.divB.part3.appendix.appnote209" display-type="short"/>.)</see-also>
+                </new-content>
+            </replace>
         </amendment>
         
         <!-- ================================================================== -->
@@ -851,7 +878,7 @@
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art10.sent2" number="2">
                             <!-- bcbc-xml-fix: 118e176ccbed4917aae54f9ce599c279:6731 Reference 706ddc78b1 -->
-                            <text>Where drinking fountains referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art10.sent1" display-type="short"/> are located in a <ref type="term" target="tr">storey</ref> where an <ref type="term" target="brrr-fr">accessible</ref> path of travel is required, they shall (See Sentences 3.3.1.8.(2) and (3) on horizontal projections.)</text>
+                            <text>Where drinking fountains referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art10.sent1" display-type="short"/> are located in a <ref type="term" target="tr">storey</ref> where an <ref type="term" target="brrr-fr">accessible</ref> path of travel is required, they shall</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect3.art10.sent2.clause1" letter="a">
                                 <text>be located along the <ref type="term" target="brrr-fr">accessible</ref> path of travel,</text>
                             </clause>
@@ -870,6 +897,8 @@
                                     <text>directs water flow in a trajectory that is nearly parallel to the front of the unit, at a height not less than <measurement units="metric">100 mm</measurement>.</text>
                                 </subclause>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01537 | issue 6380 | The PDF prints this see-also after the last Clause, not at the end of the Sentence text. -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect3.art10.sent2.seealso">(See Sentences 3.3.1.8.(2) and (3) on horizontal projections.)</see-also>
                         </sentence>
                     </article>
                 </new-content>
@@ -888,6 +917,13 @@
                     <find-replace>
                         <find>barrier-free</find>
                         <replace>accessible</replace>
+                    </find-replace>
+                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01516 | issue 6373 | "a" before the new term "accessible" becomes "an", as in the PDF (an accessible path of travel). -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace regex="true">
+                        <find>(where) a(\s+)$</find>
+                        <replace>$1 an$2</replace>
                     </find-replace>
                 </text-change>
             </modify>
@@ -1064,12 +1100,12 @@
                    description="Add reference to measurement method for door clear opening in Article 3.8.3.15.(1)(b)(ii)">
             <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art15.sent1.clause2.subclause2"/>
             <modify>
-                <text-change xpath-within-target="text()">
-                    <find-replace>
-                        <find>when it is open,</find>
-                        <replace>when it is open, measured in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6.sent2" display-type="medium"/>,</replace>
-                    </find-replace>
-                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-01548 | issue 882 | Whole text replaced so the reference 'Sentence 3.8.3.6.(2)' survives the merge, as in the PDF. -->
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>provides a clear opening not less than <measurement units="metric">850 mm</measurement> wide when it is open, measured in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6.sent2" display-type="long"/>,</text>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -1890,6 +1926,12 @@
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote28.para1"> Although there is no explicit performance statement in the British Columbia Building Code that means of egress should be free of smoke, it is the intent that during the period when occupants are using a means of egress to evacuate from a floor area, the smoke contamination should not reach levels that would inhibit movement to the exit. This is particularly critical for persons with disabilities, who may not move at the same rate as other persons and who could be more susceptible to the effects of smoke contamination. <ref type="standard" target="nfpa80" standardId="nfpa80"/> requires that a fire door protecting a means of egress be designed to minimize the possibility of smoke passing through the opening.</paragraph>
                     </new-content>
                 </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-158: the merge engine applies only the first modify amendment per target, so bc-158 was dropped. -->
+<element-replace element="paragraph" position="4">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote28.para4">Similar concern has to be considered for other closure devices that are permitted to remain open on fusible links, and their location should be restricted in accordance with <ref type="standard" target="nfpa80" standardId="nfpa80" ref-style="notitle" ref-punc="none"/> and the British Columbia Building Code, except where their installation in another location will not allow the products of combustion to spread into means of egress.</paragraph>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -1957,6 +1999,7 @@
             <modify>
                 <element-replace element="paragraph" position="1">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-01638 | issue 963 | Reads 'Sentence 3.2.2.51.(5) or 3.2.2.60.(4): for example,' as in the PDF, not 'or Sentence 3.2.2.60.(4): e.g.,'. -->
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote55.para1">Buildings conforming to the building height and area limits and the other fire protection requirements of <ref type="internal"
                                                                                                                                                                                                     target="nbc.divB.part3.sect2.subsect2.art51"
                                                                                                                                                                                                     display-type="long"/>
@@ -1968,8 +2011,8 @@
                                                                                                                                                                                 display-type="long"/>
                             <ref type="internal"
                                  target="nbc.divB.part3.sect2.subsect2.art60.sent4"
-                                 display-type="medium"
-                                 pretext=" or"/>: e.g., Group A, Division 2 and Group E major occupancies on the first and second storeys, and a parking garage on the first to third storeys. </paragraph>
+                                 display-type="number"
+                                 pretext=" or"/>: for example, Group A, Division 2 and Group E major occupancies on the first and second storeys, and a parking garage on the first to third storeys. </paragraph>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2057,7 +2100,14 @@
             <modify>
                 <element-replace element="paragraph" position="2">
                     <new-content source="bc">
-                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para2">According to <ref type="standard" target="nfpa13" standardId="nfpa13"/> and <ref type="standard" target="nfpa13r" standardId="nfpa13r"/>, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 216 | Printed as in the PDF ("According to NFPA 13 and 13R,"): the website expands standard references to number and title. -->
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para2">According to NFPA 13 and 13R, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly.</paragraph>
+                    </new-content>
+                </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-166: the merge engine applies only the first modify amendment per target, so bc-166 was dropped. -->
+<element-replace element="paragraph" position="3">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para3">Moreover, <ref type="standard" target="nfpa13d" standardId="nfpa13d"/> also allows the omission of sprinklers in such rooms and closets under certain circumstances, provided the building is sprinklered in conformance with this standard. In this case, the British Columbia Building Code concurs with the provisions of the <ref type="standard" target="nfpa13d" standardId="nfpa13d" ref-style="notitle" ref-punc="none"/> standard.</paragraph>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2130,6 +2180,20 @@
                                                                                                                                                                                                                                                                                               display-type="long"/> contains only those items that relate to the design and construction of a building; operation of the facilities and recommended actions to be taken by the building <ref type="term" target="bc-wnr">owner</ref>, occupant and fire department are covered by the British Columbia Fire Code.</paragraph>
                     </new-content>
                 </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-169: the merge engine applies only the first modify amendment per target, so bc-169 was dropped. -->
+<element-replace element="paragraph" position="4">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote101.para4">It is assumed that in the event of fire, occupants of the floor on which the fire occurs will leave by exit stairs immediately following the sounding of a fire alarm, and that occupants of the floor immediately above the floor on which the fire occurs will be advised to leave by the first fire department officer on the scene or other person assigned this responsibility. Occupants of all other floors may remain on their floors unless otherwise directed. It is also assumed that the owner of the building has complied with the Emergency Planning Section of the British Columbia Fire Code by preparing a comprehensive fire safety plan to safeguard the building occupants and that the building supervisory staff are familiar with the requirements of <ref type="internal"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         target="nbc.divB.part3.sect2.subsect6"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         display-type="long"/> and with their responsibilities under the fire safety plan.</paragraph>
+                    </new-content>
+                </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-170: the merge engine applies only the first modify amendment per target, so bc-170 was dropped. -->
+<element-replace element="paragraph" position="5">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote101.para5">The British Columbia Building Code requires that a check be made of the smoke control and mechanical venting systems. Testing will indicate deficiencies caused by inexact estimates of the leakage characteristics or of air supply requirements and, in all but the most extreme cases, will provide an opportunity for appropriate adjustments before the system is put into service.</paragraph>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -2189,7 +2253,8 @@
         <!-- Amendment 172: Add new Application Note A-3.3.1.3                 -->
         <!-- Means of Egress Serving Podiums and Terraces - BC specific note  -->
         <!-- ================================================================== -->
-        <amendment id="bc-172" sequence="162"
+        <!-- CLAUDE-AUTOFIX CF-10099 | issue 3717 | Disabled bc-172: it added a second Note A-3.3.1.3 (appnote.a3.3.1.3) next to the BC Note appnote3313 from bc-custom-33130-note (the one Article 3.3.1.3. links to), so the website showed the Note twice; the PDF has it once. -->
+        <!-- <amendment id="bc-172" sequence="162"
                    description="Add new Application Note A-3.3.1.3 for Means of Egress Serving Podiums and Terraces">
             <target type="position" 
                     parent-id="nbc.divB.part3.appendix"
@@ -2205,7 +2270,7 @@
                     </application-note>
                 </new-content>
             </insert>
-        </amendment>
+        </amendment> -->
         
         <!-- ================================================================== -->
         <!-- Amendment 173: Update Fire Code reference to BC Fire Code         -->
@@ -2219,6 +2284,17 @@
                 <element-replace element="paragraph" position="1">
                     <new-content source="bc">
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote127.para1">These measures are intended to provide temporary refuge for persons with disabilities. It is acknowledged, however, that the measures cannot provide absolute safety for all occupants in the fire area. It may, therefore, be necessary to develop special arrangements in the fire safety plan to evacuate persons with disabilities from these areas. Details for a suitable plan are contained in the British Columbia Fire Code.</paragraph>
+                    </new-content>
+                </element-replace>
+                <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-174: the merge engine applies only the first modify amendment per target, so bc-174 was dropped. -->
+<element-replace element="paragraph" position="3">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote127.para3">If an estimate is to be made of the number of persons with disabilities in a floor area who can be accommodated in each zone in <ref type="internal"
+                                                                                                                                                                                                                           target="nbc.divB.part3.sect3.subsect1.art7.sent1.clause2"
+                                                                                                                                                                                                                           display-type="long"
+                                                                                                                                                                                                                           pretext="Clause"/>, this estimate may be based on <ref type="internal"
+                                                                                   target="nbc.divB.part3.sect8.subsect2.art3.table1"
+                                                                                   display-type="long"/>, which is used to determine the minimum number of spaces to be provided for persons using wheelchairs in fixed seating areas. If more precise information is available, it should be used for sizing the zones.</paragraph>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2271,9 +2347,10 @@
             <modify>
                 <element-replace element="paragraph" position="1">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-10098 | issue 221 | NFPA 101 without its title here, as in the PDF. -->
                         <paragraph xml:id="nbc.divB.part3.appendix.appnote135.para1">The intention of <ref type="internal"
                                                                                                             target="nbc.divB.part3.sect3.subsect2.art1.sent2"
-                                                                                                            display-type="short"/> is to allow Code users the option of using <ref type="standard" target="nfpa101" standardId="nfpa101"/> to address the following issues: means of egress; egress routes within assembly occupancies; aisles and access serving seating not at tables; guards and railings; life safety evaluation; and smoke-protected assembly seating.  However, opting to use <ref type="standard" target="nfpa101" standardId="nfpa101"/> under this application entails adherence to all the provisions listed in <ref type="internal"
+                                                                                                            display-type="short"/> is to allow Code users the option of using <ref type="standard" target="nfpa101" standardId="nfpa101"/> to address the following issues: means of egress; egress routes within assembly occupancies; aisles and access serving seating not at tables; guards and railings; life safety evaluation; and smoke-protected assembly seating.  However, opting to use NFPA 101 under this application entails adherence to all the provisions listed in <ref type="internal"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                target="nbc.divB.part3.sect3.subsect2.art1.sent2"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                display-type="short"/>: it is not intended that Code users randomly select and apply a mix of provisions from both the British Columbia Building Code and the NFPA.</paragraph>
                     </new-content>
@@ -2398,6 +2475,13 @@
             </insert>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-01969 | issue 1569 | Note A-3.7.2.2.(1) deleted: the BC 2024 PDF has no such Note and Sentence 3.7.2.2.(1) no longer refers to it (bc-custom-3722-1). -->
+        <amendment id="bc-custom-a3722-1" sequence="180.5"
+                   description="Delete Application Note A-3.7.2.2.(1) (not in BCBC 2024)">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote180"/>
+            <delete/>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 183: Update Application Note A-3.4.5.1.(4)              -->
         <!-- Externally Illuminated Signs - add continuous illumination ref    -->
@@ -2438,7 +2522,8 @@
                                 <item>be identified by a sign located not less than <measurement units="metric">1 500 mm</measurement> above ground level, with the International Symbol of Access (<ref type="internal" target="nbc.divB.part3.appendix.appnote189.figure1" display-type="long"/>).</item>
                             </list>
                         </paragraph>
-                        <paragraph>Asphalt, concrete and firm, compacted gravel are acceptable parking surfaces. Curb ramps should be not less than <measurement units="metric">1 500 mm</measurement> wide. Parallel parking spaces should be not less than <measurement units="metric">7 000 mm</measurement> long. If more than one parking space is provided for persons with physical disabilities, a single access aisle can serve two adjacent parking spaces. Parking to accommodate vans and other vehicles equipped with platform lifts or side ramps should be provided greater dedicated space. The design of the path of travel should accommodate loading to and from lifts and ramps including the necessary vehicle clearances.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-01896 | issue 243 | Curb ramps should be not less than 920 mm wide, as in the PDF (and the NBC Note), not 1 500 mm. -->
+                        <paragraph>Asphalt, concrete and firm, compacted gravel are acceptable parking surfaces. Curb ramps should be not less than <measurement units="metric">920 mm</measurement> wide. Parallel parking spaces should be not less than <measurement units="metric">7 000 mm</measurement> long. If more than one parking space is provided for persons with physical disabilities, a single access aisle can serve two adjacent parking spaces. Parking to accommodate vans and other vehicles equipped with platform lifts or side ramps should be provided greater dedicated space. The design of the path of travel should accommodate loading to and from lifts and ramps including the necessary vehicle clearances.</paragraph>
                         <figure xml:id="nbc.divB.part3.appendix.appnote189.figure1" vendor-id="en000137f1">
                             <title>Shared access aisle</title>
                             <graphic src="bc-graphics/figure-a-3-8-2-5_" alt="Shared access aisle"/>
@@ -2503,7 +2588,8 @@
                                       refs="es001321a">
                         <number>3.8.2.6.(2)</number>
                         <title>Electrical Outlets</title>
-                        <paragraph>Electrical outlets intended for occupant use shall be located so that their height above the finished floor is not a barrier to use. Outlets that are dedicated for specific equipment or functions and not intended to be readily available to occupants need not conform to the location requirements.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-01899 | issue 245 | "intended for general occupant use", as in the PDF. -->
+                        <paragraph>Electrical outlets intended for general occupant use shall be located so that their height above the finished floor is not a barrier to use. Outlets that are dedicated for specific equipment or functions and not intended to be readily available to occupants need not conform to the location requirements.</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -3106,9 +3192,7 @@ described in <ref type="internal"
                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6363 Note Reference ddd9af4767 -->
                         <text>In each location where information, goods or services are provided
                     to the public at service counters in <ref type="term" target="bldng">buildings</ref> of <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, at least one
-                    of the service counters shall be equipped with (See <ref type="internal"
-                                                    target="nbc.divB.part3.appendix.appnote197"
-                                                    display-type="short"/>.)</text>
+                    of the service counters shall be equipped with</text>
                                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art9.sent2.clause1"
                                                     letter="a"
                                                     vendor-id="es014606a">
@@ -3123,6 +3207,8 @@ described in <ref type="internal"
                                                <text>an amplification system, where there is a barrier to communication,
                     such as a glass screen. </text>
                                             </clause>
+                                             <!-- CLAUDE-AUTOFIX CF-01491 | issue 6362 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                                             <see-also xml:id="nbc.divB.part3.sect8.subsect2.art9.sent2.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote197" display-type="short"/>.)</see-also>
                                          </sentence>
                 </new-content>
             </replace>
@@ -3681,6 +3767,8 @@ described in <ref type="internal"
                                                      <measurement units="metric">230 mm high</measurement> over the distance from a point <measurement units="metric">280 mm</measurement> to a point <measurement units="metric">430 mm</measurement> back from the front
                     edge,</text>
                                                </subclause>
+                                               <!-- CLAUDE-AUTOFIX CF-01550 | issue 10505 | The PDF prints "(see Note A-3.8.3.16.(1)(e))" after the last Subclause of Clause (e). -->
+                                               <see-also xml:id="nbc.divB.part3.sect8.subsect3.art16.sent1.clause5.seealso">(see <ref type="internal" target="nbc.divB.part3.appendix.appnote226" display-type="short"/>)</see-also>
                                             </clause>
                 </new-content>
             </replace>
@@ -4109,6 +4197,277 @@ described in <ref type="internal"
             <replace preserve-references="true">
                 <new-content>
                     <paragraph xml:id="nbc.divB.part3.appendix.appnote238.para1">Refer to <ref type="external" target="nfc">Subsection 4.2.12. of Division B of the </ref> British Columbia Fire Code for requirements regarding the storage of flammable and combustible liquids in individual self-service storage units.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01541 | issue 872 | Subclause 3.8.3.12.(1)(d)(iii) ends with 'measured in accordance with Sentence 3.8.3.6.(2),', as in the PDF. -->
+        <amendment id="bc-custom-3-8-3-12-1-d-iii" sequence="2347"
+                   description="Subclause 3.8.3.12.(1)(d)(iii): clear opening measured in accordance with Sentence 3.8.3.6.(2)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art12.sent1.clause4.subclause3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>provides a clear opening not less than <measurement units="metric">850 mm</measurement> wide when it is open, measured in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art6.sent2" display-type="long"/>,</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01515 | issue 6372 | Sentence 3.8.3.5.(1) starts 'Except when designed as a curb ramp in accordance with Clause 3.8.3.4.(1)(b), a ramp', as in the PDF. -->
+        <amendment id="bc-custom-3-8-3-5-1" sequence="2348"
+                   description="Sentence 3.8.3.5.(1): exception for curb ramps designed in accordance with Clause 3.8.3.4.(1)(b)">
+            <target type="canonical-id" id="nbc.divB.part3.sect8.subsect3.art5.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except when designed as a curb ramp in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art4.sent1.clause2" display-type="long"/>, a <ref type="term" target="rmp">ramp</ref> located in an <ref type="term" target="brrr-fr">accessible</ref> path of travel shall</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01848 | issue 1045 | Note A-3.5.2.1.(1) refers to the Safety Standards Act and pursuant regulations, as in the PDF, not to ASME A17.1/CSA B44. -->
+        <amendment id="bc-custom-a-3-5-2-1-1" sequence="2350"
+                   description="Note A-3.5.2.1.(1) refers to the Safety Standards Act and pursuant regulations">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote169.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote169.para1">The reference to the Safety Standards Act and pursuant regulations in this Sentence implies conformance with all requirements of the pursuant regulations for elevator cars, hoistways, pits and machine rooms, including restrictions on other services in these areas and detailed design criteria.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01849 | issue 1046 | Note A-3.5.4.1.(1) ends with the paragraph on limited-use/limited-application (LULA) elevators, as in the PDF. -->
+        <amendment id="bc-custom-a-3-5-4-1-1-para2" sequence="2351"
+                   description="Add paragraph on LULA elevators to Note A-3.5.4.1.(1)">
+            <target type="position"
+                    parent-id="nbc.divB.part3.appendix.appnote170"
+                    position="last-child"/>
+            <insert>
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote170.para2">Limited-use/limited-application (LULA) elevators are limited in size, capacity, speed and rise and are not expected to meet the minimum elevator car dimensions stated in Sentence (1).</paragraph>
+                </new-content>
+            </insert>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01565 | issue 912 | Note A-3.1.2.1.(1) lists "Daycare Facilities for Children" under Group A, Division 2, after "Dance halls", as in the PDF (rest of the paragraph unchanged from the NBC). -->
+        <amendment id="bc-custom-a-3-1-2-1-1-daycare" sequence="2352"
+                   description="Note A-3.1.2.1.(1): add Daycare Facilities for Children to the Group A, Division 2 examples">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote3.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote3.para1">The following are examples of the major occupancy classifications
+described in <ref type="internal"
+                            target="nbc.divB.part3.sect1.subsect2.art1.table1"
+                            display-type="long"/>:<list type="bulleted">
+                          <item>
+                             <emphasis style="bold">Group A, Division 1</emphasis>
+                             <list type="bulleted">
+                                <item>Motion picture theatres</item>
+                                <item>Opera houses</item>
+                                <item>Television studios admitting a viewing audience</item>
+                                <item>Theatres, including experimental theatres</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group A, Division 2</emphasis>
+                             <list type="bulleted">
+                                <item>Art galleries</item>
+                                <item>Auditoria</item>
+                                <item>Bowling alleys</item>
+                                <item>Churches and similar places of worship</item>
+                                <item>Clubs, nonresidential</item>
+                                <item>Community halls</item>
+                                <item>Courtrooms</item>
+                                <item>Dance halls</item>
+                                <item>Daycare Facilities for Children</item>
+                                <item>Exhibition halls (other than classified in Group E)</item>
+                                <item>Gymnasia</item>
+                                <item>Lecture halls</item>
+                                <item>Libraries</item>
+                                <item>Licensed beverage establishments</item>
+                                <item>Museums</item>
+                                <item>Passenger stations and depots</item>
+                                <item>Recreational piers</item>
+                                <item>Restaurants</item>
+                                <item>Schools and colleges, nonresidential</item>
+                                <item>Undertaking premises</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group A, Division 3</emphasis>
+                             <list type="bulleted">
+                                <item>Arenas</item>
+                                <item>Indoor swimming pools, with or without spectator seating</item>
+                                <item>Rinks</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group A, Division 4</emphasis>
+                             <list type="bulleted">
+                                <item>Amusement park structures (not elsewhere classified)</item>
+                                <item>Bleachers</item>
+                                <item>Grandstands</item>
+                                <item>Reviewing stands</item>
+                                <item>Stadia</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group B, Division 1</emphasis>
+                             <list type="bulleted">
+                                <item>Jails</item>
+                                <item>Penitentiaries</item>
+                                <item>Police stations with detention quarters</item>
+                                <item>Prisons</item>
+                                <item>Psychiatric hospitals with detention quarters</item>
+                                <item>Reformatories with detention quarters</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group B, Division 2</emphasis>
+                             <list type="bulleted">
+                                <item>Care facilities with treatment</item>
+                                <item>Convalescent /recovery/rehabilitation centres with treatment</item>
+                                <item>Hospices with treatment</item>
+                                <item>Hospitals</item>
+                                <item>Infirmaries</item>
+                                <item>Nursing homes with treatment</item>
+                                <item>Psychiatric hospitals without detention quarters</item>
+                                <item>Respite centres with treatment</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group B, Division 3</emphasis>
+                             <list type="bulleted">
+                                <item>Assisted/supportive living facilities</item>
+                                <item>Care facilities without treatment</item>
+                                <item>Children's custodial homes</item>
+                                <item>Convalescent/recovery/rehabilitation centres without treatment</item>
+                                <item>Group homes</item>
+                                <item>Hospices without treatment</item>
+                                <item>Nursing homes without treatment</item>
+                                <item>Reformatories without detention quarters</item>
+                                <item>Respite centres without treatment</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group C</emphasis>
+                             <list type="bulleted">
+                                <item>Apartments</item>
+                                <item>Boarding houses</item>
+                                <item>Clubs, residential</item>
+                                <item>Colleges, residential</item>
+                                <item>Convents</item>
+                                <item>Dormitories</item>
+                                <item>Hotels</item>
+                                <item>Houses</item>
+                                <item>Lodging houses</item>
+                                <item>Monasteries</item>
+                                <item>Motels</item>
+                                <item>Schools, residential</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group D</emphasis>
+                             <list type="bulleted">
+                                <item>Banks</item>
+                                <item>Barber and hairdressing shops</item>
+                                <item>Beauty parlours</item>
+                                <item>Dental offices</item>
+                                <item>Dry cleaning establishments, self-service, not using flammable
+or explosive solvents or cleaners</item>
+                                <item>Laundries, self-service</item>
+                                <item>Medical offices</item>
+                                <item>Offices</item>
+                                <item>Police stations without detention quarters</item>
+                                <item>Radio stations</item>
+                                <item>Small tool and appliance rental and service establishments</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group E</emphasis>
+                             <list type="bulleted">
+                                <item>Department stores</item>
+                                <item>Exhibition halls</item>
+                                <item>Markets</item>
+                                <item>Shops</item>
+                                <item>Stores</item>
+                                <item>Supermarkets</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group F, Division 1</emphasis>
+                             <list type="bulleted">
+                                <item>Bulk plants for flammable liquids</item>
+                                <item>Bulk storage warehouses for hazardous substances</item>
+                                <item>Cereal mills</item>
+                                <item>Chemical manufacturing or processing plants</item>
+                                <item>Distilleries</item>
+                                <item>Dry cleaning plants</item>
+                                <item>Feed mills</item>
+                                <item>Flour mills</item>
+                                <item>Grain elevators</item>
+                                <item>Lacquer factories</item>
+                                <item>Mattress factories</item>
+                                <item>Paint, varnish and pyroxylin product factories</item>
+                                <item>Rubber processing plants</item>
+                                <item>Spray painting operations</item>
+                                <item>Waste paper processing plants</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group F, Division 2</emphasis>
+                             <list type="bulleted">
+                                <item>Aircraft hangars</item>
+                                <item>Box factories</item>
+                                <item>Candy plants</item>
+                                <item>Cold storage plants</item>
+                                <item>Dry cleaning establishments not using flammable or explosive
+solvents or cleaners</item>
+                                <item>Electrical substations</item>
+                                <item>Factories</item>
+                                <item>Freight depots</item>
+                                <item>Helicopter landing areas on roofs</item>
+                                <item>Laboratories</item>
+                                <item>Laundries, except self-service</item>
+                                <item>Mattress factories</item>
+                                <item>Planing mills</item>
+                                <item>Printing plants</item>
+                                <item>Repair garages</item>
+                                <item>Salesrooms</item>
+                                <item>Service stations</item>
+                                <item>Storage rooms</item>
+                                <item>Television studios not admitting a viewing audience</item>
+                                <item>Warehouses</item>
+                                <item>Wholesale rooms</item>
+                                <item>Woodworking factories</item>
+                                <item>Workshops</item>
+                             </list>
+                          </item>
+                          <item>
+                             <emphasis style="bold">Group F, Division 3</emphasis>
+                             <list type="bulleted">
+                                <item>Creameries</item>
+                                <item>Factories</item>
+                                <item>Laboratories</item>
+                                <item>Light-aircraft hangars (storage only)</item>
+                                <item>Power plants</item>
+                                <item>Salesrooms</item>
+                                <item>Sample display rooms</item>
+                                <item>Storage garages, including open air parking garages</item>
+                                <item>Storage rooms</item>
+                                <item>Warehouses</item>
+                                <item>Workshops</item>
+                             </list>
+                          </item>
+                       </list>
+                    </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-01836 | issue 1037 | Note A-3.4.5.1.(4) says "In addition to being continuously illuminated as required by Sentence 3.4.5.1.(4), these types of signs ...", as in the PDF. -->
+        <amendment id="bc-custom-a-3-4-5-1-4" sequence="2353"
+                   description="Note A-3.4.5.1.(4): photoluminescent signs must also be continuously illuminated">
+            <target type="canonical-id" id="nbc.divB.part3.appendix.appnote158.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part3.appendix.appnote158.para1">An external lighting source is required to properly charge photoluminescent signs. In addition to being continuously illuminated as required by <ref type="internal" target="nbc.divB.part3.sect4.subsect5.art1.sent4" display-type="long"/>, these types of signs must be lit in conformance with the charging requirements indicated on the exit signs in accordance with <ref type="standard" target="ulcs572" standardId="ulcs572" ref-style="noagency" ref-punc="period"/></paragraph>
                 </new-content>
             </replace>
         </amendment>
