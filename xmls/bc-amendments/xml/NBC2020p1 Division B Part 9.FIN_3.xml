@@ -925,8 +925,8 @@
                                 <item xml:id="nbc.divBV2.part9.appendix.appnote127.list1.item1">A short-term load duration factor, K<sub>D</sub>, of 1.25 was used for the calculation of resistance to wind and seismic shear forces.</item>
                                 <item xml:id="nbc.divBV2.part9.appendix.appnote127.list1.item2">The ductility- and overstrength-related seismic force modification factors, R<sub>d</sub> and R<sub>o</sub>, were assumed to have the values listed in the following table:</item>
                             </list></paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10784 | issue 551 | The PDF prints this table without a number or title (it follows 'listed in the following table:'), so the table has no title (also CF-08176). -->
                         <table xml:id="nbc.divBV2.part9.appendix.appnote127.table1">
-                            <title>Seismic Force Modification Factors</title>
                             <tgroup cols="3">
                                 <colspec colname="col1" colwidth="3*"/>
                                 <colspec colname="col2" colwidth="1*"/>
