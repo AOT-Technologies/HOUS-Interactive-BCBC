@@ -3358,6 +3358,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect3.art1.table1">
                         <title>Diameter of Nails</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1405 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="2">
                             <colspec colname="col2" colwidth="96*"/>
                             <colspec colname="col3" colwidth="131*"/>
@@ -3442,6 +3446,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1">
                         <title>Nailing for Framing</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1406 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent1" display-type="long"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect14.art4.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="242*"/>
                             <colspec colname="tbody2" colwidth="65*"/>
@@ -3718,6 +3727,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1">
                             <title>Fastening of Subflooring, Wall Sheathing Not in a Required Braced Wall Panel, and Roof Sheathing Where HWP ≤ 0.6 kPa and S<sub>max</sub> for Site Class C ≤ 0.47</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1407 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent1" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="6">
                                 <colspec colname="1" colwidth="100*"/>
                                 <colspec colname="2" colwidth="60*"/>
@@ -3811,6 +3824,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table2">
                             <title>Fastening of Roof Sheathing Where 0.6 kPa &lt; HWP ≤ 1.2 kPa or Where S<sub>max</sub> for Site Class C &gt; 0.47 and S<sub>max</sub> ≤ 2.6</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1408 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent2" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="6">
                                 <colspec colname="1" colwidth="80*"/>
                                 <colspec colname="2" colwidth="80*"/>
@@ -3893,6 +3910,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3">
                             <title>Fastening of Wall Sheathing in Required Braced Wall Panels Where HWP ≤ 1.2kPa and S<sub>max</sub> ≤ 2.6</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1409 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="5">
                                 <colspec colname="1" colwidth="60*"/>
                                 <colspec colname="2" colwidth="120*"/>
@@ -10178,6 +10199,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect15.art5.table1">
                         <title>Thickness of Subflooring</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1415 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art5.sent1" display-type="long"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="1" colwidth="79*"/>
                             <colspec colname="2" colwidth="79*"/>
@@ -10236,6 +10262,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect15.art5.table2">
                         <title>Rating for Subfloor when Applying CSA O325</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1416 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art5.sent1" display-type="long"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="132*"/>
                             <colspec colname="tbody2" colwidth="129*"/>
@@ -10428,6 +10459,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect16.art7.table1">
                         <title>Thickness of Roof Sheathing</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1417 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="6">
                             <colspec colname="tbody1" colwidth="63*"/>
                             <colspec colname="tbody2" colwidth="72*"/>
@@ -10495,6 +10530,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect16.art7.table2">
                         <title>Rating for Roof Sheathing When Applying CSA O325</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1418 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="132*"/>
                             <colspec colname="tbody2" colwidth="130*"/>
@@ -10566,6 +10605,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect17.art2.table1">
                         <title>Wall Sheathing Thickness and Specifications</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1419 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect17.art2.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="4">
                             <colspec colname="1" colwidth="174*"/>
                             <colspec colname="2" colwidth="60*"/>
@@ -10783,6 +10826,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect28.subsect2.art2.table1" vendor-id="et000210">
                         <title>Aggregate Grading for Stucco</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1420 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect28.subsect2.art2.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="131*"/>
                             <colspec colname="tbody2" colwidth="133*"/>
@@ -10926,6 +10973,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect29.subsect3.art1.table1" vendor-id="et000213">
                         <title>Size and Spacing of Furring</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1421 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect29.subsect3.art1.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="4">
                             <colspec colname="tbody1" colwidth="96*"/>
                             <colspec colname="tbody2" colwidth="100*"/>
@@ -10982,6 +11033,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect29.subsect5.art5.table1" vendor-id="et000215">
                         <title>Fastener Penetration into Wood Supports</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1422 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect29.subsect5.art5.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="tbody1" colwidth="128*"/>
                             <colspec colname="tbody2" colwidth="68*"/>
@@ -11187,6 +11242,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect30.subsect3.art1.table1" vendor-id="et000217">
                         <title>Thickness of Wood Strip Flooring</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1423 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art1.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="4">
                             <colspec colname="tbody1" colwidth="179.99*"/>
                             <colspec colname="tbody2" colwidth="73.09*"/>
@@ -11950,6 +12009,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect32.subsect3.art6.table1">
                             <title>Kitchen/Bathroom Exhaust Fan Minimum Air-flow Rate</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1425 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art6.sent1" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="3">
                                 <colspec colname="col1" colwidth="150*"/>
                                 <colspec colname="col2" colwidth="100*"/>
