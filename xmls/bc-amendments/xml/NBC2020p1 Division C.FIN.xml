@@ -326,7 +326,8 @@
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divC.part2.sect2.subsect8.art3.sent3.clause6" letter="f">
-                                <text>percent of the <ref type="term" target="bldng">building</ref>’s <ref type="term" target="cnd-sp">conditioned space</ref> served by space-cooling equipment.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10379 | issue 790 | "building’s" is italic including ’s, as in the PDF. -->
+                                <text>percent of the <ref type="term" target="bldng">building’s</ref> <ref type="term" target="cnd-sp">conditioned space</ref> served by space-cooling equipment.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divC.part2.sect2.subsect8.art3.sent4" number="4">
