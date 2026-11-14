@@ -8338,8 +8338,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <!-- Masonry veneer cladding perpendicular - 1-storey height, partially clad - Supporting roof + 2 floors -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row75">
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05072 | issue 849 | Shows drawing GG00557A1 (3 storeys, lower storey clad, Lwl marks), as in the PDF (p.906). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row75.figure42">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="One storey building - 1-storey masonry veneer"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 1-storey masonry veneer"/>
                                         </figure>
                                         
                                         Supporting roof + 2 floors
@@ -8385,8 +8386,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05073 | issue 850 | Shows drawing GG00558A1 (2 storeys, lower storey clad, Lwl marks), as in the PDF (p.906). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row81.figure44">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 2-storey fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 2-storey fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -8424,8 +8426,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <!-- Masonry veneer cladding perpendicular - 2-storey height, fully clad - Supporting roof + 2 floors -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row87">
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05074 | issue 851 | Shows drawing GG00557A1 (3 storeys, lower storey clad, Lwl marks), as in the PDF (p.906). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row87.figure45">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="One storey building - 2-storey fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 2-storey fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 2 floors
@@ -8864,8 +8867,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <!-- CLAUDE-AUTOFIX CF-04968 | issue 2713 | Restored the PDF values of the Supporting roof + 2 floors rows (1.12/1.25 to 1.02/1.05) for 1-storey stone veneer with openings in Table 9.23.13.7.-D; they repeated the 2-storey values. -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row149">
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05086 | issue 863 | Shows drawing GG00557A1 (3 storeys, lower storey clad, Lwl marks), as in the PDF (p.908). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row149.figure59">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof-and_2floor_only" alt="One storey building - 1-storey stone veneer with openings"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 1-storey stone veneer with openings"/>
                                         </figure>
                                         
                                         Supporting roof + 2 floors
@@ -8909,8 +8913,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05087 | issue 864 | Shows drawing GG00560A1 (3 storeys, middle storey clad, Lwl marks), as in the PDF (p.908). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row155.figure61">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 2-storey stone veneer with openings"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 2-storey stone veneer with openings"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -8993,8 +8998,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05090 | issue 867 | Shows drawing GG00558A1 (2 storeys, lower storey clad, Lwl marks), as in the PDF (p.909). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row167.figure64">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 1-storey stone veneer fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 1-storey stone veneer fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -9077,8 +9083,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05092 | issue 869 | Shows drawing GG00560A1 (3 storeys, middle storey clad, Lwl marks), as in the PDF (p.909). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row179.figure67">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 2-storey stone veneer fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 2-storey stone veneer fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
