@@ -1820,7 +1820,8 @@
 
   <xsl:template name="math-text" xmlns="http://www.w3.org/1998/Math/MathML">
     <xsl:param name="raw" as="xs:string" />
-    <xsl:variable name="text" select="normalize-space($raw)" />
+    <!-- CLAUDE-AUTOFIX CF-02042 | issue 850 | The NBC XML writes some brackets as private-use characters U+F8D2 and U+F8D7, which show as blanks: they are ( and ), as in the PDF (4.1.6.5. and 4.1.6.10. equations). -->
+    <xsl:variable name="text" select="normalize-space(translate($raw, '&#xF8D2;&#xF8D7;', '()'))" />
     <xsl:if test="$text != ''">
       <xsl:choose>
         <!-- Operators -->
