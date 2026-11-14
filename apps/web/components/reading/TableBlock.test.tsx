@@ -753,7 +753,8 @@ describe('TableBlock', () => {
     render(<TableBlock table={table} />);
 
     expect(screen.getByText('Table C-1')).toBeInTheDocument();
-    expect(screen.getByText('Forming Part of Appendix C')).toBeInTheDocument();
+    // CLAUDE-AUTOFIX CL-083 CF-08737 | issue 1457 | The PDF prints no "Forming Part of ..." line under Appendix C/D tables.
+    expect(screen.queryByText('Forming Part of Appendix C')).not.toBeInTheDocument();
     expect(screen.getByText('Wind Speeds')).toBeInTheDocument();
   });
 
