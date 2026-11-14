@@ -116,7 +116,8 @@
                             <text>The <ref type="term" target="fr-prtn">fire separation</ref> required by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7.sent1" display-type="short"/> need not have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> where the <ref type="term" target="t">suite</ref> is located in a <ref type="term" target="bldng">building</ref> that is <ref type="term" target="prnklrd">sprinklered</ref> throughout.</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art7.sent3" number="3">
-                            <text>A permanent sign, with lettering not less than <measurement units="metric">50 mm</measurement> high with a <measurement units="metric">12 mm</measurement> stroke, indicating the lesser of the <ref type="term" target="ccpnt-ld">occupant load</ref> for the <ref type="term" target="t">suite</ref> or 30 persons, shall be posted in a conspicuous location near the <ref type="term" target="t">suite</ref>'s principal entrance.</text>
+                            <!-- CLAUDE-AUTOFIX CF-10379 | issue 1609 | "suite’s" with a curly apostrophe, all italic, as in the PDF. -->
+                            <text>A permanent sign, with lettering not less than <measurement units="metric">50 mm</measurement> high with a <measurement units="metric">12 mm</measurement> stroke, indicating the lesser of the <ref type="term" target="ccpnt-ld">occupant load</ref> for the <ref type="term" target="t">suite</ref> or 30 persons, shall be posted in a conspicuous location near the <ref type="term" target="t">suite’s</ref> principal entrance.</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -1814,7 +1815,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text><ref type="term" target="prt-flr-spc">protected floor spaces</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect8.art5" display-type="long"/> are provided at each floor level and the <ref type="term" target="prt-flr-spc">protected floor space</ref> on a floor level has not less than <measurement units="metric">0.5 m<super>2</super></measurement> of space for each occupant of that floor level of the <ref type="term" target="ntrcnnct">interconnected floor space</ref>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-10379 | issue 161 | The plural "s" of protected floor spaces is not italic, as in the PDF. -->
+                        <text><ref type="term" target="prt-flr-spc">protected floor space</ref>s conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect8.art5" display-type="long"/> are provided at each floor level and the <ref type="term" target="prt-flr-spc">protected floor space</ref> on a floor level has not less than <measurement units="metric">0.5 m<super>2</super></measurement> of space for each occupant of that floor level of the <ref type="term" target="ntrcnnct">interconnected floor space</ref>.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2223,7 +2225,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>the locking device releases upon actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building's</ref> fire alarm system,</text>
+                        <!-- CLAUDE-AUTOFIX CF-10379 | issue 170 | "'s" after building is not italic, as in the PDF. -->
+                        <text>the locking device releases upon actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building</ref>'s fire alarm system,</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2235,7 +2238,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building's</ref> fire alarm system,</text>
+                        <!-- CLAUDE-AUTOFIX CF-10379 | issue 171 | "'s" after building is not italic, as in the PDF. -->
+                        <text>actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building</ref>'s fire alarm system,</text>
                     </new-content>
                 </element-replace>
             </modify>
