@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T10:49:28.883+05:30",
+  "generated_timestamp" : "2026-11-14T10:53:04.815+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -321445,38 +321445,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Stone veneer cladding perpendicular to the " },
-                      
-                      { "type" : "text",
-                       "value" : "[REF:term:br-wl-bnd:braced wall band]" },
-                      
-                      { "type" : "text",
-                       "value" : ", 2 " },
-                      
-                      { "type" : "text",
-                       "value" : "[REF:term:tr:storey]" },
-                      
-                      { "type" : "text",
-                       "value" : " height, fully clad: Apply factor corresonding to depth Lwl in the direction of the " },
-                      
-                      { "type" : "text",
-                       "value" : "[REF:term:br-wl-bnd:braced wall band]" },
-                      
-                      { "type" : "text",
-                       "value" : " for one or two " },
-                      
-                      { "type" : "text",
-                       "value" : "[REF:term:bldng:building]" },
-                      
-                      { "type" : "text",
-                       "value" : " face(s). " },
-                      
-                      { "type" : "figure",
-                       "id" : "nbc.divBV2.part9.sect23.subsect13.art7.table4.row191.figure69",
-                       "source" : "bc",
-                       "graphic" : 
-                       { "src" : "bc-graphics\/figure-9-23-13-7-d-row14",
-                        "alt_text" : "Building depth diagram for K_snow" } } ],
+                       "value" : "Roof snow load: apply factor in accordance with the specified roof snow load" } ],
                      "rowspan" : 15 },
                     
                     { "content" : 
@@ -626685,7 +626654,7 @@
    "total_articles" : 2021,
    "total_sentences" : 5163,
    "total_tables" : 350,
-   "total_figures" : 326,
+   "total_figures" : 325,
    "total_spectables" : 2,
    "total_application_notes" : 824,
    "total_index_entries_vol1" : 5574,
