@@ -18678,6 +18678,18 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09917 | issue 337 | Sentence 9.10.22.1.(1) refers to the Safety Standards Act and pursuant regulations, as in the PDF. -->
+        <amendment id="bc-autofix-9-10-22-1" sequence="2137.5"
+                   description="Sentence 9.10.22.1.(1) refers to the Safety Standards Act and pursuant regulations">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect10.subsect22.art1.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as required in <ref type="internal" target="nbc.divBV2.part9.sect10.subsect22.art1.sent2" display-type="short"/>, natural gas and propane <ref type="term" target="cktp">cooktops</ref> and ovens shall be installed in accordance with the Safety Standards Act and pursuant regulations. (See also <ref type="internal" target="nbc.divBV2.part9.sect34.subsect1.art1" display-type="long"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
         <!-- CLAUDE-AUTOFIX CL-055 CF-10488 | issue 1135 | 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code, as in the PDF, not the NBC's NPC. -->
         <amendment id="bc-custom-9-36-3-11" sequence="2138"
                    description="Sentence 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code">
