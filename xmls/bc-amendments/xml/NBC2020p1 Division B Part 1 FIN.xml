@@ -258,6 +258,23 @@
             </insert>
         </amendment>
         
+
+        <!-- CLAUDE-AUTOFIX CF-10743 | issue 77 | Article 1.3.2.1. lists TECA (Thermal Environmental Comfort Association) after TC, as in the PDF. -->
+        <amendment id="bc-autofix-org-teca" sequence="10.6"
+                   description="Add TECA to the organization list after TC">
+            <target type="position"
+                    parent-id="nbc.divB.part1.sect3.subsect2.art1.sent1"
+                    position="after"
+                    reference-id="org.d1e21148"/>
+            <insert>
+                <new-content source="bc">
+                    <item xml:id="org.bc-teca">
+                        <organization>TECA</organization>
+                        <address>Thermal Environmental Comfort Association (<ref type="external" target="https://www.teca.ca">www.teca.ca</ref>)</address>
+                    </item>
+                </new-content>
+            </insert>
+        </amendment>
         <!-- ================================================================== -->
         <!-- Amendment 11: Add energy modeling standards                        -->
         <!-- ================================================================== -->
