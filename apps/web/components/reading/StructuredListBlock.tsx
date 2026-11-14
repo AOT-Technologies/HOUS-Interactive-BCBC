@@ -127,15 +127,22 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
     case 'symbol':
       return (
         <dl className={`structuredList structuredList--${list.type}`}>
-          {list.items.map((item, index) => (
-            <div
-              key={item.id || `${list.type}-${index}`}
-              className="structuredList__row structuredList__row--variable"
-            >
-              <dt className="structuredList__term">{renderText(item.symbol ?? '')}</dt>
-              <dd className="structuredList__description">{renderText(item.description ?? '')}</dd>
-            </div>
-          ))}
+          {list.items.map((item, index) => {
+            // CLAUDE-AUTOFIX CL-094 CF-06000 | issue 1810 | Items given only as "AFUE= annual fuel ..." text (table notes to Tables 9.36.3.10. and 9.36.4.2.) are split at "=" so the symbol and its meaning show, as in the PDF.
+            const rawContent = (item as { content?: string }).content;
+            const splitAt = item.symbol === undefined && item.description === undefined && rawContent ? rawContent.indexOf('=') : -1;
+            const symbol = splitAt > 0 ? rawContent!.slice(0, splitAt).trim() : item.symbol ?? '';
+            const description = splitAt > 0 ? rawContent!.slice(splitAt) : item.description ?? '';
+            return (
+              <div
+                key={item.id || `${list.type}-${index}`}
+                className="structuredList__row structuredList__row--variable"
+              >
+                <dt className="structuredList__term">{renderText(symbol)}</dt>
+                <dd className="structuredList__description">{renderText(description)}</dd>
+              </div>
+            );
+          })}
         </dl>
       );
     case 'definition':
