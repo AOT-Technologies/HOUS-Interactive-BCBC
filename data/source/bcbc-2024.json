@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T10:43:43.17+05:30",
+  "generated_timestamp" : "2026-11-14T10:46:47.853+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -304056,7 +304056,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "S_{max} ≤ 0.60" } ],
+                         "value" : "<bold>S_{max}<\/bold> ≤ 0.60" } ],
                        "align" : "center" },
                       
                       { "content" : 
@@ -304090,7 +304090,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "0.6 < S_{max} ≤ 0.8" } ],
+                         "value" : "0.6 < <bold>S_{max}<\/bold> ≤ 0.8" } ],
                        "align" : "center" },
                       
                       { "content" : 
@@ -304124,7 +304124,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "0.8 < S_{max} ≤ 1.2" } ],
+                         "value" : "0.8 < <bold>S_{max}<\/bold> ≤ 1.2" } ],
                        "align" : "center" },
                       
                       { "content" : 
@@ -304158,7 +304158,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "1.2 < S_{max} ≤ 1.6" } ],
+                         "value" : "1.2 < <bold>S_{max}<\/bold> ≤ 1.6" } ],
                        "align" : "center" },
                       
                       { "content" : 
@@ -304192,7 +304192,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "1.6 < S_{max} ≤ 2.0" } ],
+                         "value" : "1.6 < <bold>S_{max}<\/bold> ≤ 2.0" } ],
                        "align" : "center" },
                       
                       { "content" : 
@@ -304226,7 +304226,7 @@
                       { "content" : 
                        [ 
                         { "type" : "text",
-                         "value" : "2.0 < S_{max} ≤ 2.6" } ],
+                         "value" : "2.0 < <bold>S_{max}<\/bold> ≤ 2.6" } ],
                        "align" : "center" },
                       
                       { "content" : 
@@ -620176,7 +620176,7 @@
    { "location_id" : "nbc.divBV2.part9.sect23.subsect11.art4.table1",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Fasteners in Doubled Top Plate Splice Connections in [REF:term:br-wl-bnd:Braced Wall Bands] where S_{max} for Site Class C > 0.47 and S_{max} ≤ 2.6S_{max}[REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note1:short]Minimum Number of Nails on Each Side of Doubled Top Plate Splice for [REF:term:br-wl-bnd:Braced Wall Band] Spacing of 10.6 m(2)Weight of Construction or Cladding Type(3)Normal-Weight ConstructionHeavyweight construction(4)Masonry Veneer (on one or more [REF:term:bldng:building] faces) [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note4:short](5)Stone Veneer (on one or more [REF:term:bldng:building] faces) [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note4:short]  [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note5:short]S_{max} ≤ 0.60478100.6 < S_{max} ≤ 0.8689120.8 < S_{max} ≤ 1.291214191.2 < S_{max} ≤ 1.6121619251.6 < S_{max} ≤ 2.0142023312.0 < S_{max} ≤ 2.619253040" },
+    "content" : "Fasteners in Doubled Top Plate Splice Connections in [REF:term:br-wl-bnd:Braced Wall Bands] where S_{max} for Site Class C > 0.47 and S_{max} ≤ 2.6S_{max}[REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note1:short]Minimum Number of Nails on Each Side of Doubled Top Plate Splice for [REF:term:br-wl-bnd:Braced Wall Band] Spacing of 10.6 m(2)Weight of Construction or Cladding Type(3)Normal-Weight ConstructionHeavyweight construction(4)Masonry Veneer (on one or more [REF:term:bldng:building] faces) [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note4:short](5)Stone Veneer (on one or more [REF:term:bldng:building] faces) [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note4:short]  [REF:internal:nbc.divBV2.part9.sect23.subsect11.art4.table1.note5:short]<bold>S_{max}<\/bold> ≤ 0.60478100.6 < <bold>S_{max}<\/bold> ≤ 0.8689120.8 < <bold>S_{max}<\/bold> ≤ 1.291214191.2 < <bold>S_{max}<\/bold> ≤ 1.6121619251.6 < <bold>S_{max}<\/bold> ≤ 2.0142023312.0 < <bold>S_{max}<\/bold> ≤ 2.619253040" },
    
    { "location_id" : "nbc.divBV2.part9.sect23.subsect11.art4.table1",
     "type" : "revision",
