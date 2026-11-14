@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T10:24:51.482+05:30",
+  "generated_timestamp" : "2026-11-14T10:31:44.879+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -170167,7 +170167,7 @@
              [ 
               { "type" : "paragraph",
                "id" : "nbc.divB.part5.appendix.appnote44.div1.para1",
-               "content" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440-17, North American Fenestration Standard\/Specification for windows, doors, and skylights,” requires that the individual performance levels achieved by the product for structural resistance, water penetration resistance and air leakage resistance be reported on the product's performance label." } ] },
+               "content" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440, North American Fenestration Standard\/Specification for windows, doors, and skylights,” requires that the individual performance levels achieved by the product for structural resistance, water penetration resistance and air leakage resistance be reported on the product's performance label." } ] },
             
             { "id" : "nbc.divB.part5.appendix.appnote44.div2",
              "type" : "note_division",
@@ -269567,7 +269567,8 @@
                  { "id" : "nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "be designed according to good engineering practice such as that provided in the CWC 2014, “Engineering Guide for Wood Frame Construction,” or" },
+                  "source" : "bc",
+                  "text" : "be designed according to good engineering practice such as that provided in the CWC, “Engineering Guide for Wood Frame Construction,” or" },
                  
                  { "id" : "nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause3",
                   "type" : "clause",
@@ -272123,7 +272124,7 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440-17, North American Fenestration Standard\/Specification for windows, doors, and skylights,”" } ] },
+                  "text" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440, North American Fenestration Standard\/Specification for windows, doors, and skylights,”" } ] },
                
                { "id" : "nbc.divBV2.part9.sect7.subsect4.art2.sent2",
                 "type" : "sentence",
@@ -272154,7 +272155,7 @@
                     "type" : "clause",
                     "letter" : "b",
                     "source" : "bc",
-                    "text" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440-17, North American Fenestration Standard\/Specification for windows, doors, and skylights,”" } ],
+                    "text" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440, North American Fenestration Standard\/Specification for windows, doors, and skylights,”" } ],
                   "see_also" : 
                   [ 
                    { "id" : "nbc.divBV2.part9.sect7.subsect4.art2.sent1.seealso",
@@ -272211,7 +272212,7 @@
                     "type" : "clause",
                     "letter" : "b",
                     "source" : "bc",
-                    "text" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440-17, North American Fenestration Standard\/Specification for windows, doors, and skylights,”" } ] },
+                    "text" : "CSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440, North American Fenestration Standard\/Specification for windows, doors, and skylights,”" } ] },
                  
                  { "id" : "nbc.divBV2.part9.sect7.subsect4.art2.sent2",
                   "type" : "sentence",
@@ -277286,7 +277287,7 @@
                     "type" : "subclause",
                     "number" : 1,
                     "source" : "bc",
-                    "text" : "preformed insulation of rock or slag fibres conforming to CAN\/ULC-S702.1, “Mineral Fibre Thermal Insulation for Buildings,” having a mass per unit area of not less than 1.22 kg\/m^{2} of floor surface, or" },
+                    "text" : "preformed insulation of rock or slag fibres conforming to CAN\/ULC-S702, “Mineral Fibre Thermal Insulation for Buildings,” having a mass per unit area of not less than 1.22 kg\/m^{2} of floor surface, or" },
                    
                    { "id" : "nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2.subclause2",
                     "type" : "subclause",
@@ -304970,7 +304971,7 @@
                   "type" : "clause",
                   "letter" : "d",
                   "source" : "bc",
-                  "text" : "good engineering practice such as that provided in CWC 2014, “Engineering Guide for Wood Frame Construction.”" } ] } ] },
+                  "text" : "good engineering practice such as that provided in CWC “Engineering Guide for Wood Frame Construction.”" } ] } ] },
              
              { "id" : "nbc.divBV2.part9.sect23.subsect13.art2",
               "type" : "article",
@@ -305046,7 +305047,7 @@
                   "type" : "clause",
                   "letter" : "c",
                   "source" : "bc",
-                  "text" : "good engineering practice such as that provided in CWC 2014, “Engineering Guide for Wood Frame Construction.”" } ] },
+                  "text" : "good engineering practice such as that provided in CWC “Engineering Guide for Wood Frame Construction.”" } ] },
                
                { "id" : "nbc.divBV2.part9.sect23.subsect13.art2.sent3",
                 "type" : "sentence",
@@ -305188,7 +305189,7 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "good engineering practice such as that provided in the CWC 2014, “Engineering Guide for Wood Frame Construction.”" } ] } ] },
+                  "text" : "good engineering practice such as that provided in the CWC “Engineering Guide for Wood Frame Construction.”" } ] } ] },
              
              { "id" : "nbc.divBV2.part9.sect23.subsect13.art4",
               "type" : "article",
@@ -619956,7 +619957,7 @@
    { "location_id" : "nbc.divBV2.part9.sect7.subsect4.art2",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "StandardsExcept as permitted by Sentence (2) and Article 9.7.4.3., windows, doors and skylights and their components shall conform toAAMA\/WDMA\/CSA 101\/I.S.2\/A440, “North American Fenestration Standard\/Specification for windows, doors, and skylights” (Harmonized Standard), andCSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440-17, North American Fenestration Standard\/Specification for windows, doors, and skylights,”(See Note A-9.7.4.2.(1).)A door designated as a “Limited Water” door in accordance with the standard referenced in Clause (1)(a) shall not be used unless the doorseparates a [REF:term:dwllng-n:dwelling unit] from an unconditioned [REF:term:trg-grg:storage garage] or a carport,is designed with a clear width, a clear and level space, a door-opening device and a door closer in conformance with Subsection 3.8.3. (see Article 3.8.3.6.), ormeets the criteria in Sentence 9.27.3.8.(3) such that flashing would not be required." },
+    "content" : "StandardsExcept as permitted by Sentence (2) and Article 9.7.4.3., windows, doors and skylights and their components shall conform toAAMA\/WDMA\/CSA 101\/I.S.2\/A440, “North American Fenestration Standard\/Specification for windows, doors, and skylights” (Harmonized Standard), andCSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440, North American Fenestration Standard\/Specification for windows, doors, and skylights,”(See Note A-9.7.4.2.(1).)A door designated as a “Limited Water” door in accordance with the standard referenced in Clause (1)(a) shall not be used unless the doorseparates a [REF:term:dwllng-n:dwelling unit] from an unconditioned [REF:term:trg-grg:storage garage] or a carport,is designed with a clear width, a clear and level space, a door-opening device and a door closer in conformance with Subsection 3.8.3. (see Article 3.8.3.6.), ormeets the criteria in Sentence 9.27.3.8.(3) such that flashing would not be required." },
    
    { "location_id" : "nbc.divBV2.part9.sect7.subsect4.art2",
     "type" : "revision",
@@ -619965,7 +619966,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "StandardsExcept as permitted by Sentence (2) and Article 9.7.4.3., windows, doors and skylights and their components shall conform toAAMA\/WDMA\/CSA 101\/I.S.2\/A440, “North American Fenestration Standard\/Specification for windows, doors, and skylights” (Harmonized Standard), andCSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440-17, North American Fenestration Standard\/Specification for windows, doors, and skylights,”Reserved.",
+    "content" : "StandardsExcept as permitted by Sentence (2) and Article 9.7.4.3., windows, doors and skylights and their components shall conform toAAMA\/WDMA\/CSA 101\/I.S.2\/A440, “North American Fenestration Standard\/Specification for windows, doors, and skylights” (Harmonized Standard), andCSA A440S1, “Canadian Supplement to AAMA\/WDMA\/CSA 101\/I.S.2\/A440, North American Fenestration Standard\/Specification for windows, doors, and skylights,”Reserved.",
     "change_summary" : "Struck out \"General\" and substituted \"Standards\" in title",
     "note" : "Ministerial Order BA 2024 06" },
    
