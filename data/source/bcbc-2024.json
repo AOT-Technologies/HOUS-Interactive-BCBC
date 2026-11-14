@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T14:16:10.904+05:30",
+  "generated_timestamp" : "2026-11-14T14:21:53.034+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -15286,6 +15286,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row240",
                    "type" : "body_row",
+                   "source" : "bc",
                    "cells" : 
                    [ 
                     { "content" : 
@@ -15306,7 +15307,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long]  [REF:internal:nbc.divBV2.part9.sect36.subsect9.art10.table1:long]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long:Table 9.36.4.2.] Table 9.36.8.10." } ] } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row241",
                    "type" : "body_row",
