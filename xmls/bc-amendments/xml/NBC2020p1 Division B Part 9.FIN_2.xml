@@ -1217,6 +1217,18 @@
                 </attribute-change>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-06056 | issue 362 | Clause 9.36.5.10.(9)(c) ends at Sentence 9.36.7.3.(1). without the NBC "expressed as" and Subclauses (i) and (ii), as in the PDF (p.1036). -->
+        <amendment id="bc-autofix-936510-9c" sequence="298.1"
+                   description="Clause 9.36.5.10.(9)(c): end the clause at the reference and delete NBC Subclauses (i) and (ii) (not in BCBC 2024)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect5.art10.sent9.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divBV2.part9.sect36.subsect5.art10.sent9.clause3" letter="c">
+                        <text>the airtightness determined in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art3.sent1" display-type="long"/>.</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
         
         <!-- ================================================================== -->
         <!-- Amendment 299: Update reference from 9.36.2.8.(4) to 9.36.2.8.(2) -->
