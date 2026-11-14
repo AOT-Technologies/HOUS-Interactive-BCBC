@@ -677,6 +677,19 @@ incorporate a thermal break.</find>
             <delete/>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CF-09902 | issue 324 | Clause 9.4.1.1.(1)(b) prints "the CWC, “Engineering Guide for Wood Frame Construction,”" without the year 2014, as in the PDF. -->
+        <amendment id="bc-autofix-9411-1b" sequence="33.9"
+                   description="Clause 9.4.1.1.(1)(b): CWC guide printed as in the PDF (no year)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause2"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause2" letter="b">
+                        <text>be designed according to good engineering practice such as that provided in the CWC, “Engineering Guide for Wood Frame Construction,” or</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 034: Replace entire subsection with new structure       -->
         <!-- Subsection 9.7.4 - Design and Construction                        -->
@@ -712,7 +725,8 @@ incorporate a thermal break.</find>
                                     <text><ref type="standard" target="csa101a440"/> (Harmonized Standard), and</text>
                                 </clause>
                                 <clause xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.clause2" letter="b">
-                                    <text><ref type="standard" target="csaa440S1"/>,</text>
+                                    <!-- CLAUDE-AUTOFIX CF-09902 | issue 329 | Printed as in the PDF (AAMA/WDMA/CSA 101/I.S.2/A440 without "-17"). -->
+                                    <text>CSA A440S1, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440, North American Fenestration Standard/Specification for windows, doors, and skylights,”</text>
                                 </clause>
                                 <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
                                 <see-also xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.seealso">(See Note A-9.7.4.2.(1).)</see-also>
@@ -2278,7 +2292,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>joist spaces filled with</text>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2.subclause1" number="1">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
-                                <text>preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702" ref-style="notitle"/>, "Mineral Fibre Thermal Insulation for Buildings," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of floor surface, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 333 | This standard is CAN/ULC-S702 (rock or slag fibres), not S702.1, as in the PDF. -->
+                                <text>preformed insulation of rock or slag fibres conforming to CAN/ULC-S702, "Mineral Fibre Thermal Insulation for Buildings," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of floor surface, or</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2.subclause2" number="2">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
@@ -4537,7 +4552,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>Part 4, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art1.sent2.clause4" letter="d">
-                                <text>good engineering practice such as that provided in <ref type="standard" target="cwc-egwfc"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 373 | Printed as in the PDF (CWC "Engineering Guide ..." without the year 2014). -->
+                                <text>good engineering practice such as that provided in CWC “Engineering Guide for Wood Frame Construction.”</text>
                             </clause>
                         </sentence>
                     </article>
@@ -4586,7 +4602,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>Part 4, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art2.sent2.clause3" letter="c">
-                                <text>good engineering practice such as that provided in <ref type="standard" target="cwc-egwfc"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 374 | Printed as in the PDF (CWC "Engineering Guide ..." without the year 2014). -->
+                                <text>good engineering practice such as that provided in CWC “Engineering Guide for Wood Frame Construction.”</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art2.sent3" number="3">
@@ -4661,7 +4678,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>Part 4, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art3.sent2.clause2" letter="b">
-                                <text>good engineering practice such as that provided in the <ref type="standard" target="cwc-egwfc"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 375 | Printed as in the PDF (CWC "Engineering Guide ..." without the year 2014). -->
+                                <text>good engineering practice such as that provided in the CWC “Engineering Guide for Wood Frame Construction.”</text>
                             </clause>
                         </sentence>
                     </article>
