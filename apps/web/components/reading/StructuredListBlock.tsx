@@ -180,8 +180,9 @@ export const StructuredListBlock: React.FC<StructuredListBlockProps> = ({
     case 'bibliography':
       return (
         <div className="structuredList structuredList--bibliography">
+          {/* CLAUDE-AUTOFIX CL-096 CF-10780 | issue 503 | The bibliography lead-in "References:" is plain text in the PDF (p. 1380), not bold. */}
           {list.header ? (
-            <p className="structuredList__bibliography-header"><strong>{list.header}</strong></p>
+            <p className="structuredList__bibliography-header">{list.header}</p>
           ) : null}
           <ol className="structuredList structuredList--numbered structuredList--labelled">
             {list.items.map((item, index) => (
