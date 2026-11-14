@@ -519,6 +519,7 @@
                                 </row>
                                 
                                 <!-- Row 2: Fire Separations - 30 min acceptable -->
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 1 | "some" is italic, as in the PDF (1 h fire separation required between some major occupancies). -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row2"
                                     >
@@ -544,10 +545,10 @@
                                         1 h <ref
                                             type="term"
                                             target="fr-prtn"
-                                            >fire separation</ref> required between some <ref
+                                            >fire separation</ref> required between <emphasis style="italic">some <ref
                                             type="term"
                                             target="mjr-ccpn"
-                                            >major occupancies</ref>.</entry>
+                                            >major occupancies</ref></emphasis>.</entry>
                                     <entry>30 min <ref
                                             type="term"
                                             target="fr-prtn"
@@ -1094,6 +1095,7 @@
                                             >interconnected floor space</ref>.</entry>
                                 </row>
                                 
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 10 | "fire resistance rating" is italic (defined term), as in the PDF. -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row15"
                                     >
@@ -1122,7 +1124,7 @@
                                             >suites</ref> by a <ref
                                             type="term"
                                             target="fr-prtn"
-                                            >fire separation</ref> having a fire resistance rating of 45 min or 1 hr.</entry>
+                                            >fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire resistance rating</ref> of 45 min or 1 hr.</entry>
                                     <entry>Existing <ref
                                             type="term"
                                             target="fr-prtn"
@@ -1141,6 +1143,7 @@
                                             >building height</ref>.</entry>
                                 </row>
                                 
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 11 | "fire resistance ratings" is italic (defined term), as in the PDF. -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row16"
                                     >
@@ -1173,7 +1176,7 @@
                                             target="fr-rtnc-"
                                             >fire-resistance rating</ref> of at least 45 min.</entry>
                                     <entry
-                                        >Existing corridors with 30 min fire resistance ratings, such as wood lath and plaster in good condition, are acceptable in <ref type="term" target="rdntl-cc">residential occupancies</ref> provided the <ref
+                                        >Existing corridors with 30 min <ref type="term" target="fr-rtnc-">fire resistance ratings</ref>, such as wood lath and plaster in good condition, are acceptable in <ref type="term" target="rdntl-cc">residential occupancies</ref> provided the <ref
                                             type="term"
                                             target="bldng"
                                             >building</ref>:<lb/>
@@ -1453,6 +1456,7 @@
                                             >sprinklered</ref>.</entry>
                                 </row>
                                 
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 13 | "fire resistance rating" is italic (defined term), as in the PDF. -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row24"
                                     >
@@ -1510,7 +1514,7 @@
                                             >building height</ref> may have <ref type="term" target="xt">exits</ref> that are separated by a <ref
                                             type="term"
                                             target="fr-prtn"
-                                            >fire separation</ref> having a fire resistance rating of not less than 45 min provided the <ref
+                                            >fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire resistance rating</ref> of not less than 45 min provided the <ref
                                             type="term"
                                             target="bldng"
                                             >building</ref> is <ref
@@ -2894,10 +2898,11 @@
             <target type="canonical-id" id="prcs-plnt" />
             <replace preserve-references="false">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00006 | issue 1516 | "industrial occupancy", "flammable liquids" and "combustible liquids" are defined terms (italic), as in the PDF. -->
                     <item xml:id="prcs-plnt">
                         <term>Process plant</term>
                         <definition
-                            >means an industrial occupancy where materials, including flammable liquids, combustible liquids or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)</definition>
+                            >means an <ref type="term" target="ndtrl-cc">industrial occupancy</ref> where materials, including <ref type="term" target="flmmbl-l">flammable liquids</ref>, <ref type="term" target="cmbtbl-l">combustible liquids</ref> or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)</definition>
                     </item>
                 </new-content>
             </replace>
@@ -2957,11 +2962,12 @@
                 />
             <insert>
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00006 | issue 1517 | "field review" is a defined term (italic), as in the PDF. -->
                     <item xml:id="bc-rgstrd-prfssnl-f-rcrd">
                         <term>Registered professional of record</term>
                         <definition>means a <emphasis
                                 style="italic"
-                                >registered professional</emphasis> retained to undertake design work and field review in accordance with <ref
+                                >registered professional</emphasis> retained to undertake design work and <ref type="term" target="bc-fld-rvw">field review</ref> in accordance with <ref
                                 type="internal"
                                 target="nbc.divC.part2.sect2.subsect7"
                                 display-type="long"
