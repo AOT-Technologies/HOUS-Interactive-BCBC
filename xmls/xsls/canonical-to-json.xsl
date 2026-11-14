@@ -4441,9 +4441,11 @@
                                                 </xsl:for-each>
                                             </xsl:variable>
                                             <xsl:variable name="trimmed-name" select="normalize-space(replace($name-text, '\s*\($', ''))"/>
-                                            <fn:string key="fullName"><xsl:value-of select="$trimmed-name"/></fn:string>
+                                            <!-- CLAUDE-AUTOFIX CF-10524 | issue 139 | An organization without a web address keeps its full name (CCBFC, NBC, NECB, NFC, NPC), and the web address is the printed one (www.fpinnovations.ca, www.hvi.org, www.iccsafe.org ...), not the NBC href (several are wrong or empty), as in the PDF. -->
+                                            <fn:string key="fullName"><xsl:value-of select="if (address//ref[@type='external']) then $trimmed-name else normalize-space(string(address))"/></fn:string>
                                             <xsl:if test="address//ref[@type='external']">
-                                                <fn:string key="website"><xsl:value-of select="address//ref[@type='external']/@target"/></fn:string>
+                                                <xsl:variable name="web-text" select="replace(normalize-space(string((address//ref[@type='external'])[1])), '^\((.*)\)$', '$1')"/>
+                                                <fn:string key="website"><xsl:value-of select="if ($web-text = '') then (address//ref[@type='external'])[1]/@target else if (matches($web-text, '^https?://')) then $web-text else concat('https://', $web-text)"/></fn:string>
                                             </xsl:if>
                                         </xsl:when>
                                         <!-- All other list types (bulleted, numbered, alphabetic): content -->
