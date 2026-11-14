@@ -112,6 +112,30 @@
                 </text-change>
             </modify>
         </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-02954 | issue 291 | The list in Note A-4.1.8.19.(2) is lettered (a) to (e), as in the PDF, not bulleted. -->
+        <amendment id="bc-autofix-a41819-2-list" sequence="4.5"
+                   description="Note A-4.1.8.19.(2): lettered list as in the BC PDF">
+            <target type="canonical-id" id="nbc.divB.part4.appendix.appnote111.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part4.appendix.appnote111.para1">It
+is strongly recommended that a design review of the seismically isolated
+structure and its isolation system be carried out by an independent
+team of professional engineers and geoscientists experienced in seismic
+analysis methods and the theory and application of seismic isolation.
+The design review should include, but not be limited to, the following:<list type="alphabetic">
+                        <item>site-specific spectra,</item>
+                        <item>ground motion time histories, </item>
+                        <item>modeling and analyses,</item>
+                        <item>testing program and results, and </item>
+                        <item>final design of all structural framing elements and isolation
+system components.</item>
+                     </list>
+                  </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
         
         <!-- ================================================================== -->
         <!-- Amendment 005: Replace NBC with British Columbia Building Code    -->
