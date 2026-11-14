@@ -1139,10 +1139,11 @@
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5209 Reference 3cd4c9f3d9 -->
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5210 Reference 6000cf10bd -->
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5211 Reference 1474960750 -->
-                            <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3">Where the braced wall bands are not parallel, the adjacent band is identified as follows using <ref type="internal" target="nbc.divBV2.part9.appendix.appnote131.figure2" display-type="long">Figure Table A-9.23.13.5.-B</ref> as an example: 1.   <list type="numbered">
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item1">Determine the mid-point of the centre line of the subject braced wall band (A); 2.   </item>
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item2">Project a perpendicular line from this mid-point (B); 3.   </item>
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item3">The first braced wall band encountered is the adjacent braced wall band (C); 4.   </item>
+                            <!-- CLAUDE-AUTOFIX base32-683 | issue 683 | The list numbers 1. to 4. come from the numbered list only; the typed "1.", "2.", "3.", "4." are removed so each prints once, as in the PDF. -->
+                            <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3">Where the braced wall bands are not parallel, the adjacent band is identified as follows using <ref type="internal" target="nbc.divBV2.part9.appendix.appnote131.figure2" display-type="long">Figure Table A-9.23.13.5.-B</ref> as an example: <list type="numbered">
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item1">Determine the mid-point of the centre line of the subject braced wall band (A);</item>
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item2">Project a perpendicular line from this mid-point (B);</item>
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item3">The first braced wall band encountered is the adjacent braced wall band (C);</item>
                                     <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item4">Where the projected line encounters an intersection point between two braced wall bands, either wall band may be identified as the adjacent braced wall band (complex cases).</item>
                                 </list>
                             </paragraph>
