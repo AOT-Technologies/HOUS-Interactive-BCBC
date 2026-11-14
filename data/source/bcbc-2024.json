@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T10:53:04.815+05:30",
+  "generated_timestamp" : "2026-11-14T10:56:34.35+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -346440,8 +346440,20 @@
                   "display_type" : "short" } ],
                 "table_notes" : 
                 [ 
-                 { "id" : "nbc.divBV2.part9.sect36.subsect2.art6.appnote1",
-                  "content" : "Notes to Table 9.36.2.6.-C:(1) See [REF:internal:nbc.divBV2.part9.sect1.subsect1.art3.sent1:long] .(2) Notwithstanding [REF:internal:nbc.divBV2.part9.sect36.subsect2.art6.sent3:short] , ceilings below attics shall not have a reduction in effective thermal resistance(3) For the purposes of this table, a roof deck shall mean a horizontal portion of a roof intended for [REF:term:ccpnc:occupancy] .(4) For the purposes of this table, flat roofs shall mean a roof that is not intended for [REF:term:ccpnc:occupancy] .(5) See [REF:internal:nbc.divBV2.part9.sect36.subsect2.art8.sent3:short] for requirements concerning the above-ground portion of [REF:term:fndtn:foundation] walls." } ],
+                 { "id" : "nbc.divBV2.part9.sect36.subsect2.art6.table3.note1",
+                  "content" : "See [REF:internal:nbc.divA.part1.sect1.subsect3.art1:long] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect2.art6.table3.note2",
+                  "content" : "Notwithstanding [REF:internal:nbc.divBV2.part9.sect36.subsect2.art6.sent3:long] , ceilings below attics shall not have a reduction in effective thermal resistance" },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect2.art6.table3.note3",
+                  "content" : "For the purposes of this table, a roof deck shall mean a horizontal portion of a roof intended for [REF:term:ccpnc:occupancy] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect2.art6.table3.note4",
+                  "content" : "For the purposes of this table, flat roofs shall mean a roof that is not intended for [REF:term:ccpnc:occupancy] ." },
+                 
+                 { "id" : "nbc.divBV2.part9.sect36.subsect2.art6.table3.note5",
+                  "content" : "See [REF:internal:nbc.divBV2.part9.sect36.subsect2.art8.sent3:long] for requirements concerning the above-ground portion of [REF:term:fndtn:foundation] walls." } ],
                 "structure" : 
                 { "columns" : 7,
                  "column_specs" : 
