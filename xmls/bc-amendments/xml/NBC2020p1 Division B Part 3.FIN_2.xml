@@ -256,7 +256,8 @@
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1" number="1">
                             <text>At least one for every 20 or part thereof of sleeping rooms or bed spaces shall conform to <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="short"/> where provided in</text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1.clause1" letter="a">
-                                <text>hotels and motels (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent1.clause7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent8" display-type="short"/>), and</text>
+                                <!-- CLAUDE-AUTOFIX CF-10637 | issue 173 | Plural label "Sentences 3.2.4.20.(7) and (8)", as in the PDF. -->
+                                <text>hotels and motels (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent1.clause7" display-type="short"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent7" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent8" display-type="short"/>), and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art13.sent1.clause2" letter="b">
                                 <text>not including apartments and condominiums and the <ref type="term" target="bldng">buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="short"/>, other <ref type="term" target="bldng">buildings</ref> or parts of <ref type="term" target="bldng">buildings</ref> used for <ref type="term" target="rdntl-cc">residential major occupancies</ref> (see also <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art20.sent17" display-type="short"/>).</text>
@@ -495,7 +496,8 @@
                             <see-also xml:id="nbc.divB.part3.sect8.subsect3.art2.sent6.seealso">(See Note A-3.8.3.2.(6).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect3.art2.sent7" number="7">
-                            <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be equipped to provide illumination in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent1" display-type="medium"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent2" display-type="medium"/>. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent3" display-type="medium"/> and <ref type="internal" target="nbc.divBV2.part9.sect34.subsect2.art7" display-type="long"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-10638 | issue 176 | Plural label "Sentences 3.2.7.1.(1) and (2)" and "(See also Sentences 3.2.7.1.(3) ...)", as in the PDF. -->
+                            <text>An <ref type="term" target="brrr-fr">accessible</ref> path of travel shall be equipped to provide illumination in accordance with <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent1" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent2" display-type="medium"/>. (See also <ref type="internal" target="nbc.divB.part3.sect2.subsect7.art1.sent3" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect34.subsect2.art7" display-type="long"/>.)</text>
                         </sentence>
                     </article>
                 </new-content>
