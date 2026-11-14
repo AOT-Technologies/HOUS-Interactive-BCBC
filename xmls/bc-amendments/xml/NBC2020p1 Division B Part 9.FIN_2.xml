@@ -1999,6 +1999,10 @@
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect36.subsect7.art4.table1">
                             <title>Airtightness Levels</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1437 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art4.sent1" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="4">
                                 <colspec colname="col1" colwidth=""/>
                                 <colspec colname="col2" colwidth=""/>

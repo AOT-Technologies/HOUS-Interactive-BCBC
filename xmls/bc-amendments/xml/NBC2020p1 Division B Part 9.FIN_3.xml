@@ -2278,6 +2278,10 @@
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.appendix.appnote215.table1">
                         <title>Energy Efficiency Compliance Options for Part 9 Buildings</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1456 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.appendix.appnote215" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="col1" colwidth="100*"/>
                             <colspec colname="col2" colwidth="20*"/>
