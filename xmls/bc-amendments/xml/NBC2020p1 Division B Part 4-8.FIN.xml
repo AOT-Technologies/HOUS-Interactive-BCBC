@@ -331,12 +331,14 @@
             <modify>
                 <element-replace element="paragraph" position="6">
                     <new-content source="bc">
-                        <paragraph xml:id="nbc.divB.part5.appendix.appnote8.para6">It is also noted that <ref type="standard" target="csas478" standardId="csas478"/> contains requirements
+                        <!-- CLAUDE-AUTOFIX CF-10098 | issue 304 | CSA S478 without its title, as in the PDF. -->
+                        <!-- CLAUDE-AUTOFIX CF-10098 | issue 303 | CSA S478 without its title, as in the PDF. -->
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote8.para6">It is also noted that CSA S478 contains requirements
                             for actions beyond the scope of the British Columbia Building Code, which may not be the responsibility
                             of the designer, builder or authority having jurisdiction. These include
                             requirements relating to quality assurance, inspection, maintenance,
                             minimum design service lives and potential impacts of climate change,
-                            which are not addressed in the Code. The reference herein to <ref type="standard" target="csas478" standardId="csas478"/> is not intended to
+                            which are not addressed in the Code. The reference herein to CSA S478 is not intended to
                             imply that the designer, builder or authority having jurisdiction
                             adopt, apply or enforce any of these requirements.</paragraph>
                     </new-content>
@@ -860,7 +862,8 @@
                                 <text>sound audible signals within the location they serve, as described in <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent3" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent5" display-type="number"/>, <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent7" display-type="number"/> and <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent8" display-type="number"/>,</text>
                             </clause>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause2" letter="b">
-                                <text>are installed in conformance with <ref type="standard" target="ulcs524" standardId="ulcs524"/>, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-10098 | issue 316 | Printed as in the PDF (“Installation of Fire Alarm Systems”). -->
+                                <text>are installed in conformance with CAN/ULC-S524, “Installation of Fire Alarm Systems,” and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause3" letter="c">
                                 <text>form part of the fire alarm system.</text>
