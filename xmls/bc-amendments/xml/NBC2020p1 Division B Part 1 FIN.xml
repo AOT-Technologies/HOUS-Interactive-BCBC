@@ -240,6 +240,23 @@
                 </new-content>
             </insert>
         </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10535 | issue 150 | Article 1.3.2.1. lists USACE (United States Army Corps of Engineers) after ULC, as in the PDF. -->
+        <amendment id="bc-autofix-org-usace" sequence="10.5"
+                   description="Add USACE to the organization list after ULC">
+            <target type="position"
+                    parent-id="nbc.divB.part1.sect3.subsect2.art1.sent1"
+                    position="after"
+                    reference-id="org.d1e21199"/>
+            <insert>
+                <new-content source="bc">
+                    <item xml:id="org.bc-usace">
+                        <organization>USACE</organization>
+                        <address>United States Army Corps of Engineers (<ref type="external" target="https://www.erdc.usace.army.mil/Locations/CERL">www.erdc.usace.army.mil/Locations/CERL</ref>)</address>
+                    </item>
+                </new-content>
+            </insert>
+        </amendment>
         
         <!-- ================================================================== -->
         <!-- Amendment 11: Add energy modeling standards                        -->
