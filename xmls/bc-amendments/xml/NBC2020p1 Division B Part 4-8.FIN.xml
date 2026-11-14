@@ -293,6 +293,17 @@
             </insert>
         </amendment> -->
         
+        <!-- CLAUDE-AUTOFIX CF-09902 | issue 308 | Note A-5.9.2.2., Design Values: the Canadian Supplement title reads "AAMA/WDMA/CSA 101/I.S.2/A440" without "-17", as in the PDF. -->
+        <amendment id="bc-autofix-a5922-div1" sequence="13.9"
+                   description="Note A-5.9.2.2. Design Values paragraph: standard title as in the PDF">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote44.div1.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part5.appendix.appnote44.div1.para1">CSA A440S1, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440, North American Fenestration Standard/Specification for windows, doors, and skylights,” requires that the individual performance levels achieved by the product for structural resistance, water penetration resistance and air leakage resistance be reported on the product's performance label.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 014: Replace NBC with code in appendix note             -->
         <!-- Appendix Note A-5.1.4.1.(2) - Multiple Functions                 -->

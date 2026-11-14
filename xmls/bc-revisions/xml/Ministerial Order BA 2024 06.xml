@@ -6812,7 +6812,8 @@ Spaces within Buildings
                       <text><ref type="standard" target="csa101a440"/> (Harmonized Standard), and</text>
                     </clause>
                     <clause xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.clause2" letter="b">
-                      <text><ref type="standard" target="csaa440S1"/>,</text>
+                      <!-- CLAUDE-AUTOFIX CF-09902 | issue 329 | Printed as in the PDF (AAMA/WDMA/CSA 101/I.S.2/A440 without "-17"). -->
+                      <text>CSA A440S1, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440, North American Fenestration Standard/Specification for windows, doors, and skylights,”</text>
                     </clause>
                   </sentence>
                   <sentence xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent2" number="2">
