@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T10:13:57.75+05:30",
+  "generated_timestamp" : "2026-11-14T10:20:59.949+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -4351,7 +4351,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>[REF:term:fr-prtn:Fire Separations]<\/bold>\n[REF:internal:nbc.divB.part3.sect1.subsect3.art1.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect3.art1.table1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9:long] .\n 1 h [REF:term:fr-prtn:fire separation] required between some [REF:term:mjr-ccpn:major occupancies] ." } ] },
+                       "value" : "<bold>[REF:term:fr-prtn:Fire Separations]<\/bold>\n[REF:internal:nbc.divB.part3.sect1.subsect3.art1.sent1:long] , [REF:internal:nbc.divB.part3.sect1.subsect3.art1.table1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9:long] .\n 1 h [REF:term:fr-prtn:fire separation] required between <italic>some [REF:term:mjr-ccpn:major occupancies]<\/italic>." } ] },
                     
                     { "content" : 
                      [ 
@@ -4598,7 +4598,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Separation of [REF:term:t:Suites]<\/bold>\n[REF:internal:nbc.divB.part3.sect3.subsect1.art1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9.art13:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect9.art14:long] .\n[REF:term:t:Suites] are required to be separated from adjoining [REF:term:t:suites] by a [REF:term:fr-prtn:fire separation] having a fire resistance rating of 45 min or 1 hr." } ] },
+                       "value" : "<bold>Separation of [REF:term:t:Suites]<\/bold>\n[REF:internal:nbc.divB.part3.sect3.subsect1.art1:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect9.art13:long] ., [REF:internal:nbc.divBV2.part9.sect10.subsect9.art14:long] .\n[REF:term:t:Suites] are required to be separated from adjoining [REF:term:t:suites] by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire resistance rating] of 45 min or 1 hr." } ] },
                     
                     { "content" : 
                      [ 
@@ -4622,7 +4622,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "Existing corridors with 30 min fire resistance ratings, such as wood lath and plaster in good condition, are acceptable in [REF:term:rdntl-cc:residential occupancies] provided the [REF:term:bldng:building] :\n (a) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , and\n (b) is fully [REF:term:prnklrd:sprinklered] with fast response sprinklers." } ] } ] },
+                       "value" : "Existing corridors with 30 min [REF:term:fr-rtnc-:fire resistance ratings] , such as wood lath and plaster in good condition, are acceptable in [REF:term:rdntl-cc:residential occupancies] provided the [REF:term:bldng:building] :\n (a) does not exceed 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] , and\n (b) is fully [REF:term:prnklrd:sprinklered] with fast response sprinklers." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row17",
                    "type" : "body_row",
@@ -4820,7 +4820,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "1. [REF:term:bldng:Buildings] of 3 [REF:term:tr:storeys] or less may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] that does not have a [REF:term:fr-rtnc-:fire-resistance rating] provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (b) the sprinkler system is supervised in accordance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] .\n 2. [REF:term:bldng:Buildings] not exceeding 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] having a fire resistance rating of not less than 45 min provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
+                       "value" : "1. [REF:term:bldng:Buildings] of 3 [REF:term:tr:storeys] or less may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] that does not have a [REF:term:fr-rtnc-:fire-resistance rating] provided:\n (a) the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] with fast response sprinklers, and\n (b) the sprinkler system is supervised in accordance with [REF:internal:nbc.divB.part3.sect2.subsect4.art9.sent3:long] .\n 2. [REF:term:bldng:Buildings] not exceeding 6 [REF:term:tr:storeys] in [REF:term:bldng-hght:building height] may have [REF:term:xt:exits] that are separated by a [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire resistance rating] of not less than 45 min provided the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] ." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row25",
                    "type" : "body_row",
@@ -6679,7 +6679,7 @@
                    
                    { "id" : "prcs-plnt",
                     "term" : "Process plant",
-                    "definition" : "means an industrial occupancy where materials, including flammable liquids, combustible liquids or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)" },
+                    "definition" : "means an [REF:term:ndtrl-cc:industrial occupancy] where materials, including [REF:term:flmmbl-l:flammable liquids] , [REF:term:cmbtbl-l:combustible liquids] or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)" },
                    
                    { "id" : "prt-flr-spc",
                     "term" : "Protected floor space",
@@ -6703,7 +6703,7 @@
                    
                    { "id" : "bc-rgstrd-prfssnl-f-rcrd",
                     "term" : "Registered professional of record",
-                    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and field review in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] ." },
+                    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and [REF:term:bc-fld-rvw:field review] in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] ." },
                    
                    { "id" : "rpr-grg",
                     "term" : "Repair garage",
@@ -342422,7 +342422,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "This Article applies to every [REF:term:bldng:building] that contains a [REF:term:rdntl-cc:residential occupancy] , a business and personal services occupancy, or a mercantile occupancy and that",
+                "text" : "This Article applies to every [REF:term:bldng:building] that contains a [REF:term:rdntl-cc:residential occupancy] , a [REF:term:bn-nd-pr:business and personal services occupancy] , or a [REF:term:mrcntl-c:mercantile occupancy] and that",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect32.subsect4.art2.sent1.clause1",
@@ -621484,7 +621484,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "prcs-plnt" : 
    { "term" : "Process plant",
-    "definition" : "means an industrial occupancy where materials, including flammable liquids, combustible liquids or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)",
+    "definition" : "means an [REF:term:ndtrl-cc:industrial occupancy] where materials, including [REF:term:flmmbl-l:flammable liquids] , [REF:term:cmbtbl-l:combustible liquids] or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "prt-flr-spc" : 
    { "term" : "Protected floor space",
@@ -621508,7 +621508,7 @@
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "bc-rgstrd-prfssnl-f-rcrd" : 
    { "term" : "Registered professional of record",
-    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and field review in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] .",
+    "definition" : "means a <italic>registered professional<\/italic> retained to undertake design work and [REF:term:bc-fld-rvw:field review] in accordance with [REF:internal:nbc.divC.part2.sect2.subsect7:long] .",
     "location_id" : "nbc.divA.part1.sect4.subsect1.art2.sent1" },
    "rpr-grg" : 
    { "term" : "Repair garage",
