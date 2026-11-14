@@ -1121,6 +1121,10 @@
                                                 </row>
                                             </tbody>
                                         </tgroup>
+                                        <!-- CLAUDE-AUTOFIX CF-08731 | issue 1814 | Table note (1) "See Parts 2 and 3 of Division A." restored, as in the PDF and the other Objectives tables. -->
+                                        <table-notes>
+                                            <note xml:id="nbc.divB.part10.sect4.subsect1.art1.table1.note1">See Parts 2 and 3 of Division A.</note>
+                                        </table-notes>
                                     </table>
                                 </article>
                             </subsection>
