@@ -2149,7 +2149,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>public washrooms that are equipped to serve more than one person at a time,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect9.subsect12.art3.sent1.clause7" letter="g">
-                            <text>locations where doors are equipped with an electromagnetic lock as described in <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent5.clause11" display-type="long" pretext="Clauses"/> and <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent6.clause7" display-type="medium"/>, and</text>
+                            <!-- CLAUDE-AUTOFIX CF-04163 | issue 332 | Printed "Clauses 3.4.6.16.(5)(k) and (6)(g)", as in the PDF (as the Part 3 copy of this Clause). -->
+                            <text>locations where doors are equipped with an electromagnetic lock as described in Clauses <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent5.clause11" display-type="number">3.4.6.16.(5)(k)</ref> and <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent6.clause7" display-type="number">(6)(g)</ref>, and</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect9.subsect12.art3.sent1.clause8" letter="h">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2297 Formatting 54f273e5b1 -->
