@@ -1693,6 +1693,14 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   // for height matching.
   const pinnedHeaderFirstColRows = useMemo(() => {
     if (!usesSplitScrollLayout) return [];
+    // CLAUDE-AUTOFIX CL-100 CF-01199 | issue 6654 | A first header cell spanning several columns (Table 3.2.3.1.-C "Exposing Building Face") cannot be pinned into column 0 without being drawn twice, so no overlay then.
+    let col0Covered = 0;
+    for (const row of displayHeaderRows) {
+      if (col0Covered > 0) { col0Covered -= 1; continue; }
+      const first = row.cells[0];
+      if (first && typeof first.colspan === 'number' && first.colspan > 1) return [];
+      col0Covered = first && typeof first.rowspan === 'number' && first.rowspan > 1 ? first.rowspan - 1 : 0;
+    }
     let col0ActiveRowspan = 0;
     return displayHeaderRows.map((row) => {
       const isCol0Covered = col0ActiveRowspan > 0;
