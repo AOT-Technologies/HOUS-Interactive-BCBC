@@ -1785,8 +1785,8 @@
   </xsl:template>
 
   <!-- Vertical mark (vmk, vmkr) - typically for absolute value or norms -->
+  <!-- CLAUDE-AUTOFIX CF-10419 | issue 847 | vmk/vmkr are alignment marks between equation lines (id/rid), not printed bars: they print nothing, as in the PDF. -->
   <xsl:template match="vmk | vmkr" mode="mathml" xmlns="http://www.w3.org/1998/Math/MathML">
-    <mo>|</mo>
   </xsl:template>
 
   <!-- Accent (ac) -->
