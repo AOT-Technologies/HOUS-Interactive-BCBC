@@ -3705,10 +3705,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4" display-type="long"/> for requirements on the nailing of top plates splices in <ref type="term" target="br-wl-bnd">braced wall bands</ref>.</text>
                         </note>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1.note3">
-                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent2" display-type="short"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-04708 | issue 1767 | Printed "See Sentence 9.23.3.4.(2)." with the full number, as in the PDF. -->
+                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent2" display-type="long"/>.</text>
                         </note>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1.note4">
-                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent3" display-type="short"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-04708 | issue 1768 | Printed "See Sentence 9.23.3.4.(3)." with the full number, as in the PDF. -->
+                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent3" display-type="long"/>.</text>
                         </note>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1.note5">
                             <text>Where heavyweight construction is used in the roof of the space, at least 8 nails are required (see Note A-9.23.13.2.(3)).</text>
