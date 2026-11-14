@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T14:29:29.821+05:30",
+  "generated_timestamp" : "2026-11-14T14:32:13.605+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -23215,6 +23215,11 @@
                     "abbreviation" : "TC",
                     "fullName" : "Transport Canada",
                     "website" : "https:\/\/tc.canada.ca" },
+                   
+                   { "id" : "org.bc-teca",
+                    "abbreviation" : "TECA",
+                    "fullName" : "Thermal Environmental Comfort Association",
+                    "website" : "https:\/\/www.teca.ca" },
                    
                    { "id" : "org.d1e21158",
                     "abbreviation" : "TIAC",
