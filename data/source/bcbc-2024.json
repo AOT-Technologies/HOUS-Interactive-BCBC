@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T12:37:06.852+05:30",
+  "generated_timestamp" : "2026-11-14T12:41:53.195+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -344754,12 +344754,6 @@
                 "number" : 3,
                 "text" : "When other types of lighting are used, illumination equivalent to that shown in [REF:internal:nbc.divBV2.part9.sect34.subsect2.art7.table1:long] shall be provided." },
                
-               { "id" : "nbc.divBV2.part9.sect34.subsect2.art7.sent4",
-                "type" : "sentence",
-                "number" : 4,
-                "source" : "bc",
-                "text" : "Notwithstanding [REF:internal:nbc.divBV2.part9.sect34.subsect2.art7.sent1:short:Sentences (1)] to [REF:internal:nbc.divBV2.part9.sect34.subsect2.art7.sent3:short:(3)] , rooms and spaces used by the public shall be equipped to provide illumination as described in [REF:internal:nbc.divB.part3.sect2.subsect7.art1.sent4:short:Sentences 3.2.7.1.(4)] to [REF:internal:nbc.divB.part3.sect2.subsect7.art1.sent7:short:(7)] ." },
-               
                { "id" : "nbc.divBV2.part9.sect34.subsect2.art7.table1",
                 "type" : "table",
                 "source" : "bc",
@@ -344962,7 +344956,13 @@
                      [ 
                       { "type" : "text",
                        "value" : "10" } ],
-                     "align" : "center" } ] } ] } } ] } ] },
+                     "align" : "center" } ] } ] } },
+               
+               { "id" : "nbc.divBV2.part9.sect34.subsect2.art7.sent4",
+                "type" : "sentence",
+                "number" : 4,
+                "source" : "bc",
+                "text" : "Notwithstanding [REF:internal:nbc.divBV2.part9.sect34.subsect2.art7.sent1:short:Sentences (1)] to [REF:internal:nbc.divBV2.part9.sect34.subsect2.art7.sent3:short:(3)] , rooms and spaces used by the public shall be equipped to provide illumination as described in [REF:internal:nbc.divB.part3.sect2.subsect7.art1.sent4:short:Sentences 3.2.7.1.(4)] to [REF:internal:nbc.divB.part3.sect2.subsect7.art1.sent7:short:(7)] ." } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect34.subsect3",
             "type" : "subsection",
