@@ -3500,14 +3500,11 @@
                 status="current"
                 >
                 <content>
+                  <!-- CLAUDE-AUTOFIX CF-10095 | issue 312 | The standard is printed as in the PDF (CAN/CSA-B365); this revision only links "boiler". -->
                   <text>A solid-fuel burning <ref
                       type="term"
                       target="blr"
-                      >boiler</ref> accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of <ref
-                      type="standard"
-                      target="csab365"
-                      standardId="csab365"
-                      />.</text>
+                      >boiler</ref> accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”</text>
                 </content>
                 <change-summary
                   >Struck out "boiler" and substituted "boiler"</change-summary>

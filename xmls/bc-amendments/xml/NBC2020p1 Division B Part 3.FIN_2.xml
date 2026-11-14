@@ -2100,7 +2100,8 @@
             <modify>
                 <element-replace element="paragraph" position="2">
                     <new-content source="bc">
-                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para2">According to <ref type="standard" target="nfpa13" standardId="nfpa13"/> and <ref type="standard" target="nfpa13r" standardId="nfpa13r"/>, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 216 | Printed as in the PDF ("According to NFPA 13 and 13R,"): the website expands standard references to number and title. -->
+                        <paragraph xml:id="nbc.divB.part3.appendix.appnote96.para2">According to NFPA 13 and 13R, some small rooms and closets within a dwelling unit in a sprinklered building, including those that may be in the storey immediately below the roof assembly, do not require sprinklers. However, the British Columbia Building Code requires sprinkler protection within all rooms and closets immediately below the roof so as to control any fire that might start in that space and thereby limit the probability of the fire spreading into the roof assembly.</paragraph>
                     </new-content>
                 </element-replace>
                 <!-- CLAUDE-AUTOFIX CF-01716 | issue 997 | Copy of the element-replace of bc-166: the merge engine applies only the first modify amendment per target, so bc-166 was dropped. -->

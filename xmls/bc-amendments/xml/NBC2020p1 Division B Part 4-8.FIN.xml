@@ -489,7 +489,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part6.sect2.subsect1.art5.sent2" number="2">
-                        <text>A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of <ref type="standard" target="csab365" standardId="csab365"/>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 312 | The standard is printed as in the PDF (CAN/CSA-B365). -->
+                        <text>A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -782,7 +783,8 @@
                             <!-- CLAUDE-AUTOFIX CF-03767 | issue 7274 | Restored defined-term italic on the three occupancies to match the PDF (also CF-03768, CF-03769). -->
                             <text>CO alarms installed in an <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref> as required by this Article shall conform to</text>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause1" letter="a">
-                                <text><ref type="standard" target="csa6.19" standardId="csa6.19"/>, notwithstanding the scope of that standard,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10095 | issue 315 | The standard is printed as in the PDF (CAN/CSA-6.19, title case). -->
+                                <text>CAN/CSA-6.19, “Residential Carbon Monoxide Alarming Devices,” notwithstanding the scope of that standard,</text>
                             </clause>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause2" letter="b">
                                 <!-- CLAUDE-AUTOFIX CF-03773 | issue 2075 | UL 2034 is not in Table 1.3.1.2., so the reference printed its id 'ul2034'; it now prints the number and title as in the PDF. -->
@@ -985,7 +987,8 @@
                         <number>6.9.3.1.(6)</number>
                         <title>Carbon Monoxide Devices</title>
                         <!-- CLAUDE-AUTOFIX CF-03773 | issue 2075 | UL 2034 prints its number and title, as in the PDF, not the id 'ul2034'. -->
-                        <paragraph>Although the scope of <ref type="standard" target="csa6.19" standardId="csa6.19"/> and <ref type="standard" target="ul2034" standardId="ul2034">UL 2034</ref>, “Standard for Single and Multiple Station Carbon Monoxide Alarms,” is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 321 | The standard is printed as in the PDF (CAN/CSA-6.19, title case). -->
+                        <paragraph>Although the scope of CAN/CSA-6.19, “Residential Carbon Monoxide Alarming Devices,” and <ref type="standard" target="ul2034" standardId="ul2034">UL 2034</ref>, “Standard for Single and Multiple Station Carbon Monoxide Alarms,” is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications.</paragraph>
                     </application-note>
                     <application-note xml:id="nbc.divB.part6.appendix.appnote23b">
                         <number>6.9.3.1.(7)</number>

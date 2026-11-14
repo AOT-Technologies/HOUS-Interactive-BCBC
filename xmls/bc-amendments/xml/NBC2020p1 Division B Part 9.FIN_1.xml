@@ -12851,7 +12851,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect33.subsect5.art3.sent2" number="2">
-                        <text>For the purposes of <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art3.sent1" display-type="short"/>, solid-fuel-burning boiler <ref type="term" target="pplnc">appliances</ref> that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of <ref type="standard" target="csab365"/>. (See also Subclause 9.33.5.2.(1)(a)(ii).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 473 | The standard is printed as in the PDF (CAN/CSA-B365, no comma). -->
+                        <text>For the purposes of <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art3.sent1" display-type="short"/>, solid-fuel-burning boiler <ref type="term" target="pplnc">appliances</ref> that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of CAN/CSA-B365 “Installation Code for Solid-Fuel-Burning Appliances and Equipment.” (See also Subclause 9.33.5.2.(1)(a)(ii).)</text>
                     </sentence>
                 </new-content>
             </insert>
