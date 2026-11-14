@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-14T15:53:01.806+05:30",
+  "generated_timestamp" : "2026-11-14T15:56:00.564+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -355532,18 +355532,8 @@
                  { "id" : "nbc.divBV2.part9.sect36.subsect5.art10.sent9.clause3",
                   "type" : "clause",
                   "letter" : "c",
-                  "text" : "the airtightness determined in accordance with [REF:internal:nbc.divBV2.part9.sect36.subsect7.art3.sent1:long] expressed as",
-                  "subclauses" : 
-                  [ 
-                   { "id" : "nbc.divBV2.part9.sect36.subsect5.art10.sent9.clause3.subclause1",
-                    "type" : "subclause",
-                    "number" : 1,
-                    "text" : "the number of air changes per hour at 50 Pa pressure differential with a pressure exponent determined through a multi-point test, and" },
-                   
-                   { "id" : "nbc.divBV2.part9.sect36.subsect5.art10.sent9.clause3.subclause2",
-                    "type" : "subclause",
-                    "number" : 2,
-                    "text" : "the equivalent leakage area." } ] } ] },
+                  "source" : "bc",
+                  "text" : "the airtightness determined in accordance with [REF:internal:nbc.divBV2.part9.sect36.subsect7.art3.sent1:long] ." } ] },
                
                { "id" : "nbc.divBV2.part9.sect36.subsect5.art10.sent10",
                 "type" : "sentence",
