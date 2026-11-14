@@ -2059,7 +2059,8 @@
     <!-- Process the title as emphasized text in a paragraph -->
     <xsl:if test="title and normalize-space(title)">
       <paragraph xml:id="{$example-id}">
-        <emphasis style="bold"><xsl:apply-templates select="title/node()" mode="rich-text" /></emphasis>
+        <!-- CLAUDE-AUTOFIX CF-08519 | issue 731 | An example title that starts with a dash ("– Trading RSI values ...") gets its number, "Example 1 – ...", as in the PDF. -->
+        <emphasis style="bold"><xsl:if test="starts-with(normalize-space(string(title)), '&#8211;')"><xsl:value-of select="concat('Example ', count(preceding::example intersect ancestor::*[number][1]//example) + 1, ' ')" /></xsl:if><xsl:apply-templates select="title/node()" mode="rich-text" /></emphasis>
       </paragraph>
     </xsl:if>
     <!-- Process the para elements inside example with unique parent-id -->
