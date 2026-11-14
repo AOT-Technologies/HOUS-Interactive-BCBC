@@ -1734,6 +1734,10 @@
           <xsl:when test="@lp='par'">(</xsl:when>
           <xsl:when test="@lp='bra'">[</xsl:when>
           <xsl:when test="@lp='brc'">{</xsl:when>
+          <!-- CLAUDE-AUTOFIX CF-02024 | issue 846 | The NBC XML names its fences sqb, cub and vb: they open with [, { and |, as in the PDF (they fell back to a round bracket). -->
+          <xsl:when test="@lp='sqb'">[</xsl:when>
+          <xsl:when test="@lp='cub'">{</xsl:when>
+          <xsl:when test="@lp='vb'">|</xsl:when>
           <xsl:otherwise>(</xsl:otherwise>
         </xsl:choose>
       </mo>
@@ -1762,6 +1766,10 @@
         <xsl:when test="@post='par'">)</xsl:when>
         <xsl:when test="@post='bra'">]</xsl:when>
         <xsl:when test="@post='brc'">}</xsl:when>
+        <!-- CLAUDE-AUTOFIX CF-02024 | issue 846 | Closing fences sqb, cub and vb print ], } and |, as in the PDF. -->
+        <xsl:when test="@post='sqb'">]</xsl:when>
+        <xsl:when test="@post='cub'">}</xsl:when>
+        <xsl:when test="@post='vb'">|</xsl:when>
         <xsl:when test="@type='lp'">(</xsl:when>
         <xsl:when test="@type='rp'">)</xsl:when>
         <xsl:otherwise>
