@@ -1621,10 +1621,11 @@ or</item>
                                  <item>gypsum-concrete topping not less than <measurement units="metric">25 mm thick</measurement>,</item>
                               </list>
                            </item>
+                           <!-- CLAUDE-AUTOFIX CF-10098 | issue 779 | The second CSA O86 prints without its title, as in the PDF. -->
                            <item>for plank decking designed in accordance with <ref type="external" target="csa086">Clause B.10 of</ref>
                               <ref type="standard" target="d-csao86" standardId="d-csao86"/> by applying at least one of the layers
 described in <ref type="external" target="csa086">Clause B.10.4 of </ref>
-                              <ref type="standard" target="d-csao86" standardId="d-csao86"/> to the unexposed
+                              CSA O86 to the unexposed
 surface of the assembly,</item>
                            <item>for interior wall assemblies, by applying at least one of
 the following layers to at least one side of the assembly, with the
@@ -1675,13 +1676,14 @@ calculated fire-resistance rating. (See <ref type="internal"
             <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para5"/>
             <replace preserve-references="true">
                 <new-content>
+                    <!-- CLAUDE-AUTOFIX CF-10098 | issue 781 | The second CSA O86 prints without its title, as in the PDF. -->
                     <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para5"
                                vendor-id="en001102.5">5) For interior wall assemblies, the additional
 times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
                         <ref type="standard" target="d-csao86" standardId="d-csao86"/> shall only
 be applied to the calculated fire-resistance rating where both sides
 of the assembly are protected in accordance with <ref type="external" target="csao86">Clause B.8 of </ref>
-                        <ref type="standard" target="d-csao86" standardId="d-csao86"/>. Where the level of protection differs
+                        CSA O86. Where the level of protection differs
 on the two sides, the additional time corresponding to the lesser
 level of protection shall be applied.</paragraph>
                 </new-content>
@@ -1693,6 +1695,7 @@ level of protection shall be applied.</paragraph>
             <target type="canonical-id" id="nbc.divB.appendixD.appsect2.subsect11.article4.para6"/>
             <replace preserve-references="true">
                 <new-content>
+                    <!-- CLAUDE-AUTOFIX CF-10098 | issue 782 | The second CSA O86 prints without its title, as in the PDF. -->
                     <paragraph xml:id="nbc.divB.appendixD.appsect2.subsect11.article4.para6"
                                vendor-id="en001102.6">6) For exterior wall assemblies, the additional
 times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
@@ -1700,7 +1703,7 @@ times assigned in <ref type="external" target="csao86">Clause B.8.1 of </ref>
 be applied to the calculated fire-resistance rating where<list type="bulleted">
                            <item>the interior (fire-exposed) side of the assembly is protected
 in accordance with <ref type="external" target="csao86">Clause B.8 of </ref>
-                              <ref type="standard" target="d-csao86" standardId="d-csao86"/>, and</item>
+                              CSA O86, and</item>
                            <!-- CLAUDE-AUTOFIX CF-10377 | issue 2003 | "(3)(d)" is the reference text, so it prints "Clause (3)(d)" without a space, as in the PDF. -->
                            <item>except where the assembly is constructed of cross-laminated
 timber panels with lapped or splined joints as described in <ref type="internal"

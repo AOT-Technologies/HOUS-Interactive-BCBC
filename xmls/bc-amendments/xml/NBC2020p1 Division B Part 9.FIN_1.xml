@@ -11428,7 +11428,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>the Safety Standards Act and pursuant regulations,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect31.subsect6.art2.sent2.clause2" letter="b">
-                            <text><ref type="standard" target="csab139"/> Series,</text>
+                            <!-- CLAUDE-AUTOFIX CF-10098 | issue 463 | Printed as in the PDF (CSA B139 Series, title once). -->
+                            <text>CSA B139 Series, “Installation code for oil-burning equipment,”</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect31.subsect6.art2.sent2.clause3" letter="c">
                             <text>reserved,</text>
