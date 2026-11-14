@@ -444,6 +444,161 @@
             </insert>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CF-10029 | issue 70 | The Code Reference cell of NRCC-CONST-56529E lists only what the PDF lists (no references to repealed Part 2 or non-BC provisions). -->
+        <amendment id="bc-autofix-t1312-ref-1" sequence="13.01"
+                   description="Table 1.3.1.2.: remove Code References to provisions not in the BC Code for NRCC-CONST-56529E">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row134"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divA.part1.appendix.appnote1" display-type="number"/>
+                            <ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote2" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote4" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote5" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote7" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote9" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote10" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote11" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote12" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote14" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote15" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote16" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote17" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote18" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote19" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote20" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote21" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote22" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote28" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote29" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote33" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote34" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote35" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote37" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.appendix.appnote38" display-type="number"/>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10029 | issue 74 | The Code Reference cell of CAN/CGSB-149.10-2019 lists only what the PDF lists (no references to repealed Part 2 or non-BC provisions). -->
+        <amendment id="bc-autofix-t1312-ref-2" sequence="13.02"
+                   description="Table 1.3.1.2.: remove Code References to provisions not in the BC Code for CAN/CGSB-149.10-2019">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row168"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art3.sent1" display-type="number"/>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10029 | issue 78 | The Code Reference cell of CSA A23.1:19 lists only what the PDF lists (no references to repealed Part 2 or non-BC provisions). -->
+        <amendment id="bc-autofix-t1312-ref-3" sequence="13.03"
+                   description="Table 1.3.1.2.: remove Code References to provisions not in the BC Code for CSA A23.1:19">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row173"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part4.sect2.subsect3.art6.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part4.sect2.subsect3.art9.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part5.sect9.subsect1.art1.table1" display-type="long"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect3.subsect1.art1.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect3.subsect1.art1.sent4" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect3.subsect1.art3.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect3.subsect1.art4.sent1" display-type="number"/>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10029 | issue 91 | The Code Reference cell of CSA B149.1-15 lists only what the PDF lists (no references to repealed Part 2 or non-BC provisions). -->
+        <amendment id="bc-autofix-t1312-ref-4" sequence="13.04"
+                   description="Table 1.3.1.2.: remove Code References to provisions not in the BC Code for CSA B149.1-15">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row217"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part6.sect2.subsect1.art5.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect10.subsect22.art1.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect31.subsect6.art2.sent2" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art2.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.appendix.appnote78" display-type="number"/>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10029 | issue 102 | The Code Reference cell of CAN/CSA-P.3-15 lists only what the PDF lists (no references to repealed Part 2 or non-BC provisions). -->
+        <amendment id="bc-autofix-t1312-ref-5" sequence="13.05"
+                   description="Table 1.3.1.2.: remove Code References to provisions not in the BC Code for CAN/CSA-P.3-15">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row272"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divBV2.part9.sect36.subsect4.art2.table1" display-type="long"/>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10029 | issue 122 | The Code Reference cell of CAN/ULC-S101-14 lists only what the PDF lists (no references to repealed Part 2 or non-BC provisions). -->
+        <amendment id="bc-autofix-t1312-ref-6" sequence="13.06"
+                   description="Table 1.3.1.2.: remove Code References to provisions not in the BC Code for CAN/ULC-S101-14">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row411"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art7.sent2" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art14.sent5" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art14.sent6" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art15.sent3" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art15.sent4" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect7.art1.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect11.art7.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect2.subsect3.art8.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.appendix.appnote17" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect10.subsect16.art3.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.spectables1.table2" display-type="long"/>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10029 | issue 124 | The Code Reference cell of CAN/ULC-S109-14 lists only what the PDF lists (no references to repealed Part 2 or non-BC provisions). -->
+        <amendment id="bc-autofix-t1312-ref-7" sequence="13.07"
+                   description="Table 1.3.1.2.: remove Code References to provisions not in the BC Code for CAN/ULC-S109-14">
+            <target type="canonical-id" id="nbc.divB.part1.sect3.subsect1.art2.table1.row420"/>
+            <modify>
+                <element-replace element="entry" position="4">
+                    <new-content source="bc">
+                        <entry>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect16.art1.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect1.subsect18.art5.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect6.subsect5.art2.sent2" display-type="number"/>
+                            <ref type="internal" target="nbc.divB.part3.sect6.subsect5.art3.sent1" display-type="number"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect33.subsect6.art3.sent1" display-type="number"/>
+                        </entry>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 12: Ensure visible Code Reference text for AAMA rows     -->
         <!-- ================================================================== -->
