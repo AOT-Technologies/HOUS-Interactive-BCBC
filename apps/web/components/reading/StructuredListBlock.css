@@ -14,6 +14,23 @@
   list-style-type: none;
 }
 
+/* CLAUDE-AUTOFIX CF-03869 | issue 2161 | List labels are text ("(a)", "(1)", "1.") as in the PDF, hung in the left margin like the CSS markers they replace. */
+.structuredList--labelled {
+  list-style-type: none;
+  padding-left: 2.25rem;
+}
+
+.structuredList--labelled > li {
+  position: relative;
+}
+
+.structuredList__label {
+  position: absolute;
+  right: 100%;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+
 .structuredList--bulleted li,
 .structuredList--numbered li,
 .structuredList--alphabetic li,

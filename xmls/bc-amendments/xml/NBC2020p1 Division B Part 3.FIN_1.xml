@@ -99,6 +99,8 @@
                 <new-content source="bc">
                     <article xml:id="nbc.divB.part3.sect1.subsect2.art7" number="7">
                         <title>Group A, Division 2, Low Occupant Load</title>
+                        <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-3.1.2.7.)" under the Article heading; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect1.subsect2.art7.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote.a3.1.2.7" display-type="short">Note A-3.1.2.7.</ref>)</see-also>
                         
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art7.sent1" number="1">
                             <text>A <ref type="term" target="t">suite</ref> of Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, except a child or infant daycare facility, is permitted to be classified as a Group D, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref> provided</text>
@@ -106,14 +108,16 @@
                                 <text>the number of persons in the <ref type="term" target="t">suite</ref> does not exceed 30, and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect1.subsect2.art7.sent1.clause2" letter="b">
-                                <text>except as permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7.sent2" display-type="short"/>, the <ref type="term" target="t">suite</ref> is separated from the remainder of the <ref type="term" target="bldng">building</ref> by a <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> of not less than <measurement units="metric">1 h</measurement>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-00881 | issue 630 | Unit printed "1 hr" as in the PDF. -->
+                                <text>except as permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7.sent2" display-type="short"/>, the <ref type="term" target="t">suite</ref> is separated from the remainder of the <ref type="term" target="bldng">building</ref> by a <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> of not less than <measurement units="metric">1 hr</measurement>.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art7.sent2" number="2">
                             <text>The <ref type="term" target="fr-prtn">fire separation</ref> required by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7.sent1" display-type="short"/> need not have a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> where the <ref type="term" target="t">suite</ref> is located in a <ref type="term" target="bldng">building</ref> that is <ref type="term" target="prnklrd">sprinklered</ref> throughout.</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art7.sent3" number="3">
-                            <text>A permanent sign, with lettering not less than <measurement units="metric">50 mm</measurement> high with a <measurement units="metric">12 mm</measurement> stroke, indicating the lesser of the <ref type="term" target="ccpnt-ld">occupant load</ref> for the <ref type="term" target="t">suite</ref> or 30 persons, shall be posted in a conspicuous location near the <ref type="term" target="t">suite</ref>'s principal entrance.</text>
+                            <!-- CLAUDE-AUTOFIX CF-10379 | issue 1609 | "suite’s" with a curly apostrophe, all italic, as in the PDF. -->
+                            <text>A permanent sign, with lettering not less than <measurement units="metric">50 mm</measurement> high with a <measurement units="metric">12 mm</measurement> stroke, indicating the lesser of the <ref type="term" target="ccpnt-ld">occupant load</ref> for the <ref type="term" target="t">suite</ref> or 30 persons, shall be posted in a conspicuous location near the <ref type="term" target="t">suite’s</ref> principal entrance.</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -135,6 +139,8 @@
                 <new-content source="bc">
                     <article xml:id="nbc.divB.part3.sect1.subsect2.art8" number="8">
                         <title>Daycare Facilities for Children</title>
+                        <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-3.1.2.8.)" under the Article heading; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect1.subsect2.art8.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote.a3.1.2.8" display-type="short">Note A-3.1.2.8.</ref>)</see-also>
                         
                         <sentence xml:id="nbc.divB.part3.sect1.subsect2.art8.sent1" number="1">
                             <text>A daycare facility for children shall be classified as a Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref>. (See also <ref type="internal" target="nbc.divB.part3.sect3.subsect2.art17" display-type="long"/>.)</text>
@@ -182,6 +188,8 @@
                             <clause xml:id="nbc.divB.part3.sect1.subsect4.art8.sent1.clause2" letter="b">
                                 <text>except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect4.art8.sent4" display-type="short"/>, a wall assembly that satisfies the criteria of <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art5.sent1.clause2" display-type="long"/>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-00912 | issue 6326 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divB.part3.sect1.subsect4.art8.sent1.seealso">(See Note A-3.1.4.8.(1).) (See also Notes A-3.1.5.5.(1)(b)(i) and A-3.1.5.5.(1)(b)(ii).)</see-also>
                         </sentence>
                         
                         <sentence xml:id="nbc.divB.part3.sect1.subsect4.art8.sent2" number="2">
@@ -687,7 +695,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7" number="7">
-                        <text>Each adaptable <ref type="term" target="dwllng-n">dwelling unit</ref> shall be provided with special outlet boxes and cover plates that</text>
+                        <!-- CLAUDE-AUTOFIX CF-01256 | issue 6344 | Term link now covers "adaptable dwelling unit" (italic in the PDF). -->
+                        <text>Each <ref type="term" target="bc-dptbl-dwllng-nt">adaptable dwelling unit</ref> shall be provided with special outlet boxes and cover plates that</text>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause1" letter="a">
                             <text>are designed, located and wired specifically to allow strobe lights to operate in conformance with</text>
                             <subclause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause1.subclause1" number="1">
@@ -705,7 +714,8 @@
                             <text>are installed in the locations described in <ref type="internal" target="nbc.divB.part3.sect2.subsect4.art19.sent4.clause5" display-type="medium"/>, and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect2.subsect4.art19.sent7.clause4" letter="d">
-                            <text>for the purposes of providing power to the strobe lights that may be connected to the outlet boxes, are assumed that the total special outlets for at least 20 percent of the adaptable <ref type="term" target="dwllng-n">dwelling units</ref> in the <ref type="term" target="bldng">building</ref> are in use.</text>
+                            <!-- CLAUDE-AUTOFIX CF-01258 | issue 759 | Term link now covers "adaptable dwelling units" (italic in the PDF). -->
+                            <text>for the purposes of providing power to the strobe lights that may be connected to the outlet boxes, are assumed that the total special outlets for at least 20 percent of the <ref type="term" target="bc-dptbl-dwllng-nt">adaptable dwelling units</ref> in the <ref type="term" target="bldng">building</ref> are in use.</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -781,7 +791,8 @@
                     <clause xml:id="nbc.divB.part3.sect2.subsect5.art12.sent2.clause1" letter="a">
                         <text>in a <ref type="term" target="bldng">building</ref> of Group C <ref type="term" target="mjr-ccpn">major occupancy</ref> containing no other <ref type="term" target="mjr-ccpn">major occupancies</ref> that</text>
                         <subclause xml:id="nbc.divB.part3.sect2.subsect5.art12.sent2.clause1.subclause1" number="1">
-                            <text>is not more than 4 <ref type="term" target="tr">storeys</ref> in <ref type="term" target="bldng-hg">building height</ref> and conforms to <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art47" display-type="long"/>, <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art49" display-type="number"/><ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="medium" pretext=","/>, <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art52" display-type="number"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art55" display-type="number" pretext="or"/>, or</text>
+                            <!-- CLAUDE-AUTOFIX CF-10636 | issue 223 | Removed the extra pretext "or" so the list ends "3.2.2.52. or 3.2.2.55., or" as in the PDF (was "or or"). -->
+                            <text>is not more than 4 <ref type="term" target="tr">storeys</ref> in <ref type="term" target="bldng-hg">building height</ref> and conforms to <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art47" display-type="long"/>, <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art49" display-type="number"/><ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="medium" pretext=","/>, <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art52" display-type="number"/> or <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art55" display-type="number"/>, or</text>
                         </subclause>
                         <subclause xml:id="nbc.divB.part3.sect2.subsect5.art12.sent2.clause1.subclause2" number="2">
                             <text>is not more than 3 <ref type="term" target="tr">storeys</ref> in <ref type="term" target="bldng-hg">building height</ref> and conforms to <ref type="internal" target="nbc.divBV2.part9.sect10.subsect1.art3" display-type="long"/>, or</text>
@@ -989,11 +1000,13 @@
                                 <text>on the <ref type="term" target="tr">storey</ref> immediately below the roof.</text>
                             </clause>
                         </sentence>
-                        <sentence xml:id="nbc.divB.part3.sect3.subsect1.art3.sent9" number="9">                            <text>A rooftop enclosure which is more than <measurement units="metric">200 m m²</measurement> in area shall be provided with at least 2 <ref type="term" target="mn-f-gr">means of egress</ref>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-01342 | issue 788 | Unit typo "m m²" corrected to "m²", as in the PDF. -->
+                        <sentence xml:id="nbc.divB.part3.sect3.subsect1.art3.sent9" number="9">                            <text>A rooftop enclosure which is more than <measurement units="metric">200 m²</measurement> in area shall be provided with at least 2 <ref type="term" target="mn-f-gr">means of egress</ref>.</text>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect3.subsect1.art3.sent10" number="10">                            <text>Two points of egress shall be provided for a <ref type="term" target="rvc-pc">service space</ref> referred to in <ref type="internal" target="nbc.divB.part3.sect2.subsect1.art1.sent8" display-type="long"/> if</text>
                             <clause xml:id="nbc.divB.part3.sect3.subsect1.art3.sent10.clause1" letter="a">
-                                <text>the area is more than <measurement units="metric">200 m m²</measurement>, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-01342 | issue 788 | Unit typo "m m²" corrected to "m²", as in the PDF. -->
+                                <text>the area is more than <measurement units="metric">200 m²</measurement>, or</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect3.subsect1.art3.sent10.clause2" letter="b">
                                 <text>the travel distance measured from any point in the <ref type="term" target="rvc-pc">service space</ref> to a point of egress is more than <measurement units="metric">25 m</measurement>.</text>
@@ -1067,7 +1080,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>persons with disabilities can be accommodated in each zone, and</text>
+                        <!-- CLAUDE-AUTOFIX CF-01351 | issue 792 | Linked the defined term "persons with disabilities" (italic in the PDF). -->
+                        <text><ref type="term" target="bc-prsn-wth-dsblts">persons with disabilities</ref> can be accommodated in each zone, and</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1151,7 +1165,9 @@
                             <text>be not less than <measurement units="metric">1 500 mm</measurement> deep from the outside face of the exterior wall to the inside edge of the balcony with a clear perpendicular dimension of not less than <measurement units="metric">1 700 mm</measurement>, and</text>
                         </clause>
                         <clause xml:id="nbc.divB.part3.sect3.subsect1.art7.sent4.clause3" letter="c">
-                            <text>provide not less than <measurement units="metric">2 m m²</measurement> of balcony space for each accessible sleeping room or bed space.</text>
+                            <!-- CLAUDE-AUTOFIX CF-01342 | issue 788 | Unit typo "m m²" corrected to "m²", as in the PDF. -->
+                            <!-- CLAUDE-AUTOFIX CF-01356 | issue 7153 | Linked the defined term "accessible" (italic in the PDF). -->
+                            <text>provide not less than <measurement units="metric">2 m²</measurement> of balcony space for each <ref type="term" target="bc-cc-t-ccbl">accessible</ref> sleeping room or bed space.</text>
                         </clause>
                     </sentence>
                 </new-content>
@@ -1172,7 +1188,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect3.subsect1.art7.sent5" number="5">
-                        <text>The <ref type="term" target="flr-r">floor area</ref> on either side of a horizontal <ref type="term" target="xt">exit</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art10" display-type="long"/> is permitted to be considered as a zone in applying the requirements of <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7.sent1.clause2" display-type="medium"/>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-01358 | issue 7154 | Term link now covers the defined term "horizontal exit" (italic in the PDF). -->
+                        <text>The <ref type="term" target="flr-r">floor area</ref> on either side of a <ref type="term" target="hrzntl-x">horizontal exit</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art10" display-type="long"/> is permitted to be considered as a zone in applying the requirements of <ref type="internal" target="nbc.divB.part3.sect3.subsect1.art7.sent1.clause2" display-type="medium"/>.</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -1798,7 +1815,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text><ref type="term" target="prt-flr-spc">protected floor spaces</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect8.art5" display-type="long"/> are provided at each floor level and the <ref type="term" target="prt-flr-spc">protected floor space</ref> on a floor level has not less than <measurement units="metric">0.5 m<super>2</super></measurement> of space for each occupant of that floor level of the <ref type="term" target="ntrcnnct">interconnected floor space</ref>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-10379 | issue 161 | The plural "s" of protected floor spaces is not italic, as in the PDF. -->
+                        <text><ref type="term" target="prt-flr-spc">protected floor space</ref>s conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect8.art5" display-type="long"/> are provided at each floor level and the <ref type="term" target="prt-flr-spc">protected floor space</ref> on a floor level has not less than <measurement units="metric">0.5 m<super>2</super></measurement> of space for each occupant of that floor level of the <ref type="term" target="ntrcnnct">interconnected floor space</ref>.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2207,7 +2225,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>the locking device releases upon actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building's</ref> fire alarm system,</text>
+                        <!-- CLAUDE-AUTOFIX CF-10379 | issue 170 | "'s" after building is not italic, as in the PDF. -->
+                        <text>the locking device releases upon actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building</ref>'s fire alarm system,</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2219,7 +2238,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building's</ref> fire alarm system,</text>
+                        <!-- CLAUDE-AUTOFIX CF-10379 | issue 171 | "'s" after building is not italic, as in the PDF. -->
+                        <text>actuation of the <ref type="term" target="lrm-gnl">alarm signal</ref> from the <ref type="term" target="bldng">building</ref>'s fire alarm system,</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -5781,6 +5801,8 @@ materials within the space have a <ref type="term" target="flm-prd-">flame-sprea
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:8125 Punctuation d5cb2fa017 -->
                             <text>where illumination of the sign is not powered by an electrical circuit, be constructed in conformance with CAN/ULC-S572, “Standard for Photoluminescent and Self-Luminous Exit Signs and Path Marking Systems.”</text>
                         </clause>
+                        <!-- CLAUDE-AUTOFIX CF-01416 | issue 6355 | bc-081 is meant to add the Note reference after Sentence 3.4.5.1.(3) but had none; added "(See Note A-3.4.5.1.(3).)" after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divB.part3.sect4.subsect5.art1.sent3.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote.a3.4.5.1.3" display-type="short">Note A-3.4.5.1.(3)</ref>.)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -6224,7 +6246,8 @@ each 25 females.</find>
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect8.subsect2.art1.sent2" number="2">
-                        <text><ref type="term" target="bldng">Buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="long"/> shall comply with <ref type="internal" target="nbc.divB.part3.sect8.subsect5.art1.sent2" display-type="long"/>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-01481 | issue 847 | Sentence 3.8.2.1.(2) prints "Clause (1)(a)" as in the PDF, not "Clause 3.8.2.1.(1)(a)". -->
+                        <text><ref type="term" target="bldng">Buildings</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art1.sent1.clause1" display-type="medium"/> shall comply with <ref type="internal" target="nbc.divB.part3.sect8.subsect5.art1.sent2" display-type="long"/>.</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -6312,7 +6335,8 @@ each 25 females.</find>
                    description="Change article title in Article 3.8.2.3">
             <target type="canonical-id" id="nbc.divB.part3.sect8.subsect2.art3"/>
             <modify>
-                <element-replace element-name="title">
+                <!-- CLAUDE-AUTOFIX CF-01482 | issue 6925 | The merge engine matches element-replace on @element; with element-name the title change never applied. Title now reads "Areas Requiring Access" as in the PDF. -->
+                <element-replace element="title">
                     <new-content source="bc">
                         <title>Areas Requiring Access</title>
                     </new-content>
@@ -6488,6 +6512,8 @@ each 25 females.</find>
                 <new-content source="bc">
                     <article xml:id="nbc.divB.part3.sect8.subsect2.art5" number="5">
                         <title>Paths of Travel to Building Entrances and Exterior Passenger-Loading Zones</title>
+                        <!-- CLAUDE-AUTOFIX CF-00880 | issue 6910 | The PDF prints "(See Note A-3.8.2.5.)" under the Article heading; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divB.part3.sect8.subsect2.art5.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote189" display-type="short">Note A-3.8.2.5.</ref>)</see-also>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art5.sent1" number="1">
                             <text>A direct exterior <ref type="term" target="brrr-fr">accessible</ref> path of travel that complies with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> shall be provided between an <ref type="term" target="brrr-fr">accessible</ref> entrance referred to in <ref type="internal" target="nbc.divB.part3.sect8.subsect2.art2" display-type="long"/> and </text>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art5.sent1.clause1" letter="a">
@@ -6500,8 +6526,11 @@ each 25 females.</find>
                                 <text>common ancillary <ref type="term" target="bldng">buildings</ref> on the lot, and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part3.sect8.subsect2.art5.sent1.clause4" letter="d">
-                                <text>a public thoroughfare. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote189" display-type="short"/>.)</text>
+                                <!-- CLAUDE-AUTOFIX CF-01488 | issue 6360 | The PDF ends Clause (d) at "a public thoroughfare."; its see-also is printed after the Clauses (see below). -->
+                                <text>a public thoroughfare.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01488 | issue 6360 | The PDF prints "(See Note A-3.8.2.5.(1) and (2).)" after the last Clause of Sentence (1). -->
+                            <see-also xml:id="nbc.divB.part3.sect8.subsect2.art5.sent1.seealso">(See <ref type="internal" target="nbc.divB.part3.appendix.appnote190" display-type="short">Note A-3.8.2.5.(1) and (2)</ref>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part3.sect8.subsect2.art5.sent2" number="2">
                             <text>In <ref type="term" target="trg-grg">storage garages</ref>, an <ref type="term" target="brrr-fr">accessible</ref> path of travel that complies with <ref type="internal" target="nbc.divB.part3.sect8.subsect3" display-type="long"/> shall be provided between each parking level with parking spaces designated for <ref type="term" target="brrr-fr">persons with disabilities</ref> and all other parts of the <ref type="term" target="bldng">building</ref> required to be provided with <ref type="term" target="brrr-fr">access</ref> in accordance with <ref type="internal" target="nbc.divB.part3.sect8.subsect2" display-type="long"/> that are served by that <ref type="term" target="trg-grg">storage garage</ref>. (See <ref type="internal" target="nbc.divB.part3.appendix.appnote190" display-type="short"/>.)</text>
@@ -9403,6 +9432,18 @@ each 25 females.</find>
                                             </clause>
                 </new-content>
             </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10090 | issue 394 | Sentence 3.2.5.6.(2) refers to "an access route required by Sentence 3.2.2.10.(1)", as in the PDF. -->
+        <amendment id="bc-custom-3-2-5-6-2" sequence="748"
+                   description="Sentence 3.2.5.6.(2) refers to an access route required by Sentence 3.2.2.10.(1)">
+            <target type="canonical-id" id="nbc.divB.part3.sect2.subsect5.art6.sent2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>For <ref type="term" target="bldng">buildings</ref> conforming to <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art51" display-type="long"/> <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art60" display-type="long" pretext="or"/>, no portion of an access route required by <ref type="internal" target="nbc.divB.part3.sect2.subsect2.art10.sent1" display-type="long"/> shall be more than 20 m below the uppermost floor level.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
         </amendment>
     </amendments>
 </bc-overlay>

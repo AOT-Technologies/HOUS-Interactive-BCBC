@@ -288,7 +288,12 @@
                                          vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note4"/>
                                  </entry>
                                  <entry align="center" valign="middle">2</entry>
-                                 <entry align="center" valign="middle"/>
+                                 <!-- CLAUDE-AUTOFIX CF-00887 | issue 77 | Row A-2, column F-1 shows the note marker (2), as in the PDF (p.100). -->
+                                 <entry align="center" valign="middle">
+                                    <ref type="table-note"
+                                         target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"
+                                         vendor-target="nbc.divB.part3.sect1.subsect3.art1.table1.note2"/>
+                                 </entry>
                                  <entry align="center" valign="middle">2</entry>
                                  <entry align="center" valign="middle">1</entry>
                               </row>
