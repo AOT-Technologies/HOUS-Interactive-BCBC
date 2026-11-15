@@ -429,6 +429,20 @@
             </replace>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-07884 | issue 6151 | Figure A-9.8.8.6.(1)-D shows the drawing EG00167B as in the PDF (the base graphic eg00179a does not exist, so the site showed a broken image). -->
+        <amendment id="bc-custom-6151-fig" sequence="358"
+                   description="Replace graphic of Figure A-9.8.8.6.(1)-D with EG00167B as in the BC PDF">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote47.figure4"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <figure xml:id="nbc.divBV2.part9.appendix.appnote47.figure4">
+                        <title>Example of guard protrusions with a slope greater than 2 in 1</title>
+                        <graphic src="graphics/eg/001/eg00167b" alt="Example of guard protrusions with a slope greater than 2 in 1"/>
+                    </figure>
+                </new-content>
+            </replace>
+        </amendment>
+        
         <!-- ================================================================== -->
         <!-- Amendment 359: Modify A-9.8.7.1.(2) Wider Stairs than Required     -->
         <!-- BC adds "within" to path of travel text                            -->
@@ -513,7 +527,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote61">
                         <number>9.10.9.3.(2)</number>
                         <title>Openings in Fire Separations with a 15 min Fire-Resistance Rating to be Protected with Closures</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote61.para1">Doors described in <ref type="internal" target="nbc.divBV2.part9.sect10.subsect9.art3.sent2" display-type="long"/> are deemed to provide a minimum <measurement units="metric">20 min</measurement> fire-protection rating, which is considered an acceptable level of protection against the spread of fire in a house with a secondary suite. They are not required to be marked to identify conformance to <ref type="standard" target="ulcs113" standardId="ulcs113">CAN/ULC-S113</ref>, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," as is the case for solid-core doors installed in fire separations.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 642 | CAN/ULC-S113 is printed once, as in the PDF (the website expanded the reference and repeated the title). -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote61.para1">Doors described in <ref type="internal" target="nbc.divBV2.part9.sect10.subsect9.art3.sent2" display-type="long"/> are deemed to provide a minimum <measurement units="metric">20 min</measurement> fire-protection rating, which is considered an acceptable level of protection against the spread of fire in a house with a secondary suite. They are not required to be marked to identify conformance to CAN/ULC-S113, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," as is the case for solid-core doors installed in fire separations.</paragraph>
                     </application-note>
                 </new-content>
             </replace>
@@ -531,7 +546,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote68">
                         <number>9.10.13.2.(1)</number>
                         <title>Wood Doors in Fire Separations</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote68.para1"><ref type="standard" target="ulcs113" standardId="ulcs113">CAN/ULC-S113</ref>, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," provides construction details to enable manufacturers to build wood core doors that will provide a <measurement units="metric">20 min</measurement> fire-protection rating without the need for testing. The standard requires each door to be marked with<list type="numbered">
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 643 | CAN/ULC-S113 is printed once, as in the PDF (the website expanded the reference and repeated the title). -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote68.para1">CAN/ULC-S113, "Standard Specification for Wood Core Doors Meeting the Performance Required by CAN/ULC-S104 for Twenty Minute Fire Rated Closure Assemblies," provides construction details to enable manufacturers to build wood core doors that will provide a <measurement units="metric">20 min</measurement> fire-protection rating without the need for testing. The standard requires each door to be marked with<list type="numbered">
                                 <item>the manufacturer's or vendor's name or identifying symbol,</item>
                                 <item>the words "Fire Door," and</item>
                                 <item>a reference to the fire-protection rating of <measurement units="metric">20 min</measurement>.</item>
@@ -551,8 +567,9 @@
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote73.para1"/>
             <modify>
                 <text-change xpath-within-target=".//item[2]">
-                    <find-replace>
-                        <find>(doubles)</find>
+                    <!-- CLAUDE-AUTOFIX CF-07930 | issue 5040 | The merge engine treats a plain find as a regex, so "(doubles)" matched only "doubles" and the website printed "((side by side))"; an escaped regex gives "(side by side)" as in the PDF. -->
+                    <find-replace regex="true">
+                        <find>\(doubles\)</find>
                         <replace>(side by side)</replace>
                     </find-replace>
                 </text-change>
@@ -647,13 +664,14 @@
         <!-- Amendment 374: Modify A-9.13.4.3.(2)(b) and (3)(b)(i)               -->
         <!-- Change note number to (2)(b) and (3)(b), add through-footing text  -->
         <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CF-08053 | issue 5114 | The merge engine turns a non-regex find into a regex (only spaces are escaped), so the brackets in '(2)(b) and (3)(b)(i)' never matched; an escaped regex renumbers the Note (and its Figure) to A-9.13.4.3.(2)(b) and (3)(b) as in the PDF. -->
         <amendment id="bc-374" sequence="374"
                    description="Modify A-9.13.4.3.(2)(b) and (3)(b)(i) - change number and add through-footing pipe text">
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote91"/>
             <modify>
                 <text-change xpath-within-target=".//number">
-                    <find-replace>
-                        <find>9.13.4.3.(2)(b) and (3)(b)(i)</find>
+                    <find-replace regex="true">
+                        <find>9\.13\.4\.3\.\(2\)\(b\) and \(3\)\(b\)\(i\)</find>
                         <replace>9.13.4.3.(2)(b) and (3)(b)</replace>
                     </find-replace>
                 </text-change>
@@ -700,8 +718,10 @@
                         <number>9.23.3.1.(2)</number>
                         <title>Alternative Nail Sizes</title>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote115.para1">Where power nails or nails with a diameter smaller than that required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long">Tables 9.23.3.1.</ref> or 9.23.3.5.-C are used to connect framing, the following equations can be used to determine the required spacing or required number of nails.</paragraph>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote115.para2">The maximum spacing can be reduced using the following equation:<equation type="display"><latex>S_{adj} = S_{table} \times (D_{red}/D_{table})^{2}</latex></equation>where<list type="variable"><item><variable>S<sub>adj</sub></variable><description>= adjusted nail spacing ≥ 20 × nail diameter,</description></item><item><variable>S<sub>table</sub></variable><description>= nail spacing required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.table1" display-type="long"/> or 9.23.3.5.-A to 9.23.3.5.-C,</description></item><item><variable>D<sub>red</sub></variable><description>= nail diameter smaller than that required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/>, or 9.23.3.5.-C, and</description></item><item><variable>D<sub>table</sub></variable><description>= nail diameter required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/> or 9.23.3.5.-C.</description></item></list></paragraph>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote115.para3">The number of nails can be increased using the following equation:<equation type="display"><latex>N_{adj} = N_{table} \times (D_{table}/D_{red})^{2}</latex></equation>where<list type="variable"><item><variable>N<sub>adj</sub></variable><description>= adjusted number of nails,</description></item><item><variable>N<sub>table</sub></variable><description>= number of nails required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.table1" display-type="long"/> or 9.23.3.5.-A to 9.23.3.5.-C,</description></item><item><variable>D<sub>table</sub></variable><description>= nail diameter required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/> or 9.23.3.5.-C, and</description></item><item><variable>D<sub>red</sub></variable><description>= nail diameter smaller than that required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/> or 9.23.3.5.-C.</description></item></list></paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-08080 | issue 6194 | The display equation had no id, so the website could not find it and showed nothing; with an id it renders its LaTeX as in the PDF. -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote115.para2">The maximum spacing can be reduced using the following equation:<equation type="display" xml:id="nbc.divBV2.part9.appendix.appnote115.para2.eq1"><latex>S_{adj} = S_{table} \times (D_{red}/D_{table})^{2}</latex></equation>where<list type="variable"><item><variable>S<sub>adj</sub></variable><description>= adjusted nail spacing ≥ 20 × nail diameter,</description></item><item><variable>S<sub>table</sub></variable><description>= nail spacing required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.table1" display-type="long"/> or 9.23.3.5.-A to 9.23.3.5.-C,</description></item><item><variable>D<sub>red</sub></variable><description>= nail diameter smaller than that required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/>, or 9.23.3.5.-C, and</description></item><item><variable>D<sub>table</sub></variable><description>= nail diameter required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/> or 9.23.3.5.-C.</description></item></list></paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-08081 | issue 6195 | The display equation had no id, so the website could not find it and showed nothing; with an id it renders its LaTeX as in the PDF. -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote115.para3">The number of nails can be increased using the following equation:<equation type="display" xml:id="nbc.divBV2.part9.appendix.appnote115.para3.eq1"><latex>N_{adj} = N_{table} \times (D_{table}/D_{red})^{2}</latex></equation>where<list type="variable"><item><variable>N<sub>adj</sub></variable><description>= adjusted number of nails,</description></item><item><variable>N<sub>table</sub></variable><description>= number of nails required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.table1" display-type="long"/> or 9.23.3.5.-A to 9.23.3.5.-C,</description></item><item><variable>D<sub>table</sub></variable><description>= nail diameter required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/> or 9.23.3.5.-C, and</description></item><item><variable>D<sub>red</sub></variable><description>= nail diameter smaller than that required by <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.table1" display-type="long"/> or 9.23.3.5.-C.</description></item></list></paragraph>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote115.para4">Note that nails should be spaced no less than <measurement units="metric">55 mm</measurement> apart—to avoid splitting of framing lumber.</paragraph>
                     </application-note>
                 </new-content>
@@ -736,34 +756,28 @@
                                 <colspec colname="col6" colwidth="*"/>
                                 <colspec colname="col7" colwidth="*"/>
                                 <colspec colname="col8" colwidth="*"/>
+                                <!-- CLAUDE-AUTOFIX CF-08089 | issue 5131 | Header cells span two rows and Minimum Specification of Fasteners spans its two sub-columns once; the GWB fastener cells span the GWB-O to GWB-D rows once, as in the PDF. -->
                                 <thead>
                                     <row>
-                                        <entry align="center">Reference Framing Type</entry>
-                                        <entry align="center">Minimum Sheathing Element<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note1">Plywood, OSB, waferboard and board lumber may be installed vertically or horizontally and shall conform to the material standards specified in Subsection 9.23.17. Gypsum sheathing shall meet the requirements of gypsum board in Subsection 9.29.5.</note> and maximum stud spacing</entry>
-                                        <entry align="center">Minimum Specification of Fasteners, mm</entry>
-                                        <entry align="center">Minimum Specification of Fasteners, mm</entry>
-                                        <entry align="center">Minimum Number<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note2">For plywood, OSB or waferboard panel sheathing, the maximum fastener spacing along intermediate supports shall be 300 mm o.c. For gypsum sheathing, the maximum spacing along intermediate supports shall conform to Sentence 9.29.5.8.(4) for nails and Sentence 9.29.5.9.(4) for screws.</note> or Maximum Spacing of Fasteners<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note2"/> at Panel Edges to Framing</entry>
-                                        <entry align="center">K<sub>Wframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note3">See A-9.23.13.7.(3).</note></entry>
-                                        <entry align="center">K<sub>Sframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note4">See A-9.23.13.7.(4).</note></entry>
-                                        <entry align="center">Factored shear resistance, kN/m</entry>
+                                        <entry align="center" rowspan="2">Reference Framing Type</entry>
+                                        <entry align="center" rowspan="2">Minimum Sheathing Element<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note1">Plywood, OSB, waferboard and board lumber may be installed vertically or horizontally and shall conform to the material standards specified in Subsection 9.23.17. Gypsum sheathing shall meet the requirements of gypsum board in Subsection 9.29.5.</note> and maximum stud spacing</entry>
+                                        <entry align="center" colspan="2">Minimum Specification of Fasteners, mm</entry>
+                                        <entry align="center" rowspan="2">Minimum Number<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note2">For plywood, OSB or waferboard panel sheathing, the maximum fastener spacing along intermediate supports shall be 300 mm o.c. For gypsum sheathing, the maximum spacing along intermediate supports shall conform to Sentence 9.29.5.8.(4) for nails and Sentence 9.29.5.9.(4) for screws.</note> or Maximum Spacing of Fasteners<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note2"/> at Panel Edges to Framing</entry>
+                                        <entry align="center" rowspan="2">K<sub>Wframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note3">See A-9.23.13.7.(3).</note></entry>
+                                        <entry align="center" rowspan="2">K<sub>Sframe</sub><note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note4">See A-9.23.13.7.(4).</note></entry>
+                                        <entry align="center" rowspan="2">Factored shear resistance, kN/m</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.rowh2">
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
                                         <entry align="center">Common, Spiral or Ring Thread</entry>
                                         <entry align="center">Screws</entry>
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
-                                        <entry align="center"></entry>
                                     </row>
                                 </thead>
                                 <tbody>
                                     <row>
                                         <entry align="center">GWB-O (interior side of WSP framing types)</entry>
                                         <entry align="center">12.5 mm gypsum for 600 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note5">Nails for GWB framing types shall meet the requirements of Article 9.29.5.6.</note></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note6">Screws for GWB framing types shall meet the requirements of Article 9.29.5.7.</note></entry>
+                                        <entry align="center" rowspan="5">2.48 mm diameter ring thread with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note5">Nails for GWB framing types shall meet the requirements of Article 9.29.5.6.</note></entry>
+                                        <entry align="center" rowspan="5">3.45 mm shank diameter Type W with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note6">Screws for GWB framing types shall meet the requirements of Article 9.29.5.7.</note></entry>
                                         <entry align="center">200 mm o.c. for nail 300 mm o.c. for screw</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">n/a</entry>
@@ -772,8 +786,6 @@
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.row2">
                                         <entry align="center">GWB-A</entry>
                                         <entry align="center">12.5 mm gypsum for 600 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note6"/></entry>
                                         <entry align="center">200 mm o.c. for nail 300 mm o.c. for screw</entry>
                                         <entry align="center">2.85</entry>
                                         <entry align="center">4.28</entry>
@@ -782,8 +794,6 @@
                                     <row>
                                         <entry align="center">GWB-B</entry>
                                         <entry align="center">12.5 mm gypsum for 400 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note6a">Screws for GWB framing types shall meet the requirements of Article 9.29.5.7.</note></entry>
                                         <entry align="center">150 mm o.c. Or 200 mm o.c. for blocked</entry>
                                         <entry align="center">1.65</entry>
                                         <entry align="center">2.148</entry>
@@ -792,8 +802,6 @@
                                     <row>
                                         <entry align="center">GWB-C</entry>
                                         <entry align="center">12.5 mm gypsum for 400 mm stud spacing or 12.5 mm gypsum for 600 mm stud spacing, blocked<note xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.note9">Where blocking is required, horizontal panel sheathing joints shall occur over and be fastened to blocking of not less than 38 mm x 89 mm lumber oriented either edgewise or flatwise.</note></entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note6"/></entry>
                                         <entry align="center">150 mm o.c. or 200 mm o.c. for blocked</entry>
                                         <entry align="center">1.23</entry>
                                         <entry align="center">1.84</entry>
@@ -802,8 +810,6 @@
                                     <row xml:id="nbc.divBV2.part9.appendix.appnote118a.table1.row5">
                                         <entry align="center">GWB-D</entry>
                                         <entry align="center">12.5 mm gypsum for 400 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note5"/></entry>
-                                        <entry align="center">3.45 mm shank diameter Type W with 20 mm penetration into support framing<ref type="internal" target="nbc.divBV2.part9.appendix.appnote118a.table1.note6"/></entry>
                                         <entry align="center">100 mm o.c.</entry>
                                         <entry align="center">1.00</entry>
                                         <entry align="center">1.50</entry>
@@ -919,8 +925,8 @@
                                 <item xml:id="nbc.divBV2.part9.appendix.appnote127.list1.item1">A short-term load duration factor, K<sub>D</sub>, of 1.25 was used for the calculation of resistance to wind and seismic shear forces.</item>
                                 <item xml:id="nbc.divBV2.part9.appendix.appnote127.list1.item2">The ductility- and overstrength-related seismic force modification factors, R<sub>d</sub> and R<sub>o</sub>, were assumed to have the values listed in the following table:</item>
                             </list></paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10784 | issue 551 | The PDF prints this table without a number or title (it follows 'listed in the following table:'), so the table has no title (also CF-08176). -->
                         <table xml:id="nbc.divBV2.part9.appendix.appnote127.table1">
-                            <title>Seismic Force Modification Factors</title>
                             <tgroup cols="3">
                                 <colspec colname="col1" colwidth="3*"/>
                                 <colspec colname="col2" colwidth="1*"/>
@@ -1095,8 +1101,9 @@
                         <number>9.23.13.4.</number>
                         <title>Braced Wall Bands</title>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote130.para1"><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4" display-type="long"/> specifies the required characteristics of braced wall bands and their position in the building. <ref type="internal" target="nbc.divBV2.part9.appendix.appnote130.figure1" display-type="long" pretext="Figures"/><ref type="internal" target="nbc.divBV2.part9.appendix.appnote130.figure2" display-type="long" pretext=","/><ref type="internal" target="nbc.divBV2.part9.appendix.appnote130.figure3" display-type="long" pretext="and"/> illustrate these requirements.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-10401 | issue 1644 | The title of Figure A-9.23.13.4.-A lists Clauses 9.23.13.4.(1)(b), (c) and (d), as in the PDF. -->
                         <figure xml:id="nbc.divBV2.part9.appendix.appnote130.figure1">
-                            <title>Braced wall bands in an example building section [<ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4.sent1.clause1" display-type="long" pretext="Clauses"/><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4.sent1.clause2" display-type="short" pretext=","/>, (c) <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4.sent1.clause4" display-type="short" pretext="and"/>]</title>
+                            <title>Braced wall bands in an example building section [<ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4.sent1.clause2" display-type="long" pretext="Clauses"/>, (c) <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art4.sent1.clause4" display-type="short" pretext="and"/>]</title>
                             <graphic src="graphics/eg/006/eg00682a" alt="Braced wall bands in an example building section [Clauses 9.23.13.4.(1)(a), (b), (c) and (d)]"/>
                         </figure>
                         <figure xml:id="nbc.divBV2.part9.appendix.appnote130.figure2">
@@ -1132,10 +1139,11 @@
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5209 Reference 3cd4c9f3d9 -->
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5210 Reference 6000cf10bd -->
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:5211 Reference 1474960750 -->
-                            <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3">Where the braced wall bands are not parallel, the adjacent band is identified as follows using <ref type="internal" target="nbc.divBV2.part9.appendix.appnote131.figure2" display-type="long">Figure Table A-9.23.13.5.-B</ref> as an example: 1.   <list type="numbered">
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item1">Determine the mid-point of the centre line of the subject braced wall band (A); 2.   </item>
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item2">Project a perpendicular line from this mid-point (B); 3.   </item>
-                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item3">The first braced wall band encountered is the adjacent braced wall band (C); 4.   </item>
+                            <!-- CLAUDE-AUTOFIX base32-683 | issue 683 | The list numbers 1. to 4. come from the numbered list only; the typed "1.", "2.", "3.", "4." are removed so each prints once, as in the PDF. -->
+                            <paragraph xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3">Where the braced wall bands are not parallel, the adjacent band is identified as follows using <ref type="internal" target="nbc.divBV2.part9.appendix.appnote131.figure2" display-type="long">Figure Table A-9.23.13.5.-B</ref> as an example: <list type="numbered">
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item1">Determine the mid-point of the centre line of the subject braced wall band (A);</item>
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item2">Project a perpendicular line from this mid-point (B);</item>
+                                    <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item3">The first braced wall band encountered is the adjacent braced wall band (C);</item>
                                     <item xml:id="nbc.divBV2.part9.appendix.appnote131.div1.para3.item4">Where the projected line encounters an intersection point between two braced wall bands, either wall band may be identified as the adjacent braced wall band (complex cases).</item>
                                 </list>
                             </paragraph>
@@ -2273,6 +2281,10 @@
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.appendix.appnote215.table1">
                         <title>Energy Efficiency Compliance Options for Part 9 Buildings</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1456 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.appendix.appnote215" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="col1" colwidth="100*"/>
                             <colspec colname="col2" colwidth="20*"/>
@@ -2286,10 +2298,14 @@
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.appendix.appnote215.table1.rowh2">
                                     <entry align="center"/>
-                                    <entry align="center">NBC <ref type="internal" target="nbc.divBV2.part9.sect37.subsect2" display-type="number"/><ref type="internal" target="nbc.divBV2.part9.sect37.subsect4" display-type="long" pretext="to"/> (Prescriptive)</entry>
-                                    <entry align="center">NBC <ref type="internal" target="nbc.divBV2.part9.sect37.subsect5" display-type="number"/> (Performance)</entry>
-                                    <entry align="center"><ref type="internal" target="nbc.divBV2.part9.sect37.subsect6" display-type="long"/> (Energy Step Code)</entry>
-                                    <entry align="center"><ref type="standard" target="nrcc-necb" standardId="nrcc-necb"/></entry>
+                                    <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                    <entry align="center">NBC <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="number"/><ref type="internal" target="nbc.divBV2.part9.sect36.subsect4" display-type="long" pretext="to"/> (Prescriptive)</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                    <entry align="center">NBC <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="number"/> (Performance)</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                    <entry align="center"><ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/> (Energy Step Code)</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-08397 | issue 5318 | The NECB column header of Table A-9.36.1.3. prints 'NECB', as in the PDF, not the full standard title. -->
+                                    <entry align="center"><ref type="standard" target="nrcc-necb" standardId="nrcc-necb" ref-style="abbr"/></entry>
                                 </row>
                             </thead>
                             <tbody>
@@ -2336,7 +2352,8 @@
                         </tgroup>
                         <table-notes>
                             <note>(1) The walls that enclose a common space are excluded from the calculation of floor area of that common space.</note>
-                            <note>(2) For <ref type="internal" target="nbc.divBV2.part9.sect37.subsect2" display-type="long" pretext="Subsection"/> to <ref type="internal" target="nbc.divBV2.part9.sect37.subsect4" display-type="number"/> compliance option, see <ref type="internal" target="nbc.divBV2.part9.sect37.subsect1.art3.sent7" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect37.subsect1.art3.sent8" display-type="number"/>.</note>
+                            <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                            <note>(2) For <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsection"/> to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect4" display-type="number"/> compliance option, see <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent7" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent8" display-type="number"/>.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -2380,7 +2397,8 @@
             <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote236.para1"/>
             <replace preserve-references="false">
                 <new-content source="bc">
-                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote236.para1">Site-built windows are often installed in custom-built homes or in unique configurations for which manufactured units are not available. <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art1" display-type="long"/> requires windows, doors and skylights to conform to either the standards referenced in <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art2" display-type="long"/> or to Part 5. Regardless of the compliance path chosen, the requirements of <ref type="internal" target="nbc.divBV2.part9.sect7" display-type="long" pretext="Section"/> and <ref type="internal" target="nbc.divBV2.part9.sect37" display-type="number"/> must also be met. Windows, doors and skylights and other glazed products that comply with Part 5 and are installed in a Part 9 building may use the site-built provisions of <ref type="internal" target="nbc.divBV2.part9.sect37.subsect2.art7.sent3" display-type="long"/> rather than complying with the requirements in <ref type="internal" target="nbc.divBV2.part9.sect37.subsect2.art7.sent1" display-type="long"/>.</paragraph>
+                    <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                    <paragraph xml:id="nbc.divBV2.part9.appendix.appnote236.para1">Site-built windows are often installed in custom-built homes or in unique configurations for which manufactured units are not available. <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art1" display-type="long"/> requires windows, doors and skylights to conform to either the standards referenced in <ref type="internal" target="nbc.divBV2.part9.sect7.subsect4.art2" display-type="long"/> or to Part 5. Regardless of the compliance path chosen, the requirements of <ref type="internal" target="nbc.divBV2.part9.sect7" display-type="long" pretext="Section"/> and <ref type="internal" target="nbc.divBV2.part9.sect37" display-type="number"/> must also be met. Windows, doors and skylights and other glazed products that comply with Part 5 and are installed in a Part 9 building may use the site-built provisions of <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent3" display-type="long"/> rather than complying with the requirements in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent1" display-type="long"/>.</paragraph>
                 </new-content>
             </replace>
         </amendment>
@@ -2425,9 +2443,13 @@
                         <number>9.36.6.2.</number>
                         <title>Floor Area in the Energy Step Code</title>
                         <!-- CLAUDE-AUTOFIX CF-08592 | issue 5452 | The PDF prints this paragraph without a final period. -->
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295a.para1">The words floor area, as used in <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6.art2.sent1" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6.art2.sent3" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6.art3.sent1" display-type="long"/>, <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent1" display-type="long"/>, and <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent2" display-type="long"/> and <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art3.sent3" display-type="long"/> are not italicized, to differentiate them from the defined term <ref type="term" target="flr-r">floor area</ref> in <ref type="internal" target="nbc.divA.part1.sect4.subsect1.art2" display-type="long"/></paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                        <!-- CLAUDE-AUTOFIX CF-10669 | issue 762 | "Sentence 10.2.3.2.(2) of Division B, and Sentence 2.2.8.3.(3) of Division C", as in the PDF. -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295a.para1">The words floor area, as used in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art2.sent1" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art2.sent3" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art3.sent1" display-type="long"/>, <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent1" display-type="long"/>, and <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent2" display-type="long"/> of Division B, and <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art3.sent3" display-type="long"/> are not italicized, to differentiate them from the defined term <ref type="term" target="flr-r">floor area</ref> in <ref type="internal" target="nbc.divA.part1.sect4.subsect1.art2" display-type="long"/></paragraph>
                         <!-- CLAUDE-AUTOFIX CF-08592 | issue 5458 | The PDF prints this paragraph without a final period. -->
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295a.para2">Different modelling approaches identify the applicable floor area in various ways (e.g. modelled floor area, heated floor area, treated floor area, etc.) and the use of the words floor area in <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6.art2.sent1" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6.art2.sent3" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6.art3.sent1" display-type="long"/>, <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent1" display-type="long"/>, and <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent2" display-type="long"/>, and <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art3.sent3" display-type="long"/> is intended to accommodate the various modelling approaches</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                        <!-- CLAUDE-AUTOFIX CF-10669 | issue 762 | "Sentence 10.2.3.2.(2) of Division B, and Sentence 2.2.8.3.(3) of Division C", as in the PDF. -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295a.para2">Different modelling approaches identify the applicable floor area in various ways (e.g. modelled floor area, heated floor area, treated floor area, etc.) and the use of the words floor area in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art2.sent1" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art2.sent3" display-type="long"/>, <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art3.sent1" display-type="long"/>, <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent1" display-type="long"/>, and <ref type="internal" target="nbc.divB.part10.sect2.subsect3.art2.sent2" display-type="long"/> of Division B, and <ref type="internal" target="nbc.divC.part2.sect2.subsect8.art3.sent3" display-type="long"/> is intended to accommodate the various modelling approaches</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -2448,7 +2470,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote295b">
                         <number>9.36.6.2.(1)(f)</number>
                         <title>Auxiliary HVAC Equipment</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295b.para1">This category of equipment generally includes cooling tower fans, humidifiers and other devices that do not directly fall under one of the other categories listed in Sentence 8.4.2.2.(1) of the <ref type="standard" target="nrcc-necb" standardId="nrcc-necb"/>.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-08599 | issue 5459 | Note A-9.36.6.2.(1)(f) ends 'of the NECB' without a final period, as in the PDF, not with the full standard title. -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295b.para1">This category of equipment generally includes cooling tower fans, humidifiers and other devices that do not directly fall under one of the other categories listed in Sentence 8.4.2.2.(1) of the <ref type="standard" target="nrcc-necb" standardId="nrcc-necb" ref-style="abbr"/></paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -2489,7 +2512,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote295c">
                         <number>9.36.6.2.(2)</number>
                         <title>Term "House"</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295c.para1">The term "house" is used for consistency and is intended to be applied to both houses and buildings within the scope of <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect38" display-type="long"/>. Except for houses with a <ref type="term" target="scndrst">secondary suite</ref>, when a building contains more than one house or suite, the requirements of <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect38" display-type="long"/> apply to the entire building.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295c.para1">The term "house" is used for consistency and is intended to be applied to both houses and buildings within the scope of <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect38" display-type="long"/>. Except for houses with a <ref type="term" target="scndrst">secondary suite</ref>, when a building contains more than one house or suite, the requirements of <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect38" display-type="long"/> apply to the entire building.</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -2514,7 +2538,8 @@
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295d.para2">Tables 9.36.6.3.-A to 9.36.6.3.-F are organized in ranges of degree-days below 18°C, beginning from lower degree-days below 18°C to higher. In order to calculate the adjusted thermal energy demand intensity requirement, it is necessary to use values from other Tables as variables. For buildings in locations where the degree-days below 18°C value is less than 6999, the applicable thermal energy demand intensity value is subtracted from the higher thermal energy demand intensity value in a subsequent Table, for the same step. For buildings in locations where the degree-days below 18°C value is equal to or greater than 7000, the lower thermal energy demand intensity value in the preceding Table is subtracted from the applicable thermal energy demand intensity value, for the same step. The lowest degree-days below 18°C value is the value at the lowest end of the range, for example using Table 9.36.6.3.-C, the lowest degree-days below 18°C value to which the Table applies is 4000.</paragraph>
                         <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295d.para3">Table A-9.36.6.3.(4) provides thermal energy demand intensity values calculated using the formulas provided listed by degree-days below 18°C in increments of 100.</paragraph>
                         <table xml:id="nbc.divBV2.part9.appendix.appnote295d.table1">
-                            <title>Table A-9.36.6.3.(4) Thermal Energy Demand Intensity Budgets by 100 Degree-Days Below 18°C Increments</title>
+                            <!-- CLAUDE-AUTOFIX CF-08606 | issue 10293 | The PDF title has no "Table A-9.36.6.3.(4)" prefix; the website already prints the table label above it. -->
+                            <title>Thermal Energy Demand Intensity Budgets by 100 Degree-Days Below 18°C Increments</title>
                             <tgroup cols="5">
                                 <colspec colname="col1" colwidth="1*"/>
                                 <colspec colname="col2" colwidth="1*"/>
@@ -2678,7 +2703,8 @@
                     <application-note xml:id="nbc.divBV2.part9.appendix.appnote295h">
                         <number>9.36.6.5.(1)</number>
                         <title>Reference House and Proposed House</title>
-                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295h.para1">The terms "reference house" and "proposed house" have the same meanings as in <ref type="internal" target="nbc.divBV2.part9.sect37.subsect5" display-type="long"/> and they apply to energy models for both houses and multi-unit residential buildings. The term "house" is used for consistency and is intended to be applied to both houses and buildings within the scope of <ref type="internal" target="nbc.divBV2.part9.sect37.subsect6" display-type="long"/>.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                        <paragraph xml:id="nbc.divBV2.part9.appendix.appnote295h.para1">The terms "reference house" and "proposed house" have the same meanings as in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/> and they apply to energy models for both houses and multi-unit residential buildings. The term "house" is used for consistency and is intended to be applied to both houses and buildings within the scope of <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>.</paragraph>
                     </application-note>
                 </new-content>
             </insert>
@@ -2930,6 +2956,42 @@ storey.</item>
                     trusses to accommodate the full insulation value otherwise required
                     by the Code; in other words, the increased RSI value that would be
                     achieved with the raised truss cannot be traded.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09998 | issue 2672 | Note A-9.32.3.1.(1), Prescriptive Approach: "included in the British Columbia Building Code" instead of "the NBC", as in the PDF. -->
+        <amendment id="bc-autofix-cf09998" sequence="742" description="Replace NBC with British Columbia Building Code in Note A-9.32.3.1.(1) Prescriptive Approach">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote188.div2.para1"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace>
+                        <find>included in the NBC</find>
+                        <replace>included in the British Columbia Building Code</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-08461 | issue 6248 | Figure A-9.36.2.5.(5)-A caption cites Sentence 9.36.2.5.(5), as in the PDF (the base text had 9.38.2.5.(5)). -->
+        <amendment id="bc-autofix-cf08461-fig1" sequence="743" description="Correct Sentence reference 9.36.2.5.(5) in caption of Figure A-9.36.2.5.(5)-A">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote229.figure1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <figure xml:id="nbc.divBV2.part9.appendix.appnote229.figure1" vendor-id="en001746f1">
+                        <title>Application of Sentence 9.36.2.5.(5) to a cast-in-place concrete foundation wall</title>
+                        <graphic src="graphics/eg/007/eg00771a" alt="Application of Sentence 9.36.2.5.(5) to a cast-in-place concrete foundation wall"/>
+                    </figure>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-08462 | issue 6249 | Figure A-9.36.2.5.(5)-B caption cites Sentence 9.36.2.5.(5), as in the PDF (the base text had 9.38.2.5.(5)). -->
+        <amendment id="bc-autofix-cf08461-fig2" sequence="744" description="Correct Sentence reference 9.36.2.5.(5) in caption of Figure A-9.36.2.5.(5)-B">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote229.figure2"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <figure xml:id="nbc.divBV2.part9.appendix.appnote229.figure2" vendor-id="en001746f2">
+                        <title>Application of Sentence 9.36.2.5.(5) to a hollow-core masonry foundation wall</title>
+                        <graphic src="graphics/eg/007/eg00772a" alt="Application of Sentence 9.36.2.5.(5) to a hollow-core masonry foundation wall"/>
+                    </figure>
                 </new-content>
             </replace>
         </amendment>

@@ -82,6 +82,8 @@
                 <new-content source="bc">
                     <article xml:id="nbc.divBV2.part9.sect4.subsect2.art5" number="5">
                         <title>Seismic Design Parameter</title>
+                        <!-- CLAUDE-AUTOFIX CF-03997 | issue 6937 | The PDF prints "(See Note A-9.4.2.5.)" after the Article title; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect4.subsect2.art5.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote12a" display-type="short"/>)</see-also>
                         <sentence xml:id="nbc.divBV2.part9.sect4.subsect2.art5.sent1" number="1">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2212 Incorrect Content 220c6ec79c -->
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2213 Incorrect Content f5f410541f -->
@@ -143,9 +145,10 @@
             <target type="canonical-id" id="nbc.divBV2.part9.sect5.subsect2.art2"/>
             <modify>
                 <text-change xpath-within-target=".//title">
+                    <!-- CLAUDE-AUTOFIX CF-04005 | issue 6938 | Title reads "with an Accessible Path of Travel" as in the PDF (the article "a" before the new word is changed too). -->
                     <find-replace>
-                        <find>Barrier-Free Path of Travel</find>
-                        <replace>Accessible Path of Travel</replace>
+                        <find>a Barrier-Free Path of Travel</find>
+                        <replace>an Accessible Path of Travel</replace>
                     </find-replace>
                 </text-change>
             </modify>
@@ -180,7 +183,8 @@
                     <article xml:id="nbc.divBV2.part9.sect5.subsect2.art3" number="3">
                         <title>Apartment Buildings</title>
                         <sentence xml:id="nbc.divBV2.part9.sect5.subsect2.art3.sent1" number="1">
-                            <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect5.subsect2.art3.sent2" display-type="short"/>, in a <ref type="term" target="bldng">building</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> that contains multiple <ref type="term" target="dwllng-n">dwelling units</ref> and common interior space served by a common <ref type="term" target="bldng">building</ref> entrance, access described in <ref type="internal" target="nbc.divB.part3.sect8" display-type="long"/> shall be provided from the entrances, required by <ref type="internal" target="nbc.divB.part3.sect2.subsect1.art1.sent1" display-type="long"/> to be accessible, throughout all common spaces of entrance <ref type="term" target="tr">storeys</ref> and within all other common spaces including rooftop <ref type="term" target="ccpnc">occupancies</ref> serving adaptable <ref type="term" target="dwllng-n">dwelling units</ref>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-04006 | issue 2219 | Linked defined terms access, accessible and adaptable dwelling units (italic in the PDF); also CF-04007, CF-04008. -->
+                            <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect5.subsect2.art3.sent2" display-type="short"/>, in a <ref type="term" target="bldng">building</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref> that contains multiple <ref type="term" target="dwllng-n">dwelling units</ref> and common interior space served by a common <ref type="term" target="bldng">building</ref> entrance, <ref type="term" target="bc-cc-t-ccbl">access</ref> described in <ref type="internal" target="nbc.divB.part3.sect8" display-type="long"/> shall be provided from the entrances, required by <ref type="internal" target="nbc.divB.part3.sect2.subsect1.art1.sent1" display-type="long"/> to be <ref type="term" target="bc-cc-t-ccbl">accessible</ref>, throughout all common spaces of entrance <ref type="term" target="tr">storeys</ref> and within all other common spaces including rooftop <ref type="term" target="ccpnc">occupancies</ref> serving <ref type="term" target="bc-dptbl-dwllng-nt">adaptable dwelling units</ref>.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect5.subsect2.art3.sent2" number="2">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6445 Formatting 649bf58758 -->
@@ -320,7 +324,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect6.subsect1.art1.sent1.clause5" letter="e">
                             <text>glazed panels and partitions.</text>
                         </clause>
-                        <text> (See Note A-9.6.1.1.(1).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect6.subsect1.art1.sent1.seealso">(See Note A-9.6.1.1.(1).)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -364,17 +369,46 @@
         <!-- ================================================================== -->
         <amendment id="bc-018" sequence="18"
                    description="Add new Sentence 9.6.1.3.(3) on glass area for doors">
-            <target type="position" 
-                    parent-id="nbc.divBV2.part9.sect6.subsect1.art3"
-                    position="after"
-                    reference-id="nbc.divBV2.part9.sect6.subsect1.art3.sent2"/>
-            <insert>
+            <!-- CLAUDE-AUTOFIX CF-04052 | issue 2238 | BC Sentence 9.6.1.3.(3) replaces the NBC Sentence (3); inserted after (2) it was shown next to the NBC text as a second Sentence (3). -->
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.sent3"/>
+            <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect6.subsect1.art3.sent3" number="3">
                         <text>Individual panes of glass conforming to Table 9.6.1.3. that are used in doors need not comply with Sentence (1).</text>
                     </sentence>
                 </new-content>
-            </insert>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-04052 | issue 2238 | Tables 9.6.1.3.-A to -F form part of NBC Sentence 9.6.1.3.(2), which is Reserved in BC; the PDF prints only Table 9.6.1.3. (Glass Area for Doors). -->
+        <amendment id="bc-018-t1" sequence="18.1"
+                   description="Delete NBC Table 9.6.1.3. table1 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table1"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t2" sequence="18.2"
+                   description="Delete NBC Table 9.6.1.3. table2 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table2"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t3" sequence="18.3"
+                   description="Delete NBC Table 9.6.1.3. table3 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table3"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t4" sequence="18.4"
+                   description="Delete NBC Table 9.6.1.3. table4 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table4"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t5" sequence="18.5"
+                   description="Delete NBC Table 9.6.1.3. table5 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table5"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-018-t6" sequence="18.6"
+                   description="Delete NBC Table 9.6.1.3. table6 (forms part of Reserved Sentence 9.6.1.3.(2))">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect6.subsect1.art3.table6"/>
+            <delete/>
         </amendment>
         
         <!-- ================================================================== -->
@@ -643,6 +677,19 @@ incorporate a thermal break.</find>
             <delete/>
         </amendment>
 
+        <!-- CLAUDE-AUTOFIX CF-09902 | issue 324 | Clause 9.4.1.1.(1)(b) prints "the CWC, “Engineering Guide for Wood Frame Construction,”" without the year 2014, as in the PDF. -->
+        <amendment id="bc-autofix-9411-1b" sequence="33.9"
+                   description="Clause 9.4.1.1.(1)(b): CWC guide printed as in the PDF (no year)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause2"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divBV2.part9.sect4.subsect1.art1.sent1.clause2" letter="b">
+                        <text>be designed according to good engineering practice such as that provided in the CWC, “Engineering Guide for Wood Frame Construction,” or</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 034: Replace entire subsection with new structure       -->
         <!-- Subsection 9.7.4 - Design and Construction                        -->
@@ -678,9 +725,11 @@ incorporate a thermal break.</find>
                                     <text><ref type="standard" target="csa101a440"/> (Harmonized Standard), and</text>
                                 </clause>
                                 <clause xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.clause2" letter="b">
-                                    <text><ref type="standard" target="csaa440S1"/>,</text>
+                                    <!-- CLAUDE-AUTOFIX CF-09902 | issue 329 | Printed as in the PDF (AAMA/WDMA/CSA 101/I.S.2/A440 without "-17"). -->
+                                    <text>CSA A440S1, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440, North American Fenestration Standard/Specification for windows, doors, and skylights,”</text>
                                 </clause>
-                                <text> (See Note A-9.7.4.2.(1).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent1.seealso">(See Note A-9.7.4.2.(1).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect7.subsect4.art2.sent2" number="2">
                                 <text>A door designated as a "Limited Water" door in accordance with the standard referenced in Clause (1)(a) shall not be used unless the door</text>
@@ -797,8 +846,9 @@ incorporate a thermal break.</find>
                 <element-replace element="text">
                     <new-content source="bc">
                         <!-- CLAUDE-AUTOFIX CF-04083 | issue 9963 | Space between 25 and mm, as in the PDF. -->
+                        <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | The NBC Sentence already prints this note reference after its Clauses (see-also), so it is not repeated in the text, as in the PDF. -->
                         <text>a bolt throw not less than <measurement units="metric">25 mm</measurement> long, protected
-                            with a solid or hardened free-turning ring or beveled cylinder housing. (See Article 9.9.6.7.)</text>
+                            with a solid or hardened free-turning ring or beveled cylinder housing.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -814,8 +864,9 @@ incorporate a thermal break.</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | The NBC Sentence already prints this note reference after its Clauses (see-also), so it is not repeated in the text, as in the PDF. -->
                         <text>to metal doors and metal frames with machine screws not smaller
-                            than No. 10 and not less than <measurement units="metric">10 mm</measurement> long. (See Note A-9.7.5.2.(6).)</text>
+                            than No. 10 and not less than <measurement units="metric">10 mm</measurement> long.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -831,8 +882,9 @@ incorporate a thermal break.</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | The NBC Sentence already prints this note reference after its Clauses (see-also), so it is not repeated in the text, as in the PDF. -->
                         <text>to metal frames with machine screws not smaller than No. 8 and
-                            not less than <measurement units="metric">10 mm</measurement> long. (See Note A-9.7.5.2.(6))</text>
+                            not less than <measurement units="metric">10 mm</measurement> long.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1116,6 +1168,13 @@ incorporate a thermal break.</find>
                         <replace>garages that serve houses described in Clause a) or b).</replace>
                     </find-replace>
                 </text-change>
+                <!-- CLAUDE-AUTOFIX CF-04093 | issue 10037 | Table title reads 'Tapered Treads (Including Winders)' as in the PDF. -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace>
+                        <find>Tapered Treads and Winders</find>
+                        <replace>Tapered Treads (Including Winders)</replace>
+                    </find-replace>
+                </text-change>
             </modify>
         </amendment>
         
@@ -1255,7 +1314,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>This Subsection applies to pedestrian <ref type="term" target="rmp">ramps</ref>, except <ref type="term" target="rmp">ramps</ref> in an accessible path of travel.</text>
+                        <!-- CLAUDE-AUTOFIX CF-04105 | issue 2260 | Linked the defined term "accessible" (italic in the PDF). -->
+                        <text>This Subsection applies to pedestrian <ref type="term" target="rmp">ramps</ref>, except <ref type="term" target="rmp">ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1271,8 +1331,9 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04106 | issue 2261 | Linked the defined term "accessible" (italic in the PDF). -->
                         <text>
-                            <ref type="term" target="rmp">Ramps</ref> in an accessible path of travel shall conform to the requirements in <ref type="internal"
+                            <ref type="term" target="rmp">Ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel shall conform to the requirements in <ref type="internal"
                                                                                                                                                 target="nbc.divB.part3.sect8.subsect3.art5"
                                                                                                                                                 display-type="long"/>
                         </text>
@@ -1292,7 +1353,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>This Subsection applies to landings, except landings for <ref type="term" target="rmp">ramps</ref> in an accessible path of travel.</text>
+                        <!-- CLAUDE-AUTOFIX CF-04107 | issue 2262 | Linked the defined term "accessible" (italic in the PDF). -->
+                        <text>This Subsection applies to landings, except landings for <ref type="term" target="rmp">ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel.</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1308,7 +1370,8 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Landings for <ref type="term" target="rmp">ramps</ref> in an accessible path of travel shall conform to
+                        <!-- CLAUDE-AUTOFIX CF-04108 | issue 2263 | Linked the defined term "accessible" (italic in the PDF). -->
+                        <text>Landings for <ref type="term" target="rmp">ramps</ref> in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel shall conform to
                             the requirements in <ref type="internal"
                                                      target="nbc.divB.part3.sect8.subsect3.art5"
                                                      display-type="long"/>
@@ -1345,8 +1408,9 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04110 | issue 2264 | Linked the defined term "secondary suite" (italic in the PDF). -->
                         <text>
-                            <measurement units="metric">900 mm</measurement> for stairs or <ref type="term" target="rmp">ramps</ref> serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a secondary suite including their common spaces, and</text>
+                            <measurement units="metric">900 mm</measurement> for stairs or <ref type="term" target="rmp">ramps</ref> serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, and</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1795,6 +1859,7 @@ shall turn through an angle of</find>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04134 | issue 2280 | Linked the defined term "accessible" (italic in the PDF). -->
                         <text>Every <ref type="term" target="xt">exit</ref> door, except doors serving
                             a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with
                             a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, shall be designed and
@@ -1802,7 +1867,7 @@ shall turn through an angle of</find>
                             the direction of <ref type="term" target="xt">exit</ref> travel under a force
                             of not more than 90 N applied to the door release hardware. (See <ref type="internal"
                                                                                                   target="nbc.divB.part3.sect8.subsect3.art6.sent8"
-                                                                                                  display-type="long"/> for door opening forces in an accessible path of travel.)</text>
+                                                                                                  display-type="long"/> for door opening forces in an <ref type="term" target="bc-cc-t-ccbl">accessible</ref> path of travel.)</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -2084,7 +2149,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>public washrooms that are equipped to serve more than one person at a time,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect9.subsect12.art3.sent1.clause7" letter="g">
-                            <text>locations where doors are equipped with an electromagnetic lock as described in <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent5.clause11" display-type="long" pretext="Clauses"/> and <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent6.clause7" display-type="medium"/>, and</text>
+                            <!-- CLAUDE-AUTOFIX CF-04163 | issue 332 | Printed "Clauses 3.4.6.16.(5)(k) and (6)(g)", as in the PDF (as the Part 3 copy of this Clause). -->
+                            <text>locations where doors are equipped with an electromagnetic lock as described in Clauses <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent5.clause11" display-type="number">3.4.6.16.(5)(k)</ref> and <ref type="internal" target="nbc.divB.part3.sect4.subsect6.art16.sent6.clause7" display-type="number">(6)(g)</ref>, and</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect9.subsect12.art3.sent1.clause8" letter="h">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2297 Formatting 54f273e5b1 -->
@@ -2158,7 +2224,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                     <article xml:id="nbc.divBV2.part9.sect10.subsect2.art5" number="5">
                         <title>Group A, Division 2, Low Occupant Load</title>
                         <sentence xml:id="nbc.divBV2.part9.sect10.subsect2.art5.sent1" number="1">
-                            <text>This Part may apply to a Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref> that is permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7" display-type="long"/> to be classified as a Group D, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, provided the <ref type="term" target="bldng">building</ref> in which the <ref type="term" target="mbl-ccpn">assembly occupancy</ref> is located complies with <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent1" display-type="long"/>. (See Note A-3.1.2.7.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04181 | issue 2309 | Added "of Division A" after the reference to Sentence 1.3.3.3.(1), as in the PDF. -->
+                            <text>This Part may apply to a Group A, Division 2 <ref type="term" target="mbl-ccpn">assembly occupancy</ref> that is permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect2.art7" display-type="long"/> to be classified as a Group D, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, provided the <ref type="term" target="bldng">building</ref> in which the <ref type="term" target="mbl-ccpn">assembly occupancy</ref> is located complies with <ref type="internal" target="nbc.divA.part1.sect3.subsect3.art3.sent1" display-type="long"/> of Division A. (See Note A-3.1.2.7.)</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -2226,7 +2293,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>joist spaces filled with</text>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2.subclause1" number="1">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
-                                <text>preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702" ref-style="notitle"/>, "Mineral Fibre Thermal Insulation for Buildings," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of floor surface, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 333 | This standard is CAN/ULC-S702 (rock or slag fibres), not S702.1, as in the PDF. -->
+                                <text>preformed insulation of rock or slag fibres conforming to CAN/ULC-S702, "Mineral Fibre Thermal Insulation for Buildings," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of floor surface, or</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause2.subclause2" number="2">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
@@ -2237,11 +2305,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>stud spaces of</text>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause3.subclause1" number="1">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
-                                <text><ref type="term" target="ldbrng">non-loadbearing</ref> assemblies filled with preformed insulation of glass fibres conforming to <ref type="standard" target="ulcs702.1" ref-style="notitle"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">0.6 kg/m<super>2</super></measurement> of wall surface, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-04187 | issue 2313 | Standard target ulcs702.1 is not a known id; ulcs702 is CAN/ULC-S702.1, so it prints as in the PDF. -->
+                                <text><ref type="term" target="ldbrng">non-loadbearing</ref> assemblies filled with preformed insulation of glass fibres conforming to <ref type="standard" target="ulcs702" ref-style="notitle"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">0.6 kg/m<super>2</super></measurement> of wall surface, and</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause3.subclause2" number="2">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
-                                <text><ref type="term" target="ldbrng">loadbearing</ref> assemblies filled with preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702.1" ref-style="notitle"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of wall surface, or filled with insulation of cellulose fibres conforming to <ref type="standard" target="ulcs703" ref-style="notitle"/>, "Standard for Cellulose Fibre Insulation (CFI) for Buildings," having a density of not less than <measurement units="metric">50 kg/m<super>3</super></measurement>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-04187 | issue 2313 | Standard target ulcs702.1 is not a known id; ulcs702 is CAN/ULC-S702.1, so it prints as in the PDF. -->
+                                <text><ref type="term" target="ldbrng">loadbearing</ref> assemblies filled with preformed insulation of rock or slag fibres conforming to <ref type="standard" target="ulcs702" ref-style="notitle"/>, "Standard for Mineral Fibre Thermal Insulation for Buildings, Part 1: Material Specification," having a mass per unit area of not less than <measurement units="metric">1.22 kg/m<super>2</super></measurement> of wall surface, or filled with insulation of cellulose fibres conforming to <ref type="standard" target="ulcs703" ref-style="notitle"/>, "Standard for Cellulose Fibre Insulation (CFI) for Buildings," having a density of not less than <measurement units="metric">50 kg/m<super>3</super></measurement>,</text>
                             </subclause>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect10.subsect3.art1.sent3.clause4" letter="d">
@@ -2366,6 +2436,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
         <!-- Amendment 107: Remove smoke-tight barrier reference               -->
         <!-- Article 9.10.9.2.(3) - Continuous Barrier                         -->
         <!-- ================================================================== -->
+        <!-- CLAUDE-AUTOFIX CF-10226 | issue 777 | Sentence 9.10.9.2.(3) ends with one See-Note, (See Note A-3.1.8.3.(2).), as in the PDF; removed the reference to the missing Note A-9.10.9.2.(3) shown as Note B-9. -->
         <amendment id="bc-107" sequence="107"
                    description="Remove 'or smoke-tight barrier' reference from Article 9.10.9.2.(3)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect10.subsect9.art2.sent3"/>
@@ -2378,8 +2449,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     display-type="short"/>, the continuity of a <ref type="term" target="fr-prtn">fire separation</ref> where it abuts another <ref type="term" target="fr-prtn">fire separation</ref>, a floor,
                             a ceiling, or a roof shall be maintained by a <ref type="term" target="fr-tp">firestop</ref> that, when subjected to the fire test method in <ref type="standard" target="ulcs115" standardId="ulcs115"/> has an FT rating
                             not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> for the abutting <ref type="term" target="fr-prtn">fire separation</ref>. (See <ref type="internal"
-                                                                                                                                                                                                  target="nbc.divBV2.part9.appendix.appnote60"
-                                                                                                                                                                                                  display-type="short"/>.) (See also <ref type="internal"
                                                                     target="nbc.divB.part3.appendix.appnote29"
                                                                     display-type="long"/>.)</text>
                     </new-content>
@@ -2428,7 +2497,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <clause xml:id="nbc.divBV2.part9.sect10.subsect9.art3.sent2.clause2" letter="b">
                             <text>have a self-closing device.</text>
                         </clause>
-                        <text> (See <ref type="internal" target="nbc.divBV2.part9.sect10.subsect13" display-type="long"/> and Note A-9.10.9.3.(2).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect10.subsect9.art3.sent2.seealso">(See <ref type="internal" target="nbc.divBV2.part9.sect10.subsect13" display-type="long"/> and Note A-9.10.9.3.(2).)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -2860,6 +2930,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
+                        <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | The NBC Sentence already prints this note reference after its Clauses (see-also), so it is not repeated in the text, as in the PDF. -->
                         <text>Except as provided in <ref type="internal"
                                                              target="nbc.divBV2.part9.sect11.subsect1.art1.sent2"
                                                              display-type="short"
@@ -2868,7 +2939,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                  target="nbc.divBV2.part9.sect11.subsect1.art1.sent3"
                                  display-type="short"
                                  pretext="and"/>, a <ref type="term" target="dwllng-n">dwelling unit</ref> shall
-                            be separated from every other space in a <ref type="term" target="bldng">building</ref> in which noise may be generated by (See Note A-9.11.1.4.)</text>
+                            be separated from every other space in a <ref type="term" target="bldng">building</ref> in which noise may be generated by</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -3303,6 +3374,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect3.art1.table1">
                         <title>Diameter of Nails</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1405 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art1.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="2">
                             <colspec colname="col2" colwidth="96*"/>
                             <colspec colname="col3" colwidth="131*"/>
@@ -3387,6 +3462,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1">
                         <title>Nailing for Framing</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1406 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent1" display-type="long"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect14.art4.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="242*"/>
                             <colspec colname="tbody2" colwidth="65*"/>
@@ -3625,10 +3705,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4" display-type="long"/> for requirements on the nailing of top plates splices in <ref type="term" target="br-wl-bnd">braced wall bands</ref>.</text>
                         </note>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1.note3">
-                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent2" display-type="short"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-04708 | issue 1767 | Printed "See Sentence 9.23.3.4.(2)." with the full number, as in the PDF. -->
+                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent2" display-type="long"/>.</text>
                         </note>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1.note4">
-                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent3" display-type="short"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-04708 | issue 1768 | Printed "See Sentence 9.23.3.4.(3)." with the full number, as in the PDF. -->
+                            <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.sent3" display-type="long"/>.</text>
                         </note>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art4.table1.note5">
                             <text>Where heavyweight construction is used in the roof of the space, at least 8 nails are required (see Note A-9.23.13.2.(3)).</text>
@@ -3663,6 +3745,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1">
                             <title>Fastening of Subflooring, Wall Sheathing Not in a Required Braced Wall Panel, and Roof Sheathing Where HWP ≤ 0.6 kPa and S<sub>max</sub> for Site Class C ≤ 0.47</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1407 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent1" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="6">
                                 <colspec colname="1" colwidth="100*"/>
                                 <colspec colname="2" colwidth="60*"/>
@@ -3670,11 +3756,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <colspec colname="4" colwidth="60*"/>
                                 <colspec colname="5" colwidth="60*"/>
                                 <colspec colname="6" colwidth="100*"/>
+                                <!-- CLAUDE-AUTOFIX CF-04714 | issue 2551 | Element and Minimum Number header cells span two rows, Minimum Length of Fasteners spans the four fastener columns, and the 150 mm o.c. cell spans the five sheathing rows once, as in the PDF. -->
                                 <thead>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.rowh1">
-                                        <entry align="center">Element</entry>
-                                        <entry align="center">Minimum Length of Fasteners, mm</entry>
-                                        <entry align="center">Minimum Number or Maximum Spacing of Fasteners<super>(1)</super></entry>
+                                        <entry align="center" rowspan="2">Element</entry>
+                                        <entry align="center" colspan="4">Minimum Length of Fasteners, mm</entry>
+                                        <entry align="center" rowspan="2">Minimum Number or Maximum Spacing of Fasteners<super>(1)</super></entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.rowh2">
                                         <entry align="center">Common or Spiral Nails</entry>
@@ -3706,7 +3793,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">44</entry>
                                         <entry align="center">28</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
+                                        <entry align="center" rowspan="5">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row4">
                                         <entry align="left">Gypsum sheathing up to 13 mm thick</entry>
@@ -3714,7 +3801,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">44</entry>
                                         <entry align="center">n/a</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row5">
                                         <entry align="left">Plywood, OSB or waferboard up to 10 mm thick</entry>
@@ -3722,7 +3808,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">45</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">38</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row6">
                                         <entry align="left">Plywood, OSB or waferboard over 10 mm and up to 20 mm thick</entry>
@@ -3730,7 +3815,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">45</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">51</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table1.row7">
                                         <entry align="left">Plywood, OSB or waferboard over 20 mm and up to 25 mm thick</entry>
@@ -3738,7 +3822,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">51</entry>
                                         <entry align="center">n/a</entry>
                                         <entry align="center">n/a</entry>
-                                        <entry align="center">150 mm o.c. along edges and 300 mm o.c. along intermediate supports</entry>
                                     </row>
                                 </tbody>
                             </tgroup>
@@ -3759,6 +3842,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table2">
                             <title>Fastening of Roof Sheathing Where 0.6 kPa &lt; HWP ≤ 1.2 kPa or Where S<sub>max</sub> for Site Class C &gt; 0.47 and S<sub>max</sub> ≤ 2.6</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1408 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent2" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="6">
                                 <colspec colname="1" colwidth="80*"/>
                                 <colspec colname="2" colwidth="80*"/>
@@ -3841,18 +3928,23 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3">
                             <title>Fastening of Wall Sheathing in Required Braced Wall Panels Where HWP ≤ 1.2kPa and S<sub>max</sub> ≤ 2.6</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1409 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="5">
                                 <colspec colname="1" colwidth="60*"/>
                                 <colspec colname="2" colwidth="120*"/>
                                 <colspec colname="3" colwidth="80*"/>
                                 <colspec colname="4" colwidth="80*"/>
                                 <colspec colname="5" colwidth="120*"/>
+                                <!-- CLAUDE-AUTOFIX CF-04724 | issue 2559 | Header cells span as in the PDF; the GWB nail and screw cells span the five GWB rows, NP spans WSP-A to WSP-E, and WSP-C and WSP-D get their missing 3.25 mm x 63 mm nail cell, as in the PDF. -->
                                 <thead>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.rowh1">
-                                        <entry align="center">Reference framing type<super>(1)</super></entry>
-                                        <entry align="center">Minimum Sheathing Element<super>(2)</super> and Maximum Stud Spacing</entry>
-                                        <entry align="center">Minimum Specifications for Fasteners</entry>
-                                        <entry align="center">Minimum Number or Maximum Spacing of Fasteners<super>(3)(4)</super> along Panel Edges Fastened to Framing</entry>
+                                        <entry align="center" rowspan="2">Reference framing type<super>(1)</super></entry>
+                                        <entry align="center" rowspan="2">Minimum Sheathing Element<super>(2)</super> and Maximum Stud Spacing</entry>
+                                        <entry align="center" colspan="2">Minimum Specifications for Fasteners</entry>
+                                        <entry align="center" rowspan="2">Minimum Number or Maximum Spacing of Fasteners<super>(3)(4)</super> along Panel Edges Fastened to Framing</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.rowh2">
                                         <entry align="center">Common, Spiral or Ring Thread Nails</entry>
@@ -3864,8 +3956,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row1">
                                         <entry align="center">GWB-O (interior side of WSP and DWB framing types)</entry>
                                         <entry align="left">12.5 mm gypsum board for 600 mm stud spacing</entry>
-                                        <entry align="center">2.48 mm diameter ring thread with 20 mm penetration into support framing<super>(5)</super></entry>
-                                        <entry align="center">3.45 mm shank diamter, Type W, with 20 mm penetration into support framing<super>(6)</super></entry>
+                                        <entry align="center" rowspan="5">2.48 mm diameter ring thread with 20 mm penetration into support framing<super>(5)</super></entry>
+                                        <entry align="center" rowspan="5">3.45 mm shank diamter, Type W, with 20 mm penetration into support framing<super>(6)</super></entry>
                                         <entry align="center">200 mm o.c. for nails or 300 mm o.c. for screws</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row2">
@@ -3892,31 +3984,31 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry align="center">WSP-A</entry>
                                         <entry align="left">9.5 mm plywood, OSB or waferboard for 400 mm stud spacing</entry>
                                         <entry align="center">2.84 mm x 51 mm<super>(8)</super></entry>
-                                        <entry align="center">NP<super>(9)</super></entry>
+                                        <entry align="center" rowspan="5">NP<super>(9)</super></entry>
                                         <entry align="center">150 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row7">
                                         <entry align="center">WSP-B</entry>
                                         <entry align="left">11 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
                                         <entry align="center">3.25 mm x 63 mm<super>(8)</super></entry>
-                                        <entry align="center">NP<super>(9)</super></entry>
                                         <entry align="center">150 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row8">
                                         <entry align="center">WSP-C</entry>
                                         <entry align="left">11 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
+                                        <entry align="center">3.25 mm x 63 mm<super>(8)</super></entry>
                                         <entry align="center">100 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row9">
                                         <entry align="center">WSP-D</entry>
                                         <entry align="left">11 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
+                                        <entry align="center">3.25 mm x 63 mm<super>(8)</super></entry>
                                         <entry align="center">75 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row10">
                                         <entry align="center">WSP-E</entry>
                                         <entry align="left">15.5 mm plywood, OSB or waferboard, blocked,<super>(7)</super> for 600 mm stud spacing</entry>
                                         <entry align="center">3.66 mm x 76 mm<super>(8)</super></entry>
-                                        <entry align="center">NP<super>(9)</super></entry>
                                         <entry align="center">75 mm o.c.</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect3.art5.table3.row11">
@@ -3978,6 +4070,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text>clad at full height with stone veneer.</text>
                                 </subclause>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-04728 | issue 6492 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect3.art5.sent4.seealso">(See Sentence 9.23.13.2.(3).)</see-also>
                         </sentence>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect3.art5.appnote14">
                             <text>(See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art2.sent3" display-type="medium"/>.)</text>
@@ -4047,8 +4141,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect6.art1.sent3.clause1" letter="a">
                                 <text>there are not less than two anchor bolts per <ref type="term" target="br-wl-pnl">braced wall panel</ref>, located at opposite ends of the <ref type="term" target="br-wl-pnl">braced wall panel</ref> within <measurement units="metric">0.5 m</measurement> of the <ref type="term" target="fndtn">foundation</ref> end or within <measurement units="metric">0.3 m</measurement> of the end of the <ref type="term" target="br-wl-pnl">braced wall panel</ref>, and</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-04745 | issue 2572 | The See-Note of Clause 9.23.6.1.(3)(b) points at Note A-9.23.6.1.(3) as in the PDF (was A-9.23.4.4.). -->
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect6.art1.sent3.clause2" letter="b">
-                                <text>anchor bolts spaced in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect6.art1.table1" display-type="long"/>. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote123" vendor-target="en000324" display-type="short"/>.)</text>
+                                <text>anchor bolts spaced in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect6.art1.table1" display-type="long"/>. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote123a" display-type="short"/>.)</text>
                             </clause>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect23.subsect6.art1.table1">
@@ -4219,60 +4314,62 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <colspec colname="col3" colwidth="1*"/>
                                 <colspec colname="col4" colwidth="1*"/>
                                 <colspec colname="col5" colwidth="1*"/>
+                                <!-- CLAUDE-AUTOFIX CF-04794 | issue 2596 | Header cells span rows/columns explicitly (no empty filler cell) so the third header row shows as in the PDF. -->
                                 <thead>
                                     <row>
-                                        <entry align="center" rowspan="2">S<sub>max</sub><ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note1"/></entry>
-                                        <entry align="center">Minimum Number of Nails on Each Side of Doubled Top Plate Splice for <ref type="term" target="br-wl-bnd">Braced Wall Band</ref> Spacing of <measurement units="metric">10.6 m</measurement><note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note2">(2)</note></entry>
+                                        <entry align="center" rowspan="3">S<sub>max</sub><ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note1"/></entry>
+                                        <entry align="center" colspan="4">Minimum Number of Nails on Each Side of Doubled Top Plate Splice for <ref type="term" target="br-wl-bnd">Braced Wall Band</ref> Spacing of <measurement units="metric">10.6 m</measurement><note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note2">(2)</note></entry>
                                     </row>
                                     <row>
-                                        <entry align="center">Weight of Construction or Cladding Type<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note3">(3)</note></entry>
+                                        <entry align="center" colspan="4">Weight of Construction or Cladding Type<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note3">(3)</note></entry>
                                     </row>
                                     <row>
-                                        <entry align="center"></entry>
                                         <entry align="center">Normal-Weight Construction</entry>
-                                        <entry align="center">Heavyweight Construction<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4">(4)</note></entry>
+                                        <!-- CLAUDE-AUTOFIX CF-10676 | issue 2624 | Header cell reads 'Heavyweight construction' (lower-case c), as in the PDF. -->
+                                        <entry align="center">Heavyweight construction<note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4">(4)</note></entry>
                                         <entry align="center">Masonry Veneer (on one or more <ref type="term" target="bldng">building</ref> faces)<ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4"/><note xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.note5">(5)</note></entry>
                                         <entry align="center">Stone Veneer (on one or more <ref type="term" target="bldng">building</ref> faces)<ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note4"/><ref type="internal" target="nbc.divBV2.part9.sect23.subsect11.art4.table1.note5"/></entry>
                                     </row>
                                 </thead>
                                 <tbody>
+                                    <!-- CLAUDE-AUTOFIX CF-04799 | issue 367 | In this and the next 5 body rows Smax is bold, as in the PDF. -->
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row1">
-                                        <entry align="center">S<sub>max</sub> ≤ 0.60</entry>
+                                        <entry align="center"><emphasis style="bold">S<sub>max</sub></emphasis> ≤ 0.60</entry>
                                         <entry align="center">4</entry>
                                         <entry align="center">7</entry>
                                         <entry align="center">8</entry>
                                         <entry align="center">10</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row2">
-                                        <entry align="center">0.6 &lt; S<sub>max</sub> ≤ 0.8</entry>
+                                        <entry align="center">0.6 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 0.8</entry>
                                         <entry align="center">6</entry>
                                         <entry align="center">8</entry>
                                         <entry align="center">9</entry>
                                         <entry align="center">12</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row3">
-                                        <entry align="center">0.8 &lt; S<sub>max</sub> ≤ 1.2</entry>
+                                        <entry align="center">0.8 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 1.2</entry>
                                         <entry align="center">9</entry>
                                         <entry align="center">12</entry>
                                         <entry align="center">14</entry>
                                         <entry align="center">19</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row4">
-                                        <entry align="center">1.2 &lt; S<sub>max</sub> ≤ 1.6</entry>
+                                        <entry align="center">1.2 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 1.6</entry>
                                         <entry align="center">12</entry>
                                         <entry align="center">16</entry>
                                         <entry align="center">19</entry>
                                         <entry align="center">25</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row5">
-                                        <entry align="center">1.6 &lt; S<sub>max</sub> ≤ 2.0</entry>
+                                        <entry align="center">1.6 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 2.0</entry>
                                         <entry align="center">14</entry>
                                         <entry align="center">20</entry>
                                         <entry align="center">23</entry>
                                         <entry align="center">31</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect23.subsect11.art4.table1.row6">
-                                        <entry align="center">2.0 &lt; S<sub>max</sub> ≤ 2.6</entry>
+                                        <entry align="center">2.0 &lt; <emphasis style="bold">S<sub>max</sub></emphasis> ≤ 2.6</entry>
                                         <entry align="center">19</entry>
                                         <entry align="center">25</entry>
                                         <entry align="center">30</entry>
@@ -4394,8 +4491,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>clad with stone veneer.</text>
                             </subclause>
                         </clause>
+                        <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | The PDF prints this reference as "(see Sentence 9.23.13.2.(3))." (lower-case see, period after the parenthesis). -->
                         <see-also xml:id="nbc.divBV2.part9.sect23.subsect11.art4.sent7.seealso1">
-                            (See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art2.sent3" display-type="short"/>.)
+                            (see <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art2.sent3" display-type="short"/>).
                         </see-also>
                     </sentence>
                 </new-content>
@@ -4458,7 +4556,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>Part 4, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art1.sent2.clause4" letter="d">
-                                <text>good engineering practice such as that provided in <ref type="standard" target="cwc-egwfc"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 373 | Printed as in the PDF (CWC "Engineering Guide ..." without the year 2014). -->
+                                <text>good engineering practice such as that provided in CWC “Engineering Guide for Wood Frame Construction.”</text>
                             </clause>
                         </sentence>
                     </article>
@@ -4507,7 +4606,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>Part 4, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art2.sent2.clause3" letter="c">
-                                <text>good engineering practice such as that provided in <ref type="standard" target="cwc-egwfc"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 374 | Printed as in the PDF (CWC "Engineering Guide ..." without the year 2014). -->
+                                <text>good engineering practice such as that provided in CWC “Engineering Guide for Wood Frame Construction.”</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art2.sent3" number="3">
@@ -4582,7 +4682,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <text>Part 4, or</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art3.sent2.clause2" letter="b">
-                                <text>good engineering practice such as that provided in the <ref type="standard" target="cwc-egwfc"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-09902 | issue 375 | Printed as in the PDF (CWC "Engineering Guide ..." without the year 2014). -->
+                                <text>good engineering practice such as that provided in the CWC “Engineering Guide for Wood Frame Construction.”</text>
                             </clause>
                         </sentence>
                     </article>
@@ -4645,7 +4746,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                     <article xml:id="nbc.divBV2.part9.sect23.subsect13.art5" number="5">
                         <title>Braced Wall Panels in Braced Wall Bands</title>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent1" number="1">
-                            <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art5.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10.sent2" display-type="medium" pretext="9.23.13.10.(2) to (4)"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7" display-type="long"/>, <ref type="term" target="br-wl-pnl">braced wall panels</ref> shall</text>
+                            <!-- CLAUDE-AUTOFIX CF-04845 | issue 6508 | The words "9.23.13.10.(2) to (4)" are the reference text, not its pretext, so the website no longer adds "Sentence 9.23.13.10.(2)" after them; as in the PDF. -->
+                            <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art5.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art10.sent2" display-type="medium">9.23.13.10.(2) to (4)</ref> and <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7" display-type="long"/>, <ref type="term" target="br-wl-pnl">braced wall panels</ref> shall</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent1.clause1" letter="a">
                                 <text>be located within <ref type="term" target="br-wl-bnd">braced wall bands</ref>,</text>
                             </clause>
@@ -4747,7 +4849,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text><measurement units="metric">15 m</measurement> from adjacent <ref type="term" target="br-wl-bnd">braced wall bands</ref> constructed with <ref type="term" target="br-wl-pnl">braced wall panels</ref>.</text>
                                 </subclause>
                             </clause>
-                            <text>(See Note A-9.23.13.5.(2).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent2.seealso">(See Note A-9.23.13.5.(2).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent3" number="3">
                             <text>Interior or exterior wood-sheathed <ref type="term" target="br-wl-pnl">braced wall panels</ref>, other than panels of WSP-A framing in the uppermost storey shall</text>
@@ -4766,7 +4869,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text>rafters, joists or trusses by using methods of lateral load transfer designed in accordance with good engineering practice.</text>
                                 </subclause>
                             </clause>
-                            <text>(See Note A-9.23.13.5.(3) and (4).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent3.seealso">(See Note A-9.23.13.5.(3) and (4).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art5.sent4" number="4">
                             <text>The top plates of braced wall panels described in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art5.sent3" display-type="short"/> shall be fastened in accordance with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art4.table1" display-type="long"/>.</text>
@@ -4826,7 +4930,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art6.sent5.clause2" letter="b">
                                 <text>the lengths of the <ref type="term" target="br-wl-pnl">braced wall panels</ref> of mixed framing types are based on accepted engineering principles.</text>
                             </clause>
-                            <text>(See Note A-9.23.13.6.(5).)</text>
+                            <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art6.sent5.seealso">(See Note A-9.23.13.6.(5).)</see-also>
                         </sentence>
                     </article>
                 </new-content>
@@ -4909,18 +5014,20 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <colspec colname="col10" colwidth="8*"/>
                             <colspec colname="col11" colwidth="8*"/>
                             <colspec colname="col12" colwidth="8*"/>
+                            <!-- CLAUDE-AUTOFIX CF-04858 | issue 2625 | HWP and Storey header cells span the three header rows and the missing DWB header cell is added, as in the PDF. -->
                             <thead>
                                 <row>
-                                    <entry colspan="12" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Wind, L<subscript>uw</subscript>, m <super>(1)</super></entry>
+                                    <entry rowspan="3" align="center">HWP</entry>
+                                    <entry rowspan="3" align="center"><ref type="term" target="tr">Storey</ref></entry>
+                                    <entry colspan="10" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Wind, L<subscript>uw</subscript>, m <super>(1)</super></entry>
                                 </row>
                                 <row>
-                                    <entry rowspan="2" align="center">HWP</entry>
-                                    <entry rowspan="2" align="center"><ref type="term" target="tr">Storey</ref></entry>
-                                    <entry rowspan="2" align="center">Diagonal- Lumber-Sheathed Framing Type (with gypsum board on opposite side) <super>(2)</super></entry>
+                                    <entry align="center">Diagonal- Lumber-Sheathed Framing Type (with gypsum board on opposite side) <super>(2)</super></entry>
                                     <entry colspan="4" align="center">Gypsum-Sheathed Framing Type (with gypsum board on only one side) <super>(2)</super> <super>(3)</super></entry>
                                     <entry colspan="5" align="center">Wood-sheathed Framing Type ( with gypsum board on opposite side) <super>(2)</super></entry>
                                 </row>
                                 <row>
+                                    <entry align="center">DWB</entry>
                                     <entry align="center">GWB-A</entry>
                                     <entry align="center">GWB-B</entry>
                                     <entry align="center">GWB-C</entry>
@@ -5258,11 +5365,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                             </tbody>
                         </tgroup>
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note1">Notes to Table 9.23.13.7.-A:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note2"><super>(1)</super> Unadjusted minimum total braced wall panel lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<subscript>w</subscript>.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note3"><super>(2)</super> See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note4"><super>(3)</super> See Sentence (6) for braced wall panels with gypsum board installed on both sides.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note2">Unadjusted minimum total braced wall panel lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<subscript>w</subscript>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note3">See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table1.note4">See Sentence (6) for braced wall panels with gypsum board installed on both sides.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -5460,13 +5568,14 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tbody>
                         </tgroup>
                         
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note1">Notes to Table 9.23.13.7.-B:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note2"><super>(1)</super> K<sub>exp</sub> is determined based on the terrain. Rough terrain is suburban, urban, or wooded terrain extending upwind from the <ref type="term" target="bldng">building</ref> uninterrupted for at least 1 km. Open terrain is level terrain with only scattered trees, <ref type="term" target="bldng">buildings</ref> or other obstructions, open water or shorelines.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note3"><super>(2)</super> For K<sub>roof</sub> linear interpolation between roof eave-to-ridge heights is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note4"><super>(3)</super> K<sub>Wspacing</sub> Linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note5"><super>(4)</super> An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of K<sub>Wspacing</sub>. See Sentence (5).</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note6"><super>(5)</super> A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note2">K<sub>exp</sub> is determined based on the terrain. Rough terrain is suburban, urban, or wooded terrain extending upwind from the <ref type="term" target="bldng">building</ref> uninterrupted for at least 1 km. Open terrain is level terrain with only scattered trees, <ref type="term" target="bldng">buildings</ref> or other obstructions, open water or shorelines.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note3">For K<sub>roof</sub> linear interpolation between roof eave-to-ridge heights is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note4">K<sub>Wspacing</sub> Linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note5">An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of K<sub>Wspacing</sub>. See Sentence (5).</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table2.note6">A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -5525,7 +5634,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7.sent4"/>
                         </forming-part>
                         
-                        <tgroup cols="12">
+                        <!-- CLAUDE-AUTOFIX CF-04901 | issue 2657 | Table has 13 columns as in the PDF (was 12, which shifted the header rows and dropped the Diagonal-Lumber-Sheathed and WSP-E header cells). -->
+                        <tgroup cols="13">
                             <colspec colname="col1" colwidth="8.00*"/>
                             <colspec colname="col2" colwidth="8.00*"/>
                             <colspec colname="col3" colwidth="8.00*"/>
@@ -5538,21 +5648,19 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <colspec colname="col10" colwidth="8.00*"/>
                             <colspec colname="col11" colwidth="8.00*"/>
                             <colspec colname="col12" colwidth="8.00*"/>
+                            <colspec colname="col13" colwidth="8.00*"/>
                             
                             <thead>
                                 <!-- Header Row 1: Main column groupings -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.rowh1">
-                                    <entry align="center">S<sub>max</sub></entry>
-                                    <entry align="center"><ref type="term" target="tr">Storey</ref></entry>
-                                    <entry align="center"><ref type="term" target="bldng">Building</ref> Plan Dimension Parallel to <ref type="term" target="br-wl-bnd">Braced Wall Band</ref>, L<sub>wl</sub>, m</entry>
-                                    <entry colspan="9" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Seismic Forces, L<sub>us</sub>, m<super>(1)(2)</super></entry>
+                                    <entry rowspan="3" align="center">S<sub>max</sub></entry>
+                                    <entry rowspan="3" align="center"><ref type="term" target="tr">Storey</ref></entry>
+                                    <entry rowspan="3" align="center"><ref type="term" target="bldng">Building</ref> Plan Dimension Parallel to <ref type="term" target="br-wl-bnd">Braced Wall Band</ref>, L<sub>wl</sub>, m</entry>
+                                    <entry colspan="10" align="center">Unadjusted Minimum Total <ref type="term" target="br-wl-pnl">Braced Wall Panel</ref> Length for Seismic Forces, L<sub>us</sub>, m<super>(1)(2)</super></entry>
                                 </row>
                                 
                                 <!-- Header Row 2: Framing type groupings -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.rowh2">
-                                    <entry></entry>
-                                    <entry></entry>
-                                    <entry></entry>
                                     <entry align="center">Diagonal-Lumber-Sheathed Framing Type (with gypsum board on opposite side)<super>(3)</super></entry>
                                     <entry colspan="4" align="center">Gypsum-Sheathed Framing Type (with gypsum board on only one side)<super>(3)(4)</super></entry>
                                     <entry colspan="5" align="center">Wood-Sheathed Framing Type (with gypsum board on opposite side)<super>(3)</super></entry>
@@ -5560,9 +5668,6 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 
                                 <!-- Header Row 3: Column headers -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.rowh3">
-                                    <entry></entry>
-                                    <entry></entry>
-                                    <entry></entry>
                                     <entry align="center">DWB</entry>
                                     <entry align="center">GWB-A</entry>
                                     <entry align="center">GWB-B</entry>
@@ -7661,12 +7766,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tbody>
                         </tgroup>
                         
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note1">Notes to Table 9.23.13.7.-C:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note2"><super>(1)</super> Unadjusted minimum total <ref type="term" target="br-wl-pnl">braced wall panel</ref> lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<sub>s</sub>.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note3"><super>(2)</super> DR = design required, using the procedure outlined in Note A-9.23.13.7.(4) or according to Part 4, for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with typical sheathing. L<sub>us</sub> values within round brackets, to which the reduction set out in Sentence (6) has been applied, are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note4"><super>(3)</super> See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note5"><super>(4)</super> See Sentence (6) for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note2">Unadjusted minimum total <ref type="term" target="br-wl-pnl">braced wall panel</ref> lengths are for the applicable conditions corresponding to an adjustment factor of 1 in the equation for L<sub>s</sub>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note3">DR = design required, using the procedure outlined in Note A-9.23.13.7.(4) or according to Part 4, for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with typical sheathing. L<sub>us</sub> values within round brackets, to which the reduction set out in Sentence (6) has been applied, are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note4">See Sentence 9.23.3.5.(3) for a description of framing types and fastening requirements.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table3.note5">See Sentence (6) for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -7971,8 +8077,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row39">
                                     <entry rowspan="18">Masonry veneer cladding perpendicular to <ref type="term" target="br-wl-bnd">braced wall band</ref>, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face (or two <ref type="term" target="bldng">building</ref> faces)
                                         
+                                        <!-- CLAUDE-AUTOFIX CF-05065 | issue 1002 | Shows the two building-depth diagrams EG02964A1/EG02965A1, as in the PDF (p.905), not the storey icon GG00556A. -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row39.figure33">
-                                            <graphic src="bc-graphics/gg00556a" alt="Building depth diagram for masonry veneer partially clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-row3" alt="Building depth diagram for masonry veneer partially clad"/>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
@@ -8097,7 +8204,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row57">
                                     <!-- CLAUDE-AUTOFIX CF-04948 CF-04952 | issues 2692 and 2696 | One closing bracket too many removed after building faces, as in the PDF. -->
                                     <!-- CLAUDE-AUTOFIX CF-04997 CF-04999 | issues 9964 and 9966 | No space between 1- or 2- and storey, as in the PDF (1-storey height, 2-storey height). -->
-                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2-<ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face( or two <ref type="term" target="bldng">building</ref> faces)
+                                    <!-- CLAUDE-AUTOFIX CF-10395 | issue 1713 | Space moved before the bracket: "building face (or two building faces)", as in the PDF. -->
+                                    <entry rowspan="12">Masonry veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2-<ref type="term" target="tr">storey</ref> height, partially clad: <super>(3)</super> apply factor corresponding to Lwl for one <ref type="term" target="bldng">building</ref> face (or two <ref type="term" target="bldng">building</ref> faces)
                                         
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row57.figure37">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-row4" alt="Building depth diagram for 2-storey masonry veneer"/>
@@ -8141,13 +8249,14 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                                 
                                 <!-- Masonry veneer cladding perpendicular - 2-storey height, partially clad - Storey supporting roof and 2 floors -->
+                                <!-- CLAUDE-AUTOFIX CF-04950 | issue 2694 | This row label reads 'Storey supporting roof and 2 floors', as in the PDF (p.905), not 'Supporting roof + 2 floors'. -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row63">
                                     <entry rowspan="6">
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row63.figure39">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 2-storey masonry veneer"/>
                                         </figure>
                                         
-                                        Supporting roof + 2 floors
+                                        <ref type="term" target="tr">Storey</ref> supporting roof and 2 floors
                                     </entry>
                                     <entry>≤ 3.1 m</entry>
                                     <entry>1.15</entry>
@@ -8229,8 +8338,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <!-- Masonry veneer cladding perpendicular - 1-storey height, partially clad - Supporting roof + 2 floors -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row75">
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05072 | issue 849 | Shows drawing GG00557A1 (3 storeys, lower storey clad, Lwl marks), as in the PDF (p.906). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row75.figure42">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="One storey building - 1-storey masonry veneer"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 1-storey masonry veneer"/>
                                         </figure>
                                         
                                         Supporting roof + 2 floors
@@ -8276,8 +8386,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05073 | issue 850 | Shows drawing GG00558A1 (2 storeys, lower storey clad, Lwl marks), as in the PDF (p.906). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row81.figure44">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 2-storey fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 2-storey fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -8315,8 +8426,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <!-- Masonry veneer cladding perpendicular - 2-storey height, fully clad - Supporting roof + 2 floors -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row87">
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05074 | issue 851 | Shows drawing GG00557A1 (3 storeys, lower storey clad, Lwl marks), as in the PDF (p.906). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row87.figure45">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="One storey building - 2-storey fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 2-storey fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 2 floors
@@ -8596,7 +8708,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     </entry>
                                     <entry>≤ 3.1 m</entry>
                                     <entry>1.44</entry>
-                                    <entry>2.95</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-04964 | issue 2708 | Stone veneer partially clad, supporting roof only, building depth <= 3.1 m: 1.94 as in the PDF (was 2.95). -->
+                                    <entry>1.94</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row126">
                                     <entry>6.1 m</entry>
@@ -8712,8 +8825,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05065 | issue 1022 | Shows drawing GG00558A1 (2 storeys, lower storey clad, Lwl marks), as in the PDF (p.908). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row143.figure58">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof-and_2floor_only" alt="Two storey building - 1-storey stone veneer with openings"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 1-storey stone veneer with openings"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -8750,42 +8864,44 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                                 
                                 <!-- Stone veneer cladding perpendicular - 1-storey height with openings - Supporting roof + 2 floors -->
+                                <!-- CLAUDE-AUTOFIX CF-04968 | issue 2713 | Restored the PDF values of the Supporting roof + 2 floors rows (1.12/1.25 to 1.02/1.05) for 1-storey stone veneer with openings in Table 9.23.13.7.-D; they repeated the 2-storey values. -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row149">
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05086 | issue 863 | Shows drawing GG00557A1 (3 storeys, lower storey clad, Lwl marks), as in the PDF (p.908). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row149.figure59">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof-and_2floor_only" alt="One storey building - 1-storey stone veneer with openings"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_2floor_orange" alt="One storey building - 1-storey stone veneer with openings"/>
                                         </figure>
                                         
                                         Supporting roof + 2 floors
                                     </entry>
                                     <entry>≤ 3.1 m</entry>
-                                    <entry>1.36</entry>
-                                    <entry>1.76</entry>
+                                    <entry>1.12</entry>
+                                    <entry>1.25</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row150">
                                     <entry>6.1 m</entry>
-                                    <entry>1.21</entry>
-                                    <entry>1.45</entry>
+                                    <entry>1.07</entry>
+                                    <entry>1.15</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row151">
                                     <entry>9.1 m</entry>
-                                    <entry>1.14</entry>
-                                    <entry>1.32</entry>
+                                    <entry>1.05</entry>
+                                    <entry>1.11</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row152">
                                     <entry>12.2 m</entry>
-                                    <entry>1.11</entry>
-                                    <entry>1.24</entry>
+                                    <entry>1.04</entry>
+                                    <entry>1.08</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row153">
                                     <entry>15.2 m</entry>
-                                    <entry>1.09</entry>
-                                    <entry>1.20</entry>
+                                    <entry>1.03</entry>
+                                    <entry>1.07</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row154">
                                     <entry>≥ 18.3 m</entry>
-                                    <entry>1.07</entry>
-                                    <entry>1.16</entry>
+                                    <entry>1.02</entry>
+                                    <entry>1.05</entry>
                                 </row>
                                 
                                 <!-- Stone veneer cladding perpendicular - 2-storey height with openings - Supporting roof + 1 floor -->
@@ -8797,8 +8913,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05087 | issue 864 | Shows drawing GG00560A1 (3 storeys, middle storey clad, Lwl marks), as in the PDF (p.908). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row155.figure61">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 2-storey stone veneer with openings"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 2-storey stone veneer with openings"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -8881,8 +8998,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05090 | issue 867 | Shows drawing GG00558A1 (2 storeys, lower storey clad, Lwl marks), as in the PDF (p.909). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row167.figure64">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 1-storey stone veneer fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 1-storey stone veneer fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -8965,8 +9083,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         </figure>
                                     </entry>
                                     <entry rowspan="6">
+                                        <!-- CLAUDE-AUTOFIX CF-05092 | issue 869 | Shows drawing GG00560A1 (3 storeys, middle storey clad, Lwl marks), as in the PDF (p.909). -->
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row179.figure67">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange" alt="Two storey building - 2-storey stone veneer fully clad"/>
+                                            <graphic src="bc-graphics/figure-9-23-13-7-d-roof_and_1floor_orange2" alt="Two storey building - 2-storey stone veneer fully clad"/>
                                         </figure>
                                         
                                         Supporting roof + 1 floor
@@ -9045,12 +9164,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <!-- ============================================================ -->
                                 <row xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row191">
                                     <entry rowspan="15">K<sub>snow</sub> <super>(4)</super></entry>
-                                    <entry rowspan="15">Stone veneer cladding perpendicular to the <ref type="term" target="br-wl-bnd">braced wall band</ref>, 2 <ref type="term" target="tr">storey</ref> height, fully clad: Apply factor corresonding to depth Lwl in the direction of the <ref type="term" target="br-wl-bnd">braced wall band</ref> for one or two <ref type="term" target="bldng">building</ref> face(s).
-                                        
-                                        <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row191.figure69">
-                                            <graphic src="bc-graphics/figure-9-23-13-7-d-row14" alt="Building depth diagram for K_snow"/>
-                                        </figure>
-                                    </entry>
+                                    <!-- CLAUDE-AUTOFIX CF-10397 | issue 442 | The K_snow description reads "Roof snow load: apply factor in accordance with the specified roof snow load", with no depth diagram, as in the PDF (p.909); the stone veneer text was copied from the row above. -->
+                                    <entry rowspan="15">Roof snow load: apply factor in accordance with the specified roof snow load</entry>
                                     <entry rowspan="5">
                                         <figure xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.row191.figure70">
                                             <graphic src="bc-graphics/figure-9-23-13-7-d-roof_only" alt="Three storey building for K_snow"/>
@@ -9216,15 +9331,17 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tbody>
                         </tgroup>
                         
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note1">Notes to Table 9.23.13.7.-D:</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note2"><super>(1)</super> See Sentence 9.23.13.2.(3).</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note3"><super>(2)</super> For K<sub>weight</sub>, linear interpolation between Lwl values and between fully clad and partially clad veneer conditions is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note4"><super>(3)</super> "Fully clad" means that there are no openings, and "partially clad" means 50% or less coverage of an elevation.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note5"><super>(4)</super> For K<sub>snow</sub>, linear interpolation between roof snow loads is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note6"><super>(5)</super> For K<sub>spacing</sub>, linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacings is permitted.</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note7"><super>(6)</super> An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of KSspacing. See Sentence 9.23.13.2.(3).</note>
-                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note8"><super>(7)</super> A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note2">See Sentence 9.23.13.2.(3).</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note3">For K<sub>weight</sub>, linear interpolation between Lwl values and between fully clad and partially clad veneer conditions is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note4">"Fully clad" means that there are no openings, and "partially clad" means 50% or less coverage of an elevation.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note5">For K<sub>snow</sub>, linear interpolation between roof snow loads is permitted.</note>
+                            <!-- CLAUDE-AUTOFIX CF-10682 | issue 2669 | Note (5) of Table 9.23.13.7.-D names K Sspacing, as in the PDF. -->
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note6">For K<sub>Sspacing</sub>, linear interpolation between <ref type="term" target="br-wl-bnd">braced wall band</ref> spacings is permitted.</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note7">An average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of KSspacing. See Sentence 9.23.13.2.(3).</note>
+                            <note xml:id="nbc.divBV2.part9.sect23.subsect13.art7.table4.note8">A <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing of 15 m is only permitted in <ref type="term" target="bmnt">basements</ref> and crawl spaces.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -9247,7 +9364,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <text>For 3 or more parallel <ref type="term" target="br-wl-bnd">braced wall bands</ref> that are not evenly spaced, an average <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing is permitted to be used for the determination of K<sub>Wspacing</sub> or K<sub>Sspacing</sub>, provided that no single <ref type="term" target="br-wl-bnd">braced wall band</ref> spacing exceeds <measurement units="metric">10.6 m</measurement>, except as provided in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6.sent3" display-type="short"/>.</text>
                     </sentence>
                     <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art7.sent6" number="6">
-                        <text>Where <ref type="term" target="br-wl-pnl">braced wall panels</ref> of a gypsum-sheathed framing type have gypsum board installed on both sides, the minimum total length of the <ref type="term" target="br-wl-pnl">braced wall panels</ref> determined in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7.sent3" display-type="short" pretext="Sentences"/><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7.sent4" display-type="short" pretext="or"/> is permitted to be reduced by 50%.</text>
+                        <!-- CLAUDE-AUTOFIX CF-05014 | issue 2727 | The PDF prints 'Sentence 9.23.13.7.(3) or (4)' here (singular, full number). -->
+                        <text>Where <ref type="term" target="br-wl-pnl">braced wall panels</ref> of a gypsum-sheathed framing type have gypsum board installed on both sides, the minimum total length of the <ref type="term" target="br-wl-pnl">braced wall panels</ref> determined in <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7.sent3" display-type="long" pretext="Sentence"/><ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art7.sent4" display-type="short" pretext="or"/> is permitted to be reduced by 50%.</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -9300,6 +9418,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause4" letter="d">
                                 <text>do not support heavyweight construction, masonry or stone veneer.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-9.23.13.8.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent2.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote134e" display-type="short">Note A-9.23.13.8.(2)</ref>.)</see-also>
                         </sentence>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent2.appnote1">
                             <text>(See Note A-9.23.13.8.(2).)</text>
@@ -9307,7 +9427,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3" number="3">
                             <text>Where the seismic design parameter, S<sub>max</sub>, is greater than 0.60, <ref type="term" target="fndtn">foundation</ref> cripple walls need not comply with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent1" display-type="short"/>, provided they</text>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.clause1" letter="a">
-                                <text>comply with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause3" display-type="long" pretext="Clauses"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause4" display-type="short" pretext="and"/>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-05100 | issue 2729 | Clause 9.23.13.8.(3)(a) prints "Clauses (2)(c) and (d)" as in the PDF, not "Clauses 9.23.13.8.(2)(c)". -->
+                                <text>comply with <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause3" display-type="long" pretext="Clauses">(2)(c)</ref> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art8.sent2.clause4" display-type="short" pretext="and"/>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.clause2" letter="b">
                                 <text>are not more than <measurement units="metric">350 mm</measurement> in height, and</text>
@@ -9315,6 +9436,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.clause3" letter="c">
                                 <text>are not more than <measurement units="metric">5 m</measurement> length,</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-05099 | issue 6516 | The PDF prints "(See Note A-9.23.13.8.(3).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote134f" display-type="short">Note A-9.23.13.8.(3)</ref>.)</see-also>
                         </sentence>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect13.art8.sent3.appnote1">
                             <text>(See Note A-9.23.13.8.(3).)</text>
@@ -9353,6 +9476,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art9.sent1.clause3" letter="c">
                                 <text>anchor bolts are located not more than <measurement units="metric">300 mm</measurement> and <measurement units="metric">900 mm</measurement> from the step in the <ref type="term" target="fndtn">foundation</ref>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-9.23.13.9.(1).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art9.sent1.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote134g" display-type="short">Note A-9.23.13.9.(1)</ref>.)</see-also>
                         </sentence>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect13.art9.sent1.appnote1">
                             <text>(See Note A-9.23.13.9.(1).)</text>
@@ -9412,6 +9537,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect23.subsect13.art10.sent2.clause4" letter="d">
                                 <text>the end-joists or end-rafters for the roof of the space are fastened to a 3-ply, <measurement units="metric">38 mm × 140 mm</measurement> built-up column or a 5-ply, <measurement units="metric">38 mm × 89 mm</measurement> built-up column that is integral with the wall framing.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-9.23.13.10.(2).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect23.subsect13.art10.sent2.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote134h" display-type="short">Note A-9.23.13.10.(2)</ref>.)</see-also>
                         </sentence>
                         <note xml:id="nbc.divBV2.part9.sect23.subsect13.art10.sent2.appnote1">
                             <text>(See Note A-9.23.13.10.(2).)</text>
@@ -9569,9 +9696,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>WSP-E</entry>
                                     </row>
                                 </thead>
+                                <!-- CLAUDE-AUTOFIX CF-05124 | issue 2750 | Removed the figure titles of the building-configuration images in the Storey column; the PDF shows the images without a caption. -->
                                 <tbody>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure23"><title>Single storey building configuration</title><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure23"><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
                                         <entry>1.89</entry>
                                         <entry>9.47 (4.74)</entry>
                                         <entry>5.50 (2.75)</entry>
@@ -9584,7 +9712,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>1.26</entry>
                                     </row>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure28"><title>Three storey building configuration</title><graphic src="bc-graphics/gg00556a" alt="Three storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure28"><graphic src="bc-graphics/gg00556a" alt="Three storey building configuration"/></figure></entry>
                                         <entry>3.89</entry>
                                         <entry>19.45 (9.73)</entry>
                                         <entry>11.30 (5.65)</entry>
@@ -9597,7 +9725,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>2.59</entry>
                                     </row>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure24"><title>Three storey building configuration</title><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.rowh3.figure24"><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
                                         <entry>5.88</entry>
                                         <entry>NP (14.71)</entry>
                                         <entry>17.09 (8.55)</entry>
@@ -9613,7 +9741,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tgroup>
                             <table-notes>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.note1">
-                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="short"/> for a description of framing types and fastening requirements.</text>
+                                    <!-- CLAUDE-AUTOFIX CF-05170 | issue 10425 | Table note prints "See Sentence 9.23.3.5.(3)" (full number) as in the PDF, not "See Sentence (3)". -->
+                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/> for a description of framing types and fastening requirements.</text>
                                 </note>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table1.note2">
                                     <text>NP = not permitted. Values within round brackets are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</text>
@@ -9663,9 +9792,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>WSP-E</entry>
                                     </row>
                                 </thead>
+                                <!-- CLAUDE-AUTOFIX CF-05124 | issue 2750 | Removed the figure titles of the building-configuration images in the Storey column; the PDF shows the images without a caption. -->
                                 <tbody>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure25"><title>Single storey building configuration</title><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure25"><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
                                         <entry>2.27</entry>
                                         <entry>11.36 (5.68)</entry>
                                         <entry>6.60 (3.30)</entry>
@@ -9677,8 +9807,9 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>1.67</entry>
                                         <entry>1.51</entry>
                                     </row>
+                                    <!-- CLAUDE-AUTOFIX CF-05145 | issue 2768 | Restored the missing WSP-C value 3.76 in the two-storey row, as in the PDF. -->
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure16"><title>Two storey building configuration</title><graphic src="bc-graphics/gg00556a" alt="Two storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure16"><graphic src="bc-graphics/gg00556a" alt="Two storey building configuration"/></figure></entry>
                                         <entry>4.66</entry>
                                         <entry>NP (11.68)</entry>
                                         <entry>13.56 (6.78)</entry>
@@ -9686,11 +9817,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>8.18 (4.09)</entry>
                                         <entry>8.18</entry>
                                         <entry>4.34</entry>
+                                        <entry>3.76</entry>
                                         <entry>3.44</entry>
                                         <entry>3.11</entry>
                                     </row>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure26"><title>Three storey building configuration</title><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.rowh3.figure26"><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
                                         <entry>7.05</entry>
                                         <entry>NP (17.96)</entry>
                                         <entry>20.86 (10.43)</entry>
@@ -9706,7 +9838,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tgroup>
                             <table-notes>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.note1">
-                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="short"/> for a description of framing types and fastening requirements.</text>
+                                    <!-- CLAUDE-AUTOFIX CF-05170 | issue 10425 | Table note prints "See Sentence 9.23.3.5.(3)" (full number) as in the PDF, not "See Sentence (3)". -->
+                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/> for a description of framing types and fastening requirements.</text>
                                 </note>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table2.note2">
                                     <text>NP = not permitted. Values within round brackets are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</text>
@@ -9767,9 +9900,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>WSP-E</entry>
                                     </row>
                                 </thead>
+                                <!-- CLAUDE-AUTOFIX CF-05124 | issue 2750 | Removed the figure titles of the building-configuration images in the Storey column; the PDF shows the images without a caption. -->
                                 <tbody>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure27"><title>Single storey building configuration</title><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure27"><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
                                         <entry>1.89</entry>
                                         <entry>9.47 (4.74)</entry>
                                         <entry>5.50 (2.75)</entry>
@@ -9781,9 +9915,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>1.39</entry>
                                         <entry>1.26</entry>
                                     </row>
+                                    <!-- CLAUDE-AUTOFIX CF-05166 | issue 2786 | Removed the duplicated DWB value 3.89 that shifted the two-storey masonry veneer row one column right; the PDF has 3.89 once. -->
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure8"><title>Two storey building with masonry veneer configuration</title><graphic src="bc-graphics/gg00555a" alt="Two storey building with masonry veneer configuration"/></figure></entry>
-                                        <entry>3.89</entry>                     <entry>3.89</entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure8"><graphic src="bc-graphics/gg00555a" alt="Two storey building with masonry veneer configuration"/></figure></entry>
+                                        <entry>3.89</entry>
                                         <entry>19.45 (9.73)</entry>
                                         <entry>11.30 (5.65)</entry>
                                         <entry>8.38 (4.19)</entry>
@@ -9795,7 +9930,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>2.59</entry>
                                     </row>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure31"><title>Three storey building configuration</title><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.rowh3.figure31"><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
                                         <entry>5.88</entry>
                                         <entry>NP (15.01)</entry>
                                         <entry>17.44 (8.72)</entry>
@@ -9811,7 +9946,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tgroup>
                             <table-notes>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.note1">
-                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="short"/> for a description of framing types and fastening requirements.</text>
+                                    <!-- CLAUDE-AUTOFIX CF-05170 | issue 10425 | Table note prints "See Sentence 9.23.3.5.(3)" (full number) as in the PDF, not "See Sentence (3)". -->
+                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/> for a description of framing types and fastening requirements.</text>
                                 </note>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table3.note2">
                                     <text>NP = not permitted. Values within round brackets are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</text>
@@ -9861,9 +9997,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>WSP-E</entry>
                                     </row>
                                 </thead>
+                                <!-- CLAUDE-AUTOFIX CF-05124 | issue 2750 | Removed the figure titles of the building-configuration images in the Storey column; the PDF shows the images without a caption. -->
                                 <tbody>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure29"><title>Single storey building configuration</title><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure29"><graphic src="bc-graphics/gg00556a" alt="Single storey building configuration"/></figure></entry>
                                         <entry>2.27</entry>
                                         <entry>13.12 (6.56)</entry>
                                         <entry>7.63 (3.81)</entry>
@@ -9876,7 +10013,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>1.51</entry>
                                     </row>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure21"><title>Two storey building with masonry veneer configuration</title><graphic src="bc-graphics/gg00555a" alt="Two storey building with masonry veneer configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure21"><graphic src="bc-graphics/gg00555a" alt="Two storey building with masonry veneer configuration"/></figure></entry>
                                         <entry>4.66</entry>
                                         <entry>NP (15.14)</entry>
                                         <entry>17.59 (8.79)</entry>
@@ -9889,7 +10026,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                         <entry>3.11</entry>
                                     </row>
                                     <row>
-                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure30"><title>Three storey building configuration</title><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
+                                        <entry><figure xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.rowh3.figure30"><graphic src="bc-graphics/gg00554a" alt="Three storey building configuration"/></figure></entry>
                                         <entry>7.05</entry>
                                         <entry>NP (NP)</entry>
                                         <entry>NP (13.66)</entry>
@@ -9905,7 +10042,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </tgroup>
                             <table-notes>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.note1">
-                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="short"/> for a description of framing types and fastening requirements.</text>
+                                    <!-- CLAUDE-AUTOFIX CF-05170 | issue 10425 | Table note prints "See Sentence 9.23.3.5.(3)" (full number) as in the PDF, not "See Sentence (3)". -->
+                                    <text>See <ref type="internal" target="nbc.divBV2.part9.sect23.subsect3.art5.sent3" display-type="long"/> for a description of framing types and fastening requirements.</text>
                                 </note>
                                 <note xml:id="nbc.divBV2.part9.sect23.subsect13.art11.table4.note2">
                                     <text>NP = not permitted. Values within round brackets are permitted for <ref type="term" target="br-wl-pnl">braced wall panels</ref> with gypsum board installed on both sides.</text>
@@ -10089,6 +10227,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect15.art5.table1">
                         <title>Thickness of Subflooring</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1415 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art5.sent1" display-type="long"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="1" colwidth="79*"/>
                             <colspec colname="2" colwidth="79*"/>
@@ -10147,6 +10290,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect15.art5.table2">
                         <title>Rating for Subfloor when Applying CSA O325</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1416 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art5.sent1" display-type="long"/>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="132*"/>
                             <colspec colname="tbody2" colwidth="129*"/>
@@ -10272,6 +10420,42 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05225 | issue 2809 | Clause 9.23.16.5.(2)(b) reads "1-in-50-year hourly wind pressure (HWP) ... less than 1.2 kPa" as in the PDF. -->
+        <amendment id="bc-custom-1113-92316-2b" sequence="203"
+                   description="Clause wording of Article 9.23.16.5 as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect23.subsect16.art5.sent2.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>the 1-in-50-year hourly wind pressure (HWP) is equal to or greater than <measurement units="metric">0.80 kPa</measurement> but less than <measurement units="metric">1.2 kPa</measurement>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05225 | issue 2809 | Clause 9.23.16.5.(3)(a) uses the seismic design parameter Smax for Site Class C, greater than 0.8, as in the PDF. -->
+        <amendment id="bc-custom-1113-92316-3a" sequence="203"
+                   description="Clause wording of Article 9.23.16.5 as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect23.subsect16.art5.sent3.clause1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>the seismic design parameter, S<sub>max</sub>, for Site Class C is greater than 0.8, or</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05225 | issue 2809 | Clause 9.23.16.5.(3)(b) reads "1-in-50-year hourly wind pressure (HWP) ... 1.2 kPa" as in the PDF. -->
+        <amendment id="bc-custom-1113-92316-3b" sequence="203"
+                   description="Clause wording of Article 9.23.16.5 as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect23.subsect16.art5.sent3.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>the 1-in-50-year hourly wind pressure (HWP) is equal to or greater than <measurement units="metric">1.2 kPa</measurement>.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
         
         <!-- ================================================================== -->
         <!-- Amendment 204:    -->
@@ -10303,6 +10487,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect16.art7.table1">
                         <title>Thickness of Roof Sheathing</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1417 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="6">
                             <colspec colname="tbody1" colwidth="63*"/>
                             <colspec colname="tbody2" colwidth="72*"/>
@@ -10370,6 +10558,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect16.art7.table2">
                         <title>Rating for Roof Sheathing When Applying CSA O325</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1418 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art7.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="132*"/>
                             <colspec colname="tbody2" colwidth="130*"/>
@@ -10441,6 +10633,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect23.subsect17.art2.table1">
                         <title>Wall Sheathing Thickness and Specifications</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1419 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect23.subsect17.art2.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="4">
                             <colspec colname="1" colwidth="174*"/>
                             <colspec colname="2" colwidth="60*"/>
@@ -10658,6 +10854,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect28.subsect2.art2.table1" vendor-id="et000210">
                         <title>Aggregate Grading for Stucco</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1420 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect28.subsect2.art2.sent2" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="131*"/>
                             <colspec colname="tbody2" colwidth="133*"/>
@@ -10719,8 +10919,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <target type="canonical-id" id="nbc.divBV2.part9.sect28.subsect4.art3.table1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-05484 | issue 10435 | Restored the Forming Part line, the row spans and table note (1) (See Note A-Table 9.28.4.3.) that the BC replacement of Table 9.28.4.3. dropped, as in the PDF. -->
                     <table xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1" vendor-id="et000211">
+                        <number>Table 9.28.4.3.</number>
                         <title>Stucco Lath</title>
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect28.subsect4.art3.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="tbody1" colwidth="65*"/>
                             <colspec colname="tbody2" colwidth="93*"/>
@@ -10738,8 +10943,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </thead>
                             <tbody>
                                 <row xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1.row1">
-                                    <entry>Vertical surfaces</entry>
-                                    <entry>Welded or woven wire</entry>
+                                    <entry rowspan="4">Vertical surfaces</entry>
+                                    <entry rowspan="3">Welded or woven wire</entry>
                                     <entry>1.15</entry>
                                     <entry><measurement units="metric">25 mm</measurement></entry>
                                     <entry>—</entry>
@@ -10761,7 +10966,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <entry>0.98</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1.row5">
-                                    <entry>Horizontal surfaces<ref type="internal" target="nbc.divBV2.part9.appendix.appnote190" vendor-target="en000350" display-type="short"/></entry>
+                                    <entry rowspan="2">Horizontal surfaces<ref type="table-note" target="nbc.divBV2.part9.sect28.subsect4.art3.table1.note1"/></entry>
                                     <entry><measurement units="metric">9.5 mm</measurement> rib lath</entry>
                                     <entry>—</entry>
                                     <entry>—</entry>
@@ -10775,6 +10980,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                             </tbody>
                         </tgroup>
+                        <table-notes>
+                            <note xml:id="nbc.divBV2.part9.sect28.subsect4.art3.table1.note1">
+                                <text>See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote181" display-type="short"/></text>
+                            </note>
+                        </table-notes>
                     </table>
                 </new-content>
             </replace>
@@ -10791,6 +11001,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect29.subsect3.art1.table1" vendor-id="et000213">
                         <title>Size and Spacing of Furring</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1421 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect29.subsect3.art1.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="4">
                             <colspec colname="tbody1" colwidth="96*"/>
                             <colspec colname="tbody2" colwidth="100*"/>
@@ -10847,6 +11061,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect29.subsect5.art5.table1" vendor-id="et000215">
                         <title>Fastener Penetration into Wood Supports</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1422 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect29.subsect5.art5.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="5">
                             <colspec colname="tbody1" colwidth="128*"/>
                             <colspec colname="tbody2" colwidth="68*"/>
@@ -10919,8 +11137,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect29.subsect6.art1.sent1" number="1">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.sent2" display-type="short" pretext="Sentences"/><ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.sent3" display-type="short" pretext="and"/>, the minimum thickness of plywood interior finish shall conform to <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.table1" display-type="long"/></text>
                         </sentence>
+                        <!-- CLAUDE-AUTOFIX CF-05520 | issue 10436 | Restored the Forming Part line and table note (1) of Table 9.29.6.1. that the BC replacement Article dropped, as in the PDF. -->
                         <table xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1" vendor-id="et000216">
                             <title>Thickness of Plywood Interior Finish</title>
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1" display-type="long" pretext="Articles"/>
+                                <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art2" display-type="long" pretext=" and"/>
+                            </forming-part>
                             <tgroup cols="3">
                                 <colspec colname="1" colwidth="101*"/>
                                 <colspec colname="2" colwidth="118*"/>
@@ -10928,7 +11151,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 <thead>
                                     <row xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1.rowh1">
                                         <entry align="center">Maximum Spacing of Supports, mm o.c.</entry>
-                                        <entry align="center">Minimum Thickness, mm</entry>
+                                        <entry align="center">Minimum Thickness, mm<ref type="table-note" target="nbc.divBV2.part9.sect29.subsect6.art1.table1.note1"/></entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1.rowh2">
                                         <entry align="center">On Supports with no Horizontal Blocking</entry>
@@ -10948,6 +11171,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     </row>
                                 </tbody>
                             </tgroup>
+                            <table-notes>
+                                <note xml:id="nbc.divBV2.part9.sect29.subsect6.art1.table1.note1">
+                                    <text>Thickness limits shall apply to the net effective thickness (NET) of grooved, striated, textured and/or embossed panels and to the actual thickness of flat panels.</text>
+                                </note>
+                            </table-notes>
                         </table>
                         <sentence xml:id="nbc.divBV2.part9.sect29.subsect6.art1.sent2" number="2">
                             <text>A manufacturing tolerance of <measurement units="metric">−0.4 mm</measurement> may be applied to the thicknesses listed in <ref type="internal" target="nbc.divBV2.part9.sect29.subsect6.art1.table1" display-type="long"/></text>
@@ -11042,6 +11270,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <table xml:id="nbc.divBV2.part9.sect30.subsect3.art1.table1" vendor-id="et000217">
                         <title>Thickness of Wood Strip Flooring</title>
+                        <!-- CLAUDE-AUTOFIX CF-04705 | issue 1423 | "Forming Part of ..." line under the title, as in the PDF. -->
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art1.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="4">
                             <colspec colname="tbody1" colwidth="179.99*"/>
                             <colspec colname="tbody2" colwidth="73.09*"/>
@@ -11111,8 +11343,13 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <target type="canonical-id" id="nbc.divBV2.part9.sect30.subsect3.art3.table1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-05558 | issue 10438 | Restored the Forming Part line and table note (1) (See Article 9.30.3.4.) that the BC replacement of Table 9.30.3.3. dropped; the 38 mm cell shows the note mark (1) instead of the Article reference, as in the PDF. -->
                     <table xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1" vendor-id="et000218">
+                        <number>Table 9.30.3.3.</number>
                         <title>Nailing of Wood Strip Flooring</title>
+                        <forming-part>
+                            <ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art3.sent1" display-type="long"/>
+                        </forming-part>
                         <tgroup cols="3">
                             <colspec colname="tbody1" colwidth="110*"/>
                             <colspec colname="tbody2" colwidth="139*"/>
@@ -11127,7 +11364,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <tbody>
                                 <row xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1.row1">
                                     <entry>7.9</entry>
-                                    <entry>38<ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art4" display-type="long"/></entry>
+                                    <entry>38<ref type="table-note" target="nbc.divBV2.part9.sect30.subsect3.art3.table1.note1"/></entry>
                                     <entry>200</entry>
                                 </row>
                                 <row xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1.row2">
@@ -11157,6 +11394,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </row>
                             </tbody>
                         </tgroup>
+                        <table-notes>
+                            <note xml:id="nbc.divBV2.part9.sect30.subsect3.art3.table1.note1">
+                                <text>See <ref type="internal" target="nbc.divBV2.part9.sect30.subsect3.art4" display-type="long"/></text>
+                            </note>
+                        </table-notes>
                     </table>
                 </new-content>
             </replace>
@@ -11194,7 +11436,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>the Safety Standards Act and pursuant regulations,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect31.subsect6.art2.sent2.clause2" letter="b">
-                            <text><ref type="standard" target="csab139"/> Series,</text>
+                            <!-- CLAUDE-AUTOFIX CF-10098 | issue 463 | Printed as in the PDF (CSA B139 Series, title once). -->
+                            <text>CSA B139 Series, “Installation code for oil-burning equipment,”</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect31.subsect6.art2.sent2.clause3" letter="c">
                             <text>reserved,</text>
@@ -11286,7 +11529,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent2" number="2">
-                            <text>A self-contained heating-season ventilation system serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces shall comply with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote194" vendor-target="en001526" display-type="short"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-05567 | issue 2921 | Note reference points to A-9.32.1.2.(2) (appnote185 = vendor en001526, as its vendor-target says), as in the PDF. -->
+                            <text>A self-contained heating-season ventilation system serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> or a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces shall comply with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote185" vendor-target="en001526" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent3" number="3">
                             <text>In houses that contain a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, heating-season ventilation need not be provided for</text>
@@ -11299,6 +11543,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent3.clause3" letter="c">
                                 <text>ancillary spaces that are not within a <ref type="term" target="dwllng-n">dwelling unit</ref>, except as provided in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art2.sent4" display-type="short"/>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-05568 | issue 6530 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent3.seealso">(See Note A-9.32.1.2.(2).)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect1.art2.sent4" number="4">
                             <text>Where ancillary spaces described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect1.art2.sent3.clause3" display-type="medium"/> contain exhaust devices, these spaces shall be provided with make-up air in accordance with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1" display-type="long"/></text>
@@ -11381,6 +11627,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art1.sent1.clause3" letter="c">
                                 <text>for ducted mechanical ventilation systems serving more than one <ref type="term" target="dwllng-n">dwelling unit</ref> in a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, the mechanical ventilation system shall comply with this Subsection or Part 6.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-9.32.3.1.(1).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divBV2.part9.sect32.subsect3.art1.sent1.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote188" display-type="short">Note A-9.32.3.1.(1)</ref>.)</see-also>
                         </sentence>
                     </article>
                 </new-content>
@@ -11399,7 +11647,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                     <article xml:id="nbc.divBV2.part9.sect32.subsect3.art2" number="2">
                         <title>Design and Installation</title>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art2.sent1" number="1">
-                            <text>Aspects of mechanical ventilation systems not specifically described in this Subsection shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the <ref type="standard" target="hraisar-g1"/> the HRAI Residential Mechanical Ventilation Manual, the Hydronics Institute Manuals and the SMACNA Manuals.</text>
+                            <!-- CLAUDE-AUTOFIX CF-05581 | issue 2928 | Reads 'the HRAI Digest,' as in the PDF; the standard reference printed '2017 Edition, "HRAI Digest"' from the standards map. -->
+                            <text>Aspects of mechanical ventilation systems not specifically described in this Subsection shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the HRAI Digest, the HRAI Residential Mechanical Ventilation Manual, the Hydronics Institute Manuals and the SMACNA Manuals.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art2.sent2" number="2">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:10240 Punctuation 109a82472f -->
@@ -11464,6 +11713,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                 <new-content source="bc">
                     <article xml:id="nbc.divBV2.part9.sect32.subsect3.art4" number="4">
                         <title>Ventilation System Supply Air</title>
+                        <!-- CLAUDE-AUTOFIX CF-05583 | issue 6949 | The PDF prints "(See Note A-9.32.3.4.)" after the Article title; the BC Article had no see-also. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect32.subsect3.art4.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote193a" display-type="short"/>)</see-also>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent1" number="1">
                             <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent6" display-type="short"/>, a principal ventilation system shall mechanically provide supply air in accordance with <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2" display-type="short"/>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent3" display-type="short"/>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent4" display-type="short"/> or <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent5" display-type="short"/>.</text>
                         </sentence>
@@ -11482,7 +11733,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause2" letter="b">
-                                <text>draw supply air from an outdoor inlet that is connected to the cabinet containing the furnace air circulating fan required by <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="medium"/> by ducting that measures, from that cabinet to the point at which the ducting intersects the return air plenum,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10647 | issue 1373 | Printed "Clause (d)" (same Sentence), as in the PDF. -->
+                                <text>draw supply air from an outdoor inlet that is connected to the cabinet containing the furnace air circulating fan required by <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="short"/> by ducting that measures, from that cabinet to the point at which the ducting intersects the return air plenum,</text>
                                 <subclause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause2.subclause1" number="1">
                                     <text>between 3 m and 4.5 m in length, or</text>
                                 </subclause>
@@ -11506,7 +11758,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent3" number="3">
                             <text>Where the principal ventilation system is a ducted forced-air heating system used in combination with a heat-recovery ventilator,</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent3.clause1" letter="a">
-                                <text>the ducted forced-air heating system shall conform to <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1" display-type="medium"/>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause3" display-type="medium"/> and <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="medium"/>,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10647 | issue 468 | Printed "Clauses (2)(a), (c) and (d)", as in the PDF. -->
+                                <text>the ducted forced-air heating system shall conform to <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1" display-type="medium" pretext="Clauses">(2)(a)</ref>, <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause3" display-type="short"/> and <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause4" display-type="short"/>,</text>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent3.clause2" letter="b">
                                 <text>the heat-recovery ventilator shall draw supply air from an outdoor inlet into the return air plenum of the ducted forced-air heating system, and</text>
@@ -11532,7 +11785,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                     <text>each floor level without a bedroom, and</text>
                                 </subclause>
                                 <subclause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent4.clause1.subclause3" number="3">
-                                    <text>each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium"/>, and</text>
+                                    <!-- CLAUDE-AUTOFIX CF-10684 | issue 2631 | The reference prints 'Subclause (2)(a)(iii)', as in the PDF, not 'Subclause (iii)'. -->
+                                    <text>each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium">Subclause (2)(a)(iii)</ref>, and</text>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent4.clause2" letter="b">
@@ -11560,7 +11814,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                 </subclause>
                             </clause>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent5.clause3" letter="c">
-                                <text>deliver air to each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10684 | issue 2631 | The reference prints 'Subclause (2)(a)(iii)', as in the PDF, not 'Subclause (iii)'. -->
+                                <text>deliver air to each ancillary space described in <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art4.sent2.clause1.subclause3" display-type="medium">Subclause (2)(a)(iii)</ref>.</text>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect3.art4.sent6" number="6">
@@ -11785,6 +12040,10 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect32.subsect3.art6.table1">
                             <title>Kitchen/Bathroom Exhaust Fan Minimum Air-flow Rate</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1425 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art6.sent1" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="3">
                                 <colspec colname="col1" colwidth="150*"/>
                                 <colspec colname="col2" colwidth="100*"/>
@@ -12190,7 +12449,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <title>Carbon Monoxide Alarms</title>
                         <see-also xml:id="nbc.divBV2.part9.sect32.subsect4.art2.seealso1">(See Note A-9.32.4.2.)</see-also>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent1" number="1">
-                            <text>This Article applies to every <ref type="term" target="bldng">building</ref> that contains a <ref type="term" target="rdntl-cc">residential occupancy</ref>, a business and personal services occupancy, or a mercantile occupancy and that</text>
+                            <!-- CLAUDE-AUTOFIX CF-00006 | issue 1375 | Business and personal services occupancy and mercantile occupancy are defined terms (italic), as in the PDF. -->
+                            <text>This Article applies to every <ref type="term" target="bldng">building</ref> that contains a <ref type="term" target="rdntl-cc">residential occupancy</ref>, a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref> and that</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent1.clause1" letter="a">
                                 <text>is served by or contains a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or</text>
                             </clause>
@@ -12215,7 +12475,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent3" number="3">
-                            <text>Where a room in a residential occupancy contains a solid-fuel-burning <ref type="term" target="pplnc">appliance</ref>, a CO alarm conforming to <ref type="standard" target="csa6.19"/> shall be</text>
+                            <!-- CLAUDE-AUTOFIX CF-05632 | issue 6539 | Restored defined-term italic on "residential occupancy" to match the PDF. -->
+                            <text>Where a room in a <ref type="term" target="rdntl-cc">residential occupancy</ref> contains a solid-fuel-burning <ref type="term" target="pplnc">appliance</ref>, a CO alarm conforming to <ref type="standard" target="csa6.19"/> shall be</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent3.clause1" letter="a">
                                 <text>installed as recommended by the manufacturer where these instructions specifically mention solid-fuel-burning <ref type="term" target="pplnc">appliances</ref>, or</text>
                             </clause>
@@ -12255,7 +12516,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                             <text>Where CO alarms are installed in a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, the CO alarms shall be interconnected so that the actuation of any one CO alarm causes all CO alarms within the house with a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces to sound.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent8" number="8">
-                            <text>CO alarms installed in a business and personal services occupancy, or a mercantile occupancy as required by this Article shall conform to</text>
+                            <!-- CLAUDE-AUTOFIX CF-05633 | issue 6541 | Restored defined-term italic on "business and personal services occupancy" and "mercantile occupancy" to match the PDF (also CF-05634). -->
+                            <text>CO alarms installed in a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref> as required by this Article shall conform to</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent8.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9740 Punctuation 242ea75239 -->
                                 <text>CAN/CSA-6.19, “Residential carbon monoxide alarming devices,” notwithstanding the scope of that standard,</text>
@@ -12272,7 +12534,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         
                         
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent9" number="9">
-                            <text>Where a fuel-burning appliance serves a business and personal services occupancy, or mercantile occupancy, a CO alarm shall be,</text>
+                            <!-- CLAUDE-AUTOFIX CF-05635 | issue 6543 | Restored defined-term italic on "appliance", "business and personal services occupancy", "mercantile occupancy" to match the PDF (also CF-05636, CF-05637). -->
+                            <text>Where a fuel-burning <ref type="term" target="pplnc">appliance</ref> serves a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or <ref type="term" target="mrcntl-c">mercantile occupancy</ref>, a CO alarm shall be,</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent9.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2963 Formatting 30b3fd01b9 -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2964 Formatting 208b2f1d9a -->
@@ -12290,7 +12553,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         </sentence>
                         
                         <sentence xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent10" number="10">
-                            <text>For each suite of business and personal services occupancy or mercantile occupancy that shares a wall or floor/ceiling assembly with either a storage garage, or a service room containing a fuel-burning appliance, or that is adjacent to an attic or crawl space to which either a storage garage, or a service room containing a fuel-burning appliance is also adjacent, a CO alarm shall be installed</text>
+                            <!-- CLAUDE-AUTOFIX CF-05638 | issue 6546 | Restored defined-term italic on suite, occupancies, storage garage, service room, appliance to match the PDF (also CF-05639 to CF-05646). -->
+                            <text>For each <ref type="term" target="t">suite</ref> of <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref> or <ref type="term" target="mrcntl-c">mercantile occupancy</ref> that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref>, or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or that is adjacent to an attic or crawl space to which either a <ref type="term" target="trg-grg">storage garage</ref>, or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref> is also adjacent, a CO alarm shall be installed</text>
                             <clause xml:id="nbc.divBV2.part9.sect32.subsect4.art2.sent10.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2970 Formatting 8a35804d6b -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2971 Formatting aaf6d5f5df -->
@@ -12342,11 +12606,12 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
         <!-- Amendment 243: Remove linear interpolation sentence               -->
         <!-- Article 9.32.3.4 - Remove sentence 4 about linear interpolation  -->
         <!-- ================================================================== -->
-        <amendment id="bc-243" sequence="243"
+        <!-- CLAUDE-AUTOFIX CF-05587 | issue 2932 | Disabled bc-243: it deleted Sentence 9.32.3.4.(4) (heat-recovery ventilator) of the BC replacement Article from bc-235, which the PDF shows; the NBC linear-interpolation Sentence it aimed at is already gone with the replacement. -->
+        <!-- <amendment id="bc-243" sequence="243"
                    description="Remove sentence about linear interpolation from Article 9.32.3.4">
             <target type="canonical-id" id="nbc.divBV2.part9.sect32.subsect3.art4.sent4"/>
             <delete/>
-        </amendment>
+        </amendment> -->
         
         <!-- ================================================================== -->
         <!-- Amendment 244: Remove Table 9.32.3.4.1                           -->
@@ -12477,7 +12742,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect33.subsect4.art1.sent1" number="1">
-                        <text>Aspects of heating and air-conditioning systems not specifically addressed in this Subsection, including ducting, and mechanical heating and refrigeration equipment, shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the <ref type="standard" target="hraisar-g1"/> the CHC Handbook on Hydronic Heating Systems, the Hydronics Institute Manuals, the SMACNA Manuals and the TECA Quality First Manuals. (See also <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> for the design of systems that also provide ventilation.)</text>
+                        <!-- CLAUDE-AUTOFIX CF-05647 | issue 2975 | Reads 'the HRAI Digest,' as in the PDF; the standard reference printed '2017 Edition, "HRAI Digest"' from the standards map. -->
+                        <text>Aspects of heating and air-conditioning systems not specifically addressed in this Subsection, including ducting, and mechanical heating and refrigeration equipment, shall be designed, constructed and installed in accordance with good practice such as that described in the ASHRAE Handbooks and Standards, the HRAI Digest, the CHC Handbook on Hydronic Heating Systems, the Hydronics Institute Manuals, the SMACNA Manuals and the TECA Quality First Manuals. (See also <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3" display-type="long"/> for the design of systems that also provide ventilation.)</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -12615,7 +12881,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect33.subsect5.art3.sent2" number="2">
-                        <text>For the purposes of <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art3.sent1" display-type="short"/>, solid-fuel-burning boiler <ref type="term" target="pplnc">appliances</ref> that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of <ref type="standard" target="csab365"/>. (See also Subclause 9.33.5.2.(1)(a)(ii).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 473 | The standard is printed as in the PDF (CAN/CSA-B365, no comma). -->
+                        <text>For the purposes of <ref type="internal" target="nbc.divBV2.part9.sect33.subsect5.art3.sent1" display-type="short"/>, solid-fuel-burning boiler <ref type="term" target="pplnc">appliances</ref> that are approved for use under section 10 of the Safety Standards Act satisfy section 4.1 of CAN/CSA-B365 “Installation Code for Solid-Fuel-Burning Appliances and Equipment.” (See also Subclause 9.33.5.2.(1)(a)(ii).)</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -12872,10 +13139,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
         <!-- ================================================================== -->
         <amendment id="bc-269" sequence="269"
                    description="Add new sentence (4) regarding illumination for rooms and spaces used by the public in Article 9.34.2.7">
+            <!-- CLAUDE-AUTOFIX CF-05711 | issue 1510 | Sentence (4) is inserted after Table 9.34.2.7., which the PDF prints after Sentence (3). -->
             <target type="position" 
                     parent-id="nbc.divBV2.part9.sect34.subsect2.art7"
                     position="after"
-                    reference-id="nbc.divBV2.part9.sect34.subsect2.art7.sent3"/>
+                    reference-id="nbc.divBV2.part9.sect34.subsect2.art7.table1"/>
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect34.subsect2.art7.sent4" number="4">
@@ -12889,18 +13157,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
         <!-- Amendment 270: Add note reference to Article 9.35.2.2.(1)        -->
         <!-- Article 9.35.2.2 - Garage Floor                                  -->
         <!-- ================================================================== -->
-        <amendment id="bc-271" sequence="271"
-                   description="Add note reference to Article 9.35.2.2.(1)">
-            <target type="position" 
-                    parent-id="nbc.divBV2.part9.sect35.subsect2.art2.sent1"
-                    position="after"
-                    reference-id="nbc.divBV2.part9.sect35.subsect2.art2.sent1.clause2"/>
-            <insert>
-                <new-content source="bc">
-                    <text> (See Note A-9.35.2.2.(1).)</text>
-                </new-content>
-            </insert>
-        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | Removed amendment bc-271: its inserted text merged into the Sentence text before the Clauses and repeated the NBC see-also (See Note A-9.35.2.2.(1).), which the PDF prints once after the Clauses. -->
         
         <!-- ================================================================== -->
         <!-- Amendment 271: Replace Table 9.34.2.7 to add row for combustible refuse storage -->
@@ -16416,12 +16673,11 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                                    vendor-id="es005876">
                                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6463 Incorrect Content 4a8ea2a168 -->
                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6464 Note Reference 9a04da6144 -->
+                        <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | The note reference is moved from the Sentence text to a see-also after the Clauses, where the PDF prints it. -->
                         <text>Except as provided in <ref type="internal"
                                                     target="nbc.divBV2.part9.sect10.subsect9.art18.sent5"
                                                     display-type="short"/>, where a <ref type="term" target="trg-grg">storage garage </ref> is attached
-                    to or built into a <ref type="term" target="bldng">building</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref>, (See <ref type="internal"
-                                                    target="nbc.divBV2.part9.appendix.appnote65"
-                                                    display-type="short"/>.)</text>
+                    to or built into a <ref type="term" target="bldng">building</ref> of <ref type="term" target="rdntl-cc">residential occupancy</ref>,</text>
                                             <clause xml:id="nbc.divBV2.part9.sect10.subsect9.art18.sent4.clause1"
                                                     letter="a"
                                                     vendor-id="es005876a">
@@ -16439,6 +16695,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                                        display-type="long"/>
                                                </text>
                                             </clause>
+                                            <!-- CLAUDE-AUTOFIX CF-04403 | issue 6480 | Note reference after the Clauses, as in the PDF. -->
+                                            <see-also xml:id="nbc.divBV2.part9.sect10.subsect9.art18.sent4.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote65" display-type="short"/>.)</see-also>
                                          </sentence>
                 </new-content>
             </replace>
@@ -16527,9 +16785,7 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6525 Note Reference 2b28be4469 -->
                         <text>Where an exterior insulation finish system is installed as cladding
                     on wood-frame, masonry, cold-formed steel stud, above-ground flat insulating concrete form or cast-in-place concrete walls exposed to precipitation, the cladding
-                    assembly shall comply with (See <ref type="internal"
-                                                    target="nbc.divBV2.part9.appendix.appnote160"
-                                                    display-type="short"/>.)</text>
+                    assembly shall comply with</text>
                                             <clause xml:id="nbc.divBV2.part9.sect27.subsect1.art1.sent5.clause1"
                                                     letter="a"
                                                     vendor-id="es000044a">
@@ -16556,6 +16812,8 @@ need for additional support. (See Note A-9.9.10.1.(2).)</replace>
                                                     vendor-id="es000044b">
                                                <text>Part 5.</text>
                                             </clause>
+                                             <!-- CLAUDE-AUTOFIX CF-01491 | issue 6362 | The Note reference follows the Clauses (see-also), as in the PDF and the NBC structure, instead of sitting in the opening text. -->
+                                             <see-also xml:id="nbc.divBV2.part9.sect27.subsect1.art1.sent5.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote160" display-type="short"/>.)</see-also>
                                          </sentence>
                 </new-content>
             </replace>
@@ -18428,6 +18686,18 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
                 </element-replace>
             </modify>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09917 | issue 337 | Sentence 9.10.22.1.(1) refers to the Safety Standards Act and pursuant regulations, as in the PDF. -->
+        <amendment id="bc-autofix-9-10-22-1" sequence="2137.5"
+                   description="Sentence 9.10.22.1.(1) refers to the Safety Standards Act and pursuant regulations">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect10.subsect22.art1.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Except as required in <ref type="internal" target="nbc.divBV2.part9.sect10.subsect22.art1.sent2" display-type="short"/>, natural gas and propane <ref type="term" target="cktp">cooktops</ref> and ovens shall be installed in accordance with the Safety Standards Act and pursuant regulations. (See also <ref type="internal" target="nbc.divBV2.part9.sect34.subsect1.art1" display-type="long"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
         <!-- CLAUDE-AUTOFIX CL-055 CF-10488 | issue 1135 | 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code, as in the PDF, not the NBC's NPC. -->
         <amendment id="bc-custom-9-36-3-11" sequence="2138"
                    description="Sentence 9.36.3.11.(2) refers to Book II (Plumbing Systems) of this Code">
@@ -18436,6 +18706,48 @@ channels on one side spaced 400 mm or 600 mm o.c.• 1 layer of gypsum board o
                 <element-replace element="text">
                     <new-content source="bc">
                         <text>Service water heating systems that use solar thermal technology shall be installed in accordance with the Book II (Plumbing Systems) of this Code.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-04248 | issue 2356 | Added BC Article 9.10.9.22. Multiple Tenant Self Storage Warehouses, which the PDF shows after 9.10.9.21. -->
+        <amendment id="bc-custom-9-10-9-22" sequence="2343"
+                   description="Add Article 9.10.9.22. Multiple Tenant Self Storage Warehouses">
+            <target type="position"
+                    parent-id="nbc.divBV2.part9.sect10.subsect9"
+                    position="after"
+                    reference-id="nbc.divBV2.part9.sect10.subsect9.art21"/>
+            <insert>
+                <new-content source="bc">
+                    <article xml:id="nbc.divBV2.part9.sect10.subsect9.art22" number="22">
+                        <title>Multiple Tenant Self Storage Warehouses</title>
+                        <sentence xml:id="nbc.divBV2.part9.sect10.subsect9.art22.sent1" number="1">
+                            <text>Multiple tenant self storage warehouses shall comply with <ref type="internal" target="nbc.divB.part3.sect3.subsect5.art9" display-type="long"/>.</text>
+                        </sentence>
+                    </article>
+                </new-content>
+            </insert>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05571 | issue 2924 | Clause 9.32.1.3.(3)(c) refers to Article 9.32.4.1. (make-up air), as in the PDF; BC replaced NBC Article 9.32.3.8. with Air Ducts. -->
+        <amendment id="bc-custom-9-32-1-3-3c" sequence="2344"
+                   description="Clause 9.32.1.3.(3)(c) refers to Article 9.32.4.1.">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect32.subsect1.art3.sent3.clause3"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>where required by <ref type="internal" target="nbc.divBV2.part9.sect32.subsect4.art1" display-type="long"/>, be provided with make-up air.</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-04128 | issue 2274 | Sentence 9.9.6.1.(4) reads 'Doors serving a single dwelling unit need not comply with Sentences (2) and (3).', as in the PDF. -->
+        <amendment id="bc-custom-9-9-6-1-4" sequence="2346"
+                   description="Sentence 9.9.6.1.(4): doors serving a single dwelling unit">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect9.subsect6.art1.sent4"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Doors serving a single <ref type="term" target="dwllng-n">dwelling unit</ref> need not comply with <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art1.sent2" display-type="short" pretext="Sentences"/> <ref type="internal" target="nbc.divBV2.part9.sect9.subsect6.art1.sent3" display-type="short" pretext="and"/>.</text>
                     </new-content>
                 </element-replace>
             </modify>

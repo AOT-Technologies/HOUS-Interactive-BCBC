@@ -138,11 +138,9 @@ const renderFormattedText = (
     // Legacy placeholders used in some table content
     .replace(/<>/g, '<italic>')
     .replace(/<\/>/g, '</italic>')
-    // Normalize dash markers used in tables and common mojibake variants.
-    .replace(/â€”/g, '-')
-    .replace(/â€“/g, '-')
-    .replace(/—/g, '-')
-    .replace(/–/g, '-');
+    // CLAUDE-AUTOFIX CL-099 CF-04628 | issue 6746 | Keep the PDF's em/en dashes in table cells (only repair mojibake to the right dash).
+    .replace(/â€”/g, '—')
+    .replace(/â€“/g, '–');
 
   const tokenRegex = /(<italic>[\s\S]*?<\/italic>|<bold>[\s\S]*?<\/bold>|\^\{[\s\S]*?\}|_\{[\s\S]*?\})/gi;
   const nodes: React.ReactNode[] = [];
@@ -740,17 +738,23 @@ const formatFormingPartItems = (items: FormingPartItem[]): string => {
       joinWithAnd([`${group.article}.${group.tails[0]}`, ...group.tails.slice(1)])
     );
     const hasGroupWithSeveralItems = groups.some((group) => group.tails.length > 1);
+    // CLAUDE-AUTOFIX CL-092 CF-10562 | issue 1451 | With 3 or more numbers the PDF separates them with commas and puts "and" (", and" after a group that has its own "and") only before the last one.
     const body =
       groupTexts.length === 1
         ? groupTexts[0]
-        : hasGroupWithSeveralItems
-          ? groupTexts.join(' and ')
-          : joinWithAnd(groupTexts);
+        : groupTexts.length >= 3
+          ? `${groupTexts.slice(0, -1).join(', ')}${groupTexts[groupTexts.length - 2].includes(' and ') ? ', and ' : ' and '}${groupTexts[groupTexts.length - 1]}`
+          : hasGroupWithSeveralItems
+            ? groupTexts.join(' and ')
+            : joinWithAnd(groupTexts);
     return `${pretext} ${body}`;
   });
 
+  // CLAUDE-AUTOFIX CL-092 CF-10540 | issue 1398 | Runs (Sentences ..., Clause ..., Article ...) are separated by commas; "and" comes only before the last run, as in the PDF.
   return texts.reduce((text, next, index) =>
-    index === 0 ? next : `${text}${texts[index - 1].includes(' and ') ? ', and ' : ' and '}${next}`
+    index === 0
+      ? next
+      : `${text}${index < texts.length - 1 ? ', ' : texts[index - 1].includes(' and ') ? ', and ' : ' and '}${next}`
   );
 };
 
@@ -769,6 +773,13 @@ const LOWERCASE_FORMING_PART_TABLE_IDS = new Set<string>([
   'nbc.divB.part10.sect2.subsect3.art3.table9',
   'nbc.divB.part10.sect2.subsect3.art3.table10',
   'nbc.divBV2.part9.sect32.subsect3.art8.table1',
+]);
+
+// CLAUDE-AUTOFIX CL-090 CF-01778 | issue 1392 | Appendix Note tables that print no "Forming Part of ..." line in the PDF (pp. 733-734).
+const NO_FORMING_PART_TABLE_IDS = new Set<string>([
+  'nbc.divBV2.part9.appendix.appnote134b.table1',
+  'nbc.divBV2.part9.appendix.appnote134c.table1',
+  'nbc.divBV2.part9.appendix.appnote134c.table2',
 ]);
 
 const formatFormingPartText = (formingPart: FormingPartReference[] | undefined): string | null => {
@@ -821,7 +832,9 @@ const getTableNumberDisplay = (tableNumber: string): string => {
     return normalized.endsWith('.') || normalized.endsWith(')') ? normalized : `${normalized}.`;
   }
 
+  // CLAUDE-AUTOFIX CF-08042 | issue 5106 | A number that already ends with a period (e.g. from Note A-Table 9.11.1.4. or A-9.23.13.) gets no second period, as in the PDF.
   const omitTrailingDot =
+    normalized.endsWith('.') ||
     normalized.endsWith(')') ||
     /^[A-Za-z]-\d+$/i.test(normalized) ||
     /\.-[A-Z]$/i.test(normalized); // letter suffix e.g. 3.2.3.1.-A
@@ -1537,10 +1550,30 @@ export const TableBlock: React.FC<TableBlockProps> = ({
     return true;
   });
   const formingPartEntries = rawTable.formingPart ?? rawTable.forming_part;
-  const tableNumber = tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
+  // CLAUDE-AUTOFIX CL-089 CF-08525 | issue 737 | Untitled worked-example tables in appendix Notes have no "Table A-..." caption in the PDF, so none is invented.
+  // CLAUDE-AUTOFIX CL-098 CF-10784 | issue 551 | An untitled table placed directly in a Note (A-9.23.13.) has no "Table A-..." caption in the PDF either.
+  const isUntitledExampleTable =
+    /\.(?:example\d+|appnote\d+)\.table\d+$/i.test(rawTable.id ?? '') && !(typeof resolvedTitle === 'string' && resolvedTitle.trim());
+  const tableNumber = isUntitledExampleTable
+    ? null
+    : tableNumberOverride ?? getResolvedTableNumber(rawTable, appendixSiblingTableCount);
   const tableNumberDisplay = tableNumber ? getTableNumberDisplay(tableNumber) : null;
   const tableNotesHeading = tableNumberDisplay ? `Notes to ${tableNumberDisplay}:` : 'Table notes';
-  const formattedFormingPartText = formatFormingPartText(formingPartEntries);
+  // CLAUDE-AUTOFIX CL-083 CF-08737 | issue 1457 | The PDF prints no "Forming Part of ..." line under any Appendix C or D table (checked PDF pp. 1560-1640), so none is shown there.
+  // CLAUDE-AUTOFIX CL-090 CF-01778 | issue 1392 | A table forming part of an appendix Note reads "Forming Part of Note A-3.2.6.6.(1)" (note number, not "Article 3."); Tables A-9.23.13.7.(3) and (4)-A/-B have no such line in the PDF.
+  const appnoteFormingPartNumber =
+    formingPartEntries?.length === 1 &&
+    /\.appendix\.appnote[A-Za-z0-9]+$/.test(formingPartEntries[0]?.target ?? '') &&
+    typeof rawTable.number === 'string' &&
+    /^A-/.test(rawTable.number)
+      ? rawTable.number.replace(/([.)])-[A-Z]\.?$/, '$1')
+      : null;
+  const formattedFormingPartText = /^nbc\.divB\.appendix[CD]\./.test(rawTable.id ?? '') ||
+    NO_FORMING_PART_TABLE_IDS.has(rawTable.id ?? '')
+    ? null
+    : appnoteFormingPartNumber
+      ? `Forming Part of Note ${appnoteFormingPartNumber}`
+      : formatFormingPartText(formingPartEntries);
   const formingPartText = LOWERCASE_FORMING_PART_TABLE_IDS.has(rawTable.id)
     ? formattedFormingPartText?.replace(/^Forming Part/, 'Forming part') ?? null
     : formattedFormingPartText;
@@ -1660,6 +1693,14 @@ export const TableBlock: React.FC<TableBlockProps> = ({
   // for height matching.
   const pinnedHeaderFirstColRows = useMemo(() => {
     if (!usesSplitScrollLayout) return [];
+    // CLAUDE-AUTOFIX CL-100 CF-01199 | issue 6654 | A first header cell spanning several columns (Table 3.2.3.1.-C "Exposing Building Face") cannot be pinned into column 0 without being drawn twice, so no overlay then.
+    let col0Covered = 0;
+    for (const row of displayHeaderRows) {
+      if (col0Covered > 0) { col0Covered -= 1; continue; }
+      const first = row.cells[0];
+      if (first && typeof first.colspan === 'number' && first.colspan > 1) return [];
+      col0Covered = first && typeof first.rowspan === 'number' && first.rowspan > 1 ? first.rowspan - 1 : 0;
+    }
     let col0ActiveRowspan = 0;
     return displayHeaderRows.map((row) => {
       const isCol0Covered = col0ActiveRowspan > 0;

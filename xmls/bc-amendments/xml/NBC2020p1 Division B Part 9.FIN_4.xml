@@ -600,6 +600,7 @@ the effective thermal resistance of the wall assembly, RSI<sub>eff</sub>.</item>
             </replace>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-09983 | issue 1523 | The heading row reads only "9.7.2.1. Entrance Doors" (bold), as in the PDF; "Performance Expectations" is not in the PDF. -->
         <amendment id="bc-qa-e0c42d0a83" sequence="972" description="Issue 3703 Incorrect Content at B.9.38.1.1.Tbl1#Row270.Col1">
             <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row270"/>
             <replace preserve-references="true">
@@ -608,19 +609,20 @@ the effective thermal resistance of the wall assembly, RSI<sub>eff</sub>.</item>
                                                      <entry colspan="2">
                                                         <ref type="internal"
                                                              target="nbc.divBV2.part9.sect7.subsect2.art1"
-                                                             display-type="title"/> Performance Expectations
+                                                             display-type="title"/>
                                                      </entry>
                                                   </row>
                 </new-content>
             </replace>
         </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09983 | issue 1525 | The heading row reads only "9.27.3.6. Face Sealed Cladding" (bold), as in the PDF, without "(c)". -->
         <amendment id="bc-qa-b88d5c5f69" sequence="973" description="Issue 4325 Incorrect Content at B.9.38.1.1.Tbl1#Row4345.Col2">
             <target type="canonical-id" id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row4345"/>
             <replace preserve-references="true">
                 <new-content source="bc">
                     <row xml:id="nbc.divBV2.part9.sect38.subsect1.art1.table1.row4345"
                                                        rowsep="1">
-                                                     <entry colspan="2">(c)
+                                                     <entry colspan="2">
                                                         <ref type="internal"
                                                              target="nbc.divBV2.part9.sect27.subsect3.art6"
                                                              display-type="title"/>

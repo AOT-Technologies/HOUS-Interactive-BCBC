@@ -1339,6 +1339,18 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     return 'Note';
   };
 
+  // CLAUDE-AUTOFIX CF-08312 | issue 5261 | Figure numbers the PDF prints for appendix Notes whose figures are numbered by Sentence (in figure order).
+  const APPENDIX_NOTE_FIGURE_NUMBERS: Record<string, string[]> = {
+    'A-9.32.3.4.': [
+      'A-9.32.3.4.(2)',
+      'A-9.32.3.4.(3)',
+      'A-9.32.3.4.(4)',
+      'A-9.32.3.4.(5)(b)(i)',
+      'A-9.32.3.4.(5)(b)(ii)',
+      'A-9.32.3.4.(6)',
+    ],
+  };
+
   const toAlphabetOrdinalUpper = (value: number): string => {
     if (value <= 0 || Number.isNaN(value)) return String(value);
 
@@ -1414,6 +1426,15 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     };
 
     appendBlockNumbers(note);
+
+    // CLAUDE-AUTOFIX CF-08312 | issue 5261 | The PDF numbers the 6 figures of Note A-9.32.3.4. by the Sentence they illustrate, not -A to -F.
+    const pdfFigureNumbers = APPENDIX_NOTE_FIGURE_NUMBERS[noteNumber];
+    if (pdfFigureNumbers) {
+      Array.from(figureNumberById.keys()).forEach((id, index) => {
+        if (pdfFigureNumbers[index]) figureNumberById.set(id, pdfFigureNumbers[index]);
+      });
+      figureIndex = 0;
+    }
 
     // Single table/figure in a note uses the bare note number (no letter suffix)
     if (tableIndex === 1) {
