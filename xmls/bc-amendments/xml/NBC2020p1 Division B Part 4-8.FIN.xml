@@ -83,9 +83,10 @@
                    description="Add CSA A344.2 reference for steel pallet storage racks in Article 4.1.8.18.(13)">
             <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.sent13"/>
             <modify>
+                <!-- CLAUDE-AUTOFIX CF-02385 | issue 1273 | Restored "the" in "Standard for the design" and "provided the design", as in the PDF. -->
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>Free-standing steel pallet storage racks are permitted to be designed according to CSA A344.2, "Standard for design and construction of steel storage racks," and to resist earthquake effects using rational analysis, provided design achieves the minimum performance level required by <ref type="internal"
+                        <text>Free-standing steel pallet storage racks are permitted to be designed according to CSA A344.2, "Standard for the design and construction of steel storage racks," and to resist earthquake effects using rational analysis, provided the design achieves the minimum performance level required by <ref type="internal"
                                                                                                                                                                                                                                                                                                                                   target="nbc.divB.part4.sect1.subsect8"
                                                                                                                                                                                                                                                                                                                                   display-type="long"/> (See <ref type="internal"
                                                             target="nbc.divB.part4.appendix.appnote107"
@@ -109,6 +110,43 @@
                         <replace>The designer must ensure that the building complies with the BC Building Code Book I and Book II: Plumbing Systems</replace>
                     </find-replace>
                 </text-change>
+            </modify>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-02954 | issue 291 | The list in Note A-4.1.8.19.(2) is lettered (a) to (e), as in the PDF, not bulleted. -->
+        <amendment id="bc-autofix-a41819-2-list" sequence="4.5"
+                   description="Note A-4.1.8.19.(2): lettered list as in the BC PDF">
+            <target type="canonical-id" id="nbc.divB.part4.appendix.appnote111.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part4.appendix.appnote111.para1">It
+is strongly recommended that a design review of the seismically isolated
+structure and its isolation system be carried out by an independent
+team of professional engineers and geoscientists experienced in seismic
+analysis methods and the theory and application of seismic isolation.
+The design review should include, but not be limited to, the following:<list type="alphabetic">
+                        <item>site-specific spectra,</item>
+                        <item>ground motion time histories, </item>
+                        <item>modeling and analyses,</item>
+                        <item>testing program and results, and </item>
+                        <item>final design of all structural framing elements and isolation
+system components.</item>
+                     </list>
+                  </paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
+        <!-- CLAUDE-AUTOFIX CF-10640 | issue 364 | Table 4.1.6.10., Case I, Cw column reads 'As stated in 4.1.6.2.(3) and (4)' without the word Sentence, as in the PDF. -->
+        <amendment id="bc-autofix-t41610-case1" sequence="4.6"
+                   description="Table 4.1.6.10.: Case I Cw cell reads 'As stated in 4.1.6.2.(3) and (4)' as in the PDF">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect6.art10.table1.row4"/>
+            <modify>
+                <element-replace element="entry" position="3">
+                    <new-content source="bc">
+                        <entry>As stated <ref type="internal" target="nbc.divB.part4.sect1.subsect6.art2.sent3" display-type="number" pretext="in"/> <ref type="internal" target="nbc.divB.part4.sect1.subsect6.art2.sent4" display-type="short" pretext="and"/></entry>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -189,7 +227,8 @@
             <modify>
                 <element-replace element="text">
                     <new-content source="bc">
-                        <text>except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent4" display-type="short"/>, <ref type="standard" target="csaa440S1" standardId="csaa440S1"/></text>
+                        <!-- CLAUDE-AUTOFIX CF-03424 | issue 1919 | The title of CSA A440S1 reads '...A440, North American...' here, as in the PDF; the standards table title has 'A440-17'. -->
+                        <text>except as permitted in <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent4" display-type="short"/>, <ref type="standard" target="csaa440S1" standardId="csaa440S1" ref-style="notitle"/>, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440, North American Fenestration Standard/Specification for windows, doors, and skylights.”</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -209,7 +248,8 @@
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part5.sect9.subsect2.art2.sent4" number="4">
                         <!-- CLAUDE-AUTOFIX CF-03431 | issue 9956 | The PDF prints Section 5.2 without a final period here, so the reference carries its own label. -->
-                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long">Section 5.2</ref> may be used instead of the loads and procedures set out in the standard. (See Note 5.8.2.2.(4).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-03430 | issue 1923 | The Note reference reads Note 5.9.2.2.(4), as in the PDF (was 5.8.2.2.(4)). -->
+                        <text>For the purposes of conformance with <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2.sent1.clause2" display-type="medium"/>, loads and procedures from <ref type="internal" target="nbc.divB.part5.sect2" display-type="long">Section 5.2</ref> may be used instead of the loads and procedures set out in the standard. (See Note 5.9.2.2.(4).)</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -251,18 +291,32 @@
             <target type="canonical-id" id="nbc.divB.part5.sect9.subsect2.art3.sent1"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-03433 | issue 1924 | References Subsection 5.1.4. and Note A-5.9.2.3.(1) as in the PDF (was Article 5.1.4.1. and Note A-5.9.2.2.). -->
                     <sentence xml:id="nbc.divB.part5.sect9.subsect2.art3.sent1" number="1">
-                        <text>Windows, doors, skylights and their components that do not conform to <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2" display-type="long"/> shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4.art1" display-type="long"/>, <ref type="internal" target="nbc.divB.part5.sect4" display-type="long"/> and <ref type="internal" target="nbc.divB.part5.sect6" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote44" display-type="short"/>.)</text>
+                        <text>Windows, doors, skylights and their components that do not conform to <ref type="internal" target="nbc.divB.part5.sect9.subsect2.art2" display-type="long"/> shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4" display-type="long"/>, <ref type="internal" target="nbc.divB.part5.sect4" display-type="long"/> and <ref type="internal" target="nbc.divB.part5.sect6" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote45" display-type="short"/>.)</text>
                     </sentence>
                 </new-content>
             </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03437 | issue 1928 | Sentence 5.9.3.2.(1) refers to Subsection 5.1.4. as in the PDF (NBC: Article 5.1.4.1.). -->
+        <amendment id="bc-custom-1113-5932" sequence="12"
+                   description="Sentence 5.9.3.2.(1) refers to Subsection 5.1.4. as in the BC Building Code">
+            <target type="canonical-id" id="nbc.divB.part5.sect9.subsect3.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>Other fenestration assemblies and their components shall be designed and constructed in accordance with <ref type="internal" target="nbc.divB.part5.sect1.subsect4" display-type="long"/> (See <ref type="internal" target="nbc.divB.part5.appendix.appnote49" display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
         </amendment>
         
         <!-- ================================================================== -->
         <!-- Amendment 013: Add sentence about fire-protection rating          -->
         <!-- Article 5.8.3.1 - General                                         -->
         <!-- ================================================================== -->
-        <amendment id="bc-013" sequence="13"
+        <!-- CLAUDE-AUTOFIX CF-03135 | issue 7385 | Disabled bc-013: it added a second Sentence 5.9.3.1.(2) (with the wrong id part5.sect8...) next to the one from bc-qa-68c9562179, so the website showed Sentence (2) twice; the PDF has it once. -->
+        <!-- <amendment id="bc-013" sequence="13"
                    description="Add sentence (2) about fire-protection rating in Article 5.8.3.1">
             <target type="position" 
                     parent-id="nbc.divB.part5.sect9.subsect3.art1"
@@ -274,8 +328,19 @@
                     </sentence>
                 </new-content>
             </insert>
-        </amendment>
+        </amendment> -->
         
+        <!-- CLAUDE-AUTOFIX CF-09902 | issue 308 | Note A-5.9.2.2., Design Values: the Canadian Supplement title reads "AAMA/WDMA/CSA 101/I.S.2/A440" without "-17", as in the PDF. -->
+        <amendment id="bc-autofix-a5922-div1" sequence="13.9"
+                   description="Note A-5.9.2.2. Design Values paragraph: standard title as in the PDF">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote44.div1.para1"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <paragraph xml:id="nbc.divB.part5.appendix.appnote44.div1.para1">CSA A440S1, “Canadian Supplement to AAMA/WDMA/CSA 101/I.S.2/A440, North American Fenestration Standard/Specification for windows, doors, and skylights,” requires that the individual performance levels achieved by the product for structural resistance, water penetration resistance and air leakage resistance be reported on the product's performance label.</paragraph>
+                </new-content>
+            </replace>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 014: Replace NBC with code in appendix note             -->
         <!-- Appendix Note A-5.1.4.1.(2) - Multiple Functions                 -->
@@ -303,12 +368,14 @@
             <modify>
                 <element-replace element="paragraph" position="6">
                     <new-content source="bc">
-                        <paragraph xml:id="nbc.divB.part5.appendix.appnote8.para6">It is also noted that <ref type="standard" target="csas478" standardId="csas478"/> contains requirements
+                        <!-- CLAUDE-AUTOFIX CF-10098 | issue 304 | CSA S478 without its title, as in the PDF. -->
+                        <!-- CLAUDE-AUTOFIX CF-10098 | issue 303 | CSA S478 without its title, as in the PDF. -->
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote8.para6">It is also noted that CSA S478 contains requirements
                             for actions beyond the scope of the British Columbia Building Code, which may not be the responsibility
                             of the designer, builder or authority having jurisdiction. These include
                             requirements relating to quality assurance, inspection, maintenance,
                             minimum design service lives and potential impacts of climate change,
-                            which are not addressed in the Code. The reference herein to <ref type="standard" target="csas478" standardId="csas478"/> is not intended to
+                            which are not addressed in the Code. The reference herein to CSA S478 is not intended to
                             imply that the designer, builder or authority having jurisdiction
                             adopt, apply or enforce any of these requirements.</paragraph>
                     </new-content>
@@ -365,8 +432,9 @@
             <target type="canonical-id" id="nbc.divB.part5.appendix.appnote43"/>
             <replace preserve-references="true">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-03670 | issue 7389 | The PDF numbers this Note A-5.9.2.1.(3) (it sits between A-Table 5.9.1.1. and A-5.9.2.2.); the old Part 5 Section 8 number 5.8.2.1.(3) is not in the PDF. -->
                     <application-note xml:id="nbc.divB.part5.appendix.appnote43" vendor-id="en001183" refs="es007991">
-                        <number>5.8.2.1.(3)</number>
+                        <number>5.9.2.1.(3)</number>
                         <title>Airtightness and Watertightness of Windows, Doors, Skylights, Other Fenestration Assemblies and their Components Required to have a Fire-Protection Rating</title>
                         <paragraph>The airtightness and watertightness requirements are waived for these products when used in such an application, in recognition of the fact that the availability of assemblies that meet both the requirements of the applicable standards and the requirements for fire resistance may be limited. However, control of air and water leakage should not be ignored: measures should be taken to attempt to comply with applicable requirements.</paragraph>
                     </application-note>
@@ -382,16 +450,12 @@
                    description="Add ASTM E 331 and E 547 standards to Note A-5.8.3">
             <target type="canonical-id" id="nbc.divB.part5.appendix.appnote47"/>
             <modify>
-                <element-change xpath-within-target=".//paragraph/list">
-                    <add-child>
-                        <item>
-                            <ref type="standard" target="astme331" standardId="astme331"/>
-                        </item>
-                        <item>
-                            <ref type="standard" target="astme547" standardId="astme547"/>
-                        </item>
-                    </add-child>
-                </element-change>
+                <!-- CLAUDE-AUTOFIX CF-09894 | issue 1155 | The merge engine has no element-change/add-child, so the two ASTM items were never added; the paragraph is now replaced (NBC text unchanged) with ASTM E 331 and E 547 added at the end of the list, as in the PDF. -->
+                <element-replace element="paragraph">
+                    <new-content source="bc">
+                        <paragraph xml:id="nbc.divB.part5.appendix.appnote47.para1"><ref type="internal" target="nbc.divB.part5.sect9.subsect3" display-type="long"/> references ASTM test methods. The following AAMA standards can also be used to evaluate the performance characteristics of other fenestration assemblies:<list type="bulleted"><item><ref type="standard" target="aama501" standardId="aama501" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.1" standardId="aama501.1" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.2" standardId="aama501.2" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.4" standardId="aama501.4" ref-style="default" ref-punc="comma"/></item><item><ref type="standard" target="aama501.5" standardId="aama501.5" ref-style="default" ref-punc="comma"/> and</item><item><ref type="standard" target="aama501.6" standardId="aama501.6" ref-style="default" ref-punc="period"/></item><item>ASTM E 331, “Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Uniform Static Air Pressure Difference.”</item><item>ASTM E 547, “Water Penetration of Exterior Windows, Skylights, Doors, and Curtain Walls by Cyclic Static Air Pressure Difference.”</item></list></paragraph>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -475,7 +539,8 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part6.sect2.subsect1.art5.sent2" number="2">
-                        <text>A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of <ref type="standard" target="csab365" standardId="csab365"/>.</text>
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 312 | The standard is printed as in the PDF (CAN/CSA-B365). -->
+                        <text>A solid-fuel burning boiler accepted for use under section 10 of the Safety Standards Act satisfies section 4.1 of CAN/CSA-B365, “Installation Code for Solid-Fuel-Burning Appliances and Equipment.”</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -499,6 +564,19 @@
             </insert>
         </amendment>
         
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 314 | Clause 6.3.2.9.(2)(a) reads "reserved", as in the PDF (it referred to the Reserved Sentences 6.2.1.2.(2) and (3)). -->
+        <amendment id="bc-autofix-6329-2a" sequence="25.1"
+                   description="Replace Clause 6.3.2.9.(2)(a) with reserved">
+            <target type="canonical-id" id="nbc.divB.part6.sect3.subsect2.art9.sent2.clause1"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divB.part6.sect3.subsect2.art9.sent2.clause1" letter="a">
+                        <text>reserved</text>
+                    </clause>
+                </new-content>
+            </replace>
+        </amendment>
+
         <!-- ================================================================== -->
         <!-- Amendment 026: REMOVED - Article 6.3.2.14 already exists in NBC   -->
         <!-- Article 6.3.2.14 (Cleaning Devices) is present in canonical NBC   -->
@@ -752,19 +830,25 @@
                             </clause>
                         </sentence>
                         <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6" number="6">
-                            <text>CO alarms installed in an assembly occupancy, a business and personal services occupancy, or a mercantile occupancy as required by this Article shall conform to</text>
+                            <!-- CLAUDE-AUTOFIX CF-03767 | issue 7274 | Restored defined-term italic on the three occupancies to match the PDF (also CF-03768, CF-03769). -->
+                            <text>CO alarms installed in an <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, a <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or a <ref type="term" target="mrcntl-c">mercantile occupancy</ref> as required by this Article shall conform to</text>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause1" letter="a">
-                                <text><ref type="standard" target="csa6.19" standardId="csa6.19"/>, notwithstanding the scope of that standard,</text>
+                                <!-- CLAUDE-AUTOFIX CF-10095 | issue 315 | The standard is printed as in the PDF (CAN/CSA-6.19, title case). -->
+                                <text>CAN/CSA-6.19, “Residential Carbon Monoxide Alarming Devices,” notwithstanding the scope of that standard,</text>
                             </clause>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause2" letter="b">
-                                <text><ref type="standard" target="ul2034" standardId="ul2034"/>, notwithstanding the scope of that standard, or</text>
+                                <!-- CLAUDE-AUTOFIX CF-03773 | issue 2075 | UL 2034 is not in Table 1.3.1.2., so the reference printed its id 'ul2034'; it now prints the number and title as in the PDF. -->
+                                <text><ref type="standard" target="ul2034" standardId="ul2034">UL 2034</ref>, “Standard for Single and Multiple Station Carbon Monoxide Alarms,” notwithstanding the scope of that standard, or</text>
                             </clause>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.clause3" letter="c">
                                 <text>good engineering practice.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-6.9.3.1.(6).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divB.part6.sect9.subsect3.art1.sent6.seealso">(See <ref type="internal" target="nbc.divB.part6.appendix.appnote23a" display-type="short">Note A-6.9.3.1.(6)</ref>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7" number="7">
-                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning appliance serves an assembly occupancy, business and personal services occupancy, or mercantile occupancy, a CO alarm shall be,</text>
+                            <!-- CLAUDE-AUTOFIX CF-03775 | issue 7277 | Restored defined-term italic on appliance and the three occupancies to match the PDF (also CF-03776, CF-03777). -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, where a fuel-burning <ref type="term" target="pplnc">appliance</ref> serves an <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or <ref type="term" target="mrcntl-c">mercantile occupancy</ref>, a CO alarm shall be,</text>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6439 Formatting 8a4190c429 -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6440 Formatting 4606cbbdc8 -->
@@ -786,9 +870,12 @@
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2080 Formatting cc49eafa77 -->
                                 <text>installed in the room or space in which the fuel-burning <ref type="term" target="pplnc">appliance</ref> is located.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-6.9.3.1.(7).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divB.part6.sect9.subsect3.art1.sent7.seealso">(See <ref type="internal" target="nbc.divB.part6.appendix.appnote23b" display-type="short">Note A-6.9.3.1.(7)</ref>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8" number="8">
-                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each suite of assembly occupancy, business and personal services occupancy, or mercantile occupancy that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance, or that is adjacent to either an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning appliance is also adjacent, a CO alarm shall be installed</text>
+                            <!-- CLAUDE-AUTOFIX CF-03779 | issue 7280 | Restored defined-term italic on suite, occupancies and appliance to match the PDF (also CF-03780 to CF-03783). -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent9" display-type="short"/>, for each <ref type="term" target="t">suite</ref> of <ref type="term" target="mbl-ccpn">assembly occupancy</ref>, <ref type="term" target="bn-nd-pr">business and personal services occupancy</ref>, or <ref type="term" target="mrcntl-c">mercantile occupancy</ref> that shares a wall or floor/ceiling assembly with either a <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref>, or that is adjacent to either an attic or crawl space to which the <ref type="term" target="trg-grg">storage garage</ref> or a <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref> is also adjacent, a CO alarm shall be installed</text>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.clause1" letter="a">
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2081 Formatting db82de1f25 -->
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2082 Formatting 75ca91b68d -->
@@ -803,6 +890,8 @@
                                 <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:2085 Formatting 7c6c12fc5b -->
                                 <text>in each <ref type="term" target="rvc-rm">service room</ref> containing a fuel-burning <ref type="term" target="pplnc">appliance</ref>.</text>
                             </clause>
+                            <!-- CLAUDE-AUTOFIX CF-01505 | issue 6366 | The PDF prints "(See Note A-6.9.3.1.(8).)" after the Clauses of this BC Sentence; the Sentence had no see-also. -->
+                            <see-also xml:id="nbc.divB.part6.sect9.subsect3.art1.sent8.seealso">(See <ref type="internal" target="nbc.divB.part6.appendix.appnote23c" display-type="short">Note A-6.9.3.1.(8)</ref>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9" number="9">
                             <text>CO detectors are permitted to be installed in lieu of CO alarms required by this Article provided the CO detectors</text>
@@ -810,7 +899,8 @@
                                 <text>sound audible signals within the location they serve, as described in <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent3" display-type="short" pretext="Sentences"/> to <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent5" display-type="number"/>, <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent7" display-type="number"/> and <ref type="internal" target="nbc.divB.part6.sect9.subsect3.art1.sent8" display-type="number"/>,</text>
                             </clause>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause2" letter="b">
-                                <text>are installed in conformance with <ref type="standard" target="ulcs524" standardId="ulcs524"/>, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-10098 | issue 316 | Printed as in the PDF (“Installation of Fire Alarm Systems”). -->
+                                <text>are installed in conformance with CAN/ULC-S524, “Installation of Fire Alarm Systems,” and</text>
                             </clause>
                             <clause xml:id="nbc.divB.part6.sect9.subsect3.art1.sent9.clause3" letter="c">
                                 <text>form part of the fire alarm system.</text>
@@ -863,6 +953,18 @@
                     </application-note>
                 </new-content>
             </insert>
+        </amendment>
+        
+        <!-- CLAUDE-AUTOFIX CF-03913 CF-03914 | issue 7400 | BC repealed Sentences 6.2.1.2.(2) and (3) (both "Reserved" in the PDF) and replaced their guidance by BC Note A-6.2.1.2.(1) (bc-036); the PDF has no Notes A-6.2.1.2.(2) or (3), and nothing refers to them, so the two NBC Notes are deleted. -->
+        <amendment id="bc-autofix-6212-2" sequence="36.1"
+                   description="Delete NBC Note A-6.2.1.2.(2) (Sentence 6.2.1.2.(2) is Reserved in the BC code)">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote2"/>
+            <delete/>
+        </amendment>
+        <amendment id="bc-autofix-6212-3" sequence="36.2"
+                   description="Delete NBC Note A-6.2.1.2.(3) (Sentence 6.2.1.2.(3) is Reserved in the BC code)">
+            <target type="canonical-id" id="nbc.divB.part6.appendix.appnote3"/>
+            <delete/>
         </amendment>
         
         <!-- ================================================================== -->
@@ -935,7 +1037,9 @@
                     <application-note xml:id="nbc.divB.part6.appendix.appnote23a">
                         <number>6.9.3.1.(6)</number>
                         <title>Carbon Monoxide Devices</title>
-                        <paragraph>Although the scope of <ref type="standard" target="csa6.19" standardId="csa6.19"/> and <ref type="standard" target="ul2034" standardId="ul2034"/> is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications.</paragraph>
+                        <!-- CLAUDE-AUTOFIX CF-03773 | issue 2075 | UL 2034 prints its number and title, as in the PDF, not the id 'ul2034'. -->
+                        <!-- CLAUDE-AUTOFIX CF-10095 | issue 321 | The standard is printed as in the PDF (CAN/CSA-6.19, title case). -->
+                        <paragraph>Although the scope of CAN/CSA-6.19, “Residential Carbon Monoxide Alarming Devices,” and <ref type="standard" target="ul2034" standardId="ul2034">UL 2034</ref>, “Standard for Single and Multiple Station Carbon Monoxide Alarms,” is limited to carbon monoxide alarms for residential applications, their use may be appropriate in some other locations where they are not subject to excessive contaminants or risk of damage, such as in classrooms and meeting spaces. The designer is also given the option to follow good engineering practice. For example, some carbon monoxide devices used in storage garages may be suitable for use in other applications.</paragraph>
                     </application-note>
                     <application-note xml:id="nbc.divB.part6.appendix.appnote23b">
                         <number>6.9.3.1.(7)</number>
@@ -1028,7 +1132,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2" number="2">
-                        <text>For <ref type="term" target="bldng">buildings</ref> in open terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause1" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>=</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>10</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.28</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>1.0</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
+                        <!-- CLAUDE-AUTOFIX CF-10426 | issue 2089 | Removed the MathJax mpadded wrappers that raised every subscript to the baseline, so Ce, Cg, gp etc. print as subscripts as in the PDF. -->
+                        <text>For <ref type="term" target="bldng">buildings</ref> in open terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause1" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><mo>=</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>10</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.28</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>1.0</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
                         <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent2.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote58" display-type="short"/>.)</see-also>
                     </sentence>
                 </new-content>
@@ -1045,7 +1150,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3" number="3">
-                        <text>For <ref type="term" target="bldng">buildings</ref> in rough terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause2" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>=</mo><mn>0.5</mn><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>12.7</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.50</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>0.5</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
+                        <!-- CLAUDE-AUTOFIX CF-10426 | issue 2089 | Removed the MathJax mpadded wrappers that raised every subscript to the baseline, so Ce, Cg, gp etc. print as subscripts as in the PDF. -->
+                        <text>For <ref type="term" target="bldng">buildings</ref> in rough terrain, as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent5.clause2" display-type="long"/>, the value of C<sub>e</sub> for the design of the main structural system shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><mo>=</mo><mn>0.5</mn><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mi>h</mi><mn>12.7</mn></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>0.50</mn></mrow></msup><mo>,</mo><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>but</mtext><mtext>&#xA0;</mtext><mn>0.5</mn><mo>&#x2264;</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><mo>&#x2264;</mo><mn>2.5</mn></mrow></math></equation></text>
                         <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent3.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote58" display-type="short"/>.)</see-also>
                     </sentence>
                 </new-content>
@@ -1063,7 +1169,9 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4" number="4">
-                        <text>For the design of the main structural system, C<sub>g</sub> shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><mo>=</mo><mn>1</mn><mo>+</mo><msub><mi>g</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><mfrac><mi>&#x3C3;</mi><mi>&#x3BC;</mi></mfrac></mrow></math></equation>where<list type="variable"><item><variable>g<sub>p</sub></variable><description>= peak factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt><mo>+</mo><mfrac><mn>0.577</mn><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt></mfrac></mrow></math></equation>, and</description></item><item><variable>σ/μ</variable><description>= <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mi>K</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mpadded></mrow></msub></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>B</mi><mo>+</mo><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mi>&#x3B2;</mi></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>ν</variable><description>= average fluctuation rate calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><msqrt><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mrow><mi>s</mi><mi>F</mi><mo>+</mo><mi>&#x3B2;</mi><mi>B</mi></mrow></mfrac></msqrt></mrow></math></equation>,</description></item><item><variable>T</variable><description>= 3 600 s,</description></item><item><variable>K</variable><description>= 0.08 for open terrain and 0.10 for rough terrain,</description></item><item><variable>C<sub>eH</sub></variable><description>= exposure factor evaluated at reference height h = H,</description></item><item><variable>B</variable><description>= background turbulence factor, a function of w/H determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art8.figure1" display-type="long"/>,</description></item><item><variable>s</variable><description>= size reduction factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq5"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mi>&#x3C0;</mi><mn>3</mn></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>8</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><mi>H</mi></mrow><mrow><mn>3</mn><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mpadded></mrow></msub></mrow></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>10</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mpadded></mrow></msub><mi>w</mi></mrow><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mpadded></mrow></msub></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow></mrow></math></equation>,</description></item><item><variable>F</variable><description>= gust energy ratio calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq6"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><msup><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mn>4</mn><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>3</mn></mrow></msup></mrow></mfrac></mrow></math></equation>, where x<sub>0</sub> = (1 220f<sub>nD</sub>/V<sub>H</sub>), and</description></item><item><variable>β</variable><description>= damping ratio, which shall be determined by a rational method, or may be taken to be 0.01 for steel structures, 0.02 for concrete structures, and 0.015 for composite structures,</description></item></list>where<list type="variable"><item><variable>f<sub>nD</sub></variable><description>= natural frequency of vibration of the <ref type="term" target="bldng">building</ref> in the along-wind direction, in Hz,</description></item><item><variable>H</variable><description>= height of the <ref type="term" target="bldng">building</ref>,</description></item><item><variable>w</variable><description>= effective width of windward face of the <ref type="term" target="bldng">building</ref> calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq7"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub><msub><mi>w</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub></mrow><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mpadded></mrow></msub></mrow></mfrac></mrow></math></equation>, where w<sub>i</sub> = width normal to wind direction at height h<sub>i</sub>, and</description></item><item><variable>V<sub>H</sub></variable><description>= mean wind speed at the top of the structure, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq8"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow><msqrt><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mpadded></mrow></msub></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq9"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow></mrow></math></equation></variable><description>= reference wind speed at a height of 10 m, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq10"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mrow><mn>2</mn><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi></mrow><mi>&#x3C1;</mi></mfrac></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>I<sub>W</sub></variable><description>= importance factor for wind load, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.table1" display-type="long"/>,</description></item><item><variable>q</variable><description>= reference velocity pressure, in Pa, and</description></item><item><variable>ρ</variable><description>= air density = 1.2929 kg/m<super>3</super>.</description></item></list></text>
+                        <!-- CLAUDE-AUTOFIX CF-10426 | issue 2089 | Removed the MathJax mpadded wrappers that raised every subscript to the baseline, so Ce, Cg, gp etc. print as subscripts as in the PDF. -->
+                        <!-- CLAUDE-AUTOFIX CF-10432 | issue 2095 | The size reduction factor s in 4.1.7.8.(4) uses square brackets around both fractions, as in the PDF. -->
+                        <text>For the design of the main structural system, C<sub>g</sub> shall be calculated as follows:<equation type="display" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mrow></msub><mo>=</mo><mn>1</mn><mo>+</mo><msub><mi>g</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mrow></msub><mfrac><mi>&#x3C3;</mi><mi>&#x3BC;</mi></mfrac></mrow></math></equation>where<list type="variable"><item><variable>g<sub>p</sub></variable><description>= peak factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt><mo>+</mo><mfrac><mn>0.577</mn><msqrt><mn>2</mn><mi>ln</mi><mo data-mjx-texclass="NONE">&#x2061;</mo><mo stretchy="false">(</mo><mi>&#x3BD;</mi><mi>T</mi><mo stretchy="false">)</mo></msqrt></mfrac></mrow></math></equation>, and</description></item><item><variable>σ/μ</variable><description>= <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mi>K</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mrow></msub></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mi>B</mi><mo>+</mo><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mi>&#x3B2;</mi></mfrac><mo data-mjx-texclass="CLOSE">)</mo></mrow></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>ν</variable><description>= average fluctuation rate calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mrow></msub><msqrt><mfrac><mrow><mi>s</mi><mi>F</mi></mrow><mrow><mi>s</mi><mi>F</mi><mo>+</mo><mi>&#x3B2;</mi><mi>B</mi></mrow></mfrac></msqrt></mrow></math></equation>,</description></item><item><variable>T</variable><description>= 3 600 s,</description></item><item><variable>K</variable><description>= 0.08 for open terrain and 0.10 for rough terrain,</description></item><item><variable>C<sub>eH</sub></variable><description>= exposure factor evaluated at reference height h = H,</description></item><item><variable>B</variable><description>= background turbulence factor, a function of w/H determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art8.figure1" display-type="long"/>,</description></item><item><variable>s</variable><description>= size reduction factor calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq5"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mi>&#x3C0;</mi><mn>3</mn></mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>8</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mrow></msub><mi>H</mi></mrow><mrow><mn>3</mn><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mrow></msub></mrow></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">]</mo></mrow><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>10</mn><msub><mi>f</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>D</mi></mrow></mrow></msub><mi>w</mi></mrow><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>H</mi></mrow></mrow></msub></mfrac></mrow></mfrac><mo data-mjx-texclass="CLOSE">]</mo></mrow></mrow></math></equation>,</description></item><item><variable>F</variable><description>= gust energy ratio calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq6"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msubsup><mi>x</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mn>0</mn></mrow></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><msup><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mn>4</mn><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>3</mn></mrow></msup></mrow></mfrac></mrow></math></equation>, where x<sub>0</sub> = (1 220f<sub>nD</sub>/V<sub>H</sub>), and</description></item><item><variable>β</variable><description>= damping ratio, which shall be determined by a rational method, or may be taken to be 0.01 for steel structures, 0.02 for concrete structures, and 0.015 for composite structures,</description></item></list>where<list type="variable"><item><variable>f<sub>nD</sub></variable><description>= natural frequency of vibration of the <ref type="term" target="bldng">building</ref> in the along-wind direction, in Hz,</description></item><item><variable>H</variable><description>= height of the <ref type="term" target="bldng">building</ref>,</description></item><item><variable>w</variable><description>= effective width of windward face of the <ref type="term" target="bldng">building</ref> calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq7"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mfrac><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mrow></msub><msub><mi>w</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mrow></msub></mrow><mrow><mo data-mjx-texclass="OP">&#x2211;</mo><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></mrow></msub></mrow></mfrac></mrow></math></equation>, where w<sub>i</sub> = width normal to wind direction at height h<sub>i</sub>, and</description></item><item><variable>V<sub>H</sub></variable><description>= mean wind speed at the top of the structure, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq8"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow><msqrt><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>H</mi></mrow></mrow></msub></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq9"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mrow data-mjx-texclass="ORD"><mover><mi>V</mi><mo stretchy="false">&#xAF;</mo></mover></mrow></mrow></math></equation></variable><description>= reference wind speed at a height of 10 m, in m/s, calculated as <equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.eq10"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msqrt><mfrac><mrow><mn>2</mn><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mrow></msub><mi>q</mi></mrow><mi>&#x3C1;</mi></mfrac></msqrt></mrow></math></equation>,</description></item></list>where<list type="variable"><item><variable>I<sub>W</sub></variable><description>= importance factor for wind load, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.table1" display-type="long"/>,</description></item><item><variable>q</variable><description>= reference velocity pressure, in Pa, and</description></item><item><variable>ρ</variable><description>= air density = 1.2929 kg/m<super>3</super>.</description></item></list></text>
                         <see-also xml:id="nbc.divB.part4.sect1.subsect7.art8.sent4.seealso">(See <ref type="internal" target="nbc.divB.part4.appendix.appnote59" display-type="short"/>.)</see-also>
                     </sentence>
                 </new-content>
@@ -1142,7 +1250,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent2" number="2">
-                        <text>For an array of solar panels where the panels are installed close and parallel to the roof surface with their upper surface not more than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps around the panels of not less than 6 mm, the net positive or negative pressure difference between the upper and lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013704q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mi>p</mi><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><mi>E</mi><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>a</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent2.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding,</description></item><item><variable>E</variable><description>= edge factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent4" display-type="short"/>, and</description></item><item><variable>γ<sub>a</sub></variable><description>= pressure equalization factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent3" display-type="short"/>.</description></item></list></text>
+                        <!-- CLAUDE-AUTOFIX CF-10426 | issue 2089 | Removed the MathJax mpadded wrappers that raised every subscript to the baseline, so Ce, Cg, gp etc. print as subscripts as in the PDF. -->
+                        <text>For an array of solar panels where the panels are installed close and parallel to the roof surface with their upper surface not more than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps around the panels of not less than 6 mm, the net positive or negative pressure difference between the upper and lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013704q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mi>p</mi><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mrow></msub><mi>E</mi><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>a</mi></mrow></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent2.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding,</description></item><item><variable>E</variable><description>= edge factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent4" display-type="short"/>, and</description></item><item><variable>γ<sub>a</sub></variable><description>= pressure equalization factor, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent3" display-type="short"/>.</description></item></list></text>
                     </sentence>
                 </new-content>
             </replace>
@@ -1159,7 +1268,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent6" number="6">
-                        <text>For an array of solar panels mounted on a roof with a slope, α, less than or equal to 7°, where the panels are tilted relative to the roof surface, have a chord length, L<sub>p</sub>, not greater than 2 m, and are installed such that the height of their lowest point above the roof surface, h<sub>1</sub>, is not greater than 0.6 m, the height of their highest point above the roof surface, h<sub>2</sub>, is not greater than 1.2 m, and their tilt angle relative to the roof surface, ω, is not greater than 35°, or where the panels are installed parallel to the roof surface with their upper surface greater than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps not less than <measurement units="metric">6 mm</measurement> between the panels, the net positive or negative pressure difference between the upper and the lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013708q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>p</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent6.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mpadded></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mpadded></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>net</sub></variable><description>= net gust pressure coefficient, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent7" display-type="short"/>.</description></item></list></text>
+                        <!-- CLAUDE-AUTOFIX CF-10426 | issue 2089 | Removed the MathJax mpadded wrappers that raised every subscript to the baseline, so Ce, Cg, gp etc. print as subscripts as in the PDF. -->
+                        <text>For an array of solar panels mounted on a roof with a slope, α, less than or equal to 7°, where the panels are tilted relative to the roof surface, have a chord length, L<sub>p</sub>, not greater than 2 m, and are installed such that the height of their lowest point above the roof surface, h<sub>1</sub>, is not greater than 0.6 m, the height of their highest point above the roof surface, h<sub>2</sub>, is not greater than 1.2 m, and their tilt angle relative to the roof surface, ω, is not greater than 35°, or where the panels are installed parallel to the roof surface with their upper surface greater than <measurement units="metric">250 mm</measurement> above the roof surface and with gaps not less than <measurement units="metric">6 mm</measurement> between the panels, the net positive or negative pressure difference between the upper and the lower surfaces of a panel or the array shall be calculated as follows:<equation type="display" xml:id="es013708q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><msub><mi>p</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mrow></msub><mo>=</mo><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mrow></msub><mi>q</mi><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mrow></msub><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable><equation type="inline" xml:id="nbc.divB.part4.sect1.subsect7.art13.sent6.eq2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>I</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><mi>q</mi><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>e</mi></mrow></mrow></msub><mo>,</mo><mtext>&#xA0;</mtext><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>t</mi></mrow></mrow></msub></mrow></math></equation></variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art3.sent1" display-type="long"/>, determined in the same manner as for the roof cladding, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>net</sub></variable><description>= net gust pressure coefficient, as provided in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent7" display-type="short"/>.</description></item></list></text>
                     </sentence>
                 </new-content>
             </replace>
@@ -1176,7 +1286,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part4.sect1.subsect7.art13.sent7" number="7">
-                        <text>The net gust pressure coefficient, (C<sub>g</sub>C<sub>p</sub>)<sub>net</sub>, in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent6" display-type="short"/> shall be calculated as follows:<equation type="display" xml:id="es013709q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mpadded></mrow></msub><mo>=</mo><mo>&#xB1;</mo><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>c</mi></mrow></mpadded></mrow></msub><mi>E</mi><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mpadded></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mpadded></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>n</mi></mrow></mpadded></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable>γ<sub>p</sub></variable><description>= parapet factor, determined as the lesser of 1.2 and (0.9 + h<sub>pt</sub>/h),</description></item><item><variable>γ<sub>c</sub></variable><description>= chord factor, determined as the greater of (0.6 + 0.2L<sub>p</sub>) and 0.8,</description></item><item><variable>E</variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent2" display-type="short"/>, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>n</sub></variable><description>= normalized gust pressure coefficient, determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.figure2" display-type="long"/> based on ω and A<sub>N</sub>,</description></item></list>where<list type="variable"><item><variable>h<sub>pt</sub></variable><description>= height of the parapet above the roof surface, in m,</description></item><item><variable>h</variable><description>= reference height of the roof, in m,</description></item><item><variable>L<sub>p</sub></variable><description>= panel chord length, in m,</description></item><item><variable>ω</variable><description>= panel tilt angle relative to the roof surface, and</description></item><item><variable>A<sub>N</sub></variable><description>= normalized panel or array area, calculated as <equation type="inline" xml:id="es013709q3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>A</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>N</mi></mrow></mpadded></mrow></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mn>000</mn><mi>A</mi></mrow><mrow><mo data-mjx-texclass="OP" movablelimits="true">max</mo><mo stretchy="false">(</mo><msubsup><mi>L</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>b</mi></mrow></mpadded></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mo>,</mo><mn>25</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow></math></equation></description></item></list>where<list type="variable"><item><variable>A</variable><description>= panel or array area over which the wind load is being calculated, in m<super>2</super>, and</description></item><item><variable>L<sub>b</sub></variable><description>= normalized <ref type="term" target="bldng">building</ref> length, in m, determined as the lesser of <equation type="inline" xml:id="es013709q4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mo stretchy="false">(</mo><mn>0.4</mn><msqrt><mi>h</mi><msub><mi>W</mi><mrow data-mjx-texclass="ORD"><mpadded height="+0.25em" depth="-0.25em" voffset="+0.25em"><mrow data-mjx-texclass="ORD"><mi>L</mi></mrow></mpadded></mrow></msub></msqrt><mo stretchy="false">)</mo></mrow></math></equation>, h and W<sub>S</sub>,</description></item></list>where<list type="variable"><item><variable>W<sub>L</sub></variable><description>= longest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m, and</description></item><item><variable>W<sub>S</sub></variable><description>= smallest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m.</description></item></list></text>
+                        <!-- CLAUDE-AUTOFIX CF-10426 | issue 2089 | Removed the MathJax mpadded wrappers that raised every subscript to the baseline, so Ce, Cg, gp etc. print as subscripts as in the PDF. -->
+                        <text>The net gust pressure coefficient, (C<sub>g</sub>C<sub>p</sub>)<sub>net</sub>, in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent6" display-type="short"/> shall be calculated as follows:<equation type="display" xml:id="es013709q1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow xmlns=""><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>n</mi><mi>e</mi><mi>t</mi></mrow></mrow></msub><mo>=</mo><mo>&#xB1;</mo><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mrow></msub><msub><mi>&#x3B3;</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>c</mi></mrow></mrow></msub><mi>E</mi><mo stretchy="false">(</mo><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>g</mi></mrow></mrow></msub><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>p</mi></mrow></mrow></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>n</mi></mrow></mrow></msub></mrow></math></equation>where<list type="variable"><item><variable>γ<sub>p</sub></variable><description>= parapet factor, determined as the lesser of 1.2 and (0.9 + h<sub>pt</sub>/h),</description></item><item><variable>γ<sub>c</sub></variable><description>= chord factor, determined as the greater of (0.6 + 0.2L<sub>p</sub>) and 0.8,</description></item><item><variable>E</variable><description>= as defined in <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.sent2" display-type="short"/>, and</description></item><item><variable>(C<sub>g</sub>C<sub>p</sub>)<sub>n</sub></variable><description>= normalized gust pressure coefficient, determined from <ref type="internal" target="nbc.divB.part4.sect1.subsect7.art13.figure2" display-type="long"/> based on ω and A<sub>N</sub>,</description></item></list>where<list type="variable"><item><variable>h<sub>pt</sub></variable><description>= height of the parapet above the roof surface, in m,</description></item><item><variable>h</variable><description>= reference height of the roof, in m,</description></item><item><variable>L<sub>p</sub></variable><description>= panel chord length, in m,</description></item><item><variable>ω</variable><description>= panel tilt angle relative to the roof surface, and</description></item><item><variable>A<sub>N</sub></variable><description>= normalized panel or array area, calculated as <equation type="inline" xml:id="es013709q3"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><msub><mi>A</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>N</mi></mrow></mrow></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mn>000</mn><mi>A</mi></mrow><mrow><mo data-mjx-texclass="OP" movablelimits="true">max</mo><mo stretchy="false">(</mo><msubsup><mi>L</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>b</mi></mrow></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msubsup><mo>,</mo><mn>25</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow></math></equation></description></item></list>where<list type="variable"><item><variable>A</variable><description>= panel or array area over which the wind load is being calculated, in m<super>2</super>, and</description></item><item><variable>L<sub>b</sub></variable><description>= normalized <ref type="term" target="bldng">building</ref> length, in m, determined as the lesser of <equation type="inline" xml:id="es013709q4"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow xmlns=""><mo stretchy="false">(</mo><mn>0.4</mn><msqrt><mi>h</mi><msub><mi>W</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi>L</mi></mrow></mrow></msub></msqrt><mo stretchy="false">)</mo></mrow></math></equation>, h and W<sub>S</sub>,</description></item></list>where<list type="variable"><item><variable>W<sub>L</sub></variable><description>= longest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m, and</description></item><item><variable>W<sub>S</sub></variable><description>= smallest horizontal dimension of the <ref type="term" target="bldng">building</ref>, in m.</description></item></list></text>
                     </sentence>
                 </new-content>
             </replace>
@@ -1363,7 +1474,8 @@
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part5.sect9.subsect3.art1.sent2" number="2">
                         <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1927 Missing Content 68c9562179 -->
-                        <text>Other fenestration assemblies and their components that are required to have a <emphasis style="italic">fire-</emphasis> <emphasis style="italic">protection rating</emphasis> need not conform to the requirements of this Subsection. (See Note A-5.9.2.1.(3).)</text>
+                        <!-- CLAUDE-AUTOFIX CF-03135 | issue 7385 | Defined term 'fire-protection rating' as an italic term link and the See-Note as a link to Note A-5.9.2.1.(3) (taken from the disabled duplicate bc-013), as in the PDF. -->
+                        <text>Other fenestration assemblies and their components that are required to have a <ref type="term" target="fr-prtn">fire-protection rating</ref> need not conform to the requirements of this Subsection. (See <ref type="internal" target="nbc.divB.part5.appendix.appnote43" display-type="short"/>.)</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -1749,6 +1861,129 @@
                                                   <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:1243 Incorrect Content 7a26617dc8 -->
                         <text>T<sub>x</sub> = F<sub>x</sub>(e<sub>x</sub> − 0.10D<sub>nx</sub>) where Fx is determined in accordance with Sentence (7) and where each element of the <ref type="term" target="bldng">building</ref> is designed for the most severe effect of the above load cases, or</text>
                                                </subclause>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | Added the note reference that the PDF prints at the end of Sentence 6.2.1.2.(1). -->
+        <amendment id="bc-custom-6-2-1-2-1" sequence="834"
+                   description="Add note reference to Sentence 6.2.1.2.(1)">
+            <target type="canonical-id" id="nbc.divB.part6.sect2.subsect1.art2.sent1"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>The outdoor conditions to be used in designing heating, ventilating and air-conditioning systems shall be determined in conformance with <ref type="internal" target="nbc.divB.part1.sect1.subsect3" display-type="long" pretext="Subsection"/> (See <ref type="internal" target="nbc.divB.part6.appendix.appnote1a" display-type="short"/>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03791 | issue 2091 | Table 6.10.1.1 shows RESERVED for the Reserved Sentence 6.2.1.2.(2), as in the PDF. -->
+        <amendment id="bc-custom-6-10-1-1-row9" sequence="835"
+                   description="Table 6.10.1.1: Sentence 6.2.1.2.(2) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row9"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row9" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect2.subsect1.art2.sent2" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03791 | issue 2091 | Table 6.10.1.1 shows RESERVED for the Reserved Sentence 6.2.1.2.(3), as in the PDF. -->
+        <amendment id="bc-custom-6-10-1-1-row10" sequence="836"
+                   description="Table 6.10.1.1: Sentence 6.2.1.2.(3) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row10"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row10" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect2.subsect1.art2.sent3" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03791 | issue 2091 | The PDF has only an empty row after 6.2.1.2.(3) RESERVED, no [F44-OS3.4] attribution. -->
+        <amendment id="bc-custom-6-10-1-1-row11" sequence="837"
+                   description="Table 6.10.1.1: empty row after Sentence 6.2.1.2.(3)">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row11"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row11" rowsep="1">
+                        <entry/>
+                        <entry/>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 317 | Table 6.10.1.1 shows RESERVED for Sentence 6.3.2.14.(1), as in the PDF. -->
+        <amendment id="bc-autofix-6-10-1-1-row128" sequence="837.1"
+                   description="Table 6.10.1.1: Sentence 6.3.2.14.(1) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row128"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row128" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect3.subsect2.art14.sent1" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 318 | Table 6.10.1.1 shows RESERVED for Sentence 6.3.2.14.(2), as in the PDF. -->
+        <amendment id="bc-autofix-6-10-1-1-row129" sequence="837.2"
+                   description="Table 6.10.1.1: Sentence 6.3.2.14.(2) is RESERVED">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row129"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row129" rowsep="1">
+                        <entry><ref type="internal" target="nbc.divB.part6.sect3.subsect2.art14.sent2" display-type="shortNum"/></entry>
+                        <entry>RESERVED</entry>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10641 | issue 318 | The PDF has only an empty row after 6.3.2.14.(2) RESERVED, no [F44-OS3.4] attribution. -->
+        <amendment id="bc-autofix-6-10-1-1-row130" sequence="837.3"
+                   description="Table 6.10.1.1: empty row after Sentence 6.3.2.14.(2)">
+            <target type="canonical-id" id="nbc.divB.part6.sect10.subsect1.art1.table1.row130"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <row xml:id="nbc.divB.part6.sect10.subsect1.art1.table1.row130" rowsep="1">
+                        <entry/>
+                        <entry/>
+                    </row>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-03541 | issue 2002 | Note A-5.4.1.1.: "required in certain regions to reduce the radon concentration", as in the PDF (without "of Canada"). -->
+        <amendment id="bc-custom-a-5-4-1-1-para3" sequence="2349"
+                   description="Note A-5.4.1.1.: 'other measures may be required in certain regions to reduce the radon concentration'">
+            <target type="canonical-id" id="nbc.divB.part5.appendix.appnote20.para3"/>
+            <modify>
+                <text-change xpath-within-target="text()">
+                    <find-replace regex="true">
+                        <find>certain regions\s+of Canada\s+to reduce</find>
+                        <replace>certain regions to reduce</replace>
+                    </find-replace>
+                </text-change>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09868 | issue 5347 | Note (1) to Table 4.1.5.11. reads "See the Safety Standards Act and pursuant regulations.", as in the PDF (bc-001 replaces the row, but the note text lives in the table-notes). -->
+        <amendment id="bc-custom-t4-1-5-11-n1" sequence="2354"
+                   description="Note (1) to Table 4.1.5.11.: Safety Standards Act instead of ASME A17.1/CSA B44">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect5.art11.table1.note1"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <note xml:id="nbc.divB.part4.sect1.subsect5.art11.table1.note1" vendor-id="et000160-1">See the Safety Standards Act and pursuant regulations.</note>
+                </new-content>
+            </replace>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-09868 | issue 5347 | Note (3) to Table 4.1.8.18. reads "See also the Safety Standards Act and pursuant regulations.", as in the PDF (also CF-09873). -->
+        <amendment id="bc-custom-t4-1-8-18-n3" sequence="2355"
+                   description="Note (3) to Table 4.1.8.18.: Safety Standards Act instead of ASME A17.1/CSA B44">
+            <target type="canonical-id" id="nbc.divB.part4.sect1.subsect8.art18.table1.note3"/>
+            <replace preserve-references="false">
+                <new-content source="bc">
+                    <note xml:id="nbc.divB.part4.sect1.subsect8.art18.table1.note3" vendor-id="et001041-3">See also the Safety Standards Act and pursuant regulations.</note>
                 </new-content>
             </replace>
         </amendment>

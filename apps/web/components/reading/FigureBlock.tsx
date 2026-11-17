@@ -71,6 +71,20 @@ function extractFigureNumberFromId(id: string): string | undefined {
   return `${part}.${section}.${subsection}.${article}.-${toAlphabetOrdinalUpper(figureIndex)}`;
 }
 
+// CLAUDE-AUTOFIX CL-101 CF-09752 | issue 6265 | Figure numbers the PDF prints that cannot be derived from the id (Appendix D: D-2.6.1.-B, D-2.11.4.(4) ...; Note A-9.36.2.4.(1) examples: 1-1, 2-1); the JSON has no figure number.
+const PDF_FIGURE_NUMBERS: Record<string, string> = {
+  'nbc.divB.appendixD.appsect2.subsect3.article10.figure1': 'D-2.3.10.',
+  'nbc.divB.appendixD.appsect2.subsect6.article1.figure1': 'D-2.6.1.-A',
+  'nbc.divB.appendixD.appsect2.subsect6.article1.figure2': 'D-2.6.1.-B',
+  'nbc.divB.appendixD.appsect2.subsect6.article4.figure1': 'D-2.6.4.-A',
+  'nbc.divB.appendixD.appsect2.subsect6.article4.figure2': 'D-2.6.4.-B',
+  'nbc.divB.appendixD.appsect2.subsect11.article3.figure1': 'D-2.11.3.-A',
+  'nbc.divB.appendixD.appsect2.subsect11.article3.figure2': 'D-2.11.3.-B',
+  'nbc.divB.appendixD.appsect2.subsect11.article4.figure1': 'D-2.11.4.(4)',
+  'nbc.divBV2.part9.appendix.appnote223.div2.example1.figure1': '1-1',
+  'nbc.divBV2.part9.appendix.appnote223.div3.example1.figure1': '2-1',
+};
+
 function getFigureNoteNumber(noteId: string): string {
   const noteMatch = noteId.match(/\.note(\d+)$/i);
   return noteMatch?.[1] || noteId.split('.').pop() || noteId;
@@ -214,7 +228,8 @@ export const FigureBlock: React.FC<FigureBlockProps> = ({
   const rawImageSrc = figure.imageUrl || figure.graphic?.src;
   const imagePath = resolveImagePath(rawImageSrc);
   const altText = figure.altText || figure.graphic?.alt_text || figure.title || 'Figure';
-  const figureNumber = extractFigureNumberFromId(figure.id) || figure.number;
+  // CLAUDE-AUTOFIX CL-101 CF-09752 | issue 6265 | The PDF's figure number wins where it is known (see PDF_FIGURE_NUMBERS).
+  const figureNumber = PDF_FIGURE_NUMBERS[figure.id] || extractFigureNumberFromId(figure.id) || figure.number;
   const figureLabel = figureNumber ? `Figure ${figureNumber}` : 'Figure';
   const hideLabel = figure.hide_label === true;
   const formingPartEntries = figure.formingPart ?? figure.forming_part;

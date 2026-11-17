@@ -1614,6 +1614,13 @@
                                 <fn:string key="value"> [REF:internal:<xsl:value-of select="@xml:id"/>:short] </fn:string>
                             </fn:map>
                         </xsl:when>
+                        <!-- CLAUDE-AUTOFIX CL-036 CF-05801 | issue 9972 | Inline header notes with ids ending fnN (Tables 9.36.2.7.-A/-B/-D) are written as short note references labelled (N), so they show as (1) as in the PDF, not (fn1). -->
+                        <xsl:when test="self::note[@xml:id][matches(@xml:id, '\.fn\d+$')]">
+                            <fn:map>
+                                <fn:string key="type">text</fn:string>
+                                <fn:string key="value"> [REF:internal:<xsl:value-of select="@xml:id"/>:short:(<xsl:value-of select="replace(@xml:id, '^.*\.fn', '')"/>)] </fn:string>
+                            </fn:map>
+                        </xsl:when>
                         <xsl:when test="self::note[@xml:id]">
                             <fn:map>
                                 <fn:string key="type">text</fn:string>
@@ -1625,7 +1632,9 @@
                             <fn:map>
                                 <fn:string key="type">figure</fn:string>
                                 <!-- CLAUDE-AUTOFIX CL-007 CF-07500 | issue 4844 | The Part 9 span tables print no title above their drawings in the PDF: keep the description as alt text only. -->
-                                <xsl:if test="@alt and not(ancestor::table[starts-with(@xml:id, 'nbc.divBV2.part9.spectables1.')])">
+                                <!-- CLAUDE-AUTOFIX CF-09739 | issue 784 | The drawings in the Design column of Table D-6.1.1. print no "EXTW-n" caption in the PDF: keep the description as alt text only. -->
+                                <!-- CLAUDE-AUTOFIX CF-07984 | issue 510 | The drawings of Tables A-9.11.1.4.-A and -C have their captions in a separate row and no title above them in the PDF: keep the description as alt text only. -->
+                                <xsl:if test="@alt and not(ancestor::table[starts-with(@xml:id, 'nbc.divBV2.part9.spectables1.') or @xml:id = 'nbc.divB.appendixD.appsect6.subsect1.article1.table1' or @xml:id = 'nbc.divBV2.part9.appendix.appnote82.table1' or @xml:id = 'nbc.divBV2.part9.appendix.appnote82.table3'])">
                                     <fn:string key="title"><xsl:value-of select="@alt"/></fn:string>
                                 </xsl:if>
                                 <fn:map key="graphic">
@@ -1667,6 +1676,14 @@
                                 <xsl:text>[REF:internal:</xsl:text>
                                 <xsl:value-of select="@xml:id"/>
                                 <xsl:text>:short]</xsl:text>
+                            </xsl:when>
+                            <!-- CLAUDE-AUTOFIX CL-036 CF-05801 | issue 9972 | Inline header notes with ids ending fnN (Tables 9.36.2.7.-A/-B/-D) are written as short note references labelled (N), so they show as (1) as in the PDF, not (fn1). -->
+                            <xsl:when test="self::note[@xml:id][matches(@xml:id, '\.fn\d+$')]">
+                                <xsl:text>[REF:internal:</xsl:text>
+                                <xsl:value-of select="@xml:id"/>
+                                <xsl:text>:short:(</xsl:text>
+                                <xsl:value-of select="replace(@xml:id, '^.*\.fn', '')"/>
+                                <xsl:text>)]</xsl:text>
                             </xsl:when>
                             <xsl:when test="self::note[@xml:id]">
                                 <xsl:text>[REF:table-note:</xsl:text>
@@ -2251,6 +2268,11 @@
         <xsl:text>&#10;</xsl:text>
     </xsl:template>
 
+    <!-- CLAUDE-AUTOFIX CF-10725 | issue 2664 | Upright (roman) emphasis prints as plain text; the website showed the raw roman tag (two cells of Table A-9.36.2.4.(1)). -->
+    <xsl:template match="emphasis[@style = 'roman']" mode="rich-text-json" priority="2">
+        <xsl:apply-templates select="node()" mode="rich-text-json"/>
+    </xsl:template>
+
     <xsl:template match="emphasis" mode="rich-text-json">
         <xsl:text>&lt;</xsl:text>
         <xsl:value-of select="@style"/>
@@ -2292,7 +2314,8 @@
     <!-- CLAUDE-AUTOFIX CL-013 CF-00914 | issue 8022 | Standard references from the BC amendments (no ref-style) print as in the PDF: curly quotes, punctuation inside, agency only when not already in the number. -->
     <xsl:template match="ref[@type = 'standard'][not(@ref-style = 'abbr')]" mode="rich-text-json" priority="2">
         <xsl:variable name="entry" select="(key('standard-entry-by-ref-id', @target), key('standard-entry-by-ref-id', concat('d-', @target)), key('standard-entry-by-ref-id', replace(@target, '^d-', '')))[1]"/>
-        <xsl:variable name="row" select="$entry/parent::row"/>
+        <!-- CLAUDE-AUTOFIX CF-03674 | issue 2050 | A standard whose Table 1.3.1.2. row was revised (row inside revision-history) still finds its number and agency, so it prints as in the PDF (“Industrial Ventilation: ... for Design,”). -->
+        <xsl:variable name="row" select="$entry/parent::*[self::row or self::original or self::content]"/>
         <xsl:variable name="number" select="normalize-space($row/entry[@standard-ref-number][1]/@standard-ref-number)"/>
         <xsl:variable name="agency" select="normalize-space($row/entry[1][not(@standard-ref-id) and not(@standard-ref-number)])"/>
         <xsl:variable name="title" select="normalize-space($entry/@standard-ref-title)"/>
@@ -2323,7 +2346,8 @@
                     <xsl:text> </xsl:text>
                 </xsl:if>
                 <xsl:value-of select="$text"/>
-                <xsl:if test="$next-significant[self::text() and not(matches(., '^[\s,.;:)\]]'))] or $next-significant[self::ref]">
+                <!-- CLAUDE-AUTOFIX CF-05998 | issue 10272 | No space between a standard reference and a dash or closing quote typed right after it (S716.1—including), as in the PDF. -->
+                <xsl:if test="$next-significant[self::text() and not(matches(., '^([\s,.;:)\]&#8212;&#8221;]|-\w)'))] or $next-significant[self::ref]">
                     <xsl:text> </xsl:text>
                 </xsl:if>
             </xsl:otherwise>
@@ -2607,19 +2631,103 @@
                 <xsl:value-of select="$list-label"/>
             </xsl:if>
         </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-01052 | issue 690 | A short Sentence reference listed after a Sentence of the same Article (", ", "and", "or" as plain text, or a pretext the CL-020 rule does not handle such as pretext=" and" after a long Sentence) prints only (N), as in the PDF (Sentences 3.1.6.4.(1) and (2)). -->
+        <!-- CLAUDE-AUTOFIX CL-068 CF-05625 | issue 6536 | The same rule also covers a medium Sentence reference (Sentence 9.32.3.4.(2) or (3)), as in the PDF. -->
+        <xsl:variable name="sent-list-prev" select="if (@pretext) then (if (normalize-space(@pretext) = ('and', 'or', ',', ', and', ', or') and not(@pretext = normalize-space(@pretext) and $list-prev-ref/@display-type = @display-type and @display-type = ('long', 'short'))) then $list-prev-ref else ()) else $prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-10644 | issue 2018 | A Sentence joined only by a comma is a list item only when the list goes on after it; in "Sentences (9) to (12), Sentence (6) shall not apply" the comma ends a phrase, so the word stays, as in the PDF. -->
+        <xsl:if test="@type = 'internal' and @display-type = ('short', 'medium') and normalize-space(.) = '' and not($is-range-end) and not((normalize-space(@pretext) = ',' or (not(@pretext) and normalize-space(string($prev-significant[self::text()])) = ',')) and not($next-significant[self::ref] or $next-significant[self::text()][matches(., '^\s*(,|and(\s|$)|or(\s|$)|to(\s|$))')])) and matches(@target, '\.art\d+\.sent\d+$') and $sent-list-prev and matches($sent-list-prev/@target, '\.art\d+\.sent\d+$') and replace($sent-list-prev/@target, '\.sent\d+$', '') = replace(@target, '\.sent\d+$', '') and id(@target)/@number">
+            <xsl:text>:(</xsl:text>
+            <xsl:value-of select="id(@target)/@number"/>
+            <xsl:text>)</xsl:text>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-01388 | issue 808 | A medium reference to a Clause in the same Article prints "Clause (1)(b)" (or only "(1)(b)" when it follows another Clause of that Article in a list), as in the PDF. -->
+        <xsl:variable name="ctx-art" select="replace(string((ancestor::*[@xml:id][matches(@xml:id, '\.art\d+')])[last()]/@xml:id), '^(.*?\.art\d+).*$', '$1')"/>
+        <xsl:variable name="clause-list-prev" select="if (@pretext) then (if (normalize-space(@pretext) = ('and', 'or', ',', ', and', ', or')) then $list-prev-ref else ()) else $prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <xsl:if test="@type = 'internal' and @display-type = 'medium' and normalize-space(.) = '' and not($is-range-end) and $ctx-art != '' and matches(@target, '\.art\d+\.sent\d+\.clause\d+$') and replace(@target, '\.sent\d+\.clause\d+$', '') = $ctx-art and id(@target)/@letter">
+            <xsl:text>:</xsl:text>
+            <xsl:if test="not($clause-list-prev and matches($clause-list-prev/@target, '\.clause\d+$') and replace($clause-list-prev/@target, '\.sent\d+\.clause\d+$', '') = $ctx-art)">
+                <xsl:text>Clause </xsl:text>
+            </xsl:if>
+            <xsl:value-of select="concat('(', id(@target)/ancestor::sentence[1]/@number, ')(', id(@target)/@letter, ')')"/>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-02362 | issue 1261 | A number-only Sentence reference listed after a Sentence of another Article prints its full number, as in the PDF (Sentences 4.1.8.10.(8) and 4.1.8.16.(1)), not just (1). -->
+        <xsl:if test="@type = 'internal' and @display-type = 'number' and normalize-space(.) = '' and not(ancestor::entry) and not($is-range-end) and $range-end-label = '' and matches(@target, '\.art\d+\.sent\d+$') and $clause-list-prev and matches($clause-list-prev/@target, '\.art\d+\.sent\d+$') and replace($clause-list-prev/@target, '\.sent\d+$', '') != replace(@target, '\.sent\d+$', '') and id(@target)/@number">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(string-join(id(@target)/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.(', id(@target)/@number, ')')"/>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-05817 | issue 3049 | A short Clause reference (or a medium one into another Article) listed after a Clause of the same Sentence prints only its letter, as in the PDF (Clause 9.36.2.7.(9)(a) or (b); Clauses 3.8.3.12.(1)(f) and (g)). -->
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and (@display-type = 'short' or (@display-type = 'medium' and replace(@target, '\.sent\d+\.clause\d+$', '') != $ctx-art)) and not($is-range-end) and $range-end-label = '' and matches(@target, '\.art\d+\.sent\d+\.clause\d+$') and $clause-list-prev and matches($clause-list-prev/@target, '\.sent\d+\.clause\d+$') and replace($clause-list-prev/@target, '\.clause\d+$', '') = replace(@target, '\.clause\d+$', '') and not(@pretext = normalize-space(@pretext) and $list-prev-ref/@display-type = @display-type and @display-type = ('long', 'short')) and not((normalize-space(@pretext) = ',' or (not(@pretext) and normalize-space(string($prev-significant[self::text()])) = ',')) and not($next-significant[self::ref] or $next-significant[self::text()][matches(., '^\s*(,|and(\s|$)|or(\s|$)|to(\s|$))')])) and id(@target)/@letter">
+            <xsl:text>:(</xsl:text>
+            <xsl:value-of select="id(@target)/@letter"/>
+            <xsl:text>)</xsl:text>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-01215 | issue 745 | An Article, Subsection or Section reference joined by a pretext (and / or / ,) to a reference of the same level prints only its number, as in the PDF (Article 3.1.5.5. or 3.1.5.6.), also when the pretext has a leading space or the two display types differ (cases the CL-020 rule leaves out). -->
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and @display-type = ('long', 'short', 'medium') and normalize-space(@pretext) = ('and', 'or', ',', ', and', ', or') and not(@pretext = normalize-space(@pretext) and $list-prev-ref/@display-type = @display-type and @display-type = ('long', 'short')) and not($is-range-end) and $range-end-label = '' and $list-prev-ref and $list-level = ('art', 'subsect', 'sect') and replace($list-prev-ref/@target, '^.*\.([a-z]+)\d+$', '$1') = $list-level and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1) and substring($list-prev-ref/@target, 8, 1) = substring(@target, 8, 1) and id(@target)">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-10139 | issue 896 | The last Article, Subsection or Section of a list whose "or" / "and" pretext follows a separate comma also prints only its number, as in the PDF (9.27.9., or 9.27.10.). -->
+        <xsl:variable name="cl-comma-prev" select="$prev-significant[self::text()][normalize-space(.) = ',']/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and @display-type = ('long', 'short', 'medium') and normalize-space(@pretext) = ('or', 'and') and not($is-range-end) and $range-end-label = '' and $cl-comma-prev and $list-level = ('art', 'subsect', 'sect') and replace($cl-comma-prev/@target, '^.*\.([a-z]+)\d+$', '$1') = $list-level and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1) and substring($cl-comma-prev/@target, 8, 1) = substring(@target, 8, 1) and id(@target)">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-04478 | issue 2464 | Two Article, Subsection or Section references joined by plain "and" / "or" (no pretext) print as in the PDF: "Articles 5.4.1.1. and 6.2.1.1." (plural first, bare second) and "Article X or Y". -->
+        <xsl:variable name="pl-level" select="replace(@target, '^.*\.([a-z]+)\d+$', '$1')"/>
+        <xsl:variable name="pl-prev" select="$prev-significant[self::text()][normalize-space(.) = ('and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][@display-type = 'long'][normalize-space(.) = '']]"/>
+        <xsl:variable name="pl-next" select="$next-significant[self::text()][normalize-space(.) = 'and']/following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][@display-type = 'long'][not(@pretext)][normalize-space(.) = '']]"/>
+        <xsl:variable name="pl-ok" as="xs:boolean" select="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and not($is-range-end) and $range-end-label = '' and $pl-level = ('art', 'subsect', 'sect') and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1) and exists(id(@target))"/>
+        <xsl:variable name="pl-head" select="if ($pl-prev) then $pl-prev else ."/>
+        <xsl:variable name="pl-head-before" select="$pl-head/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::text()][matches(normalize-space(.), ',$')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal']]"/>
+        <xsl:variable name="pl-mixed-list" as="xs:boolean" select="exists($pl-head-before) and replace($pl-head-before/@target, '^.*\.([a-z]+)\d+$', '$1') != $pl-level"/>
+        <xsl:if test="$pl-ok and not($pl-mixed-list) and not(@pretext) and $pl-prev and replace($pl-prev/@target, '^.*\.([a-z]+)\d+$', '$1') = $pl-level and substring($pl-prev/@target, 8, 1) = substring(@target, 8, 1)">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+        </xsl:if>
+        <xsl:if test="$pl-ok and not($pl-mixed-list) and not(@pretext) and not($pl-prev) and $pl-next and exists(id($pl-next/@target)) and replace($pl-next/@target, '^.*\.([a-z]+)\d+$', '$1') = $pl-level and substring($pl-next/@target, 8, 1) = substring(@target, 8, 1)">
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(if ($pl-level = 'art') then 'Articles ' else if ($pl-level = 'subsect') then 'Subsections ' else 'Sections ', string-join(id(@target)/ancestor-or-self::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.')"/>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-07918 | issue 5034 | In an appendix Note, a standalone long reference to a Sentence, Article, Subsection or Section of another Division prints "of Division X", as in the PDF (Sentence 1.4.1.2.(1) of Division A). -->
+        <xsl:variable name="xd-ctx" select="string((ancestor::*[@xml:id])[last()]/@xml:id)"/>
+        <!-- CLAUDE-AUTOFIX CF-05356 | issue 2858 | Outside appendix Notes too, a standalone long reference to a Sentence of another Division prints "of Division X", as in the PDF (See Sentence 1.5.1.2.(1) of Division A.). -->
+        <!-- CLAUDE-AUTOFIX CL-068 CF-08223 | issue 5222 | A neighbouring list reference only blocks the label when it is also in another Division (Subsection 4.3.1. and Sentence 2.2.1.2.(1) of Division C). -->
+        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and not(@pretext) and not(ancestor::entry) and (contains($xd-ctx, '.appendix.appnote') or (starts-with($xd-ctx, 'nbc.div') and matches(@target, '\.sent\d+$'))) and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+\.sect\d+(\.subsect\d+(\.art\d+(\.sent\d+)?)?)?$') and substring(@target, 8, 1) != substring($xd-ctx, 8, 1) and not($prev-significant[self::ref]) and not($next-significant[self::ref]) and not($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', 'to', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][substring(@target, 8, 1) != substring($xd-ctx, 8, 1)]]) and not($next-significant[self::text()][normalize-space(.) = (',', 'and', 'or', 'to', ', and', ', or')]/following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][substring(@target, 8, 1) != substring($xd-ctx, 8, 1)]]) and not(following-sibling::node()[1][self::text()][matches(., '^\s*\.?\s*of Division')]) and id(@target)">
+            <xsl:variable name="xd-t" select="id(@target)"/>
+            <xsl:variable name="xd-art" select="string-join(($xd-t/ancestor-or-self::*[self::part or self::section or self::subsection or self::article])/@number, '.')"/>
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="concat(if (contains(@target, '.sent')) then 'Sentence ' else if (contains(@target, '.art')) then 'Article ' else if (contains(@target, '.subsect')) then 'Subsection ' else 'Section ', $xd-art, '.', if (contains(@target, '.sent')) then concat('(', $xd-t/@number, ')') else '', ' of Division ', substring(@target, 8, 1))"/>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CL-068 CF-09482 | issue 5600 | A reference to an Appendix D table or figure prints its PDF label: the letter (-A, -B ...) only when its Article has more than one table (or figure), as in the PDF (Table D-2.1.1., Tables D-2.3.4.-A); without the word after another such reference in a list or as the end of a range. -->
+        <xsl:variable name="appd-art" select="replace(@target, '\.(table|figure)\d+$', '')"/>
+        <xsl:variable name="appd-kind" select="replace(@target, '^.*\.(table|figure)\d+$', '$1')"/>
+        <xsl:if test="@type = 'internal' and normalize-space(.) = '' and @display-type = ('long', 'medium') and matches(@target, '^nbc\.div[A-Z]\.appendixD\.appsect\d+(\.subsect\d+)?(\.article\d+)?\.(table|figure)\d+$') and id(@target)">
+            <xsl:variable name="appd-count" select="count(id($appd-art)//*[local-name() = $appd-kind][starts-with(@xml:id, concat($appd-art, '.', $appd-kind))][matches(substring-after(@xml:id, concat($appd-art, '.', $appd-kind)), '^\d+$')])"/>
+            <xsl:variable name="appd-no" select="xs:integer(replace(@target, '^.*\.(table|figure)(\d+)$', '$2'))"/>
+            <xsl:text>:</xsl:text>
+            <!-- CLAUDE-AUTOFIX CL-068 CF-09625 | issue 5663 | The end of an Appendix D range (Tables D-2.6.1.-A to D-2.6.1.-D) also prints without the word, as in the PDF. -->
+            <xsl:if test="not($is-range-end) and not($clause-list-prev and matches($clause-list-prev/@target, '\.appendixD\..*\.(table|figure)\d+$')) and not(exists($prev-significant[self::text()][normalize-space(.) = 'to']/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.appendixD\..*\.(table|figure)\d+$')]]) or (normalize-space(@pretext) = 'to' and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.appendixD\..*\.(table|figure)\d+$')]])))">
+                <xsl:value-of select="if ($appd-kind = 'table') then 'Table ' else 'Figure '"/>
+            </xsl:if>
+            <xsl:value-of select="concat('D-', string-join(for $t in tokenize(replace($appd-art, '^.*\.appendixD\.', ''), '\.') return replace($t, '^[a-z]+', ''), '.'), '.')"/>
+            <xsl:if test="$appd-count gt 1">
+                <xsl:value-of select="concat('-', codepoints-to-string(64 + $appd-no))"/>
+            </xsl:if>
+        </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-019 CF-01368 | issue 802 | A Part reference inside the same Division prints as "Part 6", without "of Division B", as in the PDF. -->
         <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and matches(@target, '^nbc\.div[A-Z][A-Z0-9]*\.part\d+$') and substring(@target, 8, 1) = substring(string((ancestor::*[@xml:id])[last()]/@xml:id), 8, 1)">
             <xsl:text>:Part </xsl:text>
             <xsl:value-of select="replace(@target, '^.*\.part', '')"/>
         </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-018 CF-01980 | issue 1135 | Table and Figure references carry the table/figure number as in the PDF (Table 4.1.3.2.-A). -->
-        <xsl:if test="@type = 'internal' and @display-type = ('long', 'number', 'shortNum') and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+\.subsect\d+\.art\d+\.(table|figure)\d+$') and id(@target)">
+        <!-- CLAUDE-AUTOFIX CL-068 CF-10180 | issue 1298 | A short or medium table/figure reference listed after another one (or / and / ,) also gets its number label, so it shows as 9.36.2.6.-B as in the PDF. -->
+        <xsl:if test="@type = 'internal' and (@display-type = ('long', 'number', 'shortNum') or (@display-type = ('short', 'medium') and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.(table|figure)\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', ',', ', or', ', and') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.(table|figure)\d+$')]]))))) and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '^nbc\.div[A-Z0-9]+\.part\d+\.sect\d+\.subsect\d+\.art\d+\.(table|figure)\d+$') and id(@target)">
             <xsl:variable name="tf-kind" select="replace(@target, '^.*\.(table|figure)\d+$', '$1')"/>
             <xsl:variable name="tf-art-id" select="replace(@target, '\.(table|figure)\d+$', '')"/>
             <xsl:variable name="tf-sibs" select="id($tf-art-id)/*[local-name() = $tf-kind][matches(@xml:id, '\.(table|figure)\d+$')]"/>
             <xsl:variable name="tf-self" select="id(@target)"/>
             <!-- CLAUDE-AUTOFIX CL-029 CF-03052 | issue 1593 | A table listed after another table reference (… or / and / to / , …) prints only its number, as in the PDF (Table 9.10.3.1.-A or 9.10.3.1.-B). -->
-            <xsl:variable name="tf-in-list" as="xs:boolean" select="$tf-kind = 'table' and @display-type = 'long' and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])))"/>
+            <xsl:variable name="tf-in-list" as="xs:boolean" select="$tf-kind = 'table' and @display-type = ('long', 'short', 'medium') and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])))"/>
             <xsl:if test="count($tf-sibs) gt 1 and $tf-sibs[. is $tf-self]">
                 <xsl:variable name="tf-pos" select="count($tf-self/preceding-sibling::*[local-name() = $tf-kind][matches(@xml:id, '\.(table|figure)\d+$')]) + 1"/>
                 <xsl:variable name="tf-art-number" select="string-join($tf-self/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.')"/>
@@ -2635,14 +2743,16 @@
         </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-029 CF-03052 | issue 1593 | A span table listed after another table reference (… or / and / to / , …) prints only its number, as in the PDF (Table 9.10.3.1.-A or 9.10.3.1.-B). -->
         <!-- CLAUDE-AUTOFIX CL-040 CF-04737 | issue 2568 | A span table reference with the lead words Span Table prints only its number, as in the PDF (Span Table 9.23.4.2.-A). -->
-        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.spectables\d+\.table\d+$') and normalize-space(id(@target)/number[1]) != '' and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])) or normalize-space(@pretext) = ('Span Table', 'Span Tables'))">
+        <!-- CLAUDE-AUTOFIX CL-068 CF-10294 | issue 773 | A span table reference with the lead word Table / Tables also prints only its number, as in the PDF (Tables 9.10.3.1.-A and 9.10.3.1.-B). -->
+        <xsl:if test="@type = 'internal' and @display-type = 'long' and normalize-space(.) = '' and $range-end-label = '' and matches(@target, '\.spectables\d+\.table\d+$') and normalize-space(id(@target)/number[1]) != '' and (exists($prev-significant[self::text()][normalize-space(.) = (',', 'or', 'and', 'to', ', or', ', and')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]]) or (normalize-space(@pretext) = ('or', 'and', 'to', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, '\.table\d+$')]])) or normalize-space(@pretext) = ('Span Table', 'Span Tables', 'Table', 'Tables'))">
             <xsl:text>:</xsl:text>
             <xsl:value-of select="normalize-space(id(@target)/number[1])"/>
         </xsl:if>
         <!-- CLAUDE-AUTOFIX CL-027 CF-09419 | issue 5561 | References to an Appendix Sentence print as in the PDF: Sentence (5), or Sentence D-1.6.1.(5) in long form, without the extra period. -->
         <xsl:if test="@type = 'internal' and @display-type = ('short', 'long') and normalize-space(.) = '' and not($is-range-end) and matches(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+)?(\.article\d+)?\.para\d+$')">
             <xsl:variable name="ap-same" select="'^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.appsect\d+(\.subsect\d+)?(\.article\d+)?\.para\d+$'"/>
-            <xsl:variable name="ap-bare" as="xs:boolean" select="exists($prev-significant[self::text()][matches(., 'Sentences?\s*$')]) or normalize-space(@pretext) = ('Sentence', 'Sentences') or exists($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, $ap-same)]]) or (normalize-space(@pretext) = ('and', 'or', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, $ap-same)]]))"/>
+            <!-- CLAUDE-AUTOFIX CL-068 CF-10377 | issue 2003 | With the lead word Clause (pretext="Clause" followed by the letter as text) the Appendix Sentence prints only its number, as in the PDF (Clause (3)(d)). -->
+            <xsl:variable name="ap-bare" as="xs:boolean" select="exists($prev-significant[self::text()][matches(., 'Sentences?\s*$')]) or normalize-space(@pretext) = ('Sentence', 'Sentences', 'Clause', 'Clauses') or exists($prev-significant[self::text()][normalize-space(.) = (',', 'and', 'or', ', and', ', or')]/preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::ref[@type = 'internal'][matches(@target, $ap-same)]]) or (normalize-space(@pretext) = ('and', 'or', ',') and exists($prev-significant[self::ref[@type = 'internal'][matches(@target, $ap-same)]]))"/>
             <xsl:variable name="ap-para" select="replace(@target, '^.*\.para(\d+)$', '$1')"/>
             <xsl:variable name="ap-number" select="concat(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix([A-Z])\..*$', '$1'), '-', string-join(for $t in tokenize(replace(replace(@target, '^nbc\.div[A-Z0-9]+\.appendix[A-Z]\.', ''), '\.para\d+$', ''), '\.') return replace($t, '^\D+', ''), '.'), '.(', $ap-para, ')')"/>
             <xsl:text>:</xsl:text>
@@ -2698,7 +2808,8 @@
         <!-- Add trailing space if followed by non-whitespace text OR another ref WITHOUT pretext -->
         <!-- BUT: Don't add trailing space if the ref content already had a trailing space -->
         <!-- CLAUDE-AUTOFIX CL-031 CF-02248 | issue 9912 | No space between a defined term and a following 's or plural s, as in the PDF (building's, fire compartments). -->
-        <xsl:if test="not($has-trailing-space) and ($next-significant[self::text() and not(matches(., '^\s')) and not(current()/@type = 'term' and matches(., '^([''’]s|s)(\W|$)'))] or $next-significant[self::ref and not(@pretext)])">
+        <!-- CLAUDE-AUTOFIX CF-05998 | issue 10272 | No space between a reference and a dash or closing quote typed right after it (boiler-based, soil- and rock-retaining, dead load—0.9D, space”), as in the PDF. -->
+        <xsl:if test="not($has-trailing-space) and ($next-significant[self::text() and not(matches(., '^\s')) and not(matches(., '^(&#8212;|&#8221;|-\w|-\s+(and|or)\s)')) and not(current()/@type = 'term' and matches(., '^([''’]s|s)(\W|$)'))] or $next-significant[self::ref and not(@pretext)])">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>
@@ -2707,7 +2818,8 @@
     <xsl:template match="measurement" mode="rich-text-json">
         <!-- Add leading space if preceded by text without trailing space -->
         <!-- BUT: not after an opening bracket or quote, e.g. "(38 mm)" -->
-        <xsl:if test="preceding-sibling::node()[1][self::text() and not(matches(., '[\s(\[&#8220;&#8216;]$'))]">
+        <!-- CLAUDE-AUTOFIX CF-02410 | issue 10118 | No space inside a decimal number split at a measurement boundary (15.9 mm, RdRo = 1.3), as in the PDF. -->
+        <xsl:if test="preceding-sibling::node()[1][self::text() and not(matches(., '[\s(\[&#8220;&#8216;]$')) and not(matches(., '\d\.$') and matches(string(current()), '^\d'))]">
             <xsl:text> </xsl:text>
         </xsl:if>
         <!-- Process child nodes to handle super/sub elements -->
@@ -2715,7 +2827,13 @@
         <!-- Add trailing space if followed by text without leading space -->
         <!-- BUT: not before punctuation, e.g. "13 mm," or "13 mm." -->
         <!-- CLAUDE-AUTOFIX CF-09433 | issue 10341 | No space between a measurement and a plural s typed after it, as in the PDF (3 parts). -->
-        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^[\s,.;:!?)\]&#8221;&#8217;]')) and not(matches(., '^s(\W|$)'))]">
+        <!-- CLAUDE-AUTOFIX CF-06052 | issue 10275 | No space between a measurement and a unit part typed right after it (97 L/day/house, 4.8 kPa), as in the PDF. -->
+        <!-- CLAUDE-AUTOFIX CF-02410 | issue 10118 | No space inside a decimal number split at a measurement boundary (RdRo = 1.3), as in the PDF. -->
+        <xsl:if test="following-sibling::node()[1][self::text() and not(matches(., '^[\s,.;:!?)\]&#8221;&#8217;]')) and not(matches(., '^s(\W|$)')) and not(starts-with(., '/')) and not(matches(string(current()), 'kP\s*$') and matches(., '^a(\W|$)')) and not(matches(string(current()), '\d\.$') and matches(., '^\d'))]">
+            <xsl:text> </xsl:text>
+        </xsl:if>
+        <!-- CLAUDE-AUTOFIX CF-05714 | issue 10243 | A space between a measurement ending in a superscript/subscript and a defined term after it (55 m2 floor area), as in the PDF. -->
+        <xsl:if test="node()[normalize-space(.) != ''][last()][self::super or self::sub] and following-sibling::node()[1][self::text() and normalize-space(.) = '']/following-sibling::node()[1][self::ref[@type = 'term'][not(@pretext)]]">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>
@@ -2723,12 +2841,14 @@
     <xsl:template match="equation" mode="rich-text-json">
         <!-- Insert placeholder in text that matches the pattern [EQ:type:id] -->
         <!-- Use same ID fallback logic as equation-json template -->
+        <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
         <xsl:variable name="equation-id" as="xs:string"
                       select="
                         if (@xml:id) then string(@xml:id)
                         else if (@image) then string(@image)
                         else if (@html-src) then replace(tokenize(string(@html-src), '/')[last()], '\.html', '')
                         else if (@image-src) then replace(tokenize(string(@image-src), '/')[last()], '\.eps', '')
+                        else if (text) then concat(string(ancestor::*[@xml:id][1]/@xml:id), '.eq', 1 + count(preceding-sibling::equation))
                         else ''"/>
         <xsl:text>[EQ:</xsl:text>
         <xsl:value-of select="@type"/>
@@ -2895,14 +3015,25 @@
     <!-- EQUATION PROCESSING FOR JSON                                       -->
     <!-- ================================================================== -->
     
+    <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
+    <xsl:template match="text()" mode="eqtext-latex">
+        <xsl:variable name="t" select="replace(replace(., '\s+', ' '), '([{}%$#&amp;_])', '\\$1')"/>
+        <xsl:if test="$t != ''"><xsl:value-of select="concat('\text{', $t, '}')"/></xsl:if>
+    </xsl:template>
+    <xsl:template match="super" mode="eqtext-latex"><xsl:value-of select="concat('^{', normalize-space(.), '}')"/></xsl:template>
+    <xsl:template match="sub" mode="eqtext-latex"><xsl:value-of select="concat('_{', normalize-space(.), '}')"/></xsl:template>
+    <xsl:template match="*" mode="eqtext-latex"><xsl:apply-templates select="node()" mode="eqtext-latex"/></xsl:template>
+    
     <!-- Convert equation element to JSON object with multiple formats -->
     <xsl:template match="equation" mode="equation-json">
+        <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
         <xsl:variable name="equation-id" as="xs:string"
                       select="
                         if (@xml:id) then string(@xml:id)
                         else if (@image) then string(@image)
                         else if (@html-src) then replace(tokenize(string(@html-src), '/')[last()], '\.html$', '')
                         else if (@image-src) then replace(tokenize(string(@image-src), '/')[last()], '\.eps$', '')
+                        else if (text) then concat(string(ancestor::*[@xml:id][1]/@xml:id), '.eq', 1 + count(preceding-sibling::equation))
                         else ''"/>
         <fn:map>
             <fn:string key="id"><xsl:value-of select="$equation-id"/></fn:string>
@@ -2924,6 +3055,11 @@
                 <xsl:when test="latex">
                     <fn:string key="latex"><xsl:value-of select="latex"/></fn:string>
                     <fn:string key="plainText"><xsl:value-of select="latex"/></fn:string>
+                </xsl:when>
+                <!-- CLAUDE-AUTOFIX CF-08522 | issue 5401 | A display equation written as plain text (<text>) without an id got an empty id, so the website could not find it and showed nothing; it now gets an id from its paragraph and its text as upright LaTeX (	ext{...}), as in the PDF. -->
+                <xsl:when test="text and not(@xml:id)">
+                    <fn:string key="latex"><xsl:apply-templates select="text/node()" mode="eqtext-latex"/></fn:string>
+                    <fn:string key="plainText"><xsl:apply-templates select="text" mode="rich-text-json"/></fn:string>
                 </xsl:when>
                 <!-- Plain text equation (from eqtxt) -->
                 <xsl:when test="text">
@@ -3152,7 +3288,22 @@
     <xsl:template match="emphasis | super | sub | ref | measurement" mode="text-only">
         <xsl:apply-templates select="text()" mode="text-only"/>
     </xsl:template>
-    
+
+    <!-- CLAUDE-AUTOFIX CL-068 CF-08304 | issue 5257 | An empty long Sentence or Clause reference inside a title written as plain text prints its number, as in the PDF (Performance Approach [Clause 9.32.3.1.(1)(a)]), instead of disappearing. -->
+    <xsl:template match="title//ref[@type = 'internal'][@display-type = 'long'][normalize-space(.) = ''][matches(@target, '\.art\d+\.sent\d+(\.clause\d+)?$')][id(@target)]" mode="text-only" priority="2">
+        <xsl:variable name="tt" select="id(@target)"/>
+        <xsl:variable name="ts" select="$tt/ancestor-or-self::sentence[1]"/>
+        <xsl:value-of select="concat(if (contains(@target, '.clause')) then 'Clause ' else 'Sentence ', string-join($ts/ancestor::*[self::part or self::section or self::subsection or self::article]/@number, '.'), '.(', $ts/@number, ')', if (contains(@target, '.clause')) then concat('(', $tt/@letter, ')') else '')"/>
+    </xsl:template>
+
+    <!-- CLAUDE-AUTOFIX CF-08302 | issue 5255 | An empty long Subsection reference inside a title written as plain text prints "Subsection 9.32.3.", as in the PDF (Application of Subsection 9.32.3. and Ventilation ...), instead of disappearing. -->
+    <xsl:template match="title//ref[@type = 'internal'][@display-type = 'long'][normalize-space(.) = ''][matches(@target, '\.sect\d+\.subsect\d+$')][id(@target)]" mode="text-only" priority="2">
+        <xsl:variable name="tt" select="id(@target)"/>
+        <xsl:if test="preceding-sibling::node()[1][self::text()][normalize-space(.) != '']"><xsl:text> </xsl:text></xsl:if>
+        <xsl:value-of select="concat('Subsection ', string-join($tt/ancestor-or-self::*[self::part or self::section or self::subsection]/@number, '.'), '.')"/>
+        <xsl:if test="following-sibling::node()[1][self::text()][matches(., '^\s*[A-Za-z]')]"><xsl:text> </xsl:text></xsl:if>
+    </xsl:template>
+
     <!-- ================================================================== -->
     <!-- CROSS-REFERENCE INDEX BUILDING                                     -->
     <!-- ================================================================== -->
@@ -4291,9 +4442,11 @@
                                                 </xsl:for-each>
                                             </xsl:variable>
                                             <xsl:variable name="trimmed-name" select="normalize-space(replace($name-text, '\s*\($', ''))"/>
-                                            <fn:string key="fullName"><xsl:value-of select="$trimmed-name"/></fn:string>
+                                            <!-- CLAUDE-AUTOFIX CF-10524 | issue 139 | An organization without a web address keeps its full name (CCBFC, NBC, NECB, NFC, NPC), and the web address is the printed one (www.fpinnovations.ca, www.hvi.org, www.iccsafe.org ...), not the NBC href (several are wrong or empty), as in the PDF. -->
+                                            <fn:string key="fullName"><xsl:value-of select="if (address//ref[@type='external']) then $trimmed-name else normalize-space(string(address))"/></fn:string>
                                             <xsl:if test="address//ref[@type='external']">
-                                                <fn:string key="website"><xsl:value-of select="address//ref[@type='external']/@target"/></fn:string>
+                                                <xsl:variable name="web-text" select="replace(normalize-space(string((address//ref[@type='external'])[1])), '^\((.*)\)$', '$1')"/>
+                                                <fn:string key="website"><xsl:value-of select="if ($web-text = '') then (address//ref[@type='external'])[1]/@target else if (matches($web-text, '^https?://')) then $web-text else concat('https://', $web-text)"/></fn:string>
                                             </xsl:if>
                                         </xsl:when>
                                         <!-- All other list types (bulleted, numbered, alphabetic): content -->
