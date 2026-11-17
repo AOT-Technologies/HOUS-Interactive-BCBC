@@ -64,7 +64,9 @@
 .table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableD"] .table-block__forming-part,
 .table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableE"] .table-block__forming-part,
 .table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableF"] .table-block__forming-part,
-.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] .table-block__forming-part {
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] .table-block__forming-part,
+/* BBC-181 (QA re-open #3): Ministerial Order BA 2024 01 prints Table 3.1.3.1.'s "Forming Part of" line in plain type. */
+.table-block[id="nbc.divB.part3.sect1.subsect3.art1.table1"] .table-block__forming-part {
   font-weight: var(--typography-font-weights-regular, 400);
 }
 
@@ -624,8 +626,9 @@
   text-align: left;
 }
 
+/* BBC-181 (QA re-open #4): the PDF prints "Notes to Table ...:" in plain type, not bold. */
 .table-block__notes-title {
-  font-weight: var(--typography-font-weights-semibold, 600);
+  font-weight: var(--typography-font-weights-regular, 400);
   color: var(--typography-color-primary, #313132);
   margin-bottom: 0.1rem;
 }
@@ -636,13 +639,15 @@
   color: var(--typography-color-secondary, #6c6c6e);
 }
 
+/* BBC-181 (QA re-open #2): in the Notes list the PDF prints the note numbers (1), (2) ... at normal size on the
+   line, not as superscripts. */
 .table-block__note-label {
-  font-weight: var(--typography-font-weights-semibold, 600);
+  font-weight: var(--typography-font-weights-regular, 400);
   color: var(--typography-color-primary, #313132);
-  font-size: 0.75em;
-  vertical-align: super;
-  line-height: 0;
-  margin-right: 0.2em;
+  font-size: inherit;
+  vertical-align: baseline;
+  line-height: inherit;
+  margin-right: 0.35em;
 }
 
 .table-block__note-content {}
