@@ -103,6 +103,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent3.clause2" letter="b">
                             <text>except for common spaces in a house with a <ref type="term" target="bc-scnd-t">secondary suite</ref>, <ref type="term" target="bldng">buildings</ref> containing only <ref type="term" target="dwllng-n">dwelling units</ref> and common spaces whose total <ref type="term" target="flr-r">floor area</ref> does not exceed 20% of the total <ref type="term" target="flr-r">floor area</ref> of the <ref type="term" target="bldng">building</ref>.</text>
                         </clause>
+                        <!-- CLAUDE-AUTOFIX CF-05725 | issue 6561 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent3.seealso">(See Note A-9.36.1.3.(3).)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -118,24 +120,30 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6" number="6">
-                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect38.subsect1.art3.sent2" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect38.subsect1.art3.sent3" display-type="medium"/>, and except for the purpose of modeling the reference <ref type="term" target="bldng">building</ref> for compliance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long" pretext="Subsections"/> and <ref type="internal" target="nbc.divBV2.part9.sect38.subsect6" display-type="long"/>, Tables 9.37.2.6.-C, 9.37.2.7.-D, and 9.37.2.8.-C apply only to</text>
+                        <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                        <!-- CLAUDE-AUTOFIX CF-05731 | issue 6564 | Table numbers typed as 9.37.x (the BC 9.37 is Greenhouse Gas Emissions) are 9.36.x, as in the PDF. -->
+                        <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent2" display-type="medium" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent3" display-type="medium"/>, and except for the purpose of modeling the reference <ref type="term" target="bldng">building</ref> for compliance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long" pretext="Subsections"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>, Tables 9.36.2.6.-C, 9.36.2.7.-D, and 9.36.2.8.-C apply only to</text>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6.clause1" letter="a">
                             <text>houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces, and</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6.clause2" letter="b">
                             <text>except for common spaces in a house with its <ref type="term" target="bc-scnd-t">secondary suite</ref>, <ref type="term" target="bldng">buildings</ref> containing only <ref type="term" target="dwllng-n">dwelling units</ref> and common spaces whose total <ref type="term" target="flr-r">floor area</ref> does not exceed 20% of the total <ref type="term" target="flr-r">floor area</ref> of the <ref type="term" target="bldng">building</ref>.</text>
                         </clause>
+                        <!-- CLAUDE-AUTOFIX CF-05733 | issue 6566 | The PDF prints this see-also after the last Clause; the BC Sentence had none. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent6.seealso">(See Note A-9.36.1.3.(3).)</see-also>
                     </sentence>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7" number="7">
                         <text>Log homes shall conform to the requirements of</text>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7.clause1" letter="a">
-                            <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/> to <ref type="internal" target="nbc.divBV2.part9.sect38.subsect4" display-type="long"/>,</text>
+                            <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                            <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/> to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect4" display-type="long"/>,</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7.clause2" letter="b">
                             <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/>, or</text>
                         </clause>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent7.clause3" letter="c">
-                            <text><ref type="internal" target="nbc.divBV2.part9.sect38.subsect6" display-type="long"/>.</text>
+                            <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                            <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>.</text>
                         </clause>
                     </sentence>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect1.art3.sent8" number="8">
@@ -157,7 +165,8 @@
             <replace preserve-references="true">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art6.sent1" number="1">
-                        <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.sent4" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.sent5" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art5" display-type="long" pretext="Articles"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art11" display-type="long"/>, the effective thermal resistance of above-ground opaque <ref type="term" target="bldng">building</ref> assemblies or portions thereof shall be not less than that shown for the applicable heating-degree day category in</text>
+                        <!-- CLAUDE-AUTOFIX CF-05764 | issue 6568 | The exceptions point at Sentences 9.36.2.6.(2) and 9.36.2.8.(3), as in the PDF (were (4) and 9.36.2.8.(5)). -->
+                        <text>Except as provided in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.sent2" display-type="short" pretext="Sentences"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.sent3" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art5" display-type="long" pretext="Articles"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art11" display-type="long"/>, the effective thermal resistance of above-ground opaque <ref type="term" target="bldng">building</ref> assemblies or portions thereof shall be not less than that shown for the applicable heating-degree day category in</text>
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art6.sent1.clause1" letter="a">
                             <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table1" display-type="long"/>, where the ventilation system does not include heat-recovery equipment, or</text>
                         </clause>
@@ -174,7 +183,8 @@
                                 <text>a heat pump in conformance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art10" display-type="long"/>.</text>
                             </subclause>
                         </clause>
-                        <text> (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote232" vendor-target="en001785" display-type="short"/>.)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect36.subsect2.art6.sent1.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote232" vendor-target="en001785" display-type="short"/>.)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -263,11 +273,12 @@
                                     <entry>3.96</entry>
                                     <entry>3.96</entry>
                                 </row>
+                                <!-- CLAUDE-AUTOFIX CF-05771 | issue 3033 | Zones 4, 5 and 6 of Floors over unheated spaces are 4.67, as in the PDF. -->
                                 <row xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.row5">
                                     <entry align="left">Floors over unheated spaces</entry>
-                                    <entry>5.02</entry>
-                                    <entry>5.02</entry>
-                                    <entry>5.02</entry>
+                                    <entry>4.67</entry>
+                                    <entry>4.67</entry>
+                                    <entry>4.67</entry>
                                     <entry>5.02</entry>
                                     <entry>5.02</entry>
                                     <entry>5.02</entry>
@@ -275,14 +286,12 @@
                             </tbody>
                         </tgroup>
                         <table-notes>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art6.appnote1">
-                                <text>Notes to Table 9.37.2.6.-C:</text>
-                                <text>(1) See <ref type="internal" target="nbc.divBV2.part9.sect1.subsect1.art3.sent1" display-type="long"/>.</text>
-                                <text>(2) Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.sent3" display-type="short"/>, ceilings below attics shall not have a reduction in effective thermal resistance</text>
-                                <text>(3) For the purposes of this table, a roof deck shall mean a horizontal portion of a roof intended for <ref type="term" target="ccpnc">occupancy</ref>.</text>
-                                <text>(4) For the purposes of this table, flat roofs shall mean a roof that is not intended for <ref type="term" target="ccpnc">occupancy</ref>.</text>
-                                <text>(5) See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.sent3" display-type="short"/> for requirements concerning the above-ground portion of <ref type="term" target="fndtn">foundation</ref> walls.</text>
-                            </note>
+                            <!-- CLAUDE-AUTOFIX CF-05778 | issue 1801 | Five separate notes (1) to (5), as in the PDF, instead of one note holding the heading and all five texts; note (1) refers to Article 1.1.3.1. and note (2) to Sentence 9.36.2.6.(3). -->
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.note1">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.note2">Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.sent3" display-type="long"/>, ceilings below attics shall not have a reduction in effective thermal resistance</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.note3">For the purposes of this table, a roof deck shall mean a horizontal portion of a roof intended for <ref type="term" target="ccpnc">occupancy</ref>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.note4">For the purposes of this table, flat roofs shall mean a roof that is not intended for <ref type="term" target="ccpnc">occupancy</ref>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art6.table3.note5">See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.sent3" display-type="long"/> for requirements concerning the above-ground portion of <ref type="term" target="fndtn">foundation</ref> walls.</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -323,7 +332,8 @@
                                 <thead>
                                     <row>
                                         <entry>Components</entry>
-                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn1">See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table1.appnote1" display-type="long"/>.</note></entry>
+                                        <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Note reference points at Note A-Table 9.36.2.7.-A (appnote235), printed as its number as in the PDF; the old target did not exist. -->
+                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn1">See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote235" display-type="long">Note A-Table 9.36.2.7.-A</ref>.</note></entry>
                                         <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn2">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.rowh2">
@@ -338,7 +348,8 @@
                                 </thead>
                                 <tbody>
                                     <row>
-                                        <entry>Fenestration<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn3">Except skylights and glass block assemblies.</note> and doors</entry>
+                                        <!-- CLAUDE-AUTOFIX CF-05808 | issue 1808 | Note (3) reads "Except skylights (see Sentence (2)) and glass block assemblies (see Sentence (4))." as in the PDF. -->
+                                        <entry>Fenestration<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table1.fn3">Except skylights (see Sentence (2)) and glass block assemblies (see Sentence (4)).</note> and doors</entry>
                                         <entry>Max. U-value, W/(m<super>2</super>×K)</entry>
                                         <entry>1.84</entry>
                                         <entry>1.84</entry>
@@ -369,9 +380,10 @@
                                 <colspec colname="c6" colwidth="1*"/>
                                 <colspec colname="c7" colwidth="1*"/>
                                 <thead>
+                                    <!-- CLAUDE-AUTOFIX CF-05810 | issue 3048 | Component spans the three header rows and the degree-day heading spans the six zones, as in the PDF. -->
                                     <row>
-                                        <entry>Component</entry>
-                                        <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.fn1">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
+                                        <entry rowspan="3">Component</entry>
+                                        <entry colspan="6">Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.fn1">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.rowh2">
                                         <!-- CLAUDE-AUTOFIX CL-016 CF-05776 | issue 10246 | Space between the climate zone and its degree-days, as in the PDF (Zone 7A / 5000 to 5999). -->
@@ -381,6 +393,10 @@
                                         <entry>Zone 7A 5000 to 5999</entry>
                                         <entry>Zone 7B 6000 to 6999</entry>
                                         <entry>Zone 8 ≥ 7000</entry>
+                                    </row>
+                                    <!-- CLAUDE-AUTOFIX CF-05810 | issue 3048 | The PDF has a third header row "Maximum Overall Thermal Transmittance, W/(m2xK)" over the six zones. -->
+                                    <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table2.rowh3">
+                                        <entry colspan="6">Maximum Overall Thermal Transmittance, W/(m<super>2</super>×K)</entry>
                                     </row>
                                 </thead>
                                 <tbody>
@@ -606,7 +622,8 @@
                         </sentence>
                         
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art7.sent10" number="10">
-                            <text>A <ref type="term" target="bldng">building</ref> described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent9.clause1" display-type="long"/> or <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent9.clause2" display-type="short"/> is permitted to have an additional nonconforming door with an overall thermal transmittance not greater than 2.10 W/m<super>2</super>·K if the effective thermal resistance of the ceilings of the <ref type="term" target="bldng">building</ref> is at least 0.88 m<super>2</super>·K/W greater than the relevant value shown in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table1" display-type="long"/> or <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table2" display-type="long"/>, as applicable.</text>
+                            <!-- CLAUDE-AUTOFIX CF-05817 | issue 3049 | The reference to Clause (9)(a) of this Article is medium, so it prints "Clause (9)(a)" as in the PDF. -->
+                            <text>A <ref type="term" target="bldng">building</ref> described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent9.clause1" display-type="medium"/> or <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent9.clause2" display-type="short"/> is permitted to have an additional nonconforming door with an overall thermal transmittance not greater than 2.10 W/m<super>2</super>·K if the effective thermal resistance of the ceilings of the <ref type="term" target="bldng">building</ref> is at least 0.88 m<super>2</super>·K/W greater than the relevant value shown in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table1" display-type="long"/> or <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table2" display-type="long"/>, as applicable.</text>
                         </sentence>
                         
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art7.sent11" number="11">
@@ -617,7 +634,8 @@
                             <title>Required Thermal Characteristics of Fenestration for Buildings Containing Only Dwelling Units</title>
                             <forming-part>
                                 <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent6" display-type="long"/>
-                                <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent11" display-type="long"/>
+                                <!-- CLAUDE-AUTOFIX CF-10653 | issue 765 | Table 9.36.2.7.-D forms part of Sentences 9.36.1.3.(6) and 9.36.2.7.(1), as printed in the PDF. -->
+                                <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.sent1" display-type="long"/>
                             </forming-part>
                             <tgroup cols="8">
                                 <colspec colname="c1" colwidth="2*"/>
@@ -631,7 +649,9 @@
                                 <thead>
                                     <row>
                                         <entry>Components</entry>
-                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.fn1">See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table1.appnote1" display-type="long"/>.</note></entry>
+                                        <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Note reference points at Note A-Table 9.36.2.7.-A (appnote235), printed as its number as in the PDF; the old target did not exist. -->
+                                        <!-- CLAUDE-AUTOFIX CF-10685 | issue 2724 | Note (1) of Table 9.36.2.7.-D ends without a period, as in the PDF. -->
+                                        <entry>Thermal Characteristics<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.fn1">See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote235" display-type="long">Note A-Table 9.36.2.7.-A</ref></note></entry>
                                         <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location,<note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.fn2">See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.</note> in Celsius Degree-Days</entry>
                                     </row>
                                     <row xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.rowh2">
@@ -658,8 +678,10 @@
                                 </tbody>
                             </tgroup>
                             <table-notes>
+                                <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Note reference points at Note A-Table 9.36.2.7.-A (appnote235), printed as its number as in the PDF; the old target did not exist. -->
+                                <!-- CLAUDE-AUTOFIX CF-10685 | issue 2724 | Note (1) of Table 9.36.2.7.-D ends without a period, as in the PDF. -->
                                 <note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.note1">
-                                    See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table1.appnote1" display-type="long"/>.
+                                    See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote235" display-type="long"/>
                                 </note>
                                 <note xml:id="nbc.divBV2.part9.sect36.subsect2.art7.table4.note2">
                                     See <ref type="internal" target="nbc.divA.part1.sect1.subsect3.art1" display-type="long"/>.
@@ -680,10 +702,13 @@
         <!-- ================================================================== -->
         <amendment id="bc-283" sequence="283"
                    description="Add clause c) referencing Table 9.36.2.8.-C for heat pump and HRV systems in Article 9.36.2.8.(1)">
-            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art8.sent1"/>
-            <modify>
-                <element-change xpath-within-target=".">
-                    <add-child position="after" reference-element="clause[@letter='b']">
+            <!-- CLAUDE-AUTOFIX CF-05835 | issue 3058 | The merge engine has no element-change/add-child, so Clause (c) was never added; the same clause is now inserted after Clause (b), as in the PDF. -->
+            <target type="position"
+                    parent-id="nbc.divBV2.part9.sect36.subsect2.art8.sent1"
+                    position="after"
+                    reference-id="nbc.divBV2.part9.sect36.subsect2.art8.sent1.clause2"/>
+            <insert>
+                <new-content source="bc">
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art8.sent1.clause3"
                                 letter="c">
                             <text>
@@ -703,8 +728,18 @@
                                                                                display-type="long"/>.</text>
                             </subclause>
                         </clause>
-                    </add-child>
-                </element-change>
+                </new-content>
+            </insert>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05835 | issue 3058 | Clause (b) ends with ", or" now that Clause (c) follows, as in the PDF. -->
+        <amendment id="bc-autofix-cf05835-b" sequence="283.2" description="Clause 9.36.2.8.(1)(b) ends with ', or' before the new Clause (c)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art8.sent1.clause2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.table2" display-type="long"/>, where the ventilation system includes heat-recovery equipment conforming to <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art9" display-type="long"/>, or</text>
+                    </new-content>
+                </element-replace>
             </modify>
         </amendment>
         
@@ -833,16 +868,17 @@
                                 </row>
                             </tbody>
                         </tgroup>
+                        <!-- CLAUDE-AUTOFIX CF-04869 | issue 10400 | Removed the "(n)" label typed at the start of each table note; the website numbers the notes itself, so the label showed twice ("(1)(1)") instead of once as in the PDF. -->
                         <table-notes>
                             <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note1">Notes to Table 9.36.2.8.-C:</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note2"><super>(1)</super> See Note A-Tables 9.36.2.8.-A and -B.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note3"><super>(2)</super> See <ref type="internal" target="nbc.divB.part1.sect1.subsect3.art1" display-type="long"/>.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note4"><super>(3)</super> Does not apply to below-grade floors over heated crawl spaces.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note5"><super>(4)</super> Unheated floors shall be insulated to the effective thermal resistance required in Table 9.36.2.8.-C under their full bottom surface including exterior edges.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note2">See Note A-Tables 9.36.2.8.-A and -B.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note3">See <ref type="internal" target="nbc.divB.part1.sect1.subsect3.art1" display-type="long"/>.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note4">Does not apply to below-grade floors over heated crawl spaces.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note5">Unheated floors shall be insulated to the effective thermal resistance required in Table 9.36.2.8.-C under their full bottom surface including exterior edges.</note>
                             <!-- CLAUDE-AUTOFIX CF-06124 | issue 10457 | The PDF prints this note without a final period. -->
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note6"><super>(5)</super> Typically applies to floors-on-ground in full-height <ref type="term" target="bmnt">basements</ref></note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note7"><super>(6)</super> Refers to undisturbed frost line before house is constructed.</note>
-                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note8"><super>(7)</super> See <ref type="internal" target="nbc.divBV2.part9.sect25.subsect2.art3.sent5" display-type="long"/> for requirement on placement of insulation. The design of slabs-on-grade with an integral footing is addressed in Part 4 (see <ref type="internal" target="nbc.divBV2.part9.sect16.subsect1.art2" display-type="long"/>).</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note6">Typically applies to floors-on-ground in full-height <ref type="term" target="bmnt">basements</ref></note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note7">Refers to undisturbed frost line before house is constructed.</note>
+                            <note xml:id="nbc.divBV2.part9.sect36.subsect2.art8.table3.note8">See <ref type="internal" target="nbc.divBV2.part9.sect25.subsect2.art3.sent5" display-type="long"/> for requirement on placement of insulation. The design of slabs-on-grade with an integral footing is addressed in Part 4 (see <ref type="internal" target="nbc.divBV2.part9.sect16.subsect1.art2" display-type="long"/>).</note>
                         </table-notes>
                     </table>
                 </new-content>
@@ -984,6 +1020,7 @@
                    description="Change standard from CAN/ULC-S742 to ASTM E2357 and remove Type A4 designation in Article 9.37.2.9.(1)(c)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art9.sent1.clause3"/>
             <modify>
+                <!-- CLAUDE-AUTOFIX CF-05892 | issue 6577 | Unit written L/(s×m2) with the multiplication sign, as in the PDF. -->
                 <element-replace element="text">
                     <new-content source="bc">
                         <text>a continuous <ref type="term" target="r-brrr">air barrier system</ref> in
@@ -996,7 +1033,7 @@
                                  display-type="short"
                                  pretext="to"/> and <ref type="internal"
                                                     target="nbc.divBV2.part9.sect25.subsect3"
-                                                    display-type="long"/> and a <ref type="term" target="bldng">building</ref> assembly having an air leakage rate not greater than <measurement units="metric">0.20 L/(s·m<super>2</super>)</measurement> when tested in accordance with <ref type="standard" target="astme2357" standardId="astme2357"/> where</text>
+                                                    display-type="long"/> and a <ref type="term" target="bldng">building</ref> assembly having an air leakage rate not greater than <measurement units="metric">0.20 L/(s×m<super>2</super>)</measurement> when tested in accordance with <ref type="standard" target="astme2357" standardId="astme2357"/> where</text>
                     </new-content>
                 </element-replace>
             </modify>
@@ -1040,7 +1077,8 @@
             <replace preserve-references="false">
                 <new-content source="bc">
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art2.sent1" number="1" vendor-id="es006987">
-                        <text>For the purpose of this Subsection, the term "reference house" shall mean a hypothetical replica of the proposed house design using the same energy sources for the same functions and having the same environmental requirements, <ref type="term" target="ccpnc">occupancy</ref>, climatic data and operating schedules, but made to comply with all applicable prescriptive requirements of <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/><ref type="internal" target="nbc.divBV2.part9.sect36.subsect4" display-type="long" pretext=" to"/>, not including <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table3" display-type="long" pretext="Tables"/><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table4" display-type="long" pretext=","/><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.table3" display-type="long" pretext=" and"/></text>
+                        <!-- CLAUDE-AUTOFIX CF-10184 | issue 1373 | Sentence 9.36.5.2.(1) ends "9.36.2.7.-D, and 9.36.2.8.-C." with the serial comma and final period as in the PDF. -->
+                        <text>For the purpose of this Subsection, the term "reference house" shall mean a hypothetical replica of the proposed house design using the same energy sources for the same functions and having the same environmental requirements, <ref type="term" target="ccpnc">occupancy</ref>, climatic data and operating schedules, but made to comply with all applicable prescriptive requirements of <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long" pretext="Subsections"/><ref type="internal" target="nbc.divBV2.part9.sect36.subsect4" display-type="long" pretext=" to"/>, not including <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art6.table3" display-type="long" pretext="Tables"/><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art7.table4" display-type="long" pretext=","/><ref type="internal" target="nbc.divBV2.part9.sect36.subsect2.art8.table3" display-type="long" pretext=", and">9.36.2.8.-C</ref>.</text>
                     </sentence>
                 </new-content>
             </replace>
@@ -1071,7 +1109,9 @@
                             <see-also xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent1.seealso1">(See <ref type="internal" target="en001475" vendor-target="en001475" display-type="short"/>.)</see-also>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent2" number="2">
-                            <text>Except as permitted by <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art3.sent7" display-type="short"/>, the annual energy consumption of the proposed house in comparison to the house energy target of the reference house shall demonstrate a percent improvement in accordance with Table 9.37.6.3.-G. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote274" vendor-target="en001765" display-type="short"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-05731 | issue 6564 | Table numbers typed as 9.37.x (the BC 9.37 is Greenhouse Gas Emissions) are 9.36.x, as in the PDF. -->
+                            <!-- CLAUDE-AUTOFIX CF-06041 | issue 3203 | Note reference points to A-9.36.5.3.(2) (appnote275 = vendor en001765, as its vendor-target says), as in the PDF. -->
+                            <text>Except as permitted by <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art3.sent7" display-type="short"/>, the annual energy consumption of the proposed house in comparison to the house energy target of the reference house shall demonstrate a percent improvement in accordance with Table 9.36.6.3.-G. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote275" vendor-target="en001765" display-type="short"/>.)</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent3" number="3">
                             <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3197 Incorrect Content ec834ee8fc -->
@@ -1092,7 +1132,8 @@
                             <text>Both the proposed and reference houses shall be modeled using the same climatic data, <ref type="term" target="l">soil</ref> conditions, operating schedules in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5.art4" display-type="long"/> and temperature set-points.</text>
                         </sentence>
                         <sentence xml:id="nbc.divBV2.part9.sect36.subsect5.art3.sent7" number="7">
-                            <text>For log homes, the annual energy consumption of the proposed house shall not exceed the house energy target of the reference house. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote274" vendor-target="en001765" display-type="short"/>.)</text>
+                            <!-- CLAUDE-AUTOFIX CF-06041 | issue 3203 | Note reference points to A-9.36.5.3.(2) (appnote275 = vendor en001765, as its vendor-target says), as in the PDF. -->
+                            <text>For log homes, the annual energy consumption of the proposed house shall not exceed the house energy target of the reference house. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote275" vendor-target="en001765" display-type="short"/>.)</text>
                         </sentence>
                     </article>
                 </new-content>
@@ -1119,7 +1160,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect5.art6.sent2.clause3" letter="c">
                             <text>doors, windows and skylights.</text>
                         </clause>
-                        <text> (See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long"/>.)</text>
+                        <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                        <see-also xml:id="nbc.divBV2.part9.sect36.subsect5.art6.sent2.seealso">(See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect2" display-type="long"/>.)</see-also>
                     </sentence>
                 </new-content>
             </replace>
@@ -1148,7 +1190,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect5.art14.sent2.clause4" letter="d">
                             <text>an airtightness of</text>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect5.art14.sent2.clause4.subclause1" number="1">
-                                <text>3.0 air changes per hour at <measurement units="metric">50 Pa</measurement> pressure differential for attached zones, where the airtightness used for the proposed house is determined in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7.art3.sent1" display-type="long"/> using the unguarded method, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>3.0 air changes per hour at <measurement units="metric">50 Pa</measurement> pressure differential for attached zones, where the airtightness used for the proposed house is determined in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art3.sent1" display-type="long"/> using the unguarded method, and</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect5.art14.sent2.clause4.subclause2" number="2">
                                 <text>2.5 air changes per hour at <measurement units="metric">50 Pa</measurement> pressure differential otherwise, and</text>
@@ -1174,6 +1217,18 @@
                     <set-value>nbc.divBV2.part9.sect38.subsect7.art3.sent1</set-value>
                 </attribute-change>
             </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-06056 | issue 362 | Clause 9.36.5.10.(9)(c) ends at Sentence 9.36.7.3.(1). without the NBC "expressed as" and Subclauses (i) and (ii), as in the PDF (p.1036). -->
+        <amendment id="bc-autofix-936510-9c" sequence="298.1"
+                   description="Clause 9.36.5.10.(9)(c): end the clause at the reference and delete NBC Subclauses (i) and (ii) (not in BCBC 2024)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect5.art10.sent9.clause3"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <clause xml:id="nbc.divBV2.part9.sect36.subsect5.art10.sent9.clause3" letter="c">
+                        <text>the airtightness determined in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art3.sent1" display-type="long"/>.</text>
+                    </clause>
+                </new-content>
+            </replace>
         </amendment>
         
         <!-- ================================================================== -->
@@ -1201,7 +1256,14 @@
                 <text-change xpath-within-target="text()">
                     <find-replace>
                         <find>for houses containing one or </find>
-                        <replace>for houses containing 1 or 2 </replace>
+                        <replace>for houses containing 1 or </replace>
+                    </find-replace>
+                </text-change>
+                <!-- CLAUDE-AUTOFIX CF-06071 | issue 6590 | The NBC "two" sits inside the measurement element, so it is changed there to "2" (no longer "1 or 2 two"), as in the PDF. -->
+                <text-change xpath-within-target=".//text()">
+                    <find-replace>
+                        <find>two </find>
+                        <replace>2 </replace>
                     </find-replace>
                 </text-change>
             </modify>
@@ -1244,7 +1306,8 @@
                                 <text>Where a <ref type="term" target="bldng">building</ref> contains more than one <ref type="term" target="dwllng-n">dwelling unit</ref>, the requirements of this Subsection shall apply to the energy performance of the <ref type="term" target="bldng">building</ref> and not to individual <ref type="term" target="dwllng-n">dwelling units</ref>.</text>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art1.sent2" number="2">
-                                <text>This Subsection is concerned with determining compliance with one of the energy performance Steps through modeling the energy performance of components, systems and assemblies that are installed in <ref type="term" target="bldng">buildings</ref> and houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, described in <ref type="internal" target="nbc.divBV2.part9.sect38.subsect1.art3.sent3" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>This Subsection is concerned with determining compliance with one of the energy performance Steps through modeling the energy performance of components, systems and assemblies that are installed in <ref type="term" target="bldng">buildings</ref> and houses with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect1.art3.sent3" display-type="long"/>.</text>
                             </sentence>
                         </article>
                         <article xml:id="nbc.divBV2.part9.sect36.subsect6.art2" number="2">
@@ -1284,7 +1347,8 @@
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art2.sent2.clause3" letter="c">
                                     <text>except for common spaces in the house with the <ref type="term" target="bc-scnd-t">secondary suite</ref>, do not share common spaces intended for <ref type="term" target="ccpnc">occupancy</ref> with other <ref type="term" target="dwllng-n">dwelling units</ref> or houses.</text>
                                 </clause>
-                                <text> (See Note A-9.36.6.2.(2).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect36.subsect6.art2.sent2.seealso">(See Note A-9.36.6.2.(2).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art2.sent3" number="3">
                                 <text>For the purpose of this Subsection, the term "thermal energy demand intensity" shall mean a metric of the annual heating required by the <ref type="term" target="bldng">building</ref> for space conditioning and for conditioning of ventilation air, estimated by using an energy model in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art4" display-type="long"/>, normalized per square metre of floor area of <ref type="term" target="cnd-sp">conditioned space</ref> and expressed in kWh/(m<super>2</super>·year), taking into account all of the following:</text>
@@ -1341,12 +1405,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableA.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1374,12 +1439,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableB.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1407,12 +1473,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableC.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1440,12 +1507,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableD.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1473,12 +1541,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableE.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1507,12 +1576,13 @@
                                     <colspec colname="col2" colwidth="1*"/>
                                     <colspec colname="col3" colwidth="2*"/>
                                     <colspec colname="col4" colwidth="2*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableF.rowh1">
                                             <entry>Step</entry>
                                             <entry>Airtightness<super>(2)</super></entry>
-                                            <entry>Performance Requirement of Building Equipment and Systems</entry>
-                                            <entry>Performance Requirement of Building Envelope</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Equipment and Systems</entry>
+                                            <entry>Performance Requirement of <ref type="term" target="bldng">Building</ref> Envelope</entry>
                                         </row>
                                     </thead>
                                     <tbody>
@@ -1543,9 +1613,10 @@
                                     <colspec colname="col3" colwidth="1*"/>
                                     <colspec colname="col4" colwidth="1*"/>
                                     <colspec colname="col5" colwidth="1*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.rowh1">
-                                            <entry>Total Volume of Conditioned Space Within the Building or House</entry>
+                                            <entry>Total Volume of <ref type="term" target="cnd-sp">Conditioned Space</ref> Within the <ref type="term" target="bldng">Building</ref> or House</entry>
                                             <entry>Energy Performance Metrics</entry>
                                             <entry>Step</entry>
                                         </row>
@@ -1593,7 +1664,8 @@
                                     </tbody>
                                 </tgroup>
                                 <table-notes>
-                                    <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note1"><text>When a "house" is a dwelling unit forming part of a multi-unit building, as per Sentence 9.36.6.1.(1), requirements of Subsection 9.36.6. apply to entire building.</text></note>
+                                    <!-- CLAUDE-AUTOFIX CF-06108 | issue 10469 | Note (1) to Table 9.36.6.3.-G reads "..., the requirements of Subsection 9.36.6. apply to the entire building.", with dwelling unit and building as defined terms, as in the PDF (also CF-06107). -->
+                                    <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note1"><text>When a "house" is a <ref type="term" target="dwllng-n">dwelling unit</ref> forming part of a multi-unit <ref type="term" target="bldng">building</ref>, as per Sentence 9.36.6.1.(1), the requirements of Subsection 9.36.6. apply to the entire <ref type="term" target="bldng">building</ref>.</text></note>
                                     <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note2"><text>See <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art4.table1" display-type="long"/>.</text></note>
                                     <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note3"><text>See Sentence 9.36.6.5.(6)</text></note>
                                     <note xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableG.note4"><text>See Sentence 9.36.6.5.(7)</text></note>
@@ -1616,13 +1688,14 @@
                                     <colspec colname="col7" colwidth="0.8*"/>
                                     <colspec colname="col8" colwidth="0.8*"/>
                                     <colspec colname="col9" colwidth="0.8*"/>
+                                    <!-- CLAUDE-AUTOFIX CF-06128 | issue 3255 | Linked defined terms in the header (italic in the PDF). -->
                                     <thead>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.rowh1">
-                                            <entry>Heating Degree-Days of Building Location<super>(1)</super>, in Celsius Degree-Days</entry>
+                                            <entry>Heating Degree-Days of <ref type="term" target="bldng">Building</ref> Location<super>(1)</super>, in Celsius Degree-Days</entry>
                                             <!-- CLAUDE-AUTOFIX CF-06124 | issue 9980 | Curly apostrophe in Building’s, as in the PDF. -->
-                                            <entry>Amount of the Building’s Conditioned Space Served by Space-Cooling Equipment</entry>
+                                            <entry>Amount of the <ref type="term" target="bldng">Building</ref>’s Conditioned Space Served by Space-Cooling Equipment</entry>
                                             <entry>Step</entry>
-                                            <entry>Floor Area of Conditioned Space (m²)</entry>
+                                            <entry>Floor Area of <ref type="term" target="cnd-sp">Conditioned Space</ref> (m²)</entry>
                                         </row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.rowh2">
                                             <entry>≤ 50</entry>
@@ -1688,7 +1761,8 @@
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row39"><entry>4</entry><entry>170</entry><entry>153</entry><entry>123</entry><entry>103</entry><entry>93</entry><entry>90</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row40"><entry>5</entry><entry>140</entry><entry>123</entry><entry>98</entry><entry>80</entry><entry>73</entry><entry>70</entry></row>
                                         <!-- HDD ≥ 7000, ≤50% cooling -->
-                                        <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row41"><entry>7000 or more</entry><entry>Not more than 50%</entry><entry>2</entry><entry>Reserved</entry></row>
+                                        <!-- CLAUDE-AUTOFIX CF-06121 | issue 3251 | Row heading reads "More than 6999" as in the PDF. -->
+                                        <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row41"><entry>More than 6999</entry><entry>Not more than 50%</entry><entry>2</entry><entry>Reserved</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row42"><entry>3</entry><entry>200</entry><entry>180</entry><entry>155</entry><entry>143</entry><entry>133</entry><entry>130</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row43"><entry>4</entry><entry>150</entry><entry>140</entry><entry>120</entry><entry>108</entry><entry>100</entry><entry>100</entry></row>
                                         <row xml:id="nbc.divBV2.part9.sect36.subsect6.art3.tableH.row44"><entry>5</entry><entry>115</entry><entry>105</entry><entry>90</entry><entry>80</entry><entry>75</entry><entry>75</entry></row>
@@ -1712,7 +1786,8 @@
                                     <text>energy performance shall be calculated in conformance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art4" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art5" display-type="long"/>, and</text>
                                 </clause>
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent2.clause2" letter="b">
-                                    <text>airtightness shall be tested in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7" display-type="long"/>.</text>
+                                    <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                    <text>airtightness shall be tested in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7" display-type="long"/>.</text>
                                 </clause>
                             </sentence>
                             
@@ -1724,11 +1799,12 @@
                             <!-- Sentence 9.36.6.3.(4) -->
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art3.sent4" number="4">
                                 <text>For <ref type="term" target="bldng">buildings</ref> conforming to the requirements of any of Steps 3 to 5, thermal energy demand intensity requirements may be calculated using the applicable following formula</text>
-                                <text>for <ref type="term" target="bldng">buildings</ref> located where degree-days below 18°C value is less than 3000</text>
+                                <!-- CLAUDE-AUTOFIX CF-06185 | issue 3303 | "located where the degree-days" (three lines of 9.36.6.3.(4)) as in the PDF. -->
+                                <text>for <ref type="term" target="bldng">buildings</ref> located where the degree-days below 18°C value is less than 3000</text>
                                 <text>TEDI<sub>adjusted</sub> = TEDI<sub>step</sub> + (TEDI<sub>higher</sub> - TEDI<sub>step</sub>)(HDD<sub>actual</sub> - HDD<sub>lowest</sub>)/500</text>
-                                <text>for <ref type="term" target="bldng">buildings</ref> located where degree-days below 18°C value is 3000 to 6999</text>
+                                <text>for <ref type="term" target="bldng">buildings</ref> located where the degree-days below 18°C value is 3000 to 6999</text>
                                 <text>TEDI<sub>adjusted</sub> = TEDI<sub>step</sub> + (TEDI<sub>higher</sub> - TEDI<sub>step</sub>)(HDD<sub>actual</sub> - HDD<sub>lowest</sub>)/1000</text>
-                                <text>for <ref type="term" target="bldng">buildings</ref> located where degree-days below 18°C value is 7000 or greater</text>
+                                <text>for <ref type="term" target="bldng">buildings</ref> located where the degree-days below 18°C value is 7000 or greater</text>
                                 <text>TEDI<sub>adjusted</sub> = TEDI<sub>step</sub> + (TEDI<sub>step</sub> - TEDI<sub>lower</sub>)(HDD<sub>actual</sub> - HDD<sub>lowest</sub>)/1000</text>
                                 <text>where<list type="variable">
                                     <item><variable>TEDI<sub>adjusted</sub></variable><description>= thermal energy demand intensity requirement adjusted by heating degree-days,</description></item>
@@ -1760,7 +1836,8 @@
                             <title>Energy Modelling</title>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art4.sent1" number="1">
                                 <!-- CLAUDE-AUTOFIX CF-10141 | issue 3760 | The title is typed out after the standard reference, so the reference prints only agency and number (no second title in straight quotes). -->
-                                <text>Energy modeling shall be performed using a computer program that employs calculation methods that have been tested in accordance with <ref type="standard" target="ansiashrae140" ref-style="notitle"/>, "Evaluation of Building Energy Analysis Computer Programs" with variations in the computer program from the range recommended therein reported in accordance with Division C.</text>
+                                <!-- CLAUDE-AUTOFIX CF-10185 | issue 1464 | Standard reference uses the known id ashrae140, so it prints "ANSI/ASHRAE 140" as in the PDF, not the raw id. -->
+                                <text>Energy modeling shall be performed using a computer program that employs calculation methods that have been tested in accordance with <ref type="standard" target="ashrae140" standardId="ashrae140" ref-style="notitle"/>, "Evaluation of Building Energy Analysis Computer Programs" with variations in the computer program from the range recommended therein reported in accordance with Division C.</text>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art4.sent2" number="2">
                                 <text>Energy modeling shall conform to</text>
@@ -1772,7 +1849,8 @@
                                 </clause>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art4.sent3" number="3">
-                                <text>For <ref type="term" target="bldng">buildings</ref> conforming to the requirements of any of Steps 3 to 5, energy modeling shall account for the air leakage rate derived in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7" display-type="long"/>. (See Note A-9.36.6.4.(3).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>For <ref type="term" target="bldng">buildings</ref> conforming to the requirements of any of Steps 3 to 5, energy modeling shall account for the air leakage rate derived in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7" display-type="long"/>. (See Note A-9.36.6.4.(3).)</text>
                             </sentence>
                         </article>
                         
@@ -1787,7 +1865,8 @@
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent1.clause2" letter="b">
                                     <text>the annual gross space heat loss of the proposed and reference houses calculated in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6.art5.sent5" display-type="short"/>.</text>
                                 </clause>
-                                <text>(See Note A-9.36.6.5.(1).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent1.seealso">(See Note A-9.36.6.5.(1).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent2" number="2">
                                 <text>Reserved.</text>
@@ -1815,7 +1894,8 @@
                                 <clause xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent5.clause3" letter="c">
                                     <text>mechanical ventilation.</text>
                                 </clause>
-                                <text>(See Note A-9.36.6.5.(5).)</text>
+                                <!-- CLAUDE-AUTOFIX CF-04016 | issue 6447 | A <text> after the Clauses is merged into the Sentence text and shown before the Clauses; as a see-also it prints after the Clauses, as in the PDF. -->
+                                <see-also xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent5.seealso">(See Note A-9.36.6.5.(5).)</see-also>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent6" number="6">
                                 <text>The percent heat loss reduction shall be calculated by subtracting the annual gross space heat loss of the proposed house from the annual gross space heat loss of the reference house and dividing the result by the annual gross space heat loss of the reference house.</text>
@@ -1827,7 +1907,8 @@
                                 <text>Reserved.</text>
                             </sentence>
                             <sentence xml:id="nbc.divBV2.part9.sect36.subsect6.art5.sent9" number="9">
-                                <text>The airtightness value used in the energy model for the proposed house shall be a design airtightness, until the airtightness has been measured in accordance with <ref type="internal" target="nbc.divBV2.part9.sect38.subsect7.art3.sent1" display-type="long"/>.</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>The airtightness value used in the energy model for the proposed house shall be a design airtightness, until the airtightness has been measured in accordance with <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art3.sent1" display-type="long"/>.</text>
                             </sentence>
                         </article>
                     </subsection>
@@ -1849,7 +1930,8 @@
                         <clause xml:id="nbc.divBV2.part9.sect36.subsect7.art1.sent1.clause1" letter="a">
                             <text>determining the airtightness of <ref type="term" target="bldng">buildings</ref> and <ref type="term" target="dwllng-n">dwelling units</ref> and parts thereof</text>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect7.art1.sent1.clause1.subclause1" number="1">
-                                <text>for use in the energy model calculations described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect38.subsect6" display-type="long"/>, and</text>
+                                <!-- CLAUDE-AUTOFIX CF-06087 | issue 3222 | References to Section 9.37/9.38 elements that do not exist now point to the matching 9.36 element, as in the PDF (9.36 = Energy Efficiency). -->
+                                <text>for use in the energy model calculations described in <ref type="internal" target="nbc.divBV2.part9.sect36.subsect5" display-type="long"/> and <ref type="internal" target="nbc.divBV2.part9.sect36.subsect6" display-type="long"/>, and</text>
                             </subclause>
                             <subclause xml:id="nbc.divBV2.part9.sect36.subsect7.art1.sent1.clause1.subclause2" number="2">
                                 <text>for use in determining the Airtightness Level.</text>
@@ -1928,6 +2010,10 @@
                         </sentence>
                         <table xml:id="nbc.divBV2.part9.sect36.subsect7.art4.table1">
                             <title>Airtightness Levels</title>
+                            <!-- CLAUDE-AUTOFIX CF-04705 | issue 1437 | "Forming Part of ..." line under the title, as in the PDF. -->
+                            <forming-part>
+                                <ref type="internal" target="nbc.divBV2.part9.sect36.subsect7.art4.sent1" display-type="long"/>
+                            </forming-part>
                             <tgroup cols="4">
                                 <colspec colname="col1" colwidth=""/>
                                 <colspec colname="col2" colwidth=""/>
@@ -2049,7 +2135,8 @@
                             <article xml:id="nbc.divBV2.part9.sect37.subsect1.art2" number="2">
                                 <title>Definitions and Abbreviations</title>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1" number="1">
-                                    <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect37new.subsect1.art1.sent2" display-type="short"/>, for the purposes of this Section, the term "house" shall mean all houses, with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, that</text>
+                                    <!-- CLAUDE-AUTOFIX CF-06212 | issue 6600 | The reference prints 'Sentence 9.37.1.1.(2)', as in the PDF, not 'Sentence (2)' (it is another Article). -->
+                                    <text>Notwithstanding <ref type="internal" target="nbc.divBV2.part9.sect37new.subsect1.art1.sent2" display-type="medium">Sentence 9.37.1.1.(2)</ref>, for the purposes of this Section, the term "house" shall mean all houses, with or without a <ref type="term" target="bc-scnd-t">secondary suite</ref>, that</text>
                                     <clause xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1.clause1" letter="a">
                                         <text>have HVAC systems that serve only the house, only the <ref type="term" target="bc-scnd-t">secondary suite</ref>, or both the house and the <ref type="term" target="bc-scnd-t">secondary suite</ref> including their common spaces,</text>
                                     </clause>
@@ -2059,9 +2146,8 @@
                                     <clause xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1.clause3" letter="c">
                                         <text>except for common spaces in the house with the <ref type="term" target="bc-scnd-t">secondary suite</ref>, do not share common spaces intended for occupancy with other <ref type="term" target="dwllng-n">dwelling units</ref> or houses.</text>
                                     </clause>
-                                </sentence>
-                                <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent9" number="9">
-                                    <text>(See Note A-9.36.6.2.(2)).</text>
+                                    <!-- CLAUDE-AUTOFIX CF-03687 | issue 2055 | The note reference of Sentence 9.37.1.2.(1) is a see-also after its Clauses, as in the PDF, not a separate Sentence 9). -->
+                                    <see-also xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent1.seealso">(See Note A-9.36.6.2.(2)).</see-also>
                                 </sentence>
                                 <sentence xml:id="nbc.divBV2.part9.sect37.subsect1.art2.sent2" number="2">
                                     <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:9760 Punctuation 19c7608612 -->
@@ -2305,92 +2391,260 @@
         <!-- END OF AMENDMENTS                                                  -->
         <!-- ================================================================== -->
         
-        <amendment id="bc-qa-5aff5f80e7" sequence="739" description="Issue 6578 Incorrect Content at B.9.36.2.10.(8)">
+        <!-- CLAUDE-AUTOFIX CF-05910 | issue 3093 | BC deletes NBC Sentence 9.36.2.10.(7) (bc-291), so NBC Sentences (8) to (18) are Sentences (7) to (17) in the PDF: each is restored to its NBC text with its PDF number; the four earlier QA replacements of (8), (11) and (16)(a)/(b), which had put the next Sentence's text in place, are removed. -->
+        <amendment id="bc-custom-9-36-2-10-s8" sequence="2332"
+                   description="Restore NBC Sentence 9.36.2.10.(8) as Sentence (7), renumbered after the deletion of Sentence (7)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent8"/>
             <replace preserve-references="true">
-                <new-content source="bc">
+                <new-content>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8"
-                                                   number="8"
-                                                   vendor-id="es006921">
-                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6578 Incorrect Content 5aff5f80e7 -->
-                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6579 Incorrect Content 30911c81a2 -->
-                        <text>The joints between the <ref type="term" target="fndtn">foundation</ref> wall and the sill plate, between the sill plate and <ref type="term" target="rm-jst">rim joist</ref>, between the <ref type="term" target="rm-jst">rim joist</ref> and the subfloor material, and between the subfloor material and the bottom plate of the wall above shall be constructed
-                    airtight by </text>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause1"
-                                                    letter="a"
-                                                    vendor-id="es006921a">
-                                               <text>where the component is designed to provide a seal against air
-                    leakage, by sealing the component to the air barrier material (see <ref type="internal"
-                                                       target="nbc.divBV2.part9.appendix.appnote246"
-                                                       display-type="short"/>), or</text>
-                                            </clause>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause2"
-                                                    letter="b"
-                                                    vendor-id="es006921b">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3096 Incorrect Content b9b8c4f7c0 -->
-                                               <text>covering the structural components with an air barrier material
-                    and sealing it to the adjacent air barrier material.</text>
-                                            </clause>
-                                         </sentence>
+                               number="7"
+                               vendor-id="es006921">
+                        <text>Penetrations by electrical wiring, outlets, switches or recessed
+light fixtures through the plane of airtightness shall be constructed
+airtight </text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause1"
+                                letter="a"
+                                vendor-id="es006921a">
+                           <text>where the component is designed to provide a seal against air
+leakage, by sealing the component to the air barrier material (see <ref type="internal"
+                                   target="nbc.divBV2.part9.appendix.appnote246"
+                                   display-type="short"/>), or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent8.clause2"
+                                letter="b"
+                                vendor-id="es006921b">
+                           <text>where the component is not designed to provide a seal against
+air leakage, by covering the component with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-6354ee7806" sequence="740" description="Issue 6580 Incorrect Content at B.9.36.2.10.(11)">
+        <amendment id="bc-custom-9-36-2-10-s9" sequence="2333"
+                   description="Restore NBC Sentence 9.36.2.10.(9) as Sentence (8), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent9"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent9"
+                               number="8"
+                               vendor-id="es006922">
+                        <text>The joints between the <ref type="term" target="fndtn">foundation</ref> wall and the sill plate, between the sill plate and <ref type="term" target="rm-jst">rim joist</ref>, between the <ref type="term" target="rm-jst">rim joist</ref> and the subfloor material, and between the subfloor
+material and the bottom plate of the wall above shall be constructed
+airtight by</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent9.clause1"
+                                letter="a"
+                                vendor-id="es006922a">
+                           <text>sealing all joints and junctions between the structural components,
+or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent9.clause2"
+                                letter="b"
+                                vendor-id="es006922b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s10" sequence="2334"
+                   description="Restore NBC Sentence 9.36.2.10.(10) as Sentence (9), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent10"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent10"
+                               number="9"
+                               vendor-id="es006923">
+                        <text>The interfaces between windows, doors and skylights and wall/ceiling
+assemblies shall be constructed airtight by sealing all joints and
+junctions between the air barrier material in the wall and the window,
+door or skylight frame. (See <ref type="internal"
+                                target="nbc.divBV2.part9.appendix.appnote247"
+                                display-type="short"/>.) (See also <ref type="internal"
+                                target="nbc.divBV2.part9.sect7.subsect6"
+                                display-type="long"/>)</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s11" sequence="2335"
+                   description="Restore NBC Sentence 9.36.2.10.(11) as Sentence (10), renumbered after the deletion of Sentence (7)">
             <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent11"/>
             <replace preserve-references="true">
-                <new-content source="bc">
+                <new-content>
                     <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11"
-                                                   number="11"
-                                                   vendor-id="es006924">
-                                            <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6580 Incorrect Content 6354ee7806 -->
-                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:6581 Incorrect Content 698e3d282a -->
-                        <text>Interior walls that meet exterior walls or ceilings whose plane of airtightness is on the interior of the <ref type="term" target="bldng">building</ref> envelope and knee walls that separate <ref type="term" target="cnd-sp">conditioned space</ref> from unconditioned space shall be constructed airtight by</text>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause1"
-                                                    letter="a"
-                                                    vendor-id="es006924a">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3103 Incorrect Content 125aa7275b -->
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3104 Incorrect Content ebde05e7df -->
-                                               <text>sealing all junctions between the structural components,</text>
-                                            </clause>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause2"
-                                                    letter="b"
-                                                    vendor-id="es006924b">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3105 Incorrect Content e65a0f9f9e -->
-                                               <text>covering the structural components with an air barrier material
-                    and sealing it to the adjacent air barrier material, or</text>
-                                            </clause>
-                                            <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause3" letter="c">
-                                                <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3106 Missing Content e96cf989a7 -->
-                                                <text>maintaining the continuity of the <ref type="term" target="r-brrr">air barrier system</ref> above or through the interior wall or below or through the knee wall, as applicable.</text>
-                                            </clause>
-                                         </sentence>
+                               number="10"
+                               vendor-id="es006924">
+                        <text>Cantilevered floors and floors over unheated spaces or over
+the exterior shall be constructed airtight by one of the following
+methods or a combination thereof:</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause1"
+                                letter="a"
+                                vendor-id="es006924a">
+                           <text>sealing all joints and junctions between the structural components,
+or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent11.clause2"
+                                letter="b"
+                                vendor-id="es006924b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-4fce8c02cf" sequence="830" description="Issue 3115 Incorrect Content at B.9.36.2.10.(16)(a)">
-            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"/>
+        <amendment id="bc-custom-9-36-2-10-s12" sequence="2336"
+                   description="Restore NBC Sentence 9.36.2.10.(12) as Sentence (11), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent12"/>
             <replace preserve-references="true">
-                <new-content source="bc">
-                    <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"
-                                                    letter="a"
-                                                    vendor-id="es006929a">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3115 Incorrect Content 4fce8c02cf -->
-                        <text>sealing all junctions between the structural components, or</text>
-                                            </clause>
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12"
+                               number="11"
+                               vendor-id="es006925">
+                        <text>Interior walls that meet exterior walls or ceilings whose plane
+of airtightness is on the interior of the <ref type="term" target="bldng">building</ref> envelope and knee walls that separate <ref type="term" target="cnd-sp">conditioned
+space</ref> from unconditioned space shall be constructed airtight
+by</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12.clause1"
+                                letter="a"
+                                vendor-id="es006925a">
+                           <text>sealing all junctions between the structural components,</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12.clause2"
+                                letter="b"
+                                vendor-id="es006925b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material, or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent12.clause3"
+                                letter="c"
+                                vendor-id="es006925c">
+                           <text>maintaining the continuity of the <ref type="term" target="r-brrr">air barrier
+system</ref> above or through the interior wall or below or through
+the knee wall, as applicable.</text>
+                        </clause>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
-        <amendment id="bc-qa-8842c18b2e" sequence="831" description="Issue 3116 Incorrect Content at B.9.36.2.10.(16)(b)">
-            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"/>
+        <amendment id="bc-custom-9-36-2-10-s13" sequence="2337"
+                   description="Restore NBC Sentence 9.36.2.10.(13) as Sentence (12), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent13"/>
             <replace preserve-references="true">
-                <new-content source="bc">
-                    <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"
-                                                    letter="b"
-                                                    vendor-id="es006929b">
-                                               <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3116 Incorrect Content 8842c18b2e -->
-                        <!-- bcbc-xml-fix: 6007748e21284c80a727572a66e16506:3117 Incorrect Content 3b35855202 -->
-                        <text>covering the structural components with an air barrier material and sealing it to the adjacent air barrier material.</text>
-                                            </clause>
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent13"
+                               number="12"
+                               vendor-id="es006926">
+                        <text>Steel-lined <ref type="term" target="chmn">chimneys</ref> that penetrate
+the <ref type="term" target="bldng">building</ref> envelope shall be constructed
+airtight by blocking the void between required clearances for metal <ref type="term" target="chmn">chimneys</ref> and surrounding construction with sheet
+metal and sealant capable of withstanding high temperatures. </text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s14" sequence="2338"
+                   description="Restore NBC Sentence 9.36.2.10.(14) as Sentence (13), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent14"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent14"
+                               number="13"
+                               vendor-id="es006927">
+                        <text>
+                           <ref type="term" target="mnr-r-cn">Masonry or concrete chimneys</ref> that
+penetrate the <ref type="term" target="bldng">building</ref> envelope shall be
+constructed airtight by mechanically fastening a metal flange or steel
+stud that extends not less than <measurement units="metric">75 mm</measurement> out from the <ref type="term" target="chmn">chimney</ref> and sealing the air barrier material to
+it with a sealant capable of withstanding high temperatures.</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s15" sequence="2339"
+                   description="Restore NBC Sentence 9.36.2.10.(15) as Sentence (14), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent15"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent15"
+                               number="14"
+                               vendor-id="es006928">
+                        <text>Ducts that penetrate the <ref type="term" target="bldng">building</ref> envelope shall be constructed airtight by sealing the penetration
+through the <ref type="term" target="bldng">building</ref> envelope. (See <ref type="internal"
+                                target="nbc.divBV2.part9.appendix.appnote248"
+                                display-type="short"/>.)</text>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s16" sequence="2340"
+                   description="Restore NBC Sentence 9.36.2.10.(16) as Sentence (15), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent16"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16"
+                               number="15"
+                               vendor-id="es006929">
+                        <text>Plumbing vent stack pipes that penetrate the <ref type="term" target="bldng">building</ref> envelope shall be constructed airtight by </text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause1"
+                                letter="a"
+                                vendor-id="es006929a">
+                           <text>sealing the air barrier material to the vent stack pipe with
+a compatible sealant or sheathing tape, or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent16.clause2"
+                                letter="b"
+                                vendor-id="es006929b">
+                           <text>installing a rubber gasket or prefabricated roof flashing at
+the penetration of the plane of airtightness then sealing it and mechanically
+fastening it to the top plate.</text>
+                        </clause>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s17" sequence="2341"
+                   description="Restore NBC Sentence 9.36.2.10.(17) as Sentence (16), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent17"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent17"
+                               number="16"
+                               vendor-id="es006930">
+                        <text>Where a <ref type="term" target="prt-wll">party wall</ref> meets the plane
+of airtightness, that junction shall be constructed airtight by sealing
+any voids within the <ref type="term" target="prt-wll">party wall</ref> at the
+perimeter to the adjacent air barrier material and by</text>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent17.clause1"
+                                letter="a"
+                                vendor-id="es006930a">
+                           <text>sealing all junctions between the structural components, or</text>
+                        </clause>
+                        <clause xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent17.clause2"
+                                letter="b"
+                                vendor-id="es006930b">
+                           <text>covering the structural components with an air barrier material
+and sealing it to the adjacent air barrier material.</text>
+                        </clause>
+                     </sentence>
+                </new-content>
+            </replace>
+        </amendment>
+        <amendment id="bc-custom-9-36-2-10-s18" sequence="2342"
+                   description="Restore NBC Sentence 9.36.2.10.(18) as Sentence (17), renumbered after the deletion of Sentence (7)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art10.sent18"/>
+            <replace preserve-references="true">
+                <new-content>
+                    <sentence xml:id="nbc.divBV2.part9.sect36.subsect2.art10.sent18"
+                               number="17"
+                               vendor-id="es006931">
+                        <text>Where the concrete in a flat insulating concrete form wall acts
+as the air barrier, the continuity of the plane of airtightness shall
+be maintained between the concrete and adjacent air barrier materials.</text>
+                     </sentence>
                 </new-content>
             </replace>
         </amendment>
@@ -2405,6 +2659,31 @@
                     </new-content>
                 </element-replace>
             </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-10384 | issue 1159 | The second See-Note of Sentence 9.36.2.1.(2) prints only the Note number A-9.36.1.3.(6), as in the PDF, not the Note title. -->
+        <amendment id="bc-custom-9-36-2-1-2" sequence="2345"
+                   description="Sentence 9.36.2.1.(2): See Notes A-9.36.2.1.(2) and A-9.36.1.3.(6)">
+            <target type="canonical-id" id="nbc.divBV2.part9.sect36.subsect2.art1.sent2"/>
+            <modify>
+                <element-replace element="text">
+                    <new-content source="bc">
+                        <text>The requirements of this Subsection also apply to components of a <ref type="term" target="bldng">building</ref> envelope assembly that separate a <ref type="term" target="cnd-sp">conditioned space</ref> from an adjoining <ref type="term" target="trg-grg">storage garage</ref>, even if the <ref type="term" target="trg-grg">storage garage</ref> is intended to be heated. (See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote218" display-type="short" pretext="Notes"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote217" display-type="short" pretext="and">A-9.36.1.3.(6)</ref>.)</text>
+                    </new-content>
+                </element-replace>
+            </modify>
+        </amendment>
+        <!-- CLAUDE-AUTOFIX CF-05829 | issue 10449 | Same cause (Note ref without text prints the Note title): Example 1 of Note A-9.23.4.2.(2): 'vibration limit per Note A-9.23.4.2.(2)' prints the Note number only, as in the PDF, not the Note title. -->
+        <amendment id="bc-custom-a-9-23-4-2-ex1-row5" sequence="2348"
+                   description="Note A-9.23.4.2.(2) Example 1 assumptions: vibration limit per Note A-9.23.4.2.(2)">
+            <target type="canonical-id" id="nbc.divBV2.part9.appendix.appnote123.example1.table1.row5"/>
+            <replace preserve-references="true">
+                <new-content source="bc">
+                    <row xml:id="nbc.divBV2.part9.appendix.appnote123.example1.table1.row5">
+                        <entry valign="top">- vibration limit</entry>
+                        <entry align="left" valign="top">per <ref type="internal" target="nbc.divBV2.part9.appendix.appnote120" display-type="long">Note A-9.23.4.2.(2)</ref></entry>
+                    </row>
+                </new-content>
+            </replace>
         </amendment>
     </amendments>
     

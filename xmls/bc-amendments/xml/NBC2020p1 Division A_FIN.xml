@@ -519,6 +519,7 @@
                                 </row>
                                 
                                 <!-- Row 2: Fire Separations - 30 min acceptable -->
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 1 | "some" is italic, as in the PDF (1 h fire separation required between some major occupancies). -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row2"
                                     >
@@ -544,10 +545,10 @@
                                         1 h <ref
                                             type="term"
                                             target="fr-prtn"
-                                            >fire separation</ref> required between some <ref
+                                            >fire separation</ref> required between <emphasis style="italic">some <ref
                                             type="term"
                                             target="mjr-ccpn"
-                                            >major occupancies</ref>.</entry>
+                                            >major occupancies</ref></emphasis>.</entry>
                                     <entry>30 min <ref
                                             type="term"
                                             target="fr-prtn"
@@ -1094,6 +1095,7 @@
                                             >interconnected floor space</ref>.</entry>
                                 </row>
                                 
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 10 | "fire resistance rating" is italic (defined term), as in the PDF. -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row15"
                                     >
@@ -1122,7 +1124,7 @@
                                             >suites</ref> by a <ref
                                             type="term"
                                             target="fr-prtn"
-                                            >fire separation</ref> having a fire resistance rating of 45 min or 1 hr.</entry>
+                                            >fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire resistance rating</ref> of 45 min or 1 hr.</entry>
                                     <entry>Existing <ref
                                             type="term"
                                             target="fr-prtn"
@@ -1141,6 +1143,7 @@
                                             >building height</ref>.</entry>
                                 </row>
                                 
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 11 | "fire resistance ratings" is italic (defined term), as in the PDF. -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row16"
                                     >
@@ -1173,7 +1176,7 @@
                                             target="fr-rtnc-"
                                             >fire-resistance rating</ref> of at least 45 min.</entry>
                                     <entry
-                                        >Existing corridors with 30 min fire resistance ratings, such as wood lath and plaster in good condition, are acceptable in <ref type="term" target="rdntl-cc">residential occupancies</ref> provided the <ref
+                                        >Existing corridors with 30 min <ref type="term" target="fr-rtnc-">fire resistance ratings</ref>, such as wood lath and plaster in good condition, are acceptable in <ref type="term" target="rdntl-cc">residential occupancies</ref> provided the <ref
                                             type="term"
                                             target="bldng"
                                             >building</ref>:<lb/>
@@ -1453,6 +1456,7 @@
                                             >sprinklered</ref>.</entry>
                                 </row>
                                 
+                                <!-- CLAUDE-AUTOFIX CF-00006 | issue 13 | "fire resistance rating" is italic (defined term), as in the PDF. -->
                                 <row
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row24"
                                     >
@@ -1510,7 +1514,7 @@
                                             >building height</ref> may have <ref type="term" target="xt">exits</ref> that are separated by a <ref
                                             type="term"
                                             target="fr-prtn"
-                                            >fire separation</ref> having a fire resistance rating of not less than 45 min provided the <ref
+                                            >fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire resistance rating</ref> of not less than 45 min provided the <ref
                                             type="term"
                                             target="bldng"
                                             >building</ref> is <ref
@@ -1587,6 +1591,7 @@
                                     xml:id="nbc.divA.part1.sect1.subsect1.art1.table1.row27"
                                     >
                                     <entry>27</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-00019 | issue 14 | Second Sentence of each pair printed as the number only (3.4.5.1.(4), 9.9.11.3.(4)) to match the PDF. -->
                                     <entry>
                                     <emphasis style="bold">
                                     Illumination of <ref type="term" target="xt">Exit</ref> Signs
@@ -1599,7 +1604,7 @@
                                             /> and <ref
                                             type="internal"
                                             target="nbc.divB.part3.sect4.subsect5.art1.sent4"
-                                            display-type="long"
+                                            display-type="number"
                                             /> , <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect11.art3.sent3"
@@ -1607,7 +1612,7 @@
                                             /> and <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect11.art3.sent4"
-                                            display-type="long"
+                                            display-type="number"
                                             /><lb/>
                                         <ref type="term" target="xt">Exit</ref> signs are required to be illuminated continuously while the <ref
                                             type="term"
@@ -1635,11 +1640,12 @@
                                             display-type="long"
                                             />.<lb/>
                                         Stair risers shall not be closer than 300 mm from an <ref type="term" target="xt">exit</ref> door.</entry>
+                                    <!-- CLAUDE-AUTOFIX CF-00021 | issue 14 | "Except as permitted in Sentences 3.4.6.11.(3) or 9.6.6.(2)", as in the PDF. -->
                                     <entry
-                                        >Except as permitted in <ref
+                                        >Except as permitted in Sentences <ref
                                             type="internal"
                                             target="nbc.divB.part3.sect4.subsect6.art11.sent3"
-                                            display-type="long"
+                                            display-type="number"
                                             /> or <ref
                                             type="internal"
                                             target="nbc.divBV2.part9.sect9.subsect6.art2"
@@ -2893,10 +2899,11 @@
             <target type="canonical-id" id="prcs-plnt" />
             <replace preserve-references="false">
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00006 | issue 1516 | "industrial occupancy", "flammable liquids" and "combustible liquids" are defined terms (italic), as in the PDF. -->
                     <item xml:id="prcs-plnt">
                         <term>Process plant</term>
                         <definition
-                            >means an industrial occupancy where materials, including flammable liquids, combustible liquids or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)</definition>
+                            >means an <ref type="term" target="ndtrl-cc">industrial occupancy</ref> where materials, including <ref type="term" target="flmmbl-l">flammable liquids</ref>, <ref type="term" target="cmbtbl-l">combustible liquids</ref> or gases, are produced or used in a process. (See Table 3.2.7.1. of Division B of the British Columbia Fire Code.)</definition>
                     </item>
                 </new-content>
             </replace>
@@ -2956,11 +2963,12 @@
                 />
             <insert>
                 <new-content source="bc">
+                    <!-- CLAUDE-AUTOFIX CF-00006 | issue 1517 | "field review" is a defined term (italic), as in the PDF. -->
                     <item xml:id="bc-rgstrd-prfssnl-f-rcrd">
                         <term>Registered professional of record</term>
                         <definition>means a <emphasis
                                 style="italic"
-                                >registered professional</emphasis> retained to undertake design work and field review in accordance with <ref
+                                >registered professional</emphasis> retained to undertake design work and <ref type="term" target="bc-fld-rvw">field review</ref> in accordance with <ref
                                 type="internal"
                                 target="nbc.divC.part2.sect2.subsect7"
                                 display-type="long"
@@ -4187,6 +4195,7 @@
                 <new-content source="bc">
                     <sub-objective xml:id="nbc.objective.OE2" key="OE2">
                         <title>Greenhouse Gases</title>
+                        <!-- CLAUDE-AUTOFIX CF-00306 | issue 9833 | Curly apostrophe in building’s, as in the PDF (objective OE2 / OE2.1). -->
                         <definition
                             >An objective of this Code is to limit the probability that, as a result of design and construction of the <ref
                                 type="term"
@@ -4194,7 +4203,7 @@
                                 >building</ref>, including the <ref
                                 type="term"
                                 target="bldng"
-                                >building's</ref> systems, and the energy consumed in the operation of those systems, the production of greenhouse gases will be excessive. The risks of excessive greenhouse gas emissions addressed in this Code are those caused by-
+                                >building’s</ref> systems, and the energy consumed in the operation of those systems, the production of greenhouse gases will be excessive. The risks of excessive greenhouse gas emissions addressed in this Code are those caused by-
                         <lb/>
                         OE2.1– excessive emissions as a result of the design and construction of the <ref type="term" target="bldng">building</ref>, including the <ref type="term" target="bldng">building’s</ref> systems, and the energy consumed in the operation of those systems
                         </definition>
@@ -4202,8 +4211,9 @@
                             xml:id="nbc.objective.OE2.1"
                             key="OE2.1"
                             >
+                            <!-- CLAUDE-AUTOFIX CF-00306 | issue 9833 | Curly apostrophe in building’s, as in the PDF (objective OE2 / OE2.1). -->
                             <title
-                                >excessive emissions as a result of the design and construction of the building, including the building's systems, and the energy consumed in the operation of those systems</title>
+                                >excessive emissions as a result of the design and construction of the building, including the building’s systems, and the energy consumed in the operation of those systems</title>
                         </sub-sub-objective>
                     </sub-objective>
                 </new-content>
@@ -4695,63 +4705,64 @@ building on a flat site.</paragraph>
                             to perform the following functions (see 
                             <ref type="internal" target="nbc.divA.part3.appendix.appnote1" display-type="short"/>): 
                         </text>
-                            <text><emphasis style="bold">F01</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of accidental ignition.</text> 
-                            <text><emphasis style="bold">F02</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the severity and effects of fire or explosions.</text> 
-                            <text><emphasis style="bold">F03</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard the effects of fire on areas beyond its point of origin.</text> 
-                            <text><emphasis style="bold">F04</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard failure or collapse due to the effects of fire.</text> 
-                            <text><emphasis style="bold">F05</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard the effects of fire on emergency egress facilities.</text> 
-                            <text><emphasis style="bold">F06</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard the effects of fire on facilities for notification, suppression and emergency response.</text> 
-                            <text><emphasis style="bold">F10</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the timely movement of persons to a safe place in an emergency.</text> 
-                            <text><emphasis style="bold">F11</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To notify persons, in a timely manner, of the need to take action in an emergency.</text> 
-                            <text><emphasis style="bold">F12</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate emergency response.</text> 
-                            <text><emphasis style="bold">F13</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To notify emergency responders, in a timely manner, of the need to take action in an emergency.</text> 
-                            <text><emphasis style="bold">F20</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To support and withstand expected loads and forces.</text> 
-                            <text><emphasis style="bold">F21</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit or accommodate dimensional change.</text> 
-                            <text><emphasis style="bold">F22</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit movement under expected loads and forces.</text> 
-                            <text><emphasis style="bold">F23</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain equipment in place during structural movement.</text> 
-                            <text><emphasis style="bold">F30</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of injury to persons as a result of tripping, slipping, falling, contact, drowning or collision.</text> 
-                            <text><emphasis style="bold">F31</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of injury to persons as a result of contact with hot surfaces or substances.</text> 
-                            <text><emphasis style="bold">F32</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of injury to persons as a result of contact with energized equipment.</text> 
-                            <text><emphasis style="bold">F33</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the level of sound of a fire alarm system.</text> 
-                            <text><emphasis style="bold">F34</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist or discourage unwanted access or entry.</text> 
-                            <text><emphasis style="bold">F35</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the identification of potential intruders.</text> 
-                            <text><emphasis style="bold">F36</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk that persons will be trapped in confined spaces.</text> 
-                            <text><emphasis style="bold">F40</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the level of contaminants.</text> 
-                            <text><emphasis style="bold">F41</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of generation of contaminants.</text> 
-                            <text><emphasis style="bold">F42</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist the entry of vermin and insects.</text> 
-                            <text><emphasis style="bold">F43</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of release of hazardous substances.</text> 
-                            <text><emphasis style="bold">F44</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the spread of hazardous substances beyond their point of release.</text> 
-                            <text><emphasis style="bold">F46</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of contamination of potable water.</text> 
-                            <text><emphasis style="bold">F50</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide air suitable for breathing.</text> 
-                            <text><emphasis style="bold">F51</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain appropriate air and surface temperatures.</text> 
-                            <text><emphasis style="bold">F52</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain appropriate relative humidity.</text> 
-                            <text><emphasis style="bold">F53</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain appropriate indoor/outdoor air pressure differences.</text> 
-                            <text><emphasis style="bold">F54</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit drafts.</text> 
-                            <text><emphasis style="bold">F55</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist the transfer of air through environmental separators.</text> 
-                            <text><emphasis style="bold">F56</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the transmission of airborne sound into a <ref type="term" target="dwllng-n">dwelling unit </ref> from spaces elsewhere in the <ref type="term" target="bldng">building</ref> (see <ref type="internal" target="nbc.divA.part3.sect1.subsect1.art2.sent2" display-type="long">Sentence 3.1.1.2.(2)</ref> for application limitation).</text> 
-                            <text><emphasis style="bold">F60</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To control the accumulation and pressure of water on and in the ground.</text> 
-                            <text><emphasis style="bold">F61</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist the ingress of precipitation, water or moisture from the exterior or from the ground.</text> 
-                            <text><emphasis style="bold">F62</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the dissipation of water and moisture from the <ref type="term" target="bldng">building</ref>.</text>
-                            <text><emphasis style="bold">F63</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit moisture condensation.</text> 
-                            <text><emphasis style="bold">F70</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide potable water.</text> 
-                            <text><emphasis style="bold">F71</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide facilities for personal hygiene.</text> 
-                            <text><emphasis style="bold">F72</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide facilities for the sanitary disposal of human and domestic wastes.</text> 
-                            <text><emphasis style="bold">F73</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate <ref type="term" target="bc-cc-t-ccbl">access</ref> to and circulation in the <ref type="term" target="bldng">building</ref> and its facilities by <ref type="term" target="bc-prsn-wth-dsblts">persons with disabilities</ref> (see <ref type="internal" target="nbc.divA.part3.sect1.subsect1.art2.sent3" display-type="long">Sentence 3.1.1.2.(3)</ref> for application limitation).</text> 
-                            <text><emphasis style="bold">F74</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the use of the <ref type="term" target="bldng">building's</ref> facilities by <ref type="term" target="bc-prsn-wth-dsblts">persons with disabilities</ref> (see <ref type="internal" target="nbc.divA.part3.sect1.subsect1.art2.sent3" display-type="long">Sentence 3.1.1.2.(3)</ref> for application limitation).</text> 
-                            <text><emphasis style="bold">F75</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;To minimize obstacles for future modification to provide <ref type="term" target="bc-cc-t-ccbl">access</ref>.</text> 
-                            <text><emphasis style="bold">F80</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist deterioration resulting from expected service conditions.</text> 
-                            <text><emphasis style="bold">F81</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of malfunction, interference, damage, tampering, lack of use or misuse.</text> 
-                            <text><emphasis style="bold">F82</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of inadequate performance due to improper maintenance or lack of maintenance.</text> 
-                            <text><emphasis style="bold">F90</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled air leakage through the <ref type="term" target="bldng">building</ref> envelope.</text> 
-                            <text><emphasis style="bold">F91</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled air leakage through system components.</text> 
-                            <text><emphasis style="bold">F92</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled thermal transfer through the <ref type="term" target="bldng">building</ref> envelope.</text> 
-                            <text><emphasis style="bold">F93</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled thermal transfer through system components.</text> 
-                            <text><emphasis style="bold">F95</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the unnecessary demand and/or consumption of energy for heating and cooling.</text> 
-                            <text><emphasis style="bold">F96</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the unnecessary demand and/or consumption of energy for service water heating.</text> 
-                            <text><emphasis style="bold">F98</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the inefficiency of equipment.</text> 
-                            <text><emphasis style="bold">F99</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the inefficiency of systems.</text> 
-                            <text><emphasis style="bold">F100</emphasis>&#160;&#160;&#160;&#160;&#160;&#160;To limit the unnecessary rejection of reusable waste energy.</text> 
-                            <text><emphasis style="bold">F101</emphasis>&#160;&#160;&#160;&#160;To limit excessive emission of greenhouse gases into the environment.</text>
+                            <!-- CLAUDE-AUTOFIX CF-00316 | issue 84 | Removed bold from the functional statement codes F01 to F101 (plain in the PDF). -->
+                            <text>F01&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of accidental ignition.</text> 
+                            <text>F02&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the severity and effects of fire or explosions.</text> 
+                            <text>F03&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard the effects of fire on areas beyond its point of origin.</text> 
+                            <text>F04&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard failure or collapse due to the effects of fire.</text> 
+                            <text>F05&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard the effects of fire on emergency egress facilities.</text> 
+                            <text>F06&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To retard the effects of fire on facilities for notification, suppression and emergency response.</text> 
+                            <text>F10&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the timely movement of persons to a safe place in an emergency.</text> 
+                            <text>F11&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To notify persons, in a timely manner, of the need to take action in an emergency.</text> 
+                            <text>F12&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate emergency response.</text> 
+                            <text>F13&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To notify emergency responders, in a timely manner, of the need to take action in an emergency.</text> 
+                            <text>F20&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To support and withstand expected loads and forces.</text> 
+                            <text>F21&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit or accommodate dimensional change.</text> 
+                            <text>F22&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit movement under expected loads and forces.</text> 
+                            <text>F23&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain equipment in place during structural movement.</text> 
+                            <text>F30&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of injury to persons as a result of tripping, slipping, falling, contact, drowning or collision.</text> 
+                            <text>F31&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of injury to persons as a result of contact with hot surfaces or substances.</text> 
+                            <text>F32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of injury to persons as a result of contact with energized equipment.</text> 
+                            <text>F33&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the level of sound of a fire alarm system.</text> 
+                            <text>F34&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist or discourage unwanted access or entry.</text> 
+                            <text>F35&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the identification of potential intruders.</text> 
+                            <text>F36&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk that persons will be trapped in confined spaces.</text> 
+                            <text>F40&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the level of contaminants.</text> 
+                            <text>F41&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of generation of contaminants.</text> 
+                            <text>F42&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist the entry of vermin and insects.</text> 
+                            <text>F43&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of release of hazardous substances.</text> 
+                            <text>F44&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the spread of hazardous substances beyond their point of release.</text> 
+                            <text>F46&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of contamination of potable water.</text> 
+                            <text>F50&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide air suitable for breathing.</text> 
+                            <text>F51&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain appropriate air and surface temperatures.</text> 
+                            <text>F52&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain appropriate relative humidity.</text> 
+                            <text>F53&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To maintain appropriate indoor/outdoor air pressure differences.</text> 
+                            <text>F54&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit drafts.</text> 
+                            <text>F55&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist the transfer of air through environmental separators.</text> 
+                            <text>F56&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the transmission of airborne sound into a <ref type="term" target="dwllng-n">dwelling unit </ref> from spaces elsewhere in the <ref type="term" target="bldng">building</ref> (see <ref type="internal" target="nbc.divA.part3.sect1.subsect1.art2.sent2" display-type="long">Sentence 3.1.1.2.(2)</ref> for application limitation).</text> 
+                            <text>F60&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To control the accumulation and pressure of water on and in the ground.</text> 
+                            <text>F61&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist the ingress of precipitation, water or moisture from the exterior or from the ground.</text> 
+                            <text>F62&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the dissipation of water and moisture from the <ref type="term" target="bldng">building</ref>.</text>
+                            <text>F63&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit moisture condensation.</text> 
+                            <text>F70&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide potable water.</text> 
+                            <text>F71&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide facilities for personal hygiene.</text> 
+                            <text>F72&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To provide facilities for the sanitary disposal of human and domestic wastes.</text> 
+                            <text>F73&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate <ref type="term" target="bc-cc-t-ccbl">access</ref> to and circulation in the <ref type="term" target="bldng">building</ref> and its facilities by <ref type="term" target="bc-prsn-wth-dsblts">persons with disabilities</ref> (see <ref type="internal" target="nbc.divA.part3.sect1.subsect1.art2.sent3" display-type="long">Sentence 3.1.1.2.(3)</ref> for application limitation).</text> 
+                            <text>F74&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To facilitate the use of the <ref type="term" target="bldng">building's</ref> facilities by <ref type="term" target="bc-prsn-wth-dsblts">persons with disabilities</ref> (see <ref type="internal" target="nbc.divA.part3.sect1.subsect1.art2.sent3" display-type="long">Sentence 3.1.1.2.(3)</ref> for application limitation).</text> 
+                            <text>F75&#160;&#160;&#160;&#160;&#160;&#160;To minimize obstacles for future modification to provide <ref type="term" target="bc-cc-t-ccbl">access</ref>.</text> 
+                            <text>F80&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To resist deterioration resulting from expected service conditions.</text> 
+                            <text>F81&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of malfunction, interference, damage, tampering, lack of use or misuse.</text> 
+                            <text>F82&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To minimize the risk of inadequate performance due to improper maintenance or lack of maintenance.</text> 
+                            <text>F90&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled air leakage through the <ref type="term" target="bldng">building</ref> envelope.</text> 
+                            <text>F91&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled air leakage through system components.</text> 
+                            <text>F92&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled thermal transfer through the <ref type="term" target="bldng">building</ref> envelope.</text> 
+                            <text>F93&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the amount of uncontrolled thermal transfer through system components.</text> 
+                            <text>F95&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the unnecessary demand and/or consumption of energy for heating and cooling.</text> 
+                            <text>F96&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the unnecessary demand and/or consumption of energy for service water heating.</text> 
+                            <text>F98&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the inefficiency of equipment.</text> 
+                            <text>F99&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;To limit the inefficiency of systems.</text> 
+                            <text>F100&#160;&#160;&#160;&#160;&#160;&#160;To limit the unnecessary rejection of reusable waste energy.</text> 
+                            <text>F101&#160;&#160;&#160;&#160;To limit excessive emission of greenhouse gases into the environment.</text>
                         </sentence>
                 </new-content>
             </replace>
