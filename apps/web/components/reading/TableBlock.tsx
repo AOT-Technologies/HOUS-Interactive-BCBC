@@ -581,21 +581,9 @@ const getResolvedTableNumber = (table: TableWithRawSupport, siblingTableCount?: 
   const formingPartEntries = table.formingPart ?? table.forming_part;
   const articleRef = buildArticleReference(table.id);
   if (articleRef) {
-    // Only use sentences from this table's own article to avoid wrong-article fallback
-    const ownArticlePrefix = table.id.replace(/\.table\d+$/i, '');
-    const ownSentences = (formingPartEntries ?? [])
-      .filter(
-        (e) =>
-          e?.type === 'internal' &&
-          typeof e?.target === 'string' &&
-          e.target.startsWith(ownArticlePrefix) &&
-          e.target.includes('.sent')
-      )
-      .map((e) => extractNumeric(e.target, /\.sent(\d+)/i))
-      .filter(Boolean);
-    if (ownSentences.length === 1) {
-      return `${articleRef}.(${ownSentences[0]})`;
-    }
+    // BBC-186 / BBC-187: a single table is numbered after its Article only (Table 3.1.6.3., Table 3.1.8.4.),
+    // as in the PDF. Sentence suffixes such as Table 1.1.1.1.(5) apply only when an Article holds several
+    // tables; ArticleBlock computes those and passes them in as tableNumberOverride.
     return articleRef;
   }
 
