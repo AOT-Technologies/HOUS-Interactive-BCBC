@@ -2521,76 +2521,16 @@
     </amendment>
     
     <!-- ================================================================== -->
-    <!-- Amendment 50: Clause 3.1.6.4.(8)(a) - Mass Timber Elements         -->
-    <!-- Strike out "from adjacent spaces" and substitute "on the interior  -->
-    <!-- side"                                                              -->
+    <!-- Amendment 50: Clause 3.1.6.4.(8)(a) - strike out "from adjacent    -->
+    <!-- spaces" and substitute "on the interior side"                      -->
+    <!--                                                                    -->
+    <!-- APPLIED IN Ministerial Order BA 2024 01.xml (bc-mo-2024-01-006):   -->
+    <!-- Clause (8)(a) only exists in the Article that MO BA 2024 01 item 6 -->
+    <!-- substitutes, and the merge engine cannot stack two revisions on    -->
+    <!-- one element. Revision id bc-mo-2024-06-050, effective 2025-06-16.  -->
+    <!-- (BBC-185) The earlier version of this amendment rewrote Sentence   -->
+    <!-- 3.1.6.4.(1) instead, which the MO does not do.                     -->
     <!-- ================================================================== -->
-    <amendment
-      id="bc-mo-2024-06-050"
-      sequence="4049"
-      description="Amend Clause 3.1.6.4.(8)(a) by striking out 'from adjacent spaces' and substituting 'on the interior side'"
-      >
-      <target
-        type="canonical-id"
-        id="nbc.divB.part3.sect1.subsect6.art4.sent1"
-        />
-      <replace preserve-references="true">
-        <new-content source="bc">
-          <sentence
-            xml:id="nbc.divB.part3.sect1.subsect6.art4.sent1"
-            number="1"
-            vendor-id="es013838"
-            >
-            <revision-history>
-              <original effective-date="2024-03-08">
-                <!-- Merge engine will auto-populate from bc-building-code.xml -->
-              </original>
-              <revision
-                seq="1"
-                type="amendment"
-                effective-date="2025-06-16"
-                id="bc-mo-2024-06-050"
-                status="current"
-                >
-                <content>
-                  <text>Except as provided in <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.art4.sent3"
-                      display-type="short"
-                      pretext="Sentences"
-                      /> <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.art4.sent6"
-                      display-type="short"
-                      pretext="to"
-                      />, <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect3.art6"
-                      display-type="long"
-                      /> shall be protected on the interior side of the building, including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.art4.sent2"
-                      display-type="short"
-                      /> that provides an <ref
-                      type="term"
-                      target="ncps-rtng"
-                      >encapsulation rating</ref> of not less than <measurement
-                      units="metric"
-                      >50 min</measurement>. (See <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.appnote4"
-                      display-type="short"
-                      />.)</text>
-                </content>
-                <change-summary
-                  >Struck out "from adjacent spaces" and substituted "on the interior side"</change-summary>
-                <note>Ministerial Order BA 2024 06</note>
-              </revision>
-            </revision-history>
-          </sentence>
-        </new-content>
-      </replace>
-    </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 51: Sentence 3.1.6.10.(1) - Combustible Components       -->
@@ -2625,18 +2565,8 @@
                 status="current"
                 >
                 <content>
-                  <text>A <ref
-                      type="term"
-                      target="cmbtbl-c"
-                      >combustible component</ref> in an exterior wall that satisfies the criteria of <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect5.art5"
-                      display-type="long"
-                      /> of Appendix D is deemed to satisfy the criteria of <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect5.art5"
-                      display-type="medium"
-                      />.</text>
+                  <!-- BBC-184 Issue 1: MO BA 2025 02 item 51 only strikes out "meets the requirements of Clause 3.1.6.9.(2)(d)" and substitutes "satisfies the criteria of Clause 3.1.5.5.(1)(b)"; the rest of the Sentence stays. -->
+                  <text>Except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art10.sent2" display-type="short"/>, <ref type="term" target="cmbtbl">combustible</ref> components, other than those permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9" display-type="long"/>, are permitted to be used in an exterior wall assembly of a <ref type="term" target="bldng">building</ref> or part of a <ref type="term" target="bldng">building</ref> permitted to be of <ref type="term" target="ncps-mt-nstr">encapsulated mass timber construction</ref>, provided the wall assembly satisfies the criteria of <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art5.sent1.clause2" display-type="long"/>.</text>
                 </content>
                 <change-summary
                   >Struck out "meets the requirements of Clause 3.1.6.9.(2)(d)" and substituted "satisfies the criteria of Clause 3.1.5.5.(1)(b)"</change-summary>
