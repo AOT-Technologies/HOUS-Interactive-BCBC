@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-17T17:15:48.508339+05:30",
+  "generated_timestamp" : "2026-11-18T15:46:56.1584755+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -4370,7 +4370,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>[REF:term:ncmbtbl-:Noncombustible Construction]<\/bold>\n[REF:internal:nbc.divB.part3.sect1.subsect5:long] , [REF:internal:nbc.divB.part9.sect10.subsect6.art1:long] .\n All materials used in [REF:term:nncmbtbl-cnstrctn:noncombustible construction] must be [REF:term:nncmbtbl:noncombustible] unless otherwise permitted." } ] },
+                       "value" : "<bold>[REF:term:ncmbtbl-:Noncombustible Construction]<\/bold>\n[REF:internal:nbc.divB.part3.sect1.subsect5:long] , [REF:internal:nbc.divB.part9.sect10.subsect6.art1:long] .\n All materials used in [REF:term:ncmbtbl-:noncombustible construction] must be [REF:term:ncmbtbl:noncombustible] unless otherwise permitted." } ] },
                     
                     { "content" : 
                      [ 
@@ -4432,7 +4432,7 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:fr-prtn:Fire separations] are not required to be continuous above a ceiling space where\n (a) the ceiling space is [REF:term:nncmbtbl-cnstrctn:noncombustible construction] ,\n (b) both [REF:term:fr-cmprt:fire compartments] are [REF:term:prnklrd:sprinklered] , or\n (c) the ceiling has a minimum rating of 30 minutes." } ] } ] },
+                       "value" : "[REF:term:fr-prtn:Fire separations] are not required to be continuous above a ceiling space where\n (a) the ceiling space is [REF:term:ncmbtbl-:noncombustible construction] ,\n (b) both [REF:term:fr-cmprt:fire compartments] are [REF:term:prnklrd:sprinklered] , or\n (c) the ceiling has a minimum rating of 30 minutes." } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row7",
                    "type" : "body_row",
@@ -4522,12 +4522,12 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "<bold>Construction of [REF:term:xpng-bld:Exposing Building Face]<\/bold>\n[REF:internal:nbc.divB.part3.sect2.subsect3.art7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5:long] .\n The [REF:term:xpsng-bldng-fc:exposing building face] is required to have a [REF:term:fr-rtnc-:fire-resistance rating] and\/or be of [REF:term:nncmbtbl-cnstrctn:noncombustible construction] ." } ] },
+                       "value" : "<bold>Construction of [REF:term:xpng-bld:Exposing Building Face]<\/bold>\n[REF:internal:nbc.divB.part3.sect2.subsect3.art7:long] , [REF:internal:nbc.divBV2.part9.sect10.subsect14.art5:long] .\n The [REF:term:xpsng-bldng-fc:exposing building face] is required to have a [REF:term:fr-rtnc-:fire-resistance rating] and\/or be of [REF:term:ncmbtbl-:noncombustible construction] ." } ] },
                     
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:term:xpng-bld:Exposing building face] is not required to have a [REF:term:fr-rtnc-:fire-resistance rating] if the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] . Also, the [REF:term:xpsng-bldng-fc:exposing building face] is not required to be of [REF:term:nncmbtbl-cnstrctn:noncombustible construction] if it is protected by an exterior sprinkler system conforming to NFPA 13, “Installation of Sprinkler Systems.”" } ] } ] },
+                       "value" : "[REF:term:xpng-bld:Exposing building face] is not required to have a [REF:term:fr-rtnc-:fire-resistance rating] if the [REF:term:bldng:building] is [REF:term:prnklrd:sprinklered] . Also, the [REF:term:xpsng-bldng-fc:exposing building face] is not required to be of [REF:term:ncmbtbl-:noncombustible construction] if it is protected by an exterior sprinkler system conforming to NFPA 13, “Installation of Sprinkler Systems.”" } ] } ] },
                   
                   { "id" : "nbc.divA.part1.sect1.subsect1.art1.table1.row12",
                    "type" : "body_row",
@@ -29068,12 +29068,12 @@
                  { "id" : "nbc.divB.part3.sect1.subsect6.art3.sent4.clause3",
                   "type" : "clause",
                   "letter" : "c",
-                  "text" : "if horizontal, lined with not less than a single layer of 12.7 mm thick Type X gypsum board or [REF:term:cmbtbl:noncombustible] material providing an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, or" },
+                  "text" : "if horizontal, lined with not less than a single layer of 12.7 mm thick Type X gypsum board or [REF:term:ncmbtbl:noncombustible] material providing an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, or" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art3.sent4.clause4",
                   "type" : "clause",
                   "letter" : "d",
-                  "text" : "if vertical, lined with not less than a single layer of 12.7 mm thick Type X gypsum board or [REF:term:cmbtbl:noncombustible] material providing an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min and vertically divided into compartments by [REF:term:fr-blk:fire blocks] in conformance with [REF:internal:nbc.divB.part3.sect1.subsect11:long]" } ] },
+                  "text" : "if vertical, lined with not less than a single layer of 12.7 mm thick Type X gypsum board or [REF:term:ncmbtbl:noncombustible] material providing an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min and vertically divided into compartments by [REF:term:fr-blk:fire blocks] in conformance with [REF:internal:nbc.divB.part3.sect1.subsect11:long]" } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art3.table1",
                 "type" : "table",
@@ -29275,26 +29275,31 @@
               "source" : "bc",
               "revised" : true,
               "title" : "Encapsulation of Mass Timber Elements",
+              "see_also" : "(See also  Note [REF:internal:nbc.divB.part3.appendix.appnote20:short] .)",
               "content" : 
               [ 
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:long:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] that",
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:number:3.1.6.16.(2)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:number:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] that",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause1",
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "is not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , or" },
+                  "text" : "is not less than 50 minutes in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , or" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "conforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)" } ] },
+                  "text" : "conforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] ." } ],
+                "see_also" : 
+                [ 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.seealso",
+                  "content" : "(See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)" } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2",
                 "type" : "sentence",
@@ -29337,7 +29342,7 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent3.clause1",
@@ -29350,13 +29355,13 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                  "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4",
                 "type" : "sentence",
                 "number" : 4,
                 "source" : "bc",
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause1",
@@ -29382,19 +29387,23 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote24:short] and [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                  "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150." } ],
+                "see_also" : 
+                [ 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.seealso",
+                  "content" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote23:short] and [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent5",
                 "type" : "sentence",
                 "number" : 5,
                 "source" : "bc",
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" },
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6",
                 "type" : "sentence",
                 "number" : 6,
                 "source" : "bc",
-                "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
+                "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6.clause1",
@@ -29407,13 +29416,13 @@
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                  "text" : "25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7",
                 "type" : "sentence",
                 "number" : 7,
                 "source" : "bc",
-                "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] or [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short:(6)] , provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause1",
@@ -29445,7 +29454,7 @@
                   "type" : "clause",
                   "letter" : "c",
                   "source" : "bc",
-                  "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                  "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent8",
                 "type" : "sentence",
@@ -29458,19 +29467,19 @@
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "mass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected from adjacent spaces with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, and" },
+                  "text" : "mass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected on the interior side with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, and" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent8.clause2",
                   "type" : "clause",
                   "letter" : "b",
                   "source" : "bc",
-                  "text" : "concealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                  "text" : "concealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent9",
                 "type" : "sentence",
                 "number" : 9,
                 "source" : "bc",
-                "text" : "In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:short] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min." } ],
+                "text" : "In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:long] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:long] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min." } ],
               "revisions" : 
               [ 
                { "type" : "original",
@@ -29600,27 +29609,32 @@
                 "sequence" : 1,
                 "effective_date" : "2024-04-05",
                 "status" : "current",
-                "title" : "",
+                "title" : "Encapsulation of Mass Timber Elements",
+                "see_also" : "(See also  Note [REF:internal:nbc.divB.part3.appendix.appnote20:short] .)",
                 "content" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1",
                   "type" : "sentence",
                   "number" : 1,
                   "source" : "bc",
-                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:long:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] that",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:number:3.1.6.16.(2)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:number:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] that",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause1",
                     "type" : "clause",
                     "letter" : "a",
                     "source" : "bc",
-                    "text" : "is not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , or" },
+                    "text" : "is not less than 50 minutes in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , or" },
                    
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause2",
                     "type" : "clause",
                     "letter" : "b",
                     "source" : "bc",
-                    "text" : "conforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)" } ] },
+                    "text" : "conforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] ." } ],
+                  "see_also" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.seealso",
+                    "content" : "(See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)" } ] },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2",
                   "type" : "sentence",
@@ -29663,7 +29677,7 @@
                   "type" : "sentence",
                   "number" : 3,
                   "source" : "bc",
-                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent3.clause1",
@@ -29676,13 +29690,13 @@
                     "type" : "clause",
                     "letter" : "b",
                     "source" : "bc",
-                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4",
                   "type" : "sentence",
                   "number" : 4,
                   "source" : "bc",
-                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause1",
@@ -29708,19 +29722,23 @@
                     "type" : "clause",
                     "letter" : "b",
                     "source" : "bc",
-                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote24:short] and [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150." } ],
+                  "see_also" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.seealso",
+                    "content" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote23:short] and [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent5",
                   "type" : "sentence",
                   "number" : 5,
                   "source" : "bc",
-                  "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" },
+                  "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6",
                   "type" : "sentence",
                   "number" : 6,
                   "source" : "bc",
-                  "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
+                  "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6.clause1",
@@ -29733,13 +29751,13 @@
                     "type" : "clause",
                     "letter" : "b",
                     "source" : "bc",
-                    "text" : "25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                    "text" : "25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7",
                   "type" : "sentence",
                   "number" : 7,
                   "source" : "bc",
-                  "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] or [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short:(6)] , provided",
                   "clauses" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause1",
@@ -29771,7 +29789,7 @@
                     "type" : "clause",
                     "letter" : "c",
                     "source" : "bc",
-                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent8",
                   "type" : "sentence",
@@ -29790,15 +29808,230 @@
                     "type" : "clause",
                     "letter" : "b",
                     "source" : "bc",
-                    "text" : "concealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)" } ] },
+                    "text" : "concealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent9",
                   "type" : "sentence",
                   "number" : 9,
                   "source" : "bc",
-                  "text" : "In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:short] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min." } ],
+                  "text" : "In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:long] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:long] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min." } ],
                 "change_summary" : "Repealed and substituted Article 3.1.6.4 Encapsulation of Mass Timber Elements",
-                "note" : "Ministerial Order BA 2024 01" } ] },
+                "note" : "Ministerial Order BA 2024 01" },
+               
+               { "type" : "revision",
+                "revision_type" : "amendment",
+                "revision_id" : "bc-mo-2024-06-050",
+                "sequence" : 2,
+                "effective_date" : "2025-06-16",
+                "status" : "current",
+                "title" : "Encapsulation of Mass Timber Elements",
+                "see_also" : "(See also  Note [REF:internal:nbc.divB.part3.appendix.appnote20:short] .)",
+                "content" : 
+                [ 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1",
+                  "type" : "sentence",
+                  "number" : 1,
+                  "source" : "bc",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:number:3.1.6.16.(2)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:number:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] that",
+                  "clauses" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause1",
+                    "type" : "clause",
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "is not less than 50 minutes in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , or" },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.clause2",
+                    "type" : "clause",
+                    "letter" : "b",
+                    "source" : "bc",
+                    "text" : "conforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] ." } ],
+                  "see_also" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent1.seealso",
+                    "content" : "(See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)" } ] },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2",
+                  "type" : "sentence",
+                  "number" : 2,
+                  "source" : "bc",
+                  "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art11.sent1:long] , the material or assembly of materials referred to in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] shall consist of",
+                  "clauses" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2.clause1",
+                    "type" : "clause",
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "gypsum board," },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2.clause2",
+                    "type" : "clause",
+                    "letter" : "b",
+                    "source" : "bc",
+                    "text" : "gypsum concrete," },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2.clause3",
+                    "type" : "clause",
+                    "letter" : "c",
+                    "source" : "bc",
+                    "text" : "[REF:term:ncmbtbl:noncombustible] materials," },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2.clause4",
+                    "type" : "clause",
+                    "letter" : "d",
+                    "source" : "bc",
+                    "text" : "materials that conform to  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:medium:(4)] , or" },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent2.clause5",
+                    "type" : "clause",
+                    "letter" : "e",
+                    "source" : "bc",
+                    "text" : "any combination of the materials listed in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause4:shortNum:(d)] ." } ] },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent3",
+                  "type" : "sentence",
+                  "number" : 3,
+                  "source" : "bc",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "clauses" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent3.clause1",
+                    "type" : "clause",
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "their aggregate exposed surface area does not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in which they are located, and" },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent3.clause2",
+                    "type" : "clause",
+                    "letter" : "b",
+                    "source" : "bc",
+                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4",
+                  "type" : "sentence",
+                  "number" : 4,
+                  "source" : "bc",
+                  "text" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "clauses" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause1",
+                    "type" : "clause",
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "all portions of the exposed surfaces",
+                    "subclauses" : 
+                    [ 
+                     { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause1.subclause1",
+                      "type" : "subclause",
+                      "number" : 1,
+                      "source" : "bc",
+                      "text" : "face the same direction, or" },
+                     
+                     { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause1.subclause2",
+                      "type" : "subclause",
+                      "number" : 2,
+                      "source" : "bc",
+                      "text" : "are separated by a horizontal distance of not less than 4.5 m, and" } ] },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.clause2",
+                    "type" : "clause",
+                    "letter" : "b",
+                    "source" : "bc",
+                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150." } ],
+                  "see_also" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent4.seealso",
+                    "content" : "(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote23:short] and [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent5",
+                  "type" : "sentence",
+                  "number" : 5,
+                  "source" : "bc",
+                  "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6",
+                  "type" : "sentence",
+                  "number" : 6,
+                  "source" : "bc",
+                  "text" : "Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed",
+                  "clauses" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6.clause1",
+                    "type" : "clause",
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "10% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150, or" },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent6.clause2",
+                    "type" : "clause",
+                    "letter" : "b",
+                    "source" : "bc",
+                    "text" : "25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7",
+                  "type" : "sentence",
+                  "number" : 7,
+                  "source" : "bc",
+                  "text" : "The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] or [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short:(6)] , provided",
+                  "clauses" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause1",
+                    "type" : "clause",
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "the aggregate surface area of any exposed mass timber beams, columns and arches does not exceed 20% of the total wall area of the perimeter of the [REF:term:t:suite] in which they are located," },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause2",
+                    "type" : "clause",
+                    "letter" : "b",
+                    "source" : "bc",
+                    "text" : "all surfaces of mass timber walls are",
+                    "subclauses" : 
+                    [ 
+                     { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause2.subclause1",
+                      "type" : "subclause",
+                      "number" : 1,
+                      "source" : "bc",
+                      "text" : "protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , or" },
+                     
+                     { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause2.subclause2",
+                      "type" : "subclause",
+                      "number" : 2,
+                      "source" : "bc",
+                      "text" : "mass timber walls that are not otherwise permitted to be exposed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] are protected by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 80 min, and" } ] },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent7.clause3",
+                    "type" : "clause",
+                    "letter" : "c",
+                    "source" : "bc",
+                    "text" : "the [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent8",
+                  "type" : "sentence",
+                  "number" : 8,
+                  "source" : "bc",
+                  "text" : "Structural mass timber elements in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have an [REF:term:ncps-rtng:encapsulation rating] of 0 min need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided",
+                  "clauses" : 
+                  [ 
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent8.clause1",
+                    "type" : "clause",
+                    "letter" : "a",
+                    "source" : "bc",
+                    "text" : "mass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected on the interior side with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, and" },
+                   
+                   { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent8.clause2",
+                    "type" : "clause",
+                    "letter" : "b",
+                    "source" : "bc",
+                    "text" : "concealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)" } ] },
+                 
+                 { "id" : "nbc.divB.part3.sect1.subsect6.art4.sent9",
+                  "type" : "sentence",
+                  "number" : 9,
+                  "source" : "bc",
+                  "text" : "In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:long] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:long] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min." } ],
+                "change_summary" : "Struck out \"from adjacent spaces\" in Clause 3.1.6.4.(8)(a) and substituted \"on the interior side\"",
+                "note" : "Ministerial Order BA 2025 02" } ] },
              
              { "id" : "nbc.divB.part3.sect1.subsect6.art5",
               "type" : "article",
@@ -30436,7 +30669,7 @@
                     "type" : "clause",
                     "letter" : "e",
                     "source" : "bc",
-                    "text" : "a combination of [REF:term:cmbtbl:noncombustible] cladding and the cladding described in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:shortNum:(d)] ." } ],
+                    "text" : "a combination of [REF:term:ncmbtbl:noncombustible] cladding and the cladding described in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:shortNum:(d)] ." } ],
                   "see_also" : 
                   [ 
                    { "id" : "nbc.divB.part3.sect1.subsect6.art9.sent2.seealso",
@@ -30712,7 +30945,7 @@
                 "number" : 1,
                 "revised" : true,
                 "source" : "bc",
-                "text" : "A [REF:term:cmbtbl-c:combustible component] in an exterior wall that satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5:long] of Appendix D is deemed to satisfy the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5:medium] .",
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art10.sent2:short] , [REF:term:cmbtbl:combustible] components, other than those permitted by [REF:internal:nbc.divB.part3.sect1.subsect6.art9:long] , are permitted to be used in an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided the wall assembly satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5.sent1.clause2:long] .",
                 "revisions" : 
                 [ 
                  { "type" : "original",
@@ -30725,7 +30958,7 @@
                   "sequence" : 1,
                   "effective_date" : "2025-06-16",
                   "status" : "current",
-                  "text" : "A [REF:term:cmbtbl-c:combustible component] in an exterior wall that satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5:long] of Appendix D is deemed to satisfy the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5:medium] .",
+                  "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art10.sent2:short] , [REF:term:cmbtbl:combustible] components, other than those permitted by [REF:internal:nbc.divB.part3.sect1.subsect6.art9:long] , are permitted to be used in an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided the wall assembly satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5.sent1.clause2:long] .",
                   "change_summary" : "Struck out \"meets the requirements of Clause 3.1.6.9.(2)(d)\" and substituted \"satisfies the criteria of Clause 3.1.5.5.(1)(b)\"",
                   "note" : "Ministerial Order BA 2024 06" } ] },
                
@@ -30912,12 +31145,12 @@
                    { "id" : "nbc.divB.part3.sect1.subsect6.art15.sent1.clause1.subclause2",
                     "type" : "subclause",
                     "number" : 2,
-                    "text" : "a single layer of 19 mm thick[REF:term:fr-rtrdn:fire-retardant-treated wood] , on solid lumber [REF:term:prttn:partitions] , or" },
+                    "text" : "a single layer of 19 mm thick [REF:term:fr-rtrdn:fire-retardant-treated wood] , on solid lumber [REF:term:prttn:partitions] , or" },
                    
                    { "id" : "nbc.divB.part3.sect1.subsect6.art15.sent1.clause1.subclause3",
                     "type" : "subclause",
                     "number" : 3,
-                    "text" : "a single layer of 19 mm thick[REF:term:fr-rtrdn:fire-retardant-treated wood] , on [REF:term:prttn:partitions] containing wood framing, where the wood stud cavities are filled with [REF:term:cmbtbl:noncombustible] insulation, and" } ] },
+                    "text" : "a single layer of 19 mm thick [REF:term:fr-rtrdn:fire-retardant-treated wood] , on [REF:term:prttn:partitions] containing wood framing, where the wood stud cavities are filled with [REF:term:ncmbtbl:noncombustible] insulation, and" } ] },
                  
                  { "id" : "nbc.divB.part3.sect1.subsect6.art15.sent1.clause2",
                   "type" : "clause",
@@ -30933,7 +31166,7 @@
                { "id" : "nbc.divB.part3.sect1.subsect6.art16.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:short] and [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] , and except as otherwise provided in this Subsection, only construction materials and components permitted in [REF:term:cmbtbl-c:noncombustible construction] shall be permitted to have exposed surfaces in concealed spaces within floor, roof, and wall assemblies in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] ." },
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:short] and [REF:internal:nbc.divB.part3.sect1.subsect11.art7:long] , and except as otherwise provided in this Subsection, only construction materials and components permitted in [REF:term:ncmbtbl-:noncombustible construction] shall be permitted to have exposed surfaces in concealed spaces within floor, roof, and wall assemblies in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] ." },
                
                { "id" : "nbc.divB.part3.sect1.subsect6.art16.sent2",
                 "type" : "sentence",
@@ -30989,13 +31222,13 @@
                 "type" : "sentence",
                 "number" : 3,
                 "source" : "bc",
-                "text" : "A ceiling assembly is permitted to be assigned a [REF:term:fr-rtnc-:fire-resistance rating] on the basis of Assembly Number R1 in [REF:internal:nbc.divBV2.part9.sect9.subsect10.art3.table2:long] ." },
+                "text" : "A ceiling assembly is permitted to be assigned a [REF:term:fr-rtnc-:fire-resistance rating] on the basis of Assembly Number R1 in [REF:internal:nbc.divBV2.part9.spectables1.table2:long:Table A-9.10.3.1.-B] ." },
                
                { "id" : "nbc.divB.part3.sect1.subsect7.art1.sent4",
                 "type" : "sentence",
                 "number" : 4,
                 "source" : "bc",
-                "text" : "A ceiling membrane is permitted to be assigned a [REF:term:fr-rtnc-:fire-resistance rating] on the basis of Assembly Number M1 or M2 in [REF:internal:nbc.divBV2.part9.sect9.subsect10.art3.table2:long] ." } ] },
+                "text" : "A ceiling membrane is permitted to be assigned a [REF:term:fr-rtnc-:fire-resistance rating] on the basis of Assembly Number M1 or M2 in [REF:internal:nbc.divBV2.part9.spectables1.table2:long:Table A-9.10.3.1.-B] ." } ] },
              
              { "id" : "nbc.divB.part3.sect1.subsect7.art2",
               "type" : "article",
@@ -31154,7 +31387,7 @@
                 "type" : "sentence",
                 "number" : 4,
                 "source" : "bc",
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect8.art3.sent5:short] , joints located in a horizontal plane between a floor and an exterior wall shall be sealed by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in ASTM E2307, “Standard Test Method for Determining Fire Resistance of Perimeter Fire Barriers Using Intermediate-Scale, Multi-storey Test Apparatus,” has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating ]of the horizontal [REF:term:fr-prtn:fire separation] ." },
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect8.art3.sent5:short] , joints located in a horizontal plane between a floor and an exterior wall shall be sealed by a [REF:term:fr-tp:firestop] that, when subjected to the fire test method in ASTM E2307, “Standard Test Method for Determining Fire Resistance of Perimeter Fire Barriers Using Intermediate-Scale, Multi-storey Test Apparatus,” has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating] of the horizontal [REF:term:fr-prtn:fire separation] ." },
                
                { "id" : "nbc.divB.part3.sect1.subsect8.art3.sent5",
                 "type" : "sentence",
@@ -32645,12 +32878,12 @@
                 "type" : "sentence",
                 "number" : 7,
                 "source" : "bc",
-                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect9.art4.sent8:short] , penetrations of a [REF:term:fr-prtn:fire separation] that incorporate transitions between [REF:term:cmbtbl:combustible] and [REF:term:cmbtbl:noncombustible] drain, waste and vent piping shall be sealed by a [REF:term:fr-tp:firestop] that has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating ] required for the [REF:term:fr-prtn:fire separation] when subjected to the fire test method in CAN\/ULC-S115, “Standard Method of Fire Tests of Firestop Systems,” with a pressure differential of 50 Pa between the exposed and unexposed sides, with the higher pressure on the exposed side." },
+                "text" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect9.art4.sent8:short] , penetrations of a [REF:term:fr-prtn:fire separation] that incorporate transitions between [REF:term:cmbtbl:combustible] and [REF:term:ncmbtbl:noncombustible] drain, waste and vent piping shall be sealed by a [REF:term:fr-tp:firestop] that has an F rating not less than the [REF:term:fr-rtnc-:fire-resistance rating ] required for the [REF:term:fr-prtn:fire separation] when subjected to the fire test method in CAN\/ULC-S115, “Standard Method of Fire Tests of Firestop Systems,” with a pressure differential of 50 Pa between the exposed and unexposed sides, with the higher pressure on the exposed side." },
                
                { "id" : "nbc.divB.part3.sect1.subsect9.art4.sent8",
                 "type" : "sentence",
                 "number" : 8,
-                "text" : "Transitions between vertical [REF:term:cmbtbl:noncombustible] drain, waste and vent piping and [REF:term:cmbtbl:combustible] branches for drain, waste and vent piping are permitted on either side of a [REF:term:fr-prtn:fire separation] , provided they are not located in a [REF:term:vrtcl-rv:vertical service space] . (See [REF:internal:nbc.divB.part3.appendix.appnote39:short] .)" } ] },
+                "text" : "Transitions between vertical [REF:term:ncmbtbl:noncombustible] drain, waste and vent piping and [REF:term:cmbtbl:combustible] branches for drain, waste and vent piping are permitted on either side of a [REF:term:fr-prtn:fire separation] , provided they are not located in a [REF:term:vrtcl-rv:vertical service space] . (See [REF:internal:nbc.divB.part3.appendix.appnote39:short] .)" } ] },
              
              { "id" : "nbc.divB.part3.sect1.subsect9.art5",
               "type" : "article",
@@ -36073,7 +36306,7 @@
                   "type" : "clause",
                   "letter" : "a",
                   "source" : "bc",
-                  "text" : "be of [REF:term:cmbtbl-c:noncombustible construction] , or" },
+                  "text" : "be of [REF:term:ncmbtbl-:noncombustible construction] , or" },
                  
                  { "id" : "nbc.divB.part3.sect2.subsect2.art11.sent2.clause2",
                   "type" : "clause",
@@ -36090,7 +36323,7 @@
                    { "id" : "nbc.divB.part3.sect2.subsect2.art11.sent2.clause1",
                     "type" : "clause",
                     "letter" : "a",
-                    "text" : "be of [REF:term:cmbtbl-c:noncombustible construction] , or" },
+                    "text" : "be of [REF:term:ncmbtbl-:noncombustible construction] , or" },
                    
                    { "id" : "nbc.divB.part3.sect2.subsect2.art11.sent2.clause2",
                     "type" : "clause",
@@ -36110,7 +36343,7 @@
                     "type" : "clause",
                     "letter" : "a",
                     "source" : "bc",
-                    "text" : "be of [REF:term:cmbtbl-c:noncombustible construction] , or" },
+                    "text" : "be of [REF:term:ncmbtbl-:noncombustible construction] , or" },
                    
                    { "id" : "nbc.divB.part3.sect2.subsect2.art11.sent2.clause2",
                     "type" : "clause",
@@ -69948,7 +70181,7 @@
                { "id" : "nbc.divB.part3.sect2.subsect3.art11.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "An [REF:term:xpng-bld:exposing building face] of a [REF:term:bldng:building] of [REF:term:lw-hzrd-:low-hazard industrial occupancy] conforming to [REF:internal:nbc.divB.part3.sect2.subsect2.art91:long] is permitted to be of [REF:term:ncmbtbl:noncombustible construction] without a [REF:term:fr-rtnc-:fire-resistance rating] provided",
+                "text" : "An [REF:term:xpng-bld:exposing building face] of a [REF:term:bldng:building] of [REF:term:lw-hzrd-:low-hazard industrial occupancy] conforming to [REF:internal:nbc.divB.part3.sect2.subsect2.art91:long] is permitted to be of [REF:term:ncmbtbl-:noncombustible construction] without a [REF:term:fr-rtnc-:fire-resistance rating] provided",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divB.part3.sect2.subsect3.art11.sent1.clause1",
@@ -72740,7 +72973,7 @@
                     "type" : "subclause",
                     "number" : 2,
                     "source" : "bc",
-                    "text" : "all [REF:term:t:suites] are separated by a vertical [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 1 h that provides continuous protection from the top of the footing to the underside of the roof deck, with any space between the top of the wall and the roof deck tightly filled with mineral wool or [REF:term:cmbtbl:noncombustible] material," },
+                    "text" : "all [REF:term:t:suites] are separated by a vertical [REF:term:fr-prtn:fire separation] having a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 1 h that provides continuous protection from the top of the footing to the underside of the roof deck, with any space between the top of the wall and the roof deck tightly filled with mineral wool or [REF:term:ncmbtbl:noncombustible] material," },
                    
                    { "id" : "nbc.divB.part3.sect2.subsect5.art12.sent3.clause3.subclause3",
                     "type" : "subclause",
@@ -275086,7 +275319,7 @@
                { "id" : "nbc.divBV2.part9.sect9.subsect4.art3.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Where an [REF:term:xt:exit] enclosure connects with a [REF:term:flr-r:floor area] through an enclosed vestibule or corridor separated from the [REF:term:flr-r:floor area] by [REF:term:fr-prtn:fire separations] having not less than a 45 min[REF:term:fr-rtnc-:fire-resistance rating] , the glazed areas described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art3.sent1:short] need not be limited as required in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art3.sent2:short] ." } ] },
+                "text" : "Where an [REF:term:xt:exit] enclosure connects with a [REF:term:flr-r:floor area] through an enclosed vestibule or corridor separated from the [REF:term:flr-r:floor area] by [REF:term:fr-prtn:fire separations] having not less than a 45 min [REF:term:fr-rtnc-:fire-resistance rating] , the glazed areas described in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art3.sent1:short] need not be limited as required in [REF:internal:nbc.divBV2.part9.sect9.subsect4.art3.sent2:short] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect9.subsect4.art4",
               "type" : "article",
@@ -275192,7 +275425,7 @@
                  { "id" : "nbc.divBV2.part9.sect9.subsect4.art7.sent1.clause2",
                   "type" : "clause",
                   "letter" : "b",
-                  "text" : "the [REF:term:t:suite] is separated from other [REF:term:ccpnc:occupancies] by at least a 45 min[REF:term:fr-prtn:fire separation] ," },
+                  "text" : "the [REF:term:t:suite] is separated from other [REF:term:ccpnc:occupancies] by at least a 45 min [REF:term:fr-prtn:fire separation] ," },
                  
                  { "id" : "nbc.divBV2.part9.sect9.subsect4.art7.sent1.clause3",
                   "type" : "clause",
@@ -277573,7 +277806,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect6.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "[REF:term:hv-tmbr-:Heavy timber construction] shall be considered to have a 45 min[REF:term:fr-rtnc-:fire-resistance rating] when it is constructed in accordance with the requirements for [REF:term:hv-tmbr-:heavy timber construction] in [REF:internal:nbc.divB.part3.sect1.subsect4.art7:long]" } ] } ] },
+                "text" : "[REF:term:hv-tmbr-:Heavy timber construction] shall be considered to have a 45 min [REF:term:fr-rtnc-:fire-resistance rating] when it is constructed in accordance with the requirements for [REF:term:hv-tmbr-:heavy timber construction] in [REF:internal:nbc.divB.part3.sect1.subsect4.art7:long]" } ] } ] },
            
            { "id" : "nbc.divBV2.part9.sect10.subsect7",
             "type" : "subsection",
@@ -278219,7 +278452,7 @@
                  { "id" : "nbc.divBV2.part9.sect10.subsect9.art7.sent5.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "the piping is [REF:term:cmbtbl:noncombustible] and the penetration is protected in accordance with [REF:internal:nbc.divBV2.part9.sect10.subsect9.art6.sent1:long] , or" },
+                  "text" : "the piping is [REF:term:ncmbtbl:noncombustible] and the penetration is protected in accordance with [REF:internal:nbc.divBV2.part9.sect10.subsect9.art6.sent1:long] , or" },
                  
                  { "id" : "nbc.divBV2.part9.sect10.subsect9.art7.sent5.clause2",
                   "type" : "clause",
@@ -278468,7 +278701,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art13.sent3",
                 "type" : "sentence",
                 "number" : 3,
-                "text" : "Where not more than two [REF:term:dwllng-n:dwelling units] are located in a [REF:term:bldng:building] containing a [REF:term:mrcntl-c:mercantile occupancy] , such [REF:term:mrcntl-c:mercantile occupancy] shall be separated from the [REF:term:dwllng-n:dwelling units] by a [REF:term:fr-prtn:fire separation] having not less than 1 h[REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
+                "text" : "Where not more than two [REF:term:dwllng-n:dwelling units] are located in a [REF:term:bldng:building] containing a [REF:term:mrcntl-c:mercantile occupancy] , such [REF:term:mrcntl-c:mercantile occupancy] shall be separated from the [REF:term:dwllng-n:dwelling units] by a [REF:term:fr-prtn:fire separation] having not less than 1 h [REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect9.art14",
               "type" : "article",
@@ -278559,7 +278792,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art17.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as otherwise required by this Part and as provided in  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect9.art17.sent2:short] to [REF:internal:nbc.divBV2.part9.sect10.subsect9.art17.sent5:shortNum] , [REF:term:pblc-crr:public corridors] shall be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 45 min[REF:term:fr-rtnc-:fire-resistance rating] ." },
+                "text" : "Except as otherwise required by this Part and as provided in  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect9.art17.sent2:short] to [REF:internal:nbc.divBV2.part9.sect10.subsect9.art17.sent5:shortNum] , [REF:term:pblc-crr:public corridors] shall be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 45 min [REF:term:fr-rtnc-:fire-resistance rating] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art17.sent2",
                 "type" : "sentence",
@@ -278664,7 +278897,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art18.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect9.art18.sent2:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect9.art18.sent3:short:(3)] , a [REF:term:trg-grg:storage garage ] shall be separated from other [REF:term:ccpnc:occupancies] by a [REF:term:fr-prtn:fire separation] having not less than a 1.5 h[REF:term:fr-rtnc-:fire-resistance rating] ." },
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect9.art18.sent2:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect9.art18.sent3:short:(3)] , a [REF:term:trg-grg:storage garage ] shall be separated from other [REF:term:ccpnc:occupancies] by a [REF:term:fr-prtn:fire separation] having not less than a 1.5 h [REF:term:fr-rtnc-:fire-resistance rating] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect9.art18.sent2",
                 "type" : "sentence",
@@ -278844,7 +279077,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect10.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except as provided in  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect10.art4.sent2:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect10.art4.sent3:short:(3)] and [REF:internal:nbc.divBV2.part9.sect10.subsect10.art5:long] , fuel-fired [REF:term:pplnc:appliances] shall be located in a [REF:term:rvc-rm:service room] separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 1 h[REF:term:fr-rtnc-:fire-resistance rating] ." },
+                "text" : "Except as provided in  Sentences [REF:internal:nbc.divBV2.part9.sect10.subsect10.art4.sent2:short] and [REF:internal:nbc.divBV2.part9.sect10.subsect10.art4.sent3:short:(3)] and [REF:internal:nbc.divBV2.part9.sect10.subsect10.art5:long] , fuel-fired [REF:term:pplnc:appliances] shall be located in a [REF:term:rvc-rm:service room] separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 1 h [REF:term:fr-rtnc-:fire-resistance rating] ." },
                
                { "id" : "nbc.divBV2.part9.sect10.subsect10.art4.sent2",
                 "type" : "sentence",
@@ -278925,7 +279158,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect10.art6.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Rooms for the temporary storage of [REF:term:cmbtbl:combustible] refuse and materials for recycling in all [REF:term:ccpnc:occupancies] or for public storage in [REF:term:rdntl-cc:residential occupancies] shall be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 1 h[REF:term:fr-rtnc-:fire-resistance rating] , except that a [REF:term:fr-prtn:fire separation] with a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 45 min is permitted where",
+                "text" : "Rooms for the temporary storage of [REF:term:cmbtbl:combustible] refuse and materials for recycling in all [REF:term:ccpnc:occupancies] or for public storage in [REF:term:rdntl-cc:residential occupancies] shall be separated from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 1 h [REF:term:fr-rtnc-:fire-resistance rating] , except that a [REF:term:fr-prtn:fire separation] with a [REF:term:fr-rtnc-:fire-resistance rating] of not less than 45 min is permitted where",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect10.art6.sent1.clause1",
@@ -278965,7 +279198,7 @@
                 "type" : "sentence",
                 "number" : 1,
                 "source" : "bc",
-                "text" : "A [REF:term:prt-wll:party wall] on a property line of a [REF:term:bldng:building] of [REF:term:rdntl-cc:residential occupancy] need not be constructed as a [REF:term:frwll:firewall] , provided it is constructed as a [REF:term:fr-prtn:fire separation ] having not less than a 1 h[REF:term:fr-rtnc-:fire-resistance rating] , where the [REF:term:prt-wll:party wall] separates",
+                "text" : "A [REF:term:prt-wll:party wall] on a property line of a [REF:term:bldng:building] of [REF:term:rdntl-cc:residential occupancy] need not be constructed as a [REF:term:frwll:firewall] , provided it is constructed as a [REF:term:fr-prtn:fire separation ] having not less than a 1 h [REF:term:fr-rtnc-:fire-resistance rating] , where the [REF:term:prt-wll:party wall] separates",
                 "clauses" : 
                 [ 
                  { "id" : "nbc.divBV2.part9.sect10.subsect11.art2.sent1.clause1",
@@ -279390,7 +279623,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect13.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Doors required to provide a 20 min[REF:term:fr-prtct:fire-protection rating] or permitted to be 45 mm solid core wood shall be mounted in a wood frame of not less than 38 mm thickness where the frame has not been tested and rated." } ] },
+                "text" : "Doors required to provide a 20 min [REF:term:fr-prtct:fire-protection rating] or permitted to be 45 mm solid core wood shall be mounted in a wood frame of not less than 38 mm thickness where the frame has not been tested and rated." } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect13.art4",
               "type" : "article",
@@ -284396,7 +284629,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect21.art2.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except for sleeping rooms within [REF:term:dwllng-n:dwelling units] , sleeping rooms in construction camps shall be separated from each other and from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 30 min[REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
+                "text" : "Except for sleeping rooms within [REF:term:dwllng-n:dwelling units] , sleeping rooms in construction camps shall be separated from each other and from the remainder of the [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 30 min [REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect21.art3",
               "type" : "article",
@@ -284407,7 +284640,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect21.art3.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "Except in a [REF:term:dwllng-n:dwelling unit] , a floor assembly in a construction camp [REF:term:bldng:building] separating the [REF:term:frt-tr:first storey] and the second [REF:term:tr:storey] shall be constructed as a [REF:term:fr-prtn:fire separation] having not less than a 30 min[REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
+                "text" : "Except in a [REF:term:dwllng-n:dwelling unit] , a floor assembly in a construction camp [REF:term:bldng:building] separating the [REF:term:frt-tr:first storey] and the second [REF:term:tr:storey] shall be constructed as a [REF:term:fr-prtn:fire separation] having not less than a 30 min [REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect21.art4",
               "type" : "article",
@@ -284418,7 +284651,7 @@
                { "id" : "nbc.divBV2.part9.sect10.subsect21.art4.sent1",
                 "type" : "sentence",
                 "number" : 1,
-                "text" : "[REF:term:wlkw:Walkways] of [REF:term:cmbtbl-c:combustible construction] connecting [REF:term:bldng:buildings] shall be separated from each connected [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 45 min[REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
+                "text" : "[REF:term:wlkw:Walkways] of [REF:term:cmbtbl-c:combustible construction] connecting [REF:term:bldng:buildings] shall be separated from each connected [REF:term:bldng:building] by a [REF:term:fr-prtn:fire separation] having not less than a 45 min [REF:term:fr-rtnc-:fire-resistance rating] ." } ] },
              
              { "id" : "nbc.divBV2.part9.sect10.subsect21.art5",
               "type" : "article",
@@ -344304,7 +344537,7 @@
                  { "id" : "nbc.divBV2.part9.sect33.subsect8.art2.sent3.clause1",
                   "type" : "clause",
                   "letter" : "a",
-                  "text" : "25 in [REF:term:bldng:buildings] of [REF:term:ncmbtbl:noncombustible construction] , and" },
+                  "text" : "25 in [REF:term:bldng:buildings] of [REF:term:ncmbtbl-:noncombustible construction] , and" },
                  
                  { "id" : "nbc.divBV2.part9.sect33.subsect8.art2.sent3.clause2",
                   "type" : "clause",
@@ -618326,9 +618559,20 @@
     "sequence" : 1,
     "effective_date" : "2024-04-05",
     "status" : "current",
-    "content" : "Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:long:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] thatis not less than 50 min in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , orconforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art11.sent1:long] , the material or assembly of materials referred to in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] shall consist ofgypsum board,gypsum concrete,[REF:term:ncmbtbl:noncombustible] materials,materials that conform to  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:medium:(4)] , orany combination of the materials listed in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause4:shortNum:(d)] .Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedtheir aggregate exposed surface area does not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in which they are located, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedall portions of the exposed surfacesface the same direction, orare separated by a horizontal distance of not less than 4.5 m, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Notes [REF:internal:nbc.divB.part3.appendix.appnote24:short] and [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed10% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150, or25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min[REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedthe aggregate surface area of any exposed mass timber beams, columns and arches does not exceed 20% of the total wall area of the perimeter of the [REF:term:t:suite] in which they are located,all surfaces of mass timber walls areprotected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , ormass timber walls that are not otherwise permitted to be exposed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] are protected by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 80 min, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)Structural mass timber elements in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have an [REF:term:ncps-rtng:encapsulation rating] of 0 min need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedmass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected from adjacent spaces with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, andconcealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] to [REF:internal:nbc.divB.part3.appendix.appnote28:short:A-3.1.8.1.(2)] .)In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:short] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min.",
+    "content" : "Encapsulation of Mass Timber Elements(See also  Note [REF:internal:nbc.divB.part3.appendix.appnote20:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:number:3.1.6.16.(2)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:number:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] thatis not less than 50 minutes in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , orconforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] .(See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art11.sent1:long] , the material or assembly of materials referred to in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] shall consist ofgypsum board,gypsum concrete,[REF:term:ncmbtbl:noncombustible] materials,materials that conform to  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:medium:(4)] , orany combination of the materials listed in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause4:shortNum:(d)] .Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedtheir aggregate exposed surface area does not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in which they are located, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedall portions of the exposed surfacesface the same direction, orare separated by a horizontal distance of not less than 4.5 m, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150.(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote23:short] and [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed10% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150, or25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] or [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short:(6)] , providedthe aggregate surface area of any exposed mass timber beams, columns and arches does not exceed 20% of the total wall area of the perimeter of the [REF:term:t:suite] in which they are located,all surfaces of mass timber walls areprotected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , ormass timber walls that are not otherwise permitted to be exposed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] are protected by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 80 min, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Structural mass timber elements in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have an [REF:term:ncps-rtng:encapsulation rating] of 0 min need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedmass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected from adjacent spaces with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, andconcealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:long] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:long] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min.",
     "change_summary" : "Repealed and substituted Article 3.1.6.4 Encapsulation of Mass Timber Elements",
     "note" : "Ministerial Order BA 2024 01" },
+   
+   { "location_id" : "nbc.divB.part3.sect1.subsect6.art4",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-050",
+    "sequence" : 2,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "Encapsulation of Mass Timber Elements(See also  Note [REF:internal:nbc.divB.part3.appendix.appnote20:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent9:shortNum] , [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:number:3.1.6.3.(4)] , [REF:internal:nbc.divB.part3.sect1.subsect6.art16.sent2:number:3.1.6.16.(2)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art17.sent2:number:3.1.6.17.(2)] , and  Articles [REF:internal:nbc.divB.part3.sect1.subsect6.art7:long] and [REF:internal:nbc.divB.part3.sect1.subsect6.art12:long:3.1.6.12.] , the exposed surfaces of structural mass timber elements conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] shall be protected from adjacent spaces in the [REF:term:bldng:building] , including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] thatis not less than 50 minutes in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] , orconforms to the minimum values stated in  Table [REF:internal:nbc.divB.part3.sect2.subsect2.art93.table1:long] for the applicable [REF:term:mjr-ccpn:major occupancy] and [REF:term:bldng-hght:building height] .(See  Note [REF:internal:nbc.divB.part3.appendix.appnote21:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art11.sent1:long] , the material or assembly of materials referred to in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] shall consist ofgypsum board,gypsum concrete,[REF:term:ncmbtbl:noncombustible] materials,materials that conform to  Sentences [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent2:long] to [REF:internal:nbc.divB.part3.sect1.subsect5.art1.sent4:medium:(4)] , orany combination of the materials listed in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2.clause4:shortNum:(d)] .Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short:(7)] , the exposed surfaces of mass timber beams, columns and arches within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedtheir aggregate exposed surface area does not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] in which they are located, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:shortNum] , the exposed surfaces of mass timber walls within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedall portions of the exposed surfacesface the same direction, orare separated by a horizontal distance of not less than 4.5 m, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150.(See  Notes [REF:internal:nbc.divB.part3.appendix.appnote23:short] and [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the aggregate exposed surface area of mass timber elements within a [REF:term:t:suite] permitted in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent3:short] and [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent4:short:(4)] shall not exceed 35% of the total wall area of the perimeter of the [REF:term:t:suite] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Except as provided by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent7:short] , the exposed surfaces of mass timber ceilings within a [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , other than an [REF:term:xt:exit] or [REF:term:pblc-crr:public corridor] , in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , provided their aggregate surface area does not exceed10% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface is not more than 150, or25% of the total ceiling area of the [REF:term:t:suite] or [REF:term:fr-cmprt:fire compartment] , where the [REF:term:flm-prd-:flame-spread rating] on any exposed surface of a mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)The exposed surfaces of mass timber ceilings within a [REF:term:t:suite] in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] constructed in conformance with  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:long] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or required by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have a 50 min [REF:term:ncps-rtng:encapsulation rating] need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] or [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent6:short:(6)] , providedthe aggregate surface area of any exposed mass timber beams, columns and arches does not exceed 20% of the total wall area of the perimeter of the [REF:term:t:suite] in which they are located,all surfaces of mass timber walls areprotected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , ormass timber walls that are not otherwise permitted to be exposed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent5:short] are protected by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 80 min, andthe [REF:term:flm-prd-:flame-spread rating] on any exposed mass timber wall or ceiling is not more than 75. (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)Structural mass timber elements in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted by  Article [REF:internal:nbc.divB.part3.sect2.subsect2.art93:long] to have an [REF:term:ncps-rtng:encapsulation rating] of 0 min need not be protected in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:short] , providedmass timber walls and ceilings within [REF:term:vrtcl-rv:vertical service spaces] , [REF:term:pblc-crr:public corridors] , and [REF:term:xt:exits] are protected on the interior side with a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:short] that provides an [REF:term:ncps-rtng:encapsulation rating] of not less than 25 min, andconcealed spaces are protected in conformance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3.sent4:long] . (See  Note [REF:internal:nbc.divB.part3.appendix.appnote22:short] .)In a [REF:term:bldng:building] or part of a [REF:term:bldng:building] required by [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1.clause2:long] to have a minimum [REF:term:ncps-rtng:encapsulation rating] of 70 min, the upper side of a mass timber floor or roof assembly is permitted to be encapsulated by a material or assembly of materials conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent2:long] that provides an [REF:term:ncps-rtng:encapsulation rating] of 50 min.",
+    "change_summary" : "Struck out \"from adjacent spaces\" in Clause 3.1.6.4.(8)(a) and substituted \"on the interior side\"",
+    "note" : "Ministerial Order BA 2025 02" },
    
    { "location_id" : "nbc.divB.part3.sect1.subsect6.art6",
     "type" : "original",
@@ -618349,7 +618593,7 @@
    { "location_id" : "nbc.divB.part3.sect1.subsect6.art9",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "Exterior CladdingExcept as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2:short] , [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short:(3)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent6:short:(6)] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be [REF:term:ncmbtbl:noncombustible] . (See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent5:shortNum:(5)] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] is permitted to consist of[REF:term:cmbtbl:combustible] cladding thatis not contiguous over more than 4 [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,is not more than 1.2 m in width,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction,is separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding by a horizontal distance of not less than 1.2 m,[REF:term:cmbtbl:combustible] cladding thatis not contiguous across adjacent [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m,[REF:term:cmbtbl:combustible] cladding representing up to 100% of the cladding on exterior walls of the first [REF:term:tr:storey] , provided all portions of the cladding can be directly accessed and are located not more than 15 m from a [REF:term:trt:street] or access route conforming to [REF:internal:nbc.divB.part3.sect2.subsect5.art6:long] , measured horizontally from the face of the [REF:term:bldng:building] ,except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent4:short] , a wall assembly that satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5.sent1.clause2:long] , ora combination of [REF:term:cmbtbl:noncombustible] cladding and the cladding described in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:shortNum:(d)] .(See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)The permitted area of [REF:term:cmbtbl:combustible] cladding in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium:Clause (2)(a)] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short:(b)] shall not exceed 5% of the cladding on each exterior wall of each [REF:term:tr:storey] where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the [REF:term:bldng:building] exceeds 10 min in 10% or more of all fire department calls to the [REF:term:bldng:building] . (See [REF:internal:nbc.divB.part3.appendix.appnote58:long:Note A-3.2.3.1.(8)] .)An exterior wall assembly constructed in conformance with [REF:internal:nbc.divB.appendixD.appsect6:long:Section D-6] of Appendix D is deemed to satisfy the criteria of [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium:Clause (2)(d)] .Except as provided in [REF:internal:nbc.divB.part3.sect2.subsect3.art10:long] , where the [REF:term:lmtng-dt:limiting distance] in [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table4:long:Table 3.2.3.1.-D] or [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table5:long:3.2.3.1.-E] permits an area of [REF:term:nprtctd-:unprotected openings] of not more than 10% of the [REF:term:xpng-bld:exposing building face] , the construction requirements of [REF:internal:nbc.divB.part3.sect2.subsect3.art7.table1:long] shall be met.A wall assembly conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium:Clause (2)(d)] that includes [REF:term:cmbtbl:combustible] cladding made of [REF:term:fr-rtrdn:fire-retardant-treated wood] shall be tested for fire exposure after the cladding has been subjected to the accelerated weathering test specified in ASTM D2898, “Standard Practice for Accelerated Weathering of Fire-Retardant-Treated Wood for Fire Testing.”Where [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium:Clause (2)(a)] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short:(b)] on an exterior wall of a [REF:term:fr-cmprt:fire compartment] is exposed to [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium:Clause (2)(a)] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short:(b)] on an exterior wall of the same [REF:term:fr-cmprt:fire compartment] or of another [REF:term:fr-cmprt:fire compartment] , and the planes of the two walls are parallel or at an angle less than 135° measured from the exterior of the [REF:term:bldng:building] , the different portions of [REF:term:cmbtbl:combustible] cladding shallbe separated by a horizontal distance of not less than 3 m, andnot be contiguous over more than 2 [REF:term:tr:storeys]." },
+    "content" : "Exterior CladdingExcept as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2:short] , [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short:(3)] and [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent6:short:(6)] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] shall be [REF:term:ncmbtbl:noncombustible] . (See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)Except as provided in  Sentences [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent3:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent5:shortNum:(5)] , cladding on an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] is permitted to consist of[REF:term:cmbtbl:combustible] cladding thatis not contiguous over more than 4 [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,is not more than 1.2 m in width,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction,is separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding by a horizontal distance of not less than 1.2 m,[REF:term:cmbtbl:combustible] cladding thatis not contiguous across adjacent [REF:term:tr:storeys] ,represents not more than 10% of the cladding on each exterior wall of each [REF:term:tr:storey] ,has a [REF:term:flm-prd-:flame-spread rating] not more than 75 on any exposed surface, or any surface that would be exposed by cutting through the material in any direction, andis separated from other portions of [REF:term:cmbtbl:combustible] cladding on adjacent [REF:term:tr:storeys] by a horizontal distance of not less than 2.4 m,[REF:term:cmbtbl:combustible] cladding representing up to 100% of the cladding on exterior walls of the first [REF:term:tr:storey] , provided all portions of the cladding can be directly accessed and are located not more than 15 m from a [REF:term:trt:street] or access route conforming to [REF:internal:nbc.divB.part3.sect2.subsect5.art6:long] , measured horizontally from the face of the [REF:term:bldng:building] ,except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent4:short] , a wall assembly that satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5.sent1.clause2:long] , ora combination of [REF:term:ncmbtbl:noncombustible] cladding and the cladding described in  Clauses [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:short] to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:shortNum:(d)] .(See [REF:internal:nbc.divB.part3.appendix.appnote26:short] .)The permitted area of [REF:term:cmbtbl:combustible] cladding in [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium:Clause (2)(a)] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short:(b)] shall not exceed 5% of the cladding on each exterior wall of each [REF:term:tr:storey] where the time from receipt of notification of a fire by the fire department until the arrival of the first fire department vehicle at the [REF:term:bldng:building] exceeds 10 min in 10% or more of all fire department calls to the [REF:term:bldng:building] . (See [REF:internal:nbc.divB.part3.appendix.appnote58:long:Note A-3.2.3.1.(8)] .)An exterior wall assembly constructed in conformance with [REF:internal:nbc.divB.appendixD.appsect6:long:Section D-6] of Appendix D is deemed to satisfy the criteria of [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium:Clause (2)(d)] .Except as provided in [REF:internal:nbc.divB.part3.sect2.subsect3.art10:long] , where the [REF:term:lmtng-dt:limiting distance] in [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table4:long:Table 3.2.3.1.-D] or [REF:internal:nbc.divB.part3.sect2.subsect3.art1.table5:long:3.2.3.1.-E] permits an area of [REF:term:nprtctd-:unprotected openings] of not more than 10% of the [REF:term:xpng-bld:exposing building face] , the construction requirements of [REF:internal:nbc.divB.part3.sect2.subsect3.art7.table1:long] shall be met.A wall assembly conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause4:medium:Clause (2)(d)] that includes [REF:term:cmbtbl:combustible] cladding made of [REF:term:fr-rtrdn:fire-retardant-treated wood] shall be tested for fire exposure after the cladding has been subjected to the accelerated weathering test specified in ASTM D2898, “Standard Practice for Accelerated Weathering of Fire-Retardant-Treated Wood for Fire Testing.”Where [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium:Clause (2)(a)] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short:(b)] on an exterior wall of a [REF:term:fr-cmprt:fire compartment] is exposed to [REF:term:cmbtbl:combustible] cladding conforming to [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause1:medium:Clause (2)(a)] or [REF:internal:nbc.divB.part3.sect1.subsect6.art9.sent2.clause2:short:(b)] on an exterior wall of the same [REF:term:fr-cmprt:fire compartment] or of another [REF:term:fr-cmprt:fire compartment] , and the planes of the two walls are parallel or at an angle less than 135° measured from the exterior of the [REF:term:bldng:building] , the different portions of [REF:term:cmbtbl:combustible] cladding shallbe separated by a horizontal distance of not less than 3 m, andnot be contiguous over more than 2 [REF:term:tr:storeys]." },
    
    { "location_id" : "nbc.divB.part3.sect1.subsect6.art9",
     "type" : "revision",
@@ -618374,7 +618618,7 @@
     "sequence" : 1,
     "effective_date" : "2025-06-16",
     "status" : "current",
-    "content" : "A [REF:term:cmbtbl-c:combustible component] in an exterior wall that satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5:long] of Appendix D is deemed to satisfy the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5:medium] .",
+    "content" : "Except as provided in [REF:internal:nbc.divB.part3.sect1.subsect6.art10.sent2:short] , [REF:term:cmbtbl:combustible] components, other than those permitted by [REF:internal:nbc.divB.part3.sect1.subsect6.art9:long] , are permitted to be used in an exterior wall assembly of a [REF:term:bldng:building] or part of a [REF:term:bldng:building] permitted to be of [REF:term:ncps-mt-nstr:encapsulated mass timber construction] , provided the wall assembly satisfies the criteria of [REF:internal:nbc.divB.part3.sect1.subsect5.art5.sent1.clause2:long] .",
     "change_summary" : "Struck out \"meets the requirements of Clause 3.1.6.9.(2)(d)\" and substituted \"satisfies the criteria of Clause 3.1.5.5.(1)(b)\"",
     "note" : "Ministerial Order BA 2024 06" },
    
@@ -618573,7 +618817,7 @@
    { "location_id" : "nbc.divB.part3.sect2.subsect2.art11.sent2",
     "type" : "original",
     "effective_date" : "2024-03-08",
-    "content" : "The floor assembly of an exterior balcony in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] conforming to Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:number:3.2.2.48.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] shallbe of [REF:term:cmbtbl-c:noncombustible construction] , orbe constructed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] , but need not comply with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:long] ." },
+    "content" : "The floor assembly of an exterior balcony in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] conforming to Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:number:3.2.2.48.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] shallbe of [REF:term:ncmbtbl-:noncombustible construction] , orbe constructed in accordance with [REF:internal:nbc.divB.part3.sect1.subsect6.art3:long] , but need not comply with [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:long] ." },
    
    { "location_id" : "nbc.divB.part3.sect2.subsect2.art11.sent2",
     "type" : "revision",
@@ -618582,7 +618826,7 @@
     "sequence" : 1,
     "effective_date" : "2024-04-05",
     "status" : "current",
-    "content" : "The floor assembly of an exterior balcony in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] conforming to Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:number:3.2.2.48.] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number:3.2.2.93.] shallbe of [REF:term:cmbtbl-c:noncombustible construction] , orbe constructed in accordance with Article [REF:internal:nbc.divB.part3.sect1.subsect6.art3:number:3.1.6.3.] , but need not comply with Sentence [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:number:3.1.6.4.(1)] .",
+    "content" : "The floor assembly of an exterior balcony in a [REF:term:bldng:building] or part of a [REF:term:bldng:building] conforming to Article [REF:internal:nbc.divB.part3.sect2.subsect2.art48:number:3.2.2.48.] , [REF:internal:nbc.divB.part3.sect2.subsect2.art57:number:3.2.2.57.] or [REF:internal:nbc.divB.part3.sect2.subsect2.art93:number:3.2.2.93.] shallbe of [REF:term:ncmbtbl-:noncombustible construction] , orbe constructed in accordance with Article [REF:internal:nbc.divB.part3.sect1.subsect6.art3:number:3.1.6.3.] , but need not comply with Sentence [REF:internal:nbc.divB.part3.sect1.subsect6.art4.sent1:number:3.1.6.4.(1)] .",
     "change_summary" : "Added reference to 3.2.2.93",
     "note" : "Ministerial Order BA 2024 01" },
    
@@ -626659,7 +626903,7 @@
    "total_parts" : 15,
    "total_sections" : 100,
    "total_articles" : 2021,
-   "total_sentences" : 5163,
+   "total_sentences" : 5172,
    "total_tables" : 350,
    "total_figures" : 325,
    "total_spectables" : 2,
