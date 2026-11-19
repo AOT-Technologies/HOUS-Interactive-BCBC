@@ -237,7 +237,7 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect1.subsect7.art1.sent3" number="3">
-                        <text>A ceiling assembly is permitted to be assigned a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> on the basis of Assembly Number R1 in <ref type="internal" target="nbc.divBV2.part9.sect9.subsect10.art3.table2" display-type="long"/>.</text>
+                        <text>A ceiling assembly is permitted to be assigned a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> on the basis of Assembly Number R1 in <ref type="internal" target="nbc.divBV2.part9.spectables1.table2" display-type="long">Table A-9.10.3.1.-B</ref>.</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -257,7 +257,7 @@
             <insert>
                 <new-content source="bc">
                     <sentence xml:id="nbc.divB.part3.sect1.subsect7.art1.sent4" number="4">
-                        <text>A ceiling membrane is permitted to be assigned a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> on the basis of Assembly Number M1 or M2 in <ref type="internal" target="nbc.divBV2.part9.sect9.subsect10.art3.table2" display-type="long"/>.</text>
+                        <text>A ceiling membrane is permitted to be assigned a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> on the basis of Assembly Number M1 or M2 in <ref type="internal" target="nbc.divBV2.part9.spectables1.table2" display-type="long">Table A-9.10.3.1.-B</ref>.</text>
                     </sentence>
                 </new-content>
             </insert>
@@ -4678,7 +4678,7 @@ two <ref type="term" target="dwllng-n">dwelling units</ref>, </text>
                               <text>all <ref type="term" target="t">suites</ref> are separated by a vertical <ref type="term" target="fr-prtn">fire separation</ref> having a <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> of not less than <measurement units="metric">1 h</measurement> that
 provides continuous protection from the top of the footing to the
 underside of the roof deck, with any space between the top of the
-wall and the roof deck tightly filled with mineral wool or <ref type="term" target="cmbtbl">noncombustible</ref> material,</text>
+wall and the roof deck tightly filled with mineral wool or <ref type="term" target="ncmbtbl">noncombustible</ref> material,</text>
                            </subclause>
                            <subclause xml:id="nbc.divB.part3.sect2.subsect5.art12.sent3.clause3.subclause3"
                                       number="3"
@@ -5174,7 +5174,7 @@ service space</ref>.</text>
                     <new-content source="bc">
                         <text>Except as provided in <ref type="internal"
                                 target="nbc.divB.part3.sect1.subsect9.art4.sent8"
-                                display-type="short"/>, penetrations of a <ref type="term" target="fr-prtn">fire separation</ref> that incorporate transitions between <ref type="term" target="cmbtbl">combustible</ref> and <ref type="term" target="cmbtbl">noncombustible</ref> drain, waste and
+                                display-type="short"/>, penetrations of a <ref type="term" target="fr-prtn">fire separation</ref> that incorporate transitions between <ref type="term" target="cmbtbl">combustible</ref> and <ref type="term" target="ncmbtbl">noncombustible</ref> drain, waste and
 vent piping shall be sealed by a <ref type="term" target="fr-tp">firestop</ref> that has an F rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance
 rating </ref> required for the <ref type="term" target="fr-prtn">fire separation</ref> when subjected to the fire test method in CAN/ULC-S115, "Standard Method of Fire Tests of Firestop Systems," with a pressure differential of <measurement units="metric">50 Pa</measurement> between the exposed and unexposed sides, with the higher pressure
 on the exposed side.</text>
@@ -7291,7 +7291,7 @@ each 25 females.</find>
                                                     letter="e"
                                                     vendor-id="es013849e">
                                                <!-- bcbc-xml-fix: dba2a2b5a4844284b93480b4225b2b11:746 Reference 48ca5bc545 -->
-                                               <text>a combination of <ref type="term" target="cmbtbl">noncombustible</ref> cladding
+                                               <text>a combination of <ref type="term" target="ncmbtbl">noncombustible</ref> cladding
                     and the cladding described in <ref type="internal"
                                                        target="nbc.divB.part3.sect1.subsect6.art9.sent2.clause1"
                                                        display-type="short"
@@ -7568,7 +7568,7 @@ each 25 females.</find>
                                                     target="nbc.divB.part3.sect1.subsect8.art3.sent5"
                                                     display-type="short"/>, joints located in a horizontal plane between a floor and an exterior
                     wall shall be sealed by a <ref type="term" target="fr-tp">firestop</ref> that,
-                    when subjected to the fire test method in <ref type="standard" target="astme2307" standardId="astme2307" ref-style="notitle"/>, “Standard Test Method for Determining Fire Resistance of Perimeter Fire Barriers Using Intermediate-Scale, Multi-storey Test Apparatus,” has an F rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating </ref>of the horizontal <ref type="term" target="fr-prtn">fire separation</ref>.</text>
+                    when subjected to the fire test method in <ref type="standard" target="astme2307" standardId="astme2307" ref-style="notitle"/>, “Standard Test Method for Determining Fire Resistance of Perimeter Fire Barriers Using Intermediate-Scale, Multi-storey Test Apparatus,” has an F rating not less than the <ref type="term" target="fr-rtnc-">fire-resistance rating</ref> of the horizontal <ref type="term" target="fr-prtn">fire separation</ref>.</text>
                                          </sentence>
                 </new-content>
             </replace>
