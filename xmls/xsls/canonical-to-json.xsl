@@ -2399,6 +2399,21 @@
                               then key('bcf-by-id', string($ref/@target), root($ref))[1] else ()"/>
     </xsl:function>
 
+    <!-- BBC-184 Issues 6-7 / BBC-187 Issue 4 | The NBC XML links some "noncombustible" words to the
+         "combustible" definitions (cmbtbl / cmbtbl-c), and some to ids that do not exist (nncmbtbl,
+         nncmbtbl-cnstrctn). Point each one at the definition its text names, as in the PDF. -->
+    <xsl:function name="bcf:term-target" as="xs:string">
+        <xsl:param name="target" as="xs:string"/>
+        <xsl:param name="label" as="xs:string"/>
+        <xsl:variable name="l" select="lower-case(normalize-space($label))"/>
+        <xsl:sequence select="
+            if ($target = 'nncmbtbl') then 'ncmbtbl'
+            else if ($target = 'nncmbtbl-cnstrctn') then 'ncmbtbl-'
+            else if ($target = ('cmbtbl', 'cmbtbl-c', 'ncmbtbl') and starts-with($l, 'noncombustible construction')) then 'ncmbtbl-'
+            else if ($target = 'cmbtbl' and starts-with($l, 'noncombustible')) then 'ncmbtbl'
+            else $target"/>
+    </xsl:function>
+
     <!-- Full number of a code element, e.g. 3.2.1.4. / 1.3.3.3.(2) / 2.2.7.2.(1)(a)(iv).
          Empty for appendix / spec-table content and anything without a complete number. -->
     <xsl:function name="bcf:full-number" as="xs:string?">
@@ -2512,7 +2527,8 @@
         <!-- CLAUDE-AUTOFIX CL-032 CF-07755 | issue 9983 | No space after an opening bracket before a reference without pretext, as in the PDF ((Subsection 9.29.2.)); external links keep it, as the PDF prints ( https://...). -->
         <!-- CLAUDE-AUTOFIX CL-037 CF-08197 | issue 9993 | The same applies after an opening square bracket before an internal reference without pretext ([Article 9.23.13.4.]). -->
         <!-- CLAUDE-AUTOFIX CL-038 CF-10018 | issue 3796 | No space between an opening quotation mark and a defined term, as in the PDF (“heritage building.”). -->
-        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$')) and not(current()/@type = 'term' and matches(., '[\-/]$|(^|\W)inter$|(^|\s)[&quot;“‘]$')) and not(matches(., '\($') and current()/@type != 'external') and not(matches(., '\[$') and current()/@type = 'internal')] or $prev-significant[self::ref])">
+        <!-- BBC-184 | A defined term after a measurement keeps the space the source puts between them ("19 mm thick fire-retardant-treated wood"), as in the PDF. Table-note markers stay attached ("20 min(1)"), and a measurement ending in a superscript already gets its space from the rule in the measurement template. -->
+        <xsl:if test="not(@pretext) and ($prev-significant[self::text() and not(matches(., '\s$')) and not(current()/@type = 'term' and matches(., '[\-/]$|(^|\W)inter$|(^|\s)[&quot;“‘]$')) and not(matches(., '\($') and current()/@type != 'external') and not(matches(., '\[$') and current()/@type = 'internal')] or $prev-significant[self::ref] or (current()/@type = 'term' and $prev-significant[self::measurement][not(node()[normalize-space(.) != ''][last()][self::super or self::sub])] and preceding-sibling::node()[1][self::text()][normalize-space(.) = '' and string-length(.) &gt; 0]))">
             <xsl:text> </xsl:text>
         </xsl:if>
         
@@ -2537,7 +2553,7 @@
         <xsl:variable name="appnote-table-note" as="xs:boolean" select="@type = 'table-note' and contains(@target, '.appnote') and not(@display-type) and normalize-space(.) = ''"/>
         <xsl:value-of select="if ($appnote-table-note) then 'internal' else @type"/>
         <xsl:text>:</xsl:text>
-        <xsl:value-of select="@target"/>
+        <xsl:value-of select="if (@type = 'term') then bcf:term-target(string(@target), string(.)) else @target"/>
         <xsl:if test="$appnote-table-note">
             <xsl:text>:short</xsl:text>
         </xsl:if>
@@ -3346,7 +3362,7 @@
             <xsl:for-each select=".//ref[@type = 'term']">
                 <fn:map>
                     <fn:string key="source_id"><xsl:value-of select="ancestor::*[@xml:id][1]/@xml:id"/></fn:string>
-                    <fn:string key="term_id"><xsl:value-of select="@target"/></fn:string>
+                    <fn:string key="term_id"><xsl:value-of select="bcf:term-target(string(@target), string(.))"/></fn:string>
                     <fn:string key="text"><xsl:value-of select="."/></fn:string>
                 </fn:map>
             </xsl:for-each>

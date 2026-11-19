@@ -1242,7 +1242,7 @@ describe('TableBlock', () => {
     expect(screen.getByText('Descriptor')).toBeInTheDocument();
   });
 
-  it('adds sentence suffix from own-article forming_part for single tables', () => {
+  it('numbers a single table after its Article only, without a sentence suffix', () => {
     const table = {
       id: 'nbc.divA.part1.sect1.subsect1.art1.table1',
       type: 'table' as const,
@@ -1256,8 +1256,9 @@ describe('TableBlock', () => {
 
     render(<TableBlock table={table as unknown as Table} />);
 
-    // getTableNumberDisplay omits trailing dot when number ends with ')'
-    expect(screen.getByText('Table 1.1.1.1.(5)')).toBeInTheDocument();
+    // BBC-186 / BBC-187: single tables print "Table 3.1.8.4." in the PDF, never "Table 3.1.8.4.(2)"
+    expect(screen.getByText('Table 1.1.1.1.')).toBeInTheDocument();
+    expect(screen.queryByText('Table 1.1.1.1.(5)')).not.toBeInTheDocument();
   });
 
   it('does not use forming_part from a different article for the table number', () => {
