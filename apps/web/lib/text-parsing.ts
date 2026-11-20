@@ -1405,7 +1405,11 @@ export function parseTextWithMarkers(
             marker.referenceId,
             marker.format as InternalRefFormat
           )
-          : sanitizedText.substring(lastIndex, marker.start);
+          : marker.type === 'tableNote'
+            // BBC-181 (QA re-open #5): a table note marker sits right after its value, as in the PDF
+            // ("1(3)", "Separations(1)"), so the space the JSON puts before it is dropped.
+            ? sanitizedText.substring(lastIndex, marker.start).replace(/[ \t]+$/, '')
+            : sanitizedText.substring(lastIndex, marker.start);
 
       nodes.push(
         ...parseInlineFormatting(
