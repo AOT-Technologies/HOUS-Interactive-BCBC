@@ -522,10 +522,27 @@
                 <fn:string key="source"><xsl:value-of select="@source"/></fn:string>
             </xsl:if>
             
-            <xsl:if test="see-also">
-                <fn:string key="see_also"><xsl:apply-templates select="see-also" mode="rich-text-json"/></fn:string>
-            </xsl:if>
-            
+            <xsl:choose>
+                <!-- BBC-193 | A Part "(See Note ...)" changed by a revision keeps each dated version, so the site
+                     shows the right one for the selected date (Part 5: none before 2025-06-16, MO BA 2024 06 item 73). -->
+                <xsl:when test="see-also[1]/revision-history">
+                    <xsl:variable name="sa-history" select="see-also[1]/revision-history"/>
+                    <xsl:variable name="sa-current" select="($sa-history/revision[@status = 'current'][last()]/content, $sa-history/original)[1]"/>
+                    <fn:string key="see_also"><xsl:apply-templates select="$sa-current/node()" mode="rich-text-json"/></fn:string>
+                    <fn:array key="see_also_revisions">
+                        <xsl:for-each select="$sa-history/original | $sa-history/revision">
+                            <fn:map>
+                                <fn:string key="effective_date"><xsl:value-of select="@effective-date"/></fn:string>
+                                <fn:string key="content"><xsl:apply-templates select="(if (self::original) then . else content)/node()" mode="rich-text-json"/></fn:string>
+                            </fn:map>
+                        </xsl:for-each>
+                    </fn:array>
+                </xsl:when>
+                <xsl:when test="see-also">
+                    <fn:string key="see_also"><xsl:apply-templates select="see-also" mode="rich-text-json"/></fn:string>
+                </xsl:when>
+            </xsl:choose>
+
             <fn:array key="sections">
                 <xsl:apply-templates select="section" mode="json"/>
             </fn:array>

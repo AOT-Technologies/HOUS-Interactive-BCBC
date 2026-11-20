@@ -39,6 +39,25 @@ p {
   margin-top: var(--layout-margin-medium);
 }
 
+/* BBC-309 (G9): subscripts and superscripts in running text (C_pi, C_e, I_W, (C_gC_p)_net, m^2) sit
+   compactly on the text baseline, as in the MO, and no longer push lines apart. Only plain sub/sup
+   are styled: note-reference markers (sup.note-reference) and MathJax formulas keep their own styles. */
+sub:not([class]),
+sup:not([class]) {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub:not([class]) {
+  bottom: -0.25em;
+}
+
+sup:not([class]) {
+  top: -0.5em;
+}
+
 a[data-skip-link-footer] {
   display: none;
   visibility: hidden;
