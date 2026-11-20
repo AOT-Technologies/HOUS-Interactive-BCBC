@@ -1,8 +1,9 @@
+/* BBC-315 (G19): spacing comes only from the text line's bottom margin (see SentenceBlock.css). */
 .subclauseBlock {
   display: flex;
   align-items: flex-start;
   gap: 0;
-  margin-bottom: var(--layout-margin-small);
+  margin-bottom: 0;
   min-width: 0;
 }
 
@@ -38,6 +39,6 @@
 
 .subclauseNestedContent {
   margin-left: var(--layout-margin-medium);
-  margin-top: var(--layout-margin-small);
+  margin-top: 0;
   min-width: 0;
 }
