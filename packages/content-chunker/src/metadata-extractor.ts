@@ -19,6 +19,10 @@ export interface NavigationNode {
   number?: string;
   title: string;
   path: string;
+  /** Part nodes only: "(See Note A-x.)" printed under the Part title (BBC-193). */
+  see_also?: string;
+  /** Part nodes only: dated versions of see_also when a revision changes it. */
+  see_also_revisions?: Array<{ effective_date: string; content: string }>;
   children?: NavigationNode[];
 }
 
@@ -235,6 +239,8 @@ function buildDivisionNode(division: any): NavigationNode {
       number: part.number,
       title: `Part ${part.number} - ${part.title}`,
       path: `/code/${division.id}/${part.number}`,
+      ...(part.see_also ? { see_also: part.see_also } : {}),
+      ...(part.see_also_revisions?.length ? { see_also_revisions: part.see_also_revisions } : {}),
       children: [],
     };
 

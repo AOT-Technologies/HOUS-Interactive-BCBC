@@ -1,8 +1,11 @@
+/* BBC-315 (G19): one spacing rule for provisions. Only the text line (and see-also line) carries the
+   bottom margin; the block and its nested clauses add none. Margins cannot collapse inside these flex
+   rows, so a block margin here used to stack with the text margin (16-32px gaps by nesting depth). */
 .sentenceBlock {
   display: flex;
   align-items: flex-start;
   gap: 0;
-  margin-bottom: var(--layout-margin-small);
+  margin-bottom: 0;
   min-width: 0;
 }
 
@@ -39,7 +42,7 @@
 
 .sentenceNestedContent {
   margin-left: var(--layout-margin-medium);
-  margin-top: var(--layout-margin-small);
+  margin-top: 0;
   min-width: 0;
 }
 

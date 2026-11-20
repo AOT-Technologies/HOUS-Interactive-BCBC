@@ -18,6 +18,10 @@ export interface NavigationNode {
   title: string;
   type: 'volume' | 'division' | 'part' | 'section' | 'subsection' | 'article' | 'part_appendix' | 'division_appendix' | 'spectables' | 'index' | 'conversions';
   path: string;
+  /** Part nodes only: "(See Note A-x.)" printed under the Part title (BBC-193). */
+  see_also?: string;
+  /** Part nodes only: dated versions of see_also when a revision changes it. */
+  see_also_revisions?: Array<{ effective_date: string; content: string }>;
   children?: NavigationNode[];
 }
 
@@ -175,6 +179,9 @@ export const useNavigationStore = create<NavigationStore>()(
                   title: node.title,
                   type: node.type,
                   path,
+                  // BBC-193: Part "(See Note A-x.)" shown under the Part title.
+                  ...(typeof node.see_also === 'string' && node.see_also.trim() ? { see_also: node.see_also } : {}),
+                  ...(Array.isArray(node.see_also_revisions) && node.see_also_revisions.length ? { see_also_revisions: node.see_also_revisions } : {}),
                   children: node.children ? addPathToNodes(node.children, path) : undefined,
                 };
               });
