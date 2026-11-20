@@ -2390,6 +2390,7 @@
         type="canonical-id"
         id="nbc.divB.part3.sect1.subsect2.art5.sent2"
         />
+      <!-- BBC-193 Issues 6-7: "care" is the italic defined term (item 48), and Clause (b) keeps "Article 3.2.4.20." as in the base text (was 3.1.2.4.). -->
       <replace preserve-references="true">
         <new-content source="bc">
           <sentence
@@ -2409,7 +2410,7 @@
                 >
                 <content>
                   <text
-                    >A care facility accepted for residential use pursuant to provincial legislation is permitted to be classified as a <ref
+                    >A <ref type="term" target="ca">care</ref> facility accepted for residential use pursuant to provincial legislation is permitted to be classified as a <ref
                       type="term"
                       target="rdntl-cc"
                       >residential occupancy</ref>, provided</text>
@@ -2431,7 +2432,7 @@
                         target="mk-lrm"
                         >smoke alarms</ref> are installed in conformance with <ref
                         type="internal"
-                        target="nbc.divB.part3.sect1.subsect2.art4"
+                        target="nbc.divB.part3.sect2.subsect4.art20"
                         display-type="long"
                         />,</text>
                   </clause>
@@ -3359,8 +3360,8 @@
         <new-content source="bc">
           <see-also xml:id="nbc.divB.part5.seealso" revised="yes">
             <revision-history>
-              <original effective-date="2024-03-08">
-                <!-- Merge engine will auto-populate original content -->
+              <!-- BBC-193: the BC code had no "(See Note A-5.)" under the Part 5 title before MO BA 2024 06 item 73 adds it (the NBC base line is not part of the original BCBC). -->
+              <original effective-date="2024-03-08" empty="true">
               </original>
               <revision
                 seq="1"
@@ -3369,12 +3370,7 @@
                 id="bc-mo-2024-06-067"
                 status="current"
                 >
-                <content>(See <ref
-                    type="internal"
-                    target="nbc.divB.part5.appendix.appnote1"
-                    display-type="long"
-                    pretext="Note"
-                    />)</content>
+                <content>(See <ref type="internal" target="nbc.divB.part5.appendix.appnote1" display-type="short"/>.)</content>
                 <change-summary
                   >Changed see-also reference to display as "(See Note A-5.)"</change-summary>
                 <note>Ministerial Order BA 2024 06</note>

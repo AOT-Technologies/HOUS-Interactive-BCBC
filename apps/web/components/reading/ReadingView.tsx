@@ -1744,7 +1744,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
     }
 
     if (modalData.mode === 'part' && modalData.part) {
-      return <PartRenderer part={modalData.part} queryString={queryString} />;
+      return <PartRenderer part={modalData.part} queryString={queryString} effectiveDate={effectiveDate} />;
     }
 
     if (modalData.mode === 'appnote' && modalData.note) {
@@ -1961,6 +1961,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
             <PartRenderer
               part={currentPartNode}
               queryString={queryString}
+              effectiveDate={effectiveDate}
             />
           </div>
           <PrintFooter />
@@ -2264,7 +2265,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       <div className="reading-view" ref={contentContainerRef}>
         <ReadingViewHeader pdfLabel={pdfLabel} />
         <div className="reading-view__content">
-          <PartTitle title={sectionViewPartTitle} />
+          <PartTitle
+            title={sectionViewPartTitle}
+            seeAlso={currentPartNode?.see_also}
+            seeAlsoRevisions={currentPartNode?.see_also_revisions}
+            effectiveDate={effectiveDate}
+            partId={currentPartNode?.id}
+          />
           {subtree.mode === 'section' && (
             <SectionRenderer
               section={resolvedSection}
