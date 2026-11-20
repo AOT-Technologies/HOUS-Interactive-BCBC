@@ -129,6 +129,8 @@ interface RawPart {
   type: 'part';
   number: string | number;
   title: string;
+  see_also?: string;
+  see_also_revisions?: Array<{ effective_date: string; content: string }>;
   sections: RawSection[];
   appendix?: RawPartAppendix;
   spectables?: RawSpectables[];
@@ -563,6 +565,9 @@ function parsePartData(raw: RawPart): Part {
     number: String(raw.number),
     title: raw.title,
     type: 'part',
+    // BBC-193: keep the Part's "(See Note A-x.)" so the site can show it under the Part title.
+    ...(typeof raw.see_also === 'string' && raw.see_also.trim() ? { see_also: raw.see_also } : {}),
+    ...(Array.isArray(raw.see_also_revisions) && raw.see_also_revisions.length ? { see_also_revisions: raw.see_also_revisions } : {}),
     sections: raw.sections.map(parseSectionData),
     appendix: raw.appendix ? parsePartAppendixData(raw.appendix) : undefined,
     spectables: spectables?.map(parseSpectablesData),

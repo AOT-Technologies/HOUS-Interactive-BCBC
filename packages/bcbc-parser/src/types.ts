@@ -187,6 +187,10 @@ export interface Part {
   number: string;
   title: string;
   type: 'part';
+  /** "(See Note A-3.)" printed under the Part title (BBC-193). */
+  see_also?: string;
+  /** Dated versions of see_also when a revision changes it (e.g. Part 5, MO BA 2024 06 item 73). */
+  see_also_revisions?: Array<{ effective_date: string; content: string }>;
   sections: Section[];
   appendix?: PartAppendix;
   spectables?: Spectables[];
