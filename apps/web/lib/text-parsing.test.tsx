@@ -232,6 +232,19 @@ describe('parseTextWithMarkers - objective-based code references', () => {
     expect(crossRefs[2].props.displayText).toBe('(22)');
   });
 
+  it('drops the space before a table-note marker so it sits right after its value (BBC-181)', () => {
+    const nodes = parseTextWithMarkers(
+      '1 [REF:table-note:nbc.divB.part3.sect1.subsect3.art1.table1.note3]',
+      [],
+      true
+    );
+    const crossRefs = getElementsByType(nodes, CrossReferenceLink);
+
+    expect(crossRefs).toHaveLength(1);
+    expect(crossRefs[0].props.displayText).toBe('(3)');
+    expect(nodes.filter((node) => typeof node === 'string').join('')).toBe('1');
+  });
+
   it('parses note references with explicit display label payload', () => {
     const input = 'See [REF:internal:nbc.divC.part2.appendix.appnote1:short:Note A-2.2.1.2.(1)] for details.';
     const nodes = parseTextWithMarkers(input, [], true);
