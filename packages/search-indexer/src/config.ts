@@ -227,6 +227,13 @@ export interface SearchDocument {
 
   /** Extracted reference IDs (if preserveReferenceIds is true) */
   referenceIds?: string[];
+
+  /**
+   * Glossary only: the definition with its [REF:...] markers kept (BBC-316), so the
+   * definition pop-up and sidebar can show nested defined terms in italic.
+   * Written to glossary-map.json only, not to the search documents.
+   */
+  definitionMarkup?: string;
 }
 
 /**

@@ -10,8 +10,8 @@
  */
 
 import React from 'react';
-import type { Organization, Sentence, StructuredList } from '@bc-building-code/bcbc-parser';
-import { filterSentence } from '@bc-building-code/bcbc-parser';
+import type { Definition, Organization, Sentence, StructuredList } from '@bc-building-code/bcbc-parser';
+import { filterSentence, getDefinitionForDate } from '@bc-building-code/bcbc-parser';
 import { ContentRenderer } from './ContentRenderer';
 import { DefinitionsList } from './DefinitionsList';
 import { ObjectivesList } from './ObjectivesList';
@@ -61,7 +61,19 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
   const sentenceOrganizations =
     (filteredSentence as Sentence & { organizations?: Organization[] }).organizations || [];
   const sentenceEquations = (filteredSentence as { equations?: Array<{ id: string; type?: string; latex?: string; plainText?: string; mathml?: string; image?: string; imageSrc?: string }> }).equations || [];
-  const sentenceLists = (filteredSentence as Sentence & { lists?: StructuredList[] }).lists || [];
+  // BBC-322: a Defined Terms list shows each definition as in force on the selected date
+  // (a definition not yet added, or struck out, on that date is left out).
+  const sentenceLists = ((filteredSentence as Sentence & { lists?: StructuredList[] }).lists || []).map(
+    (list): StructuredList =>
+      list.type === 'definition' && effectiveDate
+        ? {
+          ...list,
+          items: list.items
+            .map((item) => getDefinitionForDate(item, effectiveDate))
+            .filter((item): item is Definition => item !== null),
+        }
+        : list
+  );
   const sentenceSeeAlso = resolveSeeAlsoText(
     (filteredSentence as Sentence & { see_also?: string | Array<{ content?: string }> }).see_also
   );
@@ -84,7 +96,9 @@ export const SentenceBlock: React.FC<SentenceBlockProps> = ({
         {/* Render definitions list if present */}
         {filteredSentence.definitions && filteredSentence.definitions.length > 0 && (
           <DefinitionsList
-            definitions={filteredSentence.definitions}
+            definitions={filteredSentence.definitions
+              .map((item) => getDefinitionForDate(item, effectiveDate))
+              .filter((item): item is Definition => item !== null)}
             interactive={interactive}
             renderContext={renderContext}
           />
