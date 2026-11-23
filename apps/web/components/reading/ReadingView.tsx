@@ -1694,12 +1694,19 @@ export const ReadingView: React.FC<ReadingViewProps> = ({
       kind: 'application-note',
       referenceId: note.id,
     };
+    // BBC-198 #2: Notes to Part 1 (Division B) print the Note title with a closing period,
+    // e.g. "A-1.1.2.1.(1) Objectives and Functional Statements Attributed to Acceptable Solutions."
+    const noteTitle = note.title?.trim() || '';
+    const displayNoteTitle =
+      noteTitle && note.id.startsWith('nbc.divB.part1.appendix.') && !/[.?!:]$/.test(noteTitle)
+        ? `${noteTitle}.`
+        : noteTitle;
 
     return (
       <article key={note.id} id={note.id} className="reading-view__appendix-note">
         <h3 className="reading-view__appendix-note-title">
           {noteLabel}
-          {note.title ? ` ${note.title}` : ''}
+          {displayNoteTitle ? ` ${displayNoteTitle}` : ''}
         </h3>
         <div className="reading-view__appendix-note-content">
           {renderAppendixBlock(note, interactive, numberOverrides, noteContext)}

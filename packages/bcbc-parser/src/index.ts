@@ -46,6 +46,7 @@ export type {
   HierarchyLevel,
   Revision,
   Definition,
+  DefinitionRevision,
   Organization,
   TextListItem,
   VariableListItem,
@@ -82,4 +83,5 @@ export {
   filterClause,
   filterSubclause,
   getLatestEffectiveDate,
+  getDefinitionForDate,
 } from './revision-filter';
