@@ -761,6 +761,8 @@ const LOWERCASE_FORMING_PART_TABLE_IDS = new Set<string>([
   'nbc.divB.part10.sect2.subsect3.art3.table9',
   'nbc.divB.part10.sect2.subsect3.art3.table10',
   'nbc.divBV2.part9.sect32.subsect3.art8.table1',
+  // BBC-317: Table 9.37.1.3. prints "Forming part of Sentence 9.37.1.3.(1)" in the BCBC source.
+  'nbc.divBV2.part9.sect37.subsect1.art3.table1',
 ]);
 
 // CLAUDE-AUTOFIX CL-090 CF-01778 | issue 1392 | Appendix Note tables that print no "Forming Part of ..." line in the PDF (pp. 733-734).

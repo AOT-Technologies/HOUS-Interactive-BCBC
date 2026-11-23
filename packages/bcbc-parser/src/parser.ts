@@ -654,6 +654,10 @@ function parseStructuredLists(
                 id: item.id,
                 term: item.term,
                 definition: item.definition,
+                // BBC-322: keep the dated versions of a revised definition.
+                ...(Array.isArray(item.revisions) && item.revisions.length > 0
+                  ? { revised: true, revisions: item.revisions }
+                  : {}),
               })),
           });
           break;

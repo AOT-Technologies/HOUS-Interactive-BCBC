@@ -2724,6 +2724,8 @@
             <insert>
                 <new-content source="bc">
                     <!-- CLAUDE-AUTOFIX CL-054 CF-10474 | issue 3022 | Defined terms in these definitions are term links (italic), as in the PDF. -->
+                    <!-- BBC-322 | The BCBC source (March 8, 2024) prints "in thier professional discretion";
+                         MO BA 2024 06 item 9 corrects it to "their" from June 16, 2025. -->
                     <item xml:id="bc-fld-rvw">
                         <term>Field review</term>
                         <definition>means a review of the work<list
@@ -2740,7 +2742,7 @@
                                         type="term"
                                         target="bldng"
                                         >building</ref> site</item>
-                            </list>that a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref> in their professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref>.</definition>
+                            </list>that a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref> in thier professional discretion considers necessary to ascertain whether the work substantially complies in all material respects with the plans and supporting documents prepared by a <ref type="term" target="bc-rgstrd-prfssnl">registered professional</ref>.</definition>
                     </item>
                 </new-content>
             </insert>

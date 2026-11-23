@@ -2274,6 +2274,10 @@
     <!-- ================================================================== -->
     <!-- Amendment 46: Table 1.3.1.2 - NRC CBD 230 row                      -->
     <!-- Strike out "A-1.1.1.1.(1)(4)" and substitute "A-1.1.1.2.(1)(4)"   -->
+    <!-- BBC-206 #12 | Revises the existing CBD 230 row (row391) in place   -->
+    <!-- instead of adding a new row. The "(4)" is Note (4) to the Table    -->
+    <!-- (Code reference is in Division A). The original keeps the source's -->
+    <!-- "A-1.1.1.1.(1)" label; Note A-1.1.1.2.(1) is the Note it points to. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-046"
@@ -2281,18 +2285,27 @@
       description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(1)(4)' and substituting 'A-1.1.1.2.(1)(4)' in the Code Reference column for NRC CBD 230 row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row391"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.nrccbd230"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row391" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>NRC</entry>
+                <entry standard-ref-number="CBD 230">CBD 230</entry>
+                <entry standard-id="cbd230"
+                  standard-ref-id="cbd230"
+                  standard-ref-title="Applying building codes to existing buildings"
+                  >Applying building codes to existing buildings</entry>
+                <entry>
+                  <ref type="internal"
+                    target="nbc.divA.part1.appendix.appnote1"
+                    display-type="number">A-1.1.1.1.(1)</ref>
+                  <ref type="table-note"
+                    target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
+                </entry>
               </original>
               <revision
                 seq="1"
@@ -2303,15 +2316,17 @@
                 >
                 <content>
                   <entry>NRC</entry>
-                  <entry>CBD 230</entry>
-                  <entry
-                    >National Research Council of Canada Construction Digest</entry>
+                  <entry standard-ref-number="CBD 230">CBD 230</entry>
+                  <entry standard-id="cbd230"
+                    standard-ref-id="cbd230"
+                    standard-ref-title="Applying building codes to existing buildings"
+                    >Applying building codes to existing buildings</entry>
                   <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
+                    <ref type="internal"
+                      target="nbc.divA.part1.appendix.appnote1"
+                      display-type="number">A-1.1.1.2.(1)</ref>
+                    <ref type="table-note"
+                      target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
                   </entry>
                 </content>
                 <change-summary
@@ -2321,61 +2336,15 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 47: Table 1.3.1.2 - NRC CBD 230 row (duplicate)          -->
-    <!-- Strike out "A-1.1.1.1.(1)(4)" and substitute "A-1.1.1.2.(1)(4)"   -->
+    <!-- MO BA 2024 06 item 47 repeats item 46 word for word; APPLIED IN    -->
+    <!-- bc-mo-2024-06-046 above (BBC-206). Adding it as a second row       -->
+    <!-- showed two extra "NRC CBD 230" rows in Table 1.3.1.2.             -->
     <!-- ================================================================== -->
-    <amendment
-      id="bc-mo-2024-06-047"
-      sequence="4046"
-      description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(1)(4)' and substituting 'A-1.1.1.2.(1)(4)' in the Code Reference column for NRC CBD 230 row"
-      >
-      <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
-        />
-      <insert>
-        <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.nrccbd2302"
-            revised="yes"
-            >
-            <revision-history>
-              <original effective-date="2024-03-08">
-              </original>
-              <revision
-                seq="1"
-                type="amendment"
-                effective-date="2025-06-16"
-                id="bc-mo-2024-06-047"
-                status="current"
-                >
-                <content>
-                  <entry>NRC</entry>
-                  <entry>CBD 230</entry>
-                  <entry
-                    >National Research Council of Canada Construction Digest</entry>
-                  <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
-                  </entry>
-                </content>
-                <change-summary
-                  >Struck out "A-1.1.1.1.(1)(4)" and substituted "A-1.1.1.2.(1)(4)" in Code Reference column</change-summary>
-                <note>Ministerial Order BA 2024 06</note>
-              </revision>
-            </revision-history>
-          </row>
-        </new-content>
-      </insert>
-    </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 48: Sentence 3.1.2.5.(2) - Care Facilities               -->

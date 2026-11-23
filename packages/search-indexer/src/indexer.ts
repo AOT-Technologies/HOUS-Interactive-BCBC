@@ -1273,6 +1273,8 @@ function processGlossary(
       path: 'Glossary',
       breadcrumbs: ['Glossary'],
       urlPath: `/glossary/${entry.id}`,
+      // BBC-316: keep the markers for the definition pop-up (glossary-map.json only).
+      definitionMarkup: entry.definition,
       hasAmendment: false,
       hasInternalRefs: false,
       hasExternalRefs: false,
