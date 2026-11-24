@@ -2274,6 +2274,10 @@
     <!-- ================================================================== -->
     <!-- Amendment 46: Table 1.3.1.2 - NRC CBD 230 row                      -->
     <!-- Strike out "A-1.1.1.1.(1)(4)" and substitute "A-1.1.1.2.(1)(4)"   -->
+    <!-- BBC-206 #12 | Revises the existing CBD 230 row (row391) in place   -->
+    <!-- instead of adding a new row. The "(4)" is Note (4) to the Table    -->
+    <!-- (Code reference is in Division A). The original keeps the source's -->
+    <!-- "A-1.1.1.1.(1)" label; Note A-1.1.1.2.(1) is the Note it points to. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-046"
@@ -2281,18 +2285,27 @@
       description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(1)(4)' and substituting 'A-1.1.1.2.(1)(4)' in the Code Reference column for NRC CBD 230 row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row391"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.nrccbd230"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row391" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>NRC</entry>
+                <entry standard-ref-number="CBD 230">CBD 230</entry>
+                <entry standard-id="cbd230"
+                  standard-ref-id="cbd230"
+                  standard-ref-title="Applying building codes to existing buildings"
+                  >Applying building codes to existing buildings</entry>
+                <entry>
+                  <ref type="internal"
+                    target="nbc.divA.part1.appendix.appnote1"
+                    display-type="number">A-1.1.1.1.(1)</ref>
+                  <ref type="table-note"
+                    target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
+                </entry>
               </original>
               <revision
                 seq="1"
@@ -2303,15 +2316,17 @@
                 >
                 <content>
                   <entry>NRC</entry>
-                  <entry>CBD 230</entry>
-                  <entry
-                    >National Research Council of Canada Construction Digest</entry>
+                  <entry standard-ref-number="CBD 230">CBD 230</entry>
+                  <entry standard-id="cbd230"
+                    standard-ref-id="cbd230"
+                    standard-ref-title="Applying building codes to existing buildings"
+                    >Applying building codes to existing buildings</entry>
                   <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
+                    <ref type="internal"
+                      target="nbc.divA.part1.appendix.appnote1"
+                      display-type="number">A-1.1.1.2.(1)</ref>
+                    <ref type="table-note"
+                      target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
                   </entry>
                 </content>
                 <change-summary
@@ -2321,61 +2336,15 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 47: Table 1.3.1.2 - NRC CBD 230 row (duplicate)          -->
-    <!-- Strike out "A-1.1.1.1.(1)(4)" and substitute "A-1.1.1.2.(1)(4)"   -->
+    <!-- MO BA 2024 06 item 47 repeats item 46 word for word; APPLIED IN    -->
+    <!-- bc-mo-2024-06-046 above (BBC-206). Adding it as a second row       -->
+    <!-- showed two extra "NRC CBD 230" rows in Table 1.3.1.2.             -->
     <!-- ================================================================== -->
-    <amendment
-      id="bc-mo-2024-06-047"
-      sequence="4046"
-      description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(1)(4)' and substituting 'A-1.1.1.2.(1)(4)' in the Code Reference column for NRC CBD 230 row"
-      >
-      <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
-        />
-      <insert>
-        <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.nrccbd2302"
-            revised="yes"
-            >
-            <revision-history>
-              <original effective-date="2024-03-08">
-              </original>
-              <revision
-                seq="1"
-                type="amendment"
-                effective-date="2025-06-16"
-                id="bc-mo-2024-06-047"
-                status="current"
-                >
-                <content>
-                  <entry>NRC</entry>
-                  <entry>CBD 230</entry>
-                  <entry
-                    >National Research Council of Canada Construction Digest</entry>
-                  <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
-                  </entry>
-                </content>
-                <change-summary
-                  >Struck out "A-1.1.1.1.(1)(4)" and substituted "A-1.1.1.2.(1)(4)" in Code Reference column</change-summary>
-                <note>Ministerial Order BA 2024 06</note>
-              </revision>
-            </revision-history>
-          </row>
-        </new-content>
-      </insert>
-    </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 48: Sentence 3.1.2.5.(2) - Care Facilities               -->
@@ -2390,6 +2359,7 @@
         type="canonical-id"
         id="nbc.divB.part3.sect1.subsect2.art5.sent2"
         />
+      <!-- BBC-193 Issues 6-7: "care" is the italic defined term (item 48), and Clause (b) keeps "Article 3.2.4.20." as in the base text (was 3.1.2.4.). -->
       <replace preserve-references="true">
         <new-content source="bc">
           <sentence
@@ -2409,7 +2379,7 @@
                 >
                 <content>
                   <text
-                    >A care facility accepted for residential use pursuant to provincial legislation is permitted to be classified as a <ref
+                    >A <ref type="term" target="ca">care</ref> facility accepted for residential use pursuant to provincial legislation is permitted to be classified as a <ref
                       type="term"
                       target="rdntl-cc"
                       >residential occupancy</ref>, provided</text>
@@ -2431,7 +2401,7 @@
                         target="mk-lrm"
                         >smoke alarms</ref> are installed in conformance with <ref
                         type="internal"
-                        target="nbc.divB.part3.sect1.subsect2.art4"
+                        target="nbc.divB.part3.sect2.subsect4.art20"
                         display-type="long"
                         />,</text>
                   </clause>
@@ -2521,76 +2491,16 @@
     </amendment>
     
     <!-- ================================================================== -->
-    <!-- Amendment 50: Clause 3.1.6.4.(8)(a) - Mass Timber Elements         -->
-    <!-- Strike out "from adjacent spaces" and substitute "on the interior  -->
-    <!-- side"                                                              -->
+    <!-- Amendment 50: Clause 3.1.6.4.(8)(a) - strike out "from adjacent    -->
+    <!-- spaces" and substitute "on the interior side"                      -->
+    <!--                                                                    -->
+    <!-- APPLIED IN Ministerial Order BA 2024 01.xml (bc-mo-2024-01-006):   -->
+    <!-- Clause (8)(a) only exists in the Article that MO BA 2024 01 item 6 -->
+    <!-- substitutes, and the merge engine cannot stack two revisions on    -->
+    <!-- one element. Revision id bc-mo-2024-06-050, effective 2025-06-16.  -->
+    <!-- (BBC-185) The earlier version of this amendment rewrote Sentence   -->
+    <!-- 3.1.6.4.(1) instead, which the MO does not do.                     -->
     <!-- ================================================================== -->
-    <amendment
-      id="bc-mo-2024-06-050"
-      sequence="4049"
-      description="Amend Clause 3.1.6.4.(8)(a) by striking out 'from adjacent spaces' and substituting 'on the interior side'"
-      >
-      <target
-        type="canonical-id"
-        id="nbc.divB.part3.sect1.subsect6.art4.sent1"
-        />
-      <replace preserve-references="true">
-        <new-content source="bc">
-          <sentence
-            xml:id="nbc.divB.part3.sect1.subsect6.art4.sent1"
-            number="1"
-            vendor-id="es013838"
-            >
-            <revision-history>
-              <original effective-date="2024-03-08">
-                <!-- Merge engine will auto-populate from bc-building-code.xml -->
-              </original>
-              <revision
-                seq="1"
-                type="amendment"
-                effective-date="2025-06-16"
-                id="bc-mo-2024-06-050"
-                status="current"
-                >
-                <content>
-                  <text>Except as provided in <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.art4.sent3"
-                      display-type="short"
-                      pretext="Sentences"
-                      /> <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.art4.sent6"
-                      display-type="short"
-                      pretext="to"
-                      />, <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect3.art6"
-                      display-type="long"
-                      /> shall be protected on the interior side of the building, including adjacent concealed spaces within wall, floor and roof assemblies, by a material or assembly of materials conforming to <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.art4.sent2"
-                      display-type="short"
-                      /> that provides an <ref
-                      type="term"
-                      target="ncps-rtng"
-                      >encapsulation rating</ref> of not less than <measurement
-                      units="metric"
-                      >50 min</measurement>. (See <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect6.appnote4"
-                      display-type="short"
-                      />.)</text>
-                </content>
-                <change-summary
-                  >Struck out "from adjacent spaces" and substituted "on the interior side"</change-summary>
-                <note>Ministerial Order BA 2024 06</note>
-              </revision>
-            </revision-history>
-          </sentence>
-        </new-content>
-      </replace>
-    </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 51: Sentence 3.1.6.10.(1) - Combustible Components       -->
@@ -2625,18 +2535,8 @@
                 status="current"
                 >
                 <content>
-                  <text>A <ref
-                      type="term"
-                      target="cmbtbl-c"
-                      >combustible component</ref> in an exterior wall that satisfies the criteria of <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect5.art5"
-                      display-type="long"
-                      /> of Appendix D is deemed to satisfy the criteria of <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect1.subsect5.art5"
-                      display-type="medium"
-                      />.</text>
+                  <!-- BBC-184 Issue 1: MO BA 2025 02 item 51 only strikes out "meets the requirements of Clause 3.1.6.9.(2)(d)" and substitutes "satisfies the criteria of Clause 3.1.5.5.(1)(b)"; the rest of the Sentence stays. -->
+                  <text>Except as provided in <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art10.sent2" display-type="short"/>, <ref type="term" target="cmbtbl">combustible</ref> components, other than those permitted by <ref type="internal" target="nbc.divB.part3.sect1.subsect6.art9" display-type="long"/>, are permitted to be used in an exterior wall assembly of a <ref type="term" target="bldng">building</ref> or part of a <ref type="term" target="bldng">building</ref> permitted to be of <ref type="term" target="ncps-mt-nstr">encapsulated mass timber construction</ref>, provided the wall assembly satisfies the criteria of <ref type="internal" target="nbc.divB.part3.sect1.subsect5.art5.sent1.clause2" display-type="long"/>.</text>
                 </content>
                 <change-summary
                   >Struck out "meets the requirements of Clause 3.1.6.9.(2)(d)" and substituted "satisfies the criteria of Clause 3.1.5.5.(1)(b)"</change-summary>
@@ -3429,8 +3329,8 @@
         <new-content source="bc">
           <see-also xml:id="nbc.divB.part5.seealso" revised="yes">
             <revision-history>
-              <original effective-date="2024-03-08">
-                <!-- Merge engine will auto-populate original content -->
+              <!-- BBC-193: the BC code had no "(See Note A-5.)" under the Part 5 title before MO BA 2024 06 item 73 adds it (the NBC base line is not part of the original BCBC). -->
+              <original effective-date="2024-03-08" empty="true">
               </original>
               <revision
                 seq="1"
@@ -3439,12 +3339,7 @@
                 id="bc-mo-2024-06-067"
                 status="current"
                 >
-                <content>(See <ref
-                    type="internal"
-                    target="nbc.divB.part5.appendix.appnote1"
-                    display-type="long"
-                    pretext="Note"
-                    />)</content>
+                <content>(See <ref type="internal" target="nbc.divB.part5.appendix.appnote1" display-type="short"/>.)</content>
                 <change-summary
                   >Changed see-also reference to display as "(See Note A-5.)"</change-summary>
                 <note>Ministerial Order BA 2024 06</note>

@@ -76,7 +76,8 @@
               
               <revision seq="1" type="amendment" effective-date="2025-03-10" id="bc-mo-2024-05-002" status="current">
                 <content>
-                  <text>3) At least one for every five or part thereof of <ref type="term" target="dwllng-n">dwelling units</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect5.art1.sent1.clause1" display-type="short"/> shall conform to this Subsection. (See <ref type="internal" target="nbc.divB.part3.appendix.appnoteA-3.8.5.1.3" display-type="long"/>.)</text>
+                  <!-- CLAUDE-AUTOFIX side-effect issue 4518/8819 | B.3.8.5.1.(3) | Removed the duplicate "3)" and the extra "of", Clause (1)(a) and "Note A-3.8.5.1.(3)" as in the PDF (Revisions 5 and 6). -->
+                  <text>At least one for every five or part thereof <ref type="term" target="dwllng-n">dwelling units</ref> described in <ref type="internal" target="nbc.divB.part3.sect8.subsect5.art1.sent1.clause1" display-type="medium"/> shall conform to this Subsection. (See <ref type="internal" target="nbc.divB.part3.appendix.appnoteA-3.8.5.1.3" display-type="short" pretext="Note"/>.)</text>
                 </content>
                 <change-summary>Added new sentence requiring one in five dwelling units to be adaptable</change-summary>
                 <note>Ministerial Order BA 2024 05</note>

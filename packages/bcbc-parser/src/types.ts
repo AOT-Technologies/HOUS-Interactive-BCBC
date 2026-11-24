@@ -187,6 +187,10 @@ export interface Part {
   number: string;
   title: string;
   type: 'part';
+  /** "(See Note A-3.)" printed under the Part title (BBC-193). */
+  see_also?: string;
+  /** Dated versions of see_also when a revision changes it (e.g. Part 5, MO BA 2024 06 item 73). */
+  see_also_revisions?: Array<{ effective_date: string; content: string }>;
   sections: Section[];
   appendix?: PartAppendix;
   spectables?: Spectables[];
@@ -339,6 +343,26 @@ export interface Definition {
   id: string;
   term: string;
   definition: string;
+  /** BBC-322: true when a revision (Ministerial Order) changed this definition. */
+  revised?: boolean;
+  /** BBC-322: dated versions of the definition (original first, then revisions). */
+  revisions?: DefinitionRevision[];
+}
+
+/**
+ * One dated version of a definition (BBC-322). An empty term and definition means the
+ * definition is not in the Code on that date (added later, or struck out).
+ */
+export interface DefinitionRevision {
+  type: 'original' | 'revision';
+  effective_date: string;
+  term: string;
+  definition: string;
+  revision_type?: string;
+  revision_id?: string;
+  sequence?: number;
+  status?: string;
+  change_summary?: string;
 }
 
 /**

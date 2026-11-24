@@ -48,7 +48,9 @@ export function exportDocuments(
   documents: SearchDocument[],
   prettyPrint: boolean = false
 ): string {
-  return JSON.stringify(documents, null, prettyPrint ? 2 : undefined);
+  // BBC-316: definitionMarkup is only for glossary-map.json; the search documents stay as before.
+  const searchDocuments = documents.map(({ definitionMarkup: _definitionMarkup, ...doc }) => doc);
+  return JSON.stringify(searchDocuments, null, prettyPrint ? 2 : undefined);
 }
 
 /**
@@ -142,7 +144,8 @@ export function exportGlossaryMap(
     glossaryMap[key] = {
       id: doc.id,
       term: doc.title,
-      definition: doc.text,
+      // BBC-316: the definition keeps its [REF:term:...] markers so nested defined terms show in italic.
+      definition: doc.definitionMarkup ?? doc.text,
     };
   }
   
