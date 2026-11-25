@@ -2,7 +2,7 @@
  { "document_type" : "bc_building_code",
   "version" : "2020",
   "canonical_version" : "1.0",
-  "generated_timestamp" : "2026-11-23T18:34:52.4547396+05:30",
+  "generated_timestamp" : "2026-11-25T09:13:09.3808021+05:30",
   "metadata" : 
   { "title" : "National Building Code of Canada 2020",
    "subtitle" : "Volume 1",
@@ -14808,27 +14808,46 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row218",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
+                   [  ],
+                   "revisions" : 
                    [ 
-                    { "content" : 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "ANSI\/CSA-B149.6-15" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Code for digester gas, landfill gas, and biogas generation and utilization" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divB.part2.sect2.subsect8.art1.sent3:number]" } ] } ] },
                     
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "ANSI\/CSA-B149.6-15" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Code for digester gas, landfill gas, and biogas generation and utilization" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part2.sect2.subsect8.art1.sent3:number]" } ] } ] },
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-032",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "deleted" : true,
+                     "cells" : 
+                     [  ],
+                     "change_summary" : "Struck out entire table row for ANSI\/CSA-B149.6-15",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row219",
                    "type" : "body_row",
@@ -14976,6 +14995,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row225",
                    "type" : "body_row",
+                   "revised" : true,
                    "source" : "bc",
                    "cells" : 
                    [ 
@@ -14997,7 +15017,62 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part3.sect3.subsect1.art19.sent1:number:3.3.1.19.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.sent1:number:3.8.3.1.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.table1:long]  [REF:internal:nbc.divB.part3.sect8.subsect3.art3.sent1:number:3.8.3.3.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent1:number:3.8.3.9.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent2:number:3.8.3.9.(2)]  [REF:internal:nbc.divB.part3.appendix.appnote189:number:A-3.8.2.5.]  [REF:internal:nbc.divB.part3.appendix.appnote200:number:A-3.8.3.1.(1)]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part3.sect3.subsect1.art19.sent1:number:3.3.1.19.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.sent1:number:3.8.3.1.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.table1:long]  [REF:internal:nbc.divB.part3.sect8.subsect3.art3.sent1:number:3.8.3.3.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent1:number:3.8.3.9.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent2:number:3.8.3.9.(2)]  [REF:internal:nbc.divB.part3.sect8.subsect5.art2.sent4:number:3.8.5.2.(4)]  [REF:internal:nbc.divB.part3.appendix.appnote189:number:A-3.8.2.5.]  [REF:internal:nbc.divB.part3.appendix.appnote200:number:A-3.8.3.1.(1)]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "B651-18" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Accessible design for the built environment" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divB.part3.sect3.subsect1.art19.sent1:number:3.3.1.19.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.sent1:number:3.8.3.1.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.table1:long]  [REF:internal:nbc.divB.part3.sect8.subsect3.art3.sent1:number:3.8.3.3.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent1:number:3.8.3.9.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent2:number:3.8.3.9.(2)]  [REF:internal:nbc.divB.part3.appendix.appnote189:number:A-3.8.2.5.]  [REF:internal:nbc.divB.part3.appendix.appnote200:number:A-3.8.3.1.(1)]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-033",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "B651-18" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Accessible design for the built environment" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divB.part3.sect3.subsect1.art19.sent1:number:3.3.1.19.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.sent1:number:3.8.3.1.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.table1:long]  [REF:internal:nbc.divB.part3.sect8.subsect3.art3.sent1:number:3.8.3.3.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent1:number:3.8.3.9.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent2:number:3.8.3.9.(2)]  [REF:internal:nbc.divB.part3.sect8.subsect5.art2.sent4:number:3.8.5.2.(4)]  [REF:internal:nbc.divB.part3.appendix.appnote189:number:A-3.8.2.5.]  [REF:internal:nbc.divB.part3.appendix.appnote200:number:A-3.8.3.1.(1)]" } ] } ],
+                     "change_summary" : "Added \"3.8.5.2.(4)\" in Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row226",
                    "type" : "body_row",
@@ -15049,27 +15124,46 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row228",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
+                   [  ],
+                   "revisions" : 
                    [ 
-                    { "content" : 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "C22.2 No. 113-10" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Fans and Ventilators" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent7:number]" } ] } ] },
                     
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "C22.2 No. 113-10" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Fans and Ventilators" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent7:number]" } ] } ] },
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-034",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "deleted" : true,
+                     "cells" : 
+                     [  ],
+                     "change_summary" : "Struck out entire table row for CSA C22.2 No. 113-10",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row229",
                    "type" : "body_row",
@@ -15193,27 +15287,46 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row234",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
+                   [  ],
+                   "revisions" : 
                    [ 
-                    { "content" : 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CAN\/CSA-C260-M90" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Rating the Performance of Residential Mechanical Ventilating Equipment" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent1:number:9.32.3.10.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent2:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.table2:long]" } ] } ] },
                     
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CAN\/CSA-C260-M90" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Rating the Performance of Residential Mechanical Ventilating Equipment" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent1:number:9.32.3.10.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent2:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.table2:long]" } ] } ] },
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-035",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "deleted" : true,
+                     "cells" : 
+                     [  ],
+                     "change_summary" : "Struck out entire table row for CAN\/CSA-C260-M90",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row235",
                    "type" : "body_row",
@@ -15265,6 +15378,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row237",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
                    [ 
                     { "content" : 
@@ -15285,7 +15399,62 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent4:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent5:number]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art8.sent4:number:9.36.3.8.(4)]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:number:9.36.3.9.(3)]  [REF:internal:nbc.divBV2.part9.appendix.appnote266:number:A-9.36.3.9.(3)]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect3.art8.sent4:number:9.36.3.8.(4)]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:number:9.36.3.9.(3)]  [REF:internal:nbc.divBV2.part9.appendix.appnote266:number:A-9.36.3.9.(3)]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CAN\/CSA-C439-09" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Standard laboratory methods of test for rating the performance of heat\/energy-recovery ventilators" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent4:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent5:number]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art8.sent4:number:9.36.3.8.(4)]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:number:9.36.3.9.(3)]  [REF:internal:nbc.divBV2.part9.appendix.appnote266:number:A-9.36.3.9.(3)]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-036",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CAN\/CSA-C439-09" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Standard laboratory methods of test for rating the performance of heat\/energy-recovery ventilators" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect3.art8.sent4:number:9.36.3.8.(4)]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:number:9.36.3.9.(3)]  [REF:internal:nbc.divBV2.part9.appendix.appnote266:number:A-9.36.3.9.(3)]" } ] } ],
+                     "change_summary" : "Struck out \"9.32.3.10.(4)\" and \"9.32.3.10.(5)\" from Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row238",
                    "type" : "body_row",
@@ -15337,6 +15506,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row240",
                    "type" : "body_row",
+                   "revised" : true,
                    "source" : "bc",
                    "cells" : 
                    [ 
@@ -15358,7 +15528,62 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long:Table 9.36.4.2.] Table 9.36.8.10." } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long:Table 9.36.4.2.]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CAN\/CSA-C745-03" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long:Table 9.36.4.2.] Table 9.36.8.10." } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-037",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CAN\/CSA-C745-03" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long:Table 9.36.4.2.]" } ] } ],
+                     "change_summary" : "Struck out \"Table 9.36.8.10.\" from Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row241",
                    "type" : "body_row",
@@ -15530,6 +15755,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row248",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
                    [ 
                     { "content" : 
@@ -15550,7 +15776,62 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent1:number:9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote188:number:A-9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote195:number:A-9.32.3.5.]  [REF:internal:nbc.divBV2.part9.appendix.appnote197:number:A-9.32.3.7.]  [REF:internal:nbc.divBV2.part9.appendix.appnote198:number:A-9.32.3.8.]  [REF:internal:nbc.divBV2.part9.appendix.appnote206:number:A-9.33.6.13.]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent1:number:9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote188:number:A-9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote206:number:A-9.33.6.13.]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CAN\/CSA-F326-M91" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Residential Mechanical Ventilation Systems" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent1:number:9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote188:number:A-9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote195:number:A-9.32.3.5.]  [REF:internal:nbc.divBV2.part9.appendix.appnote197:number:A-9.32.3.7.]  [REF:internal:nbc.divBV2.part9.appendix.appnote198:number:A-9.32.3.8.]  [REF:internal:nbc.divBV2.part9.appendix.appnote206:number:A-9.33.6.13.]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-038",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CAN\/CSA-F326-M91" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Residential Mechanical Ventilation Systems" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent1:number:9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote188:number:A-9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote206:number:A-9.33.6.13.]" } ] } ],
+                     "change_summary" : "Struck out \"A-9.32.3.5.\", \"A-9.32.3.7.\" and \"A-9.32.3.8.\" from Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row249",
                    "type" : "body_row",
@@ -16034,6 +16315,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row269",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
                    [ 
                     { "content" : 
@@ -16054,7 +16336,62 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect13.art6.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art2.sent1:number:9.23.15.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art4.sent2:number:9.23.15.4.(2)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art2.sent1:number:9.23.16.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art3.sent2:number:9.23.16.3.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art1.sent2:number:9.29.9.1.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art2.sent5:number:9.29.9.2.(5)]  [REF:internal:nbc.divBV2.part9.spectables2.table16:long]  [REF:internal:nbc.divBV2.part9.spectables2.table17:long]  [REF:internal:nbc.divBV2.part9.spectables2.table18:long]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art2.sent1:number:9.23.15.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art4.sent2:number:9.23.15.4.(2)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art2.sent1:number:9.23.16.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art3.sent2:number:9.23.16.3.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art1.sent2:number:9.29.9.1.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art2.sent5:number:9.29.9.2.(5)]  [REF:internal:nbc.divBV2.part9.spectables2.table16:long]  [REF:internal:nbc.divBV2.part9.spectables2.table17:long]  [REF:internal:nbc.divBV2.part9.spectables2.table18:long]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "O325-16" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Construction sheathing" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect13.art6.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art2.sent1:number:9.23.15.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art4.sent2:number:9.23.15.4.(2)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art2.sent1:number:9.23.16.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art3.sent2:number:9.23.16.3.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art1.sent2:number:9.29.9.1.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art2.sent5:number:9.29.9.2.(5)]  [REF:internal:nbc.divBV2.part9.spectables2.table16:long]  [REF:internal:nbc.divBV2.part9.spectables2.table17:long]  [REF:internal:nbc.divBV2.part9.spectables2.table18:long]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-039",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "O325-16" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Construction sheathing" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art2.sent1:number:9.23.15.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art4.sent2:number:9.23.15.4.(2)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art2.sent1:number:9.23.16.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art3.sent2:number:9.23.16.3.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art1.sent2:number:9.29.9.1.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art2.sent5:number:9.29.9.2.(5)]  [REF:internal:nbc.divBV2.part9.spectables2.table16:long]  [REF:internal:nbc.divBV2.part9.spectables2.table17:long]  [REF:internal:nbc.divBV2.part9.spectables2.table18:long]" } ] } ],
+                     "change_summary" : "Struck out \"Table 9.23.13.6.\" from Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row270",
                    "type" : "body_row",
@@ -16635,6 +16972,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row294",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
                    [ 
                     { "content" : 
@@ -16655,10 +16993,66 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent2:number:1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Z240 MH Series-16" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Manufactured homes" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent2:number:1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-040",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Z240 MH Series-16" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Manufactured homes" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent2:number:1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]" } ] } ],
+                     "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row295",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
                    [ 
                     { "content" : 
@@ -16679,10 +17073,66 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect12.subsect2.art2.sent6:number:9.12.2.2.(6)]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect12.subsect2.art2.sent6:number:9.12.2.2.(6)]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Z240.2.1-16" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Structural requirements for manufactured homes" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect12.subsect2.art2.sent6:number:9.12.2.2.(6)]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-041",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Z240.2.1-16" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Structural requirements for manufactured homes" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect12.subsect2.art2.sent6:number:9.12.2.2.(6)]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]" } ] } ],
+                     "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row296",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
                    [ 
                     { "content" : 
@@ -16703,7 +17153,62 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect6.art3.sent1:number:9.23.6.3.(1)]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect6.art3.sent1:number:9.23.6.3.(1)]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Z240.10.1:19" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Site preparation, foundation, and installation of buildings" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect6.art3.sent1:number:9.23.6.3.(1)]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-042",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "CSA" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Z240.10.1:19" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Site preparation, foundation, and installation of buildings" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect6.art3.sent1:number:9.23.6.3.(1)]" } ] } ],
+                     "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row297",
                    "type" : "body_row",
@@ -17394,6 +17899,7 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row324",
                    "type" : "body_row",
+                   "revised" : true,
                    "rowsep" : "1",
                    "cells" : 
                    [ 
@@ -17415,7 +17921,62 @@
                     { "content" : 
                      [ 
                       { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect2.art3.sent4:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent1:number:9.32.3.2.(1)]  [REF:internal:nbc.divBV2.part9.sect33.subsect4.art1.sent1:number:9.33.4.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote255:number:A-9.36.3.2.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote256:number:A-9.36.3.2.(2)]  [REF:internal:nbc.divBV2.part9.appendix.appnote259:number:A-9.36.3.4.(1)]" } ] } ] },
+                       "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent1:number:9.32.3.2.(1)]  [REF:internal:nbc.divBV2.part9.sect33.subsect4.art1.sent1:number:9.33.4.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote255:number:A-9.36.3.2.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote256:number:A-9.36.3.2.(2)]  [REF:internal:nbc.divBV2.part9.appendix.appnote259:number:A-9.36.3.4.(1)]" } ] } ],
+                   "revisions" : 
+                   [ 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HRAI" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "2017 Edition" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HRAI Digest" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect2.art3.sent4:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent1:number:9.32.3.2.(1)]  [REF:internal:nbc.divBV2.part9.sect33.subsect4.art1.sent1:number:9.33.4.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote255:number:A-9.36.3.2.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote256:number:A-9.36.3.2.(2)]  [REF:internal:nbc.divBV2.part9.appendix.appnote259:number:A-9.36.3.4.(1)]" } ] } ] },
+                    
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-043",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "cells" : 
+                     [ 
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HRAI" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "2017 Edition" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HRAI Digest" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent1:number:9.32.3.2.(1)]  [REF:internal:nbc.divBV2.part9.sect33.subsect4.art1.sent1:number:9.33.4.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote255:number:A-9.36.3.2.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote256:number:A-9.36.3.2.(2)]  [REF:internal:nbc.divBV2.part9.appendix.appnote259:number:A-9.36.3.4.(1)]" } ] } ],
+                     "change_summary" : "Struck out \"9.32.2.3.(4)\" from Code Reference column",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row325",
                    "type" : "body_row",
@@ -17443,55 +18004,94 @@
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row326",
                    "type" : "body_row",
+                   "revised" : true,
                    "cells" : 
+                   [  ],
+                   "revisions" : 
                    [ 
-                    { "content" : 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "HVI" } ] },
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HVI" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HVI Publication 915-2013" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Loudness Testing and Rating Procedure" } ] },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent2:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.table2:long]" } ] } ] },
                     
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "HVI Publication 915-2013" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Loudness Testing and Rating Procedure" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent2:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.table2:long]" } ] } ] },
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-044",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "deleted" : true,
+                     "cells" : 
+                     [  ],
+                     "change_summary" : "Struck out entire table row for HVI Publication 915-2013",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row327",
                    "type" : "body_row",
+                   "revised" : true,
+                   "rowsep" : "1",
                    "cells" : 
+                   [  ],
+                   "revisions" : 
                    [ 
-                    { "content" : 
+                    { "type" : "original",
+                     "effective_date" : "2024-03-08",
+                     "cells" : 
                      [ 
-                      { "type" : "text",
-                       "value" : "HVI" } ],
-                     "rowsep" : "1" },
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HVI" } ],
+                       "rowsep" : "1" },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "HVI Publication 916-2013" } ],
+                       "rowsep" : "1" },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "Airflow Test Procedure" } ],
+                       "rowsep" : "1" },
+                      
+                      { "content" : 
+                       [ 
+                        { "type" : "text",
+                         "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent1:number:9.32.3.10.(1)]" } ],
+                       "rowsep" : "1" } ] },
                     
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "HVI Publication 916-2013" } ],
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Airflow Test Procedure" } ],
-                     "rowsep" : "1" },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent1:number:9.32.3.10.(1)]" } ],
-                     "rowsep" : "1" } ] },
+                    { "type" : "revision",
+                     "revision_type" : "amendment",
+                     "revision_id" : "bc-mo-2024-06-045",
+                     "sequence" : 1,
+                     "effective_date" : "2025-06-16",
+                     "status" : "current",
+                     "deleted" : true,
+                     "cells" : 
+                     [  ],
+                     "change_summary" : "Struck out entire table row for HVI Publication 916-2013",
+                     "note" : "Ministerial Order BA 2024 06" } ] },
                   
                   { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row328",
                    "type" : "body_row",
@@ -22044,860 +22644,6 @@
                         { "type" : "text",
                          "value" : "" } ] } ],
                      "change_summary" : "Struck out entire table row for CSA B52:18",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.ansicsab14961",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-032",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out entire table row for ANSI\/CSA-B149.6-15",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csab65118",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "B651-18" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Accessible Design for the Built Environment" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divB.part3.sect8.subsect5.art2.sent4:number:3.8.5.2.(4)]" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-033",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "B651-18" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Accessible Design for the Built Environment" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "[REF:internal:nbc.divB.part3.sect8.subsect5.art2.sent4:number:3.8.5.2.(4)]" } ] } ],
-                     "change_summary" : "Added \"3.8.5.2.(4)\" to Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csac2221131",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-034",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out entire table row for CSA C22.2 No. 113-10",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac260m90",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-035",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out entire table row for CAN\/CSA-C260-M90",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac43909",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CAN\/CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "C439-09" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Portable Ladders" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-036",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CAN\/CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "C439-09" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Portable Ladders" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out \"9.32.3.10.(4)\" and \"9.32.3.10.(5)\" from Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac74503",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CAN\/CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "C745-03" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Roof Assemblies for Low-Slope Roofs" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-037",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CAN\/CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "C745-03" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Roof Assemblies for Low-Slope Roofs" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out \"Table 9.36.8.10.\" from Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsaf326m91",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CAN\/CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "F326-M91" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Treated Wood" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-038",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CAN\/CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "F326-M91" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Treated Wood" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out \"A-9.32.3.5.\", \"A-9.32.3.7.\" and \"A-9.32.3.8.\" from Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csao32516",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "O325-16" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "General Requirements for Elevator Installations" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-039",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "O325-16" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "General Requirements for Elevator Installations" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out \"Table 9.23.13.6.\" from Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz240mh",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Z240 MH Series" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Mobile Homes" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-040",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Z240 MH Series" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Mobile Homes" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]" } ] } ],
-                     "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz24021116",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Z240.2.1-16" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Mobile Homes - Part 2: Plumbing" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-041",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Z240.2.1-16" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Mobile Homes - Part 2: Plumbing" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]" } ] } ],
-                     "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz240101",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "CSA" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Z240.10.1:19" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Mobile Homes - Part 10: Energy Efficiency" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-042",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "CSA" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Z240.10.1:19" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Mobile Homes - Part 10: Energy Efficiency" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]" } ] } ],
-                     "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hrai2017",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "HRAI" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "2017 Edition" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "Heating, Refrigeration and Air Conditioning Institute" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-043",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "HRAI" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "2017 Edition" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "Heating, Refrigeration and Air Conditioning Institute" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out \"9.32.2.3.(4)\" from Code Reference column",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9152013",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-044",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out entire table row for HVI Publication 915-2013",
-                     "note" : "Ministerial Order BA 2024 06" } ] },
-                  
-                  { "id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9162013",
-                   "type" : "body_row",
-                   "revised" : true,
-                   "cells" : 
-                   [ 
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] },
-                    
-                    { "content" : 
-                     [ 
-                      { "type" : "text",
-                       "value" : "" } ] } ],
-                   "revisions" : 
-                   [ 
-                    { "type" : "original",
-                     "effective_date" : "2024-03-08",
-                     "cells" : 
-                     [  ] },
-                    
-                    { "type" : "revision",
-                     "revision_type" : "amendment",
-                     "revision_id" : "bc-mo-2024-06-045",
-                     "sequence" : 1,
-                     "effective_date" : "2025-06-16",
-                     "status" : "current",
-                     "cells" : 
-                     [ 
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] },
-                      
-                      { "content" : 
-                       [ 
-                        { "type" : "text",
-                         "value" : "" } ] } ],
-                     "change_summary" : "Struck out entire table row for HVI Publication 916-2013",
                      "note" : "Ministerial Order BA 2024 06" } ] } ] } } ] } ] },
            
            { "id" : "nbc.divB.part1.sect3.subsect2",
@@ -618076,6 +617822,230 @@
     "change_summary" : "Added 3.1.6.6.(2), (3), (4), (5) to Code Reference",
     "note" : "Ministerial Order BA 2024 01" },
    
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row218",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSAANSI\/CSA-B149.6-15Code for digester gas, landfill gas, and biogas generation and utilization[REF:internal:nbc.divB.part2.sect2.subsect8.art1.sent3:number]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row218",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-032",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "",
+    "change_summary" : "Struck out entire table row for ANSI\/CSA-B149.6-15",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row225",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSAB651-18Accessible design for the built environment[REF:internal:nbc.divB.part3.sect3.subsect1.art19.sent1:number:3.3.1.19.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.sent1:number:3.8.3.1.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.table1:long]  [REF:internal:nbc.divB.part3.sect8.subsect3.art3.sent1:number:3.8.3.3.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent1:number:3.8.3.9.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent2:number:3.8.3.9.(2)]  [REF:internal:nbc.divB.part3.appendix.appnote189:number:A-3.8.2.5.]  [REF:internal:nbc.divB.part3.appendix.appnote200:number:A-3.8.3.1.(1)]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row225",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-033",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSAB651-18Accessible design for the built environment[REF:internal:nbc.divB.part3.sect3.subsect1.art19.sent1:number:3.3.1.19.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.sent1:number:3.8.3.1.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art1.table1:long]  [REF:internal:nbc.divB.part3.sect8.subsect3.art3.sent1:number:3.8.3.3.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent1:number:3.8.3.9.(1)]  [REF:internal:nbc.divB.part3.sect8.subsect3.art9.sent2:number:3.8.3.9.(2)]  [REF:internal:nbc.divB.part3.sect8.subsect5.art2.sent4:number:3.8.5.2.(4)]  [REF:internal:nbc.divB.part3.appendix.appnote189:number:A-3.8.2.5.]  [REF:internal:nbc.divB.part3.appendix.appnote200:number:A-3.8.3.1.(1)]",
+    "change_summary" : "Added \"3.8.5.2.(4)\" in Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row228",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSAC22.2 No. 113-10Fans and Ventilators[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent7:number]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row228",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-034",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "",
+    "change_summary" : "Struck out entire table row for CSA C22.2 No. 113-10",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row234",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSACAN\/CSA-C260-M90Rating the Performance of Residential Mechanical Ventilating Equipment[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent1:number:9.32.3.10.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent2:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.table2:long]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row234",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-035",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "",
+    "change_summary" : "Struck out entire table row for CAN\/CSA-C260-M90",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row237",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSACAN\/CSA-C439-09Standard laboratory methods of test for rating the performance of heat\/energy-recovery ventilators[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent4:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent5:number]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art8.sent4:number:9.36.3.8.(4)]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:number:9.36.3.9.(3)]  [REF:internal:nbc.divBV2.part9.appendix.appnote266:number:A-9.36.3.9.(3)]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row237",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-036",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSACAN\/CSA-C439-09Standard laboratory methods of test for rating the performance of heat\/energy-recovery ventilators[REF:internal:nbc.divBV2.part9.sect36.subsect3.art8.sent4:number:9.36.3.8.(4)]  [REF:internal:nbc.divBV2.part9.sect36.subsect3.art9.sent3:number:9.36.3.9.(3)]  [REF:internal:nbc.divBV2.part9.appendix.appnote266:number:A-9.36.3.9.(3)]",
+    "change_summary" : "Struck out \"9.32.3.10.(4)\" and \"9.32.3.10.(5)\" from Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row240",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSACAN\/CSA-C745-03Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long:Table 9.36.4.2.] Table 9.36.8.10." },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row240",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-037",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSACAN\/CSA-C745-03Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters[REF:internal:nbc.divBV2.part9.sect36.subsect4.art2.table1:long:Table 9.36.4.2.]",
+    "change_summary" : "Struck out \"Table 9.36.8.10.\" from Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row248",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSACAN\/CSA-F326-M91Residential Mechanical Ventilation Systems[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent1:number:9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote188:number:A-9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote195:number:A-9.32.3.5.]  [REF:internal:nbc.divBV2.part9.appendix.appnote197:number:A-9.32.3.7.]  [REF:internal:nbc.divBV2.part9.appendix.appnote198:number:A-9.32.3.8.]  [REF:internal:nbc.divBV2.part9.appendix.appnote206:number:A-9.33.6.13.]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row248",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-038",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSACAN\/CSA-F326-M91Residential Mechanical Ventilation Systems[REF:internal:nbc.divBV2.part9.sect32.subsect3.art1.sent1:number:9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote188:number:A-9.32.3.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote206:number:A-9.33.6.13.]",
+    "change_summary" : "Struck out \"A-9.32.3.5.\", \"A-9.32.3.7.\" and \"A-9.32.3.8.\" from Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row269",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSAO325-16Construction sheathing[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect13.art6.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art2.sent1:number:9.23.15.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art4.sent2:number:9.23.15.4.(2)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art2.sent1:number:9.23.16.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art3.sent2:number:9.23.16.3.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art1.sent2:number:9.29.9.1.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art2.sent5:number:9.29.9.2.(5)]  [REF:internal:nbc.divBV2.part9.spectables2.table16:long]  [REF:internal:nbc.divBV2.part9.spectables2.table17:long]  [REF:internal:nbc.divBV2.part9.spectables2.table18:long]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row269",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-039",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSAO325-16Construction sheathing[REF:internal:nbc.divB.part5.sect9.subsect1.art1.table1:long]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art2.sent1:number:9.23.15.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect15.art4.sent2:number:9.23.15.4.(2)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art2.sent1:number:9.23.16.2.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect16.art3.sent2:number:9.23.16.3.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art1.sent2:number:9.29.9.1.(2)]  [REF:internal:nbc.divBV2.part9.sect29.subsect9.art2.sent5:number:9.29.9.2.(5)]  [REF:internal:nbc.divBV2.part9.spectables2.table16:long]  [REF:internal:nbc.divBV2.part9.spectables2.table17:long]  [REF:internal:nbc.divBV2.part9.spectables2.table18:long]",
+    "change_summary" : "Struck out \"Table 9.23.13.6.\" from Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row294",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSAZ240 MH Series-16Manufactured homes[REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent2:number:1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row294",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-040",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSAZ240 MH Series-16Manufactured homes[REF:internal:nbc.divA.part1.sect1.subsect1.art1.sent2:number:1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]",
+    "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row295",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSAZ240.2.1-16Structural requirements for manufactured homes[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect12.subsect2.art2.sent6:number:9.12.2.2.(6)]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row295",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-041",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSAZ240.2.1-16Structural requirements for manufactured homes[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect12.subsect2.art2.sent6:number:9.12.2.2.(6)]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]",
+    "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row296",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "CSAZ240.10.1:19Site preparation, foundation, and installation of buildings[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(2)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect6.art3.sent1:number:9.23.6.3.(1)]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row296",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-042",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "CSAZ240.10.1:19Site preparation, foundation, and installation of buildings[REF:internal:nbc.divA.part1.appendix.appnote2:number:A-1.1.1.1.(3)]  [REF:table-note:nbc.divB.part1.sect3.subsect1.art2.table1.note4]  [REF:internal:nbc.divBV2.part9.sect15.subsect1.art3.sent1:number:9.15.1.3.(1)]  [REF:internal:nbc.divBV2.part9.sect23.subsect6.art3.sent1:number:9.23.6.3.(1)]",
+    "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row324",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "HRAI2017 EditionHRAI Digest[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect2.art3.sent4:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent1:number:9.32.3.2.(1)]  [REF:internal:nbc.divBV2.part9.sect33.subsect4.art1.sent1:number:9.33.4.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote255:number:A-9.36.3.2.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote256:number:A-9.36.3.2.(2)]  [REF:internal:nbc.divBV2.part9.appendix.appnote259:number:A-9.36.3.4.(1)]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row324",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-043",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "HRAI2017 EditionHRAI Digest[REF:internal:nbc.divB.part6.sect2.subsect1.art1.sent1:number:6.2.1.1.(1)]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art2.sent1:number:9.32.3.2.(1)]  [REF:internal:nbc.divBV2.part9.sect33.subsect4.art1.sent1:number:9.33.4.1.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote255:number:A-9.36.3.2.(1)]  [REF:internal:nbc.divBV2.part9.appendix.appnote256:number:A-9.36.3.2.(2)]  [REF:internal:nbc.divBV2.part9.appendix.appnote259:number:A-9.36.3.4.(1)]",
+    "change_summary" : "Struck out \"9.32.2.3.(4)\" from Code Reference column",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row326",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "HVIHVI Publication 915-2013Loudness Testing and Rating Procedure[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent2:number]  [REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.table2:long]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row326",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-044",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "",
+    "change_summary" : "Struck out entire table row for HVI Publication 915-2013",
+    "note" : "Ministerial Order BA 2024 06" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row327",
+    "type" : "original",
+    "effective_date" : "2024-03-08",
+    "content" : "HVIHVI Publication 916-2013Airflow Test Procedure[REF:internal:nbc.divBV2.part9.sect32.subsect3.art10.sent1:number:9.32.3.10.(1)]" },
+   
+   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row327",
+    "type" : "revision",
+    "revision_type" : "amendment",
+    "revision_id" : "bc-mo-2024-06-045",
+    "sequence" : 1,
+    "effective_date" : "2025-06-16",
+    "status" : "current",
+    "content" : "",
+    "change_summary" : "Struck out entire table row for HVI Publication 916-2013",
+    "note" : "Ministerial Order BA 2024 06" },
+   
    { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.row391",
     "type" : "original",
     "effective_date" : "2024-03-08",
@@ -618282,230 +618252,6 @@
     "status" : "current",
     "content" : "",
     "change_summary" : "Struck out entire table row for CSA B52:18",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.ansicsab14961",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.ansicsab14961",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-032",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "",
-    "change_summary" : "Struck out entire table row for ANSI\/CSA-B149.6-15",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csab65118",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csab65118",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-033",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CSAB651-18Accessible Design for the Built Environment[REF:internal:nbc.divB.part3.sect8.subsect5.art2.sent4:number:3.8.5.2.(4)]",
-    "change_summary" : "Added \"3.8.5.2.(4)\" to Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csac2221131",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csac2221131",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-034",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "",
-    "change_summary" : "Struck out entire table row for CSA C22.2 No. 113-10",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac260m90",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac260m90",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-035",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "",
-    "change_summary" : "Struck out entire table row for CAN\/CSA-C260-M90",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac43909",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac43909",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-036",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CAN\/CSAC439-09Portable Ladders",
-    "change_summary" : "Struck out \"9.32.3.10.(4)\" and \"9.32.3.10.(5)\" from Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac74503",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsac74503",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-037",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CAN\/CSAC745-03Roof Assemblies for Low-Slope Roofs",
-    "change_summary" : "Struck out \"Table 9.36.8.10.\" from Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsaf326m91",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.cancsaf326m91",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-038",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CAN\/CSAF326-M91Treated Wood",
-    "change_summary" : "Struck out \"A-9.32.3.5.\", \"A-9.32.3.7.\" and \"A-9.32.3.8.\" from Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csao32516",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csao32516",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-039",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CSAO325-16General Requirements for Elevator Installations",
-    "change_summary" : "Struck out \"Table 9.23.13.6.\" from Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz240mh",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz240mh",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-040",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CSAZ240 MH SeriesMobile Homes[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]",
-    "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz24021116",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz24021116",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-041",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CSAZ240.2.1-16Mobile Homes - Part 2: Plumbing[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]",
-    "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz240101",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.csaz240101",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-042",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "CSAZ240.10.1:19Mobile Homes - Part 10: Energy Efficiency[REF:internal:nbc.divA.part1.sect2.subsect1.art1.sent1.clause2:number:1.2.1.1.(1)(b)]",
-    "change_summary" : "Struck out \"A-1.1.1.1.(2)(4)\" and substituted \"A-1.1.1.1.(3)(4)\" in Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hrai2017",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hrai2017",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-043",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "HRAI2017 EditionHeating, Refrigeration and Air Conditioning Institute",
-    "change_summary" : "Struck out \"9.32.2.3.(4)\" from Code Reference column",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9152013",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9152013",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-044",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "",
-    "change_summary" : "Struck out entire table row for HVI Publication 915-2013",
-    "note" : "Ministerial Order BA 2024 06" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9162013",
-    "type" : "original",
-    "effective_date" : "2024-03-08",
-    "content" : "" },
-   
-   { "location_id" : "nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9162013",
-    "type" : "revision",
-    "revision_type" : "amendment",
-    "revision_id" : "bc-mo-2024-06-045",
-    "sequence" : 1,
-    "effective_date" : "2025-06-16",
-    "status" : "current",
-    "content" : "",
-    "change_summary" : "Struck out entire table row for HVI Publication 916-2013",
     "note" : "Ministerial Order BA 2024 06" },
    
    { "location_id" : "nbc.divB.part3.sect1.subsect2.art5.sent2",
