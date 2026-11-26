@@ -423,9 +423,8 @@
                     reference-id="nbc.divBV2.part9.sect7.subsect1"/>
             <insert>
                 <new-content source="bc">
-                    <note xml:id="nbc.divBV2.part9.sect7.note1">
-                        <text>(See Note A-9.7. and Note A-9.7.4.)</text>
-                    </note>
+                    <!-- CLAUDE-AUTOFIX CF-20583 | issue 1255 | Insert the pointer as the section see-also (a note element is never shown) so the site prints it under the Section 9.7 title as the PDF does. -->
+                    <see-also xml:id="nbc.divBV2.part9.sect7.seealso">(See <ref type="internal" target="nbc.divBV2.part9.appendix.appnote20a" display-type="short">Note A-9.7.</ref> and <ref type="internal" target="nbc.divBV2.part9.appendix.appnote21a" display-type="short">Note A-9.7.4.</ref>)</see-also>
                 </new-content>
             </insert>
         </amendment>
