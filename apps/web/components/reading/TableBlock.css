@@ -447,6 +447,10 @@
 .table-block[id="nbc.divA.part1.sect1.subsect1.art1.table2"] tbody > tr:nth-child(6) > :nth-child(2) strong .glossary-term {
   font-style: normal;
 }
+/* CLAUDE-AUTOFIX CL-104 CF-21104 | issue 450 | Table 9.23.4.2.-B (span tables, 9/spectables/2 table 5): in the header "With or Without Bridging(2)" the PDF prints the note marker (2) in a regular font (ArialNarrow; the words are ArialNarrow-Bold), in the base and Revision 6 PDFs. */
+.table-block[id="nbc.divBV2.part9.spectables2.table5"] thead > tr:nth-child(3) > :nth-child(3) .cross-reference-link {
+  font-weight: var(--typography-font-weights-regular, 400);
+}
 
 .table-block__wrapper {
   display: block;
