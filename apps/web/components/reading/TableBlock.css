@@ -443,6 +443,10 @@
 .table-block[id="nbc.divBV2.part9.appendix.appnote199a.tableB"] .table-block__header-cell {
   font-weight: var(--typography-font-weights-regular, 400);
 }
+/* CLAUDE-AUTOFIX CL-103 CF-20020 | issue 11 | Table 1.1.1.1.-B (Division A), row "Openings Near Exit Doors": the PDF prints the whole bold title in Arial-BoldMT, so the defined term "Exit" in it is upright (checked with the PDF font names); the defined terms in the sentence below stay italic. */
+.table-block[id="nbc.divA.part1.sect1.subsect1.art1.table2"] tbody > tr:nth-child(6) > :nth-child(2) strong .glossary-term {
+  font-style: normal;
+}
 
 .table-block__wrapper {
   display: block;
