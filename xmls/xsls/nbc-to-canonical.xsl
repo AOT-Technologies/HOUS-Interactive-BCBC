@@ -335,6 +335,12 @@
                                     select="title/node()"
                                     mode="rich-text"
                                 /></title>
+              <!-- CLAUDE-AUTOFIX CF-20128 | issue 1247 | Keep the section "(See Note A-3.3.)" pointer that the PDF prints under the section title (part and subsection already keep theirs). -->
+              <xsl:if test="seealso">
+                <see-also xml:id="{$sect-id}.seealso">
+                  <xsl:apply-templates select="seealso/node()" mode="rich-text" />
+                </see-also>
+              </xsl:if>
 
               <xsl:for-each select="subsect">
                 <xsl:variable

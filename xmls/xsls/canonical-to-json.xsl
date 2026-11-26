@@ -587,6 +587,11 @@
             
             <fn:string key="title"><xsl:apply-templates select="title" mode="text-only"/></fn:string>
             
+            <!-- CLAUDE-AUTOFIX CF-20128 | issue 1247 | Write the section "(See Note ...)" pointer, as the subsection template does. -->
+            <xsl:if test="see-also">
+                <fn:string key="see_also"><xsl:apply-templates select="see-also" mode="rich-text-json"/></fn:string>
+            </xsl:if>
+            
             <fn:array key="subsections">
                 <xsl:apply-templates select="subsection" mode="json"/>
             </fn:array>
