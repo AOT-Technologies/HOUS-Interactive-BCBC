@@ -431,6 +431,18 @@
 .table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] thead > tr:nth-child(1) > :nth-child(1) {
   font-weight: var(--typography-font-weights-regular, 400);
 }
+/* CLAUDE-AUTOFIX CL-102 CF-22609 | issue 571 | In these 9 tables the PDF prints the whole header row in a regular font (ArialNarrow/ArialMT, checked with the PDF font names); the per-cell rules above no longer match after the header rows were restructured. Tables 9.23.6.1., 9.32.3.5., 9.32.3.8., 9.36.6.3.-G and -H, 9.37.1.3., 10.3.1.3., A-9.32.4.1.-A and -B. */
+.table-block[id="nbc.divBV2.part9.sect23.subsect6.art1.table1"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect32.subsect3.art5.table1"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect32.subsect3.art8.table1"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableG"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect36.subsect6.art3.tableH"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.sect37.subsect1.art3.table1"] .table-block__header-cell,
+.table-block[id="nbc.divB.part10.sect3.subsect1.art3.table1"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.appendix.appnote199a.tableA"] .table-block__header-cell,
+.table-block[id="nbc.divBV2.part9.appendix.appnote199a.tableB"] .table-block__header-cell {
+  font-weight: var(--typography-font-weights-regular, 400);
+}
 
 .table-block__wrapper {
   display: block;
