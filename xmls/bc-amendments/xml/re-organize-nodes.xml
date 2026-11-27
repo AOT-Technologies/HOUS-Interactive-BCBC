@@ -81,10 +81,5 @@
         <!-- Renumber sect11 → sect10 -->
         <replace from="nbc.divB.part5.sect11" to="nbc.divB.part5.sect10"/>
         <replace from="5.11." to="5.10."/>
-
-        <!-- CLAUDE-AUTOFIX CL-107 | refresh 2026-11-26 B.3.10.1.1.(1) | The PDF has 3.9 Self-service Storage Buildings and 3.10 Objectives and Functional Statements; the NBC ids are the other way round, so swap them (the BC and revision amendments already target sect10 = Table 3.10.1.1.). -->
-        <replace from="nbc.divB.part3.sect9" to="nbc.divB.part3.sect9_bkp"/>
-        <replace from="nbc.divB.part3.sect10" to="nbc.divB.part3.sect9"/>
-        <replace from="nbc.divB.part3.sect9_bkp" to="nbc.divB.part3.sect10"/>
     </text-replacements>
 </bc-overlay>

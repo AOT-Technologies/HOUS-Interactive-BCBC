@@ -451,10 +451,13 @@
 .table-block[id="nbc.divBV2.part9.spectables2.table5"] thead > tr:nth-child(3) > :nth-child(3) .cross-reference-link {
   font-weight: var(--typography-font-weights-regular, 400);
 }
+<<<<<<< HEAD
 /* CLAUDE-AUTOFIX CL-109 | refresh 2026-11-26 B.3.10.1.1.Tbl1#Row1.Col2 | Table 3.10.1.1.: in the header "Functional Statements and Objectives(1)" the PDF prints the note marker (1) in a regular font (ArialNarrow; the words are ArialNarrow-Bold), page 327. */
 .table-block[id="nbc.divB.part3.sect10.subsect1.art1.table1"] thead > tr:nth-child(1) > :nth-child(2) .cross-reference-link {
   font-weight: var(--typography-font-weights-regular, 400);
 }
+=======
+>>>>>>> f0e025952812bf3bc7e5f44934e8a28a5c783bd2
 
 .table-block__wrapper {
   display: block;
