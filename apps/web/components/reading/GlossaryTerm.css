@@ -104,6 +104,8 @@
 .glossary-tooltip__term {
   display: block;
   font-weight: 700;
+  /* BBC-316: the defined term itself is shown in italic, as in the Code. */
+  font-style: italic;
   margin-bottom: 4px;
 }
 

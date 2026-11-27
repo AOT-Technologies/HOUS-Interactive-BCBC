@@ -7,11 +7,14 @@ import './PartRenderer.css';
 export interface PartRendererProps {
   part: NavigationNode;
   queryString?: string;
+  /** Selected effective date, used for a Part "(See Note ...)" changed by a revision. */
+  effectiveDate?: string;
 }
 
 export const PartRenderer: React.FC<PartRendererProps> = ({
   part,
   queryString = '',
+  effectiveDate,
 }) => {
   const sectionNodes = (part.children || []).filter(
     (child) =>
@@ -37,7 +40,13 @@ export const PartRenderer: React.FC<PartRendererProps> = ({
 
   return (
     <div className="partRenderer">
-      <PartTitle title={part.title} />
+      <PartTitle
+        title={part.title}
+        seeAlso={part.see_also}
+        seeAlsoRevisions={part.see_also_revisions}
+        effectiveDate={effectiveDate}
+        partId={part.id}
+      />
 
       <p className="partRendererDescription">Select a section to start reading.</p>
 

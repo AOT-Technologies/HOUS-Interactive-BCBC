@@ -21,6 +21,22 @@ import { useUIStore } from '../../lib/stores/ui-store';
 import { parseTextWithMarkers } from '../../lib/text-parsing';
 import './GlossaryTerm.css';
 
+/**
+ * BBC-316: glossary-map.json definitions keep their [REF:...] markers (for italic nested terms),
+ * so the screen-reader label uses the plain wording: a term marker becomes its label, other markers
+ * their label (or nothing), and sub/superscript markers their text.
+ */
+const definitionToPlainText = (definition: string): string =>
+  definition
+    .replace(/\[REF:term:[^:\]]*:([^\]]*)\]/g, '$1')
+    .replace(/\[REF:[^\]]*?:([^:\]]*)\]/g, (match, last: string) =>
+      /^(short|long|medium|number|shortNum)$/.test(last) || match.startsWith('[REF:table-note') ? '' : last)
+    .replace(/\[[A-Z]+:[^\]]*\]/g, '')
+    .replace(/[_^]\{([^}]*)\}/g, '$1')
+    .replace(/\s+([.,;:])/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+
 export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
   termId,
   text,
@@ -152,7 +168,7 @@ export const GlossaryTerm: React.FC<GlossaryTermProps> = ({
       className="glossary-term glossary-term--interactive"
       role="button"
       tabIndex={0}
-      aria-label={`Glossary term: ${text}${definition ? `. ${definition.definition}` : ''}`}
+      aria-label={`Glossary term: ${text}${definition ? `. ${definitionToPlainText(definition.definition)}` : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}

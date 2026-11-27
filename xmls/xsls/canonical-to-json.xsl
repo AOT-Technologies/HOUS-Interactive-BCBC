@@ -522,10 +522,27 @@
                 <fn:string key="source"><xsl:value-of select="@source"/></fn:string>
             </xsl:if>
             
-            <xsl:if test="see-also">
-                <fn:string key="see_also"><xsl:apply-templates select="see-also" mode="rich-text-json"/></fn:string>
-            </xsl:if>
-            
+            <xsl:choose>
+                <!-- BBC-193 | A Part "(See Note ...)" changed by a revision keeps each dated version, so the site
+                     shows the right one for the selected date (Part 5: none before 2025-06-16, MO BA 2024 06 item 73). -->
+                <xsl:when test="see-also[1]/revision-history">
+                    <xsl:variable name="sa-history" select="see-also[1]/revision-history"/>
+                    <xsl:variable name="sa-current" select="($sa-history/revision[@status = 'current'][last()]/content, $sa-history/original)[1]"/>
+                    <fn:string key="see_also"><xsl:apply-templates select="$sa-current/node()" mode="rich-text-json"/></fn:string>
+                    <fn:array key="see_also_revisions">
+                        <xsl:for-each select="$sa-history/original | $sa-history/revision">
+                            <fn:map>
+                                <fn:string key="effective_date"><xsl:value-of select="@effective-date"/></fn:string>
+                                <fn:string key="content"><xsl:apply-templates select="(if (self::original) then . else content)/node()" mode="rich-text-json"/></fn:string>
+                            </fn:map>
+                        </xsl:for-each>
+                    </fn:array>
+                </xsl:when>
+                <xsl:when test="see-also">
+                    <fn:string key="see_also"><xsl:apply-templates select="see-also" mode="rich-text-json"/></fn:string>
+                </xsl:when>
+            </xsl:choose>
+
             <fn:array key="sections">
                 <xsl:apply-templates select="section" mode="json"/>
             </fn:array>
@@ -3065,7 +3082,13 @@
                     <fn:string key="plainText"><xsl:apply-templates select="*[local-name()='math']" mode="mathml-to-plaintext"/></fn:string>
                     
                     <!-- MathML (optional - can be large) -->
-                    <fn:string key="mathml"><xsl:value-of select="fn:serialize(*[local-name()='math'])"/></fn:string>
+                    <!-- BBC-320: formula letters print upright (roman) in the BCBC source, so every identifier
+                         without an explicit style gets mathvariant="normal" (MathJax would draw a single
+                         letter in italic, so one formula mixed italic and upright letters). -->
+                    <xsl:variable name="upright-math">
+                        <xsl:apply-templates select="*[local-name()='math']" mode="mathml-upright"/>
+                    </xsl:variable>
+                    <fn:string key="mathml"><xsl:value-of select="fn:serialize($upright-math/*)"/></fn:string>
                 </xsl:when>
                 <!-- LaTeX equation (direct latex child) -->
                 <xsl:when test="latex">
@@ -3093,10 +3116,23 @@
         </fn:map>
     </xsl:template>
     
+    <!-- BBC-320: copy MathML as is; an identifier (mi) with no mathvariant is set upright. -->
+    <xsl:template match="@* | node()" mode="mathml-upright">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()" mode="mathml-upright"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="*[local-name()='mi'][not(@mathvariant)]" mode="mathml-upright">
+        <xsl:copy>
+            <xsl:attribute name="mathvariant">normal</xsl:attribute>
+            <xsl:apply-templates select="@* | node()" mode="mathml-upright"/>
+        </xsl:copy>
+    </xsl:template>
+
     <!-- ================================================================== -->
     <!-- MATHML TO LATEX CONVERSION                                         -->
     <!-- ================================================================== -->
-    
+
     <!-- Match MathML math element (in MathML namespace) -->
     <xsl:template match="*[namespace-uri()='http://www.w3.org/1998/Math/MathML' and local-name()='math']" mode="mathml-to-latex">
         <xsl:apply-templates select="*" mode="mathml-to-latex"/>
@@ -3463,6 +3499,37 @@
                 $item"/>
         <fn:string key="term"><xsl:apply-templates select="$content-node/term" mode="text-only"/></fn:string>
         <fn:string key="definition"><xsl:apply-templates select="$content-node/definition" mode="rich-text-json"/></fn:string>
+        <!-- BBC-322: a definition changed by a revision keeps its dated versions (same shape as sentence
+             revisions, with term/definition instead of text) so the Defined Terms list can show the
+             wording in force on the selected date. An empty term/definition means "not in the Code". -->
+        <xsl:if test="$item/@revised='yes' and $item/revision-history">
+            <fn:boolean key="revised">true</fn:boolean>
+            <fn:array key="revisions">
+                <xsl:for-each select="$item/revision-history/original">
+                    <fn:map>
+                        <fn:string key="type">original</fn:string>
+                        <fn:string key="effective_date"><xsl:value-of select="@effective-date"/></fn:string>
+                        <fn:string key="term"><xsl:apply-templates select="term" mode="text-only"/></fn:string>
+                        <fn:string key="definition"><xsl:apply-templates select="definition" mode="rich-text-json"/></fn:string>
+                    </fn:map>
+                </xsl:for-each>
+                <xsl:for-each select="$item/revision-history/revision">
+                    <fn:map>
+                        <fn:string key="type">revision</fn:string>
+                        <fn:string key="revision_type"><xsl:value-of select="@type"/></fn:string>
+                        <fn:string key="revision_id"><xsl:value-of select="@id"/></fn:string>
+                        <fn:number key="sequence"><xsl:value-of select="if (@seq castable as xs:integer) then @seq else position()"/></fn:number>
+                        <fn:string key="effective_date"><xsl:value-of select="@effective-date"/></fn:string>
+                        <fn:string key="status"><xsl:value-of select="@status"/></fn:string>
+                        <fn:string key="term"><xsl:apply-templates select="content/term" mode="text-only"/></fn:string>
+                        <fn:string key="definition"><xsl:apply-templates select="content/definition" mode="rich-text-json"/></fn:string>
+                        <xsl:if test="change-summary">
+                            <fn:string key="change_summary"><xsl:value-of select="normalize-space(change-summary)"/></fn:string>
+                        </xsl:if>
+                    </fn:map>
+                </xsl:for-each>
+            </fn:array>
+        </xsl:if>
     </xsl:template>
     
     <!-- ================================================================== -->
@@ -3480,7 +3547,9 @@
                 <fn:string key="full_title"><xsl:apply-templates select="." mode="text-only"/></fn:string>
                 
                 <!-- Get agency and number from sibling entries in the same row -->
-                <xsl:variable name="row" select="parent::row"/>
+                <!-- BBC-206 follow-up: a row changed by a revision keeps its entries in revision-history/original
+                     or revision/content, so those count as the row too (the number and agency were dropped). -->
+                <xsl:variable name="row" select="parent::*[self::row or self::original or self::content]"/>
                 <xsl:if test="$row/entry[@standard-ref-number]">
                     <fn:string key="number"><xsl:value-of select="$row/entry[@standard-ref-number]/@standard-ref-number"/></fn:string>
                     <fn:string key="full_number"><xsl:apply-templates select="$row/entry[@standard-ref-number]" mode="text-only"/></fn:string>

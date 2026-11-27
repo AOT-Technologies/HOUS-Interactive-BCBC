@@ -4,7 +4,46 @@
  * Filters content based on effective date to show the correct revision
  */
 
-import type { Sentence, Clause, Subclause, Revision } from './types';
+import type { Sentence, Clause, Subclause, Revision, Definition } from './types';
+
+/**
+ * BBC-322: the definition in force on the effective date.
+ * Uses the latest dated version on or before the date (same rule as sentences). A version with
+ * an empty term and definition means the definition is not in the Code on that date, so null is
+ * returned. Without a date, or without revisions, the definition is returned as is (current text).
+ *
+ * @param definition - Definition item, possibly with revisions
+ * @param effectiveDate - Date to filter by (YYYY-MM-DD format)
+ * @returns The definition for the date, or null when it is not in the Code on that date
+ */
+export function getDefinitionForDate(
+  definition: Definition,
+  effectiveDate?: string
+): Definition | null {
+  if (!effectiveDate || !Array.isArray(definition.revisions) || definition.revisions.length === 0) {
+    return definition;
+  }
+
+  const applicable = definition.revisions
+    .filter((rev) => (rev.effective_date || '') <= effectiveDate)
+    .sort((a, b) =>
+      (b.effective_date || '').localeCompare(a.effective_date || '') ||
+      (b.sequence ?? 0) - (a.sequence ?? 0)
+    )[0];
+
+  if (!applicable) {
+    // The date is before every version: the definition was not in the Code yet.
+    return null;
+  }
+
+  const term = (applicable.term || '').trim();
+  const text = (applicable.definition || '').trim();
+  if (!term && !text) {
+    return null;
+  }
+
+  return { ...definition, term: term || definition.term, definition: text || definition.definition };
+}
 
 /**
  * Get the text content for a node based on effective date

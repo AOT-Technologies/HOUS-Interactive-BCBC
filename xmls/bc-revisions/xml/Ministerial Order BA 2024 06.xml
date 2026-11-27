@@ -1603,7 +1603,8 @@
     
     <!-- ================================================================== -->
     <!-- Amendment 32: Table 1.3.1.2 - ANSI/CSA-B149.6-15                   -->
-    <!-- Strike out entire table row for ANSI/CSA-B149.6-15                -->
+    <!-- BBC-218 #4 | Revises the existing row (row218) in place instead of -->
+    <!-- adding a new row; empty revision content = row not shown from June 16, 2025. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-032"
@@ -1611,18 +1612,18 @@
       description="Amend Table 1.3.1.2 by striking out the entire table row for ANSI/CSA-B149.6-15"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row218"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.ansicsab14961"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row218" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="ANSI/CSA-B149.6">ANSI/CSA-B149.6-15</entry>
+                <entry standard-id="csab149.6-15" standard-ref-id="csab149.6" standard-ref-title="Code for digester gas, landfill gas, and biogas generation and utilization">Code for digester gas, landfill gas, and biogas generation and utilization</entry>
+                <entry><ref type="internal" target="nbc.divB.part2.sect2.subsect8.art1.sent3" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -1631,12 +1632,7 @@
                 id="bc-mo-2024-06-032"
                 status="current"
                 >
-                <content>
-                  <entry />
-                  <entry />
-                  <entry />
-                  <entry />
-                </content>
+                <content/>
                 <change-summary
                   >Struck out entire table row for ANSI/CSA-B149.6-15</change-summary>
                 <note>Ministerial Order BA 2024 06</note>
@@ -1644,12 +1640,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 33: Table 1.3.1.2 - CSA B651-18 edition                  -->
-    <!-- Add "3.8.5.2.(4)" in Code Reference column                        -->
+    <!-- BBC-217 #1 | Revises the existing row (row225) in place instead of -->
+    <!-- adding a new row; the original is the BC base row as printed in the source. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-033"
@@ -1657,18 +1654,18 @@
       description="Amend Table 1.3.1.2 by adding '3.8.5.2.(4)' in the Code Reference column for CSA B651-18 edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row225"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.csab65118"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row225" source="bc" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="B651">B651-18</entry>
+                <entry standard-id="csab651-18" standard-ref-id="csab651" standard-ref-title="Accessible design for the built environment">Accessible design for the built environment</entry>
+                <entry><ref type="internal" target="nbc.divB.part3.sect3.subsect1.art19.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art3.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art9.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art9.sent2" display-type="number"/> <ref type="internal" target="nbc.divB.part3.appendix.appnote189" display-type="number">A-3.8.2.5.</ref> <ref type="internal" target="nbc.divB.part3.appendix.appnote200" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -1679,29 +1676,24 @@
                 >
                 <content>
                   <entry>CSA</entry>
-                  <entry>B651-18</entry>
-                  <entry>Accessible Design for the Built Environment</entry>
-                  <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divB.part3.sect8.subsect5.art2.sent4"
-                      display-type="number"
-                      />
-                  </entry>
+                  <entry standard-ref-number="B651">B651-18</entry>
+                  <entry standard-id="csab651-18" standard-ref-id="csab651" standard-ref-title="Accessible design for the built environment">Accessible design for the built environment</entry>
+                  <entry><ref type="internal" target="nbc.divB.part3.sect3.subsect1.art19.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art1.table1" display-type="long"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art3.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art9.sent1" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect3.art9.sent2" display-type="number"/> <ref type="internal" target="nbc.divB.part3.sect8.subsect5.art2.sent4" display-type="number"/> <ref type="internal" target="nbc.divB.part3.appendix.appnote189" display-type="number">A-3.8.2.5.</ref> <ref type="internal" target="nbc.divB.part3.appendix.appnote200" display-type="number"/></entry>
                 </content>
                 <change-summary
-                  >Added "3.8.5.2.(4)" to Code Reference column</change-summary>
+                  >Added "3.8.5.2.(4)" in Code Reference column</change-summary>
                 <note>Ministerial Order BA 2024 06</note>
               </revision>
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 34: Table 1.3.1.2 - CSA C22.2 No. 113-10                 -->
-    <!-- Strike out entire table row for CSA C22.2 No. 113-10              -->
+    <!-- BBC-217 #3 | Revises the existing row (row228) in place instead of -->
+    <!-- adding a new row; empty revision content = row not shown from June 16, 2025. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-034"
@@ -1709,18 +1701,18 @@
       description="Amend Table 1.3.1.2 by striking out the entire table row for CSA C22.2 No. 113-10"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row228"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.csac2221131"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row228" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="C22.2 No. 113">C22.2 No. 113-10</entry>
+                <entry standard-id="csac22.2no.113-10" standard-ref-id="csac22.2no.113" standard-ref-title="Fans and Ventilators">Fans and Ventilators</entry>
+                <entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent7" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -1729,12 +1721,7 @@
                 id="bc-mo-2024-06-034"
                 status="current"
                 >
-                <content>
-                  <entry />
-                  <entry />
-                  <entry />
-                  <entry />
-                </content>
+                <content/>
                 <change-summary
                   >Struck out entire table row for CSA C22.2 No. 113-10</change-summary>
                 <note>Ministerial Order BA 2024 06</note>
@@ -1742,12 +1729,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 35: Table 1.3.1.2 - CAN/CSA-C260-M90                     -->
-    <!-- Strike out entire table row for CAN/CSA-C260-M90                  -->
+    <!-- BBC-217 #8 | Revises the existing row (row234) in place instead of -->
+    <!-- adding a new row; empty revision content = row not shown from June 16, 2025. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-035"
@@ -1755,18 +1743,18 @@
       description="Amend Table 1.3.1.2 by striking out the entire table row for CAN/CSA-C260-M90"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row234"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.cancsac260m90"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row234" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="CAN/CSA-C260-M">CAN/CSA-C260-M90</entry>
+                <entry standard-id="csac260-m90" standard-ref-id="csac260" standard-ref-title="Rating the Performance of Residential Mechanical Ventilating Equipment">Rating the Performance of Residential Mechanical Ventilating Equipment</entry>
+                <entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.table2" display-type="long"/></entry>
               </original>
               <revision
                 seq="1"
@@ -1775,12 +1763,7 @@
                 id="bc-mo-2024-06-035"
                 status="current"
                 >
-                <content>
-                  <entry />
-                  <entry />
-                  <entry />
-                  <entry />
-                </content>
+                <content/>
                 <change-summary
                   >Struck out entire table row for CAN/CSA-C260-M90</change-summary>
                 <note>Ministerial Order BA 2024 06</note>
@@ -1788,12 +1771,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 36: Table 1.3.1.2 - CAN/CSA-C439-09 edition              -->
-    <!-- Strike out "9.32.3.10.(4)" and "9.32.3.10.(5)" in Code Reference  -->
+    <!-- BBC-217 #10 | Revises the existing row (row237) in place instead of -->
+    <!-- adding a new row; the original is the BC base row as printed in the source. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-036"
@@ -1801,18 +1785,18 @@
       description="Amend Table 1.3.1.2 by striking out '9.32.3.10.(4)' and '9.32.3.10.(5)' in the Code Reference column for CAN/CSA-C439-09 edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row237"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.cancsac43909"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row237" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="CAN/CSA-C439">CAN/CSA-C439-09</entry>
+                <entry standard-id="csac439-09" standard-ref-id="csac439" standard-ref-title="Standard laboratory methods of test for rating the performance of heat/energy-recovery ventilators">Standard laboratory methods of test for rating the performance of heat/energy-recovery ventilators</entry>
+                <entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent4" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent5" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art8.sent4" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art9.sent3" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote266" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -1822,10 +1806,10 @@
                 status="current"
                 >
                 <content>
-                  <entry>CAN/CSA</entry>
-                  <entry>C439-09</entry>
-                  <entry>Portable Ladders</entry>
-                  <entry />
+                  <entry>CSA</entry>
+                  <entry standard-ref-number="CAN/CSA-C439">CAN/CSA-C439-09</entry>
+                  <entry standard-id="csac439-09" standard-ref-id="csac439" standard-ref-title="Standard laboratory methods of test for rating the performance of heat/energy-recovery ventilators">Standard laboratory methods of test for rating the performance of heat/energy-recovery ventilators</entry>
+                  <entry><ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art8.sent4" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect36.subsect3.art9.sent3" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote266" display-type="number"/></entry>
                 </content>
                 <change-summary
                   >Struck out "9.32.3.10.(4)" and "9.32.3.10.(5)" from Code Reference column</change-summary>
@@ -1834,12 +1818,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 37: Table 1.3.1.2 - CAN/CSA-C745-03 edition              -->
-    <!-- Strike out "Table 9.36.8.10." in Code Reference column            -->
+    <!-- BBC-215 #2 | Revises the existing row (row240) in place instead of -->
+    <!-- adding a new row; the original is the BC base row as printed in the source. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-037"
@@ -1847,18 +1832,18 @@
       description="Amend Table 1.3.1.2 by striking out 'Table 9.36.8.10.' in the Code Reference column for CAN/CSA-C745-03 edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row240"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.cancsac74503"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row240" source="bc" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="CAN/CSA-C745">CAN/CSA-C745-03</entry>
+                <entry standard-id="csac745-03" standard-ref-id="csac745" standard-ref-title="Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters">Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters</entry>
+                <entry><ref type="internal" target="nbc.divBV2.part9.sect36.subsect4.art2.table1" display-type="long">Table 9.36.4.2.</ref> Table 9.36.8.10.</entry>
               </original>
               <revision
                 seq="1"
@@ -1868,10 +1853,10 @@
                 status="current"
                 >
                 <content>
-                  <entry>CAN/CSA</entry>
-                  <entry>C745-03</entry>
-                  <entry>Roof Assemblies for Low-Slope Roofs</entry>
-                  <entry />
+                  <entry>CSA</entry>
+                  <entry standard-ref-number="CAN/CSA-C745">CAN/CSA-C745-03</entry>
+                  <entry standard-id="csac745-03" standard-ref-id="csac745" standard-ref-title="Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters">Energy Efficiency of Electric Storage Tank Water Heaters and Heat Pump Water Heaters</entry>
+                  <entry><ref type="internal" target="nbc.divBV2.part9.sect36.subsect4.art2.table1" display-type="long">Table 9.36.4.2.</ref></entry>
                 </content>
                 <change-summary
                   >Struck out "Table 9.36.8.10." from Code Reference column</change-summary>
@@ -1880,13 +1865,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 38: Table 1.3.1.2 - CAN/CSA-F326-M91 edition             -->
-    <!-- Strike out "A-9.32.3.5.", "A-9.32.3.7." and "A-9.32.3.8." in Code -->
-    <!-- Reference column                                                  -->
+    <!-- BBC-215 #5 | Revises the existing row (row248) in place instead of -->
+    <!-- adding a new row; the original is the BC base row as printed in the source. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-038"
@@ -1894,18 +1879,18 @@
       description="Amend Table 1.3.1.2 by striking out 'A-9.32.3.5.', 'A-9.32.3.7.' and 'A-9.32.3.8.' in the Code Reference column for CAN/CSA-F326-M91 edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row248"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.cancsaf326m91"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row248" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="CAN/CSA-F326-M">CAN/CSA-F326-M91</entry>
+                <entry standard-id="csaf326-m91" standard-ref-id="csaf326" standard-ref-title="Residential Mechanical Ventilation Systems">Residential Mechanical Ventilation Systems</entry>
+                <entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote188" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote195" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote197" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote198" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote206" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -1915,10 +1900,10 @@
                 status="current"
                 >
                 <content>
-                  <entry>CAN/CSA</entry>
-                  <entry>F326-M91</entry>
-                  <entry>Treated Wood</entry>
-                  <entry />
+                  <entry>CSA</entry>
+                  <entry standard-ref-number="CAN/CSA-F326-M">CAN/CSA-F326-M91</entry>
+                  <entry standard-id="csaf326-m91" standard-ref-id="csaf326" standard-ref-title="Residential Mechanical Ventilation Systems">Residential Mechanical Ventilation Systems</entry>
+                  <entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote188" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote206" display-type="number"/></entry>
                 </content>
                 <change-summary
                   >Struck out "A-9.32.3.5.", "A-9.32.3.7." and "A-9.32.3.8." from Code Reference column</change-summary>
@@ -1927,12 +1912,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 39: Table 1.3.1.2 - CSA-O325-16 edition                  -->
-    <!-- Strike out "Table 9.23.13.6." in Code Reference column            -->
+    <!-- BBC-214 #4 | Revises the existing row (row269) in place instead of -->
+    <!-- adding a new row; the original is the BC base row as printed in the source. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-039"
@@ -1940,18 +1926,18 @@
       description="Amend Table 1.3.1.2 by striking out 'Table 9.23.13.6.' in the Code Reference column for CSA-O325-16 edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row269"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.csao32516"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row269" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="O325">O325-16</entry>
+                <entry standard-id="csao325-16" standard-ref-id="csao325" standard-ref-title="Construction sheathing">Construction sheathing</entry>
+                <entry><ref type="internal" target="nbc.divB.part5.sect9.subsect1.art1.table1" display-type="long"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect13.art6.table1" display-type="long"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art2.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art4.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art2.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art3.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect29.subsect9.art1.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect29.subsect9.art2.sent5" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.spectables2.table16" display-type="long"/> <ref type="internal" target="nbc.divBV2.part9.spectables2.table17" display-type="long"/> <ref type="internal" target="nbc.divBV2.part9.spectables2.table18" display-type="long"/></entry>
               </original>
               <revision
                 seq="1"
@@ -1962,9 +1948,9 @@
                 >
                 <content>
                   <entry>CSA</entry>
-                  <entry>O325-16</entry>
-                  <entry>General Requirements for Elevator Installations</entry>
-                  <entry />
+                  <entry standard-ref-number="O325">O325-16</entry>
+                  <entry standard-id="csao325-16" standard-ref-id="csao325" standard-ref-title="Construction sheathing">Construction sheathing</entry>
+                  <entry><ref type="internal" target="nbc.divB.part5.sect9.subsect1.art1.table1" display-type="long"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art2.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect15.art4.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art2.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect16.art3.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect29.subsect9.art1.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect29.subsect9.art2.sent5" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.spectables2.table16" display-type="long"/> <ref type="internal" target="nbc.divBV2.part9.spectables2.table17" display-type="long"/> <ref type="internal" target="nbc.divBV2.part9.spectables2.table18" display-type="long"/></entry>
                 </content>
                 <change-summary
                   >Struck out "Table 9.23.13.6." from Code Reference column</change-summary>
@@ -1973,12 +1959,15 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 40: Table 1.3.1.2 - CSA Z240 MH Series row               -->
-    <!-- Strike out "A-1.1.1.1.(2)(4)" and substitute "A-1.1.1.1.(3)(4)"   -->
+    <!-- Strike out "A-1.1.1.1.(2)(4)" and substitute "A-1.1.1.1.(3)(4)"    -->
+    <!-- BBC-213 #4 | Revises the existing row (row294) in place instead of -->
+    <!-- adding a new row. The original keeps the source "1.1.1.1.(2)(4)" and -->
+    <!-- "A-1.1.1.1.(2)(4)"; Note A-1.1.1.1.(3) is the Note both point to.  -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-040"
@@ -1986,18 +1975,18 @@
       description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(2)(4)' and substituting 'A-1.1.1.1.(3)(4)' in the Code Reference column for CSA Z240 MH Series row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row294"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.csaz240mh"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row294" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="Z240 MH Series">Z240 MH Series-16</entry>
+                <entry standard-id="csaz240mhseries-16" standard-ref-id="csaz240mhseries" standard-ref-title="Manufactured homes">Manufactured homes</entry>
+                <entry><ref type="internal" target="nbc.divA.part1.sect1.subsect1.art1.sent2" display-type="number">1.1.1.1.(2)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/> <ref type="internal" target="nbc.divA.part1.appendix.appnote2" display-type="number">A-1.1.1.1.(2)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/></entry>
               </original>
               <revision
                 seq="1"
@@ -2008,15 +1997,9 @@
                 >
                 <content>
                   <entry>CSA</entry>
-                  <entry>Z240 MH Series</entry>
-                  <entry>Mobile Homes</entry>
-                  <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
-                  </entry>
+                  <entry standard-ref-number="Z240 MH Series">Z240 MH Series-16</entry>
+                  <entry standard-id="csaz240mhseries-16" standard-ref-id="csaz240mhseries" standard-ref-title="Manufactured homes">Manufactured homes</entry>
+                  <entry><ref type="internal" target="nbc.divA.part1.sect1.subsect1.art1.sent2" display-type="number">1.1.1.1.(2)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/> <ref type="internal" target="nbc.divA.part1.appendix.appnote2" display-type="number">A-1.1.1.1.(3)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/></entry>
                 </content>
                 <change-summary
                   >Struck out "A-1.1.1.1.(2)(4)" and substituted "A-1.1.1.1.(3)(4)" in Code Reference column</change-summary>
@@ -2025,12 +2008,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 41: Table 1.3.1.2 - CSA Z240.2.1-16 edition row          -->
-    <!-- Strike out "A-1.1.1.1.(2)(4)" and substitute "A-1.1.1.1.(3)(4)"   -->
+    <!-- Strike out "A-1.1.1.1.(2)(4)" and substitute "A-1.1.1.1.(3)(4)"    -->
+    <!-- BBC-213 #5 | Revises the existing row (row295) in place.           -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-041"
@@ -2038,18 +2022,18 @@
       description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(2)(4)' and substituting 'A-1.1.1.1.(3)(4)' in the Code Reference column for CSA Z240.2.1-16 edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row295"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.csaz24021116"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row295" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="Z240.2.1">Z240.2.1-16</entry>
+                <entry standard-id="csaz240.2.1-16" standard-ref-id="csaz240.2.1" standard-ref-title="Structural requirements for manufactured homes">Structural requirements for manufactured homes</entry>
+                <entry><ref type="internal" target="nbc.divA.part1.appendix.appnote2" display-type="number">A-1.1.1.1.(2)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/> <ref type="internal" target="nbc.divBV2.part9.sect12.subsect2.art2.sent6" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect15.subsect1.art3.sent1" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -2060,15 +2044,9 @@
                 >
                 <content>
                   <entry>CSA</entry>
-                  <entry>Z240.2.1-16</entry>
-                  <entry>Mobile Homes - Part 2: Plumbing</entry>
-                  <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
-                  </entry>
+                  <entry standard-ref-number="Z240.2.1">Z240.2.1-16</entry>
+                  <entry standard-id="csaz240.2.1-16" standard-ref-id="csaz240.2.1" standard-ref-title="Structural requirements for manufactured homes">Structural requirements for manufactured homes</entry>
+                  <entry><ref type="internal" target="nbc.divA.part1.appendix.appnote2" display-type="number">A-1.1.1.1.(3)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/> <ref type="internal" target="nbc.divBV2.part9.sect12.subsect2.art2.sent6" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect15.subsect1.art3.sent1" display-type="number"/></entry>
                 </content>
                 <change-summary
                   >Struck out "A-1.1.1.1.(2)(4)" and substituted "A-1.1.1.1.(3)(4)" in Code Reference column</change-summary>
@@ -2077,12 +2055,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 42: Table 1.3.1.2 - CSA Z240.10.1:19 edition row         -->
-    <!-- Strike out "A-1.1.1.1.(2)(4)" and substitute "A-1.1.1.1.(3)(4)"   -->
+    <!-- Strike out "A-1.1.1.1.(2)(4)" and substitute "A-1.1.1.1.(3)(4)"    -->
+    <!-- BBC-211 #1 | Revises the existing row (row296) in place.           -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-042"
@@ -2090,18 +2069,18 @@
       description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(2)(4)' and substituting 'A-1.1.1.1.(3)(4)' in the Code Reference column for CSA Z240.10.1:19 edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row296"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.csaz240101"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row296" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>CSA</entry>
+                <entry standard-ref-number="Z240.10.1">Z240.10.1:19</entry>
+                <entry standard-id="csaz240.10.1-19" standard-ref-id="csaz240.10.1" standard-ref-title="Site preparation, foundation, and installation of buildings">Site preparation, foundation, and installation of buildings</entry>
+                <entry><ref type="internal" target="nbc.divA.part1.appendix.appnote2" display-type="number">A-1.1.1.1.(2)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/> <ref type="internal" target="nbc.divBV2.part9.sect15.subsect1.art3.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect6.art3.sent1" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -2112,15 +2091,9 @@
                 >
                 <content>
                   <entry>CSA</entry>
-                  <entry>Z240.10.1:19</entry>
-                  <entry>Mobile Homes - Part 10: Energy Efficiency</entry>
-                  <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
-                  </entry>
+                  <entry standard-ref-number="Z240.10.1">Z240.10.1:19</entry>
+                  <entry standard-id="csaz240.10.1-19" standard-ref-id="csaz240.10.1" standard-ref-title="Site preparation, foundation, and installation of buildings">Site preparation, foundation, and installation of buildings</entry>
+                  <entry><ref type="internal" target="nbc.divA.part1.appendix.appnote2" display-type="number">A-1.1.1.1.(3)</ref><ref type="table-note" target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/> <ref type="internal" target="nbc.divBV2.part9.sect15.subsect1.art3.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect23.subsect6.art3.sent1" display-type="number"/></entry>
                 </content>
                 <change-summary
                   >Struck out "A-1.1.1.1.(2)(4)" and substituted "A-1.1.1.1.(3)(4)" in Code Reference column</change-summary>
@@ -2129,12 +2102,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 43: Table 1.3.1.2 - HRAI 2017 Edition row                -->
-    <!-- Strike out "9.32.2.3.(4)" in Code Reference column                -->
+    <!-- Strike out "9.32.2.3.(4)"                                          -->
+    <!-- BBC-210 #5 | Revises the existing row (row324) in place.           -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-043"
@@ -2142,18 +2116,18 @@
       description="Amend Table 1.3.1.2 by striking out '9.32.2.3.(4)' in the Code Reference column for HRAI 2017 Edition row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row324"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.hrai2017"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row324" rowsep="1" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>HRAI</entry>
+                <entry standard-ref-number="2017 Edition">2017 Edition</entry>
+                <entry standard-id="hraisar-g1-17" standard-ref-id="hraisar-g1" standard-ref-title="HRAI Digest">HRAI Digest</entry>
+                <entry><ref type="internal" target="nbc.divB.part6.sect2.subsect1.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect32.subsect2.art3.sent4" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art2.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect33.subsect4.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote255" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote256" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote259" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -2164,10 +2138,9 @@
                 >
                 <content>
                   <entry>HRAI</entry>
-                  <entry>2017 Edition</entry>
-                  <entry
-                    >Heating, Refrigeration and Air Conditioning Institute</entry>
-                  <entry />
+                  <entry standard-ref-number="2017 Edition">2017 Edition</entry>
+                  <entry standard-id="hraisar-g1-17" standard-ref-id="hraisar-g1" standard-ref-title="HRAI Digest">HRAI Digest</entry>
+                  <entry><ref type="internal" target="nbc.divB.part6.sect2.subsect1.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art2.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect33.subsect4.art1.sent1" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote255" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote256" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.appendix.appnote259" display-type="number"/></entry>
                 </content>
                 <change-summary
                   >Struck out "9.32.2.3.(4)" from Code Reference column</change-summary>
@@ -2176,12 +2149,14 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 44: Table 1.3.1.2 - HVI Publication 915-2013             -->
-    <!-- Strike out entire table row for HVI Publication 915-2013          -->
+    <!-- Strike out the entire row                                          -->
+    <!-- BBC-210 #7 | The existing row (row326) is struck out from June 16, 2025 -->
+    <!-- (empty revision content: the row is not shown from that date).     -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-044"
@@ -2189,18 +2164,18 @@
       description="Amend Table 1.3.1.2 by striking out the entire table row for HVI Publication 915-2013"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row326"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9152013"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row326" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>HVI</entry>
+                <entry standard-ref-number="HVI Publication 915">HVI Publication 915-2013</entry>
+                <entry standard-id="hvi915-13" standard-ref-id="hvi915" standard-ref-title="Loudness Testing and Rating Procedure">Loudness Testing and Rating Procedure</entry>
+                <entry><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent2" display-type="number"/> <ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.table2" display-type="long"/></entry>
               </original>
               <revision
                 seq="1"
@@ -2209,12 +2184,7 @@
                 id="bc-mo-2024-06-044"
                 status="current"
                 >
-                <content>
-                  <entry />
-                  <entry />
-                  <entry />
-                  <entry />
-                </content>
+                <content/>
                 <change-summary
                   >Struck out entire table row for HVI Publication 915-2013</change-summary>
                 <note>Ministerial Order BA 2024 06</note>
@@ -2222,12 +2192,13 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 45: Table 1.3.1.2 - HVI Publication 916-2013             -->
-    <!-- Strike out entire table row for HVI Publication 916-2013          -->
+    <!-- Strike out the entire row                                          -->
+    <!-- BBC-210 #8 | The existing row (row327) is struck out from June 16, 2025. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-045"
@@ -2235,18 +2206,18 @@
       description="Amend Table 1.3.1.2 by striking out the entire table row for HVI Publication 916-2013"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row327"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.hvipub9162013"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row327" rowsep="1" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry rowsep="1">HVI</entry>
+                <entry rowsep="1" standard-ref-number="HVI Publication 916">HVI Publication 916-2013</entry>
+                <entry rowsep="1" standard-id="hvi916-13" standard-ref-id="hvi916" standard-ref-title="Airflow Test Procedure">Airflow Test Procedure</entry>
+                <entry rowsep="1"><ref type="internal" target="nbc.divBV2.part9.sect32.subsect3.art10.sent1" display-type="number"/></entry>
               </original>
               <revision
                 seq="1"
@@ -2255,12 +2226,7 @@
                 id="bc-mo-2024-06-045"
                 status="current"
                 >
-                <content>
-                  <entry />
-                  <entry />
-                  <entry />
-                  <entry />
-                </content>
+                <content/>
                 <change-summary
                   >Struck out entire table row for HVI Publication 916-2013</change-summary>
                 <note>Ministerial Order BA 2024 06</note>
@@ -2268,12 +2234,16 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
-    
+
     <!-- ================================================================== -->
     <!-- Amendment 46: Table 1.3.1.2 - NRC CBD 230 row                      -->
     <!-- Strike out "A-1.1.1.1.(1)(4)" and substitute "A-1.1.1.2.(1)(4)"   -->
+    <!-- BBC-206 #12 | Revises the existing CBD 230 row (row391) in place   -->
+    <!-- instead of adding a new row. The "(4)" is Note (4) to the Table    -->
+    <!-- (Code reference is in Division A). The original keeps the source's -->
+    <!-- "A-1.1.1.1.(1)" label; Note A-1.1.1.2.(1) is the Note it points to. -->
     <!-- ================================================================== -->
     <amendment
       id="bc-mo-2024-06-046"
@@ -2281,18 +2251,27 @@
       description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(1)(4)' and substituting 'A-1.1.1.2.(1)(4)' in the Code Reference column for NRC CBD 230 row"
       >
       <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
+        type="canonical-id"
+        id="nbc.divB.part1.sect3.subsect1.art2.table1.row391"
         />
-      <insert>
+      <replace preserve-references="true">
         <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.nrccbd230"
-            revised="yes"
-            >
+          <row xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.row391" revised="yes">
             <revision-history>
               <original effective-date="2024-03-08">
+                <entry>NRC</entry>
+                <entry standard-ref-number="CBD 230">CBD 230</entry>
+                <entry standard-id="cbd230"
+                  standard-ref-id="cbd230"
+                  standard-ref-title="Applying building codes to existing buildings"
+                  >Applying building codes to existing buildings</entry>
+                <entry>
+                  <ref type="internal"
+                    target="nbc.divA.part1.appendix.appnote1"
+                    display-type="number">A-1.1.1.1.(1)</ref>
+                  <ref type="table-note"
+                    target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
+                </entry>
               </original>
               <revision
                 seq="1"
@@ -2303,15 +2282,17 @@
                 >
                 <content>
                   <entry>NRC</entry>
-                  <entry>CBD 230</entry>
-                  <entry
-                    >National Research Council of Canada Construction Digest</entry>
+                  <entry standard-ref-number="CBD 230">CBD 230</entry>
+                  <entry standard-id="cbd230"
+                    standard-ref-id="cbd230"
+                    standard-ref-title="Applying building codes to existing buildings"
+                    >Applying building codes to existing buildings</entry>
                   <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
+                    <ref type="internal"
+                      target="nbc.divA.part1.appendix.appnote1"
+                      display-type="number">A-1.1.1.2.(1)</ref>
+                    <ref type="table-note"
+                      target="nbc.divB.part1.sect3.subsect1.art2.table1.note4"/>
                   </entry>
                 </content>
                 <change-summary
@@ -2321,61 +2302,15 @@
             </revision-history>
           </row>
         </new-content>
-      </insert>
+      </replace>
     </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 47: Table 1.3.1.2 - NRC CBD 230 row (duplicate)          -->
-    <!-- Strike out "A-1.1.1.1.(1)(4)" and substitute "A-1.1.1.2.(1)(4)"   -->
+    <!-- MO BA 2024 06 item 47 repeats item 46 word for word; APPLIED IN    -->
+    <!-- bc-mo-2024-06-046 above (BBC-206). Adding it as a second row       -->
+    <!-- showed two extra "NRC CBD 230" rows in Table 1.3.1.2.             -->
     <!-- ================================================================== -->
-    <amendment
-      id="bc-mo-2024-06-047"
-      sequence="4046"
-      description="Amend Table 1.3.1.2 by striking out 'A-1.1.1.1.(1)(4)' and substituting 'A-1.1.1.2.(1)(4)' in the Code Reference column for NRC CBD 230 row"
-      >
-      <target
-        type="position"
-        parent-id="nbc.divB.part1.sect3.subsect1.art2.table1"
-        position="last-child"
-        />
-      <insert>
-        <new-content source="bc">
-          <row
-            xml:id="nbc.divB.part1.sect3.subsect1.art2.table1.nrccbd2302"
-            revised="yes"
-            >
-            <revision-history>
-              <original effective-date="2024-03-08">
-              </original>
-              <revision
-                seq="1"
-                type="amendment"
-                effective-date="2025-06-16"
-                id="bc-mo-2024-06-047"
-                status="current"
-                >
-                <content>
-                  <entry>NRC</entry>
-                  <entry>CBD 230</entry>
-                  <entry
-                    >National Research Council of Canada Construction Digest</entry>
-                  <entry>
-                    <ref
-                      type="internal"
-                      target="nbc.divA.part1.sect2.subsect1.art1.sent1.clause2"
-                      display-type="number"
-                      />
-                  </entry>
-                </content>
-                <change-summary
-                  >Struck out "A-1.1.1.1.(1)(4)" and substituted "A-1.1.1.2.(1)(4)" in Code Reference column</change-summary>
-                <note>Ministerial Order BA 2024 06</note>
-              </revision>
-            </revision-history>
-          </row>
-        </new-content>
-      </insert>
-    </amendment>
     
     <!-- ================================================================== -->
     <!-- Amendment 48: Sentence 3.1.2.5.(2) - Care Facilities               -->
@@ -2390,6 +2325,7 @@
         type="canonical-id"
         id="nbc.divB.part3.sect1.subsect2.art5.sent2"
         />
+      <!-- BBC-193 Issues 6-7: "care" is the italic defined term (item 48), and Clause (b) keeps "Article 3.2.4.20." as in the base text (was 3.1.2.4.). -->
       <replace preserve-references="true">
         <new-content source="bc">
           <sentence
@@ -2409,7 +2345,7 @@
                 >
                 <content>
                   <text
-                    >A care facility accepted for residential use pursuant to provincial legislation is permitted to be classified as a <ref
+                    >A <ref type="term" target="ca">care</ref> facility accepted for residential use pursuant to provincial legislation is permitted to be classified as a <ref
                       type="term"
                       target="rdntl-cc"
                       >residential occupancy</ref>, provided</text>
@@ -2431,7 +2367,7 @@
                         target="mk-lrm"
                         >smoke alarms</ref> are installed in conformance with <ref
                         type="internal"
-                        target="nbc.divB.part3.sect1.subsect2.art4"
+                        target="nbc.divB.part3.sect2.subsect4.art20"
                         display-type="long"
                         />,</text>
                   </clause>
@@ -3359,8 +3295,8 @@
         <new-content source="bc">
           <see-also xml:id="nbc.divB.part5.seealso" revised="yes">
             <revision-history>
-              <original effective-date="2024-03-08">
-                <!-- Merge engine will auto-populate original content -->
+              <!-- BBC-193: the BC code had no "(See Note A-5.)" under the Part 5 title before MO BA 2024 06 item 73 adds it (the NBC base line is not part of the original BCBC). -->
+              <original effective-date="2024-03-08" empty="true">
               </original>
               <revision
                 seq="1"
@@ -3369,12 +3305,7 @@
                 id="bc-mo-2024-06-067"
                 status="current"
                 >
-                <content>(See <ref
-                    type="internal"
-                    target="nbc.divB.part5.appendix.appnote1"
-                    display-type="long"
-                    pretext="Note"
-                    />)</content>
+                <content>(See <ref type="internal" target="nbc.divB.part5.appendix.appnote1" display-type="short"/>.)</content>
                 <change-summary
                   >Changed see-also reference to display as "(See Note A-5.)"</change-summary>
                 <note>Ministerial Order BA 2024 06</note>

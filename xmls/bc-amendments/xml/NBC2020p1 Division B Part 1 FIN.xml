@@ -3378,5 +3378,13 @@
             </replace>
         </amendment>
 
+        <!-- BBC-198 #1 | Notes to Part 1 begin with Note A-1.1.2.1.(1) in the BCBC source; the NBC introductory
+             paragraph ("These Notes are included for explanatory purposes only ...") is not printed. -->
+        <amendment id="bc-p1-111" sequence="111"
+                   description="Delete introduction from Division B Part 1 Notes">
+            <target type="child-element" parent-id="nbc.divB.part1.appendix" element-name="introduction" position="1"/>
+            <delete/>
+        </amendment>
+
     </amendments>
 </bc-overlay>

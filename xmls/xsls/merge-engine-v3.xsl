@@ -1208,6 +1208,12 @@
 
         <revision-history>
             <xsl:choose>
+                <!-- BBC-193 | <original empty="true"> means the BC code had nothing here before the revision
+                     (e.g. "(See Note A-5.)" only added under the Part 5 title by MO BA 2024 06 item 73),
+                     so the NBC base content must not be copied in as the original. -->
+                <xsl:when test="original/@empty = 'true'">
+                    <original effective-date="{original/@effective-date}"/>
+                </xsl:when>
                 <xsl:when test="original/node()[not(self::comment())][normalize-space()]">
                     <xsl:apply-templates select="original" mode="bc-to-canonical"/>
                 </xsl:when>
@@ -1321,6 +1327,8 @@
             </xsl:when>
             <xsl:when test="local-name($source-element) = 'article'">
                 <xsl:apply-templates select="$source-element/title" mode="extract-original"/>
+                <!-- BBC-190 | Keep the original Article's "(See Note ...)" under its title (e.g. 3.1.6.6. on March 8, 2024) when an MO repeals and substitutes the Article. -->
+                <xsl:apply-templates select="$source-element/see-also" mode="extract-original"/>
                 <xsl:apply-templates select="$source-element/sentence" mode="extract-original"/>
                 <xsl:apply-templates select="$source-element/table" mode="extract-original"/>
                 <xsl:apply-templates select="$source-element/figure" mode="extract-original"/>
